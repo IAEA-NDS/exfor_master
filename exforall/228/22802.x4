@@ -1,13 +1,14 @@
-ENTRY            22802   20050923   20060202   20051225       2174
-SUBENT        22802001   20050923   20060202   20051225       2174
-BIB                 14         51
+ENTRY            22802   20061011   20070104   20061127       2180
+SUBENT        22802001   20061011   20070104   20061127       2180
+BIB                 14         53
 TITLE      .Measurement of Neutron Capture Cross-Section of
             Indium in the Energy Region from 0.003 eV to 30 KeV
-AUTHOR     (Y.YOON, T.RO, S.LEE, SW.YAMAMOTO, K.KOBAYASHI)
+AUTHOR     (Y.YOON, T.RO, S.LEE, S.YAMAMOTO, K.KOBAYASHI)
 INSTITUTE  (3KORDAU)  Yoon, Ro
            (2JPNKTO)  Lee, Yamamoto, Kobayashi - Research Reactor
                  Institute of Kyoto University, Experimental Site
 REFERENCE  (J,ANE,29,(10),1157,200210)  Main Reference
+           (J,KPS,44,809,2004)          Resonance integral
            (J,NST,33,815,1996)          Experimental Details
 FACILITY   (LINAC,2JPNKTO)  Linear Accelerator of the Kyoto
              Research Reactor Institute, Kyoto University (KURRI)
@@ -42,7 +43,7 @@ CORRECTION .Corrections were Made For the Single and Multiple
             Scattering in Samples with the Help of Monte-Carlo
             Code (MCNP, LOS ALAMOS REPORT LA-12626-M,
             BRIESMEISTER, 1997)
-ERR-ANALYS .Total Error in SAN 002. In SAN 003 - not specified
+ERR-ANALYS <ERR-T>      Total Error
            (ERR-S)      Max Statistical Error
            (MONIT-ERR)  Error of the Standard Cross-Section
            (ERR-1)      Error of Corrections
@@ -51,31 +52,34 @@ ERR-ANALYS .Total Error in SAN 002. In SAN 003 - not specified
                         Assembly
            (ERR-4)      Min Statistical Error
 HISTORY    (20030524C)  J.O.S.
-           (20050923A)  Point data from authors are added - SM
-ENDBIB              51
+           (20050923A)  CS point data from authors are added - SM
+           (20061011A)  Data in SAN 002 corrected.SAN 004 added
+ENDBIB              53
 COMMON               6          3
 ERR-S      MONIT-ERR  ERR-1      ERR-2      ERR-3      ERR-4
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
         13.        2.4        1.5        0.2        2.3        0.6
 ENDCOMMON            3
-ENDSUBENT           58
-SUBENT        22802002   20050923   20060202   20051225       2174
-BIB                  5          7
+ENDSUBENT           60
+SUBENT        22802002   20061011   20070104   20061127       2180
+BIB                  5          9
 REACTION   (49-IN-0(N,G),,SIG,,MXW)
 INC-SPECT  .Maxwell neutron energy distribution
 STATUS     .From Table 2 of Main Reference
            (DEP,22802003)
 REL-REF    (A,,R.F.ROSE,R,BNL-NCS-17541,1991)  4Th Edition of
                                                ENDF/B-VI
-HISTORY    (20050923A)  Numerical error in SIGMA corrected
-ENDBIB               7
+HISTORY    (20050923A)  Numerical error in SIGMA corrected -
+                        1.99 barn to 199 barn
+           (20061011U)  Minor numerical error in SIGMA corrected
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 EN-MEAN    DATA       ERR-T
 EV         B          B
-   2.53E-02       199.        5.6
+   2.53E-02      199.6        5.6
 ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           17
 SUBENT        22802003   20030525   20060202   20051225       2174
 BIB                  3          4
 REACTION   (49-IN-0(N,G),,SIG)
@@ -351,4 +355,24 @@ EV         B          B
   2.372E+04  8.947E-01  1.089E-01
 ENDDATA            264
 ENDSUBENT          273
-ENDENTRY             3
+SUBENT        22802004   20061011   20070104   20061127       2180
+BIB                  6         10
+REACTION   (49-IN-115(N,G)49-IN-116,,RI)
+COMMENT    .*By compiler* Resonance integral was probably obtained
+            with the help of the measured cross section for the
+            Au-197(N,g)Au-198 reaction.
+DECAY-DATA (49-IN-116,54.1MIN,DG,416.,0.292,
+                      DG,1097.,,DG,1293.,,DG,1507.,,DG,2112.)
+REL-REF    (A,22769002,Y.YOON+,J,KPS,44,809,2004)
+STATUS     .From Table 4 of the 2nd reference
+           (DEP,22802003) Probably, remark by compiler
+HISTORY    (20061011C)  SM
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+EV         B          B
+        0.5     3126.4       30.9
+ENDDATA              3
+ENDSUBENT           18
+ENDENTRY             4
