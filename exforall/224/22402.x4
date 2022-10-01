@@ -1,5 +1,5 @@
-ENTRY            22402   20020912   20050616   20050926       0000
-SUBENT        22402001   20020912   20050616   20050926       0000
+ENTRY            22402   20070731   20070924   20070920       2186
+SUBENT        22402001   20070731   20070924   20070920       2186
 BIB                 14         36
 TITLE       Investigation of the U-238(N,F)-Process Below
             And Above the Threshold in the Fission Cross-Section
@@ -12,11 +12,11 @@ REFERENCE  (J,NP/A,662,(1),63,2000)      Main Reference
               Average Neutron Energy and Anysotropy are Given
 REL-REF    (N,,C.BUDTZ-JORGENSEN+,J,NIM/A,258,209,1987)    Experi-
              Mental Details
-           (N,,CH.STRAEDE+,J,NP/A,462,85,1985)   Experim. Details
+           (N,,CH.STRAEDE+,J,NP/A,462,85,1987)   Experim. Details
 FACILITY   (VDG,2ZZZGEL)  7 MeV Van de Graaff Accelerator
 INC-SOURCE (P-LI7,P-T,D-D)
-DETECTOR   (IOCH)  Double Frisch-Gridded ionisation chamber filled
-                   with 90% Ar + 10% CH4 at pressure 1.05E+5 Pa
+DETECTOR   (IOCH)  Double Frisch-Gridded ionisation chamber
+            filled with 90% Ar + 10% CH4 at pressure 1.05E+5 Pa
 MONITOR    (92-U-233(N,F),PR,NU)
            (92-U-235(N,F),PR,NU)
            (92-U-238(N,F),PR,NU)
@@ -30,24 +30,25 @@ SAMPLE     .Two samples were used.
            .For above-threshold energy points - polyimide layer
             33 microgram/cm2 thickness covered by 26 microg/cm2
             gold and 100 microg/cm2 natural uranium
-ERR-ANALYS .           Errors are not specified
+ERR-ANALYS .Errors, if present, are statistical
 STATUS     (APRVD)  Data Obtained Via E-Mail, F.Vives 19980803,
                     And F.-J.Hambsch, 20000625
 HISTORY    (19980809C)  + +  Compiled by S.M., San 002, 003  + +
            (20000704A)  Dates are Corrected.
            (20000707A)  New Big Set of Data Added, San 004-006
-           (20020912U) Last checking has been done.
+           (20070731U)  Corrected by S.M.
 ENDBIB              36
 NOCOMMON             0          0
 ENDSUBENT           39
-SUBENT        22402002   20020912   20050616   20050926       0000
-BIB                  2          2
-REACTION   (92-U-238(N,F),PR,AKE,N)
-STATUS     (DEP,22402004)
-ENDBIB               2
+SUBENT        22402002   20070731   20070924   20070920       2186
+BIB                  2          3
+REACTION   (92-U-238(N,F),PRE,AKE,FF)
+HISTORY    (20070731A)     Reaction code corrected from PR,AKE,N
+                           DATA-ERR to ERR-S changed
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3         15
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        MEV        MEV
         1.2     169.81       0.12
         1.3     169.82       0.17
@@ -65,20 +66,22 @@ MEV        MEV        MEV
         5.5     170.24       0.07
         5.8     170.24       0.04
 ENDDATA             17
-ENDSUBENT           24
-SUBENT        22402003   20020912   20050616   20050926       0000
-BIB                  3          3
-REACTION   (92-U-238(N,F),PR,DA,N,RSD)
+ENDSUBENT           25
+SUBENT        22402003   20070731   20070924   20070920       2186
+BIB                  4          5
+REACTION   (92-U-238(N,F),PRE,DA,FF,RSD)
 ERR-ANALYS (EN-ERR)   Error of the energy spectrum line center
 STATUS     (DEP,22402004)
-ENDBIB               3
+HISTORY    (20070731A)     Reaction code corrected from PR,DA,N
+                           DATA-ERR to ERR-S changed
+ENDBIB               5
 COMMON               1          3
 ANG
 ADEG
          0.
 ENDCOMMON            3
 DATA                 4         15
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-S
 MEV        MEV        NO-DIM     NO-DIM
       1.210      0.020      1.528      0.030
       1.314      0.025      1.435      0.035
@@ -96,7 +99,7 @@ MEV        MEV        NO-DIM     NO-DIM
       5.500      0.082      1.275      0.001
       5.800      0.082      1.379      0.003
 ENDDATA             17
-ENDSUBENT           29
+ENDSUBENT           31
 SUBENT        22402004   20020912   20050616   20050926       0000
 BIB                  3          5
 REACTION   (92-U-238(N,F)MASS,PRE,FY/DE,,RAW/REL) Number of Events
@@ -53820,17 +53823,17 @@ MEV        MEV        NO-DIM     NO-DIM
         5.8       222.       117.         1.
 ENDDATA          53711
 ENDSUBENT        53721
-SUBENT        22402005   20020912   20050616   20050926       0000
+SUBENT        22402005   20070731   20070924   20070920       2186
 BIB                  3          5
 REACTION   (92-U-238(N,F)MASS,PRE,FY)  Total Yield of FF
                  Yield Sum  = 200%
 STATUS     (DEP,22402004)
 HISTORY    (20000718C)  Compiled by S.M.
-           (20020912U) Last checking has been done.
+           (20070731U)  DATA-ERR changed to ERR-S
 ENDBIB               5
 NOCOMMON             0          0
 DATA                 4       1532
-EN         MASS       DATA       DATA-ERR
+EN         MASS       DATA       ERR-S
 MEV        NO-DIM     PC/FIS     PC/FIS
         1.2        67.  0.0112095  0.0112095
         1.2        71.  0.0112095  0.0112095
@@ -55366,7 +55369,7 @@ MEV        NO-DIM     PC/FIS     PC/FIS
         5.8       177. 0.00322237 0.00227856
 ENDDATA           1534
 ENDSUBENT         1544
-SUBENT        22402006   20020912   20050616   20050926       0000
+SUBENT        22402006   20070731   20070924   20070920       2186
 BIB                  5         16
 REACTION   (92-U-238(N,F)MASS,PRE,AKE,FF)
 MISC-COL   (MISC1) Dispersion of the TKE(A) distribution function
@@ -55383,11 +55386,11 @@ FLAG       (1.)  Data for light fission fragments are not given.
                  does not correspond to the real data
 STATUS     (DEP,22402004)
 HISTORY    (20000718C)  + +  Compiled by S.M.
-           (20020912U) Last checking has been done.
+           (20070731U)   DATA-ERR changed to ERR-S - SM
 ENDBIB              16
 NOCOMMON             0          0
 DATA                 9       1527
-EN         MASS       DATA       DATA-ERR   MISC1      MISC1-ERR
+EN         MASS       DATA       ERR-S      MISC1      MISC1-ERR
 MISC2      MISC2-ERR  FLAG
 MEV        NO-DIM     MEV        MEV        MEV        MEV
 NO-DIM     NO-DIM     NO-DIM
