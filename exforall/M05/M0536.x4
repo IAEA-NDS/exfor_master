@@ -1,6 +1,6 @@
-ENTRY            M0536   19990429   19990429   20050926       0000
-SUBENT        M0536001   19990429   19990429   20050926       0000
-BIB                 15         81
+ENTRY            M0536   20090323   20090402   20090324       M047
+SUBENT        M0536001   20090323   20090402   20090324       M047
+BIB                 16         83
 REFERENCE  (J,NP/A,549,387,1992)
 TITLE      Photodisintegration of the deuteron by linearly
             polarised photons.
@@ -53,6 +53,7 @@ DETECTOR   (SOLST) 4 silicon surface barrier detectors (Si(Sb)),
             is provided   because   the  range  of  the  protons
             expected is bigger than the depletion depth  of  the
             detectors.
+PART-DET   (P)
 SAMPLE     Along the  beam direction the cryotasrget consists of
             three successive cells separated by 2 micron-m Mylar
             foils.  The  two  outer  volumes  are separated from
@@ -81,13 +82,14 @@ STATUS     (TABLE) Data were prepared in the  MSU  INP  CDFE  by
 HISTORY    (19930819C) N.O.
            (19931129E)
            (19980817A)
-           (19990429A) DATE is corrected
-ENDBIB              81
+           (20081111A)  Corrected  by V.Varlamov: PART-DET added,
+            REACTION (004) and UNITS (003) corrected, dates
+ENDBIB              83
 NOCOMMON             0          0
-ENDSUBENT           84
-SUBENT        M0536002   19990429   19990429   20050926       0000
-BIB                  3         23
-REACTION   (1-H-2(G,N)1-H-1,,DA,P,,EXP)
+ENDSUBENT           86
+SUBENT        M0536002   20090323   20090402   20090324       M047
+BIB                  3         26
+REACTION   (1-H-2(G,N)1-H-1,,DA,,MSC)
             Polarization-independent part   of   the    reaction
             differential cross section.
 COMMENT    Polarization-independent  part   of   the    reaction
@@ -98,22 +100,29 @@ COMMENT    Polarization-independent  part   of   the    reaction
             correspondingly the  reaction   differential   cross
             sections  measured parallel and perpendicular to the
             polarization plane.
-ERR-ANALYS (DATA-ERR) Statistical   errors   stemmed   from  the
+ERR-ANALYS (ERR-S)   Statistical   errors   stemmed   from   the
             statistical error on the number of  protons  and  on
-            number  of tagged photons are given.  The systematic
-            uncertainties   were   estimated   as   caused    by
-            uncertainties in:
-             percent in number of target nuclei - 2.5 %;
-             degree of linear polarisation - 2 %;
-             solid angle of proton detector - 1 %;
-             correction factor for dead time - 0.3 %;
-             azimutal asymmetry of apparatus - 0.007 %.
+            number  of tagged photons are given.
            The total systematic error was estimated to be  equal
             to 3 %.
-ENDBIB              23
-NOCOMMON             0          0
+           (ERR-1) The  systematic  uncertainties  in  number of
+            target nuclei.
+           (ERR-2) The   systematic   uncertainties   in  linear
+            polarisation.
+           (ERR-3) The  systematic  uncertainties in solid angle
+            of proton detector.
+           (ERR-4) The  systematic  uncertainties  in correction
+            factor for dead time.
+           (ERR-5) The   systematic  uncertainties  in  azimutal
+            asymmetry of apparatus.
+ENDBIB              26
+COMMON               5          3
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  2.5        2.         1.          .3         .007
+ENDCOMMON            3
 DATA                 5         27
-EN         EN-RSL-FW  ANG-CM     DATA       DATA-ERR
+EN         EN-RSL-FW  ANG-CM     DATA-CM    ERR-S
 MEV        PER-CENT   ADEG       MU-B/SR    MU-B/SR
 54.         3.         46.6       14.2      0.5
 54.         3.         67.9       15.6      0.5
@@ -143,10 +152,10 @@ MEV        PER-CENT   ADEG       MU-B/SR    MU-B/SR
 88.         5.        147.4        4.1      0.2
 88.         5.        163.9        4.2      0.2
 ENDDATA             29
-ENDSUBENT           57
-SUBENT        M0536003   19990429   19990429   20050926       0000
+ENDSUBENT           64
+SUBENT        M0536003   20090323   20090402   20090324       M047
 BIB                  3         23
-REACTION   (1-H-2(G,N)1-H-1,,POL/DA,P,,EXP)
+REACTION   (1-H-2(G,N)1-H-1,,DA,,MSC)
             Polarization-dependent part    of    the    reaction
             differential cross  section.
 COMMENT    Polarization-dependent  part    of    the    reaction
@@ -157,7 +166,7 @@ COMMENT    Polarization-dependent  part    of    the    reaction
             correspondingly the  reaction   differential   cross
             sections  measured parallel and perpendicular to the
             polarization plane.
-ERR-ANALYS (DATA-ERR) Statistical  errors   stemmed   from   the
+ERR-ANALYS (ERR-S)   Statistical  errors   stemmed   from    the
             statistical  error  on  the number of protons and on
             number of tagged photons are given.  The  systematic
             uncertainties    were   estimated   as   caused   by
@@ -172,8 +181,8 @@ ERR-ANALYS (DATA-ERR) Statistical  errors   stemmed   from   the
 ENDBIB              23
 NOCOMMON             0          0
 DATA                 6         27
-EN         EN-RSL-FW  ANG-CM     DATA       DATA-ERR   POL-BM
-MEV        PER-CENT   ADEG       MU-B/SR    MU-B/SR    PER-CENT
+EN         EN-RSL-FW  ANG-CM     DATA-CM    ERR-S      POL-BM
+MEV        PER-CENT   ADEG       MU-B/SR    MU-B/SR    NO-DIM
 54.         3.         46.6        7.1      1.1        47.3
 54.         3.         67.9        9.0      1.0        47.3
 54.         3.         88.2        9.2      1.1        47.3
@@ -203,9 +212,9 @@ MEV        PER-CENT   ADEG       MU-B/SR    MU-B/SR    PER-CENT
 88.         5.        163.9        0.0      0.7        39.3
 ENDDATA             29
 ENDSUBENT           57
-SUBENT        M0536004   19990429   19990429   20050926       0000
+SUBENT        M0536004   20090323   20090402   20090324       M047
 BIB                  3         30
-REACTION   (1-H-2(G,N)1-H-1,,POL/DA,P,AZI,EXP)
+REACTION   (1-H-2(G,N)1-H-1,,POL/DA,,ASY/PP/MSC)
             Azimuthal reaction cross section asymmetry.
 COMMENT    The azimuthal reaction cross  section  asymmetry  (is
             equivalent to  'analyzing power' in EXFOR DICTIONARY
@@ -223,7 +232,7 @@ COMMENT    The azimuthal reaction cross  section  asymmetry  (is
             are correspondingly the reaction differential  cross
             sections  measured parallel and perpendicular to the
             polarization  plane.
-ERR-ANALYS (DATA-ERR) Statistical   errors   stemmed   from  the
+ERR-ANALYS (ERR-S)   Statistical   errors   stemmed   from   the
             statistical error on the number of  protons  and  on
             number  of tagged photons are given.  The systematic
             uncertainties   were   estimated   as   caused    by
@@ -238,35 +247,35 @@ ERR-ANALYS (DATA-ERR) Statistical   errors   stemmed   from  the
 ENDBIB              30
 NOCOMMON             0          0
 DATA                 5         27
-EN         EN-RSL-FW  ANG-CM     DATA       DATA-ERR
+EN         EN-RSL-FW  ANG-CM     DATA-CM    ERR-S
 MEV        PER-CENT   ADEG       NO-DIM     NO-DIM
-54.         3.         46.6        0.50     0.08
-54.         3.         67.9        0.57     0.06
-54.         3.         88.2        0.63     0.07
-54.         3.        108.3        0.46     0.09
-54.         3.        127.1        0.42     0.12
-54.         3.        145.1        0.20     0.16
-54.         3.        162.6        0.00     0.20
-60.         5.         46.9        0.41     0.10
-60.         5.         68.2        0.44     0.07
-60.         5.         88.6        0.45     0.07
-60.         5.        108.7        0.44     0.09
-60.         5.        127.4        0.20     0.12
-60.         5.        145.5        0.21     0.14
-60.         5.        162.7        0.19     0.20
-68.         5.         47.6        0.35     0.14
-68.         5.         69.1        0.45     0.08
-68.         5.         89.4        0.31     0.08
-68.         5.        109.5        0.18     0.10
-68.         5.        128.2        0.17     0.12
-68.         5.        145.9        0.14     0.13
-68.         5.        163.0        0.10     0.16
-88.         5.         71.0        0.16     0.14
-88.         5.         91.3        0.27     0.11
-88.         5.        111.3        0.21     0.13
-88.         5.        129.9        0.07     0.14
-88.         5.        147.4        0.02     0.13
-88.         5.        163.9        0.00     0.17
+54.         3.         46.6       -0.50     0.08
+54.         3.         67.9       -0.57     0.06
+54.         3.         88.2       -0.63     0.07
+54.         3.        108.3       -0.46     0.09
+54.         3.        127.1       -0.42     0.12
+54.         3.        145.1       -0.20     0.16
+54.         3.        162.6       -0.00     0.20
+60.         5.         46.9       -0.41     0.10
+60.         5.         68.2       -0.44     0.07
+60.         5.         88.6       -0.45     0.07
+60.         5.        108.7       -0.44     0.09
+60.         5.        127.4       -0.20     0.12
+60.         5.        145.5       -0.21     0.14
+60.         5.        162.7       -0.19     0.20
+68.         5.         47.6       -0.35     0.14
+68.         5.         69.1       -0.45     0.08
+68.         5.         89.4       -0.31     0.08
+68.         5.        109.5       -0.18     0.10
+68.         5.        128.2       -0.17     0.12
+68.         5.        145.9       -0.14     0.13
+68.         5.        163.0       -0.10     0.16
+88.         5.         71.0       -0.16     0.14
+88.         5.         91.3       -0.27     0.11
+88.         5.        111.3       -0.21     0.13
+88.         5.        129.9       -0.07     0.14
+88.         5.        147.4       -0.02     0.13
+88.         5.        163.9       -0.00     0.17
 ENDDATA             29
 ENDSUBENT           64
 ENDENTRY             4
