@@ -1,9 +1,11 @@
-ENTRY            O1183   20040929
-SUBENT        O1183001   20040929
-BIB                 12         36
+ENTRY            O1183   20041230
+SUBENT        O1183001   20041230
+BIB                 13         40
 TITLE      Isotopic and velocity distributions of 83-Bi produced
            in charge-pickup reactions of 82-Pb-208 at 1A GeV.
-REFERENCE  (P,GSI-2004-19,200407)
+REFERENCE  (J,PR/C,70,064608,2004)
+           (P,GSI-2004-19,200407) All data were taken from the
+           preprint.
 AUTHOR     (A.Kelic, K.-H.Schmidt, T.Enqvist, A.Boudard,
            P.Armbruster, J.Benlliure, M.Bernas, S.Czajkowski,
            R.Legrain, S.Leray, B.Mustapha, M.Pravikoff, F.Rejmund,
@@ -32,26 +34,29 @@ COMMENT    -By authors.  In order to subtract the contribution
            repeated replacing the proton and deuteron targets by
            an empty target container.
 HISTORY    (20040929C) By F.Ch
-           (20040929U) Last checking has been done.
+           (20041230A) All SUBENTRIES were corrected
+           (20041230U) Last checking has been done.
 ERR-ANALYS (ERR-1) Systematic uncertainty
            (ERR-S) Statistical uncertainty only.
 ADD-RES    (COMP) With INCL4+ABLA and ISABEL+ABLA.
            Velocity distributions of the products.
-ENDBIB              36
-COMMON               2          3
-EN         ERR-1
-MEV        PER-CENT
-       208.         9.
-ENDCOMMON            3
-ENDSUBENT           43
-SUBENT        O1183002   20040929
-BIB                  1          1
-REACTION   (1-H-1(82-PB-208,X)ELEM/MASS,,SIG)
-ENDBIB               1
+STATUS     (TABLE) From the paper.
+ENDBIB              40
 COMMON               1          3
-ELEMENT
-NO-DIM
-        83.
+ERR-1
+PER-CENT
+         9.
+ENDCOMMON            3
+ENDSUBENT           47
+SUBENT        O1183002   20041230
+BIB                  1          2
+REACTION   ((1-H-1(82-PB-208,X)ELEM/MASS,,SIG)=
+           (82-PB-208(P,X)ELEM/MASS,,SIG))
+ENDBIB               2
+COMMON               2          3
+ELEMENT    EN-CM
+NO-DIM     MEV
+        83.       993.
 ENDCOMMON            3
 DATA                 3         16
 MASS       DATA       ERR-S
@@ -73,15 +78,16 @@ NO-DIM     MB         MB
        207.       1.38       0.08
        208.       0.52       0.05
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        O1183003   20040929
-BIB                  1          1
-REACTION   (1-H-2(82-PB-208,X)ELEM/MASS,,SIG)
-ENDBIB               1
-COMMON               1          3
-ELEMENT
-NO-DIM
-        83.
+ENDSUBENT           29
+SUBENT        O1183003   20041230
+BIB                  1          2
+REACTION   ((1-H-2(82-PB-208,X)ELEM/MASS,,SIG)=
+           (82-PB-208(D,X)ELEM/MASS,,SIG))
+ENDBIB               2
+COMMON               2          3
+ELEMENT    EN-CM
+NO-DIM     MEV
+        83.      1971.
 ENDCOMMON            3
 DATA                 3         16
 MASS       DATA       ERR-S
@@ -103,15 +109,15 @@ NO-DIM     MB         MB
        207.       1.36       0.07
        208.       0.59       0.05
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        O1183004   20040929
+ENDSUBENT           29
+SUBENT        O1183004   20041230
 BIB                  1          1
 REACTION   (22-TI-0(82-PB-208,X)ELEM/MASS,,SIG)
 ENDBIB               1
-COMMON               1          3
-ELEMENT
-NO-DIM
-        83.
+COMMON               2          3
+ELEMENT    EN
+NO-DIM     GEV
+        83.       208.
 ENDCOMMON            3
 DATA                 3         10
 MASS       DATA       ERR-S
@@ -128,4 +134,56 @@ NO-DIM     MB         MB
        208.        1.1        0.4
 ENDDATA             12
 ENDSUBENT           22
-ENDENTRY             4
+SUBENT        O1183005   20041230
+BIB                  2          4
+REACTION   ((1-H-1(82-PB-208,X)ELEM,,SIG)=
+           (82-PB-208(P,X)ELEM,,SIG))
+MISC-COL   (MISC1) Calculated by INCL+ABLA
+           (MISC2) Calculated by ISABEL+ABLA
+ENDBIB               4
+COMMON               1          3
+EN-CM
+MEV
+       993.
+ENDCOMMON            3
+DATA                 5          1
+ELEMENT    DATA       ERR-S      MISC1      MISC2
+NO-DIM     MB         MB         MB         MB
+        83.        30.         6.        36.        34.
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        O1183006   20041230
+BIB                  2          3
+REACTION   ((1-H-2(82-PB-208,X)ELEM,,SIG)=
+           (82-PB-208(D,X)ELEM,,SIG))
+MISC-COL   (MISC) Calculated by INCL+ABLA
+ENDBIB               3
+COMMON               1          3
+EN-CM
+MEV
+      1971.
+ENDCOMMON            3
+DATA                 4          1
+ELEMENT    DATA       ERR-S      MISC
+NO-DIM     MB         MB         MB
+        83.        26.         6.        31.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        O1183007   20041230
+BIB                  2          3
+REACTION   (22-TI-0(82-PB-208,X)ELEM,,SIG)
+MISC-COL   (MISC1) Calculated by INCL abla
+           (MISC2) Calculated by ISABEL+ABLA
+ENDBIB               3
+COMMON               1          3
+EN
+GEV
+       208.
+ENDCOMMON            3
+DATA                 5          1
+ELEMENT    DATA       ERR-S      MISC1      MISC2
+NO-DIM     MB         MB         MB         MB
+        83.        45.         9.        33.        51.
+ENDDATA              3
+ENDSUBENT           15
+ENDENTRY             7
