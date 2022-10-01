@@ -1,6 +1,6 @@
-ENTRY            E1807   20050224              20050926       0000
-SUBENT        E1807001   20050224              20050926       0000
-BIB                 12         43
+ENTRY            E1807   20070514   20070521   20070514       E044
+SUBENT        E1807001   20070514   20070521   20070514       E044
+BIB                 12         50
 TITLE      Polarization transfer observables for proton inelastic
            scattering from 12C at 0 degree
 AUTHOR     (A.Tamii, H.Akimune, I.Daito, Y.Fujita, M.Fujiwara,
@@ -19,10 +19,17 @@ INSTITUTE  (2JPNTOK) Department of Physics
            (2JPNTOH) Laboratory of Nuclear Science
            (2JPNJSR)
 REFERENCE  (J,PL/B,459,(1-3),61,199907)
+           Main reference. See also TITLE and AUTHOR.
+           (T,TAMII,199909)
+           A.Tamii, single differential cross section and
+           polarization transfer D(SS) and D(LL)
 PART-DET   (P)
 EN-SEC     ANG is polar angle between beam and proton in
            laboratory system
 INC-SOURCE Beam intensity is 2 to 3 nA.
+           (POLIS) POL-BM: Monitored by two sets of beam-line
+                   polarimeters with a polystyrene sheet as the
+                   analyzer target.
 SAMPLE     - Target is natural.
            - Chemical-form of target is element.
            - Physical-form of target is solid.
@@ -43,14 +50,14 @@ DETECTOR   (MAGSP) Grand Raiden [M. Fujiwara, Nucl. Instr. Meth.
                   York, 1995, p. 157] consisted of four MWPC and
                   a PS hodoscope in Grand Raiden. To measure
                   polarization of protons
-HISTORY    (20030715C)
-ENDBIB              43
+HISTORY    (20030715C) Im + Ia
+ENDBIB              50
 COMMON               5          3
 EN         POL-BM     E-RSL      ANG-MIN    ANG-MAX
 MEV        NO-DIM     KEV        ADEG       ADEG
  392.       0.75       120.       0.         1.
 ENDCOMMON            3
-ENDSUBENT           50
+ENDSUBENT           57
 SUBENT        E1807002   20050224              20050926       0000
 BIB                  4          5
 REACTION   (6-C-12(P,INL)6-C-12,,DA/DE)
@@ -553,4 +560,36 @@ MEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM
  15.1       3.         0.99       0.01       1.
 ENDDATA              5
 ENDSUBENT           20
-ENDENTRY             7
+SUBENT        E1807008   20070514   20070521   20070514       E044
+BIB                  7         16
+REACTION   (6-C-12(P,INL)6-C-12,PAR,DA)
+           Total spin transfer
+EN-SEC     (E-LVL,6-C-12)
+LEVEL-PROP ((1.)6-C-12,E-LVL=7.65,SPIN=0.,PARITY=+1.)
+           ((2.)6-C-12,E-LVL=12.7,SPIN=1.,PARITY=+1.)
+           ((3.)6-C-12,E-LVL=15.1,SPIN=1.,PARITY=+1.)
+MISC-COL   (MISC) Isospin of residual 12C
+ERR-ANALYS (ERR-1) Uncertainty in horizontal acceptance
+           (ERR-2) Uncertainty in vertical acceptance
+           (ERR-3) Uncertainty in beam current
+           (ERR-4) Uncertainty in target thickness
+           (ERR-5) Uncertainty in peak fit
+           (ERR-S) Statistical uncertainty
+           (ERR-SYS) Total systematic uncertainty
+STATUS     (TABLE) Data taken from Table 4.3, p64 in thesis
+HISTORY    (20070310C) On
+ENDBIB              16
+COMMON               6          3
+ERR-SYS    ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 5.         2.         3.         3.         1.         2.
+ENDCOMMON            3
+DATA                 5          3
+E-LVL      LVL-FLAG   DATA-CM    ERR-S      MISC
+MEV        NO-DIM     MB/SR      MB/SR      NO-DIM
+ 7.65       1.         0.42       0.01       0.
+ 12.7       2.         0.33       0.01       0.
+ 15.1       3.         3.16       0.02       1.
+ENDDATA              5
+ENDSUBENT           30
+ENDENTRY             8
