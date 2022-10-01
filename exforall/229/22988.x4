@@ -1,28 +1,29 @@
-ENTRY            22988   20080609   20081110   20081110       2202
-SUBENT        22988001   20080609   20081110   20081110       2202
-BIB                 19         70
-TITLE      Measurement of scattering cross sections of Pb-nat at
-           an incident neutron energy of 2.94 MeV.
+ENTRY            22988   20081228   20090209   20090209       2205
+SUBENT        22988001   20081228   20090209   20090209       2205
+BIB                 18         74
+TITLE      .Measurement of scattering cross sections of Pb-nat at
+            an incident neutron energy of 2.94 MeV.
 AUTHOR     (E.Poenitz, R.Nolte, D.Schmidt)
 INSTITUTE  (2GERPTB)  PTB, Braunschweig, Germany.
-REFERENCE  (C,2007NICE,1,513,200704) Conf. Proc.
+REFERENCE  (C,2007NICE,1,513,200704)  ND2007 report #390.
+              doi:10.1051/ndata07390. Conference Proceedings.
            (A,2007NICE,130(#390),200704) Book of Abstracts
 REL-REF    (N,,D.Schmidt+,R,PTB-N-27,1996) Details of facility.
            (N,,D.Schmidt+,R,PTB-N-40,1998) Code STREUER .
 FACILITY   (CYCLO,2GERPTB) Cyclotron can be rotated from -20deg
             to +110deg with respect to detector.
              TOF spectrometer at PTB.
-INC-SOURCE  N-15(p,n)O-15 reaction as source for monoenergetic
-           neutrons.Pulsed beam with time width of 0.8ns to 2.0ns.
-            Gas target of 3 cm length, with entrance window of
-            5 microm Mo-foil. Distance between center of gas
-            target and pivot point 17.5cm.
-            Gas target allows background subtraction by
-            gas-in/gas-out difference measurements and easy
-            variation of target thickness by changing gas pressure
+INC-SOURCE .       N-15(p,n)O-15 reaction as source for monoener-
+            getic neutrons. Pulsed beam with time width of 0.8 to
+            2.0 ns. Gas target of 3 cm length, with entrance
+            window of 5 micron Mo-foil. Distance between center
+            of gas target and pivot point 17.5cm.
+            Gas target allows background subtraction by gas-in/
+            gas-out difference measurements and easy variation
+            of target thickness by changing gas pressure
 INC-SPECT   Energy spread is primary caused by target thickness
-            (deltaEg = 0.09MeV )and energy spread of protons beam
-            (deltaEacc = 0.06MeV FWHM).
+            (delta-Eg = 0.09MeV )and energy spread of protons beam
+            (delta-Eacc = 0.06MeV FWHM).
 METHOD     (TOF) Time-of-flight, 12 m flight path of scattered
                  neutrons.
 DETECTOR   (SCIN)   Six  NE213 liquid scintillation detectors:
@@ -34,9 +35,8 @@ DETECTOR   (SCIN)   Six  NE213 liquid scintillation detectors:
             detector.If the cyclotron is at 25.0 deg with respect
             to detector D1, then data at 25.0, 37.5, 50.0, 62.5
             and 75.0 deg were measured at the same time.
-MONITOR    (1-H-1(N,EL)1-H-1,,DA)  ENDF/B-V scattering c-s were
-             used for normalization.
-MONIT-REF  (,,3,ENDF/B-5)
+MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
+MONIT-REF  (,,3,ENDF/B-V,,) ENDF/B-V scat c-s were used for norm.
 SAMPLE      Located at the pivot point. Full cylinder of 2.502cm
             diameter, 5.002 cm height, 278.260 g mass, chemical
             purity 99.9%, natural isotopic abundance.
@@ -44,13 +44,13 @@ SAMPLE      Located at the pivot point. Full cylinder of 2.502cm
            22.455g mass, hydrogen mass content 14.30% was used for
            normalization measurement.
 ANALYSIS   Iteratively fitting a realistic Monte Carlo simulation
-           of neutron production,scattering and detection process
+           of neutron production, scattering and detection process
            to measured TOF spectra. Monte Carlo code STREUER was
            used for simulation.
            (INTAD)Angle-integrated cross sections were obtained by
            fitting a Legendre polynomial expansion to experimental
            data using least-squares methods.
-ERR-ANALYS (DATA-ERR) Uncertainties are one standard deviation.
+ERR-ANALYS (ERR-T)    Total error
             Cross section uncertainties come from:
            (ERR-1) - Normalization, including the uncertainty of
            hydrogen content of PE sample, uncertainty of ENDF/B-V
@@ -60,7 +60,6 @@ ERR-ANALYS (DATA-ERR) Uncertainties are one standard deviation.
             of detector efficiency;
            - Counting statistics of measurement with Pb sample;
            - Uncertainty of multiple scattering correction.
-MISC-COL   (MISC1) Relative uncertainty.
 CORRECTION  With Monte Carlo simulation, data were corrected for
             finite geometry, multiple scattering and flux
             attenuation in sample and surrounding air.
@@ -71,18 +70,23 @@ STATUS     (TABLE) Data received from author E.Poenitz 10.01.2008.
            (APRVD) E.Poenitz, 18.01.2008 .
 HISTORY    (20080110C)   M.M.
            (20080609U) M.M. Reference was corrected.
-ENDBIB              70
+           (20081114U) S.M. Reference was corrected.
+           (20081228A) Keyword ANALYSIS changed to COVARIANCE
+            in SUBENTs 22988-002, -004, -005, -007, -008, -010,
+            -011, -013; MISC1 deleted,changed to ERR-T in percent;
+            DATA-ERR changed to ERR-T - S.M.
+ENDBIB              74
 COMMON               4          3
 EN         EN-ERR     ANG-ERR    ERR-1
 MEV        MEV        ADEG       PER-CENT
-  2.94      0.06       0.2         1.
+  2.94      0.06         0.2         1.
 ENDCOMMON            3
-ENDSUBENT           77
-SUBENT        22988002   20080110   20080305   20080305       2191
+ENDSUBENT           81
+SUBENT        22988002   20081228   20090209   20090209       2205
 BIB                  3         15
 REACTION   (82-PB-0(N,EL)82-PB-0,,DA) Angular distribution of
             elastic scattering on Pb-nat.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
             100
              68 100
              66  77 100
@@ -98,7 +102,7 @@ STATUS     (PRELM) PTB preliminary data are presented on Fig.3 of
 ENDBIB              15
 NOCOMMON             0          0
 DATA                 4         10
-ANG-CM     DATA-CM    DATA-ERR   MISC1
+ANG-CM     DATA-CM    ERR-T      ERR-T
 ADEG       MB/SR      MB/SR      PER-CENT
  25.10      2959.2      76.9       2.6
  37.23      1206.1      36.2       3.0
@@ -112,7 +116,7 @@ ADEG       MB/SR      MB/SR      PER-CENT
 129.72       123.2       3.0       2.4
 ENDDATA             12
 ENDSUBENT           32
-SUBENT        22988003   20080110   20080305   20080305       2191
+SUBENT        22988003   20081228   20090209   20090209       2205
 BIB                  2          5
 REACTION   (82-PB-0(N,EL)82-PB-0,,SIG,,SPA) Averaged over the
             experimental energy spread, angle-integrated cross
@@ -122,19 +126,19 @@ STATUS     (PRELM) Preliminary data.
 ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   MISC1
+DATA       ERR-T      ERR-T
 B          B          PER-CENT
  6.6917     0.1476     2.206
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        22988004   20080110   20080305   20080305       2191
+SUBENT        22988004   20081228   20090209   20090209       2205
 BIB                  3         17
 REACTION   (82-PB-0(N,EL)82-PB-0,,DA,,LEG/RSL) Legendre
            coefficients in form
            d-Sig/d-Omega=(Sig/4pi)*Sum(1+(2L+1)a(L)p(L)),
            where L= from 1 to 6,
            Sig=(6691.7+-147.6)mb - angle-integrated cross section.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
              -12 100
               53 -22 100
@@ -149,7 +153,7 @@ STATUS     (PRELM) PTB preliminary data (Legendre polynomial fit
 ENDBIB              17
 NOCOMMON             0          0
 DATA                 4          6
-NUMBER-CM  DATA-CM    DATA-ERR   MISC1
+NUMBER-CM  DATA-CM    ERR-T      ERR-T
 NO-DIM     NO-DIM     NO-DIM     PER-CENT
 1.         0.53497     0.01136       2.123
 2.         0.46454     0.00401       0.864
@@ -159,13 +163,13 @@ NO-DIM     NO-DIM     NO-DIM     PER-CENT
 6.         0.04871     0.00145       2.980
 ENDDATA              8
 ENDSUBENT           30
-SUBENT        22988005   20080110   20080305   20080305       2191
+SUBENT        22988005   20081228   20090209   20090209       2205
 BIB                  4         17
 REACTION   (82-PB-206(N,INL)82-PB-206,PAR,DA) Angular distribution
             of inelastic scattering with excitation of 1st level
             of Pb-206.
 EN-SEC     (E-LVL,82-PB-206) 1st exc. level energy.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
                0 100
                1   1 100
@@ -185,7 +189,7 @@ KEV
   803.
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA-CM    DATA-ERR   MISC1
+ANG-CM     DATA-CM    ERR-T      ERR-T
 ADEG       MB/SR      MB/SR      PER-CENT
  25.40      59.0           11.7       19.8
  37.73      45.4            7.6       16.6
@@ -199,7 +203,7 @@ ADEG       MB/SR      MB/SR      PER-CENT
 129.91      33.9            3.3        9.8
 ENDDATA             12
 ENDSUBENT           38
-SUBENT        22988006   20080110   20080305   20080305       2191
+SUBENT        22988006   20081228   20090209   20090209       2205
 BIB                  3          7
 REACTION   (82-PB-206(N,INL)82-PB-206,PAR,SIG) Angle-integrated
             cross section for inelastic scattering with excitation
@@ -215,19 +219,19 @@ KEV
   803.
 ENDCOMMON            3
 DATA                 3          1
-DATA       DATA-ERR   MISC1
+DATA       ERR-T      ERR-T
 MB         MB         PER-CENT
  492.4      25.6       5.206
 ENDDATA              3
 ENDSUBENT           19
-SUBENT        22988007   20080110   20080305   20080305       2191
+SUBENT        22988007   20081228   20090209   20090209       2205
 BIB                  4         14
 REACTION   (82-PB-206(N,INL)82-PB-206,PAR,DA,,LEG/RSL) Legendre
            coefficients in form
            d-Sig/d-Omega=(Sig/4pi)*Sum(1+(2L+1)a(L)p(L)),
            where L= from 1 to 2,
            Sig=( 492.4+- 25.6)mb - angle-integrated cross section.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
               -8 100
               37 -22 100
@@ -243,19 +247,19 @@ KEV
   803.
 ENDCOMMON            3
 DATA                 4          2
-NUMBER-CM  DATA-CM    DATA-ERR   MISC1
+NUMBER-CM  DATA-CM    ERR-T      ERR-T
 NO-DIM     NO-DIM     NO-DIM     PER-CENT
 1.          0.08356     0.03076    36.807
 2.          0.04997     0.02942    58.878
 ENDDATA              4
 ENDSUBENT           27
-SUBENT        22988008   20080110   20080305   20080305       2191
+SUBENT        22988008   20081228   20090209   20090209       2205
 BIB                  4         17
 REACTION   (82-PB-207(N,INL)82-PB-207,PAR,DA) Angular distribution
             of inelastic scattering with excitation of 1st level
             of Pb-207.
 EN-SEC     (E-LVL,82-PB-207) 1st exc. level energy.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
                0 100
                1   2 100
@@ -275,7 +279,7 @@ KEV
   570.
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA-CM    DATA-ERR   MISC1
+ANG-CM     DATA-CM    ERR-T      ERR-T
 ADEG       MB/SR      MB/SR      PER-CENT
  25.40      67.7           15.7      23.2
  37.72      79.9            9.4      11.7
@@ -289,7 +293,7 @@ ADEG       MB/SR      MB/SR      PER-CENT
 129.89      55.0            5.5      10.0
 ENDDATA             12
 ENDSUBENT           38
-SUBENT        22988009   20080110   20080305   20080305       2191
+SUBENT        22988009   20081228   20090209   20090209       2205
 BIB                  3          7
 REACTION   (82-PB-207(N,INL)82-PB-207,PAR,SIG) Angle-integrated
             cross section for inelastic scattering with excitation
@@ -305,19 +309,19 @@ KEV
  570.
 ENDCOMMON            3
 DATA                 3          1
-DATA       DATA-ERR   MISC1
+DATA       ERR-T      ERR-T
 MB         MB         PER-CENT
  748.2        33.4         4.464
 ENDDATA              3
 ENDSUBENT           19
-SUBENT        22988010   20080110   20080305   20080305       2191
+SUBENT        22988010   20081228   20090209   20090209       2205
 BIB                  4         14
 REACTION   (82-PB-207(N,INL)82-PB-207,PAR,DA,,LEG/RSL) Legendre
            coefficients in form
            d-Sig/d-Omega=(Sig/4pi)*Sum(1+(2L+1)a(L)p(L)),
            where L= from 1 to 2,
            Sig=( 748.2+- 33.4)mb - angle-integrated cross section.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
              -26 100
               38 -37 100
@@ -333,19 +337,19 @@ KEV
   507.
 ENDCOMMON            3
 DATA                 4          2
-NUMBER-CM  DATA-CM    DATA-ERR   MISC1
+NUMBER-CM  DATA-CM    ERR-T      ERR-T
 NO-DIM     NO-DIM     NO-DIM     PER-CENT
 1.         0.04366     0.02322    53.183
 2.         0.04220     0.01951    46.227
 ENDDATA              4
 ENDSUBENT           27
-SUBENT        22988011   20080110   20080305   20080305       2191
+SUBENT        22988011   20081228   20090209   20090209       2205
 BIB                  4         17
 REACTION   (82-PB-207(N,INL)82-PB-207,PAR,DA) Angular distribution
             of inelastic scattering with excitation of 2nd level
             of Pb-207.
 EN-SEC     (E-LVL,82-PB-207) 2nd exc. level energy.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
                1 100
                0   1 100
@@ -365,7 +369,7 @@ KEV
   898.
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA-CM    DATA-ERR   MISC1
+ANG-CM     DATA-CM    ERR-T      ERR-T
 ADEG       MB/SR      MB/SR      PER-CENT
  25.39      55.7       11.4          20.5
  37.71      54.6        7.3          13.4
@@ -379,7 +383,7 @@ ADEG       MB/SR      MB/SR      PER-CENT
 130.01      44.8        4.4           9.9
 ENDDATA             12
 ENDSUBENT           38
-SUBENT        22988012   20080110   20080305   20080305       2191
+SUBENT        22988012   20081228   20090209   20090209       2205
 BIB                  3          7
 REACTION   (82-PB-207(N,INL)82-PB-207,PAR,SIG) Angle-integrated
             cross section for inelastic scattering with excitation
@@ -395,19 +399,19 @@ KEV
   898.
 ENDCOMMON            3
 DATA                 3          1
-DATA       DATA-ERR   MISC1
+DATA       ERR-T      ERR-T
 MB         MB         PER-CENT
  489.6        31.2      6.384
 ENDDATA              3
 ENDSUBENT           19
-SUBENT        22988013   20080110   20080305   20080305       2191
+SUBENT        22988013   20081228   20090209   20090209       2205
 BIB                  4         14
 REACTION   (82-PB-207(N,INL)82-PB-207,PAR,DA,,LEG/RSL) Legendre
            coefficients in form
            d-Sig/d-Omega=(Sig/4pi)*Sum(1+(2L+1)a(L)p(L)),
            where L= from 1 to 2,
            Sig=( 489.6+- 31.2)mb - angle-integrated cross section.
-ANALYSIS   Correlation matrix (in %) is symmetric,lower triangle:
+COVARIANCE Correlation matrix (in %) is symmetric,lower triangle:
              100
                0 100
               21 -24 100
@@ -423,7 +427,7 @@ KEV
   898.
 ENDCOMMON            3
 DATA                 4          2
-NUMBER-CM  DATA-CM    DATA-ERR   MISC1
+NUMBER-CM  DATA-CM    ERR-T      ERR-T
 NO-DIM     NO-DIM     NO-DIM     PER-CENT
 1.          -0.04494     0.03923   87.285
 2.           0.14369     0.03420   23.799

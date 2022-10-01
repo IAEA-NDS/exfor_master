@@ -1,27 +1,23 @@
-ENTRY            23028   20080730   20081028   20081023       2201
-SUBENT        23028001   20080730   20081028   20081023       2201
-BIB                 11         36
+ENTRY            23028   20081010   20090209   20090209       2203
+SUBENT        23028001   20081010   20090209   20090209       2203
+BIB                  9         34
 TITLE      .Inelastic neutron scattering cross section of 187Os
-            at 30 keV
+            and 188Os at 30 keV
 AUTHOR     (M.Mosconi, M.Heil, F.Kaeppeler, A.Mengoni,
            R.Plag)
 INSTITUTE  (2GERKFK)  Forschungszentrum Karlsruhe, Germany.
                      M.Mosconi, M.Heil, F.Kaeppeler, R.Plag
            (3ZZZIAE)   International Atomic Energy Agency,
               Vienna, Austria. A.Mengoni
-REFERENCE  (C,2007NICE,,1308,200805)   Main reference, graph
-                                       is given
+REFERENCE  (C,2006CERN,,(#55),200606)  Main reference, graphs for
+                                       MACS are given
+           (T,MOSCONI,2007)
+           (C,2007NICE,2,1307,200704)  ND2007 report #408.
+            doi:10.1051/ndata07408
+            Graph for inelastic scattering cross section is given
 FACILITY   (VDG,2GERKFK)  3.7 MV Van de Graaff accelerator of
             Forschungszentrum Karlsruhe. In pulse mode, frequency
             1 MHz, pulse width 10 nanosec
-INC-SOURCE (P-LI7)  Proton energy 1.8811 MeV, 0.7 keV above the
-             reaction threshold. Natural metallic lithium target
-             1 micrometer thick evaporated on silver backing.
-             Proton current from 2 to 6 micro-A.
-INC-SPECT  .Neutrons emitted in a cone with max. angle 14 degree,
-            average energy 30 keV with energy spread from 7.6 to
-            9.5 keV. By varying proton current energy spread was
-            kept aprx. constant.
 METHOD     (TOF)   Time-of-Flight
            (PHD)   Pulse height discrimination
 DETECTOR   (SCIN)  The monitor detector GS20 (NE908), for neutron
@@ -37,34 +33,556 @@ CORRECTION .Corrections were made
             3. For the (n,gamma) events in the sample and (at
                larger TOF) in the monitor.
 HISTORY    (20080730C)   SM
-ENDBIB              36
+           (20081010A)   Three SUBENTs and reference added - SM
+                         BIB information corrected
+ENDBIB              34
 NOCOMMON             0          0
-ENDSUBENT           39
-SUBENT        23028002   20080730   20081028   20081023       2201
-BIB                  8         17
-REACTION   (76-OS-187(N,INL)76-OS-187,PAR,SIG,,SPA)
-REL-REF    (R,41120003,L.L.Litvinski+,J,YF,56,(1),31,199301) Elas-
+ENDSUBENT           37
+SUBENT        23028002   20081010   20090209   20090209       2203
+BIB                 11         24
+REACTION  1(76-OS-187(N,INL)76-OS-187,,SIG,,SPA)
+          2((76-OS-187(N,EL)76-OS-187,,SIG,,SPA)/
+           (76-OS-187(N,INL)76-OS-187,,SIG,,SPA))
+INC-SOURCE (P-LI7)  Proton energy 1.8811 MeV, 0.7 keV above the
+             reaction threshold. Natural metallic lithium target
+             1 micrometer thick evaporated on silver backing.
+             Proton current from 2 to 6 micro-A.
+MONITOR    (76-OS-187(N,EL)76-OS-187,,SIG)
+MONIT-REF  (41120003,L.L.Litvinski+,J,YF,56,(1),31,199301) Elas-
                     tic scattering taken from this reference
-           (R,41195003,L.L.Litvinski+,J,YF,58,(2),206,199502) Ela-
+           (41195003,L.L.Litvinski+,J,YF,58,(2),206,199502) ElaS-
                     stic scattering taken from this reference
-           (A,41195002,L.L.Litvinski+,J,YF,58,(2),206,199502) For
-                       extrapolated value at another energy
-           (A,12818002,R.L.MACKLIN+,J,AJ,274,408,198311) For
-                       extrapolated value at another energy
-EN-SEC     (E-LVL,76-OS-187)
 ANALYSIS   .Inelastic cross section obtained as difference
             between total and elastic scattering
 INC-SPECT  .Broad spectrum, EN-RSL given. No further details
+REL-REF    (A,41195002,L.L.Litvinski+,J,YF,58,(2),206,199502) For
+                       extrapolated value at another energy
+           (A,12818002,R.L.MACKLIN+,J,AJ,274,408,198311) For
+                       extrapolated value at another energy
 SAMPLE     .Isotopically enriched metal powder. No further details
 ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (CURVE)  From Fig.5 of main reference
-           (PRELM)  By the authors
-ENDBIB              17
-NOCOMMON             0          0
-DATA                 5          1
-EN         EN-RSL-FW  E-LVL      DATA       DATA-ERR
-KEV        KEV        KEV        B          B
-    30.        7.6         9.75      1.78       0.08
+STATUS     .From the 2-nd reference
+HISTORY    (20081010U)  INC-SOURCE keyword moved from SAN 001
+                        Data corrected according to Ref. 2
+ENDBIB              24
+COMMON               2          3
+MONIT      MONIT-ERR
+B          B
+   13.27       0.30
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-RSL-FW  DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+KEV        KEV        B          B          NO-DIM     NO-DIM
+    30.        7.6        1.64       0.10       8.1        0.5
 ENDDATA              3
-ENDSUBENT           25
-ENDENTRY             2
+ENDSUBENT           36
+SUBENT        23028003   20081010   20090209   20090209       2203
+BIB                  7         16
+REACTION   (76-OS-187(N,SCT)76-OS-187,,DE,,REL/SPA) Count
+              rate, averaged over neutron energy spectrum
+INC-SOURCE (P-LI7)  Proton energy adjusted right above the
+             reaction Li-7(P,N)Be-7 threshold.
+INC-SPECT  .Broad spectrum, average energy 30 keV, max energy
+            spread is 10 keV. Neutrons emitted in a cone with
+            angle spread less than 13 degree
+SAMPLE     .Isotopically enriched metal powder encapsulated in a
+            thin-walled aluminium can 15 mm diameter. Weight 2 g,
+            Os-187 content 70%, Os-188 content aprx.13%
+ERR-ANALYS (E-ERR-DIG) Secondary energy digitizing error
+           (E-ERR)     Error from the graphic bars
+           (ERR-DIG)    Data digitizing error
+STATUS     (CURVE) Fig.3 of main reference,  Os-187, right panel
+           (PRELM) By the authors
+HISTORY    (20081010C)   SM
+ENDBIB              16
+COMMON               4          3
+EN-MEAN    EN-RSL-FW  E-ERR-DIG  ERR-DIG
+KEV        KEV        KEV        ARB-UNITS
+    30.         10.    1.9698E-02 0.52952
+ENDCOMMON            3
+DATA                 3        109
+E          E-ERR      DATA
+KEV        KEV        ARB-UNITS
+  1.21860   5.3717E-01 8.1606E+00
+  1.87530   8.3555E-01 1.2864E+01
+  2.29300   4.7749E-01 9.7077E+00
+  2.53180   4.7749E-01 1.2848E+01
+  3.00920   5.9686E-01 8.1174E+00
+  3.36760   6.5654E-01 1.5974E+01
+  3.72560   6.5660E-01 1.2819E+01
+  3.84510   5.3723E-01 1.7535E+01
+  4.56110   7.1623E-01 1.1226E+01
+  4.62110   7.1623E-01 1.9090E+01
+  5.51620   7.1623E-01 1.4349E+01
+  5.81460   7.7592E-01 1.4342E+01
+  6.35220   1.0743E+00 2.5340E+01
+  6.88970   1.6116E+00 3.6338E+01
+  7.00840   9.5497E-01 1.7459E+01
+  7.36680   5.9686E-01 2.3742E+01
+  8.02340   7.7597E-01 2.6873E+01
+  8.50060   7.1623E-01 1.8996E+01
+  8.62060   1.3728E+00 3.4723E+01
+  9.27690   1.0743E+00 2.9988E+01
+  9.81430   7.1623E-01 3.4695E+01
+ 10.05300   1.3131E+00 4.0981E+01
+ 10.65000   1.0147E+00 2.9955E+01
+ 10.88900   1.3131E+00 4.5680E+01
+ 11.30600   8.3560E-01 3.4658E+01
+ 12.02300   7.7586E-01 4.4079E+01
+ 12.50100   8.3560E-01 4.5641E+01
+ 12.67900   1.0743E+00 3.7771E+01
+ 13.39500   1.3132E+00 2.9889E+01
+ 13.45500   6.5644E-01 4.5618E+01
+ 13.87300   9.5497E-01 4.8754E+01
+ 14.05200   7.7586E-01 4.0884E+01
+ 14.23100   1.0743E+00 4.7172E+01
+ 14.47100   1.1340E+00 6.4470E+01
+ 14.88800   8.3549E-01 4.8729E+01
+ 15.12800   1.1341E+00 7.3892E+01
+ 15.42500   1.1340E+00 5.3435E+01
+ 15.60500   1.0743E+00 6.7588E+01
+ 15.84300   1.0742E+00 5.8144E+01
+ 16.02300   1.1340E+00 8.3309E+01
+ 16.14200   1.1340E+00 5.1845E+01
+ 16.32200   9.5497E-01 9.4313E+01
+ 16.56000   1.0743E+00 7.2284E+01
+ 16.80000   1.0743E+00 1.1318E+02
+ 16.97800   1.0743E+00 8.1712E+01
+ 17.15800   1.0743E+00 9.1146E+01
+ 17.57500   1.1341E+00 9.1136E+01
+ 17.75500   1.0146E+00 1.1787E+02
+ 17.99300   1.0743E+00 8.9553E+01
+ 18.17300   1.0147E+00 1.2258E+02
+ 18.41200   1.1340E+00 1.1943E+02
+ 18.71100   1.0146E+00 1.2257E+02
+ 18.89100   9.5497E-01 1.6189E+02
+ 19.12900   1.0147E+00 1.3829E+02
+ 19.36800   1.0146E+00 1.4929E+02
+ 19.66700   1.0147E+00 1.6187E+02
+ 19.90600   1.0147E+00 1.6501E+02
+ 20.14500   1.0743E+00 1.7602E+02
+ 20.44400   1.0147E+00 2.1062E+02
+ 20.68100   1.0146E+00 1.4454E+02
+ 20.98200   1.0147E+00 2.1218E+02
+ 21.28100   9.5497E-01 2.2318E+02
+ 21.57900   1.0147E+00 2.3733E+02
+ 21.87900   9.5503E-01 2.7193E+02
+ 22.11900   1.0146E+00 3.1440E+02
+ 22.41700   1.0147E+00 3.0495E+02
+ 22.71500   9.5497E-01 2.9079E+02
+ 23.07700   1.0147E+00 3.8673E+02
+ 23.37600   8.9523E-01 4.0088E+02
+ 23.67600   9.5497E-01 4.6537E+02
+ 24.09400   9.5498E-01 4.5592E+02
+ 24.45600   9.5497E-01 5.6288E+02
+ 24.75500   9.5498E-01 5.9119E+02
+ 25.11600   9.5498E-01 6.6196E+02
+ 25.47500   8.9529E-01 7.0757E+02
+ 25.83500   8.9529E-01 7.5633E+02
+ 26.25400   9.5498E-01 7.7991E+02
+ 26.67300   9.5498E-01 8.2867E+02
+ 27.03500   9.5497E-01 9.1990E+02
+ 27.45300   8.9529E-01 9.3719E+02
+ 27.87000   8.9529E-01 9.1516E+02
+ 28.23000   8.3566E-01 9.5919E+02
+ 28.71200   8.9523E-01 1.0882E+03
+ 29.18400   9.5498E-01 9.4344E+02
+ 29.60500   9.5497E-01 1.0315E+03
+ 30.08400   8.9529E-01 1.0866E+03
+ 30.56200   8.9534E-01 1.0771E+03
+ 31.10100   9.5498E-01 1.1353E+03
+ 31.57500   9.5497E-01 1.0456E+03
+ 32.05300   8.9523E-01 1.0629E+03
+ 32.58700   8.3560E-01 9.7482E+02
+ 33.12200   8.9534E-01 9.0716E+02
+ 33.71700   8.9529E-01 8.4895E+02
+ 34.25200   8.3566E-01 7.8444E+02
+ 34.84700   8.9523E-01 7.4353E+02
+ 35.37900   8.3566E-01 5.8149E+02
+ 36.03300   8.9529E-01 5.1855E+02
+ 36.62700   8.9529E-01 4.2416E+02
+ 37.28200   8.9529E-01 3.7695E+02
+ 37.93400   8.9529E-01 2.6525E+02
+ 38.64800   8.9529E-01 1.8501E+02
+ 39.30200   8.3560E-01 1.1735E+02
+ 40.07800   7.7592E-01 1.1891E+02
+ 40.73300   8.3560E-01 7.6420E+01
+ 41.56700   8.3560E-01 2.9209E+01
+ 42.34200   8.3554E-01 1.6606E+01
+ 43.11900   8.3560E-01 2.7598E+01
+ 43.95400   8.3566E-01 1.1848E+01
+ 44.07300   8.3560E-01 7.1256E+00
+ENDDATA            111
+ENDSUBENT          136
+SUBENT        23028004   20081010   20090209   20090209       2203
+BIB                  7         15
+REACTION   (76-OS-187(N,EL)76-OS-187,,DE,,REL/SPA)  Count rate of
+            elastically scattered neutrons, averaged over neutron
+            energy spectrum
+INC-SOURCE (P-LI7)  Proton energy adjusted right above the
+             reaction Li-7(P,N)Be-7 threshold.
+INC-SPECT  .Broad spectrum, averaged energy 30 keV, max energy
+            spread is 10 keV. Neutrons emitted in s cone with
+            angle spread less than 13 degree
+SAMPLE     .Isotopically enriched metal powder encapsulated in a
+            thin-walled aluminium can 15 mm diameter. Weight 2 g,
+            Os-187 content 70%, Os-188 content aprx.13%
+ERR-ANALYS (E-ERR-DIG) Scattered neutron energy digitizing error
+           (ERR-DIG)   Data digitizing error
+STATUS     (CURVE) Fig.3 of main reference, elastic component
+HISTORY    (20081010C)   SM
+ENDBIB              15
+COMMON               4          3
+EN-MEAN    EN-RSL-FW  E-ERR-DIG  ERR-DIG
+KEV        KEV        KEV        ARB-UNITS
+    30.         10.    4.3872E-03  0.52520
+ENDCOMMON            3
+DATA                 2        170
+E          DATA
+KEV        ARB-UNITS
+   3.188    3.7596E+00
+   4.143    5.3251E+00
+   5.098    3.7460E+00
+   5.993    3.7397E+00
+   6.829    3.7337E+00
+   7.664    3.7278E+00
+   8.500    3.7219E+00
+   9.216    5.2891E+00
+   9.932    6.8564E+00
+  10.708    8.4232E+00
+  11.484    1.1562E+01
+  12.081    1.4703E+01
+  12.559    1.6272E+01
+  12.977    1.9413E+01
+  13.454    2.0982E+01
+  13.872    2.2552E+01
+  14.349    2.4121E+01
+  14.767    2.8835E+01
+  15.245    3.1976E+01
+  15.722    3.3545E+01
+  16.200    3.8258E+01
+  16.558    4.1401E+01
+  16.976    4.6115E+01
+  17.513    5.2400E+01
+  18.050    5.8685E+01
+  18.468    6.4972E+01
+  18.826    7.1259E+01
+  19.304    7.7544E+01
+  19.662    8.8548E+01
+  20.020    9.7980E+01
+  20.259    1.0427E+02
+  20.498    1.1213E+02
+  20.737    1.2156E+02
+  20.976    1.3099E+02
+  21.215    1.4042E+02
+  21.394    1.4986E+02
+  21.633    1.6086E+02
+  21.871    1.7344E+02
+  21.991    1.8287E+02
+  22.170    1.9545E+02
+  22.409    2.0960E+02
+  22.588    2.2375E+02
+  22.767    2.3790E+02
+  22.947    2.5205E+02
+  23.066    2.6620E+02
+  23.186    2.8192E+02
+  23.305    2.9607E+02
+  23.484    3.1179E+02
+  23.604    3.3066E+02
+  23.723    3.4638E+02
+  23.843    3.6210E+02
+  23.962    3.7625E+02
+  24.082    3.9198E+02
+  24.142    4.0613E+02
+  24.202    4.2185E+02
+  24.321    4.3757E+02
+  24.441    4.5487E+02
+  24.501    4.7059E+02
+  24.560    4.8631E+02
+  24.680    5.0046E+02
+  24.800    5.1776E+02
+  24.859    5.3505E+02
+  24.979    5.5077E+02
+  25.039    5.6807E+02
+  25.158    5.8379E+02
+  25.218    5.9794E+02
+  25.338    6.1838E+02
+  25.398    6.3568E+02
+  25.517    6.5297E+02
+  25.637    6.6869E+02
+  25.756    6.8284E+02
+  25.876    6.9857E+02
+  25.936    7.1429E+02
+  26.055    7.3158E+02
+  26.175    7.4731E+02
+  26.294    7.6146E+02
+  26.473    7.8032E+02
+  26.653    7.9762E+02
+  26.772    8.1177E+02
+  26.892    8.2592E+02
+  27.071    8.4164E+02
+  27.250    8.5736E+02
+  27.429    8.7465E+02
+  27.549    8.8723E+02
+  27.668    9.0138E+02
+  27.907    9.1868E+02
+  28.027    9.3283E+02
+  28.206    9.5169E+02
+  28.445    9.7056E+02
+  28.624    9.8628E+02
+  28.744    9.9886E+02
+  28.923    1.0162E+03
+  29.102    1.0319E+03
+  29.281    1.0460E+03
+  29.461    1.0586E+03
+  29.640    1.0680E+03
+  29.819    1.0790E+03
+  29.998    1.0885E+03
+  30.297    1.0963E+03
+  30.655    1.1010E+03
+  30.953    1.0979E+03
+  31.251    1.0900E+03
+  31.550    1.0775E+03
+  31.669    1.0664E+03
+  31.848    1.0570E+03
+  32.027    1.0444E+03
+  32.146    1.0334E+03
+  32.325    1.0208E+03
+  32.385    1.0083E+03
+  32.504    9.9569E+02
+  32.683    9.7996E+02
+  32.802    9.6581E+02
+  32.921    9.5323E+02
+  32.981    9.4065E+02
+  33.100    9.3279E+02
+  33.160    9.2021E+02
+  33.279    9.1078E+02
+  33.338    8.9663E+02
+  33.458    8.8247E+02
+  33.577    8.6989E+02
+  33.696    8.5417E+02
+  33.756    8.3845E+02
+  33.875    8.2429E+02
+  33.935    8.1329E+02
+  34.113    7.9285E+02
+  34.173    7.7555E+02
+  34.232    7.6297E+02
+  34.352    7.4567E+02
+  34.471    7.2995E+02
+  34.590    7.1265E+02
+  34.650    7.0008E+02
+  34.709    6.8750E+02
+  34.828    6.7020E+02
+  34.888    6.5762E+02
+  35.007    6.4504E+02
+  35.126    6.3089E+02
+  35.186    6.1517E+02
+  35.305    5.9787E+02
+  35.365    5.8057E+02
+  35.543    5.6328E+02
+  35.603    5.5070E+02
+  35.663    5.3497E+02
+  35.782    5.1925E+02
+  35.961    5.0353E+02
+  36.020    4.8937E+02
+  36.080    4.7522E+02
+  36.199    4.6107E+02
+  36.259    4.4849E+02
+  36.378    4.3591E+02
+  36.497    4.1862E+02
+  36.557    4.0761E+02
+  36.735    3.9346E+02
+  36.795    3.8088E+02
+  36.914    3.6358E+02
+  36.974    3.4943E+02
+  37.093    3.3685E+02
+  37.212    3.2584E+02
+  37.331    3.1327E+02
+  37.391    3.0226E+02
+  37.510    2.8968E+02
+  37.630    2.7710E+02
+  37.749    2.6295E+02
+  37.868    2.5194E+02
+  37.987    2.3936E+02
+  38.107    2.2678E+02
+  38.226    2.1263E+02
+  38.405    2.0005E+02
+  38.524    1.8747E+02
+  38.703    1.7332E+02
+  38.822    1.6546E+02
+ENDDATA            172
+ENDSUBENT          196
+SUBENT        23028005   20081010   20090209   20090209       2203
+BIB                  7         17
+REACTION   (76-OS-188(N,SCT)76-OS-188,,DE,,REL/SPA)  Count
+              rate, averaged over neutron energy spectrum
+INC-SOURCE (P-LI7)  Proton energy adjusted right above the
+             reaction Li-7(P,N)Be-7 threshold.
+INC-SPECT  .Broad spectrum, averaged energy 30 keV, max energy
+            spread is 10 keV. Neutrons emitted in a cone with
+            angle spread less than 13 degree
+SAMPLE     .Isotopically enriched metal powder encapsulated in a
+            thin-walled aluminium can 15 mm diameter. Weight 2 g,
+            Os-188 content 95%, Os-188, -190, -192 content
+            all around aprx. 5%
+ERR-ANALYS (E-ERR-DIG)  Secondary energy digitizing error
+           (E-ERR)      Secondary energy error from the graphic
+                        bars
+           (ERR-DIG)    Data digitizing error
+STATUS     (CURVE) Fig.3 of main reference, Os-188, left panel
+HISTORY    (20081010C)   SM
+ENDBIB              17
+COMMON               4          3
+EN-MEAN    EN-RSL-FW  E-ERR-DIG  ERR-DIG
+KEV        KEV        KEV        ARB-UNITS
+    30.         10.    1.8898E-02   0.17292
+ENDCOMMON            3
+DATA                 3        143
+E          E-ERR      DATA
+KEV        KEV        ARB-UNITS
+   3.48650  2.5068E+00 1.0034E+01
+   3.60610  2.6262E+00 2.4184E+01
+   3.72550  9.7998E-01 2.5755E+01
+   3.78490  2.5665E+00 1.0031E+01
+   3.78500  2.8052E+00 1.6320E+01
+   3.84500  2.8052E+00 3.0470E+01
+   3.90450  2.8649E+00 2.4180E+01
+   3.96400  2.4471E+00 1.0029E+01
+   3.96410  2.9843E+00 1.6318E+01
+   3.96450  9.8017E-01 3.8330E+01
+   4.02420  3.4021E+00 3.8330E+01
+   4.08370  1.0396E+00 2.8895E+01
+   4.20270  2.0540E+00 1.0026E+01
+   4.26270  3.0440E+00 2.4176E+01
+   4.74000  1.5578E+00 1.7881E+01
+   5.87400  1.3728E+00 1.1578E+01
+   6.11270  1.3728E+00 1.1575E+01
+   6.29180  1.8502E+00 1.6290E+01
+   6.35160  1.5418E+00 2.1006E+01
+   6.41110  1.5518E+00 1.1571E+01
+   6.53060  1.5610E+00 1.6287E+01
+   6.53070  2.0293E+00 2.2576E+01
+   6.64990  1.4922E+00 1.1568E+01
+   6.82900  1.9696E+00 1.6283E+01
+   6.82920  2.1487E+00 2.4145E+01
+   6.88870  1.8502E+00 1.6282E+01
+   7.06770  1.4325E+00 1.3136E+01
+   7.36610  1.2534E+00 8.4151E+00
+   7.60510  1.5385E+00 2.4135E+01
+   7.66460  1.4325E+00 1.4701E+01
+   7.90330  1.6115E+00 1.1553E+01
+   8.02280  1.8503E+00 1.7841E+01
+   8.20170  1.8503E+00 1.1550E+01
+   8.32120  1.9100E+00 1.6265E+01
+   8.55980  1.7906E+00 8.4006E+00
+   8.73890  1.5518E+00 1.3115E+01
+   8.91790  1.4921E+00 8.3963E+00
+   9.21640  1.4325E+00 1.4682E+01
+   9.33570  1.4325E+00 9.9636E+00
+   9.63420  1.3728E+00 1.1532E+01
+   9.75360  1.3131E+00 1.6248E+01
+   9.87290  1.6115E+00 9.9571E+00
+  10.23100  1.3131E+00 2.4104E+01
+  10.23100  1.6115E+00 9.9528E+00
+  10.47000  1.3131E+00 1.6239E+01
+  10.58900  1.2534E+00 2.2527E+01
+  10.88800  1.6115E+00 1.3089E+01
+  10.94700  1.3728E+00 2.4095E+01
+  11.00700  1.0743E+00 1.6233E+01
+  11.18600  1.4325E+00 2.2520E+01
+  11.30500  1.3728E+00 9.9398E+00
+  11.48500  1.4325E+00 1.6227E+01
+  11.66400  9.5495E-01 2.7231E+01
+  11.90200  9.5498E-01 2.2511E+01
+  11.96200  1.0147E+00 2.8800E+01
+  12.02200  1.1937E+00 1.9365E+01
+  12.26100  1.0743E+00 2.8796E+01
+  12.32100  1.1937E+00 3.8229E+01
+  12.49900  1.3728E+00 2.2504E+01
+  12.61800  1.4325E+00 9.9239E+00
+  12.85700  1.0743E+00 1.7783E+01
+  13.27500  1.1937E+00 1.4633E+01
+  13.45400  1.3728E+00 3.3499E+01
+  13.57300  1.2534E+00 8.3400E+00
+  13.81200  1.6114E+00 2.8777E+01
+  14.17100  1.2534E+00 3.0345E+01
+  14.40900  1.1937E+00 3.3487E+01
+  14.58800  1.4921E+00 9.9001E+00
+  14.70800  1.4325E+00 1.7760E+01
+  15.00600  1.0743E+00 1.9329E+01
+  15.00600  1.4325E+00 2.8763E+01
+  15.18500  1.1341E+00 1.1465E+01
+  15.36400  1.1341E+00 3.5048E+01
+  15.78200  1.3728E+00 3.9760E+01
+  15.78200  1.4922E+00 2.8754E+01
+  15.90200  1.0744E+00 4.7620E+01
+  16.08100  7.7589E-01 3.0322E+01
+  16.20000  1.7906E+00 4.1327E+01
+  16.43900  1.0743E+00 4.7613E+01
+  16.85700  8.9529E-01 3.9747E+01
+  17.09600  1.3131E+00 5.5467E+01
+  17.27500  1.0743E+00 6.4899E+01
+  17.45400  1.2534E+00 5.0746E+01
+  17.75200  1.0743E+00 2.5585E+01
+  17.93100  1.7309E+00 5.8602E+01
+  18.05100  1.7906E+00 6.3317E+01
+  18.34900  9.5495E-01 7.1175E+01
+  18.58800  1.1340E+00 6.0166E+01
+  18.82700  1.0744E+00 6.4880E+01
+  19.06500  1.0743E+00 5.5443E+01
+  19.30400  9.5498E-01 7.5881E+01
+  19.54300  1.0146E+00 8.8456E+01
+  19.78300  9.5500E-01 1.1361E+02
+  20.08100  1.0147E+00 1.0732E+02
+  20.31900  9.5503E-01 9.7881E+01
+  20.61800  9.5500E-01 9.3160E+01
+  20.79700  1.0744E+00 1.1045E+02
+  21.15600  9.5495E-01 1.3875E+02
+  21.39400  9.5495E-01 1.2774E+02
+  21.75300  1.0147E+00 1.7491E+02
+  21.99200  9.5500E-01 1.6704E+02
+  22.29100  1.0147E+00 2.1893E+02
+  22.59000  9.5495E-01 2.2049E+02
+  22.94800  1.0147E+00 2.3307E+02
+  23.24700  9.5498E-01 2.6608E+02
+  23.54600  1.0147E+00 3.0696E+02
+  23.90600  9.5498E-01 3.7771E+02
+  24.20500  9.5498E-01 4.3274E+02
+  24.56300  9.5498E-01 4.4689E+02
+  24.92200  8.9535E-01 4.7047E+02
+  25.28300  9.5498E-01 6.3556E+02
+  25.64100  8.9532E-01 6.5599E+02
+  26.06000  9.5498E-01 7.3146E+02
+  26.41800  9.5500E-01 7.2516E+02
+  26.83700  9.5495E-01 7.8648E+02
+  27.25500  9.5495E-01 8.1163E+02
+  27.61500  8.9529E-01 8.7138E+02
+  28.09300  9.5498E-01 9.2483E+02
+  28.51200  8.9529E-01 9.7985E+02
+  28.92900  8.9529E-01 9.5627E+02
+  29.40800  1.0147E+00 1.0223E+03
+  29.88600  9.5498E-01 1.0710E+03
+  30.36300  9.5500E-01 1.0050E+03
+  30.84100  8.9529E-01 1.0820E+03
+  31.31900  9.5497E-01 1.0820E+03
+  31.85400  9.5498E-01 9.8768E+02
+  32.39200  8.9532E-01 1.0018E+03
+  32.86700  8.3563E-01 8.6817E+02
+  33.52400  8.3560E-01 8.7288E+02
+  34.00000  8.3561E-01 8.2256E+02
+  34.53500  7.7595E-01 7.0305E+02
+  35.19000  8.9527E-01 5.8512E+02
+  35.84500  9.5498E-01 5.1908E+02
+  36.44000  9.5498E-01 4.2473E+02
+  37.03600  8.9532E-01 3.2409E+02
+  37.75000  8.9529E-01 2.3446E+02
+  38.40600  8.9526E-01 1.7471E+02
+  39.06200  8.9529E-01 1.6526E+02
+  39.77700  8.9529E-01 7.5633E+01
+  40.55300  8.9531E-01 6.7762E+01
+  41.20900  7.7597E-01 5.0459E+01
+  42.04400  8.3563E-01 2.2147E+01
+  42.82000  8.9529E-01 1.2704E+01
+ENDDATA            145
+ENDSUBENT          171
+ENDENTRY             5

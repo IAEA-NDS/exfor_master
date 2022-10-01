@@ -1,13 +1,13 @@
-ENTRY            22976   20080122   20080402   20080318       2192
-SUBENT        22976001   20080122   20080402   20080318       2192
-BIB                 16        107
+ENTRY            22976   20080820   20090209   20090209       2203
+SUBENT        22976001   20080820   20090209   20090209       2203
+BIB                 16        116
 TITLE      .Measurement of Neutron Activation Cross Sections in
             the Energy Range from 8 MeV to 15 MeV
 AUTHOR     (W.MANNHART, D.SCHMIDT)
 INSTITUTE  (2GERPTB)
 REFERENCE  (R,PTB-N-53,200701)  Report of the Physikalisch-
              Technischen Bundesanstalt, Braunschweig, Germany.
-             Main reference, data tables are given
+             Main reference, data tables and figures are given
            (C,2004SANTA,,609,200410)   W. Mannhart, D. Schmidt,
              Nuclear Data for Science and Technology (Eds.:
              R.C. Haight, M.B. Chadwick, T. Kawano, P. Talou),
@@ -93,10 +93,19 @@ MONIT-REF A(,M.Wagner+,B,PH-DAT,13,(5),1990) M.Wagner, H. Vonach,
                14.50    1155.
                15.00    1198.
            .......................
-CORRECTION .Corrections were made for a breakup neutrons and
-            obtained by subtraction of the GAS-OUT measurements
-            from the measured data.
+CORRECTION .After subtraction of the GAS-OUT measurements from
+            the measured data, corrections were applied for the
+            breakup neutrons. The magnitude of the correction
+            depend on the reaction cross section and on the
+            neutron energy. The error of the correction is 3% of
+            the experimental value (R) describing the actual
+            ratio of breakup-to-monoenergetic neutrons
            .Corrections were made also:
+            For summing losses in the photon counting
+            For the variation of the photon efficiency over the
+             finite size of samples
+            For photon attenuation in the sample
+            For positron annihilation in flight
             For dead time effects
             For variation of neutron fluence in time
             For fission fragment losses
@@ -104,26 +113,26 @@ CORRECTION .Corrections were made for a breakup neutrons and
             For neutron scattering from the gas target, fission
                 chamber and support structures
 ERR-ANALYS (EN-ERR)  Error of the neutron energy scale   - 20 keV
-           (ERR-HL)  Error of the half-life given under DECAY-DATA
            (ERR-1)   Uncertainty of detector calibration - 1.5%
-           (ERR-2)   Error due to the breakup neutron correction
 HISTORY    (20080122C)  SM
-ENDBIB             107
-COMMON               3          3
-EN-ERR     ERR-1      ERR-2
-KEV        PER-CENT   PER-CENT
-   20.           1.5       3.
+           (20080820A)  Corrected after Dr. W.Mannhart remarks -
+                        SM
+ENDBIB             116
+COMMON               2          3
+EN-ERR     ERR-1
+KEV        PER-CENT
+   20.           1.5
 ENDCOMMON            3
-ENDSUBENT          114
-SUBENT        22976002   20080122   20080402   20080318       2192
-BIB                  9         22
+ENDSUBENT          123
+SUBENT        22976002   20080820   20090209   20090209       2203
+BIB                  9         23
 REACTION   (12-MG-24(N,P)11-NA-24,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (11-NA-24,14.9590HR,DG,1368.6,1.0)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Mg-24 content
-            is (78.99+-0.4)%, Mg-25 content is (10.00+-0.01)%,
-            deposit mass 159.6+-0.9 microgram.
+            is (78.99+-0.04)%, Mg-25 content is (10.00+-0.01)%,
+            fission deposit mass 159.6+-0.9 microgram.
             Placed at zero degree direction to beam axis at
             distance 90.6 mm from the center of the D2 gas cell.
 CORRECTION .Corrected for the Mg-25(n,x)Na-24 secondary reaction
@@ -131,19 +140,20 @@ CORRECTION .Corrected for the Mg-25(n,x)Na-24 secondary reaction
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
-MISC-COL   (MISC1) Ratio of the breakup to monoenergetic neutrons
+MISC-COL   (MISC1) Correction factor of the secondary reaction
            (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A1
            (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
 ERR-ANALYS (ERR-3)  Error of the Mg-24 isotopic content
            (ERR-4)  Error of the Mg-25 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A1 of the main reference, p.53
-ENDBIB              22
+ENDBIB              23
 COMMON               6          3
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     MISC2      MISC3
 PER-CENT   PER-CENT   PER-CENT   HR         PER-CENT   SEE TEXT
-    0.4        0.01      1.5         0.0012    2.11       0.9
+    0.04       0.01      1.5         0.0012    2.11       0.9
 ENDCOMMON            3
 DATA                 6         26
 EN         EN-RSL-FW  DATA       ERR-T      ERR-T      MISC1
@@ -175,19 +185,17 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
     8.556     0.150     113.6       3.6       3.21
     8.334     0.155     118.1       3.7       3.15
 ENDDATA             28
-ENDSUBENT           59
-SUBENT        22976003   20080122   20080402   20080318       2192
-BIB                  9         20
+ENDSUBENT           60
+SUBENT        22976003   20080820   20090209   20090209       2203
+BIB                  8         19
 REACTION   (13-AL-27(N,P)12-MG-27,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (12-MG-27,9.458MIN,DG,843.8,0.718)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick.Al-27 content
-            is 100%, deposit mass 101.6+-0.6 microgram.
+            is 100%, fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
-CORRECTION .Corrected for the Mg-25(n,x)Na-24 secondary reaction
-            cross section
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC
@@ -197,8 +205,9 @@ MISC-COL   (MISC2) The fully correlated portion of the uncertainty
 ERR-ANALYS (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A2 of the main reference, p.54
-ENDBIB              20
+ENDBIB              19
 COMMON               5          3
 MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   MIN        NO-DIM     PER-CENT   SEE TEXT
@@ -232,15 +241,15 @@ MEV        MEV        MB         MB         PER-CENT
     8.948     0.120      80.8        2.6      3.21
     7.980     0.132      78.2        2.3      2.97
 ENDDATA             26
-ENDSUBENT           55
-SUBENT        22976004   20080122   20080402   20080318       2192
-BIB                  8         16
+ENDSUBENT           54
+SUBENT        22976004   20080820   20090209   20090209       2203
+BIB                  8         17
 REACTION   (13-AL-27(N,A)11-NA-24,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (11-NA-24,14.9590HR,DG,1368.6,1.0)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Al-27 content
-            is 100%, deposit mass 159.6+-0.9 microgram.
+            is 100%, fission deposit mass 159.6+-0.9 microgram.
             Placed at zero degree direction to beam axis at
             distance 90.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -250,8 +259,9 @@ MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A3
            (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
 ERR-ANALYS (MONIT-ERR)  Error of the monitor cross section
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A3 of the main reference, p.55
-ENDBIB              16
+ENDBIB              17
 COMMON               4          3
 MONIT-ERR  ERR-HL     MISC2      MISC3
 PER-CENT   HR         PER-CENT   SEE TEXT
@@ -289,16 +299,16 @@ MEV        MEV        MB         MB         PER-CENT
     8.556     0.150      57.5        1.8       3.21
     8.334     0.155      45.8        1.5       3.18
 ENDDATA             30
-ENDSUBENT           55
-SUBENT        22976005   20080122   20080402   20080318       2192
-BIB                  9         22
+ENDSUBENT           56
+SUBENT        22976005   20080820   20090209   20090209       2203
+BIB                  9         23
 REACTION   (14-SI-28(N,P)13-AL-28,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (13-AL-28,2.2414MIN,DG,1778.9,1.0)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Si-28 content
             is (92.2297+-0.0002)%, Si-29 content is (4.6832+-
-            0.0005)%, deposit mass 101.6+-0.6 microgram.
+            0.0005)%, fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 CORRECTION .Corrected for the Si-29(n,n+p)Al-28 secondary
@@ -313,8 +323,9 @@ MISC-COL   (MISC2) The fully correlated portion of the uncertainty
 ERR-ANALYS (ERR-3)  Error of the Si-28 isotopic content
            (ERR-4)  Error of the Si-29 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A4 of the main reference, p.56
-ENDBIB              22
+ENDBIB              23
 COMMON               6          3
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     MISC2      MISC3
 PER-CENT   PER-CENT   PER-CENT   MIN        PER-CENT   SEE TEXT
@@ -343,9 +354,9 @@ MEV        MEV        MB         MB         PER-CENT
      7.151    0.148     188.5        5.1         2.71
      6.943    0.154     178.2        5.5         3.07
 ENDDATA             21
-ENDSUBENT           52
-SUBENT        22976006   20080122   20080402   20080318       2192
-BIB                  9         24
+ENDSUBENT           53
+SUBENT        22976006   20080820   20090209   20090209       2203
+BIB                  9         25
 REACTION   (14-SI-29(N,P)13-AL-29,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (13-AL-29,6.56MIN,DG,1273.4,0.906)
@@ -360,7 +371,7 @@ CORRECTION .Corrected for the Si-30(n,X)Al-29 secondary reaction
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
-MISC-COL   (MISC1) Ratio of the breakup to monoenergetic neutrons
+MISC-COL   (MISC1) Correction factor of the secondary reaction
            (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A5
            (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
@@ -369,8 +380,9 @@ ERR-ANALYS (ERR-3)  Error of the Si-29 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A5 of the main reference, p.57
-ENDBIB              24
+ENDBIB              25
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -402,9 +414,9 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
      7.151    0.148       56.5     2.2         3.95
      6.943    0.154       50.8     2.3         4.58
 ENDDATA             21
-ENDSUBENT           57
-SUBENT        22976007   20080122   20080402   20080318       2192
-BIB                  8         20
+ENDSUBENT           58
+SUBENT        22976007   20080820   20090209   20090209       2203
+BIB                  8         21
 REACTION   (14-SI-30(N,A)12-MG-27,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (12-MG-27,9.458MIN,DG,843.8,0.718)
@@ -424,8 +436,9 @@ ERR-ANALYS (ERR-3)  Error of the Si-30 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A6 of the main reference, p.58
-ENDBIB              20
+ENDBIB              21
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   MIN        NO-DIM     PER-CENT   SEE TEXT
@@ -451,9 +464,9 @@ MEV        MEV        MB         MB         PER-CENT
      7.985      0.132        2.6       1.1      43.02
      7.666      0.140        3.3       1.1      34.22
 ENDDATA             18
-ENDSUBENT           47
-SUBENT        22976008   20080122   20080402   20080318       2192
-BIB                  8         25
+ENDSUBENT           48
+SUBENT        22976008   20080820   20090209   20090209       2203
+BIB                  8         26
 REACTION   ((22-TI-46(N,P)21-SC-46,,SIG)+
            (22-TI-47(N,X)21-SC-46,,SIG,,FCT))   Sum of
             (Ti-46(N,P)Sc-46,SIG)+0.902*(TI-47(N,X)SC-46,SIG),
@@ -464,7 +477,7 @@ DECAY-DATA (21-SC-46,83.79D,DG,889.3,0.99984)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ti-46 content
             is (8.25+-0.03)%, Ti-47 content is (7.44+-0.02)%,
-            deposit mass 101.6+-0.6 microgram.
+            fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -478,8 +491,9 @@ ERR-ANALYS (ERR-3)  Error of the Ti-46 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A7 of the main reference, p.59
-ENDBIB              25
+ENDBIB              26
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -514,9 +528,9 @@ MEV        MEV        MB         MB         PER-CENT
      7.667      0.139     225.2       10.0       4.46
      7.404      0.143     210.9        8.7       4.13
 ENDDATA             24
-ENDSUBENT           61
-SUBENT        22976009   20080122   20080402   20080318       2192
-BIB                  9         27
+ENDSUBENT           62
+SUBENT        22976009   20080820   20090209   20090209       2203
+BIB                  8         26
 REACTION   ((22-TI-47(N,P)21-SC-47,,SIG)+
            (22-TI-48(N,X)21-SC-47,,SIG,,FCT))   Sum of
             (Ti-47(N,P)Sc-47,SIG)+9.909*(TI-48(N,X)SC-46,SIG),
@@ -527,11 +541,9 @@ DECAY-DATA (21-SC-47,3.3492D,DG,159.4,0.683)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ti-47 content
             is (7.44+-0.02)%, Ti-48 isotopic content is (73.72+-
-            0.03)%, deposit mass 101.6+-0.6 microgram.
+            0.03)%, fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
-CORRECTION .Correction was made for Ti-48(n,x)Sc-47 reaction
-            cross section
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
@@ -543,8 +555,9 @@ ERR-ANALYS (ERR-3)  Error of the Ti-47 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A8 of the main reference, p.60
-ENDBIB              27
+ENDBIB              26
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -579,16 +592,16 @@ MEV        MEV        MB         MB         PER-CENT
      7.667     0.139       101.9        2.6       2.59
      7.404     0.143        98.0        2.6       2.64
 ENDDATA             24
-ENDSUBENT           63
-SUBENT        22976010   20080122   20080402   20080318       2192
-BIB                  9         24
+ENDSUBENT           62
+SUBENT        22976010   20080820   20090209   20090209       2203
+BIB                  9         25
 REACTION   (22-TI-48(N,P)21-SC-48,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.0011)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ti-48 content
             is (73.72+-0.03)%, Ti-49 isotopic content is (5.41+-
-            0.02)%,deposit mass 101.6+-0.6 microgram.
+            0.02)%, fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 CORRECTION .Correction was made for Ti-49(N,X)Sc-48 reaction
@@ -596,17 +609,18 @@ CORRECTION .Correction was made for Ti-49(N,X)Sc-48 reaction
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
-MISC-COL   (MISC1)  Ratio of the breakup to monoenergetic neutrons
+MISC-COL   (MISC1)  Correction factor of the secondary reaction
            (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A9
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass, UNITS = MI
 ERR-ANALYS (ERR-3)  Error of the Ti-48 isotopic content
            (ERR-4)  Error of the Ti-49 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A9 of the main reference, p.61
-ENDBIB              24
+ENDBIB              25
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -641,15 +655,16 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
      7.667      0.139      12.68      0.33      2.62
      7.404      0.143      11.59      0.31      2.66
 ENDDATA             24
-ENDSUBENT           60
-SUBENT        22976011   20080122   20080402   20080318       2192
-BIB                  8         19
+ENDSUBENT           61
+SUBENT        22976011   20080820   20090209   20090209       2203
+BIB                  8         21
 REACTION   (23-V-51(N,P)22-TI-51,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (22-TI-51,5.76MIN,DG,320.1,0.931)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. V-51 content
-            is (99.750+-0.004)%, deposit mass 101.6+-0.6 microgram
+            is (99.750+-0.004)%,  fission deposit mass
+            101.6+-0.6 microgram
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -657,13 +672,14 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A10
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass, UNITS = MI
 ERR-ANALYS (ERR-3)  Error of the V-51 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A10 of the main reference, p.62
-ENDBIB              19
+ENDBIB              21
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   MIN        NO-DIM     PER-CENT   SEE TEXT
@@ -688,15 +704,16 @@ MEV        MEV        MB         MB         PER-CENT
      8.908      0.125      15.38      0.48       3.14
      7.858      0.139      13.04      0.39       3.00
 ENDDATA             17
-ENDSUBENT           45
-SUBENT        22976012   20080122   20080402   20080318       2192
-BIB                  8         19
+ENDSUBENT           47
+SUBENT        22976012   20080820   20090209   20090209       2203
+BIB                  8         22
 REACTION   (23-V-51(N,A)21-SC-48,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.0011)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. V-51 content
-            is (99.750+-0.004)%, deposit mass 101.6+-0.6 microgram
+            is (99.750+-0.004)%, fission deposit mass 101.6+-0.6
+            microgram
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -704,13 +721,15 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A11
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the V-51  isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A11 of the main reference, p.63
-ENDBIB              19
+ENDBIB              22
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   HR         NO-DIM     PER-CENT   SEE TEXT
@@ -735,33 +754,35 @@ MEV        MEV        MB         MB         PER-CENT
      8.908      0.125       2.51       0.11       4.25
      7.858      0.139       0.793      0.034      4.28
 ENDDATA             17
-ENDSUBENT           45
-SUBENT        22976013   20080122   20080402   20080318       2192
-BIB                  9         23
+ENDSUBENT           48
+SUBENT        22976013   20080820   20090209   20090209       2203
+BIB                  9         25
 REACTION   (24-CR-52(N,P)23-V-52,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (23-V-52,3.743MIN,DG,1434.1,1.000)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. CR-52 content
             is (83.789+-0.018)%, Cr-53 content is (9.501+-0.017)%,
-            deposit mass 101.6+-0.6 microgram.
+             fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 CORRECTION .Corrections were made for Cr-53(n,x)V-52 reaction CS
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
-MISC-COL   (MISC1) Ratio of the breakup to monoenergetic neutrons
+MISC-COL   (MISC1) Correction factor of the secondary reaction
            (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A12
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Cr-52 isotopic content
            (ERR-4)  Error of the Cr-53 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A12 of the main reference, p.64
-ENDBIB              23
+ENDBIB              25
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -789,32 +810,37 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
      8.908      0.125      48.46      1.68       3.46
      7.858      0.139      36.44      1.25       3.44
 ENDDATA             17
-ENDSUBENT           52
-SUBENT        22976014   20080122   20080402   20080318       2192
-BIB                  9         22
+ENDSUBENT           54
+SUBENT        22976014   20080820   20090209   20090209       2203
+BIB                  9         27
 REACTION   (24-CR-52(N,2N)24-CR-51,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (24-CR-51,27.7025D,DG,320.1,0.0992)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. CR-52 content
             is (83.789+-0.018)%, Cr-50 content is (4.345+-0.013)%,
-            deposit mass 101.6+-0.6 microgram.
+             fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
-CORRECTION .Corrections were made for Cr-50(n,G)Cr-51 reaction CS
+CORRECTION .A separate measurement of the Cr-50(n,G)Cr-51 reaction
+            cross section. performed below the threshold of the
+            (N,2N) reaction, resulted in the negligible
+            contribution to the main cross section
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A13
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Cr-52 isotopic content
-           (ERR-4)  Error of the Cr-59 isotopic content
+           (ERR-4)  Error of the Cr-50 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A13 of the main reference, p.65
-ENDBIB              22
+ENDBIB              27
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -835,8 +861,8 @@ MEV        MEV        MB         MB         PER-CENT
     12.634      0.108       31.6       1.8       5.57
     12.427      0.108       10.5       2.1      19.62
 ENDDATA             10
-ENDSUBENT           44
-SUBENT        22976015   20080122   20080402   20080318       2192
+ENDSUBENT           49
+SUBENT        22976015   20080820   20090209   20090209       2203
 BIB                 10         19
 REACTION   (26-FE-54(N,P)25-MN-54,,SIG)
 MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
@@ -853,7 +879,7 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A14
-ERR-ANALYS (ERR-3)  Error of the Fe-52 isotopic content
+ERR-ANALYS (ERR-3)  Error of the Fe-54 isotopic content
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
 STATUS     (TABLE)  Table A14 of the main reference, p.66
@@ -861,7 +887,7 @@ ENDBIB              19
 COMMON               4          3
 ERR-3      ERR-HL     ERR-IDD    MISC2
 PER-CENT   HR         NO-DIM     PER-CENT
-    0.035      0.0012   0.00001      2.61
+    0.035      0.06     0.00001      2.61
 ENDCOMMON            3
 DATA                 5         13
 EN         EN-RSL-FW  DATA       ERR-T      ERR-T
@@ -881,13 +907,13 @@ MEV        MEV        MB         MB         PER-CENT
      9.098      0.174      481.4       17.0       3.53
 ENDDATA             15
 ENDSUBENT           43
-SUBENT        22976016   20080122   20080402   20080318       2192
-BIB                 10         19
+SUBENT        22976016   20080820   20090209   20090209       2203
+BIB                 10         20
 REACTION   (26-FE-54(N,A)24-CR-51,,SIG)
 MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
 DECAY-MON  (11-NA-24,14.9590HR,DG,1368.6,1.0)
 MONIT-REF  (22976004,W.MANNHART+,R,PTB-N-53,2007)
-DECAY-DATA (24-CR-51,27.7065D,DG,320.1,0.0992)
+DECAY-DATA (24-CR-51,27.7025D,DG,320.1,0.0992)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. FE-54 content
             is (5.845+-0.035)%.
@@ -901,8 +927,9 @@ MISC-COL   (MISC2) The fully correlated portion of the uncertainty
 ERR-ANALYS (ERR-3)  Error of the Fe-54 isotopic content
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A15 of the main reference, p.67
-ENDBIB              19
+ENDBIB              20
 COMMON               4          3
 ERR-3      ERR-HL     ERR-IDD    MISC2
 PER-CENT   D          NO-DIM     PER-CENT
@@ -925,9 +952,9 @@ MEV        MEV        MB         MB         PER-CENT
      9.633      0.174      43.59       3.93       9.01
      9.098      0.174      44.23       3.17       7.17
 ENDDATA             15
-ENDSUBENT           43
-SUBENT        22976017   20080122   20080402   20080318       2192
-BIB                 11         23
+ENDSUBENT           44
+SUBENT        22976017   20080820   20090209   20090209       2203
+BIB                 11         24
 REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
 MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
 DECAY-MON  (11-NA-24,14.9590HR,DG,1368.6,1.0)
@@ -935,7 +962,7 @@ MONIT-REF  (22976004,W.MANNHART+,R,PTB-N-53,2007)
 DECAY-DATA (25-MN-56,2.5789HR,DG,846.8,0.9887)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick.
-            Fe-59 content is (91.754+-0.036)%, Fe-57 content is
+            Fe-56 content is (91.754+-0.036)%, Fe-57 content is
             (2.119+-0.010)%
             Placed at zero degree direction to beam axis at
             distance 38.6 mm from the center of the D2 gas cell.
@@ -943,15 +970,16 @@ CORRECTION .Corrections were made for Fe-57(n,x)Mn-56 reaction CS
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
-MISC-COL   (MISC1)  Ratio of the breakup to monoenergetic neutrons
+MISC-COL   (MISC1)  Correction factor of the secondary reaction
            (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A16
 ERR-ANALYS (ERR-3)  Error of the Fe-56 isotopic content
            (ERR-4)  Error of the Fe-57 isotopic content
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A16 of the main reference, p.68
-ENDBIB              23
+ENDBIB              24
 COMMON               5          3
 ERR-3      ERR-4      ERR-HL     ERR-IDD    MISC2
 PER-CENT   PER-CENT   HR         NO-DIM     PER-CENT
@@ -974,15 +1002,15 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
      9.633      0.174       70.0        2.2       3.20
      9.098      0.174       60.9        2.1       3.37
 ENDDATA             15
-ENDSUBENT           47
-SUBENT        22976018   20080122   20080402   20080318       2192
-BIB                  8         18
+ENDSUBENT           48
+SUBENT        22976018   20080820   20090209   20090209       2203
+BIB                  8         20
 REACTION   (27-CO-59(N,P)26-FE-59,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (26-FE-59,44.495D,DG,1099.3,0.568)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. CO-59 content
-            is 100%, deposit mass 101.6+-0.6 microgram.
+            is 100%,  fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -990,12 +1018,14 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A17
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the fission deposit mass,
+                    units = microgram
 ERR-ANALYS (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A17 of the main reference, p.69
-ENDBIB              18
+ENDBIB              20
 COMMON               5          3
 MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   D          NO-DIM     PER-CENT   SEE TEXT
@@ -1024,15 +1054,15 @@ MEV        MEV        MB         MB         PER-CENT
      8.555      0.129       31.7        1.9       5.98
      8.098      0.134       28.9        1.7       5.70
 ENDDATA             21
-ENDSUBENT           48
-SUBENT        22976019   20080122   20080402   20080318       2192
-BIB                  8         18
+ENDSUBENT           50
+SUBENT        22976019   20080820   20090209   20090209       2203
+BIB                  8         20
 REACTION   (27-CO-59(N,A)25-MN-56,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (25-MN-56,2.5789HR,DG,846.8,0.9887)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. CO-59 content
-            is 100%, deposit mass 101.6+-0.6 microgram.
+            is 100%,  fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -1040,12 +1070,14 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A18
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the fission deposit mass,
+                    units = microgram  22976019
 ERR-ANALYS (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A18 of the main reference, p.70
-ENDBIB              18
+ENDBIB              20
 COMMON               5          3
 MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   HR         NO-DIM     PER-CENT   SEE TEXT
@@ -1074,15 +1106,17 @@ MEV        MEV        MB         MB         PER-CENT
      8.555      0.129      10.47       0.29       2.78
      8.098      0.134       8.61       0.24       2.78
 ENDDATA             21
-ENDSUBENT           48
-SUBENT        22976020   20080122   20080402   20080318       2192
-BIB                  8         18
+ENDSUBENT           50
+SUBENT        22976020   20080820   20090209   20090209       2203
+BIB                  9         22
 REACTION   (27-CO-59(N,2N)27-CO-58,,SIG)
+ANALYSIS   .The measurements were performed after the complete
+            decay of Co-58-M with a half-life of 9.04 HR
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (27-CO-58-G,70.86D,DG,810.8,0.9945)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. CO-59 content
-            is 100%, deposit mass 101.6+-0.6 microgram.
+            is 100%,  fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -1090,12 +1124,14 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A19
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A19 of the main reference, p.71
-ENDBIB              18
+ENDBIB              22
 COMMON               5          3
 MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   D          NO-DIM     PER-CENT   SEE TEXT
@@ -1118,17 +1154,19 @@ MEV        MEV        MB         MB         PER-CENT
     11.301      0.108       87.4        2.7       3.12
     11.024      0.110       33.5        1.4       4.03
 ENDDATA             15
-ENDSUBENT           42
-SUBENT        22976021   20080122   20080402   20080318       2192
-BIB                  9         25
+ENDSUBENT           46
+SUBENT        22976021   20080820   20090209   20090209       2203
+BIB                 10         29
 REACTION   (28-NI-58(N,P)27-CO-58,,SIG)
+ANALYSIS   .The measurements were performed after the complete
+            decay of Co-58-M with a half-life of 9.04 HR
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (27-CO-58-M,9.04HR,DG)  IT = 1.0
            (27-CO-58-G,70.86D,DG,810.8,0.9945)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ni-58 content
             is (68.0769+-0.0089)%,
-            deposit mass 101.6+-0.6 microgram.
+             fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
 FLAG       (1.)  Run#1: distance 90.6 mm from the center of the
                  D2 gas cell.
@@ -1139,14 +1177,16 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A20
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Ni-58 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
              DECAY-DATA. ERR-HL ad ERR-IDD given for Co-58-G
              ERR-HL for Co-58-M is 0.11 HR
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A20 of the main reference, pp.72-73
-ENDBIB              25
+ENDBIB              29
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   D          NO-DIM     PER-CENT   SEE TEXT
@@ -1180,7 +1220,7 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
     12.485     0.089      536.4         16.6       3.09      1.
     12.521     0.103      529.8         14.5       2.74      2.
     12.680     0.103      515.1         14.3       2.77      2.
-    12.925     0.087      498.1         15.8       3.17      2.
+    12.925     0.087      498.1         15.8       3.17      1.
     12.980     0.103      481.6         14.0       2.91      2.
     13.159     0.103      470.5         14.4       3.06      2.
     13.469     0.085      442.9         15.9       3.59      1.
@@ -1192,15 +1232,15 @@ MEV        MEV        MB         MB         PER-CENT   NO-DIM
     14.240     0.103      351.0         18.0       5.12      2.
     14.421     0.103      333.9         19.1       5.73      2.
 ENDDATA             38
-ENDSUBENT           72
-SUBENT        22976022   20080122   20080402   20080318       2192
-BIB                  8         20
+ENDSUBENT           76
+SUBENT        22976022   20080820   20090209   20090209       2203
+BIB                  8         22
 REACTION   (28-NI-58(N,2N)28-NI-57,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (28-NI-57-G,35.60HR,DG,1377.6,0.817)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ni-58 content
-            is (68.0769+-0.0089)%, deposit mass 101.6+-0.6
+            is (68.0769+-0.0089)%, fission deposit mass 101.6+-0.6
             microgram. Placed at zero degree direction to beam
             axis at distance 59.6 mm from the center of the
             D2 gas cell.
@@ -1209,13 +1249,15 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A21
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Ni-58 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A21 of the main reference, p.73
-ENDBIB              20
+ENDBIB              22
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   HR         NO-DIM     PER-CENT   SEE TEXT
@@ -1234,9 +1276,9 @@ MEV        MEV        MB         MB         PER-CENT
     12.680      0.103       1.18       0.11       9.01
     12.521      0.103       0.21       0.06      27.48
 ENDDATA             11
-ENDSUBENT           40
-SUBENT        22976023   20080122   20080402   20080318       2192
-BIB                 10         27
+ENDSUBENT           42
+SUBENT        22976023   20080820   20090209   20090209       2203
+BIB                 10         29
 REACTION   (28-NI-58(N,X)27-CO-57,IND,SIG) (n,d) + (n,n+p)
              reactions cross section
 ANALYSIS   .Sigma=Sigma(measured)-1.0055*Sigma(Ni-58(n,2n)),
@@ -1246,7 +1288,7 @@ DECAY-DATA (27-CO-57,271.74D,DG,122.1,0.8560)
            (28-NI-57-G,35.60HR,DG,1377.6,0.817)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ni-58 content
-            is (68.0769+-0.0089)%, deposit mass 101.6+-0.6
+            is (68.0769+-0.0089)%, fission deposit mass 101.6+-0.6
             microgram. Placed at zero degree direction to beam
             axis at distance 59.6 mm from the center of the
             D2 gas cell.
@@ -1257,14 +1299,16 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A22
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Ni-58 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A22 of the main reference, p.74
            (DEP,22976022)
-ENDBIB              27
+ENDBIB              29
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   D          NO-DIM     PER-CENT   SEE TEXT
@@ -1291,35 +1335,35 @@ MEV        MEV        MB         MB         PER-CENT
     10.392      0.110      35.7         2.2       6.19
     10.061      0.113      13.9         1.6       11.54
 ENDDATA             19
-ENDSUBENT           55
-SUBENT        22976024   20080122   20080402   20080318       2192
-BIB                  9         27
+ENDSUBENT           57
+SUBENT        22976024   20080820   20090209   20090209       2203
+BIB                  8         27
 REACTION   ((28-NI-61(N,P)27-CO-61,,SIG)+
            (28-NI-62(N,X)27-CO-61,,SIG,,FCT))  Measured data
             of 61Ni(n,p)61Co + 3.188*62Ni(n,x)61Co,
             "3.188" is the ratio of isotopic abundances, Eq (1)
-            og main reference
+            of main reference
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (27-CO-61,1.650HR,DG,67.4,0.8467)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ni-61 content
             is (1.1399+-0.0006)%, Ni-62 content is (3.6345+-
-            0.0017)%, deposit mass 101.6+-0.6 microgram.
+            0.0017)%,  fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
-CORRECTION .Corrections were made for reaction Ni-62(N,x)Co-61
-            cross section
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A23
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Ni-61 isotopic content
            (ERR-4)  Error of the NI-62 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A23 of the main reference, p.75
 ENDBIB              27
 COMMON               7          6
@@ -1349,14 +1393,15 @@ MEV        MEV        MB         MB         PER-CENT
      7.980      0.132      29.60       1.06       3.59
 ENDDATA             16
 ENDSUBENT           55
-SUBENT        22976025   20080122   20080402   20080318       2192
-BIB                  8         19
+SUBENT        22976025   20080820   20090209   20090209       2203
+BIB                  8         22
 REACTION   (29-CU-63(N,2N)29-CU-62,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (29-CU-62,9.67MIN,B+,,0.9743)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Cu-63 content
-            is (69.17+-0.03)%, deposit mass 101.6+-0.6 microgram.
+            is (69.17+-0.03)%, fission deposit mass 101.6+-0.6
+            microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -1364,13 +1409,15 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A24
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Ni-58 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A24 of the main reference, p.76
-ENDBIB              19
+ENDBIB              22
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   MIN        NO-DIM     PER-CENT   SEE TEXT
@@ -1393,15 +1440,16 @@ MEV        MEV        MB         MB         PER-CENT
     11.495      0.106       12.46      0.44       3.55
     11.190      0.107        1.78      0.09       5.18
 ENDDATA             15
-ENDSUBENT           43
-SUBENT        22976026   20080122   20080402   20080318       2192
-BIB                  8         19
+ENDSUBENT           46
+SUBENT        22976026   20080820   20090209   20090209       2203
+BIB                  8         22
 REACTION   (29-CU-65(N,P)28-NI-65,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (28-NI-65,2.5172HR,DG,1481.8,0.2359)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Cu-65 content
-            is (30.83+-0.03)%, deposit mass 101.6+-0.6 microgram.
+            is (30.83+-0.03)%, fission deposit mass 101.6+-0.6
+             microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -1409,13 +1457,15 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A25
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Cu-65 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A25 of the main reference, p.77
-ENDBIB              19
+ENDBIB              22
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   HR         NO-DIM     PER-CENT   SEE TEXT
@@ -1435,33 +1485,37 @@ MEV        MEV        MB         MB         PER-CENT
     10.370      0.110      15.78       0.56       3.58
     10.209      0.110      15.03       0.47       3.12
 ENDDATA             12
-ENDSUBENT           40
-SUBENT        22976027   20080122   20080402   20080318       2192
-BIB                  9         23
+ENDSUBENT           43
+SUBENT        22976027   20080820   20090209   20090209       2203
+BIB                  9         27
 REACTION   (29-CU-65(N,2N)29-CU-64,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (29-CU-64,12.700HR,B+,,0.174)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Cu-65 content
             is (30.83+-0.03)%, Cu-63 content is (69.17+-0.03)%,
-            deposit mass 101.6+-0.6 microgram.
+            fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 CORRECTION .Corrections were made for Cu-63(N,gamma)Cu-64 reaction
-            cross section
+            cross section. The contribution of the (N,gamma)
+            reaction was measured below the threshold of the
+            (N,2N) reaction and extrapolated to higher energies
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A26
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Cu-65 isotopic content
            (ERR-4)  Error of the Cu-63 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A26 of the main reference, p.78
-ENDBIB              23
+ENDBIB              27
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -1497,33 +1551,35 @@ MEV        MEV        MB         MB         PER-CENT
     10.370      0.110      13.32        1.08     8.07
     10.209      0.110       4.10        1.03    25.15
 ENDDATA             25
-ENDSUBENT           60
-SUBENT        22976028   20080122   20080402   20080318       2192
-BIB                  9         23
+ENDSUBENT           64
+SUBENT        22976028   20080820   20090209   20090209       2203
+BIB                  9         25
 REACTION   (30-ZN-64(N,P)29-CU-64,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (29-CU-64,12.700HR,B+,,0.174)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Zn-64 content
             is (48.63+-0.60)%, Zn-66 content is (27.90+-0.27)%,
-            deposit mass 101.6+-0.6 microgram.
+            fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
-CORRECTION .Corrections were made for Zn-66(N,T)Cu-64 reaction
-            cross section and found to be negligible
+CORRECTION .Corrections for Zn-66(N,T)Cu-64 reaction cross section
+            were estimated and found negligible
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A27
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Zn-64 isotopic content
            (ERR-4)  Error of the Zn-66 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A27 of the main reference, p.79
-ENDBIB              23
+ENDBIB              25
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
@@ -1553,15 +1609,16 @@ MEV        MEV        MB         MB         PER-CENT
      8.973      0.120      241.2       7.1        2.93
      8.495      0.126      235.3       6.9        2.92
 ENDDATA             19
-ENDSUBENT           54
-SUBENT        22976029   20080122   20080402   20080318       2192
-BIB                  8         19
+ENDSUBENT           56
+SUBENT        22976029   20080820   20090209   20090209       2203
+BIB                  8         22
 REACTION   (30-ZN-64(N,2N)30-ZN-63,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (30-ZN-63,38.47MIN,B+,,0.9274)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Zn-64 content
-            is (48.63+-0.60)%, deposit mass 101.6+-0.6 microgram.
+            is (48.63+-0.60)%, fission deposit mass 101.6+-0.6
+            microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -1569,13 +1626,15 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A28
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Zn-64 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A28 of the main reference, p.80
-ENDBIB              19
+ENDBIB              22
 COMMON               6          3
 ERR-3      MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   PER-CENT   MIN        NO-DIM     PER-CENT   SEE TEXT
@@ -1594,39 +1653,44 @@ MEV        MEV        MB         MB         PER-CENT
     12.496      0.105       5.59        0.22       3.94
     12.207      0.105       0.75        0.17      22.76
 ENDDATA             11
-ENDSUBENT           39
-SUBENT        22976030   20080122   20080402   20080318       2192
-BIB                  9         23
+ENDSUBENT           42
+SUBENT        22976030   20080820   20090209   20090209       2203
+BIB                  9         28
 REACTION   (30-ZN-70(N,2N)30-ZN-69-M,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (30-ZN-69-M,13.76HR,DG,438.6,0.9477)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Zn-70 content
             is (0.62+-0.03)%, Zn-68 content is (18.75+-0.51)%,
-            deposit mass 101.6+-0.6 microgram.
+            fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 59.6 mm from the center of the D2 gas cell.
 CORRECTION .Corrections were made for Zn-68(N,G)Zn-69-M reaction
-            cross section
+            cross section. At three energies, below the threshold
+            of the (N,2N) reaction, the contribution of the (N,G)
+            reaction was measured. The resulting correction was
+            extrapolated to higher neutron energies.
 COVARIANCE .The fully correlated portion of the uncertainty which
             enables generation of the full covariance matrix and
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A29
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (ERR-3)  Error of the Zn-70 isotopic content
            (ERR-4)  Error of the Zn-68 isotopic content
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A29 of the main reference, p.81
-ENDBIB              23
+ENDBIB              28
 COMMON               7          6
 ERR-3      ERR-4      MONIT-ERR  ERR-HL     ERR-IDD    MISC2
 MISC3
 PER-CENT   PER-CENT   PER-CENT   HR         NO-DIM     PER-CENT
 SEE TEXT
-   0.03       0.51        1.5       0.02       0.0020     1.90
+   0.03       0.51        1.5       0.02       0.0020     1.63
    0.6
 ENDCOMMON            6
 DATA                 5         14
@@ -1647,15 +1711,15 @@ MEV        MEV        MB         MB         PER-CENT
     10.569      0.109      121.8       12.6      10.37
      9.979      0.113       14.2        7.8      55.18
 ENDDATA             16
-ENDSUBENT           51
-SUBENT        22976031   20080122   20080402   20080318       2192
-BIB                  8         18
+ENDSUBENT           56
+SUBENT        22976031   20080820   20090209   20090209       2203
+BIB                  8         20
 REACTION   (41-NB-93(N,2N)41-NB-92-M,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
 DECAY-DATA (41-NB-92-M,10.15D,DG,934.4,0.9907)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Nb-93 content
-            is 100%, deposit mass 101.6+-0.6 microgram.
+            is 100%, fission deposit mass 101.6+-0.6 microgram.
             Placed at zero degree direction to beam axis at
             distance 90.6 mm from the center of the D2 gas cell.
 COVARIANCE .The fully correlated portion of the uncertainty which
@@ -1663,12 +1727,14 @@ COVARIANCE .The fully correlated portion of the uncertainty which
             is given under MISC2
 MISC-COL   (MISC2) The fully correlated portion of the uncertainty
                     marked as "common" in Table A30
-           (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
+           (MISC3)  Error of the  fission deposit mass,
+                    units = microgram
 ERR-ANALYS (MONIT-ERR)  Error of the monitor cross section
            (ERR-IDD)    Error of intensity value given under
                         DECAY-DATA
+           (ERR-HL)  Error of the half-life given under DECAY-DATA
 STATUS     (TABLE)  Table A30 of the main reference, p.82
-ENDBIB              18
+ENDBIB              20
 COMMON               5          3
 MONIT-ERR  ERR-HL     ERR-IDD    MISC2      MISC3
 PER-CENT   D          NO-DIM     PER-CENT   SEE TEXT
@@ -1692,32 +1758,38 @@ MEV        MEV        MB         MB         PER-CENT
      9.370      0.108       13.37       0.47       3.53
      9.135      0.110        1.18       0.21      18.17
 ENDDATA             16
-ENDSUBENT           43
-SUBENT        22976032   20080122   20080402   20080318       2192
-BIB                  7         18
+ENDSUBENT           45
+SUBENT        22976032   20080820   20090209   20090209       2203
+BIB                  6         24
 REACTION   (28-NI-58(N,P)27-CO-58-M/T,,SIG/RAT)
-MONITOR    (92-U-238(N,F),,SIG)
+ANALYSIS   .The isomeric cross section ratio was determined in
+            following the growth and decay of the radioactivity
+            via the 810.8 keV gamma line of the ground state of
+            Co-58 (See Chapter 4 of the main reference, p.12).
+            The procedure cancels most of the common errors as
+            sample mass. monitor cross section, gamma intensity
+            and detector calibration. The remaining errors are
+            from the subtraction of the separate GAS-OUT measure-
+            ments, from the correction of the breakup neutrons
+            and from the counting statistics.
 DECAY-DATA (27-CO-58-M,9.04HR,DG)  IT = 1.0
            (27-CO-58-G,70.86D,DG,810.8,0.9945)
 SAMPLE     .Elemental sample of high-purity element in disk-
             shaped form, diameter 10 mm, 1 mm thick. Ni-58 content
-            is (68.0769+-0.0089)%, deposit mass 101.6+-0.6
-            microgram.
-            Placed at zero degree direction to beam axis at
-           .Run#1: distance 90.6 mm from the center of the
-            D2 gas cell.
-           .Run#2: distance 59.6 mm from the center of the
-            D2 gas cell.
-MISC-COL   (MISC3)  Error of the deposit mass, UNITS = MICROGRAM
-ERR-ANALYS (ERR-3)  Error of the Ni-58 isotopic content
-           (MONIT-ERR)  Error of the monitor cross section
+            is (68.0769+-0.0089)% placed at zero degree direction
+            to beam axis at distance 59.6 mm from the center of
+            the D2 gas cell.
+ERR-ANALYS (HL1-ERR)  Error of the half-life of Co-58-M given
+                      under DECAY-DATA
+           (HL2-ERR)  Error of the half-life of Co-58-G given
+                      under DECAY-DATA
 STATUS     (TABLE)  Table A31 of the main reference, p.83
            (DEP,22976021)
-ENDBIB              18
-COMMON               3          3
-ERR-3      MONIT-ERR  MISC3
-PER-CENT   PER-CENT   SEE TEXT
-   0.0089      1.5        0.6
+ENDBIB              24
+COMMON               2          3
+HL1-ERR    HL2-ERR
+HR         D
+   0.11         0.06
 ENDCOMMON            3
 DATA                 5         10
 EN         EN-RSL-FW  DATA       ERR-T      ERR-T
@@ -1733,5 +1805,5 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
      8.948      0.120      0.419      0.014       3.27
      7.980      0.132      0.422      0.010       2.34
 ENDDATA             12
-ENDSUBENT           39
+ENDSUBENT           45
 ENDENTRY            32

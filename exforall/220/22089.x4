@@ -1,39 +1,72 @@
-ENTRY            22089   20070125   20070320   20070301       2182
-SUBENT        22089001   20070125   20070320   20070301       2182
-BIB                 14         62
+ENTRY            22089   20081020   20090209   20090209       2204
+SUBENT        22089001   20081020   20090209   20090209       2204
+BIB                 17        103
 REFERENCE  (R,JAERI-1312,1988)
 TITLE      -Activation cross section measurements for fusion
             reactor structural materials at neutron energy from
             13.3 to 15.0 MeV using FNS facility.
-AUTHOR     (Y.IKEDA,C.KONNO,K.OISHI,T.NAKAMURA,H.MIYADE,K.KAWADE,
-            H.YAMAMOTO,T.KATOH)
+AUTHOR     (Y.Ikeda,C.Konno,K.Oishi,T.Nakamura,H.Miyade, K.Kawade,
+            H.Yamamoto, T.Katoh)
 INSTITUTE  (2JPNJAE)
-FACILITY   .Jaeri FNS facility. deuterons were accelerated to 330
-             keV and the beam current was 1.5 milli-amperes
-INC-SOURCE (D-T) Water cooled Ii-T target. neutron yield at
-                 target position was 2.0E+11 N/S.
+REL-REF    (N,,H.Maekawa+,R,JAERI-M-83-219,1983) Associated
+            alpha-particles counting.
+           (R,,C.M.Lederer+,B,LEDERER-7,,1978) Reference for
+            half-life errors and gamma-ray emission probability .
+           (N,,Nakagava+,R,JAERI-M-84-126,1984) Reference for
+            Monte Carlo code MORSE-DD used for neutron spectra
+            calculations.
+FACILITY   (FNS,2JPNJAE) JAERI FNS facility. Deuterons accelerated
+            to 330 keV . The beam current was 1.5 milli-Amperes.
+INC-SOURCE (D-T) Water cooled Ti-T target. Neutron yield at
+                 target position was 2.0E+11 n/sec.
+INC-SPECT  Source neutron spectra calculated by MORSE-DD at angles
+            0, 45, 60, 80, 100, 120, 135, 165 deg are given in
+            Figures 8.1 - 8.8, 10 .
 METHOD     (ACTIV)
-DETECTOR   (GELI) 5 GELI detectors were used. Two of these served
+DETECTOR   (GELI) 5 GeLi detectors were used. Two of these served
             as standard detectors, and the absolute efficiency of
             these were determined with standard gamma-ray sources.
-MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
-           (41-NB-93(N,2N)41-NB-92-M,,SIG) Was used as a substan-
-            dard for half-lives longer than 30 min while the reac-
-            tion 13-Al-27(n,p)12-Mg-27 was employed for the short-
-            lived activities.
-SAMPLE     .Basically, separated isotopes were used. if the sample
-            Was powder, it was wrapped in a cartridge paper. the
-            Area of the samples were 1 cm2 and they were
-            Positioned at a distance of 10 cm from the target, in
-            The angular interval 0 - 165 degrees, thus covering
-            The energy range 13.3 - 15.0 mev. samples with short
-            Lived activities were transported with a pneumatic
-            Rabbit system.
+MONITOR    ((MONIT1)13-AL-27(N,A)11-NA-24,,SIG)
+           ((MONIT2)41-NB-93(N,2N)41-NB-92-M,,SIG) 464 mb for
+            neutrons between 13.3 to 15.0 MeV. Determined relative
+            to MONIT1. Used as neutron flux monitor.
+            Was used as a substandard for half-lives longer than
+            30 min while the reaction 13-Al-27(n,p)12-Mg-27 was
+            employed for the short-lived activities.
+           ((MONIT3)13-AL-27(N,P)12-MG-27,,SIG) As substandard.
+            Determined relative to MONIT1 with uncertainty 4.3%.
+            Numerical values of monitors used:
+            EN-NRM (MeV)  MONIT1 (mb)   EN-NRM (MeV)  MONIT3 (mb)
+            14.96         113.42        14.93         62.29
+            14.92         113.93        14.76         60.92
+            14.84         114.97        14.66         66.05
+            14.71         116.65        14.43         64.18
+            14.53         118.97        14.04         71.08
+            14.32         121.28        13.52         77.84
+            14.10         123.63        13.33         83.29
+            13.95         125.02
+            13.81         125.93
+            13.68         126.77
+            13.55         127.62
+            13.33         128.60
+            In COMMON block the value of MONIT1 and MONIT3  at
+             EN-NRM1=13.33 MeV are given.
+MONIT-REF  ((MONIT1),,3,ENDF/B-5) ENDF/B-V Dosimetry File.
+SAMPLE      Basically, separated isotopes were used. If the sample
+            was powder, it (about 50mg weight) was wrapped in a
+            cartridge paper with effective area of 1 cm2. Samples
+            were positioned at a distance of 10cm from the target,
+            in the angular interval 0 - 165 degrees, thus covering
+            the energy range 13.3 - 15.0 MeV. Samples with short
+            lived activities were transported with a pneumatic
+            rabbit system, transfer time about 1 sec.
+            Two Nb foils of 10mmx10mmx0.1mm for one sample - for
+            neutron flux monitoring .
 CORRECTION .Corrections were applied for count loss due to
-            Summation of cascade gammas, self absorption in the
-            Samples, fluctuation of the neutron flux during
-            Irradiation, and for contribution of low energy
-            Neutrons to the reaction rate.
+            summation of cascade gammas, self absorption in the
+            samples, fluctuation of the neutron flux during
+            irradiation, and for contribution of low energy
+            neutrons to the reaction rate.
 ERR-ANALYS (ERR-T)    Different factors contributing to the
                        total error
            (ERR-S)  Max  statistical error of gamma-ray counts;
@@ -41,43 +74,54 @@ ERR-ANALYS (ERR-T)    Different factors contributing to the
            (ERR-1) Max error of detector efficiency
                    Min error = 2.0%
            (ERR-2) Error of sample weight
-           (ERR-3) Mqx error of irradiation, cooling and
+           (ERR-3) Max error of irradiation, cooling and
                    measuring time
-           (ERR-4) Error of self absorption
-           (ERR-5) Max error OF half-life
+           (ERR-4) Error of self-absorption
+           (ERR-5) Max error of half-life
                 Min error =  0.1%
-           (ERR-6) Max error OF gamma-ray emission probability
-                   mINERROR = 0.5%
+           (ERR-6) Max error of gamma-ray emission probability
+                   min error = 0.5%
            (ERR-7) Max error of correction for mean source
                    position
            (ERR-8) Max error of correction for fluctuation
            (ERR-9) Max error of correction for cascade summing
-           (MONIT-ERR)  Standard reaction cross section error
-STATUS     .Data taken from main ref.
+           (MONIT1-ERR) MONIT1 standard reaction cross section
+                        error
+           (MONIT2-ERR) Error of MONIT2.
+           (MONIT3-ERR) Error of MONIT3.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
            (COREL,22637001)
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. Flags added to numereous subents.
+           (19900828A) S.W. Flags added to numerous  subents.
            (19900917E)
            (20040610A) DATE is corrected  -  SM
            (20070125A) Data error in SAN064 corrected.
-             Erros structure given and DATA-ERR to ERR-T changed
+             Errors structure given and DATA-ERR to ERR-T changed
              -  SM
-ENDBIB              62
-COMMON              11          6
-MONIT-ERR  ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
-ERR-5      ERR-6      ERR-7      ERR-8      ERR-9
+           (20081020A) M.M. Misprint in Subent 096 was corrected.
+            Free text was corrected to be human-readable.
+            Monitors values were added. Misprints in decay data
+            were corrected in several Subents. Information in
+            STATUS lines was added.
+ENDBIB             103
+COMMON              17          9
+MONIT1-ERR ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
+ERR-5      ERR-6      ERR-7      ERR-8      ERR-9      EN-NRM1
+MONIT1     MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   MEV
+MB         MB         PER-CENT   MB         PER-CENT
   3.0         5.          3.        0.1        0.1        0.5
-   2.         2.         0.1        0.1        0.1
-ENDCOMMON            6
-ENDSUBENT           72
-SUBENT        22089002   20070125   20070320   20070301       2182
+   2.         2.         0.1        0.1        0.1      13.33
+ 128.60      464.       4.2         83.29     4.3
+ENDCOMMON            9
+ENDSUBENT          116
+SUBENT        22089002   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (9-F-19(N,2N)9-F-18,,SIG)
-DECAY-DATA (9-F-18,109.72MIN,AR,511.,1.938)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (9-F-18,109.72MIN,AR,511.0,1.938)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.1 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -95,11 +139,11 @@ MEV        MB         MB
  1.3360E+01 2.5500E+01 1.4000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089003   20070125   20070320   20070301       2182
+SUBENT        22089003   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (11-NA-23(N,2N)11-NA-22,,SIG)
 DECAY-DATA (11-NA-22,2.602YR,DG,1274.55,.9993)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -117,11 +161,11 @@ MEV        MB         MB
  1.3330E+01 2.1900E+00 2.8000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089004   20070125   20070320   20070301       2182
+SUBENT        22089004   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (12-MG-24(N,P)11-NA-24,,SIG)
-DECAY-DATA (11-NA-24,15.03HR,DG,1368.6,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (11-NA-24,15.03HR,DG,1368.6,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.3 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -139,11 +183,11 @@ MEV        MB         MB
  1.3330E+01 1.9780E+02 9.8000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089005   20070125   20070320   20070301       2182
+SUBENT        22089005   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (12-MG-25(N,P)11-NA-25,,SIG)
 DECAY-DATA (11-NA-25,60.SEC,DG,975.2,.147)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.4 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -159,11 +203,11 @@ MEV        MB         MB
  1.3330E+01 5.8000E+01 1.5000E+01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089006   20070125   20070320   20070301       2182
+SUBENT        22089006   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (12-MG-25(N,N+P)11-NA-24,,SIG)
-DECAY-DATA (11-NA-24,15.03HR,DG,1368.6,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (11-NA-24,15.03HR,DG,1368.6,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.5 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -181,11 +225,11 @@ MEV        MB         MB
  1.3420E+01 7.0200E+00 3.8000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089007   20070125   20070320   20070301       2182
+SUBENT        22089007   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (13-AL-27(N,P)12-MG-27,,SIG)
 DECAY-DATA (12-MG-27,9.462MIN,DG,843.76,.731)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.6 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -201,11 +245,11 @@ MEV        MB         MB
  1.3330E+01 8.3300E+01 3.6000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089008   20070125   20070320   20070301       2182
+SUBENT        22089008   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (14-SI-28(N,P)13-AL-28,,SIG)
-DECAY-DATA (13-AL-28,2.24MIN,DG,1778.7,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (13-AL-28,2.24MIN,DG,1778.7,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.7 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -221,11 +265,11 @@ MEV        MB         MB
  1.3320E+01 2.8700E+02 1.9000E+01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089009   20070125   20070320   20070301       2182
+SUBENT        22089009   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (14-SI-29(N,P)13-AL-29,,SIG)
 DECAY-DATA (13-AL-29,6.56MIN,DG,1273.2,.891)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.8 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -239,11 +283,11 @@ MEV        MB         MB
  1.3340E+01 1.3000E+02 1.2000E+01
 ENDDATA              6
 ENDSUBENT           16
-SUBENT        22089010   20070125   20070320   20070301       2182
+SUBENT        22089010   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (14-SI-29(N,N+P)13-AL-28,,SIG)
-DECAY-DATA (13-AL-28,2.24MIN,DG,1778.7,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (13-AL-28,2.24MIN,DG,1778.7,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.9 .
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -256,11 +300,11 @@ MEV        MB         MB
  1.4040E+01 4.8000E+00 1.4000E+00
 ENDDATA              5
 ENDSUBENT           15
-SUBENT        22089011   20070125   20070320   20070301       2182
+SUBENT        22089011   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (14-SI-30(N,A)12-MG-27,,SIG)
 DECAY-DATA (12-MG-27,9.462MIN,DG,843.76,.731)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.10.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -276,11 +320,11 @@ MEV        MB         MB
  1.3320E+01 8.2000E+01 2.5000E+01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089012   20070125   20070320   20070301       2182
+SUBENT        22089012   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (17-CL-35(N,2N)17-CL-34-M,,SIG)
-DECAY-DATA (17-CL-34-M,31.99MIN,DG,2127.65,.42)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (17-CL-34-M,31.99MIN,DG,2127.65,.420)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.11.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -298,11 +342,11 @@ MEV        MB         MB
  1.3330E+01 1.4400E-01 2.8000E-02
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089013   20070125   20070320   20070301       2182
+SUBENT        22089013   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (19-K-39(N,2N)19-K-38,,SIG)
 DECAY-DATA (19-K-38,7.613MIN,DG,2167.5,.998)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.12.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -318,11 +362,11 @@ MEV        MB         MB
  1.3410E+01 4.1300E-01 9.0000E-02
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089014   20070125   20070320   20070301       2182
+SUBENT        22089014   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (19-K-41(N,P)18-AR-41,,SIG)
 DECAY-DATA (18-AR-41,1.827HR,DG,1293.64,.9916)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.13.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -340,11 +384,11 @@ MEV        MB         MB
  1.3320E+01 5.9800E+01 2.8000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089015   20070125   20070320   20070301       2182
+SUBENT        22089015   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (19-K-41(N,A)17-CL-38,,SIG)
-DECAY-DATA (17-CL-38,37.29MIN,DG,1642.16,.31)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (17-CL-38,37.29MIN,DG,1642.16,.310)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.14.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -362,11 +406,11 @@ MEV        MB         MB
  1.3320E+01 4.0400E+01 3.2000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089016   20070125   20070320   20070301       2182
+SUBENT        22089016   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (20-CA-42(N,P)19-K-42,,SIG)
 DECAY-DATA (19-K-42,12.36HR,DG,1524.6,.188)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.15.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -384,11 +428,11 @@ MEV        MB         MB
  1.3320E+01 2.0000E+02 1.2000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089017   20070125   20070320   20070301       2182
+SUBENT        22089017   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (20-CA-43(N,P)19-K-43,,SIG)
 DECAY-DATA (19-K-43,22.2HR,DG,617.8,.648)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.16.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -406,11 +450,11 @@ MEV        MB         MB
  1.3340E+01 9.1900E+01 7.3000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089018   20070125   20070320   20070301       2182
+SUBENT        22089018   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (20-CA-44(N,P)19-K-44,,SIG)
-DECAY-DATA (19-K-44,22.15MIN,DG,1157.,.58)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (19-K-44,22.15MIN,DG,1157.0,.580)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.17.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -428,11 +472,11 @@ MEV        MB         MB
  1.3330E+01 3.4700E+01 1.7000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089019   20070125   20070320   20070301       2182
+SUBENT        22089019   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (20-CA-44(N,N+P)19-K-43,,SIG)
 DECAY-DATA (19-K-43,22.2HR,DG,617.8,.648)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.18.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -450,11 +494,11 @@ MEV        MB         MB
  1.3340E+01 5.6500E-01 3.6000E-02
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089020   20070125   20070320   20070301       2182
+SUBENT        22089020   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (20-CA-44(N,A)18-AR-41,,SIG)
 DECAY-DATA (18-AR-41,1.827HR,DG,1293.64,.9916)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.19.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -472,11 +516,11 @@ MEV        MB         MB
  1.3330E+01 2.3000E+01 1.1000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089021   20070125   20070320   20070301       2182
+SUBENT        22089021   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (20-CA-48(N,2N)20-CA-47,,SIG)
-DECAY-DATA (20-CA-47,4.54D,DG,1297.,.77)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (20-CA-47,4.54D,DG,1297.0,.770)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.20.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -494,11 +538,11 @@ MEV        MB         MB
  1.3330E+01 6.7700E+02 4.7000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089022   20070125   20070320   20070301       2182
+SUBENT        22089022   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (21-SC-45(N,2N)21-SC-44-M,,SIG)
 DECAY-DATA (21-SC-44-M,2.442D,DG,271.24,.866)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.21.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -516,11 +560,11 @@ MEV        MB         MB
  1.3370E+01 6.0500E+01 3.1000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089023   20070125   20070320   20070301       2182
+SUBENT        22089023   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (21-SC-45(N,2N)21-SC-44-G,,SIG)
-DECAY-DATA (21-SC-44-G,3.927HR,DG,1157.,.9989)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-44-G,3.927HR,DG,1157.0,.9989)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.22.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -538,11 +582,11 @@ MEV        MB         MB
  1.3380E+01 7.8100E+01 4.0000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089024   20070125   20070320   20070301       2182
+SUBENT        22089024   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (21-SC-45(N,A)19-K-42,,SIG)
 DECAY-DATA (19-K-42,12.361HR,DG,1524.6,.188)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.23.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -560,11 +604,11 @@ MEV        MB         MB
  1.3330E+01 5.1900E+01 3.6000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089025   20070125   20070320   20070301       2182
+SUBENT        22089025   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-46(N,2N)22-TI-45,,SIG)
-DECAY-DATA (22-TI-45,3.08HR,AR,511.,1.7)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (22-TI-45,3.08HR,AR,511.0,1.700)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.24.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -580,11 +624,11 @@ MEV        MB         MB
  1.3630E+01 1.8200E-01 2.9000E-02
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089026   20070125   20070320   20070301       2182
+SUBENT        22089026   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-46(N,P)21-SC-46,,SIG)
-DECAY-DATA (21-SC-46,83.8D,DG,889.25,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-46,83.8D,DG,889.25,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.25.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -600,11 +644,11 @@ MEV        MB         MB
  1.3330E+01 2.7400E+02 1.4000E+01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089027   20070125   20070320   20070301       2182
+SUBENT        22089027   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-47(N,P)21-SC-47,,SIG)
 DECAY-DATA (21-SC-47,3.422D,DG,159.38,.685)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.26.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -620,11 +664,11 @@ MEV        MB         MB
  1.3330E+01 1.4450E+02 9.7000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089028   20070125   20070320   20070301       2182
+SUBENT        22089028   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-47(N,N+P)21-SC-46,,SIG)
-DECAY-DATA (21-SC-46,83.8D,DG,889.25,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-46,83.8D,DG,889.25,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.27.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -640,11 +684,11 @@ MEV        MB         MB
  1.3470E+01 1.6600E+01 3.4000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089029   20070125   20070320   20070301       2182
+SUBENT        22089029   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-48(N,P)21-SC-48,,SIG)
-DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.28.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -659,11 +703,11 @@ MEV        MB         MB
  1.3330E+01 5.5300E+01 2.6000E+00
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        22089030   20070125   20070320   20070301       2182
+SUBENT        22089030   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-48(N,N+P)21-SC-47,,SIG)
 DECAY-DATA (21-SC-47,3.422D,DG,159.38,.685)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.29.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -679,11 +723,11 @@ MEV        MB         MB
  1.3370E+01 2.4300E+00 1.7000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089031   20070125   20070320   20070301       2182
+SUBENT        22089031   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-49(N,N+P)21-SC-48,,SIG)
-DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.30.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -698,11 +742,11 @@ MEV        MB         MB
  1.3490E+01 1.7600E+00 1.6000E-01
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        22089032   20070125   20070320   20070301       2182
+SUBENT        22089032   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-50(N,P)21-SC-50,,SIG)
-DECAY-DATA (21-SC-50,1.71MIN,DG,1553.71,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-50,1.71MIN,DG,1553.71,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.31.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -718,11 +762,11 @@ MEV        MB         MB
  1.3330E+01 9.0000E+00 1.6000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089033   20070125   20070320   20070301       2182
+SUBENT        22089033   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (22-TI-50(N,A)20-CA-47,,SIG)
-DECAY-DATA (20-CA-47,4.54D,DG,1297.03,.77)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (20-CA-47,4.54D,DG,1297.03,.770)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.32.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -737,11 +781,11 @@ MEV        MB         MB
  1.3350E+01 6.3700E+00 6.2000E-01
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        22089034   20070125   20070320   20070301       2182
+SUBENT        22089034   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (23-V-51(N,P)22-TI-51,,SIG)
 DECAY-DATA (22-TI-51,5.8MIN,DG,319.7,.934)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.33.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -757,11 +801,11 @@ MEV        MB         MB
  1.3330E+01 3.0200E+01 1.7000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089035   20070125   20070320   20070301       2182
+SUBENT        22089035   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (23-V-51(N,A)21-SC-48,,SIG)
-DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (21-SC-48,43.67HR,DG,983.5,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.34.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -779,11 +823,11 @@ MEV        MB         MB
  1.3340E+01 1.3340E+01 7.1000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089036   20070125   20070320   20070301       2182
+SUBENT        22089036   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (24-CR-50(N,2N)24-CR-49,,SIG)
 DECAY-DATA (24-CR-49,41.9MIN,DG,152.93,.2907)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.35.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -800,11 +844,11 @@ MEV        MB         MB
  1.3680E+01 1.7300E+00 3.2000E-01
 ENDDATA              9
 ENDSUBENT           19
-SUBENT        22089037   20070125   20070320   20070301       2182
+SUBENT        22089037   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (24-CR-52(N,2N)24-CR-51,,SIG)
 DECAY-DATA (24-CR-51,27.701D,DG,320.03,.102)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.37.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -821,11 +865,11 @@ MEV        MB         MB
  1.3600E+01 1.5200E+02 1.2000E+01
 ENDDATA              9
 ENDSUBENT           19
-SUBENT        22089038   20070125   20070320   20070301       2182
+SUBENT        22089038   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (24-CR-52(N,P)23-V-52,,SIG)
-DECAY-DATA (23-V-52,3.746MIN,DG,1434.06,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (23-V-52,3.746MIN,DG,1434.06,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.36.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -841,11 +885,11 @@ MEV        MB         MB
  1.3330E+01 7.5500E+01 6.2000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089039   20070125   20070320   20070301       2182
+SUBENT        22089039   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (25-MN-55(N,2N)25-MN-54,,SIG)
-DECAY-DATA (25-MN-54,312.2D,DG,834.83,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (25-MN-54,312.2D,DG,834.83,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.38.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -863,11 +907,11 @@ MEV        MB         MB
  1.3350E+01 6.1300E+02 3.3000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089040   20070125   20070320   20070301       2182
+SUBENT        22089040   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (26-FE-54(N,P)25-MN-54,,SIG)
-DECAY-DATA (25-MN-54,312.2D,DG,834.83,1.)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (25-MN-54,312.2D,DG,834.83,1.000)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.39.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -885,11 +929,11 @@ MEV        MB         MB
  1.3320E+01 4.2300E+02 1.9000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089041   20070125   20070320   20070301       2182
+SUBENT        22089041   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (26-FE-54(N,A)24-CR-51,,SIG)
 DECAY-DATA (24-CR-51,27.701D,DG,320.03,.102)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.40.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -907,11 +951,11 @@ MEV        MB         MB
  1.3330E+01 7.9600E+01 7.1000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089042   20070125   20070320   20070301       2182
+SUBENT        22089042   20081020   20090209   20090209       2204
 BIB                  4          7
 REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
 DECAY-DATA (25-MN-56,2.5785HR,DG,846.75,.9887)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.41.
 HISTORY    (19881024C) N.O.
            (19881216E)
            (19900828A) S.W. DATA CORRECTED.
@@ -931,11 +975,11 @@ MEV        MB         MB
  1.3330E+01 1.1900E+02 6.2000E+00
 ENDDATA             10
 ENDSUBENT           22
-SUBENT        22089043   20070125   20070320   20070301       2182
+SUBENT        22089043   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (26-FE-57(N,N+P)25-MN-56,,SIG)
 DECAY-DATA (25-MN-56,2.5785HR,DG,846.75,.9887)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.42.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -952,18 +996,21 @@ MEV        MB         MB
  1.3350E+01 4.8900E+00 6.5000E-01
 ENDDATA              9
 ENDSUBENT           19
-SUBENT        22089044   20070125   20070320   20070301       2182
-BIB                  5          9
+SUBENT        22089044   20081020   20090209   20090209       2204
+BIB                  5         12
 REACTION   (27-CO-59(N,2N)27-CO-58,,SIG)
-DECAY-DATA (27-CO-58,70.78D,DG,810.76,.9944)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (27-CO-58-G,70.78D,DG,810.76,.9944)
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.45.1, 11.45.2
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+           (20081020A) M.M. Co-58 was changed into Co-58-G in
+                       DECAY-DATA .
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         15
 EN         DATA       ERR-T      FLAG
@@ -984,12 +1031,12 @@ MEV        MB         MB         NO-DIM
  1.3340E+01 5.9200E+02 3.1000E+01 1.
  1.3340E+01 5.8300E+02 2.7000E+01 2.
 ENDDATA             17
-ENDSUBENT           31
-SUBENT        22089045   20070125   20070320   20070301       2182
+ENDSUBENT           34
+SUBENT        22089045   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (27-CO-59(N,P)26-FE-59,,SIG)
 DECAY-DATA (26-FE-59,44.56D,DG,1099.22,.565)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.43.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1006,11 +1053,11 @@ MEV        MB         MB
  1.3320E+01 5.5600E+01 4.4000E+00
 ENDDATA              9
 ENDSUBENT           19
-SUBENT        22089046   20070125   20070320   20070301       2182
+SUBENT        22089046   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (27-CO-59(N,A)25-MN-56,,SIG)
 DECAY-DATA (25-MN-56,2.579HR,DG,846.75,.9887)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.44.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1028,18 +1075,19 @@ MEV        MB         MB
  1.3340E+01 3.0800E+01 1.5000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089047   20070125   20070320   20070301       2182
-BIB                  5          9
+SUBENT        22089047   20081020   20090209   20090209       2204
+BIB                  5         10
 REACTION   (28-NI-58(N,2N)28-NI-57,,SIG)
 DECAY-DATA (28-NI-57,35.99HR,DG,1377.59,.776)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.48.1, 11.48.2.
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         22
 EN         DATA       ERR-T      FLAG
@@ -1067,19 +1115,22 @@ MEV        MB         MB         NO-DIM
  1.3550E+01 1.3240E+01 7.0000E-01 1.
  1.3550E+01 1.3260E+01 6.9000E-01 2.
 ENDDATA             24
-ENDSUBENT           38
-SUBENT        22089048   20070125   20070320   20070301       2182
-BIB                  5          9
+ENDSUBENT           39
+SUBENT        22089048   20081020   20090209   20090209       2204
+BIB                  5         12
 REACTION   (28-NI-58(N,P)27-CO-58,,SIG)
-DECAY-DATA (27-CO-58,70.78D,DG,810.76,.9944)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (27-CO-58-G,70.78D,DG,810.76,.9944)
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.46.1, 11.46.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+           (20081020A) M.M. Co-58 was changed into Co-58-G in
+                       DECAY-DATA .
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         16
 EN         DATA       ERR-T      FLAG
@@ -1101,12 +1152,12 @@ MEV        MB         MB         NO-DIM
  1.3320E+01 4.5300E+02 2.3000E+01 1.
  1.3320E+01 4.4700E+02 2.1000E+01 2.
 ENDDATA             18
-ENDSUBENT           32
-SUBENT        22089049   20070125   20070320   20070301       2182
+ENDSUBENT           35
+SUBENT        22089049   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (28-NI-58(N,N+P)27-CO-57,,SIG)
 DECAY-DATA (27-CO-57,271.65D,DG,122.06,.856)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.47.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1126,11 +1177,11 @@ MEV        MB         MB
  1.3550E+01 5.1800E+02 2.7000E+01
 ENDDATA             12
 ENDSUBENT           22
-SUBENT        22089050   20070125   20070320   20070301       2182
+SUBENT        22089050   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (29-CU-65(N,2N)29-CU-64,,SIG)
-DECAY-DATA (29-CU-64,12.699HR,DG,511.,.386)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (29-CU-64,12.699HR,DG,511.0,.386)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.50.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1148,11 +1199,11 @@ MEV        MB         MB
  1.3330E+01 7.5100E+02 4.9000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089051   20070125   20070320   20070301       2182
+SUBENT        22089051   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (29-CU-65(N,P)28-NI-65,,SIG)
 DECAY-DATA (28-NI-65,2.52HR,DG,1115.84,.15134)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.49.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1170,11 +1221,11 @@ MEV        MB         MB
  1.3340E+01 1.7400E+01 1.4000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089052   20070125   20070320   20070301       2182
+SUBENT        22089052   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-90(N,2N)40-ZR-89-M,,SIG)
 DECAY-DATA (40-ZR-89-M,4.18MIN,DG,587.8,.895)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.53.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1190,14 +1241,16 @@ MEV        MB         MB
  1.3480E+01 1.7300E+01 1.6000E+00
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089053   20070125   20070320   20070301       2182
-BIB                  4          5
+SUBENT        22089053   20081020   20090209   20090209       2204
+BIB                  4          7
 REACTION   (40-ZR-90(N,2N)40-ZR-89,,SIG)
-DECAY-DATA (40-ZR-89,78.43HR,DG,909.2,.9901)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (40-ZR-89-G,78.43HR,DG,909.2,.9901)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.54.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. Zr-89 was changed into Zr-89-G in
+                       DECAY-DATA .
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -1211,12 +1264,12 @@ MEV        MB         MB
  1.3580E+01 4.6400E+02 2.2000E+01
  1.3370E+01 3.8000E+02 1.8000E+01
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089054   20070125   20070320   20070301       2182
+ENDSUBENT           22
+SUBENT        22089054   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-90(N,P)39-Y-90-M,,SIG)
-DECAY-DATA (39-Y-90-M,3.19HR,DG,479.51,.91)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (39-Y-90-M,3.19HR,DG,479.51,.910)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.51.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1232,11 +1285,11 @@ MEV        MB         MB
  1.3330E+01 1.1080E+01 7.9000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089055   20070125   20070320   20070301       2182
+SUBENT        22089055   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-90(N,A)38-SR-87-M,,SIG)
-DECAY-DATA (38-SR-87-M,2.805HR,DG,388.4,.87)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (38-SR-87-M,2.805HR,DG,388.4,.870)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.52.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1254,11 +1307,11 @@ MEV        MB         MB
  1.3340E+01 2.9800E+00 1.8000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089056   20070125   20070320   20070301       2182
+SUBENT        22089056   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-91(N,P)39-Y-91-M,,SIG)
 DECAY-DATA (39-Y-91-M,49.71MIN,DG,555.57,.949)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.55.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1273,11 +1326,11 @@ MEV        MB         MB
  1.3330E+01 1.6030E+01 9.3000E-01
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        22089057   20070125   20070320   20070301       2182
+SUBENT        22089057   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-91(N,N+P)39-Y-90-M,,SIG)
-DECAY-DATA (39-Y-90-M,3.19HR,DG,479.51,.91)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (39-Y-90-M,3.19HR,DG,479.51,.910)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.56.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1293,11 +1346,11 @@ MEV        MB         MB
  1.3370E+01 3.7200E-01 8.7000E-02
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089058   20070125   20070320   20070301       2182
+SUBENT        22089058   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-92(N,P)39-Y-92,,SIG)
 DECAY-DATA (39-Y-92,3.54HR,DG,934.5,.139)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.57.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1314,11 +1367,11 @@ MEV        MB         MB
  1.3340E+01 1.8500E+01 2.0000E+00
 ENDDATA              9
 ENDSUBENT           19
-SUBENT        22089059   20070125   20070320   20070301       2182
+SUBENT        22089059   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-92(N,N+P)39-Y-91-M,,SIG)
 DECAY-DATA (39-Y-91-M,49.71MIN,DG,555.57,.949)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.58.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1333,11 +1386,11 @@ MEV        MB         MB
  1.3340E+01 3.1000E-01 1.1000E-01
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        22089060   20070125   20070320   20070301       2182
+SUBENT        22089060   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-94(N,P)39-Y-94,,SIG)
-DECAY-DATA (39-Y-94,18.7MIN,DG,918.8,.56)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (39-Y-94,18.7MIN,DG,918.8,.560)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.59.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1353,11 +1406,11 @@ MEV        MB         MB
  1.3360E+01 4.8700E+00 9.1000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089061   20070125   20070320   20070301       2182
+SUBENT        22089061   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-94(N,A)38-SR-91,,SIG)
-DECAY-DATA (38-SR-91,9.48HR,DG,1024.3,.33)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (38-SR-91,9.48HR,DG,1024.3,.330)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.61.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1373,11 +1426,11 @@ MEV        MB         MB
  1.3340E+01 3.6300E+00 3.1000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089062   20070125   20070320   20070301       2182
+SUBENT        22089062   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-94(N,N+P)39-Y-93,,SIG)
 DECAY-DATA (39-Y-93,10.25HR,DG,266.9,.068)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.60.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1391,11 +1444,11 @@ MEV        MB         MB
  1.4000E+01 3.7000E-01 1.4000E-01
 ENDDATA              6
 ENDSUBENT           16
-SUBENT        22089063   20070125   20070320   20070301       2182
+SUBENT        22089063   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (40-ZR-96(N,2N)40-ZR-95,,SIG)
 DECAY-DATA (40-ZR-95,63.98D,DG,756.72,.546)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.63.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1411,11 +1464,11 @@ MEV        MB         MB
  1.3330E+01 1.4620E+03 8.6000E+01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089064   20070125   20070320   20070301       2182
+SUBENT        22089064   20081020   20090209   20090209       2204
 BIB                  4          6
 REACTION   (40-ZR-96(N,A)38-SR-93,,SIG)
-DECAY-DATA (38-SR-93,7.43MIN,DG,590.18,.73)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (38-SR-93,7.43MIN,DG,590.18,.730)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.62.
 HISTORY    (19881024C) N.O.
            (19881216E)
            (20070125A) S.M.  Data value for EN=14.04MeV corrected
@@ -1429,11 +1482,11 @@ MEV        MB         MB
  1.4040E+01 9.6000E-01 1.9000E-01
 ENDDATA              5
 ENDSUBENT           16
-SUBENT        22089065   20070125   20070320   20070301       2182
+SUBENT        22089065   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (41-NB-93(N,2N)41-NB-92-M,,SIG)
 DECAY-DATA (41-NB-92-M,10.14D,DG,934.51,.992)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.65.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1454,11 +1507,11 @@ MEV        MB         MB
  1.3550E+01 4.5800E+02 1.9000E+01
 ENDDATA             13
 ENDSUBENT           23
-SUBENT        22089066   20070125   20070320   20070301       2182
+SUBENT        22089066   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (41-NB-93(N,A)39-Y-90-M,,SIG)
-DECAY-DATA (39-Y-90-M,3.19HR,DG,479.51,.91)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (39-Y-90-M,3.19HR,DG,479.51,.910)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.64.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1476,11 +1529,11 @@ MEV        MB         MB
  1.3340E+01 4.8200E+00 3.7000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089067   20070125   20070320   20070301       2182
+SUBENT        22089067   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-92(N,2N)42-MO-91-M,,SIG)
 DECAY-DATA (42-MO-91-M,64.SEC,DG,652.9,.481)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.69.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1494,11 +1547,11 @@ MEV        MB         MB
  1.4140E+01 4.3800E+00 7.9000E-01
 ENDDATA              6
 ENDSUBENT           16
-SUBENT        22089068   20070125   20070320   20070301       2182
+SUBENT        22089068   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-92(N,P)41-NB-92-M,,SIG)
 DECAY-DATA (41-NB-92-M,10.14D,DG,934.51,.992)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.66.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1516,11 +1569,11 @@ MEV        MB         MB
  1.3320E+01 8.7800E+01 4.1000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089069   20070125   20070320   20070301       2182
+SUBENT        22089069   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-92(N,A)40-ZR-89-M,,SIG)
 DECAY-DATA (40-ZR-89-M,4.18MIN,DG,587.8,.895)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.67.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1536,16 +1589,18 @@ MEV        MB         MB
  1.3330E+01 6.4800E+00 7.1000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089070   20070125   20070320   20070301       2182
-BIB                  4          7
+SUBENT        22089070   20081020   20090209   20090209       2204
+BIB                  4          9
 REACTION   (42-MO-92(N,A)40-ZR-89,,SIG)
-DECAY-DATA (40-ZR-89,78.43HR,DG,909.2,.9901)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (40-ZR-89-G,78.43HR,DG,909.2,.9901)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.68.
 HISTORY    (19881024C) N.O.
            (19881216E)
            (19900828U) S.W.
            (19900917E)
-ENDBIB               7
+           (20081020A) M.M. Zr-89 was changed into Zr-89-G in
+                       DECAY-DATA .
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -1559,12 +1614,12 @@ MEV        MB         MB
  1.3570E+01 2.0500E+01 1.0000E+00
  1.3340E+01 1.9830E+01 9.4000E-01
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        22089071   20070125   20070320   20070301       2182
+ENDSUBENT           24
+SUBENT        22089071   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-94(N,2N)42-MO-93-M,,SIG)
 DECAY-DATA (42-MO-93-M,6.95HR,DG,263.06,.5672)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.71.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1582,11 +1637,11 @@ MEV        MB         MB
  1.3520E+01 8.0800E+00 5.4000E-02
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089072   20070125   20070320   20070301       2182
+SUBENT        22089072   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-94(N,P)41-NB-94-M,,SIG)
-DECAY-DATA (41-NB-94-M,6.26MIN,DG,871.,.0047)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (41-NB-94-M,6.26MIN,DG,871.0,.0047)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.70.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1602,11 +1657,11 @@ MEV        MB         MB
  1.3330E+01 2.8000E+01 1.2000E+01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089073   20070125   20070320   20070301       2182
+SUBENT        22089073   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-95(N,P)41-NB-95-M,,SIG)
 DECAY-DATA (41-NB-95-M,86.6HR,DG,235.69,.2554)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.72.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1622,11 +1677,11 @@ MEV        MB         MB
  1.2340E+01 7.3800E+00 6.9000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089074   20070125   20070320   20070301       2182
+SUBENT        22089074   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-95(N,P)41-NB-95,,SIG)
 DECAY-DATA (41-NB-95,34.97D,DG,765.78,.9982)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.73.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1644,18 +1699,19 @@ MEV        MB         MB
  1.3330E+01 3.9600E+01 2.0000E+00
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089075   20070125   20070320   20070301       2182
-BIB                  5          9
+SUBENT        22089075   20081020   20090209   20090209       2204
+BIB                  5         10
 REACTION   (42-MO-96(N,P)41-NB-96,,SIG)
 DECAY-DATA (41-NB-96,23.55HR,DG,778.22,.968)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.74.1, 11.74.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         16
 EN         DATA       ERR-T      FLAG
@@ -1677,19 +1733,23 @@ MEV        MB         MB         NO-DIM
  1.3340E+01 1.8790E+01 9.7000E-01 1.
  1.3340E+01 1.7590E+01 8.7000E-01 2.
 ENDDATA             18
-ENDSUBENT           32
-SUBENT        22089076   20070125   20070320   20070301       2182
-BIB                  5          9
+ENDSUBENT           33
+SUBENT        22089076   20081020   20090209   20090209       2204
+BIB                  6         13
 REACTION   (42-MO-96(N,N+P)41-NB-95-M,,SIG)
 DECAY-DATA (41-NB-95-M,86.6HR,DG,235.69,.2554)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+COMMENT     Point ( EN=13.41 MeV 0.78+-0.20 ) is absent in
+                   Fig.11.75.1 .
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.75.1, 11.75.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+           (20081020A) M.M. COMMENT was added.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4         14
 EN         DATA       ERR-T      FLAG
@@ -1709,13 +1769,13 @@ MEV        MB         MB         NO-DIM
  1.3420E+01 2.3400E-01 4.1000E-02 2.
  1.3410E+01 7.8000E-01 2.0000E-01 1.
 ENDDATA             16
-ENDSUBENT           30
-SUBENT        22089077   20070125   20070320   20070301       2182
+ENDSUBENT           34
+SUBENT        22089077   20081020   20090209   20090209       2204
 BIB                  4          6
 REACTION   (42-MO-96(N,N+P)41-NB-95,,SIG)
 DECAY-DATA (41-NB-95-M,86.6HR,DG,235.69,.2554)
            (41-NB-95-G,34.97D,DG,765.78,.9982)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.76.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               6
@@ -1733,11 +1793,11 @@ MEV        MB         MB
  1.3440E+01 2.4400E+00 3.0000E-01
 ENDDATA             10
 ENDSUBENT           21
-SUBENT        22089078   20070125   20070320   20070301       2182
+SUBENT        22089078   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-97(N,P)41-NB-97-M,,SIG)
-DECAY-DATA (41-NB-97-M,60.SEC,DG,747.,.979)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (41-NB-97-M,60.SEC,DG,747.0,.979)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.77.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1753,14 +1813,16 @@ MEV        MB         MB
  1.3330E+01 3.7800E+00 8.8000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089079   20070125   20070320   20070301       2182
-BIB                  4          5
+SUBENT        22089079   20081020   20090209   20090209       2204
+BIB                  4          7
 REACTION   (42-MO-97(N,P)41-NB-97,,SIG)
-DECAY-DATA (41-NB-97,72.1MIN,DG,657.92,.982)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (41-NB-97-G,72.1MIN,DG,657.92,.982)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.78.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. Nb-97 was changed into Nb-97-G in
+                       DECAY-DATA .
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -1774,19 +1836,20 @@ MEV        MB         MB
  1.3580E+01 1.3060E+01 7.3000E-01
  1.3350E+01 1.1860E+01 6.7000E-01
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089080   20070125   20070320   20070301       2182
-BIB                  5          9
+ENDSUBENT           22
+SUBENT        22089080   20081020   20090209   20090209       2204
+BIB                  5         10
 REACTION   (42-MO-97(N,N+P)41-NB-96,,SIG)
 DECAY-DATA (41-NB-96,23.55HR,DG,778.22,.968)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.79.1, 11.79.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         16
 EN         DATA       ERR-T      FLAG
@@ -1808,19 +1871,20 @@ MEV        MB         MB         NO-DIM
  1.3450E+01 1.3070E+00 8.6000E-01 2.
  1.3430E+01 1.1930E+00 7.3000E-02 1.
 ENDDATA             18
-ENDSUBENT           32
-SUBENT        22089081   20070125   20070320   20070301       2182
-BIB                  5          9
+ENDSUBENT           33
+SUBENT        22089081   20081020   20090209   20090209       2204
+BIB                  5         10
 REACTION   (42-MO-98(N,P)41-NB-98-M,,SIG)
 DECAY-DATA (41-NB-98-M,51.3MIN,DG,787.36,.932)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.80.1, 11.80.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         16
 EN         DATA       ERR-T      FLAG
@@ -1842,12 +1906,12 @@ MEV        MB         MB         NO-DIM
  1.3350E+01 3.5700E+00 2.3000E-01 1.
  1.3350E+01 3.5100E+00 2.8000E-01 2.
 ENDDATA             18
-ENDSUBENT           32
-SUBENT        22089082   20070125   20070320   20070301       2182
+ENDSUBENT           33
+SUBENT        22089082   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (42-MO-98(N,N+P)41-NB-97-M,,SIG)
-DECAY-DATA (41-NB-97-M,60.SEC,DG,747.,.979)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (41-NB-97-M,60.SEC,DG,747.0,.979)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.81.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -1860,14 +1924,16 @@ MEV        MB         MB
  1.4040E+01 7.4000E-01 3.7000E-01
 ENDDATA              5
 ENDSUBENT           15
-SUBENT        22089083   20070125   20070320   20070301       2182
-BIB                  4          5
+SUBENT        22089083   20081020   20090209   20090209       2204
+BIB                  4          7
 REACTION   (42-MO-98(N,N+P)41-NB-97,,SIG)
-DECAY-DATA (41-NB-97,72.1MIN,DG,657.92,.982)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (41-NB-97-G,72.1MIN,DG,657.92,.982)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.82.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. Nb-97 was changed into Nb-97-G in
+                       DECAY-DATA .
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -1881,19 +1947,20 @@ MEV        MB         MB
  1.3620E+01 7.2000E-01 1.1000E-01
  1.3500E+01 4.9000E-01 1.1000E-01
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089084   20070125   20070320   20070301       2182
-BIB                  5          9
+ENDSUBENT           22
+SUBENT        22089084   20081020   20090209   20090209       2204
+BIB                  5         10
 REACTION   (42-MO-98(N,A)40-ZR-95,,SIG)
 DECAY-DATA (40-ZR-95,63.98D,DG,756.72,.546)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.83.1, 11.83.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4          6
 EN         DATA       ERR-T      FLAG
@@ -1905,20 +1972,21 @@ MEV        MB         MB         NO-DIM
  1.3340E+01 4.4600E+00 3.9000E-01 1.
  1.3340E+01 4.9200E+00 3.6000E-01 2.
 ENDDATA              8
-ENDSUBENT           22
-SUBENT        22089085   20070125   20070320   20070301       2182
-BIB                  5         10
+ENDSUBENT           23
+SUBENT        22089085   20081020   20090209   20090209       2204
+BIB                  5         11
 REACTION   (42-MO-100(N,2N)42-MO-99,,SIG)
 DECAY-DATA (42-MO-99,66.02HR,DG,739.4,.126)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-           (3.) 3RD INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+           (3.) 3-rd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.85.1, 11.85.2, 11.85.3 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB              10
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         29
 EN         DATA       ERR-T      FLAG
@@ -1953,20 +2021,21 @@ MEV        MB         MB         NO-DIM
  1.3550E+01 1.3500E+03 1.1000E+02 3.
  1.3330E+01 1.5400E+03 1.3000E+02 1.
 ENDDATA             31
-ENDSUBENT           46
-SUBENT        22089086   20070125   20070320   20070301       2182
-BIB                  5         10
+ENDSUBENT           47
+SUBENT        22089086   20081020   20090209   20090209       2204
+BIB                  5         11
 REACTION   (42-MO-100(N,A)40-ZR-97,,SIG)
 DECAY-DATA (40-ZR-97,16.9HR,DG,743.36,.928)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-           (3.) 3RD INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+           (3.) 3-rd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.84.1, 11.84.2, 11.84.3 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB              10
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         25
 EN         DATA       ERR-T      FLAG
@@ -1997,12 +2066,12 @@ MEV        MB         MB         NO-DIM
  1.3550E+01 2.0200E+00 2.3000E-01 3.
  1.3350E+01 2.1100E+00 1.7000E-01 2.
 ENDDATA             27
-ENDSUBENT           42
-SUBENT        22089087   20070125   20070320   20070301       2182
+ENDSUBENT           43
+SUBENT        22089087   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-112(N,2N)50-SN-111,,SIG)
-DECAY-DATA (50-SN-111,35.MIN,DG,761.2,.0066)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (50-SN-111,35.0MIN,DG,761.2,.0066)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.86.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2018,18 +2087,19 @@ MEV        MB         MB
  1.3340E+01 1.0900E+03 1.9000E+02
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089088   20070125   20070320   20070301       2182
-BIB                  5          9
+SUBENT        22089088   20081020   20090209   20090209       2204
+BIB                  5         10
 REACTION   (50-SN-114(N,2N)50-SN-113,,SIG)
 DECAY-DATA (50-SN-113,115.07D,DG,255.06,.0182)
-FLAG       (1.) 1ST INDEPENDENT SET OF MEASUREMENTS.
-           (2.) 2ND INDEPENDENT SET OF MEASUREMENTS.
-STATUS     .DATA TAKEN FROM MAIN REF.
+FLAG       (1.) 1-st independent set of measurements.
+           (2.) 2-nd independent set of measurements.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+                   Fig.11.88.1, 11.88.2 .
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. FLAG ADDED.
+           (19900828A) S.W. FLAG added.
            (19900917E)
-ENDBIB               9
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         11
 EN         DATA       ERR-T      FLAG
@@ -2046,12 +2116,12 @@ MEV        MB         MB         NO-DIM
  1.3360E+01 1.0000E+03 1.0000E+02 1.
  1.3340E+01 9.2000E+02 3.6000E+01 2.
 ENDDATA             13
-ENDSUBENT           27
-SUBENT        22089089   20070125   20070320   20070301       2182
+ENDSUBENT           28
+SUBENT        22089089   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-114(N,P)49-IN-114-M,,SIG)
 DECAY-DATA (49-IN-114-M,49.51D,DG,190.24,.156)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.87.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2066,14 +2136,15 @@ MEV        MB         MB
  1.3350E+01 2.1100E+01 5.2000E+00
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        22089090   20070125   20070320   20070301       2182
-BIB                  4          5
-REACTION   (50-SN-116(N,P)49-IN-116-M,,SIG)
-DECAY-DATA (49-IN-116-M,54.12MIN,DG,416.86,.278)
-STATUS     .DATA TAKEN FROM MAIN REF.
+SUBENT        22089090   20081020   20090209   20090209       2204
+BIB                  4          6
+REACTION   (50-SN-116(N,P)49-IN-116-M1,,SIG)
+DECAY-DATA (49-IN-116-M1,54.12MIN,DG,416.86,.278)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.89.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. In-116-M was changed into In-116-M1 .
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -2087,12 +2158,12 @@ MEV        MB         MB
  1.3570E+01 8.3000E+00 6.7000E-01
  1.3340E+01 7.2900E+00 6.2000E-01
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089091   20070125   20070320   20070301       2182
+ENDSUBENT           21
+SUBENT        22089091   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-117(N,P)49-IN-117-M,,SIG)
 DECAY-DATA (49-IN-117-M,1.93HR,DG,315.3,.169)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.90.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2110,11 +2181,11 @@ MEV        MB         MB
  1.3350E+01 2.1500E+00 3.9000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089092   20070125   20070320   20070301       2182
+SUBENT        22089092   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-117(N,P)49-IN-117-G,,SIG)
 DECAY-DATA (49-IN-117-G,42.3MIN,DG,552.9,.997)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.91.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2132,14 +2203,15 @@ MEV        MB         MB
  1.3350E+01 7.1400E+00 3.7000E-01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089093   20070125   20070320   20070301       2182
-BIB                  4          5
-REACTION   (50-SN-117(N,N+P)49-IN-116-M,,SIG)
-DECAY-DATA (49-IN-116-M,54.12MIN,DG,416.86,.278)
-STATUS     .DATA TAKEN FROM MAIN REF.
+SUBENT        22089093   20081020   20090209   20090209       2204
+BIB                  4          6
+REACTION   (50-SN-117(N,N+P)49-IN-116-M1,,SIG)
+DECAY-DATA (49-IN-116-M1,54.12MIN,DG,416.86,.278)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.92.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. In-116-M was changed into In-116-M1 .
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -2153,12 +2225,12 @@ MEV        MB         MB
  1.3580E+01 3.5300E-01 7.3000E-02
  1.3330E+01 2.9500E-01 6.8000E-02
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089094   20070125   20070320   20070301       2182
+ENDSUBENT           21
+SUBENT        22089094   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-118(N,2N)50-SN-117-M,,SIG)
 DECAY-DATA (50-SN-117-M,14.0D,DG,158.6,.864)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.93.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2176,11 +2248,11 @@ MEV        MB         MB
  1.3330E+01 7.2200E+02 4.0000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089095   20070125   20070320   20070301       2182
+SUBENT        22089095   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-120(N,A)48-CD-117-M,,SIG)
 DECAY-DATA (48-CD-117-M,3.31HR,DG,564.4,.152)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.94.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2198,20 +2270,24 @@ MEV        MB         MB
  1.3350E+01 1.2300E-01 4.5000E-02
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089096   20070125   20070320   20070301       2182
-BIB                  4          5
+SUBENT        22089096   20081020   20090209   20090209       2204
+BIB                  4          9
 REACTION   (50-SN-120(N,A)48-CD-117-G,,SIG)
-DECAY-DATA (48-CD-117-G,2.42HR,DG,273.28,.29)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (48-CD-117-G,2.42HR,DG,273.28,.290)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.95.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. One data point (misprint in Table 5)
+            was corrected in according to message of author
+            C.Konno (2008-06-18): at EN=14.69 MeV
+                   2.27E-02 -> 2.27E-01 . (See also Fig.11.75)
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
 MEV        MB         MB
  1.4970E+01 3.1900E-01 5.7000E-02
- 1.4690E+01 2.2700E-02 7.9000E-02
+ 1.4690E+01 2.2700E-01 7.9000E-02
  1.4450E+01 1.9600E-01 5.1000E-02
  1.4240E+01 1.6600E-01 4.9000E-02
  1.3990E+01 1.6800E-01 3.8000E-02
@@ -2219,12 +2295,12 @@ MEV        MB         MB
  1.3600E+01 1.1100E-01 2.5000E-02
  1.3400E+01 7.6000E-02 2.4000E-02
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089097   20070125   20070320   20070301       2182
+ENDSUBENT           24
+SUBENT        22089097   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (50-SN-124(N,2N)50-SN-123-M,,SIG)
 DECAY-DATA (50-SN-123-M,40.08MIN,DG,160.33,.855)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.96.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2242,11 +2318,11 @@ MEV        MB         MB
  1.3330E+01 5.7000E+02 3.0000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089098   20070125   20070320   20070301       2182
+SUBENT        22089098   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (56-BA-134(N,2N)56-BA-133-M,,SIG)
 DECAY-DATA (56-BA-133-M,38.9HR,DG,275.6,.175)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.97.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2264,11 +2340,11 @@ MEV        MB         MB
  1.3340E+01 6.8200E+02 4.9000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089099   20070125   20070320   20070301       2182
+SUBENT        22089099   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (56-BA-135(N,P)55-CS-135-M,,SIG)
 DECAY-DATA (55-CS-135-M,53.MIN,DG,781.,.997)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.98.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2286,11 +2362,11 @@ MEV        MB         MB
  1.3340E+01 2.4000E-01 3.2000E-02
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089100   20070125   20070320   20070301       2182
+SUBENT        22089100   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (56-BA-136(N,2N)56-BA-135-M,,SIG)
-DECAY-DATA (56-BA-135-M,28.7HR,DG,268.24,.16)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (56-BA-135-M,28.7HR,DG,268.24,.160)
+STATUS     (TABLE) Data taken from Table5 of main Ref. Fig.11.100.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2308,11 +2384,11 @@ MEV        MB         MB
  1.3330E+01 8.5100E+02 6.9000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089101   20070125   20070320   20070301       2182
+SUBENT        22089101   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (56-BA-136(N,P)55-CS-136,,SIG)
-DECAY-DATA (55-CS-136,13.D,DG,818.5,.997)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (55-CS-136,13.0D,DG,818.5,.997)
+STATUS     (TABLE) Data taken from Table 5 of main Ref. Fig.11.99.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2328,14 +2404,18 @@ MEV        MB         MB
  1.3330E+01 2.9000E+00 8.6000E-01
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        22089102   20070125   20070320   20070301       2182
-BIB                  4          5
+SUBENT        22089102   20081020   20090209   20090209       2204
+BIB                  5          9
 REACTION   (56-BA-137(N,N+P)55-CS-136,,SIG)
-DECAY-DATA (55-CS-136,13.D,DG,818.5,.997)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (55-CS-136,13.0D,DG,818.5,.997)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.
+COMMENT    Of compiler. In Fig.11.101 the data plot for reaction
+           W-186(n,a)Hf-183 (the same as Fig.11.107) is presented
+           instead of reaction Ba-137(n,np)Cs-136.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. COMMENT was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          6
 EN         DATA       ERR-T
@@ -2347,12 +2427,12 @@ MEV        MB         MB
  1.3600E+01 4.7700E-01 8.7000E-02
  1.3420E+01 3.3700E-01 8.6000E-02
 ENDDATA              8
-ENDSUBENT           18
-SUBENT        22089103   20070125   20070320   20070301       2182
+ENDSUBENT           22
+SUBENT        22089103   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (56-BA-138(N,2N)56-BA-137-M,,SIG)
 DECAY-DATA (56-BA-137-M,2.5513MIN,DG,661.65,.899)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.104.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2370,14 +2450,16 @@ MEV        MB         MB
  1.3340E+01 8.3600E+02 4.5000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089104   20070125   20070320   20070301       2182
-BIB                  4          5
+SUBENT        22089104   20081020   20090209   20090209       2204
+BIB                  4          7
 REACTION   (56-BA-138(N,P)55-CS-138,,SIG)
-DECAY-DATA (55-CS-138,32.2MIN,DG,1435.86,.75)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (55-CS-138-G,32.2MIN,DG,1435.86,.750)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.102.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. Cs-138 was changed into Cs-138-G in
+                       DECAY-DATA .
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -2391,15 +2473,17 @@ MEV        MB         MB
  1.3580E+01 1.8100E+00 1.3000E-01
  1.3350E+01 1.6300E+00 1.2000E-01
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089105   20070125   20070320   20070301       2182
-BIB                  4          5
+ENDSUBENT           22
+SUBENT        22089105   20081020   20090209   20090209       2204
+BIB                  4          7
 REACTION   (56-BA-138(N,A)54-XE-135,,SIG)
-DECAY-DATA (54-XE-135,9.104HR,DG,249.79,.9)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (54-XE-135-G,9.104HR,DG,249.79,.900)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.103.
 HISTORY    (19881024C) N.O.
            (19881216E)
-ENDBIB               5
+           (20081020A) M.M. Xe-135 was changed into Xe-135-G in
+                       DECAY-DATA .
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -2413,12 +2497,12 @@ MEV        MB         MB
  1.3570E+01 1.7100E+00 1.3000E-01
  1.3340E+01 1.6500E+00 1.1000E-01
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        22089106   20070125   20070320   20070301       2182
+ENDSUBENT           22
+SUBENT        22089106   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (73-TA-181(N,2N)73-TA-180-M,,SIG)
-DECAY-DATA (73-TA-180-M,8.HR,DG,93.,.05)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (73-TA-180-M,8.0HR,DG,93.0,.050)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.105.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2436,14 +2520,14 @@ MEV        MB         MB
  1.3330E+01 1.3680E+03 8.2000E+01
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22089107   20070125   20070320   20070301       2182
+SUBENT        22089107   20081020   20090209   20090209       2204
 BIB                  4          7
 REACTION   (74-W-184(N,P)73-TA-184,,SIG)
 DECAY-DATA (73-TA-184,8.7HR,DG,111.19,.243)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.106.
 HISTORY    (19881024C) N.O.
            (19881216E)
-           (19900828A) S.W. REACTION PRODUCT CORRECTED, NOT '-M'.
+           (19900828A) S.W. Reaction product corrected, not '-M'.
            (19900917E)
 ENDBIB               7
 NOCOMMON             0          0
@@ -2460,11 +2544,11 @@ MEV        MB         MB
  1.3360E+01 1.3140E+00 8.0000E-01
 ENDDATA             10
 ENDSUBENT           22
-SUBENT        22089108   20070125   20070320   20070301       2182
+SUBENT        22089108   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (74-W-186(N,A)72-HF-183,,SIG)
-DECAY-DATA (72-HF-183,64.MIN,DG,783.73,.65)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (72-HF-183,64.MIN,DG,783.73,.650)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.107.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2478,11 +2562,11 @@ MEV        MB         MB
  1.3330E+01 2.3700E-01 6.0000E-01
 ENDDATA              6
 ENDSUBENT           16
-SUBENT        22089109   20070125   20070320   20070301       2182
+SUBENT        22089109   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (79-AU-197(N,2N)79-AU-196-M,,SIG)
-DECAY-DATA (79-AU-196-M,9.7HR,DG,188.23,.3784)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (79-AU-196-M,9.70HR,DG,188.23,.3784)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.108.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2503,11 +2587,11 @@ MEV        MB         MB
  1.3550E+01 1.0630E+02 5.6000E+00
 ENDDATA             13
 ENDSUBENT           23
-SUBENT        22089110   20070125   20070320   20070301       2182
+SUBENT        22089110   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (79-AU-197(N,2N)79-AU-196-G,,SIG)
 DECAY-DATA (79-AU-196-G,6.183D,DG,355.65,.876)
-STATUS     .DATA TAKEN FROM MAIN REF.
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.109.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5
@@ -2528,11 +2612,11 @@ MEV        MB         MB
  1.3550E+01 1.8700E+03 9.6000E+01
 ENDDATA             13
 ENDSUBENT           23
-SUBENT        22089111   20070125   20070320   20070301       2182
+SUBENT        22089111   20081020   20090209   20090209       2204
 BIB                  4          5
 REACTION   (82-PB-204(N,2N)82-PB-203,,SIG)
-DECAY-DATA (82-PB-203,52.02HR,DG,279.18,.81)
-STATUS     .DATA TAKEN FROM MAIN REF.
+DECAY-DATA (82-PB-203,52.02HR,DG,279.18,.810)
+STATUS     (TABLE) Data taken from Table 5 of main Ref.Fig.11.110.
 HISTORY    (19881024C) N.O.
            (19881216E)
 ENDBIB               5

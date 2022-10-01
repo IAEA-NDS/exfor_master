@@ -1,54 +1,118 @@
-ENTRY            21957     860120              20050926       0000
-SUBENT        21957001     860120              20050926       0000
-BIB                 11         14
-INSTITUTE  (2JPNJAE)
-REFERENCE  (J,NST,707,20,83)
-AUTHOR     (I.TSUBONE,Y.NAKAJIMA,Y.KANDA)
-TITLE      -S-WAVE NEUTRON STRENGTH FUNCTION OF TA-181
-FACILITY   (LINAC,2JPNJAE)  ELECTRON LINEAR ACCELERATOR
-INC-SOURCE (PHOTO) WATER COOLED TANTALUM TARGET
-METHOD     (TOF  ) FLIGHT PATH LENGTHS OF 56.34 M AND 191.52 M
-DETECTOR   (SCIN ) LI-6 GLASS DETECTOR
-STATUS     .MAIN REFERENCE FROM THE TEXT
-HISTORY    (850208C) BL
-           (850423E)
-           (860120A)
-           (860411E)
-CORRECTION .NOT APPLIED
+ENTRY            21957   20081114   20090209   20090209       2204
+SUBENT        21957001   20081114   20090209   20090209       2204
+BIB                 15         63
+REFERENCE  (J,NST,20,(8),707,198308)
+AUTHOR     (I.Tsubone, Y.Nakajima, Y.Kanda)
+TITLE      -S-wave neutron strength function of Ta-181
+REL-REF    (N,,Y.Nakajima,J,ANE,7,25,1980) Exp. details.
+           (N,,G.deSaussure+,R,ORNL-TM-6286,1978) Code SIOB .
+           (R,,S.F.Mughabghab+,R,BNL-325,1,1973)  "Neutron
+            Cross Sections", BNL-325, (3rd ed.), Vol. I,
+             Resonance parameters, (1973).
+INSTITUTE  (2JPNJAE) I.Tsubone, Y.Nakajima
+           (2JPNKYU) Y.Kanda
+FACILITY   (LINAC,2JPNJAE)  Electron Linear Accelerator
+            Operated with 120 MeV electron energy, 300 pps of
+            repetition rate, 30 ns of electron burst width and
+            20-30 microA of average beam current.
+INC-SOURCE (PHOTO) Water cooled tantalum target.
+            20 cm diameter x 5 cm thick boron-loaded polyethylene
+            disk as moderator.30 cm thick lead shadow rings to
+            reduce gamma-flash signals in detectors.
+METHOD     (TOF)  Neutron spectra were measured by the TOF using
+           two flight path lengths of 56.34 m and 191.52 m
+           for low and high resolution measurements, respectively.
+           (TRN) Neutron resonance spectroscopy has been performed
+                by neutron transmission measurements.
+           Resonance energies and neutron widths are determined
+           for 632 levels from 100 to 3.720 eV, and average level
+           spacing and s-wave neutron strength function are
+           deduced from these values.
+DETECTOR   (SCIN) Li-6 glass detector of 11.1cm diameter, 0.635cm
+            thick - for low resolution measurements.
+           The detector located at 190 m station consisted of
+           5 sets of the 'Li glass scintillators of 11.1 cm
+           diameter, 1.25 cm thick each.
+           (GLASD) Two Li6 glass detectors for neutron intensity
+           monitoring at 45 and 100 m.
+SAMPLE     Natural Ta metallic plates. Ta-181 abundance 99.988%.
+           Two samples of thicknesses 0.00565 and 0.560atoms/barn,
+           three samples of thickness 0.0112, 0.0280, 0.0560
+           atoms/barn were used for the low and high resolution
+           measurements, respectively.
+CORRECTION For counting losses by the dead time.
+           Background subtraction.
+ANALYSIS   (SHAPE) Shape analysis of the transmission.
+            Two sets of transmission data for the low resolution
+            and three sets for the high resolution were
+            simultaneously fitted with a least squares shape
+            analysis code SIOB based on the multi-level
+            Breit-Wigner formula. Doppler and resolution
+            broadenings were taken into account.
+ASSUMED    (ASSUM,73-TA-181(N,G),,WID) Capture width was assumed
+            to be constant 55 meV for all levels, which was taken
+            from BNL-325 3rd edition.
+            The statistical spin factors were taken also from
+            BNL-325 3rd edition, if available. Otherwise g =0.5
+            was assumed.
+STATUS      Main Reference.
+HISTORY    (19850208C) BL
+           (19850423E)
+           (19860120A)
+           (19860411E)
+           (20081114A) M.M. Misprint in REFERENCE was corrected.
+            BIB and COMMON information was added.
+            Dates were corrected for 4-digits year.
+            Free text was corrected to be human-readable.
+ENDBIB              63
+COMMON               1          3
+ASSUM
+MILLI-EV
+ 55.
+ENDCOMMON            3
+ENDSUBENT           70
+SUBENT        21957002   20081114   20090209   20090209       2204
+BIB                  5         14
+REACTION   (73-TA-181(N,EL),,STF)
+ANALYSIS   S-wave neutron strength function was obtained by slope
+           of plot of SUM(g*Gn, L=0)) vs. neutron energy in Fig.2.
+STATUS     Main Reference, Text, page 709; Fig.2 .
+HISTORY    (19850208C)
+           (19850423E)
+           (19860120A)
+           (19860411E)
+           (20081114A) M.M. In REACTION SF3 was corrected
+            0 -> EL . EN-MIN,EN-MAX were changed into EN-RES-MIN,
+            EN-RES-MAX .
+ERR-ANALYS (DATA-ERR) Error was estimated from a conventional
+            statistical assumption deltaS0/S0=(2/N)1/2, where N
+            is the number of levels.
 ENDBIB              14
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        21957002     860120              20050926       0000
-BIB                  4          8
-REACTION   (73-TA-181(N,0),,STF)
-STATUS     .MAIN REFERENCE FROM THE TEXT
-HISTORY    (850208C)
-           (850423E)
-           (860120A)
-           (860411E)
-ERR-ANALYS .STATISTICAL FLUCTUATION OF RESONANCE LEVALS IS
-            INCLUDED
-ENDBIB               8
-NOCOMMON             0          0
 DATA                 5          2
-EN-MIN     EN-MAX     MOMENTUM L DATA       DATA-ERR
+EN-RES-MIN EN-RES-MAX MOMENTUM L DATA       DATA-ERR
 KEV        KEV        NO-DIM     NO-DIM     NO-DIM
- 1.0000E-01 1.7000E+00 0.0000E+00 1.6600E-04 1.3000E-05
- 1.7000E+00 3.7200E+00 0.0000E+00 1.0600E-04 9.0000E-06
+  0.100     1.700      0.0        1.6600E-04 1.3000E-05
+  1.700     3.720      0.0        1.0600E-04 9.0000E-06
 ENDDATA              4
-ENDSUBENT           17
-SUBENT        21957003     860411              20050926       0000
-BIB                  3          4
+ENDSUBENT           23
+SUBENT        21957003   20081114   20090209   20090209       2204
+BIB                  4          9
 REACTION   (73-TA-181(N,0),,D)
-STATUS     .MAIN REFERENCE FROM THE TEXT
-HISTORY    (860120C)
-           (860411E)
-ENDBIB               4
+ANALYSIS   Average level spacing was obtained by the slope of plot
+           of the cumulative level count vs. neutron energy up to
+           1.700 eV in Fig.1.
+STATUS      Main Reference Text,page 709; Fig.1.
+HISTORY    (19860120C)
+           (19860411E)
+           (20081114A) EN-MIN,EN-MAX were changed into EN-RES-MIN,
+            EN-RES-MAX
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          1
-EN-MIN     EN-MAX     MOMENTUM L DATA
+EN-RES-MIN EN-RES-MAX MOMENTUM L DATA
 KEV        KEV        NO-DIM     EV
- 1.0000E-01 1.7000E+00 0.0000E+00 4.7700E+00
+ 0.100      1.700      0.0        4.77
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           17
 ENDENTRY             3
