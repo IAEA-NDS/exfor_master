@@ -1,0 +1,123 @@
+ENTRY            10207   20010305   20010426
+SUBENT        10207001   20010305   20010426
+BIB                 11         22
+INSTITUTE  (1USAORL)
+REFERENCE  (J,NSE,12,359,1962)
+           (J,NSE,44,266,197105)
+AUTHOR     (R.GWIN,D.W.MAGNUSON)
+TITLE      DETERMINATION OF ETA BY COMPARISON OF (ETA * SIGMA)AVG.
+            FOR U-233 AND PU-239 WITH (ETA * SIGMA)AVG. FOR U-235
+            IN A FLUX TRAP CRITICAL ASSEMBLY.
+SAMPLE     SAMPLES DISSOLVED IN H2O.
+INC-SOURCE (THCOL) Thermalized spectrum at ORNL critical facility,
+            annualr homogeneous 235U-H2O reactior.
+METHOD     (REAC) Reactivity coefficient measurement.
+CORRECTION Corrected for epithermal neutron effects, assuming
+            incident spectrum to be Maxwellian plus 1/E.
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+STATUS     (APRVD) Approved by author
+           Data taken from recalculation by Magnuson, see
+            Nuc.Sci.Eng. 44, 266 (1971).
+HISTORY    (19711203C)
+           (19750905U) BIB changes
+           (19821012A) Converted to REACTION formalism
+           (20010305A) Updated to new date formats, lower case.
+                       Out-of-date subentries 2-8 deleted.
+ENDBIB              22
+COMMON               1          3
+EN-DUMMY
+EV
+ 0.0253
+ENDCOMMON            3
+ENDSUBENT           29
+NOSUBENT      10207002   20010305   20010426
+NOSUBENT      10207003   20010305   20010426
+NOSUBENT      10207004   20010305   20010426
+NOSUBENT      10207005   20010305   20010426
+NOSUBENT      10207006   20010305   20010426
+NOSUBENT      10207007   20010305   20010426
+NOSUBENT      10207008   20010305   20010426
+SUBENT        10207009   20010305   20010426
+BIB                  1          4
+REACTION   (((92-U-233(N,ABS),,ETA,,MXW)*
+           (92-U-233(N,ABS),,SIG,,MXW))/
+           ((92-U-235(N,ABS),,ETA,,MXW)*
+           (92-U-235(N,ABS),,SIG,,MXW)))
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.953      0.014
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        10207010   20010305   20010426
+BIB                  1          4
+REACTION   (((94-PU-239(N,ABS),,ETA,,MXW)*
+           (94-PU-239(N,ABS),,SIG,,MXW))/
+           ((92-U-235(N,ABS),,ETA,,MXW)*
+           (92-U-235(N,ABS),,SIG,,MXW)))
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 1.631      0.023
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        10207011   20010305   20010426
+BIB                  5          9
+REACTION  1((92-U-233(N,ABS),,ETA,,MXW)/
+           (92-U-235(N,ABS),,ETA,,MXW))
+          2(92-U-233(N,ABS),,ETA,,MXW)
+ANALYSIS   Calculated from (eta * sigma(abs)), assuming
+            absorption = 575.6 b for 233U, 679.5 b for 235U,
+            Westcott g-factor = 0.9962 for 233U, 0.9778 for 235U.
+MONITOR   2(92-U-235(N,ABS),,ETA,,MXW)
+STATUS     (DEP,10207009)
+HISTORY    (19821013A) SUBENTRIES 11,13 combined
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+DATA      1DATA      2MONIT
+NO-DIM     NO-DIM     NO-DIM
+ 1.104      2.292      2.076
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        10207012   20010305   20010426
+BIB                  5          9
+REACTION  1((94-PU-239(N,ABS),,ETA,,MXW)/
+           (92-U-235(N,ABS),,ETA,,MXW))
+          2(94-PU-239(N,ABS),,ETA,,MXW)
+ANALYSIS   Calculated from (eta * sigma(abs)), assuming
+            absorption = 1012.0 b for 239Pu, 679.5 b for 235U,
+            Westcott g-factor = 1.0809 for 239Pu, 0.9778 for 235U.
+MONITOR   2(92-U-235(N,ABS),,ETA,,MXW)
+STATUS     (DEP,10207009)
+HISTORY    (19821013A) SUBENTRIES 12,14 combined
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+DATA      1DATA      2MONIT     1
+NO-DIM     NO-DIM     NO-DIM
+ 0.9908    2.056      2.076
+ENDDATA              3
+ENDSUBENT           17
+NOSUBENT      10207013     821012
+NOSUBENT      10207014     821012
+SUBENT        10207015   20010305   20010426
+BIB                  4          5
+REACTION   (94-PU-239(N,ABS),,ETA)
+ANALYSIS   Calculated from Maxwellian cross section using
+            spectral correction factor = 0.9764.
+MONITOR    (92-U-235(N,ABS),,ETA) Assumed 235U eta = 2.076
+STATUS     (DEP,10207012)
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 1          1
+DATA
+NO-DIM
+ 2.106
+ENDDATA              3
+ENDSUBENT           13
+ENDENTRY            15
