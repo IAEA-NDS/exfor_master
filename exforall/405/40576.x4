@@ -1,50 +1,78 @@
-ENTRY            40576   20020822   20030327
-SUBENT        40576001   20020822   20030327
-BIB                 10         14
+ENTRY            40576   20050922   20051111                  4135
+SUBENT        40576001   20050922   20051111                  4135
+BIB                  9         17
 INSTITUTE  (4RUSRI )
 REFERENCE  (J,AE,54,(2),108,198302)
 AUTHOR     (E.A.GROMOVA,S.S.KOVALENKO,JU.A.NEMILOV,B.I.TARLER,
-           L.D.PREOBRAZHENSKAJA,JU.A.SELITSKIJ,JU.N.TROFIMOV,
-           V.B.FUNSHTEJN,S.V.KHLEBNIKOV)
-TITLE      MEASUREMENT OF NP-237(N,2N) REACTION CROSS SECTION AT
-           14.8 MEV NEUTRON INCIDENT ENERGY
-FACILITY   (VDG)
-INC-SOURCE (D-T)
-SAMPLE      MASS OF NP-237 100.-200.MILLIGRAMM
-METHOD     (ACTIV) LOW VOLTAGE ACCELERATOR
-DETECTOR   (GELI) VOLUME 38.CM**3
+            L.D.PREOBRAZHENSKAJA,JU.A.SELITSKIJ,JU.N.TROFIMOV,
+            V.B.FUNSHTEJN,S.V.KHLEBNIKOV)
+TITLE      Measurement Of Np-237(N,2n) Reaction Cross Section At
+           14.8 Mev Neutron Incident Energy
+FACILITY   (ACCEL) NG-400 Low Voltage Accelerator
+INC-SOURCE (D-T) Deutron Energy 250 keV
+SAMPLE      Mass of Np-237 100.-200.milligramm,
+            Concentrative Solution Of Neptunil Nitrat In Glass
+            Ampule
+METHOD     (ACTIV)  Activation time 20 h
 HISTORY    (19840518C)
            (20020822A) DATE is corrected
-ENDBIB              14
+           (20050921A) Subents 001,002,003 were corrected,
+                       Subent 004 was added
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        40576002   20020822   20030327
-BIB                  2          2
-REACTION   (93-NP-237(N,2N)93-NP-236,,SIG)
+ENDSUBENT           20
+SUBENT        40576002   20050922   20051111                  4135
+BIB                  7         10
+REACTION   (93-NP-237(N,2N)93-NP-236-M,,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
-ENDBIB               2
-COMMON               2          3
-MONIT      MONIT-ERR
-B          B
- 1.2300E+00 2.0000E-02
+MONIT-REF  (,M.SOWERBY+,J,ANE,1,409,1974)
+ERR-ANALYS (ERR-1) statistical error of 642.kev gamma-line
+                   intensity determination
+           (ERR-2) error of gamma-line registration
+DETECTOR   (GELI) Volume 38.Cm**3 for gamma
+           (IOCH) for neutron flux
+PART-DET   (G)
+DECAY-DATA (92-U-236,,DG,642.,0.98)
+ENDBIB              10
+COMMON               4          3
+MONIT      MONIT-ERR  ERR-1      ERR-2
+B          B          PER-CENT   PER-CENT
+ 1.2300E+00 2.0000E-02 2.0        2.0
 ENDCOMMON            3
 DATA                 4          1
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        B          B
  1.4800E+01 2.0000E-01 2.3000E-01 5.0000E-02
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40576003   20020822   20030327
-BIB                  2          3
-REACTION   (94-PU-239(N,2N)94-PU-238,,SIG)
-MONITOR    (94-PU-238(0,F)2-HE-4,CUM,FY)
-           (94-PU-238(0,F)2-HE-4,CHN,FY)
-ENDBIB               3
+ENDSUBENT           22
+SUBENT        40576003   20050922   20051111                  4135
+BIB                  4          5
+REACTION   (93-NP-237(N,2N)93-NP-236-M,,SIG)
+MONITOR    (94-PU-236(0,F)2-HE-4,CUM,FY)
+           (94-PU-239(0,F)2-HE-4,CHN,FY)
+PART-DET   (A)
+DETECTOR   (SIBAR) For Alpha Spectrum
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 4          1
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        B          B
  1.4800E+01 2.0000E-01 2.7600E-01 1.4000E-02
 ENDDATA              3
-ENDSUBENT           11
-ENDENTRY             3
+ENDSUBENT           13
+SUBENT        40576004   20050922   20051111                  4135
+BIB                  2          5
+REACTION   (93-NP-237(N,2N)93-NP-236,,SIG) TOTAL (N,2N) CROSS
+                                        SECTION
+STATUS     (DEP,10408002)
+           (DEP,40576002)
+           (DEP,40576003)
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+EN-DUMMY   DATA       DATA-ERR
+MEV        B          B
+14.8       0.37       0.02
+ENDDATA              3
+ENDSUBENT           13
+ENDENTRY             4
