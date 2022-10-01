@@ -1,15 +1,27 @@
-ENTRY            22890   20070312   20070521   20070506       2184
-SUBENT        22890001   20070312   20070521   20070506       2184
-BIB                 12         31
-TITLE      .Investigation of (N,P) and (N,A) reactions on Al-26
-            and Cl-36 and their astrophysical relevance
-AUTHOR     (C.WAGEMANS, G.GOEMINNE, L.DE SMET, J.WAGEMANS)
-INSTITUTE  (2BLGGHT)
-           (2ZZZGEL)
-REFERENCE  (J,NP/A,758,80,2005)  Main reference, Al-26(N,A) data
-            are represented
-           (J,NP/A,719,127,2003) Second reference, Cl-36(N,P) data
-            are represented
+ENTRY            22890   20071206   20080131   20080123       2190
+SUBENT        22890001   20071206   20080131   20080123       2190
+BIB                 11         44
+TITLE      .Experimental determination of the 26Al(n,alpha.)23Na
+            reaction cross section and calculation of the
+            Maxwellian averaged cross section at stellar
+            temperatures
+AUTHOR     (L.De Smet, C. Wagemans, J. Wagemans, J. Heyse,
+           J. Van Gils)
+INSTITUTE  (2BLGGHT) L.De Smet, corresponding author,
+             Email=liesbeth.desmet@gmail.com; C.Wagemans, Email=
+             cyrillus.wagemans@UGent.be. Department of Subatomic
+             and Radiation Physics, University of Gent,
+             Proeftuinstraat 86, Gent, Belgium
+           (2BLGMOL) J.Wagemans. SCK.CEN, Boeretang 200, Mol,
+             Belgium
+           (2ZZZGEL) J. Heyse, Van Gils. Institute for Reference
+             Materials and Measurements, EC-JRC, Retieseweg 111,
+             Geel, Belgium. Experimental site
+REFERENCE  (J,PR/C,76,045804,200709) Main reference, res. param.
+              and Maxwell averaged cross section
+           (J,NP/A,758,80,2005)  Preliminary result, Al-26(N,A)
+              data are given on graph
+           (J,PR/C,75,034617,2007) L.DE SMET, Experimental details
 FACILITY   (LINAC,2ZZZGEL) Pulsed Geel linear accelerator - GELINA
 INC-SOURCE (PHOTO)  High energy electrons hit a mercury cooled
             rotating uranium target and in this way generate
@@ -18,7 +30,7 @@ INC-SOURCE (PHOTO)  High energy electrons hit a mercury cooled
             the neutrons in water filled Be-containers results in
             a broad neutron spectrum.
 DETECTOR   (IOCH) The alpha-particles and protons were detected
-            using a frisch-gridded ionisation chamber filled with
+            using a Frisch-gridded ionisation chamber filled with
             very pure C-H4  gas.
 METHOD     (TOF)
 ADD-RES    (COMP).The R-matrix code SAMMY.
@@ -29,12 +41,13 @@ MONITOR    (5-B-10(N,A)3-LI-7,,SIG) The neutron flux is determined
             based on the well-known reaction and black resonance
             filters are used to determine the energy dependent
             background.
-ERR-ANALYS .Errors not specified by authors.
 HISTORY    (20051030C)  + + Compiled by S.M.
            (20070312U) Data in SAN 002 superseded  - S.M.
-ENDBIB              31
+                       SUBENT 22890003 added
+           (20071206A) New data added from main reference
+ENDBIB              44
 NOCOMMON             0          0
-ENDSUBENT           34
+ENDSUBENT           47
 SUBENT        22890002   20070312   20070521   20070506       2184
 BIB                  4         11
 REACTION   (13-AL-26(N,A)11-NA-23,,SIG) Fig 1 of main reference.
@@ -1057,4 +1070,316 @@ EV         B          B
   120448.10    0.00474    0.00642
 ENDDATA            803
 ENDSUBENT          848
-ENDENTRY             3
+SUBENT        22890004   20071206   20080131   20080123       2190
+BIB                  3         11
+REACTION  1(13-AL-26(N,0),,EN)       Resonance energy
+          2(13-AL-26(N,A),,ARE,,VGT) Resonance area
+          3(13-AL-26(N,A),,WID,,VGT) Total width
+          4(13-AL-26(N,A),,WID/STR,,VGT) Total strength function=
+            = Kres**2*AREA/(2*PI**2), (Kres(in 1/barn))**2 =
+              4.826E-6*(Eres(in eV))
+          5(13-AL-26(N,A),1,WID/STR,,VGT) Strength function
+                         for  alpha-0 level
+ANALYSIS   (MLA)    Multi-level analysis from Voigt fit method
+STATUS     (TABLE)  Table II of main reference
+           (DEP,22890003)
+ENDBIB              11
+NOCOMMON             0          0
+DATA                10          6
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
+DATA      4DATA-ERR  4DATA      5DATA-ERR  5
+EV         EV         B*EV       B*EV       EV         EV
+EV         EV         EV         EV
+   5870.       30.      2950.       250.          160.        25.
+       4.23       0.36      3.68        0.34
+  21980.      100.       340.        50.          400.       100.
+       1.83       0.27      1.83        0.27
+  34950.      200.       700.       100.          400.       200.
+       5.98       0.86
+  41300.      200.      2000.       200.
+      20.19       2.02     11.10        1.50
+  85200.      800.
+
+ 108500.     1100.
+
+ENDDATA             16
+ENDSUBENT           32
+SUBENT        22890005   20071206   20080131   20080123       2190
+BIB                  5         10
+REACTION   (13-AL-26(N,A)11-NA-23,,SIG,,MXW) Maxwellian average
+              of the cross section
+ANALYSIS   .Data obtained by integration over the whole energy
+            range. Cross sections for high energy was determined
+            with uncertainty
+INC-SPECT  .Neutron spectrum supposed to be Maxwellian
+ERR-ANALYS (EN-ERR-DIG) Energy digitizing error. EN == KT
+           (ERR-DIG)    Data digitizing error
+           (DATA-ERR)   Error from the graphic bars
+STATUS     (CURVE)    Fig. 8 of main reference
+ENDBIB              10
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+KEV        PER-CENT
+ 4.0004E-02 3.3123E-03
+ENDCOMMON            3
+DATA                 3        255
+KT         DATA       DATA-ERR
+KEV        MB         MB
+    0.63962     10.204
+    0.63992     10.627
+    0.64022     11.067
+    0.64052     11.525
+    0.64082     12.002
+    0.64112     12.499
+    0.64142     13.017
+    0.64172     13.556
+    0.72291     14.117
+    0.72321     14.702
+    0.72351      15.31
+    0.72382     15.944
+    0.72412     16.605
+    0.72442     17.292
+    0.72472     18.008
+    0.72502     18.754
+    0.72532     19.531
+    0.72562     20.339
+    0.72592     21.181
+    0.80704     21.836
+    0.80734      22.74
+    0.80764     23.682
+    0.80794     24.662
+    0.80824     25.683
+    0.80854     26.747
+    0.80884     27.854
+    0.80914     29.008
+    0.80944     30.209
+    0.80974     31.460
+    0.81005     32.763
+    0.89123     34.119
+    0.89153     35.532
+    0.89184     37.003
+    0.89214     38.535
+    0.89244     40.131
+    0.89274     41.793
+    0.89304     43.523
+    0.89334     45.326
+    0.97453     47.202
+    0.97483     49.157
+    0.97513     51.192
+    0.97543     53.312
+    0.97573     55.520
+    0.97603     57.818
+    0.97634     60.213
+    0.97664     62.706
+     1.0578     65.302
+     1.0581     68.006
+     1.0584     70.822
+     1.0587     73.755
+     1.0590     76.809
+     1.0593     79.989
+     1.1405     83.301
+     1.1408     86.750
+     1.1411     90.342
+     1.1414     94.083
+     1.1417     97.979
+     1.2229     102.04
+     1.2232     106.26
+     1.2235     110.66
+     1.2238     115.24
+     1.2242     121.24
+     1.2245     126.26
+     1.3057     131.49
+      1.306     136.93
+     1.3872      142.6
+     1.3875      148.5
+     1.3878     154.65
+      1.469     161.06
+     1.4693     167.72
+     1.4696     174.67
+     1.5507     180.07
+      1.551     187.52
+     1.6322     195.28
+     1.6325     203.37
+     1.7137     211.79
+      1.714     220.56
+     1.7951     229.69
+     1.8763      239.2
+     1.9575      249.1
+     2.0387     259.42
+     2.1199     270.15
+     2.2819      278.5
+     2.4439      287.1
+     2.6059     295.96
+     2.8486     295.95     31.247
+     3.0912     295.95
+     3.3337     289.99
+     3.5763     287.06
+     3.7379     281.29
+     3.8996     275.63
+      4.142     267.37
+     4.3035     259.35
+      4.546     251.57
+     4.7884     244.02
+       4.95      236.7
+     5.1924      229.6
+     5.4348     220.46
+     5.6772     213.85
+     5.9196     207.44
+     6.0812     201.21
+     6.3236     195.18
+     6.5661     189.32
+     6.8085     183.64
+     7.0509     178.13
+     7.2934     174.55
+     7.5359     169.31
+     7.7783     164.24
+     8.0208     160.93
+     8.2633      156.1
+     8.5058     152.97
+     8.7483     149.89
+     8.9908     146.87
+     9.1524     143.92
+     9.3949     141.03
+     9.6375      139.6
+     9.7991     136.79
+     10.042     134.04     7.9148
+     10.284     132.69
+     10.527     130.02
+     10.769      127.4
+     11.012     124.84
+     11.254     123.58
+     11.578     121.09
+     11.901     118.66
+     12.225     116.27
+     12.548     115.09
+     12.791     112.78
+     13.114     110.51
+     13.437     108.28
+     13.761     107.19
+     14.003     105.03
+     14.327     103.97
+      14.65     102.91
+     14.974     100.84
+     15.297     98.815
+     15.621     97.814
+     15.944     96.823
+     16.187     94.876
+      16.51     92.967
+     16.833     92.025
+     17.157     91.093
+      17.48      89.26
+     17.804     88.356
+     18.127     87.461
+      18.37     85.702
+     18.693     84.834
+     19.017     83.975
+     19.259     82.286
+     19.583     81.452
+     19.825     80.628
+     19.987     79.813      13.32
+      20.23     79.005
+     20.553     78.205
+     20.796     77.413
+     21.119     76.629
+     21.443     75.853
+     21.766     75.085
+     22.009     73.575
+     22.332     72.829
+     22.655     71.364
+     22.979     71.361
+     23.302     69.926
+     23.626     69.217
+     23.868     67.825
+     24.192     67.823
+     24.515     66.458
+     24.839     65.785
+     25.162     65.119
+     25.486     63.808
+     25.728     63.163
+     26.052     62.523
+     26.375     61.889
+     26.699     61.263
+     26.941     60.031
+     27.265     60.028
+     27.507     58.821
+     27.831     58.225
+     28.154     57.635
+     28.478     57.052
+     28.801     56.474
+     29.125     55.902
+     29.367     54.777
+      29.61     54.776
+     29.852     54.222
+     30.014     54.221     16.204
+     30.257      53.13
+     30.499     52.592
+     30.742      52.06
+     31.065     52.058
+     31.308     51.531
+     31.551      51.01
+     31.874     50.493
+     32.197     49.477
+     32.521     48.976
+     32.844      48.48
+     33.087     47.989
+      33.33     47.504
+     33.653     47.022
+     33.976     46.546
+       34.3     46.075
+     34.623     45.608
+     34.947     45.146
+     35.189     44.689
+     35.513     44.236
+     35.756     43.789
+     35.998     43.346
+     36.322     42.906
+     36.564     42.472
+     36.888     42.471
+      37.13     41.617
+     37.454     41.195
+     37.777     41.193
+      38.02     40.777
+     38.262     40.364
+     38.586     39.955
+     38.828     39.551
+     39.152      39.15
+     39.475     38.753
+     39.799     38.361     14.547
+     40.041     37.973
+     40.284     37.588
+     40.608     37.208
+      40.85     36.831
+     41.093      36.83
+     41.335     36.457
+     41.578     36.088
+     41.901     35.723
+     42.144     35.361
+     42.468      35.36
+      42.71     35.002
+     42.953     34.648
+     43.276     34.297
+     43.519      33.95
+     43.761     33.949
+     44.085     33.605
+     44.328     33.265
+     44.651     32.928
+     44.974     32.594      13.36
+     45.298     32.264
+     45.621     31.937
+     45.945     31.614
+     46.268     31.294
+     46.592     30.977
+     46.915     30.663
+     47.239     30.352
+     47.562     30.351
+     47.886      29.74
+     48.209     29.739
+     48.452     29.438
+     48.775      29.14
+     49.099     28.845
+     49.422     28.553
+     49.665     28.264
+     49.908     28.263
+ENDDATA            257
+ENDSUBENT          276
+ENDENTRY             5

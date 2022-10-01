@@ -1,6 +1,6 @@
-ENTRY            23010   20071203   20071206   20071203       2189
-SUBENT        23010001   20071203   20071206   20071203       2189
-BIB                 15         28
+ENTRY            23010   20071225   20080131   20080123       2190
+SUBENT        23010001   20071225   20080131   20080123       2190
+BIB                 14         27
 TITLE      Measurement of gamma-ray production cross sections of
            iron for incident neutron energies between 6 and 33
            MeV
@@ -9,8 +9,6 @@ INSTITUTE  (2JPNKTO) Department of Nuclear Engineering
            (2JPNTOH) Cyclotron and Radioisotope Center
 REFERENCE  (J,NST,31,(11),1133,199411)
 PART-DET   (G)
-EN-SEC     ANG is polar angle between beam and prompt gamma in
-           laboratory system
 INC-SOURCE Beam intensity is about 0.05 micro-Ampere.
            (P-BE) Be(p,n) at 35 MeV
 SAMPLE     - Chemical-form of target is element.
@@ -21,27 +19,36 @@ FACILITY   (ISOCY,2JPNTOH) AVF cyclotron at Cyclotron and
                            Radioisotope Center
 ANALYSIS   (UNFLD) To unfold pulse-height data to gamma-ray
                    spectrum
-DETECTOR   (SCIN) ToF detector (NE213)
+DETECTOR   (SCIN) TOF detector (NE213)
            (BGO) To detect gamma-rays produced in sample
 ERR-ANALYS (ERR-1) Errors in detector efficiency of NE-213
            (ERR-2) Maximum uncertainties in response function of
                    gamma-detector (1-3%)
-           (DATA-ERR) No information on source of uncertainties
-STATUS     (TABLE) Taken from Table 1, p1138 of reference
+STATUS     (APRVD) Proofread by Takashi Nakamura (2007.11.22)
 HISTORY    (20071018C)
-ENDBIB              28
-COMMON               3          3
-ANG        ERR-1      ERR-2
-ADEG       PER-CENT   PER-CENT
- 144.       10.        3.
+           (20071225A) DAX data added after comment from
+                       T.Nakamura
+ENDBIB              27
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+ 10.        3.
 ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        23010002   20071203   20071206   20071203       2189
-BIB                  2          2
-REACTION   (26-FE-0(N,X)0-G-0,,DA/DE)
-EN-SEC     (E,G)
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           34
+SUBENT        23010002   20071225   20080131   20080123       2190
+BIB                  4          6
+REACTION   (26-FE-0(N,X)0-G-0,,DA/DE,,AV)Averaged over ENmin-ENmax
+EN-SEC     ANG is polar angle between beam and prompt gamma in
+           laboratory system
+           (E,G)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties
+STATUS     (TABLE) Taken from Table 1, p1138 of reference
+ENDBIB               6
+COMMON               1          3
+ANG
+ADEG
+ 144.
+ENDCOMMON            3
 DATA                 5        167
 EN-MIN     EN-MAX     E          DATA       DATA-ERR
 MEV        MEV        MEV        MB/SR/MEV  MB/SR/MEV
@@ -213,5 +220,37 @@ MEV        MEV        MEV        MB/SR/MEV  MB/SR/MEV
  30.        33.        8.75       0.66       0.33
  30.        33.        9.25       0.96       0.34
 ENDDATA            169
-ENDSUBENT          176
-ENDENTRY             2
+ENDSUBENT          184
+SUBENT        23010003   20071225   20080131   20080123       2190
+BIB                  4         10
+REACTION   (26-FE-0(N,X)0-G-0,PAR,DA,,AV,DERIV) Averaged over
+             energy interval given in the DATA section
+EN-SEC     ANG is polar angle between beam and prompt gamma in
+           laboratory system
+           (E,G)
+ERR-ANALYS (DATA-ERR)     Error bars on Fig.9
+STATUS     (DEP,23010002) Derived from Table.1, p1139 of
+                          reference (data points)
+           (CURVE) Scanned from Fig.9, p1141 of reference (error
+                   bars)
+ENDBIB              10
+COMMON               2          3
+E-MIN      ANG
+MEV        ADEG
+ 1.5        144.
+ENDCOMMON            3
+DATA                 4          9
+EN-MIN     EN-MAX     DATA       DATA-ERR
+MEV        MEV        B/SR       B/SR
+  6.         9.        0.151      0.027
+  9.        12.        0.187      0.035
+ 12.        15.        0.152      0.028
+ 15.        18.        0.087      0.017
+ 18.        21.        0.064      0.012
+ 21.        24.        0.073      0.014
+ 24.        27.        0.089      0.017
+ 27.        30.        0.087      0.018
+ 30.        33.        0.059      0.016
+ENDDATA             11
+ENDSUBENT           30
+ENDENTRY             3
