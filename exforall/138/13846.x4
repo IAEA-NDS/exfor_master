@@ -1,6 +1,6 @@
-ENTRY            13846   20031223   20040406   20050926       0000
-SUBENT        13846001   20031223   20040406   20050926       0000
-BIB                 15         35
+ENTRY            13846   20080626   20080909   20080909       1349
+SUBENT        13846001   20080626   20080909   20080909       1349
+BIB                 15         36
 INSTITUTE  (1USAORL,1USATEN,1USANIS,1USALAS)
 REFERENCE  (J,PR/C,65,045801,200204)
 AUTHOR     (J.C.Blackmon,S.Raman,J.K.Dickens,R.M.Lindstrom,
@@ -19,11 +19,11 @@ DETECTOR   (GE-IN) High purity germanium detector surrounded by
             bismuth germanate (BGO) Compton-suppression detector.
             Detector surrounded by 10-cm-thick layer of lead and
             6Li-loaded plastic.
-MONITOR    (6-C-12(N,G)6-C-13,,SIG)
-            Detector calibrated using gamma yield from 152Eu
+MONITOR    Detector calibrated using gamma yield from 152Eu
             source and from 35Cl(n,gamma)36Cl reaction.
-ANALYSIS   Determined by assuming that ratio to C for cold
-            neutrons is the same at thermal energies.
+ANALYSIS   Determined by assuming that ratio of 208Pb(n,gamma) to
+            12C(n,gamma) for cold neutrons is the same at thermal
+            energies.
 CORRECTION Corrected for background.
 ERR-ANALYS (DATA-ERR) One standard deviation uncertainties,
             include uncertainites in:
@@ -36,19 +36,24 @@ STATUS     (APRVD) Approved by J. Blackmon, 21 November 2002.
 HISTORY    (20021119C)
            (20030828A) Spectrum energy updated.
            (20031223A) BIB update; energy update.
-ENDBIB              35
+           (20080626A) BIB update.
+ENDBIB              36
 COMMON               1          3
 EN-DUMMY
 EV
   0.0253
 ENDCOMMON            3
-ENDSUBENT           42
-SUBENT        13846002   20031223   20040406   20050926       0000
-BIB                  2          3
+ENDSUBENT           43
+SUBENT        13846002   20080626   20080909   20080909       1349
+BIB                  3          7
 REACTION   (82-PB-208(N,G)82-PB-209,PAR,SIG,,MXW,DERIV)
-METHOD     Composite sample of radiogenic lead and reactor-grade
-            graphite monitor.
-ENDBIB               3
+SAMPLE     Composite sample of radiogenic lead (72.3% 208Pb) and
+            reactor-grade graphite monitor.
+MONITOR    ((MONIT1)6-C-12(N,G)6-C-13,PAR,SIG)
+           ((MONIT2)6-C-12(N,G)6-C-13,PAR,SIG)
+            Weighted average of measurement relative to each C
+            gamma.
+ENDBIB               7
 COMMON               6          3
 E-NRM1     MONIT1     MONIT1-ERR E-NRM2     MONIT2     MONIT2-ERR
 KEV        MB         MB         KEV        MB         MB
@@ -65,17 +70,19 @@ KEV        KEV        MICRO-B    MICRO-B
 1788.3        0.4       54.        11.
 1905.7        0.4       78.        13.
 ENDDATA              9
-ENDSUBENT           21
-SUBENT        13846003   20031223   20040406   20050926       0000
-BIB                  2          3
+ENDSUBENT           25
+SUBENT        13846003   20080626   20080909   20080909       1349
+BIB                  4          5
 REACTION   (82-PB-208(N,G)82-PB-209,PAR,SIG,,MXW,DERIV)
-METHOD     Data taken for separate samples of radiogenic lead
-            and reactor-grade graphite monitor.
-ENDBIB               3
+SAMPLE     Radiogenic lead (72.3% 208Pb).
+MONITOR    (82-PB-208(N,G)82-PB-209,PAR,SIG,,MXW)
+            Normalized to data for composite sample.
+HISTORY    (20080626A) Normalization corrected.
+ENDBIB               5
 COMMON               3          3
 E-NRM      MONIT      MONIT-ERR
 KEV        MB         MB
-1262.        1.09       0.02
+1567.1     230.        12.
 ENDCOMMON            3
 DATA                 4          5
 E          E-ERR      DATA       DATA-ERR
@@ -86,52 +93,51 @@ KEV        KEV        MICRO-B    MICRO-B
 1788.3        0.4       42.        15.
 1905.7        0.4       79.        14.
 ENDDATA              7
-ENDSUBENT           19
-SUBENT        13846004   20031223   20040406   20050926       0000
-BIB                  2          3
+ENDSUBENT           21
+SUBENT        13846004   20080626   20080909   20080909       1349
+BIB                  4          6
 REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW,DERIV)
-METHOD     Composite sample of radiogenic lead and reactor-grade
-            graphite monitor.
-ENDBIB               3
-COMMON               6          3
-E-NRM1     MONIT1     MONIT1-ERR E-NRM2     MONIT2     MONIT2-ERR
-KEV        MB         MB         KEV        MB         MB
-1262.        1.09       0.02     3684.        1.08       0.02
-ENDCOMMON            3
+SAMPLE     Composite sample of radiogenic lead (72.3% 208Pb) and
+            reactor-grade graphite monitor.
+MONITOR    (6-C-12(N,G)6-C-13,,SIG)
+METHOD     Measured intensity of 1567-keV gamma, which represents
+            100% of captures.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MICRO-B    MICRO-B
  230.        12.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        13846005   20031223   20040406   20050926       0000
-BIB                  2          3
-REACTION   (82-PB-207(N,G)82-PB-208,,SIG,,MXW,DERIV)
-METHOD     Composite sample of radiogenic lead and reactor-grade
-            graphite monitor.
-ENDBIB               3
-COMMON               6          3
-E-NRM1     MONIT1     MONIT1-ERR E-NRM2     MONIT2     MONIT2-ERR
-KEV        MB         MB         KEV        MB         MB
-1262.        1.09       0.02     3684.        1.08       0.02
-ENDCOMMON            3
+ENDSUBENT           14
+SUBENT        13846005   20080626   20080909   20080909       1349
+BIB                  5          7
+REACTION   (82-PB-206(N,G)82-PB-207,,SIG,,MXW,DERIV)
+SAMPLE     Composite sample of radiogenic lead (72.3% 208Pb) and
+            reactor-grade graphite monitor.
+MONITOR    (6-C-12(N,G)6-C-13,,SIG)
+METHOD     Measured intensity of 6739-keV gamma, which represents
+            >99% of captures.
+HISTORY    (20080626A) Reaction corrected.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
   26.6        1.2
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        13846006   20031223   20040406   20050926       0000
-BIB                  2          3
-REACTION   (82-PB-206(N,G)82-PB-207,,SIG,,MXW,DERIV)
-METHOD     Composite sample of radiogenic lead and reactor-grade
-            graphite monitor.
-ENDBIB               3
-COMMON               6          3
-E-NRM1     MONIT1     MONIT1-ERR E-NRM2     MONIT2     MONIT2-ERR
-KEV        MB         MB         KEV        MB         MB
-1262.        1.09       0.02     3684.        1.08       0.02
-ENDCOMMON            3
+SUBENT        13846006   20080626   20080909   20080909       1349
+BIB                  5          7
+REACTION   (82-PB-207(N,G)82-PB-208,,SIG,,MXW,DERIV)
+SAMPLE     Composite sample of radiogenic lead (72.3% 208Pb) and
+            reactor-grade graphite monitor.
+MONITOR    (6-C-12(N,G)6-C-13,,SIG)
+METHOD     Measured intensity of 7368-keV gamma, which represents
+            >99% of captures.
+HISTORY    (20080626A) Reaction corrected.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB

@@ -1,6 +1,6 @@
-ENTRY            22890   20071206   20080131   20080123       2190
-SUBENT        22890001   20071206   20080131   20080123       2190
-BIB                 11         44
+ENTRY            22890   20080502   20080828   20080828       2199
+SUBENT        22890001   20080502   20080828   20080828       2199
+BIB                 11         45
 TITLE      .Experimental determination of the 26Al(n,alpha.)23Na
             reaction cross section and calculation of the
             Maxwellian averaged cross section at stellar
@@ -45,9 +45,10 @@ HISTORY    (20051030C)  + + Compiled by S.M.
            (20070312U) Data in SAN 002 superseded  - S.M.
                        SUBENT 22890003 added
            (20071206A) New data added from main reference
-ENDBIB              44
+           (20080502A) REACTION codes in SAN 004 corrected - SM
+ENDBIB              45
 NOCOMMON             0          0
-ENDSUBENT           47
+ENDSUBENT           48
 SUBENT        22890002   20070312   20070521   20070506       2184
 BIB                  4         11
 REACTION   (13-AL-26(N,A)11-NA-23,,SIG) Fig 1 of main reference.
@@ -1070,21 +1071,34 @@ EV         B          B
   120448.10    0.00474    0.00642
 ENDDATA            803
 ENDSUBENT          848
-SUBENT        22890004   20071206   20080131   20080123       2190
-BIB                  3         11
+SUBENT        22890004   20080502   20080828   20080828       2199
+BIB                  5         20
 REACTION  1(13-AL-26(N,0),,EN)       Resonance energy
-          2(13-AL-26(N,A),,ARE,,VGT) Resonance area
-          3(13-AL-26(N,A),,WID,,VGT) Total width
-          4(13-AL-26(N,A),,WID/STR,,VGT) Total strength function=
+          2(13-AL-26(N,A),,ARE)      Resonance area
+          3(13-AL-26(N,A),,WID)      Total alpha width of reso-
+            nance obtained on the basis of Voigt convolution of
+            the Lorenz profile with Gaussian resolution function
+          4(13-AL-26(N,A),,WID/STR)      Total strength function=
             = Kres**2*AREA/(2*PI**2), (Kres(in 1/barn))**2 =
-              4.826E-6*(Eres(in eV))
-          5(13-AL-26(N,A),1,WID/STR,,VGT) Strength function
-                         for  alpha-0 level
-ANALYSIS   (MLA)    Multi-level analysis from Voigt fit method
+              4.826E-6*(E-res(in eV))
+          5(13-AL-26(N,A),PAR,WID/STR)      Strength function
+                                           for  alpha-0 level
+EN-SEC     (LVL-NUMB,13-AL-27)
+ANALYSIS   (SLA,SHAPE,AREA) Single level analysis in connection
+              with shape ans area analysis. Resonance area, alpha
+              widths and strength functions were obtained on the
+              basis of Voigt convolution of the Lorenz profile
+              with Gaussian detector resolution function
 STATUS     (TABLE)  Table II of main reference
            (DEP,22890003)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20080502A) VGT code in SF8 deleted. SF5 for pointer
+              5 changed from "1" to "PAR" -
+ENDBIB              20
+COMMON               1          3
+LVL-NUMB  5
+NO-DIM
+    0.
+ENDCOMMON            3
 DATA                10          6
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
 DATA      4DATA-ERR  4DATA      5DATA-ERR  5
@@ -1103,7 +1117,7 @@ EV         EV         EV         EV
  108500.     1100.
 
 ENDDATA             16
-ENDSUBENT           32
+ENDSUBENT           45
 SUBENT        22890005   20071206   20080131   20080123       2190
 BIB                  5         10
 REACTION   (13-AL-26(N,A)11-NA-23,,SIG,,MXW) Maxwellian average

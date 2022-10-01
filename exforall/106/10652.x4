@@ -1,50 +1,62 @@
-ENTRY            10652     810514              20050926       0000
-SUBENT        10652001     810514              20050926       0000
-BIB                 11         28
+ENTRY            10652   20080818   20080909   20080909       1349
+SUBENT        10652001   20080818   20080909   20080909       1349
+BIB                 13         36
 INSTITUTE  (1USALRL)
-REFERENCE  (J,NSE,77,444,8104)
-           (R,UCID-17324,7611)
-AUTHOR     (J.W.BEHRENS,J.C.BROWNE)
-TITLE      MEASUREMENT OF THE NEUTRON-INDUCED FISSION CROSS
-           SECTIONS OF AM-241 AND AM-243 RELATIVE TO U-235 FROM
-           0.2 TO 30 MEV
-FACILITY   (LINAC) LAWRENCE LIVERMORE 100-MEV LINEAR ACCELERATOR
-METHOD     (TOF) TIME OF FLIGHT WITH 15.7-METER FLIGHT PATH.
-            PHOTOFISSION INDUCED BY GAMMA FLASH USED AS MAIN
-            TIMING REFERENCE. THRESHOLD CROSS SECTION METHOD USED
-            WHICH ANALYZES SPECTRA FROM THREE FISSION CHAMBERS-
-            AM SAMPLE, U-235 TARGET, AND A MIXTURE OF BOTH.
-DETECTOR   (FISCH) LOW MASS, PARALLEL PLATE IONIZATION CHAMBER
-            WITH FOILS PERPENDICULAR TO BEAM.
-CORRECTION CORRECTIONS MADE FOR TIME-INDEPENDENT BACKGROUNDS,
-            SAMPLE IMPURITIES, AND TIMING ERRORS OF AM FISSION
-            CHAMBER RELATIVE TO THE U-235 FISSION CHAMBER
-ERR-ANALYS (DATA-ERR1) TOTAL SYSTEMATIC ERROR
-           (DATA-ERR2) STATISTICAL ERRORS
-           (DATA-ERR3) TOTAL ERROR, ONE STANDARD DEVIATION RMS SUM
-            OF STATISTICAL ERRORS, SYSTEMATIC ERROR, AND
-            THRESHOLD-METHOD CROSS SECTION ERROR.
-           (DATA-ERR4) ERROR IN THRESHOLD CROSS SECTION METHOD.
-STATUS     (APRVD) APPROVED BY J.W.BEHRENS, 81/2/18.
-HISTORY    (770315C)
-           (801222A) REFERENCE UPDATE.
-           (810514A) REFERENCE UPDATE.
-ENDBIB              28
-COMMON               1          3
-DATA-ERR4
-PER-CENT
- 2.8
-ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        10652002     810112              20050926       0000
-BIB                  3          3
+REFERENCE  (J,NSE,77,444,198104)
+           (R,UCID-17324,197611) Preliminary 241Am data
+AUTHOR     (J.W.Behrens,J.C.Browne)
+TITLE      Measurement of the Neutron-Induced Fission Cross
+            Sections of 241Am and 243Am Relative to 235U from 0.2
+            to 30 MeV
+FACILITY   (LINAC,1USALRL) 100-MeV linear accelerator.
+INC-SOURCE (PHOTO) Photoneutrons from water-cooled tantalum target
+INC-SPECT   Typical energy resolutoons at ~3% at 1 MeV and 6% at
+             20 MeV.
+METHOD     (TOF) Time of flight with 15.7-meter flight path.
+            Photofission induced by gamma flash used as main
+            timing reference. Threshold cross section method used
+            which analyzes spectra from three fission chambers-
+            Am sample, 235U target, and a mixture of both.
+DETECTOR   (IOCH) Low mass, parallel plate ionization fission
+            chamber with foils perpendicular to beam.
+CORRECTION Corrections made for time-independent backgrounds,
+            sample impurities, and timing errors of am fission
+            chamber relative to the 235U fission chamber
+ERR-ANALYS (ERR-SYS) Total systematic uncertainty
+           (ERR-S) Statistical uncertainty
+           (ERR-T) Total uncertainty; one standard deviation RMS
+            sum of statistical errors, systematic error, and
+            threshold-method cross section error.
+           (MONIT-ERR) Normalization uncertainty.
+           Uncertainty in energy scale is 3.5 keV at 1 MeV and
+             0.31 MeV at 20 MeV.
+           See reference for a detailed discussion of errors.
+STATUS     (APRVD) Approved by J.W.Behrens, 1981/2/18.
+HISTORY    (19770315C)
+           (19801222A) REFERENCE update.
+           (19810514A) REFERENCE update.
+           (20080818A) Converted to new date formats, lower case.
+             BIB update. Error heading updated. Monitor added.
+ENDBIB              36
+NOCOMMON             0          0
+ENDSUBENT           39
+SUBENT        10652002   20080818   20080909   20080909       1349
+BIB                  4          7
 REACTION   ((95-AM-241(N,F),,SIG)/(92-U-235(N,F),,SIG))
-SAMPLE     TOTAL MASS OF 4-MILLIGRAMS, 99.19-PERCENT AM-241
-HISTORY    (801222A) DATA REPLACED.
-ENDBIB               3
-NOCOMMON                        0
+SAMPLE     4-mg americium sample, enriched to 99.19% 241Am. Areal
+            density 0.02 mg/cm2.
+           120 mg uranium sample enriched to 99.91% 235U, areal
+            density 0.26 mg/cm2.
+MONITOR    ((95-AM-241(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
+HISTORY    (19801222A) Data replaced.
+ENDBIB               7
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
+MEV        MEV        NO-DIM     PER-CENT
+ 1.75       4.00       1.648      2.8
+ENDCOMMON            3
 DATA                 5         63
-EN         DATA       DATA-ERR1  DATA-ERR2  DATA-ERR3
+EN         DATA       ERR-SYS    ERR-S      ERR-T
 MEV        NO-DIM     PER-CENT   PER-CENT   PER-CENT
   0.2189    0.019      1.0        38.4       38.5
   0.2438    0.019      1.0        31.4       31.5
@@ -110,16 +122,24 @@ MEV        NO-DIM     PER-CENT   PER-CENT   PER-CENT
  27.50      1.486      1.8         7.7        8.4
  32.16      1.225      1.8        10.3       10.4
 ENDDATA             65
-ENDSUBENT           73
-SUBENT        10652003     810112              20050926       0000
-BIB                  3          3
+ENDSUBENT           81
+SUBENT        10652003   20080818   20080909   20080909       1349
+BIB                  4          7
 REACTION   ((95-AM-243(N,F),,SIG)/(92-U-235(N,F),,SIG))
-SAMPLE     TOTAL MASS OF 15-MILLIGRAMS, 99.83-PERCENT AM-243
-HISTORY    (801222C)
-ENDBIB               3
-NOCOMMON
+SAMPLE     Total mass of 15-milligrams, 99.83% 243Am, areal
+            density 0.06 mg/cm2.
+           120 mg uranium sample enriched to 99.91% 235U, areal
+            density 0.26 mg/cm2.
+MONITOR    ((95-AM-243(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
+HISTORY    (19801222C)
+ENDBIB               7
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
+MEV        MEV        NO-DIM     PER-CENT
+ 1.75       4.00       1.391      2.8
+ENDCOMMON            3
 DATA                 5         63
-EN         DATA       DATA-ERR1  DATA-ERR2  DATA-ERR3
+EN         DATA       ERR-SYS    ERR-S      ERR-T
 MEV        NO-DIM     PER-CENT   PER-CENT   PER-CENT
   0.2395    0.0087     1.2        18.3       18.6
   0.3226    0.0145     1.0        16.1       16.4
@@ -185,5 +205,5 @@ MEV        NO-DIM     PER-CENT   PER-CENT   PER-CENT
  30.88      1.137      1.9         8.4        9.1
  36.53      1.197      1.9         9.5       10.1
 ENDDATA             65
-ENDSUBENT           73
+ENDSUBENT           81
 ENDENTRY             3
