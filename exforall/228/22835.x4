@@ -1,67 +1,120 @@
-ENTRY            22835   20040626
-SUBENT        22835001   20040626
-BIB                 16         36
+ENTRY            22835   20060204   20060525                  2176
+SUBENT        22835001   20060204   20060525                  2176
+BIB                 16         59
 TITLE       .Measurement of the thermal neutron cross section and
              resonance integral of the 237Np(N,gamma)238Np
              reaction
 AUTHOR     (T.KATOH, S.NAKAMURA, K.FURUTAKA, H.HARADA,
            K.FUJIWARA, T.FUJII, H.YAMANA)
-INSTITUTE  (2JPNPNC) Nucl.Cyc.Dev.Inst, Kato, Nakamura, Furutaka,
-                     Harada
+INSTITUTE  (2JPNJNC)  Nakamura, Furutaka, Harada, Nuclear Cycle
+                      Development Dept.
            (2JPNKTO) Fujiwara, Fujii, Yamana, Research Reactor
                      Institute. Experimental site
 REFERENCE  (J,NST,40,559,2003)        Main reference
            (J,NST,32,395,1995)        Experimental details
-FACILITY   (REAC,2JPNKTO)  Kyoto university reactor  kur
+FACILITY   (REAC,2JPNKTO)  Kyoto university reactor  KURRI
 DETECTOR   (HPGE)  High purity germanium detector, relative
             efficiency 90% relative to 7.6*7.6 cm2 Na-I(Tl)
-            detector.
-            Energy resolution 2.1 KeV at 1.33 MeV peak of Co-60
-METHOD     (ACTIV)
-            ACTIVATION
-MONITOR    (27-CO-59(N,G)27-CO-60,,SIG)
-           (79-AU-197(N,G)79-AU-198,,SIG)
-           (27-CO-59(N,G)27-CO-60,,RI)
-           (79-AU-197(N,G)79-AU-198,,RI)
-SAMPLE     .Gold sample is Au-Al wire alloy, Au 0.112 wt%, 0.51 mm
-             diameter
-           .Cobalt sample is Co-Al wire alloy, Co 0.46 wt%,
-            0.381 mm diameter
+            detector. Energy resolution 2.1 KeV at 1.33 MeV peak
+            of Co-60
+METHOD     (ACTIV)  Activation
+           (GSPEC)  Gamma spectrum analysis
+MONITOR    ((MONIT1)27-CO-59(N,G)27-CO-60,,SIG)
+           ((MONIT2)79-AU-197(N,G)79-AU-198,,SIG)
+DECAY-MON  (27-CO-60,5.271YR,DG,1173.,0.9990,
+                             DG,1333.,0.9998)
+           (79-AU-198,2.695D,DG,412.,0.995)
+SAMPLE     .Fourteen samples were prepared by dropping of a 1 kBq
+            25 microliters of Np-237 solution in H-N-O3 each on a
+            quartz plate (1 cm)*(2 cm)*(2 mm) and drying it to
+            a circle of 7 mm diameter
+           .Gold monitor sample is Au-Al wire alloy, Au 0.112 wt%,
+            0.51 mm diameter
+           .Cobalt monitor sample is Co-Al wire alloy,
+            Co 0.46 wt%, 0.381 mm diameter
 INC-SOURCE (REAC)
 INC-SPECT  .Thermal neutron energy spectrum
             Epithermal neutrons taken into account
-DECAY-DATA (93-NP-237,,DG)
-           (93-NP-238,2.117D,DG,984.5,0.2519)
+DECAY-DATA (93-NP-237,2.144E+06YR,A)
+           (93-NP-238,2.117D,DG,984.45,0.278,
+                             DG,1025.87,0.096,
+                             DG,1028.54,0.203)
+           (91-PA-233,26.967D,DG,300.34,0.0662,
+                              DG,312.17,0.386,
+                              DG,340.81,0.447)
 ADD-RES    (G-SPC)
-COMMENT     E-nrm,g - normalisation energy
-ERR-ANALYS (DATA-ERR)   Not specified
+ERR-ANALYS (ERR-T)  Total error
+           (ERR-1)  Error in the gamma-ray total peak efficiency
+           (ERR-2)  Error in the detection efficiency
+           (ERR-3)  Error due to neutron flux uncertainy caused
+                    by Co and Au nuclear data errors
+           (ERR-4)  Error due to variation of the neutron flux
+           (ERR-5)  Error in the half-life of Np-237
+           (ERR-6)  Error in the half-life of Np-238
+           (ERR-7)  Error in the emission probability of 312 keV
+                    gamma-line of Pa-233
+           (ERR-8)  Error in the emission probability of Np-237
+           (ERR-9)  Max statistical error of the gamma
+                    measurements of the sample
+           (ERR-10) Max statistical error of the gamma
+                    measurements of the minitors
 HISTORY    (20040628C)  + + Jos
-           (20040626U) Last checking has been done.
-ENDBIB              36
-NOCOMMON             0          0
-ENDSUBENT           39
-SUBENT        22835002   20040626
-BIB                  2          2
-REACTION   (93-NP-237(N,G)93-NP-238,,SIG,,MXW)
+           (20060204U)  Corrected SM
+ENDBIB              59
+COMMON              14          9
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR ERR-1      ERR-2
+ERR-3      ERR-4      ERR-5      ERR-6      ERR-7      ERR-8
+ERR-9      ERR-10
+B          B          B          B          PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT
+  37.18      0.06       98.65       0.09      3.0        1.5
+    1.8        1.5        0.5          0.1       1.0        3.0
+       0.5        1.0
+ENDCOMMON            9
+ENDSUBENT           72
+SUBENT        22835002   20060204   20060525                  2176
+BIB                  3          4
+REACTION   (93-NP-237(N,G)93-NP-238,,SIG)   Data for Vn=2200 m/sec
 STATUS       From private communication, Kato, 2003-03
-ENDBIB               2
+HISTORY    (20060204U)   SF8 erased, EN-MEAN to EN changed
+                         DATA-ERR changed to ERR-T
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
-EN-MEAN    DATA       DATA-ERR
+EN         DATA       ERR-T
 EV         B          B
    2.53E-02      141.7        5.4
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        22835003   20040626
-BIB                  2          2
-REACTION   (93-NP-237(N,G)93-NP-238,,RI)
-STATUS       From private communication, Kato, 200303
-ENDBIB               2
+ENDSUBENT           12
+SUBENT        22835003   20060204   20060525                  2176
+BIB                  3          6
+REACTION  1(93-NP-237(N,G)93-NP-238,,RI)
+          2(93-NP-237(N,G)93-NP-238,,RI)
+STATUS    1. From private communication, Kato, 200303
+          2. From Table 8 of main reference
+HISTORY    (20060204A)   Data added for pointer 2
+                         DATA-ERR changed to ERR-T
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 5          1
+EN-MIN     DATA      1ERR-T     1DATA      2ERR-T     2
+EV         B          B          B          B
+      0.358       862.        51.    799.        50.
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        22835004   20040626   20060525                  2176
+BIB                  3          4
+REACTION   (93-NP-237(N,G)93-NP-238,,RI,,RNV) Non 1/v part of the
+                                        resonance integral
+STATUS     . From Table 8 of main reference
+HISTORY    (20060204C)   SM
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
-EN-MIN     DATA       DATA-ERR
+EN-MIN     DATA       ERR-T
 EV         B          B
-      0.358       862.        51.
+      0.358       722.        49.
 ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             3
+ENDSUBENT           12
+ENDENTRY             4
