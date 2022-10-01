@@ -1,31 +1,62 @@
-ENTRY            40650     840320              20050926       0000
-SUBENT        40650001     840320              20050926       0000
-BIB                 11         13
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,AE,13,366,62)
-           (J,SJA,13,974,63)
-AUTHOR     (G.N.SMIRENKIN,B.G.NESTEROV,I.I.BONDARENKO)
-TITLE      U233,U235,PU239 FISSION CROSS SECTIONS FOR 0.3-2.5 MEV
-           NEUTRONS.
+ENTRY            40650   20071122   20080402   20080312       4142
+SUBENT        40650001   20071122   20080402   20080312       4142
+BIB                 13         29
+INSTITUTE  (4RUSFEI)
+REFERENCE  (J,AE,13,(4),366,1962) Main Reference.
+           (J,SJA,13,974,1963)    Engl. translation of AE,13,366.
+           (R,ICD-4,339,1967) Data Table for SUBENTs .005, .006 .
+AUTHOR     (G.N.Smirenkin,B.G.Nesterov,I.I.Bondarenko)
+TITLE      U233,U235,Pu239 fission cross sections for 0.3-2.5 MeV
+           neutrons.
 FACILITY   (VDG)
-INC-SOURCE (P-T)
-DETECTOR   (IOCH) DOUBLE IONIZATION CHAMBER
-MONITOR    (92-U-235(N,F),,SIG)
+INC-SOURCE (P-T)  T(p,n)He-3 reaction on solid tritium target of
+             about 25 keV thickness.
+DETECTOR   (IOCH) Double ionization chamber for fission fragments
+           (BF3) Boron counter of 30 mm diameter and 70% B-10 in
+            paraffin block. For relative measurements of neutron
+            yields in direction of fissile layers.
+REL-REF    (R,,Vatset+,J,AE,7,(2),172,1959) Details of boron
+                                            counter construction.
+SAMPLE      Layers of about 1.5 mg/cm**2 thickness and 38mm
+            diameter. Uranium oxide enriched in U-235 to 92.1%.
+            Uranium U-233 oxide with admixtures of U-238 - 4.8%,
+            U-234 - 2.4%, U-235 - 0.7%.
+            Pu-239 with admixtures of Pu-240 - 1.8%.
+CORRECTION  For background of neutrons scattered in target and
+            walls of chamber - less 3.%.
 STATUS     (SCSRS,CURVE)
-HISTORY    (831219T) CONVERTED FROM ENTRY 80058
-ERR-ANALYS (ERR-1) NEUTRON BACKGROUND ERROR
-ENDBIB              13
-COMMON               4          3
-EN-NRM     MONIT      ERR-S      ERR-1
-MEV        MB         PER-CENT   PER-CENT
- 2.5000E+00 5.8500E+02 1.0000E+00 3.0000E+00
+HISTORY    (19831219T) Converted From ENTRY 80058 (SUB.002-.004)
+           (20071122A) M.M. BIB information was added.
+                SUBENTs .005, .006 were added.
+ERR-ANALYS (ERR-S) Statistical uncertainty.
+           (ERR-1) Normalization uncertainty (5.-10%). Max.
+ENDBIB              29
+COMMON               2          3
+ERR-1      ERR-S
+PER-CENT   PER-CENT
+ 10.        1.0000E+00
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        40650002     840320              20050926       0000
-BIB                  1          1
+ENDSUBENT           36
+SUBENT        40650002   20071122   20080402   20080312       4142
+BIB                  5         12
 REACTION   (92-U-233(N,F),,SIG)
-ENDBIB               1
-NOCOMMON             0          0
+MONITOR    ((MONIT2)(92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
+MONIT-REF  ((MONIT2)12356002,J.USE,C,58GENEVA,2,39,1959)
+ANALYSIS    At En=2.5MeV the U-233 fission cross-section was
+            defined by comparison of effective amounts of
+            substances in thermal neutron beam.
+            Resonance neutrons were excluded by cadmium difference
+            measurement.
+             Cross-sections ratio at thermal energy from MONIT2
+            Reference, corrected for "Fermi" epithermal neutrons
+            contribution, was used for normalization(see MONIT2).
+STATUS     (DEP,40650005)
+ENDBIB              12
+COMMON               2          3
+EN-NRM2    MONIT2
+EV         NO-DIM
+ 0.025       0.935
+ENDCOMMON            3
 DATA                 2         42
 EN         DATA
 MEV        B
@@ -72,12 +103,27 @@ MEV        B
  2.5800E+00 2.0100E+00
  2.6300E+00 1.9600E+00
 ENDDATA             44
-ENDSUBENT           50
-SUBENT        40650003     840320              20050926       0000
-BIB                  1          1
+ENDSUBENT           65
+SUBENT        40650003   20071122   20080402   20080312       4142
+BIB                  5         12
 REACTION   (94-PU-239(N,F),,SIG)
-ENDBIB               1
-NOCOMMON             0          0
+MONITOR    ((MONIT3)(94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+MONIT-REF  ((MONIT3)12356009,J.USE,C,58GENEVA,2,39,1959)
+ANALYSIS    At En=2.5MeV the Pu-239 fission cross-section was
+            defined by comparison of effective amounts of
+            substances in thermal neutron beam.
+            Resonance neutrons were excluded by cadmium difference
+            measurement.
+             Cross-sections ratio at thermal energy from MONIT2
+            Reference, corrected for "Fermi" epithermal neutrons
+            contribution, was used for normalization(see MONIT3).
+STATUS     (DEP,40650006)
+ENDBIB              12
+COMMON               2          3
+EN-NRM2    MONIT3
+EV         NO-DIM
+ 0.025      1.50
+ENDCOMMON            3
 DATA                 2         44
 EN         DATA
 MEV        B
@@ -126,12 +172,22 @@ MEV        B
  2.3900E+00 1.9700E+00
  2.5300E+00 1.9500E+00
 ENDDATA             46
-ENDSUBENT           52
-SUBENT        40650004     840320              20050926       0000
-BIB                  1          1
+ENDSUBENT           67
+SUBENT        40650004   20071122   20080402   20080312       4142
+BIB                  4          7
 REACTION   (92-U-235(N,F),,SIG)
-ENDBIB               1
-NOCOMMON             0          0
+MONITOR    ((MONIT1)92-U-238(N,F),,SIG)
+MONIT-REF  ((MONIT1)12338008,R.LAMPHERE+,J,PR,104,1654,1956)
+ANALYSIS    Normalization of absolute cross-sections was carried
+           by comparison of number of fission counts in layers of
+           U-235 and natural uranium at fast and thermal neutrons,
+            using the MONIT1 value at En=2.5 MeV.
+ENDBIB               7
+COMMON               2          3
+EN-NRM     MONIT1
+MEV        MB
+ 2.5        5.8500E+02
+ENDCOMMON            3
 DATA                 2         52
 EN         DATA
 MEV        B
@@ -188,5 +244,118 @@ MEV        B
  2.5500E+00 1.3500E+00
  2.6200E+00 1.3500E+00
 ENDDATA             54
-ENDSUBENT           60
-ENDENTRY             4
+ENDSUBENT           70
+SUBENT        40650005   20071122   20080402   20080312       4142
+BIB                  3          3
+REACTION   ((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
+ERR-ANALYS (DATA-ERR) Uncertainty of measurement.
+STATUS     (TABLE) Table III of 3rd Reference.
+ENDBIB               3
+COMMON               1          3
+DATA-ERR
+PER-CENT
+ 3.
+ENDCOMMON            3
+DATA                 3         41
+EN         EN-ERR     DATA
+MEV        MEV        NO-DIM
+0.350       0.030      1.740
+0.410       0.024      1.695
+0.465       0.023      1.682
+0.525       0.022      1.657
+0.585       0.022      1.670
+0.640       0.021      1.657
+0.695       0.021      1.674
+0.740       0.020      1.677
+0.770       0.020      1.704
+0.800       0.020      1.704
+0.835       0.020      1.741
+0.870       0.020      1.728
+0.910       0.020      1.652
+0.950       0.020      1.605
+0.990       0.020      1.546
+1.020       0.020      1.571
+1.095       0.034      1.595
+1.160       0.032      1.595
+1.205       0.032      1.560
+1.245       0.032      1.547
+1.280       0.030      1.577
+1.315       0.030      1.555
+1.350       0.030      1.577
+1.395       0.029      1.590
+1.435       0.029      1.563
+1.475       0.028      1.607
+1.515       0.028      1.568
+1.555       0.027      1.573
+1.595       0.027      1.573
+1.635       0.027      1.583
+1.720       0.026      1.604
+1.800       0.025      1.595
+1.890       0.024      1.537
+1.980       0.024      1.606
+2.065       0.023      1.619
+2.160       0.023      1.580
+2.250       0.022      1.576
+2.340       0.021      1.603
+2.435       0.021      1.595
+2.530       0.020      1.595
+2.625       0.020      1.575
+ENDDATA             43
+ENDSUBENT           55
+SUBENT        40650006   20071122   20080402   20080312       4142
+BIB                  3          3
+REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+ERR-ANALYS (DATA-ERR) Uncertainty of measurement.
+STATUS     (TABLE) Table III of 3rd Reference.
+ENDBIB               3
+COMMON               1          3
+DATA-ERR
+PER-CENT
+ 3.
+ENDCOMMON            3
+DATA                 3         40
+EN         EN-ERR     DATA
+MEV        MEV        NO-DIM
+0.350       0.030      1.242
+0.410       0.024      1.224
+0.465       0.023      1.291
+0.525       0.022      1.313
+0.585       0.022      1.378
+0.640       0.021      1.394
+0.695       0.021      1.447
+0.740       0.020      1.432
+0.770       0.020      1.452
+0.800       0.020      1.488
+0.835       0.020      1.465
+0.870       0.020      1.455
+0.910       0.020      1.430
+0.950       0.020      1.391
+0.990       0.020      1.395
+1.020       0.020      1.390
+1.050       0.034      1.419
+1.095       0.034      1.408
+1.130       0.033      1.423
+1.160       0.032      1.395
+1.205       0.032      1.449
+1.245       0.032      1.414
+1.280       0.030      1.468
+1.315       0.030      1.500
+1.350       0.030      1.500
+1.395       0.029      1.482
+1.435       0.029      1.496
+1.475       0.028      1.522
+1.515       0.028      1.517
+1.595       0.027      1.515
+1.680       0.026      1.568
+1.760       0.025      1.499
+1.845       0.025      1.522
+1.935       0.024      1.490
+2.020       0.023      1.552
+2.110       0.023      1.503
+2.205       0.022      1.490
+2.295       0.022      1.465
+2.390       0.021      1.523
+2.530       0.020      1.474
+ENDDATA             42
+ENDSUBENT           54
+ENDENTRY             6
