@@ -1,6 +1,6 @@
-ENTRY            20427   20070601   20071002   20071002       2185
-SUBENT        20427001   20070601   20071002   20071002       2185
-BIB                 13         30
+ENTRY            20427   20080807   20081110   20081110       2202
+SUBENT        20427001   20080807   20081110   20081110       2202
+BIB                 17         79
 INSTITUTE  (2GERKFK)
 REFERENCE  (C,75WASH,2,549,197503) Graph of nu-prompt given as
             function of incident neutron energy.
@@ -8,45 +8,104 @@ REFERENCE  (C,75WASH,2,549,197503) Graph of nu-prompt given as
 AUTHOR     (F.Kaeppeler, R.E.Bandl)
 TITLE      -The average number of prompt neutrons from neutron
             induced fission of U-235 between 0.2 and 1.4 MeV.-
-FACILITY   (VDG)      3 MeV pulsed Van-de Graaff.
-INC-SOURCE (P-LI7)    Li-7(N,P)
-SAMPLE     .Two uranium acetate layers less than 0.5 millig/cm**2
+FACILITY   (VDG)      3 MV pulsed Van-de-Graaff accelerator.
+            Pulse width 1 nsec, average beam current 20 microA at
+            repetition rate 5 MHz.
+INC-SOURCE (P-LI7)    Li-7(N,P). Collimated neutron beam.
+INC-SPECT   The metallic Li-targets thickness was such, that
+            neutron energy spread deltaEn was less 4%.
+SAMPLE      Two uranium acetate layers less than 0.5 millig/cm**2
             in fission chamber at 56 and 63 cm flight path
             and U-235 metal disk of 0.15 millimeter thick,
             70 millimeter diameter at 74 cm flight path.
-METHOD     (TOF)      Time-of-flight.
-MONITOR    (92-U-235(N,F),PR,NU,,AV)
-            To value recommended by F.Manero
+DETECTOR   (SCIN) -Gas scintillation fission counter, containing
+            two thin samples of U-235, divided by samples into
+            optically decoupled thirds each inspected by 56 DUVP
+            photomultipliers.
+             -Fission neutron detector PM XP 1040, placed at
+             12.5 cm distance from sample.
+            Both detectors and the samples were shielded against
+            slow, roomscattered neutrons by Cd-sheets to reduce
+            the time-independent background.
+           (GLASD) Li-6-glass detector at 130 cm from target for
+           neutron spectrum determination and as monitor for
+           neutron yield.
+           Calibration procedure was done by strong Am-Be neutron
+           source located at 3m distance to measure efficiency.
+METHOD     (TOF) Time-of-flight. Overall time resolution 2.5 nsec.
+           (COINC) Coincidence between two thirds to register
+            a fission event.
+           (PSD) Pulse shape discrimination against gamma
+            radiation.
+MONITOR    (92-U-235(N,F),PR,NU,,AV)  Integral from 225 to 1363keV
+            of NUp values recommended by F.Manero
             and V.A.Konshin, Atomic Energy Review 10, IAEA,
-            Vienna(1972),P.637.
+            Vienna(1972),P.637, was used for normalization.
+MONIT-REF  (,P.Manero+,J,REA,10,637,1972)
 PART-DET   (FF)       Fission-fragments
            (N)        Fission-neutrons
-           .Detailed description of detection given in reference.
-CORRECTION .Carefully considered,see table 1 of reference.
+            Detailed description of detection given in reference.
+ANALYSIS    TOF spectra of three samples and the pulse height
+            distribution of the fission neutron detector for max.
+            energy run at 1363+-35 keV were used.
+            Prompt neutron yield was derived from integrated peaks
+            in TOF spectra.
+CORRECTION  Carefully considered,see Table 1 of reference.
+            Correction for:
+           -Fission neutron detector efficiency and increase of
+            fragment temperature - 5% (max.),
+           -Isotopic composition - 1.5% (max.),
+           -Multiple scattering - 1.5% (max.),
+           -Self shielding and fission neutron angular
+            distribution - 0.8% (max.).
+            Background considerations concerning the fission
+            neutron detector were made.
 ERR-ANALYS (ERR-SYS) Systematic uncertainty due to background and
                      corrections was 0.6 %.
-           (ERR-S)   Max error of counting statistics
+           (ERR-S)   Max error of counting statistics 1.1% .
                      Min error of counting statistics is 0.6%
+           ERR-SYS and ERR-S correspond to one standard deviation.
+           (ERR-1) Uncertainty of correction for fission neutron
+                   detector efficiency and increase of fragment
+                   temperature.
+           (ERR-2) Uncertainty of correction for isotopic
+                   composition. Maximal.
+           (ERR-3) Uncertainty of correction for multiple
+                   scattering . Maximal.
+           (ERR-4) Uncertainty of correction for self shielding
+                   and fission neutron angular distribution. Max.
 HISTORY    (19750707C)
            (19750925E)
-           (20070601A) Date is corrected. Error structure given
+           (20070601A) Date is corrected. Error structure given.
            (20070601U) Last corrections  have been done.
-ENDBIB              30
-COMMON               2          3
-ERR-S      ERR-SYS
-PER-CENT   PER-CENT
-        1.1        0.6
+           (20080807A) M.M. BIB and COMMON information was added.
+            Data units of Subent 002 were corrected.
+ENDBIB              79
+COMMON               6          3
+ERR-S      ERR-SYS    ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+        1.1        0.6    0.5       0.2       0.2        0.2
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        20427002   20070601   20071002   20071002       2185
-BIB                  2          2
+ENDSUBENT           86
+SUBENT        20427002   20080807   20081110   20081110       2202
+BIB                  3         12
 REACTION   (92-U-235(N,F),PR,NU)
 HISTORY    (20070601A)   Data units corrected, NO-DIM to PC/FIS
-ENDBIB               2
+           (20080807A) M.M. DATA units were corrected from
+            PC/FIS into PRT/FIS in according to Fig.3 of 1-st Ref.
+           DATA-ERR units were corrected from PC/FIS into PER-CENT
+            in according to error bars of overall uncertainties
+            given on Fig.3 of 1-st Reference.
+            DATA-ERR was changed into ERR-T in according to text
+            of 1-st Reference, p.552 and Fig.3 of 1-st Reference.
+            (See also ERR-ANALYS).
+STATUS     (TABLE) Data from authors - see second Reference.
+           Data are presented on Fig.3 of 1-st Reference.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         22
-EN         EN-RSL     DATA       DATA-ERR
-KEV        KEV        PC/FIS     PC/FIS
+EN         EN-RSL     DATA       ERR-T
+KEV        KEV        PRT/FIS    PER-CENT
  2.2500E+02 1.0000E+01 2.4760E+00 9.0000E-01
  2.7100E+02 1.2000E+01 2.4540E+00 1.0000E+00
  3.2300E+02 1.8000E+01 2.4690E+00 7.0000E-01
@@ -70,5 +129,5 @@ KEV        KEV        PC/FIS     PC/FIS
  1.3230E+03 4.0000E+01 2.5480E+00 1.0000E+00
  1.3630E+03 3.5000E+01 2.5310E+00 1.1000E+00
 ENDDATA             24
-ENDSUBENT           31
+ENDSUBENT           41
 ENDENTRY             2

@@ -1,45 +1,51 @@
-ENTRY            10683     840227              20050926       0000
-SUBENT        10683001     840227              20050926       0000
-BIB                 12         22
+ENTRY            10683   20080925   20081219   20081211       1350
+SUBENT        10683001   20080925   20081219   20081211       1350
+BIB                 11         20
 INSTITUTE  (1USAARK)
-REFERENCE  (J,NSE,63,504,7708)
-AUTHOR     (D.C.HARRIS,J.N.BECK,W.L.RAINES,J.T.HARVEY,K.G.W.INN,
-           J.L.MEASON,H.L.WRIGHT)
-TITLE      DISTRIBUTION OF FISSION YIELDS FOR FISSION SPECTRUM
-           NEUTRON-INDUCED FISSION OF URANIUM-238
-FACILITY   FAST BURST REACTOR AT WHITE SANDS MISSLE RANGE
-INC-SPECT  AVERAGE NEUTRON ENERGY GREATER THAN 10 KEV IS 1.52
-           +-0.09 MEV. SPECTRAL INDEX= 6.7+- 0.4 (SPECTRAL INDEX
-           IS RATIO OF FLUX GREATER THAN 10 KEV TO FLUX GREATER
-           THAN 3 MEV)
-SAMPLE     20.459-GRAM SAMPLE OF AMMONIUM DIURANATE ENCASED IN
-           24-MIL CADMIUM COVER.
-METHOD     (ACTIV) AFTER IRRADIATION RADIOACTIVITY ASSAY WAS
-           PERFORMED
-DETECTOR   (GELI) GE(LI) DETECTOR FOR GAMMA-RAY SPECTROSCOPY.
-           (PROPC) PROPORTIONAL COUNTERS FOR BETA DETECTION.
-ERR-ANALYS DATA ERRORS DERIVED THROUGH COMBINING SYSTEMATIC ERROR
-           AND THE 3.9 PERCENT ABSOLUTE ERROR IN THE 140 YIELD.
-STATUS     (APRVD) APPROVED BY D.C.HARRIS 78/3/9.
-HISTORY    (780119C)
-           (801028A)  ENERGY AND MONITOR MOVED.
-ENDBIB              22
+REFERENCE  (J,NSE,63,504,197708)
+AUTHOR     (D.C.Harris,J.N.Beck,W.L.Raines,J.T.Harvey,K.G.W.Inn,
+           J.L.Meason,H.L.Wright)
+TITLE      Distribution of Fission Yields for Fission Spectrum
+           Neutron-Induced Fission of Uranium-238
+FACILITY   (REAC) Fast burst reactor at White Sands Missle Range
+INC-SPECT  Average neutron energy greater than 10 keV is 1.52
+            +0.09 MeV. Spectral index = 6.7+-0.4 (spectral index
+            is ratio of flux greater than 10 kev to flux greater
+            than 3 MeV)
+SAMPLE     20.459-gram sample of ammonium diuranate encased in
+            24-mil cadmium cover; 99.989% 238U.
+METHOD     (RCHEM)
+DETECTOR   (GELI) Ge(Li) detector for gamma-ray spectroscopy.
+           (PROPC) Proportional counters for beta detection.
+STATUS     (APRVD) Approved by D.C.Harris, 1978/3/9.
+HISTORY    (19780119C)
+           (19801028A)  Energy and MONITOR moved.
+           (20080925A) Formats updated; BIB updates.
+ENDBIB              20
 COMMON               1          3
 EN-MEAN
 MEV
  1.52
 ENDCOMMON            3
-ENDSUBENT           29
-SUBENT        10683002     840227              20050926       0000
-BIB                  3          5
+ENDSUBENT           27
+SUBENT        10683002   20080925   20081219   20081211       1350
+BIB                  5          9
 REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY,,FIS)
 MONITOR    (92-U-238(N,F)56-BA-140,CUM,FY,,FIS)
-           (92-U-238(N,F),,SIG) ABSOLUTE MEASUREMENT OF 140-BA.
-HISTORY    (801028A) ADDED MONITOR.
-           (840227A) SUBENTRIES 2,3 COMBINED.
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4         26
+ERR-ANALYS (DATA-ERR) Data errors include systematic error and
+            3.9% absolute error in the 140Ba yield.
+STATUS     (COREL,10683004) Normalizated to 140Ba yield.
+           (TABLE) Data taken from Table I in reference.
+HISTORY    (19801028A) Added MONITOR.
+           (19840227A) Subentries 2,3 combined.
+           (20080925C) Moved 140Ba to 10683004.
+ENDBIB               9
+COMMON               2          3
+MONIT      MONIT-ERR
+PC/FIS     PER-CENT
+ 6.07       3.9
+ENDCOMMON            3
+DATA                 4         25
 ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
  38.         89.        3.44       0.23
@@ -60,7 +66,6 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
  52.        132.        6.18       0.53
  53.        131.        3.42       0.26
  53.        133.        6.54       0.28
- 56.        140.        6.07       0.24
  58.        141.        5.90       0.33
  58.        143.        4.64       0.20
  59.        143.        4.56       0.42
@@ -68,7 +73,24 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
  61.        149.        1.72       0.14
  61.        151.        0.88       0.08
  62.        153.        0.48       0.04
-ENDDATA             28
-ENDSUBENT           38
+ENDDATA             27
+ENDSUBENT           45
 NOSUBENT      10683003     840227              20050926       0000
-ENDENTRY             3
+SUBENT        10683004   20080925   20081219   20081211       1350
+BIB                  5          7
+REACTION   (92-U-238(N,F)56-BA-140,CUM,FY,,FIS)
+MONITOR    (92-U-238(N,F),,SIG)
+ERR-ANALYS (ERR-SYS) Systematic uncertainty.
+           (DATA-ERR) Absolute uncertainty
+STATUS     (COREL,10683002)
+           (TABLE) Data taken from Table I in reference.
+HISTORY    (20080925C) Moved from 10683002.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-SYS    DATA-ERR
+PC/FIS     PC/FIS     PC/FIS
+  6.07       0.24       3.9
+ENDDATA              3
+ENDSUBENT           15
+ENDENTRY             4
