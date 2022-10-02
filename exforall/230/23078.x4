@@ -1,12 +1,12 @@
-ENTRY            23078   20090826   20100209   20100209       2216
-SUBENT        23078001   20090826   20100209   20100209       2216
-BIB                 15        121
-TITLE      .Cross Sections for Neutron-Induced Fission of 235U,
-            238U, 209Bi, and natPb in the Energy Range from 33
+ENTRY            23078   20101108   20110216   20110208       2223
+SUBENT        23078001   20101108   20110216   20110208       2223
+BIB                 17        140
+TITLE      .Cross Sections for Neutron-Induced Fission of U-235,
+            U-238, Bi-209i, and Pb-nat in the Energy Range from 33
             to 200 MeV Measured Relative to n-p Scattering
 AUTHOR     (R.Nolte, M.S.Allie, F.D.Brooks, A.Buffler,
            V.Dangendorf, J.P.Meulders, H.Schuhmacher, F.D.Smit,
-           M.Weierganz)
+           M.Weierganz, S.Roettger)
 INSTITUTE  (2GERPTB)   Physikalisch-Technische Bundesanstalt,
               Braunschweig, Germany. R.Nolte, corresponding
               author, E-mail: ralf.nolte@ptb.de; V.Dangendorf,
@@ -19,16 +19,19 @@ INSTITUTE  (2GERPTB)   Physikalisch-Technische Bundesanstalt,
               Sciences, Somerset West, South Africa. F.D.Smit
 REFERENCE  (J,NSE,156,197,2007)  Main reference, data are given
            (J,NSTS,2,(1),311,200208)  Preliminary results
-REL-REF    (M,,,J,NIM/A,476,369,2002) High-Energy Neutron
+           (S,AIP-1175,382,2010) Data were re-analyzed, but
+           given on figures only. First author S.Roettger.
+           (W,NOLTE,20101116)Private communication with Ralf Nolte
+REL-REF    (M,,R.Nolte+,J,NIM/A,476,369,2002) High-Energy Neutron
               Reference Fields for the Calibration of Detectors
                Used in Neutron Spectrometry
-           (I,,,J,NIM/A,469,205,2001)         Proton Recoil
+           (I,,V.Dangendorf+,J,NIM/A,469,205,2001)  Proton Recoil
              Telescopes for Fluence Measurements in Neutron Beams
              of 20-200 MeV Energy
-           (I,,,J,NIM/A,421,284,1999)  Experimental details.
-               Accelerator at Louvain-la-Neuve
-FACILITY   (ACCEL,2BLGLVN)  Quasi-Monoenergetic Neutron Beams
-            with Energies from 25 MeV to 70 MeV, proton energy
+           (I,,H.Schuhmacher,J,NIM/A,421,284,1999)  Exp. details
+             of Accelerator at Louvain-la-Neuve
+FACILITY   (ACCEL,2BLGLVN)  Quasi-monoenergetic neutron beams
+            with energies from 25 MeV to 70 MeV, proton energy
             36 to 63 MeV
            (ACCEL,3SAFITH)  Accelerator at iThemba Laboratory for
               Accelerator with neutron energies 97.4 to 197.3 MeV.
@@ -52,8 +55,10 @@ DETECTOR   (TELES)  Recoil proton telescopes for the peak neutron
 INC-SPECT  .High energy peak E0 with low energy cut-off at energy
             E1 with width DE depending on the thickness of 7Li
             target d mm:
-           .Typical Parameters of the Neutron Beams Used for the
-            Cross-Section Measurements. Ep - proton energy.
+           .Typical parameters of the neutron beams used for the
+            cross-section measurements. Ep - proton energy.
+            F0/F - ratio of the fluence of low-energy continuum
+            neutrons to the total fluence above 5 MeV.
            ---
              Ep     E0     DE      E1     d     F0/F
              MeV    MeV    MeV     MeV    mm
@@ -66,7 +71,7 @@ INC-SPECT  .High energy peak E0 with low energy cut-off at energy
              200.  197.3   1.6    185.0    8     0.69
              ------------------------------------------
 MONITOR    (1-H-1(N,EL)1-H-1,,DA) Main monitor, values are given
-                                  below
+               in C.M.system:
             E0      DE   ang   ds/d-omega
              MeV    MeV  deg       mb/sr
             ----------------- -----------
@@ -120,36 +125,56 @@ ERR-ANALYS (DATA-ERR)   Total error, not includes monitor error
               non-statistical type
            (ERR-12) Error due to Correction factor k6, 0.013,
               non-statistical type
-STATUS     (TABLE)  Table IV of main reference
+ADD-RES    (COMP) Comparison with MCNPX calculations and other
+            experimental data.
+COMMENT    Of compiler M.M. In two articles J,NSTS, S,AIP-1175
+           masses are given as: U-235 - 197.8+-0.6 mg,
+            U-238 - 201.6 mg - these are misprint (according to
+           given number of atoms and thickness).
+            Right masses are given in respective Subents - from
+            J,NSE. These were confirmed by R.Nolte 16.11.2010.
+STATUS     (TABLE)  Table IV of J,NSE,156,197,2007
+           (APRVD) Approved by Ralf Nolte 19 Nov. 2010.
 HISTORY    (20090826C)   S.M.
-ENDBIB             121
+           (20101107A) M.M. BIB information was added.
+           Reference S,AIP-1175,,382,2010 was added.
+           Relative errors were re-calculated by dividing factor
+           =100. according to correction of units
+           NO-DIM -> PER-CENT in COMMON.
+ENDBIB             140
 COMMON               8          6
 ERR-5      ERR-6      ERR-7      ERR-8      ERR-9      ERR-10
 ERR-11     ERR-12
-NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
-NO-DIM     NO-DIM
-   0.016      0.02       0.007      0.009      0.004      0.002
-   0.003      0.013
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT
+   1.6      2.         0.7        0.9        0.4        0.2
+   0.3      1.3
 ENDCOMMON            6
-ENDSUBENT          131
-SUBENT        23078002   20090826   20100209   20100209       2216
-BIB                  6         15
+ENDSUBENT          150
+SUBENT        23078002   20101108   20110216   20110208       2223
+BIB                  7         21
 REACTION  1(92-U-235(N,F),,SIG)
           2((92-U-235(N,F),,SIG)/(92-U-238(N,F),,SIG))
-MONITOR    (92-U-238(N,F),,SIG)
+MONITOR    (92-U-238(N,F),,SIG) only for 96.5 MeV point c-s
 MONIT-REF  (,,R,INDC(NDS)-368,1997)  (http://www-nds.iaea.org/
                 reports-new/indc-reports/indc-nds/)
 SAMPLE     .Thin layers on platinum and tantalum disks 72 mm
             diameter 0.1 mm thick. Uranium layers are:
-            235U:  201.6+-0.5 mg weight, 444.3 microgram/cm2
+            U-235: 201.6+-0.5 mg weight, 444.3+-18 microgram/cm2
                    thickness, (5.1642+-0.0013)E+20 nuclei;
-            238U:  197.9+-0.5 mg weight, 436.0 microgram/cm2
+            U-238: 197.9+-0.5 mg weight, 436.0+-17 microgram/cm2
                    thickness, (5.0034+-0.0013)E+20 nuclei.
+COMMENT    Of compiler. U-235 c-s data point at 96.5 MeV is absent
+           on Fig.2 left of S,AIP-1175,383,2020 and Fig.8 of J,NSE
 MISC-COL   (MISC)  Calculated energy
 FLAG       (1.)    Data value obtained with the help of U-238
                    monitor
            (2.)    Calculated energy used
-ENDBIB              15
+            Because no independent determination of experimental
+           mean energy was possible for the two measurements at
+           60.0 MeV because of problems with the time structure
+           of the proton beam.
+ENDBIB              21
 NOCOMMON             0          0
 DATA                 9          9
 EN         EN-ERR     EN-RSL     DATA      1DATA-ERR  1DATA      2
@@ -175,17 +200,21 @@ NO-DIM     MEV        NO-DIM
 199.0         2.0        1.6          1.38        0.12     1.09
        0.09     198.92
 ENDDATA             22
-ENDSUBENT           42
-SUBENT        23078003   20090826   20100209   20100209       2216
-BIB                  4          7
+ENDSUBENT           48
+SUBENT        23078003   20101108   20110216   20110208       2223
+BIB                  4         11
 REACTION   (92-U-238(N,F),,SIG)
 SAMPLE     .Thin layer on platinum and tantalum disks 72 mm
             diameter 0.1 mm thick. Uranium layer is:
-            238U:  197.9+-0.5 mg weight, 436.0 microgram/cm2
+            U-238: 197.9+-0.5 mg weight, 436.0+-17 microgram/cm2
                    thickness, (5.0034+-0.0013)E+20 nuclei.
 MISC-COL   (MISC)  Calculated energy
 FLAG       (2.)    Calculated energy used
-ENDBIB               7
+            Because no independent determination of experimental
+           mean energy was possible for the two measurements at
+           60.0 MeV because of problems with the time structure
+           of the proton beam.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 7         10
 EN         EN-ERR     EN-RSL     DATA       DATA-ERR   MISC
@@ -213,14 +242,14 @@ NO-DIM
  199.0      2.0       1.6         1.27        0.12      198.92
 
 ENDDATA             24
-ENDSUBENT           36
-SUBENT        23078004   20090826   20100209   20100209       2216
-BIB                  6         12
+ENDSUBENT           40
+SUBENT        23078004   20101108   20110216   20110208       2223
+BIB                  7         17
 REACTION   (83-BI-209(N,F),,SIG)
-MONITOR    (92-U-238(N,F),,SIG)
+MONITOR    (92-U-238(N,F),,SIG) Only for 96.7 point c-s.
 MONIT-REF  (,,R,INDC(NDS)-368,1997)  (http://www-nds.iaea.org/
                 reports-new/indc-reports/indc-nds/)
-SAMPLE     .Thin layer on stainless steel and aluminium disks
+SAMPLE     .Thin layer on stainless steel and aluminum  disks
             100 mm diameter 0.1 mm thick. Bismuth layer is:
             209Bi:  76.13+- 0.04 mg weight, 387.7 microgram/cm2
                     thickness, (2.1937+-0.0011)E+20 nuclei
@@ -228,12 +257,17 @@ MISC-COL   (MISC)  Calculated energy
 FLAG       (1.)    Data value obtained with the help of U-238
                    monitor
            (2.)    Calculated energy used
-ENDBIB              12
+            Because no independent determination of experimental
+           mean energy was possible for the two measurements at
+           60.0 MeV because of problems with the time structure
+           of the proton beam.
+HISTORY    (20101108) Units corrected B -> MB.
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 7          6
 EN         EN-ERR     EN-RSL     DATA       DATA-ERR   MISC
 FLAG
-MEV        MEV        MEV        B          B          MEV
+MEV        MEV        MEV        MB         MB         MEV
 NO-DIM
   33.00      0.18       3.8          0.26      0.03         32.74
 
@@ -248,22 +282,27 @@ NO-DIM
  199.0       2.0        1.6         69.       10.          198.92
 
 ENDDATA             16
-ENDSUBENT           33
-SUBENT        23078005   20090826   20100209   20100209       2216
-BIB                  4          7
+ENDSUBENT           38
+SUBENT        23078005   20101108   20110216   20110208       2223
+BIB                  5         12
 REACTION   (82-PB-0(N,F),,SIG)
-SAMPLE     .Thin layer on stainless steel and aluminium disks
+SAMPLE     .Thin layer on stainless steel and aluminum  disks
             100 mm diameter 0.1 mm thick. Lead layer is:
             natPb: 118.81+-0.3 mg weight, 605 microgram/cm2 thick,
                    (3.4530+-0.0019)E+20 nuclei
 MISC-COL   (MISC)  Calculated energy
 FLAG       (2.)    Calculated energy used
-ENDBIB               7
+            Because no independent determination of experimental
+           mean energy was possible for the two measurements at
+           60.0 MeV because of problems with the time structure
+           of the proton beam.
+HISTORY    (20101108) Units corrected B -> MB.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 7          4
 EN         EN-ERR     EN-RSL     DATA       DATA-ERR   MISC
 FLAG
-MEV        MEV        MEV        B          B          MEV
+MEV        MEV        MEV        MB         MB         MEV
 NO-DIM
   45.39      0.27       2.9         0.35       0.03         45.27
 
@@ -274,40 +313,20 @@ NO-DIM
  199.0       2.0        1.6         31.         4.         198.92
 
 ENDDATA             12
-ENDSUBENT           24
-SUBENT        23078006   20090826   20100209   20100209       2216
-BIB                  5         10
+ENDSUBENT           29
+SUBENT        23078006   20101108   20110216   20110208       2223
+BIB                  4          9
 REACTION   ((92-U-235(N,F),,SIG,,,DERIV)/
            (92-U-238(N,F),,SIG,,,DERIV))
 SAMPLE     .Thin layers on platinum and tantalum disks 72 mm
             diameter 0.1 mm thick. Uranium layer is:
-            238U:  197.9+-0.5 mg weight, 436.0 microgram/cm2
+            U-238: 197.9+-0.6 mg weight, 436.0+-17 microgram/cm2
                    thickness, (5.0034+-0.0013)E+20 nuclei.
-MISC-COL   (MISC)  Calculated energy
-STATUS     (DEP,23078002)
-           (DEP,23078003)
-FLAG       (2.)    Calculated energy used
-ENDBIB              10
+STATUS     (SPSDD,23078002) See HISTORY.
+HISTORY    (20101108D) M.M. Data were deleted as duplication of
+           given in Subent 002 reactions ratio - DATA 2 .
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 7          7
-EN         EN-ERR     EN-RSL     DATA       DATA-ERR   MISC
-FLAG
-MEV        MEV        MEV        NO-DIM     NO-DIM     MEV
-NO-DIM
- 33.00        0.18                   1.16          0.04      32.74
-
- 44.91        0.24       2.9         1.13          0.05      45.27
-
- 46.25        0.23                   1.15          0.04      45.85
-
- 59.95                               1.06          0.05      59.95
-         2.
- 59.95                   2.3         1.10          0.05      59.95
-         2.
-147.0         1.4        1.2         1.09          0.10     147.55
-
-199.0         2.0        1.6         1.09          0.09     198.92
-
-ENDDATA             18
-ENDSUBENT           33
+NODATA               0          0
+ENDSUBENT           13
 ENDENTRY             6

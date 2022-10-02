@@ -1,6 +1,6 @@
-ENTRY            23072   20090728   20100209   20100209       2214
-SUBENT        23072001   20090728   20100209   20100209       2214
-BIB                 17         94
+ENTRY            23072   20101107   20110216   20110208       2223
+SUBENT        23072001   20101107   20110216   20110208       2223
+BIB                 18        126
 TITLE       Measurement of the neutron fission of  U-235, U-233
             and Cm-245 with FIC detector at CERN n-TOF facility.
 AUTHOR     (M.Calviani, D.Karadimos, U.Abbondano,
@@ -29,13 +29,20 @@ AUTHOR     (M.Calviani, D.Karadimos, U.Abbondano,
            D.Villamarin,M.C.Vincente,V.Vlachoudis,R.Vlastou,
            F.Voss,S.Walter,M.Wiescher,K.Wisshak)
 INSTITUTE  (2ZZZCER)
-           (2ZZZNTF)
+           (2ZZZNTF)  n TOF collaboration.
            (2ITYPAD) M.Calviani
            (2ITYPAV) M.Calviani
-REFERENCE  (C,2007NICE,1,335,200704)
+REFERENCE  (C,2007NICE,1,335,200704) Graphs.
            #doi:10.1051/ndata:07750
-REL-REF    (N,,G.Lorusso+,J,NIM/A,532,622,2004)
+           (S,AIP-1175,211,2010) Graphs.
+           Proc.of Int.Workshop on Nuclear Fission and
+            Fission-product spectroscopy.
+REL-REF    (M,,G.Lorusso+,J,NIM/A,532,622,2004)
             Method of time-to-energy calibration.
+           (I,,M.Calviani+,J,NIM/A,594,220,2008)
+            Detection system and analysis details.
+           (M,,M.Calviani,T,CALVIANI,2009)
+           Detailed off-line analysis, based on ROOT routines.
 FACILITY   (SYNCH,2ZZZCER) n TOF facility.
            7.E+12 protons per pulse in dedicated or 4.E+12 protons
             per pulse in parasitic mode.
@@ -60,11 +67,12 @@ SAMPLE      Stainless steel holder, 100 microm thick Al foil
             backing. Thin layers of 4 - 450 microg/cm**2 on both
             sides and of 80 mm diameter, deposited by panting
             technique.
-             U-235 mass 31.8+-0.5 mg .
-             U-233 mass 28.8 0.5 mg.
-            Cm-245 mass 1.71 +- 0.03 mg.
-            Am-241 mass 2.26 +- 0.03 mg.
-            Am-243 mass 4.8 +- 0.1 mg.
+             U-235 mass 31.8+-0.5 mg (=+-1.6%), 0.2 kBq activity.
+             U-233 mass 28.8 0.5 mg. (=+-1.7%), 5 MBq activity.
+            Cm-245 mass 1.71 +- 0.03 mg (=+-1.8%), 0.2GBq activity
+            Am-241 mass 2.26 +- 0.03 mg (=+-1.3%),76MBq activity.
+            Am-243 mass 4.80 +- 0.1 mg (=+-2.1%), 7.4MBq activity.
+           Uranium samples in form of oxide U(3)O(8).
 DETECTOR   (IOCH) Fast ionization chamber (FIC) as fission
            fragment detector. Constituted by a stack of several
            parallel-plate chambers  with 5 mm spacing between
@@ -88,16 +96,44 @@ ANALYSIS   (SHAPE) Shape analysis of the TAC energy response for
            consisted in gamma-ray cascade generator coupled to
            GEANT4 toolkit.
            For fission - 100 % efficiency was considered.
+           In the energy range above 10 keV, the cross-section was
+           extracted directly from the ratio to U-235(n,f)
+           reaction. Between 0.16 and 245 eV the cross-section is
+           determined using the smooth flux obtained from the
+           Li-6(n,a) reaction, normalized to the U-235(n,f) data
+           between 0.16 eV and 1 eV.
 CORRECTION MCNPX simulation to quantify the beam attenuation in
             various materials (targets, backings, electrodes),
             value was evaluated about 0.1%, so no correction was
             applied.
+           For energy loss in the sample and in the gas volume by
+           Monte Carlo simulation.
+           Loss of counts due to the dead-time induced by the
+           reconstruction routine was calculated under hypothesis
+           of a non-paralyzable model.
+           Efficiency and dead-time corrections were found to be
+           of the order of a few percent.
+ERR-ANALYS (ERR-1,,1.) Uncertainty due to Efficiency and dead-time
+           corrections.
+           (ERR-SYS) Overall systematic uncertainty.
 STATUS     (PRELM) Preliminary results.
            Request for the data to M.Calviani was sent 05.08.2009.
 HISTORY    (20090728C)       M.M.
-ENDBIB              94
-NOCOMMON             0          0
-ENDSUBENT           97
+           (20100502A) Subent 003 (without data)was deleted as
+            superseded by Subent 14257002.
+           (20101107A) M.M. Reference S,AIP-1175,,211,2010 was
+           added. BIB information was added.
+            Subents 005-008 were added.
+           Request  to M.Calviani was sent 10 Nov.2010
+           for the data of
+           U-235(n,f), Cm-245(n,f), Am-241(n,f), Am-243(n,f) c-s.
+ENDBIB             126
+COMMON               1          3
+ERR-SYS
+PER-CENT
+ 3.
+ENDCOMMON            3
+ENDSUBENT          133
 SUBENT        23072002   20090728   20100209   20100209       2214
 BIB                  3          4
 REACTION   (92-U-235(N,F),,SIG)
@@ -112,8 +148,8 @@ EV         EV
 ENDCOMMON            3
 NODATA               0          0
 ENDSUBENT           12
-SUBENT        23072003   20090728   20100209   20100209       2214
-BIB                  4          8
+SUBENT        23072003   20100923   20110216   20110208       2223
+BIB                  4         10
 REACTION   (92-U-233(N,F),,SIG)
 CORRECTION  Subsequent loss of efficiency was corrected
             recalculating the corresponding flux from U-235 for
@@ -121,17 +157,19 @@ CORRECTION  Subsequent loss of efficiency was corrected
 ADD-RES    (COMP) Comparison with ENDF/B-VII.0:
             small differences in the amplitude of some resonances
             are observed.
-STATUS     (UNOBT) Data are presented on Fig.5 of C,2007NICE.
-ENDBIB               8
+STATUS             Data are presented on Fig.5 of C,2007NICE.
+           (SPSDD,14257002) Average data.
+           (SPSDD,14257003) Pointwise detailed data from author.
+ENDBIB              10
 COMMON               2          3
 EN-MIN     EN-MAX
 EV         MEV
 0.050       2.
 ENDCOMMON            3
 NODATA               0          0
-ENDSUBENT           16
-SUBENT        23072004   20090728   20100209   20100209       2214
-BIB                  5         15
+ENDSUBENT           18
+SUBENT        23072004   20101107   20110216   20110208       2223
+BIB                  5         16
 REACTION   (96-CM-245(N,F),,SIG)
 DECAY-DATA (96-CM-245,8500.YR)
 CORRECTION  Subsequent loss of efficiency was corrected
@@ -146,13 +184,101 @@ REL-REF    (N,,J.C.Browne+,J,NSE,65,166,1978)
            (N,,R.W.Benjamin+,J,NSE,47,203,1972)
              Weighted mean of values of REL-REFs was used for
             normalization.
-STATUS     (UNOBT) Data are presented on Fig.6 of C,2007NICE.
-ENDBIB              15
+STATUS             Data are presented on Fig.6 of C,2007NICE.
+           (SPSDD,23072008) Different normalization.
+ENDBIB              16
 COMMON               2          3
 EN-MIN     EN-MAX
 EV         MEV
 0.035       1.
 ENDCOMMON            3
 NODATA               0          0
+ENDSUBENT           24
+SUBENT        23072005   20101107   20110216   20110208       2223
+BIB                  5          8
+REACTION   (92-U-233(N,F),,SIG)
+ANALYSIS   Thermal cross section was extracted from n TOF data
+           by linear fit. Agreement within 1% with ENDF/B-VII.O
+           value of 530.70 barn.
+ERR-ANALYS (DATA-ERR) Not explained.
+STATUS     (TABLE) Text, page 215 of S,AIP-1175,,211,2010.
+           (DEP,14257003)  See ANALYSIS.
+HISTORY    (20101107C)
+ENDBIB               8
+COMMON               1          3
+EN
+EV
+0.0253
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+B          B
+ 534.8      0.2
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        23072006   20101107   20110216   20110208       2223
+BIB                  5          7
+REACTION   (95-AM-243(N,F),,SIG)
+ADD-RES    (COMP) Comparison with ENDF/B-VII.0 .
+REL-REF    (D,,A.Laptev+,C,2004SANTA,,864,2004)
+           (D,,M.Aiche+,C,2007NICE,1,483,200704)
+STATUS     (UNOBT) Data are presented on Fig.3a of
+           S,AIP-1175,,211,2010 -results for limited energy range.
+HISTORY    (20101107C)
+ENDBIB               7
+COMMON               2          3
+EN-MIN     EN-MAX
+EV         EV
+      0.02       2.E+6
+ENDCOMMON            3
+NODATA               0          0
+ENDSUBENT           15
+SUBENT        23072007   20101107   20110216   20110208       2223
+BIB                  8         15
+REACTION   (95-AM-241(N,F),,SIG)
+ANALYSIS    Analysis was complicated by the presence of a large
+           alpha-particle background, and of Pu-239 contamination,
+           which was asserted at the level of 0.2% from two Pu-239
+           resonances.
+REL-REF    (R,,J.W.T.Dabbs+,J,NSE,83,22,1983)
+CORRECTION Background and the subtracted Pu-239 yield were
+           renormalized to the results of Dabbs+ around
+           1.27 eV resonance.
+ADD-RES    (COMP) Comparison with ENDF/B-VII.0 .
+ERR-ANALYS (DATA-ERR,,10.) Uncertainty close to 10% mainly due to
+           normalization effects.
+STATUS     (UNOBT) Data are presented on Fig.3b of
+           S,AIP-1175,,211,2010 -results for limited energy range.
+HISTORY    (20101107C)
+ENDBIB              15
+COMMON               2          3
+EN-MIN     EN-MAX
+EV         EV
+ 0.18       0.4
+ENDCOMMON            3
+NODATA               0          0
 ENDSUBENT           23
-ENDENTRY             4
+SUBENT        23072008   20101107   20110216   20110208       2223
+BIB                  5         13
+REACTION   (96-CM-245(N,F),,SIG)
+ADD-RES    (COMP) Comparison with ENDF/B-VII.0 .
+ANALYSIS   Analysis is complicated by the alpha activity and by
+           the presence of a 6.6% contamination of Cm-244, which
+           contributes to the background due to the high
+           spontaneous fission count-rate. Both effects are
+           subtracted using the runs without beam.
+           Due to a large uncertainty in the efficiency
+           correction, the n TOF data have been normalized to
+           ENDF/B-VII.0 data at 32 meV.
+STATUS     (UNOBT) Data are presented on Fig.4 of
+           S,AIP-1175,,211,2010 -results for limited energy range.
+HISTORY    (20101107C)
+ENDBIB              13
+COMMON               3          3
+EN-MIN     EN-MAX     EN-NRM
+EV         MEV        MILLI-EV
+     0.032      2.     32.
+ENDCOMMON            3
+NODATA               0          0
+ENDSUBENT           21
+ENDENTRY             8

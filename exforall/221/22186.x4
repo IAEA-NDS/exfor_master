@@ -1,23 +1,25 @@
-ENTRY            22186   20090519   20090901   20090818       2213
-SUBENT        22186001   20090519   20090901   20090818       2213
-BIB                 16         60
-INSTITUTE  (2JPNOSA,2JPNJAE)
-REFERENCE  (R,OKTAV-A-92-01,199208) Main reference.Tabulated data
-                                    and graphs
-           (R,JAERI-M-91-032,199103)
-           ((R,JAERI-M-90-220,199012)=(R,NEANDC(J)-158,199012)=
-           (R,INDC(JPN)-146,199012)) DE, DA, SIG data for Ti,
-                   Mo, Sn, tables and graphs
-           (J,NST,25,215,1988) Experimental details
-REL-REF    (E,,E.Ishimura+,R,OKTAV-A-87-02,1987) Method of
-                 correction calculations
+ENTRY            22186   20101117   20110216   20110208       2224
+SUBENT        22186001   20101117   20110216   20110208       2224
+BIB                 16         65
+TITLE       Measurement of double differential neutron emission
+            cross sections at 14.1 MeV for Ti, Mo, Sn and Sb
 AUTHOR     (A.Takahashi, M.Gotoh, Y.Sasaki, H.Sugimoto,
-           K.Yamanaka, H.Kanazawa, F.Maekawa)
-TITLE      -Measurement of Double Differential Neutron Emission
-            Cross Sections at 14.1 MeV for Ti, Mo, Sn and Sb
-FACILITY   (CCW,2JPNOSA) The intense 14 MeV neutron source
-            OKTAVIAN at Osaka University.
-INC-SOURCE (D-T)   2 cm diam tritiated titanium target, pulsed
+            K.Yamanaka, H.Kanazawa, F.Maekawa)
+INSTITUTE  (2JPNOSA,2JPNJAE)
+REFERENCE  (R,OKTAV-A-92-01,1992)
+            Tables (ADX,SIG,EDX,DDX) and figs (ADX,EDX,DDX) given
+           ((R,JAERI-M-90-220,1990)=(R,NEANDC(J)-158,1990)=
+           (R,INDC(JPN)-146,1990))
+            Same tabulated ADX and EDX given for Ti, Mo and Sn
+            (Elastic ADX is probably misprinted for Ti.)
+           (S,JAERI-M-91-032,227,1991)
+            Figures (DDX,EDX,ADX) given
+REL-REF    (M,,E.Ishimura+,R,OKTAV-A-87-02,1987)
+            Method of correction calculations
+           (M,,A.Takahashi,J,NST,25,215,198803)
+            Experimental method in detail
+FACILITY   (CCW,2JPNOSA) Intense 14 MeV neutron source OKTAVIAN
+INC-SOURCE (D-T) 2 cm diam tritiated titanium target, pulsed
             beam with 1.8 nsec pulse width and 1 MHz repetition
             rate.
 SAMPLE     .Cylindrical natural metal rod 3.0 cm in diam and
@@ -59,15 +61,18 @@ STATUS     .Tables given in main reference. And obtained on tape
 HISTORY    (19910716C) S.W.
            (19910722E)
            (19980223A) Duplicate data sets deleted
+           (20090305R) Data from T.Nakagawa & I.Murata by INTERNET
            (20090519A) Uncorrected data restored and new SUBENTS
                        with data from main reference added
-ENDBIB              60
+           (20101102A) SD: Author's remark added to Subent 081
+           (20101117A) On. REFERENCE updated
+ENDBIB              65
 COMMON               2          3
 EN         EN-RSL
 MEV        MEV
- 1.4100E+01 2.0000E-01
+ 14.1       0.20
 ENDCOMMON            3
-ENDSUBENT           67
+ENDSUBENT           72
 SUBENT        22186002   20090519   20090901   20090818       2213
 BIB                  4          9
 REACTION   (22-TI-0(N,X)0-NN-1,,DA/DE) DDX data in LAB system
@@ -8602,15 +8607,15 @@ MEV        MEV        ADEG       B/SR       B/SR
    -1.4       -3.4       160.        4.45E-3     1.3E-3
 ENDDATA             15
 ENDSUBENT           28
-SUBENT        22186062   20090519   20090901   20090818       2213
+SUBENT        22186062   20101117   20110216   20110208       2224
 BIB                  5          7
-REACTION   (42-MO-0(N,2N),,DA) N,2N angular distribution
-                               in LAB system
+REACTION   (42-MO-0(N,2N),,DA)
 ANALYSIS   (INTED)
-CORRECTION .From corrected DDX data. Details see in SAN 001
-STATUS     (TABLE) From table 14 of main reference, page Mo-1:393
-           (DEP,22186057)
-HISTORY    (20090519C)   S.M.
+CORRECTION  From corrected DDX data. Details see in SAN 001
+STATUS     (TABLE) Table 14, page Mo-1:393 of R,OKTAV-A-92-01,1992
+           (DEP,22186057) (n,x+n) double diff. cross section
+HISTORY    (20090519C) S.M.
+           (20101117U) On. BIB updated
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         16
@@ -8669,22 +8674,28 @@ MEV        MEV        B          B
    -1.4       -3.4        8.00E-2     1.6E-2
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        22186065   20090519   20090901   20090818       2213
-BIB                  5          6
-REACTION   (42-MO-0(N,2N),,SIG)  N,2N cross section in LAB system
-ANALYSIS   (INTED,INTAD)
-CORRECTION .From corrected DDX data. Details see in SAN 001
-STATUS     (TABLE) From table 14 of main reference, page Mo-1:393
-           (DEP,22186057)
-HISTORY    (20090519C)   S.M.
-ENDBIB               6
+SUBENT        22186065   20101117   20110216   20110208       2224
+BIB                  6         12
+REACTION   (42-MO-0(N,2N),,SIG)
+ANALYSIS   (INTAD)
+CORRECTION  From corrected DDX data. Details see in SAN 001
+COMMENT    Isao Murata (2010-11-17)
+            Division by multiplicity 2 after integration of
+            DDX for (n,2n) part was probably forgotten.
+STATUS     (TABLE) Table 14, page Mo-1:393 of R,OKTAV-A-92-01,1992
+           (DEP,22186062) (n,2n) angular diff. cross section
+           (SPSDD,22186085) Factor 1/2 considered
+           (APRVD) Isao Murata and Hisashi Sugimoto (2010-11-17)
+HISTORY    (20090519C) S.M.
+           (20101117A) On. Superseded by 22186.085
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
-    1.95E+0     1.4E-1
+ 1.95       0.14
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           20
 SUBENT        22186066   20090519   20090901   20090818       2213
 BIB                  5          7
 REACTION   (51-SB-0(N,EL)51-SB-0,,DA) Elastic angular distribution
@@ -8751,15 +8762,15 @@ ADEG       B/SR       B/SR
  150.          3.37E-3     3.8E-4
 ENDDATA             15
 ENDSUBENT           32
-SUBENT        22186068   20090519   20090901   20090818       2213
+SUBENT        22186068   20101117   20110216   20110208       2224
 BIB                  5          7
-REACTION   (51-SB-0(N,2N),,DA) N,2N angular distribution
-                               in LAB system
+REACTION   (51-SB-0(N,2N),,DA)
 ANALYSIS   (INTED)
-CORRECTION .From corrected DDX data. Details see in SAN 001
-STATUS     (TABLE) From table 17 of main reference, page Sb-1:455
-           (DEP,22186054)
-HISTORY    (20090519C)   S.M.
+CORRECTION  From corrected DDX data. Details see in SAN 001
+STATUS     (TABLE) Table 17, page Sb-1:455 of R,OKTAV-A-92-01,1992
+           (DEP,22186054) (n,x+n) double diff. cross section
+HISTORY    (20090519C) S.M.
+           (20101117U) On. BIB updated
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         16
@@ -8818,23 +8829,28 @@ MEV        MEV        B          B
    -1.0       -4.0        8.00E-2     1.6E-2
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        22186071   20090519   20090901   20090818       2213
-BIB                  5          7
-REACTION   (51-SB-0(N,2N),,SIG) N,2N cross section
-                               in LAB system
-ANALYSIS   (INTED,INTAD)
-CORRECTION .From corrected DDX data. Details see in SAN 001
-STATUS     (TABLE) From table 17 of main reference, page Sb-1:455
-           (DEP,22186054)
-HISTORY    (20090519C)   S.M.
-ENDBIB               7
+SUBENT        22186071   20101117   20110216   20110208       2224
+BIB                  6         12
+REACTION   (51-SB-0(N,2N),,SIG)
+ANALYSIS   (INTAD)
+CORRECTION  From corrected DDX data. Details see in SAN 001
+COMMENT    Isao Murata (2010-11-17)
+            Division by multiplicity 2 after integration of
+            DDX for (n,2n) part was probably forgotten.
+STATUS     (TABLE) Table 17, page Sb-1:455 of R,OKTAV-A-92-01,1992
+           (DEP,22186068) (n,2n) angular diff. cross section
+           (SPSDD,22186086) Factor 1/2 considered
+           (APRVD) Isao Murata and Hisashi Sugimoto (2010-11-17)
+HISTORY    (20090519C) S.M.
+           (20101117A) On. Superseded by 22186.086
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
-    1.95E+0     1.4E-1
+ 1.95       0.14
 ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           20
 SUBENT        22186072   20090519   20090901   20090818       2213
 BIB                  5         13
 REACTION  1(50-SN-0(N,X)0-NN-1,,DA/DE) Sec.neutron DDX data in
@@ -13551,16 +13567,19 @@ MEV        MEV        B/MEV      B/MEV      B/MEV      B/MEV
     1.00000    0.80000   4.09E-01   6.52E-03   3.78E-01   6.04E-03
 ENDDATA             71
 ENDSUBENT           89
-SUBENT        22186081   20090519   20090901   20090818       2213
-BIB                  5          7
+SUBENT        22186081   20101102   20110216   20110208       2224
+BIB                  6         10
 REACTION   (22-TI-0(N,EL)22-TI-0,,DA)
 ANALYSIS   (INTED)
 CORRECTION .Data from corrected DDX data, details see in SAN 001
 STATUS     (TABLE)  Data from table 15 of main reference,
                     page Ti-1:173
+COMMENT    Author's remark: Elastic data tabulated in Table 1
+           of JAERI-M-90-220 is not correct
            (DEP,22186078)
 HISTORY    (20090519C) S.M.
-ENDBIB               7
+           (20101102A) SD: Author's remark was added as a COMMENT
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 3         15
 ANG        DATA       DATA-ERR
@@ -13581,7 +13600,7 @@ ADEG       B/SR       B/SR
   150.         8.30E-3     2.4E-4
   160.         9.68E-3     4.1E-4
 ENDDATA             17
-ENDSUBENT           29
+ENDSUBENT           32
 SUBENT        22186082   20090519   20090901   20090818       2213
 BIB                  6          8
 REACTION   (22-TI-0(N,INL)22-TI-0,PAR,DA)
@@ -13675,4 +13694,32 @@ MEV        MEV        B          B
 -3.5       -4.2        0.0722     0.0180
 ENDDATA              5
 ENDSUBENT           18
-ENDENTRY            84
+SUBENT        22186085   20101117   20110216   20110208       2224
+BIB                  3          4
+REACTION   (42-MO-0(N,2N),,SIG)
+STATUS     (DEP,22186065) Data published in R,OKTAV-A-92-01
+           (APRVD) Isao Murata and Hisashi Sugimoto (2010-11-17)
+HISTORY    (20101117C) On
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+B          B
+ 0.975      0.07
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        22186086   20101117   20110216   20110208       2224
+BIB                  3          4
+REACTION   (51-SB-0(N,2N),,SIG)
+STATUS     (DEP,22186071) Data published in R,OKTAV-A-92-01
+           (APRVD) Isao Murata and Hisashi Sugimoto (2010-11-17)
+HISTORY    (20101117C) On
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+B          B
+ 0.975      0.07
+ENDDATA              3
+ENDSUBENT           12
+ENDENTRY            86

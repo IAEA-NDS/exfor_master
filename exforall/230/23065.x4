@@ -1,6 +1,6 @@
-ENTRY            23065   20100403   20100712   20100629       2218
-SUBENT        23065001   20100403   20100712   20100629       2218
-BIB                 13         49
+ENTRY            23065   20101104   20110216   20110208       2223
+SUBENT        23065001   20101104   20110216   20110208       2223
+BIB                 13         54
 TITLE      .Measurement of keV-Neutron Capture Gamma Rays for
             Se Isotopes
 AUTHOR     (M.Igashira, S.Kamada, T.Katabuchi, M.Mizumoto,
@@ -16,6 +16,8 @@ REFERENCE  (S,AIP-1090,376,200808)   Main reference. Neutron
               for Sn-116(n,gamma) reaction
            (S,JAEA-C-2009-004,181,2009)  Graphs for Se-80, Se-82
              cross sections and gamma spectra at neutron capture
+           (J,NST,47,(7),634,2010) Se-77 data.
+            First author S.Kamada .
 FACILITY   (VDGT,2JPNTIT) 3-MV PELLETRON accelerator of the
             Research Laboratory for Nuclear Reactors at the Tokyo
             Institute of Technology.
@@ -23,7 +25,7 @@ INC-SOURCE (P-LI7)  The 7Li(p,n)7Be reaction with a pulsed proton
             beam (1.5 ns neutron bunch width, 4 MHz repetition
             rate) from the Pelletron accelerator.
 INC-SPECT  .The incident neutron spectra are obtained at blank
-            irradiation and measured by Li-6 glass detector
+            irradiation and measured by Li-6 glass detector.
 DETECTOR   (SPEC,NAICR) Large anti-Compton NaI(TL) spectrometer.
             The main NaI detector has 15.2 cm diameter and 20.0
             cm length centered in hollow Compton suppression NaI
@@ -45,14 +47,17 @@ METHOD     (TOF)   The incident neutron energy spectrum on the
            (PHD) A pulse-height weighting technique was applied
              to the observed capture gamma-ray pulse-height
              spectra to obtain the capture yields.
-SAMPLE     .Gold metal disk 20 mm in diameter, 1 mm thick
+SAMPLE     .Gold metal disk about 20 mm in diameter, 1 mm thick
 ERR-ANALYS .By the authors: ERR-T= 5% As given in AIP-1090,376
 HISTORY    (20090930C)  S.M./M.M.
            (20100403A)  S.M. Preliminary and digitized data
             changed for the authorized. Thirteen new SUBENTS added
-ENDBIB              49
+           (20101104A) M.M. Reference J,NST,47,(7),634,2010 was
+           added. BIB information was added. Subents 003,004,013
+           were corrected. Three Subents were added.
+ENDBIB              54
 NOCOMMON             0          0
-ENDSUBENT           52
+ENDSUBENT           57
 SUBENT        23065002   20100403   20100712   20100629       2218
 BIB                  6         11
 REACTION   (34-SE-74(N,G)34-SE-75,,SIG,,SPA)  Averaged over
@@ -78,43 +83,121 @@ KEV        MB         PER-CENT   MB
  552.        107.        4.6         5.
 ENDDATA              7
 ENDSUBENT           23
-SUBENT        23065003   20100403   20100712   20100629       2218
-BIB                  6         11
+SUBENT        23065003   20101104   20110216   20110208       2223
+BIB                  9         70
 REACTION   (34-SE-77(N,G)34-SE-78,,SIG,,SPA)  Averaged over
                                      energy spectrum
-SAMPLE     .Enriched isotopic sample 20 mm diameter, 1-3 gram
-            weight. No further information
-MISC-COL   (MISC)   Cross section error in MB
-ERR-ANALYS (DATA-ERR)  Not specified
+SAMPLE                           Se-77      Au-197
+           Chemical purity,%     99.96      99.99
+           Net weight,g          0.997      3.427/6.856  *
+           Diameter,mm           14.2       15.
+           Thickness,mm          1.7        1.0/2.0      *
+                 1.E-3at/barn    4.92       5.93/11.9    *
+           * - Two gold samples (100.% Au-197) - for 15-100 keV
+               and for 510 keV.
+           Se-77 sample isotopic composition, % :
+           Se-74 - 0.02, Se-76 - 0.14, Se-77 - 99.66,
+           Se-78 - 0.09, Se-80 - 0.05, Se-82 - 0.04 .
+INC-SPECT   Incident neutron spectra are given on Fig.2 of
+            J,NST,47,(7),634,2010 .
+ANALYSIS   Energy calibration of PH spectra was done by standard
+           gamma-ray sources: Cs-137, Na-22, Co-60 and background
+           gamma-rays K-40(1.461 MeV),
+           Fe-56(Nthermal,g)Fe-57 7.638 MeV (weighted average of
+           7.631 and 7.6464 MeV gamma-rays).
+           Se-77 capture c-s were defined by the average capture
+           c-s of Au-197, obtained as from standard capture c-s
+           from ENDF/B-VII.0 by averaging over incident neutron
+           spectrum in respective energy range.
+CORRECTION  Correction factors for self-shielding Cns and
+           multiple scattering of neutrons in sample:
+                           Se-77                 Au-197
+           En,keV     Cns        Cnm        Cns        Cnm
+           15-25      0.964      1.102      0.960      1.122
+           25-35      0.966      1.094      0.962      1.112
+           35-55      0.967      1.085      0.965      1.101
+           55-100     0.969      1.074      0.968      1.088
+           510        0.975      1.073      0.964      1.088
+           Correction for self-shielding and multiple scattering
+           was  carried out by Monte Carlo method, taking into
+           account isotopic and chemical impurities, using data of
+           JENDL-3.3 and ENDF/B-VII.0.
+           Correction for chemical impurities < o.01%,
+           for isotopic impurities <0.09%.
+           Dead time correction < 0.3%.
+           Contributions of the extrapolation regions to the
+           capture yields - 2.7-4.7 % in 15-100 keV energy,
+                          - 3.0-7.7 % at 510 keV energy.
+MISC-COL   (MISC)   Cross section total error in MB
+ERR-ANALYS (ERR-T)  Total error.
+           (ERR-S) Statistical error.
+           (ERR-1) Au-197 statistical error.
+           (ERR-2) Error due to Se-77 self-shielding and multiple
+                   scattering.
+           (ERR-3) Error due to Au-197 self-shielding and multiple
+                   scattering.
+           (ERR-4) Error due to weighting function.
+           (ERR-5,,0.1) Error due to impurity correction for Se-77
+                      capture yields.
+           (ERR-6) Error due to extrapolation of PH spectrum of
+                   Se-77.
+           (ERR-7) Error due to extrapolation of PH spectrum of
+                   Au-197.
+           (ERR-8) Error of number of target nuclei.
+           (MONIT-ERR) Error of Au-197 standard capture cross
+                      sections.
 STATUS     (TABLE)    Sent by INTERNET, So Kamada via N.Otsuka,
               2010-03-30. Data given on Fig.3, right panel,
-              of AIP-1090376
+              of AIP-1090,376 .
+           Data are published in Table 5 of J,NST,47,(7),634,2010.
 HISTORY    (20100403C)   S.M.
            (20100330R)   Data received
-ENDBIB              11
-NOCOMMON             0          0
-DATA                 4          5
-EN-MEAN    DATA       DATA-ERR   MISC
-KEV        MB         PER-CENT   MB
-  20.           619.     3.9           24.
-  30.           514.     3.8           20.
-  44.           420.     3.7           16.
-  69.           326.     3.7           12.
- 511.            43.4    4.8            2.1
-ENDDATA              7
-ENDSUBENT           23
-SUBENT        23065004   20100403   20100712   20100629       2218
-BIB                  5          9
+           (20101104A) Data were corrected as given in Table 4 of
+                       J,NST,47,(7),634,2010.
+            CORRECTION, ERR-ANALYS, COMMON were added.
+ENDBIB              70
+COMMON               2          3
+ERR-4      ERR-8
+PER-CENT   PER-CENT
+ 1.0        0.2
+ENDCOMMON            3
+DATA                14          5
+EN-MEAN    EN-MIN     EN-MAX     EN-RSL-FW  DATA       ERR-T
+MISC       ERR-S      ERR-1      ERR-2      ERR-3      ERR-6
+ERR-7      MONIT-ERR
+KEV        KEV        KEV        KEV        MB         PER-CENT
+MB         PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT
+  21.       15.       25.                    619.      3.9
+  24.       0.6        0.9        0.6        0.8        0.8
+ 1.4         3.0
+  30.       25.       35.                    514.      3.9
+  20.       0.5        0.7        0.6        0.7        0.8
+ 1.4         3.0
+  45.       35.       55.                    420.      3.7
+  16.       0.4        0.6        0.5        0.6        0.8
+ 1.4         3.0
+  70.       55.       100.                   326.      3.7
+  12.       0.4        0.7        0.4        0.5        0.8
+ 1.4         3.0
+ 510.                            81.         44.       4.8
+  2.1       1.8        0.7        0.5        0.5        0.9
+ 2.3         3.5
+ENDDATA             21
+ENDSUBENT          100
+SUBENT        23065004   20101104   20110216   20110208       2223
+BIB                  4         10
 REACTION   (34-SE-77(N,G)34-SE-78,,MLT/DE,,AV)     Averaged over
              energy interval given in COMMON section
-SAMPLE     .Enriched isotopic sample 20 mm diameter, 1-3 gram
-            weight. No further information
 ERR-ANALYS (DATA-ERR)   Error given by authors are not specified
 STATUS     (TABLE)   Data obtained by INTERNET from So Kamada,
               2010-03-30 via N.Otsuka. Fig 4 of AIP-1090,376
-HISTORY    (20100403A)  S.M. Digitized data changed to authorized
-           (20100330R)   Data received
-ENDBIB               9
+            Fig.7 of J,NST,47,(7),634,2010 .
+           (DEP,23065003) See Subent 003 for SAMPLE, CORRECTION,
+           ANALYSIS.
+HISTORY    (20100330R)   Data received
+           (20100403A)  S.M. Digitized data changed to authorized
+ENDBIB              10
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
@@ -337,7 +420,7 @@ MEV        PT/RCT/MEV PT/RCT/MEV
  1.1050E+01 1.9014E-04 6.2497E-04
  1.1100E+01 0.0000E+00 0.0000E+00
 ENDDATA            215
-ENDSUBENT          233
+ENDSUBENT          234
 SUBENT        23065005   20100403   20100712   20100629       2218
 BIB                  5         10
 REACTION   (34-SE-74(N,G)34-SE-75,,MLT/DE,,AV)     Averaged over
@@ -1153,18 +1236,19 @@ MEV        PT/RCT/MEV PT/RCT/MEV
  8.2500E+00 0.0000E+00 0.0000E+00
 ENDDATA            156
 ENDSUBENT          174
-SUBENT        23065013   20100403   20100712   20100629       2218
-BIB                  5          9
+SUBENT        23065013   20101104   20110216   20110208       2223
+BIB                  4         10
 REACTION   (34-SE-77(N,G)34-SE-78,,MLT/DE,,SPA)   Averaged over
                                                   energy spectrum
-SAMPLE     .Enriched isotopic sample 20 mm diameter, 1-3 gram
-            weight. No further information
 ERR-ANALYS (DATA-ERR)   Error given by authors are not specified
 STATUS     (TABLE)   Data obtained by INTERNET from So Kamada,
                      2010-03-30 via N.Otsuka
-HISTORY    (20100403C)  S.M.
-           (20100330R)   Data received
-ENDBIB               9
+            Fig.7 of J,NST,47,(7),634,2010 .
+           (DEP,23065003) See Subent 003 for SAMPLE, CORRECTION,
+           ANALYSIS.
+HISTORY    (20100330R)   Data received
+           (20100403C)  S.M.
+ENDBIB              10
 COMMON               1          3
 EN-MEAN
 KEV
@@ -1392,7 +1476,7 @@ MEV        PT/RCT/MEV PT/RCT/MEV
  1.1300E+01 3.5636E-05 1.5143E-03
  1.1350E+01 0.0000E+00 0.0000E+00
 ENDDATA            220
-ENDSUBENT          238
+ENDSUBENT          239
 SUBENT        23065014   20100403   20100712   20100629       2218
 BIB                  5          9
 REACTION   (34-SE-78(N,G)34-SE-79,,MLT/DE,,AV)     Averaged over
@@ -2172,4 +2256,79 @@ MEV        PT/RCT/MEV PT/RCT/MEV
  6.0000E+00 0.0000E+00 0.0000E+00
 ENDDATA            111
 ENDSUBENT          131
-ENDENTRY            18
+SUBENT        23065019   20101104   20110216   20110208       2223
+BIB                  6         10
+REACTION   (34-SE-77(N,G)34-SE-78,PAR,MLT) Gamma multiplicity,
+             gammas/capture, for gammas of energy > E-MIN.
+ERR-ANALYS (DATA-ERR) Not specified, probably total.
+EN-SEC     (E-MIN,G) Minimal gamma energy.
+ANALYSIS   (INTED) Multiplicities were derived by integrating the
+            gamma-ray spectra with respect to gamma-ray energy.
+STATUS     (TABLE) Table 6 of J,NST,47,(7),634,2010
+           (DEP,23064004) See ANALYSIS.
+           (DEP,23064013) See ANALYSIS.
+HISTORY    (20101104C) M.M.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 4          3
+EN-CM      E-MIN      DATA       DATA-ERR
+KEV        MEV        PRT/REAC   PRT/REAC
+ 45.       0.50        4.04      0.08
+ 45.       0.60        3.92      0.12
+504.       0.60        4.06      0.15
+ENDDATA              5
+ENDSUBENT           20
+SUBENT        23065020   20101104   20110216   20110208       2223
+BIB                  6         11
+REACTION   (34-SE-77(N,G)34-SE-78,PAR,MLT) Gamma multiplicity,
+             gammas/capture, for primary transition from 1-st
+           and 2-nd state to ground.
+ERR-ANALYS (DATA-ERR) Not specified, probably total.
+EN-SEC     (E-LVL-INI,34-SE-78) Energy of initial state.
+           (E-LVL-FIN,34-SE-78) Energy of final state.
+ANALYSIS    Multiplicities were derived from the gamma-ray spectra
+STATUS     (TABLE) Table 6 of J,NST,47,(7),634,2010
+           (DEP,23064004) See ANALYSIS.
+           (DEP,23064013) See ANALYSIS.
+HISTORY    (20101104C) M.M.
+ENDBIB              11
+COMMON               1          3
+E-LVL-FIN
+MEV
+0.
+ENDCOMMON            3
+DATA                 4          4
+EN-CM      E-LVL-INI  DATA       DATA-ERR
+KEV        MEV        PRT/REAC   PRT/REAC
+ 45.       0.614      0.81       0.01
+ 45.       1.309      0.17       0.01
+504.       0.614      0.84       0.04
+504.       1.309      0.17       0.06
+ENDDATA              6
+ENDSUBENT           26
+SUBENT        23065021   20101104   20110216   20110208       2223
+BIB                  6         10
+REACTION   (34-SE-77(N,G)34-SE-78,PAR,MLT) Gamma multiplicity,
+             gammas/capture, for cascade transitions from capture
+           states to ground, 1-st, 2-nd states.
+ERR-ANALYS (DATA-ERR) Not specified, probably total.
+EN-SEC     (E-LVL,34-SE-78) Energy of final state.
+ANALYSIS    Multiplicities were derived from the gamma-ray spectra
+STATUS     (TABLE) Table 6 of J,NST,47,(7),634,2010
+           (DEP,23064004) See ANALYSIS.
+           (DEP,23064013) See ANALYSIS.
+HISTORY    (20101104C) M.M.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 4          6
+EN-CM      E-LVL      DATA       DATA-ERR
+KEV        MEV        PRT/REAC   PRT/REAC
+ 45.       0.            1.90E-02   0.06E-02
+ 45.       0.614         1.34E-02   0.06E-02
+ 45.       1.309         1.31E-02   0.06E-02
+504.       0.            0.99E-02   0.10E-02
+504.       0.614         0.89E-02   0.11E-02
+504.       1.309         0.77E-02   0.14E-02
+ENDDATA              8
+ENDSUBENT           23
+ENDENTRY            21
