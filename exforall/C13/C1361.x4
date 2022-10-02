@@ -1,30 +1,54 @@
-ENTRY            C1361   20051103   20060111   20060104       C076
-SUBENT        C1361001   20051103   20060111   20060104       C076
-BIB                 10         12
+ENTRY            C1361   20120627   20121029   20121025       C120
+SUBENT        C1361001   20120627   20121029   20121025       C120
+BIB                 11         25
 INSTITUTE  (1USANRL)
 REFERENCE  (J,PR,107,538,1957)
 AUTHOR     (E.G.Illsley,H.D.Holmgren,R.L.Johnston,E.A.Wolicki)
-TITLE      Differential Cross Sections for the C13(He3, p)N15
-            Reaction
-FACILITY   (VDG,1USANRL) U.S. Naval Research Lab. 2 Mv and 5 Mv
+TITLE      Differential cross sections for the C13(He3,p)N15
+            reaction
+FACILITY   (VDG,1USANRL) U.S. Naval Research Lab. 2 MV and 5 MV
             Van de Graaff
-INC-SOURCE 3He beam from 2.0 to 4.5 MeV
 DETECTOR   (PLATE) Ilford C-2 200 micron nuclear emulsions
-SAMPLE     Target chamber
+SAMPLE     The C13 enriched methyl iodide was cracked onto
+           a 50-microinch foil, and the carbon deposit on the
+           back of the foil was peeled o6 in order to obtain a
+           single thin layer of carbon.
+REL-REF    (I,F0487001,H.D.Holmgren+,J,PR,104,1446,1956)
+                 Target chamber description
+           (M,,H.D.Holmgren+,J,PR,106,100,1956) -  The targets
+           and method of measuring the absolute cross section
+           have been described.
+ERR-ANALYS (ERR-T) The uncertainties in the absolute
+           differential  cross sections arise almost entirely
+           from the measurement of the target thickness and are
+            estimated to be about 20%
 PART-DET   (P)
 HISTORY    (20051103C) DR
-ENDBIB              12
-NOCOMMON             0          0
-ENDSUBENT           15
-SUBENT        C1361002   20051103   20060111   20060104       C076
-BIB                  3          3
-REACTION   (6-C-13(HE3,P)7-N-15,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 1
-ENDBIB               3
-NOCOMMON             0          0
+           (20120627A) SD: BIB updated. REACTION code in Subents
+             2,3 corrected. Subents 4,5 were added.
+ENDBIB              25
+COMMON               1          3
+ERR-T
+PER-CENT
+  20.
+ENDCOMMON            3
+ENDSUBENT           32
+SUBENT        C1361002   20120627   20121029   20121025       C120
+BIB                  4          6
+REACTION   (6-C-13(HE3,P)7-N-15,PAR,DA)
+ERR-ANALYS (ERR-S) The uncertainties indicated on the experimental
+           points are due to the statistical fluctuations
+STATUS     (CURVE) Data taken from Fig. 1 in PR,107,538,1957
+HISTORY    (20111128A) SD: REACTION code corrected (SF5=PAR added)
+            E-LVL added to COMMON.
+ENDBIB               6
+COMMON               1          3
+E-LVL
+MEV
+ 0.0
+ENDCOMMON            3
 DATA                 4         31
-EN         ANG-CM     DATA-CM    ERR-T
+EN         ANG-CM     DATA-CM    ERR-S
 MEV        ADEG       MB/SR      MB/SR
 2.0           9.17E+00   3.23E-01   9.37E-03
 2.0           1.98E+01   3.04E-01   6.81E-03
@@ -58,14 +82,22 @@ MEV        ADEG       MB/SR      MB/SR
 4.5           1.47E+02   1.07E+00   3.73E-02
 4.5           1.57E+02   1.49E+00   4.98E-02
 ENDDATA             33
-ENDSUBENT           41
-SUBENT        C1361003   20051103   20060111   20060104       C076
-BIB                  3          3
-REACTION   (6-C-13(HE3,P)7-N-15,,DA)
-ERR-ANALYS No information
-STATUS     (CURVE) Data taken from Fig. 2
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           48
+SUBENT        C1361003   20120627   20121029   20121025       C120
+BIB                  4          7
+REACTION   (6-C-13(HE3,P)7-N-15,PAR,DA)
+ERR-ANALYS (DATA-ERR) The uncertainty in the determination of
+            the camera solid angles, and an estimated counting
+            uncertainty of 1%.
+STATUS     (CURVE) Data taken from Fig. 2 in PR,107,538,1957
+HISTORY    (20111128A) SD: REACTION code corrected (SF5=PAR added)
+            E-LVL added to COMMON.
+ENDBIB               7
+COMMON               2          3
+E-LVL      DATA-ERR
+MEV        PER-CENT
+  0.0        1.0
+ENDCOMMON            3
 DATA                 3        178
 ANG        EN         DATA
 ADEG       MEV        MB/SR
@@ -248,5 +280,55 @@ ADEG       MEV        MB/SR
 150.          3.60E+00   9.64E-01
 150.          3.69E+00   9.59E-01
 ENDDATA            180
-ENDSUBENT          188
-ENDENTRY             3
+ENDSUBENT          196
+SUBENT        C1361004   20120627   20121029   20121025       C120
+BIB                  3          5
+REACTION   (6-C-13(HE3,P)7-N-15,PAR,DA,,LEG/RS0)
+STATUS     (TABLE) Data taken from Tbl.1  in PR,107,538,1957
+           (DEP,C1361002)
+           (DEP,C1361003)
+HISTORY    (20120627C) SD
+ENDBIB               5
+COMMON               1          3
+E-LVL
+MEV
+  0.0
+ENDCOMMON            3
+DATA                 3         12
+EN         NUMBER     DATA
+MEV        NO-DIM     NO-DIM
+ 2.00        1.          0.03
+ 2.00        2.          0.74
+ 2.00        3.         -0.005
+ 2.00        4.          0.30
+ 2.00        5.          0.02
+ 2.00        6.          0.07
+ 4.5         1.          0.45
+ 4.5         2.          0.97
+ 4.5         3.          0.06
+ 4.5         4.          0.51
+ 4.5         5.          0.09
+ 4.5         6.          0.45
+ENDDATA             14
+ENDSUBENT           28
+SUBENT        C1361005   20120627   20121029   20121025       C120
+BIB                  4          5
+REACTION   (6-C-13(HE3,P)7-N-15,PAR,SIG)
+ANALYSIS   (INTAD)
+STATUS     (TABLE) Data taken from Tbl.1  in PR,107,538,1957
+           (DEP,C1361004)
+HISTORY    (20120627C) SD
+ENDBIB               5
+COMMON               1          3
+E-LVL
+MEV
+  0.0
+ENDCOMMON            3
+DATA                 2          2
+EN         DATA
+MEV        MB
+  2.00       2.1
+  4.5       14.
+ENDDATA              4
+ENDSUBENT           18
+ENDENTRY             5

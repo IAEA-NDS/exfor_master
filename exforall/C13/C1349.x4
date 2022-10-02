@@ -1,47 +1,63 @@
-ENTRY            C1349   20051021   20060111   20060104       C076
-SUBENT        C1349001   20051021   20060111   20060104       C076
-BIB                 12         25
+ENTRY            C1349   20120626   20121029   20121025       C120
+SUBENT        C1349001   20120626   20121029   20121025       C120
+BIB                 10         32
 INSTITUTE  (1USAMSU)
 REFERENCE  (J,PR/C,23,589,1981)
+           (J,PRL,39,1451,1977) 116Sn,122Sn data
 AUTHOR     (G.M.Crawley,W.Benenson,G.Bertsch,S.Gales,D.Weber,
             B.Zwieglinski)
-TITLE      Hole states in the tin isotopes observed by the (p, t)
+TITLE      Hole states in the tin isotopes observed by the (p,t)
             reaction
-FACILITY   (CYCLO,1USAMSU) The Michigan State University
-            isochronous cyclotron.
-INC-SOURCE  42 MeV proton beam
+FACILITY   (ISOCY,1USAMSU) The Michigan State University
+           isochronous cyclotron.
 METHOD     (EDE)
 DETECTOR   (SOLST) Solid state detector telescope
            (NAICR) NaI monitor detector at a fixed laboratory
             angle of 90 degree.
            Enge split-pole spectrograph
-SAMPLE     The targets were self-supporting foils of various
-            thicknesses ranging from about 5.3 to 0.3 mg/cm2 with
-            the following isotopic abundances: 124Sn (94.7 %),
-            122Sn (90.8 %), 118Sn (96.6 %), 116Sn (95.6 %) and
-            112Sn (80.0 %).
-PART-DET   (T)
-MONITOR    Calibration was performed using the known low lying
+MONITOR    The absolute cross section was obtained by measuring
+           the elastic scattering at 8., 10., and 12. degr. and
+           comparing with an optical model calculation.
+           Calibration was performed using the known low lying
             states of the lighter tin isotopes, the oxygen and
             carbon impurities in the tin targets and also the
             58Ni(p,t) and 64Ni(p,t) reactions.
+ERR-ANALYS (DATA-ERR) The absolute cross sections are
+           accurate to better than 10%, one of the largest
+           uncertainties in extracting the cross section for the
+           broad feature arises from the background subtraction.
+           An estimate of this error was made by repeating the
+            extraction of the peak a number of times with
+           different backgrounds.
 HISTORY    (20051021C) DR
-ENDBIB              25
+           (20120626A) SD: BIB update. SF5=PAR was added to
+           REACTION code and E-EXC was added to COMMON in
+           Subents 2-9. Subents 10,11 were added.
+ENDBIB              32
 COMMON               1          3
 EN
 MEV
 42.
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        C1349002   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-112(P,T)50-SN-110,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 2
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           39
+SUBENT        C1349002   20120626   20121029   20121025       C120
+BIB                  4          8
+REACTION   (50-SN-112(P,T)50-SN-110,PAR,DA)
+SAMPLE     (50-SN-112,ENR=0.800) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                 112Sn (80.0 %).
+STATUS     (CURVE) Data taken from Fig. 2 in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               8
+COMMON               2          3
+E-EXC      E-EXC-ERR
+MEV        MEV
+   7.15       0.10
+ENDCOMMON            3
 DATA                 3          9
-ANG-CM     DATA-CM    ERR-T
+ANG-CM     DATA-CM    DATA-ERR
 ADEG       MB/SR      MB/SR
    8.71E+00   3.27E-01   3.90E-02
    1.28E+01   2.54E-01   2.85E-02
@@ -53,17 +69,25 @@ ADEG       MB/SR      MB/SR
    3.71E+01   8.98E-02   8.79E-03
    4.14E+01   8.50E-02   1.07E-02
 ENDDATA             11
-ENDSUBENT           19
-SUBENT        C1349003   20051021   20060111   20060104       C076
-BIB                  4          4
+ENDSUBENT           28
+SUBENT        C1349003   20120626   20121029   20121025       C120
+BIB                  5          8
 REACTION   (50-SN-112(P,T)50-SN-110,PAR,DA)
-EN-SEC     (E-EXC,50-SN-110)
-ERR-ANALYS No information
-STATUS     (CURVE) Data taken from Fig. 3
-ENDBIB               4
-NOCOMMON             0          0
+SAMPLE     (50-SN-112,ENR=0.800) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                 112Sn (80.0 %).
+EN-SEC     (E-LVL,50-SN-110)
+STATUS     (CURVE) Data taken from Fig. 3  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: E-EXC changed to E-LVL
+ENDBIB               8
+COMMON               2          3
+E-LVL-ERR  DATA-ERR
+MEV        PER-CENT
+   0.10      10.
+ENDCOMMON            3
 DATA                 3         27
-E-EXC      ANG-CM     DATA-CM
+E-LVL      ANG-CM     DATA-CM
 MEV        ADEG       MB/SR
 0.0           8.53E+00   9.93E-02
 0.0           1.26E+01   5.18E-01
@@ -93,107 +117,194 @@ MEV        ADEG       MB/SR
 2.20          3.64E+01   3.12E-02
 2.20          4.00E+01   2.93E-02
 ENDDATA             29
-ENDSUBENT           38
-SUBENT        C1349004   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-112(P,T)50-SN-110,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 4
-ENDBIB               3
-COMMON               1          3
-ANG-CM
-ADEG
-16.
+ENDSUBENT           46
+SUBENT        C1349004   20120626   20121029   20121025       C120
+BIB                  4          8
+REACTION   (50-SN-112(P,T)50-SN-110,PAR,DA)
+SAMPLE     (50-SN-112,ENR=0.800) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                 112Sn (80.0 %).
+STATUS     (CURVE) Data taken from Fig. 4  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               8
+COMMON               3          3
+E-EXC      E-EXC-ERR  ANG-CM
+MEV        MEV        ADEG
+   7.15       0.10      16.
 ENDCOMMON            3
 DATA                 2          1
-DATA-CM    ERR-T
+DATA-CM    DATA-ERR
 MB/SR      MB/SR
    3.20E-01   2.71E-02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        C1349005   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-116(P,T)50-SN-114,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 4
-ENDBIB               3
-COMMON               1          3
-ANG-CM
-ADEG
-16.
+ENDSUBENT           20
+SUBENT        C1349005   20120626   20121029   20121025       C120
+BIB                  4          8
+REACTION   (50-SN-116(P,T)50-SN-114,PAR,DA)
+SAMPLE     (50-SN-116,ENR=0.956) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                 116Sn (95.6%).
+STATUS     (CURVE) Data taken from Fig. 4  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               8
+COMMON               3          3
+E-EXC      E-EXC-ERR  ANG-CM
+MEV        MEV        ADEG
+   8.00       0.04      16.
 ENDCOMMON            3
 DATA                 2          1
-DATA-CM    ERR-T
+DATA-CM    DATA-ERR
 MB/SR      MB/SR
    3.59E-01   3.72E-02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        C1349006   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-118(P,T)50-SN-116,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 4
-ENDBIB               3
-COMMON               1          3
-ANG-CM
-ADEG
-16.
+ENDSUBENT           20
+SUBENT        C1349006   20120626   20121029   20121025       C120
+BIB                  4          8
+REACTION   (50-SN-118(P,T)50-SN-116,PAR,DA)
+SAMPLE     (50-SN-118,ENR=0.966) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                 118Sn (96.6%).
+STATUS     (CURVE) Data taken from Fig. 4  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               8
+COMMON               3          3
+E-EXC      E-EXC-ERR  ANG-CM
+MEV        MEV        ADEG
+   8.40       0.04      16.
 ENDCOMMON            3
 DATA                 2          1
-DATA-CM    ERR-T
+DATA-CM    DATA-ERR
 MB/SR      MB/SR
    3.97E-01   3.81E-02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        C1349007   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-120(P,T)50-SN-118,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 4
-ENDBIB               3
-COMMON               1          3
-ANG-CM
-ADEG
-16.
+ENDSUBENT           20
+SUBENT        C1349007   20120626   20121029   20121025       C120
+BIB                  4          6
+REACTION   (50-SN-120(P,T)50-SN-118,PAR,DA)
+SAMPLE     The targets were self-supporting foils of various
+           thicknesses ranging from about 5.3 to  0.3 mg/cm2
+STATUS     (CURVE) Data taken from Fig. 4  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               6
+COMMON               3          3
+E-EXC      E-EXC-ERR  ANG-CM
+MEV        MEV        ADEG
+   8.51       0.04      16.
 ENDCOMMON            3
 DATA                 2          1
-DATA-CM    ERR-T
+DATA-CM    DATA-ERR
 MB/SR      MB/SR
    3.47E-01   3.05E-02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        C1349008   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-122(P,T)50-SN-120,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 4
-ENDBIB               3
-COMMON               1          3
-ANG-CM
-ADEG
-16.
+ENDSUBENT           18
+SUBENT        C1349008   20120626   20121029   20121025       C120
+BIB                  4          8
+REACTION   (50-SN-122(P,T)50-SN-120,PAR,DA)
+SAMPLE     (50-SN-122,ENR=0.908) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                  122Sn (90.8%).
+STATUS     (CURVE) Data taken from Fig. 4  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               8
+COMMON               3          3
+E-EXC      E-EXC-ERR  ANG-CM
+MEV        MEV        ADEG
+   8.53       0.08      16.
 ENDCOMMON            3
 DATA                 2          1
-DATA-CM    ERR-T
+DATA-CM    DATA-ERR
 MB/SR      MB/SR
    2.86E-01   3.13E-02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        C1349009   20051021   20060111   20060104       C076
-BIB                  3          3
-REACTION   (50-SN-124(P,T)50-SN-122,,DA)
-ERR-ANALYS (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from Fig. 4
-ENDBIB               3
-COMMON               1          3
-ANG-CM
-ADEG
-16.
+ENDSUBENT           20
+SUBENT        C1349009   20120626   20121029   20121025       C120
+BIB                  4          8
+REACTION   (50-SN-124(P,T)50-SN-122,PAR,DA)
+SAMPLE     (50-SN-124,ENR=0.947) The targets were self-supporting
+           foils of various thicknesses ranging from about 5.3 to
+            0.3 mg/cm2 with the following isotopic abundances:
+                                                  124Sn (94.7%).
+STATUS     (CURVE) Data taken from Fig. 4  in PR/C,23,589,1981
+HISTORY    (20120626A) SD: SF5=PAR was added to REACTION code and
+                           E-EXC was added to COMMON.
+ENDBIB               8
+COMMON               3          3
+E-EXC      E-EXC-ERR  ANG-CM
+MEV        MEV        ADEG
+   8.65       0.08      16.
 ENDCOMMON            3
 DATA                 2          1
-DATA-CM    ERR-T
+DATA-CM    DATA-ERR
 MB/SR      MB/SR
    2.95E-01   3.90E-02
 ENDDATA              3
-ENDSUBENT           15
-ENDENTRY             9
+ENDSUBENT           20
+SUBENT        C1349010   20120626   20121029   20121025       C120
+BIB                  5          7
+REACTION   (50-SN-116(P,T)50-SN-114,PAR,DA)
+SAMPLE     The targets were self-supporting foils of various
+           thicknesses ranging from about 5.0 to 0.3 mg/cm2
+ERR-ANALYS (ANG-ERR-D)  Digitizing error
+           (ERR-DIG)    Digitizing error
+STATUS     (CURVE) Data taken from Fig. 2  in PRL,39,1451,1977
+HISTORY    (20120626C) SD
+ENDBIB               7
+COMMON               4          3
+E-EXC      E-EXC-ERR  ANG-ERR-D  ERR-DIG
+MEV        MEV        ADEG       PER-CENT
+   8.00       0.04       0.2        0.4
+ENDCOMMON            3
+DATA                 3         10
+ANG-CM     DATA-CM    DATA-ERR
+ADEG       MB/SR      MB/SR
+ 7.9842    0.40631    0.20921E-01
+ 12.108    0.39973
+ 16.156    0.36520
+ 20.203    0.30985    0.31094E-01
+ 24.398    0.26567    0.17647E-01
+ 28.369    0.20712    0.22744E-01
+ 32.490    0.18139    0.12049E-01
+ 37.493    0.14519    0.15944E-01
+ 42.641    0.10678    0.14205E-01
+ 50.807    0.71757E-010.92158E-02
+ENDDATA             12
+ENDSUBENT           28
+SUBENT        C1349011   20120626   20121029   20121025       C120
+BIB                  5          7
+REACTION   (50-SN-122(P,T)50-SN-120,PAR,DA)
+SAMPLE     The targets were self-supporting foils of various
+           thicknesses ranging from about 5.0 to 0.3 mg/cm2
+ERR-ANALYS (ANG-ERR-D)  Digitizing error
+           (ERR-DIG)    Digitizing error
+STATUS     (CURVE) Data taken from Fig. 2  in PRL,39,1451,1977
+HISTORY    (20120626C) SD
+ENDBIB               7
+COMMON               4          3
+E-EXC      E-EXC-ERR  ANG-ERR-D  ERR-DIG
+MEV        MEV        ADEG       PER-CENT
+   8.53       0.08      0.2        0.4
+ENDCOMMON            3
+DATA                 3          9
+ANG-CM     DATA-CM    DATA-ERR
+ADEG       MB/SR      MB/SR
+ 8.1288    0.17472    0.17513E-01
+ 12.179    0.18697    0.18741E-01
+ 16.318    0.28804    0.26124E-01
+ 20.361    0.26169    0.26234E-01
+ 25.431    0.21728    0.22812E-01
+ 30.576    0.18720    0.19651E-01
+ 35.498    0.15626    0.15663E-01
+ 40.557    0.10069    0.96134E-02
+ 50.815    0.35496E-010.37466E-02
+ENDDATA             11
+ENDSUBENT           27
+ENDENTRY            11

@@ -1,15 +1,21 @@
-ENTRY            23059   20110204   20110905   20110902       2226
-SUBENT        23059001   20110204   20110905   20110902       2226
-BIB                 15         63
-TITLE       (N,XN) measurement at 96 MeV.
+ENTRY            23059   20120109   20121029   20121025       2230
+SUBENT        23059001   20120109   20121029   20121025       2230
+BIB                 15         87
+TITLE       Neutron production in neutron-induced reactions at
+            96 MeV on Fe-56 and Pb-208
 AUTHOR     (I.C.Sagrado Garcia, G.Ban, V.Blideanu, J.M.Fontbonne,
-           G.Iltis, F.R.Lecolley, J.F.Lecolley, J.L.Lecouey,
+           G.Itis, F.R.Lecolley, J.F.Lecolley, J.L.Lecouey,
            T.Lefort, N.Marie,J.C.Steckmeyer, C.Le Brun,J.Blomgren,
            C.Johansson, J.Klug, A.Oehrn, P.Mermod,N.Olsson,S.Pomp,
            M.Oesterlund,U.Tippawan,A.V.Prokofiev,P.Nadel-Turonski,
            M.Fallot, Y.Foucher, A.Guertin, F.Haddad, M.Vatre)
-REFERENCE  (C,2007NICE,2,1035,200704)   Main Reference .
+REFERENCE  (J,PR/C,84,044619,2011)
+           #doi:10.1103/PhysRevC.84.044619
+            Tables and Figures.
+           (C,2007NICE,2,1035,200704)
            #doi:10.1051/ndata:07433
+            DA, DE, DA/DE on figures;
+            neutron production c-s in Table 1.
 INSTITUTE  (2SWDUPP) J.Blomgren, C.Johansson, J.Klug, A.Oehrn,
            P.Mermod,N.Olsson,S.Pomp, M.Oesterlund, U.Tippawan
               -Department of Neutron Research ;
@@ -18,14 +24,16 @@ INSTITUTE  (2SWDUPP) J.Blomgren, C.Johansson, J.Klug, A.Oehrn,
            G.Iltis, F.R.Lecolley, J.F.Lecolley, J.L.Lecouey,
            T.Lefort, N.Marie, J.C.Steckmeyer .
            (2FR SAC) I.C.Sagrado Garcia, V.Blideanu .
-           (2FR FR)  C.Le Brun - LPSC,Grenoble France.
+           (2FR GRE)  C.Le Brun - LPSC,Grenoble France.
            (3TAICHM) U.Tippawan .
            (1USAGWU) P.Nadel-Turonski
            (2FR NTE) M.Fallot, Y.Foucher, A.Guertin, F.Haddad,
             M.Vatre - SUBATECH, Nantes .
-REL-REF    (I,,H.Cond+,J,NIM/A,292,121,1990)
-           (I,,S.Pomp+,C,2004SANTA,,2004)
+REL-REF    (I,,H.Conde+,J,NIM/A,292,121,1990)
+           (I,,S.Pomp+,C,2004SANTA,780,2004)
              Facility details.
+           (I,,I.C.Sagrado Garcia,T,GARCIA,2006)
+            Details of detectors and exp.techniques.
 EXP-YEAR   (2004)
 FACILITY   (SYNCY,2SWDUPP)   TSL neutron beam
 INC-SOURCE (P-LI7) 100 MeV proton beam on lithium target.
@@ -39,14 +47,18 @@ METHOD     (REC) Recoil protons trajectories were measured.
             recoiling proton.
            (TOF) Energy of incoming neutron was measured by TOF.
 DETECTOR   (TFBC) TFBC and Faraday cup - for beam monitoring.
-          1(DRFTC) To measure high-energy part of neutron spectrum
+           (DRFTC) To measure high-energy part of neutron spectrum
             above 40 MeV :
             CLODIA (Chamber for LOcalization with DrIft and
             Amplification) consists of seven (n,p) converters and
             eight multidrift chambers.
             In addition, one SCANDAL arm was used to measure
             proton residual energy.
-          2(TELES,SCIN) For low-energy part of neutron spectrum,
+            CLODIA-SCANDAL efficiency was calculated by GEANT
+           simulation; depends of the emitted neutron energy
+            ( at 60 MeV is about 0.1%).
+           Measurement at angles 15, 30, 50, and 70 deg.
+           (TELES,SCIN) For low-energy part of neutron spectrum,
                 below 50 MeV :
              DECOI-DEMON time-of-flight telescope, developed at
              LPC Caen lab. DECOI- neutron-to-proton converter made
@@ -55,6 +67,10 @@ DETECTOR   (TFBC) TFBC and Faraday cup - for beam monitoring.
              scintillator NE213 of 16 cm diameter, 20cm thickness.
              In front of DEMON cell,5mm thick plastic scintillator
              was added for charge particle rejection.
+           Specific simulation tool was developed to calculate
+           efficiency of DECOI-DEMON. Efficiency is typically one
+           order of magnitude smaller than that of CLODIA-SCANDAL.
+           Measurement at angles 15, 24, 60, and 98 deg.
             For overlap energy region, from 40 to 50 MeV, the two
             sets of measurement differ less than 10%.
 SAMPLE      No information.
@@ -64,17 +80,28 @@ STATUS      Request for the data was sent to
             sent in September ' .
 HISTORY    (20090619C)   M.M.
            (20110204U) SD: DOI was corrected.
-ENDBIB              63
+           (20120109A) M.M. Reference J,PR/C,84,044619,2011 was
+           added as main. BIB information was added.
+           Pb-0 -> Pb-208, Fe-0 -> Fe-56 ( as given in title of
+           J,PR/C,84,044619,2011, even there are no information
+           about samples in both articles, see REFERENCE).
+            Digitized data were replaced by tabulated where
+           it's possible.
+            Subents 10, 11 were added.
+ENDBIB              87
 COMMON               1          3
 EN
 MEV
         96.
 ENDCOMMON            3
-ENDSUBENT           70
-SUBENT        23059002   20090619   20100209   20100209       2214
-BIB                  5         15
-REACTION   (82-PB-0(N,EL)82-PB-0,,DA)
-REL-REF    (A,21123001,G.L.Salmon+,J,NP,21,15,1960)
+ENDSUBENT           94
+SUBENT        23059002   20120109   20121029   20121025       2230
+BIB                  6         16
+REACTION   (82-PB-208(N,EL)82-PB-208,,DA)
+ANALYSIS   (INTED) Elastic cross sections have been calculated
+           from double-differential cross sections integrating
+           over the elastic peak.
+REL-REF    (A,21123001,G.L.Salmon,J,NP,21,15,1960)
            (A,22847001,J.Klug+,J,PR/C,68,064605,2003)
            (A,,A.J.Koning+,J,NP/A,713,231,2003)
 ADD-RES    (COMP) Data compared with experiments of G.Salmon+ and
@@ -82,66 +109,58 @@ ADD-RES    (COMP) Data compared with experiments of G.Salmon+ and
             Elastic c-s were calculated via direct integration of
             elastic peak centered at 96 MeV and observed for small
             angles.
-ERR-ANALYS (ANG-ERR-D)  Digitizing error of ANG .
-           (ANG-ERR)    Error bar on Fig.3 for angle.
-           (ERR-DIG)    Digitizing error of DATA.
-           (DATA-ERR)   Error bar on Fig.3 for DATA.
-STATUS     (CURVE)  Fig.3 of C,2007NICE.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table II of  J,PR/C,84,044619,2011.
+            Data are on Fig.3 of C,2007NICE.
            (DEP,23059004)
-ENDBIB              15
-COMMON               2          3
-ANG-ERR-D  ERR-DIG
-ADEG       PER-CENT
-   0.98E-01   0.16E-01
-ENDCOMMON            3
-DATA                 4          4
-ANG        ANG-ERR    DATA       DATA-ERR
-ADEG       ADEG       MB/SR      MB/SR
-15.        2.3        998.        202.
-25.        2.5        370.
-30.        2.3        220.         46.
-60.        2.5        2.95          0.92
+ENDBIB              16
+NOCOMMON             0          0
+DATA                 3          4
+ANG        DATA       DATA-ERR
+ADEG       MB/SR      MB/SR
+15.        993.        20.
+24.        364.         4.
+30.        212.        32.
+60.        2.8          1.
 ENDDATA              6
-ENDSUBENT           30
-SUBENT        23059003   20090619   20100209   20100209       2214
-BIB                  5         13
-REACTION   (26-FE-0(N,EL)26-FE-0,,DA)
+ENDSUBENT           27
+SUBENT        23059003   20120109   20121029   20121025       2230
+BIB                  6         14
+REACTION   (26-FE-56(N,EL)26-FE-56,,DA)
+ANALYSIS   (INTED) Elastic cross sections have been calculated
+           from double-differential cross sections integrating
+           over the elastic peak.
 REL-REF    (A,,A.J.Koning+,J,NP/A,713,231,2003)
 ADD-RES    (COMP) Data compared with optical model calculations
             of A.Koning+.
             Elastic c-s were calculated via direct integration of
             elastic peak centered at 96 MeV and observed for small
             angles.
-ERR-ANALYS (ANG-ERR-D)  Digitizing error of ANG .
-           (ANG-ERR)    Error bar on Fig.4 for angle.
-           (ERR-DIG)    Digitizing error of DATA.
-           (DATA-ERR)   Error bar on Fig.4 for DATA.
-STATUS     (CURVE)  Fig.4 of C,2007NICE.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table II of  J,PR/C,84,044619,2011.
+            Data are on Fig.4 of C,2007NICE.
            (DEP,23059005)
-ENDBIB              13
-COMMON               2          3
-ANG-ERR-D  ERR-DIG
-ADEG       PER-CENT
-0.89578E-010.13153E-01
-ENDCOMMON            3
-DATA                 4          4
-ANG        ANG-ERR    DATA       DATA-ERR
-ADEG       ADEG       MB/SR      MB/SR
-15.         2.4        377.
-25.         2.4         38.3
-30.         2.2         74.1     12.4
-55.         2.4          1.94     0.92
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 3          4
+ANG        DATA       DATA-ERR
+ADEG       MB/SR      MB/SR
+15.         380.        4.
+25.          38.        1.
+30.          75.       11.
+55.           1.9       1.
 ENDDATA              6
-ENDSUBENT           28
-SUBENT        23059004   20090619   20100209   20100209       2214
-BIB                  3          6
-REACTION   (82-PB-0(N,X)0-NN-1,,DA/DE)
+ENDSUBENT           25
+SUBENT        23059004   20120109   20121029   20121025       2230
+BIB                  3          7
+REACTION   (82-PB-208(N,X)0-NN-1,,DA/DE)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error of E .
            (E-ERR)      Error bar on Fig.5 for E .
            (ERR-DIG)    Digitizing error of DATA.
            (DATA-ERR)   Error bar on fig.5 for DATA.
 STATUS     (CURVE)  Fig.5 of C,2007NICE.
-ENDBIB               6
+            Data are also on Fig.1 of J,PR/C,84,044619,2011.
+ENDBIB               7
 COMMON               2          3
 E-ERR-DIG  ERR-DIG
 MEV        PER-CENT
@@ -272,16 +291,17 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
 98.         30.328     1.91       0.7216     0.5462
 98.         34.143     1.91       0.1612     0.5021
 ENDDATA            123
-ENDSUBENT          138
-SUBENT        23059005   20090619   20100209   20100209       2214
-BIB                  3          6
-REACTION   (26-FE-0(N,X)0-NN-1,,DA/DE)
+ENDSUBENT          139
+SUBENT        23059005   20120109   20121029   20121025       2230
+BIB                  3          7
+REACTION   (26-FE-56(N,X)0-NN-1,,DA/DE)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error of E.
            (E-ERR)      Error bar on Fig.6 for E.
            (ERR-DIG)    Digitizing error of DATA.
            (DATA-ERR)   Error bar on Fig.6 for DATA.
 STATUS     (CURVE)  Fig.6 of C,2007NICE.
-ENDBIB               6
+            Data are also on Fig.2 of J,PR/C,84,044619,2011.
+ENDBIB               7
 COMMON               2          3
 E-ERR-DIG  ERR-DIG
 MEV        PER-CENT
@@ -412,22 +432,23 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
  98.        29.90       1.99       0.344     0.153
  98.        33.87       1.99       0.442     0.217
 ENDDATA            123
-ENDSUBENT          138
-SUBENT        23059006   20090619   20100209   20100209       2214
-BIB                  5         12
-REACTION   (82-PB-0(N,X)0-NN-1,,DE)
+ENDSUBENT          139
+SUBENT        23059006   20120109   20121029   20121025       2230
+BIB                  5         13
+REACTION   (82-PB-208(N,X)0-NN-1,,DE)
 ANALYSIS    Derived from double differential cross section using
             Kalbach systematic.
 ADD-RES    (COMP) Data compared with theoretical predictions:
            MCNPX/GNASH, MCNPX/INCL4-ABLA, GEANT3/FLUKA,
-           GEANT/GHEISHA, TALYS, DYWAN, DYWAN+symetry energy term.
+           GEANT/GHEISHA,TALYS, DYWAN, DYWAN+symmetry energy term.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error of E .
            (E-ERR)      Error bar on Fig.7 for E .
            (ERR-DIG)    Digitizing error of DATA .
            (DATA-ERR)   Error bar on fig.7 for DATA.
-STATUS     (CURVE)  Fig.7 of C,2007NICE.
+STATUS     (CURVE) Data are on Fig.7 of C,2007NICE,
+                        Fig.4 of J,PR/C,84,044619,2011
            (DEP,23059004)
-ENDBIB              12
+ENDBIB              13
 COMMON               2          3
 E-ERR-DIG  ERR-DIG
 MEV        PER-CENT
@@ -456,10 +477,10 @@ MEV        MEV        MB/MEV     MB/MEV
  69.91      1.97        11.01      2.92
  74.14      1.97         9.13      1.38
 ENDDATA             21
-ENDSUBENT           42
-SUBENT        23059007   20090619   20100209   20100209       2214
-BIB                  5         12
-REACTION   (26-FE-0(N,X)0-NN-1,,DE)
+ENDSUBENT           43
+SUBENT        23059007   20120109   20121029   20121025       2230
+BIB                  5         13
+REACTION   (26-FE-56(N,X)0-NN-1,,DE)
 ANALYSIS    Derived from double differential cross section using
             Kalbach systematic.
 ADD-RES    (COMP) Data compared with theoretical predictions:
@@ -470,8 +491,9 @@ ERR-ANALYS (E-ERR-DIG)  Digitizing error of E .
            (ERR-DIG)    Digitizing error of DATA .
            (DATA-ERR)   Error bar on Fig.8 for DATA.
 STATUS     (CURVE)  Fig.8 of C,2007NICE.
+                        Fig.4 of J,PR/C,84,044619,2011
            (DEP,23059005)
-ENDBIB              12
+ENDBIB              13
 COMMON               2          3
 E-ERR-DIG  ERR-DIG
 MEV        PER-CENT
@@ -496,39 +518,97 @@ MEV        MEV        MB/MEV     MB/MEV
  53.918     1.98         8.082    16.03
  58.129     1.98         8.269    16.98
 ENDDATA             17
-ENDSUBENT           38
-SUBENT        23059008   20090619   20100209   20100209       2214
-BIB                  4          7
-REACTION   (82-PB-0(N,X)0-NN-1,,SIG) Total neutron production c-s.
-ANALYSIS    Calculated from energy distribution integration in the
-            measured energy region.
+ENDSUBENT           39
+SUBENT        23059008   20120109   20121029   20121025       2230
+BIB                  4         15
+REACTION  A(82-PB-208(N,X)0-NN-1,,SIG)
+          B(82-PB-208(N,X)0-NN-1,,SIG)
+           Total neutron production c-s.
+ANALYSIS  A(INTAD) Calculated from angular distribution
+           integration in the measured region.
+          B(INTED) Calculated from energy distribution
+           integration in the measured energy region.
+           Values extracted from energy distributions could be
+           overestimated .
 ADD-RES    (COMP) Data compared with theoretical predictions:
            MCNPX/GNASH (5011.mb), MCNPX/INCL4-ABLA (5964.mb).
 STATUS     (TABLE)  Table 1 of C,2007NICE.
-           (DEP,23059004)
-ENDBIB               7
+                    Table IV of J,PR/C,84,044619,2011.
+          A(DEP,23059010)
+          B(DEP,23059006)
+ENDBIB              15
 NOCOMMON             0          0
-DATA                 1          1
-DATA
-MB
-   6132.
+DATA                 2          1
+DATA      ADATA      B
+MB         MB
+   6132.    8663.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        23059009   20090619   20100209   20100209       2214
-BIB                  4          7
-REACTION   (26-FE-0(N,X)0-NN-1,,SIG) Total neutron production c-s.
-ANALYSIS    Calculated from energy distribution integration in the
-            measured energy region.
-ADD-RES    (COMP) Data compared with theoretical predictions:
-           MCNPX/GNASH (1459 mb), MCNPX/INCL4-ABLA (1577 mb).
+ENDSUBENT           23
+SUBENT        23059009   20120109   20121029   20121025       2230
+BIB                  3         13
+REACTION  3(26-FE-56(N,X)0-NN-1,,SIG)
+          4(26-FE-56(N,X)0-NN-1,,SIG)
+           Total neutron production c-s.
+ANALYSIS  3(INTAD) Calculated from angular distribution
+           integration in the measured region.
+          4(INTED) Calculated from energy distribution
+           integration in the measured energy region.
+           Values extracted from energy distributions could be
+           overestimated .
 STATUS     (TABLE)  Table 1 of C,2007NICE.
-           (DEP,23059005)
-ENDBIB               7
+                    Table IV of J,PR/C,84,044619,2011.
+          3(DEP,23059011)
+          4(DEP,23059007)
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 1          1
-DATA
-MB
- 4304.
+DATA                 2          1
+DATA      3DATA      4
+MB         MB
+ 4304.      5868.
 ENDDATA              3
-ENDSUBENT           15
-ENDENTRY             9
+ENDSUBENT           21
+SUBENT        23059010   20120109   20121029   20121025       2230
+BIB                  4          8
+REACTION   (82-PB-208(N,X)0-NN-1,,DA)
+ANALYSIS   (INTED) The elastic contribution approximated by
+           Gaussian is rejected and resulting spectrum was
+           integrated from energy threshold 4+-2 MeV to
+           the beam energy 96. MeV.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table III of J,PR/C,84,044619,2011
+           (DEP,23059004)
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          5
+ANG        DATA       DATA-ERR
+ADEG       MB/SR      MB/SR
+15.         1982.      83.
+30.         1317.      76.
+50.          717.      66.
+70.          507.      88.
+98.          259.      23.
+ENDDATA              7
+ENDSUBENT           20
+SUBENT        23059011   20120109   20121029   20121025       2230
+BIB                  4          8
+REACTION   (26-FE-56(N,X)0-NN-1,,DA)
+ANALYSIS   (INTED) The elastic contribution approximated by
+           Gaussian is rejected and resulting spectrum was
+           integrated from energy threshold 4+-2 MeV to
+           the beam energy 96. MeV.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table III of J,PR/C,84,044619,2011
+           (DEP,23059005)
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          5
+ANG        DATA       DATA-ERR
+ADEG       MB/SR      MB/SR
+15.         1221.      47.
+30.          818.      34.
+50.          561.      39.
+70.          363.      50.
+98.          159.      11.
+ENDDATA              7
+ENDSUBENT           20
+ENDENTRY            11

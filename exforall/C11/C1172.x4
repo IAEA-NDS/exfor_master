@@ -1,6 +1,6 @@
-ENTRY            C1172   20050216              20050926       0000
-SUBENT        C1172001   20050216              20050926       0000
-BIB                 10         16
+ENTRY            C1172   20120618   20121029   20120916       C119
+SUBENT        C1172001   20120618   20121029   20120916       C119
+BIB                 12         42
 INSTITUTE  (2FR PAR,3INDTRM,1USAMSU,1USAFSU,1USASCA,2FR SAC,
            1USAORL)
 REFERENCE  (J,PL/B,596,54,2004)
@@ -11,28 +11,58 @@ AUTHOR     (A.Shrivastava,Y.Blumenfeld,N.Keeley,T.Zerguerras,
             T.Suomijarvi,M.Thoennessen,E.Tryggestad,R.L.Varner)
 TITLE      11Be continuum studied through proton scattering
 FACILITY   (CYCLO,1USAMSU)
-METHOD     Inverse kinematics
-INC-SPECT  11B beam at 63.7 MeV/A
+METHOD     (EDE,COINC) Inverse kinematics
+INC-SOURCE A pure secondary beam of 11Be with an intensity of
+           ~10**5 pps at an energy of 63.7A MeV was produced by
+           bombarding a 1100 mg/cm2 Be production target with a
+           13C beam accelerated to 100A MeV in the K1200 cyclotron
 SAMPLE     CH2 target, 1mg/cm2
-DETECTOR   (TELES) Array of height telescopes, 5x5 cm2 active
-            area
+DETECTOR   (TELES,SISD,CSICR) Array of eight telescopes, 5 x 5
+           cm2 active area. Each telescope was composed of a 300
+           mu-m thick Si strip detector with 16 vertical strips
+            (3 mm wide) backed by a 500 mu-m thick PIN diode
+           detector and a 1 cm thick stopping CsI detector read
+           out by 4 photodiodes.
+           (DRFTC,SCIN) in coincidence with the recoil protons,
+           the scattered fragments were detected in the S800
+           spectrometer equipped with its standard detection
+           system: a pair of position sensitive cathode readout
+           drift chambers for trajectory measurements followed
+           by a multi-segmented ion chamber and two large
+           plastic scintillators.
+STATUS     (TABLE) Data received from the author (A. Shrivastava)
+ERR-ANALYS (ERR-1) The systematic error is approximately 10%,
+           mainly due to the uncertainty in the target thickness,
+           while the incident beam particles were counted
+           individually with a drift chamber placed at the
+           entrance of the target chamber
+           (DATA-ERR) The error bars shown are statistical
+           and take into account the errors on the carbon
+           target data which have been subtracted
 HISTORY    (20050216C) DR
-ENDBIB              16
-COMMON               2          3
-EN         ANG-RSL
-MEV/A      ADEG
-63.7       0.8
+           (20120618A) SD: heading E-EXC changed to E-LVL in
+           Subent  2. SF3=INL changed to SCT in Subent 2.
+           BIB update.
+ENDBIB              42
+COMMON               3          3
+EN         ANG-RSL    ERR-1
+MEV/A      ADEG       PER-CENT
+63.7       0.8          10.0
 ENDCOMMON            3
-ENDSUBENT           23
-SUBENT        C1172002   20050216              20050926       0000
-BIB                  4          4
-REACTION   (1-H-1(4-BE-11,INL)1-H-1,PAR,DA)
-EN-SEC     (E-EXC,4-BE-11)
-ERR-ANALYS No information
-STATUS     Data received from the author (A. Shrivastava)
-ENDBIB               4
+ENDSUBENT           49
+SUBENT        C1172002   20120618   20121029   20120916       C119
+BIB                  3          8
+REACTION   ((1-H-1(4-BE-11,SCT)1-H-1,PAR,DA)=
+           (4-BE-11(P,SCT)4-BE-11,PAR,DA))
+           quasi-elastic scattering defined as the sum of
+           elastic scattering and inelastic scattering to the
+           bound excited state at E = 320 keV.
+EN-SEC     (E-LVL,4-BE-11)
+HISTORY    (20120618A) SD: heading E-EXC changed to E-LVL and
+           SF3=INL changed to SCT.
+ENDBIB               8
 COMMON               2          3
-E-EXC      E-EXC
+E-LVL      E-LVL
 MEV        MEV
 0.0        0.320
 ENDCOMMON            3
@@ -50,7 +80,7 @@ ADEG       MB/SR      MB/SR
 27.3        70.4       2.9
 29.0        34.1       1.9
 ENDDATA             12
-ENDSUBENT           25
+ENDSUBENT           29
 SUBENT        C1172003   20050216              20050926       0000
 BIB                  4          4
 REACTION   (1-H-1(4-BE-11,INL)1-H-1,PAR,DA)

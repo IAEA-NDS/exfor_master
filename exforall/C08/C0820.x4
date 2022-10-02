@@ -1,6 +1,6 @@
-ENTRY            C0820   20091009   20100712   20100630       C099
-SUBENT        C0820001   20091009   20100712   20100630       C099
-BIB                  9         21
+ENTRY            C0820   20120616   20121029   20120916       C119
+SUBENT        C0820001   20120616   20121029   20120916       C119
+BIB                  9         23
 INSTITUTE  (1USAMSU,1USAANL,2UK SUR)
 REFERENCE  (J,PR/C,63,065806,2001)
 AUTHOR     (B.Davids,S.M.Austin,D.Bazin,H.Esbensen,B.M.Sherrill,
@@ -11,7 +11,7 @@ FACILITY   (CYCLO,1USAMSU) K1200 cyclotron.
 INC-SOURCE 8B beam produced using 100 and 125 MeV/nucleon beams
             of 12C.  Beam magnetically analyzed using a1200
             fragment separator.
-           Beam contaminents included 7Be (5-8 times
+           Beam contaminants included 7Be (5-8 times
             more intense than 8B component), 6Li, and 9C.
 ERR-ANALYS (ERR-S) Statistical uncertainty given.
            In addition, there is a 9% systematic uncertainty
@@ -19,12 +19,14 @@ ERR-ANALYS (ERR-S) Statistical uncertainty given.
 STATUS     (TABLE) Data received by email from B.Davids, 26 June
                    2001.
            (APRVD) approved by B. Davids, 24 July 2001.
-HISTORY    (20010723C) Vm
+HISTORY    (20010723C) VM
            (20040120A) reactions updated.
            (20091001A) VM:Updated to new date formats,lower case.
-ENDBIB              21
+           (20120616A) SD: SF7 - deleted from REACTION code in
+           Subent 5, SF7 - corrected in REACTION code in Subent 6
+ENDBIB              23
 NOCOMMON             0          0
-ENDSUBENT           24
+ENDSUBENT           26
 SUBENT        C0820002   20091009   20100712   20100630       C099
 BIB                  6         15
 REACTION   (47-AG-0(5-B-8,X)4-BE-7,LP,IPA/DP)
@@ -213,13 +215,14 @@ ADEG       MEV/C      MB/MEV/C   MB/MEV/C
   3.5      2086.66     0.15727    0.023818
 ENDDATA             50
 ENDSUBENT           74
-SUBENT        C0820005   20091009   20100712   20100630       C099
-BIB                  6         16
-REACTION   (82-PB-0(5-B-8,P+X)4-BE-7,LP,IPA/DP,5-B-8/P)
-            Maximum angle of 8B (p+7Be).
+SUBENT        C0820005   20120616   20121029   20120916       C119
+BIB                  7         19
+REACTION   (82-PB-0(5-B-8,X)4-BE-7,LP,IPA/DP)   fig.12
+            Maximum angle of 8B (p+7Be); inclusive measurement
 SAMPLE     28 mg/cm2 Pb target.
 METHOD     (TOF) 8B particles in beam identified by time-of-
             flight.
+PART-DET   (4-BE-7)
 DETECTOR   (MAGSP) S800 spectrometer used to detect 7Be fragments
            spectrometer comprised of:
            . 2 position-sensitive cathode readout drift chambers
@@ -231,7 +234,9 @@ DETECTOR   (MAGSP) S800 spectrometer used to detect 7Be fragments
 CORRECTION Corrected for overall efficiency of drift chambers,
             and angular acceptance of S800 spectrometer.
 HISTORY    (20091001A) Reaction corrected.
-ENDBIB              16
+           (20120616A) SD: SF7 - deleted from REACTION code,
+               SF3 corrected (inclusive measurement)
+ENDBIB              19
 COMMON               1          3
 EN
 MEV
@@ -289,15 +294,17 @@ ADEG       MEV/C      MB/MEV/C   MB/MEV/C
   2.4      2840.89     0.546587   0.0890277
   2.4      2850.9      0.28812    0.0625264
 ENDDATA             50
-ENDSUBENT           75
-SUBENT        C0820006   20091009   20100712   20100630       C099
-BIB                  6         18
-REACTION   (82-PB-0(5-B-8,P+X)4-BE-7,LP,IPA/DP,5-B-8/P)
-            Maximum angle of 8B (p+7Be).
+ENDSUBENT           78
+SUBENT        C0820006   20120616   20121029   20120916       C119
+BIB                  7         22
+REACTION   (82-PB-0(5-B-8,P+X)4-BE-7,LP,IPA/DP,B8/P)  fig.13
+            Maximum angle of 8B (p+7Be); exclusive measurement
 SAMPLE     28 mg/cm2 Pb target.
-METHOD     Particle identified by measuring energy loss and
-            time-of-flight.
            Protons and 7Be detected in coincidence.
+PART-DET   (4-BE-7,P)
+METHOD     (COINC) 7Be and proton detected in coincidence.
+           Particle identified by measuring energy loss and
+            time-of-flight.
 DETECTOR   (MWDC) Detector system consisted of:
            . 4 position-sensitive multi-wire drift chambers
              (mwdc) recorded positions of 7Be and p fragments.
@@ -310,7 +317,9 @@ DETECTOR   (MWDC) Detector system consisted of:
 CORRECTION Corrected for detector efficiency and angular and
             momentum acceptance.
 HISTORY    (20091001A) Reaction corrected.
-ENDBIB              18
+           (20120616A) SD: SF7=5-B-8 was changed to B8 in
+                                                   REACTION code
+ENDBIB              22
 COMMON               2          3
 EN         ANG-CM-MAX
 MEV        ADEG
@@ -335,5 +344,5 @@ MEV/C      MB/MEV/C   MB/MEV/C
 451.5       0.621653   0.0798691
 459.5       0.343918   0.0780151
 ENDDATA             17
-ENDSUBENT           44
+ENDSUBENT           48
 ENDENTRY             6
