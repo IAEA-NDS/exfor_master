@@ -1,40 +1,56 @@
-ENTRY            A1058   19990319   19990505   20050926       0000
-SUBENT        A1058001   19990319   19990505   20050926       0000
-BIB                  9         10
+ENTRY            A1058   20110814   20111215   20111213       A074
+SUBENT        A1058001   20110814   20111215   20111213       A074
+BIB                  9         14
 INSTITUTE  (1CANMON)
 REFERENCE  (J,CJP,46,(14),1585,196801)
-AUTHOR     (W.DEL BIANCO,F.LEMIRE,R.J.A.LEVESQUE,J.M.POUTISSOU)
-TITLE      D(HE-3,GAMMA)LI-5 REACTION FROM  2 TO 11 MEV
-FACILITY   (VDG)
+AUTHOR     (W.del Bianco,F.Lemire,R.J.A.Levesque,J.M.Poutissou)
+TITLE      D(He-3,gamma)Li-5 reaction from 2 to 11 MeV
+FACILITY   (VDG,1CANLUQ)
 SAMPLE     A gas target 1.2 mu-m thick nickel foil
 METHOD     (PHD)
 DETECTOR   (NAICR) Cristal 12.7 cm diam. by 15.2 long
 HISTORY    (19810324C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990205U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              10
-NOCOMMON
-ENDSUBENT           13
-SUBENT        A1058002   19990319   19990505   20050926       0000
-BIB                  3         11
-REACTION   (1-H-2(HE3,G)3-LI-5,,DA,,,EXP)
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) Digitizing error and the statistic error on
-           the g-ray yield, indicated by vertical flags, amounted
-           to approximately 10% over the entire 3He energy range.
-           (DATA-ERR3) Other sources of error, do not include:
-           (DATA-ERR1) The uncertainty in the calibration of the
+           (20110814A) SD. In Subent 002:LVL-NUMB added in COMMON;
+             SF5=PAR added in REACTION code; number of columns in
+             DATA changed (2 -> 3).
+           Titles of digitizing errors changed according to Dict.
+ENDBIB              14
+NOCOMMON             0          0
+ENDSUBENT           17
+SUBENT        A1058002   20110814   20111215   20111213       A074
+BIB                  5         20
+REACTION   (1-H-2(HE3,G)3-LI-5,PAR,DA)
+            differential captu re cross section for transitions
+            to the ground and first excited states
+LEVEL-PROP (3-LI-5,LVL-NUMB=0.,SPIN=1.5,PARITY=-1.)
+           (3-LI-5,LVL-NUMB=1.,SPIN=0.5,PARITY=-1.)
+ERR-ANALYS (EN-ERR-DIG) Digitizing error
+           (ERR-DIG) Digitizing error
+           (ERR-S) given on fig. as error bars is statistic error
+           on the gamma-ray yield, indicated by vertical flags,
+           amounted to approximately 10% over the entire 3He
+                                                  energy range.
+           (ERR-1) The uncertainty in the calibration of the
            photon monitor and
-           (DATA-ERR2) The g-ray absorption in the paraffin
+           (ERR-2) The gamma-ray absorption in the paraffin
            between gas target and detector.
+           (DATA-ERR) Other sources of error.
 STATUS     (CURVE) Fig 2
-ENDBIB              11
-COMMON               6          3
-ANG        EN-ERR     DATA-ERR   DATA-ERR1  DATA-ERR2  DATA-ERR3
-ADEG       MEV        MB/SR      PER-CENT   PER-CENT   PER-CENT
-  90.        0.04      0.0003      6.0        15.0       5.0
-ENDCOMMON            3
-DATA                 2         14
-EN         DATA       DATA-ERR
+HISTORY    (20110814A) SD. LVL-NUMB added in COMMON;
+             SF5=PAR added in REACTION code; number of columns in
+             DATA changed (2 -> 3). BIB updated.
+ENDBIB              20
+COMMON               8          6
+ANG        LVL-NUMB   LVL-NUMB   EN-ERR-DIG ERR-DIG    ERR-1
+ERR-2      DATA-ERR
+ADEG       NO-DIM     NO-DIM     MEV        MB/SR      PER-CENT
+PER-CENT   PER-CENT
+  90.        0.         1.         0.04      0.0003      6.0
+  15.0       5.0
+ENDCOMMON            6
+DATA                 3         14
+EN         DATA       ERR-S
 MEV        MB/SR      MB/SR
      2.177  0.1848E-02 0.3116E-03
      3.296  0.1936E-02 0.2952E-03
@@ -51,5 +67,5 @@ MEV        MB/SR      MB/SR
     10.67   0.2844E-02 0.3116E-03
     11.15   0.3256E-02 0.2624E-03
 ENDDATA             16
-ENDSUBENT           36
+ENDSUBENT           48
 ENDENTRY             2

@@ -1,41 +1,69 @@
-ENTRY            A1185   20010709   20011009   20050926       0000
-SUBENT        A1185001   20010709   20011009   20050926       0000
-BIB                 10         15
+ENTRY            A1185   20110814   20111215   20111213       A074
+SUBENT        A1185001   20110814   20111215   20111213       A074
+BIB                 11         31
 TITLE      A Note on the He-3+D Nuclear Reaction Cross Section
-AUTHOR     (W.MOLLER, F.BESENBACHER)
+AUTHOR     (W.Moller,F.Besenbacher)
 INSTITUTE  (2DENAAU)
 REFERENCE  (J,NIM,168,111,198001)
-MONITOR    (1-H-2(D,P)1-H-3)
-SAMPLE     The Deuterium Targets were Prepared by Ion Implanation
+SAMPLE     The Deuterium Targets were Prepared by Ion Implantation
            Of Deuterons Into Silicon Wafers
 METHOD     (PHD)
-FACILITY   (VDG)
-DETECTOR   (SIBAR)
+FACILITY   (VDG,2DENAAU)
+DETECTOR   (SIBAR) Two surface-barrier detectors were positioned
+           at the laboratory angles 90. and 135. degr., each
+           with a depletion depth of 300 mu-m.
+MONITOR    (1-H-2(D,P)1-H-3,,SIG)
+           The absolute total cross section was then found by
+           comparing the results to the product of the relative
+           total cross sections(3He + D)/(D + D) measured in the
+           second run and the literature values of the D+D cross
+                                                          section.
+ERR-ANALYS (ERR-S,,3.) The statistical errors of the individual
+           points are <3% (standard deviation) except for the
+           point at 200 keV (7%).
+           (ERR-1,,1.5) The error introduced by the normalizing
+           procedure is not larger than 1.5%,
+           (MONIT-ERR) the absolute D(d, p)T cross section is
+           assumed to be known to within -+3%.
 HISTORY    (19830107C) This Compilation has Been Produced
            By Arzamas RFNC-VNIIEF
            (20010709A) Data Table Changed For Data Table from Isu
            Data Bank by CAJAD.
            (20010709U) Last checking has been done.
-ENDBIB              15
-NOCOMMON
-ENDSUBENT           18
-SUBENT        A1185002   20010709   20011009   20050926       0000
-BIB                  4          6
-REACTION   (1-H-2(HE3,P)2-HE-4,,SIG,,,EXP)
+           (20110814A) SD: BIB updated. Units for energy in
+            Subent 002 corrected: MEV -> KEV. ERR-ANALYS added.
+ENDBIB              31
+COMMON               1          3
+MONIT-ERR
+PER-CENT
+   3.
+ENDCOMMON            3
+ENDSUBENT           38
+SUBENT        A1185002   20110814   20111215   20111213       A074
+BIB                  6         18
+REACTION   (1-H-2(HE3,P)2-HE-4,,SIG)
+           Integral cross section was calculated from differential
+           cros section using formula: dSig=Sig/(4*Pi)*Fa, whereas
+              Fa - anisotropy factor written in terms of Legendre
+              polynomials.
+REL-REF    (N,C0987002,J.L.Yarnell+,J,PR,90,292,1953)
+            Up to 1 MeV, the angular dependence is sufficiently
+            described by three Legendre coefficients, which
+            have been derived from the angular distributions of
+            Yarnell et al., using a fitting procedure.
 ERR-ANALYS (DATA-ERR) Absolute Error
-STATUS     (TABLE) From Isu Data Base.
-COMMENT    - By CAJAD - Data Table in Isu Data Base Does not
+STATUS     (TABLE) From IBANDL Data Base.
+COMMENT    - By CAJAD - Data Table in IBANDL Data Base Does not
            Contain Data Uncertainty.  Therefore Former Value of
            Absolute Uncertainty has Been Saved.
-ENDBIB               6
-COMMON               1          3
-DATA-ERR
-MB
-      9.039
-ENDCOMMON            3
+HISTORY    (20110814A) SD: Units for energy corrected: MEV -> KEV
+            DATA-ERR deleted - no any relation between table and
+            this value.
+ENDBIB              18
+NOCOMMON             0          0
 DATA                 2         19
 EN         DATA
-MEV        MB
+KEV        MB
        214.       49.6
        365.       328.
        434.       520.
@@ -56,5 +84,5 @@ MEV        MB
       2017.       171.
       2156.       166.
 ENDDATA             21
-ENDSUBENT           36
+ENDSUBENT           44
 ENDENTRY             2

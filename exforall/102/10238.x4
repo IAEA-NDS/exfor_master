@@ -1,16 +1,16 @@
-ENTRY            10238   20010309   20010426   20050926       0000
-SUBENT        10238001   20010309   20010426   20050926       0000
-BIB                 11         36
+ENTRY            10238   20110727   20111215   20111113       1374
+SUBENT        10238001   20110727   20111215   20111113       1374
+BIB                 12         53
 INSTITUTE  (1USAANL)
 REFERENCE  (J,NSE,58,314,197511)
            (R,ANL-NDM-10,197501)
            (R,ANL-NDM-13,197506)
            (J,ANS,16,312,197306) Data superseded
-AUTHOR     (D.L.SMITH,J.W.MEADOWS)
-TITLE      Cross-Section Measurement of (n,p) Reactions for 27Al,
-            46,47,48Ti, 54,56Fe, 58Ni, 59Co, and 64Zn from Near
-            Threshold to 10 MeV
-FACILITY   (DYNAM) Fast neutron generator
+AUTHOR     (D.L.Smith,J.W.Meadows)
+TITLE      Cross-section measurement of (n,p) reactions for 27Al,
+            46,47,48Ti, 54,56Fe, 58Ni, 59Co, and 64Zn from near
+            threshold to 10 MeV
+FACILITY   (DYNAM,1USAANL) Fast neutron generator
 METHOD     (ACTIV) Activation
 DETECTOR   (GELI,NAICR) Ge(Li) and NaI detectors
 CORRECTION Data corrected for
@@ -25,21 +25,42 @@ CORRECTION Data corrected for
             . isotopic content of sample and standard,
             . deadtime losses,
             . gamma detector efficiency.
+MONIT-REF  (,,3,ENDF/B-IV,,1974)  .Data were taken from the
+             ENDF/B-IV file
 ERR-ANALYS (DATA-ERR) Data errors given are statistical errors
             plus 5% for possible systematic error.
+           (ERR-SYS) Possible systematic error includes:
+             * integration of gamma-ray full-energy peak - 3%
+             * gamma-ray detector efficiency - 3%
+             * decay half-life - < 1%
+             * fission deposit and sample dimensions - 1.4%
+             * neutron-group intensities - 1-4%
+             * scattering correction - 1%
+             * mass of uranium deposit - 1%
+            - Uncertainties in reaction-product decay schemes and
+              fission monitor cross sections are not included in
+              the assigned experimental errors.
 STATUS     (APRVD) Approved by author 1975/8/8.
-           Renormalized data received on punched cards from
-            D.L. Smith, May 1975.
+           (TABLE) Renormalized data received on punched cards
+            from D.L. Smith, May 1975.
 HISTORY    (19730522C)
            (19750314A) Data superseded, new data added
            (19750613A) Subentries 10-19 outdated
            (19751210A) Reference updated
            (19821015A) Converted to REACTION formalism
            (20010309A) Updated to new date formats, lower case.
-              Superseded and out-of-date data sets deleted.
-ENDBIB              36
-NOCOMMON             0          0
-ENDSUBENT           39
+            Superseded and out-of-date data sets deleted.
+           (20110727A) SD: Full description of uncertainties added
+           in ERR-ANALYS.  SF1 in second REACTION code was changed
+            (U-235 -> U-238) in Subents 031, 034, 037, 040, 043
+            MONIT-REF was added in Subent 001.
+ENDBIB              53
+COMMON               1          3
+ERR-SYS
+PER-CENT
+  5.0
+ENDCOMMON            3
+ENDSUBENT           60
 NOSUBENT      10238002   20010309   20010426   20050926       0000
 NOSUBENT      10238003   20010309   20010426   20050926       0000
 NOSUBENT      10238004   20010309   20010426   20050926       0000
@@ -416,14 +437,16 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  9.9520E+00 4.3800E-01 2.6660E-02 1.5200E-03 2.7350E-02 1.5590E-03
 ENDDATA             11
 ENDSUBENT           21
-SUBENT        10238031   20010309   20010426   20050926       0000
-BIB                  4          5
+SUBENT        10238031   20110727   20111215   20111113       1374
+BIB                  5          7
 REACTION  1(26-FE-54(N,P)25-MN-54,,SIG)
-          2((26-FE-54(N,P)25-MN-54,,SIG)/(92-U-238(N,F),,SIG))
+          2((26-FE-54(N,P)25-MN-54,,SIG)/(92-U-235(N,F),,SIG))
 INC-SOURCE (P-LI7) Protons on lithium-7
 MONITOR   1(92-U-235(N,F),,SIG) ENDF/B-IV cross sections
 DECAY-DATA (25-MN-54,312.D,DG,835.,1.0)
-ENDBIB               5
+HISTORY    (20110727A) SF1 in second REACTION code was changed
+            (U-238 -> U-235)
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 6         13
 EN         EN-RSL     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
@@ -442,7 +465,7 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  3.7880E+00 1.6200E-01 2.7010E-01 1.4490E-02 2.3140E-01 1.2410E-02
  3.9900E+00 1.6200E-01 2.5840E-01 1.3490E-02 2.2450E-01 1.1720E-02
 ENDDATA             15
-ENDSUBENT           25
+ENDSUBENT           27
 SUBENT        10238032   20010309   20010426   20050926       0000
 BIB                  4          5
 REACTION  1(26-FE-54(N,P)25-MN-54,,SIG)
@@ -497,21 +520,23 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  9.9480E+00 4.4400E-01 4.4930E-01 2.5610E-02 4.6090E-01 2.6270E-02
 ENDDATA             12
 ENDSUBENT           22
-SUBENT        10238034   20010309   20010426   20050926       0000
-BIB                  4          5
+SUBENT        10238034   20110727   20111215   20111113       1374
+BIB                  5          7
 REACTION  1(26-FE-56(N,P)25-MN-56,,SIG)
-          2((26-FE-56(N,P)25-MN-56,,SIG)/(92-U-238(N,F),,SIG))
+          2((26-FE-56(N,P)25-MN-56,,SIG)/(92-U-235(N,F),,SIG))
 INC-SOURCE (P-LI7) Protons on lithium-7
 MONITOR   1(92-U-235(N,F),,SIG) ENDF/B-IV cross sections
 DECAY-DATA (25-MN-56,2.58HR,DG,847.,0.988)
-ENDBIB               5
+HISTORY    (20110727A) SF1 in second REACTION code was changed
+            (U-238 -> U-235)
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 6          1
 EN         EN-RSL     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 MEV        MEV        B          B          NO-DIM     NO-DIM
  3.9790E+00 1.2400E-01 5.3540E-06 3.4240E-06 4.6490E-06 2.9730E-06
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 SUBENT        10238035   20010309   20010426   20050926       0000
 BIB                  4          5
 REACTION  1(26-FE-56(N,P)25-MN-56,,SIG)
@@ -568,15 +593,17 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  9.9450E+00 4.4400E-01 6.2200E-02 3.5450E-03 6.3800E-02 3.6360E-03
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        10238037   20010309   20010426   20050926       0000
-BIB                  5          6
+SUBENT        10238037   20110727   20111215   20111113       1374
+BIB                  6          8
 REACTION  1(28-NI-58(N,P)27-CO-58,,SIG)
-          2((28-NI-58(N,P)27-CO-58,,SIG)/(92-U-238(N,F),,SIG))
+          2((28-NI-58(N,P)27-CO-58,,SIG)/(92-U-235(N,F),,SIG))
 INC-SOURCE (P-LI7) Protons on lithium-7
 MONITOR   1(92-U-235(N,F),,SIG) ENDF/B-IV cross sections
 DECAY-DATA (27-CO-58-G,71.D,DG,811.,0.995)
 COMMENT    Normal resolution
-ENDBIB               6
+HISTORY    (20110727A) SF1 in second REACTION code was changed
+            (U-238 -> U-235)
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 6         37
 EN         EN-RSL     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
@@ -619,7 +646,7 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  3.9060E+00 8.8000E-02 3.7430E-01 1.6580E-02 3.2330E-01 1.4320E-02
  3.9600E+00 1.1000E-01 3.3710E-01 1.6600E-02 2.9230E-01 1.4390E-02
 ENDDATA             39
-ENDSUBENT           50
+ENDSUBENT           52
 SUBENT        10238038   20010309   20010426   20050926       0000
 BIB                  5          6
 REACTION  1(28-NI-58(N,P)27-CO-58,,SIG)
@@ -682,15 +709,17 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  9.8970E+00 4.4200E-01 5.7300E-01 3.0950E-02 5.8730E-01 3.1720E-02
 ENDDATA             12
 ENDSUBENT           23
-SUBENT        10238040   20010309   20010426   20050926       0000
-BIB                  5          6
+SUBENT        10238040   20110727   20111215   20111113       1374
+BIB                  6          8
 REACTION  1(28-NI-58(N,P)27-CO-58,,SIG)
-          2((28-NI-58(N,P)27-CO-58,,SIG)/(92-U-238(N,F),,SIG))
+          2((28-NI-58(N,P)27-CO-58,,SIG)/(92-U-235(N,F),,SIG))
 INC-SOURCE (P-LI7) Protons on lithium-7
 MONITOR   1(92-U-235(N,F),,SIG) ENDF/B-IV cross sections
 DECAY-DATA (27-CO-58-G,71.D,DG,811.,0.995)
 COMMENT    High resolution
-ENDBIB               6
+HISTORY    (20110727A) SF1 in second REACTION code was changed
+            (U-238 -> U-235)
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 6         45
 EN         EN-RSL     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
@@ -741,7 +770,7 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  3.9690E+00 4.8000E-02 3.9540E-01 1.9710E-02 3.4310E-01 1.7100E-02
  3.9940E+00 4.8000E-02 3.6330E-01 1.7640E-02 3.1580E-01 1.5340E-02
 ENDDATA             47
-ENDSUBENT           58
+ENDSUBENT           60
 SUBENT        10238041   20010309   20010426   20050926       0000
 BIB                  5          6
 REACTION  1(28-NI-58(N,P)27-CO-58,,SIG)
@@ -789,14 +818,16 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  9.9440E+00 4.7000E-01 3.4810E-02 1.9840E-03 3.5700E-02 2.0350E-03
 ENDDATA             19
 ENDSUBENT           29
-SUBENT        10238043   20010309   20010426   20050926       0000
-BIB                  4          5
+SUBENT        10238043   20110727   20111215   20111113       1374
+BIB                  5          7
 REACTION  1(30-ZN-64(N,P)29-CU-64,,SIG)
-          2((30-ZN-64(N,P)29-CU-64,,SIG)/(92-U-238(N,F),,SIG))
+          2((30-ZN-64(N,P)29-CU-64,,SIG)/(92-U-235(N,F),,SIG))
 INC-SOURCE (P-LI7) Protons on lithium-7
 MONITOR   1(92-U-235(N,F),,SIG) ENDF/B-IV cross sections
 DECAY-DATA (29-CU-64,12.71HR,AR,511.,0.386)
-ENDBIB               5
+HISTORY    (20110727A) SF1 in second REACTION code was changed
+            (U-238 -> U-235)
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 6         15
 EN         EN-RSL     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
@@ -817,7 +848,7 @@ MEV        MEV        B          B          NO-DIM     NO-DIM
  3.7700E+00 1.5600E-01 1.2530E-01 6.2640E-03 1.0720E-01 5.3590E-03
  3.9580E+00 1.5600E-01 1.3040E-01 6.5190E-03 1.1300E-01 5.6520E-03
 ENDDATA             17
-ENDSUBENT           27
+ENDSUBENT           29
 SUBENT        10238044   20010309   20010426   20050926       0000
 BIB                  4          5
 REACTION  1(30-ZN-64(N,P)29-CU-64,,SIG)

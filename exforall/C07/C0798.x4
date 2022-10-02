@@ -1,10 +1,10 @@
-ENTRY            C0798   20010629   20010927   20050926       0000
-SUBENT        C0798001   20010629   20010927   20050926       0000
-BIB                 13         19
+ENTRY            C0798   20111002   20111215   20111123       C110
+SUBENT        C0798001   20111002   20111215   20111123       C110
+BIB                 13         22
 INSTITUTE  (1USAWIS)
 REFERENCE  (J,PR/C,24,1891,198111)
 AUTHOR     (C.A.Davis)
-TITLE      20Ne(alpha,12C)12C
+TITLE      20Ne(alpha,12C)12C reaction
 FACILITY   (VDGT,1USAWIS)
 INC-SOURCE He++ ion beam. Energy resolution is at worst 4 keV
             and arises mainly from straggling of the beam in the
@@ -13,24 +13,30 @@ SAMPLE     Differentially pumped natural neon gas.
 METHOD     (BCINT)
 DETECTOR   (SOLST) Thin depleted surface barrier detectors.
 CORRECTION Corrected for helium partial pressure buildup.
-ERR-ANALYS (ERR-S) Uncertainty given includes counting statistics
-            and background subtraction.
-           Systematic uncertainties varied from 2-3%
-            (greater at forward angles).
-STATUS     Data taken from PRVCA-24-1891-244/
+ERR-ANALYS (DATA-ERR) Uncertainty given includes counting
+            statistics and background subtraction.
+           (ERR-SYS,2.,3.) Systematic uncertainties varied
+            from 2-3% (greater at forward angles).
+STATUS     (TABLE) Data taken from AIP document
+            No. PAPS PRVCA-24-1891-244
            (APRVD) Approved by C.A. Davis, 29 June 2001.
 HISTORY    (20010502C) VM
-ENDBIB              19
+           (20110922A) OS. Error analysis modified,
+            BIB corrections
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           22
-SUBENT        C0798002   20010516   20010927   20050926       0000
-BIB                  1          1
+ENDSUBENT           25
+SUBENT        C0798002   20111002   20111215   20111123       C110
+BIB                  3          4
 REACTION   (10-NE-20(A,EL)10-NE-20,,DA)
-ENDBIB               1
+FLAG       (1.) Suspicious data point.
+            Possibly should be 18229.9 (Comment by compiler)
+HISTORY    (20110922A) FLAG added
+ENDBIB               4
 NOCOMMON             0          0
-DATA                 4       1008
-ANG        EN         DATA       ERR-S
-ADEG       MEV        MB/SR      MB/SR
+DATA                 5       1008
+ANG        EN         DATA       DATA-ERR   FLAG
+ADEG       MEV        MB/SR      MB/SR      NO-DIM
  45.        16.297    25986.3      244.3
  45.        16.307    29173.4      262.6
  45.        16.317    32570.1      281.7
@@ -346,7 +352,7 @@ ADEG       MEV        MB/SR      MB/SR
  45.        19.872    19067.6      192.8
  45.        19.882    18488.4      189.4
  45.        19.892    18038.5      186.7
- 45.        19.902    10229.9      187.6
+ 45.        19.902    10229.9      187.6      1.
  45.        19.912    18668.1      190.5
  45.        19.922    18125.1      186.9
  45.        19.932    18541.3      189.9
@@ -1040,15 +1046,15 @@ ADEG       MEV        MB/SR      MB/SR
 170.        17.434     16852.2     437.4
 170.        17.444     15454.3     418.7
 ENDDATA           1010
-ENDSUBENT         1016
-SUBENT        C0798003   20010516   20010927   20050926       0000
+ENDSUBENT         1019
+SUBENT        C0798003   20111002   20111215   20111123       C110
 BIB                  2          2
 REACTION   (10-NE-20(A,INL)10-NE-20,PAR,DA)
 STATUS     Remaining data to be compiled as resources allow.
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 5        100
-Q-VAL      ANG        EN         DATA       ERR-S
+Q-VAL      ANG        EN         DATA       DATA-ERR
 MEV        ADEG       MEV        MU-B/SR    MU-B/SR
 -1.6337     70.        13.415    26047.7      309.1
 -1.6337     70.        13.425    24838.9      300.6
@@ -1152,18 +1158,18 @@ MEV        ADEG       MEV        MU-B/SR    MU-B/SR
 -1.6337     70.        14.395     4784.6      120.0
 ENDDATA            102
 ENDSUBENT          109
-SUBENT        C0798004   20010516   20010927   20050926       0000
+SUBENT        C0798004   20111002   20111215   20111123       C110
 BIB                  2          2
 REACTION   (10-NE-20(A,6-C-12)6-C-12,PAR,DA)
 STATUS     Remaining data to be compiled as resources allow.
 ENDBIB               2
 COMMON               1          3
-E-EXC
+E-LVL
 MEV
  0.0
 ENDCOMMON            3
 DATA                 4        495
-ANG        EN         DATA       ERR-S
+ANG        EN         DATA       DATA-ERR
 ADEG       MEV        MB/SR      MB/SR
  10.        13.415    1612.4       49.3
  10.        13.425    1659.3       50.6

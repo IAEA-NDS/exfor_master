@@ -1,26 +1,40 @@
-ENTRY            40953   20030205   20040112   20050926       0000
-SUBENT        40953001   20030205   20040112   20050926       0000
-BIB                 14         30
-INSTITUTE  (4ZZZDUB)
+ENTRY            40953   20111005   20111215   20111212       4154
+SUBENT        40953001   20111005   20111215   20111212       4154
+BIB                 15         47
+INSTITUTE  (4ZZZDUB) All authors from 4ZZZDUB.
+               L.B.Pikelner = L.B.Pikel'ner
 REFERENCE  (C,85SANTA,1,937,198505)
-           (J,NP/A,398,93,1983) Experimental Details
            (J,ZEP,39,(8),346,19840425)
-AUTHOR     (V.P.ALFIMENKOV,S.B.BORZAKOV, VO-VAN-THUAN,
-           YU.D.MAREEV,L.B.PIKEL'NER,
-           I.M.FRANK,A.S.KHRYKIN,E.I.SHARAPOV)
-TITLE       Polarization and Angular Correlation in the
-            Sn-117(N,GAMMA) Reaction Near the 1.33 eV P-Wave
-            Resonance
-FACILITY   (REAC) Fast Pulse Reactor IBR-30
-SAMPLE      Enriched Tin, Sn-117 Content is 92%  , Weight
-            From 8 to 400 Gram
-METHOD     (TOF)
-DETECTOR   (GELI)
+            First preliminary measurement of Subent 004 data.
+           (J,JEL,39,416,1984) Engl.Trans. of ZEP,39,346,1984
+REL-REF    (I,41576001,V.P.Alfimenkov+,J,NP/A,398,93,1983)
+            Exp.details of beam polarization and its reversal.
+AUTHOR     (V.P.Alfimenkov,S.B.Borzakov, Vo Van Thuan,
+           Yu.D.Mareev,L.B.Pikelner,
+           I.M.Frank,A.S.Khrykin,E.I.Sharapov)
+TITLE       Polarization and angular correlation in the
+            Sn-117(n,gamma) Reaction near the 1.33 eV p-wave
+            resonance
+FACILITY   (REAC,4ZZZDUB) Fast Pulse Reactor IBR-30
+SAMPLE      Enriched tin, Sn-117 content is 92%  , weight
+            from 8 to 400 gram
+METHOD     (TOF) 35 m and 58 m flight paths.
+            TOF spectra were registered with 8.5 MeV threshold.
+            Amplitude spectra were also measured in 3.5-10 MeV
+           region in 8 time windows.
+           Background was determined by Sn sample and black boron
+           filter as well as with an equivalent scatterer in the
+           place of sample.
+INC-SOURCE (POLNS,REAC) Polarized neutrons.
+           Polarizer was installed at 32 m distance from reactor
+           core. Neutron polarization 0.5 - 0.6 .
+           Polarization reversal was made each 40 sec.
+DETECTOR   (NAICR) NaI(Tl) crystal of 200 mm diameter, 200 mm
+            thick. As gamma detector.
 PART-DET   (G)
 MONITOR     No Information
-COMMENT    . All Measurements are Made For Gamma-Energy 9.32 KeV
-ERR-ANALYS  Error is not Specified
-STATUS      Data are Taken from Tne First Reference
+CORRECTION  For background.
+COMMENT    . All measurements are made for gamma-energy 9.32 MeV
 HISTORY    (19880622C)  Compiled at CJD
            (19881001U)  Angular Variable is Added to San 003, 004
            (19901017U)  Angular Variables are Changed in San  004
@@ -31,21 +45,28 @@ HISTORY    (19880622C)  Compiled at CJD
            (20030205A)  Two Lost Subents - 006, 007 - Restored
                         As Inserted
            (20030205U)  Last checking has been done.
-ENDBIB              30
-NOCOMMON
-ENDSUBENT           33
-SUBENT        40953002   20010815   20020121   20050926       0000
-BIB                  4          5
-REACTION   (50-SN-117(N,G)50-SN-118,,DA)
+           (20111005A) M.M. BIB information was added.
+            Several mistakes were corrected.
+           Ref. J,NP/A,398,93,1983 was moved in REL-REF.
+ENDBIB              47
+NOCOMMON             0          0
+ENDSUBENT           50
+SUBENT        40953002   20111005   20111215   20111212       4154
+BIB                  6          9
+REACTION   (50-SN-117(N,G)50-SN-118,PAR,DA)
 MISC-COL   (MISC) Value of 0.5*(D-SIG(EN,45ADEG)/D-OMEGA +
-                 D-SIG(EN,135 ADEG)/D-OMEGA)
-ERR-ANALYS (ERR-1) Error of Normalization
-STATUS     (CURVE)
-ENDBIB               5
-COMMON               2          3
-ANG        ERR-1
-ADEG       PER-CENT
-        90.        20.
+                 D-SIG(EN,135 ADEG)/D-OMEGA) for Egamma=9.3 MeV.
+ERR-ANALYS (ERR-1) Error of normalization
+STATUS     (CURVE) Fig.1 of C,85SANTA,937,1984
+COMMENT    Of compiler M.M. 05.10.2011.
+            On fig.1 there are smooth curves, were digitized at
+            several points of EN.
+HISTORY    (20111005A) M.M. PAR was added and E=9.3 MeV.
+ENDBIB               9
+COMMON               3          3
+ANG        ERR-1      E
+ADEG       PER-CENT   MEV
+        90.        20. 9.32
 ENDCOMMON            3
 DATA                 3         18
 EN         DATA       MISC
@@ -69,18 +90,24 @@ EV         MB/SR      MB/SR
          2.        .33
          3.        .28
 ENDDATA             20
-ENDSUBENT           34
-SUBENT        40953003   20010815   20020121   20050926       0000
-BIB                  3          4
-REACTION   (50-SN-117(N,G)50-SN-118,,POL/DA,,ASY)
-STATUS     (CURVE)
+ENDSUBENT           38
+SUBENT        40953003   20111005   20111215   20111212       4154
+BIB                  3         10
+REACTION   (50-SN-117(N,G)50-SN-118,,POL/DA,,ASY/MSC)
+             Fore-aft asymmetry near 1.33 eV resonance.
+           Defined as
+            (DA(45deg)-DA(135deg))/(DA(45deg)+DA(135deg)),
+           DA- differential cross section.
+STATUS     (CURVE) Fig.2 of C,85SANTA,937,1984
 HISTORY    (19881001U) Angle is Added
            (20010815U) Last checking has been done.
-ENDBIB               4
+           (20111005A) M.M. Angle value was corrected 90. -> 45.
+           MSC was added according to N.Otsuke's opinion(NDS IAEA)
+ENDBIB              10
 COMMON               1          3
 ANG
 ADEG
-        90.
+        45.
 ENDCOMMON            3
 DATA                 3         16
 EN         DATA       DATA-ERR
@@ -102,23 +129,27 @@ EV         NO-DIM     NO-DIM
        2.86       -.01       .056
        3.76      -.048       .048
 ENDDATA             18
-ENDSUBENT           31
-SUBENT        40953004   20010815   20020121   20050926       0000
-BIB                  4          9
+ENDSUBENT           37
+SUBENT        40953004   20111005   20111215   20111212       4154
+BIB                  4         13
 REACTION   (50-SN-117(N,G)50-SN-118,,POL/DA,,ANA)
-COMMENT     Ang=45 Adeg is the First, Ang=135 Adeg is the Second
-            Angles of Measurement
-STATUS     (CURVE)
-HISTORY    (19881001U) Angles are Added
+            Analyzing power at 1.33 eV resonance.
+           Defined as (DA(90deg,parallel)-DA(90deg,antiparallel))/
+                      (DA(90deg,parallel)+DA(90deg,antiparallel)),
+           DA- differential cross section.
+ERR-ANALYS (DATA-ERR) Error is not specified
+STATUS     (CURVE) Fig.3 of C,85SANTA,937.
+HISTORY    (19881001U) Angles are added
            (19901017U) Angle Headings are Changed
            (19920727U) Angle Headings are Changed and Comment
             Given
            (20010815U) Last checking has been done.
-ENDBIB               9
+           (20111005A) M.M. ANG value was changed 45. -> 90.
+ENDBIB              13
 COMMON               1          3
 ANG
 ADEG
-        45.
+        90.
 ENDCOMMON            3
 DATA                 3          9
 EN         DATA       DATA-ERR
@@ -133,82 +164,86 @@ EV         NO-DIM     NO-DIM
        1.54        .13        .05
        1.69       .068       .091
 ENDDATA             11
-ENDSUBENT           29
-SUBENT        40953005   20010815   20020121   20050926       0000
-BIB                  2          4
-REACTION  1(50-SN-117(N,G),,WID)
-          2(50-SN-117(N,0),,L)
-HISTORY    (19920727U)  'Par' in Reaction Sf5 Deleted
+ENDSUBENT           33
+SUBENT        40953005   20111005   20111215   20111212       4154
+BIB                  4          7
+REACTION   (50-SN-117(N,G),,WID)
+            P resonance neutron width.
+ERR-ANALYS (DATA-ERR) Error is not specified
+STATUS     (TABLE) Text of C,85SANTA, page 940.
+HISTORY    (19920727U)  'Par' in Reaction SF5 Deleted
            (20010815U) Last checking has been done.
-ENDBIB               4
-NOCOMMON
+           (20111005A) M.M. DATA 2 -> MOMENTUM L .
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4          1
-EN-RES     DATA      1DATA-ERR  1DATA      2
+EN-RES     DATA       DATA-ERR   MOMENTUM L
 EV         EV         EV         NO-DIM
        1.33        .19        .01         1.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40953006   20030205   20040112   20050926       0000
-BIB                  4          6
-REACTION  1((50-SN-117(N,EL),PAR,WID)/(50-SN-117(N,EL),,WID))
-          2(50-SN-117(N,0),,L)
-EN-SEC     (E-LVL,50-SN-117)
+ENDSUBENT           15
+SUBENT        40953006   20111005   20111215   20111212       4154
+BIB                  5          8
+REACTION   ((50-SN-117(N,EL),,WID,,MSC)/(50-SN-117(N,EL),,WID))
+            S resonance neutron width / neutron width .
 ANALYSIS    Channel Spin Approach, Phys.Rev. Vol C8,P336,1973
+ERR-ANALYS (DATA-ERR) Error is not specified
+STATUS     (TABLE) Text of C,85SANTA, page 940.
 HISTORY    (20030205C)  New Compilation
            (20030205U) Last checking has been done.
-ENDBIB               6
-NOCOMMON
-DATA                 5          1
-EN-RES     E-LVL      DATA      1DATA-ERR  1DATA      2
-EV         KEV        NO-DIM     NO-DIM     NO-DIM
-       1.33     1.33          .82        .07         0.
+           (20111005A) M.M. DATA 2 -> MOMENTUM L . E-LVL deleted.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 4          1
+EN-RES     DATA       DATA-ERR   MOMENTUM L
+EV         NO-DIM     NO-DIM     NO-DIM
+       1.33        .82        .07         0.
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40953007   20030205   20040112   20050926       0000
-BIB                  3          5
-REACTION  1(50-SN-117(N,EL),,WID)
-          2(50-SN-117(N,0),,J)
+ENDSUBENT           16
+SUBENT        40953007   20111005   20111215   20111212       4154
+BIB                  6         10
+REACTION   (50-SN-117(N,EL),,WID)
 ASSUMED    (ASSUM,50-SN-117(N,EL),,WID,,G)
+            G*GAMMA-n from REL-REF.
+REL-REF    (R,41576001,V.P.Alfimenkov+,J,NP/A,398,93,1983)
+             Reference for ASSUM.
+ERR-ANALYS (DATA-ERR) Error is not specified
+STATUS     (TABLE) Text of C,85SANTA, page 940.
 HISTORY    (20030205C)  New Compilation
            (20030205U) Last checking has been done.
-ENDBIB               5
+           (20111005A) M.M. DATA 2 -> SPIN J
+ENDBIB              10
 COMMON               2          3
 ASSUM      ASSUM-ERR
 EV         EV
     1.9E-07    1.5E-08
 ENDCOMMON            3
 DATA                 4          1
-EN-RES     DATA      1DATA-ERR  1DATA      2
+EN-RES     DATA       DATA-ERR   SPIN J
 EV         EV         EV         NO-DIM
        1.33     1.E-08     5.E-09        0.5
 ENDDATA              3
-ENDSUBENT           17
-SUBENT        40953008   20030205   20040112   20050926       0000
-BIB                  4         14
-REACTION  1((50-SN-117(N,EL),PAR,WID)/
-           ((50-SN-117(N,EL),PAR,WID)+
-           (50-SN-117(N,EL),PAR,WID,,FCT)))
-             Main result of this Subent -
-              (N-WIDTH-PARTIAL(L=1,J=1/2))/
-               ((N-WIDTH(L=1,J=1/2))+(N-WIDTH(L=1,J=3/2)))
-          2(50-SN-117(N,0),,L)
-          3(50-SN-117(N,0),,J)
-STATUS     .Data Given from 3-D Reference - ZEP, Vol. 39,No. 8,
-             P. 346, 1984
-COMMENT    .VALUE GIVEN IN COMMON SECTION IS SPIN VALUE IN THE
-            SECOND TERM OF DENOMINATOR under POINTER 1
+ENDSUBENT           22
+SUBENT        40953008   20111005   20111215   20111212       4154
+BIB                  4         12
+REACTION   ((50-SN-117(N,EL),,WID,,MSC)/(50-SN-117(N,EL),,WID))
+              (N-WIDTH(L=1,J=1/2))/
+               ((N-WIDTH(L=1,J=1/2))+(N-WIDTH(L=1,J=3/2)))=
+             (P resonance neutron wide of j=1/2)/( p resonance
+               neutron width).
+ERR-ANALYS (DATA-ERR) Error is not specified
+STATUS     (TABLE) Text of ZEP, Vol.39,No.8,P.346,1984, p.348.
 HISTORY    (20030205C)  New Compilation
            (20030205U) Last checking has been done.
-ENDBIB              14
-COMMON               2          3
-SPIN J     E-LVL
-NO-DIM     KEV
- 1.5          1.33
-ENDCOMMON            3
-DATA                 5          1
-EN-RES     DATA      1DATA-ERR  1DATA      2DATA      3
-EV         NO-DIM     NO-DIM     NO-DIM     NO-DIM
-       1.33    2.7E-01     3.E-02         1.        0.5
+           (20111005A) M.M. DATA 2 -> MOMENTUM L.
+            "E-LVL=1.33 keV" was deleted from COMMON.
+            PAR was deleted from REACTION terms.
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 4          1
+EN-RES     DATA       DATA-ERR   MOMENTUM L
+EV         NO-DIM     NO-DIM     NO-DIM
+       1.33    2.7E-01     3.E-02         1.
 ENDDATA              3
-ENDSUBENT           26
+ENDSUBENT           20
 ENDENTRY             8

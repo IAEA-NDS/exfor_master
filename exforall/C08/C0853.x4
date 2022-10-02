@@ -1,11 +1,11 @@
-ENTRY            C0853   20011206   20050616   20050926       0000
-SUBENT        C0853001   20011206   20050616   20050926       0000
-BIB                 12         24
+ENTRY            C0853   20111002   20111215   20111123       C110
+SUBENT        C0853001   20111002   20111215   20111123       C110
+BIB                 12         29
 INSTITUTE  (1USACAL)
-REFERENCE  (J,PR,99,138,195307)
+REFERENCE  (J,PR,99,138,195507)
 AUTHOR     (T.S.Webb,F.B.Hagedorn,W.A.Fowler,C.C.Lauritsen)
-TITLE      Elastic Scattering by F19
-FACILITY   (ACCEL,1USACAL) 2-MeV electrostatic generator.
+TITLE      Elastic scattering of protons by F19
+FACILITY   (VDG,1USACAL) 2-MeV electrostatic generator.
 SAMPLE     Thick targets produced by pressing LiF powder into
             circular recess in copper backing.
 METHOD     (BCINT)
@@ -13,21 +13,30 @@ DETECTOR   (SCIN) Zinc sulfide scintillation counter.
 MONITOR    (29-CU-0(P,EL)29-CU-0,,DA)
            Energy scale calibrated using gammas associated with
             873- and 1372-keV resonances in 19F(p,alpha) reaction.
-ERR-ANALYS Probable uncertainty in absolute values 6%, due to
-            uncertainties in:
-            . LiF stopping power (5%).
-            . solid angle (3%),
-            . target composition and behavior (3%).
+ERR-ANALYS (DATA-ERR1) Probable uncertainty in absolute values 6%,
+            due to uncertainties in:
+           (ERR-1)  LiF stopping power (5%).
+           (ERR-2)  solid angle (3%),
+           (ERR-3) target composition and behavior (3%).
             In addition there is a systematic uncertainty due to
             energy resolution which is negligible at angles >90
             degrees, but could increase to observed yield by 5-10%
             at 60 degrees.
-           Statistical uncertainty at each point is 102%.
-STATUS     Data downloaded fron SigmaBase Web site.
+           (ERR-S,1.,2.) Statistical uncertainty at each point
+             is 1 - 2%.
+           (DATA-ERR2) Uncertainty in relative cross sections (5%)
+STATUS     Data downloaded from SigmaBase Web site.
 HISTORY    (20011206C) VM
-ENDBIB              24
-NOCOMMON             0          0
-ENDSUBENT           27
+           (20110923A) OS. Error analysis modified,
+            BIB corrections. Subentry 4 deleted (no such data in
+            reference)
+ENDBIB              29
+COMMON               5          3
+DATA-ERR1  ERR-1      ERR-2      ERR-3      DATA-ERR2
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  6.          5.        3.         3.         5.
+ENDCOMMON            3
+ENDSUBENT           36
 SUBENT        C0853002   20011206   20050616   20050926       0000
 BIB                  2          2
 REACTION   (9-F-19(P,EL)9-F-19,,DA)
@@ -237,21 +246,5 @@ KEV        NO-DIM     NO-DIM
 1810.        1.52
 ENDDATA            181
 ENDSUBENT          195
-SUBENT        C0853004   20011220   20050616   20050926       0000
-BIB                  5          7
-REACTION   (7-N-14(P,G)8-O-15,PAR,DA)
-SAMPLE     14N gas in stainless steel transmission cell with
-            molybdenum entrance and exit windows.
-METHOD     Absolute cross section obtained from known target
-            thickness and the detector efficiency.
-ERR-ANALYS Overall uncertainty in cross sections <30%.
-STATUS     (UNOBT) Data given in Figs. 7, 8 in reference.
-ENDBIB               7
-COMMON               1          3
-E-LVL
-MEV
-  0.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           15
+NOSUBENT      C0853004   20111002   20111215   20111123       C110
 ENDENTRY             4
