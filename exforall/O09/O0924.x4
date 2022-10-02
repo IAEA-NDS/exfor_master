@@ -1,6 +1,6 @@
-ENTRY            O0924   20030503              20050926       0000
-SUBENT        O0924001   20030503              20050926       0000
-BIB                 13         32
+ENTRY            O0924   20140305   20140701   20140623       O052
+SUBENT        O0924001   20140305   20140701   20140623       O052
+BIB                 14         36
 TITLE      Superasymmetric fission at intermediate energy and
            production of neutron-rich nuclei with A< 80.
 AUTHOR     (M.Huhta, P.Dendooven, A.Honkanen, A.Jokinen,
@@ -9,13 +9,11 @@ AUTHOR     (M.Huhta, P.Dendooven, A.Honkanen, A.Jokinen,
 INSTITUTE  (2SF JYV)
            (4RUSRI)
 REFERENCE  (J,PL/B,405,230,1997)
-REL-REF    (N,O0646001,E.KARTTUNEN+,J,NSE,109,350,1991)
-           (N,O0499001,P.P.JAUHO+,J,PR/C,49,2036,1994)
+REL-REF    (N,O0646001,E.Karttunen+,J,NSE,109,350,1991)
+           (N,O0499001,P.P.Jauho+,J,PR/C,49,2036,1994)
            Theoretical models.
-           (R,O0825001,M.LEINO+,J,PR/C,44,336,1991) Details of
+           (M,O0825001,M.Leino+,J,PR/C,44,336,1991) Details of
            experiment.
-HISTORY    (20011228C)
-           (20030503U) Last checking has been done.
 SAMPLE     The 15 mg/cm**2 thick uranium target foil were used.
 ADD-RES    (COMP).The theoretical model for calculating mass and
            independent fission products.
@@ -23,66 +21,81 @@ ADD-RES    (COMP).The theoretical model for calculating mass and
 PART-DET   (DG)
            (B-)
 COMMENT    -By authors. Independent and cumulative fission product
-           yields in atoms/s For Z=28-32 and a=71-82 As Measured
+           yields in atoms/s for Z=28-32 and A=71-82 as measured
            at the focal point of the IGISOL separator.
 FACILITY   (OLMS,2SF JYV)  The on-line mass separator IGISOL.
+           (CYCLO,2SF JYV)
 METHOD     (OLMS)
            (HEJET) Fragments were slowed down as ions in
            high-pressure helium and transported by the flow into
            the mass separator.
            (ACTIV)
            (BCINT)
-STATUS     (TABLE)
-ENDBIB              32
+ERR-ANALYS (DATA-ERR) Experimental error
+STATUS     (TABLE) Data were received from Dr. V.A.Rubchenya
+HISTORY    (20011228C)
+           (20030503U) Last checking has been done.
+           (20140305A) SD: Data from author presented in D0149
+            were added. ERR-T -> DATA-ERR in Subent 2,3.
+ENDBIB              36
 COMMON               1          3
 EN
 MEV
         25.
 ENDCOMMON            3
-ENDSUBENT           39
-SUBENT        O0924002   20030503              20050926       0000
-BIB                  3          5
-REACTION   (92-U-238(P,X)ELEM/MASS,IND,PY,,REL)
+ENDSUBENT           43
+SUBENT        O0924002   20140305   20140701   20140623       O052
+BIB                  5         13
+REACTION   (92-U-238(P,X)ELEM/MASS,IND,FY)
+           The independent yields extracted from the measured
+           cumulative production yields, which were determined
+           from the radioactivity of the mass separated nuclides.
+MISC-COL   (MISC) Independent fission product yield in atoms/s
+ERR-ANALYS (MISC-ERR) Experimental error
 COMMENT    - By authors. The average masses, standard deviations
            and elemental yields were obtained by fitting with a
            gaussian function.
-ERR-ANALYS (ERR-T).The uncertainty is reported by authors.
-ENDBIB               5
-NOCOMMON
-DATA                 4         21
-ELEMENT    MASS       DATA       ERR-T
-NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS
-        28.        71.        5.7        1.7
-        29.        71.        1.4        1.1
-        29.        72.        15.         3.
-        29.        73.        10.         3.
-        29.        74.         9.         3.
-        30.        74.        16.         5.
-        30.        75.        69.         8.
-        30.        76.        55.         5.
-        30.        77.        27.         4.
-        30.        78.        11.         3.
-        30.        79.        3.1        0.6
-        31.        76.        29.        10.
-        31.        78.        92.        12.
-        31.        79.        96.        17.
-        31.        80.        26.         3.
-        31.        81.        13.         5.
-        32.        78.       140.        30.
-        32.        79.       200.        30.
-        32.        80.       234.        20.
-        32.        81.       350.        40.
-        32.        82.       135.        20.
+HISTORY    (20140305A) SD: SF8=REL deleted, SF6=PY -> FY in
+           REACTION code values from col. DATA were moved
+           MISC-COL; absolute values received from author were
+           added in  col.DATA from D0149.002
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 6         21
+ELEMENT    MASS       DATA       DATA-ERR   MISC       MISC-ERR
+NO-DIM     NO-DIM     PRD/FIS    PRD/FIS    ARB-UNITS  ARB-UNITS
+  28.        71.          8.51E-5    2.54E-5     5.7       1.7
+  29.        71.          2.09E-5    1.64E-5     1.4       1.1
+  29.        72.           2.3E-4    4.03E-5    15.        3.
+  29.        73.          1.46E-4    4.78E-5    10.        3.
+  29.        74.          1.39E-4    4.48E-5     9.        3.
+  30.        74.          2.43E-4    7.16E-5    16.        5.
+  30.        75.          0.00103    1.13E-4    69.        8.
+  30.        76.          8.25E-4    7.31E-5    55.        5.
+  30.        77.          3.97E-4    5.67E-5    27.        4.
+  30.        78.          1.63E-4    3.73E-5    11.        3.
+  30.        79.          4.63E-5    8.96E-6     3.1       0.6
+  31.        76.          4.31E-4    1.42E-4    29.       10.
+  31.        78.          0.00137    1.72E-4    92.       12.
+  31.        79.          0.00143    2.57E-4    96.       17.
+  31.        80.          3.87E-4    4.92E-5    26.        3.
+  31.        81.          1.88E-4    7.76E-5    13.        5.
+  32.        78.          0.00212    4.37E-4   140.       30.
+  32.        79.          0.00298    4.33E-4   200.       30.
+  32.        80.          0.0035     2.92E-4   234.       20.
+  32.        81.          0.00525    5.61E-4   350.       40.
+  32.        82.          0.00202    2.98E-4   135.       20.
 ENDDATA             23
-ENDSUBENT           33
-SUBENT        O0924003   20030503              20050926       0000
-BIB                  2          2
-REACTION   (92-U-238(P,F)ELEM/MASS,CUM,PY,,REL)
-ERR-ANALYS (ERR-T).The uncertainty is reported by authors.
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           41
+SUBENT        O0924003   20140305   20140701   20140623       O052
+BIB                  3          3
+REACTION   (92-U-238(P,F)ELEM/MASS,CUM,FY,,REL)
+STATUS     (TABLE) tbl.1 from PL/B,405,230
+HISTORY    (20140305A) SD: SF6=PY -> FY in REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         12
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS
         29.        71.        7.1        0.8
         29.        72.        15.         3.
@@ -97,5 +110,29 @@ NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS
         33.        81.       790.        60.
         33.        82.      1530.       200.
 ENDDATA             14
-ENDSUBENT           21
-ENDENTRY             3
+ENDSUBENT           22
+SUBENT        O0924004   20140305   20140701   20140623       O052
+BIB                  3         10
+REACTION   (92-U-238(P,F)ELEM,CHG,FY)
+           Elemental yields (%)
+ANALYSIS   Experimental elemental yields were obtained by Gaussian
+           fitting of the independent yields for the isotope
+           chains of Cu, Zn, Ga and Ge. Due to the lack of
+           experimental data, the value for Ni was estimated
+           using the experimental yield of 71Ni only and the
+           theoretical value of the average mass equal 71.23
+           and the mass dispersion equal 1.47, for the Ni-chain.
+HISTORY    (20140305T) SD: Subent was added from D0149004.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2          5
+ELEMENT    DATA
+NO-DIM     PC/FIS
+  28.        0.034
+  29.        0.059
+  30.        0.26
+  31.        0.48
+  32.        1.84
+ENDDATA              7
+ENDSUBENT           22
+ENDENTRY             4

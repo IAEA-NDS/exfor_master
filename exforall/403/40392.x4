@@ -1,33 +1,68 @@
-ENTRY            40392     850329              20050926       0000
-SUBENT        40392001     850329              20050926       0000
-BIB                  8         10
-INSTITUTE  (4CCPCCP)
-REFERENCE  (J,AE,4,374,58)
-           (J,JNE,9,207,59)
-AUTHOR     (A.N.PROTOPOPOV,M.V.BLINOV)
-TITLE      A DETERMINATION OF NU FOR THE 14.8MEV NEUTRON-INDUCED
-           FISSION OF U-235.
-INC-SOURCE (D-T)
-METHOD     (COINC)
+ENTRY            40392   20140402   20140701   20140617       4163
+SUBENT        40392001   20140402   20140701   20140617       4163
+BIB                 10         25
+INSTITUTE  (4RUSRI)
+REFERENCE  (J,AE,4,374,1958)
+           (J,SJA,4,(4),491,1958) Engl.transl. of J,AE,4,374,1958
+           #doi:10.1007/BF01880577
+           (J,JNE,9,207,1959) Engl.translation of J,AE,4,374
+AUTHOR     (A.N.Protopopov,M.V.Blinov)
+TITLE      Mean number of neutrons emitted in U235 fission induced
+           by 14.8-MeV neutrons.
+INC-SOURCE (D-T)  Thick T-Zr target. 175 keV deutrons.
+INC-SPECT   Total neutron flux (1-2)E+9 n/sec .
+           Neutron flux over area of U layers was uniform within
+           4%.
+METHOD     (COINC) Coincidence between FF and neutrons.
 DETECTOR   (COIN,FISCH,IOCH)
-HISTORY    (830921T)  CONVERTED FROM ENTRY 80021
-ENDBIB              10
+           U-235 layers on electrodes.
+           The chamber was irradiated first by 14.8 mev neutrons,
+           then by thermal neutrons.
+CORRECTION Background due to fission induced by scattered neutrons
+           - 3%.
+HISTORY    (19830921T)  Converted from ENTRY 80021
+           (20140402A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Engl.translation J,SJA was added.
+           BIB information was updated.
+           MONITOR reaction: ,,NU -> ,PR,NU,,MXW
+ENDBIB              25
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        40392002     850329              20050926       0000
+ENDSUBENT           28
+SUBENT        40392002   20140402   20140701   20140617       4163
 BIB                  2          3
-REACTION  1((92-U-235(N,F),PR,NU)/(92-U-235(N,F),PR,NU,,MXW))
-          2(92-U-235(N,F),PR,NU)
-MONITOR   2(92-U-235(N,F),,NU)
+REACTION   ((92-U-235(N,F),PR,NU)//(92-U-235(N,F),PR,NU))
+            Ratio of NU at EN-NM to NU for thermal neutrons.
+STATUS     (TABLE) From J,AE,4,374,1958
 ENDBIB               3
-NOCOMMON             0          0
-DATA                 7          1
-EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2MONIT     2
-MONIT-ERR 2
-MEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
-NO-DIM
- 1.4800E+01 1.9000E+00 1.8000E-01 4.7000E+00 5.0000E-01 2.4700E+00
- 3.0000E-02
-ENDDATA              6
-ENDSUBENT           14
-ENDENTRY             2
+COMMON               1          3
+EN-DN
+EV
+0.0253
+ENDCOMMON            3
+DATA                 3          1
+EN-NM      DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+ 14.8       1.9000E+00 1.8000E-01
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        40392003   20140402   20140701   20140617       4163
+BIB                  4          5
+REACTION   (92-U-235(N,F),PR,NU)
+MONITOR    (92-U-235(N,F),PR,NU,,MXW)  Thermal neutron induced.
+STATUS     (TABLE) From J,AE,4,374,1958
+           (DEP,40392002) Ratio in Subent 002.
+HISTORY    (20140402C) Subent was added.
+ENDBIB               5
+COMMON               1          3
+EN-NRM
+EV
+0.0253
+ENDCOMMON            3
+DATA                 5          1
+EN         DATA       DATA-ERR   MONIT      MONIT-ERR
+MEV        PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+ 14.8       4.7000E+00 5.0000E-01 2.4700E+00 3.0000E-02
+ENDDATA              3
+ENDSUBENT           17
+ENDENTRY             3

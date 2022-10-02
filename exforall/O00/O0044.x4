@@ -1,45 +1,94 @@
-ENTRY            O0044     941031              20050926       0000
-SUBENT        O0044001     941031              20050926       0000
-BIB                 12         19
-TITLE      A SPALLATION NUCLEAR REACTION ON THORIUM AT
-           150 AND 82 MEV PROTON ENERGIES.
-           REACTIONS NUCLEAIRES DE SPALLATION INDUITES SUR LE
-           THORIUM PAR DES PROTONS DE 150 ET 82 MEV.(IN FRENCH).
-AUTHOR     (M.LEFORT,G.N.SIMONOFF,X.TARRAGO)
+ENTRY            O0044   20140121   20140701   20140623       O052
+SUBENT        O0044001   20140121   20140701   20140623       O052
+BIB                 13         55
+TITLE      A spallation nuclear reaction on thorium at
+           150 and 82 MeV proton energies.
+AUTHOR     (M.Lefort,G.N.Simonoff,X.Tarrago)
 INSTITUTE  (2FR PAR)
-REFERENCE  (J,NP,25,216,61)
-HISTORY    (941028C)
-           (941229U)
-SAMPLE     THE METALLIC FOILS OF THORIUM,0.03-0.05 MM THICKNESS,
-           WAS USED.
-MONITOR    ((MONIT1)13-AL-27(P,N+3P)11-NA-24,,SIG,,,EXP).AT 150MEV
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,,SIG,,,EXP).AT 80 MEV
-           ((MONIT3)6-C-12(P,N+P)6-C-11,,SIG,,,EXP).AT 150 MEV.
-MONIT-REF  (,H.G.HICKS+,J,PR,101,329,56)
+REFERENCE  (J,NP,25,216,1961) In French
+           (J,CR,251,2155,1960) In French - One value for
+            Th-232(p,n) at 150 MeV is given
+SAMPLE     The metallic foils of thorium,0.03-0.05 mm thickness,
+           was used.
+MONITOR    ((MONIT1)13-AL-27(P,X)11-NA-24,,SIG).At 150MeV
+           ((MONIT2)13-AL-27(P,X)11-NA-24,,SIG).at 80 MeV
+           ((MONIT3)6-C-12(P,X)6-C-11,,SIG).at 150 MeV.
+MONIT-REF  (C0257002,H.G.Hicks+,J,PR,102,1390,1956)
+             The cross-section of the reaction 12C(p,pn)11C has
+           been accurately determined by Crandall (see MONIT-REF)
+           at various energies. By adopting the value of 9.1 mb
+           for sodium-24, it was found 45+-1 mb  for 11C to
+           150 MeV.
 FACILITY   (SYNCY,2FR PAR)
-DETECTOR   (NAICR).A CRYSTAL NAI(TL).
+DETECTOR   (NAICR) Na(Tl) 2.54 cm in diam. and 2.54 cm thick.
+           In addition, one more NaI(Tl)  was used for counting
+            2.754 MeV gamma-rays
+           (IOCH) Most of the isotopes formed by spallation of
+           the thorium decay by emission alpha. Several
+           ionization chambers were used for their detection and
+           measurement.
+           (GEMUC) The detector used was a anthracene crystal
+           or a Geiger counter
 METHOD     (SITA)
-ADD-RES     CALCULATED CROSS SECTION BY SERBER-JACKSON MODEL.
-ENDBIB              19
-COMMON               3          3
-MONIT1     MONIT2     MONIT3
-MB         MB         MB
-        9.1       10.2        45.
-ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        O0044002     941229              20050926       0000
-BIB                  6          8
-REACTION   (6-C-12(P,3N+3P)4-BE-7,UND,SIG,,,EXP)
+ADD-RES     Calculated cross section by Serber-Jackson model.
+ERR-ANALYS (ERR-1) Uncertainty in monitoring estimated at 5%
+            (counting error, calibration and uncertainty
+                 on the cross-section of the absolute sodium 24).
+           (ERR-2,3.,6.) Uncertainty in sample thickness
+           (EN-ERR) Energy uncertainty
+           (ERR-T) Total error depends on type of
+           detection. The most precise measurements (2%) are those
+           of alpha radiation. The counting of the beta - decays
+           is less accurate because of the calibration
+           pre-issuer beta- the same spectrum of energies or
+           spectrum of neighbor energies. The margin of error
+           varies between 5 and 10%. In the case of measures
+           decays by electron capture, the lack of clarity is
+           exacerbated by the knowledge often approximate patterns
+           of disintegration, which leads to a margin of error
+           of up to 20%.
+HISTORY    (19941028C)
+           (19941229U)
+           (20140121A) SD: Updated to new date formats,lower case.
+            Corrections according last EXFOR rules and Dict.
+            Ref. on CR,251 was added; ref.(MONITOR) was
+           corrected (PR,101,329 -> PR,102,1390). BIB updated.
+           The expression in SF3 was changed on 'X' in MONITOR
+           reactions and in REACTION code in Subents 2,8-23.
+           Col.EN-ERR was added to Subents
+ENDBIB              55
+COMMON               7          6
+EN-NRM1    MONIT1     EN-NRM2    MONIT2     EN-NRM3    MONIT3
+ERR-1
+MEV        MB         MEV        MB         MEV        MB
+PER-CENT
+     80.         9.1      150.      10.2       150.      45.
+  5.
+ENDCOMMON            6
+ENDSUBENT           65
+SUBENT        O0044002   20140121   20140701   20140623       O052
+BIB                  7         18
+REACTION   (6-C-12(P,X)4-BE-7,,SIG)
 RAD-DET    (4-BE-7,DG)
 DECAY-DATA (4-BE-7,53.6D,DG,479.,0.12)
-COMMENT    /BY AUTHORS/.THIS REACTION WAS USED AS MONITOR ONE TOO.
-STATUS     (CURVE).BY CAJAD.FROM FIG.1.
-ERR-ANALYS (+ERR-T).AUTHORS' UNCERTAINTY.
-           (-ERR-T).SEE ABOVE.
-           (EN-ERR).DATA-POINT READER UNCERTAINTY.
-ENDBIB               8
+COMMENT    /By authors/ The monitoring by targets aluminum can do
+           little to go down to lower energies to 80 MeV, whereas
+           the carbon can be used up to energies of about 30 MeV.
+           By contrast, the short period of 20.5 min makes more
+           delicate the use of carbon and introduces errors in it
+           when the irradiation hard with a variable flow a few
+           tens of minutes. Authors have therefore sought on the
+           target of graphite to determine the cross sections
+           of beryllium-7-(12C(p, 3p3n)7Be) - at various energies.
+            This monitor can be used from an energy of 40 MeV.
+STATUS     (CURVE).By CAJaD.From fig.1 of NP,25,216,1961
+ERR-ANALYS (EN-ERR-DIG).Error in digitizing the incident
+                        energy values
+HISTORY    (20140121A) SD: SF5=UND deleted and SF3=3N+3P -> X in
+            REACTION code. EN-ERR -> EN-ERR-DIG acc. definition.
+ENDBIB              18
 COMMON               1          3
-EN-ERR
+EN-ERR-DIG
 MEV
         2.8
 ENDCOMMON            3
@@ -59,37 +108,34 @@ MEV        MB         MB         MB
       121.2       12.1        0.6        1.3
       149.2        9.8        0.4        1.1
 ENDDATA             14
-ENDSUBENT           31
-SUBENT        O0044003     941031              20050926       0000
-BIB                  5          6
-REACTION   (90-TH-232(P,N)91-PA-232,,SIG,,,EXP)
+ENDSUBENT           41
+SUBENT        O0044003   20140121   20140701   20140623       O052
+BIB                  6          7
+REACTION   (90-TH-232(P,N)91-PA-232,,SIG)
 RAD-DET    (92-U-232,A)
 DECAY-DATA (92-U-232,74.YR)
            (91-PA-232,,B-)
-METHOD     (CHSEP) OF URANIUM WHICH IS DAUTHER OF PA-232.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               6
-NOCOMMON
-DATA                 3          2
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        8.0        1.0
-        82.        13.         2.
+METHOD     (CHSEP) Of uranium which is daughter of Pa-232.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.      8.0        1.0
+        82.      3.     13.         2.
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        O0044004     941031              20050926       0000
-BIB                  6          9
-REACTION   (90-TH-232(P,3N)91-PA-230,,SIG,,,EXP)
+ENDSUBENT           16
+SUBENT        O0044004   20140121   20140701   20140623       O052
+BIB                  5          5
+REACTION   (90-TH-232(P,3N)91-PA-230,,SIG)
 RAD-DET    (92-U-230,A)
 DECAY-DATA (91-PA-230,,B-,,0.08)
-METHOD     (CHSEP).OF URANIUM-230 WHICH IS THE DAUTHER OF PA-230.
-ERR-ANALYS (+ERR-T).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-           (-ERR-T).SEE ABOVE.
-           (-EN-ERR).AUTHORS' UNCERTAINTY.
-           (+EN-ERR).SEE ABOVE.
-STATUS     (CURVE).BY CAJAD.FROM FIG.2
-ENDBIB               9
-NOCOMMON
+METHOD     (CHSEP).Of uranium-230 which is the daughter of Pa-230.
+STATUS     (CURVE).By CAJaD.From fig.2 of NP,25,216,1961
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 6          9
 EN         -EN-ERR    +EN-ERR    DATA       -ERR-T     +ERR-T
 MEV        MEV        MEV        MB         MB         MB
@@ -103,71 +149,78 @@ MEV        MEV        MEV        MB         MB         MB
         82.        2.4        2.4        12.         2.         2.
        150.        2.9        2.5        7.5        1.0        1.0
 ENDDATA             11
-ENDSUBENT           25
-SUBENT        O0044005     941031              20050926       0000
-BIB                  2          2
-REACTION   (90-TH-232(P,4N)91-PA-229,,SIG,,,EXP)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               2
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        5.0        1.5
+ENDSUBENT           21
+SUBENT        O0044005   20140121   20140701   20140623       O052
+BIB                  3          3
+REACTION   (90-TH-232(P,4N)91-PA-229,,SIG)
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.        5.0        5.0        1.5
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        O0044006     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,5N)91-PA-228,,SIG,,,EXP)
+ENDSUBENT           11
+SUBENT        O0044006   20140121   20140701   20140623       O052
+BIB                  5          5
+REACTION   (90-TH-232(P,5N)91-PA-228,,SIG)
 RAD-DET    (90-TH-228,A)
 DECAY-DATA (91-PA-228)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          2
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.       3.25       0.50
-        82.         9.         1.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 4          2
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.       3.25       0.50
+        82.      3.        9.         1.
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        O0044007     941031              20050926       0000
-BIB                  4         10
-REACTION   (90-TH-232(P,6N)91-PA-227,,SIG,,,EXP)
-PART-DET   (A).THREE GROUPS OF ALPHA PARTICLES WERE MEASURED.
-           THE ENERGIES OF THESE GROUPS 6.46,6.6,6.64 MEV.THESE
-           ALPHA PARTICLES ARE THE PRODUCTS OF DECAY PA-227 AND
-           AC-223,FR-219,AT-215,BI-211.
-ERR-ANALYS (+ERR-T).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-           (-ERR-T).SEE ABOVE.
-           (+EN-ERR).AUTHORS' UNCERTAINTY.
-           (-EN-ERR).SEE ABOVE.
-STATUS     (CURVE).BY CAJAD.FROM FIG 2.
-ENDBIB              10
-NOCOMMON
-DATA                 6          6
+ENDSUBENT           14
+SUBENT        O0044007   20140121   20140701   20140623       O052
+BIB                  4          7
+REACTION   (90-TH-232(P,6N)91-PA-227,,SIG)
+PART-DET   (A).Three groups of alpha particles were measured.
+           The energies of these groups 6.46,6.6,6.64 MeV.These
+           alpha particles are the products of decay Pa-227 and
+           Ac-223,fr-219,at-215,Bi-211.
+FLAG       (1.) Tabulated value from CR,251,2155 is the same
+STATUS     (CURVE).By CAJaD.From fig.2 of NP,25,216,1961
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 7          6
 EN         -EN-ERR    +EN-ERR    DATA       -ERR-T     +ERR-T
+FLAG
 MEV        MEV        MEV        MB         MB         MB
+NO-DIM
         47.        4.2        2.4        8.6        0.5        0.4
+
         56.         5.         5.       13.8        0.3        0.7
+
        62.2        3.5        2.4        9.2        0.4        0.4
+
        66.8        4.2        2.4        6.9        0.5        0.5
+
         82.         4.         4.        3.2        0.5        0.5
+
        150.         4.         4.        1.5        0.2        0.2
-ENDDATA              8
-ENDSUBENT           23
-SUBENT        O0044008     941031              20050926       0000
-BIB                  5          7
-REACTION   (90-TH-232(P,N+P)90-TH-231,,SIG,,,EXP)
+         1.
+ENDDATA             16
+ENDSUBENT           28
+SUBENT        O0044008   20140121   20140701   20140623       O052
+BIB                  6          7
+REACTION   (90-TH-232(P,X)90-TH-231,,SIG)
 RAD-DET    (90-TH-231,B-)
 DECAY-DATA (90-TH-231)
-STATUS     (CURVE).BY CAJAD.FROM FIG.9.
-ERR-ANALYS (+ERR-T).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-           (-ERR-T).SEE ABOVE.
-           (EN-ERR).DATA-POINT READER UNCERTAINTY.
+STATUS     (CURVE).By CAJaD.From fig.9 of NP,25,216,1961
+ERR-ANALYS (EN-ERR-DIG).Error in digitizing the incident
+                        energy values
+HISTORY    (20140121A) SD: SF3=N+P -> X in REACTION code.
 ENDBIB               7
 COMMON               1          3
-EN-ERR
+EN-ERR-DIG
 MEV
         1.4
 ENDCOMMON            3
@@ -186,278 +239,306 @@ MEV        MB         MB         MB
       149.3        94.                   16.
 ENDDATA             12
 ENDSUBENT           28
-SUBENT        O0044009     941031              20050926       0000
+SUBENT        O0044009   20140121   20140701   20140623       O052
 BIB                  2          2
-REACTION   (90-TH-232(P,3N+P)90-TH-229,,SIG,,,EXP)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
+REACTION   (90-TH-232(P,X)90-TH-229,,SIG)
+STATUS     (TABLE) Tbl.1 from NP,25,216
 ENDBIB               2
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        41.         8.
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.       41.         8.
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        O0044010     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,4N+P)90-TH-228,,SIG,,,EXP)
+SUBENT        O0044010   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)90-TH-228,,SIG)
 RAD-DET    (90-TH-228,A)
 DECAY-DATA (90-TH-228,,A,4900.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          2
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        44.         6.
-        82.        54.         8.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=3N+P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          2
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.       44.         6.
+        82.      3.       54.         8.
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        O0044011     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,5N+P)90-TH-227,,SIG,,,EXP)
+ENDSUBENT           15
+SUBENT        O0044011   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)90-TH-227,,SIG)
 RAD-DET    (90-TH-227,A)
 DECAY-DATA (90-TH-227,,A,5840.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          2
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        34.         4.
-        82.        38.         6.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=5N+P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          2
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.       34.         4.
+        82.       3.       38.         6.
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        O0044012     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,6N+P)90-TH-226,,SIG,,,EXP)
+ENDSUBENT           15
+SUBENT        O0044012   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)90-TH-226,,SIG)
 RAD-DET    (90-TH-226,A)
 DECAY-DATA (90-TH-226,30.MIN,A,6330.,,A,6550.,,A,7130.,,A,7680.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          2
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        24.         3.
-        82.        30.         5.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=6N+P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          2
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.       24.         3.
+        82.       3.       30.         5.
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        O0044013     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,7N+P)90-TH-225,,SIG,,,EXP)
+ENDSUBENT           15
+SUBENT        O0044013   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)90-TH-225,,SIG)
 RAD-DET    (90-TH-225,A)
 DECAY-DATA (90-TH-225,8.MIN,A,6370.,0.9)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 4          2
-EN         DATA       DATA-ERR   DATA-MIN
-MEV        MB         MB         MB
-        82.                              10.
-       150.        18.         3.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=7N+P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 5          2
+EN         EN-ERR     DATA       ERR-T      DATA-MIN
+MEV        MEV        MB         MB         MB
+        82.       3.                            10.
+       150.       5.      18.         3.
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        O0044014     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,3N+2P)89-AC-228,,SIG,,,EXP)
+ENDSUBENT           15
+SUBENT        O0044014   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)89-AC-228,,SIG)
 RAD-DET    (90-TH-228,A)
 DECAY-DATA (89-AC-228,6.13HR,B-)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        15.         2.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=3N+2P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.       15.         2.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044015     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,4N+2P)89-AC-227,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044015   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)89-AC-227,,SIG)
 RAD-DET    (90-TH-227,A)
 DECAY-DATA (89-AC-227,22.YR,B-)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        14.         2.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=4N+2P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.        14.         2.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044016     941031              20050926       0000
-BIB                  4          5
-REACTION   (90-TH-232(P,5N+2P)89-AC-226,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044016   20140121   20140701   20140623       O052
+BIB                  5          7
+REACTION   (90-TH-232(P,X)89-AC-226,,SIG)
 RAD-DET    (86-RN-218,A)
 DECAY-DATA (89-AC-226,,B-,,0.8)
            (86-RN-218,,A,7130.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               5
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        15.         2.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=5N+2P -> X in
+           REACTION code.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.       15.         2.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        O0044017     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,6N+2P)89-AC-225,,SIG,,,EXP)
+ENDSUBENT           15
+SUBENT        O0044017   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)89-AC-225,,SIG)
 RAD-DET    (89-AC-225,A)
 DECAY-DATA (89-AC-225,10.D,A,5800.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        14.         2.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=6N+2P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.      14.         2.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044018     941031              20050926       0000
-BIB                  4          5
-REACTION   (90-TH-232(P,7N+2P)89-AC-224,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044018   20140121   20140701   20140623       O052
+BIB                  5          7
+REACTION   (90-TH-232(P,X)89-AC-224,,SIG)
 RAD-DET    (84-PO-216,A)
 DECAY-DATA (89-AC-224,2.9HR,B-,,0.9)
            (84-PO-216,,A,6770.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               5
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.       11.0        1.5
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=7N+2P -> X in
+           REACTION code.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.      11.0        1.5
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        O0044019     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,2N+3P)88-RA-228,,SIG,,,EXP)
+ENDSUBENT           15
+SUBENT        O0044019   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)88-RA-228,,SIG)
 RAD-DET    (90-TH-228,A)
 DECAY-DATA (88-RA-228,6.7YR,B-)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        2.1        0.4
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=2N+3P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.     2.1        0.4
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044020     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,3N+3P)88-RA-227,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044020   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)88-RA-227,,SIG)
 RAD-DET    (88-RA-227,B-)
 DECAY-DATA (88-RA-227)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        2.3        0.5
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=3N+3P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.       2.3        0.5
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044021     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,5N+3P)88-RA-225,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044021   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)88-RA-225,,SIG)
 RAD-DET    (89-AC-225,A)
 DECAY-DATA (88-RA-225,,B-)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        2.4        0.5
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=5N+3P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.        2.4        0.5
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044022     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,6N+3P)88-RA-224,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044022   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)88-RA-224,,SIG)
 RAD-DET    (88-RA-224,A)
 DECAY-DATA (88-RA-224,3.64D,A,6282.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        2.5        0.5
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=6N+3P -> X in
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.       5.      2.5        0.5
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044023     941031              20050926       0000
-BIB                  4          4
-REACTION   (90-TH-232(P,7N+3P)88-RA-223,,SIG,,,EXP)
+ENDSUBENT           14
+SUBENT        O0044023   20140121   20140701   20140623       O052
+BIB                  5          6
+REACTION   (90-TH-232(P,X)88-RA-223,,SIG)
 RAD-DET    (84-PO-215,A)
 DECAY-DATA (84-PO-215,,A,7360.)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB               4
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        2.1        0.3
-ENDDATA              3
-ENDSUBENT           12
-SUBENT        O0044024     941229              20050926       0000
-BIB                  2          2
-REACTION   (6-C-12(P,X)1-H-3,,SIG,,,EXP)
-ERR-ANALYS (DATA-ERR).AUTHORS' UNCERTAINTY.
-ENDBIB               2
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        6.0        1.6
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        O0044025     941229              20050926       0000
-BIB                  2          2
-REACTION   (13-AL-27(P,X)1-H-3,,SIG,,,EXP)
-ERR-ANALYS (DATA-ERR).AUTHORS' UNCERTAINTY.
-ENDBIB               2
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.       10.0        1.5
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        O0044026     941229              20050926       0000
-BIB                  2          2
-REACTION   (26-FE-56(P,X)1-H-3,,SIG,,,EXP)
-ERR-ANALYS (DATA-ERR).AUTHORS' UNCERTAINTY.
-ENDBIB               2
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        13.         2.
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        O0044027     941229              20050926       0000
-BIB                  2          2
-REACTION   (90-TH-232(P,X)1-H-3,,SIG,,,EXP)
-ERR-ANALYS (DATA-ERR).AUTHORS' UNCERTAINTY.
-ENDBIB               2
-NOCOMMON
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MB         MB
-       150.        20.         2.
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        O0044028     941229              20050926       0000
-BIB                  3          6
-REACTION   (79-AU-197(P,X)1-H-3,,SIG,,,EXP)
-ERR-ANALYS (-EN-ERR).AUTHORS' UNCERTAINTY.
-           (+EN-ERR).SEE ABOVE.
-           (-ERR-T).AUTHORS' UNCERTAINTY.
-           (+ERR-T).SEE ABOVE.
-STATUS     (CURVE). BY CAJAD.FROM FIG.11.
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added. SF3=7N+3P -> X in
+           REACTION code.
 ENDBIB               6
-NOCOMMON
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.       2.1        0.3
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        O0044024   20140121   20140701   20140623       O052
+BIB                  3          3
+REACTION   (6-C-12(P,X)1-H-3,,SIG)
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.           6.0        1.6
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        O0044025   20140121   20140701   20140623       O052
+BIB                  3          3
+REACTION   (13-AL-27(P,X)1-H-3,,SIG)
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.          10.0        1.5
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        O0044026   20140121   20140701   20140623       O052
+BIB                  3          3
+REACTION   (26-FE-56(P,X)1-H-3,,SIG)
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.           13.         2.
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        O0044027   20140121   20140701   20140623       O052
+BIB                  3          3
+REACTION   (90-TH-232(P,X)1-H-3,,SIG)
+STATUS     (TABLE) Tbl.1 from NP,25,216
+HISTORY    (20140121A) SD: EN-ERR was added.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+       150.      5.           20.         2.
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        O0044028   20140121   20140701   20140623       O052
+BIB                  2          2
+REACTION   (79-AU-197(P,X)1-H-3,,SIG)
+STATUS     (CURVE).By CAJaD.From fig.11 of NP,25,216,1961
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 6          6
 EN         -EN-ERR    +EN-ERR    DATA       -ERR-T     +ERR-T
 MEV        MEV        MEV        MB         MB         MB
@@ -468,5 +549,5 @@ MEV        MEV        MEV        MB         MB         MB
        82.5        4.3        2.5       26.9         2.        1.8
        150.        2.5        3.5       19.0        1.9         2.
 ENDDATA              8
-ENDSUBENT           19
+ENDSUBENT           15
 ENDENTRY            28

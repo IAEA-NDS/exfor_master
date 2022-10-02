@@ -1,34 +1,52 @@
-ENTRY            41330   19981113   19990308   20050926       0000
-SUBENT        41330001   19981113   19990308   20050926       0000
-BIB                 11         15
+ENTRY            41330   20140416   20140701   20140617       4163
+SUBENT        41330001   20140416   20140701   20140617       4163
+BIB                 14         32
 INSTITUTE  (4RUSFEI)
-REFERENCE  (R,YK-19,57,197505)      MAIN REFERENCE
-           (J,YF,20,(1),11,197407)  EXPERIMENTAL DETAILS
-AUTHOR     (V.S.SHORIN,V.N.KONONOV,E.D.POLETAEV)
-TITLE      .RADIATIVE CAPTURE CROSS SECTION FOR NEUTRONS WITH
-            ENERGY 5-80 KEV FOR INDIUM, IODINE, TANTALUM AND GOLD
-FACILITY   (VDG)  PULSED VAN DE GRAAFF ACCELERATOR
-METHOD     (TOF)  FLIGHT BASE IS 85 CM
+REFERENCE  ((R,YK-19,57,1975)=(R,INDC(CCP)-68,57,1975))
+            In Russian.
+AUTHOR     (V.S.Shorin,V.N.Kononov,E.D.Poletaev)
+TITLE      Neutron radiative capture cross sections of In, I, Ta
+           and Au in 5-80 keV neutron energy region.
+FACILITY   (VDG)  Pulsed Van de Graaff Accelerator
+METHOD     (TOF)  Flight base is 85 cm
 MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG)
-           (5-B-10(N,A)3-LI-7,,SIG)
+            For absolute normalization.
+           (5-B-10(N,A)3-LI-7,,SIG) For relative energy dependence
+           of cross sections.
+MONIT-REF  ((MONIT1),D.Kompe,J,NP/A,133,513,1969)
+           And also W.Poenitz, Nucl.Data for Reactors,IAEA,
+           v.1,p.277,1967
+SAMPLE     Au sample of 7.05E-3 nucl/b .
+           Samples of natural elements.
 DETECTOR   (NAICR)
-ERR-ANALYS (ERR-T   ) TOTAL UNCERTAINTY
-STATUS     (TABLE)  DATA ARE TAKEN FROM TABLE 1 OF MAIN REFERENCE
-           (COREL,40520001)
-HISTORY    (19981103C)  + +  COMPILED AT THE CENTRE - CJD  + +
-ENDBIB              15
-COMMON               3          3
-EN-RSL     EN-NRM     MONIT1
-NSEC/M     KEV        MB
-  25.         30.       596.
+CORRECTION For multiple scattering in sample, resonance
+           shelf-shielding, registration efficiency.
+ERR-ANALYS (ERR-T) Total uncertainty  8-10%.
+           (ERR-S,2.,6.) Statistical uncertainty.
+           (ERR-SYS) Systematical uncertainty about 8.%
+STATUS     (COREL,40222002) Data for Au (Fig.1 of R,YK-19,57,1975)
+           (COREL,40222003) Data for In (Fig.1 of R,YK-19,57,1975)
+HISTORY    (19981103C)  + +  Compiled at the centre - CJD  + +
+           (20140416A) M.M. Ref. J,YF,20,(1),11,197407 was deleted
+           as fully wrong ( misprint in Liter.list in R,YK-19,57).
+           Ref. R,INDC(CCP)-68,57,1975 was added.
+           Upper -> lower case correction.
+           BIB information was updated.
+           Subents 004-011 were added.
+ENDBIB              32
+COMMON               4          3
+EN-RSL     EN-NRM     MONIT1     ERR-SYS
+NSEC/M     KEV        MB         PER-CENT
+  25.         30.       596.      8.
 ENDCOMMON            3
-ENDSUBENT           22
-SUBENT        41330002   19981113   19990308   20050926       0000
-BIB                  3          3
+ENDSUBENT           39
+SUBENT        41330002   20140416   20140701   20140617       4163
+BIB                  4          4
 REACTION   (53-I-127(N,G)53-I-128,,SIG,,AV)
-SAMPLE     .THICKNESS 7.98E-03 ATOMS/B
-HISTORY    (19981103T)  CONVERTED PARTLY FROM SUBENT 88030002+
-ENDBIB               3
+SAMPLE      Thickness 7.98E-03 atoms/b
+STATUS     (TABLE)  Table 1 of R,YK-19,57,1975
+HISTORY    (19981103T)  Converted partly from SUBENT 88030002+
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 4         32
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -66,12 +84,13 @@ KEV        KEV        MB         MB
  7.6000E+01 8.0000E+01 4.1800E+02 3.6000E+01
  8.0000E+01 8.4000E+01 3.9000E+02 3.3000E+01
 ENDDATA             34
-ENDSUBENT           42
-SUBENT        41330003   19981113   19990308   20050926       0000
-BIB                  2          2
+ENDSUBENT           43
+SUBENT        41330003   20140416   20140701   20140617       4163
+BIB                  3          3
 REACTION   (73-TA-181(N,G)73-TA-182,,SIG,,AV)
-SAMPLE     .THICKNESS 8.25E-03 ATOMS/B
-ENDBIB               2
+SAMPLE      Thickness 8.25E-03 atoms/b
+STATUS     (TABLE)  Table 1 of R,YK-19,57,1975
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4         32
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -109,5 +128,173 @@ KEV        KEV        MB         MB
  7.6000E+01 8.0000E+01 4.2600E+02 3.9000E+01
  8.0000E+01 8.4000E+01 4.1100E+02 3.8000E+01
 ENDDATA             34
-ENDSUBENT           41
-ENDENTRY             3
+ENDSUBENT           42
+SUBENT        41330004   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (49-IN-115(N,EL),,STF)
+            p-neutron strength function .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,40222003)  Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 4          1
+MOMENTUM L DATA       -DATA-ERR  +DATA-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 1.            4.7E-04    0.7E-04    0.9E-04
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330005   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (53-I-127(N,EL),,STF)
+            p-neutron strength function .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,41330002) Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 3          1
+MOMENTUM L DATA       -DATA-ERR
+NO-DIM     NO-DIM     NO-DIM
+ 1.           4.35E-04    1.6E-04
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330006   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (73-TA-181(N,EL),,STF)
+            p-neutron strength function .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,41330003) Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 4          1
+MOMENTUM L DATA       -DATA-ERR  +DATA-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 1.            0.2E-04    0.1E-04    0.6E-04
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330007   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (79-AU-197(N,EL),,STF)
+            p-neutron strength function .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,40222003) Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 4          1
+MOMENTUM L DATA       -DATA-ERR  +DATA-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 1.           0.07E-04   0.05E-04   0.27E-04
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330008   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (49-IN-115(N,0),,D)
+            Average level spacing .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,40222003)  Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 3          1
+DATA       -DATA-ERR  +DATA-ERR
+EV         EV         EV
+  9.5        1.2        1.3
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330009   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (53-I-127(N,0),,D)
+            Average level spacing .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,41330002) Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+EV         EV
+  13.8       2.3
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330010   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (73-TA-181(N,0),,D)
+            Average level spacing .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,41330003) Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 3          1
+DATA       -DATA-ERR  +DATA-ERR
+EV         EV         EV
+  2.9        0.45       0.9
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        41330011   20140416   20140701   20140617       4163
+BIB                  4          7
+REACTION   (79-AU-197(N,0),,D)
+            Average level spacing .
+ANALYSIS   Measured capture cross sections were analyzed in the
+           frames of Hauser-Feshbach statistical theory.
+STATUS     (TABLE)  Table 2 of R,YK-19,57,1975
+           (DEP,40222003) Capture cross section, see ANALYSIS.
+HISTORY    (20140416C) Subent was added.
+ENDBIB               7
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+ 5.         80.
+ENDCOMMON            3
+DATA                 3          1
+DATA       -DATA-ERR  +DATA-ERR
+EV         EV         EV
+  12.3       2.2        2.7
+ENDDATA              3
+ENDSUBENT           19
+ENDENTRY            11

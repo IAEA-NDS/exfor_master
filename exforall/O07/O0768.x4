@@ -1,24 +1,17 @@
-ENTRY            O0768   20080417              20080417       0000
-SUBENT        O0768001   20080417              20080417       0000
-BIB                 13         34
+ENTRY            O0768   20140121   20140701   20140623       O052
+SUBENT        O0768001   20140121   20140701   20140623       O052
+BIB                 12         34
 TITLE      Production rate of proton-induced isotopes in different
            materials.
 AUTHOR     (E.Porras, F.Sanchez, V.Reglero, B.Cordier, A.J.Dean,
            F.Lei, J.M.Perez, B.M.Swinyard)
 INSTITUTE  (2SPNVAL)
-           (2SPNSPN) Institute of Corpuscular Fhysics.
-           (2FR SAC)
+           (2SPNSPN) Institute of Corpuscular Physics.
+           (2FR SAT)
            (2UK UK) University of Southampton.
-           (2SPNSPN) CIEMAT, Madrid.
+           (2SPNPCM) CIEMAT, Madrid.
            (2UK NIN)
 REFERENCE  (J,NIM/B,160,73,2000)
-HISTORY    (20000816C)
-           (20040205A) Many REACTION and DECAY-DATA are changed.
-           Some subentries are combined.
-           (20040211U) Last checking has been done.
-           (20080416A) SD NDS: isomeric state for 73-TA-182-M
-           isotope at SUBENT 006 was changed on 73-TA-182-M2
-           according to EXFOR reaction formalism.
 ADD-RES    (COMP) GEANT/GCALOR MONTE-CARLO code. Silberberg and
             Tsao semiempirical expressions.
 DETECTOR   (HPGE)
@@ -26,7 +19,6 @@ FACILITY   (SYNCH,2FR SAC)
            (SYNCH,2UK NIN)
 METHOD     (SITA)
            (GSPEC)
-ANALYSIS   (AREA)
 ERR-ANALYS (ERR-S).The errors associated to the calculated
            production cross section values have been estimated by
            taking into account only the statistical errors
@@ -35,6 +27,14 @@ STATUS     (TABLE)
 CRITIQUE   -By compiler. Very much cases are presented, which have
            not any explanation for excluding product production
            due to radioactive decay of precursors.
+HISTORY    (20000816C)
+           (20040205A) Many REACTION and DECAY-DATA are changed.
+           Some subentries are combined.
+           (20040211U) Last checking has been done.
+           (20080416A) SD NDS: isomeric state for 73-TA-182-M
+           isotope at SUBENT 006 was changed on 73-TA-182-M2
+           according to EXFOR reaction formalism.
+           (20140121A) SD: REACTION code corrected in Subent 204.
 ENDBIB              34
 NOCOMMON             0          0
 ENDSUBENT           37
@@ -3612,21 +3612,23 @@ MEV        MB         MB
       1200.        5.3        0.1
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        O0768204   20040211   20040407   20050926       0000
-BIB                  4          5
-REACTION   (82-PB-0(P,X)82-PB-195-M+G,IND,SIG)
+SUBENT        O0768204   20140121   20140701   20140623       O052
+BIB                  5          7
+REACTION   (82-PB-0(P,X)82-PB-195,IND,SIG)
 METHOD     (ACTIV)  Irradiation time: 1 minute.
-DECAY-DATA (82-PB-195-G,15.0MIN,DG,383.6,100.E-02)
-           (82-PB-195-M,15.MIN,DG,394.2,44.E-02)
-SAMPLE     Natural lead 1*1*0.0125 cm**3.
-ENDBIB               5
-NOCOMMON
+DECAY-DATA (82-PB-195-G,15.0MIN,DG,383.6,1.)
+           (82-PB-195-M,15.MIN,DG,394.2,0.44)
+SAMPLE     Natural lead 1 x 1 x 0.0125 cm**3.
+HISTORY    (20140121A) SD: Illegal isom. frag combination -M+G
+           deleted from SF4 of REACTION code.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-S
 MEV        MB         MB
       1200.         3.        0.4
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 SUBENT        O0768205   20040211   20040407   20050926       0000
 BIB                  4          5
 REACTION   (82-PB-0(P,X)82-PB-194,IND,SIG)
