@@ -1,6 +1,6 @@
-ENTRY            10785   20100715   20100917   20100916       1366
-SUBENT        10785001   20100715   20100917   20100916       1366
-BIB                 14         42
+ENTRY            10785   20101025   20110113   20110112       1367
+SUBENT        10785001   20101025   20110113   20110112       1367
+BIB                 14         44
 INSTITUTE  (1USALTI)
 REFERENCE  (J,PR/C,18,1185,197809)
 AUTHOR     (R.V.LeClaire,J.J.Egan,L.E.Beghian,G.P.Couchell,
@@ -12,7 +12,7 @@ INC-SOURCE (P-T) Protons on tritium
 SAMPLE     Cylinder 2.54-cm diameter by 5-cm high containing
             2.85-moles of elemental cobalt
 DETECTOR   (GELI) 40-cm**3 germanium-lithium crystal surrounded by
-            lead rings imbedded in lithium carbonate and paraffin
+            lead rings embedded in lithium carbonate and paraffin
             to reduce background gammas. Shielded from direct neu-
             trons by copper shadow bar.
            (LONGC) Hansen-McKibben long counter for neutron flux.
@@ -30,23 +30,29 @@ MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
            (1-H-3(P,N)2-HE-3,,SIG)
 CORRECTION Corrected for multiple scattering and neutron and gamma
             attenuation
-ERR-ANALYS (DATA-ERR) Errors due to:
-           . absolute zero-degree neutron flux uncertainty (6%),
-           . Ge(Li) detector efficiency (4%),
-           . uncertainty of finite sample corrections and
-             variation of neutron flux through sample corrections,
-             (1.5 - 5%),
-           . extraction of areas of full energy peaks, including
-             statistical errors (5 - 30%).
+ERR-ANALYS (ERR-T) Errors include uncertainties due to:
+           (ERR-1) Absolute zero-degree neutron flux
+              uncertainty (6%),
+           (ERR-2) Ge(Li) Detector efficiency (4%),
+           (ERR-3,1.5,5.) Uncertainty of finite sample corrections
+             and variation of neutron flux through sample
+             corrections (1.5 - 5%),
+           (ERR-S,5.,30.) Extraction of areas of full energy
+             peaks, including statistical errors (5 - 30%).
 STATUS     (TABLE) Tabulated data received from J. Egan, 1977/6.
            (APRVD) Approved by J.W.Egan, 1979/7/3.
 HISTORY    (19790403C)
            (20100715A) VM:Updated to new date formats,lower case.
                        BIB updates.
-ENDBIB              42
-NOCOMMON             0          0
-ENDSUBENT           45
-SUBENT        10785002   20100715   20100917   20100916       1366
+           (20101024A) OS. ERR-ANALYS and error headings changed
+ENDBIB              44
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+   6.         4.
+ENDCOMMON            3
+ENDSUBENT           51
+SUBENT        10785002   20101025   20110113   20110112       1367
 BIB                  1          1
 REACTION   (27-CO-59(N,INL)27-CO-59,PAR,DA,G)
 ENDBIB               1
@@ -56,7 +62,7 @@ ADEG
  125.
 ENDCOMMON            3
 DATA                 6        265
-EN         E          E          ANG        DATA       DATA-ERR
+EN         E          E          ANG        DATA       ERR-T
 MEV        KEV        KEV        ADEG       MB/SR      MB/SR
  1.33       1099.                  30.        5.8       0.9
  1.33       1099.                  55.        5.3       0.8
@@ -325,14 +331,14 @@ MEV        KEV        KEV        ADEG       MB/SR      MB/SR
  2.77       2087.                 135.        3.5       1.3
 ENDDATA            267
 ENDSUBENT          277
-SUBENT        10785003   20100715   20100917   20100916       1366
+SUBENT        10785003   20101025   20110113   20110112       1367
 BIB                  2          2
 REACTION   (27-CO-59(N,INL)27-CO-59,PAR,SIG)
 STATUS     (DEP,10785002) Data obtained from 125-deg cross section
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 4        229
-E-LVL      EN         DATA       DATA-ERR
+E-LVL      EN         DATA       ERR-T
 KEV        MEV        MB         MB
  1099.      1.23        46.        6.
  1099.      1.44        98.       13.
