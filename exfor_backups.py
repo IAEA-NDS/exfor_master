@@ -123,7 +123,7 @@ def convert_dtform(dtstring: str):
 
 
 def zip_filename(date_dt):
-    # latest: datatime.date(YYYY, MM, DD) format
+    # date_dt: datatime.date(YYYY, MM, DD) format
     if date_dt < datetime.date(2010, 7, 1):
         return "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".zip"])
     else:
@@ -132,7 +132,7 @@ def zip_filename(date_dt):
 
 
 def bck_filename(date_dt):
-    # dt: datatime.date(YYYY, MM, DD) format
+    # date_dt: datatime.date(YYYY, MM, DD) format
     if date_dt < datetime.date(2010, 7, 1):
         if not os.path.exists(
             "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".bck"])
@@ -214,7 +214,8 @@ def split_bck_file(filename:str):
 
 
 def run_rsync():
-    # --ignore-times does more than its name implies. It ignores both the time and size. In contrast, --size-only does exactly what it says.
+    # --ignore-times does more than its name implies. It ignores both the time and size. 
+    # In contrast, --size-only does exactly what it says.
     print("rsync")
     logging.info(f"rsync started")
     cmd = "rsync -azP --delete --ignore-times " + EXFOR_ALL_TEMP + " " + EXFOR_ALL_PATH
