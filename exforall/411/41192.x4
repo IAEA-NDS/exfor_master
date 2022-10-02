@@ -1,60 +1,113 @@
-ENTRY            41192     960328              20050926       0000
-SUBENT        41192001     960328              20050926       0000
-BIB                  9         13
-TITLE       FACILITY FOR THE DELAYED NEUTRONS STUDY AND PRELIMINA
-            RESULTS OF THE BETA-EFF DETERMINATION FOR U-233
-            RELATIVE TO U-235
-AUTHOR     (S.B.BORZAKOV,E.DERMENJIEV,YU.S.ZAMYATNIN,V.M.NAZAROV,
-           S.S.PAVLOV,A.D.ROGOV,I.RUSKOV)
+ENTRY            41192   20110719   20111003   20110930       4153
+SUBENT        41192001   20110719   20111003   20110930       4153
+BIB                 13         41
+TITLE      Apparatus for studying delayed neutrons and preliminary
+           results of the determination of beta-eff for U-233 with
+           respect to U-235 .
+AUTHOR     (S.B.Borzakov,E.Dermenjiev,Yu.S.Zamyatnin,V.M.Nazarov,
+           S.S.Pavlov,A.D.Rogov,I.Ruskov)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,AE,79,(3),231,9509)  DATA ARE GIVEN
-FACILITY   (REAC)  FAST PULS REACTOR IBR-2
-DETECTOR   (PROPC)  BATTERY OF 12 PROP.COUNTERS PLACED IN
-                    POLYETHILEN
-MONITOR     NO INFORMATION
-ERR-ANALYS (DATA-ERR)  ERRORS ARE NOT SPECIFIED
-HISTORY    (960328C)  + + COMPILED AT THE CENTRE - CJD + +
-ENDBIB              13
+REFERENCE  (J,AE,79,(3),231,199509)  Data are given
+           (J,AE/T,79,(3),637,1995) Engl.translation of J,AE,79 .
+REL-REF    (I,,E.Dermendjiev+,P,JINR-E3-6,1993)
+            Details of neutron detector and electronics.
+FACILITY   (REAC,4ZZZDUB)  Fast pulse reactor IBR-2
+                      Setup "ISOMER".
+           (CHOPS) Slow chopper at 30 m distance from reactor.
+METHOD     (ACTIV) Cyclic activation: activation time 10-50 msec,
+            measurement time about 150 msec - each cycle.
+           (FISCT)
+DETECTOR   (PROPC)  Battery of 12 prop.counters placed in
+            polyethylene. Covered by Cd and borated polyethylene.
+            Detector efficiency was calculated by MCNP code to be
+            20% at 2 MeV and about 1.5 times less at 0.1 MeV.
+INC-SOURCE (REAC) Mirror neutron guide. Slow chopper at 30 m
+           distance from reactor.
+INC-SPECT   Thermal neutron beam at sample position
+           2.E+5 /sec/cm**2.
+CORRECTION  Background was measured by Cd filter, 12 for U-235,
+            37 % for U-233.
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+HISTORY    (19960328C)  + + Compiled at the centre - CJD + +
+           (20110715A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           BIB information was added.
+           Ref. J,SJA was added.
+           In REACTION denominator F),PR,NU) -> F),,NU)
+           because BETA-ef= NU(delayed neutrons)/NU(total) -
+           according to information and formula on page 231 of
+           J,AE,79,(3),231,1995 .
+           DATA-ERR 1, DATA-ERR 2 in Subent 002 were corrected
+            1.4E-3 -> 1.4E-4 as given in Table of
+            J,AE,79,(3),231,1995.
+           In Subent 004 DATA was corrected 2.7E-3 -> 2.9E-3 ,
+                        DATA-ERR 1.E-4 -> 2.E-4 as given in text.
+ENDBIB              41
 NOCOMMON             0          0
-ENDSUBENT           16
-SUBENT        41192002     960328              20050926       0000
-BIB                  2          4
-REACTION  1((92-U-235(N,F),DL,NU)/(92-U-235(N,F),PR,NU))
-          2((92-U-235(N,F),DL,NU)/(92-U-235(N,F),PR,NU))
-SAMPLE    1 METALLIC DISK 50-80 MM IN DIAMETER, MASS 7 GRAM
-          2 METALLIC DISK 50-80 MM IN DIAMETER, MASS 0.3 GRAM
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 5          1
-EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-EV         NO-DIM     NO-DIM     NO-DIM     NO-DIM
-    2.5E-02    6.50E-3     1.4E-3   6.47E-03    1.4E-03
-ENDDATA              3
-ENDSUBENT           12
-SUBENT        41192003     960328              20050926       0000
-BIB                  2          3
-REACTION   ((92-U-233(N,F),DL,NU)/(92-U-235(N,F),PR,NU))
-SAMPLE      METALLIC DISK 50-80 MM IN DIAMETER, MASS 7 GRAM
-            U-235 ADMISSION LESS THEN 0.2 PC
-ENDBIB               3
+ENDSUBENT           44
+SUBENT        41192002   20110719   20111003   20110930       4153
+BIB                  5          8
+REACTION   ((92-U-235(N,F),DL,NU)/(92-U-235(N,F),,NU))
+SAMPLE      1 Metallic disk 50-80 mm in diameter, mass 7 gram
+            2 Metallic disk 50-80 mm in diameter, mass 0.3 gram
+ANALYSIS     Ratio of registration efficiencies of delayed to
+            prompt neutron = 1.42+-0.02 was used.
+FLAG       (1.) Measured by sample 1.
+           (2.) Measured by sample 2.
+STATUS     (TABLE) Table of J,AE,79,(3),231,1995.
+ENDBIB               8
+COMMON               1          3
+EN
+EV
+    2.5E-02
+ENDCOMMON            3
+DATA                 3          2
+DATA       DATA-ERR   FLAG
+NO-DIM     NO-DIM     NO-DIM
+    6.50E-3     1.4E-4     1.
+    6.47E-3     1.4E-4     2.
+ENDDATA              4
+ENDSUBENT           21
+SUBENT        41192003   20110719   20111003   20110930       4153
+BIB                  4          6
+REACTION   ((92-U-233(N,F),DL,NU)/(92-U-233(N,F),,NU))
+SAMPLE      Metallic disk 50-80 mm in diameter, mass 7 gram,
+            U-235 admixture less then 0.2 %.
+ANALYSIS     Ratio of registration efficiencies of delayed to
+            prompt neutron = 1.42+-0.02 was used.
+STATUS     (TABLE) Table of J,AE,79,(3),231,1995.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         NO-DIM     NO-DIM
     2.5E-02    2.77E-3     7. E-5
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        41192004     960328              20050926       0000
-BIB                  2          3
-REACTION   ((92-U-233(N,F),DL,NU)/(92-U-233(N,F),PR,NU))
-STATUS     (DEP,41192002)
-           (DEP,41192003)
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           14
+SUBENT        41192004   20110719   20111003   20110930       4153
+BIB                  5         12
+REACTION   ((92-U-233(N,F),DL,NU)/(92-U-233(N,F),,NU))
+ASSUMED    (ASSUM,(92-U-235(N,F),DL,NU)/(92-U-235(N,F),,NU))
+            From REL-REF of J.Blachot+.
+REL-REF    (R,,J.Blachot+,R,NEACRP-L-323,1990)
+           (A,,E.Dermenjiev+,P,JINR-E3-7,1993)
+            Agree with value 0.0027+-0.0001 of E.Dermenjiev+.
+ANALYSIS    Using ASSUM value of BETA-ef from REL-REF, the ratio
+           of registration efficiencies of delayed to prompt
+           neutron was determined to be EPS-DN/EPS-PN=1.36 +-0.06,
+           what is in reasonable agreement with calculated.
+           BETA-ef was determined using this exp. ratio 1.36+-0.6.
+STATUS     (TABLE) Text, page 232 of J,AE,79,(3),231,1995.
+ENDBIB              12
+COMMON               2          3
+ASSUM      ASSUM-ERR
+NO-DIM     NO-DIM
+ 0.0068    0.0002
+ENDCOMMON            3
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         NO-DIM     NO-DIM
-    2.5E-02    2.7 E-3     1. E-4
+    2.5E-02    2.9 E-3     2. E-4
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           24
 ENDENTRY             4

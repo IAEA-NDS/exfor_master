@@ -1,46 +1,105 @@
-ENTRY            41172     950726              20050926       0000
-SUBENT        41172001     950726              20050926       0000
-BIB                 13         18
-TITLE       N-ALPHA REACTIONS CROSS-SECTIONS ON SN-112, 114, 116
-            AT THE NEUTRON ENERGY 14.6 MEV
-AUTHOR     (P.M.GOPYCH,M.N.DEMCHENKO,I.M.ZALYUBOVSKIY,
-           P.S.KIZIM)
+ENTRY            41172   20110727   20111003   20110930       4153
+SUBENT        41172001   20110727   20111003   20110930       4153
+BIB                 11         25
+TITLE      Th cross-sections of (N,ALPHA) reactions on
+           Sn-112, 114, 116 at the neutron energy 14.6 MeV
+AUTHOR     (P.M.Gopych,M.N.Demchenko,I.M.Zalyubovskiy,
+           P.S.Kizim)
 INSTITUTE  (4UKRKHU)
-REFERENCE  (J,AE,78,(5),329,9505)  DATA ARE GIVEN
-FACILITY   (VDG)  NEUTRON GENERATOR NG-150M
+REFERENCE  (J,AE,78,(5),329,199505)  Data are given
+           (J,AE/T,78,(5),323,1995) Engl.translation of J,AE,78 .
+           #doi:10.1007/BF02419256
+REL-REF    (R,,U.Reus+,J,AND,29,193,1983) Ref. for decay data.
+FACILITY   (VDG,4UKRKHU)  Neutron generator NG-150M
 METHOD     (ACTIV)
-DETECTOR   (GELI)
-MONITOR    (50-SN-112(N,2N)50-SN-111,,SIG)
-           ((50-SN-112(N,D)49-IN-111,,SIG)+
-           (50-SN-112(N,N+P)49-IN-111,,SIG))
-ASSUMED    (ASSUM,50-SN-114(N,2N)50-SN-113,,SIG)
-ERR-ANALYS (DATA-ERR)  ERROR IS NOT SPECIFIED
-SAMPLE      SN-114 CONTENT IS 7.1+-1.5%, SN-112 CONTENT IS NOT
-            GIVEN
-STATUS     DATA ARE TAKEN FROM THE REFERENCE ONE
-HISTORY    (950726C)  + + COMPILED AT THE CENTRE - CJD + +
-ENDBIB              18
-COMMON               6          3
-MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR ASSUM      ASSUM-ERR
-MB         MB         MB         MB         MB         MB
-  1300.       210.       180.      110.       1160.      130.
-ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        41172002     950726              20050926       0000
-BIB                  2          7
-REACTION   (50-SN-112(N,A)48-CD-109,,SIG)
-DECAY-DATA (48-CD-109,461.9D,DG,88.0,0.0361)
-           (49-IN-111-G,2.83D,DG,171.3,0.903)
-           (49-IN-111-G,2.83D,DG,245.4,0.94)
-           (50-SN-111,35.3MIN,DG)
-           (50-SN-113-G,115.1D,DG,255.0,0.0185)
-           (50-SN-113-G,115.1D,DG,391.7,0.642)
-ENDBIB               7
+DETECTOR   (GELI) Ge(Li) of 50 cm** volume, energy resolution
+           about 3.5 keV for Co-60. Pb-Cd-Cu protection to
+           suppress background.
+           Spectrometer was calibrated by Co-57, Sn-113, Ce-139,
+           Am-241 and Sn-122 standard sources.
+ERR-ANALYS (DATA-ERR)  Error is not specified
+SAMPLE      Sn-114 content IS 7.1+-1.5%, Sn-112 Content is not
+            given. Enriched Sn-112 sample of about 2g mass.
+HISTORY    (19950726C)  + + Compiled at the centre - CJD + +
+           (20110727A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Ref. J,AE/T was added.
+           BIB information was added.
+           Subents 003-004 were added.
+ENDBIB              25
+NOCOMMON             0          0
+ENDSUBENT           28
+SUBENT        41172002   20110727   20111003   20110930       4153
+BIB                  3          6
+REACTION   (50-SN-112(N,A)48-CD-109,,SIG,,,DERIV)
+ANALYSIS     C-s value was defined as average of Subents 003,004
+           data determined relative different monitor c-s.
+STATUS     (TABLE) Text, page 329, of J,AE,78,(5),329,1995
+           (DEP,41172003)   See
+           (DEP,41172004)       ANALYSIS.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          1
 EN         EN-ERR     DATA       DATA-ERR
 EV         EV         MB         MB
    1.46E+07     2.E+05   45.       10.
 ENDDATA              3
-ENDSUBENT           15
-ENDENTRY             2
+ENDSUBENT           14
+SUBENT        41172003   20110727   20111003   20110930       4153
+BIB                  6         19
+REACTION   (50-SN-112(N,A)48-CD-109,,SIG)
+DECAY-DATA (48-CD-109,461.9D,DG,88.0,0.0361)
+           (49-IN-111-G,2.83D,DG,171.3,0.903)
+           (49-IN-111-G,2.83D,DG,245.4,0.94)
+           (50-SN-111,35.3MIN,DG)
+            Decay data used to define Sn-114 admixture  in sample:
+           (50-SN-113-G,115.1D,DG,391.7,0.642)
+            Also the line was detected:
+           (50-SN-113-G,115.1D,DG,255.0,0.0185)
+MONITOR    ((MONIT1)50-SN-112(N,2N)50-SN-111,,SIG)
+           ((MONIT2)(50-SN-112(N,D)49-IN-111,,SIG)+
+           (50-SN-112(N,N+P)49-IN-111,,SIG))
+ASSUMED    (ASSUM,50-SN-114(N,2N)50-SN-113,,SIG)
+ANALYSIS    Gamma-lines 88.0, 171.3, 245.4 keV lines were used
+           to define c-s using linear combination of MONII1 and
+           MONIT2.
+           To define the amount of Sn-114 in sample - gamma-lines
+           171.3, 345.4, 391.7 keV were used by ASSUM .
+STATUS     (TABLE) Text, page 329, of J,AE,78,(5),329,1995
+ENDBIB              19
+COMMON               6          3
+ASSUM      ASSUM-ERR  MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
+MB         MB         MB         MB         MB         MB
+  1160.      130.       1300.       210.       180.      110.
+ENDCOMMON            3
+DATA                 4          1
+EN         EN-ERR     DATA       DATA-ERR
+EV         EV         MB         MB
+   1.46E+07     2.E+05   44.       11.
+ENDDATA              3
+ENDSUBENT           31
+SUBENT        41172004   20110727   20111003   20110930       4153
+BIB                  5         10
+REACTION   (50-SN-112(N,A)48-CD-109,,SIG)
+DECAY-DATA (48-CD-109,461.9D,DG,88.0,0.0361)
+           (50-SN-111,35.3MIN,DG)
+           (50-SN-113-G,115.1D,DG,391.7,0.642)
+           (50-SN-113-G,115.1D,DG,255.0,0.0185)
+MONITOR    (50-SN-114(N,2N)50-SN-113,,SIG)
+ANALYSIS    C-s value was defined by the Sn-114 admixture  amount
+           in sample determined in Subent 003 relative Sn-114(N,2N
+           c-s using lines 88.0, 255.0, 391.7 keV.
+STATUS     (TABLE) Text, page 329, of J,AE,78,(5),329,1995
+ENDBIB              10
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+  1160.      130.
+ENDCOMMON            3
+DATA                 4          1
+EN         EN-ERR     DATA       DATA-ERR
+EV         EV         MB         MB
+   1.46E+07     2.E+05   52.       18.
+ENDDATA              3
+ENDSUBENT           22
+ENDENTRY             4

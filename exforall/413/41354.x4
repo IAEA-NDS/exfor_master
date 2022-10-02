@@ -1,6 +1,6 @@
-ENTRY            41354   20091214   20100209   20100209       4148
-SUBENT        41354001   20091214   20100209   20100209       4148
-BIB                 13         38
+ENTRY            41354   20110629   20111003   20110930       4153
+SUBENT        41354001   20110629   20111003   20110930       4153
+BIB                 13         43
 TITLE        Measurements of Neutron Capture Cross Sections of
              234-U and 236-U and Fission Cross Section of 236-U.
 AUTHOR     (G.V.Muradyan, M.A.Voskanyan, L.P.Yastrebova,
@@ -12,8 +12,11 @@ REFERENCE  ((S,ISINN-7,287,1999)=(S,JINR-E3-99-212,287,1999))
              Main Reference
            ((S,ISINN-7,292,1999)=(S,JINR-E3-99-212,292,1999))
              Data For U-234 .
+           (J,AE,110,(2),100,2011) Data for U-236 confirmed.
+           (J,AE/T,110,(2),115,2011) Engl.translation of J,AE .
+           #doi:10.1007/s10512-011-9399-z
 FACILITY   (LINAC,4RUSKUR) Pulsed Linear Electron Accelerator
-            'FAKEL', electron pulse duration 60 ns, repetiton
+            'FAKEL', electron pulse duration 60 ns, repetition
             frequency 400 Hz
 REL-REF    (N,,G.V.Muradyan+,J,NSE,90,60,1990) Experimental
                                                details .
@@ -39,21 +42,26 @@ HISTORY    (20000317C)  + +  Compiled at CJD
            (20000317U)  Last checking has been done.
            (20091214U) Two references of ISINN-7 were added.
             BIB and COMMON information was added.
-ENDBIB              38
+           (20110629A) Ref. J,AE,(2),100,2011 and Engl.translation
+             were added.
+ENDBIB              43
 NOCOMMON             0          0
-ENDSUBENT           41
-SUBENT        41354002   20091214   20100209   20100209       4148
-BIB                  5          9
+ENDSUBENT           46
+SUBENT        41354002   20110629   20111003   20110930       4153
+BIB                  5         12
 REACTION   (92-U-236(N,G)92-U-237,,SIG,,AV)  Averaged over energy
                  interval given in data section
 SAMPLE     -Two identical metallic foil 10 mm diameter enriched
             on 236-U to 99.845%. Thickness 9.443E-4 atoms/barn
 REL-REF    (A,,Yu.A.Adamchuk+,J,AE,65,356,1988)
            (D,,A.A.Bergman+,J,YK,1988,(1),396,1988)
-ERR-ANALYS  Statistical errors < 0.5% for each energy intervals .
-            Systematic error < 4.% .
-STATUS     (TABLE)  From Table 1 of S,ISINN-7,287,1999 .
-ENDBIB               9
+ERR-ANALYS  Statistical errors < 0.5% for each energy intervals
+                excluding 10-21.5 eV.
+           (ERR-SYS,4.) Systematic error < 4.% .
+STATUS     (TABLE)  From Table 1 of S,ISINN-7,287,1999
+                = Table 1 of J,AE,(2),100,2011 .
+           (COREL,40987002) Measurement by different detector.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 3         10
 EN-MIN     EN-MAX     DATA
@@ -69,19 +77,23 @@ EV         EV         B
        900.      1000.       4.21
       1000.      2000.       2.47
 ENDDATA             12
-ENDSUBENT           26
-SUBENT        41354003   20091214   20100209   20100209       4148
-BIB                  4          9
-REACTION   (92-U-236(N,G)92-U-237,,SIG,,AV)  Weighted over 1/En
+ENDSUBENT           29
+SUBENT        41354003   20110629   20111003   20110930       4153
+BIB                  5         13
+REACTION   (92-U-236(N,G)92-U-237,,SIG,,EPI)  Weighted over 1/En
             spectrum capture cross-section within
             energy interval given in data section
 SAMPLE     -Two identical metallic foil 10 mm diameter enriched
             on 236-U to 99.845%. Thickness 9.443E-4 atoms/barn
 ERR-ANALYS  Statistical errors < 0.5% for each energy intervals
            excluding  10.0-21.5 eV.
-            Systematic error < 4.% .
+           (ERR-SYS,4.) Systematic error < 4.% .
 STATUS     (TABLE)  From Table 2 S,ISINN-7,287,1999.
-ENDBIB               9
+                = Table 2 of J,AE,(2),100,2011 .
+           (COREL,40987005) Measurement by different detector.
+HISTORY    (20110629A) AV -> EPI according to the comment of
+                N.Otsuka (NDS IAEA).
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 3          8
 EN-MIN     EN-MAX     DATA
@@ -95,24 +107,30 @@ EV         EV         B
        465.      1000.       5.28
       1000.      2150.       2.56
 ENDDATA             10
-ENDSUBENT           24
-SUBENT        41354004   20091214   20100209   20100209       4148
-BIB                  4          7
-REACTION   (92-U-236(N,F),,SIG,,AV)  Weighted fission cs
+ENDSUBENT           28
+SUBENT        41354004   20110629   20111003   20110930       4153
+BIB                  6         13
+REACTION   (92-U-236(N,F),,SIG,,EPI)  Weighted fission cs
             over energy interval given in data section
 SAMPLE     -Two identical metallic foil 10 mm diameter enriched
             on 236-U to 99.845%. Thickness 9.443E-4 atoms/barn
+MONITOR    ((MONIT)92-U-236(N,F),,WID)
+                Calibration was done by 5.45 eV resonance of
+            fission width 0.29 milli-eV.
 ERR-ANALYS (DATA-ERR) Accuracy is about 6 %, does not include
              normalization error.
 STATUS     (TABLE)  From Table 3 of S,ISINN-7,287,1999
-ENDBIB               7
-COMMON               1          3
-DATA-ERR
-PER-CENT
- 6.
+                = Table 3 of J,AE,(2),100,2011 .
+HISTORY    (20110629A) AV -> EPI according to the comment of
+                N.Otsuka (NDS IAEA).
+ENDBIB              13
+COMMON               3          3
+DATA-ERR   EN-RES-NRM MONIT
+PER-CENT   EV         MILLI-EV
+ 6.          5.45      0.29
 ENDCOMMON            3
 DATA                 4          7
-EN-MIN     EN-MAX     DATA       DATA-MIN
+EN-MIN     EN-MAX     DATA       DATA-MAX
 EV         EV         B          B
        4.65        10.       4.21
         10.       21.5                 0.001
@@ -122,7 +140,7 @@ EV         EV         B          B
        215.       465.      0.094
        465.      1000.      0.085
 ENDDATA              9
-ENDSUBENT           25
+ENDSUBENT           31
 SUBENT        41354005   20091214   20100209   20100209       4148
 BIB                  4         10
 REACTION   (92-U-234(N,G)92-U-235,,SIG,,AV)  Weighted over 1/En

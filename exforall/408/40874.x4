@@ -1,42 +1,51 @@
-ENTRY            40874     860417              20050926       0000
-SUBENT        40874001     860417              20050926       0000
-BIB                 11         14
-INSTITUTE  (4CCPNIR)
-REFERENCE  (C,83KIEV,2,298,8310)
-AUTHOR     (A.A.BOJCOV,B.I.STAROSTOV)
-TITLE       HIGH PRECISION PROMPT NEUTRON SPECTRUM MEASUREMENT
-            FROM CF-252 SPONTANEOUS FISSION IN THE ENERGY RANGE
-            0.01 - 3 MEV
-INC-SOURCE (CF252)
-SAMPLE      CF-252 LAYER ON A THIN PLATINUM SHEET
-METHOD     (TOF)  FLIGHT BASE  .51 M
-DETECTOR   (SCIN) ANTRACEN SCINTILLATION DETECTOR
-           (FISCH) U-235 FISSION CHAMBER
-MONITOR     ABSOLUTE MEASUREMENT
+ENTRY            40874   20110125   20111003   20110930       4153
+SUBENT        40874001   20110125   20111003   20110930       4153
+BIB                 10         15
+INSTITUTE  (4RUSNIR)
+REFERENCE  (C,83KIEV,2,298,198310)
+AUTHOR     (A.A.Boytsov,B.I.Starostov)
+TITLE       High precision prompt neutron spectrum measurement
+            from Cf-252 spontaneous fission in the energy range
+            0.01 - 3 MeV
+SAMPLE      Cf-252 layer on platinum sheet of 0.01mm thickness .
+METHOD     (TOF)  Flight base  .51 m
+MONITOR    (92-U-235(N,F),,SIG) For U-235 IC efficiency.
+MONIT-REF  (,V.A.Kon'shin+,R,TMO-22,1978)
 STATUS     (APRVD)
-HISTORY    (851016C) COMPILED IN CJD
-ENDBIB              14
+HISTORY    (19851016C) Compiled in CJD
+           (20110125A) Entry corrected according to comments of
+            V.Pronyaev (CJD) and NDS IAEA.
+                A.A.Bojcov -> A.A.Boytsov.
+ENDBIB              15
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        40874002     851016              20050926       0000
-BIB                  3         11
-REACTION   (98-CF-252(0,F),PR,DE,N,REL) ABSOLUTE VALUE NORMALIZED
+ENDSUBENT           18
+SUBENT        40874002   20110125   20111003   20110930       4153
+BIB                  6         19
+REACTION   (98-CF-252(0,F),PR,NU/DE) Absolute value normalized
+DETECTOR   (SCIN) Anthracene scintillation detector for neutron
+                registration
+           (IOCH) For Cf-252 FF registration. Weight about 2.5 g.
+            FF registration efficiency 97+-2 % .
 EN-SEC     (E,N)
-ERR-ANALYS (ERR-1) SUM OF STATISTICAL ERROR, ERROR DUE TO THE
-                   RANDOM COINCIDENCE IN THE DETECTORS, ERROR
-                   DUE TO THE RECYCLING NEUTRONS, ERROR DUE TO
-                   THE EXPERIMENTAL HALL BACKGROUND
-           (ERR-2) ERROR DUE TO THE FLIGHT TIME UNCERTAINTIES
-           (ERR-3) ERROR CAUSED BY THE NEUTRON SCATTERING ON
-                   THE DETECTOR WALLS AND ON THE AIR ATOMS
-           (ERR-4) ERROR CAUSED BY THE DETECTOR EFFICIENCY
-                   UNCERTAINTY
-ENDBIB              11
+ERR-ANALYS (ERR-1) Sum of statistical error, error due to the
+                   random coincidence in the detectors, error
+                   due to the recycling neutrons, error due to
+                   the experimental hall background
+           (ERR-2) Error due to the flight time uncertainties
+           (ERR-3) Error caused by the neutron scattering on
+                   the detector walls and on the air atoms
+           (ERR-4) Error caused by the detector efficiency
+                   uncertainty
+           (ERR-T) Total error.
+STATUS     (TABLE) From author.
+HISTORY    (20110125A) REL was deleted.
+                DE -> NU/DE. ARB-UNITS -> PT/FIS/MEV .
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 8         55
 E          E-RSL      DATA       ERR-1      ERR-2      ERR-3
 ERR-4      ERR-T
-MEV        MEV        ARB-UNITS  PER-CENT   PER-CENT   PER-CENT
+MEV        MEV        PT/FIS/MEV PER-CENT   PER-CENT   PER-CENT
 PER-CENT   PER-CENT
  9.1000E-02 5.0000E-03 7.2600E-01 3.2000E+00 5.0000E-01 7.0000E-02
  2.6000E+00 4.2000E+00
@@ -149,15 +158,24 @@ PER-CENT   PER-CENT
  2.0500E+00 5.2000E-01 8.6900E-01 8.0000E-01 1.7000E+00 7.0000E-02
  2.2000E+00 3.0000E+00
 ENDDATA            114
-ENDSUBENT          130
-SUBENT        40874003     851016              20050926       0000
-BIB                  3          4
-REACTION   (98-CF-252(0,F),PR,DE,N,REL) RATIO TO THE MAXWELL WITH
-                                        TEMPERATURE 1.42 MEV
-DETECTOR   (IOCH) THIN-WALL IONIZATION CHAMBER
+ENDSUBENT          138
+SUBENT        40874003   20110125   20111003   20110930       4153
+BIB                  5          9
+REACTION   (98-CF-252(0,F),PR,NU/DE,,MXD) Ratio to the Maxwell
+                                  with  temperature 1.42 MeV
+DETECTOR   (IOCH) Thin-wall ionization chamber with eight U-235
+            fission layers for neutron registration .
 EN-SEC     (E,N)
-ENDBIB               4
-NOCOMMON             0          0
+STATUS     (TABLE) From author.
+                Data are on Fig. of C,83KIEV,2,298,1983
+HISTORY    (20110125A) DE,N,REL -> NU/DE,,MXD.
+                KT-NRM was added.
+ENDBIB               9
+COMMON               1          3
+KT-NRM
+MEV
+ 1.42
+ENDCOMMON            3
 DATA                 3         24
 E          DATA       ERR-T
 MEV        NO-DIM     PER-CENT
@@ -186,15 +204,24 @@ MEV        NO-DIM     PER-CENT
  8.9000E-01 9.8000E-01 4.3000E+00
  1.0500E+00 1.0100E+00 4.3000E+00
 ENDDATA             26
-ENDSUBENT           35
-SUBENT        40874004     851016              20050926       0000
-BIB                  3          4
-REACTION   (98-CF-252(0,F),PR,DE,N,REL) RATIO TO THE MAXWELL WITH
-                                 TEMPERATURE 1.42 MEV
-DETECTOR   (IOCH) 'GSD'
+ENDSUBENT           44
+SUBENT        40874004   20110125   20111003   20110930       4153
+BIB                  5          9
+REACTION   (98-CF-252(0,F),PR,NU/DE,,MXD) Ratio to the Maxwell
+                             with temperature 1.42 MeV
+DETECTOR   (IOCH) Gas scintillating detector - ionization chamber
+            with 235U metallic radiator
 EN-SEC     (E,N)
-ENDBIB               4
-NOCOMMON             0          0
+STATUS     (TABLE) From author.
+                Data are on Fig. of C,83KIEV,2,298,1983
+HISTORY    (20110125A) DE,N,REL -> NU/DE,,MXD.
+                KT-NRM was added.
+ENDBIB               9
+COMMON               1          3
+KT-NRM
+MEV
+ 1.42
+ENDCOMMON            3
 DATA                 3         24
 E          DATA       ERR-T
 MEV        NO-DIM     PER-CENT
@@ -223,5 +250,5 @@ MEV        NO-DIM     PER-CENT
  3.2600E+00 1.0170E+00 4.3000E+00
  3.6800E+00 1.0210E+00 4.3000E+00
 ENDDATA             26
-ENDSUBENT           35
+ENDSUBENT           44
 ENDENTRY             4
