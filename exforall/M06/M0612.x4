@@ -1,43 +1,50 @@
-ENTRY            M0612   20000328   20000510   20050926       0000
-SUBENT        M0612001   20000328   20000510   20050926       0000
-BIB                 14         29
-TITLE      PHOTOPROTON REACTION IN 9BE.
-AUTHOR     (F.M.CLIKEMAN,A.J.BUREAU,M.G.STEWART)
+ENTRY            M0612   20160202   20160401   20160311       M081
+SUBENT        M0612001   20160202   20160401   20160311       M081
+BIB                 13         30
+TITLE      Photoproton reaction in 9Be.
+AUTHOR     (F.M.Clikeman,A.J.Bureau,M.G.Stewart)
 INSTITUTE  (1USAIOW)
 REFERENCE  (J,PR,126,1822,1962)
-FACILITY   (SYNCH,1USAIOW) IOWA   STATE   UNIVERSITY   65    MEV
-            ELECTRON SYNCHROTRON.
+FACILITY   (SYNCH,1USAIOW) Iowa   State   University   65    MeV
+            electron synchrotron.
 INC-SOURCE (BRST)
-SAMPLE     METALLIC BERILLIUM TARGET.
-DETECTOR   (SCIN) TWO SCINTILLATOR AS COINCIDENCE TELESCOPE.
-METHOD     (ACTIV) 0.8 SEC, 13 MEV BETA-PARTICLE DECAY OF 8LI.
-ANALYSIS   (UNFLD) NOT  IDENTIFIED   UNFOLDING   PROCEDURE   FOR
-            OBTAINING OF CROSS SECTION FROM THE REACTION YIELD.
-ERR-ANALYS (DATA-ERR) STATISTICAL ERRORS VALUES FROM ABSTRACT.
-COMMENT    THE REACTION 9BE(G,P)8LI WAS MEASAURED FROM THRESHOLD
-            (16.89  MEV)  UP  TO 57 MEV USING THE BREMSSTRAHLUNG
-            BEAM   FROM   IOWA   STATE    UNIVERSITY    ELECTRON
-            SYNCHROTRON.  THE DATA WERE TAKEN IN ENERGY STEPS OF
-            ABOUT 0.050 MEV FOR THE FIRST  SEVERAL  MEV  AND  IN
-            ENERGY  STEPS  OF ABOUT 1.0 MEV FOR THE REMAINDER OF
-            THE YIELD CURVE.  A NUMBER OF SMALL RESONANCES  NEAR
-            THRESHOLD  WAS  OBSERVED.  THE GIANT RESONANCE CROSS
-            SECTION REACHES A PEAK VALUE OF 2.64 (0.30) MB AT AN
-            ENERGY   OF   23  MEV,  AND  IT  PROCESSES  A  LARGE
-            HIGH-ENERGY TAIL.  THE INTEGRATED CROSS  SECTION  TO
-            56.8 MEV IS 41.4 (4.6) MEV*MB.
-STATUS     (CURVE) COMBINED DATA FROM THE FIGURES 3 AND  7  HAVE
-            BEEN   COMPILED  AT  THE  RUSSIA  MSU  INP  CDFE  BY
-            V.VARLAMOV.
-HISTORY    (20000324C)
-ENDBIB              29
+SAMPLE     Metallic beryllium target.
+DETECTOR   (SCIN)  Two  scintillation  counters  as  coincidence
+            telescope.
+METHOD     (ACTIV) 0.8 sec, 13 MeV beta-particle decay of 8Li.
+ANALYSIS   (UNFLD) Not  identified   unfolding   procedure   for
+            obtaining of cross section from the reaction yield.
+ERR-ANALYS (DATA-ERR) Mean-root-squared uncertainties.
+COMMENT    The reaction 9Be(g,p)8Li was  measured from threshold
+            (16.89  MeV)  up  to 57 MeV using the bremsstrahlung
+            beam   from   Iowa   State    University    electron
+            synchrotron.  The data were taken in energy steps of
+            about 0.050 MeV for the first  several  MeV  and  in
+            energy  steps  of about 1.0 MeV for the remainder of
+            the yield curve.  A number of small resonances  near
+            threshold  was  observed.  The giant resonance cross
+            section reaches a peak value of 2.64 (0.30) mb at an
+            energy   of   23  MeV,  and  it  processes  a  large
+            high-energy tail.  The integrated cross  section  to
+            56.8 MeV is 41.4 (4.6) MeV*mb.
+HISTORY    (20000324C) Data were compiled at the Russia MSU SINP
+            CDFE by V.Varlamov.
+           (20160202A) Corrected by V.Varlamov: ERR-ANALYS,
+            REACTION, lowercase.
+ENDBIB              30
 NOCOMMON             0          0
-ENDSUBENT           32
-SUBENT        M0612002   20000328   20000510   20050926       0000
-BIB                  1          1
-REACTION   (4-BE-9(G,P)3-LI-8,,SIG,,,EXP)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           33
+SUBENT        M0612002   20160202   20160401   20160311       M081
+BIB                  5          7
+REACTION   (4-BE-9(G,P)3-LI-8,,SIG,,BRS)
+DECAY-DATA (3-LI-8,0.8SEC,B-)
+STATUS     (CURVE) Combined data from Figs. 3 and 7 of
+            PR,126,1822.
+COMMENT    Peak value 2.64 (0.30) from the text.
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS,
+            DECAY-DATA, COMMENT, SF8 = BRS in REACTION.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 3         98
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -140,16 +147,22 @@ MEV        MB         MB
    52.78       0.61
    53.82       2.01
 ENDDATA            100
-ENDSUBENT          106
-SUBENT        M0612003   20000328   20000510   20050926       0000
-BIB                  1          1
-REACTION   (4-BE-9(G,P)3-LI-8,,INT,,,EXP)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT          112
+SUBENT        M0612003   20160202   20160401   20160311       M081
+BIB                  4          7
+REACTION   (4-BE-9(G,P)3-LI-8,,INT)
+STATUS     (DEP,M0612002) Reaction cross section.
+           (TABLE) Data from the text.
+CRITIQUE   EN-MAX is equal 56.8 MeV in the Abstract and 57.0 MeV
+            in the text (page 1824, column right, line 11 from
+            the bottom).
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS, CRITIQUE.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        MB*MEV     MB*MEV
    16.89      57.        41.4      4.6
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           15
 ENDENTRY             3

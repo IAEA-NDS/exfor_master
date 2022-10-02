@@ -1,36 +1,42 @@
-ENTRY            M0611   20000324   20000510   20050926       0000
-SUBENT        M0611001   20000324   20000510   20050926       0000
-BIB                 13         21
-TITLE      PHOTONUCLEAR QUADRUPOLE RESONANCE IN 160GD.
-AUTHOR     (F.DREYER,H.DAHMEN,J.STAUBE,H.H.THIES)
+ENTRY            M0611   20160202   20160401   20160311       M081
+SUBENT        M0611001   20160202   20160401   20160311       M081
+BIB                 13         23
+TITLE      Photonuclear quadrupole resonance in 160Gd.
+AUTHOR     (F.Dreyer,H.Dahmen,J.Staube,H.H.Thies)
 INSTITUTE  (2GERHEI)
 REFERENCE  (J,NP/A,192,433,1972)
-FACILITY   (BETAT,2GERHEI) HEIDELBERG 33 MEV BETATRON.
+FACILITY   (BETAT,2GERHEI) Heidelberg 33 MeV betatron.
 INC-SOURCE (BRST)
-SAMPLE     SAMPLES OF 99.9 % PURE 160GD.
-DETECTOR   (IOCH) IONIZATION CHAMBER.
-ANALYSIS   (LEAST) COOK LEAST-STRUCTURE METHOD.
-ERR-ANALYS (DATA-ERR) STATISTICAL ERRORS ONLY.
-COMMENT    THE (G,N) AND  (G,P)  CROSS  SECTION  IN  160GD  WERE
-            MEASURED FROM    THRESHOLD    TO    33   MEV   USING
-            BREMSSTRAHLUNG FROM 33 MEV BETARON AND OBSERVING THE
-            INDUCED ACTIVITIES.  BOTH  CROSS  SECTIONS CONTAIN A
-            BROAD MAXIMUM AT 23.5 MEV.  IT IS ARGUED  THAT  THIS
-            MAXIMUM IS THE QUADRUPOLE RESONANCE PREDICTED AT 1.6
-            TIMES THE  E1  GIANT   RESONANCE   ENERGY   BY   THE
-            HYDRODINAMIC MODEL.
-STATUS     (CURVE) DATA  FROM  THE  FIGURES  2  -  4  HAVE  BEEN
-            COMPILED AT THE RUSSIA MSU INP CDFE BY V.VARLAMOV.
-HISTORY    (20000324C)
-ENDBIB              21
+METHOD     (ACTIV)
+SAMPLE     Samples of 99.9 % pure 160Gd.
+DETECTOR   (IOCH) Ionization chamber.
+ANALYSIS   (LEAST) Cook least-structure method.
+ERR-ANALYS (DATA-ERR) Mean-root-squared unsertainties.
+COMMENT    The (g,n) and  (g,p)  cross  section  in  160Gd  were
+            measured from    threshold    to    33   MeV   using
+            bremsstrahlung from 33 MeV betatron and observing the
+            induced activities.  Both  cross  sections contain a
+            broad maximum at 23.5 MeV.  It is argued  that  this
+            maximum is the quadrupole resonance predicted at 1.6
+            times the  E1  giant   resonance   energy   by   the
+            hydrodinamic model.
+HISTORY    (20000324C) Data were compiled at the Russia MSU SINP
+            CDFE by V.Varlamov.
+           (20160202A) Corrected by V.Varlamov: ERR-ANALYS,
+            METHOD, REACTION, STATUS, lowercase.
+ENDBIB              23
 NOCOMMON             0          0
-ENDSUBENT           24
-SUBENT        M0611002   20000324   20000510   20050926       0000
-BIB                  2          2
-REACTION   (64-GD-160(G,N)64-GD-159,,SIG,,,EXP)
-METHOD     (ACTIV) 18.45 H B- ACTIVITY OF 159GD.
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           26
+SUBENT        M0611002   20160202   20160401   20160311       M081
+BIB                  5          6
+REACTION   (64-GD-160(G,N)64-GD-159,,SIG,,BRS)
+METHOD     (GSPEC) 18.45 h b- activity of 159Gd.
+DECAY-DATA (64-GD-159,18.45HR,B-)
+STATUS     (CURVE) Data from Fig. 2 b of NP/A,192,433,1972.
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS,
+           METHOD, DECAY-DATA, SF8 = BRS in REACTION.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 3         35
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -70,15 +76,21 @@ MEV        MB         MB
     23.61    36.73     4.76
     24.60    34.01     4.08
 ENDDATA             37
-ENDSUBENT           44
-SUBENT        M0611003   20000324   20000510   20050926       0000
-BIB                  2          4
-REACTION   ((64-GD-160(G,P)63-EU-159,,SIG,,,EXP)+
-           (64-GD-160(G,N+P)63-EU-158,,SIG,,,EXP))
-METHOD     (ACTIV) 18.5 MIN  B- ACTIVITY OF 159EU PLUS
-            46 MIN B- ACTIVITY OF 158EU.
-ENDBIB               4
-NOCOMMON
+ENDSUBENT           48
+SUBENT        M0611003   20160202   20160401   20160311       M081
+BIB                  5         10
+REACTION   ((64-GD-160(G,P)63-EU-159,,SIG,,BRS)+
+           (64-GD-160(G,X)63-EU-158,,SIG,,BRS))
+METHOD     (ACTIV) 18.5 min  B- activity of 159Eu plus
+            46 min B- activity of 158Eu.
+DECAY-DATA (63-EU-159,18.5MIN,B-)
+           (63-EU-158,46.0MIN,B-)
+STATUS     (CURVE) Data from Fig. 3 of NP/A,192,433,1972.
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS,
+           METHOD, DECAY-DATA, SF3 = N+P -> X, SF8 = BRS in
+           REACTION.
+ENDBIB              10
+NOCOMMON             0          0
 DATA                 3         36
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -119,16 +131,19 @@ MEV        MB         MB
     32.19     8.71     0.88
     32.74     9.25     1.11
 ENDDATA             38
-ENDSUBENT           47
-SUBENT        M0611004   20000324   20000510   20050926       0000
-BIB                  3          5
-REACTION   (64-GD-160(G,P)63-EU-159,,SIG,,,DERIV)
-METHOD     SEPARATION OF ((G,P)+(G,PN)) REACTION  CROSS  SECTION
-            INTO ((G,P)  AND  (G,NP) PARTS USING COULOMB-BARRIER
-            TRANSMISSION PROBABILITY DATA.
+ENDSUBENT           53
+SUBENT        M0611004   20160202   20160401   20160311       M081
+BIB                  4          8
+REACTION   (64-GD-160(G,P)63-EU-159,,SIG,,BRS,DERIV)
+METHOD     Separation of ((gamma,p)+(gamma,pn)) reaction  cross
+           section into ((gamma,p)  and  (gamma,np) parts using
+           Coulomb-barrier transmission probability data.
 STATUS     (DEP,M0611003)
-ENDBIB               5
-NOCOMMON
+           (CURVE) Data from Fig. 4 of NP/A,192,433,1972.
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS, SF8 =
+            BRS in REACTION.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3         36
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -169,16 +184,19 @@ MEV        MB         MB
     32.01     0.01     0.75
     32.48    -0.04     0.95
 ENDDATA             38
-ENDSUBENT           48
-SUBENT        M0611005   20000324   20000510   20050926       0000
-BIB                  3          5
-REACTION   (64-GD-160(G,N+P)63-EU-158,,SIG,,,DERIV)
-METHOD     SEPARATION OF ((G,P)+(G,PN)) REACTION  CROSS  SECTION
-            INTO ((G,P)  AND  (G,NP) PARTS USING COULOMB-BARRIER
-            TRANSMISSION PROBABILITY DATA.
+ENDSUBENT           51
+SUBENT        M0611005   20160202   20160401   20160311       M081
+BIB                  4          8
+REACTION   (64-GD-160(G,N+P)63-EU-158,,SIG,,BRS,DERIV)
+METHOD     Separation of ((gamma,p)+(gamma,pn)) reaction  cross
+           section into ((gamma,p)  and  (gamma,np) parts using
+           Coulomb-barrier transmission probability data.
 STATUS     (DEP,M0611003)
-ENDBIB               5
-NOCOMMON
+           (CURVE) Data from Fig. 4 of NP/A,192,433,1972.
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS, SF8 =
+            BRS in REACTION.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3         20
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -203,5 +221,5 @@ MEV        MB         MB
     32.01     5.03     0.47
     32.48     5.37     0.62
 ENDDATA             22
-ENDSUBENT           32
+ENDSUBENT           35
 ENDENTRY             5

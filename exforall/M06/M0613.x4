@@ -1,45 +1,50 @@
-ENTRY            M0613   20010322   20010711   20050926       0000
-SUBENT        M0613001   20010322   20010711   20050926       0000
-BIB                 15         31
-TITLE      18O(G,PN + G,NP) CROSS SECTION.
-AUTHOR     (K.G.MCNEILL,J.W.JURY,M.N.THOMPSON,B.L.BERMAN,
-            R.E.PYWELL)
+ENTRY            M0613   20160202   20160401   20160311       M081
+SUBENT        M0613001   20160202   20160401   20160311       M081
+BIB                 14         32
+TITLE      18O(gamma,pn + gamma,np) cross section.
+AUTHOR     (K.G.Mcneill,J.W.Jury,M.N.Thompson,B.L.Berman,
+            R.E.Pywell)
 INSTITUTE  (1CANTOR,1CANSAS,1USAGWU,3AULAML)
 REFERENCE  (J,PR/C,43,489,1991)
 FACILITY   (LINAC,1USALRL)
-SAMPLE     WATER SAMPLE, 96.6 G OF (H-2)18O.
-INC-SOURCE (QMPH) QUASIMONOENERGETICAL  PHOTONS   FROM   POSITRON
-            ANNIHILATION IN FLIGHT.
-METHOD     (ACTIV) 6.13  MEV  GAMMA  RAYS  FROM 16N (T-1/2 = 7.2
-            SEC) WERE DETECTED.
+SAMPLE     Water sample, 96.6 g of (H-2)18O.
+INC-SOURCE (QMPH) Quasimonoenergetical  photons   from   positron
+            annihilation in flight.
+METHOD     (ACTIV) 6.13  MeV  gamma  rays  from 16N (T-1/2 = 7.2
+            sec) were detected.
 DETECTOR   (NAICR)
-ANALYSIS   DIRECT MEASUREMENTS.
-ERR-ANALYS (DATA-ERR) STATISTICAL ERRORS ONLY.
-CORRECTION CORRECTIONS OF TWO KINDS HAVE BEEN DONE:
-            - FOR  SMALL  16O  AND  17O  CONTAMINATION  USING THE
-              INDEPENDENT    MEASUREMENTS    AND    CORRESPONDENT
-              SUBTRACTION PROCEDURES;
-            - FOR  18O(G,P)  REACTION  CONTRIBUTION  BECAUSE  THE
-              FOLLOWING PROCESS: 18O -> 17N ->B-DECAY -> 17O -> N
-              -> (N,G),  6.9  MEV,  T-1/2  =  4   SEC   -   USING
-              CALCULATION OF ZUBANOV (PRIVATE COMMUNICATION).
-COMMENT    MEASUREMENT HAS BEEN MADE OF THE 18O(G,PN + NP)  CROSS
-            SECTION.  THE CROSS SECTION RISES TO A MAXIMUM OF 1.2
-            MB AT 27.5 MEV,  APPROXIMATELY ONE-TENTH OF THE TOTAL
-            (G,N)  CROSS  SECTION  THERE.  THE  INTEGRATED  CROSS
-            SECTION IS CORRESPONDINGLY SMALL (11.8 MEV*MB  TO  43
-            MEV).
-STATUS     (CURVE) DATA FROM THE FIGURE 1 HAVE BEEN  COMPILED  AT
-            THE MSU INP CDFE BY V.VARLAMOV.
-HISTORY    (20010112C)
-ENDBIB              31
+ANALYSIS   Direct measurements.
+ERR-ANALYS (DATA-ERR) No description of the error source.
+CORRECTION Corrections of two kinds have been done:
+            - for  small  16O  and  17O  contamination  using the
+              independent    measurements    and    correspondent
+              subtraction procedures;
+            - for  18O(gamma,p)  reaction  contribution  because
+              following process: 18O -> 17N ->b-decay -> 17O -> N
+              -> (n,gamma), 6.9 MeV, t-1/2 = 4  sec   -   using
+              calculation of Zubanov (private communication).
+COMMENT    Measurement has been made of the 18O(gamma,pn + np)
+            cross section. The cross section rises to a maximum
+            of 1.2 mb at 27.5 MeV, approximately one-tenth of the
+            total (gamma,n) cross section there. The  integrated
+            cross section is correspondingly small (11.8 MeV*mb
+            to  43 MeV).
+HISTORY    (20010112C) Data were  compiled the Russia MSU SINP
+            CDFE by V.Varlamov.
+           (20160202A) Corrected by V.Varlamov: REACTION,
+            ERR-ANALYS, lowercase.
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           34
-SUBENT        M0613002   20010322   20010711   20050926       0000
-BIB                  1          1
-REACTION   (8-O-18(G,N+P)7-N-16,,SIG,,,EXP)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           35
+SUBENT        M0613002   20160202   20160401   20160311       M081
+BIB                  4          5
+REACTION   (8-O-18(G,X)7-N-16,,SIG)
+DECAY-DATA (7-N-16,7.2SEC,DG,6130.,0.68)
+STATUS     (CURVE) Data from Fig. 1 of PR/C,43,489,1991.
+HISTORY    (20160202A) Corrected by V.Varlamov: DECAY-DATA,
+            STATUS, SF3 = N + P -> X in REACTION.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 3         91
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -135,17 +140,21 @@ MEV        MB         MB
     42.4        .244      .033
     43.5        .262      .04
 ENDDATA             93
-ENDSUBENT           99
-SUBENT        M0613003   20010322   20010711   20050926       0000
-BIB                  1          1
-REACTION   (8-O-18(G,N+P)7-N-16,,INT,,,EXP)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT          103
+SUBENT        M0613003   20160202   20160401   20160311       M081
+BIB                  3          5
+REACTION   (8-O-18(G,X)7-N-16,,INT)
+STATUS     (DEP,M0613002) Reaction cross section.
+           (TABLE) Data from Tab. 1 of PR/C,43,489,1991.
+HISTORY    (20160202A) Corrected by V.Varlamov: STATUS,
+           SF3 = N + P -> X in REACTION.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 3          2
 EN-MAX     DATA       DATA-ERR
 MEV        MB*MEV     MB*MEV
-    30.        5.6       .2
-    43.       11.8       .4
+    30.        5.6      0.2
+    43.       11.8      0.4
 ENDDATA              4
-ENDSUBENT           10
+ENDSUBENT           14
 ENDENTRY             3
