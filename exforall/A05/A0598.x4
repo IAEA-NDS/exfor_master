@@ -1,21 +1,21 @@
-ENTRY            A0598   20040121              20050926       0000
-SUBENT        A0598001   20040121              20050926       0000
-BIB                 14         42
+ENTRY            A0598   20160228   20160701   20160621       A084
+SUBENT        A0598001   20160228   20160701   20160621       A084
+BIB                 14         44
 INSTITUTE  (4RUSJIA,1CANTMF)
 REFERENCE  (J,PR/C,68,054611,200311)
 AUTHOR     (B.L.Zhuikov, M.V.Mebel, V.M.Kokhanyuk, A.S.Iljinov,
            A.Yu.Zyuzin, J.S.Vincent)
 TITLE      Production of high-spin isomers in proton induced
            reactions at 100-500 MeV on 181Ta
-REL-REF    (R,,U.REUS+,J,AND,29,1,1983) Decay-data
+REL-REF    (R,,U.Reus+,J,AND,29,1,1983) Decay-data
 FACILITY   (MESON,1CANTMF) 100, 200, 350, 500 MeV
            (LINAC,4RUSJIA) 100, 145 MeV
 SAMPLE     Metallic tantalum foils, about 0.1 mm thick.
            Proton energy loss due to degrading materials before
-           the target was always less then 15 MeV.
+           the target was always less than 15 MeV.
            The foil stack was thin enough, so that activation from
            secondary pions and neutrons could be neglected.
-METHOD     (RCHEM)
+METHOD     (CHSEP)
            (STTA) The uncertainty in the reported proton energies
            due to the use of the stack foil technique and target
            holder design was estimated as +/-2 MeV or less.
@@ -24,51 +24,55 @@ METHOD     (RCHEM)
            (EXTB) Proton current varied from 0.5 to 10 ma in
            different irradiations.
            (GSPEC)
-DETECTOR   (GE-IN) Ge detectors measured gammas spectra.
+DETECTOR   (GE-IN) Ge detectors measured gamma spectra.
 MONITOR    (13-AL-27(P,X)11-NA-22,,SIG)
            (29-CU-0(P,X)30-ZN-62,,SIG)
            (74-W-0(P,X)75-RE-181,,SIG)
            (79-AU-197(P,X)80-HG-192,,SIG)
-ERR-ANALYS (ERR-T) Statistical uncertainties added in
+ERR-ANALYS (DATA-ERR) Statistical uncertainties added in
             quadrature with systematic uncertainties due to:
             . Yields from less abundant chemical fractions,
             . Decay during irradiation and chemical processing,
             . Detector efficiency,
             . Beam monitoring.
-STATUS     (APRVD) Approved by B. Zhuikov, 2004/1/18.
-           Data taken from table II in reference.
-HISTORY    (20040116C) VM
-           (20040121A) Entry is received from VM and a little
-           corrections were included.
-           (20040121U) Last checking has been done.
 ADD-RES    (COMP) CEF and ALICE-HMS-ALICE codes.
            Isomer ratios were calculated too.
-ENDBIB              42
-NOCOMMON
-ENDSUBENT           45
-SUBENT        A0598002   20040121              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)71-LU-177-M,IND,SIG)
-DECAY-DATA (71-LU-177-M,160.D,DG,208.3,,DG,413.7,,DG,418.5)
-ENDBIB               2
-NOCOMMON
+STATUS     (APRVD) Approved by B. Zhuikov, 2004/1/18.
+           (TABLE) Data taken from table II from PR/C,68,054611
+HISTORY    (20040116C) VM
+           (20040121A) Entry is received from VM and small
+           corrections were included.
+           (20040121U) Last checking has been done.
+           (20160228A) SD: DECAY-DATA corrected in Subents 004,013
+           ERR-T -> DATA-ERR in Subents 002-013.
+ENDBIB              44
+NOCOMMON             0          0
+ENDSUBENT           47
+SUBENT        A0598002   20160228   20160701   20160621       A084
+BIB                  3          4
+REACTION   (73-TA-181(P,X)71-LU-177-M1,,SIG)
+DECAY-DATA (71-LU-177-M1,160.D,DG,208.3,,DG,413.7,,DG,418.5)
+HISTORY    (20160228A) SD: SF4=Lu-177m -> Lu177m1, SF5=IND deleted
+           from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 3          4
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.      0.022      0.002
        200.       0.04      0.013
        350.      0.068      0.008
        500.       0.11       0.03
 ENDDATA              6
-ENDSUBENT           13
-SUBENT        A0598003   20040121              20050926       0000
+ENDSUBENT           15
+SUBENT        A0598003   20160228   20160701   20160621       A084
 BIB                  2          2
 REACTION   (73-TA-181(P,X)72-HF-177-M2,,SIG)
 DECAY-DATA (72-HF-177-M2,51.MIN,DG,277.3)
 ENDBIB               2
-NOCOMMON
+NOCOMMON             0          0
 DATA                 4          4
-EN         DATA       ERR-T      DATA-MAX
+EN         DATA       DATA-ERR   DATA-MAX
 MEV        MB         MB         MB
        100.      0.038       0.01
        200.                            0.085
@@ -76,44 +80,52 @@ MEV        MB         MB         MB
        500.       0.05       0.01
 ENDDATA              6
 ENDSUBENT           13
-SUBENT        A0598004   20040121              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)72-HF-179-M2,IND,SIG)
-DECAY-DATA (72-HF-179-M2,25.HR,DG,453.7)
-ENDBIB               2
-NOCOMMON
+SUBENT        A0598004   20160228   20160701   20160621       A084
+BIB                  4          8
+REACTION   (73-TA-181(P,X)72-HF-179-M2,,SIG)
+DECAY-DATA (72-HF-179-M2,25.D,DG,453.7)
+COMMENT    From Dr.B.L.Zhuikov (2014-10-20): Instead of 'hour'
+           it should be 'day' in the Tbl.II. It was misprint in
+           the submitted manuscript.
+HISTORY    (20160228A) SD: hl=25.hr->25.d in DECAY-DATA according
+           to author's remark (see COMMENT). SF5=IND deleted from
+           REACTION code.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3          4
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.       0.42       0.04
        200.       0.44       0.04
        350.       0.39       0.03
        500.       0.41       0.03
 ENDDATA              6
-ENDSUBENT           13
-SUBENT        A0598005   20040121              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)72-HF-180-M,IND,SIG)
+ENDSUBENT           19
+SUBENT        A0598005   20160228   20160701   20160621       A084
+BIB                  3          3
+REACTION   (73-TA-181(P,X)72-HF-180-M,,SIG)
 DECAY-DATA (72-HF-180-M,5.5HR,DG)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20160228A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 3          4
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.       0.44       0.13
        200.       1.17       0.09
        350.        1.6       0.09
        500.       1.71        0.2
 ENDDATA              6
-ENDSUBENT           13
-SUBENT        A0598006   20040121              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)73-TA-178-M,IND,SIG)
+ENDSUBENT           14
+SUBENT        A0598006   20160228   20160701   20160621       A084
+BIB                  3          3
+REACTION   (73-TA-181(P,X)73-TA-178-M,,SIG)
 DECAY-DATA (73-TA-178-M,2.5HR,DG)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20160228A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.       34.2        2.5
        145.        25.         2.
@@ -121,15 +133,15 @@ MEV        MB         MB
        350.       17.4        1.2
        500.       13.1        1.5
 ENDDATA              7
-ENDSUBENT           14
-SUBENT        A0598007   20040121              20050926       0000
+ENDSUBENT           15
+SUBENT        A0598007   20160228   20160701   20160621       A084
 BIB                  2          2
 REACTION   (73-TA-181(P,X)71-LU-169,CUM,SIG)
 DECAY-DATA (71-LU-169-G,30.HR,DG)
 ENDBIB               2
-NOCOMMON
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.        1.1        0.2
        145.        44.        15.
@@ -138,14 +150,14 @@ MEV        MB         MB
        500.        37.         5.
 ENDDATA              7
 ENDSUBENT           14
-SUBENT        A0598008   20040121              20050926       0000
+SUBENT        A0598008   20160228   20160701   20160621       A084
 BIB                  2          2
 REACTION   (73-TA-181(P,X)71-LU-171,CUM,SIG)
 DECAY-DATA (71-LU-171-G,8.2D,DG)
 ENDBIB               2
-NOCOMMON
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.        24.         2.
        145.        65.         5.
@@ -154,16 +166,16 @@ MEV        MB         MB
        500.        44.         4.
 ENDDATA              7
 ENDSUBENT           14
-SUBENT        A0598009   20040121              20050926       0000
+SUBENT        A0598009   20160228   20160701   20160621       A084
 BIB                  3          4
 REACTION   (73-TA-181(P,X)71-LU-167,CUM,SIG)
 DECAY-DATA (71-LU-167,52.MIN,DG)
 COMMENT    -By compiler.  Product given incorrectly in article;
            corrected in email from B.Zhuikov, 2004/1/18.
 ENDBIB               4
-NOCOMMON
+NOCOMMON             0          0
 DATA                 3          4
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.        0.1
        200.        14.         3.
@@ -171,14 +183,14 @@ MEV        MB         MB
        500.        37.         5.
 ENDDATA              6
 ENDSUBENT           15
-SUBENT        A0598010   20040121              20050926       0000
+SUBENT        A0598010   20160228   20160701   20160621       A084
 BIB                  2          2
 REACTION   (73-TA-181(P,X)72-HF-170,CUM,SIG)
 DECAY-DATA (72-HF-170,16.HR,DG)
 ENDBIB               2
-NOCOMMON
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.       13.6         2.
        145.        58.         7.
@@ -187,14 +199,14 @@ MEV        MB         MB
        500.        43.         5.
 ENDDATA              7
 ENDSUBENT           14
-SUBENT        A0598011   20040121              20050926       0000
+SUBENT        A0598011   20160228   20160701   20160621       A084
 BIB                  2          2
 REACTION   (73-TA-181(P,X)72-HF-172,CUM,SIG)
 DECAY-DATA (72-HF-172,1.9YR,DG)
 ENDBIB               2
-NOCOMMON
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.        32.         5.
        145.       107.        60.
@@ -203,14 +215,14 @@ MEV        MB         MB
        500.        19.         2.
 ENDDATA              7
 ENDSUBENT           14
-SUBENT        A0598012   20040121              20050926       0000
+SUBENT        A0598012   20160228   20160701   20160621       A084
 BIB                  2          2
 REACTION   (73-TA-181(P,X)72-HF-175,CUM,SIG)
 DECAY-DATA (72-HF-175,70.D,DG)
 ENDBIB               2
-NOCOMMON
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.       175.        30.
        145.       130.        30.
@@ -219,14 +231,19 @@ MEV        MB         MB
        500.        34.         6.
 ENDDATA              7
 ENDSUBENT           14
-SUBENT        A0598013   20040121              20050926       0000
-BIB                  2          2
+SUBENT        A0598013   20160228   20160701   20160621       A084
+BIB                  4          7
 REACTION   (73-TA-181(P,5N)74-W-177,,SIG)
-DECAY-DATA (74-W-177,23.HR,DG)
-ENDBIB               2
-NOCOMMON
+DECAY-DATA (74-W-177,2.25HR,DG)
+COMMENT    From Dr.B.L.Zhuikov (2014-10-20): Instead of '23.hr'
+           it should be '2.25hr' in the Tbl.III. It was misprint
+           in the submitted manuscript.
+HISTORY    (20160228A) SD: hl=23.hr -> 2.25hr in DECAY-DATA
+           according to author's remark (see COMMENT).
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        100.        62.         6.
        145.        34.         5.
@@ -234,5 +251,5 @@ MEV        MB         MB
        350.        7.5        1.4
        500.        7.3         2.
 ENDDATA              7
-ENDSUBENT           14
+ENDSUBENT           19
 ENDENTRY            13

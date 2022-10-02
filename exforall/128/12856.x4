@@ -1,6 +1,6 @@
-ENTRY            12856   20120710   20121203   20121026       1384
-SUBENT        12856001   20120710   20121203   20121026       1384
-BIB                 11         16
+ENTRY            12856   20160227   20160701   20160615       1416
+SUBENT        12856001   20160227   20160701   20160615       1416
+BIB                 11         18
 INSTITUTE  (1USABNW)
 REFERENCE  (J,PR/C,28,1740,198310)
 AUTHOR     (P.L.Reeder,R.A.Warner)
@@ -17,9 +17,11 @@ STATUS     (APRVD) P.L.Reeder, 1984/05/23.
 HISTORY    (19840215C)
            (20120710A) SD:Updated to new date formats,lower case.
                 Corrected according to last EXFOR rules and Dict.
-ENDBIB              16
+           (20160226A) OS. Subentry 3 split into subs.3-15,
+            data units changed
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           19
+ENDSUBENT           21
 SUBENT        12856002   20120710   20121203   20121026       1384
 BIB                  5          6
 REACTION   (92-U-235(N,F),DL,NU)
@@ -36,14 +38,14 @@ EV         PC/FIS
 0.0253     1.63
 ENDDATA              3
 ENDSUBENT           14
-SUBENT        12856003   20120710   20121203   20121026       1384
-BIB                  9         48
-REACTION   (ELEM/MASS(0,B-),,PN)
-MONITOR    ((MONIT1)37-RB-97(0,B-),,PN)
-           ((MONIT2)37-RB-98(0,B-),,PN)
-           ((MONIT3)37-RB-99(0,B-),,PN)
-           ((MONIT4)55-CS-146(0,B-),,PN)
-           ((MONIT5)55-CS-147(0,B-),,PN)
+SUBENT        12856003   20160227   20160701   20160615       1416
+BIB                 10         34
+REACTION   (38-SR-97(0,B-)39-Y-97,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
            The recommended delayed neutron probabilities-
              (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
              precursors were used to determine the ratio of
@@ -65,67 +67,674 @@ ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
             over all precursors.
 CORRECTION Background component was included in the least-squares
            analysis.
-DECAY-DATA ((1.)38-SR-97,0.403SEC)      Extracted from data
-           ((2.)38-SR-98,0.66SEC)       Assumed
-           ((3.)38-SR-99,0.274SEC)      Extracted from data
-           ((4.)39-Y-97-G,3.72SEC)      Extracted from data
-           ((5.)39-Y-97-M,1.19SEC)      Extracted from data
-           ((6.)39-Y-98-G,0.51SEC)      Extracted from data
-           ((7.)39-Y-99,1.47SEC)        Extracted from data
-           ((8.)56-BA-146,2.18SEC)      Assumed
-           ((9.)56-BA-147,0.91SEC)      Extracted from data
-           ((10.)56-BA-148,0.607SEC)    Assumed
-           ((11.)57-LA-146-M,6.0SEC)    Assumed
-           ((12.)57-LA-147,4.48SEC)     Assumed
-           ((13.)57-LA-148,1.42SEC)     Extracted from data
-ERR-ANALYS (ERR-T)
-            quoted errors for pn values are based on uncertainties
-              on saturation activities derived from least-squares
-              fit to growth-decay curves.
-           (ERR-1) Systematic error.
+DECAY-DATA (38-SR-97,0.403SEC)          Extracted from data
+ERR-ANALYS (ERR-SYS) Systematic error.
             Systematic error is based on uncertainty of reference
-              pn value used to normalize for counter efficiencies.
+              Pn value used to normalize for counter efficiencies.
 STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
-ENDBIB              48
+HISTORY    (20160226A) Subentry split in subs. 3-15; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              34
 COMMON              10          6
 MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
 MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
-PC/DECAY   PC/DECAY   PC/DECAY   PC/DECAY   PC/DECAY   PC/DECAY
-PC/DECAY   PC/DECAY   PC/DECAY   PC/DECAY
- 26.9      1.9        13.4       1.1        13.4       1.9
- 13.4      1.2        26.2       3.7
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
 ENDCOMMON            6
-DATA                 8         13
-ELEMENT    MASS       ISOMER     DATA       DATA-MAX   ERR-T
-ERR-1      DECAY-FLAG
-NO-DIM     NO-DIM     NO-DIM     PC/DECAY   PC/DECAY   PC/DECAY
-PER-CENT   NO-DIM
-38.        97.                              0.02
-7.         1.
-38.        98.                   0.18                  0.02
-8.         2.
-38.        99.                   0.31                  0.11
-14.        3.
-39.        97.        0.         0.061                 0.007
-7.         4.
-39.        97.        1.         0.11                  0.03
-7.         5.
-39.        98.        0.         0.21                  0.04
-8.         6.
-39.        99.                   0.96                  0.15
-14.        7.
-56.        146.                             0.02
-10.        8.
-56.        147.                  0.030                 0.016
-14.        9.
-56.        148.                             0.03
-8.         10.
-57.        146.                             0.007
-10.        11.
-57.        147.                  0.033                 0.006
-14.        12.
-57.        148.                  0.13                  0.01
-8.         13.
-ENDDATA             30
-ENDSUBENT           90
-ENDENTRY             3
+DATA                 3          1
+DATA-MAX   ERR-SYS    ERR-HL
+NO-DIM     PER-CENT   SEC
+  0.0002       7.       0.005
+ENDDATA              3
+ENDSUBENT           49
+SUBENT        12856004   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (38-SR-98(0,B-)39-Y-98,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (38-SR-98,0.66SEC)       Assumed
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 3          1
+DATA       ERR-T      ERR-SYS
+NO-DIM     NO-DIM     PER-CENT
+ 0.0018     0.0002      8.
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856005   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (38-SR-99(0,B-)39-Y-99,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (38-SR-99,0.274SEC)      Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.0031     0.0011      14.        0.004
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856006   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (39-Y-97(0,B-)40-ZR-97,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (39-Y-97-G,3.72SEC)      Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.00061     0.00007      7.       0.11
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856007   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (39-Y-97-M1(0,B-)40-ZR-97,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (39-Y-97-M,1.19SEC)      Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.0011     0.0003      7.         0.04
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856008   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (39-Y-98(0,B-)40-ZR-98,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (39-Y-98-G,0.51SEC)      Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.0021     0.0004      8.          0.01
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856009   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (39-Y-99(0,B-)40-ZR-99,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (39-Y-99,1.47SEC)        Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.0096     0.0015      14.         0.02
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856010   20160227   20160701   20160615       1416
+BIB                 10         34
+REACTION   (56-BA-146(0,B-)57-LA-146,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (56-BA-146,2.18SEC)      Assumed
+ERR-ANALYS (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              34
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 2          1
+DATA-MAX   ERR-SYS
+NO-DIM     PER-CENT
+ 0.0002      10.
+ENDDATA              3
+ENDSUBENT           49
+SUBENT        12856011   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (56-BA-147(0,B-)57-LA-147,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (56-BA-147,0.91SEC)      Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.0003     0.00016      14.       0.04
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856012   20160227   20160701   20160615       1416
+BIB                 10         34
+REACTION   (56-BA-148(0,B-)57-LA-148,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (56-BA-148,0.607SEC)    Assumed
+ERR-ANALYS (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              34
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 2          1
+DATA-MAX   ERR-SYS
+NO-DIM     PER-CENT
+ 0.0003       8.
+ENDDATA              3
+ENDSUBENT           49
+SUBENT        12856013   20160227   20160701   20160615       1416
+BIB                 10         34
+REACTION   (57-LA-146(0,B-)58-CE-146,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (57-LA-146-G,6.0SEC)    Assumed
+ERR-ANALYS (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              34
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 2          1
+DATA-MAX   ERR-SYS
+NO-DIM     PER-CENT
+ 0.00007      10.
+ENDDATA              3
+ENDSUBENT           49
+SUBENT        12856014   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (57-LA-147(0,B-)58-CE-147,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (57-LA-147,4.48SEC)     Assumed
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 3          1
+DATA       ERR-T      ERR-SYS
+NO-DIM     NO-DIM     PER-CENT
+ 0.00033     0.00006      14.
+ENDDATA              3
+ENDSUBENT           53
+SUBENT        12856015   20160227   20160701   20160615       1416
+BIB                 10         38
+REACTION   (57-LA-148(0,B-)58-CE-148,,PN)
+MONITOR    ((MONIT1)37-RB-97(0,B-)38-SR-97,,PN)
+           ((MONIT2)37-RB-98(0,B-)38-SR-98,,PN)
+           ((MONIT3)37-RB-99(0,B-)38-SR-99,,PN)
+           ((MONIT4)55-CS-146(0,B-)56-BA-146,,PN)
+           ((MONIT5)55-CS-147(0,B-)56-BA-147,,PN)
+           The recommended delayed neutron probabilities-
+             (Mann,1982 Antwerp Conf.,p.272.) For Rb and Cs
+             precursors were used to determine the ratio of
+             neutron and beta counting efficiencies.
+MONIT-REF  (,F.M.Mann+,C,82ANTWER,,272,1982)
+DECAY-MON  (37-RB-97,0.1690SEC)
+           (37-RB-98,0.108SEC)
+           (37-RB-99,0.055SEC)
+           (55-CS-146,0.322SEC)
+           (55-CS-147,0.220SEC)
+ANALYSIS   (LEAST) Growth and decay curves were analyzed by least-
+            squares procedure.
+           Least-squares analysis was performed to determine the
+            precursor half-lives from neutron and beta decay
+            curves.
+           Total delayed neutron yields were calculated with
+            the measured delayed neutron probability and the
+            cumulative yield of the precursor and summing
+            over all precursors.
+CORRECTION Background component was included in the least-squares
+           analysis.
+DECAY-DATA (57-LA-148,1.42SEC)     Extracted from data
+ERR-ANALYS (ERR-T)
+            Quoted errors for Pn values are based on uncertainties
+              on saturation activities derived from least-squares
+              fit to growth-decay curves.
+           (ERR-SYS) Systematic error.
+            Systematic error is based on uncertainty of reference
+              Pn value used to normalize for counter efficiencies.
+STATUS     (TABLE) Data taken from Table II of PR/C,28,1740,1983
+HISTORY    (20160226C) Data moved from sub.3; units
+            changed from PC/FIS to NO-DIM, values divided by 100
+ENDBIB              38
+COMMON              10          6
+MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR
+MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     PC/DECAY
+ 0.269      0.019       0.134      0.011     0.134      0.019
+ 0.134      0.012       0.262      0.037
+ENDCOMMON            6
+DATA                 4          1
+DATA       ERR-T      ERR-SYS    ERR-HL
+NO-DIM     NO-DIM     PER-CENT   SEC
+ 0.0013     0.0001       8.        0.07
+ENDDATA              3
+ENDSUBENT           53
+ENDENTRY            15

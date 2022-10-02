@@ -1,24 +1,42 @@
-ENTRY            12329     841005              20050926       0000
-SUBENT        12329001     841005              20050926       0000
-BIB                  7         10
+ENTRY            12329   20160315   20160701   20160615       1416
+SUBENT        12329001   20160315   20160701   20160615       1416
+BIB                  8         18
+TITLE      Total neutron cross sections of U233 and U235 from 0.02
+            to 0.08 eV.
+AUTHOR     (O.D.Simpson,M.S.Moore,F.B.Simpson)
 INSTITUTE  (1USAMTR)
-REFERENCE  (J,NSE,7,187,60)
-           (R,IDO-16557,5911) TABULATED DATA
-AUTHOR     (O.D.SIMPSON,M.S.MOORE,F.B.SIMPSON)
-TITLE      TOTAL NEUTRON CROSS SECTIONS OF U233 AND U235 FROM 0.02
-            TO 0.08 EV.
-FACILITY   (CHOPF) FAST CHOPPER
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (841005A) CONVERTED TO REACTION FORMALISM
-ENDBIB              10
+REFERENCE  (J,NSE,7,187,1960)
+           (R,IDO-16557,195911)
+REL-REF    (O,12341001,M.S.Moore+,J,PR,118,714,1960)
+            233U data given
+FACILITY   (REAC,CHOPF) Fast chopper at Materials Testing Reactor
+SAMPLE     (92-U-238,ENR=0.0554)
+           (92-U-234,ENR=0.0100)
+           (92-U-236,ENR=0.0031)
+           Sample consisted of 3 stacked metal foils, each 0.010
+            in thick (averaging 295.4+- 0.6 b/atom)
+HISTORY    (19760804T) Translated from SCISRS
+           (19841005A) Converted to REACTION formalism
+           (20160221A) OS. Sub.3 added, experim.information added
+            in sub.2, converted to lower case
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        12329002     841005              20050926       0000
-BIB                  2          2
+ENDSUBENT           21
+SUBENT        12329002   20160315   20160701   20160615       1416
+BIB                  6         12
 REACTION   (92-U-235(N,TOT),,SIG,,RTE)
-METHOD     (TOF) TIME-OF-FLIGHT
-ENDBIB               2
+METHOD     (TOF,TRN)
+           Transmission was measured for U, Au, and Cd samples.
+           Au runs for checking consistency of different runs,
+           Cd runs helped in background correction.
+DETECTOR   (BF3) 3 BF3 counters
+CORRECTION Corrected for dead time and oxygen content of sample
+STATUS     (TABLE) Data from Appendix II, Report IDO-16557,
+            1959, corresponding to Fig. 1 of Nucl.Sci.Eng.7,187,
+            upper panel
+HISTORY    (20160221A) Added information to METHOD, DETECTOR,
+            STATUS and CORRECTION
+ENDBIB              12
 COMMON               1          3
 EN-RSL
 MICROSEC/M
@@ -143,5 +161,43 @@ EV         B*RT-EV
  79.7   -03 99.8
  80.3   -03 99.5
 ENDDATA            117
-ENDSUBENT          128
-ENDENTRY             2
+ENDSUBENT          138
+SUBENT        12329003   20160315   20160701   20160615       1416
+BIB                  5         21
+REACTION   (92-U-235(N,TOT),,SIG,,,DERIV)
+ANALYSIS   2200 m/sec cross section was obtained by a linear
+           least square fit of the 0.02 - 0.08 eV data given
+           in subentry 2.
+ERR-ANALYS (ERR-T) Total uncertainty, consisting of contributions
+            from:
+           (ERR-1) Sample nonuniformity
+           (ERR-2) Sample area measurement
+           (ERR-3) Sample weight measurement
+           (ERR-4) Isotopic analysis
+           (ERR-5) Statistical deviations and non-linearity of
+                    SigT(root-E) plots
+           (ERR-6,,0.03) Contaminant corrections
+           (ERR-7) Coherent scattering
+           (ERR-8) Flight path
+           (ERR-9) Initial delay
+           (ERR-10) Channel widths
+           (ERR-11) Equipment reproducibility
+STATUS     (TABLE) Table II, Nucl.Sci.Eng.7,187,1960
+           (DEP,12392002)
+HISTORY    (20160221C)
+ENDBIB              21
+COMMON              10          6
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-7
+ERR-8      ERR-9      ERR-10     ERR-11
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  1.2         0.2       0.01       0.05       0.6        0.5
+  0.06        0.06      0.01       0.3
+ENDCOMMON            6
+DATA                 3          1
+EN         DATA       ERR-T
+EV         B          B
+ 0.0253      690.       10.
+ENDDATA              3
+ENDSUBENT           36
+ENDENTRY             3

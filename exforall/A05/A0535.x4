@@ -1,43 +1,55 @@
-ENTRY            A0535   20140829   20141203   20141201       A082
-SUBENT        A0535001   20140829   20141203   20141201       A082
-BIB                 12         25
+ENTRY            A0535   20160226   20160701   20160621       A084
+SUBENT        A0535001   20160226   20160701   20160621       A084
+BIB                 12         32
 TITLE      Total cross sections reactions F-19(d,t)F-18
            measurements.
 AUTHOR     (S.N.Abramovich,L.N.Generalov,B.Ya.Gyzhovskiy,
            V.N.Protopopov,A.P.Solodovnikov,V.V.Chulkov)
 INSTITUTE  (4RUSEPA)
-REFERENCE  (C,93DUBNS,,249,1993)
-           (J,IZV,57,(10),187,1993)
+REFERENCE  (J,IZV,57,(10),187,1993)
            (J,BAS,57,1832,1993) - transl. of IZV,57
+           (C,93DUBNS,,249,1993) - prelim. data
 SAMPLE     A layers of natural Li(F),thickness approximately
             1 mg/cm**2,on the titanium backing were used.
 DETECTOR   (GELI)
 FACILITY   (VDGT,4RUSEPA)
-METHOD     (ACTIV)
-STATUS     (TABLE). Additional data were received from authors.
-ERR-ANALYS (DATA-ERR). Any information is absent.
-COMMENT    /by Authors/.The energy (EN) in the Data-Section is
+METHOD     (ACTIV,BCINT)
+STATUS     (TABLE)  Additional data were received from authors.
+ERR-ANALYS (ERR-T) Total error
+           (ERR-1) Uncertainty in target thickness
+           (ERR-2) Errors of monitoring
+           (ERR-3) Uncertainty in detect. efficiency determination
+           (ERR-S) Random errors
+COMMENT    /by Authors/.The energy (EN) in the data-section is
            effective energies. E(eff)=E(D)-1/2DeltaE(M),where
            E(D)-incident deuterons energy, delta E(M)-a loss
            energy of deuterons in target.
 HISTORY    (19950330C)
            (19951018A) 'RAD-DET' in Subentry 002 is corrected.
-           Additional Data are included.
-           (19980519A) Reaction line is corrected. Comment is adde
+           Additional data are included.
+           (19980519A) Reaction line is corrected. Comment added
            (19980525U) Last checking has been done.
            (20140829U) SD: Refs. BAS, IZV added.
-ENDBIB              25
-NOCOMMON             0          0
-ENDSUBENT           28
-SUBENT        A0535002     980525   20050616   20050926       0000
-BIB                  3          3
+           (20160226A) SD: DECAY-DATA corrected in Subent 002.
+           BIB update. ERR-ANALYS update. DATA-ERR -> ERR-S;
+           ERR-1, ERR-S added.
+ENDBIB              32
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+  1.0         1.0        1.0
+ENDCOMMON            3
+ENDSUBENT           39
+SUBENT        A0535002   20160226   20160701   20160621       A084
+BIB                  4          4
 REACTION   (9-F-19(D,T)9-F-18,,SIG)
 COMMENT    - By Compiler - Ne-18 Production is Forbidden.
-DECAY-DATA (9-F-18,0.109SEC)
-ENDBIB               3
+DECAY-DATA (9-F-18,109.8MIN,AR,511.)
+HISTORY    (20160226A) SD: DECAY-DATA update.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3         53
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        MB         MB
       4.958      0.017      0.001
       5.208      0.009     0.0008
@@ -93,5 +105,5 @@ MEV        MB         MB
      11.724       32.1        0.5
      11.977       33.1        0.5
 ENDDATA             55
-ENDSUBENT           63
+ENDSUBENT           64
 ENDENTRY             2

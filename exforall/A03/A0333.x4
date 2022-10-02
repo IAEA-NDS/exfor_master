@@ -1,25 +1,35 @@
-ENTRY            A0333   20100309   20100518   20100517       A067
-SUBENT        A0333001   20100309   20100518   20100517       A067
-BIB                 13         26
+ENTRY            A0333   20160202   20160701   20160621       A084
+SUBENT        A0333001   20160202   20160701   20160621       A084
+BIB                 13         44
 TITLE      Proton beam monitoring via the Cu(p,x)Co-58,
-           Cu-63(p,2n)Zn-62,29-Cu-65(p,n)Zn-65 reactions in
+           Cu-63(p,2n)Zn-62, Cu-65(p,n)Zn-65 reactions in
            copper.
 AUTHOR     (P.Kopecky)
 INSTITUTE  (3CZRUJV)
 REFERENCE  (J,ARI,36,(8),657,1985)
 FACILITY   (ISOCY,3CZRUJV)
-DETECTOR   (GELI)
+DETECTOR   (GELI) 15 cm3 Ge(Li) detector and subsequently
+           processed on a 10 K-byte analyzing system.
 METHOD     (ACTIV,STTA,EDEG,EXTB,BCINT)
-HISTORY    (19861221C)
-           (20100309A) BIB section upgraded. Status line was
-           added, according N.Otsuka remarks. Correction in
-           subents, according new Exfor rules.
-ANALYSIS   (AREA)
-ERR-ANALYS (ERR-1).The uncertainty in the absolute
+             The target flux was measured by the current
+           integrator calibrated with a standard current source
+REL-REF    (M,,C.F.Williamson+,R,CEA-R-3042,1965)  The energy
+           degradation was calculated from the proton ranges
+           tabulated by Williamson et al.
+ERR-ANALYS (ERR-T) The overall uncertainty in the cross sections
+           was calculated from the square root of the individual
+           relative errors added quadratically.
+           (ERR-1) The uncertainty in the absolute
            detector efficiency.
-           (ERR-2).The uncertainty in spectral integration.
-           (ERR-S).The uncertainty in the counting statistics.
-COMMENT    /By authors/.The experimental cross sections have
+           (ERR-2,1.9,6.8) The uncertainty in spectral integration
+           (ERR-3,,1.) The uncertainty in individual thickness
+           was determined by weighing to better than +-1%.
+           (ERR-4) Uncertainty in target flux
+           (ERR-S) The uncertainty in the counting statistics.
+            * The activity losses by recoil were found to be
+           negligible and were neglected in computation of the
+           cross sections.
+COMMENT    /By authors/ The experimental cross sections have
            been used as reference data for proton beam monitoring
            in the energy range of 13 to 33 MeV protons with 25
            and 50 mg/cm**2 thick copper foils.
@@ -27,34 +37,38 @@ ADD-RES     Reference function for the calculations of
             the mean proton energy in copper monitor
             foil.
 STATUS     (TABLE) Table 2 of J,ARI,36,657,1985
-ENDBIB              26
+HISTORY    (19861221C)
+           (20100309A) BIB section upgraded. Status line was
+           added, according to N.Otsuka remarks. Correction in
+           Subents, according to new EXFOR rules.
+           (20160202A) SD: DECAY-DATA corrected in Subent 004.
+           ERR-ANALYS update, DATA-ERR -> ERR-T in Subents 002-004
+           RAD-DET deleted from Subents (info presented in
+           DECAY-DATA). ANALYSIS (AREA) deleted (not relevant).
+ENDBIB              44
 COMMON               3          3
-ERR-1      ERR-2      ERR-S
+ERR-1      ERR-4      ERR-S
 PER-CENT   PER-CENT   PER-CENT
-    4.         6.8        2.
+    4.        0.5         2.
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        A0333002   20100309   20100518   20100517       A067
-BIB                  6         11
+ENDSUBENT           51
+SUBENT        A0333002   20160202   20160701   20160621       A084
+BIB                  4          7
 REACTION   (29-CU-0(P,X)27-CO-58,,SIG)
-RAD-DET    (27-CO-58-G,DG)
 DECAY-DATA (27-CO-58-G,1698.73HR,DG,810.78,0.99445)
-REL-REF    (A,A0178011,A.GRUTTER,J,NP/A,383,98,1982)
+REL-REF    (A,A0178011,A.Grutter,J,NP/A,383,98,1982)
 SAMPLE     The excitation functions were measured by means of
-           the stacked foil technique.The copper foils (average
+           the stacked foil technique. The copper foils (average
            thickness 0.0555 g/cm**2) degraded protons from 32.7
            to 10.9 MeV.
-ERR-ANALYS (EN-ERR).The error is reported by authors in table.
-           (DATA-ERR).The author's uncertainty in the cross
-           sections.
-ENDBIB              11
+ENDBIB               7
 COMMON               1          3
 EN-ERR
 MEV
-    0.45
+   0.45
 ENDCOMMON            3
 DATA                 3          8
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        MB         MB
    27.85       1.70       0.13
    28.52       3.30       0.26
@@ -65,32 +79,30 @@ MEV        MB         MB
    31.78      20.7        1.10
    32.40      23.8        1.30
 ENDDATA             10
-ENDSUBENT           30
-SUBENT        A0333003   20100309   20100518   20100517       A067
-BIB                  7         15
-REACTION   (29-CU-0(P,2N)30-ZN-62,,SIG)
-RAD-DET    (30-ZN-62,DG)
+ENDSUBENT           26
+SUBENT        A0333003   20160202   20160701   20160621       A084
+BIB                  6         13
+REACTION   (29-CU-0(P,X)30-ZN-62,,SIG)
 DECAY-DATA (30-ZN-62,9.257HR,DG,596.6,0.257)
 SAMPLE     The excitation functions were measured by means of the
            stacked foil technique. The copper foils (average
            thickness 0.0555 g/cm**2) degraded protons from 32.7
            to about 10.9 MeV.
-ERR-ANALYS (EN-ERR).The error is reported by authors in table.
-           (DATA-ERR).The author's error in the cross sections.
-REL-REF    (A,A0178004,A.GRUTTER,J,NP/A,383,98,1982)
-           (A,B0174002,M.W.GREEN+,J,ARI,23,342,1972)
+REL-REF    (A,A0178004,A.Grutter,J,NP/A,383,98,1982)
+           (A,B0174002,M.W.Green+,J,ARI,23,342,1972)
 COMMENT    /By authors/.In fig 2  the excitation functions for
            Zn-62 measured in this work is compared with results
            of Green (16-33 MeV) and Grutter (16-32 MeV). See
-           Rel-Ref.
-ENDBIB              15
+           REL-REF.
+HISTORY    (20160202A) SD: SF3=2N -> X in REACTION code.
+ENDBIB              13
 COMMON               1          3
 EN-ERR
 MEV
-    0.45
+   0.45
 ENDCOMMON            3
 DATA                 3         24
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        MB         MB
    14.05       2.03       0.13
    15.18       9.75       0.60
@@ -117,12 +129,11 @@ MEV        MB         MB
    31.78      25.8        1.5
    32.40      23.2        1.3
 ENDDATA             26
-ENDSUBENT           50
-SUBENT        A0333004   20100309   20100518   20100517       A067
-BIB                  8         17
-REACTION   (29-CU-0(P,N)30-ZN-65,,SIG)
-RAD-DET    (30-ZN-65,DG)
-DECAY-DATA (30-ZN-65,58.56HR,DG,1115.55,0.5075)
+ENDSUBENT           48
+SUBENT        A0333004   20160202   20160701   20160621       A084
+BIB                  7         19
+REACTION   (29-CU-0(P,X)30-ZN-65,,SIG)
+DECAY-DATA (30-ZN-65,5856.HR,DG,1115.55,0.5075)
 SAMPLE     Two stacks were irradiated. The copper in the
            first stack (average thickness 0.0555 g/cm**2)
            degraded protons 32.7 to about 10.9 MeV and those
@@ -130,21 +141,20 @@ SAMPLE     Two stacks were irradiated. The copper in the
            from 13.0 to about 3.9 MeV.
 COMMENT    /By authors/.In fig 1  the excitation functions for
            Zn-65 measured in this work is compared with the data
-           published by Colle et Al. (3-25 MeV) and Grutter (16-
-            32 MeV).See rel-ref.
-REL-REF    (A,A0178002,A.GRUTTER,J,NP/A,383,98,1982)
-           (A,B0057003,R.COLLE+,J,PR/C,9,1819,1974)
-ERR-ANALYS (EN-ERR).The error is reported by authors in table.
+           published by Colle et al. (3-25 MeV) and Grutter (16-
+            32 MeV).See REL-REF.
+REL-REF    (A,A0178002,A.Grutter,J,NP/A,383,98,1982)
+           (A,B0057003,R.Colle+,J,PR/C,9,1819,1974)
 FLAG       (1.).First stack.
            (2.).Second stack.
-ENDBIB              17
-COMMON               2          3
-EN-ERR1    EN-ERR2
-MEV        MEV
-    0.45       0.40
-ENDCOMMON            3
+HISTORY    (20160202A) SD: hl=58.56 hr -> 5856.hr in DECAY-DATA
+           according to the Table 1 of ARI,36,(8),657,1985.
+           COMMON deleted (info is given in DATA section.)
+           SF3=N -> X in REACTION code.
+ENDBIB              19
+NOCOMMON             0          0
 DATA                 5         39
-EN         EN-ERR     DATA       DATA-ERR   FLAG
+EN         EN-ERR     DATA       ERR-T      FLAG
 MEV        MEV        MB         MB         NO-DIM
 4.42       0.40       49.6       3.3        2.
 5.45       0.40       98.0       7.0        2.
@@ -186,5 +196,5 @@ MEV        MEV        MB         MB         NO-DIM
 31.78      0.45       7.98       0.64       1.
 32.40      0.45       7.78       0.63       1.
 ENDDATA             41
-ENDSUBENT           67
+ENDSUBENT           65
 ENDENTRY             4

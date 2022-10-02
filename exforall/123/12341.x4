@@ -1,27 +1,49 @@
-ENTRY            12341     820519              20050926       0000
-SUBENT        12341001     820519              20050926       0000
-BIB                  7         10
+ENTRY            12341   20160315   20160701   20160615       1416
+SUBENT        12341001   20160315   20160701   20160615       1416
+BIB                  6         14
+TITLE      Slow neutron total and fission cross sections of U-233.
+AUTHOR     (M.S.Moore,L.G.Miller,O.D.Simpson)
 INSTITUTE  (1USAMTR)
-REFERENCE  (J,PR,118,714,60)
-           (R,IDO-16576,5912) TABULATED DATA
-           (J,BAP,2,70(XA10),57)
-AUTHOR     (M.S.MOORE,L.G.MILLER,O.D.SIMPSON)
-TITLE      SLOW NEUTRON TOTAL AND FISSION CROSS SECTIONS OF U-233.
-FACILITY   (CHOPF) FAST CHOPPER
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (820519A) CONVERTED TO REACTION FORMALISM
-ENDBIB              10
+REFERENCE  (J,PR,118,714,1960) Graphs of total and fission cs
+           (J,NSE,7,187,1960) Thermal cross section given,
+            total cs experiment described
+           (R,IDO-16576,195912) Tabulated cross sections
+           (J,BAP,2,70(XA10),1957)
+FACILITY   (REAC,CHOPF) Fast chopper at Materials Testing Reactor
+HISTORY    (19760804T) Translated from SCISRS
+           (19820519A) Converted to REACTION formalism
+           (20160221A) OS. Sub.5 added, 2nd reference added,
+            experim.information added and STATUS updated in
+            subs.2-4, converted to lower case
+ENDBIB              14
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        12341002     820519              20050926       0000
-BIB                  3          5
+ENDSUBENT           17
+SUBENT        12341002   20160315   20160701   20160615       1416
+BIB                  8         23
 REACTION   (92-U-233(N,F),,SIG)
-METHOD     (TOF)      TIME-OF-FLIGHT
+METHOD     (TOF)
+DETECTOR   (FISCH) 2 fission chambers
+           (BF3) for neutron flux monitoring
+SAMPLE     (92-U-233,ENR=0.99) Purity in U-233 > 99%
+           3 foils of U3O8 of 5 in. diameter were placed in
+           each fission chamber, average thickness 570 mug/cm2
 MONITOR    (92-U-233(N,F),,SIG)
-            NORMALIZED TO THERMAL FISSION CROSS
-            SECTION = 524 B.
-ENDBIB               5
+            Normalized to thermal fission cross
+            section = 524 b.
+ERR-ANALYS Detailed error analysis with energy-dependent
+           uncertainty components is given in Table I of
+           Phys.Rev.188,714,1960.
+           (ERR-T,1.7,17.) Total uncertainty, consisting of
+            contributions from:
+           (ERR-S,0.8,12.) Counting statistics
+           (ERR-1,0.3,10.) Background uncertainties
+           (ERR-2,1.5,7.) Normalization uncertainties)
+           (EN-ERR,0.7,8.) Error in energy scale from initial
+            delay uncertainties
+STATUS     (TABLE) Data from Appendix I, Report IDO-16576,1959
+HISTORY    (20160221A) Added DETECTOR, SAMPLE, ERR-ANALYS and
+            STATUS information
+ENDBIB              23
 COMMON               2          3
 EN-NRM     MONIT
 EV         B
@@ -984,12 +1006,32 @@ MEV        B
  9.082  -04 1.25   +01
  9.597  -04 1.03   +01
 ENDDATA            955
-ENDSUBENT          969
-SUBENT        12341003     820519              20050926       0000
-BIB                  2          2
+ENDSUBENT          987
+SUBENT        12341003   20160315   20160701   20160615       1416
+BIB                  8         22
 REACTION   (92-U-233(N,TOT),,SIG)
-METHOD     (TOF)      TIME-OF-FLIGHT
-ENDBIB               2
+METHOD     (TOF,TRN)
+           Transmission was measured for U, Au, and Cd samples.
+           Au runs for checking consistency of different runs,
+           Cd runs helped in background correction.
+SAMPLE     (92-U-233,ENR=0.976)
+           Metal plates, 0.030 and 0.170 in thick
+DETECTOR   (BF3) 3 BF3 counters
+CORRECTION Corrected for dead time and oxygen content of sample
+ERR-ANALYS Detailed error analysis with energy-dependent
+           uncertainty components is given in Table I of
+           Phys.Rev.188,714,1960.
+           (ERR-T,0.8,18.) Total uncertainty, consisting of
+            contributions from:
+           (ERR-S,0.5,15.) Counting statistics
+           (ERR-1,0.3,10.) Background uncertainties
+           (ERR-2,0.6,1.5) Sample uncertainties
+           (EN-ERR,0.7,8.) Error in energy scale from initial
+            delay uncertainties
+STATUS     (TABLE) Data from Appendix I, Report IDO-16576,1959
+HISTORY    (20160221A) Added DETECTOR, SAMPLE, ERR-ANALYS,
+            CORRECTION and STATUS information
+ENDBIB              22
 NOCOMMON             0          0
 DATA                 2       1071
 EN         DATA
@@ -2066,16 +2108,58 @@ MEV        B
  2.114  -04 5.29   +01
  2.169  -04 4.50   +01
 ENDDATA           1073
-ENDSUBENT         1080
-SUBENT        12341004     820519              20050926       0000
-BIB                  1          1
+ENDSUBENT         1100
+SUBENT        12341004   20160315   20160701   20160615       1416
+BIB                  4          5
 REACTION   (92-U-233(N,EL),,STF)
-ENDBIB               1
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
+STATUS     (TABLE) Text on p.717 of Phys.Rev.118,714,1960
+           (DEP,12341003)
+HISTORY    (20160221A) STATUS added
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 5          1
-EN-MIN     EN-MAX     MOMENTUM L DATA       DATA-ERR
+EN-RES-MIN EN-RES-MAX MOMENTUM L DATA       DATA-ERR
 EV         EV         NO-DIM     NO-DIM     NO-DIM
   0.0        20.0       0.        1.0    -04 0.2    -04
 ENDDATA              3
-ENDSUBENT            9
-ENDENTRY             4
+ENDSUBENT           13
+SUBENT        12341005   20160315   20160701   20160615       1416
+BIB                  5         21
+REACTION   (92-U-233(N,TOT),,SIG,,,DERIV)
+ANALYSIS   2200 m/sec cross section was obtained by a linear
+           least square fit of the 0.02 - 0.08 eV data given
+           in subentry 3.
+ERR-ANALYS (ERR-T) Total uncertainty, consisting of contributions
+            from:
+           (ERR-1) Sample nonuniformity
+           (ERR-2) Sample area measurement
+           (ERR-3) Sample weight measurement
+           (ERR-4) Isotopic analysis
+           (ERR-5) Statistical deviations and non-linearity of
+                    SigT(root-E) plots
+           (ERR-6,,0.03) Contaminant corrections
+           (ERR-7) Coherent scattering
+           (ERR-8) Flight path
+           (ERR-9) Initial delay
+           (ERR-10) Channel widths
+           (ERR-11) Equipment reproducibility
+STATUS     (TABLE) Table II, Nucl.Sci.Eng.7,187,1960
+           (DEP,12341003)
+HISTORY    (20160221C)
+ENDBIB              21
+COMMON              10          6
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-7
+ERR-8      ERR-9      ERR-10     ERR-11
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  0.5         0.2       0.01       0.04       0.5        0.5
+  0.05        0.05      0.01       0.3
+ENDCOMMON            6
+DATA                 3          1
+EN         DATA       ERR-T
+EV         B          B
+ 0.0253      587.       6.
+ENDDATA              3
+ENDSUBENT           36
+ENDENTRY             5

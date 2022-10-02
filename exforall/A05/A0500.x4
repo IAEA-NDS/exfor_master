@@ -1,57 +1,68 @@
-ENTRY            A0500     911025              20050926       0000
-SUBENT        A0500001     911025              20050926       0000
-BIB                 11         27
-TITLE      EXCITATION FUNCTIONS AND PRODUCTION RATES OF RELEVANCE
-           TO THE PRODUCTION OF IN-111 BY PROTON BOMBARDMENT OF
-           CD-NAT AND IN-NAT UP TO 100 MEV.
-AUTHOR     (F.M.NORTIER,S.J.MILLS,G.F.STEYN)
+ENTRY            A0500   20160212   20160701   20160621       A084
+SUBENT        A0500001   20160212   20160701   20160621       A084
+BIB                 12         34
+TITLE      Excitation functions and production rates of relevance
+           to the production of In-111 by proton bombardment of
+           Cd-nat and In-nat up to 100 MeV.
+AUTHOR     (F.M.Nortier,S.J.Mills,G.F.Steyn)
 INSTITUTE  (3SAFNAC)
-HISTORY    (911023C)
-           (920714U)
-REFERENCE  (J,ARI,41,1201,90)
-DETECTOR   (GE-IN)
-COMMENT    /BY AUTHORS/.THE TOTAL UNCERTAINTIES IN THE CROSS-
-           SECTIONS AND PRODUCTION RATES WERE OBTAINED BY SUMMING
-           ALL THE CONTRIBUTING UNCERTAINTIES IN QUADRATURE.THEY
-           ARE EXPRESSED WITH A 68% CONFIDENCE LEVEL,AND CONSIST
-           OF A VARIABLE COMPONENT,DUE TO COUNTING STATISTICS AND
-           PHOTOPEAK INTEGRATIONAS.
+REFERENCE  (J,ARI,41,1201,1990)
+DETECTOR   (GE-IN) Intrinsic Ge detector with a relative
+           efficiency of 13% and a resolution of 1.8 keV FWHM
+           at 1.33 MeV.
 FACILITY   (ISOCY,3SAFNAC)
-ADD-RES    (COMP).THE COMPUTER CODE 'ALICE'.
+ADD-RES    (COMP).The computer code 'ALICE'.
+MONITOR    (13-AL-27(P,X)11-NA-22,,SIG)
+MONIT-REF  (A0497002,G.F.Steyn+,J,ARI,41,315,1990)
 METHOD     (EXTB,STTA,ACTIV)
-ERR-ANALYS (ERR-1).THE ERROR IN BEAM-LOSS CORRECTIONS.
-           (ERR-2).THE ERROR IN CONSTANT PART.
-           (ERR-3).COMPRISING UNCERTAINTIES IN BEAM CURRENT.
-           (ERR-4).THE ERROR IN THE DETECTOR EFFICIENCY.
-           (ERR-5).THE ERR0R IN COUNTING GEOMETRY.
-           (ERR-6).THE ERR0R IN DECAY CORRECTIONS.
-           (DATA-ERR1).THE ERROR IN FOIL THICKNESS.
-           (EN-ERR).THE UNCERTAINTIES IN INCIDENT ENERGIES.
-           (DATA-ERR).THE UNCERTAINTIES IS REPORTED BY AUTHORS.
-ENDBIB              27
-COMMON               8          6
-EN-ERR     ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
-ERR-6      DATA-ERR1
+ERR-ANALYS (ERR-T) The total uncertainties in the cross-sections
+           and production rates were obtained by summing all the
+           contributing uncertainties in quadrature. They are
+           expressed with a 68% confidence level,and consist of:
+            * a variable component, due to counting statistics and
+              photopeak integration;
+           (ERR-1,,1.4) The error in beam-loss corrections;
+           (ERR-2) Comprising uncertainties in beam current;
+           (ERR-3) The error in the detector efficiency;
+           (ERR-4) The error in counting geometry;
+           (ERR-5) The error in decay corrections;
+           (ERR-6) The error in foil thickness;
+           (EN-ERR) The uncertainties in incident energies.
+HISTORY    (19911023C)
+           (19920714U)
+           (20160212A) SD:Updated to new date formats,lower case.
+           SF4 corrected in REACTION code in Subent 002 according
+           to author's remark. DATA-ERR -> ERR-T in Subents 02,03.
+           Info from COMMENT moved to ERR-ANALYS.ERR-ANALYS update
+           MONITOR added. DECAY-DATA were added to Subent 002.
+ENDBIB              34
+COMMON               6          3
+EN-ERR     ERR-2      ERR-3      ERR-4      ERR-5      ERR-6
 MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT
-         1.        1.4         8.         6.         5.         1.
-         1.         1.
-ENDCOMMON            6
-ENDSUBENT           37
-SUBENT        A0500002     911025              20050926       0000
-BIB                  2          7
-REACTION  1(48-CD-0(P,X)49-IN-109,,SIG,,,EXP)
-          2(48-CD-0(P,X)49-IN-110-M,,SIG,,,EXP)
-          3(48-CD-0(P,X)49-IN-111,,SIG,,,EXP)
-          4(48-CD-0(P,X)49-IN-114-M,,SIG,,,EXP)
-SAMPLE     NATURAL CD FOIL STACKS WAS USED.IN THE CD STACKS 125MUM
-           THICK HIGH-PURITY CD FOILS (99.95%) WERE EMPLOYED AS
-           TARGET FOILS.
-ENDBIB               7
-NOCOMMON
+         1.         6.         5.         1.         1.         1.
+ENDCOMMON            3
+ENDSUBENT           41
+SUBENT        A0500002   20160212   20160701   20160621       A084
+BIB                  5         14
+REACTION  1(48-CD-0(P,X)49-IN-109,,SIG)
+          2(48-CD-0(P,X)49-IN-110-G,,SIG)
+          3(48-CD-0(P,X)49-IN-111,,SIG)
+          4(48-CD-0(P,X)49-IN-114-M,,SIG)
+DECAY-DATA1(49-IN-109,4.2HR)
+          2(49-IN-110-G,4.9HR)
+          4(49-IN-114-M,49.51D)
+SAMPLE     Natural high-purity Cd foils (99.95%), 125mu-m thick.
+           Each target foil was followed by a 250 mu-m high-purity
+           Al monitor foil (99.999%) for the accurate measurement
+           of the incident proton flux.
+STATUS     (TABLE) Tbl. 1 of ARI,41,1201,1990
+HISTORY    (20160212A) SD: SF4=In-110m -> In-110g in REACTION (2)
+           code according to author's remark.
+ENDBIB              14
+NOCOMMON             0          0
 DATA                 9         37
-EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3
-DATA-ERR  3DATA      4DATA-ERR  4
+EN         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3DATA      4ERR-T     4
 MEV        MB         MB         MB         MB         MB
 MB         MB         MB
        98.5       34.9        2.8       17.3        1.4       31.2
@@ -129,24 +140,24 @@ MB         MB         MB
         4.1                                                    1.2
         0.1        0.7        0.2
 ENDDATA             78
-ENDSUBENT           90
-SUBENT        A0500003     920330              20050926       0000
-BIB                  3         10
-REACTION  1(49-IN-0(P,X)50-SN-109,,SIG,,,EXP)
-          2(49-IN-0(P,X)50-SN-110,,SIG,,,EXP)
-          3(49-IN-0(P,X)50-SN-111,,SIG,,,EXP)
-          4(49-IN-0(P,X)50-SN-113,,SIG,,,EXP)
-REL-REF    (D,A0506002,F.M.NORTIER+,J,ARI,42,1105,91)
-SAMPLE     THE STACKS WERE ASSEMBLED SIMILAR CADMIUM STACKS (SEE
-           A0500002),HOWEVER,FOR FEAR OF LOCAL MELTING AND
-           SUBSEQUENT STICKIN OF THE FOILS,EACH 125 MUM THICK
-           HIGH-PURITY IN FOIL(99.99 PER CENT) WAS SANDWICHED
-           BETWEEN TWO 20 MUM AL MICROFOILS.
+ENDSUBENT           97
+SUBENT        A0500003   20160212   20160701   20160621       A084
+BIB                  4         10
+REACTION  1(49-IN-0(P,X)50-SN-109,,SIG)
+          2(49-IN-0(P,X)50-SN-110,,SIG)
+          3(49-IN-0(P,X)50-SN-111,,SIG)
+          4(49-IN-0(P,X)50-SN-113,,SIG)
+REL-REF    (D,A0506002,F.M.Nortier+,J,ARI,42,1105,1991)
+SAMPLE     Each 125 mu-m thick high-purity In foil(99.99%) was
+           sandwiched between two 20 mu-m Al microfoils for
+           excluding local melting and subsequent sticking of
+           the foils.
+STATUS     (TABLE) Tbl. 3 of ARI,41,1201,1990
 ENDBIB              10
-NOCOMMON
+NOCOMMON             0          0
 DATA                 9         37
-EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3
-DATA-ERR  3DATA      4DATA-ERR  4
+EN         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3DATA      4ERR-T     4
 MEV        MB         MB         MB         MB         MB
 MB         MB         MB
        98.5       34.9        2.8       17.3        1.4        31.

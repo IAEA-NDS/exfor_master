@@ -1,58 +1,67 @@
-ENTRY            A0201   20010613   20010705   20050926       0000
-SUBENT        A0201001   20010613   20010705   20050926       0000
-BIB                 14         22
-TITLE      Excitation Functions and Isomeric Ratios For the
-           Isomeric Pair 106-M-Ag and 106-G-Ag in the 107Ag (D,T)
-           Reaction
-AUTHOR     (M.E.LALLI, C.WASILEVSKY, O.R.HERREROS USHER,
-           S.J.NASSIFF)
+ENTRY            A0201   20160208   20160701   20160621       A084
+SUBENT        A0201001   20160208   20160701   20160621       A084
+BIB                 14         26
+TITLE      Excitation functions and isomeric ratios for the
+           isomeric pair Ag-106m and Ag-106g in the Ag-107(d,t)
+           reaction
+AUTHOR     (M.E.Lalli,C.Wasilevsky,O.R.Herreros Usher,S.J.Nassiff)
 REFERENCE  (J,RCA,23,107,1976)
-HISTORY    (19831208C)
-           (20010613A) Remarks of V.Mclane are Included.
-           (20010613U) Last checking has been done.
 INSTITUTE  (3ARGCNE)
 FACILITY   (SYNCY,3ARGCNE).
-MONITOR    (13-AL-27(D,P+A)11-NA-24-G,M+,SIG,,,EXP)
-MONIT-REF  (B0142004,U.MARTENS+,R,KFK-1083,1969)
-SAMPLE     Silver Foils (99.999%) Were Cut and Washed Very
-           Carefully and Placed Between Aluminium Monitor Foils of
-           Known Thickness.
-REL-REF    (R,,C.F.WILLIAMSON+,R,CEA-R-3042,1966).Range-Energy
+MONITOR    (13-AL-27(D,X)11-NA-24,,SIG)
+MONIT-REF  (B0142004,U.Martens+,R,KFK-1083,1969)
+SAMPLE     Silver foils (99.999%) were cut and washed very
+           carefully and placed between aluminum monitor foils of
+           known thickness.
+REL-REF    (R,,C.F.Williamson+,R,CEA-R-3042,1966) Range-Energy
            Tables.
 DETECTOR   (GELI)
 METHOD     (STTA,ACTIV,EXTB,EDEG)
-ANALYSIS   (AREA)
 ADD-RES    (TTY-C)
-ENDBIB              22
-NOCOMMON
-ENDSUBENT           25
-SUBENT        A0201002   20010613   20010705   20050926       0000
-BIB                  5         21
-REACTION  G(47-AG-107(D,T)47-AG-106-G,,SIG,,,EXP)
-          M(47-AG-107(D,T)47-AG-106-M,,SIG,,,EXP)
-          R(47-AG-107(D,T)47-AG-106-M/G,,SIG/RAT,,,EXP)
-ERR-ANALYS (ERR-T).Errors in the Cross Section Values are Due
-           To Uncertainties of the Individual Quantities Involved
-           In Their Determination,As the Absolute Activity of
-           The Gamma Ray,the Deutron Flux,Etc.
-COMMENT    /by Authors/ All Data were Obtained As an Average of
-           Data from Three Determinations. The Listed Errors are
-           The Greatest Deviations from the Average.
-           /by Compiler/. It is not Obviously to Account Rh-106.
-           Authors Remarked That the Substraction of this
-           Nuclide Introduces a Certain Error in the
-           Determination of Photopeak Areas (ROUGHLY ESTIMATED
-           AS +-15%)
-RAD-DET   G(47-AG-106-G,AR)
-           (47-AG-106-G,DG)
-          M(47-AG-106-M,AR)
-           (47-AG-106-M,DG)
+STATUS     (TABLE) Tbl.1 of RCA,23,107,1976
+HISTORY    (19831208C)
+           (20010613A) Remarks of V.Mclane are Included.
+           (20010613U) Last checking has been done.
+           (20160208A) SD: REACTION code corrected in Subent 002;
+           small corrections in all Subents. SF4=Na-24g -> Na24;
+           SF5=M+ deleted from MONITOR. RAD-DET deleted from
+           Subents (information presented in DECAY-DATA).
+           ANALYSIS (AREA) deleted (not relevant).
+ENDBIB              26
+NOCOMMON             0          0
+ENDSUBENT           29
+SUBENT        A0201002   20160208   20160701   20160621       A084
+BIB                  5         22
+REACTION  G(47-AG-107(D,X)47-AG-106-G,,SIG)
+          M(47-AG-107(D,X)47-AG-106-M,,SIG)
+          R(47-AG-107(D,X)47-AG-106-M/G,,SIG/RAT)
+ERR-ANALYS (DATA-ERR) Errors in the cross section values are due
+           to uncertainties of the individual quantities involved
+           in their determination, as the absolute activity of
+           the gamma ray, the deuteron flux, etc.
+           (EN-ERR) The uncertainty in the particle energy for
+           each data point is due to the energy spread of the
+           incident beam from the cyclotron
+COMMENT    /by Authors/ All data were obtained as an average of
+           data from three determinations. The listed errors are
+           the greatest deviations from the average.
+           /by Compiler/. It is not obviously to account Rh-106.
+           Authors remarked that the subtraction of this nuclide
+           introduces a certain error in the determination
+           of photopeak areas (roughly estimated as +-15%)
 DECAY-DATAG(47-AG-106-G,,AR,511.,,DG,512.)
           M(47-AG-106-M,,AR,511.,,DG,512.)
-ENDBIB              21
-NOCOMMON
+HISTORY    (20160208A) SD: SF3=T -> X (from the text of the
+           article: (d,t) means: (d,t), (d,p2n) or (d,dn)).
+           ERR-T -> DATA-ERR. ERR-ANALYS update.
+ENDBIB              22
+COMMON               1          3
+EN-ERR
+PER-CENT
+  1.
+ENDCOMMON            3
 DATA                 6         13
-EN         DATA      MERR-T     MDATA      GERR-T     GDATA      R
+EN         DATA      MDATA-ERR  MDATA      GDATA-ERR  GDATA      R
 MEV        MB         MB         MB         MB         NO-DIM
        26.9       111.        15.       191.        50.       0.58
        26.4        84.         5.        98.        30.       0.85
@@ -60,13 +69,13 @@ MEV        MB         MB         MB         MB         NO-DIM
        25.3        90.         5.        95.         5.       0.94
        24.8        72.         1.        78.         3.       0.91
        23.3        50.         2.        49.         1.       0.99
-        21.        37.         2.        41.        10.       0.88
-        20.        25.         7.        24.         4.       1.07
+       21.0        37.         2.        41.        10.       0.88
+       20.0        25.         7.        24.         4.       1.07
        19.1        30.         2.        25.         2.        1.2
        17.4        27.         5.        20.         1.       1.33
        16.8        19.         1.        19.         1.       1.01
-        16.        12.         2.        18.         1.       0.68
+       16.0        12.         2.        18.         1.       0.68
        11.4        12.         5.        14.         3.       0.86
 ENDDATA             15
-ENDSUBENT           41
+ENDSUBENT           46
 ENDENTRY             2

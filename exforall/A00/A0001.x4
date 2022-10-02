@@ -1,45 +1,50 @@
-ENTRY            A0001   20080608   20080908   20080901       A063
-SUBENT        A0001001   20080608   20080908   20080901       A063
-BIB                 12         26
+ENTRY            A0001   20160207   20160701   20160621       A084
+SUBENT        A0001001   20160207   20160701   20160621       A084
+BIB                 11         31
 TITLE      Excitation functions of (p,n)- and (p,2n)-reactions
            on cadmium isotopes
-AUTHOR     (E.A.Skakun,A.P.Kljucharev,Yu.N.Rakivnenko,
-           I.A.Romanij)
+AUTHOR     (E.A.Skakun,A.P.Klyucharev,Yu.N.Rakivnenko,
+           I.A.Romanii)
 INSTITUTE  (4UKRUFT)
 REFERENCE  (J,IZV,39,24,1975)
            (J,BAS,39,(1),18,1975) English translation
 FACILITY   (LINAC,4UKRUFT)
+DETECTOR   (NAICR) 40 x 40 mm crystal and a multichannel
+           amplitude analyzer.
+METHOD     (STTA,INTB,BCINT,EDEG)  Emax = 9 and 21 MeV.
+           (ACTIV)
+           (GSPEC)
+ADD-RES    (COMP) Statistical theory and Weisskopf-Ewing formulae.
+ERR-ANALYS (DATA-ERR) Uncertainties include random error of
+           photopeak-area and decay curve analysis as well as
+           systematic errors associated with counter  efficiencies
+           and spread in beam energy.  Errors in decay scheme are
+           not included.
+STATUS     (TABLE) Tbl. 3 from IZV,39,24,1975
+           (APRVD).By E.A.Skakun.
 HISTORY    (19750623C)
            (19991226A) Converted to lower case. Structure of data
            sections are changed. Some reaction lines are corrected
            (20000717A) Date is corrected
            (20080608A) BIB section updated
-DETECTOR   (NAICR)
-ERR-ANALYS (ERR-T).Uncertainties include random error of
-           photopeak-area and decay curve analysis as well as
-           systematic errors associated with counter  efficiencies
-           and spread in beam energy.  Errors in decay scheme  are
-           not included.
-METHOD     (STTA,INTB,BCINT,EDEG).Accelerators' EMAX 9
-           and 21 MeV.
-           (ACTIV)
-           (GSPEC)
-ANALYSIS   (AREA)
-ADD-RES    (COMP) Statistial theory and Weisskopf-Ewing formulae.
-STATUS     (APRVD).By E.A.Skakun.
-ENDBIB              26
+           (20160207A) SD: DECAY-data corrected in Subents 002,005
+           ERR-T -> DATA-ERR in Subents 002-013. Small corrections
+           in all Subents. Coded info added to SAMPLE in Sub.2-13.
+           RAD-DET deleted (info was given in DECAY-DATA).
+            ANALYSIS (AREA) deleted (not relevant).
+ENDBIB              31
 NOCOMMON             0          0
-ENDSUBENT           29
-SUBENT        A0001002   20080608   20080908   20080901       A063
+ENDSUBENT           34
+SUBENT        A0001002   20160207   20160701   20160621       A084
 BIB                  5          8
 REACTION   (48-CD-110(P,N)49-IN-110,,SIG)
-SAMPLE     Enriched target with 91.5% Cd-110
-RAD-DET    (49-IN-110-G,DG)
-           (49-IN-110-M,DG)
-DECAY-DATA (49-IN-110-G,69.0MIN,DG,657.,0.979)
-           (49-IN-110-M,4.9HR,DG,885.,0.95) isomer transition is
-           absent.
-REL-REF    (N,D4069003,E.A.SKAKUN+,J,IZV,39,31,1975) isomer ratio.
+SAMPLE     (48-CD-110,ENR=0.915) Enriched target with 91.5% Cd-110
+DECAY-DATA (49-IN-110-M,69.0MIN,DG,657.,0.979)
+           (49-IN-110-G,4.9HR,DG,642.,0.269,DG,657.,0.988,
+             DG,707.,0.312,DG,885.,0.950,DG,937.,0.696)
+REL-REF    (O,D4069003,E.A.Skakun+,J,IZV,39,31,1975) isomer ratio.
+HISTORY    (20160207A) SD:  -G and -M were swapped in DECAY-DATA
+           according to their half-life.
 ENDBIB               8
 COMMON               1          3
 ERR-T
@@ -51,27 +56,27 @@ EN         DATA
 MEV        MB
         6.5       108.
         7.3       168.
-         8.       250.
+        8.0       250.
         8.5       312.
-         9.       340.
+        9.0       340.
        11.8       597.
        13.7       544.
        15.2       262.
-        17.       146.
+       17.0       146.
        18.3       102.
        19.7        73.
        20.9        64.
 ENDDATA             14
 ENDSUBENT           31
-SUBENT        A0001003   20080608   20080908   20080901       A063
+SUBENT        A0001003   20160207   20160701   20160621       A084
 BIB                  5          7
 REACTION   (48-CD-110(P,2N)49-IN-109,,SIG)
-SAMPLE     Enriched target with 91.5% Cd-110.
-RAD-DET    (49-IN-109-M,DG)
-           (49-IN-109-G,DG)
-DECAY-DATA (49-IN-109-M,1.3MIN,DG,658.,1.0) 100% isomer transition
+SAMPLE     (48-CD-110,ENR=0.915) Enriched target with 91.5% Cd-110
+DECAY-DATA (49-IN-109-M1,1.3MIN,DG,658.,1.0) 100% isomer
+                                                      transition
            (49-IN-109-G,4.3HR,DG,203.,0.724)
-REL-REF    (N,D4069002,E.A.SKAKUN+,J,IZV,39,31,1975) isomer ratio.
+REL-REF    (O,D4069002,E.A.Skakun+,J,IZV,39,31,1975) isomer ratio.
+HISTORY    (20160207U) SD: In-109m -> In-109m1 in DECAY-DATA.
 ENDBIB               7
 COMMON               1          3
 ERR-T
@@ -83,22 +88,21 @@ EN         DATA
 MEV        MB
        13.7       105.
        15.2       371.
-        17.       511.
+       17.0       511.
        17.7       558.
        18.3       604.
-        19.       638.
+       19.0       638.
        19.7       668.
        20.3       660.
        20.9       672.
 ENDDATA             11
 ENDSUBENT           27
-SUBENT        A0001004   20080608   20080908   20080901       A063
-BIB                  4          4
+SUBENT        A0001004   20160207   20160701   20160621       A084
+BIB                  3          3
 REACTION   (48-CD-111(P,N)49-IN-111,,SIG)
-SAMPLE     Enriched target with 93.9% Cd-111.
-RAD-DET    (49-IN-111-G,DG)
+SAMPLE     (48-CD-111,ENR=0.939) Enriched target with 93.9% Cd-111
 DECAY-DATA (49-IN-111-G,2.81D,DG,172.,0.909,DG,247.0,0.943)
-ENDBIB               4
+ENDBIB               3
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -112,28 +116,28 @@ MEV        MB
         5.9       66.6
         6.7       134.
         7.3       226.
-         8.       300.
+        8.0       300.
         8.5       377.
-         9.       430.
+        9.0       430.
         9.8       489.
        11.8       696.
        13.7       481.
        15.2       250.
-        17.       140.
+       17.0       140.
        18.3        82.
        19.7        72.
        20.9        61.
 ENDDATA             18
-ENDSUBENT           31
-SUBENT        A0001005   20080608   20080908   20080901       A063
+ENDSUBENT           30
+SUBENT        A0001005   20160207   20160701   20160621       A084
 BIB                  4          7
 REACTION   (48-CD-111(P,2N)49-IN-110,,SIG)
-SAMPLE     Enriched target with 93.9% Cd-111
-RAD-DET    (49-IN-110-G,DG)
-           (49-IN-110-M,DG)
-DECAY-DATA (49-IN-110-G,69.0MIN,DG,657.,0.979)
-           (49-IN-110-M,4.9HR,DG,885.,0.95) isomer transition is
-           absent.
+SAMPLE     (48-CD-111,ENR=0.939) Enriched target with 93.9% Cd-111
+DECAY-DATA (49-IN-110-M,69.0MIN,DG,657.,0.979)
+           (49-IN-110-G,4.9HR,DG,642.,0.269,DG,657.,0.988,
+             DG,707.,0.312,DG,885.,0.950,DG,937.,0.696)
+HISTORY    (20160207A) SD:  -G and -M were swapped in DECAY-DATA
+           according to their half-life.
 ENDBIB               7
 COMMON               1          3
 ERR-T
@@ -146,23 +150,21 @@ MEV        MB
        11.8        17.
        13.7       332.
        15.2       628.
-        17.       711.
+       17.0       711.
        18.3       790.
        19.7       917.
        20.9       718.
 ENDDATA              9
 ENDSUBENT           25
-SUBENT        A0001006   20080608   20080908   20080901       A063
-BIB                  5          8
+SUBENT        A0001006   20160207   20160701   20160621       A084
+BIB                  4          6
 REACTION   (48-CD-112(P,N)49-IN-112,,SIG)
-SAMPLE     Enriched target with 94.9% Cd-112
-RAD-DET    (49-IN-112-M,DG)
-           (49-IN-112-G,DG)
+SAMPLE     (48-CD-112,ENR=0.949) Enriched target with 94.9% Cd-112
 DECAY-DATA (49-IN-112-M,21.0MIN,DG,157.,0.126) 100% isomer
            transition
            (49-IN-112-G,14.4MIN,DG,617.,0.0595)
-REL-REF    (N,D4069005,E.A.SKAKUN+,J,IZV,39,31,1975) isomer ratio.
-ENDBIB               8
+REL-REF    (O,D4069005,E.A.Skakun+,J,IZV,39,31,1975) isomer ratio.
+ENDBIB               6
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -180,23 +182,22 @@ MEV        MB
         7.8       375.
         8.2       483.
         8.7       544.
-         9.       600.
+        9.0       600.
        12.5       680.
-        14.       426.
+       14.0       426.
        15.6       295.
-        17.       190.
+       17.0       190.
        18.3       135.
        19.7       110.
        20.9        96.
 ENDDATA             19
-ENDSUBENT           36
-SUBENT        A0001007   20080608   20080908   20080901       A063
-BIB                  4          4
+ENDSUBENT           34
+SUBENT        A0001007   20160207   20160701   20160621       A084
+BIB                  3          3
 REACTION   (48-CD-112(P,2N)49-IN-111,,SIG)
-SAMPLE     Enriched target with 94.9% Cd-112
-RAD-DET    (49-IN-111-G,DG)
+SAMPLE     (48-CD-112,ENR=0.949) Enriched target with 94.9% Cd-112
 DECAY-DATA (49-IN-111-G,2.81D,DG,172.,0.909,DG,247.0,0.943)
-ENDBIB               4
+ENDBIB               3
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -207,19 +208,18 @@ EN         DATA
 MEV        MB
        13.2       200.
        15.2       597.
-        17.       823.
+       17.0       823.
        18.3       913.
        19.7       970.
        20.9      1070.
 ENDDATA              8
-ENDSUBENT           21
-SUBENT        A0001008   20080608   20080908   20080901       A063
-BIB                  4          4
+ENDSUBENT           20
+SUBENT        A0001008   20160207   20160701   20160621       A084
+BIB                  3          3
 REACTION   (48-CD-113(P,N)49-IN-113-M,,SIG)
-SAMPLE     Enriched target with 90.2% Cd-113
-RAD-DET    (49-IN-113-M,DG)
+SAMPLE     (48-CD-113,ENR=0.902) Enriched target with 90.2% Cd-113
 DECAY-DATA (49-IN-113-M,99.4MIN,DG,393.0,0.649)
-ENDBIB               4
+ENDBIB               3
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -229,13 +229,13 @@ DATA                 2         15
 EN         DATA
 MEV        MB
         4.7        4.6
-         5.       11.3
+        5.0       11.3
         5.9        29.
         6.5        59.
         7.3        85.
         7.8       109.
         8.5       127.
-         9.       140.
+        9.0       140.
        10.9       140.
        13.5        56.
        15.2        26.
@@ -244,17 +244,15 @@ MEV        MB
        19.5        13.
        20.9        14.
 ENDDATA             17
-ENDSUBENT           30
-SUBENT        A0001009   20080608   20080908   20080901       A063
-BIB                  5          7
+ENDSUBENT           29
+SUBENT        A0001009   20160207   20160701   20160621       A084
+BIB                  4          5
 REACTION   (48-CD-113(P,2N)49-IN-112,,SIG)
-SAMPLE     Enriched target with 90.2% Cd-113
-RAD-DET    (49-IN-112-M,DG)
-           (49-IN-112-G,DG)
+SAMPLE     (48-CD-113,ENR=0.902) Enriched target with 90.2% Cd-113
 DECAY-DATA (49-IN-112-M,21.0MIN,DG,157.,0.126)
            (49-IN-112-G,14.4MIN,DG,617.,0.0595)
-REL-REF    (N,D4069006,E.A.SKAKUN+,J,IZV,39,31,1975) isomer ratio.
-ENDBIB               7
+REL-REF    (O,D4069006,E.A.Skakun+,J,IZV,39,31,1975) isomer ratio.
+ENDBIB               5
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -264,21 +262,20 @@ DATA                 2          7
 EN         DATA
 MEV        MB
        12.5       423.
-        14.       755.
+       14.0       755.
        15.6       910.
-        17.      1105.
+       17.0      1105.
        18.3      1056.
        19.7       984.
        20.9       917.
 ENDDATA              9
-ENDSUBENT           25
-SUBENT        A0001010   20080608   20080908   20080901       A063
-BIB                  4          4
+ENDSUBENT           23
+SUBENT        A0001010   20160207   20160701   20160621       A084
+BIB                  3          3
 REACTION   (48-CD-114(P,N)49-IN-114-M,,SIG)
-SAMPLE     Enriched target with 97.3% Cd-114
-RAD-DET    (49-IN-114-M,DG)
+SAMPLE     (48-CD-114,ENR=0.973) Enriched target with 97.3% Cd-114
 DECAY-DATA (49-IN-114-M,50.D,DG,192.,0.182)
-ENDBIB               4
+ENDBIB               3
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -290,19 +287,18 @@ MEV        MB         MB
         3.8                   0.1
         5.9        29.
         7.7       150.
-         9.       270.
+        9.0       270.
        11.8       226.
-        19.        41.
+       19.0        41.
        20.9        41.
 ENDDATA              9
-ENDSUBENT           22
-SUBENT        A0001011   20080608   20080908   20080901       A063
-BIB                  4          4
+ENDSUBENT           21
+SUBENT        A0001011   20160207   20160701   20160621       A084
+BIB                  3          3
 REACTION   (48-CD-114(P,2N)49-IN-113-M,,SIG)
-SAMPLE     Enriched target with 97.3% Cd-114
-RAD-DET    (49-IN-113-M,DG)
+SAMPLE     (48-CD-114,ENR=0.973) Enriched target with 97.3% Cd-114
 DECAY-DATA (49-IN-113-M,99.4MIN,DG,393.,0.649)
-ENDBIB               4
+ENDBIB               3
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -319,20 +315,21 @@ MEV        MB
        16.2       204.
        16.7       179.
        18.3       190.
-        19.       162.
+       19.0       162.
        20.3       190.
        20.9       145.
 ENDDATA             13
-ENDSUBENT           26
-SUBENT        A0001012   20080608   20080908   20080901       A063
-BIB                  4          6
-REACTION   (48-CD-116(P,N)49-IN-116-M1,M+,SIG)
-SAMPLE     Enriched target with 90.5% Cd-116.
-RAD-DET    (49-IN-116-M1,DG)
+ENDSUBENT           25
+SUBENT        A0001012   20160207   20160701   20160621       A084
+BIB                  4          7
+REACTION   (48-CD-116(P,N)49-IN-116-M1+M2,,SIG)
+SAMPLE     (48-CD-116,ENR=0.905) Enriched target with 90.5% Cd-116
 DECAY-DATA (49-IN-116-M1,54.0MIN,DG,1293.,0.85,DG,2112.,0.15)
            (49-IN-116-M2,2.2SEC).  100% Isomeric transition,
            half-life 2.2 Sec (comment by the compiler)
-ENDBIB               6
+HISTORY    (20160207A) SD:  SF4=In-m1 -> In-m1+m2; SF5=M+ deleted
+            from REACTION code.
+ENDBIB               7
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -346,9 +343,9 @@ MEV        MB
         5.9        20.
         6.7        37.
         7.3        61.
-         8.        85.
+        8.0        85.
         8.5       123.
-         9.       147.
+        9.0       147.
        11.5        90.
        13.5        37.
        15.2        24.
@@ -357,14 +354,13 @@ MEV        MB
        19.5        14.
        20.9        15.
 ENDDATA             17
-ENDSUBENT           32
-SUBENT        A0001013   20080608   20080908   20080901       A063
-BIB                  4          4
+ENDSUBENT           33
+SUBENT        A0001013   20160207   20160701   20160621       A084
+BIB                  3          3
 REACTION   (48-CD-116(P,2N)49-IN-115-M,,SIG)
-SAMPLE     Enriched target with 90.5% Cd-116
-RAD-DET    (49-IN-115-M,DG)
+SAMPLE     (48-CD-116,ENR=0.905) Enriched target with 90.5% Cd-116
 DECAY-DATA (49-IN-115-M,4.5HR,DG,335.,0.475)
-ENDBIB               4
+ENDBIB               3
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -381,5 +377,5 @@ MEV        MB
        19.5       243.
        20.9       210.
 ENDDATA              9
-ENDSUBENT           22
+ENDSUBENT           21
 ENDENTRY            13
