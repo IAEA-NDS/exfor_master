@@ -1,33 +1,35 @@
-ENTRY            T0033   19990629   19990901   20050926       0000
-SUBENT        T0033001   19990629   19990901   20050926       0000
-BIB                  8          9
+ENTRY            T0033   20171029   20171228   20171227       C169
+SUBENT        T0033001   20171029   20171228   20171227       C169
+BIB                  8         11
 INSTITUTE  (1USAANL)
-REFERENCE  (J,PR/C,25,2174,198205)
-AUTHOR     (B.W.FILIPPONE,A.J.ELWYN,W.RAY,JR.,D.D.KOETKE)
+REFERENCE  (J,PR/C,25,2174,1982)
+AUTHOR     (B.W.Filippone,A.J.Elwyn,W.Ray Jr,D.D.Koetke)
 TITLE      Absolute cross section for 7Li(d,p)8Li and solar
             neutrino capture rates
-FACILITY   (DYNAM) Argonne 4.5 MeV
+FACILITY   (DYNAM,1USAANL) Argonne 4.5 MeV
 DETECTOR   (SOLST) Two silicon detectors.
 STATUS     (APRVD) Approved by A.J. Elwyn, 15 June 1999.
 HISTORY    (19990407A) Converted from F0036 by VNIIEF (SD).
-ENDBIB               9
+           (20171029A) OS. Error headings changed in sub.2,
+            Error analysis added to sub.3, BIB changes
+ENDBIB              11
 NOCOMMON             0          0
-ENDSUBENT           12
-SUBENT        T0033002   19990602   19990901   20050926       0000
+ENDSUBENT           14
+SUBENT        T0033002   20171029   20171228   20171227       C169
 BIB                  4         10
 REACTION   (3-LI-7(D,P)3-LI-8,,SIG)
-SAMPLE     69 mu-g/cm**2 LiF target
-ERR-ANALYS (DATA-ERR1) Total error
-           (DATA-ERR2) Digitizing error.
+SAMPLE     (3-LI-7,ENR=0.9999) 69 mu-g/cm**2 LiF target
+ERR-ANALYS (DATA-ERR) Total error
+           (ERR-DIG) Digitizing error.
            Relative uncertainties are approximately the size of
             the data points.
-           (EN-ERR1) Absolute error
-           (EN-ERR2) Digitizing error
+           (EN-ERR) Absolute error
+           (EN-ERR-DIG) Digitizing error
 STATUS     (CURVE) Scanned from Fig 5, except for point at 770
                    keV which was taken from Table I.
 ENDBIB              10
 COMMON               4          3
-EN-ERR1    EN-ERR2    DATA-ERR1  DATA-ERR2
+EN-ERR     EN-ERR-DIG DATA-ERR   ERR-DIG
 MEV        MEV        PER-CENT   MB
  0.01       0.0005      8.        0.87
 ENDCOMMON            3
@@ -68,20 +70,30 @@ KEV        MB
   1184.     116.
 ENDDATA             34
 ENDSUBENT           53
-SUBENT        T0033003   19990602   19990901   20050926       0000
-BIB                  4          6
+SUBENT        T0033003   20171029   20171228   20171227       C169
+BIB                  6         12
 REACTION   (3-LI-7(D,P)3-LI-8,,SIG)
-SAMPLE     Targets of LiF (enriched to 99.99% in 7Li) of
-            thickness (microg/cm**2) 46, 69, 70, 94, and 260,
-            sandwiched between thin Au layers (5 microg/cm**2).
+SAMPLE     (3-LI-7,ENR=0.9999) Targets of LiF (enriched to 99.99%
+            in 7Li) of thickness (microg/cm**2) 46, 69, 70, 94,
+            and 260, sandwiched between thin Au layers
+            (5 microg/cm**2).
 ANALYSIS   Average of data taken on 5 targets.
-STATUS     Data taken from Table I.
-ENDBIB               6
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Totol error, including uncertainties due to
+           (ERR-1) Target thickness
+           (ERR-2) Charge integration
+           (ERR-3) Solid angle
+STATUS     (TABLE) Data taken from Table I.
+HISTORY    (20171029A) ERR-ANALYS and partial errors added
+ENDBIB              12
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+  7.         2.         3.
+ENDCOMMON            3
 DATA                 4          1
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 KEV        KEV        MB         MB
 770.        10.       148.        12.
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           24
 ENDENTRY             3
