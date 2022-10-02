@@ -1,12 +1,12 @@
-ENTRY            C0187   20010208   20030922   20050926       0000
-SUBENT        C0187001   20010208   20030922   20050926       0000
-BIB                 13         38
+ENTRY            C0187   20171004   20171208   20171206       C168
+SUBENT        C0187001   20171004   20171208   20171206       C168
+BIB                 13         41
+TITLE      The indirect production of no-carrier-added 57Co via
+            the 59Co(p,3n)57Ni->57Co reaction
+AUTHOR     (P.C.Johnson,M.C.Lagunas-Solar,M.J.Avila)
 INSTITUTE  (1USADAV)
 REFERENCE  (J,ARI,35,371,1984)
            (J,RCA,60,57,1993) Data compared to ALICE calculations.
-AUTHOR     (P.C.JOHNSON, M.C.LAGUNAS-SOLAR, M.J.AVILA)
-TITLE      The indirect production of no-carrier-added 57Co via
-            the 59Co(p,3n)57Ni->57Co reaction
 FACILITY   (ISOCY,1USADAV)
 SAMPLE     Natural Co (100% 59Co) foils  (0.1 mm) used.
             (density= 8.92 g/cm3). Stacked target was composed of
@@ -19,15 +19,7 @@ DETECTOR   (GELI)
 ANALYSIS   High resolution gamma-spectrometry method was used.
 DECAY-DATA Decay data taken from C.M. Lederer and V.S. Shirley,
             Table of Isotopes, 7th Ed. (1978).
-ERR-ANALYS (DATA-ERR) Overall uncertainties of the yield and
-            cross section values estimated by summing up the
-            individual errors in quadrature.
-               calibration sources            3%
-               detector efficirncy            6%
-               curve-fitting routine         10%
-               integration error of the
-                 extrapolated curves          1%
-           Total uncertainty in average foil energy varied from
+ERR-ANALYS Total uncertainty in average foil energy varied from
             +-0.5 MeV at 40 MeV, to +-0.69 MeV at 9.96 Mev and
             includes the
                 incident beam energy          1.25%
@@ -36,31 +28,43 @@ ERR-ANALYS (DATA-ERR) Overall uncertainties of the yield and
                 foil density                   0.1%
                 foil thickness                 0.1%
            The radiochemical yield was 95%.
+           (ERR-T) Overall uncertainties of the yield and
+            cross section values estimated by summing up the
+            individual errors in quadrature.
+           (ERR-1)    calibration sources            3%
+           (ERR-2)    detector efficirncy            6%
+           (ERR-3)    curve-fitting routine         10%
+           (ERR-4)    integration error of the
+                      extrapolated curves          1%
 STATUS     No reply from M. Lagunas-Solar to author proof.
 HISTORY    (19980930C)
            (20010208A) Reference added.
-ENDBIB              38
-COMMON               1          3
-DATA-ERR
-PER-CENT
- 12.
+           (20170920A) TS+On+OS. Major revisions in 004.
+            See also CP-D/933. Uncertainty description revised
+            in subs. 1-6.
+ENDBIB              41
+COMMON               5          3
+ERR-T      ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 12.          3.         6.        10.         1.
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        C0187002   20010208   20010426   20050926       0000
-BIB                  5         10
+ENDSUBENT           48
+SUBENT        C0187002   20171004   20171208   20171206       C168
+BIB                  5         11
 REACTION   (27-CO-59(P,X)27-CO-57,,SIG)
            - Comment by compiler - 57Ni production is less than
             possible uncertainty of 57Co production. Therefore,
             compiler assumed 57Co production as independent.
 DECAY-DATA (27-CO-57,271.65D,DG,122.0,0.856,DG,136.0,0.115)
-ERR-ANALYS (DATA-ERR1) Data-point reader uncertainty.
-           (EN-ERR). Data-point reader uncertainty.
+ERR-ANALYS (ERR-DIG) Data-point reader uncertainty.
+           (EN-ERR-DIG). Data-point reader uncertainty.
 STATUS     (CURVE) Scanned by CAJaD from figures in Radiochem.
                    Acta reference.
 HISTORY    (20010208A) Data added.
-ENDBIB              10
+           (20170920A) OS. Error headings changed
+ENDBIB              11
 COMMON               2          3
-EN-ERR     DATA-ERR1
+EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
    0.16         5.
 ENDCOMMON            3
@@ -90,22 +94,23 @@ MEV        MB
    38.0     221.
    38.9     215.
 ENDDATA             24
-ENDSUBENT           43
-SUBENT        C0187003   20010208   20010426   20050926       0000
-BIB                  5         10
+ENDSUBENT           44
+SUBENT        C0187003   20171004   20171208   20171206       C168
+BIB                  5         11
 REACTION   (27-CO-59(P,X)27-CO-56,(CUM),SIG)
            - Comment by compiler - Authors did not publish cross
             section for 56Ni production. Therefore, it is assumed
             that 56Co production is cumulative.
 DECAY-DATA (27-CO-56,78.76D,DG,847.0,0.9995)
-ERR-ANALYS (DATA-ERR1) Data-point reader uncertainty.
-           (EN-ERR). Data-point reader uncertainty.
+ERR-ANALYS (ERR-DIG) Data-point reader uncertainty.
+           (EN-ERR-DIG). Data-point reader uncertainty.
 STATUS     (CURVE) Scanned by CAJaD from figures in Radiochem.
                    Acta reference.
 HISTORY    (20010208A) Data added.
-ENDBIB              10
+           (20170920A) OS. Error headings changed
+ENDBIB              11
 COMMON               2          3
-EN-ERR     DATA-ERR1
+EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
      8.E-02         5.
 ENDCOMMON            3
@@ -125,37 +130,41 @@ MEV        MB
   38.4       13.6
   39.4       18.0
 ENDDATA             14
-ENDSUBENT           33
-SUBENT        C0187004   20030626   20030922   20050926       0000
-BIB                  4          8
-REACTION  1(27-CO-59(P,X)27-CO-57,CUM,TTY,,DT) yield at
-            271.5 hours after the end of bombardment.
-          2(27-CO-59(P,3N)28-NI-57,,TTY,,DT)   at the end of
-            bombardment.
-DECAY-DATA1(27-CO-57,271.65D,DG,122.0,0.856,DG,136.0,0.115)
-          2(28-NI-57,35.99HR,DG,1378.0,0.776,DG,127.0,0.129)
-STATUS     Data taken from text of reference.
+ENDSUBENT           34
+SUBENT        C0187004   20171004   20171208   20171206       C168
+BIB                  5         11
+REACTION   (27-CO-59(P,3N)28-NI-57,,TTY,,EOB/MSC)
+            EOB activity divided by irradiated charge
+             (Irradiation time unspecified)
+DECAY-DATA (28-NI-57,35.99HR,DG,1378.0,0.776,DG,127.0,0.129)
+ADD-RES    57Co yield at 271.5 hours after EOB is
+            2.22+/-0.26 uCi/uA-hr.
+STATUS     (TABLE) Data taken from text of reference.
 HISTORY    (20030626A) Reaction corrected.
-ENDBIB               8
+           (20170920A) TS+On+OS. REACTION(SF8) revised.
+            57Co yield moved to ADD-RES.
+            Deleted redundant DATA-ERR.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 6          1
-EN-MAX     EN-MIN     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-MEV        MEV        KBQ/MUAHR  KBQ/MUAHR  MBQ/MUAHR  MBQ/MUAHR
-       40.0       24.0      82.14       9.62      15.36       1.85
+DATA                 3          1
+EN-MAX     EN-MIN     DATA
+MEV        MEV        MUCI/MUAHR
+ 40.0       24.0        415.
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        C0187005   20010208   20010426   20050926       0000
-BIB                  5          7
+ENDSUBENT           19
+SUBENT        C0187005   20171004   20171208   20171206       C168
+BIB                  5          8
 REACTION   (27-CO-59(P,X)25-MN-54,,SIG)
 DECAY-DATA (25-MN-54,312.20D,DG,835.0,1.0)
-ERR-ANALYS (DATA-ERR1) Data-point reader uncertainty.
-           (EN-ERR). Data-point reader uncertainty.
+ERR-ANALYS (ERR-DIG) Data-point reader uncertainty.
+           (EN-ERR-DIG). Data-point reader uncertainty.
 STATUS     (CURVE) Scanned by CAJaD from figures in Radiochem.
                    Acta reference.
 HISTORY    (20010208C) Data added.
-ENDBIB               7
+           (20170920A) OS. Error headings changed
+ENDBIB               8
 COMMON               2          3
-EN-ERR     DATA-ERR1
+EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
    0.08        3.
 ENDCOMMON            3
@@ -176,19 +185,20 @@ MEV        MB
   38.4       31.4
   39.4       33.5
 ENDDATA             15
-ENDSUBENT           31
-SUBENT        C0187006   20010208   20010426   20050926       0000
-BIB                  5          7
+ENDSUBENT           32
+SUBENT        C0187006   20171004   20171208   20171206       C168
+BIB                  5          8
 REACTION   (27-CO-59(P,3N)28-NI-57,,SIG)
 DECAY-DATA (28-NI-57,35.99HR,DG,1378.0,0.776,DG,127.0,0.129)
-ERR-ANALYS (DATA-ERR1) Data-point reader uncertainty.
-           (EN-ERR). Data-point reader uncertainty.
+ERR-ANALYS (ERR-DIG) Data-point reader uncertainty.
+           (EN-ERR-DIG). Data-point reader uncertainty.
 STATUS     (CURVE) Scanned by CAJaD from figures in Radiochem.
                    Acta reference.
 HISTORY    (20010208C) Data added.
-ENDBIB               7
+           (20170920A) OS. Error headings changed
+ENDBIB               8
 COMMON               2          3
-EN-ERR     DATA-ERR1
+EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
    0.08       5.
 ENDCOMMON            3
@@ -210,5 +220,5 @@ MEV        MB
   38.3        9.2
   39.4        9.6
 ENDDATA             16
-ENDSUBENT           32
+ENDSUBENT           33
 ENDENTRY             6
