@@ -1,61 +1,67 @@
-ENTRY            30802   20090909   20091224   20091223       3141
-SUBENT        30802001   20090909   20091224   20091223       3141
-BIB                 14         28
-INSTITUTE  (3VN IPH)
-           (3SLKSLO)last author
-REFERENCE  (R,INDC(VN)-2,198311) in connection with IAEA
-           interregional project INT/1/018 (INT(83)-8).
-AUTHOR     (Phan Nhu Ngoc,Ly Lea Bach,Nguyen Van Do,
-           Trang Trong Vinh,I.Ribansky)
-TITLE      Neutron activation cross section for Fe-56(n,p) and
-           Rb-87(n,2n) reactions
-FACILITY   (CCW,3VN IPH) A 120 kV D-T neutron generator
+ENTRY            30802   20180525   20180629   20180629       3185
+SUBENT        30802001   20180525   20180629   20180629       3185
+BIB                 12         23
+TITLE      Neutron activation cross section for 56Fe(n,p) and
+            87Rb(n,2n) reactions
+AUTHOR     (Phan Nhu Ngoc, Ly Lea Bach, Nguyen Van Do,
+            Trang Trong Vinh, I.Ribansky)
+INSTITUTE  (3VN IPH,3SLKSLO)
+REFERENCE  (R,INDC(VN)-2,198311)
+            IAEA interregional project INT/1/018 (INT(83)-8)
+FACILITY   (CCW,3VN IPH) 120 kV D-T neutron generator
 INC-SOURCE (D-T)
-SAMPLE     Iron targets prepared by mixing pure Fe and Al oxide
-           powders.
-           The rubidium target prepared by pressing Rb powder
-            (enriched to 98%) between two Al foils.
-METHOD     (ACTIV)
 DETECTOR   (GELI)
+           (SCIN) Neutron flux monitor
 MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
-MONIT-REF  (,,3,ENDF/B-5) From ENDF/B-5 Activ.File.
-           Neutron flux was monitored using plastic scintillator.
-STATUS     (TABLE) Data taken from INDC(VN)-2,(1983).
-ERR-ANALYS (DATA-ERR) Following uncertainties are included:
-           (ERR-1) Photo-efficiency 5%
-           (MONIT-ERR) Monitor reaction cross-section and
-             * Statistical errors of photopeak areas
+MONIT-REF  (,,3,ENDF/B-V,,1978) ENDF/B-5 Activation File
+CORRECTION Coincidence summing was negligible due to their simple
+            decay scheme
+ERR-ANALYS (ERR-T) Including statistical errors of photopeak
+            areas as well as
+           (ERR-1)     Photo-efficiency               (5%)
+           (MONIT-ERR) Monitor reaction cross section (1%)
 HISTORY    (19840307C) DG.-
-           (20090725A) SD:Updated to new date formats,lower case.
-           Cosmetic changes, codes for partial uncertainties and
-           data to COMMON section are added.
-ENDBIB              28
+           (20090725A) SD: Codes for partial uncertainties and
+            data to COMMON section are added.
+           (20180525A) On. Major rev. in 002-003. DATA-ERR->ERR-T.
+ENDBIB              23
 COMMON               5          3
 EN         EN-ERR     MONIT      MONIT-ERR  ERR-1
 MEV        MEV        MB         PER-CENT   PER-CENT
- 1.4800E+01 2.0000E-01 1.1550E+02 1.0000E+00   5.0
+ 14.8       0.2        115.5      1.         5.
 ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        30802002   20090909   20091224   20091223       3141
-BIB                  1          1
+ENDSUBENT           30
+SUBENT        30802002   20180525   20180629   20180629       3185
+BIB                  5          5
 REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
-ENDBIB               1
+SAMPLE     Pure Fe and Al oxide powders mixed (20 mm diam.)
+METHOD     (ACTIV) Irradiated for ~1 hr
+STATUS     (TABLE) Text (p.3) of INDC(VN)-2 (1983)
+HISTORY    (20180525A) On. DATA-ERR -> ERR-T
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 2          1
-DATA       DATA-ERR
+DATA       ERR-T
 MB         MB
- 1.1870E+02 1.2000E+01
+ 118.7      12.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        30802003   20090909   20091224   20091223       3141
-BIB                  1          1
+ENDSUBENT           13
+SUBENT        30802003   20180525   20180629   20180629       3185
+BIB                  6          8
 REACTION   (37-RB-87(N,2N)37-RB-86,,SIG)
-ENDBIB               1
+SAMPLE     (37-RB-87,ENR=0.98)
+            Enriched Rb powder between two Al foils
+DECAY-DATA (37-RB-86-G,18.7D)
+METHOD     (ACTIV) Irradiated for ~6 hr
+           (GSPEC) Measured during 6 days after irradiation
+STATUS     (TABLE) Text (p.4) of INDC(VN)-2 (1983)
+HISTORY    (20180525A) On. DATA-ERR -> ERR-T
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
-DATA       DATA-ERR
+DATA       ERR-T
 MB         MB
- 1.2260E+03 1.2800E+02
+ 1226.      128.
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           16
 ENDENTRY             3

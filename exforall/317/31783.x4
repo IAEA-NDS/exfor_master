@@ -1,0 +1,131 @@
+ENTRY            31783   20180508   20180629   20180629       3184
+SUBENT        31783001   20180508   20180629   20180629       3184
+BIB                 16         34
+TITLE      Measurement of 89Y(n,2n) spectral averaged cross
+            section in LR-0 special core reactor spectrum
+AUTHOR     (M.Kostal, E.Losa, P.Baron, J.Solc, M.Svadlenkova,
+            M.Koleska, M.Marecek, J.Uhlir)
+INSTITUTE  (3CZRUJV)
+REFERENCE  (J,RPC,141,22,2017)
+           (W,KOSTAL,20180228)       Latest values tabulated.
+            Document LR0-RESR-004 submitted to IRPhE in 2018
+            "VVER-1000 physics experiments hexagonal jattices
+             (1.275 cm Pitch) of Low Enriched U(3.3 wt.% U235)O2
+             fuel assemblies in light water 75As(n, 2n),
+             23Na(n,2n), 90Zr(n,2n), 89Y(n,2n) reaction rates"
+            received from M.Kostal on 28 February 2018.
+REL-REF    (N,,M.Kostal+,J,ARI,135,83,2018)
+            Measured LR-0 neutron spectrum in void case tabulated
+FACILITY   (REAC,3CZRUJV) LR-0 reactor
+INC-SOURCE (REAC)
+SAMPLE     Y2O3 (202.3 g, 1.8212 g/cm3) melted in an Al capsule
+            (80 mm diam.).
+METHOD     (ACTIV) Irradiated for 20 hours
+           (GSPEC) Measurement started 4 weeks after irradiation
+DETECTOR   (HPGE) Efficiency calculated by MCNP6
+DECAY-DATA (39-Y-88,106.627D,DG,898.0,0.9390,
+                             DG,1836.1,0.9932)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+           (28-NI-58(N,P)27-CO-58,,SIG)
+DECAY-MON  (79-AU-198-G,2.6947D,DG,411.8,0.9562)
+           (27-CO-58-G,70.86D,DG,810.8,0.9945)
+CORRECTION Corrected for
+            - the spectral shift (ratio between the full geometry
+              and empty geomtery).
+            - coincidence summing effect
+STATUS     (APRVD) Proof-read by Michal Kostal (2018-05-09)
+HISTORY    (20180508C) On
+ENDBIB              34
+NOCOMMON             0          0
+ENDSUBENT           37
+SUBENT        31783002   20180508   20180629   20180629       3184
+BIB                  5          9
+REACTION   (39-Y-89(N,2N)39-Y-88,,SIG,,SPA)
+INC-SPECT  LR-0 reactor spectrum.
+           The measured numerical spectrum in void case is in
+            Table 2 of M.Kostal+,Appl.Radiat.Isot.135(2018)83.
+MISC-COL   (MISC) Cross section averaged in LR-0 reactor spectrum
+                  above 10 MeV
+ERR-ANALYS (DATA-ERR) Total uncertainty                     (3.3%)
+STATUS     (TABLE) Table 3 of Radiat.Phys.Chem.141(2017)22
+           (SPSDD,31783004)
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 4          1
+EN-DUMMY   DATA       DATA-ERR   MISC
+MEV        MICRO-B    PER-CENT   MB
+ 1.         43.9       3.3        124.9
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        31783003   20180508   20180629   20180629       3184
+BIB                  5          9
+REACTION   (39-Y-89(N,2N)39-Y-88,,SIG,,FIS)
+INC-SPECT  235U(n,nth) prompt fission neutron spectrum
+ANALYSIS   Cross section averaged over the LR-0 spectrum above
+            10 MeV multiplied by the fracion of 235U prompt
+            fission neutrons above 10 MeV in ENDF/B-VII (0.1396%)
+ERR-ANALYS (DATA-ERR) Total uncertainty                     (3.3%)
+STATUS     (TABLE) Table 3 of Radiat.Phys.Chem.141(2017)22
+           (DEP,31783002) LR-0 spectrum averaged cross section
+           (SPSDD,31783005)
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+KT-DUMMY   DATA       DATA-ERR
+MEV        MB         PER-CENT
+ 1.32       0.172      3.3
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        31783004   20180508   20180629   20180629       3184
+BIB                  5         16
+REACTION   (39-Y-89(N,2N)39-Y-88,,SIG,,SPA)
+INC-SPECT  LR-0 reactor spectrum.
+           The measured numerical spectrum in void case is in
+            Table 2 of M.Kostal+,Appl.Radiat.Isot.135(2018)83.
+MISC-COL   (MISC) Cross section averaged in LR-0 reactor spectrum
+                  above 10 MeV
+ERR-ANALYS (ERR-T) Total uncertainty                        (3.2%)
+           (ERR-1) Statistics of 88Y activity               (0.6%)
+           (ERR-2) Bias between 88Y 898 and 1836 keV peaks  (1.0%)
+           (ERR-3) Target modeling                          (1.0%)
+           (ERR-4) HPGe efficiency volume source - Y        (0.9%)
+           (ERR-5) Statistics of 198Au activity             (0.3%)
+           (ERR-6) Statistics of 58Co activity              (0.8%)
+           (ERR-7) HPGe efficiency point source - Au,Ni     (1.9%)
+           (ERR-8) Bias between Au/Ni based scaling factors (1.7%)
+STATUS     (TABLE) Table 3.7.5.5 of LR0-RESR-004 (2018)
+ENDBIB              16
+COMMON               7          6
+ERR-2      ERR-3      ERR-4      ERR-5      ERR-6      ERR-7
+ERR-8
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+ 1.0        1.0        0.9        0.3        0.8        1.9
+ 1.7
+ENDCOMMON            6
+DATA                 5          1
+EN-DUMMY   DATA       ERR-T      ERR-1      MISC
+MEV        MICRO-B    PER-CENT   PER-CENT   MB
+ 1.         43.54      3.2        0.6        123.8
+ENDDATA              3
+ENDSUBENT           31
+SUBENT        31783005   20180508   20180629   20180629       3184
+BIB                  5          9
+REACTION   (39-Y-89(N,2N)39-Y-88,,SIG,,FIS)
+INC-SPECT  235U prompt fission neutron spectra
+ANALYSIS   Cross section averaged over the LR-0 spectrum above
+            10 MeV multiplied by the fracion of 235U prompt
+            fission neutrons above 10 MeV in ENDF/B-VII (0.1396%)
+ERR-ANALYS (DATA-ERR) Total uncertainty                   (3.1%)
+STATUS     (TABLE) Table 3.7.5.5 of LR0-RESR-004 (2018)
+           (DEP,31783004) LR-0 spectrum averaged cross section
+           (COREL,31785003) Another result from the same group
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+KT-DUMMY   DATA       DATA-ERR
+MEV        MB         PER-CENT
+ 1.32       0.1708     3.2
+ENDDATA              3
+ENDSUBENT           17
+ENDENTRY             5
