@@ -1,12 +1,14 @@
-ENTRY            20374   20120708   20130226   20130207       2232
-SUBENT        20374001   20120708   20130226   20130207       2232
-BIB                 18         83
+ENTRY            20374   20161121   20170302   20170214       2255
+SUBENT        20374001   20161121   20170302   20170214       2255
+BIB                 19         91
 INSTITUTE  (2GERKFK)
 REFERENCE  (J,NP/A,240,29,1975)
            (S,KFK-2046,79,197409) Proc. of EACRP-sponsored panel
             on keV capture of the structural materials Cr,Fe,Ni,
             Karlsruhe, 8-9 May, 1973, summary of KFK capture
             and transmission results on Cr-50 and Fe-54.
+           (J,AAA,37,197,1974) 62Ni res.parameters Tables.
+            MACS for Cr,Fe,Ni,Co isotopes in Table.
            (W,SPENCER,197305) further resonance parameter tables
             with neutron and radiation widths for Cr-52, Cr-53,
             Fe-54, Fe-57, Ni-62 and Ni-64. Point capture data.
@@ -14,12 +16,12 @@ REL-REF    (O,20413001,H.Beer+,R,KFK-1516,197312) -
                               Transmission results, Fe-54
            (O,20435001,R.R.Spencer+,R,KFK-1517,197311) -
             transmission results, Cr-50, Cr-52, Ni-62, Ni-64.
-           (O,20155001,K-N.Mueller+,J,NP/A,164,97,1971) -
+           (O,20155001,K.-N.Mueller+,J,NP/A,164,97,1971)-
            transmission results, Cr-53,Ti-49. See entry 20155.
            (O,20159001,G.Rohr+,J,ZP,227,1,196908) transmission
              results, Fe-57. See entry 20159.
-AUTHOR     (H.Beer,R.R.Spencer)
-TITLE       KeV neutron radiative capture and total cross
+AUTHOR     (H.Beer,R.R.Spencer,A.Ernst)
+TITLE       keV neutron radiative capture and total cross
             section of 50,52,53Cr, 54,57Fe and 62,64Ni
 FACILITY   (VDG,2GERKFK) Pulsed 3 MV Van de Graaff at Karlsruhe.
 INC-SOURCE (P-LI7)    Li-7(p,n)Be-7 reaction. Relatively thick
@@ -79,14 +81,20 @@ COMMENT    .Capture cross section data are capture yields divided
             section only where effects of sample thickness (self-
             shielding, multiple collisions) and resolution are
             negligible.
+ADD-RES      Correlation coefficients between the gamma width and
+           the neutron width are given in Table 18 of
+           J,NP/A,240,29,1975 .
 HISTORY    (19730614C)
            (19740929E)
            (19780911U) Reference updated by NNDC
            (20120708A) SD: Updated to new date formats,lower case.
                 Corrections according last EXFOR rules and Dict.
-ENDBIB              83
+           (20161121A) M.M. Ref. J,AAA,37,197,1974 was added.
+            BIB information was updated in Subents 001,018,019.
+            Subents 023-045 were added.
+ENDBIB              91
 NOCOMMON             0          0
-ENDSUBENT           86
+ENDSUBENT           94
 SUBENT        20374002   20120708   20130226   20130207       2232
 BIB                  3          8
 REACTION   (24-CR-50(N,G)24-CR-51,,SIG,,RAW)
@@ -3611,8 +3619,8 @@ MEV        B          PER-CENT
  1.9776E-01 1.3637E-02 9.9800E+01
 ENDDATA            467
 ENDSUBENT          481
-SUBENT        20374018   20120708   20130226   20130207       2232
-BIB                  4         16
+SUBENT        20374018   20161121   20170302   20170214       2255
+BIB                  5         22
 REACTION  1(28-NI-62(N,0),,EN)
           2(28-NI-62(N,EL),,WID)
           3(28-NI-62(N,G),,WID)
@@ -3626,14 +3634,20 @@ ANALYSIS   .Associated effective R-matrix channel radii are
                  C=160 keV     (centre of energy interval fitted).
 MISC-COL   (MISC) .This column gives multiple-interaction
             contribution to capture peak area in per-cent.
+ERR-ANALYS (DATA-ERR) Uncertainty in energy scale and resonance
+            energies estimated as 0.3%.
+           .Neutron and radiation width uncertainties calculated
+            from transmission and capture yield uncertainties
+            by error propagation through least-squares fit.
 STATUS     (TABLE) .From tables presented at EACRP panel,
               KFK, May 1973; same in tbl.12 of NP/A,240,29,1975.
            .Potential scattering parameters from KFK-1517.
-ENDBIB              16
+            Table 1 of J,AAA,37,197,1974
+ENDBIB              22
 COMMON               1          3
 MOMENTUM L
 NO-DIM
- 0.0000E+00
+ 0.0
 ENDCOMMON            3
 DATA                 9         11
 DATA      1DATA-ERR  1DATA-APRX 1DATA      2DATA-ERR  2DATA-APRX 2
@@ -3663,22 +3677,28 @@ MILLI-EV   MILLI-EV   PER-CENT
                        2.8800E+05                       1.0000E+06
 
 ENDDATA             26
-ENDSUBENT           51
-SUBENT        20374019   20120708   20130226   20130207       2232
-BIB                  3         12
+ENDSUBENT           57
+SUBENT        20374019   20161121   20170302   20170214       2255
+BIB                  4         18
 REACTION  1(28-NI-62(N,0),,EN)
           2(28-NI-62(N,EL),,WID,,G)
           3(28-NI-62(N,G),,WID/STR)
           4(28-NI-62(N,G),,WID,,G)
            .For narrow resonances (probably p-wave, above roughly
             50 keV probably p- or d-wave levels).
+ERR-ANALYS (DATA-ERR) Uncertainty in energy scale and resonance
+            energies estimated as 0.3%.
+           .Neutron and radiation width uncertainties calculated
+            from transmission and capture yield uncertainties
+            by error propagation through least-squares fit.
 STATUS     (TABLE) .From tables presented at EACRP panel,
               KFK, May 1973; same in tbl.13 of NP/A,240,29,1975.
+            Table 2 of J,AAA,37,197,1974
 HISTORY    (20120708A) SD: Presentation of REACTION 3 corrected
            according to last EXFOR rules. Uncertainty of one
             value of gGamma(g) corrected:
                                  280+/-70 meV-> 280+/-110 meV
-ENDBIB              12
+ENDBIB              18
 NOCOMMON             0          0
 DATA                 8         23
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
@@ -3732,7 +3752,7 @@ MILLI-EV   MILLI-EV
  1.6050E+05 1.8000E+03                       2.7200E+03 6.0000E+02
 
 ENDDATA             50
-ENDSUBENT           67
+ENDSUBENT           73
 SUBENT        20374020   20120708   20130226   20130207       2232
 BIB                  3          9
 REACTION   (28-NI-64(N,G)28-NI-65,,SIG,,RAW)
@@ -4311,4 +4331,666 @@ MILLI-EV   NO-DIM
             1.0000E+00
 ENDDATA             22
 ENDSUBENT           37
-ENDENTRY            22
+SUBENT        20374023   20161121   20170302   20170214       2255
+BIB                  5         15
+REACTION   (24-CR-50(N,G)24-CR-51,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 in resolved resonance region
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 31mb at 30 keV .
+ERR-ANALYS (DATA-ERR) Uncertainty estimated due to uncertainties
+           in the capture cross section.
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374002)  Capture cross section ( yields)
+           (DEP,20374003)  Res. parameters
+           (DEP,20374004)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              15
+COMMON               1          3
+DATA-ERR
+PER-CENT
+ 20.
+ENDCOMMON            3
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        236.
+ 10.        129.
+ 15.         90.
+ 20.         70.
+ 25.         58.
+ 30.         50.
+ 35.         45.
+ 40.         40.
+ 45.         37.
+ 50.         34.
+ 55.         32.
+ 60.         30.
+ 65.         28.
+ 70.         26.
+ 75.         25.
+ENDDATA             17
+ENDSUBENT           41
+SUBENT        20374024   20161121   20170302   20170214       2255
+BIB                  4         13
+REACTION   (24-CR-52(N,G)24-CR-53,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 3.8mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374005)  Capture cross section ( yields)
+           (DEP,20374006)  Res. parameters
+           (DEP,20374007)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        13.9
+ 10.         9.3
+ 15.         8.8
+ 20.         8.6
+ 25.         8.5
+ 30.         8.3
+ 35.         8.1
+ 40.         7.8
+ 45.         7.6
+ 50.         7.3
+ 55.         6.9
+ 60.         6.6
+ 65.         6.3
+ 70.         6.1
+ 75.         5.7
+ENDDATA             17
+ENDSUBENT           35
+SUBENT        20374025   20161121   20170302   20170214       2255
+BIB                  4         13
+REACTION   (24-CR-53(N,G)24-CR-54,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 40.mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374008)  Capture cross section ( yields)
+           (DEP,20374009)  Res. parameters
+           (DEP,20374010)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        368.
+ 10.        197.
+ 15.        127.
+ 20.         93.
+ 25.         74.
+ 30.         61.
+ 35.         53.
+ 40.         47.
+ 45.         42.
+ 50.         38.
+ 55.         35.
+ 60.         33.
+ 65.         30.
+ 70.         28.
+ 75.         27.
+ENDDATA             17
+ENDSUBENT           35
+SUBENT        20374026   20161121   20170302   20170214       2255
+BIB                  4         13
+REACTION   (26-FE-54(N,G)26-FE-55,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 34. at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374011)  Capture cross section ( yields)
+           (DEP,20374012)  Res. parameters
+           (DEP,20374013)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        62.
+ 10.        53.
+ 15.        42.
+ 20.        36.
+ 25.        31.
+ 30.        28.
+ 35.        26.
+ 40.        24.
+ 45.        22.
+ 50.        21.
+ 55.        20.
+ 60.        18.
+ 65.        17.
+ 70.        16.
+ 75.        15.
+ENDDATA             17
+ENDSUBENT           35
+SUBENT        20374027   20161121   20170302   20170214       2255
+BIB                  4         10
+REACTION   (26-FE-56(N,G)26-FE-57,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 13.5mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        20.
+ 10.        15.
+ 15.        15.
+ 20.        15.
+ 25.        14.
+ 30.        14.
+ 35.        13.
+ 40.        12.
+ 45.        11.
+ 50.        11.
+ 55.        10.
+ 60.         9.
+ 65.         9.
+ 70.         8.
+ 75.         8.
+ENDDATA             17
+ENDSUBENT           32
+SUBENT        20374028   20161121   20170302   20170214       2255
+BIB                  4         13
+REACTION   (26-FE-57(N,G)26-FE-58,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 30.mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374014)  Capture cross section ( yields)
+           (DEP,20374015)  Res. parameters
+           (DEP,20374016)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        137.
+ 10.         80.
+ 15.         56.
+ 20.         42.
+ 25.         34.
+ 30.         28.
+ 35.         24.
+ 40.         21.
+ 45.         18.
+ 50.         16.
+ 55.         15.
+ 60.         13.
+ 65.         12.
+ 70.         11.
+ 75.         10.
+ENDDATA             17
+ENDSUBENT           35
+SUBENT        20374029   20161121   20170302   20170214       2255
+BIB                  4         10
+REACTION   (27-CO-59(N,G)27-CO-60,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 35.mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        230.
+ 10.        142.
+ 15.        110.
+ 20.         92.
+ 25.         81.
+ 30.         72.
+ 35.         66.
+ 40.         61.
+ 45.         57.
+ 50.         53.
+ 55.         50.
+ 60.         47.
+ 65.         44.
+ 70.         42.
+ 75.         40.
+ENDDATA             17
+ENDSUBENT           32
+SUBENT        20374030   20161121   20170302   20170214       2255
+BIB                  4         10
+REACTION   (28-NI-58(N,G)28-NI-59,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 17.mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        48.
+ 10.        58.
+ 15.        51.
+ 20.        46.
+ 25.        42.
+ 30.        40.
+ 35.        39.
+ 40.        38.
+ 45.        37.
+ 50.        37.
+ 55.        36.
+ 60.        35.
+ 65.        35.
+ 70.        34.
+ 75.        33.
+ENDDATA             17
+ENDSUBENT           32
+SUBENT        20374031   20161121   20170302   20170214       2255
+BIB                  4         10
+REACTION   (28-NI-60(N,G)28-NI-61,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+            Data on J.Allen+ from Advances of Nuclear Physics,
+           vol.4,page 205, Ed. M.Baranger and E.Vogt, Plenum
+           Press, New York, 1971 - 7.5mb at 30 keV .
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        75.
+ 10.        67.
+ 15.        52.
+ 20.        42.
+ 25.        35.
+ 30.        31.
+ 35.        28.
+ 40.        26.
+ 45.        25.
+ 50.        23.
+ 55.        22.
+ 60.        21.
+ 65.        21.
+ 70.        20.
+ 75.        19.
+ENDDATA             17
+ENDSUBENT           32
+SUBENT        20374032   20161121   20170302   20170214       2255
+BIB                  4          7
+REACTION   (28-NI-61(N,G)28-NI-62,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        323.
+ 10.        222.
+ 15.        178.
+ 20.        157.
+ 25.        144.
+ 30.        135.
+ 35.        128.
+ 40.        121.
+ 45.        114.
+ 50.        108.
+ 55.        102.
+ 60.         97.
+ 65.         92.
+ 70.         87.
+ 75.         82.
+ENDDATA             17
+ENDSUBENT           29
+SUBENT        20374033   20161121   20170302   20170214       2255
+BIB                  4         10
+REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374017)  Capture cross section ( yields)
+           (DEP,20374018)  Res. parameters
+           (DEP,20374019)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        102.
+ 10.         58.
+ 15.         42.
+ 20.         34.
+ 25.         29.
+ 30.         26.
+ 35.         23.
+ 40.         22.
+ 45.         20.
+ 50.         19.
+ 55.         18.
+ 60.         17.
+ 65.         16.
+ 70.         15.
+ 75.         15.
+ENDDATA             17
+ENDSUBENT           32
+SUBENT        20374034   20161121   20170302   20170214       2255
+BIB                  4         10
+REACTION   (28-NI-64(N,G)28-NI-65,,SIG,,MXW,DERIV)
+ANALYSIS    MACS were derived from thermal cross sections, the
+            individual resonance areas and energies by formula
+             (1) in J,AAA,37,197,1974 .
+           In unresolved resonance region the formula (2) was used
+STATUS     (TABLE) Table 3 of J,AAA,37,197,1974
+           (DEP,20374020)  Capture cross section ( yields)
+           (DEP,20374021)  Res. parameters
+           (DEP,20374022)  Res. parameters
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2         15
+KT         DATA
+KEV        MB
+  5.        76.
+ 10.        64.
+ 15.        47.
+ 20.        35.
+ 25.        28.
+ 30.        23.
+ 35.        19.
+ 40.        17.
+ 45.        15.
+ 50.        14.
+ 55.        12.
+ 60.        11.
+ 65.        11.
+ 70.        10.
+ 75.         9.
+ENDDATA             17
+ENDSUBENT           32
+SUBENT        20374035   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (24-CR-50(N,EL),,STF)
+            s-wave neutron strength function
+REL-REF    (A,10074030,R.G.Stieglitz+,J,NP/A,163,592,1971)
+            (2.18+-0.75)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 16 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               1          3
+MOMENTUM L
+NO-DIM
+ 0.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    1.7 E-4    0.7 E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374036   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (24-CR-52(N,EL),,STF)
+            s-wave neutron strength function
+REL-REF    (A,10074031,R.G.Stieglitz+,J,NP/A,163,592,1971)
+            (2.10+-1.05)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 16 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               1          3
+MOMENTUM L
+NO-DIM
+ 0.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    1.9 E-4    1.0 E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374037   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (26-FE-54(N,EL),,STF)
+            s-wave neutron strength function
+REL-REF    (A,,K.K.Seth,J,ND/A,2,299,1966)
+             (5.2+-1.7)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 16 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               1          3
+MOMENTUM L
+NO-DIM
+ 0.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    7.8 E-4    3.4 E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374038   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (28-NI-62(N,EL),,STF)
+            s-wave neutron strength function
+REL-REF    (A,,K.K.Seth,J,ND/A,2,299,1966)
+             (2.9+-0.8)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 16 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               1          3
+MOMENTUM L
+NO-DIM
+ 0.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    1.8 E-4    0.9 E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374039   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (28-NI-64(N,EL),,STF)
+            s-wave neutron strength function
+REL-REF    (A,,K.K.Seth,J,ND/A,2,299,1966)
+             (2.0+-0.8)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 16 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               1          3
+MOMENTUM L
+NO-DIM
+ 0.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    3.5 E-4    1.4 E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374040   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (24-CR-50(N,EL),,STF)
+            p-wave neutron strength function
+REL-REF    (A,10074036,R.G.Stieglitz+,J,NP/A,163,592,1971)
+            (0.264+-0.152)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 17 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               3          3
+MOMENTUM L EN-RES-MIN EN-RES-MAX
+NO-DIM     KEV        KEV
+ 1.         6.         60.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    0.36E-4    0.27E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374041   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (24-CR-52(N,EL),,STF)
+            p-wave neutron strength function
+REL-REF    (A,10074037,R.G.Stieglitz+,J,NP/A,163,592,1971)
+            (0.053+-0.023)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 17 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               3          3
+MOMENTUM L EN-RES-MIN EN-RES-MAX
+NO-DIM     KEV        KEV
+ 1.         6.         154.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+   0.068E-4   0.060E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374042   20161121   20170302   20170214       2255
+BIB                  5          8
+REACTION   (24-CR-53(N,EL),,STF)
+            p-wave neutron strength function
+REL-REF    (A,10074038,R.G.Stieglitz+,J,NP/A,163,592,1971)
+            (0.074+-0.050)*10**-4
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 17 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               8
+COMMON               3          3
+MOMENTUM L EN-RES-MIN EN-RES-MAX
+NO-DIM     KEV        KEV
+ 1.         6.         94.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+   0.081E-4   0.051E-4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20374043   20161121   20170302   20170214       2255
+BIB                  4          6
+REACTION   (26-FE-54(N,EL),,STF)
+            p-wave neutron strength function
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 17 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               6
+COMMON               3          3
+MOMENTUM L EN-RES-MIN EN-RES-MAX
+NO-DIM     KEV        KEV
+ 1.         10.        127.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    0.18E-4    0.08E-4
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        20374044   20161121   20170302   20170214       2255
+BIB                  4          6
+REACTION   (26-FE-57(N,EL),,STF)
+            p-wave neutron strength function
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 17 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               6
+COMMON               3          3
+MOMENTUM L EN-RES-MIN EN-RES-MAX
+NO-DIM     KEV        KEV
+ 1.         6.         102.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    0.55E-4    0.43E-4
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        20374045   20161121   20170302   20170214       2255
+BIB                  4          6
+REACTION   (28-NI-62(N,EL),,STF)
+            p-wave neutron strength function
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 17 of J,NP/A,240,29,1975
+HISTORY    (20161121C) M.M. Subent was added.
+ENDBIB               6
+COMMON               3          3
+MOMENTUM L EN-RES-MIN EN-RES-MAX
+NO-DIM     KEV        KEV
+ 0.         6.         161.
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+   0.028E-4   0.013E-4
+ENDDATA              3
+ENDSUBENT           18
+ENDENTRY            45

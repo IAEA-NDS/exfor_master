@@ -1,15 +1,20 @@
-ENTRY            22843   20070628   20071002   20071002       2186
-SUBENT        22843001   20070628   20071002   20071002       2186
-BIB                 12         39
+ENTRY            22843   20161111   20170302   20170214       2255
+SUBENT        22843001   20161111   20170302   20170214       2255
+BIB                 14         64
 TITLE       Measurement of the effective capture cross section
-            of the 238Np forr thermal neutrons
-AUTHOR     (H.HARADA, S.NAKAMURA, T.FUJII, H.YAMANA)
+            of 238Np for thermal neutrons
+AUTHOR     (H.Harada, S.Nakamura, T.Fujii, H.Yamana)
 INSTITUTE  (2JPNJAE)  Harada, Nakamura
            (2JPNKTO)  Fujii, Yamana
 REFERENCE  (J,NST,41,(1),1,200401)  Main reference, data given
-FACILITY   (REAC,2JPNKTO)  Thermal neutron flux resaerch reactor
-                           at the kyoto university
-DETECTOR   (HPGE)    High purity gelium detector with BGO
+           (S,JAERI-C-2005-03,121,2005)
+REL-REF    (O,22872001,H.Harada+,S,JAERI-C-2005-03,121,2005)
+            Data for Np-237 measured by TOF method.
+           (O,22872001,H.Harada+,S,JAERI-C-2005-03,121,2005)
+            Data for Np-237 measured by gamma-spectroscopy .
+FACILITY   (REAC,2JPNKTO)  Thermal neutron flux research reactor
+                           at the Kyoto University
+DETECTOR   (HPGE) High purity n-type germanium detector with BGO.
              (Bi4-Ge3-O12 ) detector to measure a weak gamma rays
              from 239-Np
            .The peak detector efficiency was 90% at 1.33 MeV gamma
@@ -27,43 +32,69 @@ METHOD     (ACTIV,GSPEC)
            (SITA)    Single target irradiation
 MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG)
            ((MONIT2)27-CO-59(N,G)27-CO-60,,SIG)
-DECAY-MON  (79-AU-198,2.695D,DG,412.,0.9558)
-           (27-CO-60,5.271YR,DG,1173.,0.9985,
+DECAY-MON  (79-AU-198-G,2.695D,DG,412.,0.9558)
+            Self-absorption coefficient 0.995
+           (27-CO-60-G,5.271YR,DG,1173.,0.9985,
                              DG,1333.,0.999826)
+           Self-absorption coefficient 0.998 for both gamma-lines.
+ANALYSIS    Using the data on both SIG-0 and S0 for Co and Au and
+            the results of reaction rates R for Co and Au, the
+            values of flux and r*sqrt(T/T0)  at the irradiation
+            position were determined.
+            Formulas used:
+            SIG-eff=SIG-0*(1+r*sqrt(T=T0)*S0),
+            S0=(2/sqrt(PI))*(I0r/SIG-0),
+            I0r=I0 - 0.45*SIG-0 ,
+            where SIG-0 - CS at thermal point, see MONITOR
+            I0 - resonance integral.
+            Co-59 - S0=37.18+-0.06, Au-198 - S0=17.22+-0.32 were
+            obtained.
 ERR-ANALYS (ERR-T)  Total error
            (ERR-S)  Statistical
            (ERR-1)  Error in the gamma ray detection efficiency
-                    resultin from the ambiguity of the intencity
-                    calibration
-           (ERR-2)  Error in the measurement of the induced activi
+                    resulting from the ambiguity of the calibratio
+                    source intensity
+           (ERR-2)  Error in the measurement of the induced
+                    activity
            (ERR-3)  Error in the measurement of the neutron flux
-           (ERR-HL) Error in the half-lives of 238Np and 239Np
+           (ERR-HL) Error resulting from the errors of the
+                    half-lives of 238Np and 239Np
 HISTORY    (20040805C)  JOS
            (20040805U)  Monitor codes corrected, EN-NRM added-SM
-ENDBIB              39
+           (20161111A) M.M. Ref. S,JAERI-C-2005-03,121,2005 was
+           added. BIB information was updated.
+           ANALYSIS, STATUS were added.
+           ERR-HL -> HL-ERR .
+ENDBIB              64
 COMMON              10          6
-EN-NRM     ERR-S      ERR-1      ERR-2      ERR-3      ERR-HL
+EN-NRM     ERR-S      ERR-1      ERR-2      ERR-3      HL-ERR
 MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
 EV         PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 B          B          B          B
-   2.53E-02        3.8        2.4        1.1         2.        0.1
+   2.53E-02        3.8        2.4        1.1        2.0        0.1
       98.65       0.09      37.18       0.06
 ENDCOMMON            6
-ENDSUBENT           49
-SUBENT        22843002   20040805              20050926       0000
-BIB                  4          6
+ENDSUBENT           74
+SUBENT        22843002   20161111   20170302   20170214       2255
+BIB                  5         12
 REACTION   (93-NP-238(N,G)93-NP-239,,SIG,,MXW)
 INC-SPECT   Thermal neutron spectrum, mean energy supposed
-            0.0253 eV
+            0.0253 eV . Epithermal index r*sqrt(T/T0)=0.03+-0.001.
+            Neutron flux  (1.01+-0.01)*10**14 n/(cm2*s).
 DECAY-DATA (93-NP-238,2.117D,DG,984.5,0.2519)
+            HL=2.117+-0.002 d , intensity 25.19+-0.21 %
            (93-NP-239,2.3565D,DG,277.6,0.1444)
-ASSUMED    (ASSUM,93-NP-239(N,G)93-NP-240,,SIG,,MXW)
-ENDBIB               6
+            HL=2.3565+-0.0004 d , intensity 14.44+-0.10 %
+ASSUMED    (ASSUM,93-NP-239(N,G)93-NP-240,,SIG)
+            SIG-O for Np-239 at thermal point
+STATUS     (TABLE) Table 3 of J,NST,41,(1),1,2004
+            Text, page 123, of S,JAERI-C-2005-03,121,2005
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          1
 EN-DUMMY   DATA       ERR-T      ASSUM
 EV         B          B          B
-     0.0253       479.        24.        37.
+     0.0253       479.       24.      37.0
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           20
 ENDENTRY             2

@@ -1,48 +1,130 @@
-ENTRY            22009     870825              20050926       0000
-SUBENT        22009001     870825              20050926       0000
-BIB                 13         19
-REFERENCE  (P,NEANDC(E)-272U,(5),8,8606)
-TITLE      -MEASUREMENT OF THE LA-139 CAPTURE CROSS SECTION
-            AND A STUDY OF THE S-PROCESS AT MAGIC NEUTRON
-            NUMBER 82.
-AUTHOR     (H.BEER)
+ENTRY            22009   20161030   20170302   20170214       2255
+SUBENT        22009001   20161030   20170302   20170214       2255
+BIB                 16         42
+REFERENCE  (J,AAA,162,330,1986)
+           ((P,NEANDC(E)-272U,(5),8,198606)=
+           (P,INDC(GER)-29,8,1986))
+                    Prelim.data in Table.
+TITLE       A measurement of the La-139 capture cross section
+            and a study of the s-process at magic neutron
+            number 82.
+AUTHOR     (H.Beer)
 INSTITUTE  (2GERKFK)
-FACILITY   (VDG,2GERKFK) KFK 3.75 MV VAN DE GRAAFF ACCELERATOR.
-METHOD     (ACTIV) ACTIVATION TECHNIQUE.
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) MAXWELLIAN
-            AVERAGE CAPTURE CROSS SECTION.
-DECAY-MON  (79-AU-198,2.69D,DG,412.,.9552)
-SAMPLE     .NO DETAILS GIVEN.
-CORRECTION .NO DETAILS GIVEN.
-ERR-ANALYS (DATA-ERR) NO DETAILS GIVEN.
-STATUS     .DATA WERE TAKEN FROM MAIN REF.
-HISTORY    (861125C)  NO.
-           (861212E)
-           (870825U) IF.
-           (870827E)
-ENDBIB              19
-COMMON               2          3
-MONIT      MONIT-ERR
-MB         MB
- 6.5700E+02 1.6000E+01
+FACILITY   (VDG,2GERKFK) KFK 3.75 MV Van De Graaff accelerator.
+METHOD     (ACTIV) Activation technique.
+INC-SOURCE (P-LI7) Proton energy 1911 keV.
+INC-SPECT    Good approximated by Maxwellian of kT=25 keV .
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) Maxwellian
+            average capture cross section.
+DECAY-MON  (79-AU-198-G,2.6935D,DG,412.,.955) 95.5+-0.1 %
+MONIT-REF  (,R.L.Macklin,W,MACKLIN,1982)
+SAMPLE     Samples were attached to the water cooled neutron
+           target. Samples were sandwiched between two gold
+           foils.
+           Sample thickness: La - 2.60E-4 at/b, Au - 1.14E-4 at/b
+DETECTOR   (GLASD) Li-6 glass detector to monitor neutron beam.
+            Placed on the beam axis at 70 cm distance from the
+            neutron source.
+           (GE) Ge detector of 45 cm3 volume, 1.6keV energy
+           resolution at 1.33 MeV was used to count the induced
+           activities of the samples.
+CORRECTION For gamma-ray self-absorption.
+           For decay during irradiation including the time
+           dependence of neutron yield.
+STATUS     .Data were taken from main ref.
+HISTORY    (19861125C)  NO.
+           (19861212E)
+           (19870825U) IF.
+           (19870827E)
+           (20161030A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Ref. J,AAA,162,330,1986 was added.
+           BIB information was updated.
+           SAMPLE,DETECTOR,ERR-ANALYS were added.
+           MONIT-ERR: 16. -> 20. mb as given in AAA,162,330,1986
+           Subent 002 was added
+ENDBIB              42
+COMMON               3          3
+MONIT      MONIT-ERR  KT-NRM
+MB         MB         KEV
+ 657.       20.        25.
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        22009002     881117              20050926       0000
-BIB                  4          8
-REACTION   (57-LA-139(N,G)57-LA-140,,SIG,,MXW) MAXWELLIAN
-DECAY-DATA (57-LA-140,40.272HR,DG,1596.,.955)
-STATUS     .DATA WERE TAKEN FROM MAIN REF.
-HISTORY    (861125C)  NO.
-           (861212E)
-           (870605U) IF.
-           (870825U) IF.
-           (870827E)
-ENDBIB               8
-NOCOMMON             0          0
+ENDSUBENT           49
+SUBENT        22009002   20161030   20170302   20170214       2255
+BIB                  5         22
+REACTION   (57-LA-139(N,G)57-LA-140,,SIG,,MXW) Maxwellian
+DECAY-DATA (57-LA-140,40.272HR,DG,1596.,.955)  95.5+-0.3 %
+ERR-ANALYS (ERR-T)  Total error.
+                Sources of uncertainty:
+           (ERR-1) Au standard
+           (ERR-2) Gamma-ray intensity per decay
+           (ERR-3) Ge detector efficiency
+           (ERR-4,,0.1) Gamma-ray self-absorption
+           (ERR-5,,1.) Activation via scattered neutrons
+           (ERR-6) Neutron flux dispersion
+           (ERR-7) Deviation of flux distribution from Maxwellian
+           (ERR-8,,2.) Irradiation history.
+STATUS     (TABLE) Text, page 331 of J,AAA,162,330,1986 .
+            In P,NEANDC(E)-272U,(5),8,1986 - kT=23.4kev, DATA and
+            DATA-ERR values are the same as in AAA,162,330,1986
+HISTORY    (19861125C)  NO.
+           (19861212E)
+           (19870605U) IF.
+           (19870825U) IF.
+           (19870827E)
+           (20161030A) M.M. kT was changed 23.4 -> 25.keV as given
+           in J,AAA,162,330,1986 .
+ENDBIB              22
+COMMON               5          3
+ERR-1      ERR-2      ERR-3      ERR-6      ERR-7
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 3.         0.3        2.         3.         3.
+ENDCOMMON            3
 DATA                 3          1
-KT         DATA       DATA-ERR
+KT         DATA       ERR-T
 KEV        MB         MB
- 2.3400E+01 4.4100E+01 2.9000E+00
+ 25.        44.1       2.9
 ENDDATA              3
-ENDSUBENT           16
-ENDENTRY             2
+ENDSUBENT           34
+SUBENT        22009003   20161030   20170302   20170214       2255
+BIB                  7         27
+REACTION   (57-LA-139(N,G)57-LA-140,,SIG,,MXW) Maxwellian
+REL-REF    (A,11399001,R.L.Macklin+,J,PR,107,504,1957) 45+-6 mb
+            Agree within uncertainties.
+           (D,30384001,A.R.Musgrove+,J,AUJ,30,599,1977) 54+-5 mb
+            Higher.
+ERR-ANALYS (ERR-T)  Total error.
+                Sources of uncertainty:
+           (ERR-1) Au standard
+           (ERR-2) Gamma-ray intensity per decay
+           (ERR-3) Ge detector efficiency
+           (ERR-4,,0.1) Gamma-ray self-absorption
+           (ERR-5,,1.) Activation via scattered neutrons
+           (ERR-6) Neutron flux dispersion
+           (ERR-7) Deviation of flux distribution from Maxwellian
+           (ERR-8,,2.) Irradiation history.
+             Uncertainty of extrapolation is not mentioned in the
+             article.
+ANALYSIS    Cross section value was derived by extrapolation of
+            measured cross section at kT=25keV to 30 keV assuming
+            temperature dependence proportional to 1/sqrt(k*T)
+ADD-RES     In Table 3 there are "Adopted values" for other
+            isotopes at kT=30 keV:
+            Ba-138 - 3.96+-0.23 mb, Ce-140 - 10.82+-0.53 mb,
+            Pr-141 - 119+-16 mb , Nd-142 - 46+-4 mb .
+STATUS     (TABLE) Table 3 of J,AAA,162,330,1986
+           (DEP,22009002) See ANALYSIS
+HISTORY    (20161030A) M.M. Subent was added.
+ENDBIB              27
+COMMON               5          3
+ERR-1      ERR-2      ERR-3      ERR-6      ERR-7
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 3.         0.3        2.         3.         3.
+ENDCOMMON            3
+DATA                 3          1
+KT         DATA       ERR-T
+KEV        MB         MB
+ 30.        38.4       2.7
+ENDDATA              3
+ENDSUBENT           39
+ENDENTRY             3

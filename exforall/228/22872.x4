@@ -1,11 +1,10 @@
-ENTRY            22872   20090218   20090508   20090507       2208
-SUBENT        22872001   20090218   20090508   20090507       2208
-BIB                 14         62
+ENTRY            22872   20161111   20170302   20170214       2255
+SUBENT        22872001   20161111   20170302   20170214       2255
+BIB                 16         86
 TITLE      .Measurement of Neutron Capture Cross Section of
-            Np-237 by linac time-of flight method for energy
-            region 0.02 to 100 eV
+            Np-237 from 0.02 to 100 eV
 AUTHOR     (O.Shcherbakov, K.Furutaka, S.Nakamura, H.Sakane,
-            K.Kobayashi, S.Yamamoto, Jun-Ichi Hori, H.Harada)
+           K.Kobayashi, S.Yamamoto, J.-I.Hori, H.Harada)
 INSTITUTE  (2JPNJNC) O.Shcherbakov, K.Furutaka, S.Nakamura,
                      H.Sakane, H.Harada
            (2JPNKTO) K.Kobayashi, S.Lee, H.-J. Cho, Y.Fujita,
@@ -13,9 +12,16 @@ INSTITUTE  (2JPNJNC) O.Shcherbakov, K.Furutaka, S.Nakamura,
                      Institute.
 REFERENCE  (J,NST,42,(2),135,200502)  Main reference, Sigma and
                      Res. integrals are given
+           (S,JAERI-C-2005-03,121,2005) First author H.Harada .
+             Figure of ratios of measured average CS to CS of
+           Kobayashi, Weston, JENDL-3.3, ENDF/B-VI .
            (C,2004SANTA,,1007,200410)  Graph for 0.02 - 1 eV
+REL-REF    (O,22843001,H.Harada+,S,JAERI-C-2005-03,121,2005)
+            Data for Np-238 in Entry 22843 .
+           (O,22872001,H.Harada+,S,JAERI-C-2005-03,121,2005)
+            Data for Np-237 measured by gamma-spectroscopy .
 DETECTOR   (BF3)    For neutron flux monitoring
-           (BGO)  Capture g-ray detector consists of two identical
+           (BGO) Capture gamma-ray detector consists of two
                halves, each containing 8 optically separated BGO
                crystals 1700 mm in length which form a cylindrical
                scintillation layer having internal and external
@@ -38,59 +44,73 @@ METHOD     (TOF)  .Flight path is 24.2m, electron beam
            (PHD)  .Pulse height discrimination
            (STTA) .Stack target measurements
 MONITOR    ((MONIT1)93-NP-237(N,G)93-NP-238,,SIG)
+              at thermal point .
            (5-B-10(N,A)3-LI-7,PAR,SIG)  For neutron flux
-MONIT-REF  ((MONIT1),P.F.ROSE,R,BNL-NCS-17541,1991)  New evaluatio
+MONIT-REF  ((MONIT1),P.F.Rose,R,BNL-NCS-17541,1991) Evaluation
              ENDF/B-VI, Brookhaven National Laboratory
-           (,K.SHIBATA+,J,NST,39,1125,2002) JENDL-3.3
+           (,K.Shibata+,J,NST,39,1125,2002) JENDL-3.3
 CORRECTION .For multiple scattering and self-shielding in samples
 SAMPLE     .Neptunium oxide Np-O2 powder, weight 1.13 gram packed
-            in aluminium disk container 30 mm diameter, 0.4 mm
+            in aluminum  disk container 30 mm diameter, 0.4 mm
             thick walls. Purity of sample is 99.6% by weight.
             Radioactive purity is  99.9% with admixture of Pu239
             less than 0.1%.
             Thickness of the sample is 0.359 gram/cm2. Major
             impurities are Ga, K, P, Rb, S about 4 milligram in
             total weight.
-           .Dummy sample - an identical aluminium container
+           .Dummy sample - an identical aluminum  container
             without neptunium oxide - for background measurements
-           .Boron powder encapsulated in cylinder aluminium
+           .Boron powder encapsulated in cylinder aluminum
             thin-walled (0.2 mm) container 52 mm diameter,
             sample material thickness is 0.494 gram/cm2, elemental
             purity 99.9%, B-10 content 93%
+ERR-ANALYS  Contributions to the total uncertainties due to:
+           - to statistical errors,
+           - neutron self-shielding and multiple scattering
+            corrections - max. 2.1% for Np; for B - negligible
+            at 0.01 - 10 eV energy range, up to 0.25% at 100 eV,
+           - the background subtraction,
+           (ERR-1) the uncertainty of absolute normalization at
+           thermal point - 2.3 % ( error of reference CS was not
+            included) .
+           (MONIT1-ERR) Np-237 capture CS uncertainty at thermal
+           point .
+            Uncertainty due to un-uniform thickness of NpO2
+            sample was assumed to be negligible ( << 1.%) .
 HISTORY    (20050516C)  SM  Data from main reference, SAN 002, 003
            (20071120A)  Three new SUBENTs added. BIB-information
                         updated - SM
            (20090218A) MONIT1 moved from subent 002 to 001
                        Neutron flux monitor reaction corrected
                        Subent 006 deleted, duplicate with 002
-ENDBIB              62
-COMMON               1          3
-MONIT1
-B
-       181.
+           (20161111A) M.M. Ref. S,JAERI-C-2005-03,121,2005 was
+           added. BIB information was updated.
+           EN-NRM=0.0253 was added in Subent 001.
+           ERR-ANALYS was added in Subent 001.
+ENDBIB              86
+COMMON               4          3
+MONIT1     EN-NRM     MONIT1-ERR ERR-1
+B          EV         PER-CENT   PER-CENT
+       181.  0.0253    3.3         2.3
 ENDCOMMON            3
-ENDSUBENT           69
-SUBENT        22872002   20090218   20090508   20090507       2208
+ENDSUBENT           93
+SUBENT        22872002   20161111   20170302   20170214       2255
 BIB                  5         13
 REACTION   (93-NP-237(N,G)93-NP-238,,SIG,,AV)  Averaged over
                energy interval given in the data table
-REL-REF    (A,22858002,K.KOBAYASHI+,J,NST,39,111,2002) For 0.02 -
+REL-REF    (A,22858002,K.Kobayashi+,J,NST,39,111,2002) For 0.02 -
                 0.06, 2.8 - 5.2 and 16.0 - 45.0 eV neutron energy
-           (D,22858006,K.KOBAYASHI+,J,NST,39,111,2002) Other EN
-           (A,10887002,L.W.WESTON+,J,NSE,79,184,1981)
-           (A,,P.F.ROSE,R,BNL-NCS-17541,1991)
-           (A,,K.SHIBATA+,J,NST,39,1125,2002)  For 0.3 - 100 eV
-           (D,,K.SHIBATA+,J,NST,39,1125,2002)  For 0.02-0.1 eV
-ERR-ANALYS (ERR-T)   Total error, its structure not given
-STATUS     .Data from table 1 of main reference
+           (D,22858006,K.Kobayashi+,J,NST,39,111,2002) Other EN
+           (A,10887002,L.W.Weston+,J,NSE,79,184,1981)
+           (A,,P.F.Rose,R,BNL-NCS-17541,1991)
+           (A,,K.Shibata+,J,NST,39,1125,2002)  For 0.3 - 100 eV
+           (D,,K.Shibata+,J,NST,39,1125,2002)  For 0.02-0.1 eV
+ERR-ANALYS (ERR-T)   Total error
+STATUS     (TABLE) Table 1 of NST,42,(2),135,2005
            (COREL,22858002)
 HISTORY    (20090218A) MONIT moved to subent 001
 ENDBIB              13
-COMMON               1          3
-EN-NRM
-EV
-   2.53E-02
-ENDCOMMON            3
+NOCOMMON             0          0
 DATA                 4         13
 EN-MIN     EN-MAX     DATA       ERR-T
 EV         EV         B          B
@@ -108,13 +128,13 @@ EV         EV         B          B
  45.0        73.0        70.0        2.0
  73.0       100.0        43.8        1.6
 ENDDATA             15
-ENDSUBENT           37
-SUBENT        22872003   20071120   20080131   20080123       2190
+ENDSUBENT           33
+SUBENT        22872003   20161111   20170302   20170214       2255
 BIB                  4          4
 REACTION   (93-NP-237(N,G)93-NP-238,,RI,,LIM)
-REL-REF    (R,22858002,K.KOBAYASHI+,J,NST,39,111,2002)
-ERR-ANALYS (ERR-T)   Total error, its structure not given
-STATUS     .From Table 2 of main reference
+REL-REF    (R,22858002,K.Kobayashi+,J,NST,39,111,2002)
+ERR-ANALYS (ERR-T)   Total error.
+STATUS     (TABLE) Table 2 of NST,42,(2),135,2005
 ENDBIB               4
 NOCOMMON             0          0
 DATA                 4          2
@@ -124,13 +144,13 @@ EV         EV         B          B
   0.5        100.        506.       14.
 ENDDATA              4
 ENDSUBENT           13
-SUBENT        22872004   20071120   20080131   20080123       2190
+SUBENT        22872004   20161111   20170302   20170214       2255
 BIB                  7         12
 REACTION   (93-NP-237(N,G)93-NP-238,,SIG)
 EXP-YEAR   (2003) Final results, Nov 2003
-ANALYSIS   .Results of calculation from exp data by program
+ANALYSIS   .Results of calculation from exp. data by program
             "SumSig4.mcd"
-ERR-ANALYS (DATA-ERR)  Error is not specified
+ERR-ANALYS (DATA-ERR) Type of error is not specified
 STATUS     (TABLE) Delivered by INTERNET from O.Shcherbakov
                    et al. via N.Ohtsuka, 2007-10-27
 FLAG       (1.)  For En = 0.0185 - 0.3495 eV: 100 ch group-->
@@ -233,13 +253,13 @@ EV         B          B          NO-DIM
    1.035       43.18    8.746      3.
 ENDDATA             90
 ENDSUBENT          107
-SUBENT        22872005   20071120   20080131   20080123       2190
+SUBENT        22872005   20161111   20170302   20170214       2255
 BIB                  7         15
 REACTION   (93-NP-237(N,G)93-NP-238,,SIG)
 EXP-YEAR   (2003) Final results, Oct 2003
 ANALYSIS   .Results of calculation from exp data by program
             "SumSig4.mcd"
-ERR-ANALYS (DATA-ERR)  Error is not specified
+ERR-ANALYS (DATA-ERR) Type of error is not specified
 STATUS     (TABLE) Delivered by INTERNET from O.Shcherbakov
                    et al. via N.Ohtsuka, 2007-10-27
 FLAG       (1.)  For En =  0.2953 - 0.3962 eV: 100 ch group-->
