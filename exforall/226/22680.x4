@@ -1,7 +1,7 @@
-ENTRY            22680   20120120   20130207   20130111       Y008
-SUBENT        22680001   20120120   20130207   20130111       Y008
-BIB                 20        189
-TITLE      .Neutron activation cross sections on lead isotopes
+ENTRY            22680   20140404   20140820   20140807       2238
+SUBENT        22680001   20140404   20140820   20140807       2238
+BIB                 20        192
+TITLE       Neutron activation cross sections on lead isotopes
 AUTHOR     (V.Semkova, P.Reimer, T.Altzitzoglou, A.J.M.Plompen,
            C.Quetel, S.Sudar, J.Vogl, A.J.Koning, S.M.Qaim,
            D.L.Smith, F.Cserpak, V.Avrigeanu)
@@ -132,7 +132,7 @@ DECAY-MON  (11-NA-24,14.997HR,DG,1368.6,0.99994) MONIT-REF(1):
               ERR-HL=0.004hr, ERR-IDD=2.2%.
            (27-CO-58,70.86D,DG,810.8,0.9945)     MONIT-REF(2):
               ERR-HL=0.07d, ERR-IDD=0.01%.
-ADD-RES    (THEO)  TALYS, TALYS-mu and STARPLE codes were used
+ADD-RES    (THEO)  TALYS, TALYS-mu and STAPRE codes were used
                    for auxiliary cross section calculations
 CORRECTION .Most of these correction procedures were standard.
             The neutron scattering corrections were derived by
@@ -190,9 +190,12 @@ HISTORY    (20020121C) Raw entry obtained from A.J.M. Plompen.
             BIB Information corrected and updated.
            (20100808U) Minor corrections in ENTRY 22680
            (20120120A) NDS(VZ): MONIT-REF: ND/B->NDS
-ENDBIB             189
+           (20140404A) SD: Subent 009 deleted according to
+           Dr.V.Semkova remark (dupl. with 22818.018). Data
+           in Subents 3,4 revise based on Tables of the PR/C,80.
+ENDBIB             192
 NOCOMMON             0          0
-ENDSUBENT          192
+ENDSUBENT          195
 SUBENT        22680002   20100715   20100809   20100806       2219
 BIB                  6         19
 REACTION   (82-PB-208(N,P)81-TL-208,,SIG)
@@ -231,19 +234,21 @@ MEV        MEV        MB         MB
       20.5        0.08       8.1        0.5
 ENDDATA              8
 ENDSUBENT           36
-SUBENT        22680003   20100808   20110216   20110208       2224
-BIB                  5         10
+SUBENT        22680003   20140404   20140820   20140807       2238
+BIB                  5         12
 REACTION   (82-PB-206(N,A)80-HG-203,,SIG)
 DECAY-DATA (80-HG-203,46.612D,DG,279.1967,0.8146)
-SAMPLE     .Natural lead samples.
+SAMPLE     .Natural and enriched lead samples.
 STATUS     (TABLE)  Table from A.Plompen,  2002-07-04.
-           (COREL,22680010)  Correlated with enriched sample
+               The same in Tbl. IV PR/C,80,024610
+           (SPSDD,22680010)  final results
 HISTORY    (20040119U)   Correlation with 22680010 established
            (20091019A)   Bib section corrected: SAMPLE given
                          instead of COMMENT, STATUS corrected
            (20091115U) Decay data errors given. BIB info corrected
            (20100808U) Correlation to SAN 010 specified.
-ENDBIB              10
+           (20140404U) SD: STATUS was changed (COREL -> SPSDD)
+ENDBIB              12
 COMMON               2          3
 ERR-HL     ERR-IDD
 D          NO-DIM
@@ -259,22 +264,23 @@ MEV        MEV        MB         MB
       20.0       0.11        3.89       0.35
       20.5       0.139       3.81       0.31
 ENDDATA              8
-ENDSUBENT           27
-SUBENT        22680004   20091115   20100809   20100806       2219
-BIB                  5         12
+ENDSUBENT           29
+SUBENT        22680004   20140404   20140820   20140807       2238
+BIB                  6         13
 REACTION   (82-PB-206(N,3N)82-PB-204-M,,SIG)
 DECAY-DATA (82-PB-204-M,67.2MIN,DG,899.15,0.99170)
 ANALYSIS   .These cross sections were measured using both natural
             lead samples and samples enriched in Pb-204 and
             Pb-206, respectively. Use of these isotopically
             enriched samples enabled contributions from the
-            reaction Pb-204(N,INL) and Pb-206(N,3N) to be
+            reaction Pb-204(n,inl) and Pb-206(n,3n) to be
             distinguished in the experiment.
-SAMPLE     .Natural lead samples.
+SAMPLE     .Natural and enriched lead samples.
 STATUS     (TABLE)   Table from A.Plompen,  2002-7-04.
-           (COREL,22680011)  Correlated with enriched sample
-                             measurements
-ENDBIB              12
+               The same in Tbl. IV PR/C,80,024610
+           (SPSDD,22680011)  Final results
+HISTORY    (20140404A) SD: STATUS was changed (COREL -> SPSDD)
+ENDBIB              13
 COMMON               2          3
 ERR-HL     ERR-IDD
 MIN        NO-DIM
@@ -287,7 +293,7 @@ MEV        MEV        MB         MB
       19.43      0.09       92.         6.
       20.68      0.07      292.        31.
 ENDDATA              5
-ENDSUBENT           26
+ENDSUBENT           27
 SUBENT        22680005   20100715   20100809   20100806       2219
 BIB                  6         20
 REACTION   (82-PB-204(N,INL)82-PB-204-M,,SIG)
@@ -444,37 +450,7 @@ MEV        MEV        MB         MB
       20.5        0.1       82.        14.
 ENDDATA              7
 ENDSUBENT           30
-SUBENT        22680009   20091115   20100809   20100806       2219
-BIB                  6         14
-REACTION   (82-PB-0(N,X)81-TL-204,,SIG)
-DECAY-DATA (81-TL-204,3.78YR,B-,764.,0.971,
-                             EC,,0.029)
-METHOD     (RCHEM) .This reaction cross section was determined
-             by measuring beta-minus decay with low level liquid
-             scintillation counting following radiochemical
-             separation of thallium from lead matrix.
-COMMENT    .Errors determined by compiler from the Nuclear Wallet
-            Card.
-STATUS     (TABLE)   Preliminary data provided in tabular form by
-               private communication, A.J.M.Plompen, 2002-7-04.
-           (PRELM)      By the author
-HISTORY    (20091115U)  Decay-data SF3 corrected to B- and
-                        decay errors are given - SM.
-ENDBIB              14
-COMMON               2          3
-ERR-HL     ERR-IDD
-YR         NO-DIM
-     0.02    0.001
-ENDCOMMON            3
-DATA                 4          4
-EN         EN-RSL-FW  DATA       DATA-ERR
-MEV        MEV        MB         MB
-       18.         0.1        5.1        1.1
-       18.7        0.1        4.5        0.6
-       20.         0.1        8.7        1.1
-       20.4        0.1       13.2        1.8
-ENDDATA              6
-ENDSUBENT           29
+NOSUBENT      22680009   20140404   20140820   20140807       2238
 SUBENT        22680010   20100808   20110216   20110208       2224
 BIB                  5         11
 REACTION   (82-PB-206(N,A)80-HG-203,,SIG)

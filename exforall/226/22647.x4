@@ -1,77 +1,92 @@
-ENTRY            22647   20060204   20060525   20060430       2176
-SUBENT        22647001   20060204   20060525   20060430       2176
-BIB                  8         25
-TITLE      .Measurements of Neutron-Induced Fission Cross Sectns
-            Of Minor Actinides from 0.1 eV to 10 KeV with Lead
-            Slowing-Down Spectrometer and at 0.0253 eV with
-            Thermal Neutron Facility
-AUTHOR     (K.KOBAYASHI, T.KAI, S.YAMAMOTO, H.-J.CHO, H.YAMANA,
-           Y.FUJITA, T.MITSUGASHIRA, I.KIMURA, T.YOSHIMOTO,
-           Y.OHKAWACHI)
-INSTITUTE  (2JPNKTO) Kobayashi, Kai, Yamamoto, Cho, Yamana,
-                     Fujita, Kimura
-           (2JPNTOH) Kai, Mitsugashira
-           (2JPNJNC) Ohkawachi
-REFERENCE  (J,NSE,139,(3),273,2001)   Main Reference
-           (J,NST,36,(6),549,199906)  Data For 231Pa
-           (J,NIM/A,385,145,1997)   Detailed Description of the
-              KULS Facility Coupled to Linear Accelerator
-DETECTOR   (FISCH)  Back-To-Back Fission Chamber
-           (BF3)     Only For Neutron Energies Below 1 KeV
+ENTRY            22647   20140310   20140820   20140807       2238
+SUBENT        22647001   20140310   20140820   20140807       2238
+BIB                 11         29
+TITLE      Measurement of neutron-induced fission cross sections
+            of 229Th and 231Pa using linac-driven lead slowing-
+            down spectrometer
+AUTHOR     (K.Kobayashi, S.Yamamoto, S.Lee, H.-J.Cho, Y.Yamana,
+            H.Moriyama, Y.Fujita, T.Mitsugashira)
+INSTITUTE  (2JPNKTO,2JPNTOH)
+REFERENCE  (J,NSE,139,273,2001) LSDS data on 229Th and 231Pa
+           (J,NST,36,549,1999) Final report on 231Pa(nth,f)
+           (S,JAERI-C-99-002,113,1999) Prelim. data on 231Pa(LSDS)
+REL-REF    (I,,K.Kobayashi+,J,NIM/A,385,145,1997)
+            Description of the KULS Facility
+DETECTOR   (FISCH)  Back-to-back fission chamber
+           (BF3) Only for neutron energies below 1 KeV
 MONITOR    (92-U-235(N,F),,SIG)
-           (5-B-10(N,A)3-LI-7,,SIG)  Only For Neutron Energies
-                                     Below 1 KeV
-SAMPLE     .Standard Sample is 99.91% Enriched Metallic 235U
-HISTORY    (20011220C)  + +  Compiled by S.M.
-           (20051026A)  .Corrected after N.Ohtsuka comments
-                         SUBENT 22647005 moved to SAN 22422005
-           (20060204U)  Corrected SM
-ENDBIB              25
+           (5-B-10(N,A)3-LI-7,,SIG)  for En < 1 keV
+MONIT-REF  (,R.F.Rose,R,BNL-NCS-17541,1991) 4th ed. ENDF/B-VI
+SAMPLE     Chemically purified 229Th and 231Pa electrodeposited
+            onto Al plate.
+           The numbers of 229Th and 231Pa atoms were determined as
+             (2.32+/-0.05)E+16 for 229Th
+             (3.32+/-0.07)E+16 for 231Pa
+           by alpha spectrometry.
+STATUS     (APRVD) Approved by Katsuhei Kobayashi (2014-03-13)
+HISTORY    (20011220C) + +  Compiled by S.M.
+           (20051026A) Corrected after N.Otsuka comments.
+                       SUBENT 22647.005 moved to SAN 22422.005
+           (20060204U) Corrected SM
+           (20140310U) On. REFERENCE: JAERI-C-99-002 added.
+                           MONIT-REF and SAMPLE added.
+ENDBIB              29
 NOCOMMON             0          0
-ENDSUBENT           28
-SUBENT        22647002   20060204   20060525   20060430       2176
-BIB                  8         10
-REACTION   (91-PA-231(N,F),,SIG)  Data for Vn = 2200 m/sec
-FACILITY   (REAC,2JPNKTO) Kyoto University Heavy-Water Reactor
-SAMPLE     .Thin Film Electrodeposited on 0.5 mm Thick Aluminium
-            Plate. Number of 231Pa Atoms are (3.32+-0.07)E+17
-INC-SOURCE (REAC)
-INC-SPECT  .Thermal Spectrum of Kyoto Univ.Reactor is Maxwellian
-            With Temperature 40 Deg Celsium
-ERR-ANALYS (ERR-T)  Total Error
-STATUS     .Data from 2-nd  Reference
-HISTORY    (20060204U)  SF8 deleted, 'EN' heading restored
-ENDBIB              10
+ENDSUBENT           32
+SUBENT        22647002   20140310   20140820   20140807       2238
+BIB                  8         12
+REACTION   (91-PA-231(N,F),,SIG) 2200 m/sec cross section
+FACILITY   (REAC,2JPNKTO) Kyoto University Research Reactor (KUR)
+INC-SOURCE (THCOL) KUR heavy water thermal neutron facility
+INC-SPECT  Maxwellian distribution with T=40 deg-C
+ASSUMED    (ASSUM1,(91-PA-231(N,F),,SIG,,MXW)/
+           (91-PA-231(N,F),,SIG)) g-factor
+           (ASSUM2,(92-U-235(N,F),,SIG,,MXW)/
+           (92-U-235(N,F),,SIG)) g-factor
+ERR-ANALYS (DATA-ERR) Total uncertainty
+STATUS     (TABLE) Table 1 of J.Nucl.Sci.Technol.36(1999)549
+HISTORY    (20060204U) SF8 deleted, 'EN' heading restored
+           (20140310A) On. ERR-T -> DATA-ERR
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       ERR-T
-EV         MB         MB
-     0.0253        25.       0.82
+DATA                 6          1
+EN         DATA       DATA-ERR   MONIT      ASSUM1     ASSUM2
+EV         MB         MB         MB         NO-DIM     NO-DIM
+ 0.0253     25.0       0.82       584.25     1.018      0.9742
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        22647003   20051026   20060202   20051225       2174
-BIB                  9         13
-REACTION   (91-PA-231(N,F),,SIG)
-FACILITY   (LINAC,2JPNKTO)  46 MeV Electron Linear Accelerator
-METHOD     (SLODT)   Slowing-Down Time
-SAMPLE     .Thin Film Electrodeposited on 0.5 mm Thick Aluminium
-            Plate. Number of 231Pa Atoms are (3.32+-0.07)E+17
+ENDSUBENT           20
+SUBENT        22647003   20140310   20140820   20140807       2238
+BIB                 10         22
+REACTION   (91-PA-231(N,F),,SIG,,SDT)
+FACILITY   (LINAC,2JPNKTO) KURRI 46 MeV electron linac
+METHOD     (SLODT) Slowing-down time
 INC-SOURCE (PHOTO)
-INC-SPECT  .Relation En(KEV)=K/T**2 is Obtained For Average
-            Neutron Energy. T- Slowing-Down Time in Micro-Sec
-ERR-ANALYS (ERR-T)  Total Error
-           (ERR-S)  Max Statistical Error
-           (ERR-1)  Error of the Reference Cross Section
-STATUS     (APRVD)   Katsuhei Kobayashi, 2001-08, Via Internet
-HISTORY    (20051026U)   Data units corrected. Numbers adjusted
-ENDBIB              13
-COMMON               2          3
-ERR-S      ERR-1
-PER-CENT   PER-CENT
-        40.         2.
+INC-SPECT  dE(FWHM)/E=0.162899*E**(-1/2)+0.352787+(7.599E-5)*E
+REL-REF    (N,,T.Nakagawa+,R,JAERI-D-2002-02,2002)
+           Resolution function given
+MISC-COL   (MISC) Total uncertainty in percent
+ERR-ANALYS (ERR-T) Total Uncertainty                     (4.6-40%)
+           (ERR-1,2.1,40.,U) Statistics for 231Pa(n,f)   (2.1-40%)
+           (ERR-2,0.8,1.5,U) Statistics for 235U(n,f)   (0.8-1.5%)
+           (ERR-3,,1.5) Assignment of counts for 231Pa(n,f)(<1.5%)
+           (ERR-4,,0.65)Assignment of counts for 235U(n,f)(<0.65%)
+           (ERR-5) Number of atoms of 231Pa                 (2.2%)
+           (ERR-6) Number of atoms of 235U                  (1.1%)
+           (ERR-7,2.,4.) 235U(n,f) and 10B(n,a) standard    (2-4%)
+           (ERR-8) Setting 231Pa and 235U deposits          (0.3%)
+           (ERR-9,,0.2) Correction for inscattered neutrons(<0.2%)
+           (ERR-10,,0.2) Background subtraction            (<0.2%)
+STATUS     (TABLE) Katsuhei Kobayashi, 2001-08, via Internet
+HISTORY    (20051026U) Data units corrected. Numbers adjusted
+           (20140310A) On. SF8=SDT added. ERR-ANALYS updated.
+ENDBIB              22
+COMMON               3          3
+ERR-5      ERR-6      ERR-8
+PER-CENT   PER-CENT   PER-CENT
+ 2.2        1.1        0.3
 ENDCOMMON            3
 DATA                 4        104
-EN         DATA       ERR-T      ERR-T
+EN         DATA       ERR-T      MISC
 EV         B          B          PER-CENT
  8.9120E-02  1.495E-02 6.5553E-03     43.849
  1.0000E-01  1.340E-02 5.0759E-03     37.880
@@ -178,23 +193,39 @@ EV         B          B          PER-CENT
  1.1220E+04 9.8561E-04 2.0767E-04     21.07
  1.2589E+04 9.6346E-04 2.3576E-04     24.471
 ENDDATA            106
-ENDSUBENT          128
-SUBENT        22647004   20051026   20060202   20051225       2174
-BIB                  9         10
-REACTION   (90-TH-229(N,F),,SIG)
-FACILITY   (LINAC,2JPNKTO)  46 MeV Electron Linear Accelerator
-METHOD     (SLODT)   Slowing-Down Time
-SAMPLE     .No Information
+ENDSUBENT          137
+SUBENT        22647004   20140310   20140820   20140807       2238
+BIB                 10         22
+REACTION   (90-TH-229(N,F),,SIG,,SDT)
+FACILITY   (LINAC,2JPNKTO) KURRI 46 MeV electron linac
+METHOD     (SLODT) Slowing-down time
 INC-SOURCE (PHOTO)
-INC-SPECT  .Relation En(KEV)=K/T**2 is Obtained For Average
-            Neutron Energy. T- Slowing-Down Time in Micro-Sec
-ERR-ANALYS (ERR-T)  Total Error
-STATUS     (APRVD)   Katsuhei Kobayashi, 2001-08  Via Internet
-HISTORY    (20051026A)   Units corrected
-ENDBIB              10
-NOCOMMON             0          0
+INC-SPECT  dE(FWHM)/E=0.162899*E**(-1/2)+0.352787+(7.599E-5)*E
+REL-REF    (N,,T.Nakagawa+,R,JAERI-D-2002-02,2002)
+           Resolution function given
+MISC-COL   (MISC) Total uncertainty in percent
+ERR-ANALYS (ERR-T) Total Uncertainty                     (4.4-36%)
+           (ERR-1,1.8,36.,U) Statistics for 229Th(n,f)   (1.8-36%)
+           (ERR-2,0.9,1.9,U) Statistics for 235U(n,f)   (0.9-1.9%)
+           (ERR-3,,1.2) Assignment of counts for 229Th(n,f)(<1.2%)
+           (ERR-4,,0.65)Assignment of counts for 235U(n,f)(<0.65%)
+           (ERR-5) Number of atoms of 229Th                 (2.1%)
+           (ERR-6) Number of atoms of 235U                  (1.1%)
+           (ERR-7,2.,4.) 235U(n,f) and 10B(n,a) standard    (2-4%)
+           (ERR-8) Setting 231Pa and 235U deposits          (0.3%)
+           (ERR-9,,0.2) Correction for inscattered neutrons(<0.2%)
+           (ERR-10,,0.2) Background subtraction            (<0.2%)
+STATUS     (TABLE) Katsuhei Kobayashi, 2001-08, via Internet
+HISTORY    (20051026A) Units corrected
+           (20140310A) On. SF8=SDT added. ERR-ANALYS updated.
+ENDBIB              22
+COMMON               3          3
+ERR-5      ERR-6      ERR-8
+PER-CENT   PER-CENT   PER-CENT
+ 2.2        1.1        0.3
+ENDCOMMON            3
 DATA                 4        100
-EN         DATA       ERR-T      ERR-T
+EN         DATA       ERR-T      MISC
 EV         B          B          PER-CENT
   1.259E-02 4.9575E+01 2.4553E+01     49.527
   1.585E-02 4.2205E+01 1.5191E+01     35.995
@@ -297,6 +328,22 @@ EV         B          B          PER-CENT
  8.9125E+03     1.4172 6.2303E-02      4.396
      1.E+04     1.5846  6.958E-02      4.391
 ENDDATA            102
-ENDSUBENT          117
+ENDSUBENT          133
 NOSUBENT      22647005   20051026   20060202   20051225       2174
-ENDENTRY             5
+SUBENT        22647006   20140310   20140820   20140807       2238
+BIB                  5          6
+REACTION   (90-TH-229(N,F),,SIG,,,DERIV)
+ANALYSIS   Interpolation of slowing-down time broadened data
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties
+STATUS     (TABLE) Abstract of Nucl.Sci.Eng.139(2001)273
+           (DEP,22647004) Slowing-down time broadened data given
+HISTORY    (20140310C) On
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+ 0.0253     32.4       10.7
+ENDDATA              3
+ENDSUBENT           14
+ENDENTRY             6

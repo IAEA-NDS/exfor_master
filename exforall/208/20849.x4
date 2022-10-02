@@ -1,52 +1,120 @@
-ENTRY            20849     840208              20050926       0000
-SUBENT        20849001     840208              20050926       0000
-BIB                  9         13
-INSTITUTE  (2JAPKTO) RESEARCH REACTOR INSTITUTE.
-REFERENCE  (P,NEANDC(J)-51,48,7709) SHORT REPORT, SAME AS
-              INDC(JAP)-37/U.
-AUTHOR     (K.KOBAYASHI,I.KIMURA)
-TITLE      -FISSION SPECTRUM AVERAGED CROSS SECTION FOR THE
-            231-PA(N,F) REACTION-.
-INC-SOURCE (REAC ) KUR FAST REACTOR.
-INC-SPECT  GOOD APPROXIMATION TO FISSION NEUTRON
-            SPECTRUM.
-MONITOR    (93-NP-237(N,F),,SIG,,FIS) VALUE GIVEN IN TEXT.
-STATUS     .TABLE 1, PAGE 49, NEANDC(J)-51,1977.
-HISTORY    (790319C)
-           (790511E)
-ENDBIB              13
+ENTRY            20849   20140310   20140820   20140807       2238
+SUBENT        20849001   20140310   20140820   20140807       2238
+BIB                 15         36
+TITLE      Fission spectrum averaged cross section for the
+            231Pa(n,f) reaction
+AUTHOR     (K.Kobayashi, I.Kimura)
+INSTITUTE  (2JPNKTO)
+REFERENCE  (R,KURRI-AR-10,1,1977)
+           ((P,INDC(JAP)-37,48,1977)=(P,NEANDC(J)-51,48,1977))
+            Same PFNS averaged cross sections given
+FACILITY   (REAC,2JPNKTO) Kyoto University Research Reactor (KUR)
+INC-SPECT  Close to fission neutron spectrum
+SAMPLE     Samples below were sealed in a quartz tube.
+           Pa: Prepared from 231Pa2O5 by chemical purification,
+                and mounted on Al (10 mm in diam).
+               The number of atoms (2.589+/-0.128)E+17 was
+                determined by photopeak counts of 290 keV gamma
+                ray (3.25E+4 years).
+           Np: Prepared from 237NpO2 by chemical purification to
+                exclude 239Pu and 238Pu-241Am.
+               The number of atoms (1.112+/-0.046)E+18 was
+                determined by photopeak of 233Pa, which was
+                produced by alpha-decay and in equilibrium with
+                237Np.
+DETECTOR   (GELI) 30 cc Ge(Li) detector
+MONITOR    (93-NP-237(N,F),,SIG,,FIS)
+ASSUMED    (ASSUM1,93-NP-237(N,F)56-BA-140,CUM,FY)
+           (ASSUM2,91-PA-231(N,F)56-BA-140,CUM,FY)
+REL-REF    (R,,J.Kemmer+,J,RCA,13,181,1970) 231Pa(n,f)140Ba yield
+DECAY-DATA (57-LA-140,,DG,1600.)
+MONIT-REF  (,B.A.Magurno,R,BNL-NCS-50446,1975)
+            1975 ENDF/B-IV Dosimetry File
+STATUS     (TABLE) Table 1 of Ann.Rep.RRI Kyoto.Univ.Vol.10(1977)1
+           (APRVD) Approved by Katsuhei Kobayashi (2014-03-11)
+HISTORY    (19790319C)
+           (19790511E)
+           (20140310A) On. REFERENCE: KURRI-AR-10 added.
+           BIB updated in all Subents. EN-DUMMY -> KT-DUMMY
+           according to MEMO CP-D/776.
+ENDBIB              36
 COMMON               2          3
-EN-DUMMY   MONIT
-MEV        MB
- 1.5000E+00 1.3230E+03
+ASSUM1     ASSUM2
+PC/FIS     PC/FIS
+ 5.93       6.98
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        20849002     840208              20050926       0000
-BIB                  3          4
-REACTION   (91-PA-231(N,F),,SIG,,FIS) FISSION SPECTRUM
-            AVERAGE CROSS SECTION.
-METHOD     .FISSION PLATE.
-STATUS     .TABLE 1.
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 1.0870E+03 6.8000E+01
+ENDSUBENT           43
+SUBENT        20849002   20140310   20140820   20140807       2238
+BIB                  5         21
+REACTION   (91-PA-231(N,F),,SIG,,FIS) fission plate neutrons
+INC-SOURCE Fission plate (90% enriched uranium) installed at
+            the heavy water thermal neutron facility of KUR
+REL-REF    (I,,K.Kanda+,R,KURRI-TR-96,1972)
+            Fission plate is described.
+METHOD     (ACTIV) Irradiated for 60 hours  (~1E+9 n/cm2/sec)
+ERR-ANALYS (ERR-T) Total uncertainty                        (6.3%)
+           (MONIT-ERR) 237Np(n,f) cross section reference     (2%)
+           (ERR-1)     237Np(n,f)140Ba reaction rate          (2%)
+           (ERR-2)     231Pa(n,f)140Ba reaction rate          (1%)
+           (ASSUM1-ERR)237Np(n,f)140Ba fission yield reference(3%)
+           (ASSUM2-ERR)231Pa(n,f)140Ba fission yield reference(1%)
+           (ERR-3)     237Np/231Pa atom numbers ratio         (3%)
+           (ERR-4)     Systematic errors including          (3.5%)
+                       - uncertainty in fission neutron energy
+                          spectrum shape
+                       - deviation in location between 231Pa and
+                          237Np samples
+                       - uncertainties of half-life
+                       - irradiation and cooling time
+                       and so forth.
+ENDBIB              21
+COMMON               6          3
+ERR-1      ERR-2      ASSUM1-ERR ASSUM2-ERR ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 2.         1.         3.         1.         3.         3.5
+ENDCOMMON            3
+DATA                 5          1
+KT-DUMMY   DATA       ERR-T      MONIT      MONIT-ERR
+MEV        MB         MB         MB         PER-CENT
+ 1.32       1087.      68.        1323.      2.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        20849003     840208              20050926       0000
-BIB                  3          4
-REACTION   (91-PA-231(N,F),,SIG,,FIS) FISSION SPECTRUM
-            AVERAGE CROSS SECTION.
-COMMENT    .MEASURED IN CORE OF KUR REACTOR.
-STATUS     .TABLE 1.
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 1.0590E+03 7.6000E+01
+ENDSUBENT           33
+SUBENT        20849003   20140310   20140820   20140807       2238
+BIB                  5         24
+REACTION   (91-PA-231(N,F),,SIG,,FIS) core neutrons
+INC-SOURCE Core of KUR (hydraulic conveyor tube) where the fast
+            neutron spectrum was previously shown to be close to
+            the fission spectrum
+REL-REF    (R,,I.Kimura+,J,NST,8,59,1971)
+            Neutron spectrum at core of KUR is described.
+           (R,,K.Kanda+,R,KURRI-AR-2,18,1969)
+            Neutron spectrum at core of KUR is described.
+METHOD     (ACTIV) Irradiated for two hours (~4E+13 n/cm2/sec)
+ERR-ANALYS (ERR-T) Total uncertainty                        (7.2%)
+           (MONIT-ERR) 237Np(n,f) cross section reference     (2%)
+           (ERR-1)     237Np(n,f)140Ba reaction rate        (1.5%)
+           (ERR-2)     231Pa(n,f)140Ba reaction rate        (3.8%)
+           (ASSUM1-ERR)237Np(n,f)140Ba fission yield reference(3%)
+           (ASSUM2-ERR)231Pa(n,f)140Ba fission yield reference(1%)
+           (ERR-3)     237Np/231Pa atom numbers ratio         (3%)
+           (ERR-4)     Systematic errors including          (3.5%)
+                       - uncertainty in fission neutron energy
+                          spectrum shape
+                       - deviation in location between 231Pa and
+                          237Np samples
+                       - uncertainties of half-life
+                       - irradiation and cooling time
+                       and so forth.
+ENDBIB              24
+COMMON               6          3
+ERR-1      ERR-2      ASSUM1-ERR ASSUM2-ERR ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 1.5        3.8        3.         1.         3.         3.5
+ENDCOMMON            3
+DATA                 5          1
+KT-DUMMY   DATA       ERR-T      MONIT      MONIT-ERR
+MEV        MB         MB         MB         PER-CENT
+ 1.32       1059.      76.        1323.      2.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           36
 ENDENTRY             3

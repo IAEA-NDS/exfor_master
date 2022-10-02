@@ -1,6 +1,6 @@
-ENTRY            20748   20120731   20130226   20130207       2232
-SUBENT        20748001   20120731   20130226   20130207       2232
-BIB                 17         52
+ENTRY            20748   20131211   20140820   20140807       2238
+SUBENT        20748001   20131211   20140820   20140807       2238
+BIB                 18         50
 INSTITUTE  (2SPNVLD)
 REFERENCE  (J,ARS,72,(3),186,197607) In Spanish. Data are given.
 REL-REF    (I,20776001,J.L.Casanova+,J,ARS,71,(2),123,197504)
@@ -18,11 +18,11 @@ SAMPLE     -Made of natural elements of high purity (more than
 METHOD     (ACTIV) Activation method
 DETECTOR   (GELI) 6 cm3 Ge-Li detector,3.5 keV resolution for
                    the 1.33 MeV line of Co-60.
-MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG) Gives mean flux
+MONITOR    ((MONIT)29-CU-63(N,2N)29-CU-62,,SIG) Gives mean flux
             inside the samples.
             Authors assumed a c.s. of 478.+-48. millibarns.
-            Mean neutron flux was (426.+-0.07)E+5 n/cm2/s.
-           ((MONIT2)79-AU-197(N,G)79-AU-198,,SIG) Gives the
+            Mean neutron flux was (426.+-0.07) x 10**5 n/cm2/s.
+ASSUMED    (ASSUM,79-AU-197(N,G)79-AU-198,,SIG) Gives the
             slowed down neutron flux.
             The reaction c.s. was assumed to be 96.+-1. barns.
             Relation between fast and slow fluxes was 11.6+-0.2.
@@ -30,36 +30,34 @@ PART-DET   (DG)
 COMMENT     The (n,p) cross section has been studied as a function
             of the asymmetry parameter of the target nucleus for
             each element and of the atomic number for the isotone
-            elements.Authors gave a method for predicting unknown
+            elements. Authors gave a method for predicting unknown
             cross sections and reaction mechanisms.
-STATUS      Data From ARS,72,(3),,186,1976.
+STATUS     (TABLE) Data from ARS,72,(3),186,1976.
 CORRECTION -Each cross section was measured 3 times, and the data
             are the mean values of these three measurements.
            -Data were corrected for neutron and gamma
-            self-absorption, and for (n,g) induced by slowed down
-            neutrons.
+            self-absorption, and for (n,gamma) induced by slowed
+            down neutrons.
 ERR-ANALYS (ERR-S) Statistical error weighted by the inverse
             of the standard deviation for each of the three
             measurements.
 HISTORY    (19771227C)
-           (19780705E)
            (19801107A) G.C., MONITOR reactions corrected.
             MONITOR-values coded.
-           (19801121E)
            (19860310A)N.CH
-           (19860416E)
            (20080416A) M.M. STATUS was added in Subentries.
             Free text was corrected to be "human-readable".
             Dates were corrected for 4-digits year.
            (20120731A) SD: SF4 was corrected in REACTION code in
             Subent 6. Ref. on ARS,71 moved to REL-REF
-ENDBIB              52
+           (20131211A) SD:REACTION code was corrected in Subent 5.
+ENDBIB              50
 COMMON               5          3
-EN         MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
+EN         MONIT      MONIT-ERR  ASSUM      ASSUM-ERR
 MEV        MB         MB         B          B
  1.4100E+01 4.7800E+02 4.8000E+01 9.6000E+01 1.0000E+00
 ENDCOMMON            3
-ENDSUBENT           59
+ENDSUBENT           57
 SUBENT        20748002   20080416   20080828   20080828       2198
 BIB                  3          6
 REACTION   (30-ZN-64(N,P)29-CU-64,,SIG)
@@ -108,38 +106,40 @@ MB         MB
  8.0000E+01 8.0000E+00
 ENDDATA              3
 ENDSUBENT           14
-SUBENT        20748005   20080416   20080828   20080828       2198
-BIB                  3          6
-REACTION   (30-ZN-67(N,P)29-CU-67,,SIG)
-STATUS     (TABLE) Table 1 of 1-st reference.
-HISTORY    (19771227C)
-           (19780705E)
-           (19801107A) G.C., REACTION string corrected.
+SUBENT        20748005   20131211   20140820   20140807       2238
+BIB                  3          7
+REACTION   ((30-ZN-67(N,P)29-CU-67,,SIG)+
+           (30-ZN-68(N,X)29-CU-67,,SIG,,RAB))
+STATUS     (TABLE) Table 1 of ARS,72,(3),186,1976
+HISTORY    (19801107A) G.C., REACTION string corrected.
            (19801121E)
-ENDBIB               6
+           (20131210A) SD:REACTION code was corrected:
+            Zn-67(n,p)Cu-67 on sum of reactions.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-S
 MB         MB
  7.5000E+01 6.0000E+00
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        20748006   20120731   20130226   20130207       2232
-BIB                  3          6
-REACTION   (30-ZN-68(N,P)29-CU-68-G,(M),SIG)
-STATUS     (TABLE) Table 1 of 1-st reference.
+ENDSUBENT           15
+SUBENT        20748006   20131211   20140820   20140807       2238
+BIB                  3          7
+REACTION   (30-ZN-68(N,P)29-CU-68,,SIG)
+STATUS     (TABLE) Table 1 of ARS,72,(3),186,1976
 HISTORY    (19801107A) G.C., REACTION string corrected.
-           (19801121E)
            (20120731A) SD: SF4 was corrected in REACTION code
             Cu-68-M -> CU-68-G in SF4  and (M) was added in SF5
-ENDBIB               6
+           (20131211A) SD: SF4 was corrected in REACTION code
+            Cu-68-G -> CU-68 in SF4, SF5=(M) deleted.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-S
 MB         MB
  4.6000E+01 5.0000E+00
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           15
 SUBENT        20748007   20080416   20080828   20080828       2198
 BIB                  3          6
 REACTION   (31-GA-69(N,2N)31-GA-68,,SIG)
