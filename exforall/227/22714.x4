@@ -1,10 +1,10 @@
-ENTRY            22714   20061208   20070306   20070214       2181
-SUBENT        22714001   20061208   20070306   20070214       2181
-BIB                 15         65
-TITLE      .Neutron-Proton Analyzing Power Ay at 68 MeV.
-AUTHOR     (C.BROGLI-GYSIN, S.BURZYNSKI, J.CAMPBELL, P.HAFFTER,
-           M.HAMMANS, R.HENNECK, J.JOURDAN, G.MASSON, M.A.PICKAR,
-           I.SICK)
+ENTRY            22714   20160726   20170201   20170124       2252
+SUBENT        22714001   20160726   20170201   20170124       2252
+BIB                 15         74
+TITLE       Neutron-proton analyzing power Ay at 68 MeV.
+AUTHOR     (C.Brogli-Gysin,S.Burzynski,J.Campbell,P.Haffter,
+           M.Hammans,R.Henneck,J.Jourdan,G.Masson,M.A.Pickar,
+           I.Sick)
 INSTITUTE  (2SWTPSI) Henneck, experimental site
            (2SWTBAS) Brogli-Gysin, Haffter, Hammans, Jourdan,
                      Masson, Sick
@@ -12,15 +12,18 @@ INSTITUTE  (2SWTPSI) Henneck, experimental site
            (1CANTMF) Campbell
            (1USAKTY) Henneck
 REFERENCE  (J,NP/A,541,137,1992) Main reference
-           (J,NIM/A,259,329,1987) Technical details of Facility
-           (J,PR/C,42,20,1990) Calibration of neutron polarization
+REL-REF    (I,,R.Henneck+,J,NIM/A,259,329,1987) Technical details
+                                                of facility
+           (M,,M.A.Pickar+,J,PR/C,42,20,1990) Calibration of
+                                            neutron polarization
+           (R,,P.D.Eversheim+,J,PL/B,234,253,1990) Data of ASSUM
 FACILITY   (CYCLO,2SWTPSI) Polarized Neutron facility installed
             at the PSI Injector Cyclotron.
-INC-SOURCE (POLNS,P-D) Transverse polarization in H-2(P,N)2P
+INC-SOURCE (POLNS,P-D) Transverse polarization in H-2(p,n)2P
                        reaction for polarized neutron production.
             Neutron polarization- 0.35 determined by measurement
             of proton polarization- 0.85 and transfer coefficient.
-INC-SPECT  .Quasi-monoenergetic beam of neutrons with spin,
+INC-SPECT   Quasi-monoenergetic beam of neutrons with spin,
             flipped upon a flip of proton spin. 1 microA proton
             beam current, producing about 1.E+6 neutrons/sec on
             target. Neutron beam of about 33 mm diameter at the
@@ -32,6 +35,9 @@ METHOD     (TOF) For neutron energy measurement.
            (REC) Measurement of recoil protons from CH2 converter
             downstream of actual target -for separate neutron flux
             monitor.
+           (BCINT) The neutron flux normalization is obtained
+           from the normalization of the proton beam intensity
+           provided by the Faraday cup.
 DETECTOR   (SCIN) System of Plastic Scintillator deltaE and
             E detectors. Each left and right arm:
             Thin (1 or 2 mm thick) deltaE detector at 20 or 30 cm
@@ -42,7 +48,7 @@ DETECTOR   (SCIN) System of Plastic Scintillator deltaE and
             range 82deg< ANG-CM < 156deg.
            .Detection of scattered neutrons in the range 38deg <
             ANG-CM <103deg, employing active liquid scintillation
-            target.                          22714001
+            target.
            .Faraday Cup provided proton beam intensity for neutron
             flux normalization.
            (MWPC) Three Multi-wire Proportional Chambers to
@@ -53,7 +59,6 @@ SAMPLE     .Active liquid scintillator target (NE235H) in
             For recoil experiment- CH2 targets (236 and 326 mg/cm2
             and high-purity graphite for carbon background
             determination.
-REL-REF    (R,,P.D.EVERSHEIM+,J,PL/B,234,253,1990) Data of ASSUM
 ANALYSIS   .Proton-carbon analyzing power at 72.0MeV, 44.0deg
             from reaction (6-C-12(P,SCT)6-C-12,,POL/DA,,ANA), see
             REL-REF, for data analysis
@@ -64,24 +69,28 @@ CORRECTION .Correction For:
             Energy dependence of spin transfer coefficient.
             Final geometrical acceptance.
             Multiple Scattering - for protons only
-ERR-ANALYS (ERR-T) Include Statistical And Systematical Errors.
+ERR-ANALYS (DATA-ERR) Statistical and systematical errors.
 HISTORY    (20061208C)  M.M./ S.M.
-ENDBIB              65
+           (20160726U) SD: Entry was re-transmitted to exclude
+           difference between trans.2181 and Master file.
+           Small additional corrections. ERR-T -> DATA-ERR.
+           Two refs moved to REL-REF.
+ENDBIB              74
 COMMON               2          3
 EN         POL-BM
 MEV        NO-DIM
  68.        0.35
 ENDCOMMON            3
-ENDSUBENT           72
-SUBENT        22714002   20061208   20070306   20070214       2181
+ENDSUBENT           81
+SUBENT        22714002   20160726   20170201   20170124       2252
 BIB                  2          3
 REACTION   (1-H-1(N,EL)1-H-1,,POL/DA,P,ANA)  Measurements on
                                     protons recoil detection
-STATUS     .From Table 1 of main reference
+STATUS     (TABLE) From Table 1 of NP/A,541,137,1992
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 3         19
-ANG-CM     DATA-CM    ERR-T
+ANG-CM     DATA       DATA-ERR
 ADEG       NO-DIM     NO-DIM
  82.0       0.269      0.006
  90.3       0.231      0.006
@@ -104,15 +113,17 @@ ADEG       NO-DIM     NO-DIM
 155.2       0.011      0.010
 ENDDATA             21
 ENDSUBENT           29
-SUBENT        22714003   20061208   20070306   20070214       2181
-BIB                  2          3
+SUBENT        22714003   20160726   20170201   20170124       2252
+BIB                  3          5
 REACTION   (1-H-1(N,EL)1-H-1,,POL/DA,,ANA)  Measurements on
                    experiment of scattered neutron detection
-STATUS     .From Table 2 of Main Reference.
-ENDBIB               3
+STATUS     (TABLE) From Table 2 of NP/A,541,137,1992
+HISTORY    (20160726U) SD: SF5=N deleted from REACTION code
+            (as it is given in Master file).
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3         12
-ANG-CM     DATA-CM    ERR-T
+ANG-CM     DATA       DATA-ERR
 ADEG       NO-DIM     NO-DIM
  38.6       0.249      0.011
  47.5       0.293      0.011
@@ -127,5 +138,5 @@ ADEG       NO-DIM     NO-DIM
  94.3       0.214      0.010
 103.1       0.181      0.011
 ENDDATA             14
-ENDSUBENT           22
+ENDSUBENT           24
 ENDENTRY             3

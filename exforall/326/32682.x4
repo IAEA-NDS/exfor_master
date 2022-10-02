@@ -1,16 +1,17 @@
-ENTRY            32682   20120213   20120530   20120508       3154
-SUBENT        32682001   20120213   20120530   20120508       3154
-BIB                 15         64
-TITLE      Measurement and evaluation of the double differential
-           cross sections of secondary neutrons for 9Be at
-           21.65 MeV incident neutrons
-AUTHOR     (Changlin Lan,Xichao Ruan,Guochang Chen,
-           Hanxiong Huang,Gang Liu,Yangbo Nie,Qiping Zhong,
-           Xia Li,Songlin Wang,Jie Bao,Zuying Zhou, Hongqing Tang,
-           Xiangzhong Kong)
+ENTRY            32682   20161129   20170201   20170113       3176
+SUBENT        32682001   20161129   20170201   20170113       3176
+BIB                 15         68
+TITLE      Measurement of secondary neutron emission
+           double-differential cross sections for 9Be induced by
+           21.65+-0.07 MeV neutrons
+AUTHOR     (Changlin Lan,Xichao Ruan,Guochang Chen,Yangbo Nie,
+           Hanxiong Huang,Jie Bao,Zuying Zhou,Hongqing Tang,
+           Xiangzhong Kong,Meng Peng)
 INSTITUTE  (3CPRLNZ,3CPRAEP) The experiment were measured and
            analyzed at China Institute of Atomic Energy (CIAE).
-REFERENCE  (T,LAN,2009) Main reference
+REFERENCE  (J,NIM/B,375,8,2016) Main reference
+           #doi:10.1016/j.nimb.2016.03.027
+           (T,LAN,2009)
            (S,JAEA-C-2009-004,169,2009) Preliminary results
            (J,KPS,59,(2),1729,2011) Same data given.
            #doi:10.3938/jkps.59.1729
@@ -24,11 +25,12 @@ METHOD     (TOF,PSD,PHD) The measured raw TOF spectra are
            600.0 cm, and set at 60 degree.
 FACILITY   (VDGT,3CPRAEP) The 13MV HI-13 Tandem Accelerator in
            China Institute of Atomic Energy (CIAE).
-DETECTOR   (SCIN) Three main detectors BC501A 12.70 x 5.08 cm
-           in diameter and height with 470 keVee (electronic
+DETECTOR   (SCIN) Three main detectors BC501A 12.70 x 5.08 cm in
+           diameter and height with 470 keVee (electronic
            energy) electron threshold, and one stilbene monitor
            3.0 x 3.0 cm in diameter and height with 300 keVee
-           were used.
+           were used. The uncertainty of scattering angle is
+           less than 0.5 degree.
 CORRECTION For reduction of the experimental data, a detailed
            Monte Carlo simulation was employed to obtain TOF
            spectra, which were compared with the experimental
@@ -38,7 +40,7 @@ CORRECTION For reduction of the experimental data, a detailed
            simulation.
 INC-SOURCE (D-T) Tritium gas target contains tritium gas chamber
            and helium gas chamber,  and more detailed
-           information are as following:
+           informations are as following:
             (1)Tritium gas chamber: 30 x 10 mm in length and
            diameter, the thickness of  gold backing is 0.5 mm,
            the thickness of entrance Mo  foil is 10 um. The gas
@@ -57,21 +59,23 @@ ERR-ANALYS (ERR-T) The total uncertainty;
            efficiency is (3%);
            (ERR-2) The uncertainty of the correction for
            multiple scattering is (5%);
-           (ANG-ERR,,0.5) The uncertainty of scattering angle is
-           less than 0.5 degree;
            (ERR-S,3.,14.) The counting statistical uncertainty;
            (MONIT-ERR) n-p monitor cross section (1%)
-STATUS     (TABLE) Data were approved by Author;
+STATUS     (TABLE,APRVD) Data were received from author and
+           approved by author;
 HISTORY    (20100901C) Compiled by Guochang CHEN (CNDC)
            (20120213U) Add ND2010 conference publication
            reference information by Guochang CHEN (CNDC)
-ENDBIB              64
+           (20161129A) Add NIM paper as main reference and
+           change the incident energy uncertainty by Guochang
+           CHEN (CNDC). Also major revision in 003.
+ENDBIB              68
 COMMON               6          3
 EN         EN-ERR     MONIT-ERR  ANG-NRM    ERR-1      ERR-2
 MEV        MEV        PER-CENT   ADEG       PER-CENT   PER-CENT
-21.65      0.08       1.0        60.        3.         5.
+      21.65       0.07        1.0        60.         3.         5.
 ENDCOMMON            3
-ENDSUBENT           71
+ENDSUBENT           75
 SUBENT        32682002   20100901   20110323   20110323       3148
 BIB                  2          4
 REACTION   (4-BE-9(N,SCT)4-BE-9,PAR,DA)
@@ -113,10 +117,14 @@ ADEG       MB/SR      MB/SR
      143.30       0.25       0.35
 ENDDATA             26
 ENDSUBENT           39
-SUBENT        32682003   20100901   20110323   20110323       3148
-BIB                  1          1
-REACTION   (4-BE-9(N,X)0-NN-1,,DA/DE)
-ENDBIB               1
+SUBENT        32682003   20161129   20170201   20170113       3176
+BIB                  3          5
+REACTION   (4-BE-9(N,X)0-NN-1,EM,DA/DE)
+COMMENT    By Guochang CHEN (2016-12-01):
+            In the data analysis process, the elastic peak is
+            excluded for continuum part.
+HISTORY    (20161129A) REACTION: EM added by Guochang CHEN (CNDC).
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 5        425
 ANG        E          E-ERR      DATA       ERR-T
@@ -547,5 +555,5 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
      145.00      12.50       0.50       0.66       0.04
      145.00      14.50       0.50       1.19       0.49
 ENDDATA            427
-ENDSUBENT          433
+ENDSUBENT          437
 ENDENTRY             3

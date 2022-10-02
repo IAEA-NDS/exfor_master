@@ -1,6 +1,6 @@
-ENTRY            M0106   20130531   20130823   20130819       M067
-SUBENT        M0106001   20130531   20130823   20130819       M067
-BIB                 13         22
+ENTRY            M0106   20161114   20170201   20170110       M085
+SUBENT        M0106001   20161114   20170201   20170110       M085
+BIB                 13         24
 TITLE      Photoneutrons from Li-6 and Co-59.
 AUTHOR     (E.B.Bazhanov,A.P.Komar,A.V.Kulikov)
 INSTITUTE  (4RUSFTI)
@@ -23,9 +23,11 @@ HISTORY    (19840407C)
            (20130531A) Corrected     by    V.Varlamov:    dates,
             REFERENCE,  REACTION,  STATUS,  DATA in SUBENT  004,
             DATA-ERR, SUBENTS 005 and 006 added, lowercase.
-ENDBIB              22
+           (20161114A) Corrected   by  V.Varlamov:  REACTION  in
+            SUBENTs 003 and 006, DATA in SUBENT 006.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           25
+ENDSUBENT           27
 SUBENT        M0106002   20130531   20130823   20130819       M067
 BIB                  3          5
 REACTION   (3-LI-6(G,X)0-NN-1,,SIG,,BRS)
@@ -77,14 +79,16 @@ MEV        MB         MB
     51.9        0.19
 ENDDATA             39
 ENDSUBENT           49
-SUBENT        M0106003   20130531   20130823   20130819       M067
-BIB                  3          5
-REACTION   (27-CO-59(G,N)27-CO-58,,SIG,,BRS)
+SUBENT        M0106003   20161114   20170201   20170110       M085
+BIB                  3          7
+REACTION   (27-CO-59(G,X)0-NN-1,UNW,SIG,,BRS)
+           Reaction (g,sn) = (g,n) + (g,np) + (g,2n).
 STATUS     (CURVE) Data from Fig. 2.
            (DEP,M0106004) Neutron  multiplicity  sorting   using
              statistical theory.
 HISTORY    (20130531A) Corrected by V.Varlamov: BRA -> BRS.
-ENDBIB               5
+           (20161114A) Corrected by V.Varlamov: REACTION.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         39
 EN         DATA       DATA-ERR
@@ -97,25 +101,25 @@ MEV        MB         MB
       12.        18.1        0.6
       12.55      23.2        0.7
       13.11      27.1        0.8
-      13.66      35.         1.3
-      14.17      47.4        2.
-      14.7       65.4        2.
+      13.66      35.0        1.3
+      14.17      47.4        2.0
+      14.7       65.4        2.0
       15.22      76.2        2.2
-      15.75      80.9        2.
-      16.3       81.         2.2
+      15.75      80.9        2.0
+      16.3       81.0        2.2
       16.86      75.8        2.6
       17.38      76.         3.
       17.9       79.8        3.4
-      18.43      77.8        3.
+      18.43      77.8        3.0
       18.97      67.7        4.7
       19.52      59.9        3.4
-      20.07      50.3        5.
-      20.61      44.2        5.
+      20.07      50.3        5.0
+      20.61      44.2        5.0
       21.17      41.3        5.6
-      21.7       37.6        6.
-      22.22      33.         5.5
+      21.7       37.6        6.0
+      22.22      33.0        5.5
       22.8       29.         6.
-      23.3       26.         6.8
+      23.3       26.0        6.8
       23.85      26.1        5.1
       24.4       24.8        5.8
       24.94      22.4        6.5
@@ -129,7 +133,7 @@ MEV        MB         MB
       29.29       6.4
       29.83       6.5
 ENDDATA             41
-ENDSUBENT           51
+ENDSUBENT           53
 SUBENT        M0106004   20130531   20130823   20130819       M067
 BIB                  3          5
 REACTION   (27-CO-59(G,X)0-NN-1,,SIG,,BRS)
@@ -198,19 +202,20 @@ MEV        MB*MEV     MB*MEV
    60.        53.         .8
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        M0106006   20130531   20130823   20130819       M067
-BIB                  3          5
-REACTION   (27-CO-59(G,X)0-NN-1,,INT,,BRA)
-            Reaction (g,xn) = (g,n) + 2(g,2n) + ...
+SUBENT        M0106006   20161114   20170201   20170110       M085
+BIB                  3          6
+REACTION   (27-CO-59(G,X)0-NN-1,UNW,INT,,BRA)
+            Reaction (g,xn) = (g,n) + (g,2n) + ...
 STATUS     (TABLE) Data from text.
-           (DEP,M0106004) Reaction cross section.
-HISTORY    (20130531C)
-ENDBIB               5
+           (DEP,M0106003) Reaction cross section.
+HISTORY    (20161114A) Corrected by V.Varlamov: REACTION - UNW,
+            STATUS, DATA substituted.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN-MAX     DATA       DATA-ERR
 MEV        MB*MEV     PER-CENT
-   29.       700.        13.
+   29.       701.        13.
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           14
 ENDENTRY             6

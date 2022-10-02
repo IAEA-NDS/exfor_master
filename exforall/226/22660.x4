@@ -1,6 +1,6 @@
-ENTRY            22660   20150925   20160603   20160523       2245
-SUBENT        22660001   20150925   20160603   20160523       2245
-BIB                 13         56
+ENTRY            22660   20160915   20170201   20170124       2252
+SUBENT        22660001   20160915   20170201   20170124       2252
+BIB                 13         59
 TITLE      Multi-parametric measurement of prompt neutrons and
            fission fragments for 233U(n-th,f)
 AUTHOR     (K.Nishio, M.Nakashima, I.Kimura, Y.Nakagome)
@@ -24,8 +24,8 @@ METHOD     (TOF)    Time-of-flight for prompt neutron's energy
               measurement on flight base 75.8 cm, and fission
               fragments energy measurement on flight base 31.9 cm
            (COINC)  Two types of coincidence were used
-              1. Fiss.Fragments coincidence
-              2. Fiss.Fragments and neutron events coincidence
+              1. Fiss.fragments coincidence
+              2. Fiss.fragments and neutron events coincidence
            (GSPEC)   Gamma-ray spectrometry
            (PSD)     The pulse-shape discrimination technique
                      was used to separate prompt neutrons and
@@ -41,9 +41,10 @@ DETECTOR   (SIBAR)  Silicon surface-barrier detector for first
              container with 5 cm thick walls, time resolution
              1.5 nanosec, for neutron detection. The neutron
              threshold level of the detector was set at 0.2 MeV
-             using the gamma ray from 22Na source
-SAMPLE      Electrodeposited U-O2-(N-O3)2 on 90 microgram/cm2
-            thick nickel foil.
+             using the gamma-ray from 22Na source
+SAMPLE     (92-U-233,ENR=0.995) Electrodeposited U-O2-(N-O3)2 on
+            90 microgram/cm2 thick nickel foil. The target
+            thickness was about 30 mu-g(233U)/cm2.
 CORRECTION  Corrections  were made for flight-path length of
             fission-fragments, for a number of neutrons emitted
             by fiss.fragments, for energy loss of fission
@@ -57,18 +58,20 @@ HISTORY    (20020302C)  + +  Compiled by S.M.
             in SAN 002 accomplished according to MEMO CP-D/635
            (20150925A) SD: REACTION code was modified in
             Subents 005 - 009 according to MEMO CP-D/856.
-ENDBIB              56
+           (20160915A) SD: STATUS was changed in Subents 003-009.
+           REACTION code corrected in Subent 002.
+ENDBIB              59
 COMMON               1          3
 EN-MEAN
 EV
    2.53E-02
 ENDCOMMON            3
-ENDSUBENT           63
-SUBENT        22660002   20110713   20120427   20120411       2227
-BIB                  5         10
-REACTION   (92-U-233(N,F)MASS,PR,NU/DE,,RRE/MXW/REL) Neutron
+ENDSUBENT           66
+SUBENT        22660002   20160915   20170201   20170124       2252
+BIB                  5         12
+REACTION   (92-U-233(N,F)MASS,PR,NU/DE,,MXW/REL) Neutron
             spectrum in the C.M. system for specified fragment
-            mass divided by Sqrt(E)
+            mass divided by sqrt(E)
 EN-SEC     (E-CM,N)    Energy of fission neutron
 ERR-ANALYS (DATA-ERR)  Not specified
 STATUS     (TABLE) K.Nishio, 2002-01-15. Data correspond to those
@@ -76,7 +79,9 @@ STATUS     (TABLE) K.Nishio, 2002-01-15. Data correspond to those
 HISTORY    (20110713A) REACTION code changed from PR,DE,N to
               PR,NU/DE. Units changed from PRT/FIS to ARB-UNITS
               Data numbers converted to E-format
-ENDBIB              10
+           (20160915A) SD:REACTION code was corrected (SF8=RRE
+           deleted) following remark from N.Otsuka.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4       1700
 E-CM       MASS       DATA-CM    DATA-ERR
@@ -1782,19 +1787,21 @@ MEV        NO-DIM     ARB-UNITS  ARB-UNITS
         3.9       158. 0.0000E+00 0.0000E+00
         3.9       159. 0.0000E+00 0.0000E+00
 ENDDATA           1702
-ENDSUBENT         1717
-SUBENT        22660003   20090119   20090306   20090302       2206
-BIB                  4          9
-REACTION   (92-U-233(N,F)MASS,PR,KE,N,MXW) Average Neutron
-             Emission Energy in C.M. System As a Function of
-             Fragment Mass
-REL-REF    (D,,J.TERRELL,J,PR,113,527,1959)     1
-           (A,,J.C.MILTON+,C,65SALZBURG,2,39,1965)
-STATUS     (APRVD)  K.Nishio, 20020115. Data in Fig. 4 of Main
+ENDSUBENT         1719
+SUBENT        22660003   20160915   20170201   20170124       2252
+BIB                  5         11
+REACTION   (92-U-233(N,F)MASS,PR,KE,N,MXW) Average neutron
+             emission energy in c.m. system as a function of
+             fragment mass
+REL-REF    (D,,J.Terrel,J,PR,113,527,1959)
+           (A,,J.C.Milton+,C,65SALZBURG,2,39,1965)
+ERR-ANALYS (ERR-S)  Statistical error
+STATUS     (TABLE)  K.Nishio, 20020115. Data in Fig. 4 of Main
                     Reference
            (DEP,22660002)
-HISTORY    (20090119A)  REACTION SF6 changed fron AKE to KE
-ENDBIB               9
+HISTORY    (20090119A)  REACTION SF6 changed from AKE to KE
+           (20160915U) SD: 'APRVD' -> 'TABLE' in STATUS.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3         85
 MASS       DATA-CM    ERR-S
@@ -1885,7 +1892,7 @@ NO-DIM     MEV        MEV
        158.      1.863       .327
        159.      1.326       .27
 ENDDATA             87
-ENDSUBENT          101
+ENDSUBENT          103
 SUBENT        22660004   20150925   20160603   20160523       2245
 BIB                  5          9
 REACTION   (92-U-233(N,F)MASS,PR,KE/TKE,N,MXW) Average Neutron
