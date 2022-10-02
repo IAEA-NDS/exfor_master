@@ -1,13 +1,13 @@
-ENTRY            G0014   20090820   20100209   20100204       G019
-SUBENT        G0014001   20090820   20100209   20100204       G019
+ENTRY            G0014   20090121   20100610   20100601       G020
+SUBENT        G0014001   20090121   20100610   20100601       G020
 BIB                 13         67
 TITLE      Post-neutron mass yield distribution and photo-neutron
            cross-section measurements in 209-Bi with 65-MeV
            bremsstrahlung.
-AUTHOR     (Haladhara Naik,Annareddy Venkatramann Reddy,
-           Srinivasan Ganesan,Devesh Raj,Kwangsoo Kim,
-           Guinyun Kim,Young Do Oh,Due Khue Pham,Moo-Hyun Cho,
-           In Soo Ko,Won Namkung)
+AUTHOR     (Haladhara Naik, Annareddy Venkatramann Reddy,
+           Srinivasan Ganesan, Devesh Raj, Kwangsoo Kim,
+           Guinyun Kim, Young Do Oh, Due Khue Pham, Moo-Hyun Cho,
+           In Soo Ko And Won Namkung)
 INSTITUTE  (3INDTRM,3KORPUE)
 REFERENCE  (J,KPS,52,934,2008)
 FACILITY   (LINAC,3KORPUE)
@@ -67,7 +67,7 @@ HISTORY    (20080421C)
             Radiochemistry Division, B.A.R.C
            (20080525A) VV CDFE. Last correction were made
                        in reaction codes.
-           (20090820A) SD: list of authors was corrected.
+           (20090121A) On. 002: REACTION and data table updated
 ENDBIB              67
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      ERR-4
@@ -75,36 +75,43 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT
   2.0        3.0        1.0        1.0
 ENDCOMMON            3
 ENDSUBENT           74
-SUBENT        G0014002   20080421   20080530   20080530       G017
-BIB                  2          3
-REACTION   (83-BI-209(G,F)ELEM/MASS,CUM,FY,,BRA)
-STATUS     (TABLE) Data are taken from table 1. Cumulative yields
-            determined in the present work.
-ENDBIB               3
-COMMON               1          3
-EN-MAX
-MEV
-65.0
+SUBENT        G0014002   20090121   20100610   20100601       G020
+BIB                  6         10
+REACTION  1((83-BI-209(G,F)ELEM/MASS,CUM,FY,,BRA)/
+           (83-BI-209(G,F)44-RU-103,CUM,FY,,BRA))
+          2(83-BI-209(G,F)ELEM/MASS,CUM,FY,,BRA)
+MONITOR   2((MONIT)83-BI-209(G,F)44-RU-103,CUM,FY,,BRA)
+COMMENT    H.Naik (2010-01-16, through G.N.Kim)
+            105Ru -> 105Rh in the Table 1 of the KPS article
+REL-REF    (N,G0019001,H.Naik+,J,EPJ/A,14,323,2009)
+            Absolute fission yield is given
+STATUS     (TABLE) Table 1 of J,KPS,52,934,2008
+HISTORY    (20090121A) On. REACTION and data table updated
+ENDBIB              10
+COMMON               2          3
+EN-MAX     MONIT     2
+MEV        PC/FIS
+65.0        8.496
 ENDCOMMON            3
-DATA                 4         14
-ELEMENT    MASS       DATA       ERR-T
-NO-DIM     NO-DIM     PC/FIS     PC/FIS
-38.        91.0       0.443      0.082
-40.        89.0       0.314      0.058
-40.        95.0       0.723      0.069
-40.        95.0       0.693      0.087
-40.        97.0       0.857      0.091
-42.        99.0       0.934      0.129
-44.        103.0      1.0
-44.        105.0      0.959      0.013
-47.        112.0      0.675      0.056
-47.        112.0      0.627      0.172
-47.        113.0      0.579      0.189
-48.        115.0      0.471      0.021
-48.        117.0      0.090      0.017
-48.        117.0      0.144      0.015
+DATA                 6         14
+ELEMENT    MASS       DATA      1ERR-T     1DATA      2ERR-T     2
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 38.         91.       0.443      0.082      3.764      0.697
+ 40.         89.       0.314      0.058      2.668      0.493
+ 40.         95.       0.723      0.069      6.143      0.586
+ 40.         95.       0.693      0.087      5.888      0.739
+ 40.         97.       0.857      0.091      7.281      0.773
+ 42.         99.       0.934      0.129      7.935      1.096
+ 44.        103.                             8.496      0.850
+ 45.        105.       0.959      0.013      8.148      0.110
+ 47.        112.       0.675      0.056      5.735      0.476
+ 47.        112.       0.627      0.172      5.327      1.461
+ 47.        113.       0.579      0.189      4.919      0.606
+ 48.        115.       0.471      0.021      4.002      0.178
+ 48.        117.       0.090      0.017      0.765      0.144
+ 48.        117.       0.144      0.015      1.223      0.127
 ENDDATA             16
-ENDSUBENT           28
+ENDSUBENT           35
 SUBENT        G0014003   20080421   20080530   20080530       G017
 BIB                  3         13
 REACTION   (83-BI-209(G,3N)83-BI-206,,SIG,,BRA)

@@ -1,6 +1,6 @@
-ENTRY            K2061   20080131   20080131   20080131       K004
-SUBENT        K2061001   20080131   20080131   20080131       K004
-BIB                 14         31
+ENTRY            K2061   20100514   20100610   20100514       K007
+SUBENT        K2061001   20100514   20100610   20100514       K007
+BIB                 14         32
 TITLE      High-resolution measurement of fine structure in the
            photoabsorption cross section of 18O
 AUTHOR     (H.Harada, Y.Shigetome, H.Ohgaki, T.Noguchi,
@@ -8,14 +8,11 @@ AUTHOR     (H.Harada, Y.Shigetome, H.Ohgaki, T.Noguchi,
 INSTITUTE  (2JPNPNC)
            (2JPNETL)
 REFERENCE  (J,PRL,80,(1),33,199801)
-REL-REF    (R,,D.R.Tilley+,J,NP/A,564,1,1993)
-           To subtract 16O resonance contributions at 11.52,
-           12.44 and 13.09 MeV
 PART-DET   (G) Transmitted photon
 INC-SOURCE (LCS) lambda=527 nm laser photons used
-SAMPLE     - Target enrichment is 98%.
-           - Chemical-form of target is H2O.
+SAMPLE     - Chemical-form of target is H2O.
            - Physical-form of target is liquid.
+           (8-O-18,ENR=0.98)
 METHOD     (TRN)
 FACILITY   (ESTRG,2JPNETL) To store electron beam at 615 MeV at
                            Electron strage ring TERAS
@@ -24,30 +21,35 @@ ANALYSIS   Photo-atom cross section is subtracted by taking
 DETECTOR   (GE,BGO) To count transmitted photon (HHS:
                     High-resolution high-energy photon
                     spectrometer)
-ERR-ANALYS - 0.8-1.1 mb in 10-13 MeV, 1.1-1.8 mb in 8-10 MeV
-           - There is no systematic uncertainty in the
+ERR-ANALYS - There is no systematic uncertainty in the
              determination of beam current, detector efficiency,
              background subtraction and reactino losses in data.
+           - 0.8-1.1 mb in 10-13 MeV, 1.1-1.8 mb in 8-10 MeV
            (ERR-1) Maximum uncertainty in simulation of HHS's
                    response functions (<20%)
+REL-REF    (R,,D.R.Tilley+,J,NP/A,564,1,1993)
+           To subtract 16O resonance contributions at 11.52,
+           12.44 and 13.09 MeV
 HISTORY    (20070711C) On
            (20070713R) On. Received by e-mail from H.Harada
-ENDBIB              31
+           (20100223A) Nf. 002-003 corrected
+ENDBIB              32
 COMMON               2          3
 E-RSL-FW   ERR-1
 MEV        PER-CENT
  0.1        20.
 ENDCOMMON            3
-ENDSUBENT           38
-SUBENT        K2061002   20080131   20080131   20080131       K004
-BIB                  2          3
-REACTION   (8-O-18(G,ABS),,SIG)
-STATUS     (TABLE) Data (Fig.3(c) in reference) received by
-                   e-mail from H.Harada (2007.07.20)
-ENDBIB               3
+ENDSUBENT           39
+SUBENT        K2061002   20100514   20100610   20100514       K007
+BIB                  3          4
+REACTION   (8-O-18(G,TOT),,SIG)
+STATUS     (TABLE) Corresponding to Fig.3(c) of J,PRL,80,33,1998
+HISTORY    (20100223A) Nf. SF3: ABS -> TOT, EN-CM-MIN/MAX ->
+                       EN-MIN/MAX
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3         60
-EN-CM-MIN  EN-CM-MAX  DATA
+EN-MIN     EN-MAX     DATA
 MEV        MEV        MB
  8.10       8.20       -1.90
  8.20       8.30       -6.70
@@ -110,20 +112,21 @@ MEV        MEV        MB
  13.90      14.00      0.00
  14.00      14.10      0.00
 ENDDATA             62
-ENDSUBENT           70
-SUBENT        K2061003   20080131   20080131   20080131       K004
-BIB                  4          7
+ENDSUBENT           71
+SUBENT        K2061003   20100514   20100610   20100514       K007
+BIB                  5          8
+REACTION  1(8-O-18(G,0),,EN)
+           Excitation energies of resonances in 18O+g
+          2(8-O-18(G,TOT),,SIG,,RES)
+ERR-ANALYS (ERR-S) Statistical uncertainty
 REL-REF    (N,,D.R.Tilley+,J,NP/A,595,1,1995)
            Compared with present result
-REACTION  1(8-O-18(G,ABS),,EN)
-           Excitation energies of resonances in 18O+g
-          2(8-O-18(G,ABS),,SIG,,RES)
-ERR-ANALYS (ERR-S) Statistical uncertainty
-STATUS     (TABLE) Taken from Table I, p35 in reference
-ENDBIB               7
+STATUS     (TABLE) Table I of J,PRL,80,33,1998
+HISTORY    (20100223A) Nf. SF3: ABS -> 0 and TOT, DATA-CM -> DATA
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          7
-DATA-CM   1DATA      2ERR-S     2
+DATA      1DATA      2ERR-S     2
 MEV        MB         MB
  10.2       5.         1.1
  10.4       9.         1.1
@@ -133,5 +136,5 @@ MEV        MB         MB
  12.5       6.         1.1
  13.0       9.         1.1
 ENDDATA              9
-ENDSUBENT           21
+ENDSUBENT           22
 ENDENTRY             3
