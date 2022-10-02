@@ -1,11 +1,12 @@
-ENTRY            14383   20140331   20141007   20141001       1399
-SUBENT        14383001   20140331   20141007   20141001       1399
-BIB                 11         35
+ENTRY            14383   20150225   20150701   20150604       1405
+SUBENT        14383001   20150225   20150701   20150604       1405
+BIB                 11         36
 TITLE      Improved neutron capture cross section of 239Pu
 AUTHOR     (S.Mosby,T.A.Bredeweg,A.Chyzh,A.Couture,R.Henderson,
            M.Jandel,E.Kwan,J.M.O'Donnell,J.Ullmann,C.Y.Wu)
 INSTITUTE  (1USALAS,1USALRL)
-REFERENCE  (J,PR/C,89,034610,2014)
+REFERENCE  (J,PR/C,89,034610,2014) Main Reference
+           (J,NDS,119,31,2014) Preliminary data
 FACILITY   (LINAC,1USALAS) Experiment performed at the 800 MeV
            proton linac of the Lujan Neutron Scattering Center
            at LANSCE
@@ -15,7 +16,7 @@ DETECTOR   (BAF2) Gamma detector array DANCE, consisting of 160
            detection. A single gamma-ray efficiency was 85%.
 METHOD     (TOF) Energy of primary neutrons was determined by time
            of flight.
-           (PSD) Gama rays were identified by pulse shape
+           (PSD) Gamma rays were identified by pulse shape
            analysis using fast scintillation component in BaF2
            signal.
 INC-SOURCE (SPALL) Spallation neutrons were produced by a pulsed
@@ -29,34 +30,36 @@ ANALYSIS   The (n,g) cross section was determined from ratio of
            anticoincidence with PPAC and multiplicity of gamma
            rays larger than 3.
 HISTORY    (20140331C) Compiled by S.H.
+           (20150112A) S.H. Second reference added - proceedings
+                       of ND2013, status updated
 ERR-ANALYS (ERR-1) Systematic uncertainty in PPAC efficiency
            (ERR-2) Systematic uncertainty in scattered background
                    scaling
-           (ERR-3) Systematic uncertainty in cross section
+           (ERR-3) Systematic uncertainty in (n,g) cross section
                    normalization
-           (ERR-4) Systematic uncertainty in  reference (n,f )
-                   cross section
-ENDBIB              35
-COMMON               4          3
-ERR-1      ERR-2      ERR-2      ERR-4
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-1.4        1.5        2.0        1.0
+ENDBIB              36
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+1.4        1.5        2.
 ENDCOMMON            3
-ENDSUBENT           42
-SUBENT        14383002   20140331   20141007   20141001       1399
-BIB                  4         11
+ENDSUBENT           43
+SUBENT        14383002   20150225   20150701   20150604       1405
+BIB                  5         13
 REACTION   (94-PU-239(N,ABS),,ALF,,AV)
-STATUS     (TABLE) Data presented in fig. 7 sent by author.
+STATUS     (TABLE) Data presented in fig. 7 of the main reference
+                   sent by author.
+HISTORY    (20150112A) Status updated
 SAMPLE     (94-PU-239,ENR=0.9997)
-           (94-PU-240,ENR=0.03) 937 mu-g of 239Pu target material
-           was electroplated onto both sides of a 3 mu-m Ti
-           backing and covered by a pair of 1.4 mu-m Al Mylar
+           (94-PU-240,ENR=0.0003) 937 mu-g of 239Pu target
+           material was electroplated onto both sides of a 3 mu-m
+           Ti backing and covered by a pair of 1.4 mu-m Al Mylar
            windows for containment and protection of the sample.
            This assembly served as the central cathode for a
            parallel-plate avalanche counter.
 MISC-COL   (MISC1) Minimum data (DATA-MIN)
            (MISC2) Maximum data (DATA-MAX)
-ENDBIB              11
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 5       2000
 EN-MIN     EN-MAX     DATA       MISC1      MISC2
@@ -2062,12 +2065,14 @@ EV         EV         NO-DIM     NO-DIM     NO-DIM
   995.40542  997.70006    0.66166    0.60397    0.71935
   997.70006 1000.00000    0.40323    0.35806    0.44840
 ENDDATA           2002
-ENDSUBENT         2018
-SUBENT        14383003   20140331   20141007   20141001       1399
-BIB                  7         12
+ENDSUBENT         2020
+SUBENT        14383003   20150225   20150701   20150604       1405
+BIB                  9         16
 REACTION   (94-PU-239(N,G)94-PU-240,,SIG,,AV)
-STATUS     (TABLE) Data presented in fig. 8 sent by author.
+STATUS     (TABLE) Data presented in fig. 8 of the main reference
+                   sent by author (S.M.).
            (DEP,14383002)
+HISTORY    (20150112A) Status updated
 MONITOR    (94-PU-239(N,F),,SIG)
 MONIT-REF  (,,3,ENDF/B-VII.1,,2011) Doppler broadened ENDF
              cross section was used as monitor reaction.
@@ -2075,10 +2080,16 @@ CORRECTION Corrections for PPAC efficiency was made
 ANALYSIS   Cross section determined from measured cross section
            ratio (n,g)/(n,f) and Doppler broadened ENDF cross
            section, prepared using SAMMY code.
+ERR-ANALYS (ERR-4) Systematic uncertainty in  reference (n,f)
+                   cross section
 MISC-COL   (MISC1) Minimum data (DATA-MIN)
            (MISC2) Maximum data (DATA-MAX)
-ENDBIB              12
-NOCOMMON             0          0
+ENDBIB              16
+COMMON               1          3
+ERR-4
+PER-CENT
+  1.
+ENDCOMMON            3
 DATA                 5       1988
 EN-MIN     EN-MAX     DATA       MISC1      MISC2
 EV         EV         B          B          B
@@ -4071,17 +4082,18 @@ EV         EV         B          B          B
   995.40542  997.70006    6.05607    5.52803    6.58411
   997.70006 1000.00000    4.26717    3.78921    4.74514
 ENDDATA           1990
-ENDSUBENT         2007
-SUBENT        14383004   20140331   20141007   20141001       1399
-BIB                  4          7
+ENDSUBENT         2015
+SUBENT        14383004   20150225   20150701   20150604       1405
+BIB                  5          8
 REACTION   (94-PU-239(N,G)94-PU-240,,INT)
-STATUS     (TABLE)Data taken from tab. 3 of the reference.
+STATUS     (TABLE)Data taken from tab. 3 of the main reference.
            (DEP,14383003)
 ANALYSIS   Integral cross section data, obtained by integration
            of data in subentry 3
 COMMENT    By compiler: Table 3 has units "barns" but it should
            read barn * eV (confirmed by author)
-ENDBIB               7
+ERR-ANALYS (DATA-ERR) No information given
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         10
 EN-MIN     EN-MAX     DATA       DATA-ERR
@@ -4097,5 +4109,5 @@ EV         EV         B*EV       B*EV
       800.0      900.0      392.0       15.0
       900.0     1000.0      518.0       19.0
 ENDDATA             12
-ENDSUBENT           24
+ENDSUBENT           25
 ENDENTRY             4
