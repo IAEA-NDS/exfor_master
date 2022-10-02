@@ -1,6 +1,6 @@
-ENTRY            41201   20130123   20130502   20130410       4159
-SUBENT        41201001   20130123   20130502   20130410       4159
-BIB                 11         38
+ENTRY            41201   20150929   20151123   20151116       4171
+SUBENT        41201001   20150929   20151123   20151116       4171
+BIB                 11         40
 INSTITUTE  (4RUSEPA)
 AUTHOR     (V.M.Gorbachev,V.I.Nagornyy,Yu.Ya.Nefedov,
            M.S.Shvetsov,E.F.Fomushkin, A.M.Shvetsov)
@@ -12,7 +12,7 @@ FACILITY   (VDG)  Neutron Generator NG 150M in pulse mode.
             Pulse frequency 5E+5 pulse/sec, pulse duration 30 ns.
 INC-SOURCE (D-T) Ti-T target, deuterons of 120 keV.
            Maximal neutron yield (1-2)*10**9 n/s .
-METHOD     (TOF)   Time-Of-Flight . Base 8 m.
+METHOD     (TOF)   Time-of-flight . Base 8 m.
            Time resolution (HWHM) 30 nsec.
 DETECTOR   (NAICR)    For gamma-ray detection
            (TELES)    Proton telescope for neutron monitoring
@@ -39,9 +39,11 @@ HISTORY    (19960725C)  + + Compiled at the Centre - CJD + +
            (20130123A) M.M. Upper -> lower case correction.
             Subents 003, 010 data were corrected.
             BIB information was updated.
-ENDBIB              38
+           (20150929U) Duplicative line was removed from SAMPLE
+           in Subent 010.
+ENDBIB              40
 NOCOMMON             0          0
-ENDSUBENT           41
+ENDSUBENT           43
 SUBENT        41201002   20130123   20130502   20130410       4159
 BIB                  5          5
 REACTION   (29-CU-0(N,X)0-G-0,,DE)
@@ -302,19 +304,22 @@ MEV        MEV        MB/MEV
   6.5         7.0         11.
 ENDDATA             16
 ENDSUBENT           54
-SUBENT        41201010   20130123   20130502   20130410       4159
-BIB                  8         31
+SUBENT        41201010   20150929   20151123   20151116       4171
+BIB                  8         34
 REACTION   (92-U-235(N,X)0-G-0,,DE)
 MONITOR    (92-U-235(N,TOT),,SIG) Total c-s in Monte-Carlo code.
 STATUS     (COREL,41201004)
-           (TABLE) Table of J,YK .
+           (TABLE) Table of J,YK,(2),47,1996
 SAMPLE      Metallic half-sphere
-           (TABLE) Table of J,YK .
 ANALYSIS   (4PI1A)   Angle of measurements is 125 adeg
-ERR-ANALYS            Total error at the confidence level 0.95:
+ERR-ANALYS         Total error at the confidence level 0.95 -
+           uncertainties of differential angular CS for different
+           gammas:
            0.5< Egamma <1.5 MeV - from 30% to 15%,
            1.5< Egamma <4.0 MeV - from 15% to 20%,
            4.0< Egamma <10.0 MeV - from 20% to 100%,
+           (DATA-ERR,,10.) Uncertainty of integral cross section
+           for different gammas < 10.% at 0.95 confidence level.
            Considered uncertainties:
            (ERR-1) Uncertainty of number of neutrons in 4PI solid
                    angle.
@@ -335,11 +340,11 @@ ERR-ANALYS            Total error at the confidence level 0.95:
 EN-SEC     (E,G)
 HISTORY    (20120123A) M.M. Duplicative line in DATA block was
            deleted.
-ENDBIB              31
-COMMON               4          3
-EN         EN-ERR     ERR-T      DATA-ERR
-EV         MEV        PER-CENT   PER-CENT
-   1.38E+07 0.2           15.        10.
+ENDBIB              34
+COMMON               3          3
+EN         EN-ERR     ERR-1
+EV         MEV        PER-CENT
+   1.38E+07 0.2         3.
 ENDCOMMON            3
 DATA                 3         16
 E-MIN      E-MAX      DATA
@@ -361,5 +366,5 @@ MEV        MEV        MB/MEV
   7.0         7.5          5.
   7.5         8.0          3.
 ENDDATA             18
-ENDSUBENT           58
+ENDSUBENT           61
 ENDENTRY            10

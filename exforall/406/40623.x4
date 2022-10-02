@@ -1,54 +1,58 @@
-ENTRY            40623   20021224   20030502   20050926       0000
-SUBENT        40623001   20021224   20030502   20050926       0000
-BIB                 13         31
+ENTRY            40623   20151007   20151123   20151116       4171
+SUBENT        40623001   20151007   20151123   20151116       4171
+BIB                 13         37
 TITLE        Elastic and Inelastic Scattering of the Neutrons
              With the Energies from 5 to 8 MeV on Niobium
-AUTHOR     (S.P.SIMAKOV, G.N.LOVCHIKOVA, V.P.LUNEV, O.A.SAL'NIKOV,
-            N.N.TITARENKO)
+AUTHOR     (S.P.Simakov, G.N.Lovchikova, V.P.Lunev, O.A.Sal'nikov,
+            N.N.Titarenko)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,YF,37,(4),801,198304)
+REFERENCE  (J,YF,37,(4),801,1983)
+           (J,SNP,37,477,1983) Engl.transl.of YF,37,(4),801,1983
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
+           For normalization to absolute values.
 INC-SOURCE (P-T) Proton-Tritium
-FACILITY   (VDG) Elestrostatic Proton Charge-Exchange Accelerator
-METHOD     (TOF) Flight Base is 201 Cm
-DETECTOR   (SCIN)
-           (IOCH) For Detector Efficiensy Determiation
-SAMPLE      Metallic Niobium
-STATUS     (APRVD) Simakov, 830429. Preliminary Data are Given
-                   In the Entry 40517
-ERR-ANALYS (ERR-1) Minimum Statistic-Of-Counts Error
-           (ERR-2) Maximum Statistic-Of-Counts Error
-           (ERR-3) Minimum Detector Energy- Dependence
-                   Uncertainty Error
-           (ERR-4) Maximum Detector Energy-Dependence
-                   Uncertainty Error
-           (ERR-5) Neutron Flux Determination Error
-           (ERR-6) For Large Energies and Small Angles -
-                   Minimum Elastic-Scattering Substraction
-                   Error
-           (ERR-7) For Large Energies and Small Angles -
-                   Maximum Elastic-Scattering Substraction
-                   Error
+FACILITY   (VDG,4RUSFEI) Electrostatic proton charge-exchange
+                      accelerator
+METHOD     (TOF) Flight base is 201 cm .
+           Time resolution 3-4 nsec.
+DETECTOR   (SCIN) For scattered neutrons.
+           Detection threshold 0.4 MeV.
+           (IOCH) For detector efficiency determination
+SAMPLE      Metallic niobium as hollow cylinder of 4.5cm height,
+           4.5cm outer diameter, 3.0cm inner diameter,
+           3.21 moles of Nb-93.
+STATUS     (APRVD) S.Simakov, 1983-04-29; 2015-10-07 .
+           Preliminary data are given in the Entry 40517
+ERR-ANALYS (ERR-S,2.,9.) Statistical error 2-9%.
+           (ERR-1,3.,7.) Detector energy- dependence
+                   uncertainty error
+           (ERR-2) Neutron flux determination error
+           (ERR-3,5.,20.) For large energies and small angles -
+                   elastic-scattering subtraction error
+           (ERR-T) Total error
 HISTORY    (19830531C) Compiled at the Centre
-           (20021220A) Date is Corrected. Subents Merged
+           (20021220A) Date is corrected. Subents merged
            (20021224U) Last checking has been done.
-ENDBIB              31
-COMMON               8          6
-ANG-RSL    ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
-ERR-6      ERR-7
-ADEG       PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT
-         1.         2.         9.         3.         7.         4.
-         5.        20.
-ENDCOMMON            6
-ENDSUBENT           41
-SUBENT        40623002   20021224   20030502   20050926       0000
-BIB                  3          3
+           (20151007A) M.M. Ref.of Engl.translation was added.
+           Upper -> lower case correction.
+           STATUS was updated in data Subents.
+           Subent 003 reaction was corrected.
+           ERR-ANALYS and COMMON were corrected.
+ENDBIB              37
+COMMON               2          3
+ANG-RSL    ERR-2
+ADEG       PER-CENT
+         1.         4.
+ENDCOMMON            3
+ENDSUBENT           44
+SUBENT        40623002   20151007   20151123   20151116       4171
+BIB                  3          4
 REACTION   (41-NB-93(N,INL)41-NB-93,,SIG)
 ANALYSIS   (INTED,INTAD)
-STATUS     (DEP,40623004)
-ENDBIB               3
-NOCOMMON
+STATUS     (DEP,40623004)  Angular-energy distribution
+           (TABLE) Table I of YF,37,(4),801,1983
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          4
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        B          B
@@ -57,18 +61,21 @@ MEV        MEV        B          B
        7.23       0.07       2.01       0.17
        8.01       0.08       1.89       0.15
 ENDDATA              6
-ENDSUBENT           14
-SUBENT        40623003   20021224   20030502   20050926       0000
-BIB                  4          5
-REACTION   (41-NB-93(N,INL)41-NB-93,,DA)
-ANALYSIS   (INTED)
-STATUS     (DEP,40623004)
+ENDSUBENT           15
+SUBENT        40623003   20151007   20151123   20151116       4171
+BIB                  3          8
+REACTION   (41-NB-93(N,EL)41-NB-93,,DA)
+             Elastic scattering cross section.
+STATUS     (TABLE) Table I of YF,37,(4),801,1983
 HISTORY    (20021220C)   Compiled at the Center - CJD
            (20021224U) Last checking has been done.
-ENDBIB               5
-NOCOMMON
+           (20151007A) M.M. INL -> EL in SF3 according to the
+           title of Table I. INTED and DEP were deleted.
+           DATA -> DATA-CM .
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 6         24
-EN         EN-ERR     COS-CM     COS-ERR    DATA       ERR-T
+EN         EN-ERR     COS-CM     COS-ERR    DATA-CM    ERR-T
 MEV        MEV        NO-DIM     NO-DIM     MB/SR      MB/SR
        5.23        .06      0.853        .01       467.        33.
        5.23        .06      0.687       .012        23.         7.
@@ -95,16 +102,17 @@ MEV        MEV        NO-DIM     NO-DIM     MB/SR      MB/SR
        8.01        .08     -0.529       .015        26.         2.
        8.01        .08     -0.879        .01        17.         4.
 ENDDATA             26
-ENDSUBENT           36
-SUBENT        40623004   20021224   20030502   20050926       0000
-BIB                  3          5
+ENDSUBENT           39
+SUBENT        40623004   20151007   20151123   20151116       4171
+BIB                  4          6
 REACTION   (41-NB-93(N,INL)41-NB-93,,DA/DE)
 EN-SEC     (E,N)
-HISTORY    (20021220C)   Data Restructured from the old ENTRY
-                      Data from Subents 40623004-40623007 Merged
+STATUS     (TABLE) From authors.
+HISTORY    (20021220C)   Data restructured from the old ENTRY
+                      Data from Subents 40623004-40623007 merged
            (20021224U) Last checking has been done.
-ENDBIB               5
-NOCOMMON
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 6       1211
 EN         EN-ERR     E          ANG        DATA       ERR-T
 MEV        MEV        MEV        ADEG       MB/SR/MEV  MB/SR/MEV
@@ -1320,5 +1328,5 @@ MEV        MEV        MEV        ADEG       MB/SR/MEV  MB/SR/MEV
  8.01       0.08       6.750       121.         3.250      0.363
  8.01       0.08       6.750       151.         2.909      0.329
 ENDDATA           1213
-ENDSUBENT         1223
+ENDSUBENT         1224
 ENDENTRY             4

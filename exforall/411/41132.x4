@@ -1,6 +1,6 @@
-ENTRY            41132   20100915   20101201   20101129       4150
-SUBENT        41132001   20100915   20101201   20101129       4150
-BIB                 10         20
+ENTRY            41132   20150724   20151123   20151113       4170
+SUBENT        41132001   20150724   20151123   20151113       4170
+BIB                 10         25
 TITLE       Energy Distributions of Np-237 Fission Neutrons
 AUTHOR     (A.M.Trufanov,G.N.Lovchikova, S.E.Sukhikh,A.V.Polyakov,
            V.G.Demenkov, V.A.Vinogradov, H.Maerten, A.Ruben,
@@ -8,12 +8,15 @@ AUTHOR     (A.M.Trufanov,G.N.Lovchikova, S.E.Sukhikh,A.V.Polyakov,
 INSTITUTE  (4RUSFEI) Trufanov, Lovchikova, Sukhikh, Polyakov,
                      Demenkov, Vinogradov
            (3DDRTUD) Maerten, Ruben, Duering
-REFERENCE  (J,YF,55,(2),298,199202)
+REFERENCE  (J,YF,55,(2),298,1992)
            (J,SNP,55,162,1992) Engl. translation of J,YF,55,298 .
+           (R,INDC(NDS)-0251,105,1991)  Np-237 at 6.0 MeV
 FACILITY   (VDG,4RUSFEI)  For En=4.9 MeV
            (VDG,3DDRROS)  For En=7.8 MeV
-MONITOR    (98-CF-252(0,F),PR,DE,N)
+MONITOR    (98-CF-252(0,F),PR,NU/DE)
 METHOD     (TOF)  128.5 cm(for 4.9MeV neutrons)
+            Cf-252 and Np-237 spectra were measured at the same
+           exp. conditions.
 DETECTOR   (FISCH)  For fission fragments
            (SCIN)   Stilbene counter for neutrons
 STATUS       Data of SAN 002 taken from the reference
@@ -21,20 +24,34 @@ HISTORY    (19930729C)  + + Compiled at the Centre - CJD + +
            (20070729A) M.M. Subent .003 and .004 were added.
                Dates were corrected for 4-digit year.
            (20100915U) Ref. J,SNP,55,162,1992 was added.
-ENDBIB              20
+           (20150724A) Ref. INDC(NDS)-0251,105,1991 was added.
+           Subent 005 was added.
+ENDBIB              25
 NOCOMMON             0          0
-ENDSUBENT           23
-SUBENT        41132002   20100915   20101201   20101129       4150
-BIB                  5          8
+ENDSUBENT           28
+SUBENT        41132002   20150724   20151123   20151113       4170
+BIB                  6         20
 REACTION   (93-NP-237(N,F)0-NN-1,PR,KE)
 SAMPLE      Neptunium-237 on fission chamber electrodes.
             Mass 500 milligram
+REL-REF    (A,,G.S.Boykov+,C,91JUELIC,,1991)
+           Report was not included in Conf.Proc., was published
+           later by INDC as INDC-CCP-352,1993 ( notes at
+           PAN,57,2047,1994):
+            EN        YF,55,(2),298,1992      INDC-CCP-352,25,1993
+            2.9 MeV   2.054+-0.008 MeV        2.05+-0.03 MeV
+           14.7 MeV   2.114+-0.012 MeV        2.11+-0.03 MeV
+           These values of G.Boykov+ are compared with authors'
+           ones in Table 1 of SNP,55,162,1992.
+           See also later (1994) published data in 41171.002.
 ERR-ANALYS (DATA-ERR)  Not specified
 STATUS     (TABLE) Table of J,YF,55,(2),298,1992.
+           (DEP,41132003) Spectrum at 4.9 MeV .
+           (DEP,41132004) Spectrum at 7.8 MeV .
 HISTORY    (20100915A) Corrected:
-               ),PR,AKE,N  ->  0-NN-1,PR,KE
+               ),PR,AKE,N)  ->  )0-NN-1,PR,KE)
            according to N.Otsuka opinion (NDS IAEA).
-ENDBIB               8
+ENDBIB              20
 NOCOMMON             0          0
 DATA                 4          2
 EN         EN-RSL     DATA       DATA-ERR
@@ -42,16 +59,29 @@ MEV        MEV        MEV        MEV
   4.9         0.1        2.19       0.04
   7.8         0.2        2.03       0.08
 ENDDATA              4
-ENDSUBENT           17
-SUBENT        41132003   20100915   20101201   20101129       4150
-BIB                  4          5
+ENDSUBENT           29
+SUBENT        41132003   20150724   20151123   20151113       4170
+BIB                  8         14
 REACTION   (93-NP-237(N,F),PR,NU/DE,,NPD)
+FACILITY   (VDG,4RUSFEI)
+INC-SOURCE (P-T) Tritium gas target. Monoenergetic neutron yield
+           10**8 n/sr/microC at angle 0deg, energy resolution
+           50-70 keV in continuous mode of accelerator operation.
+SAMPLE     40 layers ( on electrodes) of 500 mg Np-237 .
+           Fis.chamber was placed at 17 cm distance from neutron
+           source.
+REL-REF    (I,,V.G.Demenkov+,R,FEI-2013,1989) Exp.details.
 ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (APRVD) Data received from Authors 06.2007
+STATUS     (APRVD) Data received from A.Trufanov 06.2007
            (TABLE)
+           Data are presented on Fig.2 of YF,55,(2),298,1992
 HISTORY    (20100913A) NPD was added in SF8 (Memo CP/D-658).
-ENDBIB               5
-NOCOMMON             0          0
+ENDBIB              14
+COMMON               1          3
+EN-ERR
+MEV
+0.1
+ENDCOMMON            3
 DATA                 4         38
 EN         E          DATA       DATA-ERR
 MEV        MEV        1/MEV      PER-CENT
@@ -94,16 +124,25 @@ MEV        MEV        1/MEV      PER-CENT
   4.9       11.65     0.00103     51.77
   4.9       12.48     0.00109     40.69
 ENDDATA             40
-ENDSUBENT           50
-SUBENT        41132004   20100915   20101201   20101129       4150
-BIB                  4          5
+ENDSUBENT           63
+SUBENT        41132004   20150724   20151123   20151113       4170
+BIB                  6         10
 REACTION   (93-NP-237(N,F),PR,NU/DE,,NPD)
+FACILITY   (VDG,3DDRROS)
+INC-SOURCE            Deuterium gas target at 2 atm pressure.
+           Monoenergetic neutrons yield about 10**8 n/sr/microC at
+           0 deg.
 ERR-ANALYS (ERR-S) Statistical Error
-STATUS     (APRVD) Data received from Authors 06.2007
+STATUS     (APRVD) Data received from A.M.Trufanov 06.2007
            (TABLE)
+           Data are presented on Fig.3 of YF,55,(2),298,1992
 HISTORY    (20100913A) NPD was added in SF8 (Memo CP/D-658).
-ENDBIB               5
-NOCOMMON             0          0
+ENDBIB              10
+COMMON               1          3
+EN-ERR
+MEV
+0.2
+ENDCOMMON            3
 DATA                 4         27
 EN         E          DATA       ERR-S
 MEV        MEV        1/MEV      PER-CENT
@@ -135,5 +174,79 @@ MEV        MEV        1/MEV      PER-CENT
   7.8       10.93     0.71345E-03 41.24
   7.8       11.98     0.22472E-03 49.12
 ENDDATA             29
-ENDSUBENT           39
-ENDENTRY             4
+ENDSUBENT           48
+SUBENT        41132005   20150724   20151123   20151113       4170
+BIB                  8         23
+REACTION   (93-NP-237(N,F),PR,NU/DE,,NPD)
+FACILITY   (VDG,4RUSFEI)
+COMMENT    Of compiler M.M.
+           This data were digitized according to the request of
+           NDS, IAEA.
+           There are some doubts in this data :
+           - authors did not use this data in later publication
+           YF,55,(2),298,1992,
+           - EN=6.0 MeV is given without error ( may be,
+             it's EN-MAX ?) ,
+           - exp.details ( described in INDC(NDS)-0251) are the
+           same as for experiment at 4.9 MeV .
+CORRECTION  Energy resolution correction was not done.
+ADD-RES      The approximation of the measured PFNS  by Maxwellian
+           distribution results in T=1.486 MeV and mean energy of
+           spectrum 2.23 MeV.
+ERR-ANALYS (DATA-ERR)  Not specified
+           (E-ERR-DIG)  Digitizing error of energy E
+           (ERR-DIG)    Digitizing error of DATA and DATA-ERR
+           Digitization quantization errors:
+           scale X - 0.006 MeV , scale Y - 0.31%
+STATUS     (CURVE)  Fig. of R,INDC(NDS)-0251,105,1991.
+HISTORY    (20150724C) M.M.
+ENDBIB              23
+COMMON               3          3
+E-ERR-DIG  ERR-DIG    EN
+MEV        PER-CENT   MEV
+0.011      1.03       6.0
+ENDCOMMON            3
+DATA                 3         38
+E          DATA       DATA-ERR
+MEV        1/MEV      PER-CENT
+ 0.793      0.2775
+ 0.995      0.3022
+ 1.204      0.3023
+ 1.394      0.2981
+ 1.597      0.2837
+ 1.794      0.2497
+ 1.984      0.2326
+ 2.199      0.2183
+ 2.402      0.2034
+ 2.586      0.1816
+ 2.746      0.1621
+ 2.936      0.1468
+ 3.151      0.1274
+ 3.378      0.1059     0.8657E-02
+ 3.581      0.1008
+ 3.722      0.1008
+ 3.937      0.9001E-01 0.8009E-02
+ 4.189      0.7275E-01
+ 4.367      0.6495E-01 0.5279E-02
+ 4.552      0.5757E-01
+ 4.760      0.5519E-01
+ 4.988      0.4589E-01 0.4084E-02
+ 5.221      0.4430E-01
+ 5.479      0.3456E-01
+ 5.707      0.2658E-01 0.3190E-02
+ 6.001      0.2210E-01
+ 6.308      0.2134E-01 0.2400E-02
+ 6.628      0.1839E-01
+ 6.984      0.1642E-01
+ 7.340      0.1272E-01 0.1633E-02
+ 7.752      0.1051E-01
+ 8.219      0.7800E-02 0.1255E-02
+ 8.661      0.6770E-02
+ 9.189      0.4852E-02 0.8613E-03
+ 9.779      0.3840E-02
+10.412      0.2388E-02 0.6741E-03
+11.076      0.7453E-03 0.5518E-03
+11.855      0.9912E-03 0.5161E-03
+ENDDATA             40
+ENDSUBENT           72
+ENDENTRY             5

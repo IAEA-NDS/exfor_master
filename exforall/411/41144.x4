@@ -1,56 +1,80 @@
-ENTRY            41144   20010311   20011019   20050926       0000
-SUBENT        41144001   20010311   20011019   20050926       0000
-BIB                 13         24
+ENTRY            41144   20151001   20151123   20151116       4171
+SUBENT        41144001   20151001   20151123   20151116       4171
+BIB                 15         43
 INSTITUTE  (4RUSFEI)
-           (3DDRTUD)  MERTENS, RUBEN
-REFERENCE  (J,AE,69,(1),28,199007)  NEUTRON SPECTRUM CURVE IS
-           GIVEN
-           (J,PTE,,(6),22,1980)     EXPERIMENTAL DETAILS
-AUTHOR     (S.E.SUKHIKH, G.N.LOVCHIKOVA, V.A.VINOGRADOV,
-            B.N.ZHURAVLEV, O.A.SAL'NIKOV, H.MERTENS, A.RUBEN)
-TITLE       SPECTRA OF THE FISSION PROMPT NEUTRONS ARISING
-            AT THE INTERACTION OF 1.5-MEV NEUTRONS WITH U-235
-            NUCLEUS
-FACILITY   (VDG,4RUSFEI)  EGP-10M ACCELERATOR
-INC-SOURCE (P-T)  GAS TRITIUM TARGET
-SAMPLE      HOLLOW CYLINDER OF METALLIC URANIUM
-            CONTAINE 1.093 MOLES OF U-235
-METHOD     (TOF)
-DETECTOR   (SCIN)  STILBENE DETECTOR
-           (FISCH)
+           (3DDRTUD)  Maerten, Ruben
+REFERENCE  (J,AE,69,(1),28,1990)  Neutron spectrum curve is given
+           (J,SJA,69,(1),583,1990) H.Maerten,A.Ruben
+REL-REF    (I,,N.I.Fetisov+,J,PTE,,(6),22,1980)
+           Details of inc.source .
+           (I,,N.I.Fetisov+,J,IET,23,1340,1980)
+           Engl.transl.of PTE,,(6),1980
+           (M,,G.N.Lovchikova+,R,FEI-1564,1984)
+AUTHOR     (H.Maerten, A.Ruben, S.E.Sukhikh, G.N.Lovchikova,
+           V.A.Vinogradov, B.N.Zhuravlev, O.A.Sal'nikov)
+TITLE       Spectra of the fission prompt neutrons arising
+            at the interaction of 1.5-MeV neutrons with U-235
+            nucleus
+FACILITY   (VDG,4RUSFEI)  EGP-10M accelerator
+INC-SOURCE (P-T)  Gas tritium target
+SAMPLE      Hollow cylinder of metallic uranium
+            contains 1.093 moles of U-235.
+            Hollow graphite cylinder of 3cm outside diameter,
+           4.5cm length, 0.5cm thickness, contained 2.367mole C-12
+METHOD     (TOF)  Time resolution 2 nsec(HWHM)
+DETECTOR   (SCIN)  Stilbene detector for neutrons
+            neutron recording threshold 0.6 MeV.
+           (FISCH) Cf-252 fis.chamber to measure neutron detection
+                   efficiency.
            (LONGC)
-MONITOR    (98-CF-252(0,F),,DE,N)
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-HISTORY    (19940414C)  + + COMPILED AT THE CENTRE - CJD + +
-           (19950422U)  - - REACTION CODE IN SAN 003 CORRECTED
+MONITOR    (98-CF-252(0,F),,NU/DE)
+           For neutron detection efficiency as function of energy.
+           ((MONIT)6-C-12(N,EL)6-C-12,,DA)
+           Differential U-235 CS was determined by normalization
+           TO elastic scattering CS for carbon , which measured at
+           90 deg relative to incident neutron beam.
+MONIT-REF  ((MONIT),V.M.Bychkov+,R,FEI-1917,1988)
+CORRECTION   For attenuation and multiple scattering -
+           from 5% at 2-6 MeV to 2.% above 6 MeV.
+ERR-ANALYS (DATA-ERR)  Not specified
+HISTORY    (19940414C)  + + Compiled at the centre - CJD + +
+           (19950422U)  - - REACTION code in SAN 003 corrected
            (20010311A) DATE is corrected
-ENDBIB              24
-COMMON               2          3
-EN         EN-RSL
-MEV        MEV
-  1.49       0.05
+           (20151001A) M.M. Ref.of Engl.translations were added.
+            Subent 004 was added.
+           Second ref. was moved in REL-REF.
+           MONIT, MONIT-REF,REL-REF were added.
+ENDBIB              43
+COMMON               3          3
+EN         EN-RSL-HW  MONIT
+MEV        MEV        B/SR
+  1.49       0.05      0.152
 ENDCOMMON            3
-ENDSUBENT           31
-SUBENT        41144002   20010311   20011019   20050926       0000
-BIB                  1          2
-REACTION   (92-U-235(N,X)0-NN-1,,SIG,,SPA)  AVERAGED OVER 'EN-RSL'
-                  ENERGY DISTRIBUTION
-ENDBIB               2
+ENDSUBENT           50
+SUBENT        41144002   20151001   20151123   20151116       4171
+BIB                  3          4
+REACTION   (92-U-235(N,X)0-NN-1,,SIG,,SPA)  Averaged over 'EN-RSL'
+                  energy distribution
+ANALYSIS   (INTAD)
+STATUS     (TABLE) Text, page 584 of SJA,69,(1),583,1990
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
    3.52       0.25
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        41144003   20010311   20011019   20050926       0000
-BIB                  2          4
-REACTION   (92-U-235(N,F),,DA/DE,N,RSD/SPA) AVERAGED OVER 'EN-RSL'
-            AND SECONDARY ENERGY INTERVAL GIVEN IN THE DATA SECT.
-                    DATA ARE GIVEN RELATIVE TO 90 ADEG
-HISTORY    (19950422C)  REACTION CODE CORRECTED FROM ,DA/DE,N,SPA
-ENDBIB               4
+ENDSUBENT           12
+SUBENT        41144003   20151001   20151123   20151116       4171
+BIB                  3          7
+REACTION   (92-U-235(N,F)0-NN-1,PAR,DA,,RSD/SPA) Averaged over
+           EN-RSL and secondary energy interval given in the data
+           sect.  Data are given relative to 90 ADEG
+STATUS     (TABLE) Table 2 of SJA,69,(1),583,1990
+HISTORY    (19950422C)  REACTION code corrected from ,DA/DE,N,SPA
+           (20151001A) N was moved from SF7 into SF4 according to
+           comment of N.Otsuka (NDS,IAEA).; ,,DA/DE -> PAR,DA
+ENDBIB               7
 COMMON               1          3
 ANG
 ADEG
@@ -64,5 +88,160 @@ MEV        MEV        NO-DIM     NO-DIM
    6.         8.        1.105      0.04
    8.        10.        1.086      0.09
 ENDDATA              6
-ENDSUBENT           19
-ENDENTRY             3
+ENDSUBENT           22
+SUBENT        41144004   20151001   20151123   20151116       4171
+BIB                  4          7
+REACTION   (92-U-235(N,X)0-NN-1,,KEM,,SPA)
+ANALYSIS    Measured spectrum shapes were analyzed by least-square
+           fitting using Maxwellian distribution.
+MISC-COL   (MISC1) Neutron angle
+           (MISC2) Max. energy of outgoing neutrons.
+                   Min.energy 2 MeV
+STATUS     (TABLE) Table 1 of SJA,69,(1),583,1990
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          6
+DATA       DATA-ERR   MISC1      MISC2
+MEV        MEV        ADEG       MEV
+1.32       0.04        90.       6.
+1.33       0.04       150.       6.
+1.32       0.04         0.       6.
+1.30       0.04        90.       10.
+1.30       0.04       150.       10.
+1.30       0.04         0.       10.
+ENDDATA              8
+ENDSUBENT           20
+SUBENT        41144005   20151001   20151123   20151116       4171
+BIB                  5         10
+REACTION   (92-U-235(N,F)0-NN-1,,DA/DE,,SPA)
+            Fission neutron spectra.
+EN-SEC     (E,N)
+ERR-ANALYS (E-ERR-DIG) Digitizing error of E
+           (ERR-DIG)   Digitizing error of DATA and DATA-ERR
+            Probably total - contributions are described in
+           REL-REF R,FEI-1564,1984.
+STATUS     (CURVE) Fig.1 of SJA,69,(1),583,1990
+HISTORY    (20151001A) 0-NN-1 was added in SF4 according to
+           comment of N.Otsuka (NDS,IAEA).
+ENDBIB              10
+COMMON               2          3
+E-ERR-DIG  ERR-DIG
+MEV        PER-CENT
+0.019       0.71
+ENDCOMMON            3
+DATA                 4        110
+ANG        E          DATA       DATA-ERR
+ADEG       MEV        MB/SR/MEV  MB/SR/MEV
+  90.       1.8394      64.55
+  90.       2.0484      57.25
+  90.       2.2411      50.41
+  90.       2.5151      45.72
+  90.       2.7078      40.25
+  90.       2.9332      36.51
+  90.       3.0615      33.12
+  90.       3.2543      29.38
+  90.       3.4794      25.86
+  90.       3.6722      22.94
+  90.       3.9297      20.34
+  90.       4.0738      17.78
+  90.       4.2986      15.42
+  90.       4.4753      13.68
+  90.       4.7004      12.13
+  90.       4.8929      10.45
+  90.       5.1173      8.727
+  90.       5.2938      7.684
+  90.       5.5025      6.664
+  90.       5.6952      5.867
+  90.       5.8876      5.014
+  90.       6.1122      4.252
+  90.       6.3371      3.688
+  90.       6.5291      3.059
+  90.       6.7540      2.653
+  90.       6.9311      2.461
+  90.       7.1560      2.134
+  90.       7.3160      1.824
+  90.       7.5083      1.547
+  90.       7.7819      1.362
+  90.       7.9743      1.172    0.178
+  90.       8.1524      1.172
+  90.       8.3587     0.8308
+  90.       8.5667     0.6788
+  90.       8.7614     0.7096
+  90.       8.9699     0.6063
+  90.       9.1635     0.5752
+  90.       9.3729     0.5256
+  90.       9.5763     0.2935
+  90.       9.7737     0.3809
+  90.       9.9163     0.2955
+  90.      10.208      0.3088
+  90.      10.403      0.3156
+  90.      10.529      0.2448
+  90.      10.782      0.1495    0.0844
+  90.      10.980      0.1984
+  90.      11.188      0.1597
+  90.      11.335      0.1881
+  90.      11.564      0.2183
+  90.      11.769      0.1405
+  90.      11.957      0.8579E-01
+  90.      12.179      0.5948E-01
+  90.      12.537      0.7003E-01
+  90.      12.843      0.6164E-01
+  90.      12.999      0.3600E-01
+ 150.       1.9370      67.49
+ 150.       2.1301      61.22
+ 150.       2.3229      54.30
+ 150.       2.5326      51.13
+ 150.       2.7254      45.35
+ 150.       2.9344      40.53
+ 150.       3.0948      35.68
+ 150.       3.3038      31.89
+ 150.       3.5128      28.28
+ 150.       3.7058      25.46
+ 150.       3.9146      22.25
+ 150.       4.1232      19.16
+ 150.       4.3320      16.74
+ 150.       4.5083      14.52
+ 150.       4.7175      13.07
+ 150.       4.9263      11.42
+ 150.       5.1022      9.545
+ 150.       5.3434      8.340
+ 150.       5.5688      7.564
+ 150.       5.7288      6.513
+ 150.       5.9213      5.607
+ 150.       6.1135      4.756
+ 150.       6.3383      4.064
+ 150.       6.5311      3.631
+ 150.       6.7388      2.880
+ 150.       6.9319      2.632
+ 150.       7.1406      2.283
+ 150.       7.3494      1.980
+ 150.       7.5414      1.654
+ 150.       7.7671      1.534
+ 150.       7.9429      1.273
+ 150.       8.1516      1.096    0.1449
+ 150.       8.3765     0.9574
+ 150.       8.5692     0.8366
+ 150.       8.7924     0.6297
+ 150.       8.9876     0.6883
+ 150.       9.1487     0.6433
+ 150.       9.3421     0.6012
+ 150.       9.6148     0.4912    0.1187
+ 150.       9.7561     0.3406
+ 150.      10.016      0.3723
+ 150.      10.226      0.3505
+ 150.      10.414      0.2173
+ 150.      10.555      0.1368
+ 150.      10.808      0.3297
+ 150.      10.982      0.2463    0.0882
+ 150.      11.189      0.1813
+ 150.      11.413      0.1416
+ 150.      11.621      0.1210
+ 150.      11.810      0.7337E-01
+ 150.      12.063      0.4480E-01
+ 150.      12.304      0.4094E-01
+ 150.      12.669      0.8757E-01
+ 150.      12.835      0.2988E-01
+ 150.      13.060      0.2650E-01
+ENDDATA            112
+ENDSUBENT          131
+ENDENTRY             5

@@ -1,51 +1,66 @@
-ENTRY            41195     960702              20050926       0000
-SUBENT        41195001     960702              20050926       0000
-BIB                 12         20
-TITLE       NETRON INELASTIC SCATTERING ON OS-187 WITH ENERGY
-            45 KEV
-AUTHOR     (L.L.LITVINSKIY,YA.A.ZHIGALOV,V.A.LIBMAN,A.V.MURZIN,
-           A.M.SHKARUPA)
-INSTITUTE  (4UKRIJI)
-REFERENCE  (J,YF,58,(2),206,9502) DATA ARE GIVEN
-           (R,KIYAI-85-35,85)     EXPERIMENTAL DETAILS
-FACILITY   (REAC)  REACTOR WWR-M
+ENTRY            41195   20150929   20151123   20151116       4171
+SUBENT        41195001   20150929   20151123   20151116       4171
+BIB                 17         35
+TITLE       Inelastic scattering of 45-keV neutrons by Os-187
+AUTHOR     (L.L.Litvinskii,Ya.A.Zhigalov,V.A.Libman,A.V.Murzin,
+           A.M.Shkarupa)
+INSTITUTE  (4UKRIJD)
+REFERENCE  (J,YF,58,(2),206,1995) Data are given
+           (J,PAN,58,164,1995) Engl.translation of YF,58,(2),206
+           (R,KIYAI-85-35,1985)     Experimental details
+FACILITY   (REAC,4UKRIJD)  Reactor WWR-M
 INC-SOURCE (REAC)
-INC-SPECT   REACTOR NEUTRON BEAM IS TRANSMITTED THROUGH NEUTRON
-            FILTER CONSISTING OF CR-52 (THICKNESS 177 GRAM/CM2),
-            SULPHUR (THICKNESS 110 GRAM/CM2), V-51(THICKNESS
-            18.5 GRAM/CM2) AND B-10 (THICKNESS 0.2 GRAM/CM2)
-SAMPLE      .METALLIC POWDER, MASS 11.96 GRAM, DIAMETER 28 MM,
-            .OS-187 CONTENT IS 99.5 PC
-MONITOR    (76-OS-187(N,TOT),,SIG)
-           (76-OS-187(N,G)76-OS-188,,SIG)
-ERR-ANALYS (DATA-ERR)  ERRORS ARE NOT SPECIFIED
-STATUS      DATA ARE TAKEN FROM THE REFERENCE  ONE
-HISTORY    (960702C)  + + COMPILED AT THE CENTRE - CJD + +
-ENDBIB              20
-COMMON               5          3
-EN-NRM     MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
-EV         B          B          B          B
-    4.5E+04  14.09      0.37      0.68         0.05
+INC-SPECT   reactor neutron beam is transmitted through neutron
+            filter consisting of Cr-52 (thickness 177 gram/cm2),
+            sulphur (thickness 110 gram/cm2), V-51(thickness
+            18.5 gram/cm2) and B-10 (thickness 0.2 gram/cm2)
+SAMPLE      .Metallic powder, mass 11.96 gram, diameter 28 mm,
+           (76-OS-187,ENR=0.995) Os-187 content is 99.5 % .
+METHOD     (FNB,REC)
+DETECTOR    (PROPC) Proton-recoil counter CHM-38.
+CORRECTION  For presence of oxygen in sample ~5%,
+            for multiple processes ~6% for el., 15% for inel.;
+            for resonance self-shielding ~5%.
+ANALYSIS    Absolute values of scattering cs were defined by
+           normalizing sum SIGel+SIGinel to the difference between
+           total CS and capture CS.
+ASSUMED    (ASSUM1,76-OS-187(N,TOT),,SIG)
+           (ASSUM2,76-OS-187(N,G)76-OS-188,,SIG)
+           These values were estimated according to results from:
+REL-REF    (R,,J.C.Browne+,J,PR/C,23,1434,1981)
+           (R,,L.L.Litvinskii,J,YF,56,(1),31,1993)
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+STATUS     (TABLE) Data are taken from PAN,58,164,199, page 207.
+HISTORY    (19960702C)  + + Compiled at the centre - CJD + +
+           (20150929A) M.M. Ref. PAN,58,164,199 was added.
+           TITLE,AUTHOR,INSTITUTE,FACILITY were corrected.
+            EN-RSL-HW -> EN-RSL-FW .
+            MONITOR -> ASSUMED ( see ANALYSIS added).
+ENDBIB              35
+COMMON               4          3
+ASSUM1     ASSUM1-ERR ASSUM2     ASSUM2-ERR
+B          B          B          B
+  14.09      0.37      0.68         0.05
 ENDCOMMON            3
-ENDSUBENT           27
-SUBENT        41195002     960702              20050926       0000
+ENDSUBENT           42
+SUBENT        41195002   20150929   20151123   20151116       4171
 BIB                  1          1
 REACTION   (76-OS-187(N,INL)76-OS-187,,SIG)
 ENDBIB               1
 NOCOMMON             0          0
 DATA                 4          1
-EN         EN-RSL-HW  DATA       DATA-ERR
+EN         EN-RSL-FW  DATA       DATA-ERR
 EV         EV         B          B
     4.5E+04     7.E+03    1.51       0.45
 ENDDATA              3
 ENDSUBENT            9
-SUBENT        41195003     960702              20050926       0000
+SUBENT        41195003   20150929   20151123   20151116       4171
 BIB                  1          1
 REACTION   (76-OS-187(N,EL)76-OS-187,,SIG)
 ENDBIB               1
 NOCOMMON             0          0
 DATA                 4          1
-EN         EN-RSL-HW  DATA       DATA-ERR
+EN         EN-RSL-FW  DATA       DATA-ERR
 EV         EV         B          B
     4.5E+04     7.E+03   11.90     0.50
 ENDDATA              3
