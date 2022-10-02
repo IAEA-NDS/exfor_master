@@ -1,6 +1,6 @@
-ENTRY            O1026   20040526              20050926       0000
-SUBENT        O1026001   20040526              20050926       0000
-BIB                 12         31
+ENTRY            O1026   20100920   20110107   20101118       O042
+SUBENT        O1026001   20100920   20110107   20101118       O042
+BIB                 12         32
 TITLE      Neutron yields from a thick C-13 target irradiated by
             30-MeV protons.
 AUTHOR     (Z.Radivojevic, A.Andrighetto, F.Brandolini,
@@ -13,7 +13,8 @@ REFERENCE  (J,NIM/B,194,251,2002)
 HISTORY    (20030131C)
            (20030326R) Data tables are received
            (20040521A) Data units are given as CP-C/344
-           (20040526U) Last checking has been done.
+           (20100708A).Correction in subentry 003 was made,
+           according N.Otsuka remarks.
 SAMPLE     The C-13 target was in a powder form-6.5 g, pressed
            into a cylindrical aluminum container. The C-13
            material had a purity of 99.8%.
@@ -27,18 +28,18 @@ DETECTOR   (PSSCN) Four position sensitive neutron detectors.
 FACILITY   (CYCLO,2SF JYV)  K-130 accelerator.
 METHOD     (TOF)
            (BCINT)
-CORRECTION -By authors. The correction for accidental coincidences
+CORRECTION *By authors*.The correction for accidental coincidences
            in measured neutron TOF spectra. The transformation to
            neutron energies was performed using the relativistic
            equation.
 STATUS     (TABLE) From Z.Radivojevic.
-ENDBIB              31
+ENDBIB              32
 COMMON               1          3
 EN
 MEV
         30.
 ENDCOMMON            3
-ENDSUBENT           38
+ENDSUBENT           39
 SUBENT        O1026002   20040526              20050926       0000
 BIB                  3          3
 REACTION   (6-C-13(P,X)0-NN-1,,PY/DA/DE,,TT)  Figure 3.      nds
@@ -477,20 +478,25 @@ MEV        ADEG       P/IN/MEVSR
         30.        90.         0.
 ENDDATA            428
 ENDSUBENT          436
-SUBENT        O1026003   20040526              20050926       0000
-BIB                  5          8
-REACTION   (6-C-13(P,X)0-NN-1,,PY/DA,,TT)   Figure 4         nds
+SUBENT        O1026003   20100709   20110107   20101118       O042
+BIB                  6          9
+REACTION   (6-C-13(P,X)0-NN-1,PAR,PY/DA,,TT)   Figure 4
+EN-SEC     (E-MIN,N)
 PART-DET   (N)
-ERR-ANALYS (ERR-T) The uncertainty is shown on figure.  Any
+ERR-ANALYS (DATA-ERR) The uncertainty is shown on figure.  Any
            analysis is absent.
 STATUS     (DEP,O1026002)
 ANALYSIS   (INTAD) These data are obtained by integration of the
            double differential spectra from the lowest (2 MeV) to
            the highest neutron energy.
-ENDBIB               8
-NOCOMMON
+ENDBIB               9
+COMMON               1          3
+E-MIN
+MEV
+2.
+ENDCOMMON            3
 DATA                 3          9
-ANG        DATA       ERR-T
+ANG        DATA       DATA-ERR
 ADEG       PRD/INC/SR PRD/INC/SR
          0.   1.13E-02     7.E-04
          5.   1.15E-02     7.E-04
@@ -502,5 +508,5 @@ ADEG       PRD/INC/SR PRD/INC/SR
         90.    6.9E-03     5.E-04
        120.    6.6E-03     5.E-04
 ENDDATA             11
-ENDSUBENT           24
+ENDSUBENT           29
 ENDENTRY             3

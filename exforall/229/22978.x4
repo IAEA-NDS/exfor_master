@@ -1,18 +1,18 @@
-ENTRY            22978   20090818   20100209   20100209       2217
-SUBENT        22978001   20090818   20100209   20100209       2217
-BIB                 14        109
+ENTRY            22978   20100713   20110107   20101216       2222
+SUBENT        22978001   20100713   20110107   20101216       2222
+BIB                 14        113
 TITLE      .Neutron capture cross section of 90Zr: Bottleneck in
             the s-process reaction flow. In addition, measurement
             of the 90,91,92,93,94,96Zr(n,g), 139La(n,g) cross-
             sections at n-TOF.
 REFERENCE  (J,PR/C,77,035802,200803)  Main reference, Res. pars
              for Zr-90. MACS cross section
-           #doi:10:1103/PhysRevC.77.035802
-           (C,2007NICE,2,1303,200704)    First reference, graph
-             for La-139 and Maxwell average cross sections
-             at kT=30 keV for La-139 and Zr isotopes
+           #doi:10.1103/PhysRevC.77.035802
+           (C,2007NICE,2,1303,200704)
            #doi:10.1051/ndata:07732
-           (J,NP/A,758,573,2005)  Preliminary result. Graph for
+           Graph for La-139 and Maxwell average cross sections
+             at kT=30 keV for La-139 and Zr isotopes
+           (J,NP/A,758,573c,2005)  Preliminary result. Graph for
              Zr-90(N,gamma) cross section
            #doi:10.1016/j.nuclphysa.2005.05.184
            (J,NIM/A,517,389,2004) S.Marrone et al., Experimental
@@ -23,7 +23,7 @@ REFERENCE  (J,PR/C,77,035802,200803)  Main reference, Res. pars
            (C,2007TOKYO,2,570,200706)
              Prelim.MACS for ZR-90,-91,-92,-94,-96.
            (C,2006CERN,,227,200606)
-             Preliminary data for MACS fo kT=30 keV for five Zr
+             Preliminary data for MACS of kT=30 keV for five Zr
              isotopes.
            (C,2004SANTA,1,880,2004) First author C.Moreau.
 AUTHOR     (G.Tagliente, K.Fujii, P.M.Milazzo, C.Moreau, G.Aerts,
@@ -110,13 +110,17 @@ HISTORY    (20071217C)  SB
            (20090818A) M.M. References C,2008MACKIN, C,2004SANTA,
             C,2006CERN, C,2007TOKYO were added.
             BIB and COMMON information was added.
-ENDBIB             109
+           (20100713A) M.M. Data deleted in subents 004,005,009
+                       BIB information was corrected and added
+                       J,NP/A,758,573, -> J,NP/A,758,573c
+                       Subent 006 was corrected.
+ENDBIB             113
 COMMON               1          3
 ERR-1
 PER-CENT
  3.
 ENDCOMMON            3
-ENDSUBENT          116
+ENDSUBENT          120
 SUBENT        22978002   20080419   20080604   20080604       2197
 BIB                  3          4
 REACTION   (57-LA-139(N,G)57-LA-140,,SIG,,REL) Capture yield
@@ -127,10 +131,10 @@ ENDBIB               4
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT            8
-SUBENT        22978003   20080419   20080604   20080604       2197
-BIB                  4         15
-REACTION   (40-ZR-90(N,G)40-ZR-91,,SIG,,REL) Capture yield of
-               the Zr-90 sample
+SUBENT        22978003   20100713   20110107   20101216       2222
+BIB                  7         22
+REACTION   (40-ZR-90(N,G)40-ZR-91,,TRN,,RYL/RAW) Capture yield of
+               the Zr-90 sample (events).
 SAMPLE     .Zr-O2 oxide pressed to pellets 22 mm diameter, thick-
             ness 1.3 mm = 0.003531 atoms/barn, mass 2.717 gram.
             Zr-90 content is 97.7%, Zr-91 content 0.87%,
@@ -140,11 +144,18 @@ SAMPLE     .Zr-O2 oxide pressed to pellets 22 mm diameter, thick-
            .Additional Al and Pb samples of the same diameter
             were used for repeated N-flux and background measure-
             ments.
+ANALYSIS   The normalization of capture events has been determined
+           with an accuracy of better than 3% by analyzing the
+           saturated 4.9 eV resonance of the Au sample.
+CORRECTION  Not corrected for background.
 ERR-ANALYS (EN-ERR-DIG) Energy digitizing error
            (ERR-DIG)    Data digitizing error
-STATUS     (CURVE)  Fig.1 of reference 3
+STATUS     (CURVE)  Fig.1 of reference J,NP/A,758,573c,2005.
            (PRELM)  Preliminary results, Alberto Mengoni
-ENDBIB              15
+HISTORY    (20100713A) M.M. Reaction was corrected according to
+            N.Otsuka (NDS IAEA) comment:
+            SIG,,REL -> TRN,,RYL/RAW .
+ENDBIB              22
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 PER-CENT   PER-CENT
@@ -580,33 +591,30 @@ EV         ARB-UNITS
  9.2713E+05 4.9619E-05
  9.6680E+05 5.6416E-05
 ENDDATA            428
-ENDSUBENT          452
-SUBENT        22978004   20080419   20080604   20080604       2197
-BIB                  7         14
+ENDSUBENT          459
+SUBENT        22978004   20100713   20110107   20101216       2222
+BIB                  7         15
 REACTION   (40-ZR-90(N,G)40-ZR-91,,SIG,,MXW,DERIV)
 ANALYSIS   .To calculate Maxwell-averaged cross section in the
             full energy range the JENDL cross section was
             renormalized with respect to n-TOF data
 INC-SPECT  .Maxwellian with mean temperature kT=30 keV taken from
             Fig. 3 of main reference. EN-DUMMY=(3/2)*kT
-REL-REF    (A,,Z.Y.BAO+,J,AND,76,70,2000)
+REL-REF    (A,,Z.Y.Bao+,J,AND,76,70,2000)
 ERR-ANALYS (DATA-ERR)  Errors not specified
-STATUS     (TABLE) Table 2 of 2nd  reference. Units taken from
-            Fig.3 of this reference
-           (PRELM)  Preliminary results, Alberto Mengoni
+STATUS     (TABLE) Table 2 of C,2007NICE,2,1303,2007. Units taken
+            from Fig.3 of C,2007NICE,2,1303,2007 .
+            Preliminary results at kT=30 keV, Alberto Mengoni .
            (DEP,22978003)
-           (SPSDD,22978011)
+           (SPSDD,22978011) Preliminary results were superseded.
 HISTORY    (20080419A)   Restored old preliminary value
-ENDBIB              14
+           (20100713D) Data were deleted as superseded.
+ENDBIB              15
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       DATA-ERR
-KEV        MB         MB
-  45.        18.1       1.
-ENDDATA              3
-ENDSUBENT           22
-SUBENT        22978005   20090116   20090306   20090302       2206
-BIB                  8         18
+NODATA               0          0
+ENDSUBENT           19
+SUBENT        22978005   20100713   20110107   20101216       2222
+BIB                  8         19
 REACTION   (40-ZR-91(N,G)40-ZR-92,,SIG,,MXW,DERIV)
 ANALYSIS   .To calculate Maxwell-averaged cross section in the
             full energy range the JENDL cross section was
@@ -618,24 +626,21 @@ SAMPLE     .Zr-O2 oxide pressed to pellets 22 mm diameter,
             Zr-94 content 1.75%, Zr-96 content 0.24%.
 INC-SPECT  .Maxwellian with mean temperature kT=30 keV taken from
             Fig. 3 of the 2nd  reference. EN-DUMMY=(3/2)*kT
-REL-REF    (D,,Z.Y.BAO+,J,AND,76,70,2000)
+REL-REF    (D,,Z.Y.Bao+,J,AND,76,70,2000)
 ERR-ANALYS (DATA-ERR)  Errors not specified
-STATUS     (TABLE) Table 2 of main reference. Units taken from
-            Fig.3 of the second reference
-           (PRELM)  Preliminary results, Alberto Mengoni
-           (SPSDD,23044005)  By compiler
+STATUS     (TABLE) Table 2 of C,2007NICE,2,1303,2007. Units taken
+            from Fig.3 of C,2007NICE,2,1303,2007 .
+            Preliminary results at kT=30 keV, Alberto Mengoni.
+           (SPSDD,23044005) Superseded by Subent 23044005.
 HISTORY    (20090116A)       Data superseded by compiler
-ENDBIB              18
+           (20100713D) Data were deleted as superseded.
+ENDBIB              19
 NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       DATA-ERR
-KEV        MB         MB
-  30.        51.6        2.
-ENDDATA              3
-ENDSUBENT           26
-SUBENT        22978006   20090417   20090508   20090507       2209
-BIB                  8         18
-REACTION   (40-ZR-92(N,G)40-ZR-93,,SIG,,MXW)
+NODATA               0          0
+ENDSUBENT           23
+SUBENT        22978006   20100713   20110107   20101216       2222
+BIB                  8         20
+REACTION   (40-ZR-92(N,G)40-ZR-93,,SIG,,MXW,DERIV)
 ANALYSIS   .To calculate Maxwell-averaged cross section in the
             full energy range the JENDL cross section was
             renormalized with respect to n-TOF data
@@ -646,22 +651,20 @@ SAMPLE     .Zr-O2 oxide pressed to pellets 22 mm diameter,
             Zr-94 content 2.03%, Zr-96 content 0.3 %.
 INC-SPECT  .Maxwellian with mean temperature kT=30 keV taken from
             Fig. 3 of main reference.
-REL-REF    (A,,Z.Y.BAO+,J,AND,76,70,2000)
+REL-REF    (A,,Z.Y.Bao+,J,AND,76,70,2000)
 ERR-ANALYS (DATA-ERR)  Errors not specified
-STATUS     (TABLE) Table 2 of main reference. Units taken from
-                   Fig.3 of this referene
+STATUS     (TABLE) Table 2 of C,2007NICE,2,1303,2007. Units taken
+            from Fig.3 of C,2007NICE,2,1303,2007.
            (PRELM)  Preliminary results, Alberto Mengoni
+           (SPSDD,23117003) Superseded by new publication.
 HISTORY    (20090116A)    EN-DUMMY=45 keV changed for KT = 30 keV
            (20090417U)    BIB info corrected
-ENDBIB              18
+           (20100713D)    DATA deleted (superseded by 23117003)
+ENDBIB              20
 NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       DATA-ERR
-KEV        MB         MB
-  30.        29.7        2.
-ENDDATA              3
-ENDSUBENT           26
-SUBENT        22978007   20090417   20090508   20090507       2209
+NODATA               0          0
+ENDSUBENT           24
+SUBENT        22978007   20100713   20110107   20101216       2222
 BIB                  8         18
 REACTION   (40-ZR-94(N,G)40-ZR-95,,SIG,,MXW,DERIV)
 ANALYSIS   .To calculate Maxwell-averaged cross section in the
@@ -674,10 +677,10 @@ SAMPLE     .Zr-O2 oxide pressed to pellets 22 mm diameter,
             Zr-94 content 91.8%, Zr-96 content 1.04%.
 INC-SPECT  .Maxwellian with mean temperature kT=30 keV taken from
             Fig. 3 of main reference.
-REL-REF    (A,,Z.Y.BAO+,J,AND,76,70,2000)
+REL-REF    (A,,Z.Y.Bao+,J,AND,76,70,2000)
 ERR-ANALYS (DATA-ERR)  Errors not specified
-STATUS     (TABLE) Table 2 of main reference. Units taken from
-                   Fig.3 of this reference
+STATUS     (TABLE) Table 2 of C,2007NICE,2,1303,2007. Units taken
+            from Fig.3 of C,2007NICE,2,1303,2007.
            (PRELM)  Preliminary results, Alberto Mengoni
 HISTORY    (20090116A)    EN-DUMMY=45 keV changed for KT = 30 keV
            (20090417U)    BIB info corrected
@@ -689,9 +692,9 @@ KEV        MB         MB
   30.        27.6        1.
 ENDDATA              3
 ENDSUBENT           26
-SUBENT        22978008   20090417   20090508   20090507       2209
+SUBENT        22978008   20100713   20110107   20101216       2222
 BIB                  8         18
-REACTION   (40-ZR-96(N,G)40-ZR-97,,SIG,,MXW)
+REACTION   (40-ZR-96(N,G)40-ZR-97,,SIG,,MXW,DERIV)
 ANALYSIS   .To calculate Maxwell-averaged cross section in the
             full energy range the JENDL cross section was
             renormalized with respect to n-TOF data
@@ -702,10 +705,10 @@ SAMPLE     .Zr-O2 oxide pressed to pellets 22 mm diameter,
             Zr-94 content 8.08%, Zr-96 content 58.5%.
 INC-SPECT  .Maxwellian with mean temperature kT=30 keV taken from
             Fig. 3 of main reference.
-REL-REF    (D,,Z.Y.BAO+,J,AND,76,70,2000)
+REL-REF    (D,,Z.Y.Bao+,J,AND,76,70,2000)
 ERR-ANALYS (DATA-ERR)  Errors not specified
-STATUS     (TABLE) Table 2 of second reference. Units taken from
-                   Fig.3 of this reference
+STATUS     (TABLE) Table 2 of C,2007NICE,2,1303,2007. Units taken
+            from Fig.3 of C,2007NICE,2,1303,2007.
            (PRELM)  Preliminary results, Alberto Mengoni
 HISTORY    (20090116A)    EN-DUMMY=45 keV changed for KT = 30 keV
            (20090417U)    BIB info corrected
@@ -717,8 +720,8 @@ KEV        MB         MB
   30.         7.5        0.4
 ENDDATA              3
 ENDSUBENT           26
-SUBENT        22978009   20080419   20080604   20080604       2197
-BIB                  7         14
+SUBENT        22978009   20100713   20110107   20101216       2222
+BIB                  9         17
 REACTION   (57-LA-139(N,G)57-LA-140,,SIG,,MXW,DERIV)
 ANALYSIS   .To calculate Maxwell-averaged cross section in the
             full energy range the JENDL cross section was
@@ -727,20 +730,19 @@ SAMPLE     .Metallic sample, diameter 20 mm, mass 1.934 gram,
             La-139 enrichment 99.71%
 INC-SPECT  .Maxwellian with mean temperature kT=30 keV taken from
             Fig. 3 of main reference. EN-DUMMY=(3/2)*kT
-REL-REF    (D,,Z.Y.BAO+,J,AND,76,70,2000)
+REL-REF    (D,,Z.Y.Bao+,J,AND,76,70,2000)
 ERR-ANALYS (DATA-ERR)  Errors not specified
-STATUS     (TABLE) Table 2 of 2nd  reference. Units taken from
-            Fig.3 of this reference
-           (PRELM)           Preliminary results, Alberto Mengoni
-           (SPSDD,22930007)
-ENDBIB              14
+COMMENT    Of compiler. In Table 2 of 2007NICE,2,1303 there is
+           misprint: Zr-139 -> La-139 .
+STATUS     (TABLE) Table 2 of C,2007NICE,2,1303,2007. Units taken
+            from Fig.4 of C,2007NICE,2,1303,2007.
+            Preliminary results at kT=30 keV, Alberto Mengoni.
+           (SPSDD,22930007) Data were superseded by 22930007.
+HISTORY    (20100713D) Data were deleted as superseded.
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       DATA-ERR
-KEV        MB         MB
-  45.        32.4        3.
-ENDDATA              3
-ENDSUBENT           22
+NODATA               0          0
+ENDSUBENT           21
 SUBENT        22978010   20080419   20080604   20080604       2197
 BIB                  9         39
 REACTION  1(40-ZR-90(N,0),,EN)       Resonance energy

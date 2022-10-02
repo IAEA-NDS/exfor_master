@@ -1,12 +1,12 @@
-ENTRY            31556   20051129   20060327   20060323       3118
-SUBENT        31556001   20051129   20060327   20060323       3118
-BIB                 14         25
-TITLE      Accurate absolute intensities for the 35Cl(n,c)
+ENTRY            31556   20100623   20110107   20101203       3146
+SUBENT        31556001   20100623   20110107   20101203       3146
+BIB                 11         19
+TITLE      Accurate absolute intensities for the 35Cl(n,gamma)
            reaction gamma-ray standard
 AUTHOR     (G.L.Molnar,Zs.Revay,T.Belgya)
 INSTITUTE  (3HUNII)
 REFERENCE  (J,NIM/B,213,32,2004)
-FACILITY   (REAC)
+FACILITY   (REAC,3HUNII)
 METHOD     (GSPEC)
 INC-SPECT  The thermal equivalent neutron flux at the sample
            position is 5 x 10**7 n/cm2/s
@@ -14,35 +14,40 @@ DETECTOR   (HPGE) HPGe-BGO Compton-suppressed spectrometer,
            positioned at a distance of 23.5 cm from the target.
 SAMPLE     Thin polyvinyl chloride (PVC) targets were used to
            avoid high count rates and absorption problems.
-MONITOR    (7-N-14(N,G)7-N-15,PAR,SIG,,SPA) reaction
-           on a melamine (C3H6N6) target
-CORRECTION Data corrected for gamma-ray transmission.
-MONIT-REF  (,E.T.JURNEY+,J,PR/C,56,118,1997)
-           (,G.D.LOPER+,J,NIM,105,453,1972) As it is not clear
-           how many ground-state transitions have been missed,
-           the normalisation was checked by the cross-section
-           ratio method, introduced by Loper and Thomas.
 ERR-ANALYS (DATA-ERR) Relative error. The errors do not
            include, however, the possible systematic error
            introduced by the intensity normalisation.
 HISTORY    (20051129C) SD
-ENDBIB              25
+           (20100622A) SD: data units in Subent 003 were
+               corrected: mb => barn
+ENDBIB              19
+NOCOMMON             0          0
+ENDSUBENT           22
+SUBENT        31556002   20100923   20110107   20101203       3146
+BIB                  6         17
+REACTION   (17-CL-35(N,G)17-CL-36,,SPC,,SPA)
+ANALYSIS   Absolute gamma-ray intensities were obtained by
+           normalising to the sum of intensities of the 50
+           possible ground state transitionsall of which were
+           identified in singles and coincidence spectra.
+MONITOR    (7-N-14(N,G)7-N-15,PAR,SIG,,SPA) reaction
+           on a melamine (C3H6N6) target
+           Efficiency calibrations were performed with the
+           help of radioactive sources and the 14N(n,c) reaction
+           on a melamine (C3H6N6) target
+CORRECTION Data corrected for gamma-ray transmission.
+MONIT-REF  (,E.T.Jurney+,J,PR/C,56,118,1997)
+           (,G.D.Loper+,J,NIM,105,453,1972) As it is not clear
+           how many ground-state transitions have been missed,
+           the normalisation was checked by the cross-section
+           ratio method, introduced by Loper and Thomas.
+STATUS     (TABLE) Data taken from  tbl. 2 of main reference.
+ENDBIB              17
 COMMON               1          3
 EN-DUMMY
 EV
  0.0005
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        31556002   20051129   20060327   20060323       3118
-BIB                  2          6
-REACTION   (17-CL-35(N,G)17-CL-36,,SPC,,SPA) Absolute gamma-ray
-           intensities were obtained by normalising to the sum of
-           intensities of the 50 possible ground state transitions
-           all of which were identified in singles and coincidence
-           spectra.
-STATUS     (TABLE) Data taken from  tbl. 2 of main reference.
-ENDBIB               6
-NOCOMMON             0          0
 DATA                 3         36
 E          DATA       DATA-ERR
 KEV        PC/REAC    PC/REAC
@@ -83,19 +88,35 @@ KEV        PC/REAC    PC/REAC
  7790.3       8.07        0.10
  8578.6       2.68        0.04
 ENDDATA             38
-ENDSUBENT           49
-SUBENT        31556003   20051129   20060327   20060323       3118
-BIB                  2          4
-REACTION   (17-CL-35(N,G)17-CL-36,,SIG) Thirty gamma-rays from
-           Tbl.2 could be used to deduce the capture cross-section
-           of 35Cl with respect to the hydrogen line.
-STATUS     Data taken from p.35 of reference.
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           64
+SUBENT        31556003   20100623   20110107   20101203       3146
+BIB                  7         16
+REACTION   (17-CL-35(N,G)17-CL-36,,SIG,,A)
+ANALYSIS   Thirty gamma-rays from Tbl.2 could be used to deduce
+           the capture cross-section of 35Cl with respect to the
+           hydrogen line.
+MONITOR    (1-H-1(N,G)1-H-2,PAR,SIG,G)
+MONIT-REF  (31558002,Zs.Revay+,J,RCA,91,361,2003)
+COMMENT    Author's comment: They are elemental cross-secs, not
+           isotopic ones (implicitly contain isotopic abundance).
+           The experiment was done in cold neutron beam, but the
+           cross-section is given in the units of thermal
+           cross-sec, as it was done with internal standardization
+            (just a small comment in the paper) relative to the
+           thermal cross-sec of H (0.3326(7)barn), i.e. at 0.025 e
+STATUS     (TABLE) Data taken from p.35 of reference.
+           (DEP,31556002)
+HISTORY    (20100622A) SD: data units were corrected: mb => barn
+ENDBIB              16
+COMMON               4          3
+EN-DUMMY   E-NRM      MONIT      MONIT-ERR
+EV         KEV        B          B
+ 0.0253      2223.     0.3326     0.0007
+ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+B          B
   32.94      0.14
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           28
 ENDENTRY             3

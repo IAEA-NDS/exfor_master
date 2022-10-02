@@ -1,13 +1,12 @@
-ENTRY            30969   20090513   20090724   20090720       3136
-SUBENT        30969001   20090513   20090724   20090720       3136
-BIB                 11         45
+ENTRY            30969   20100723   20110107   20101203       3146
+SUBENT        30969001   20100723   20110107   20101203       3146
+BIB                 10         47
 TITLE      The Cf-252(sf) neutron spectrum in the 5- to 20-MeV
            energy range
 AUTHOR     (H.Maerten,D.Richter,D.Seeliger,W.D.Fromm,R.Boettger,
            H.Klein)
 INSTITUTE  (3DDRTUD,3DDRROS,2GERPTB)
 REFERENCE  (J,NSE,106,353,1990)
-INC-SOURCE (CF252)
 METHOD     (TOF,PHD,PSD) The fission fragment signals obtained
            by constant-fraction discriminators were used as
            stop signal in the time-of-flight measurement.
@@ -38,7 +37,7 @@ DETECTOR   (COIN,SCIN,IOCH) Two independent Ne-213 scintillators
                the sample. The time resolution was 1.3 ns FWHM.
 PART-DET   (N,FF)
 CORRECTION Corrections have been made for neutron attenuation,
-           tof channel-dependent background due to noncorrelated
+           TOF channel-dependent background due to noncorrelated
            stop signals, influence of scattered neutrons, time
            resolution, anisotropic fragment losses in fragment
            detection efficiency
@@ -46,171 +45,110 @@ STATUS     (TABLE) Data are taken from J,NSE,106,353,90 Tbl.1,2,3
 HISTORY    (19911205C) HW
            (20090512A) SD:Updated to new date formats,lower case
            Subents 004,005 were added from 22219 Entry.
-ENDBIB              45
+           (20100722A) SD: data at 7. MeV was corrected: x10 in
+            Subents 002, 003. Subents 004, 005 were merged
+                                                   with 002, 003
+ENDBIB              47
 NOCOMMON             0          0
-ENDSUBENT           48
-SUBENT        30969002   20090513   20090724   20090720       3136
-BIB                  2          8
-REACTION   (98-CF-252(0,F),PR,DE,N) tbl.1
-           detector in 0-deg position)
+ENDSUBENT           50
+SUBENT        30969002   20100723   20110107   20101203       3146
+BIB                  3         13
+REACTION  1(98-CF-252(0,F),PR,NU/DE,,NPD)  Tbl.2
+          2(98-CF-252(0,F),PR,NU/DE,,MXD)  Tbl.2
+           detector in 0-deg position
+            2- ratio of measured neutron emission spectrum to Max-
+            wellian spectrum of temperature 1.42 MeV.
 ERR-ANALYS (ERR-SYS)The systematic errors include uncertainties
            of neutron detection efficiency, energy scale,
            energy bin width, light-output calibration and all
            corrections.
            (ERR-S) Statistical uncertainty
            (ERR-T) Total uncertainty
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 5         23
-E          DATA       ERR-S      ERR-SYS    ERR-T
-MEV        1/MEV      PER-CENT   PER-CENT   PER-CENT
-5.0          0.4282E-1       0.3        5.5        5.5
-5.5          0.3152E-1       0.4        5.3        5.3
-6.0          0.2244E-1       0.5        5.2        5.2
-6.5          0.1568E-1       0.6        5.2        5.2
-7.0          0.1143E-2       0.7        5.1        5.1
-7.5          0.7824E-2       0.8        5.1        5.2
-8.0          0.5666E-2       1.0        5.2        5.3
-8.5          0.4102E-2       1.2        5.2        5.3
-9.0          0.2887E-2       1.5        5.3        5.5
-9.5          0.1944E-2       1.7        5.4        5.7
-10.0         0.1438E-2       2.1        5.4        5.8
-10.5         0.1102E-2       2.6        5.5        6.1
-11.0         0.7781E-3       3.1        5.6        6.4
-11.5         0.5586E-3       3.7        5.8        6.9
-12.0         0.4087E-3       4.2        6.0        7.3
-13.0         0.1966E-3       4.1        6.4        7.6
-14.0         0.9145E-4       5.7        6.8        8.9
-15.0         0.5915E-4       7.1        7.3       10.2
-16.0         0.2823E-4       9.2        7.9       12.1
-17.0         0.1652E-4      11.5        8.7       14.4
-18.0         0.6736E-5      17.0        9.5       20.
-19.0         0.2964E-5      25.        10.5       27.
-20.0         0.1664E-5      35.        11.8       37.
+HISTORY    (20100722A) SD: data at 7. MeV was corrected: x10.
+           Subents 004, was merged with 002
+ENDBIB              13
+COMMON               1          3
+KT-NRM    2
+MEV
+  1.42
+ENDCOMMON            3
+DATA                 6         23
+E          DATA      1DATA      2ERR-S      ERR-SYS    ERR-T
+MEV        1/FIS/MEV  NO-DIM     PER-CENT   PER-CENT   PER-CENT
+        5.0  4.282E-02     0.9713        0.3        5.5        5.5
+        5.5  3.152E-02     0.9695        0.4        5.3        5.3
+        6.0  2.244E-02     0.9397        0.5        5.2        5.2
+        6.5  1.568E-02     0.8971        0.6        5.2        5.2
+        7.0  1.143E-02     0.8962        0.7        5.1        5.1
+        7.5  7.824E-03     0.8447        0.8        5.1        5.2
+        8.0  5.666E-03     0.8403        1.0        5.2        5.3
+        8.5  4.102E-03     0.8393        1.2        5.2        5.3
+        9.0  2.887E-03     0.8165        1.5        5.3        5.5
+        9.5  1.944E-03     0.7607        1.7        5.4        5.7
+       10.0  1.438E-03     0.7801        2.1        5.4        5.8
+       10.5  1.102E-03     0.8298        2.6        5.5        6.1
+       11.0  7.781E-04     0.8139        3.1        5.6        6.4
+       11.5  5.586E-04     0.8127        3.7        5.8        6.9
+       12.0  4.087E-04     0.8278        4.2        6.0        7.3
+       13.0  1.966E-04     0.7735        4.1        6.4        7.6
+       14.0  9.145E-05     0.7013        5.7        6.8        8.9
+       15.0  5.915E-05     0.7783        7.1        7.3       10.2
+       16.0  2.823E-05      0.828        9.2        7.9       12.1
+       17.0  1.652E-05     0.9508       11.5        8.7       14.4
+       18.0  6.736E-06     0.7619       17.0        9.5       20.0
+       19.0  2.964E-06     0.6599       25.0       10.5       27.0
+       20.0  1.664E-06     0.7305       35.0       11.8       37.0
 ENDDATA             25
-ENDSUBENT           38
-SUBENT        30969003   20090513   20090724   20090720       3136
-BIB                  2          8
-REACTION   (98-CF-252(0,F),PR,DE,N)  tbl.2
+ENDSUBENT           47
+SUBENT        30969003   20100723   20110107   20101203       3146
+BIB                  3         13
+REACTION  1(98-CF-252(0,F),PR,NU/DE,,NPD)  tbl.3
+          2(98-CF-252(0,F),PR,NU/DE,,MXD)
            detector in 60-deg position
+            2- ratio of measured neutron emission spectrum to Max-
+            wellian spectrum of temperature 1.42 MeV.
 ERR-ANALYS (ERR-SYS)The systematic errors include uncertainties
            of neutron detection efficiency, energy scale,
            energy bin width, light-output calibration and all
            corrections.
            (ERR-S) Statistical uncertainty
            (ERR-T) Total uncertainty
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 5         23
-E          DATA       ERR-S      ERR-SYS    ERR-T
-MEV        1/MEV      PER-CENT   PER-CENT   PER-CENT
-5.0          0.4268E-1       0.5        5.9        5.9
-5.5          0.3332E-1       0.6        5.8        5.8
-6.0          0.2398E-1       0.6        5.8        5.8
-6.5          0.1667E-1       0.8        5.7        5.8
-7.0          0.1191E-2       0.8        5.6        5.7
-7.5          0.8161E-2       0.9        5.7        5.8
-8.0          0.5794E-2       1.1        5.8        5.9
-8.5          0.4171E-2       1.3        5.9        6.0
-9.0          0.3154E-2       1.7        6.0        6.2
-9.5          0.2213E-2       2.0        6.1        6.4
-10.0         0.1440E-2       2.5        6.2        6.7
-10.5         0.1031E-2       3.0        6.3        7.0
-11.0         0.7444E-3       3.6        6.5        7.4
-11.5         0.5130E-3       4.9        6.8        8.4
-12.0         0.3643E-3       5.4        7.2        9.0
-13.0         0.1889E-3       5.6        7.9        9.7
-14.0         0.1055E-3       7.1        8.3       10.9
-15.0         0.4743E-4      10.0        8.8       13.3
-16.0         0.2125E-4      14.3        9.4       17.1
-17.0         0.1179E-4      18.        10.1       21.
-18.0         0.8479E-5      21.        10.9       24.
-19.0         0.2758E-5      37.        11.8       39.
-20.0         0.1789E-5      53.        12.8       55.
-ENDDATA             25
-ENDSUBENT           38
-SUBENT        30969004   20090513   20090724   20090720       3136
-BIB                  2          6
-REACTION   (98-CF-252(0,F),PR,DE,N,MXD)  Tbl.1
-           detector in 0-deg position)
-            ratio of measured neutron emission spectrum to Max-
-            wellian spectrum of temperature 1.42 MeV.
-STATUS     (DEP,30969002)
-           Subent was added supersedes 22219002 Subent.
-ENDBIB               6
+HISTORY    (20100722A) SD: data at 7. MeV was corrected: x10.
+           Subents 005, was merged with 003
+ENDBIB              13
 COMMON               1          3
-KT-NRM
+KT-NRM    2
 MEV
   1.42
 ENDCOMMON            3
-DATA                 2         23
-E          DATA
-MEV        NO-DIM
-        5.0     0.9713
-        5.5     0.9695
-        6.0     0.9397
-        6.5     0.8971
-        7.0     0.8962
-        7.5     0.8447
-        8.0     0.8403
-        8.5     0.8393
-        9.0     0.8165
-        9.5     0.7607
-       10.0     0.7801
-       10.5     0.8298
-       11.0     0.8139
-       11.5     0.8127
-       12.0     0.8278
-       13.0     0.7735
-       14.0     0.7013
-       15.0     0.7783
-       16.0     0.8280
-       17.0     0.9508
-       18.0     0.7619
-       19.0     0.6599
-       20.0     0.7305
+DATA                 6         23
+E          DATA      1DATA      2ERR-S      ERR-SYS    ERR-T
+MEV        1/FIS/MEV  NO-DIM     PER-CENT   PER-CENT   PER-CENT
+        5.0  4.268E-02     0.9682        0.5        5.9        5.9
+        5.5  3.332E-02     1.0248        0.6        5.8        5.8
+        6.0  2.398E-02     1.0042        0.6        5.8        5.8
+        6.5  1.667E-02     0.9538        0.8        5.7        5.8
+        7.0  1.191E-02     0.9337        0.8        5.6        5.7
+        7.5  8.161E-03      0.879        0.9        5.7        5.8
+        8.0  5.794E-03     0.8593        1.1        5.8        5.9
+        8.5  4.171E-03     0.8534        1.3        5.9        6.0
+        9.0  3.154E-03     0.8919        1.7        6.0        6.2
+        9.5  2.213E-03      0.866        2.0        6.1        6.4
+       10.0   1.44E-03     0.7811        2.5        6.2        6.7
+       10.5  1.031E-03     0.7765        3.0        6.3        7.0
+       11.0  7.444E-04     0.7786        3.6        6.5        7.4
+       11.5   5.13E-04     0.7463        4.9        6.8        8.4
+       12.0  3.643E-04     0.7377        5.4        7.2        9.0
+       13.0  1.889E-04     0.7433        5.6        7.9        9.7
+       14.0  1.055E-04      0.809        7.1        8.3       10.9
+       15.0  4.743E-05     0.7106       10.0        8.8       13.3
+       16.0  2.125E-05     0.6233       14.3        9.4       17.1
+       17.0  1.179E-05     0.6783       18.0       10.1       21.0
+       18.0  8.479E-06      0.959       21.0       10.9       24.0
+       19.0  2.758E-06      0.614       37.0       11.8       39.0
+       20.0  1.789E-06     0.7853       53.0       12.8       55.0
 ENDDATA             25
-ENDSUBENT           40
-SUBENT        30969005   20090513   20090724   20090720       3136
-BIB                  2          6
-REACTION   (98-CF-252(0,F),PR,DE,N,MXD)  tbl.2
-           detector in 60-deg position
-            ratio of measured neutron emission spectrum to Max-
-            wellian spectrum of temperature 1.42 MeV.
-STATUS     (DEP,30969003)
-            Subent was added supersedes 22219004 Subent.
-ENDBIB               6
-COMMON               1          3
-KT-NRM
-MEV
-  1.42
-ENDCOMMON            3
-DATA                 2         23
-E          DATA
-MEV        NO-DIM
-        5.0     0.9682
-        5.5     1.0248
-        6.0     1.0042
-        6.5     0.9538
-        7.0     0.9337
-        7.5      0.879
-        8.0     0.8593
-        8.5     0.8534
-        9.0     0.8919
-        9.5      0.866
-       10.0     0.7811
-       10.5     0.7765
-       11.0     0.7786
-       11.5     0.7463
-       12.0     0.7377
-       13.0     0.7433
-       14.0      0.809
-       15.0     0.7106
-       16.0     0.6233
-       17.0     0.6783
-       18.0      0.959
-       19.0      0.614
-       20.0     0.7853
-ENDDATA             25
-ENDSUBENT           40
+ENDSUBENT           47
+NOSUBENT      30969004   20100923   20110107   20101203       3146
+NOSUBENT      30969005   20100923   20110107   20101203       3146
 ENDENTRY             5
