@@ -1,25 +1,30 @@
-ENTRY            G4054   20141217   20150505   20150429       G032
-SUBENT        G4054001   20141217   20150505   20150429       G032
-BIB                 14         28
-TITLE      Isomeric yield ratios of isomeric yield ratios of
-           fission fragments fission fragments 131Te, 132Sb,
-           133Te, 132,134I, 135Xe in (gamma,f), (gamma,nf)
-           reactions on 235U, 237Np, 239Pu
-AUTHOR     (I.M.Vyshnevskyi,V.O.Zheltonozhskii,A.M.Savrasov,
-           E.P.Rovenskykh,O.I .Davidovskaya,V.A.Plujko,
-           O.M.Gorbachenko)
+ENTRY            G4054   20161226   20170504   20170502       G037
+SUBENT        G4054001   20161226   20170504   20170502       G037
+BIB                 15         39
+TITLE      Isomeric yield ratios and mean angular momenta of
+            photofission fragments of 235U, 237Np and 239Pu
+AUTHOR     (I.M.Vyshnevskyi, V.O.Zheltonozhskyi, V.A.Plujko,
+            A.M.Savrasov, O.M.Gorbachenko, O.I.Davydovska,
+            E.P.Rovenskykh)
 INSTITUTE  (4UKRIJD,4UKRKGU)
-REFERENCE  (A,ISINN-22,85,2014)
+REFERENCE  (J,YFE,16,(1),5,2015)
+REL-REF    (O,G4032001,I.N.Vishnevskii+,J,YFE,16,(1),5,2015)
+            239Pu(g,f)131Te,132Sb,133Te,134I,135Xe data sets
+            (E0=9.8 MeV) compiled separately
+           (O,G4038001,I.N.Vishnevskii+,J,YFE,16,(1),5,2015)
+            237Np(g,f)133Te,134I,135Xe data sets (E0=9.8 MeV)
+            compiled separately
 INC-SOURCE (BRST)
 FACILITY   (MICRT,4UKRIEP)M-30 microton
-SAMPLE     The enriched 90% U-235 sample had 514 mg in weight, the
-           enriched 95.5% Pu-239 sample had 400 mg in weight, the
-           enriched 100% Np-237 sample had 853 mg in weight.
+SAMPLE     (92-U-235,ENR=0.90)The sample had 514 mg in weight.
+           (94-PU-2395,ENR=0.955)The sample had 400 mg in weight.
+           (93-NP-237,ENR=1.)The sample had 853 mg in weight.
 METHOD     (ACTIV) Induced gamma-activity was measured.
 DETECTOR   (HPGE)Spectrometers based on Ge detectors with a volume
            of 160 cm3 and resolution of 1.8 keV for the 1330 keV
            60Co gamma-line were used.
-STATUS     (TABLE) Data from the table 1 from .....
+STATUS     (TABLE) Data from the table 1 in A,ISINN-22,85,2014 and
+           data from the table 1 in J,YFE,16,(1),5,2015.
 COMMENT    The experimental values of isomeric yield ratios
            were calculated taking into account the contribution
            from the beta-decay of isobaric nuclei in the yields
@@ -27,16 +32,18 @@ COMMENT    The experimental values of isomeric yield ratios
 ADD-RES    (AMFF)The average angular momenta were determined by
            EMPIRE 3.2 and TALYS 1.4 so as to reproduce the
            measured isomeric ratios.
-ERR-ANALYS (DATA-ERR) No information
+ERR-ANALYS (ERR-S)Statistical error
 HISTORY    (20141216C)UKRNDC
-ENDBIB              28
-COMMON               1          3
-EN-MAX
-MEV
-18.
-ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        G4054002   20141217   20150505   20150429       G032
+           (20161226A)OG: (J,YFE,16,(1),5,2015) was added,
+           DATA-ERR were changed on ERR-S in subentries 001-018
+           concerning information in (J,YFE,16,(1),5,2015),
+           SAMPLE and STATUS were updated.
+           Subentries 019-027 were added. These data are presented
+           in J,YFE,16,(1),5,2015.
+ENDBIB              39
+NOCOMMON             0          0
+ENDSUBENT           42
+SUBENT        G4054002   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (92-U-235(G,F)52-TE-131-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (52-TE-131-M,30.HR)
@@ -45,28 +52,30 @@ ADD-RES    (AMFF)Average angular momentum of 52-TE-131
            is 6.5+-0.9.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-2.6        0.5
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        2.6        0.5
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054003   20141217   20150505   20150429       G032
-BIB                  3          5
+SUBENT        G4054003   20161226   20170504   20170502       G037
+BIB                  4          6
 REACTION   (92-U-235(G,F)51-SB-132-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (51-SB-132-M,4.10MIN)
            (51-SB-132-G,2.79MIN)
 ADD-RES    (AMFF)Average angular momentum of 51-SB-132
-           is 4.2+-0.5.
-ENDBIB               5
+           is 5.6+-0.5 (9.8 MeV) and 4.2+-0.5 (18 MeV).
+HISTORY    (20161226A) OG+On. 9.8 MeV data point added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-1.46       0.22
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        G4054004   20141217   20150505   20150429       G032
+DATA                 3          2
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+9.8        0.58       0.06
+18.        1.46       0.22
+ENDDATA              4
+ENDSUBENT           15
+SUBENT        G4054004   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (92-U-235(G,F)53-I-132-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (53-I-132-M,1.387HR)
@@ -75,58 +84,64 @@ ADD-RES    (AMFF)Average angular momentum of 53-I-132
            is 10.2+-1.3.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-2.2        0.4
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        2.2        0.4
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054005   20141217   20150505   20150429       G032
-BIB                  3          5
+SUBENT        G4054005   20161226   20170504   20170502       G037
+BIB                  4          6
 REACTION   (92-U-235(G,F)52-TE-133-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (52-TE-133-M,55.4MIN)
            (52-TE-133-G,12.5MIN)
 ADD-RES    (AMFF)Average angular momentum of 52-TE-133
-           is 7.5+-0.7.
-ENDBIB               5
+           is 5.7+-0.6 (9.8 MeV) and 7.5+-0.7 (18 MeV).
+HISTORY    (20161226A) OG+On. 9.8 MeV data point added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-4.3        0.3
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        G4054006   20141217   20150505   20150429       G032
-BIB                  3          5
+DATA                 3          2
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+9.8        2.3        0.3
+18.        4.3        0.3
+ENDDATA              4
+ENDSUBENT           15
+SUBENT        G4054006   20161226   20170504   20170502       G037
+BIB                  4          6
 REACTION   (92-U-235(G,F)53-I-134-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (53-I-134-M,3.69MIN)
            (53-I-134-G,52.6MIN)
 ADD-RES    (AMFF)Average angular momentum of 53-I-134
-           is 5.5+-0.7.
-ENDBIB               5
+           is 5.3+-0.5 (9.8 MeV) and 5.5+-0.7 (18 MeV).
+HISTORY    (20161226A) OG+On. 9.8 MeV data point added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-0.58       0.09
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        G4054007   20141217   20150505   20150429       G032
-BIB                  3          5
+DATA                 3          2
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+9.8        0.49       0.05
+18.        0.58       0.09
+ENDDATA              4
+ENDSUBENT           15
+SUBENT        G4054007   20161226   20170504   20170502       G037
+BIB                  4          6
 REACTION   (92-U-235(G,F)54-XE-135-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (54-XE-135-M,15.29MIN)
            (54-XE-135-G,9.14HR)
 ADD-RES    (AMFF)Average angular momentum of 54-XE-135
-           is 1.5+-0.5.
-ENDBIB               5
+           is 2.0+-0.5 (9.8 MEV) and 1.5+-0.5 (18 MeV).
+HISTORY    (20161226A) OG+On. 9.8 MeV data point added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-0.056       0.007
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        G4054008   20141217   20150505   20150429       G032
+DATA                 3          2
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+9.8        0.142      0.014
+18.        0.056       0.007
+ENDDATA              4
+ENDSUBENT           15
+SUBENT        G4054008   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (93-NP-237(G,F)52-TE-131-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (52-TE-131-M,30.HR)
@@ -135,13 +150,13 @@ ADD-RES    (AMFF)Average angular momentum of 52-TE-131
            is 5.5+-0.8.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-1.9        0.3
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        1.9        0.3
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054009   20141217   20150505   20150429       G032
+SUBENT        G4054009   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (93-NP-237(G,F)51-SB-132-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (51-SB-132-M,4.10MIN)
@@ -150,13 +165,13 @@ ADD-RES    (AMFF)Average angular momentum of 51-SB-132
            is 6.8+-0.7.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-1.01       0.12
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        1.01       0.12
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054010   20141217   20150505   20150429       G032
+SUBENT        G4054010   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (93-NP-237(G,F)53-I-132-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (53-I-132-M,1.387HR)
@@ -165,13 +180,13 @@ ADD-RES    (AMFF)Average angular momentum of 53-I-132
            is 6.5+-0.8.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-0.95       0.15
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.95       0.15
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054011   20141217   20150505   20150429       G032
+SUBENT        G4054011   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (93-NP-237(G,F)52-TE-133-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (52-TE-133-M,55.4MIN)
@@ -180,13 +195,13 @@ ADD-RES    (AMFF)Average angular momentum of 52-TE-133
            is 12.5+-1.2.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-9.0        0.9
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        9.0        0.9
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054012   20141217   20150505   20150429       G032
+SUBENT        G4054012   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (93-NP-237(G,F)54-XE-135-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (54-XE-135-M,15.29MIN)
@@ -195,13 +210,13 @@ ADD-RES    (AMFF)Average angular momentum of 54-XE-135
            is 1.3+-0.5.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-0.041       0.006
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.041       0.006
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054013   20141217   20150505   20150429       G032
+SUBENT        G4054013   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (94-PU-239(G,F)52-TE-131-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (52-TE-131-M,30.HR)
@@ -210,13 +225,13 @@ ADD-RES    (AMFF)Average angular momentum of 52-TE-131
            is 7.2+-0.9.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-3.2        0.6
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        3.2        0.6
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054014   20141217   20150505   20150429       G032
+SUBENT        G4054014   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (94-PU-239(G,F)51-SB-132-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (51-SB-132-M,4.10MIN)
@@ -225,13 +240,13 @@ ADD-RES    (AMFF)Average angular momentum of 51-SB-132
            is 8.2+-0.8.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-1.48       0.16
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        1.48       0.16
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054015   20141217   20150505   20150429       G032
+SUBENT        G4054015   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (94-PU-239(G,F)53-I-132-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (53-I-132-M,1.387HR)
@@ -240,13 +255,13 @@ ADD-RES    (AMFF)Average angular momentum of 53-I-132
            is 5.1+-0.6.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-0.51       0.06
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.51       0.06
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054016   20141217   20150505   20150429       G032
+SUBENT        G4054016   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (94-PU-239(G,F)52-TE-133-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (52-TE-133-M,55.4MIN)
@@ -255,13 +270,13 @@ ADD-RES    (AMFF)Average angular momentum of 52-TE-133
            is 8.5+-0.7.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-5.3        0.3
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        5.3        0.3
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054017   20141217   20150505   20150429       G032
+SUBENT        G4054017   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (94-PU-239(G,F)53-I-134-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (53-I-134-M,3.69MIN)
@@ -270,13 +285,13 @@ ADD-RES    (AMFF)Average angular momentum of 53-I-134
            is 7.7+-0.9.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-1.26       0.25
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        1.26       0.25
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        G4054018   20141217   20150505   20150429       G032
+SUBENT        G4054018   20161226   20170504   20170502       G037
 BIB                  3          5
 REACTION   (94-PU-239(G,F)54-XE-135-M/G,,SIG/RAT,,BRA)
 DECAY-DATA (54-XE-135-M,15.29MIN)
@@ -285,10 +300,90 @@ ADD-RES    (AMFF)Average angular momentum of 54-XE-135
            is 1.5+-0.5.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-0.066       0.007
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.066       0.007
 ENDDATA              3
 ENDSUBENT           13
-ENDENTRY            18
+SUBENT        G4054019   20161226   20170504   20170502       G037
+BIB                  4          6
+REACTION   (92-U-235(G,F)35-BR-84-M/G,,SIG/RAT,,BRA)
+DECAY-DATA (35-BR-84-M,6.0MIN)
+           (35-BR-84-G,31.80MIN)
+ADD-RES    (AMFF)Average angular momentum of 35-BR-84
+           is 1.8+-0.5.
+HISTORY    (20161226C) OG
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.14       0.01
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        G4054020   20161226   20170504   20170502       G037
+BIB                  4          6
+REACTION   (93-NP-237(G,F)35-BR-84-M/G,,SIG/RAT,,BRA)
+DECAY-DATA (35-BR-84-M,6.0MIN)
+           (35-BR-84-G,31.80MIN)
+ADD-RES    (AMFF)Average angular momentum of 35-BR-84
+           is 1.9+-0.5.
+HISTORY    (20161226C) OG
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.15       0.01
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        G4054021   20161226   20170504   20170502       G037
+BIB                  4          6
+REACTION   (93-NP-237(G,F)37-RB-90-M/G,,SIG/RAT,,BRA)
+DECAY-DATA (37-RB-90-M,258.SEC)
+           (37-RB-90-G,158.SEC)
+ADD-RES    (AMFF)Average angular momentum of 37-RB-90
+           is 2.2+-0.6.
+HISTORY    (20161226C) OG
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        1.2        0.2
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        G4054022   20161226   20170504   20170502       G037
+BIB                  4          6
+REACTION   (94-PU-239(G,F)35-BR-84-M/G,,SIG/RAT,,BRA)
+DECAY-DATA (35-BR-84-M,6.0MIN)
+           (35-BR-84-G,31.80MIN)
+ADD-RES    (AMFF)Average angular momentum of 35-BR-84
+           is 1.7+-0.5.
+HISTORY    (20161226C) OG
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        0.118      0.006
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        G4054023   20161226   20170504   20170502       G037
+BIB                  4          6
+REACTION   (94-PU-239(G,F)37-RB-90-M/G,,SIG/RAT,,BRA)
+DECAY-DATA (37-RB-90-M,258.SEC)
+           (37-RB-90-G,158.SEC)
+ADD-RES    (AMFF)Average angular momentum of 37-RB-90
+           is 1.8+-0.6.
+HISTORY    (20161226C) OG
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       ERR-S
+MEV        NO-DIM     NO-DIM
+18.        1.0        0.2
+ENDDATA              3
+ENDSUBENT           14
+ENDENTRY            23

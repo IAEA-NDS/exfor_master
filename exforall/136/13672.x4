@@ -1,13 +1,13 @@
-ENTRY            13672   20021204   20030219   20050926       0000
-SUBENT        13672001   20021204   20030219   20050926       0000
-BIB                 13         30
+ENTRY            13672   20160804   20170504   20161113       1421
+SUBENT        13672001   20160804   20170504   20161113       1421
+BIB                 13         33
 INSTITUTE  (1USALAS)
 REFERENCE  (J,NSE,128,270,199803)
            (J,ANS,76,361,199706)
 AUTHOR     (D.Loaiza,G.Brunson,R.Sanchez,K.Butterfield)
 TITLE      Measurement of Absolute Delayed Neutron Yield and Group
             Constants for the Fast Fission of 235U and 237Np
-FACILITY   (REAC) Godiva IV burst assembly
+FACILITY   (CRASS,1USALAS) Godiva IV burst assembly
 INC-SOURCE (REAC) Reactor spectrum passed through cadmium, Boral,
             and borated polyethylene to absorb thermal neutrons.
 INC-SPECT  Fission neutrons.
@@ -23,7 +23,7 @@ CORRECTION Delayed-neutron activity corrected for the time-
             dependent neutron background  (0.27%) and dead time
             (<2%).
 ERR-ANALYS (DATA-ERR) Systematic uncertainty.
-STATUS     Data taken from Nucl.Sci.Eng.
+STATUS     (TABLE) Data taken from Nucl.Sci.Eng., Tables I and II.
            (APRVD) D. Loaiza, 1997/8/12. No reply received to
              author proof after 1999 update.
 HISTORY    (19970630C)
@@ -31,36 +31,43 @@ HISTORY    (19970630C)
            (19990812A) Updated to new reference, absolute data
                        added.
            (20021204A) Obsolete data heading replaced.
-ENDBIB              30
+           (20160728A) OS. STATUS updated, SAMPLE updated in
+            subs.2 and 3,  monitor decay information in subs.3,5
+            corrected
+ENDBIB              33
 COMMON               1          3
 EN-DUMMY
 MEV
 1.4
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        13672002   20021204   20030219   20050926       0000
-BIB                  3          3
+ENDSUBENT           40
+SUBENT        13672002   20160804   20170504   20161113       1421
+BIB                  3          4
 REACTION   (92-U-235(N,F),DL,NU,,FST)
-SAMPLE     3-gram metal sample, 93% enriched 235U.
+SAMPLE     (92-U-235,ENR=0.93) 3-gram metal sample, 93% enriched
+            235U.
 CORRECTION Corrected for sample impurities.
-ENDBIB               3
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 PRT/FIS    PRT/FIS
  0.0163     0.0008
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13672003   20021204   20030219   20050926       0000
-BIB                  5          7
+ENDSUBENT           12
+SUBENT        13672003   20160804   20170504   20161113       1421
+BIB                  5         10
 REACTION  1((92-U-235(N,F),DL/GRP,NU,,FST)/
            (92-U-235(N,F),DL,NU,,FST))
           2(92-U-235(N,F),DL/GRP,NU,,FST)
-SAMPLE     3-gram metal sample, 93% enriched 235U.
+SAMPLE     (92-U-235,ENR=0.93) 3-gram metal sample, 93% enriched
+            235U.
 MONITOR   2(92-U-235(N,F)57-LA-140,CUM,FY)
-DECAY-MON 2(57-LA-140,12.9D,DG,1596.)
+            La-140 in equilibrium with 140Ba (12.9 d) after
+            13 days
 CORRECTION Corrected for sample impurities.
-ENDBIB               7
+HISTORY    (20160728A) DECAY-MON replaced by free text
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 5          6
 DCNST      DCNST-ERR  DATA      1DATA-ERR  1DATA      2
@@ -72,7 +79,7 @@ DCNST      DCNST-ERR  DATA      1DATA-ERR  1DATA      2
  1.37       0.0514     0.114      0.005      0.00186
  3.83       0.1138     0.0235     0.001      0.000383
 ENDDATA              8
-ENDSUBENT           20
+ENDSUBENT           23
 SUBENT        13672004   20021204   20030219   20050926       0000
 BIB                  2          2
 REACTION   (93-NP-237(N,F),DL,NU,,FST)
@@ -85,15 +92,17 @@ PRT/FIS    PRT/FIS
  0.0126     0.0007
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        13672005   20021204   20030219   20050926       0000
-BIB                  4          6
+SUBENT        13672005   20160804   20170504   20161113       1421
+BIB                  4          8
 REACTION  1((93-NP-237(N,F),DL/GRP,NU,,FST)/
            (93-NP-237(N,F),DL,NU,,FST))
           2(93-NP-237(N,F),DL/GRP,NU,,FST)
 SAMPLE     3.5-gram metal sample, 99% 237Np.
 MONITOR   2(92-U-235(N,F)57-LA-140,CUM,FY)
-DECAY-MON 2(57-LA-140,12.9D,DG,1596.)
-ENDBIB               6
+            La-140 in equilibrium with 140Ba (12.9 d) after
+            13 days
+HISTORY    (20160728A) DECAY-MON replaced by free text
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          6
 DCNST      DCNST-ERR  DATA      1DATA-ERR  1DATA      2
@@ -105,5 +114,5 @@ DCNST      DCNST-ERR  DATA      1DATA-ERR  1DATA      2
  0.914      0.058      0.150      0.014      0.00189
  3.2        0.13       0.045      0.006      0.000567
 ENDDATA              8
-ENDSUBENT           19
+ENDSUBENT           21
 ENDENTRY             5
