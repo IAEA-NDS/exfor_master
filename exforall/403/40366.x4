@@ -1,43 +1,68 @@
-ENTRY            40366     850329              20050926       0000
-SUBENT        40366001     850329              20050926       0000
-BIB                 14         22
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,YF,4,(5),993,6611)
-           (C,64PARIS,11,1132,6407)PRELIMINARY DATA
-           (J,PTE,4,122,6407) DETAILED DESCRIPTION OF DETECTOR
-            AND RECORDING SCHEME
-AUTHOR     (V.G.NESTEROV,G.N.SMIRENKIN,D.L.SHPAK)
-TITLE      ENERGY DEPENDENCE OF THE ANGULAR DISTRIBUTION OF
-           FRAGMENTS IN THE NEUTRON FISSION OF U-233,U-235
-           AND PU-239
-FACILITY   (VDG)
+ENTRY            40366   20170118   20170703   20170630       4175
+SUBENT        40366001   20170118   20170703   20170630       4175
+BIB                 14         37
+INSTITUTE  (4RUSFEI)
+REFERENCE  (J,SNP,4,713,1967) Eng.transl.of YF,4,(5),993,1966
+           (J,YF,4,(5),993,196611)
+           (C,64PARIS,2,1132,196407) Preliminary data
+                First author I.I.Bondarenko
+           (J,AE,16,(6),519,1964) First author V.G.Nesterov
+            Prelim.publication.
+           (J,SJA,16,(6),641,1964) Engl.transl.of AE,16,519,1964
+           #doi:10.1007/BF01115671
+           (J,PTE,,(4),122,196407) detailed description of
+            detector and recording scheme
+             First author Yu.A.Blyumkina
+AUTHOR     (V.G.Nesterov,G.N.Smirenkin,D.L.Shpak)
+TITLE      Energy dependence of the fragment distribution in
+           neutron fission of U-233,U-235 and Pu-239
+FACILITY   (VDG,4RUSFEI)
 INC-SOURCE (P-T)
            (D-D)
-SAMPLE      SAMPLES OF U-233,U-235,PU-239,THICKNESS 1.5MILLIGRAM/
-            CM-SQ
+SAMPLE      Samples of U-233, U-235, Pu-239, thickness
+            1.5milligram/cm-sq
 METHOD     (COINC)
 DETECTOR   (COIN,IOCH,IOCH)
-COMMENT     FRAGMENTS WERE MEASURED UNDER 6 ANGLES-13,26,39,52.5
-            66.5,81 ADEG
-FLAG       (1.) ENERGY SPREAD IS FROM 0.03 MEV TO 0.11 MEV
-HISTORY    (781205C)COMPILED AT THE CENTRE
-CORRECTION  CORRECTIONS ON ADMIXTURE OF OTHER ISOTOPES WAS MADE
-ERR-ANALYS (DATA-ERR) STATIST.ERROR
-ENDBIB              22
+COMMENT     Fragments were measured under 6 angles-13,26,39,52.5
+            66.5,81 degr.
+FLAG       (1.) Energy spread is from 0.03 MeV to 0.11 MeV
+CORRECTION  Corrections on admixture of other isotopes was made
+            for U-235 at En > 1.5 MeV, for other isotopes was
+            negligible .
+ERR-ANALYS  Angular resolution was about 5 deg.
+HISTORY    (19781205C)Compiled at the centre
+           (20150210A) SD: Updated to new date formats,lower case.
+               Engl.transl. of YF added. 64PARIS: Vol.11 -> Vol.2
+           (20170118A) M.M. STATUS,ANALYSIS were added.
+           Article was checked, BIB information was updated in
+           ERR-ANALYS,CORRECTION.
+           DATA-ERR -> ERR-S .
+           Ref.AE,16,(6),519,1964 and it's Engl.transl.were added.
+ENDBIB              37
+NOCOMMON             0          0
+ENDSUBENT           40
+SUBENT        40366002   20170118   20170703   20170630       4175
+BIB                  6         12
+REACTION   (92-U-233(N,F),,DA,FF,RSD,DERIV)
+                W(0deg)/W(90deg)
+SAMPLE     Sample of U-233 with 2.5% of (U-234+U-238)
+ANALYSIS    Value W(0deg)W(90deg) was derived from exp.ratios
+            W(angle)/W981deg) by introduction small correction and
+            by least squares on assumption that W(angle) obeys as:
+            W(angle) ~ 1+A*COS(angle) .
+ERR-ANALYS (ERR-S)    Statist.error
+STATUS     (TABLE) Table of SNP,4,713,1967 ( anisotropy is given
+            as W(0deg)/W(90deg)-1 .
+           (DEP,40366005) Directly measured data.
+HISTORY    (20170118A) M.M. DERIV was added
+ENDBIB              12
 COMMON               1          3
 ANG
 ADEG
- 0.0000E+00
+ 0.0
 ENDCOMMON            3
-ENDSUBENT           29
-SUBENT        40366002     850329              20050926       0000
-BIB                  2          2
-REACTION   (92-U-233(N,F),,DA,FF,RSD)
-SAMPLE     SAMPLE OF U-233 WITH 2.5PER-CENT OF (U-234+U-238)
-ENDBIB               2
-NOCOMMON             0          0
 DATA                 5          8
-EN         EN-ERR     DATA       DATA-ERR   FLAG
+EN         EN-ERR     DATA       ERR-S      FLAG
 MEV        MEV        NO-DIM     NO-DIM     NO-DIM
  8.0000E-02            1.0250E+00 9.0000E-03 1.0000E+00
  1.7000E-01 5.0000E-02 1.0410E+00 8.0000E-03
@@ -48,17 +73,32 @@ MEV        MEV        NO-DIM     NO-DIM     NO-DIM
  9.8000E-01 4.0000E-02 1.1210E+00 9.0000E-03
  1.2600E+00 4.0000E-02 1.1230E+00 1.2000E-02
 ENDDATA             10
-ENDSUBENT           17
-SUBENT        40366003     850329              20050926       0000
-BIB                  2          2
-REACTION   (92-U-235(N,F),,DA,FF,RSD)
-SAMPLE      SAMPLE OF U-235 (ENRICHMENT 90PER-CENT)
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           31
+SUBENT        40366003   20170118   20170703   20170630       4175
+BIB                  6         13
+REACTION   (92-U-235(N,F),,DA,FF,RSD,DERIV)
+                W(0deg)/W(90deg)
+SAMPLE      Sample of U-235 (enrichment 90%)
+           (92-U-235,ENR=0.90)
+ANALYSIS    Value W(0deg)W(90deg) was derived from exp.ratios
+            W(angle)/W981deg) by introduction small correction and
+            by least squares on assumption that W(angle) obeys as:
+            W(angle) ~ 1+A*COS(angle) .
+ERR-ANALYS (ERR-S)    Statist.error
+STATUS     (TABLE) Table of SNP,4,713,1967 ( anisotropy is given
+            as W(0deg)/W(90deg)-1 .
+           (DEP,40366006) Directly measured data.
+HISTORY    (20170118A) M.M. DERIV was added
+ENDBIB              13
+COMMON               1          3
+ANG
+ADEG
+ 0.0
+ENDCOMMON            3
 DATA                 5         20
-EN         EN-ERR     DATA       DATA-ERR   FLAG
+EN         EN-ERR     DATA       ERR-S      FLAG
 MEV        MEV        NO-DIM     NO-DIM     NO-DIM
- 8.0000E-02 0.0000E+00 1.0600E+00 9.0000E-03 1.0000E+00
+ 8.0000E-02           -0.0600E+00 9.0000E-03 1.0000E+00
  1.7000E-01 5.0000E-02 1.0000E+00 1.2000E-02
  3.0000E-01 5.0000E-02 1.0370E+00 9.0000E-03
  5.0000E-01 4.0000E-02 1.0590E+00 1.1000E-02
@@ -79,17 +119,30 @@ MEV        MEV        NO-DIM     NO-DIM     NO-DIM
  5.5200E+00 9.0000E-02 1.1590E+00 1.3000E-02
  6.0700E+00 9.0000E-02 1.1870E+00 7.0000E-03
 ENDDATA             22
-ENDSUBENT           29
-SUBENT        40366004     850329              20050926       0000
-BIB                  2          2
-REACTION   (94-PU-239(N,F),,DA,FF,RSD)
-SAMPLE      SAMPLE OF PU-239 (2.PER-CENT OF PU-240)
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           44
+SUBENT        40366004   20170118   20170703   20170630       4175
+BIB                  6         11
+REACTION   (94-PU-239(N,F),,DA,FF,RSD,DERIV)
+                W(0deg)/W(90deg)
+SAMPLE      Sample of Pu-239 (2.% of Pu-240)
+ANALYSIS    Value W(0deg)W(90deg) was derived from exp.ratios
+            W(angle)/W981deg) by introduction small correction and
+            by least squares on assumption that W(angle) obeys as:
+            W(angle) ~ 1+A*COS(angle) .
+ERR-ANALYS (ERR-S)    Statist.error
+STATUS     (TABLE) Table of SNP,4,713,1967 ( anisotropy is given
+            as W(0deg)/W(90deg)-1 .
+HISTORY    (20170118A) M.M. DERIV was added
+ENDBIB              11
+COMMON               1          3
+ANG
+ADEG
+ 0.0
+ENDCOMMON            3
 DATA                 5         10
-EN         EN-ERR     DATA       DATA-ERR   FLAG
+EN         EN-ERR     DATA       ERR-S      FLAG
 MEV        MEV        NO-DIM     NO-DIM     NO-DIM
- 8.0000E-02 0.0000E+00 1.0000E+00 1.1000E-02 1.0000E+00
+ 8.0000E-02            1.0000E+00 1.1000E-02 1.0000E+00
  1.7000E-01 5.0000E-02 1.0250E+00 1.0000E-02
  2.9000E-01 5.0000E-02 1.0790E+00 1.1000E-02
  4.9000E-01 3.0000E-02 1.0860E+00 1.0000E-02
@@ -100,5 +153,129 @@ MEV        MEV        NO-DIM     NO-DIM     NO-DIM
  1.2400E+00 4.0000E-02 1.0940E+00 9.0000E-03
  1.5000E+00 4.0000E-02 1.1110E+00 9.0000E-03
 ENDDATA             12
-ENDSUBENT           19
-ENDENTRY             4
+ENDSUBENT           32
+SUBENT        40366005   20170118   20170703   20170630       4175
+BIB                  5          8
+REACTION   (92-U-233(N,F),,DA,FF,RSD)
+                W(angle)/W(90deg)
+SAMPLE     Sample of U-233 with 2.5% of (U-234+U-238)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (CURVE) Fig.1 of SNP,4,713,1967 -DATA and DATA-ERR.
+            Angles - from text, page 713.
+HISTORY    (20170118C) M.M. Subent was added .
+ENDBIB               8
+COMMON               1          3
+ERR-DIG
+NO-DIM
+0.23251E-03
+ENDCOMMON            3
+DATA                 5         24
+EN         EN-ERR     ANG        DATA       DATA-ERR
+MEV        MEV        ADEG       NO-DIM     NO-DIM
+ 0.08                 13.         0.9494    0.0105
+ 0.08                 26.         0.9691    0.0095
+ 0.08                 39.         0.9820    0.0091
+ 0.08                 52.5        0.9910    0.0086
+ 0.08                 66.5        0.9946    0.0098
+ 0.17       0.05      13.         1.0120    0.0165
+ 0.17       0.05      26.         0.9972    0.0131
+ 0.17       0.05      39.         0.9855    0.0122
+ 0.17       0.05      52.5        0.9970    0.0131
+ 0.17       0.05      66.5        1.0015    0.0105
+ 0.29       0.04      13.         1.0525    0.0107
+ 0.29       0.04      26.         1.0246    0.0103
+ 0.29       0.04      39.         1.0203    0.0076
+ 0.29       0.04      52.5        1.0155    0.0093
+ 0.29       0.04      66.5        1.0101    0.0097
+ 0.49       0.03      13.         1.0694    0.0131
+ 0.49       0.03      26.         1.0463    0.0122
+ 0.49       0.03      39.         1.0267    0.0110
+ 0.49       0.03      66.5        1.0139    0.0114
+ 0.75       0.03      13.         1.1106    0.0143
+ 0.75       0.03      26.         1.1018    0.0126
+ 0.75       0.03      39.         1.0813    0.0112
+ 0.75       0.03      52.5        1.0575    0.0098
+ 0.75       0.03      66.5        1.0346    0.0119
+ENDDATA             26
+ENDSUBENT           43
+SUBENT        40366006   20170118   20170703   20170630       4175
+BIB                  5          9
+REACTION   (92-U-235(N,F),,DA,FF,RSD)
+                W(angle)/W(90deg)
+SAMPLE      Sample of U-235 (enrichment 90%)
+           (92-U-235,ENR=0.90)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (CURVE) Fig.2 of SNP,4,713,1967 -DATA and DATA-ERR.
+            Angles - from text, page 713.
+HISTORY    (20170118C) M.M. Subent was added .
+ENDBIB               9
+COMMON               3          3
+EN         EN-ERR     ERR-DIG
+MEV        MEV        NO-DIM
+ 1.25       0.04       0.000096
+ENDCOMMON            3
+DATA                 3          5
+ANG        DATA       DATA-ERR
+ADEG       NO-DIM     NO-DIM
+ 13.        1.0950    0.0078
+ 26.        1.1124    0.0057
+ 39.        1.0803    0.0049
+ 52.5       1.0597    0.0046
+ 66.5       1.0285    0.0046
+ENDDATA              7
+ENDSUBENT           25
+SUBENT        40366007   20170118   20170703   20170630       4175
+BIB                  5          8
+REACTION   (92-U-233(N,F),,DA,FF,RSD)
+                W(angle)/W(90deg)
+SAMPLE     Sample of U-233 with 2.5% of (U-234+U-238)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (CURVE) Fig.2 of SNP,4,713,1967 -DATA and DATA-ERR.
+            Angles - from text, page 713.
+HISTORY    (20170118C) M.M. Subent was added .
+ENDBIB               8
+COMMON               3          3
+EN         EN-ERR     ERR-DIG
+MEV        MEV        NO-DIM
+ 0.75       0.03       0.000096
+ENDCOMMON            3
+DATA                 3          5
+ANG        DATA       DATA-ERR
+ADEG       NO-DIM     NO-DIM
+ 13.        1.0592    0.0067
+ 26.        1.0734    0.0045
+ 39.        1.0455    0.0045
+ 52.5       1.0269    0.0048
+ 66.5       1.0010    0.0052
+ENDDATA              7
+ENDSUBENT           24
+SUBENT        40366008   20170118   20170703   20170630       4175
+BIB                  5          8
+REACTION   (94-PU-239(N,F),,DA,FF,RSD)
+                W(angle)/W(90deg)
+SAMPLE      Sample of Pu-239 (2.% of Pu-240)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (CURVE) Fig.2 of SNP,4,713,1967 -DATA and DATA-ERR.
+            Angles - from text, page 713.
+HISTORY    (20170118C) M.M. Subent was added .
+ENDBIB               8
+COMMON               3          3
+EN         EN-ERR     ERR-DIG
+MEV        MEV        NO-DIM
+ 0.90       0.03       0.000096
+ENDCOMMON            3
+DATA                 3          5
+ANG        DATA       DATA-ERR
+ADEG       NO-DIM     NO-DIM
+ 13.        1.0481     0.0061
+ 26.        1.0609     0.0041
+ 39.        1.0476     0.0040
+ 52.5       1.0323     0.0038
+ 66.5       1.0093     0.0036
+ENDDATA              7
+ENDSUBENT           24
+ENDENTRY             8

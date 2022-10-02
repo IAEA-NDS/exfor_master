@@ -1,49 +1,77 @@
-ENTRY            40306     920911              20050926       0000
-SUBENT        40306001     920911              20050926       0000
-BIB                 17         32
-TITLE      NEUTRON INTERACTION WITH IRON NUCLEI IN ENERGY RANGE
-           16-22 MEV.
-AUTHOR     (V.CORCALCIUC,G.A.PROKOPETS,B.HOLMKVIST)
-INSTITUTE  (4CCPKGU)
-REFERENCE  (J,YF,20,(6),1096,7412) DATA ARE GIVEN
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG)  CROSS-SECTION WAS TAKEN
-           ACCORDING TO Y.KANDA, R.NAKASIMA. JAERY-1207, 1972.
-METHOD     (TOF) TIME-OF-FLIGHT METHOD.
-ANALYSIS   (4PI1A)  MEASUREMENTS AT 55 ADEG
-FACILITY   (VDG) VAN DE GRAAFF.
-INC-SOURCE (D-T) DEUTERON-TRITIUM
-DETECTOR   (GELI) GERMANIUM-LITHIUM DETECTOR
-SAMPLE     .CYLINDER WITH DIAMETER 85 MM, LENGTH 10MM.
-STATUS     .DATA ARE TAKEN FROM REFERENCE
+ENTRY            40306   20161012   20170703   20170630       4175
+SUBENT        40306001   20161012   20170703   20170630       4175
+BIB                 17         58
+TITLE      Interaction of 16-22 MeV neutrons with iron nuclei
+AUTHOR     (V.Corcalciuc,G.A.Prokopets,B.Holmqvist)
+             V.Corcalciuc = V.Korkal'chuk ( in SNP,20,574)
+INSTITUTE  (2SWDAE,3RUMBUC,4UKRKGU)
+REFERENCE  (J,SNP,20,574,1975) Eng.transl.of YF,20,(6),1096,1974
+           (J,YF,20,(6),1096,197412) Data are given
+MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG)  Cross-section was taken
+           according to Y.Kanda, R.Nakasima. JAERI-1207, 1972.
+MONIT-REF  (,Y.Kanda+,R,JAERI-1207,1972)
+METHOD     (TOF) Time-of-flight method.
+FACILITY   (VDG,2SWDAE) Van de Graaff.
+            Pulsed electrostatic generator at the
+           Neutron Physics Laboratory in Studsvik.
+INC-SOURCE (D-T) Deuteron-tritium . Tritium gas target.
+            Deuterons energy 6 MeV
+DETECTOR   (GELI) 100-cm3, germanium-lithium detector, made by
+           the AB Atomenergiy at Studsvik. Shielded by Fe, Pb,
+           borated paraffin layers.
+           Angle of gamma registration 55 deg relative to neutron
+           beam. Gamma energy resolution 3.6keV at 1.MeV gamma.
+           (SCIN,BF3) The composition of the neutron beam was
+           monitored and controlled with a time-of-flight
+           scintillation spectrometer (NE = 102, diam.38 mm,
+           h = 13 mm, 2.91-m flight base) and a standard
+           long BF3 counter.
+SAMPLE     .Cylinder with diameter 85 mm, length 10mm.
+            Natural iron.
 PART-DET   (G)
-CORRECTION CORRECTIONS WERE INTRODUCED ON NEUTRON AND GAMMAS FLUX
-           ABSORPTION IN SAMPLE, TIME AND ANGULAR RESOLUTION,
-           DETECTOR EFFICIENCY, BACKGROUND, NEUTRON ENERGY
-           DISTRIBUTION FROM SOURCE
-ERR-ANALYS (ERR-T)   MAXIMAL TOTAL ERROR. CONSISTS OF STATISTICAL
-                     ERROR, CORRECTION ERROR AND ERROR OF
-                     CROSS-SECTION CALCULATION
-COMMENT    DATA WERE MEASURED AT ANGLE 55 GRAD. AND CALCULATED BY
-           SIGMA=4*PI*D SIGMA(55 GRAD)/D OMEGA.
-HISTORY    (751020C) COMPILED AT THE CENTRE
-           (920911A)  OBSOLETE KEYWORDS CORRECTED. ISO-QUANT INTO
-                      REACTION CONVERTED. ERR-T INTRODUCED
-            .REACTION KEYWORD TRANSFERRED FROM SAN 001 TO PROPER
-             SUBENTS
-            .AUTHOR NAME KORKAL'CHUK CHANGED TO CORCALCIUC
-            .DATA FOR (N,INL) ARE SEPARATED FROM THOSE FOR (N,2N)
-             AND PLACED IN SAN 007 - 011
-ENDBIB              32
-COMMON               1          3
-ERR-T
-PER-CENT
-  20.
+CORRECTION Corrections were introduced on neutron and gammas flux
+           absorption in sample, time and angular resolution,
+           detector efficiency, background, neutron energy
+           distribution from source, attenuation in sample.
+           For background.
+ERR-ANALYS (DATA-ERR,15.,25.)   Total error. Consists of
+           statistical error, correction error and error of
+           cross-section calculation
+ANALYSIS   (4PI1A) Data were measured at angle 55 deg, and
+            calculated as:
+           sigma=4*PI*dSIGMA/dOMEGA(55deg) .
+           CS were calculated for natural iron; the CS for Fe-56
+           were determined by division of factor 0.916 .
+STATUS     (TABLE) .Tbl.I are taken from YF,20,1096,1974
+HISTORY    (19751020C) Compiled at the centre
+           (19920911A)  Obsolete keywords corrected. ISO-QUANT
+                into REACTION converted. ERR-T introduced
+            .REACTION keyword transferred from San 001 to proper
+             Subents
+            .Author name Korkal'chuk changed to Corcalciuc
+            .Data for (n,inl) are separated from those for (n,2n)
+             and placed in San 007 - 011
+           (20150208U) SD: Updated to new date formats,lower case.
+             Ref. on Engl.transl. of YF added. ERR-T -> DATA-ERR.
+             MONIT-REF added.
+           (20161012A) M.M. Article was checked, BIB information
+           was updated in INC-SOURCE,FACILITY,DETECTOR,ANALYSIS,
+           SAMPLE .
+           EN-RSL-HW, ANG were added.
+           4PI was added in REACTION SF8; SIG -> DA (see ANALYSIS)
+ENDBIB              58
+COMMON               2          3
+EN-RSL-HW  ANG
+KEV        ADEG
+ 400.       55.
 ENDCOMMON            3
-ENDSUBENT           39
-SUBENT        40306002     920911              20050926       0000
-BIB                  1          1
-REACTION   (26-FE-56(N,2N)26-FE-55,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           65
+SUBENT        40306002   20161012   20170703   20170630       4175
+BIB                  2          3
+REACTION   (26-FE-56(N,2N)26-FE-55,PAR,DA,G,4PI)
+HISTORY    (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -63,11 +91,14 @@ KEV        MB
   1371.        4.3
   1410.       21.
 ENDDATA             12
-ENDSUBENT           22
-SUBENT        40306003     920911              20050926       0000
-BIB                  1          1
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           24
+SUBENT        40306003   20161012   20170703   20170630       4175
+BIB                  2          4
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,4PI)
+HISTORY    (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+            FE-0 -> FE-56 in SF1 and SF3.
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -87,11 +118,13 @@ KEV        MB
   1371.       23.
   1410.       39.
 ENDDATA             12
-ENDSUBENT           22
-SUBENT        40306004     920911              20050926       0000
-BIB                  1          1
-REACTION   (26-FE-56(N,2N)26-FE-55,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           25
+SUBENT        40306004   20161012   20170703   20170630       4175
+BIB                  2          3
+REACTION   (26-FE-56(N,2N)26-FE-55,PAR,DA,G,4PI)
+HISTORY    (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -111,11 +144,13 @@ KEV        MB
   1371.       39.
   1410.       34.
 ENDDATA             12
-ENDSUBENT           22
-SUBENT        40306005     920911              20050926       0000
-BIB                  1          1
-REACTION   (26-FE-56(N,2N)26-FE-55,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           24
+SUBENT        40306005   20161012   20170703   20170630       4175
+BIB                  2          3
+REACTION   (26-FE-56(N,2N)26-FE-55,PAR,DA,G,4PI)
+HISTORY    (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -135,11 +170,13 @@ KEV        MB
   1371.       34.
   1410.       42.
 ENDDATA             12
-ENDSUBENT           22
-SUBENT        40306006     920911              20050926       0000
-BIB                  1          1
-REACTION   (26-FE-56(N,2N)26-FE-55,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           24
+SUBENT        40306006   20161012   20170703   20170630       4175
+BIB                  2          3
+REACTION   (26-FE-56(N,2N)26-FE-55,PAR,DA,G,4PI)
+HISTORY    (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -159,12 +196,14 @@ KEV        MB
   1371.       27.2
   1410.       31.
 ENDDATA             12
-ENDSUBENT           22
-SUBENT        40306007     920911              20050926       0000
-BIB                  2          2
-REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)
-HISTORY    (920911C)  + +  COMPILED AT THE CENTRE - CJD  + +
-ENDBIB               2
+ENDSUBENT           24
+SUBENT        40306007   20161012   20170703   20170630       4175
+BIB                  2          4
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,4PI)
+HISTORY    (19920911C)  + +  Compiled at the centre - CJD  + +
+           (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -176,12 +215,14 @@ KEV        MB
   846.8       392.
  1239.        220.
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        40306008     920911              20050926       0000
-BIB                  2          2
-REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)
-HISTORY    (920911C)  + +  COMPILED AT THE CENTRE - CJD  + +
-ENDBIB               2
+ENDSUBENT           17
+SUBENT        40306008   20161012   20170703   20170630       4175
+BIB                  2          4
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,4PI)
+HISTORY    (19920911C)  + +  Compiled at the centre - CJD  + +
+           (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -193,12 +234,14 @@ KEV        MB
   846.8       115.
  1239.         82.
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        40306009     920911              20050926       0000
-BIB                  2          2
-REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)
-HISTORY    (920911C)  + +  COMPILED AT THE CENTRE - CJD  + +
-ENDBIB               2
+ENDSUBENT           17
+SUBENT        40306009   20161012   20170703   20170630       4175
+BIB                  2          4
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,4PI)
+HISTORY    (19920911C)  + +  Compiled at the centre - CJD  + +
+           (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -210,12 +253,14 @@ KEV        MB
   846.8        80.
  1239.         70.
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        40306010     920911              20050926       0000
-BIB                  2          2
-REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)
-HISTORY    (920911C)  + +  COMPILED AT THE CENTRE - CJD  + +
-ENDBIB               2
+ENDSUBENT           17
+SUBENT        40306010   20161012   20170703   20170630       4175
+BIB                  2          4
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,4PI)
+HISTORY    (19920911C)  + +  Compiled at the centre - CJD  + +
+           (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -227,12 +272,14 @@ KEV        MB
   846.8       245.
  1239.         64.
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        40306011     920911              20050926       0000
-BIB                  2          2
-REACTION   (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)
-HISTORY    (920911C)  + +  COMPILED AT THE CENTRE - CJD  + +
-ENDBIB               2
+ENDSUBENT           17
+SUBENT        40306011   20161012   20170703   20170630       4175
+BIB                  2          4
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,4PI)
+HISTORY    (19920911C)  + +  Compiled at the centre - CJD  + +
+           (20161012A) M.M. 4PI was added in REACTION SF8;
+           SIG -> DA (see ANALYSIS in Subent 001)
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -244,5 +291,5 @@ KEV        MB
   846.8       477.
  1239.         52.
 ENDDATA              4
-ENDSUBENT           15
+ENDSUBENT           17
 ENDENTRY            11

@@ -1,37 +1,62 @@
-ENTRY            40399   20050827   20051111   20051111       4135
-SUBENT        40399001   20050827   20051111   20051111       4135
-BIB                 10         14
-INSTITUTE  (4RUSRUS)
-REFERENCE  (J,AE,5,71,1958)
-           (J,JNE/A,10,65,1959)
-AUTHOR     (A.N.PROTOPOPOV,M.V.BLINOV)
-TITLE      THE AVERAGE NUMBER OF NEUTRON EMITTED IN THE FISSION OF
-           U233 BY 14.8MEV NEUTRONS.
+ENTRY            40399   20170123   20170703   20170630       4175
+SUBENT        40399001   20170123   20170703   20170630       4175
+BIB                 11         23
+INSTITUTE  (4RUSRI)
+REFERENCE  (J,SJA,5,885,1958) Eng.trans.of AE,5,71,1958
+           (J,AE,5,71,1958)
+           (J,JNE/A,10,65(1),1959)
+AUTHOR     (A.N.Protopopov,M.V.Blinov)
+TITLE      Determination of the mean number of neutrons emitted
+           per fission of U-233 induced by 14.8-MeV neutrons.
+REL-REF    (M,,A.N.Protopopov+,J,AE,4,(4),374,1958)
 INC-SOURCE (D-T)
 METHOD     (COINC)
-DETECTOR   (COIN,FISCH,IOCH)
-MONITOR    (92-U-233(N,F),,NU)
+DETECTOR   (COIN,FISCH,IOCH) Double ionization chamber to detect
+            fission fragments and fission neutrons.
+SAMPLE      Platinum discs coated with U-233
+ERR-ANALYS (DATA-ERR)  Not specified
 HISTORY    (19830922C)
-           (20050827U) Correction according to Memo CP-E/70,
+           (20050827U) Correction according to memo CP-E/70,
                         dates were corrected
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-ENDBIB              14
+           (20150218U) SD: Updated to new date formats,lower case.
+             Ref. on Engl.transl. of AE added.
+           (20160123A) M.M. Subent 002 was split into two Subents.
+            The article was checked, BIB information was corrected
+            in DETECTOR,MONITOR,INSTITUTE.
+            SAMPLE,STATUS,REL-REF,MONIT-REF were added.
+ENDBIB              23
+NOCOMMON             0          0
+ENDSUBENT           26
+SUBENT        40399002   20170123   20170703   20170630       4175
+BIB                  2          2
+REACTION   ((92-U-233(N,F),PR,NU)//(92-U-233(N,F),PR,NU))
+STATUS     (TABLE) Text, page 885 of SJA,5,885,1958
+ENDBIB               2
+NOCOMMON             0          0
+DATA                 4          1
+EN-NM      EN-DN      DATA       DATA-ERR
+MEV        EV         NO-DIM     NO-DIM
+ 14.8       0.0253     1.74       0.16
+ENDDATA              3
+ENDSUBENT           10
+SUBENT        40399003   20170123   20170703   20170630       4175
+BIB                  4          6
+REACTION   (92-U-233(N,F),PR,NU)
+MONITOR    (92-U-233(N,F),,NU)
+MONIT-REF  (,D.J.Hughes+,R,BNL-325,1957)
+              BNL-#@%, Suppl. 1, 1957 .
+STATUS     (TABLE) Text, page 885 of SJA,5,885,1958
+           (DEP,40399002) Measured ratio NU(14.8MeV)/NU(thermal)
+ENDBIB               6
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
 EV         PRT/FIS    PRT/FIS
- 2.5300E-02 2.5200E+00 3.0000E-02
+ 0.0253     2.52       0.03
 ENDCOMMON            3
-ENDSUBENT           21
-SUBENT        40399002   20050827   20051111   20051111       4135
-BIB                  1          2
-REACTION  1(92-U-233(N,F),PR,NU)
-          2((92-U-233(N,F),PR,NU)/(92-U-233(N,F),,NU))
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 5          1
-EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-MEV        PRT/FIS    PRT/FIS    NO-DIM     NO-DIM
- 1.4800E+01 4.4000E+00 4.5000E-01 1.7400E+00 1.6000E-01
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        PRT/FIS    PRT/FIS
+ 14.8       4.40       0.45
 ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             2
+ENDSUBENT           18
+ENDENTRY             3
