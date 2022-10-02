@@ -1,46 +1,53 @@
-ENTRY            T0034   19990708   19990901   20050926       0000
-SUBENT        T0034001   19990708   19990901   20050926       0000
-BIB                 14         24
+ENTRY            T0034   20120316   20120530   20120515       T022
+SUBENT        T0034001   20120316   20120530   20120515       T022
+BIB                 13         26
 INSTITUTE  (1USAORE)
 REFERENCE  (J,NP/A,357,279,198104)
-AUTHOR     (R.M.SEALOCK,HSIAO-YUAN WU,J.C.OVERLEY)
+AUTHOR     (R.M.Sealock,Hsiao-Yuan Wu,J.C.Overley)
 TITLE      7Li(alpha,n)10B differential cross-section
             measurements from threshold to E(alpha)=5.1 MeV
-FACILITY   (VDG)
+FACILITY   (VDG,1USAORE)
 INC-SOURCE Pulsed and klyston-bunched 4He+ ion beam.
-SAMPLE     Targets cut from 2 mm thick, 99.9% pure natural
-            lithium ribbon, scraped clean of surface contaminants.
+SAMPLE     (3-LI-7,NAT=0.999) Targets cut from 2 mm thick, 99.9%
+           pure  natural lithium ribbon, scraped clean of surface
 METHOD     (TOF)
 DETECTOR   (SCIN) 6.3 cm diameter, 1.3 cm thick Naton 136
             scintillator coupled to photomultiplier.
 MONITOR    (3-LI-7(P,N)4-BE-7,,DA) Determined neutron detection
             efficiencies at 0 degrees for E(p) = 2.9, 3. MeV
-MONIT-REF  (,BURKE+,J,PR/C,10,1299,197410)
-ERR-ANALYS (DATA-ERR) Overall uncertainty, excluding systematic
-            uncertainty.  Dominant contributions to this are
-            uncertainty in detector efficiency (4%), and
-            uncertainty in neutron yield (4%).
+MONIT-REF  (,C.A.Burke+,J,PR/C,10,1299,197410)
 STATUS     (APRVD) Approved by J.C. Overley, 8 July 1999.
-           Data tables received from J.C. Overley, 10 June 1999.
+           (TABLE) Data tables received from J.C. Overley,
+                          10/06/1999 and presented in pdf-files
 HISTORY    (19990407C) Converted from F0045 by VNIIEF (SD).
            (19990610A) Data replaced by data received in private
              communication from J.C. Overley.
-ENDBIB              24
-COMMON               2          3
-DATA-ERR1  ANG-NRM
-PER-CENT   ADEG
-  6.000     0.
-ENDCOMMON            3
-ENDSUBENT           31
-SUBENT        T0034002   19990708   19990901   20050926       0000
-BIB                  1          1
-REACTION   (3-LI-7(A,N)5-B-10,,DA,,AV)
-ENDBIB               1
-COMMON               3          3
-EN-ERR     EN-RSL     DATA-ERR
-KEV        KEV        MB/SR
-  3.        10.        0.01
-ENDCOMMON            3
+           (20120316A) SD: Data in Subent 004 were checked and
+             corrected (sign '-' shifted to proper place).
+            ERR-ANALYS was updated.
+            In Subent 002 SF8=AV was deleted from REACTION code.
+            Uncertainty presented digitizing error deleted.
+ENDBIB              26
+NOCOMMON             0          0
+ENDSUBENT           29
+SUBENT        T0034002   20120316   20120530   20120515       T022
+BIB                  3          7
+REACTION   (3-LI-7(A,N)5-B-10,,DA)
+ERR-ANALYS (DATA-ERR) Uncertainty, excluding systematic
+            uncertainty.  Dominant contributions to this are:
+           (ERR-1) uncertainty in detector efficiency (4%), and
+           (ERR-2) uncertainty in neutron yield (4%).
+           (ERR-3)  the +-4 % uncertainty for target variability.
+HISTORY    (20120316A) SD: SF8=AV was deleted from REACTION code.
+ENDBIB               7
+COMMON               7          6
+EN-ERR     EN-RSL     DATA-ERR   ANG-NRM    ERR-1      ERR-2
+ERR-3
+KEV        KEV        PER-CENT   ADEG       PER-CENT   PER-CENT
+PER-CENT
+  3.        10.         6.000     0.           4.0       4.0
+  4.0
+ENDCOMMON            6
 DATA                 3        453
 ANG        EN         DATA
 ADEG       MEV        MB/SR
@@ -498,17 +505,28 @@ ADEG       MEV        MB/SR
 114.         5.09       1.59
 114.         5.10       1.57
 ENDDATA            455
-ENDSUBENT          465
-SUBENT        T0034003   19990708   19990901   20050926       0000
-BIB                  3          4
+ENDSUBENT          474
+SUBENT        T0034003   20120316   20120530   20120515       T022
+BIB                  4         11
 REACTION   (3-LI-7(A,N)5-B-10,,SIG)
 ANALYSIS   (INTAD) From Legendre polynomial fit, 4pi*A(0).
-STATUS     (DEP,T0034003)
-           (COREL,T0034005)
-ENDBIB               4
-NOCOMMON             0          0
+ERR-ANALYS (ERR-S)  Statistical error
+           (DATA-ERR) Uncertainty, excluding systematic
+            uncertainty.  Dominant contributions to this are:
+           (ERR-1) uncertainty in detector efficiency (4%), and
+           (ERR-2) uncertainty in neutron yield (4%).
+           (ERR-3)  the +-4 % uncertainty for target variability.
+STATUS     (COREL,T0034004) Zeroth order coefficient * 4 pi given
+                                                as cross section
+           (DEP,T0034002)
+ENDBIB              11
+COMMON               5          3
+DATA-ERR   ANG-NRM    ERR-1      ERR-2      ERR-3
+PER-CENT   ADEG       PER-CENT   PER-CENT   PER-CENT
+  6.0       0.           4.0       4.0        4.0
+ENDCOMMON            3
 DATA                 3         72
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        MB         MB
   4.39       1.0        0.1
   4.40       1.9        0.1
@@ -583,14 +601,24 @@ MEV        MB         MB
   5.09      33.8        0.6
   5.10      33.4        0.5
 ENDDATA             74
-ENDSUBENT           83
-SUBENT        T0034004   19990708   19990901   20050926       0000
-BIB                  2          3
+ENDSUBENT           94
+SUBENT        T0034004   20120316   20120530   20120515       T022
+BIB                  3          9
 REACTION   (3-LI-7(A,N)5-B-10,,DA,,LEG)
-STATUS     (DEP,T0034003)
-           (COREL,T0034004)
-ENDBIB               3
-NOCOMMON             0          0
+STATUS     (COREL,T0034003) Zeroth order coefficient * 4 pi given
+                                                   cross section
+           (DEP,T0034002)
+ERR-ANALYS (DATA-ERR) The method of least squares was used with
+           each datum assigned an uncertainty equal to counting
+           statistics folded with
+           (ERR-1) the +-4 % uncertainty for target variability.
+             corrected (sign '-' shifted to proper place).
+ENDBIB               9
+COMMON               1          3
+ERR-1
+PER-CENT
+  4.0
+ENDCOMMON            3
 DATA                 4        177
 NUMBER-CM  EN         DATA-CM    DATA-ERR
 NO-DIM     MEV        MU-B/SR    MU-B/SR
@@ -654,14 +682,14 @@ NO-DIM     MEV        MU-B/SR    MU-B/SR
   1.         5.00      -923.        56.
   1.         5.01      -957.        58.
   1.         5.02      -992.        60.
-  1.         5.03    - 1052.        62.
-  1.         5.04    - 1108.        65.
-  1.         5.05    - 1147.        67.
-  1.         5.06    - 1166.        68.
-  1.         5.07    - 1185.        70.
-  1.         5.08    - 1201.        71.
-  1.         5.09    - 1203.        71.
-  1.         5.10    - 1162.        71.
+  1.         5.03     -1052.        62.
+  1.         5.04     -1108.        65.
+  1.         5.05     -1147.        67.
+  1.         5.06     -1166.        68.
+  1.         5.07     -1185.        70.
+  1.         5.08     -1201.        71.
+  1.         5.09     -1203.        71.
+  1.         5.10     -1162.        71.
   2.         4.56        82.        37.
   2.         4.57        83.        42.
   2.         4.58        91.        48.
@@ -699,7 +727,7 @@ NO-DIM     MEV        MU-B/SR    MU-B/SR
   2.         4.90       363.        57.
   2.         4.91       372.        60.
   2.         4.92       362.        64.
-  2.         4.93       586.        60.
+  2.         4.93       386.        60.
   2.         4.94       411.        56.
   2.         4.95       371.        56.
   2.         4.96       342.        70.
@@ -772,5 +800,5 @@ NO-DIM     MEV        MU-B/SR    MU-B/SR
   4.         5.09       222.       109.
   4.         5.10       224.       109.
 ENDDATA            179
-ENDSUBENT          187
+ENDSUBENT          197
 ENDENTRY             4

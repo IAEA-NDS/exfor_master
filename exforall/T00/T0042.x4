@@ -1,29 +1,33 @@
-ENTRY            T0042   19990809   20000119   20050926       0000
-SUBENT        T0042001   19990809   20000119   20050926       0000
-BIB                 12         16
+ENTRY            T0042   20120317   20120530   20120515       T022
+SUBENT        T0042001   20120317   20120530   20120515       T022
+BIB                 12         20
 INSTITUTE  (1USATNL,1USADKE,1USANCA)
 REFERENCE  (J,PR/C,40,1517,198909)
-AUTHOR     (J.C.RILEY,H.R.WELLER,D.R.TILLEY)
+AUTHOR     (J.C.Riley,H.R.Weller,D.R.Tilley)
 TITLE      Radiative capture of tensor and vector polarized
             deuterons by 3H at 400 keV
 FACILITY   (VDG,1USATNL)
 INC-SOURCE (POLIS) Polarized pulsed deuteron beams.
-           Beam degraded by scattering from Havar foil.
+           Beam degraded by scattering from 1 mg/cm2 Havar foil.
 SAMPLE     Tritiated titanium foil.
 METHOD     (PHD,ACTIV)
            Beam polarization measured by 3H(d,n) with unpolarized
             beam.
-DETECTOR   (NAICR) Two anticoincidence shielded NaI detectors.
+DETECTOR   (NAICR) Two anticoincidence shielded 25.4 cm x 25.4 cm
+                    NaI detectors.
 CORRECTION Corrected for the background.
 STATUS     No reply from R. Tilley to author proof.
 HISTORY    (19990713C) SD and VM.
-ENDBIB              16
-COMMON               2          3
-EN         EN-RSL-FW
-KEV        KEV
-400.       200.
+           (20120317A) SD: In Subent 003 in REACTION code fields
+           SF5, SF8 were changed to: SF5=NN, SF8=ANA. Data from
+           fig.1 were digitized and added to Subents 003,004.
+ENDBIB              20
+COMMON               3          3
+EN         EN-RSL-FW  POL-BM
+KEV        KEV        NO-DIM
+400.       200.         0.83
 ENDCOMMON            3
-ENDSUBENT           23
+ENDSUBENT           27
 SUBENT        T0042002   19990713   20000119   20050926       0000
 BIB                  3          6
 REACTION   (1-H-3(D,G)2-HE-5,,DA,,REL)
@@ -50,20 +54,58 @@ ADEG       ARB-UNITS
  137.      2950.
 ENDDATA              9
 ENDSUBENT           24
-SUBENT        T0042003   19990713   20000119   20050926       0000
-BIB                  2          2
-REACTION   (1-H-3(D,G)2-HE-5,,POL/DA,,AYY)
-STATUS     Data given in Fig. 1 (a)
-ENDBIB               2
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            6
-SUBENT        T0042004   19990713   20000119   20050926       0000
-BIB                  2          2
+SUBENT        T0042003   20120317   20120530   20120515       T022
+BIB                  4          8
+REACTION   (1-H-3(D,G)2-HE-5,NN,POL/DA,,ANA)
+ERR-ANALYS (ANG-ERR-D)  Digitizing error
+           (ERR-DIG)    Digitizing error
+           (ERR-S) Statistical uncertainties from graphic bars
+STATUS     (CURVE) Data were digitized from Fig.1(a) of
+                                                PR/C,40,1517,1989
+HISTORY    (20120317A) SD: In REACTION code fields SF5,SF8 were
+           changed to: SF5=NN, SF8=ANA (see last EXFOR rules).
+ENDBIB               8
+COMMON               2          3
+ANG-ERR-D  ERR-DIG
+ADEG       NO-DIM
+    0.3     0.0011
+ENDCOMMON            3
+DATA                 3          7
+ANG-CM     DATA       ERR-S
+ADEG       NO-DIM     NO-DIM
+       42.8     0.2165     0.0342
+       50.6     0.1593     0.0228
+       70.6     0.1207     0.0987
+       90.6     0.1618     0.1215
+      110.6     0.1460     0.0190
+      130.6     0.0770     0.0228
+      138.0     0.0995     0.0342
+ENDDATA              9
+ENDSUBENT           26
+SUBENT        T0042004   20120317   20120530   20120515       T022
+BIB                  3          6
 REACTION   (1-H-3(D,G)2-HE-5,,POL/DA,,ANA)
-STATUS     Data given in Fig. 1 (b)
-ENDBIB               2
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            6
+ERR-ANALYS (ANG-ERR-D)  Digitizing error
+           (ERR-DIG)    Digitizing error
+           (ERR-S) Statistical uncertainties from graphic bars
+STATUS     (CURVE) Data were digitized from Fig.1(b) of
+                                                PR/C,40,1517,1989
+ENDBIB               6
+COMMON               2          3
+ANG-ERR-D  ERR-DIG
+ADEG       NO-DIM
+    0.3     0.0011
+ENDCOMMON            3
+DATA                 3          7
+ANG-CM     DATA       ERR-S
+ADEG       NO-DIM     NO-DIM
+       42.3     0.0509     0.0228
+       50.1    -0.0138     0.0152
+       70.1     0.0315     0.0114
+       90.1     0.0083     0.0417
+      110.1     0.0080     0.0190
+      130.1     0.0115     0.0152
+      137.5    -0.0418     0.0266
+ENDDATA              9
+ENDSUBENT           24
 ENDENTRY             4

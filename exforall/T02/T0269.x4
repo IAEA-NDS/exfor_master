@@ -1,6 +1,6 @@
-ENTRY            T0269   20040426              20050926       0000
-SUBENT        T0269001   20040426              20050926       0000
-BIB                 13         30
+ENTRY            T0269   20120326   20120530   20120515       T022
+SUBENT        T0269001   20120326   20120530   20120515       T022
+BIB                 14         38
 INSTITUTE  (1USAFSU)
 REFERENCE  (J,PR/C,6,1705,197205)
 AUTHOR     (A.W.Obst,K.W.Kemper)
@@ -12,32 +12,40 @@ SAMPLE     Target made by breaking a bubble blown from a quartz
 DETECTOR   (SIBAR) 15 Si surface-barrier detectors mounted in a
             ring.
 MONITOR    (79-AU-197(A,EL)79-AU-197,,DA)
-           Relative solid angles obtained by measuring alpha yield
-            from a gold target at 9 MeV.
-           Cross sections obtained by normalizing Si(alpha,alpha)
-            yield to yield from thin gold film at angles forward o
-            60 degrees.
+           Cross sections were obtained by normalizing the
+           Si(alpha,alpha) yield to the yield from a thin film of
+           gold on the Si02 target at angles forward of 60.degr.,
+           where Au(alpha,alpha) obeys Rutherford scattering up
+            to 28 MeV to within +-10%.
            Ratio of gold/quartz target thicknesses obtained by
-            measuring forward angle scattering at 6 MeV.
+           measuring forward angle scattering at 6 MeV. The
+           uncertainty in this ratio, and hence in the absolute
+           normalization, is about +-3%.
 CORRECTION Corrected for dead time, and isotopic abundance of 28Si
 ERR-ANALYS (DATA-ERR)  Relative uncertainties, scanned from
-            figures, due to statistical error, peak fiiting error,
-            and overall repeatability where data were repeated.
+            figures, due to:
+             * statistical error,
+             * peak fitting error and
+             * overall repeatability where data were repeated.
             Resulting errors range from 2% to 10% for ground-state
             3% to 15% for 2+ and 4+ levels, and 5% to 50% for 1st
             excited state.
+           (ERR-1) uncertainty in the absolute normalization
            (ERR-DIG)  Digitizing error in data.
 REL-REF    (N,,C.Bergman+,J,PR/C,3,1729,1971) Reference for
-            (8-O-16(A,EL)8-O-16,,DA) reaction used as consistancy
+            (8-O-16(A,EL)8-O-16,,DA) reaction used as consistency
             check.
+STATUS     (CURVE) all figures were scanned from PR/C,6,1705,1972
 HISTORY    (20040618C)
-ENDBIB              30
-COMMON               1          3
-E-RSL
-KEV
-200.
+           (20120326A) SD.  in Subents 4,5: Reaction code was
+           changed (SF6=SIG => SF6=IPA); ANG-MIN, ANG-MAX added
+ENDBIB              38
+COMMON               2          3
+EN-RSL     ERR-1
+KEV        PER-CENT
+ 200.          3.
 ENDCOMMON            3
-ENDSUBENT           37
+ENDSUBENT           45
 SUBENT        T0269002   20040426              20050926       0000
 BIB                  3          3
 REACTION   (14-SI-28(A,EL)14-SI-28,,DA)
@@ -1568,18 +1576,20 @@ MEV        ADEG       MEV        MB/SR      MB/SR
   4.97     171.9       26.97       0.4
 ENDDATA           1081
 ENDSUBENT         1094
-SUBENT        T0269004   20040426              20050926       0000
-BIB                  4          5
-REACTION   (14-SI-28(A,EL)14-SI-28,,SIG)
-ANALYSIS   (INTAD)
+SUBENT        T0269004   20120326   20120530   20120515       T022
+BIB                  5          7
+REACTION   (14-SI-28(A,EL)14-SI-28,,IPA)
+ANALYSIS   (INTAD) Angle-integrated excitation function
 ERR-ANALYS (EN-ERR-DIG)  Digitizing error in energy.
 STATUS     (DEP,T0269002)
            (CURVE) Scanned from Fig.5 in article at RFNC-VNIIEF.
-ENDBIB               5
-COMMON               2          3
-EN-ERR-DIG ERR-DIG
-MEV        MB
-  0.02       0.5
+HISTORY    (20120326A) SD.  Reaction code was changed (SF6=SIG =>
+                                SF6=IPA); ANG-MIN, ANG-MAX added
+ENDBIB               7
+COMMON               4          3
+ANG-MIN    ANG-MAX    EN-ERR-DIG ERR-DIG
+ADEG       ADEG       MEV        MB
+  30.         170.        0.02       0.5
 ENDCOMMON            3
 DATA                 3         53
 EN         DATA       DATA-ERR
@@ -1638,19 +1648,21 @@ MEV        MB         MB
  27.69      52.4        5.3
  27.95      49.7        5.3
 ENDDATA             55
-ENDSUBENT           69
-SUBENT        T0269005   20040702              20050926       0000
-BIB                  4          5
-REACTION   (14-SI-28(A,INL)14-SI-28,PAR,SIG)
+ENDSUBENT           71
+SUBENT        T0269005   20120326   20120530   20120515       T022
+BIB                  5          7
+REACTION   (14-SI-28(A,INL)14-SI-28,PAR,IPA)
 ANALYSIS   (INTAD)
 ERR-ANALYS (EN-ERR-DIG)  Digitizing error in energy.
 STATUS     (DEP,T0269003)
            (CURVE) Scanned from Fig.5 in article at RFNC-VNIIEF.
-ENDBIB               5
-COMMON               2          3
-EN-ERR-DIG ERR-DIG
-MEV        MB
- 0.02        0.3
+HISTORY    (20120326A) SD.  Reaction code was changed (SF6=SIG =>
+                                SF6=IPA); ANG-MIN, ANG-MAX added
+ENDBIB               7
+COMMON               4          3
+ANG-MIN    ANG-MAX    EN-ERR-DIG ERR-DIG
+ADEG       ADEG       MEV        MB
+  30.         170.        0.02       0.3
 ENDCOMMON            3
 DATA                 4        162
 E-LVL      EN         DATA       DATA-ERR
@@ -1818,5 +1830,5 @@ MEV        MEV        MB         MB
   4.97      27.73       3.6        0.8
   4.97      27.98       4.4        1.3
 ENDDATA            164
-ENDSUBENT          178
+ENDSUBENT          180
 ENDENTRY             5
