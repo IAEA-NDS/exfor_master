@@ -1,48 +1,157 @@
-ENTRY            41063   20020729   20030127   20050926       0000
-SUBENT        41063001   20020729   20030127   20050926       0000
-BIB                 12         24
+ENTRY            41063   20180303   20180525   20180525       4178
+SUBENT        41063001   20180303   20180525   20180525       4178
+BIB                 13         32
 INSTITUTE  (4RUSMIM)
-REFERENCE  (J,AE,68,(2),128,199002)  EXPERIMENTAL DETAILS ARE
-           GIVEN
-             IN THE SOVIET JOURNAL ''IZMERITEL'NAYA TECHNIKA''
-             (TECHNIC OF THE MEASUREMENTS), 1984, ISSUE 2, P.21-23
-AUTHOR     (N.N.MOISEEV,Z.A.RAMENDIK,V.T.SHCHEBOLEV)
-TITLE       PRECISION MEASUREMENT OF THE IN-115(N,INL)IN-115-M
-            REACTION CROSS-SECTION AT THE NEUTRON ENERGY 14.8 MEV
-METHOD     (ACTIV)
-DETECTOR   (NAICR) SCINTILLATION DETECTOR
-           (GELI)  SEMICONDUCTOR GAMMA-SPECTROMETER
+REFERENCE  (J,AE,68,128,1990) Issue 2
+           (J,SJA,68,153,1990) Engl.transl.of J,AE,68,128,1990
+             Experimental details are given
+             in the Soviet Journal ''Izmeritel'naya Technika''
+             (Technic of the Measurements), 1984, issue 2, p.21-23
+AUTHOR     (N.N.Moiseev,Z.A.Ramendik,V.T.Shchebolev)
+TITLE       Precision determination of the 115In(n,n')115mIn
+            cross section for 14.8-MeV neutrons
+FACILITY   (NGEN,4RUSMIM) Neutron generator,utilized deuteron beam
+INC-SPECT   Neutron flux density was determined by 3 methods:
+           - neutron-alpha coincidence,
+           - recoil-proton method (stilbene scin.spectrometer),
+           - associated particles method.
+METHOD     (ACTIV) Irradiation time 2-6 hr .
+SAMPLE      Metallic disk 20 mm diameter, 0.3 - 2.5 mm thickness ,
+           natural In.
 PART-DET   (G)
-MONITOR     ABSOLUTE MEASUREMENTS
-CORRECTION  CORRECTION WAS MADE ON THE SELF-ABSORPTION
-ERR-ANALYS (ERR-1)  ERROR OF NEUTRON FLUX DETERMINATION
-           (ERR-2)  ERROR OF NA-J DETECTOR CALIBRATION
-           (ERR-3)  ERROR OF PHOTOPEAK AREA DETERMINATIN
-                    FOR NA-J DETECTOR
-           (ERR-4)  ERROR OT PHOTOPEAK AREA DETERMINATION
-                    FOR GE-LI DETECTOR
-           (ERR-5)  ERROR DUE TO SELF-ABSORPTION
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-HISTORY    (19920311C)  + + COMPILED AT THE CENTRE - CJD + +
-           (20020729A) DATE is corrected
-ENDBIB              24
-COMMON               5          3
-ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-  0.1        0.5        0.3       1.2         0.2
+MONITOR     No information
+CORRECTION  Correction was made for the self-absorption,
+            for neutron flux fluctuation ,
+            for contribution of reaction
+           In-115(n,p)Cd-115 -> 53.46hr beta- -> In-115m -0.3-0.7%
+ASSUMED    (ASSUM,49-IN-115(N,P)48-CD-115,,SIG)
+HISTORY    (19920311C)  + + Compiled at the center - CJD + +
+           (20020729A) Date is corrected
+           (20180303A) M.M. Upper -> lower case correction.
+           Ref. SJA,68,153,1990 was added.
+           BIB information was updated.
+           Subents 003,004 were added.
+           ERR-ANALYS was moved from Subent 001 in Subents 003,004
+           and corrected according to Table 1 of SJA,68,153,1990
+ENDBIB              32
+COMMON               1          3
+ASSUM
+MB
+ 15.
 ENDCOMMON            3
-ENDSUBENT           31
-SUBENT        41063002   20020729   20030127   20050926       0000
-BIB                  3          3
+ENDSUBENT           39
+SUBENT        41063002   20180303   20180525   20180525       4178
+BIB                  5          9
 REACTION   (49-IN-115(N,INL)49-IN-115-M,,SIG)
-SAMPLE      METALLIC DISK 20 MM DIAMETER, 0.3 - 2.5 MM THICKNESS
+ANALYSIS    CS is average root-mean-square of two values directly
+           measured .
 DECAY-DATA (49-IN-115-M,4.486HR,DG,336.2,0.459)
-ENDBIB               3
+            4.486+-0.004 hr, 0.459+-0.001 .
+ERR-ANALYS (DATA-ERR) Total error
+STATUS     (TABLE) Text, page 155 of SJA,68,153,1990
+           (DEP,41063003) CS measured by NAICR
+           (DEP,41063004) CS measured by SCIN
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 4          1
-EN         EN-ERR     DATA       ERR-T
-MEV        MEV        MB         MB
-  14.79      0.15       64.3       0.7
+DATA                 6          1
+EN         EN-ERR     DATA       DATA-ERR   ERR-HL     ERR-IDD
+MEV        MEV        MB         MB         HR         NO-DIM
+  14.79      0.15       64.3       0.7       0.004      0.001
 ENDDATA              3
-ENDSUBENT           11
-ENDENTRY             2
+ENDSUBENT           17
+SUBENT        41063003   20180303   20180525   20180525       4178
+BIB                  5         28
+REACTION   (49-IN-115(N,INL)49-IN-115-M,,SIG)
+DETECTOR   (NAICR) Scintillation detector with NaI crystal of 63mm
+           diameter, 63mm height.
+DECAY-DATA (49-IN-115-M,4.486HR,DG,336.2,0.459)
+            4.486+-0.004 hr, 0.459+-0.001 .
+ERR-ANALYS (ERR-T) Total error defined as
+           SQRT( sum(STATi**2) + 1/3 * sum(SYSTi**2)), where
+           STATi , SYSTi are random and systematical errors,
+           respectively.
+             Random components ( STATi):
+           (ERR-1)      Neutron flux determination
+           (ERR-2)      Detector efficiency (calibration)
+           (ERR-3)      Photopeak area determination
+           (ERR-4)      Self-absorption correction
+             Systematical components (SYSTi) :
+           (ERR-5) Determination of neutron flux density
+           (ERR-6) Self-screening neutron flux in sample
+           (ERR-7) Contribution of scattered neutrons
+           (ERR-8) Determination of number of nuclei in sample
+           (ERR-9) Detector efficiency (calibration)
+           (ERR-10) Photopeak area determination
+           (ERR-11) Self-absorption correction
+           (ERR-12) Correction for (n,p) reaction contribution
+           (ERR-13) Decay data
+           (ERR-14) Geometry factor
+           (ERR-15) Time factor
+            Total error 1.4 % .
+STATUS     (TABLE) Text, page 155 of SJA,68,153,1990
+ENDBIB              28
+COMMON              15          9
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-6
+ERR-7      ERR-8      ERR-9      ERR-10     ERR-11     ERR-12
+ERR-13     ERR-14     ERR-15
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT
+ 0.1        0.5        0.3        0.2        0.9        0.1
+ 0.1        0.1        1.2        1.2        0.7        0.15
+ 0.25       0.2        0.05
+ENDCOMMON            9
+DATA                 6          1
+EN         EN-ERR     DATA       ERR-T      ERR-HL     ERR-IDD
+MEV        MEV        MB         MB         HR         NO-DIM
+  14.79      0.15       64.6       1.0       0.004      0.001
+ENDDATA              3
+ENDSUBENT           46
+SUBENT        41063004   20180303   20180525   20180525       4178
+BIB                  5         27
+REACTION   (49-IN-115(N,INL)49-IN-115-M,,SIG)
+DETECTOR   (GELI)  Semiconductor gamma-spectrometer with GeLi
+           detector  of effective volume 100 cm3; calibrated by
+           standard gamma-sources.
+DECAY-DATA (49-IN-115-M,4.486HR,DG,336.2,0.459)
+            4.486+-0.004 hr, 0.459+-0.001 .
+ERR-ANALYS (ERR-T) Total error defined as
+           SQRT( sum(STATi**2) + 1/3 * sum(SYSTi**2)), where
+           STATi , SYSTi are random and systematical errors,
+           respectively.
+             Random components ( STATi):
+           (ERR-1)      Neutron flux determination
+           (ERR-3)      Photopeak area determination
+             Systematical components (SYSTi) :
+           (ERR-5) Determination of neutron flux density
+           (ERR-6) Self-screening neutron flux in sample
+           (ERR-7) Contribution of scattered neutrons
+           (ERR-8) Determination of number of nuclei in sample
+           (ERR-9) Detector efficiency (calibration)
+           (ERR-10) Photopeak area determination
+           (ERR-11) Self-absorption correction
+           (ERR-12) Correction for (n,p) reaction contribution
+           (ERR-13) Decay data
+           (ERR-14) Geometry factor
+           (ERR-15) Time factor
+            Total error 1.9 % .
+STATUS     (TABLE) Text, page 155 of SJA,68,153,1990
+ENDBIB              27
+COMMON              13          9
+ERR-1      ERR-3      ERR-5      ERR-6      ERR-7      ERR-8
+ERR-9      ERR-10     ERR-11     ERR-12     ERR-13     ERR-14
+ERR-15
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+ 0.1        1.5        0.9        0.1        0.1        0.1
+ 1.3        0.7        0.7        0.15       0.25       0.3
+ 0.1
+ENDCOMMON            9
+DATA                 6          1
+EN         EN-ERR     DATA       ERR-T      ERR-HL     ERR-IDD
+MEV        MEV        MB         MB         HR         NO-DIM
+  14.79      0.15       63.6       1.2       0.004      0.001
+ENDDATA              3
+ENDSUBENT           45
+ENDENTRY             4

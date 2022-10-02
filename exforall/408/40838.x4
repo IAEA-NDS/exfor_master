@@ -1,64 +1,93 @@
-ENTRY            40838     870618              20050926       0000
-SUBENT        40838001     870618              20050926       0000
-BIB                 12         16
-TITLE       MEASUREMENTS OF THE DIFFERENCE OF MEAN KINETIC
-            ENERGIES OF NEUTRON FISSION SPECTRA FOR U-233,
-            U-235, PU-239 AND CF-252
-AUTHOR     (V.I.BOL'SHOV,G.N.SMIRENKIN)
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,AE,59,343,8511)
-MONITOR    (98-CF-252(0,F),PR,AKE,N)
-METHOD      METHOD OF GAMMA-QUANTA DISCRIMINATION
-FACILITY   (REAC)     REACTOR BR-10
-           (VDG)      ELECTROSTATIC ACCELERATOR
-DETECTOR   (SCIN)  STILBENE AND ANTRACENE CRYSTALS
-ANALYSIS    NEUTRON SPECTRA EVALUATION WAS MADE ON THE BASIS
-            OF MAXWELLIAN DISTRIBUTION FUNCTION
-ERR-ANALYS (ERR-T)  SUM OF STATISTICAL AND SYSTEMATIC ERRORS
-STATUS     (APRVD)  BOL'SHOV, 8505
-HISTORY    (870618C)  COMPILED AT CJD
-ENDBIB              16
-NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        40838002     870618              20050926       0000
+ENTRY            40838   20180303   20180525   20180525       4178
+SUBENT        40838001   20180303   20180525   20180525       4178
+BIB                 13         43
+TITLE       Measurements of the mean-energy difference in the
+            fission-neutron spectra of 233U, 235U, 239Pu, and
+            252Cf
+AUTHOR     (V.I.Vol'shov, G.N.Smirenkin)
+            Vol'shov (SJA) = Bol'shov (AE) ( wrong translation)
+INSTITUTE  (4RUSFEI)
+REFERENCE  (J,AE,59,343,1985)
+           (J,SJA,59,903,1985) Engl.transl.of J,AE,59,343,1985
+REL-REF    (R,40358001,Z.A.Aleksandrova+,J,AE,38,108,1975)Iss.2.
+            U-235, Pu-239 spectra for incident neutron energy
+           0.1MeV . (Series I)
+           (N,40358001,Z.A.Aleksandrova+,J,SJA,38,140,1975)
+           Engl.translation of AE,38,(2),108,1975)
+           (R,,V.I.Bol'shov+,J,YK,,(3/42),43,1981) =
+           (R,,V.I.Bol'shov+,R,INDC(CCP)-173,43,1981)
+            U-233,-235,Pu-239 fission neutron spectra for thermal
+           incident neutrons, Cf-252 SF neutron spectra.
+ASSUMED    (ASSUM,98-CF-252(0,F)0-NN-1,PR,KE)
+METHOD      Method of gamma-quanta discrimination.
+            Several series of measurement:
+             I - electrostatic generator, En=100 keV, stilbene
+            II - similar setup as I,neutron generator, En not give
+           III - Reactor BR-10, thermal neutrons.
+FACILITY   (REAC,4RUSFEI)     Reactor BR-10
+           (VDG,4RUSFEI)      Electrostatic accelerator
+DETECTOR   (SCIN)  Stilbene and antracene crystals
+ANALYSIS    Neutron spectra evaluation was made on the basis
+            of Maxwellian distribution function .
+            Data are mean weighted of 3 series.
+ERR-ANALYS (DATA-ERR)  Sum of statistical and systematic errors
+STATUS     (APRVD)  Bol'shov, 1985-05
+           (TABLE) Table 1 of SJA,59,903,1985
+HISTORY    (19870618C)  Compiled at CJD
+           (20180202A) M.M. Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            Ref. SJA,59,903,1985 was added.
+            REACTIONs were corrected:
+            (.....(N,F),PR,AKE,N)-(CF-252(0,F),PR,AKE,N) ->
+             (CF-252(0,F)0-NN-1,PR,KE)-(.....(N,F)0-NN-1,PR,KE).
+            EN-MIN/MAX -> E-MIN/MAX ( range of fission neutron
+           spectra energy), PAR was added in SF5.
+           EN-MIN/MAX were added in COMMON of Subent 001.
+            MONITOR -> ASSUMED, ASSUM added in COMMON .
+ENDBIB              43
+COMMON               3          3
+EN-MIN     EN-MAX     ASSUM
+EV         KEV        MEV
+ 0.025      100.       2.13
+ENDCOMMON            3
+ENDSUBENT           50
+SUBENT        40838002   20180303   20180525   20180525       4178
 BIB                  1          2
-REACTION   ((92-U-233(N,F),PR,AKE,N)-
-           (98-CF-252(0,F),PR,AKE,N))
+REACTION   ((98-CF-252(0,F)0-NN-1,PR/PAR,KE)-
+           (92-U-233(N,F)0-NN-1,PR/PAR,KE))
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 4          2
-EN-MIN     EN-MAX     DATA       ERR-T
+E-MIN      E-MAX      DATA       DATA-ERR
 MEV        MEV        KEV        KEV
  1.          8.         119.       23.
  1.         10.5        120.       22.
 ENDDATA              4
 ENDSUBENT           11
-SUBENT        40838003     870618              20050926       0000
-BIB                  2          3
-REACTION   ((92-U-235(N,F),PR,AKE,N)-
-           (98-CF-252(0,F),PR,AKE,N))
-SAMPLE      METALLIC DISKS OF U-235
-ENDBIB               3
+SUBENT        40838003   20180303   20180525   20180525       4178
+BIB                  1          2
+REACTION   ((98-CF-252(0,F)0-NN-1,PR/PAR,KE)-
+           (92-U-235(N,F)0-NN-1,PR/PAR,KE))
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 4          2
-EN-MIN     EN-MAX     DATA       ERR-T
+E-MIN      E-MAX      DATA       DATA-ERR
 MEV        MEV        KEV        KEV
   1.          8.        162.       8.
   1.         10.5       165.       8.
 ENDDATA              4
-ENDSUBENT           12
-SUBENT        40838004     870618              20050926       0000
-BIB                  2          3
-REACTION   ((94-PU-239(N,F),PR,AKE,N)-
-           (98-CF-252(0,F),PR,AKE,N))
-SAMPLE      METALLIC DISKS OF PU-239
-ENDBIB               3
+ENDSUBENT           11
+SUBENT        40838004   20180303   20180525   20180525       4178
+BIB                  1          2
+REACTION   ((98-CF-252(0,F)0-NN-1,PR/PAR,KE)-
+           (94-PU-239(N,F)0-NN-1,PR/PAR,KE))
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 4          2
-EN-MIN     EN-MAX     DATA       ERR-T
+E-MIN      E-MAX      DATA       DATA-ERR
 MEV        MEV        KEV        KEV
   1.         8.         74.        9.
   1.        10.5        76.        9.
 ENDDATA              4
-ENDSUBENT           12
+ENDSUBENT           11
 ENDENTRY             4

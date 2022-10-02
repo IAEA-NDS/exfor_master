@@ -1,82 +1,107 @@
-ENTRY            40897     860808              20050926       0000
-SUBENT        40897001     860808              20050926       0000
-BIB                 10         13
-TITLE       CROSS-SECTIONS OF THE REACTIONS (N,ALPHA-0),
-            (N,ALPHA-1), (N,ALPHA-2), (N,ALPHA-3), (N,ALPHA-4)
-            ON SI-28 AND (N,ALPHA-1) ON SI-29
-            AT THE NEUTRON ENERGY 14.1 MEV
-REFERENCE  (J,AE,58,(5),375,8505)
-AUTHOR     (L.I.KLOCHKOVA,B.S.KOVRIGIN)
-INSTITUTE  (4CCPTIL)
-DETECTOR   (SOLST)  SOLID STATE SILICON-LITHIUM DRIFT DETECTOR
-FACILITY            NEUTRON GENERATORNG-200
+ENTRY            40897   20180202   20180525   20180525       4178
+SUBENT        40897001   20180202   20180525   20180525       4178
+BIB                 10         22
+TITLE       Refinement of the Si-28 (n,alpha0), (n,alpha1),
+            (n,alpha2), (n,alpha3) and (n,alpha4) cross-sections
+             for 14.1-MeV neutrons
+REFERENCE  (J,AE,58,375,1985) Issue 5.
+           (J,SJA,58,433,1985) Engl.transl.of J,AE,58,375,1985
+            Subent 003 data.
+           (J,AE,42,(2),141,1977)
+           (J,SJA,42,158,1977) Engl.translation of AE,42,141,1977
+            Subent 002,003 data
+AUTHOR     (L.I.Klochkova,B.S.Kovrigin)
+INSTITUTE  (4RUSTIL)
+DETECTOR   (SOLST)  Solid state silicon-lithium drift detector
+FACILITY   (NGEN,4RUSTIL)  Neutron generator NG-200
 INC-SOURCE (D-T)
 PART-DET   (A,P)
 MONITOR    (14-SI-28(N,A)12-MG-25,,SIG)
-HISTORY    (860808C)    COMPILED AT CJD
-ENDBIB              13
+HISTORY    (19860808C)    Compiled at CJD
+           (20180202U) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Refs. SJA,58,433,1985, SJA,42,158,1977 were added.
+           BIB information was updated.
+           ERR-T -> DATA-ERR .
+ENDBIB              22
 COMMON               1          3
 EN
 MEV
  14.1
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        40897002     860808              20050926       0000
-BIB                  3          5
+ENDSUBENT           29
+SUBENT        40897002   20180202   20180525   20180525       4178
+BIB                  3          6
 REACTION   (14-SI-28(N,A)12-MG-25,PAR,SIG)
-REFERENCE  (J,AE,42,(2),141,7702)
-ERR-ANALYS (ERR-T)  TOTAL ERROR CONSIST OF NEUTRON FLUX ERROR
-                    DETECTOR SENSITIVE-LAYER-THICKNESS ERROR,
-                    ALPHA-PEACS DECOMPOSITION ERROR
-ENDBIB               5
+ERR-ANALYS (DATA-ERR)  Total error consist of neutron flux error
+                    detector sensitive-layer-thickness error,
+                    alpha-peaks decomposition error
+STATUS     (TABLE) Text of SJA,42,158,1977
+            Table 1 of SJA,58,433,1985
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          5
-LVL-NUMB   DATA       ERR-T
+LVL-NUMB   DATA       DATA-ERR
 NO-DIM     MB         MB
   0.         14.3       0.7
-  1.         6.6        0.3
-  2.         9.0        0.5
-  3.            12.         1.
-  4.            13.8        0.7
+  1.          6.6       0.3
+  2.          9.0       0.5
+  3.         12.        1.
+  4.         13.8       0.7
 ENDDATA              7
-ENDSUBENT           17
-SUBENT        40897003     860808              20050926       0000
+ENDSUBENT           18
+SUBENT        40897003   20180202   20180525   20180525       4178
 BIB                  3          6
 REACTION   (14-SI-29(N,A)12-MG-26,PAR,SIG)
-REFERENCE  (J,AE,42,(2),141,7702)
-ERR-ANALYS (ERR-T) TOTAL ERROR INCLUDE NEUTRON FLUX DETERMINATION
-                   ERROR, DETECTOR SENSITIVE-LAYER-THICKNESS
-                   DETERMINATION ERROR AND CROSS-SECTION ANALYSIS
-                   ERROR
+ERR-ANALYS (DATA-ERR) Total error includes neutron flux
+           determination error, detector sensitive-layer-thickness
+           error, determination error and cross-section analysis
+           error
+STATUS     (TABLE) Text of SJA,42,158,1977
 ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          2
-LVL-NUMB   DATA       ERR-T
+LVL-NUMB   DATA       DATA-ERR
 NO-DIM     MB         MB
  0.         2.4        0.3
  1.         7.3        0.9
 ENDDATA              4
 ENDSUBENT           15
-SUBENT        40897004     860808              20050926       0000
-BIB                  3          4
+SUBENT        40897004   20180202   20180525   20180525       4178
+BIB                  6         19
 REACTION   (14-SI-28(N,A)12-MG-25,PAR,SIG)
-REFERENCE  (J,AE,58,(5),375,8505)STATUS
-STATUS     (COREL,40897002)  NEW ANALYSIS OF THE OLD EXPERIMENTAL
-                             DATA WAS PERTORMED
-ENDBIB               4
+ANALYSIS    Response function given on fig.1 of SJA,58,433,1985
+            was approximated by formula (1).
+            Intensities of alpha1, alpha2, alpha3, alpha3, alpha4
+           were found to be in ratio 1:0.41:0.52:0.74:0.82 with
+           accuracy 3%.
+MONITOR    ((MONIT)14-SI-28(N,A)12-MG-25,PAR,SIG)  For Alpha0 .
+            Obtained as average value of 4 values 11.6,13.8, 13.3,
+           14.3 from REL-REFs
+REL-REF    (R,20929002,L.Colli+,J,NP,43,529,1963)
+           (R,,R.G.Miller+,J,NIM,48,13,1967)
+           (R,30702002,D.W.Mingay+,J,NIM,94,497,1971)
+           (R,40897002,L.I.Klochkova+,J,AE,42,(2),141,1977)
+ERR-ANALYS (DATA-ERR)  Total error consist of neutron flux error
+                    detector sensitive-layer-thickness error,
+                    alpha-peaks decomposition error
+STATUS     (TABLE) Text, page 436 of SJA,58,433,198
+           (COREL,40897002)  New analysis of the old experimental
+                             data was performed
+ENDBIB              19
 COMMON               2          3
 MONIT      MONIT-ERR
 MB         MB
  13.6       0.5
 ENDCOMMON            3
 DATA                 3          5
-LVL-NUMB   DATA       ERR-T
+LVL-NUMB   DATA       DATA-ERR
 NO-DIM     MB         MB
   0.        13.6        0.7
-  1.          5.6       .3
+  1.         5.6        .3
   2.         7.1        .3
-  3.           10.1        .5
-  4.            11.2       .5
+  3.        10.1        .5
+  4.        11.2        .5
 ENDDATA              7
-ENDSUBENT           20
+ENDSUBENT           35
 ENDENTRY             4

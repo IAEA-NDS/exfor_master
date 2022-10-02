@@ -1,110 +1,179 @@
-ENTRY            40743     970715              20050926       0000
-SUBENT        40743001     970715              20050926       0000
-BIB                  7         10
-AUTHOR     (I.A.KONDUROV)
-TITLE      .ABSORPTION CROSS SECTIONS MEASUREMENTS FOR RADIOACTIVE
-            NUCLEI
+ENTRY            40743   20180315   20180525   20180525       4178
+SUBENT        40743001   20180315   20180525   20180525       4178
+BIB                  7         18
+AUTHOR     (I.A.Kondurov, A.I.Egorov, M.Kaminker, E.M.Korotkikh,
+           A.M.Nikitin)
+TITLE       Neutron capture cross sections measurements for Co58m,
+            Cu64, and Sc46
 INSTITUTE  (4RUSFTI)
-REFERENCE  (J,AE,24,(6),533,68)  MAIN REFERENCE. DATA ARE GIVEN
-           (P,INDC-140,21,6606)
-METHOD     (BURN)   BURN-UP
-FACILITY   (REAC)   REACTOR WWR-M
-HISTORY    (840516T) CONVERTED FROM ENTRY 80143
-           (970710A) * * CORRECTED IN CJD - S.MAEV ***
-ENDBIB              10
+REFERENCE  (J,AE,24,533,1968) Is.6. Main reference. Data are given
+           (J,SJA,24,657,1968) Engl.transl.of J,AE,24,533,1968
+           (P,INDC-140,22,1966)
+            Co-58m, Sc-46 capture CS - preliminary data.
+METHOD     (BURN)   Burn-up
+FACILITY   (REAC,4RUSFTI)   Reactor WWR-M
+HISTORY    (19840516T) Converted from ENTRY 80143
+           (19970710A) * * Corrected in CJD - S.Maev ***
+           (20180315A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Ref. SJA,24,657,1968 was added.
+           BIB information was added.
+           Subent 008 was added.
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        40743002     970715              20050926       0000
-BIB                  4          6
+ENDSUBENT           21
+SUBENT        40743002   20180315   20180525   20180525       4178
+BIB                  4          7
 REACTION   (21-SC-46(N,G)21-SC-47,,SIG,,SPA)
-INC-SPECT   REACTOR SPECTRUM. CADMIUM RATIO IS 19.3 +- 0.6
-STATUS     (SCSRS)
+INC-SPECT   Reactor spectrum. cadmium ratio is 19.3 +- 0.6
+STATUS     (TABLE) P,INDC-140,22,1966
+           (PRELM)
            (SPSDD,40743007)
-HISTORY    (970710A)  DATA SUPERSEDED AS NOT CORRESPONDING
-                      TO THOSE GIVEN IN THE MAIN REFERENCE
-ENDBIB               6
+HISTORY    (19970710A)  Data superseded as not corresponding
+                      to those given in the main reference
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 EN-DUMMY   DATA-MAX
 MEV        B
  2.5300E-08 2.0000E+00
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40743003     970715              20050926       0000
-BIB                  5          5
-REACTION   (27-CO-58-M1(N,G)27-CO-59,,SIG,,SPA)
-INC-SPECT   REACTOR SPECTRUM.   CADMIUM RATIO IS 19.3 +- 0.6
-ASSUMED    (ASSUM,27-CO-59(N,G)27-CO-60,,SIG) FOR 2200 CM/SEC
-STATUS     (SCSRS)
-HISTORY    (970710U)  BIB-INFORMATION ADDED
+ENDSUBENT           15
+SUBENT        40743003   20180315   20180525   20180525       4178
+BIB                  5         12
+REACTION   (27-CO-58-M(N,G)27-CO-59,,SIG)
+ANALYSIS    SIG0 was derived from SPA cross section - see formula
+            (2) in SJA,24,657,1968 :
+            SIG0=SIGspa/(g+r*S0*SQRT(T/T0)), where
+           r*SQRT(T/T0) = 0.025+-0.02, S0=6.3+-1.2,
+           Westcott factor g was assumed to be 1. .
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article
+STATUS     (TABLE) Text, page 659 of SJA,24,657,1968
+           (DEP,40743008) SPA cross section
+HISTORY    (19970710U)  BIB-information added
+           (20180315A) M.M. EN-DUMMY -> EN, SPA deleted ( 2200
+           m/sec SIG0) .
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+ 0.0253       1.36E+05    1.0E+04
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        40743004   20180315   20180525   20180525       4178
+BIB                  4          5
+REACTION   (27-CO-58-M(N,G)27-CO-59,,RI)
+ANALYSIS   RI was derived from SIG0 : RI=1/2 * SQRT(PI*SIG0)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article
+STATUS     (TABLE) Text, page 662 of SJA,24,657,1968
+           (DEP,40743003) SIG0
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 5          1
-EN-DUMMY   DATA       DATA-ERR   ASSUM      ASSUM-ERR
-MEV        B          B          B          B
- 2.5300E-08 1.3600E+05 1.0000E+04       37.7        1.0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+MEV        B          B
+ 5.0000E-07   7.60E+05   1.60E+05
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        40743004     970715              20050926       0000
-BIB                  3          4
-REACTION   (27-CO-58-M1(N,G)27-CO-59,,RI)
-STATUS     (SCSRS)
-            .DATA CHECKED WITH MAIN REFERENCE
-ASSUMED    (ASSUM,27-CO-59(N,G)27-CO-60,,SIG) FOR 2200 CM/SEC
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 5          1
-EN-MIN     DATA       DATA-ERR   ASSUM      ASSUM-ERR
-MEV        B          B          B          B
- 5.0000E-07 7.6000E+05 1.6000E+05       37.7        1.0
-ENDDATA              3
-ENDSUBENT           12
-SUBENT        40743005     970715              20050926       0000
-BIB                  4          5
+SUBENT        40743005   20180315   20180525   20180525       4178
+BIB                  5          8
 REACTION   ((28-NI-58(N,P)27-CO-58-M,,SIG,,SPA)/
            (28-NI-58(N,P)27-CO-58,,SIG,,SPA))
-INC-SPECT   REACTOR SPECTRUM.  CADMIUM RATIO IA 19.3+-0.6
+INC-SPECT   Reactor spectrum.  Cd ratio is 19.3+-0.6 for Co59
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article
 STATUS     (SCSRS)
-HISTORY    (970710U)  BIB-INFO ADDED
-ENDBIB               5
+HISTORY    (19970710U)  BIB-info added
+           (20180315U) M.M. Data were not found in SJA,24,657,1968
+           INDC-140 is not available for checking
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM
  2.5300E-08 4.8000E-01 4.0000E-03
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40743006     970715              20050926       0000
-BIB                  5          5
+ENDSUBENT           16
+SUBENT        40743006   20180315   20180525   20180525       4178
+BIB                  8         11
 REACTION   (29-CU-64(N,G)29-CU-65,,SIG,,MXW)
-DETECTOR   (SCIN) SCINTILLATION SPECTROMETER
-INC-SPECT   REACTOR SPECTRUM. CADMIUM RATIO IS 19.3 +- 0.6
+DETECTOR   (SCIN) Scintillation spectrometer
+INC-SPECT   Reactor spectrum. Cd ratio is 19.3 +- 0.6 for Co59
+            Thermal neutron flux 2.E+14 n/cm2/sec.
 DECAY-DATA (29-CU-64,12.838HR,DG)
-HISTORY    (970710T) * * CONVERTED FROM SUBENT 80501004
-ENDBIB               5
+COMMENT     Of authors. Because error is too large, then only
+           conclusion was done, that this CS < 6000 b - upper
+           limit estimated as SIG+2*ERR with 95% probability.
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article
+STATUS     (TABLE) Text, page 660 of SJA,24,657,1968
+HISTORY    (19970710T) * * Converted from SUBENT 80501004
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 EV         B          B
- 2.5300E-02 2.1000E+03 1.9000E+03
+ 2.5300E-02  2.100E+03  1.900E+03
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40743007     970715              20050926       0000
-BIB                  7          8
-REACTION   (21-SC-46(N,G)21-SC-47,BA,SIG,,MXW)
-SAMPLE     SCANDIUM OXIDE
-INC-SPECT   REACTOR SPECTRUM. CADMIUM RATIO IS 19.3 +- 0.6
-DETECTOR   GERMANIUM SEMICONDUCTOR SPECTROMETER
-DECAY-DATA (21-SC-46-G,84.D,B-,889.,,B-,1119.)
-           (21-SC-47,3.4D,B-,157.)
+ENDSUBENT           19
+SUBENT        40743007   20180315   20180525   20180525       4178
+BIB                 10         15
+REACTION   (21-SC-46(N,G)21-SC-47,,SIG,,MXW)
+SAMPLE     Scandium oxide samples.
+INC-SPECT   Reactor spectrum. Cd ratio is 19.3 +- 0.6 for Co59
+DETECTOR   Germanium semiconductor spectrometer
+DECAY-DATA (21-SC-46-G,84.D,B-,,,DG,889.,,DG,1119.)
+           (21-SC-47,3.4D,B-,,,DG,157.)
+            Lines in measured gamma spectra of irradiated samples.
+METHOD     (ACTIV,CHSEP,GSPEC) Irradiation 1-10 days.
+           Single spectrum was measured 3-5 hr.
 ASSUMED    (ASSUM,21-SC-45(N,G)21-SC-46,,SIG,,MXW)
-HISTORY    (970710T) * * CONVERTED FROM SUBENT 80501005
-ENDBIB               8
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article
+STATUS     (TABLE) Text, page 662 of SJA,24,657,1968
+HISTORY    (19970710T) * * Converted from SUBENT 80501005
+           (20180315A) M.M. Decay data were corrected.
+            Code BA was deleted from SF5 .
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 EN-DUMMY   DATA       DATA-ERR   ASSUM
 EV         B          B          B
- 2.5300E-02 8.3000E+00 1.4000E+00 2.2000E+01
+ 2.5300E-02 8.3        1.4        2.2000E+01
 ENDDATA              3
-ENDSUBENT           16
-ENDENTRY             7
+ENDSUBENT           23
+SUBENT        40743008   20180315   20180525   20180525       4178
+BIB                 11         26
+REACTION   (27-CO-58-M(N,G)27-CO-59,,SIG,,SPA)
+SAMPLE     Co-58-M was produced via Ni-58(n,p) reaction at fast
+           neutron irradiation .
+INC-SPECT   Reactor spectrum. Cd ratio is 19.3 +- 0.6 for Co-59
+METHOD     Ni samples of 0.1-1.0 g were irradiated in the water
+           cavity of reactor at fast and thermal neutron flux of
+            (2-3)*10**13 and 2*10**14 n/cn2/sec, respectively.
+            Irradiation time 10-30 hr.
+            Irradiation without (2samples) and with (1 sample) Cd.
+           (CHSEP) Chemical separation (1hr) of Co from Ni was
+           employed.
+MONITOR     Thermal neutron flux was determined by Co monitors
+           with accuracy 3-4 %.
+DETECTOR   (SCIN) Co-58 activity was measured by scintillation
+           spectrometer during 2-3 days.
+ASSUMED    (ASSUM,27-CO-59(N,G)27-CO-60,,SIG) For 2200  m/sec
+            Co-58 capture CS at thermal point was defined as
+           weighted average of two values 1650+-150 and
+           3150+-150 b
+DECAY-DATA   CO-58-M mean lifetime 13.3+-0.2 hr measured ,
+            Isomeric transition 25 keV .
+           (27-CO-58-G,71.3D,DG,814.)
+ERR-ANALYS (ERR-1,3.,4.) Neutron flux uncertainty .
+           (DATA-ERR) Type of error is not explained in article
+STATUS     (TABLE) Text, page 659 of SJA,24,657,1968
+HISTORY    (20180315C) M.M.
+ENDBIB              26
+NOCOMMON             0          0
+DATA                 5          1
+EN-DUMMY   DATA       DATA-ERR   ASSUM      ASSUM-ERR
+EV         B          B          B          B
+ 0.0253       1.57E+05    1.0E+04       37.5        1.0
+ENDDATA              3
+ENDSUBENT           34
+ENDENTRY             8

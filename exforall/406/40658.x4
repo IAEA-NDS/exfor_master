@@ -1,38 +1,46 @@
-ENTRY            40658   20030128   20040112   20050926       0000
-SUBENT        40658001   20030128   20040112   20050926       0000
-BIB                  9         13
-TITLE       SPIN DEFENDENCE OF S-WAVE NEUTRON SCATTERING
-            CROSS-SECTION OF LI-7
-AUTHOR     (V.P.ALFIMENKOV, S.B.BORZAKOV, VO-VAN-TKHUAN',
-           YU.D.MAREEV, L.B.PIKEL'NER, G.RUBIN, A.S.KHRYKIN,
-           E.I.SHARAPOV)
+ENTRY            40658   20180225   20180525   20180525       4178
+SUBENT        40658001   20180225   20180525   20180525       4178
+BIB                  8         16
+TITLE       Spin dependence of the cross-section for scattering of
+            s-wave neutrons by Li-7
+AUTHOR     (V.P.Alfimenkov, S.B.Borzakov, Vo Van Tkhuan,
+           Yu.D.Mareev, L.B.Pikel'Ner, G.Rubin, A.S.Khrykin,
+           E.I.Sharapov)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,YF,35,(3),542,1982)
-FACILITY   (REAC) FAST PULSE REACTOR IBR-30
+REFERENCE  (J,YF,35,542,1982) Issue 3
+           (J,SNP,35,313,1982) Engl.transl.of J,YF,35,542,1982
+FACILITY   (REAC,4ZZZDUB) Fast pulse reactor IBR-30
 INC-SOURCE (REAC)
-ANALYSIS   (RFN)
-STATUS     (APRVD) SHARAPOV 831101
-HISTORY    (19840201C) COMPILED AT CJD
-           (20030128A) DATE is corrected
-ENDBIB              13
-NOCOMMON
-ENDSUBENT           16
-SUBENT        40658002   20030128   20040112   20050926       0000
-BIB                  6          9
+STATUS     (APRVD) Sharapov 1983-11-01
+HISTORY    (19840201C) Compiled at CJD
+           (20030128A) Date is corrected
+           (20180225A) M.M. Upper -> lower case correction.
+           Ref.SNP,35,313,1982 was added.
+           BIB information was updated.
+ENDBIB              16
+NOCOMMON             0          0
+ENDSUBENT           19
+SUBENT        40658002   20180225   20180525   20180525       4178
+BIB                  8         14
 REACTION   (3-LI-7(N,EL)3-LI-7,,SIG)
-METHOD     (TOF)  FLIGHT BASES ARE 118 M, 500M, 1000M, PULSE
-                  DURATION 4.5 MICROSEC
-SAMPLE      METALLIC CHEMICALly PURE LITHIUM
-            THICKNESS 0.81E22 ATOMS/CM-SQ
-ERR-ANALYS (ERR-1)  SYSTEMATIC ERROR
-DETECTOR   (SCIN)  4PI SCINTILLATION DETECTOR,PLEXIGLASS WITH
-                   ZN-S(AG)10-B
+METHOD     (TOF)  Flight bases are 118 m, 500m, 1000m, pulse
+                  duration 4.5 microsec
+SAMPLE      Metallic chemically pure lithium.
+            Thickness 7.81E22 atoms/cm2, diameter 178mm.
+ERR-ANALYS (ERR-1)  Systematic error
+           (MONIT-ERR,,0.6) Carbon  scattering cross-section
+           uncertainty < 0.6 % .
+           (ERR-S) Statistical error
+DETECTOR   (SCIN)  4PI scintillation detector,plexiglass with
+                   Zn-S(Ag)10-B
 MONITOR    (6-C-12(N,EL)6-C-12,,SIG)
-ENDBIB               9
-COMMON               3          3
-EN-NRM     MONIT-ERR  ERR-S
-KEV        PER-CENT   PER-CENT
-  2.        .6         1.5
+CORRECTION  For background ( measured without sample)
+STATUS     (TABLE) From author  Sharapov 1983-11-01
+ENDBIB              14
+COMMON               2          3
+EN-NRM     ERR-S
+KEV        PER-CENT
+  2.        1.5
 ENDCOMMON            3
 DATA                 4         18
 EN         EN-RSL     DATA       ERR-1
@@ -56,25 +64,36 @@ KEV        KEV        B          B
 66.         5.         1.04       0.03
 74.5        6.         1.06       0.045
 ENDDATA             20
-ENDSUBENT           38
-SUBENT        40658003   20030128   20040112   20050926       0000
-BIB                  7         10
-REACTION   (3-LI-7(N,EL)3-LI-7,POT,SIG)         DERIVED FROM
-                         POLARIZATION MEASUREMENTS
-METHOD     (TOF) FLIGHT BASES ARE 36M AND 116M
-DETECTOR   (PROPC) HELIUM COUNTER ON THE BASE 36M
-           (STANK) LIQUID SCINTILLATIONN COUNTER ON THE BASE 116M
-SAMPLE      METALLIC LITHIUM, THICKNESS IS 2.76E22 ATOMS/CM-SQ,
-            LI-7 CONTENTS IS 96.7 PERCENT, LI-6 CONTENT IS 3.3 PC
+ENDSUBENT           43
+SUBENT        40658003   20180225   20180525   20180525       4178
+BIB                 10         17
+REACTION   (3-LI-7(N,EL)3-LI-7,POT,SIG)         Derived from
+                         polarization measurements
+METHOD     (TOF,TRN) Flight bases are 36m and 116m
+DETECTOR   (PROPC) Helium counter on the base 36m
+           (STANK) Liquid scintillation  counter on the base 116m
+SAMPLE      Metallic lithium, thickness is 2.76e23 atoms/cm2 ,
+            Li-7 contents is 96.7 % , Li-6 content is 3.3 %
+           (3-LI-7,ENR=0.967)
 INC-SOURCE (POLNS,POLTR)
-MONITOR    (3-LI-6(N,EL)3-LI-6,,SIG)
-HISTORY    (20030128U)  REACTION SF9 CANCELLED
-ENDBIB              10
-NOCOMMON
+ASSUMED    (ASSUM,3-LI-6(N,ABS),,SIG)
+            Polarization absorption cross section
+REL-REF    (R,,H.Glaettli+,J,PRL,40,748,1978)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article.
+STATUS     (TABLE) Text, page 315 of SNP,35,313,1982
+HISTORY    (20030128U)  Reaction SF9 cancelled
+           (20180225A) M.M. MONITOR -> ASSUMED,
+            N,EL -> N,ABS , value was added in COMMON.
+ENDBIB              17
+COMMON               3          3
+ASSUM      ASSUM-ERR  EN-NRM
+B          B          EV
+1160.      50.         0.0709
+ENDCOMMON            3
 DATA                 5          1
 EN         DATA       DATA-ERR   POL-BM     POL-TR
 KEV        B          B          NO-DIM     NO-DIM
- 0.5        0.50       0.08        0.5        0.03
+ 0.5        0.56       0.08        0.5        0.03
 ENDDATA              3
-ENDSUBENT           18
+ENDSUBENT           29
 ENDENTRY             3

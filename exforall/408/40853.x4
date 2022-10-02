@@ -1,58 +1,74 @@
-ENTRY            40853     850429              20050926       0000
-SUBENT        40853001     850429              20050926       0000
-BIB                  9         16
-INSTITUTE  (4CCPRI)
-           (4CCPSUL)
-REFERENCE  (J,AE,56,(4),212,8404)
-AUTHOR     (E.A.GROMOVA,S.S.KOVALENKO,JU.A.NEMILOV,JU.A.SELICKIJ,
-           A.B.STEPANOV,A.M.FRIDKIN,V.B.FUNSHTEIN,V.A.JAKOVLEV,
-           G.V.VAL'SKIJ,G.A.PETROV)
-TITLE        FISSION CROSS-SECTION FOR SHORT-LIVING ISOMER
-             NP-236 BY THERMAL NEUTRONS
-FACILITY   (REAC,4CCPRI)
-           (CYCLO,4CCPSUL)
-SAMPLE       NP-236 NUCLEI WERE OBTAINED IN THE REACTION U-236(D,
-             2N)NP-236 ON THE CYCLOTRON AND SEPARATED BY RADIOCHE-
-             MICAL METHOD, NP-236 MASS IS 0.016 NANOGRAM
-DETECTOR   (TRD) MICA TRACK DETECTOR
-HISTORY    (850429C)
-ERR-ANALYS (ERR-1) ERROR DUE TO THE NP-236 NUMBER UNCERTAINTY
-ENDBIB              16
-COMMON               2          3
-ERR-1      ERR-S
-PER-CENT   PER-CENT
- 4.0000E+00 3.0000E+00
-ENDCOMMON            3
-ENDSUBENT           23
-SUBENT        40853002     860206              20050926       0000
-BIB                  4          5
-REACTION   (93-NP-236-M(N,F),,SIG,,MXW)
-INC-SPECT   THERMAL REACTOR SPECTRUM WHITH CADMIUM RATIO 10
-DECAY-DATA (93-NP-236-M,22.5HR,B-,,0.48)
-MONITOR    (92-U-235(N,F),,SIG)
-           (94-PU-236(N,F),,SIG)
-ENDBIB               5
+ENTRY            40853   20180303   20180525   20180525       4178
+SUBENT        40853001   20180303   20180525   20180525       4178
+BIB                  8         21
+INSTITUTE  (4RUSRI)
+           (4RUSSUL)
+REFERENCE  (J,AE,56,212,1984) Issue 4
+           (J,SJA,56,230,1984) Engl.transl.of J,AE,56,212,1984
+AUTHOR     (E.A.Gromova,S.S.Kovalenko,Yu.A.Nemilov,Yu.A.Selitskii,
+           A.B.Stepanov,A.M.Fridkin,V.B.Funshtein,V.A.Yakovlev,
+           G.V.Val'skiI,G.A.Petrov)
+TITLE       Thermal-neutron fission cross section of the
+            short-lived isomer of 236Np
+FACILITY   (REAC,4RUSRI)
+           (CYCLO,4RUSSUL) Deuteron energy 12.6 MeV.
+SAMPLE       Np-236 nuclei were obtained in the reaction
+            U-236(d,2n)Np-236 on the cyclotron and separated by
+           radiochemical method. Np-236 mass is 0.016 nanogram at
+           the beginning of measurement at the reactor.
+DETECTOR   (TRD) Mica track detectors. Efficiency 96+-1 %.
+HISTORY    (19850429C)
+           (20180303A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Ref. SJA,56,230,1984 was added.
+           ERR-ANALYS was corrected. BIB information was added.
+ENDBIB              21
 NOCOMMON             0          0
+ENDSUBENT           24
+SUBENT        40853002   20180303   20180525   20180525       4178
+BIB                  6         13
+REACTION   (93-NP-236-M(N,F),,SIG,,MXW)
+INC-SPECT   Thermal reactor spectrum with  cadmium ratio 10.0+-0.3
+           for U-235 and Cd thickness 2mm.
+DECAY-DATA (93-NP-236-M,22.5HR,B-,,0.48)
+            22.5+-0.4 HR , 0.48+-0.01
+MONITOR    ((MONIT1)92-U-235(N,F),,SIG)
+           ((MONIT2)94-PU-236(N,F),,SIG)
+            See formula (2) for CS calculation by monitors.
+ERR-ANALYS (ERR-T) Mean-square error , main contributions from:
+           (ERR-1) Error due to the Np-236 number uncertainty
+           (ERR-2)     Random component of parameter F error( see
+           formula (2) in SJA,56,230,1984 )
+STATUS     (TABLE) Text, page 232 of SJA,56,230,1984
+ENDBIB              13
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+ 3.         4.
+ENDCOMMON            3
 DATA                 8          1
 EN-DUMMY   DATA       ERR-T      MONIT1     MONIT1-ERR MONIT2
 MONIT2-ERR EN-NRM
 EV         B          B          B          B          B
 B          EV
- 2.5000E-02 2.7400E+03 1.4000E+02 5.8350E+02 1.3000E+00 1.6500E+02
- 2.0000E+01 2.5000E-02
+ 2.5000E-02 2740.      140.       583.5      1.3        165.
+ 20.        2.5000E-02
 ENDDATA              6
-ENDSUBENT           16
-SUBENT        40853003     850429              20050926       0000
-BIB                  2          3
+ENDSUBENT           28
+SUBENT        40853003   20180303   20180525   20180525       4178
+BIB                  4          6
 REACTION   (93-NP-236-M(N,F),,RI)
-MONITOR    (92-U-235(N,F),,RI)
-           (94-PU-236(N,F),,RI)
-ENDBIB               3
+MONITOR    ((MONIT1)92-U-235(N,F),,RI)
+           ((MONIT2)94-PU-236(N,F),,RI)
+            See formulas (3,4) for RI calculation by monitors.
+ERR-ANALYS (DATA-ERR) Total error
+STATUS     (TABLE) Text, page 232 of SJA,56,230,1984
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 6          1
-EN-MIN     DATA       ERR-T      MONIT1     MONIT1-ERR MONIT2
+EN-MIN     DATA       DATA-ERR   MONIT1     MONIT1-ERR MONIT2
 EV         B          B          B          B          B
- 6.0000E-01 7.0000E+02 4.0000E+02 2.7500E+02 5.0000E+00 9.6000E+02
+ 0.6        700.       400.       275.       5.         960.
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           14
 ENDENTRY             3

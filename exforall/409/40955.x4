@@ -1,54 +1,85 @@
-ENTRY            40955     920727              20050926       0000
-SUBENT        40955001     920727              20050926       0000
-BIB                 11         19
-TITLE       MEASUREMENT OF THE RESONANCE INTEGRAL AND EVALUATION
-            OF THE THERMAL NEUTRON ABSORPTION CROSS-SECTION
-            FOR THE RADIOACTIVE NUCLEUS CD-109
-AUTHOR     (M.P.ANIKINA,A.G.BEDA,A.V.DAVYDOV,M.M.KOROTKOV,
-           G.M.KUKAVADZE,L.YA.MEMELOVA)
-INSTITUTE  (4CCPITE)
-REFERENCE  (J,AE,62,(6),415,8706)
-FACILITY   (REAC) HEAVY-WATER REACTOR
-SAMPLE      CD-100 OBTAINED AFTER SILVEA IRRADIATION ON
-            A CYCLOTROV
+ENTRY            40955   20180202   20180525   20180525       4178
+SUBENT        40955001   20180202   20180525   20180525       4178
+BIB                 12         38
+TITLE       Measurement of the resonance integral and evaluation
+            of the absorption cross-section for thermal neutrons
+            for the radioactive Cd-109
+AUTHOR     (M.P.Anikina,A.G.Beda,A.V.Davydov,M.M.Korotkov,
+           G.M.Kukavadze,L.Ya.Memelova)
+INSTITUTE  (4RUSITE)
+REFERENCE  (J,AE,62,415,1987) Issue 6.
+           (J,SJA,62,483,1987) Engl.transl.of J,AE,62,415,1987
+FACILITY   (REAC,4RUSITE) Heavy-water reactor
+INC-SOURCE (REAC)
+SAMPLE      Cd-109 obtained after silver irradiation in
+            a cyclotron
 DETECTOR   (GELI)
-STATUS      FROM THE PUBLISHED SOURCE GIVEN UNDER 'REFERENCE'
-HISTORY    (880701C)  COMPILED AT THE CJD
-           (920727U) REFERENCE CODE CORRECTED, 'ASSUMED' IN
-                     'MONITOR' CONVERTED, EN-NRM AND EN-NRM-MIN
-                     DELETED
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-MONITOR    (48-CD-108(N,ABS),,SIG)
-           (48-CD-108(N,ABS),,RI)
-ENDBIB              19
-COMMON               4          3
-MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
-B          B          B          B
- 1.1         .3        12.8       1.8
-ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        40955002     880701              20050926       0000
-BIB                  2          3
-REACTION   (48-CD-109(N,ABS),,SIG,,SPA)  AVERAGED OVER REACTOR
-                                         THERMAL SPECTRUM
-INC-SPECT   REACTOR THERMAL NEUTRON SPECTRUM
-ENDBIB               3
+ERR-ANALYS (DATA-ERR)  Not specified
+METHOD     (ACTIV)  Irradiation with and without Cd.
+            Irradiation time 306.44 hr.
+            Gamma-activity of samples:
+           Sample number 1 :
+           Irradiation           in Cd 1mm thick
+           Activity ratio A1/A3
+           before irradiation    0.84083+-0.00085
+           after irradiation     0.83273+-0.00117
+           Sample number 2 :
+           Irradiation           without Cd
+           Activity ratio A2/A3
+           before irradiation    1.26833+-0.00145
+           after irradiation     1.25286+-0.00207
+DECAY-DATA (48-CD-109,,DG,88.)
+HISTORY    (19880701C)  Compiled at the CJD
+           (19920727U) Reference Code Corrected, 'ASSUMED' in
+                     'MONITOR' converted, EN-NRM and EN-NRM-MIN
+                     deleted
+           (20180202A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Ref. SJA,62,483,1987 was added.
+           MONITOR -> ASSUM ( not directly proportional values,
+           see formula1 9,10 in SJA,62,483,1987 ) and moved in
+           data Subents.
+ENDBIB              38
 NOCOMMON             0          0
+ENDSUBENT           41
+SUBENT        40955002   20180202   20180525   20180525       4178
+BIB                  4          7
+REACTION   (48-CD-109(N,ABS),,SIG,,SPA)  Averaged over reactor
+                                         thermal spectrum
+INC-SPECT   Reactor thermal neutron spectrum.
+           Thermal flux was determined by Co monitor :
+            (1.342+-0.052)*10**13
+ASSUMED    (ASSUM1,48-CD-108(N,ABS),,SIG)
+STATUS     (TABLE) Text page 484 of SJA,62,483,1987
+ENDBIB               7
+COMMON               2          3
+ASSUM1     ASSUM1-ERR
+B          B
+ 1.1         .3
+ENDCOMMON            3
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 EV         B          B
  0.0253     184.       180.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        40955003     880701              20050926       0000
-BIB                  1          1
+ENDSUBENT           19
+SUBENT        40955003   20180202   20180525   20180525       4178
+BIB                  4          5
 REACTION   (48-CD-109(N,ABS),,RI)
-ENDBIB               1
-NOCOMMON             0          0
+INC-SPECT  Epithermal flux was determined by Co monitor :
+             (1.332+-0.060)*10**12 n/cm2/sec
+ASSUMED    (ASSUM2,48-CD-108(N,ABS),,RI)
+STATUS     (TABLE) Text page 484 of SJA,62,483,1987
+ENDBIB               5
+COMMON               2          3
+ASSUM2     ASSUM2-ERR
+B          B
+ 12.8       1.8
+ENDCOMMON            3
 DATA                 3          1
 EN-MIN     DATA       DATA-ERR
 EV         B          B
   0.5        6.720E+03    1.2E+03
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           17
 ENDENTRY             3

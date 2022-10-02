@@ -1,37 +1,74 @@
-ENTRY            40719     910128              20050926       0000
-SUBENT        40719001     910128              20050926       0000
-BIB                 10         13
-INSTITUTE  (4CCPITE)
-REFERENCE  (J,EON,2,77,6502)
-           (J,AE,16,(2),110,64) EXPERIMENTAL DETAILS AND
-                                RESONANCE ENERGIES
-AUTHOR     (K.G.IGNATIEV,I.V.KIRPICHNIKOV)
-TITLE       ABSORTION CROSS-SECTION MEASUREMENTS AND RESONANCE
-            PARAMETERS FOR PU239.
-METHOD     (TOF) TIME-OF-FLIGHT, RESOLUTION 0.02 MICROSEC/M
-DETECTOR   (NAICR) NA-J(TL) CRYSTAL
-SAMPLE      METALLIC FOIL, THICKNESS 0.001325 NUCLEI/BARN
-MONITOR     (ABSOLUTE MEASUREMENTS)
+ENTRY            40719   20180330   20180525   20180525       4178
+SUBENT        40719001   20180330   20180525   20180525       4178
+BIB                 12         38
+INSTITUTE  (4RUSITE)
+REFERENCE  (J,EON,2,77,1965)
+REL-REF    (M,,K.O.Ignatev+,R,INDSWG-7E,1963)=
+           (M,,K.O.Ignatev+,R,INDC(CCP)-001,1963) -001 = *001
+            Measurement by B(10)H(14)+ZnS(Ag) crystal scin.counter
+                           =R,INDC(IAE)*002R,1963
+           (O,40156001,K.G.Ignat'ev+,J,AE,16,110,1964) Issue 2.
+            U-235 CS, ALF, ETA; Pu-239 CS (data from authors)
+            Method of measurement.
+           (O,40157001,K.G.Ignat'ev+,J,AE,16,110,1964) Issue 2.
+            U-235 widths (superseded by Kirpichnikov revision),
+           Pu-239 total widths. Previous measurement.
+            (different measurement? detector is not mentioned.)
+           (N,,K.G.Ignat'ev+,J,SJA,16,121,1964)
+            Engl.transl.of AE,16,(2),110,1964
+            Different data in Table 2 of INDC(CCP)*001 and
+             in Table 2 of SJA,16,121,1963 from Subent 002 data.
+AUTHOR     (K.G.Ignat'ev,I.V.Kirpichnikov)
+TITLE       Absorption cross-section measurements and resonance
+            parameters for Pu-239.
+FACILITY   (CYCLO,4RUSITE)
+METHOD     (TOF) Time-of-flight, resolution 0.02 microsec/m
+           (TRN)
+DETECTOR   (NAICR) Four Na-I(Tl) crystals 8cm diameter, 8-10 cm
+           high. Placed inside a lead shield up to 50cm thickness.
+           Crystals were covered by 1cm boron carbide.
+           Used as gamma detector.
+SAMPLE      Metallic foil, thickness 0.001325 nuclei/barn
+MONITOR     No information
 ASSUMED    (ASSUM,94-PU-239(N,G),,WID)
-HISTORY    (910128U) INSTITUTE CODE 'CCP' CHANGED TO 'ITE'
-ENDBIB              13
+HISTORY    (19910128U) Institute code 'CCP' changed to 'ITE'
+           (20180330A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Refs. R,INDSWG-7E,1963, R,INDC(IAE)*002R,1963,
+           R,INDC(CCP)*001,1963, SJA,16,121,1963 were added.
+           BIB information was updated.
+            Refs.INDSWG-7E,1963 and AE,16,(2),110,1964 were
+            moved in REL-REF .
+ENDBIB              38
 COMMON               1          3
 ASSUM
 MILLI-EV
 40.
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        40719002     841024              20050926       0000
-BIB                  3          5
-REACTION   ((94-PU-239(N,ABS),,ETA)/
-           (94-PU-239(N,F),,NU))
-STATUS     (SCSRS)
-           (COREL,40156002)
-HISTORY    (840423T) CONVERTED FROM SUBENTRY 80126002
-ENDBIB               5
+ENDSUBENT           45
+SUBENT        40719002   20180330   20180525   20180525       4178
+BIB                  6         17
+REACTION   ((94-PU-239(N,F),,WID)/
+           (94-PU-239(N,G),,WID))
+ANALYSIS   Normalization was done by two resonances 7.84, 15.5 eV,
+           using GAMMAfis/GAMMAabs 0.465 and 0.9 , respectively,
+           from REL-REF:
+REL-REF    (R,40157001,K.G.Ignat'ev+,J,AE,16,110,1964) Issue 2.
+           (R,40157001,K.G.Ignat'ev+,J,SJA,16,121,1964)
+            Engl.transl.of AE,16,(2),110,1964
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article.
+STATUS     (TABLE) Table 1 of J,EON,2,77,1965
+           (COREL,40156002) Earlier data
+HISTORY    (19840423T) Converted from SUBENTRY 80126002
+           (20180330A) Reaction was corrected as given in Table
+            ((94-PU-239(N,ABS),,ETA)/(94-PU-239(N,F),,NU))
+            ->
+            ((94-PU-239(N,F),,WID)/(94-PU-239(N,G),,WID))
+             EN -> EN-RES
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 3         21
-EN         DATA       DATA-ERR
+EN-RES     DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM
  7.8400E-06 4.6000E-01 5.0000E-02
  1.0950E-05 6.7000E-01 6.0000E-02
@@ -55,29 +92,31 @@ MEV        NO-DIM     NO-DIM
  8.5600E-05 6.1000E-01 5.0000E-02
  9.0300E-05 2.9000E-01 6.0000E-02
 ENDDATA             23
-ENDSUBENT           33
-SUBENT        40719003     841024              20050926       0000
-BIB                  3          3
+ENDSUBENT           45
+SUBENT        40719003   20180330   20180525   20180525       4178
+BIB                  4          5
 REACTION   (94-PU-239(N,F),,WID)
-STATUS     (SCSRS)
-HISTORY    (840423T) CONVERTED FROM SUBENTRY 80126004
-ENDBIB               3
+ANALYSIS    GAMMAfission=GAMMAgamma/(GAMMAabs/GAMMAf-1),
+           GAMMAgamma= 40 millieV.
+STATUS     (TABLE) Table 3 of J,EON,2,77,1965
+HISTORY    (19840423T) converted from SUBENTRY 80126004
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 2          5
 EN-RES     DATA
 MEV        MILLI-EV
- 4.1700E-05 1.3000E+01
- 4.4600E-05 5.5000E+00
- 5.2600E-05 2.3000E+01
- 6.5900E-05 8.9000E+01
- 7.5000E-05 1.2000E+02
+ 41.7       13.
+ 44.6       6.5
+ 52.6       23.
+ 65.9       89.
+ 75.0       120.
 ENDDATA              7
-ENDSUBENT           15
-SUBENT        40719004     841024              20050926       0000
+ENDSUBENT           17
+SUBENT        40719004   20180330   20180525   20180525       4178
 BIB                  3          3
 REACTION   (94-PU-239(N,0),,EN)
-STATUS     (SCSRS)
-HISTORY    (840423T) CONVERTED FROM SUBENTRY 80126005
+STATUS     (TABLE) Text,page 78 of J,EON,2,77,1965
+HISTORY    (19840423T) Converted from SUBENTRY 80126005
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 1         13
@@ -98,12 +137,18 @@ MEV
  2.7000E-04
 ENDDATA             15
 ENDSUBENT           23
-SUBENT        40719005     841024              20050926       0000
-BIB                  3          3
+SUBENT        40719005   20180330   20180525   20180525       4178
+BIB                  6          9
 REACTION   (94-PU-239(N,EL),,WID)
-STATUS     (SCSRS)
-HISTORY    (840423T) CONVERTED FFOM SUBENTRY 80126006
-ENDBIB               3
+ANALYSIS    Average values from this work and from previous
+            (see REL-REF)
+REL-REF    (R,40157001,K.G.Ignat'ev+,J,AE,16,110,1964) Issue 2.
+           (R,40157001,K.G.Ignat'ev+,J,SJA,16,121,1964)
+            Engl.transl.of AE,16,(2),110,1964
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article.
+STATUS     (TABLE) Table 3 of J,EON,2,77,1965
+HISTORY    (19840423T) Converted from SUBENTRY 80126006
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          5
 EN-RES     DATA       DATA-ERR
@@ -114,29 +159,31 @@ MEV        MILLI-EV   MILLI-EV
  6.5900E-05 1.9500E+01 4.0000E+00
  7.5000E-05 2.5000E+01 5.0000E+00
 ENDDATA              7
-ENDSUBENT           15
-SUBENT        40719006     841024              20050926       0000
+ENDSUBENT           21
+SUBENT        40719006   20180330   20180525   20180525       4178
 BIB                  3          3
 REACTION   (94-PU-239(N,0),,J)
-STATUS     (SCSRS)
-HISTORY    (840423T) CONVERTED FROM SUBENTRY 80126007
+STATUS     (TABLE) Table 3 of J,EON,2,77,1965
+HISTORY    (19840423T) Converted from SUBENTRY 80126007
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          5
 EN-RES     DATA
 MEV        NO-DIM
- 4.1700E-05 0.0000E+00
- 4.4600E-05 1.0000E+00
- 5.2600E-05 0.0000E+00
- 6.5900E-05 0.0000E+00
- 7.5000E-05 1.0000E+00
+ 4.1700E-05 0.
+ 4.4600E-05 1.
+ 5.2600E-05 0.
+ 6.5900E-05 0.
+ 7.5000E-05 1.
 ENDDATA              7
 ENDSUBENT           15
-SUBENT        40719007     841024              20050926       0000
-BIB                  2          2
+SUBENT        40719007   20180330   20180525   20180525       4178
+BIB                  4          4
 REACTION   ((94-PU-239(N,ABS),,WID)/(94-PU-239(N,TOT),,WID))
-HISTORY    (840423C) COMPILED AT THE CENTRE
-ENDBIB               2
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article.
+STATUS     (TABLE) Table 3 of J,EON,2,77,1965
+HISTORY    (19840423C) Compiled at the center
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          5
 EN-RES     DATA       DATA-ERR
@@ -147,12 +194,14 @@ EV         NO-DIM     NO-DIM
  65.9       .72        .10
  75.0       .97        .10
 ENDDATA              7
-ENDSUBENT           14
-SUBENT        40719008     841024              20050926       0000
-BIB                  2          2
+ENDSUBENT           16
+SUBENT        40719008   20180330   20180525   20180525       4178
+BIB                  4          4
 REACTION   ((94-PU-239(N,F),,SIG)/(94-PU-239(N,ABS),,SIG))
-HISTORY    (840423T) COMPILED AT THE CENTRE
-ENDBIB               2
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article.
+STATUS     (TABLE) Table 2 of J,EON,2,77,1965
+HISTORY    (19840423T) Compiled at the center
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 4          4
 EN-MIN     EN-MAX     DATA       DATA-ERR
@@ -162,5 +211,5 @@ EV         EV         NO-DIM     NO-DIM
  40.        106.       .63         .07
 106.        210.       .57         .10
 ENDDATA              6
-ENDSUBENT           13
+ENDSUBENT           15
 ENDENTRY             8

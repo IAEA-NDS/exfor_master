@@ -1,45 +1,61 @@
-ENTRY            41020     900713              20050926       0000
-SUBENT        41020001     900713              20050926       0000
-BIB                 11         23
-TITLE       THE FAST NEUTRON RADIATION CAPTURE FOR DYSPROSIUM
-            ISOTOPES
-AUTHOR     (M.V.BOKHOVKO,L.E.KAZAKOV,V.N.KONONOV,E.D.POLETAEV,
-           V.M.TIMOKHOV)
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,YK,,(4),8,8811)  DATA  TABLES ARE GIVEN
-MONITOR     ABSOLUTE MEASUREMENTS
+ENTRY            41020   20180325   20180525   20180525       4178
+SUBENT        41020001   20180325   20180525   20180525       4178
+BIB                 13         35
+TITLE       The neutron capture cross-sections of fast neutron
+           for dysprosium isotopes.
+AUTHOR     (M.V.Bokhovko,L.E.Kazakov,V.N.Kononov,E.D.Poletaev,
+           V.M.Timokhov)
+INSTITUTE  (4RUSFEI)
+REFERENCE  ((J,YK,,(4),8,1988)=
+           (R,INDC(CCP)-299,8,1988))
+            Data tables are given
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)   At EN < 120keV
+           (5-B-10(N,A)3-LI-7,,SIG)  At EN >120 keV
+            For neutron flux.
+           (79-AU-197(N,G)79-AU-198,,SIG)
+            Au197 - to determine normalization coefficient K.
+MONIT-REF  (,,3,ENDF/B-V,,1978)
 METHOD     (TOF)
-FACILITY   (VDG)  VAN-DE-GRAAFF EG-1 ACCELERATOR
-DETECTOR   (STANK) LIQUID SCINTILLATION DETECTOR
-           (GLASD) GLASS LI-6 DETECTOR FOR RELATIVE NEUTRON FLUX
-                   MEASUREMENTS
+FACILITY   (VDG,4RUSFEI)  Van-de-Graaff EG-1 accelerator,
+            pulse duration 2-3nsec, frequency  500 kHz, average
+           current 2microA.
+INC-SOURCE (P-LI7)
+DETECTOR   (STANK) Liquid scintillation detector
+           (GLASD) Glass Li-6 detector for relative neutron flux
+                   measurements
            (NAICR)
-ERR-ANALYS (ERR-S)  MAXIMUM STATISTICAL ERROR
-           (ERR-1)  MAXIMUM ERROR CONNECTED WITH BACKGROUND
-                    EXTRACTION
-           (ERR-2)  MAXIMUM NORMALIZATION ERROR
-           (ERR-3)  MAXIMUM ERROR OF THE RELATIVE CROSS-SECTION
-                    ENERGY DEPENDENCE
-           (ERR-4)  MAXIMUM ERROR DUE TO THE FINITE SAMPLE
-                    THICKNESS
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-HISTORY    (900712C)  -- COMPILED AT THE CENTRE - CJD  --
-ENDBIB              23
-COMMON               5          3
-ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-  6.         13.        6.         2.5        3.
+ERR-ANALYS (ERR-T) Total error
+           (ERR-2,4.5,6.) Normalization error
+           (ERR-3,1.,2.) Error of Li-6(N,d) reaction CS,
+           (ERR-4)  Error of B-10(n,d) reaction CS,
+           (ERR-5,2.,3.) Error due to corrections .
+CORRECTION For gammas self-absorption in sample, resonance
+           blocking, multiple scattering.
+HISTORY    (19900712C)  -- Compiled at the center - CJD  --
+           (20180325A) M.M. Upper -> lower case correction .
+           Dates were corrected for 4-digits year.
+           Ref. INDC(CCP)-299,8,1988 was added.
+           BIB information was updated in ERR-ANALYS, MONITOR
+ENDBIB              35
+COMMON               1          3
+ERR-4
+PER-CENT
+  2.5
 ENDCOMMON            3
-ENDSUBENT           30
-SUBENT        41020002     900713              20050926       0000
-BIB                  2          6
+ENDSUBENT           42
+SUBENT        41020002   20180325   20180525   20180525       4178
+BIB                  4         10
 REACTION   (66-DY-160(N,G)66-DY-161,,SIG)
-SAMPLE      DYSPROSIUM OXIDE DY2-O3, DENTSITY 7.81GRAM/CM2,
-            THICKNESS 5.97E-03 ATOMS/B, ISOTOPIC MASS IS 22.90
-            GRAM,                      DY-160 CONTENT - 63.31 PC,
-            DY-161 CONTENT - 21.58 PC, DY-162 CONTENT -  7.59 PC,
-            DY-163 CONTENT -  7.59 PC, DY-164 CONTENT -  3.35 PC,
-ENDBIB               6
+SAMPLE      Dysprosium oxide Dy2-O3, density  7.81gram/cm2,
+            thickness 5.97E-03 atoms/b, isotopic mass is 22.90g,
+                                       Dy-160 content - 63.31 % ,
+            Dy-161 content - 21.58 % , Dy-162 content -  7.59 % ,
+            Dy-163 content -  7.59 % , Dy-164 content -  3.35 % ,
+ERR-ANALYS (ERR-S,3.,4.) Statistical error
+           (ERR-1,0.5,13.)  Error due to background subtraction
+           for TOF spectra - 13% at 5keV, 0.5% at En>30 keV.
+STATUS     (TABLE) Table 2 of INDC(CCP)-299,8,1988
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         49
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -94,16 +110,20 @@ KEV        KEV        MB         MB
  420.       440.        205.        13.
  440.       460.        200.        13.
 ENDDATA             51
-ENDSUBENT           62
-SUBENT        41020003     900713              20050926       0000
-BIB                  2          6
+ENDSUBENT           66
+SUBENT        41020003   20180325   20180525   20180525       4178
+BIB                  4         10
 REACTION   (66-DY-161(N,G)66-DY-162,,SIG)
-SAMPLE      DYSPROSIUM OXIDE DY2-O3, DENTSITY 7.81GRAM/CM2,
-            THICKNESS 9.02E-03 ATOMS/B, ISOTOPIC MASS IS 34.65 G,
-            GRAM,                      DY-160 CONTENT -  0.49 PC,
-            DY-161 CONTENT - 92.2  PC, DY-162 CONTENT -  5.48 PC,
-            DY-163 CONTENT -  1.17 PC, DY-164 CONTENT -  0.66 PC,
-ENDBIB               6
+SAMPLE      Dysprosium oxide Dy2-O3, density  7.81gram/cm2,
+            thickness 9.02E-03 atoms/b, isotopic mass is 34.65 g,
+                                       Dy-160 content -  0.49 % ,
+            Dy-161 Content - 92.2  % , Dy-162 content -  5.48 % ,
+            Dy-163 content -  1.17 % , Dy-164 content -  0.66 % ,
+ERR-ANALYS (ERR-S,1.,2.) Statistical error
+           (ERR-1,0.5,10.)  Error due to background subtraction
+           for TOF spectra - 5-10% at 20 keV, 0.5-1.% at En>70 keV
+STATUS     (TABLE) Table 2 of INDC(CCP)-299,8,1988
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         49
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -158,16 +178,20 @@ KEV        KEV        MB         MB
  420.       440.        247.         14.
  440.       460.        245.         14.
 ENDDATA             51
-ENDSUBENT           62
-SUBENT        41020004     900713              20050926       0000
-BIB                  2          6
+ENDSUBENT           66
+SUBENT        41020004   20180325   20180525   20180525       4178
+BIB                  4         10
 REACTION   (66-DY-162(N,G)66-DY-163,,SIG)
-SAMPLE      DYSPROSIUM OXIDE DY2-O3, DENTSITY 7.81GRAM/CM2,
-            THICKNESS 8.97E-03 ATOMS/B, ISOTOPIC MASS IS 34.63 G,
-            GRAM,                      DY-160 CONTENT -  0.1  PC,
-            DY-161 CONTENT -  1.02 PC, DY-162 CONTENT - 95.1  PC,
-            DY-163 CONTENT -  3.12 PC, DY-164 CONTENT -  0.76 PC,
-ENDBIB               6
+SAMPLE      Dysprosium oxide Dy2-O3, density  7.81gram/cm2,
+            thickness 8.97E-03 atoms/b, isotopic mass is 34.63 g,
+                                       Dy-160 content -  0.1  % ,
+            Dy-161 content -  1.02 % , Dy-162 content - 95.1  % ,
+            Dy-163 content -  3.12 % , Dy-164 content -  0.76 % ,
+ERR-ANALYS (ERR-S,3.,4.) Statistical error
+           (ERR-1,0.5,10.)  Error due to background subtraction
+           for TOF spectra - 5-10% at 20 keV, 0.5-1.% at En>70 keV
+STATUS     (TABLE) Table 2 of INDC(CCP)-299,8,1988
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         49
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -222,16 +246,20 @@ KEV        KEV        MB         MB
  420.       440.         92.         6.
  440.       460.         93.         6.
 ENDDATA             51
-ENDSUBENT           62
-SUBENT        41020005     900713              20050926       0000
-BIB                  2          6
+ENDSUBENT           66
+SUBENT        41020005   20180325   20180525   20180525       4178
+BIB                  4         10
 REACTION   (66-DY-163(N,G)66-DY-164,,SIG)
-SAMPLE      DYSPROSIUM OXIDE DY2-O3, DENTSITY 7.81GRAM/CM2,
-            THICKNESS 8.89E-03 ATOMS/B, ISOTOPIC MASS IS 34.53
-            GRAM,                      DY-160 CONTENT -  0.2  PC,
-            DY-161 CONTENT -  0.22 PC, DY-162 CONTENT -  1.27 PC,
-            DY-163 CONTENT - 92.5  PC, DY-164 CONTENT -  6.01 PC,
-ENDBIB               6
+SAMPLE      Dysprosium oxide Dy2-O3, density  7.81gram/cm2,
+            thickness 8.89E-03 atoms/b, isotopic mass is 34.53 g,
+                                       Dy-160 content -  0.2  % ,
+            Dy-161 content -  0.22 % , Dy-162 content -  1.27 % ,
+            Dy-163 content - 92.5  % , Dy-164 content -  6.01 % ,
+ERR-ANALYS (ERR-S,3.,4.) Statistical error
+           (ERR-1,0.5,10.)  Error due to background subtraction
+           for TOF spectra - 5-10% at 20 keV, 0.5-1.% at En>70 keV
+STATUS     (TABLE) Table 2 of INDC(CCP)-299,8,1988
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         49
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -286,16 +314,20 @@ KEV        KEV        MB         MB
  420.       440.         141.         9.
  440.       460.         146.         9.
 ENDDATA             51
-ENDSUBENT           62
-SUBENT        41020006     900713              20050926       0000
-BIB                  2          6
+ENDSUBENT           66
+SUBENT        41020006   20180325   20180525   20180525       4178
+BIB                  4         10
 REACTION   (66-DY-164(N,G)66-DY-165,,SIG)
-SAMPLE      DYSPROSIUM OXIDE DY2-O3, DENTSITY 7.81GRAM/CM2,
-            THICKNESS 8.85E-03 ATOMS/B, ISOTOPIC MASS IS 34.53 G,
-            GRAM,                      DY-160 CONTENT -  0.1  PC,
-            DY-161 CONTENT -  0.44 PC, DY-162 CONTENT -  0.63 PC,
-            DY-163 CONTENT -  1.73 PC, DY-164 CONTENT - 97.2  PC,
-ENDBIB               6
+SAMPLE      Dysprosium oxide Dy2-O3, density  7.81gram/cm2,
+            thickness 8.85E-03 atoms/b, isotopic mass is 34.53 g,
+                                       Dy-160 content -  0.1  % ,
+            Dy-161 content -  0.44 % , Dy-162 content -  0.63 % ,
+            Dy-163 content -  1.73 % , Dy-164 content - 97.2  % ,
+ERR-ANALYS (ERR-S,4.,6.) Statistical error
+           (ERR-1,0.5,10.)  Error due to background subtraction
+           for TOF spectra - 5-10% at 20 keV, 0.5-1.% at En>70 keV
+STATUS     (TABLE) Table 2 of INDC(CCP)-299,8,1988
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         49
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -350,12 +382,15 @@ KEV        KEV        MB         MB
  420.       440.         39.         3.
  440.       460.         38.         3.
 ENDDATA             51
-ENDSUBENT           62
-SUBENT        41020007     900713              20050926       0000
-BIB                  2          2
+ENDSUBENT           66
+SUBENT        41020007   20180325   20180525   20180525       4178
+BIB                  4          5
 REACTION   (66-DY-0(N,G),,SIG)
-SAMPLE      NATURAL ISOTOPIC MIXTURE
-ENDBIB               2
+SAMPLE      Natural isotopic mixture, mass 29g, 0.0075 at/b
+ERR-ANALYS (ERR-1,0.5,10.)  Error due to background subtraction
+           for TOF spectra - 5-10% at 20 keV, 0.5-1.% at En>70 keV
+STATUS     (TABLE) Table 23 of INDC(CCP)-299,8,1988
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 4         54
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -415,5 +450,5 @@ KEV        KEV        MB         MB
  360.       380.         126.         8.
  380.       400.         124.         7.
 ENDDATA             56
-ENDSUBENT           63
+ENDSUBENT           66
 ENDENTRY             7

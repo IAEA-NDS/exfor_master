@@ -1,45 +1,59 @@
-ENTRY            40734     870220              20050926       0000
-SUBENT        40734001     870220              20050926       0000
-BIB                 12         18
-INSTITUTE  (4CCPNIR)
-REFERENCE  (J,AE,55,(5),320,8311)
-AUTHOR     (V.A.ANUFRIEV,S.I.BABICH,N.G.KOCHERYGIN,V.N.NEFEDOV,
-           E.A.ERIN,JU.V.EFREMOV,G.A.TIMOFEEV)
-TITLE       THE TOTAL NEUTRON CROSS-SECTION OF BK-249 IN THE
-            .02-46.  EV ENERGY INTERVAL
-FACILITY   (REAC)
-INC-SOURCE (REAC) REACTOR SM-2
-SAMPLE      SAMPLE OF BK-249 (.87+-.09)10**24 AND (5.2+-.4)10**24
-            ATOM/M**2
-METHOD     (TOF) FLIGHT BASE 92.M
+ENTRY            40734   20180320   20180525   20180525       4178
+SUBENT        40734001   20180320   20180525   20180525       4178
+BIB                 13         24
+INSTITUTE  (4RUSNIR)
+REFERENCE  (J,AE,55,320,1983) Issue 5
+           (J,SJA,55,778,1983) Engl.transl.of J,AE,55,320,1983
+AUTHOR     (V.A.Anufriev,S.I.Babich,N.G.Kocherygin,V.N.Nefedov,
+           E.A.Erin,Yu.V.Efremov,G.A.Timofeev)
+TITLE       Neutron total cross-section of 249Bk in the range
+            0.02-46. eV
+FACILITY   (REAC,4RUSNIR)
+INC-SOURCE (REAC)         Reactor SM-2
+SAMPLE      Sample of Bk-249 (.87+-.09)10**24 and (5.2+-.4)10**24
+            atom/m**2
+METHOD     (TOF,TRN) Flight base 92.m . Best resolution 120nsec/m
+            5 series of measurements during 150 d .
 PART-DET   (N)
-ANALYSIS   (SHAPE) SHAPE ANALYSIS
-MONITOR    ABSOLUTE MEASUREMENTS
-HISTORY    (840605C) COMPILED AT THE CJD
-           (870218A) ONE NEW SUBENT ADDED WHICH WAS MADE
-                     FROM THE DATA OF SAN  004 CONTAINING INVALID
-                     MULTIPLE REACTION
-ENDBIB              18
+MONITOR    No information
+CORRECTION  Background < 6%.
+ERR-ANALYS (DATA-ERR) Type of error is not explained in article
+HISTORY    (19840605C) Compiled at the CJD
+           (19870218A) One new SUBENT added which was made
+                     from the data of SAN  004 containing invalid
+                     multiple reaction
+           (20180320U) M.M. Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            Ref.SJA,55,778,1983 was added. STATUS was added.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           21
-SUBENT        40734002     840605              20050926       0000
-BIB                  1          1
+ENDSUBENT           27
+SUBENT        40734002   20180320   20180525   20180525       4178
+BIB                  2          2
 REACTION   (97-BK-249(N,TOT),,SIG)
-ENDBIB               1
+STATUS     (TABLE) Text, page 781 of SJA,55,778,1983
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
    .025        500.       70.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        40734003     840605              20050926       0000
-BIB                  1          4
+ENDSUBENT           10
+SUBENT        40734003   20180320   20180525   20180525       4178
+BIB                  5         11
 REACTION  1(97-BK-249(N,0),,EN)
           2(97-BK-249(N,TOT),,WID)
           3(97-BK-249(N,G),,WID)
           4(97-BK-249(N,EL),,WID,,2G)
-ENDBIB               4
+ANALYSIS   (SHAPE,SLA) Shape analysis by single-level Breit-Wigner
+           formula.
+ERR-ANALYS (ERR-1,8.,10.) Error in determining Bk-149 amount.
+           (ERR-S,1.,5.) Statistical error in transmission
+           measurement.
+STATUS     (TABLE) Table 1 of SJA,55,778,1983
+HISTORY    (20180320A) M.M. ANALYSIS and ERR-ANALYS were added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 8         30
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
@@ -107,15 +121,17 @@ MILLI-EV   MILLI-EV
   46.5         .9         40.
    6.7        2.5
 ENDDATA             64
-ENDSUBENT           73
-SUBENT        40734004     870218              20050926       0000
-BIB                  1          5
-REACTION  1(97-BK-249(N,EL),,WID/RED,,2G/AV)  AVERAGED OVER ALL
-                                          RESONANCES
+ENDSUBENT           80
+SUBENT        40734004   20180320   20180525   20180525       4178
+BIB                  2          7
+REACTION  1(97-BK-249(N,EL),,WID/RED,,2G/AV)  Averaged over all
+                                          resonances
           2(97-BK-249(N,0),,D)
-          3(97-BK-249(N,G),,WID,,AV)AVERAGED OVER ALL RESONANCES
+          3(97-BK-249(N,G),,WID,,AV)Averaged over all resonances
           4(97-BK-249(N,EL),,STF)
-ENDBIB               5
+STATUS     (TABLE) Text, page 780 of SJA,55,778,1983
+           (DEP,40734003) res.parameters
+ENDBIB               7
 COMMON               2          3
 EN-MIN     EN-MAX
 EV         EV
@@ -129,11 +145,13 @@ NO-DIM     NO-DIM
    .33       1.4        .2         40.        4.           1.3 E-4
    .4000E-4  0.
 ENDDATA              6
-ENDSUBENT           20
-SUBENT        40734005     890405              20050926       0000
-BIB                  1          1
+ENDSUBENT           22
+SUBENT        40734005   20180320   20180525   20180525       4178
+BIB                  2          3
 REACTION   (97-BK-249(N,G)97-BK-250,,RI)
-ENDBIB               1
+STATUS     (TABLE) Text, page 780 of SJA,55,778,1983
+           (DEP,40734003) res.parameters
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          2
 EN-MIN     DATA       DATA-ERR
@@ -141,5 +159,5 @@ EV         B          B
   .4         870.       120.
   .2        1130.       220.
 ENDDATA              4
-ENDSUBENT           10
+ENDSUBENT           12
 ENDENTRY             5
