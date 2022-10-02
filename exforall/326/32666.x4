@@ -1,17 +1,17 @@
-ENTRY            32666   20060701   20070213   20070209       3121
-SUBENT        32666001   20060701   20070213   20070209       3121
-BIB                 15         65
+ENTRY            32666   20090821   20091029   20091028       3139
+SUBENT        32666001   20090821   20091029   20091028       3139
+BIB                 17         80
 INSTITUTE  (3CHFTHU)
 TITLE      Cumulative fission product yield of fast-neutron of
            Th-232
-AUTHOR     (C. Chung,L.-J. Pan)
+AUTHOR     (C.Chung,L.-J.Pan)
 REFERENCE  (J,RCA,38,173,1985)
 FACILITY   (REAC,3CHFTHU)
 SAMPLE     Thorium metal foil 5mil thick were sealed in
            polyethyene bag and coverd with 0.2cm cadmium capsule,
            which in turn was placed in a plastic carrier filled
            with 2 cm of boron carbide
-INC-SOURCE (REAC)                                        32666  1
+INC-SOURCE (REAC)
 DETECTOR   (GELI) The counting system consisted of a 50 ccm Ge(Li)
            detector connected to a TN-1710 2048-channel analyzer
            coupled to an Apple-II PC. The system resolution was
@@ -21,15 +21,30 @@ DETECTOR   (GELI) The counting system consisted of a 50 ccm Ge(Li)
 INC-SPECT  Reactor neutron spectrum.
 METHOD     (FPGAM)
 ERR-ANALYS (ERR-T) The errors are given as one standard deviation:
-              detection efficiency ....... 3.3%
-              CFY(Ba-140)normalization.....3.3%
-              sample weight .............. 0.9-1.4%
-              gamma-ray intensity ........ 0.2-18.0%
-              gamma counting statistics .. 0.4-12.%
+           (ERR-1)           detection efficiency ....... 3.3%
+           (MONIT-ERR)      CFY(Ba-140)   normalization.....3.3%
+           (ERR-3,0.9,1.4) sample weight .............. 0.9-1.4%
+           (ERR-4,0.2,18.) gamma-ray intensity ........ 0.2-18.0%
+           (ERR-S,0.4,12.) gamma counting statistics .. 0.4-12.%
               ----------------------------------------------
               total yield error .......... 4.8-18.90%
            The total error was calculated as the square root of
            the sum of squares of individual errors
+MONITOR    (90-TH-232(N,F)56-BA-140,IND,FY,,FIS)
+           The absolute fission yields was obtained by normalizing
+           the CFY (140Ba) to the average values of published data
+MONIT-REF  (13367001,Turkevich+,J,PR,84,52,1951)
+           (,Iyer+,J,JIN,25,465,1963)
+           (,Wyttenbach+,C,65SALZBURG,,415,1965)
+           (,Bresesti+,J,JIN,29,1189,1967)
+           (13234001,Harvey+,J,CJC,46,2911,1968)
+           (13200001,Crook+,R,IS-558,1963) Iowa St.Univ. report
+           (21723001,Erten+,J,NSE,79,167,1981)
+           Additionally, data were used from:
+            * Coryell+, N.: Radiochem.Studies: The fission
+              products, McGraw-Hill Book Co.,NY, 1951
+            * Brasca+, Energia Nucleare (Milan),
+                                     vol.20, p.691,1973 (Madrid)
 DECAY-MON  (56-BA-140,12.79D,DG,537.6,0.24)
 DECAY-DATA ((1.)34-SE-84,198.0SEC,DG,408.0,1.00)
            ((2.)36-KR-87,4650.0SEC,DG,402.6,0.5)
@@ -66,10 +81,14 @@ DECAY-DATA ((1.)34-SE-84,198.0SEC,DG,408.0,1.00)
            ((33.)58-CE-146,840.0SEC,DG,316.8,0.55)
 STATUS     (TABLE)
 HISTORY    (20060701C) Compiled by Yu Hongwei
-ENDBIB              65
-NOCOMMON             0          0
-ENDSUBENT           68
-SUBENT        32666002   20060701   20070213   20070209       3121
+ENDBIB              80
+COMMON               1          3
+ERR-1
+PER-CENT
+  3.3
+ENDCOMMON            3
+ENDSUBENT           87
+SUBENT        32666002   20090821   20091029   20091028       3139
 BIB                  1          1
 REACTION   (90-TH-232(N,F)ELEM/MASS,CUM,FY,,FST)
 ENDBIB               1
