@@ -1,41 +1,59 @@
-ENTRY            A1117   19990319   19990505   20050926       0000
-SUBENT        A1117001   19990319   19990505   20050926       0000
-BIB                  9         17
+ENTRY            A1117   20180129   20180423   20180408       A088
+SUBENT        A1117001   20180129   20180423   20180408       A088
+BIB                 10         33
 INSTITUTE  (1USAMIN)
-REFERENCE  (J,PR,74,(5),553,194809)
-AUTHOR     (J.M.BLAIR,G.FREIER,E.LAMPI,W.SLEATOR,JR.,J.H.WILLIAMS)
+REFERENCE  (J,PR,74,553,1948)
+AUTHOR     (J.M.Blair,G.Freier,E.E.Lampi,W.Sleator Jr,
+           J.H.Williams)
 TITLE      The scattering of 2.4 to 3.5 MeV protons by protons
-FACILITY   (VDG)
+FACILITY   (VDG,1USAMIN)
 SAMPLE     A gas target
 DETECTOR   (PROPC) Two proportional detectors
 ERR-ANALYS (EN-ERR) The uncertainties are estimates of author's
            lack of knowledge of the beam energy at the center of
-           the scattering chamber due to the uninformity of nylon
+           the scattering chamber due to the uniformity of nylon
            windows, lack of information on the exact amount of
            carbon deposited on these windows at the time of
            observation, and fluctuations in the accelerating
            potential.
-           (ERR-T) The combined probable error of the cross sect.
+           (ERR-1) Uncertainty in value G (see ANALYSIS)
+           (ERR-2) Uncertainty in N - value (see ANALYSIS)
+           (ERR-3) Uncertainty in n - value (see ANALYSIS)
+ANALYSIS     The cross section per unit solid angle for proton-
+           proton scattering is given by
+              sigma = Y x sin(theta)/(N x n x G), detected by
+           the where Y is the number of scattered protons
+           proportional counter when N protons of energy Ep are
+           incident on (n/2) molecules/cm3 of hydrogen gas and
+           the detected protons are scattered through a lab.
+           angle (theta). The factor G=2bA/Rh is a measure of
+           the gas scattering volume and solid angle defined by
+           the entrance slits and final aperture of the analyzing
+           system between the scattering volume N, n, and G.
 HISTORY    (19811026C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990214U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              17
-COMMON               2          3
-EN-ERR     ERR-T
-MEV        PER-CENT
- 0.02        1.6
+           (20180129A) SD: SF9=EXP deleted from REACTION code in
+           Subent 002. Small correction in author's list.
+ENDBIB              33
+COMMON               4          3
+EN-ERR     ERR-1      ERR-2      ERR-3
+MEV        PER-CENT   PER-CENT   PER-CENT
+ 0.02        0.25        1.0       0.2
 ENDCOMMON            3
-ENDSUBENT           24
-SUBENT        A1117002   19990319   19990505   20050926       0000
-BIB                  3          5
-REACTION   (1-H-1(P,EL)1-H-1,,DA,,,EXP)
-ERR-ANALYS (DATA-ERR) The uncertainties shown for the values of
+ENDSUBENT           40
+SUBENT        A1117002   20180129   20180423   20180408       A088
+BIB                  4          7
+REACTION   (1-H-1(P,EL)1-H-1,,DA)
+ERR-ANALYS (ERR-S) The uncertainties shown for the values of
            sigma in this table were determined by the
            reproducibility of values of sigma from week to week.
-STATUS     (TABLE) Table 1
-ENDBIB               5
-NOCOMMON
+STATUS     (TABLE) Table 1 from PR,74,(5),553,1948
+HISTORY    (20180129A) SD: SF9=EXP deleted from REACTION code.
+            DATA-ERR -> ERR-S.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4         44
-EN         ANG        DATA       DATA-ERR
+EN         ANG        DATA       ERR-S
 MEV        ADEG       MB/SR      MB/SR
      2.42       8.      7770.       100.
      2.42      10.      3050.        40.
@@ -82,5 +100,5 @@ MEV        ADEG       MB/SR      MB/SR
      3.53      40.       397.         4.
      3.53      45.       366.         4.
 ENDDATA             46
-ENDSUBENT           56
+ENDSUBENT           58
 ENDENTRY             2

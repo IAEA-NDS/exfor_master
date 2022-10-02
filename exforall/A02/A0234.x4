@@ -1,48 +1,61 @@
-ENTRY            A0234   20080616   20080908   20080901       A063
-SUBENT        A0234001   20080616   20080908   20080901       A063
-BIB                 17         31
+ENTRY            A0234   20180121   20180423   20180408       A088
+SUBENT        A0234001   20180121   20180423   20180408       A088
+BIB                 16         43
 TITLE      Excitation functions of deuteron induced nuclear
-           reactions on natural tellurium and enriched 122-Te-
-           production of 123-I via the 122-Te(d,n) 123-I-process
-AUTHOR     (J.H.Zaidi,S.M.Qaim And G.Stocklin)
+           reactions on natural tellurium and enriched 122-Te:
+           Production of 123-I via the 122-Te(d,n) 123-I-process
+AUTHOR     (J.H.Zaidi,S.M.Qaim,G.Stocklin)
 REFERENCE  (J,ARI,34,1425,1983)
-           (C,82ANTWER,909,1982)
+           (C,82ANTWER,,909,1982)
            (R,INDC(GER)-24/2+SPECIAL,28,1982). Short report.
 INSTITUTE  (2GERJUL)
 FACILITY   (CYCLO,2GERJUL).The compact cyclotron CV28.
            (ISOCY,2GERJUL).The incident energy CV28 was 14.MeV,
            one 'Julic' was 50.MeV.
-HISTORY    (19850330C)
-           (20080616A) BIB section updated
-            Corrections were made according new exfor rules.
 METHOD     (STTA,EXTB,ACTIV)
-MONITOR    (23-V-51(D,2N)24-CR-51,,SIG)
-MONIT-REF  (A0169002,R.WEINREICH+,J,ARI,31,223,1980)
+MONITOR    (23-V-51(D,2N)24-CR-51,,SIG) - The beam current was
+            monitored.
+             Several vanadium (99% pure) and aluminum (99.9%
+           pure) foils were inserted at several intervals in the
+           stacks to allow beam current determination and the
+           required energy degradation.
+MONIT-REF  (A0169002,R.Weinreich+,J,ARI,31,223,1980)
 DECAY-MON  (24-CR-51,27.7D,DG,320.,0.102)
-DETECTOR   (GELI). 32 Cm**3.
+DETECTOR   (GELI). 32 cm**3.
            (GE-IN).It was used for 125-I.
-ANALYSIS   (AREA).
-ERR-ANALYS (EN-ERR). The uncertainy of reading of the curve.
 STATUS     (CURVE). By CAJAD.
-REL-REF    (R,,C.F.WILLIAMSON+,R,CEA-R-3042,1966).Stopping power
+REL-REF    (R,,C.F.Williamson+,R,CEA-R-3042,1966).Stopping power
            table.
-           (R,,C.M.LEDERER+,B,LEDERER-7,,1978)
+           (R,,C.M.Lederer+,B,LEDERER-7,,1978)
 ADD-RES    The method of target preparation. The device for
            high current beam.
 SAMPLE     An electroplating method was developed to obtain thin
-           tellurium samples. Titanium foils of 25 mumeters and
-           10 mumeters thickness were used as backing material.
-ENDBIB              31
+           tellurium samples. Titanium foils of 25 mu-m and
+           10 mu-m thickness were used as backing material.
+COMMENT     S.M.Qaim (2018-01-24): Some of the points near the
+            threshold appear to be shifted since the energy
+            calibration of the cyclotron at that time was not
+            very good.
+HISTORY    (19850330C)
+           (20080616A) BIB section updated
+            Corrections were made according new EXFOR rules.
+           (20180121A) SD: 'and' deleted from author's list; ref.
+           C,82ANTWER,909, -> C,82ANTWER,,909,1982. Data were
+           re-digitized in all Subents. BIB update. COMMENT added.
+            ANALYSIS 'AREA' deleted. ERR-ANALYS update. Subent 007
+           deleted (dupl. with 006).
+ENDBIB              43
 NOCOMMON             0          0
-ENDSUBENT           34
-SUBENT        A0234002   20080616   20080908   20080901       A063
-BIB                  5         18
-REACTION   (52-TE-0(D,X)53-I-131,IND,SIG)
-RAD-DET    (53-I-131,DG)
+ENDSUBENT           46
+SUBENT        A0234002   20180121   20180423   20180408       A088
+BIB                  6         24
+REACTION   (52-TE-0(D,X)53-I-131,(CUM),SIG)
 DECAY-DATA (53-I-131,8.04D,DG,364.,0.81)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/.The total errors in the measured cross
+SAMPLE     Several stacks of natural tellurium each consisting
+           of about 6 Ti-Te discs, were irradiated.
+           Tellurium films of 6.-7. mu-m thickness, corresponding
+           to a tellurium weight of 4.- 4.5 mg/cm were used.
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such as those occurring in the determination of
@@ -55,38 +68,44 @@ COMMENT    /By authors/.The total errors in the measured cross
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
            10 and 12%.
-ENDBIB              18
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
+STATUS     (CURVE) Fig. 1 from ARI,34,1425.
+HISTORY    (20180121A) SD: Data re-digitized. SAMPLE, STATUS were
+           added.COMMENT deleted (information moved to ERR-ANALYS)
+           EN-ERR -> EN-ERR-DIG. RAD-DET deleted. SF5=IND -> (CUM)
+           in REACTION code.
+ENDBIB              24
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+0.025        0.7
 ENDCOMMON            3
-DATA                 4         12
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    528.E-2    200.E-2      3.E-2     17.E-2
-    570.E-2    402.E-2      7.E-2     33.E-2
-    669.E-2    115.E-1     10.E-1     10.E-1
-    741.E-2    234.E-1     28.E-1     18.E-1
-    813.E-2      43.E0       4.E0       3.E0
-    902.E-2      71.E0       6.E0       6.E0
-    975.E-2      91.E0       8.E0       4.E0
-   1040.E-2    980.E-1     72.E-1     19.E-1
-   1115.E-2      94.E0       8.E0       4.E0
-   1186.E-2      92.E0       8.E0       3.E0
-   1263.E-2    940.E-1     69.E-1     18.E-1
-   1323.E-2      84.E0       5.E0       4.E0
+DATA                 3         12
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      5.272      2.015      0.182
+      5.758      4.023      0.400
+      6.698     11.392      1.409
+      7.494     23.758      2.303
+      8.147     42.527      3.559
+      8.996     69.232      6.254
+      9.786     91.250      7.024
+     10.404     97.382      6.182
+     11.218     93.154      6.544
+     11.920     91.753      5.820
+     12.595     91.701      2.633
+     13.239     82.165      5.772
 ENDDATA             14
-ENDSUBENT           41
-SUBENT        A0234003   20080616   20080908   20080901       A063
-BIB                  5         19
-REACTION   (52-TE-0(D,X)53-I-130-G,IND/M+,SIG)
-RAD-DET    (53-I-130-G,DG)
+ENDSUBENT           47
+SUBENT        A0234003   20180121   20180423   20180408       A088
+BIB                  6         25
+REACTION   (52-TE-0(D,X)53-I-130-G,,SIG)
 DECAY-DATA (53-I-130-G,12.36HR,DG,536.,0.99,
                                DG,739.,0.823)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
+SAMPLE     Several stacks of natural tellurium each consisting
+           of about 6 Ti-Te discs, were irradiated.
+           Tellurium films of 6.-7. mu-m thickness, corresponding
+           to a tellurium weight of 4.- 4.5 mg/cm were used.
+ERR-ANALYS (DATA-ERR) The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such   as those occurring in the determination of
@@ -98,37 +117,43 @@ COMMENT    /By authors/. The total errors in the measured cross
            as well as errors in the energy scale
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
-           10 and 12 per-cent.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
+           10 and 12%.
+STATUS     (CURVE) Fig. 1 from ARI,34,1425.
+HISTORY    (20180121A) SD: SAMPLE, STATUS were added. COMMENT
+           deleted (information moved to ERR-ANALYS).
+           EN-ERR -> EN-ERR-DIG. RAD-DET deleted.Data re-digitized
+           SF5=IND/M+ deleted from REACTION code.
+ENDBIB              25
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+0.025        0.7
 ENDCOMMON            3
-DATA                 4         10
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    676.E-2    211.E-2      4.E-2     16.E-2
-    743.E-2    577.E-2     10.E-2     48.E-2
-    804.E-2    121.E-1     11.E-1     11.E-1
-    904.E-2    243.E-1     22.E-1     22.E-1
-    975.E-2    412.E-1     23.E-1     38.E-1
-   1046.E-2    496.E-1     45.E-1     23.E-1
-   1125.E-2      66.E0       5.E0       4.E0
-   1190.E-2      79.E0       6.E0       5.E0
-   1261.E-2    882.E-1     56.E-1     22.E-1
-   1318.E-2      96.E0       8.E0       4.E0
+DATA                 3         10
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      6.789      2.117      0.177
+      7.504      5.699      0.515
+      8.131     12.149      1.178
+      9.038     23.728      2.144
+      9.775     39.198      3.542
+     10.424     50.554      4.231
+     11.270     65.188      5.019
+     11.891     78.740      5.533
+     12.594     87.142      5.532
+     13.213     94.363      5.988
 ENDDATA             12
-ENDSUBENT           40
-SUBENT        A0234004   20080616   20080908   20080901       A063
-BIB                  5         19
-REACTION   (52-TE-0(D,X)53-I-126,IND,SIG)
-RAD-DET    (53-I-126,DG)
+ENDSUBENT           46
+SUBENT        A0234004   20180121   20180423   20180408       A088
+BIB                  6         25
+REACTION   (52-TE-0(D,X)53-I-126,,SIG)
 DECAY-DATA (53-I-126,13.02D,DG,389.,0.35,
                             DG,491.,0.022)
-ERR-ANALYS (+DATA-ERR).see below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
+SAMPLE     Several stacks of natural tellurium each consisting
+           of about 6 Ti-Te discs, were irradiated.
+           Tellurium films of 6.-7. mu-m thickness, corresponding
+           to a tellurium weight of 4.- 4.5 mg/cm were used.
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such   as those occurring in the determination of
@@ -141,37 +166,43 @@ COMMENT    /By authors/. The total errors in the measured cross
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
            10 and 12%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
+STATUS     (CURVE) Fig. 1 from ARI,34,1425.
+HISTORY    (20180121A) SD: SAMPLE, STATUS were added. COMMENT
+           deleted (information moved to ERR-ANALYS). RAD-DET
+           deleted. EN-ERR -> EN-ERR-DIG. SF5=IND deleted
+           from REACTION code. Data re-digitized.
+ENDBIB              25
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+0.025        0.7
 ENDCOMMON            3
-DATA                 4         11
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    580.E-2   1393.E-4     24.E-4    117.E-4
-    682.E-2    317.E-3      5.E-3     26.E-3
-    753.E-2     62.E-2      3.E-2      4.E-2
-    807.E-2    132.E-2     10.E-2     14.E-2
-    907.E-2    258.E-2     21.E-2     29.E-2
-    987.E-2     52.E-1      4.E-1      4.E-1
-   1053.E-2     85.E-1      5.E-1      4.E-1
-   1149.E-2    152.E-1     11.E-1      8.E-1
-   1193.E-2    212.E-1     18.E-1     14.E-1
-   1276.E-2    245.E-1     12.E-1     19.E-1
-   1324.E-2    237.E-1     20.E-1     16.E-1
+DATA                 3         11
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      5.828      0.138      0.014
+      6.737      0.305      0.028
+      7.504      0.609      0.051
+      8.188      1.289      0.149
+      8.982      2.499      0.248
+      9.806      5.250      0.438
+     10.486      8.547      0.713
+     11.280     15.187      1.267
+     11.987     21.374      1.953
+     12.662     24.355      1.840
+     13.280     23.990      2.008
 ENDDATA             13
-ENDSUBENT           41
-SUBENT        A0234005   20080616   20080908   20080901       A063
-BIB                  5         19
-REACTION   (52-TE-0(D,X)53-I-125,IND,SIG)
-RAD-DET    (53-I-125,XR)
+ENDSUBENT           47
+SUBENT        A0234005   20180121   20180423   20180408       A088
+BIB                  6         25
+REACTION   (52-TE-0(D,X)53-I-125,,SIG)
 DECAY-DATA (53-I-125,60.2D,XR,27.4,0.71,
                            XR,31.2,0.16)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
+SAMPLE     Several stacks of natural tellurium each consisting
+           of about 6 Ti-Te discs, were irradiated.
+           Tellurium films of 6.-7. mu-m thickness, corresponding
+           to a tellurium weight of 4.- 4.5 mg/cm were used.
+ERR-ANALYS (DATA-ERR) The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such   as those occurring in the determination of
@@ -184,35 +215,41 @@ COMMENT    /By authors/. The total errors in the measured cross
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
            10 and 12%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
+STATUS     (CURVE) Fig. 1 from ARI,34,1425.
+HISTORY    (20180121A) SD: SAMPLE, STATUS were added. COMMENT
+           deleted (information moved to ERR-ANALYS).
+           EN-ERR -> EN-ERR-DIG. RAD-DET deleted.Data re-digitized
+           SF5=IND deleted from REACTION code.
+ENDBIB              25
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+0.025        0.7
 ENDCOMMON            3
-DATA                 4         10
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    667.E-2    159.E-3     13.E-3     12.E-3
-    744.E-2    342.E-3     35.E-3     26.E-3
-    816.E-2     58.E-2      5.E-2      3.E-2
-    903.E-2    141.E-2     12.E-2      9.E-2
-    983.E-2    285.E-2     29.E-2     26.E-2
-   1049.E-2     52.E-1      6.E-1      4.E-1
-   1124.E-2     89.E-1      8.E-1      5.E-1
-   1205.E-2    138.E-1     12.E-1      9.E-1
-   1258.E-2   1593.E-2     28.E-2     82.E-2
-   1331.E-2   1669.E-2     29.E-2     88.E-2
+DATA                 3         10
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      6.729      0.161      0.017
+      7.497      0.340      0.045
+      8.206      0.591      0.063
+      9.003      1.437      0.178
+      9.799      2.868      0.331
+     10.508      5.285      0.653
+     11.246      9.121      1.053
+     11.981     14.009      1.504
+     12.629     15.847      1.702
+     13.276     16.789      1.668
 ENDDATA             12
-ENDSUBENT           40
-SUBENT        A0234006   20080616   20080908   20080901       A063
-BIB                  5         18
-REACTION   (52-TE-0(D,X)53-I-123,IND,SIG)
-RAD-DET    (53-I-123,DG)
+ENDSUBENT           46
+SUBENT        A0234006   20180121   20180423   20180408       A088
+BIB                  6         24
+REACTION   (52-TE-0(D,X)53-I-123,,SIG)
 DECAY-DATA (53-I-123,13.02HR,DG,159.,0.829)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
+SAMPLE     Several stacks of natural tellurium each consisting
+           of about 6 Ti-Te discs, were irradiated.
+           Tellurium films of 6.-7. mu-m thickness, corresponding
+           to a tellurium weight of 4.- 4.5 mg/cm were used.
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such   as those occurring in the determination of
@@ -225,68 +262,43 @@ COMMENT    /By authors/. The total errors in the measured cross
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
            10 and 12%.
-ENDBIB              18
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
+STATUS     (CURVE) Fig. 1 from ARI,34,1425.
+HISTORY    (20180121A) SD: SAMPLE, STATUS were added. COMMENT
+           deleted (information moved to ERR-ANALYS).
+           EN-ERR -> EN-ERR-DIG. RAD-DET deleted.Data re-digitized
+           SF5=IND deleted from REACTION code.
+ENDBIB              24
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+0.025        0.7
 ENDCOMMON            3
-DATA                 4         10
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    680.E-2    264.E-3      5.E-3     22.E-3
-    755.E-2    525.E-3      9.E-3     36.E-3
-    825.E-2    100.E-2      8.E-2      8.E-2
-    911.E-2    232.E-2     13.E-2     19.E-2
-    983.E-2    454.E-2     43.E-2     29.E-2
-   1052.E-2     74.E-1      7.E-1      4.E-1
-   1125.E-2     83.E-1      9.E-1      5.E-1
-   1200.E-2     82.E-1      3.E-1      7.E-1
-   1260.E-2     61.E-1      5.E-1      4.E-1
-   1330.E-2     45.E-1      4.E-1      3.E-1
+DATA                 3         10
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      6.763      0.258      0.022
+      7.502      0.523      0.039
+      8.156      0.984      0.082
+      9.037      2.290      0.192
+      9.804      4.571      0.473
+     10.485      7.497      0.727
+     11.273      8.296      0.694
+     11.974      7.937      0.664
+     12.589      6.148      0.636
+     13.287      4.363      0.423
 ENDDATA             12
-ENDSUBENT           39
-SUBENT        A0234007   20080616   20080908   20080901       A063
-BIB                  5          9
-REACTION   (52-TE-0(D,X)53-I-124,IND,SIG)
-RAD-DET    (53-I-124,DG)
+ENDSUBENT           45
+NOSUBENT      A0234007   20180121   20180423   20180408       A088
+SUBENT        A0234008   20180121   20180423   20180408       A088
+BIB                  6         25
+REACTION   (52-TE-0(D,X)53-I-124,,SIG)
 DECAY-DATA (53-I-124,4.15D,DG,603.,0.61,
                           DG,1691.,0.105)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of three squares of the individual errors.
-ENDBIB               9
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
-ENDCOMMON            3
-DATA                 4         10
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    686.E-2    259.E-3      4.E-3     16.E-3
-    753.E-2    512.E-3      9.E-3     24.E-3
-    816.E-2     99.E-2      9.E-2      9.E-2
-    911.E-2    229.E-2     10.E-2     17.E-2
-    992.E-2    447.E-2     37.E-2     24.E-2
-   1053.E-2     75.E-1      7.E-1      6.E-1
-   1127.E-2     83.E-1      7.E-1      6.E-1
-   1193.E-2     78.E-1      7.E-1      6.E-1
-   1262.E-2     61.E-1      5.E-1      5.E-1
-   1343.E-2     44.E-1      4.E-1      4.E-1
-ENDDATA             12
-ENDSUBENT           30
-SUBENT        A0234008   20080616   20080908   20080901       A063
-BIB                  5         19
-REACTION   (52-TE-0(D,X)53-I-124,IND,SIG)
-RAD-DET    (53-I-124,DG)
-DECAY-DATA (53-I-124,4.15D,DG,603.,0.61,
-                          DG,1691.,0.105)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
+SAMPLE     Several stacks of natural tellurium each consisting
+           of about 6 Ti-Te discs, were irradiated.
+           Tellurium films of 6.-7. mu-m thickness, corresponding
+           to a tellurium weight of 4.- 4.5 mg/cm were used.
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such   as those occurring in the determination of
@@ -299,335 +311,346 @@ COMMENT    /By authors/. The total errors in the measured cross
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
            10 and 12%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
+STATUS     (CURVE) Fig. 1 from ARI,34,1425.
+HISTORY    (20180121A) SD: SAMPLE, STATUS were added. COMMENT
+           deleted (information moved to ERR-ANALYS).
+           EN-ERR -> EN-ERR-DIG. RAD-DET deleted.Data re-digitized
+           SF5=IND deleted from REACTION code.
+ENDBIB              25
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+0.025        0.7
 ENDCOMMON            3
-DATA                 4          9
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    761.E-2   1611.E-4     28.E-4    138.E-4
-    823.E-2    302.E-3      5.E-3     16.E-3
-    901.E-2     63.E-2      6.E-2      5.E-2
-    982.E-2    121.E-2     16.E-2     10.E-2
-   1053.E-2    208.E-2     27.E-2     13.E-2
-   1133.E-2    269.E-2     25.E-2     23.E-2
-   1206.E-2    287.E-2     40.E-2     17.E-2
-   1264.E-2    276.E-2     28.E-2     23.E-2
-   1333.E-2    235.E-2     22.E-2     20.E-2
+DATA                 3          9
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      7.487      0.161      0.020
+      8.169      0.302      0.025
+      9.021      0.631      0.065
+      9.816      1.205      0.117
+     10.497      2.095      0.203
+     11.286      2.663      0.241
+     11.962      2.926      0.322
+     12.635      2.759      0.249
+     13.335      2.298      0.192
 ENDDATA             11
-ENDSUBENT           39
-SUBENT        A0234009   20080616   20080908   20080901       A063
-BIB                  6         19
-REACTION   (52-TE-122(D,N)53-I-123,,SIG)
-RAD-DET    (53-I-123,DG)
-DECAY-DATA (53-I-123,13.02HR,DG,159.,0.829)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of the squares of the individual errors,
-           such   as those occurring in the determination of
-           the thickness of each Ti-foil and tellurium-film, in
-           beam current measurements, in the determination of
-           the absolute activity of samples ( including
-           statistical errors, errors in the efficiency  of the
-           detector, counting geometry and decay schemes etc.),
-           as well as errors in the energy scale
-           calculations. The total errors in cross sections
-           vary from  case to case, but in general lie between
-           10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45 Per-cent.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
-ENDCOMMON            3
-DATA                 4         33
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-    746.E-2    450.E-2      8.E-2     37.E-2
-    775.E-2    963.E-2     16.E-2     72.E-2
-    797.E-2    165.E-1     18.E-1     14.E-1
-    834.E-2    135.E-1     30.E-1     20.E-1
-    843.E-2      35.E0       3.E0       3.E0
-    843.E-2    299.E-1     19.E-1     20.E-1
-    914.E-2      89.E0       6.E0       7.E0
-    915.E-2      54.E0       7.E0       7.E0
-    961.E-2     111.E0      17.E0       9.E0
-    990.E-2     187.E0      15.E0      17.E0
-   1000.E-2     201.E0      26.E0      17.E0
-   1039.E-2     240.E0      19.E0      14.E0
-   1059.E-2     270.E0      17.E0      20.E0
-   1075.E-2     323.E0      12.E0      27.E0
-   1105.E-2     351.E0      25.E0      18.E0
-   1125.E-2     323.E0      29.E0      36.E0
-   1192.E-2     242.E0      50.E0      16.E0
-   1205.E-2     297.E0      38.E0      15.E0
-   1272.E-2     195.E0      34.E0      23.E0
-   1305.E-2     185.E0      23.E0      17.E0
-   1325.E-2     187.E0      33.E0      17.E0
-   1451.E-2     162.E0      19.E0      11.E0
-   1621.E-2     132.E0      13.E0      11.E0
-   1771.E-2     111.E0      12.E0       9.E0
-   1910.E-2      88.E0       6.E0       7.E0
-   2086.E-2      89.E0       5.E0       3.E0
-   2090.E-2      80.E0       6.E0       4.E0
-   2209.E-2      87.E0      11.E0      10.E0
-   2292.E-2      80.E0       3.E0       6.E0
-   2631.E-2      64.E0       5.E0       4.E0
-   2940.E-2    544.E-1     44.E-1     28.E-1
-   3166.E-2    463.E-1     42.E-1     24.E-1
-   3395.E-2    378.E-1     34.E-1     20.E-1
-ENDDATA             35
-ENDSUBENT           63
-SUBENT        A0234010   20080616   20080908   20080901       A063
-BIB                  6         19
-REACTION   (52-TE-122(D,2N)53-I-122,,SIG)
-RAD-DET    (53-I-122,DG)
-DECAY-DATA (53-I-122,3.6MIN,DG,564.,0.18)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read of figures.
-COMMENT    /By authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of the squares of the individual errors,
-           such   as those occurring in the determination of
-           the thickness of each Ti-foil and tellurium-film, in
-           beam current measurements, in the determination of
-           the absolute activity of samples ( including
-           statistical errors, errors in the efficiency  of the
-           detector, counting geometry and decay schemes etc.),
-           as well as errors in the energy scale
-           calculations. The total errors in cross sections
-           vary from  case to case, but in general lie between
-           10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45 Per-cent.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
-ENDCOMMON            3
-DATA                 4         14
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-   1276.E-2    260.E-1      4.E-1     20.E-1
-   1380.E-2    702.E-1     12.E-1     26.E-1
-   1561.E-2     183.E0      16.E0       8.E0
-   1674.E-2     268.E0      19.E0      16.E0
-   1807.E-2     320.E0      29.E0      22.E0
-   1875.E-2     346.E0      16.E0      23.E0
-   2005.E-2     297.E0      22.E0      13.E0
-   2137.E-2     273.E0      15.E0      23.E0
-   2265.E-2     216.E0      19.E0      15.E0
-   2450.E-2     197.E0      16.E0      12.E0
-   2556.E-2     163.E0      16.E0       8.E0
-   2709.E-2     136.E0      10.E0       9.E0
-   2983.E-2     100.E0      10.E0       8.E0
-   3235.E-2      83.E0       6.E0       7.E0
-ENDDATA             16
-ENDSUBENT           44
-SUBENT        A0234011   20080616   20080908   20080901       A063
-BIB                  6         19
-REACTION   (52-TE-122(D,3N)53-I-121,,SIG)
-RAD-DET    (53-I-121,DG)
-DECAY-DATA (53-I-121,2.12HR,DG,212.,0.84)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /by authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of the squares of the individual errors,
-           such   as those occurring in the determination of
-           the thickness of each Ti-foil and tellurium-film, in
-           beam current measurements, in the determination of
-           the absolute activity of samples ( including
-           statistical errors, errors in the efficiency  of the
-           detector, counting geometry and decay schemes etc.),
-           as well as errors in the energy scale
-           calculations. The total errors in cross sections
-           vary from  case to case, but in general lie between
-           10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.07
-ENDCOMMON            3
-DATA                 4         13
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-   1899.E-2    504.E-2      9.E-2     42.E-2
-   2092.E-2   1518.E-2     26.E-2    103.E-2
-   2211.E-2      44.E0       3.E0       3.E0
-   2309.E-2      71.E0       5.E0       6.E0
-   2649.E-2     222.E0      13.E0      18.E0
-   2946.E-2     341.E0      19.E0      23.E0
-   3174.E-2     309.E0      15.E0      16.E0
-   3386.E-2     244.E0      20.E0      19.E0
-   3544.E-2     229.E0      13.E0      19.E0
-   3696.E-2     212.E0      14.E0      16.E0
-   3864.E-2     195.E0      14.E0      12.E0
-   3907.E-2     191.E0      15.E0      16.E0
-   3958.E-2     169.E0      15.E0      10.E0
-ENDDATA             15
-ENDSUBENT           43
-SUBENT        A0234012   20080616   20080908   20080901       A063
-BIB                  6         19
-REACTION   (52-TE-122(D,2N+P)52-TE-121-G,,SIG)
-RAD-DET    (52-TE-121-G,DG)
-DECAY-DATA (52-TE-121-G,16.78D,DG,573.,0.803)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of the squares of the individual errors,
-           such   as those occurring in the determination of
-           the thickness of each Ti-foil and tellurium-film, in
-           beam current measurements, in the determination of
-           the absolute activity of samples ( including
-           statistical errors, errors in the efficiency  of the
-           detector, counting geometry and decay schemes etc.),
-           as well as errors in the energy scale
-           calculations. The total errors in cross sections
-           vary from  case to case, but in general lie between
-           10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.14
-ENDCOMMON            3
-DATA                 4         16
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-   1209.E-2    214.E-2      4.E-2     15.E-2
-   1474.E-2    762.E-2     14.E-2     61.E-2
-   1618.E-2    151.E-1     10.E-1      6.E-1
-   1781.E-2    277.E-1     26.E-1     15.E-1
-   1923.E-2    503.E-1     44.E-1     27.E-1
-   2099.E-2      92.E0       8.E0       4.E0
-   2290.E-2     152.E0      16.E0       3.E0
-   2651.E-2     243.E0      14.E0      10.E0
-   2948.E-2     245.E0      16.E0       6.E0
-   3171.E-2     204.E0      12.E0       8.E0
-   3402.E-2     190.E0       9.E0       7.E0
-   3552.E-2     186.E0       8.E0      10.E0
-   3696.E-2     178.E0       5.E0      10.E0
-   3867.E-2     174.E0       8.E0       4.E0
-   3910.E-2     171.E0       4.E0      15.E0
-   3965.E-2     157.E0      15.E0       6.E0
-ENDDATA             18
-ENDSUBENT           46
-SUBENT        A0234013   20080616   20080908   20080901       A063
-BIB                  6         19
-REACTION   (52-TE-122(D,2N+P)52-TE-121-M,,SIG)
-RAD-DET    (52-TE-121-M,DG)
-DECAY-DATA (52-TE-121-M,154.0D,DG,212.,0.83)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of the squares of the individual errors,
-           such   as those occurring in the determination of
-           the thickness of each Ti-foil and tellurium-film, in
-           beam current measurements, in the determination of
-           the absolute activity of samples ( including
-           statistical errors, errors in the efficiency  of the
-           detector, counting geometry and decay schemes etc.),
-           as well as errors in the energy scale
-           calculations. The total errors in cross sections
-           vary from  case to case, but in general lie between
-           10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.14
-ENDCOMMON            3
-DATA                 4         16
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-   1231.E-2   1050.E-3     19.E-3     21.E-3
-   1478.E-2    219.E-2      4.E-2     16.E-2
-   1634.E-2    348.E-2     47.E-2     14.E-2
-   1776.E-2     55.E-1      6.E-1      4.E-1
-   1928.E-2     85.E-1      6.E-1      5.E-1
-   2079.E-2    147.E-1     15.E-1      8.E-1
-   2291.E-2    267.E-1     23.E-1     15.E-1
-   2629.E-2      57.E0       6.E0       4.E0
-   2972.E-2    605.E-1     34.E-1     24.E-1
-   3190.E-2      54.E0       3.E0       5.E0
-   3388.E-2    489.E-1     38.E-1     27.E-1
-   3553.E-2    470.E-1     24.E-1     33.E-1
-   3704.E-2    452.E-1     30.E-1     18.E-1
-   3875.E-2    443.E-1     42.E-1     21.E-1
-   3920.E-2    422.E-1     28.E-1     17.E-1
-   3957.E-2    415.E-1     32.E-1     23.E-1
-ENDDATA             18
-ENDSUBENT           46
-SUBENT        A0234014   20080616   20080908   20080901       A063
-BIB                  6         19
-REACTION   (52-TE-122(D,P)52-TE-123-M,,SIG)
-RAD-DET    (52-TE-123-M,DG)
-DECAY-DATA (52-TE-123-M,119.7D,DG,159.,0.836)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
-           sections were estimated by taking square roots of
-           the sums of the squares of the individual errors,
-           such   as those occurring in the determination of
-           the thickness of each Ti-foil and tellurium-film, in
-           beam current measurements, in the determination of
-           the absolute activity of samples ( including
-           statistical errors, errors in the efficiency  of the
-           detector, counting geometry and decay schemes etc.),
-           as well as errors in the energy scale
-           calculations. The total errors in cross sections
-           vary from  case to case, but in general lie between
-           10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45%.
-ENDBIB              19
-COMMON               1          3
-EN-ERR
-MEV
-       0.14
-ENDCOMMON            3
-DATA                 4         16
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-   1139.E-2    329.E-2      6.E-2     18.E-2
-   1227.E-2    842.E-2     15.E-2     74.E-2
-   1349.E-2    208.E-1     20.E-1     18.E-1
-   1490.E-2    468.E-1     41.E-1     26.E-1
-   1662.E-2    670.E-1     28.E-1     59.E-1
-   1948.E-2      61.E0       6.E0       3.E0
-   2128.E-2      49.E0       7.E0       5.E0
-   2295.E-2    443.E-1     42.E-1     11.E-1
-   2642.E-2    317.E-1     31.E-1     18.E-1
-   2960.E-2    231.E-1     29.E-1     20.E-1
-   3195.E-2    166.E-1     16.E-1     12.E-1
-   3402.E-2    128.E-1     11.E-1      4.E-1
-   3569.E-2    121.E-1      9.E-1      7.E-1
-   3679.E-2     95.E-1      6.E-1      8.E-1
-   3928.E-2     69.E-1      4.E-1      3.E-1
-   3969.E-2    668.E-2     52.E-2     21.E-2
-ENDDATA             18
-ENDSUBENT           46
-SUBENT        A0234015   20080616   20080908   20080901       A063
+ENDSUBENT           45
+SUBENT        A0234009   20180121   20180423   20180408       A088
 BIB                  6         20
+REACTION   (52-TE-122(D,N)53-I-123,,SIG)
+DECAY-DATA (53-I-123,13.02HR,DG,159.,0.829)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR)   The total errors in the measured cross
+           sections were estimated by taking square roots of
+           the sums of the squares of the individual errors,
+           such   as those occurring in the determination of
+           the thickness of each Ti-foil and tellurium-film, in
+           beam current measurements, in the determination of
+           the absolute activity of samples ( including
+           statistical errors, errors in the efficiency  of the
+           detector, counting geometry and decay schemes etc.),
+           as well as errors in the energy scale
+           calculations. The total errors in cross sections
+           vary from  case to case, but in general lie between
+           10 and 12%.
+STATUS     (CURVE) Fig. 2 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. Data re-digitized.
+ENDBIB              20
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.028          0.6
+ENDCOMMON            3
+DATA                 3         33
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      7.407      4.545      0.380
+      7.710      9.873      0.925
+      8.053     16.862      1.411
+      8.347     13.698      0.728
+      8.396     30.415      2.240
+      8.482     35.056      3.624
+      9.167     91.669      7.674
+      9.204     55.449      6.815
+      9.591    115.290     13.060
+      9.892    190.550     17.849
+      9.977    207.950     16.531
+     10.359    247.620     23.201
+     10.529    276.180     21.956
+     10.699    325.340     25.864
+     11.038    362.830     28.845
+     11.248    328.800     37.242
+     11.921    252.840     18.614
+     12.050    311.160     29.139
+     12.764    196.540     24.155
+     13.101    182.030     15.238
+     13.312    190.140     19.688
+     14.493    166.640     15.610
+     16.180    133.780     13.853
+     17.699    114.690     11.876
+     19.133     91.091      7.623
+     20.822     91.993      6.234
+     20.948     82.464      6.903
+     22.089     88.955     11.783
+     22.932     78.837      6.267
+     26.308     65.331      5.469
+     29.474     54.146      4.531
+     31.668     47.946      3.043
+     33.820     38.480      2.442
+ENDDATA             35
+ENDSUBENT           64
+SUBENT        A0234010   20180121   20180423   20180408       A088
+BIB                  6         20
+REACTION   (52-TE-122(D,2N)53-I-122,,SIG)
+DECAY-DATA (53-I-122,3.6MIN,DG,564.,0.18)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
+           sections were estimated by taking square roots of
+           the sums of the squares of the individual errors,
+           such   as those occurring in the determination of
+           the thickness of each Ti-foil and tellurium-film, in
+           beam current measurements, in the determination of
+           the absolute activity of samples ( including
+           statistical errors, errors in the efficiency  of the
+           detector, counting geometry and decay schemes etc.),
+           as well as errors in the energy scale
+           calculations. The total errors in cross sections
+           vary from  case to case, but in general lie between
+           10 and 12%.
+STATUS     (CURVE) Fig. 2 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. Data re-digitized.
+ENDBIB              20
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.028          0.6
+ENDCOMMON            3
+DATA                 3         14
+EN         DATA       DATA-ERR
+MEV        MB         MB
+     12.660      26.32       1.94
+     13.725      70.32       5.89
+     15.466     191.96      14.14
+     16.609     272.13      17.27
+     17.878     327.42      24.11
+     18.470     345.68      21.94
+     19.947     306.24      25.64
+     21.213     277.33      23.22
+     22.688     220.25      18.44
+     24.419     199.40      16.70
+     25.515     171.00      16.02
+     26.991     137.30      11.50
+     29.775     102.03       5.43
+     32.392      83.68       7.01
+ENDDATA             16
+ENDSUBENT           45
+SUBENT        A0234011   20180121   20180423   20180408       A088
+BIB                  6         20
+REACTION   (52-TE-122(D,3N)53-I-121,,SIG)
+DECAY-DATA (53-I-121,2.12HR,DG,212.,0.84)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
+           sections were estimated by taking square roots of
+           the sums of the squares of the individual errors,
+           such   as those occurring in the determination of
+           the thickness of each Ti-foil and tellurium-film, in
+           beam current measurements, in the determination of
+           the absolute activity of samples ( including
+           statistical errors, errors in the efficiency  of the
+           detector, counting geometry and decay schemes etc.),
+           as well as errors in the energy scale
+           calculations. The total errors in cross sections
+           vary from  case to case, but in general lie between
+           10 and 12%.
+STATUS     (CURVE) Fig. 2 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. Data re-digitized.
+ENDBIB              20
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.028          0.6
+ENDCOMMON            3
+DATA                 3         13
+EN         DATA       DATA-ERR
+MEV        MB         MB
+     18.979      5.033      0.371
+     20.847     15.325      1.283
+     22.082     45.177      4.232
+     22.973     71.451      6.693
+     26.362    222.160     16.366
+     29.365    343.300     18.263
+     31.686    310.680     16.520
+     33.795    249.350     13.259
+     35.315    228.260      9.757
+     36.750    213.580      9.135
+     38.481    197.630      8.448
+     38.987    191.200      8.173
+     39.451    171.350      7.333
+ENDDATA             15
+ENDSUBENT           44
+SUBENT        A0234012   20180121   20180423   20180408       A088
+BIB                  6         21
+REACTION   (52-TE-122(D,X)52-TE-121-G,,SIG)
+DECAY-DATA (52-TE-121-G,16.78D,DG,573.,0.803)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
+           sections were estimated by taking square roots of
+           the sums of the squares of the individual errors,
+           such   as those occurring in the determination of
+           the thickness of each Ti-foil and tellurium-film, in
+           beam current measurements, in the determination of
+           the absolute activity of samples ( including
+           statistical errors, errors in the efficiency  of the
+           detector, counting geometry and decay schemes etc.),
+           as well as errors in the energy scale
+           calculations. The total errors in cross sections
+           vary from  case to case, but in general lie between
+           10 and 12%.
+STATUS     (CURVE) Fig. 3 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. SF3=2N+P -> X in REACTION code.
+           Data re-digitized.
+ENDBIB              21
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.023       0.5
+ENDCOMMON            3
+DATA                 3         16
+EN         DATA       DATA-ERR
+MEV        MB         MB
+     11.921      2.137      0.152
+     14.519      7.441      0.528
+     16.267     15.093      1.320
+     17.596     28.378      2.245
+     19.160     50.577      4.420
+     20.845     94.349      7.463
+     22.939    153.420     10.892
+     26.338    243.630     15.307
+     29.422    246.880     17.527
+     31.670    210.090     14.898
+     33.861    192.940     10.574
+     35.402    186.970     11.754
+     36.765    179.830     11.298
+     38.485    178.270     11.200
+     39.076    170.240     12.079
+     39.608    161.350      9.538
+ENDDATA             18
+ENDSUBENT           48
+SUBENT        A0234013   20180121   20180423   20180408       A088
+BIB                  6         21
+REACTION   (52-TE-122(D,X)52-TE-121-M,,SIG)
+DECAY-DATA (52-TE-121-M,154.0D,DG,212.,0.83)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
+           sections were estimated by taking square roots of
+           the sums of the squares of the individual errors,
+           such   as those occurring in the determination of
+           the thickness of each Ti-foil and tellurium-film, in
+           beam current measurements, in the determination of
+           the absolute activity of samples ( including
+           statistical errors, errors in the efficiency  of the
+           detector, counting geometry and decay schemes etc.),
+           as well as errors in the energy scale
+           calculations. The total errors in cross sections
+           vary from  case to case, but in general lie between
+           10 and 12%.
+STATUS     (CURVE) Fig. 3 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. SF3=2N+P -> X in REACTION code.
+           Data re-digitized.
+ENDBIB              21
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.023       0.5
+ENDCOMMON            3
+DATA                 3         16
+EN         DATA       DATA-ERR
+MEV        MB         MB
+     12.013      1.060      0.075
+     14.590      2.150      0.142
+     16.270      3.550      0.285
+     17.711      5.517      0.482
+     19.210      8.444      0.679
+     20.833     14.710      1.183
+     22.872     26.611      1.763
+     26.341     56.441      3.741
+     29.428     60.790      4.458
+     31.736     53.736      4.319
+     33.868     48.976      3.475
+     35.408     46.743      3.317
+     36.831     45.646      2.868
+     38.491     44.568      2.800
+     39.083     43.545      2.736
+     39.616     42.547      2.673
+ENDDATA             18
+ENDSUBENT           48
+SUBENT        A0234014   20180121   20180423   20180408       A088
+BIB                  6         20
+REACTION   (52-TE-122(D,P)52-TE-123-M,,SIG)
+DECAY-DATA (52-TE-123-M,119.7D,DG,159.,0.836)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR)  The total errors in the measured cross
+           sections were estimated by taking square roots of
+           the sums of the squares of the individual errors,
+           such   as those occurring in the determination of
+           the thickness of each Ti-foil and tellurium-film, in
+           beam current measurements, in the determination of
+           the absolute activity of samples ( including
+           statistical errors, errors in the efficiency  of the
+           detector, counting geometry and decay schemes etc.),
+           as well as errors in the energy scale
+           calculations. The total errors in cross sections
+           vary from  case to case, but in general lie between
+           10 and 12%.
+STATUS     (CURVE) Fig. 4 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. Data re-digitized.
+ENDBIB              20
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.025      0.5
+ENDCOMMON            3
+DATA                 3         16
+EN         DATA       DATA-ERR
+MEV        MB         MB
+     11.088      3.377      0.273
+     11.939      8.519      0.628
+     13.145     20.682      1.988
+     14.526     46.509      3.426
+     16.254     65.079      5.174
+     19.159     61.151      5.879
+     20.933     48.580      5.490
+     22.948     44.969      4.701
+     26.322     32.822      2.609
+     29.458     23.776      2.486
+     31.764     16.967      1.490
+     33.775     13.375      1.063
+     35.375     12.383      1.190
+     36.793      9.689      0.770
+     38.981      7.184      0.512
+     39.574      6.913      0.493
+ENDDATA             18
+ENDSUBENT           47
+SUBENT        A0234015   20180121   20180423   20180408       A088
+BIB                  6         21
 REACTION   (52-TE-122(D,A)51-SB-120-M,,SIG)
-RAD-DET    (51-SB-120-M,DG)
 DECAY-DATA (51-SB-120-M,5.76D,DG,89.8,0.85,
                               DG,1172.,1.)
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties were read on figures.
-COMMENT    /By authors/. The total errors in the measured cross
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+ERR-ANALYS (DATA-ERR) The total errors in the measured cross
            sections were estimated by taking square roots of
            the sums of the squares of the individual errors,
            such   as those occurring in the determination of
@@ -640,139 +663,187 @@ COMMENT    /By authors/. The total errors in the measured cross
            calculations. The total errors in cross sections
            vary from  case to case, but in general lie between
            10 and 12%.
-SAMPLE     Enrichment of 122-Te-96.45%.
-ENDBIB              20
-COMMON               1          3
-EN-ERR
-MEV
-       0.14
+STATUS     (CURVE) Fig. 4 from ARI,34,1425.
+HISTORY    (20180121A) SD: STATUS was added. EN-ERR -> EN-ERR-DIG.
+           COMMENT deleted (information moved to ERR-ANALYS).
+           RAD-DET deleted. Data re-digitized.
+ENDBIB              21
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.025      0.5
 ENDCOMMON            3
-DATA                 4         15
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MB         MB         MB
-   1468.E-2   1171.E-3     21.E-3    141.E-3
-   1651.E-2    194.E-2      4.E-2     14.E-2
-   1798.E-2    306.E-2     24.E-2     20.E-2
-   1908.E-2    435.E-2     26.E-2     39.E-2
-   2120.E-2    433.E-2     26.E-2     24.E-2
-   2304.E-2     43.E-1      4.E-1      3.E-1
-   2627.E-2    376.E-2     37.E-2     21.E-2
-   2958.E-2     35.E-1      3.E-1      3.E-1
-   3183.E-2    324.E-2     35.E-2     18.E-2
-   3394.E-2    308.E-2     30.E-2     17.E-2
-   3556.E-2    301.E-2     35.E-2     14.E-2
-   3669.E-2    292.E-2     25.E-2     19.E-2
-   3880.E-2    286.E-2     20.E-2     23.E-2
-   3908.E-2    278.E-2     24.E-2     15.E-2
-   3964.E-2    275.E-2     24.E-2     26.E-2
+DATA                 3         15
+EN         DATA       DATA-ERR
+MEV        MB         MB
+      14.62      1.165      0.102
+      16.30      2.004      0.176
+      17.73      3.169      0.233
+      19.16      4.401      0.314
+      21.00      4.466      0.392
+      22.90      4.497      0.470
+      26.34      3.944      0.412
+      29.48      3.677      0.323
+      31.67      3.536      0.310
+      33.86      3.298      0.290
+      35.35      3.197      0.281
+      36.71      3.099      0.272
+      38.49      3.004      0.289
+      39.02      2.935      0.282
+      39.55      2.890      0.302
 ENDDATA             17
-ENDSUBENT           46
-SUBENT        A0234016   20080616   20080908   20080901       A063
-BIB                  4          6
-REACTION   (52-TE-122(D,N)53-I-123,,TTY,,DT)
-SAMPLE     Enrichment of 122-Te-96.45%.
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties of reading of the
-           curve.
-STATUS     (DEP,A0234008)
-ENDBIB               6
-COMMON               1          3
-EN-ERR
-MEV
-       0.13
+ENDSUBENT           47
+SUBENT        A0234016   20180121   20180423   20180408       A088
+BIB                  4          7
+REACTION   (52-TE-122(D,N)53-I-123,,TTY,,PHY,DERIV)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+STATUS     (CURVE) Fig. 5 from ARI,34,1425.
+           (DEP,A0234008)
+HISTORY    (20180121A) SD: STATUS was update. EN-ERR -> EN-ERR-DIG
+           SF8=DT -> PHY, SF9=DERIV in REACTION code. ERR-ANALYS
+           deleted (no info). Data re-digitized.
+ENDBIB               7
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.015        1.
 ENDCOMMON            3
-DATA                 4         18
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MCI/MUAHR  MCI/MUAHR  MCI/MUAHR
-   1071.E-2    251.E-4      9.E-4      8.E-4
-   1124.E-2    645.E-4     22.E-4     21.E-4
-   1165.E-2    187.E-3      6.E-3      6.E-3
-   1296.E-2    617.E-3     21.E-3     21.E-3
-   1387.E-2    102.E-2      4.E-2      3.E-2
-   1459.E-2    143.E-2      5.E-2      5.E-2
-   1595.E-2    183.E-2      6.E-2      6.E-2
-   1750.E-2    216.E-2      7.E-2      7.E-2
-   1944.E-2    259.E-2      9.E-2      9.E-2
-   2138.E-2    295.E-2     10.E-2     10.E-2
-   2332.E-2    330.E-2     11.E-2     11.E-2
-   2526.E-2    382.E-2     13.E-2     13.E-2
-   2655.E-2    387.E-2     13.E-2     13.E-2
-   2810.E-2    419.E-2     14.E-2     14.E-2
-   2946.E-2    439.E-2     15.E-2     15.E-2
-   3108.E-2    444.E-2     15.E-2     15.E-2
-   3224.E-2    490.E-2     17.E-2     16.E-2
-   3301.E-2    489.E-2     17.E-2     16.E-2
-ENDDATA             20
-ENDSUBENT           35
-SUBENT        A0234017   20080616   20080908   20080901       A063
-BIB                  4          6
-REACTION   (52-TE-122(D,2N)53-I-122,,TTY,,DT)
-SAMPLE     Enrichment of 122-Te-96.45%.
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties of reading of the
-           curve.
-STATUS     (DEP,A0234009)
-ENDBIB               6
-COMMON               1          3
-EN-ERR
-MEV
-       0.13
+DATA                 2         32
+EN         DATA
+MEV        MCI/MUAHR
+       8.23      0.013
+       8.67      0.030
+       9.11      0.067
+       9.55      0.128
+      10.12      0.248
+      10.80      0.448
+      11.30      0.633
+      11.89      0.881
+      12.36      1.094
+      12.79      1.263
+      13.29      1.417
+      14.35      1.707
+      15.52      1.999
+      16.51      2.210
+      17.69      2.442
+      18.93      2.699
+      20.35      2.898
+      21.65      3.157
+      22.89      3.391
+      23.94      3.589
+      25.11      3.745
+      26.29      3.908
+      27.22      4.078
+      27.96      4.135
+      28.83      4.193
+      29.38      4.314
+      30.06      4.375
+      30.87      4.500
+      31.67      4.563
+      32.41      4.627
+      33.16      4.760
+      33.96      4.827
+ENDDATA             34
+ENDSUBENT           50
+SUBENT        A0234017   20180121   20180423   20180408       A088
+BIB                  4          7
+REACTION   (52-TE-122(D,2N)53-I-122,,TTY,,(PHY),DERIV)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+STATUS     (CURVE) Fig. 5 from ARI,34,1425.
+           (DEP,A0234009)
+HISTORY    (20180121A) SD: STATUS was update. EN-ERR -> EN-ERR-DIG
+           SF8=DT -> (PHY), SF9=DERIV in REACTION code.ERR-ANALYS
+           deleted (no info). Data re-digitized.
+ENDBIB               7
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.015        1.
 ENDCOMMON            3
-DATA                 4         18
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MCI/MUAHR  MCI/MUAHR  MCI/MUAHR
-   1423.E-2    216.E-3      7.E-3      7.E-3
-   1458.E-2    436.E-3     15.E-3     14.E-3
-   1473.E-2    823.E-3     28.E-3     27.E-3
-   1486.E-2    127.E-2      4.E-2      4.E-2
-   1518.E-2    206.E-2      7.E-2      7.E-2
-   1549.E-2    303.E-2     10.E-2     10.E-2
-   1594.E-2    483.E-2     16.E-2     16.E-2
-   1639.E-2    795.E-2     27.E-2     26.E-2
-   1697.E-2    131.E-1      4.E-1      4.E-1
-   1826.E-2    217.E-1      7.E-1      7.E-1
-   1930.E-2    374.E-1     13.E-1     12.E-1
-   2065.E-2    572.E-1     20.E-1     19.E-1
-   2236.E-2    786.E-1     27.E-1     26.E-1
-   2433.E-2     106.E0       4.E0       4.E0
-   2628.E-2     117.E0       4.E0       4.E0
-   2869.E-2     144.E0       5.E0       5.E0
-   3082.E-2     151.E0       5.E0       5.E0
-   3204.E-2     149.E0       5.E0       5.E0
-ENDDATA             20
-ENDSUBENT           35
-SUBENT        A0234018   20080616   20080908   20080901       A063
-BIB                  4          6
-REACTION   (52-TE-122(D,3N)53-I-121,,TTY,,DT)
-SAMPLE     Enrichment of 122-Te-96.45%.
-ERR-ANALYS (+DATA-ERR).See below.
-           (-DATA-ERR).These uncertainties of reading of the
-           curve.
-STATUS     (DEP,A0234010)
-ENDBIB               6
-COMMON               1          3
-EN-ERR
-MEV
-       0.13
+DATA                 2         27
+EN         DATA
+MEV        MCI/MUAHR
+      12.71      0.209
+      13.03      0.441
+      13.54      1.109
+      14.29      2.786
+      14.98      5.561
+      15.66      9.889
+      16.78     18.624
+      17.72     27.069
+      18.28     34.567
+      18.96     42.272
+      19.52     48.804
+      20.14     55.538
+      20.76     62.297
+      21.31     68.881
+      21.81     74.002
+      22.49     80.648
+      23.11     86.637
+      23.73     94.420
+      24.53    101.420
+      25.40    107.380
+      26.39    117.000
+      27.50    123.850
+      28.62    131.100
+      29.73    136.800
+      31.03    140.680
+      31.96    144.710
+      32.95    146.720
+ENDDATA             29
+ENDSUBENT           45
+SUBENT        A0234018   20180121   20180423   20180408       A088
+BIB                  4          7
+REACTION   (52-TE-122(D,3N)53-I-121,,TTY,,(PHY),DERIV)
+SAMPLE     (52-TE-122,ENR=0.9645) Enrichment of 122-Te - 96.45%
+STATUS     (CURVE) Fig. 5 from ARI,34,1425.
+           (DEP,A0234010)
+HISTORY    (20180121A) SD: STATUS was update. EN-ERR -> EN-ERR-DIG
+           SF8=DT -> (PHY), SF9=DERIV in REACTION code. ERR-ANALYS
+           deleted (no info). Data re-digitized.
+ENDBIB               7
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+ 0.015        1.
 ENDCOMMON            3
-DATA                 4         15
-EN         DATA       +DATA-ERR  -DATA-ERR
-MEV        MCI/MUAHR  MCI/MUAHR  MCI/MUAHR
-   2036.E-2     92.E-3      3.E-3      3.E-3
-   2096.E-2    150.E-3      5.E-3      5.E-3
-   2176.E-2    319.E-3     11.E-3     11.E-3
-   2237.E-2    646.E-3     22.E-3     21.E-3
-   2336.E-2    114.E-2      4.E-2      4.E-2
-   2429.E-2    209.E-2      7.E-2      7.E-2
-   2502.E-2    370.E-2     13.E-2     12.E-2
-   2627.E-2    633.E-2     22.E-2     21.E-2
-   2732.E-2    101.E-1      3.E-1      3.E-1
-   2889.E-2    179.E-1      6.E-1      6.E-1
-   3057.E-2    241.E-1      8.E-1      8.E-1
-   3226.E-2    330.E-1     11.E-1     11.E-1
-   3408.E-2    416.E-1     14.E-1     14.E-1
-   3667.E-2    523.E-1     18.E-1     17.E-1
-   3744.E-2    549.E-1     19.E-1     18.E-1
-ENDDATA             17
-ENDSUBENT           32
+DATA                 2         34
+EN         DATA
+MEV        MCI/MUAHR
+      19.69      0.073
+      20.19      0.118
+      20.57      0.177
+      21.00      0.250
+      21.50      0.391
+      22.13      0.611
+      22.75      0.969
+      23.25      1.329
+      23.75      1.798
+      24.31      2.540
+      24.80      3.197
+      25.36      4.325
+      25.92      5.522
+      26.67      7.470
+      27.10      9.403
+      27.79     11.666
+      28.53     14.473
+      29.21     17.699
+      30.08     21.641
+      30.95     25.343
+      31.38     26.839
+      31.88     28.834
+      32.37     30.977
+      32.93     33.762
+      33.55     36.269
+      34.42     39.522
+      34.98     41.851
+      35.53     44.318
+      36.34     47.603
+      37.08     50.403
+      37.76     52.606
+      38.38     54.908
+      39.12     57.306
+      39.99     59.804
+ENDDATA             36
+ENDSUBENT           52
 ENDENTRY            18
