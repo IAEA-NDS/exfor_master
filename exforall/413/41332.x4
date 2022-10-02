@@ -1,45 +1,63 @@
-ENTRY            41332   20051028   20060215   20060215       4136
-SUBENT        41332001   20051028   20060215   20060215       4136
-BIB                 12         29
-TITLE      .INELASTIC NEUTRON SCATTERING AND PROMPT FISSION
-            NEUTRON SPECTRA FOR 237Np.
-AUTHOR     (N.V.KORNILOV,A.V.KAGALENKO,V.YA.BARYBA,V.G.DEMENKOV,
-           C.V.PUPKO,P.A.ANDROSENKO,A.A.LYCHAGIN,B.V.ZHURAVLEV,
-           V.I.TRYKOVA)
+ENTRY            41332   20090429   20090724   20090724       4146
+SUBENT        41332001   20090429   20090724   20090724       4146
+BIB                 13         46
+TITLE      .Inelastic neutron scattering and prompt fission
+            neutron spectra for 237Np.
+AUTHOR     (N.V.Kornilov,A.V.Kagalenko,V.Ya.Baryba,V.G.Demenkov,
+           C.V.Pupko,P.A.Androsenko,A.A.Lychagin,B.V.Zhuravlev,
+           V.I.Trykova)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (C,97TRIEST,1,577,199705)  Experiment descriptipon
+REFERENCE  (C,97TRIEST,1,577,199705)  Experiment description
                                       and graphs
            (W,KORNILOV,199712)   Data are given on diskette
-           (J,ANE,27,1643,200002) Exp. datails, graphs,tables
-METHOD     (TOF) Flight Base Is 2 M
+           (J,ANE,27,1643,200002) Exp. details, graphs,tables
+           ((S,ISINN-5,297,199705)=(R,JINR-E3-97-213,297,199705))
+            First exp.results. Graphs only.
+           ((S,ISINN-5,304,199705)=(R,JINR-E3-97-213,304,199705))
+            Measurement for 0.52 MeV inc.neutron energy.
+METHOD     (TOF) Flight base is 2 m .
 DETECTOR   (SOLST) Cylindrical stilbene detector 70 mm diameter,
                    50 mm height shielded by lead from gammas
                    emitted by Np.
            (LONGC) For relative measurements
            (SCIN)  Two plastic scintillation counters for time-of
                    flight monitoring
-MONITOR    (98-CF-252(0,F),PRE,FY)
+MONITOR    (98-CF-252(0,F),PR,DE,N)
+            Main parameters of detector were measured by standard
+            Cf-252 fission neutron spectrum.
+           (6-C-12(N,EL)6-C-12,,DE) Neutron scattering on C sample
+             was measured to normalize Np data.
 FACILITY   (VDG) EG-1 accelerator, ion current is 4-6 microAmper
 INC-SOURCE (P-T)  For neutron with energies 1 - 2.5 MeV
            (P-LI7) For neutron with energies 0.5 MeV
-SAMPLE     .Neptunium oxide np-o2 in stainless-steel container
+SAMPLE     .Neptunium oxide Np-O2 in stainless-steel container
             having cylindrical shape, wall thickness is 0.1 mm.
             Container weight is 19.9 gram. neptunium oxide powder
             has dimensions 45 mm height, 47 mm diameter,
-            weight of np-o2 is 189.1 gram
+            weight of Np-O2 is 189.1 gram.
+            Carbon sample of 47 mm outer diameter, 27 mm inner
+            diameter, 45 mm height, weight 82.8 g.
+CORRECTION For scattering on the oxygen and iron nuclei,
+           For effect of finite sample size,
+           For neutron background.
 STATUS     (APRVD) .Data are obtained from the author
-HISTORY    (19990906C)  + +  COMPILED AT THE CENTER - CJD
+HISTORY    (19990906C)  + +  Compiled At The Center - CJD
            (20051028U) 3d Reference was added. (M.M.)
-ENDBIB              29
+           (20090429A) M.M.  References S,ISINN-5,297,
+             S,ISINN-5,304 were added.
+            Free text was corrected to be human-readable.
+            BIB information was added.
+ENDBIB              46
 NOCOMMON             0          0
-ENDSUBENT           32
-SUBENT        41332002   19990906   19991117   20050926       0000
-BIB                  3          4
+ENDSUBENT           49
+SUBENT        41332002   20090429   20090724   20090724       4146
+BIB                  4          5
 REACTION   (93-NP-237(N,F),PR,DE,N)
-ANALYSIS    THE SPECTRUM NORMALIZATION WAS ADJUSTED
-             BY FITTING THE EVALUATED CURVE TO EXPERIMENTAL DATA.
-ERR-ANALYS (ERR-S)  RELATIVE STAT. ERROR - dN/N
-ENDBIB               4
+ANALYSIS    The spectrum normalization was adjusted
+             by fitting the evaluated curve to experimental data.
+ERR-ANALYS (ERR-S)  Relative Stat. Error - dN/N
+HISTORY    (20090429A) 1/MEV -> PT/FIS/MEV .
+ENDBIB               5
 COMMON               1          3
 EN
 MEV
@@ -47,7 +65,7 @@ MEV
 ENDCOMMON            3
 DATA                 3         44
 E          DATA       ERR-S
-MEV        1/MEV      PER-CENT
+MEV        PT/FIS/MEV PER-CENT
   0.71       3.750E-01   2.5
   0.89       3.610E-01   2.4
   1.09       3.420E-01   2.4
@@ -93,20 +111,21 @@ MEV        1/MEV      PER-CENT
  11.0        2.160E-04  55.0
  12.0        1.380E-04  57.0
 ENDDATA             46
-ENDSUBENT           59
-SUBENT        41332003   19990906   19991117   20050926       0000
-BIB                  3         19
-REACTION  1((93-NP-237(N,F),PR,NU,,REL)*(93-NP-237(N,F),,SIG))
-          2(((93-NP-237(N,F),PR,NU)*(93-NP-237(N,F),,SIG))/
-           ((93-NP-237(N,F),PR,NU,,,EVAL)*
-           (93-NP-237(N,F),,SIG,,,EVAL)))
-COMMENT    .The experimental (SIG-FISS*NU) values and their ratio
+ENDSUBENT           60
+SUBENT        41332003   20090429   20090724   20090724       4146
+BIB                  5         21
+REACTION   ((93-NP-237(N,F),PR,NU,,REL)*(93-NP-237(N,F),,SIG))
+MISC-COL   (MISC)(((93-NP-237(N,F),PR,NU)*(93-NP-237(N,F),,SIG))/
+             ((93-NP-237(N,F),PR,NU,,,EVAL)*
+             (93-NP-237(N,F),,SIG,,,EVAL)))
+            Deviation from ENDF/B-VI evaluation.
+COMMENT    -The experimental (SIG-FISS*NU) values and their ratio
            to ENDF/B-6 data.
-           .The errors of the fitting procedure are given
+           -The errors of the fitting procedure are given
            in brackets.
-           .The systematic errors due to normalization was not
+           -The systematic errors due to normalization was not
            included.
-            Eo, MeV (sfn)exp        ratio (sfn)exp/(sfn)eval
+            Eo, MeV (SFN)exp        ratio (SFN)exp/(SFN)eval
             0.99    3.89 (1.3%)     0.963
             1.00    4.00 (1.3%)     0.989
             1.46    4.53 (1.1%)     1.010
@@ -114,11 +133,12 @@ COMMENT    .The experimental (SIG-FISS*NU) values and their ratio
             1.77    5.02 (1.0%)     1.055
             1.99    5.05 (1.0%)     1.031
             2.47    5.25 (1.2%)     1.058
-ERR-ANALYS (DATA-ERR)  ERROR OF THE FITTING PROCEDURE
-ENDBIB              19
+ERR-ANALYS (DATA-ERR)  Error of the fitting procedure
+HISTORY    (20090429A)  DATA 2 were moved in MISC.
+ENDBIB              21
 NOCOMMON             0          0
 DATA                 4          7
-EN         DATA      1DATA-ERR  1DATA      2
+EN         DATA       DATA-ERR   MISC
 MEV        ARB-UNITS  PER-CENT   NO-DIM
  0.99        3.89      1.3           0.963
  1.00        4.00      1.3           0.989
@@ -128,12 +148,13 @@ MEV        ARB-UNITS  PER-CENT   NO-DIM
  1.99        5.05      1.0           1.031
  2.47        5.25      1.2           1.058
 ENDDATA              9
-ENDSUBENT           33
-SUBENT        41332004   19990906   19991117   20050926       0000
-BIB                  2          2
+ENDSUBENT           35
+SUBENT        41332004   20090429   20090724   20090724       4146
+BIB                  3          3
 REACTION   (93-NP-237(N,SCT)93-NP-237,,DA/DE)
-ERR-ANALYS (ERR-S)  RELATIVE STAT.ERROR
-ENDBIB               2
+ERR-ANALYS (ERR-S)  Relative Stat.Error
+STATUS      Data are presented partly on Fig.4 of S,ISINN-5,297.
+ENDBIB               3
 COMMON               1          3
 ANG
 ADEG
@@ -372,13 +393,13 @@ MEV        MEV        MB/SR/MEV  PER-CENT
  2.47        2.633       19.0       026.
  2.47        2.693       1.8        100.
 ENDDATA            231
-ENDSUBENT          242
-SUBENT        41332005   19990906   19991117   20050926       0000
+ENDSUBENT          243
+SUBENT        41332005   20090429   20090724   20090724       4146
 BIB                  3          4
 REACTION   (93-NP-237(N,X)0-NN-1,,DA/DE)
-ERR-ANALYS (ERR-S)  RELATIVE STAT.ERROR
+ERR-ANALYS (ERR-S)  Relative Stat.Error
 COMMENT    .The  emission neutron spectrum and "inelastic+elastic"
-           spectrum for initial energy 0.99 MeV - 2.47 mEV.
+           spectrum for initial energy 0.99 MeV - 2.47 MeV.
 ENDBIB               4
 COMMON               1          3
 ANG
@@ -1020,12 +1041,12 @@ MEV        MEV        MB/SR/MEV  PER-CENT
  2.47      8.165       3.2          016.
 ENDDATA            632
 ENDSUBENT          645
-SUBENT        41332006   19990906   19991117   20050926       0000
+SUBENT        41332006   20090429   20090724   20090724       4146
 BIB                  3          4
 REACTION   (93-NP-237(N,INL)93-NP-237,,DA)
 COMMENT     The inelastic cross section integrated over the
             energy range from 0.25 MeV to (E0-0.25) MeV.
-ERR-ANALYS (ERR-S)  RELATIVE STAT.ERROR
+ERR-ANALYS (ERR-S)  Relative Stat.Error
 ENDBIB               4
 COMMON               1          3
 ANG
@@ -1044,20 +1065,19 @@ MEV        MB/SR      MB/SR
 2.47        90.5       6.1
 ENDDATA              9
 ENDSUBENT           22
-SUBENT        41332007   19990906   19991117   20050926       0000
-BIB                  3          7
+SUBENT        41332007   20090429   20090724   20090724       4146
+BIB                  3          6
 REACTION   (93-NP-237(N,TOT),,SIG)
 INC-SOURCE (CF252)
-ERR-ANALYS (ERR-T)  RELATIVE TOTAL ERROR
-           (ERR-S)  MAX STATISTICAL ERROR
-           (ERR-1)  MIN STATISTICAL ERROR
-           (ERR-2)  ERROR DUE TO NUCLEAR DENSITY IN SAMPLES
-           (ERR-3)  MAX ERROR CAUSED BY SPECTROMETER CALIBRATION
-ENDBIB               7
-COMMON               4          3
-ERR-S      ERR-1      ERR-2      ERR-3
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-  20.        3.           1.3       2.2
+ERR-ANALYS (ERR-T)  Relative total error
+            ERR-S   Statistical error 1. -20.% .
+           (ERR-2)  Error due to nuclear density in samples
+           (ERR-3)  Max error caused by spectrometer calibration
+ENDBIB               6
+COMMON               2          3
+ERR-2      ERR-3
+PER-CENT   PER-CENT
+    1.3       2.2
 ENDCOMMON            3
 DATA                 3         61
 EN         DATA       ERR-T
@@ -1124,5 +1144,5 @@ MEV        B          PER-CENT
  8.8        5.78       21.8
  9.0        5.48       24.7
 ENDDATA             63
-ENDSUBENT           79
+ENDSUBENT           78
 ENDENTRY             7

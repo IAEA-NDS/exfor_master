@@ -1,0 +1,74 @@
+ENTRY            31667   20090227   20090724   20090720       3136
+SUBENT        31667001   20090227   20090724   20090720       3136
+BIB                 19         38
+TITLE       The thermal neutron capture cross section of 129I
+AUTHOR     (T.Belgya, O.Bouland, G.Noguere, A.Plompen,
+            P.Schillebeeckx, L.Szentmiklosi)
+REFERENCE  (C,2007NICE,1,631,2007)
+INSTITUTE  (3HUNII )
+           (2FR CAD)
+           (2ZZZGEL) Neutron Physics Unit
+FACILITY   (REAC,3HUNII ) PGAA Facility, Budapest Research Reactor
+INC-SOURCE (REAC) Chopped cold neutron beam
+INC-SPECT   Cold neutron, negligible amount of epithermal neutrons
+SAMPLE      Weight of 1.9778 g, total activity of 2.81 MBq.
+            I(20w%), Pb(53w%), S(6w%), Na(1w%),
+            O(15w%), H(0.1w%), N(1w%)
+DETECTOR   (HPGE) 23 cm distance to sample
+METHOD     (ACTIV,GSPEC)
+MONITOR    ((MONIT)53-I-127(N,G)53-I-128,PAR,SIG,DG)
+MONIT-REF  ((MONIT)31582011,L.Szentmiklosi+,J,NIM/A,564,655,2006)
+ASSUMED    (ASSUM,53-I-129(N,G)53-I-130-M/T,,SIG)
+DECAY-DATA See Fig.3 and Table 1 of C,2007NICE,1,631,2007.
+           Internal conversion coeff. (130Xe, 536 keV): 0.996
+           (53-I-130-G,12.340HR,DG,536.,0.997)
+            - T(1/2) = (ln 2/lambda) is calculated by compiler
+              from decay constant used by authors (1.5603e-05/sec)
+           (53-I-130-M,8.7798MIN,DG,536.,0.995)
+            - T(1/2) = (ln 2/lambda) is calculated by compiler
+              from decay constant used by authors (1.3158e-03/sec)
+            - I = 99.6% is calculated by compiler
+              from IT ratio (82.3%) and two branching ratio
+              I(536 keV,130gI)=0.997 and I(536 keV,130mI)=0.988
+CORRECTION - attenuation of neutron
+           - gamma-ray self absorption
+REL-REF    (R,22819001,S.Nakamura+,J,NST,33,283,1996)
+            Isomeric ratio for 129I(n,g)130I. See ASSUMED.
+           (R,,R.B.Firestone+,B,FIRESTONE,,1999)
+            Decay data (8th edition, 1999 update)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties
+COMMENT    Authors assume 1/v-shape for I-127, 129 neutron capture
+HISTORY    (20090227C) On
+ENDBIB              38
+COMMON               5          3
+E-NRM      MONIT      MONIT-ERR  ASSUM      ASSUM-ERR
+KEV        B          B          NO-DIM     NO-DIM
+443.       0.712      0.009      0.588      0.014
+ENDCOMMON            3
+ENDSUBENT           45
+SUBENT        31667002   20090223   20090724   20090720       3136
+BIB                  2          2
+REACTION   (53-I-129(N,G)53-I-130,PAR,SIG,DG)
+STATUS     (TABLE) Text (p.633) of C,2007NICE,1,631,2007
+ENDBIB               2
+NOCOMMON             0          0
+DATA                 4          1
+EN         E          DATA       DATA-ERR
+EV         KEV        B          B
+0.0253     536.       30.4       1.1
+ENDDATA              3
+ENDSUBENT           10
+SUBENT        31667003   20090223   20090724   20090720       3136
+BIB                  2          3
+REACTION   (53-I-129(N,G)53-I-130,,SIG)
+STATUS     (TABLE) Text (p.634) of C,2007NICE,1,631,2007
+           (DEP,31667002)
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+0.0253     30.6       1.1
+ENDDATA              3
+ENDSUBENT           11
+ENDENTRY             3

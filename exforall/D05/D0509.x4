@@ -1,6 +1,6 @@
-ENTRY            D0509   20080825   20081028   20081023       D063
-SUBENT        D0509001   20080825   20081028   20081023       D063
-BIB                 10         22
+ENTRY            D0509   20090609   20090724   20090721       D068
+SUBENT        D0509001   20090609   20090724   20090721       D068
+BIB                 10         25
 TITLE      Elastic and inelastic scattering of protons by 7Li
            in the energy interval(3.0-5.6) MeV.
 AUTHOR     (U.Fasoli,D.Toniolo,G.Zago)
@@ -13,8 +13,8 @@ METHOD     (EDE,BCINT)Faraday cup
 SAMPLE     A 7Li target isotopically enriched to 99.3%; the
            target was previously evaporated on a 1000 A nickel
            foil and its thickness for 2 MeV protons was ~30 keV.
-ERR-ANALYS (EN-ERR)The beam energy uncertainty varies between
-           0.1 and 0.2%.
+ERR-ANALYS (EN-ERR,0.1,0.2)The beam energy uncertainty varies
+                           between 0.1 and 0.2%.
            (ERR-1)The resolution of the counter was about l%.
            The statistical errors were negligible with respect
            to the errors made in estimating the background.
@@ -23,13 +23,16 @@ ERR-ANALYS (EN-ERR)The beam energy uncertainty varies between
            and therefore have not been applied.
            (ERR-DIG)    Digitizing error
 HISTORY    (20080825C)LV, SD.
-ENDBIB              22
-COMMON               2          3
-EN-ERR     ERR-1
-PER-CENT   PER-CENT
-  0.2        1.0
+           (20090521A) SD: Reaction codes in Subnts. 007,008 were
+                               changed (from SIG to IPA in SF6)
+                               and ANG-MIN, ANG-MAX were added
+ENDBIB              25
+COMMON               1          3
+ERR-1
+PER-CENT
+   1.0
 ENDCOMMON            3
-ENDSUBENT           29
+ENDSUBENT           32
 SUBENT        D0509002   20080825   20081028   20081023       D063
 BIB                  5          5
 REACTION   (3-LI-7(P,EL)3-LI-7,,DA)
@@ -913,16 +916,18 @@ MEV        NO-DIM     MB/SR
  5.4000    -.98354     110.62
 ENDDATA             36
 ENDSUBENT           48
-SUBENT        D0509007   20080825   20081028   20081023       D063
-BIB                  3          3
-REACTION   (3-LI-7(P,INL)3-LI-7,PAR,SIG)
+SUBENT        D0509007   20090609   20090724   20090721       D068
+BIB                  4          5
+REACTION   (3-LI-7(P,INL)3-LI-7,PAR,IPA)
 ERR-ANALYS (EN-ERR-DIG) Digitizing error
 STATUS     (CURVE)Curve fig. 7 from reference.
-ENDBIB               3
-COMMON               3          3
-E-LVL      EN-ERR-DIG ERR-DIG
-MEV        MEV        B
-0.478        0.005      0.0005
+HISTORY    (20090521A) SD: Reaction code was changed (from SIG
+                   to IPA in SF6) ANG-MIN, ANG-MAX were added
+ENDBIB               5
+COMMON               5          3
+E-LVL      EN-ERR-DIG ERR-DIG    ANG-MIN    ANG-MAX
+MEV        MEV        B          ADEG       ADEG
+0.478        0.005      0.0005     70.        180.
 ENDCOMMON            3
 DATA                 2         17
 EN         DATA
@@ -945,17 +950,19 @@ MEV        B
  5.1860    0.14209
  5.3919    0.15465
 ENDDATA             19
-ENDSUBENT           31
-SUBENT        D0509008   20080825   20081028   20081023       D063
-BIB                  3          3
-REACTION   (3-LI-7(P,EL)3-LI-7,,SIG)
+ENDSUBENT           33
+SUBENT        D0509008   20090609   20090724   20090721       D068
+BIB                  4          5
+REACTION   (3-LI-7(P,EL)3-LI-7,,IPA)
 ERR-ANALYS (EN-ERR-DIG) Digitizing error
 STATUS     (CURVE)Curve fig. 7 from reference.
-ENDBIB               3
-COMMON               2          3
-EN-ERR-DIG ERR-DIG
-MEV        B
-  0.005      0.0005
+HISTORY    (20090521A) SD: Reaction code was changed (from SIG
+                   to IPA in SF6) ANG-MIN, ANG-MAX were added
+ENDBIB               5
+COMMON               4          3
+EN-ERR-DIG ERR-DIG    ANG-MIN    ANG-MAX
+MEV        B          ADEG       ADEG
+  0.005      0.0005     70.        180.
 ENDCOMMON            3
 DATA                 2         12
 EN         DATA
@@ -973,5 +980,5 @@ MEV        B
  5.1964    0.49207
  5.3960    0.44071
 ENDDATA             14
-ENDSUBENT           26
+ENDSUBENT           28
 ENDENTRY             8
