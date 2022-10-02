@@ -1,6 +1,6 @@
-ENTRY            31714   20130717   20140228   20140212       3162
-SUBENT        31714001   20130717   20140228   20140212       3162
-BIB                 11         66
+ENTRY            31714   20150312   20150604   20150513       3169
+SUBENT        31714001   20150312   20150604   20150513       3169
+BIB                 12         75
 TITLE      Studies of (n,xn) cross-sections in Al, Au, Bi, Cu,
            Fe, I, In, Mg, Ni, Ta, Y, and Zn by the activation
            method
@@ -9,6 +9,10 @@ AUTHOR     (J.Vrzalova,O.Svoboda,A.Krasa,A.Kugler,M.Majerle,
 INSTITUTE  (3CZRUJF,3CZRCTI)
 REFERENCE  (J,NIM/A,726,84,2013)
            #doi:10.1016/j.nima.2013.05.133
+           (J,JP/CS,533,012051,2014)
+           #doi:10.1088/1742-6596/533/1/012051
+            Additional results for 181Ta(n,2n). Data for
+            natIn(n,xn)112mIn, 127I(n,8n) and 197Au(n,7n)
            (J,KPS,59,1709,2011)
            (J,EPJ/CS,8,07003,2010) Data on graphs.
            (C,2010KRAKOW,,259,2010) Preliminary data on graphs
@@ -31,7 +35,13 @@ INC-SOURCE (P-LI7) High energy protons from the cyclotron were
             92 and 97 MeV were used.
            In NPI, proton beams with energies 20, 32.5, and
             37 MeV were used.
-METHOD     (ACTIV) The irradiation times were about 20 h.
+REL-REF    (R,E1826005,Y.Uwamino+,J,NIM/A,389,463,1997) Neutron
+           spectra estimated by interpolating the data in the ref.
+           (R,31723001,P.Chudoba+,J,PPRC,59,114,2014)
+            MCNPX simulations of the neutron spectra in NPI
+           (R,,A.Prokofiev+,J,NSTS,2,(1),112,2002) TSL neutron
+            spectra calculations algorithm.
+METHOD     (ACTIV,GSPEC) The irradiation times were about 20 h.
            Transport times between end of irradiation and
             activity counting were from 2 minutes in TSL up to
             15 minutes in NPI.
@@ -48,16 +58,12 @@ CORRECTION The following set of corrections were applied:
             - gamma line intensity correction,
             - beam instability correction,
             - background subtraction.
-ERR-ANALYS (ERR-S,1.,10.) Minimal statistical uncertainty from
-            the Gauss-fit of the gamma peaks was 1%, but lower
-            than 10% for most of the peaks.
+ERR-ANALYS (ERR-T) The main contributions to the total unc. are:
+           (ERR-S,1.,10.) Statistical uncertainty
            (ERR-1,,3.) Uncertainty of the efficiency of the HPGe
             detector calibration is below 3%.
            (ERR-2) Uncertainty of the neutron beam intensity 10%.
            (ERR-3,,10.) Uncertainties due to background subtr.
-           (ERR-T) Total uncertainty is a square root of the
-            second powers of Gauss-fit, beam intensity
-            determination and neutron spectrum uncertainties.
 DECAY-DATA Decay data were taken from Chu S.Y.F. et al.: The
             Lund/LBNL Nuclear Data Search web
             Numerical values received from authors.
@@ -66,14 +72,17 @@ HISTORY    (20110708C) VS
              C,2010KRAKOW,,259,2010 and EPJ/CS,21,10007,2012
              STATUS moved from subent. 001 to 002-017.
              Subentry 018 added.
-           (20130717) VS. Entry revised NIM/A,726,84,2013
-ENDBIB              66
+           (20130717A) VS. Entry revised NIM/A,726,84,2013
+           (20150312A) VS. Ref. J.Phys.Conf.Ser.533(2014)012051
+            added. Subents 046-048 added. New data added to
+           subents 007,019
+ENDBIB              75
 COMMON               1          3
 ERR-2
 PER-CENT
 10.
 ENDCOMMON            3
-ENDSUBENT           73
+ENDSUBENT           82
 SUBENT        31714002   20130717   20140228   20140212       3162
 BIB                  4          6
 REACTION  1(79-AU-197(N,2N)79-AU-196,,SIG)
@@ -177,21 +186,26 @@ MEV        MEV        B          B
      35.9      0.8       0.37       0.06
 ENDDATA              4
 ENDSUBENT           15
-SUBENT        31714007   20130717   20140228   20140212       3162
-BIB                  5          5
+SUBENT        31714007   20150312   20150604   20150513       3169
+BIB                  5          7
 REACTION   (73-TA-181(N,2N)73-TA-180-G,,SIG)
 FACILITY   (CYCLO,2SWDUPP)
 DECAY-DATA (73-TA-180-G,8.152HR,DG,93.326,0.045)
 HISTORY    (20130429A) On. DECAY-DATA:73-TA-180 ->73-TA-180-G
+           (20150312A) VS. New data added.
 STATUS     (TABLE) Data from table 6 of NIM/A 726 (2013) 84.
-ENDBIB               5
+            and table 1 of J.Phys.Conf.Ser.533(2014)012051
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         EN-ERR     DATA       ERR-T
+DATA                 4          4
+EN         EN-RSL-FW  DATA       ERR-T
 MEV        MEV        B          B
  47.0        0.6          0.139       0.025
-ENDDATA              3
-ENDSUBENT           13
+ 59.0        0.4          0.059       0.010
+ 66.4        0.4          0.040       0.007
+ 72.8        0.4          0.042       0.010
+ENDDATA              6
+ENDSUBENT           18
 SUBENT        31714008   20130717   20140228   20140212       3162
 BIB                  4          6
 REACTION  1(13-AL-27(N,X)11-NA-24,,SIG)
@@ -405,23 +419,28 @@ MEV        MEV        B          B
      35.9         0.8      0.129      0.018
 ENDDATA              4
 ENDSUBENT           16
-SUBENT        31714019   20130717   20140228   20140212       3162
-BIB                  4          4
-REACTION   (49-IN-0(N,X)49-IN-113-M,,SIG)
+SUBENT        31714019   20150312   20150604   20150513       3169
+BIB                  5          8
+REACTION  1(49-IN-0(N,X)49-IN-113-M,,SIG)
+          2(49-IN-0(N,X)49-IN-113-M,,SIG)
 DECAY-DATA (49-IN-113-M,1.6582HR,DG,391.690,0.642)
-FACILITY   (CYCLO,2SWDUPP)
-STATUS     (TABLE) Data from table 1 of NIM/A 726 (2013) 84.
-ENDBIB               4
+FACILITY  1(CYCLO,3CZRUJF)
+          2(CYCLO,2SWDUPP)
+HISTORY    (20150312A) VS. New data added.
+STATUS     (TABLE) Data from table 6 of NIM/A 726 (2013) 84.
+            and table 1 of J.Phys.Conf.Ser.533(2014)012051
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 4          4
-EN         EN-RSL     DATA       ERR-T
-MEV        MEV        B          B
-        59.        0.4      0.019      0.003
-       66.4        0.4      0.016      0.004
-       72.8        0.4     0.0169     0.0029
-       89.3        0.7     0.0158     0.0026
-ENDDATA              6
-ENDSUBENT           15
+DATA                 6          5
+EN         EN-RSL-HW  DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MEV        B          B          B          B
+       17.5        0.8      0.023      0.003
+       59.0        0.4                           0.019      0.003
+       66.4        0.4                           0.016      0.004
+       72.8        0.4                          0.0169     0.0029
+       89.3        0.7                          0.0158     0.0026
+ENDDATA              7
+ENDSUBENT           20
 SUBENT        31714020   20130717   20140228   20140212       3162
 BIB                  4          6
 REACTION  1(49-IN-0(N,X)49-IN-111,,SIG)
@@ -849,4 +868,56 @@ MEV        MEV        B          B
        35.9        0.8    0.30     0.05
 ENDDATA              4
 ENDSUBENT           13
-ENDENTRY            45
+SUBENT        31714046   20150312   20150604   20150513       3169
+BIB                  5          7
+REACTION  1(49-IN-0(N,X)49-IN-112-M,,SIG)
+          2(49-IN-0(N,X)49-IN-112-M,,SIG)
+DECAY-DATA (49-IN-112-M,20.56MIN,DG,156.56,0.132)
+FACILITY  1(CYCLO,2SWDUPP)
+          2(CYCLO,3CZRUJF)
+HISTORY    (20150312C) VS.
+STATUS     (TABLE) table 1 of J.Phys.Conf.Ser.533(2014)012051
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 6          3
+EN         EN-RSL-FW  DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MEV        B          B          B          B
+       47.0        0.6     0.28     0.07
+       30.4        0.8                            0.159      0.022
+       17.5        0.8                            0.043      0.007
+ENDDATA              5
+ENDSUBENT           17
+SUBENT        31714047   20150312   20150604   20150513       3169
+BIB                  5          5
+REACTION   (53-I-127(N,8N)53-I-120-G,,SIG)
+DECAY-DATA (53-I-120-G,81.MIN,DG,560.44,0.73)
+FACILITY   (CYCLO,2SWDUPP)
+HISTORY    (20150312C) VS.
+STATUS     (TABLE) table 1 of J.Phys.Conf.Ser.533(2014)012051
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-RSL-FW  DATA       ERR-T
+MEV        MEV        B          B
+       94.0        0.7     0.075    0.0025
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        31714048   20150312   20150604   20150513       3169
+BIB                  5          5
+REACTION   (79-AU-197(N,7N)79-AU-191,,SIG)
+DECAY-DATA (79-AU-191-G,3.18HR,DG,586.45,0.17)
+FACILITY   (CYCLO,2SWDUPP)
+HISTORY    (20150312C) VS.
+STATUS     (TABLE) Table 1 of J.Phys.Conf.Ser.533(2014)012051
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 4          4
+EN         EN-RSL-FW  DATA       ERR-T
+MEV        MEV        B          B
+       59.0        0.4     0.094    0.019
+       66.4        0.4     0.24     0.04
+       72.8        0.4     0.174    0.026
+       89.3        0.7     0.078    0.012
+ENDDATA              6
+ENDSUBENT           16
+ENDENTRY            48

@@ -1,46 +1,116 @@
-ENTRY            40141     861009              20050926       0000
-SUBENT        40141001     861009              20050926       0000
-BIB                  9         23
-TITLE       AVERAGE PROMPT NEUTRON NUMBER FOR SPONTANEOUS
-            FISSION OF FM-256
-AUTHOR     (M.DAKOWSKI,JU.A.LAZAREV,JU.TS.OGANESJAN)
+ENTRY            40141   20150316   20150604   20150512       4168
+SUBENT        40141001   20150316   20150604   20150512       4168
+BIB                  9         32
+TITLE       Average number of prompt neutrons in spontaneous
+            fission of Fm-256
+AUTHOR     (M.Dakovskii,Yu.A.Lazarev,Yu.Ts.Oganesyan)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (R,JINR-P15-6218,7206) PREPRINT.JOINT INSTITUTE FOR
-                             NUCLEAR RESEARCH,DUBNA
-MONITOR    (96-CM-244(0,F),PR,NU)   AVERAGE PROMPT NEUTRON NUMBER
-                      FOR  SPONTANEOUS FISSION OF FM-256 IS GIVEN
-                      RELATIVE TO AVERAGE PROMPT NEUTRON NUMBER
-                      FOR SPONTANEOUS FISSION OF CM-244.
-METHOD     (COINC)    THE MEASUREMENTS CONSISTED IN COUNTING
-                      THE COINCIDENCES BETWEEN THE IMPULSES FROM
-                      NEUTRON DETECTORS AND FISSION FRAGMENT
-                      DETECTORS.
-DETECTOR   (COIN,LONGC,SOLST)     LONG COUNTER FOR RECORDING OF
-                      NEUTRONS WHICH CONSISTS OF 36 HE-3 COUNTERS
-                      PLACED INTO PLEXIGLAS BLOCK. FOR RECORDING
-                      OF FISSION FRAGMENTS THE SI(AU)
-                      DETECTORS WAS USED.
-ERR-ANALYS (ERR-S)   STATISTICAL ERROR.
-HISTORY    (730322C)  COMPILED AT THE CENTRE
-           (860506U)  SOME CORRECTIONS MADE
-           (861009U)  ONE EXTRA REACTION LINE ADDED
-ENDBIB              23
-COMMON               1          3
-MONIT
-NO-DIM
-2.69
-ENDCOMMON            3
-ENDSUBENT           30
-SUBENT        40141002     890331              20050926       0000
-BIB                  1          2
+REFERENCE  (J,SNP,16,641,1973) Engl.translation of:
+           (J,YF,16,(6),1167,1972)
+           (R,JINR-P15-6218,197206) Preprint.Joint Institute for
+                             Nuclear Research,Dubna
+FACILITY   (CYCLO,4ZZZDUB) Fm-256 was synthesized in the internal
+           Ne-22 (130 MeV ion energy, about 6E+13 prt/sec
+           intensity) ion beam of U-300 cyclotron by reaction
+           U-238(Ne-22,p3n)Md-256 -> E.C.(90.%,HL=1.33hr -> Fm-256
+           which cross-section is about 2.E-33 cm**2.
+METHOD     (COINC)  The coincidences between the impulses from
+            neutron detectors and fission fragment detectors.
+DETECTOR   (COIN,LONGC,SIBAR)     Long counter for recording of
+            neutrons; consists of 36 He-3 counters placed into
+           plexiglas block. For recording of fission fragments
+           the surface-barrier Si(Au) detectors were used.
+           The efficiency of fission-neutron registration
+           determined for Cm-244 was 48.5%;
+           background < 0.001 n/fis.
+ERR-ANALYS  Background due to spontaneous fission of Cf-246 and
+           Fm-252 (presented in investigated source) can not
+           introduce an error > 0.1 % in measured NU.
+HISTORY    (19730322C)  Compiled at the centre
+           (19860506U)  Some corrections made
+           (19861009U)  One extra reaction line added
+           (20150316A) M.M. Refs. J,SNP,16,641,1973;
+           J,YF,16,(6),1167,1972 were added.
+           BIB information was updated. NO-DIM -> PRT/FIS for NU .
+           Subents 003,004 were added.
+ENDBIB              32
+NOCOMMON             0          0
+ENDSUBENT           35
+SUBENT        40141002   20150316   20150604   20150512       4168
+BIB                  7         14
 REACTION  1(100-FM-256(0,F),PR,NU)
           2((100-FM-256(0,F),PR,NU)/(96-CM-244(0,F),PR,NU))
-ENDBIB               2
+DECAY-DATA (100-FM-256,2.62HR,SF,0.97)
+MONITOR   1(96-CM-244(0,F),PR,NU)   Average prompt neutron number
+           for spontaneous fission of Fm-256 is defined relative
+           to average prompt neutron number for Cm-244 spontaneous
+           fission using the source of 13 fis/min intensity.
+MONIT-REF  (,A.H.Jaffey+,J,NP/A,145,1,1970)
+MISC-COL   (MISC1) Variance for Fm-256 fis. neutrons multiplicity,
+           (MISC2) Variance for Cm-244 fis. neutrons multiplicity,
+             (SIGnu)**2,  (prt/fis)**2 .
+ERR-ANALYS (ERR-S)   Statistical error.
+STATUS     (TABLE) Table II of J,SNP,16,641,1973 NU .
+           Text, page 642 for ratio.
+ENDBIB              14
+COMMON               2          3
+MONIT      MONIT-ERR
+PRT/FIS    PRT/FIS
+2.69       0.02
+ENDCOMMON            3
+DATA                 8          1
+DATA      1ERR-S     1DATA      2ERR-S     2MISC1      MISC1-ERR
+MISC2      MISC2-ERR
+PRT/FIS    PRT/FIS    NO-DIM     NO-DIM     SEE TEXT   SEE TEXT
+SEE TEXT   SEE TEXT
+3.73       0.18       1.387      0.066      2.19       0.66
+1.33       0.08
+ENDDATA              6
+ENDSUBENT           29
+SUBENT        40141003   20150316   20150604   20150512       4168
+BIB                  3          6
+REACTION   (100-FM-256(0,F),PR/NUM,NU,,REL)
+            Total number of events 204.
+            Distributions of multiplicities of registered neutrons
+            number of events.
+STATUS     (TABLE) Table I of J,SNP,16,641,1973 .
+HISTORY    (20150316C) M.M. Subent was added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-S     1DATA      2ERR-S     2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
-3.73       0.18       1.387      0.066
-ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             2
+DATA                 2          8
+PART-OUT   DATA
+NO-DIM     ARB-UNITS
+ 0.        27.
+ 1.        65.
+ 2.        58.
+ 3.        36.
+ 4.        14.
+ 5.        4.
+ 6.        0.
+ 7.        0.
+ENDDATA             10
+ENDSUBENT           21
+SUBENT        40141004   20150316   20150604   20150512       4168
+BIB                  3          6
+REACTION   (96-CM-244(0,F),PR/NUM,NU,,REL)
+            Total number of events 7169.
+            Distributions of multiplicities of registered neutrons
+            number of events.
+STATUS     (TABLE) Table I of J,SNP,16,641,1973 .
+HISTORY    (20150316C) M.M. Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 2          8
+PART-OUT   DATA
+NO-DIM     ARB-UNITS
+ 0.        1645.
+ 1.        2745.
+ 2.        1991.
+ 3.        640.
+ 4.        137.
+ 5.        137.
+ 6.        11.
+ 7.        0.
+ENDDATA             10
+ENDSUBENT           21
+ENDENTRY             4
