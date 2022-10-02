@@ -1,17 +1,20 @@
-ENTRY            D4080   20010913   20011126   20050926       0000
-SUBENT        D4080001   20010913   20011126   20050926       0000
-BIB                 10         32
-TITLE      Cross section data for proton, He-3 and a-particle
+ENTRY            D4080   20100614   20110323   20110307       D074
+SUBENT        D4080001   20100614   20110323   20110307       D074
+BIB                 12         46
+TITLE      Cross section data for proton, He-3 and alpha-particle
            induced reactions on nat-Ni, nat-Cu and nat-Ti for
            monitoring beam performance
-AUTHOR     (F.TARKANYI, F.SZELECSENYI, P.KOPECKY)
+AUTHOR     (F.Tarkanyi,F.Szelecsenyi,P.Kopecky)
 REFERENCE  (C,91JUELIC,,529,1991) Main Reference
-           (J,ARI,42,513,1991) Methods of data evaluation and
-           error calculation
+REL-REF    (M,D4002001,F.Tarkanyi+,J,ARI,42,513,1991) Methods of
+           data evaluation and error calculation and details for
+           Ti sample description
+           (M,D4002001,F.Tarkanyi+,J,ARI,44,687,1993) details for
+           Ni sample description
 INSTITUTE  (3HUNDEB,3CZRUJV)
 FACILITY   (CYCLO,3HUNDEB)  MGC-20E
            (CYCLO,3CZRUJV)  U-120M
-           (CYCLO,2GERJUL)  Cv-28
+           (CYCLO,2GERJUL)  CV-28
 SAMPLE     Natural metal Ti, Ni and Cu foils from Goodfellow,
            England, more details can be found in
             J,ARI,44,687,93 For Ti
@@ -27,30 +30,47 @@ DETECTOR   (GELI)
 ANALYSIS   (AREA) Normal high resolution gamma-spectrometry was
            applied.
            The beam energy degradation in the targets was
-           calculated according to Williamson et al., Raport
-           Cea-R-3042, (1966).
+           calculated according to Williamson et al., Report
+           CEA-R-3042, (1966).
            Correction was made for dead time, pile-up and cascade
            losses.
+ERR-ANALYS (ERR-S,1.,6.) counting statistics
+           (ERR-1) detector S efficiency 5%,
+           (ERR-2) decay data 3%,
+           (ERR-3) number of target nuclei 1%,
+           (ERR-4,7.,9.)incident bombarding particle
+                                                 intensity 7-9%.
+            The total estimated errors in the cross
+                                               sections are 6-15%
 HISTORY    (19980112C)
            (20010409U) Changed to lower case, BIB updates
-ENDBIB              32
-NOCOMMON             0          0
-ENDSUBENT           35
-SUBENT        D4080002   20010913   20011126   20050926       0000
-BIB                  4          9
-REACTION   (28-NI-0(P,X)28-NI-57,,SIG,,,EXP)
+           (20100614A) SD: Small correction of REACTION code was
+            made in Subents 002-007. SF9 was deleted as obsolete.
+            ERR-ANALYS was added to Subent 001.
+ENDBIB              46
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+  5.          3.        1.
+ENDCOMMON            3
+ENDSUBENT           53
+SUBENT        D4080002   20100614   20110323   20110307       D074
+BIB                  4         11
+REACTION   (28-NI-0(P,X)28-NI-57,,SIG)
 DECAY-DATA (28-NI-57,36.1HR,DG,127.2,0.129,
                             DG,1377.6,0.779,
                             DG,1757.5,0.071)
-STATUS     Numerical data were received from the authors
-ERR-ANALYS (EN-ERR)  .
-           (DATA-ERR)  .
-           Details about the error calculation can be found in
-           journal, ARI, 42, (1991) 513
-ENDBIB               9
+STATUS     (TABLE) Numerical data were received from the authors
+ERR-ANALYS (ERR-T) The total errors in the cross sections were
+              obtained by summing quadratically the possible
+              individual relative errors, described in Subent 001.
+           (EN-ERR) the uncertainty varying in accordance with
+                  the straggling, the foil non-uniformities and
+                  the calculation method
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         67
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
        13.6        0.3       0.41       0.05
        13.9        0.3        1.2       0.14
@@ -120,22 +140,26 @@ MEV        MEV        MB         MB
        29.1        0.2       167.        17.
        29.6        0.2       172.        17.
 ENDDATA             69
-ENDSUBENT           83
-SUBENT        D4080003   20010913   20011126   20050926       0000
-BIB                  5          9
-REACTION   (22-TI-0(P,X)23-V-48,,SIG,,,EXP)
+ENDSUBENT           85
+SUBENT        D4080003   20100614   20110323   20110307       D074
+BIB                  6         13
+REACTION   (22-TI-0(P,X)23-V-48,,SIG)
 RAD-DET    (23-V-48,DG)
 DECAY-DATA (23-V-48,383.424HR,DG,983.5,0.9999,
                               DG,1312.0,0.9749)
-STATUS     Numerical data were received from the authors
-ERR-ANALYS (EN-ERR) Details about the error calculation can be
-            found in J,ARI, 42, (1991) 513
-           (DATA-ERR) Details about the error calculation can be
-            found in J,ARI, 42, (1991) 513
-ENDBIB               9
+STATUS     (TABLE) Numerical data were received from the authors
+ERR-ANALYS (ERR-T) The total errors in the cross sections were
+              obtained by summing quadratically the possible
+              individual relative errors, described in Subent 001.
+           (EN-ERR) the uncertainty varying in accordance with
+                  the straggling, the foil non-uniformities and
+                  the calculation method
+HISTORY    (20100614A) SD: data point at En=10.61 was corrected:
+                                  563. ==> 363.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4         69
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
         4.5       0.41      0.463      0.042
        5.31       0.39      36.79       2.79
@@ -153,7 +177,7 @@ MEV        MEV        MB         MB
       10.05       0.29       353.        28.
       10.34       0.28       369.        29.
       10.45       0.37       357.        28.
-      10.61       0.28       563.        28.
+      10.61       0.28       363.        28.
       10.78        0.5       364.        24.
       10.91       0.36       362.        28.
       11.35       0.35       366.        29.
@@ -207,10 +231,10 @@ MEV        MEV        MB         MB
       29.53       0.21       34.8        2.6
       29.98        0.2       34.3        2.6
 ENDDATA             71
-ENDSUBENT           85
-SUBENT        D4080004   20010913   20011126   20050926       0000
+ENDSUBENT           89
+SUBENT        D4080004   20100614   20110323   20110307       D074
 BIB                  3          5
-REACTION   (22-TI-0(HE3,X)23-V-48,,SIG,,,EXP)
+REACTION   (22-TI-0(HE3,X)23-V-48,,SIG)
 DECAY-DATA (23-V-48,383.424HR,DG,983.5,0.9999,
                               DG,1312.0,0.9749)
 STATUS     (CURVE) Data were taken from Figure 4. of the
@@ -243,9 +267,9 @@ MEV        MB
        35.3     364.07
 ENDDATA             23
 ENDSUBENT           33
-SUBENT        D4080005   20010913   20011126   20050926       0000
+SUBENT        D4080005   20100614   20110323   20110307       D074
 BIB                  3          4
-REACTION   (22-TI-0(A,X)24-CR-51,,SIG,,,EXP)
+REACTION   (22-TI-0(A,X)24-CR-51,,SIG)
 DECAY-DATA (24-CR-51,27.8D,DG,320.0)
 STATUS     (CURVE) Data were taken from Figure 6. of the
            publication C,91JUELIC,,p.531,1991.
@@ -284,9 +308,9 @@ MEV        MB
       38.42       72.5
 ENDDATA             30
 ENDSUBENT           39
-SUBENT        D4080006   20010913   20011126   20050926       0000
+SUBENT        D4080006   20100614   20110323   20110307       D074
 BIB                  3          4
-REACTION   (29-CU-0(A,X)31-GA-66,,SIG,,,EXP)
+REACTION   (29-CU-0(A,X)31-GA-66,,SIG)
 DECAY-DATA (31-GA-66,9.4HR,DG,1039.,0.379)
 STATUS     (CURVE) Data were taken from Figure 5. of the
            publication C,91JUELIC,,p.531,1991.
@@ -319,9 +343,9 @@ MEV        MB
         40.      136.7
 ENDDATA             24
 ENDSUBENT           33
-SUBENT        D4080007   20010913   20011126   20050926       0000
+SUBENT        D4080007   20100614   20110323   20110307       D074
 BIB                  3          4
-REACTION   (29-CU-0(HE3,X)31-GA-66,,SIG,,,EXP)
+REACTION   (29-CU-0(HE3,X)31-GA-66,,SIG)
 DECAY-DATA1(31-GA-66,9.4HR,DG,1039.,0.379)
 STATUS     (CURVE) Data were taken from Figure 3. of the
            publication C,91JUELIC,,p.531,1991.
