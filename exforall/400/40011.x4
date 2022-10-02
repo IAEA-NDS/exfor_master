@@ -1,71 +1,168 @@
-ENTRY            40011     971214              20050926       0000
-SUBENT        40011001     971214              20050926       0000
-BIB                 12         18
-TITLE       ON THE KINETIC ENERGY VARIATION OF THE FRAGMENTS OF
-            92-U-235 FISSION BY 0.15-1.68 MEV NEUTRONS
-AUTHOR     (E.DERMENDZHIEV, N.KASHUKEEV, TS.PANTELEEV,
-           TYAN-SAN-KHAK)
+ENTRY            40011   20141114   20150416   20150410       4167
+SUBENT        40011001   20141114   20150416   20150410       4167
+BIB                 15         56
+TITLE       On variation of the kinetic energy of the fragments
+           from 92-U-235 fission by 0.15-1.68 MeV neutrons
+AUTHOR     (E.Dermendzhiev, N.Kashukeev, Ts.Panteleev,
+           Tyan San Khak)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (R,JINR-P3-4873,6912)
-MONITOR    (92-U-235(N,F),,KE,FF)  =1.AT THERMAL FISSION
-FACILITY   (VDG)      VAN DE GRAAFF
-INC-SOURCE (P-LI7)    THICKNESS OF TARGET IS EQUAL TO  0.38 MG/CM2
-                      DIAMETER IS EQUAL TO 1CM
-METHOD      (CRAT)     COUNTER RATIO
-ERR-ANALYS (DATA-ERR) NOT SPECIFIED
-PART-DET   (FF)       FISSION-FRAGMENTS
-DETECTOR   (FISCH)    FISSION CHAMBER
-HISTORY    (700619R)
-           (700619C)
-           (830303A)  CORRECTED IN BNL
-           (971214A)  CORRECTED IN CJD
-ENDBIB              18
+REFERENCE  (R,JINR-P3-4873,196912)
+REL-REF    (I,,S.Bochvarov+,R,JINR-P3-4110,1968)
+           (I,,V.Z.Mikhaylova+,J,NIM,66,25,1968)
+MONITOR     No information.
+           Absolute counting of fission events.
+COMMENT    Of compiler M.M.
+           Initially, this MONITOR was compiled in 1970 by reactio
+             (U-235(N,F),,DE,FF,REL)=1. .
+            In 2014 reaction is
+             "(U-235(N,F),,AKE,FF) =1. at thermal fission" ,
+            what is wrong, because AKE,FF at thermal fission is
+           about 170 MeV (TKE) .
+FACILITY   (VDG,4ZZZDUB)      Van de Graaff EG-5
+            Proton current ~20-30 microA.
+INC-SOURCE (P-LI7)   Thickness of Li target is 0.38 mg/cm2,
+                     diameter is equal to 1cm .
+            Energy resolution at all points is about 0.08 MeV.
+            For fast neutrons in 0.15 MeV - 1.68 MeV energy range.
+            - Thermal neutrons were obtained by slowing-down in
+           paraffin block.
+SAMPLE     Two samples in ionization chamber. Diameter 9.2 cm .
+           Thickness ~ 1.8 mg/cm2 .
+METHOD     (FISCT)
+           Cyclic measurements at fast and thermal neutron beams
+           about 30 min at each beam.
+           2PI geometry in combination with samples rotation at
+           45 deg to avoid influence from angular anisotropy of
+           fission fragments.
+PART-DET   (FF)       Fission-fragments
+DETECTOR   (FISCH) Double ionization fission chamber.
+           Registration discrimination thresholds 55-60 MeV and
+           20 MeV.
+ERR-ANALYS (DATA-ERR) Standard deviation.
+HISTORY    (19700619R)
+           (19700619C)
+           (19830303A)  corrected in BNL
+           (19971214A)  corrected in CJD
+           (20141114A) SD: Updated to new date formats,lower case.
+            Code in METHOD deleted. SF6=KE -> AKE in MONITOR and
+            REACTION code according to EXFOR rules in Subents 1-3.
+           (20141223A) M.M. The article was checked,
+           BIB information was updated in FACILITY,INC-SOURCE,
+           METHOD,SAMPLE,DETECTOR,ERR-ANALYS,ANALYSIS,STATUS,
+           REL-REF,EN-SEC,COMMENTs.
+           MONITOR was deleted as wrong - see COMMENT of compiler.
+           Reaction was corrected (see ANALYSIS in Subent 002) :
+             (92-U-235(N,F),,AKE,FF,REL) ->
+             ((92-U-235(N,F),PAR/PRE,FY,,REL/MSC)//
+             (92-U-235(N,F),PAR/PRE,FY,,REL/MSC)) .
+           EN -> EN-NM; E1-MIN,E2-MIN, EN-DN, EN-SEC were added.
+           ARB-UNITS -> NO-DIM .
+ENDBIB              56
 COMMON               1          3
-EN-RSL
+EN-RSL-FW
 MEV
- 8.0000E-02
+ 0.08
 ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        40011002     971214              20050926       0000
-BIB                  3          3
-REACTION   (92-U-235(N,F),,KE,FF,REL)
-STATUS     (PRELM)
-HISTORY    (971214A)   REACTION QUANTITY CORRECTED
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           63
+SUBENT        40011002   20141114   20150416   20150410       4167
+BIB                  6         45
+REACTION   ((92-U-235(N,F),PAR/PRE,FY,,MSC)//
+           (92-U-235(N,F),PAR/PRE,FY,,MSC))
+            See ANALYSIS for explanation of measured quantity.
+ANALYSIS    Relative yield W of fission fragments was defined as:
+           W=(N1fast/N2fast)/(N1thermal/N2thermal),
+           N1 - number of counts in 1st sample with high
+           discrimination threshold E1=55-60 MeV,
+           N2 - number of counts in 2nd sample with low
+           discrimination threshold E2=20 MeV; corrected for
+           backgrounds due to alpha-particles
+            ( average background ~ 2count/min).
+           fast - for fast neutrons,
+           thermal - for thermal neutrons.
+           Maximal counts rate in measurement at thermal neutrons
+            about 200 count/sec.
+EN-SEC     (E1-MIN,FF) High discrimination threshold E1=55-60 MeV.
+           (E2-MIN,FF) Low discrimination threshold E2=20 MeV.
+COMMENT    Of compiler M.M.
+           On Fig.1 these data are given in two Y scales:
+           left - W ( see ANALYSIS), right - deltaEk, where
+           deltaEk - average deviation of fission fragments
+             kinetic energy at fission by fast neutrons EKfast
+             from one at fission by thermal neutrons EKthermal,
+             EKfast-EKthermal.
+            Scale values correspondence:
+           W,no-dim   deltaEk,MeV
+           0.96       -0.8
+           0.98       -0.4
+           1.00       0.
+           1.02       0.4
+           1.04       0.8
+           So, to define deltaEk (MeV) from W values (no-dim),
+           a formula could be applied:
+           deltaEk= (W-1.)*20  .
+STATUS     (PRELM) Preliminary measurement.
+           (TABLE) Table 1 of R,JINR-P3-4873,1969 .
+HISTORY    (19971214A)   Reaction quantity corrected
+           (20141114A) SD:  SF6=KE -> AKE in REACTION code
+            according to EXFOR rules.
+           (20141223A) M.M. Reaction was corrected
+             (92-U-235(N,F),,AKE,FF,REL) ->
+             ((92-U-235(N,F),PAR/PRE,FY,,REL/MSC)//
+             (92-U-235(N,F),PAR/PRE,FY,,REL/MSC)) .
+           EN -> EN-NM; E1-MIN,E2-MIN, EN-DN, EN-SEC were added.
+           ARB-UNITS -> NO-DIM .
+ENDBIB              45
+COMMON               3          3
+EN-DN      E1-MIN     E2-MIN
+EV         MEV        MEV
+0.0253       55.       20.
+ENDCOMMON            3
 DATA                 3          4
-EN         DATA       DATA-ERR
-MEV        ARB-UNITS  ARB-UNITS
- 1.5000E-01 9.9500E-01 2.6000E-02
- 4.3000E-01 1.0050E+00 2.0000E-02
- 7.7000E-01 1.0200E+00 1.9000E-02
- 9.9000E-01 1.0050E+00 2.3000E-02
+EN-NM      DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+ 1.5       0.995      0.026
+ 4.3       1.005      0.020
+ 7.7       1.020      0.019
+ 9.9       1.005      0.023
 ENDDATA              6
-ENDSUBENT           14
-SUBENT        40011003     971214              20050926       0000
-BIB                  3          3
-REACTION   (92-U-235(N,F),,KE,FF,REL)
-COMMENT     DATA ARE AVERAGED ON SEVERAL MEASUREMENTS
-HISTORY    (971214A)   REACTION QUANTITY CORRECTED
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           60
+SUBENT        40011003   20141114   20150416   20150410       4167
+BIB                  5         12
+REACTION   ((92-U-235(N,F),PAR/PRE,FY,,MSC)//
+           (92-U-235(N,F),PAR/PRE,FY,,MSC))
+           See ANALYSIS for explanation of measured quantity,
+           in this Subent and in Subent 002.
+ANALYSIS    Data are averaged on several measurements
+            See also ANALYSIS in Subent 002 for data definition.
+EN-SEC     (E1-MIN,FF) High discrimination threshold E1=55-60 MeV.
+           (E2-MIN,FF) Low discrimination threshold E2=20 MeV.
+STATUS     (TABLE) Table 1 of R,JINR-P3-4873,1969 .
+HISTORY    (19971214A)   Reaction quantity corrected
+           (20141114A) SD:  SF6=KE -> AKE in REACTION code
+            according to EXFOR rules.
+ENDBIB              12
+COMMON               3          3
+EN-DN      E1-MIN     E2-MIN
+EV         MEV        MEV
+0.0253       55.       20.
+ENDCOMMON            3
 DATA                 3         14
-EN         DATA       DATA-ERR
-MEV        ARB-UNITS  ARB-UNITS
- 2.6000E-01 1.0000E+00 6.0000E-03
- 3.7000E-01 9.9100E-01 5.0000E-03
- 4.9000E-01 1.0020E+00 4.0000E-03
- 5.9000E-01 9.9900E-01 4.0000E-03
- 7.1000E-01 1.0090E+00 6.0000E-03
- 7.7000E-01 1.0180E+00 9.0000E-03
- 8.1000E-01 1.0160E+00 6.0000E-03
- 8.8000E-01 9.9800E-01 8.0000E-03
- 9.9000E-01 9.9600E-01 8.0000E-03
- 1.0900E+00 1.0060E+00 8.0000E-03
- 1.2100E+00 1.0140E+00 8.0000E-03
- 1.3800E+00 1.0110E+00 1.0000E-02
- 1.5800E+00 1.0130E+00 8.0000E-03
- 1.6800E+00 1.0180E+00 1.0000E-02
+EN-NM      DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+ 0.26       1.000      0.006
+ 0.37       0.991      0.005
+ 0.49       1.002      0.004
+ 0.59       0.999      0.004
+ 0.71       1.009      0.006
+ 0.77       1.018      0.009
+ 0.81       1.016      0.006
+ 0.88       0.998      0.008
+ 0.99       0.996      0.008
+ 1.09       1.006      0.008
+ 1.21       1.014      0.008
+ 1.38       1.011      0.010
+ 1.58       1.013      0.008
+ 1.68       1.018      0.010
 ENDDATA             16
-ENDSUBENT           24
+ENDSUBENT           37
 ENDENTRY             3
