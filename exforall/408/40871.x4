@@ -1,36 +1,38 @@
-ENTRY            40871   20090414   20090724   20090724       4146
-SUBENT        40871001   20090414   20090724   20090724       4146
-BIB                 12         37
+ENTRY            40871   20111222   20120210   20120207       4155
+SUBENT        40871001   20111222   20120210   20120207       4155
+BIB                 13         42
 INSTITUTE  (4RUSNIR)
 REFERENCE  (C,83KIEV,2,285,198310)
 AUTHOR     (V.N.Nefedov, B.I.Starostov, A.A.Boytsov)
 TITLE       High precision spectra measurements for neutrons
             arising from the fission of Cf-252, U-233, U-235,
             Pu-239 in the energy range 0.04 - 5 MeV .
-FACILITY   (REAC) Reactor CM-2
+FACILITY   (REAC,4RUSNIR) Reactor CM-2
 METHOD     (TOF) Time resolution 5 nsec.
-DETECTOR   (SCIN) Antracene scintillation detector for neutrons.
+DETECTOR  1(SCIN) Anthracene scintillation detector for neutrons.
             Crystal of 18mm diameter, 4 mm height, methane filled.
             Lead filter of 1 mm thickness, 30 mm diameter to
             decrease gammas background.
             Calibration of pulse discrimination  by
                  Fe-55, gamma energy 5.9 keV;
                  Am-241,gamma energy 59.5 keV.
-           (FISCH) For fission fragments -four ionization chambers
+          2(FISCH) For fission fragments -four ionization chambers
             of 2.5 g weight each.
             Registration efficiency : Cf-252 - 98+-2 %,
             Pu-239 - 97+-2 %, U-235 - 95+-2 %, U-233 - 92+-2%.
 SAMPLE      Layers of 20 mm diameter on stainless steel of 0.04 mm
             thickness, 25 mm diameter.
-PART-DET   (N)
-           (FF)
-ERR-ANALYS (ERR-1) Time-width  of the channel error.
-           (ERR-2) Error in the zero-time determination.
-           (ERR-3) Error in the flight base determination.
-           (ERR-4) Error due to the discrimination level
-                   stability.
-           (ERR-5) Error caused by the delayed gammas.
-            Statistical error 2. - 5. % .
+PART-DET  1(N)
+          2(FF)
+CORRECTION  For random coincidences.
+            For background due scattered neutrons and delayed
+            gammas. Contribution of delayed gamma quanta 2%.
+ERR-ANALYS (ERR-S,2.,5.) Statistical error 2. - 5. % .
+                   Time-width  of the channel error 3%.
+                   Error in the zero-time determination - 0.3nsec.
+                   Error in the flight base determination-1mm.
+                   Error due to the discrimination level
+                   stability - 0.03 keV.
 STATUS     (APRVD)  Starostov 1985-06
 HISTORY    (19851018C)
            (20010319A) Date is corrected
@@ -38,64 +40,84 @@ HISTORY    (19851018C)
             BIB information was added.
             Free text was corrected to be human-readable.
             Units were  corrected PART/FIS -> PRT/FIS
-ENDBIB              37
-COMMON               5          3
-ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
-PER-CENT   NSEC       MM         KEV        PER-CENT
- 3.0000E-01 3.0000E-01 1.0000E+00 3.0000E-02 2.0000E+00
-ENDCOMMON            3
-ENDSUBENT           44
-SUBENT        40871002   20090414   20090724   20090724       4146
-BIB                  4          6
-REACTION   (94-PU-239(N,F),PR,NU,,MXW)
+           (20111221A) Reaction was corrected in Subents 005-013
+            according to memo CP-D/701 .
+             Errors ERR-1 - ERR-5 were moved in free text.
+ENDBIB              42
+NOCOMMON             0          0
+ENDSUBENT           45
+SUBENT        40871002   20111222   20120210   20120207       4155
+BIB                  7         13
+REACTION  1(94-PU-239(N,F),PR,NU,,MXW)
+          2(94-PU-239(N,F)0-NN-1,PR,KEM) Spectrum temperature
 INC-SPECT   Thermal neutrons .
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
-MONITOR    (98-CF-252(0,F),PR,NU)
-STATUS      Text of reference, p.287 .
-ENDBIB               6
+MONITOR    ((MONIT)98-CF-252(0,F),PR,NU)
+ASSUMED    (ASSUM,98-CF-252(0,F)0-NN-1,PR,KEM)Spectrum temperature
+                from REL-REF of M.V.Blinon.
+MONIT-REF  ((MONIT),R.Bottger+,C,82ANTWER,484,1982)
+            Value of NU given in 82ANTWER,484 is from
+            R.R.Spencer,NBS-594,728,1980 .
+REL-REF    (R,,M.V.Blinov+,C,82ANTWER,479,1982)
+STATUS     (TABLE) Text of C,83KIEV,2,285,1983, p.287 .
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       MONIT
-EV         PRT/FIS    PRT/FIS
-   2.53E-02 2.89       3.77
+DATA                 5          1
+EN-DUMMY   DATA      1DATA      2MONIT      ASSUM
+EV         PRT/FIS    MEV        PRT/FIS    MEV
+   2.53E-02 2.89       1.367      3.77       1.417
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40871003   20090414   20090724   20090724       4146
-BIB                  4          6
-REACTION   (92-U-235(N,F),PR,NU,,MXW)
+ENDSUBENT           21
+SUBENT        40871003   20111222   20120210   20120207       4155
+BIB                  7         13
+REACTION  1(92-U-235(N,F),PR,NU,,MXW)
+          2(92-U-235(N,F)0-NN-1,PR,KEM,,MXW) Spectrum temperature
 INC-SPECT   Thermal neutrons.
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
-MONITOR    (98-CF-252(0,F),PR,NU)
-STATUS      Text of reference, p.287 .
-ENDBIB               6
+MONITOR    ((MONIT)98-CF-252(0,F),PR,NU)
+ASSUMED    (ASSUM,98-CF-252(0,F)0-NN-1,PR,KEM)Spectrum temperature
+                from REL-REF of M.V.Blinon.
+MONIT-REF  ((MONIT),R.Bottger+,C,82ANTWER,484,1982)
+            Value of NU given in 82ANTWER,484 is from
+            R.R.Spencer,NBS-594,728,1980 .
+REL-REF    (R,,M.V.Blinov+,C,82ANTWER,479,1982)
+STATUS     (TABLE) Text of C,83KIEV,2,285,1983, p.287 .
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       MONIT
-EV         PRT/FIS    PRT/FIS
- 2.5300E-02 2.3830E+00 3.7700E+00
+DATA                 5          1
+EN-DUMMY   DATA      1DATA      2MONIT      ASSUM
+EV         PRT/FIS    MEV        PRT/FIS    MEV
+ 2.5300E-02 2.383      1.306      3.77       1.417
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40871004   20090414   20090724   20090724       4146
-BIB                  4          6
-REACTION   (92-U-233(N,F),PR,NU,,MXW)
+ENDSUBENT           21
+SUBENT        40871004   20111222   20120210   20120207       4155
+BIB                  7         13
+REACTION  1(92-U-233(N,F),PR,NU,,MXW)
+          2(92-U-233(N,F)0-NN-1,PR,KEM,,MXW) Spectrum temperature
 INC-SPECT   Thermal neutrons.
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
-MONITOR    (98-CF-252(0,F),PR,NU)
-STATUS      Text of reference, p.287 .
-ENDBIB               6
+MONITOR    ((MONIT)98-CF-252(0,F),PR,NU)
+ASSUMED    (ASSUM,98-CF-252(0,F)0-NN-1,PR,KEM)Spectrum temperature
+                from REL-REF of M.V.Blinon.
+MONIT-REF  ((MONIT),R.Bottger+,C,82ANTWER,484,1982)              4
+            Value of NU given in 82ANTWER,484 is from
+            R.R.Spencer,NBS-594,728,1980 .
+REL-REF    (R,,M.V.Blinov+,C,82ANTWER,479,1982)
+STATUS     (TABLE) Text of C,83KIEV,2,285,1983, p.287 .
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       MONIT
-EV         PRT/FIS    PRT/FIS
- 2.5300E-02 2.5780E+00 3.7700E+00
+DATA                 5          1
+EN-DUMMY   DATA      1DATA      2MONIT      ASSUM
+EV         PRT/FIS    MEV        PRT/FIS    MEV
+ 2.5300E-02 2.578      1.333      3.77       1.417
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40871005   20090414   20090724   20090724       4146
-BIB                  4         14
-REACTION   (98-CF-252(0,F),PR,DE,N) From ratio to Maxwell
+ENDSUBENT           21
+SUBENT        40871005   20111222   20120210   20120207       4155
+BIB                  5         16
+REACTION   (98-CF-252(0,F),PR,NU/DE) From ratio to Maxwell
 MISC-COL   (MISC) Flight base length
 ERR-ANALYS (ERR-6) Sum of statistical error, error due to the
                    random coincidence in the detectors, error
@@ -106,10 +128,12 @@ ERR-ANALYS (ERR-6) Sum of statistical error, error due to the
                    the detector walls and on the air atoms
            (ERR-9) Error caused by the detector efficiency
                    uncertainty
+STATUS     (TABLE) From author.
 HISTORY    (20090414A) REACTION SF2 was corrected: N -> 0 ,
             MXW/REL was deleted from SF8.
             DATA units were corrected  ARB-UNITS -> PT/FIS/MEV .
-ENDBIB              14
+           (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB              16
 COMMON               1          3
 MISC
 M
@@ -193,10 +217,10 @@ PER-CENT   PER-CENT
  7.4900E+00 6.2000E-01 3.4100E-02 1.8000E+00 6.9000E-01 4.0000E-01
  5.0000E+00 5.4000E+00
 ENDDATA             76
-ENDSUBENT           99
-SUBENT        40871006   20090414   20090724   20090724       4146
-BIB                  5         17
-REACTION   (94-PU-239(N,F),PR,DE,N,MXW) Deduced from the ratio
+ENDSUBENT          101
+SUBENT        40871006   20111222   20120210   20120207       4155
+BIB                  6         19
+REACTION   (94-PU-239(N,F),PR,NU/DE,,MXW) Deduced from the ratio
                                  to the Maxwell spectrum
 INC-SPECT   Thermal neutrons .
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
@@ -211,9 +235,11 @@ ERR-ANALYS (ERR-6) Sum of statistical error,error due to the
                    the detector walls and on the air atoms
            (ERR-9) Error caused by the detector efficiency
                    uncertainty
+STATUS     (TABLE) From author.
 HISTORY    (20090414A) DATA units were corrected:
              ARB-UNITS -> PT/FIS/MEV . REL was deleted in SF8.
-ENDBIB              17
+           (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB              19
 COMMON               1          3
 EN-DUMMY
 EV
@@ -357,10 +383,10 @@ PER-CENT   PER-CENT   M
  7.1500E+00 5.8000E-01 2.9520E-02 2.0000E+00 7.2000E-01 4.0000E-01
  5.0000E+00 5.3000E+00 2.3130E+00
 ENDDATA            136
-ENDSUBENT          162
-SUBENT        40871007   20090414   20090724   20090724       4146
-BIB                  5         17
-REACTION   (92-U-235(N,F),PR,DE,N,MXW) Deduced from the ratio
+ENDSUBENT          164
+SUBENT        40871007   20111222   20120210   20120207       4155
+BIB                  6         19
+REACTION   (92-U-235(N,F),PR,NU/DE,,MXW) Deduced from the ratio
                       to the Maxwell spectrum
 INC-SPECT   Thermal neutrons
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
@@ -375,9 +401,11 @@ ERR-ANALYS (ERR-6) Sum of statistical error, error due to the
                    the detector walls and on the air atoms
            (ERR-9) Error caused by the detector efficiency
                    uncertainty
+STATUS     (TABLE) From author.
 HISTORY    (20090414A) DATA units were corrected:
              ARB-UNITS -> PT/FIS/MEV . REL was deleted in SF8.
-ENDBIB              17
+           (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB              19
 COMMON               1          3
 EN-DUMMY
 EV
@@ -541,10 +569,10 @@ PER-CENT   PER-CENT   M
  7.4900E+00 6.2000E-01 1.4700E-02 2.0000E+00 7.0000E-01 3.6000E-01
  5.0000E+00 5.4000E+00 2.3130E+00
 ENDDATA            156
-ENDSUBENT          182
-SUBENT        40871008   20090414   20090724   20090724       4146
-BIB                  5         17
-REACTION   (92-U-235(N,F),PR,DE,N,MXW) Deduced from
+ENDSUBENT          184
+SUBENT        40871008   20111222   20120210   20120207       4155
+BIB                  6         19
+REACTION   (92-U-235(N,F),PR,NU/DE,,MXW) Deduced from
                            the ratio to the Maxwell spectrum
 INC-SPECT   Thermal neutrons.
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
@@ -559,9 +587,11 @@ ERR-ANALYS (ERR-6) Sum of statistical error, error due to the
                    the detector walls and on the air atoms
            (ERR-9) Error caused by the detector efficiency
                    uncertainty
+STATUS     (TABLE) From author.
 HISTORY    (20090414A) DATA units were corrected:
              ARB-UNITS -> PT/FIS/MEV . REL was deleted in SF8.
-ENDBIB              17
+           (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB              19
 COMMON               2          3
 EN-DUMMY   MISC
 EV         M
@@ -663,19 +693,21 @@ PER-CENT   PER-CENT
  4.7000E+00 1.8000E+00 1.1700E-01 1.5000E+00 3.1000E+00 8.0000E-02
  2.2000E+00 4.1000E+00
 ENDDATA             94
-ENDSUBENT          120
-SUBENT        40871009   20090414   20090724   20090724       4146
-BIB                  4          7
-REACTION   ((98-CF-252(0,F),PR,DE,N)//
-           (94-PU-239(N,F),PR,DE,N,MXW))
+ENDSUBENT          122
+SUBENT        40871009   20111222   20120210   20120207       4155
+BIB                  5          9
+REACTION   ((98-CF-252(0,F),PR,NU/DE)/
+           (94-PU-239(N,F),PR,NU/DE,,MXW))
 INC-SPECT   Thermal neutrons for Pu-239.
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
 MISC-COL   (MISC) Flight base length
-STATUS       Data are presented on Fig.1 .
-ENDBIB               7
+STATUS     (TABLE) From author.
+             Data are presented on Fig.1 of C,83KIEV,2,285,1983.
+HISTORY    (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB               9
 COMMON               2          3
-EN-DN      MISC
+EN         MISC
 EV         M
  2.5300E-02 5.1000E-01
 ENDCOMMON            3
@@ -712,19 +744,21 @@ MEV        NO-DIM     PER-CENT
  1.6610E+00 1.3050E+00 1.0000E+00
  1.8410E+00 1.3400E+00 9.7000E-01
 ENDDATA             31
-ENDSUBENT           47
-SUBENT        40871010   20090414   20090724   20090724       4146
-BIB                  4          7
-REACTION   ((98-CF-252(0,F),PR,DE,N)//
-           (94-PU-239(N,F),PR,DE,N,MXW))
+ENDSUBENT           49
+SUBENT        40871010   20111222   20120210   20120207       4155
+BIB                  5          9
+REACTION   ((98-CF-252(0,F),PR,NU/DE)/
+           (94-PU-239(N,F),PR,NU/DE,,MXW))
 INC-SPECT   Thermal neutrons for PU-239
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
 MISC-COL   (MISC) Flight base length
-STATUS       Data are presented on Fig.1 .
-ENDBIB               7
+STATUS     (TABLE) From author.
+             Data are presented on Fig.1 of C,83KIEV,2,285,1983.
+HISTORY    (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB               9
 COMMON               2          3
-EN-DN      MISC
+EN         MISC
 EV         M
  2.5300E-02 2.3130E+00
 ENDCOMMON            3
@@ -801,18 +835,21 @@ MEV        NO-DIM     PER-CENT
  8.6400E+00 1.6180E+00 5.3000E+00
  9.0800E+00 1.6310E+00 5.5000E+00
 ENDDATA             71
-ENDSUBENT           87
-SUBENT        40871011   20090414   20090724   20090724       4146
-BIB                  4          6
-REACTION   ((98-CF-252(0,F),PR,DE,N)//(92-U-235(N,F),PR,DE,N,MXW))
+ENDSUBENT           89
+SUBENT        40871011   20111222   20120210   20120207       4155
+BIB                  5          9
+REACTION   ((98-CF-252(0,F),PR,NU/DE)/
+           (92-U-235(N,F),PR,NU/DE,,MXW))
 INC-SPECT   Thermal neutrons for U-235
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
 MISC-COL   (MISC) Flight base length .
-STATUS       Data are presented on Fig.1 .
-ENDBIB               6
+STATUS     (TABLE) From author.
+             Data are presented on Fig.1 of C,83KIEV,2,285,1983.
+HISTORY    (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB               9
 COMMON               2          3
-EN-DN      MISC
+EN         MISC
 EV         M
  2.5300E-02 5.1000E-01
 ENDCOMMON            3
@@ -841,18 +878,21 @@ MEV        NO-DIM     PER-CENT
  8.4700E-01 1.4802E+00 9.4000E-01
  9.1100E-01 1.4807E+00 9.4000E-01
 ENDDATA             23
-ENDSUBENT           38
-SUBENT        40871012   20090414   20090724   20090724       4146
-BIB                  4          6
-REACTION   ((98-CF-252(0,F),PR,DE,N)//(92-U-235(N,F),PR,DE,N,MXW))
+ENDSUBENT           41
+SUBENT        40871012   20111222   20120210   20120207       4155
+BIB                  5          9
+REACTION   ((98-CF-252(0,F),PR,NU/DE)/
+           (92-U-235(N,F),PR,NU/DE,,MXW))
 INC-SPECT     Thermal neutrons for U-235 .
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
 MISC-COL   (MISC) Flight base length .
-STATUS       Data are presented on Fig.1 .
-ENDBIB               6
+STATUS     (TABLE) From author.
+             Data are presented on Fig.1 of C,83KIEV,2,285,1983.
+HISTORY    (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB               9
 COMMON               2          3
-EN-DN      MISC
+EN         MISC
 EV         M
  2.5300E-02 2.3130E+00
 ENDCOMMON            3
@@ -916,18 +956,21 @@ MEV        NO-DIM     PER-CENT
  7.4900E+00 2.3160E+00 3.8000E+00
  7.8400E+00 2.3350E+00 3.9000E+00
 ENDDATA             58
-ENDSUBENT           73
-SUBENT        40871013   20090414   20090724   20090724       4146
-BIB                  4          6
-REACTION   ((98-CF-252(0,F),PR,DE,N)//(92-U-233(N,F),PR,DE,N,MXW))
+ENDSUBENT           76
+SUBENT        40871013   20111222   20120210   20120207       4155
+BIB                  5          9
+REACTION   ((98-CF-252(0,F),PR,NU/DE)/
+           (92-U-233(N,F),PR,NU/DE,,MXW))
 INC-SPECT   Thermal neutrons
             12 cm quartz, 8 cm bismuth - to remove fast neutrons
             and gammas.
 MISC-COL   (MISC) Flight base length .
-STATUS       Data are presented on Fig.1 .
-ENDBIB               6
+STATUS     (TABLE) From author.
+             Data are presented on Fig.1 .
+HISTORY    (20111221A) PR,DE,N -> PR,NU/DE .
+ENDBIB               9
 COMMON               2          3
-EN-DN      MISC
+EN         MISC
 EV         M
  2.5300E-02 5.1000E-01
 ENDCOMMON            3
@@ -957,5 +1000,5 @@ MEV        NO-DIM     PER-CENT
  4.5100E+00 1.7210E+00 1.1000E+00
  4.7100E+00 1.7250E+00 1.1000E+00
 ENDDATA             24
-ENDSUBENT           39
+ENDSUBENT           42
 ENDENTRY            13

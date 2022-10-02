@@ -1,112 +1,315 @@
-ENTRY            41158     940928              20050926       0000
-SUBENT        41158001     940928              20050926       0000
-BIB                 11         18
-TITLE       LOE-ENERGY NEUTRON SPECTROMETER AND ITS APPLICATION
-            FOR CF-252 NEUTRON SPECTRUM MEASUREMENTS
-AUTHOR     (A.LAJTAI,P.P.D'YACHENKO,V.N.KONONOV,E.A.SEREGINA)
-INSTITUTE  (4ZZZDUB)  LAJTAI
-           (4RUSFEI)  D'YACHENKO, KONONOV, SEREGINA
-REFERENCE  (J,NIM/A,293,555,90)   DATA TABLE IS GIVEN
-DETECTOR   (GLASD)  LI-6 THIN GLASS DETECTOR FOR NEUTRONS
-           (FISCH)  FOR FISSION FRAGMENTS
-METHOD     (TOF)
-MONITOR     ABSOLUTE MEASUREMENTS
+ENTRY            41158   20111219   20120210   20120207       4155
+SUBENT        41158001   20111219   20120210   20120207       4155
+BIB                 11         35
+TITLE       Low-energy neutron spectrometer and its application
+            for Cf-252 neutron spectrum measurements.
+AUTHOR     (A.Lajtai,P.P.Dyachenko,V.N.Kononov,E.A.Seregina)
+INSTITUTE  (4ZZZDUB)  Lajtai
+           (4RUSFEI) Dyachenko (=D'yachenko), Kononov, Seregina
+REFERENCE  (J,NIM/A,293,555,1990)   Data table is given
+           #doi:10.1016/168-9002(90)90323-X
+DETECTOR   (GLASD)  Li-6 thin glass detector for neutrons
+           Efficiency of 0.95 cm thick NE 912 glass neutron
+           detector was determined independently by using 0.0835cm
+           thin glass detector as a reference, whose efficiency
+           was determined by Monte Carlo calculations.
+           (FISCH)  For fission fragments .
+            Filled with 90% Ar + 10% CO2 at 3 Torr.
+SAMPLE      Cf-252 source of 10**4 fis/sec, 6mm diameter.
+METHOD     (TOF) 30 cm flight path.
+            Four series of measurements: with NE 912 and NE 913
+           glass scintillators, both with and without shadow cone.
+            Total number of fission events 1.5*10**10 for each of
+            four runs.
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG) To determine thin detector
+            efficiency. See MISC-COL in Subent 002.
 PART-DET   (FF,N)
-ERR-ANALYS (ERR-T) TOTAL ERROR
-           (ERR-1) ERROR OF THE CORRECTION FACTOR
-           (ERR-2) ERROR OF EFFICIENCY OF IONOZATION CHAMBER
-           (ERR-3) ERROR OF DETERMINATION OF FLIGHT LENGTH AND
-                   NEUTRON SOLID ANGLE
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-HISTORY    (940928C)  + + COMPILED AT THE CENTRE - CJD + +
-ENDBIB              18
+CORRECTION  For deviation of actual efficiencies from the
+           efficiencies for pure Li-6(N,A) reaction.
+           For time dependence of response function.
+           For gamma-ray sensitivity of thick glass detector.
+           For systematic accident coincidences at high counting
+           rates.
+           For backgrounds.
+           For time resolution of TOF spectrometer.
+HISTORY    (19940928C)  + + compiled at the centre - CJD + +
+           (20111219A) M.M. Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            BIB information was added.
+ENDBIB              35
+NOCOMMON             0          0
+ENDSUBENT           38
+SUBENT        41158002   20111219   20120210   20120207       4155
+BIB                  6         29
+REACTION   (98-CF-252(0,F),PR,NU/DE,,REL) See ANALYSIS.
+ANALYSIS    Neutron spectrum was defined as:
+            N(E)=P(E)/Nf*(solid angle)*(n detection efficiency),
+            where Nf - number of detected fission events,
+            P(E) - corrected neutron TOF spectrum transformed
+            ( t -> E ) in energy spectrum.
+MISC-COL   (MISC1) Detection efficiencies for thin NE 908
+                      (Monte Carlo calculation).
+           (MISC2) Detection efficiencies for thick NE 912
+           detector suspended in thin-wall Al chamber.
+           (MISC3) Detection efficiencies for thick NE 912
+           detector mounted on 56AVP multiplier.
+ERR-ANALYS (MISC2-ERR) Errors
+           (MISC3-ERR)        include:
+           the statistical errors of the measurements,
+           the accuracy of the Monte Carlo calculation of thin
+           glass efficiency (less than 2%),
+           the accuracy of the 6Li(n,a)T cross section.
+           (ERR-T) Total error  includes:
+           (ERR-1) Error of the correction factor
+           (ERR-2) Error of efficiency of ionization chamber
+           (ERR-3) Error of determination of flight length and
+                   neutron solid angle
+STATUS     (TABLE) Table 2 of J,NIM/A,293,555,1990 .
+HISTORY    (20111219A) PR,DE,N,REL -> PR,NU/DE,,REL .
+           MISC data (ratio of measured spectrum to Maxwellian
+           one) were moved in Subent 003.
+           Data of efficiencies were inserted as MISC1, MISC2,
+            MISC3 (Table 1 of J,NIM/A,293,555,1990).
+ENDBIB              29
 COMMON               3          3
 ERR-1      ERR-2      ERR-3
 PER-CENT   PER-CENT   PER-CENT
  2.          3.         2.
 ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        41158002     940928              20050926       0000
-BIB                  2          4
-REACTION   (98-CF-252(0,F),PR,DE,N,REL) REFERENCE QUANTITY IS
-                                                NOT GIVEN
-MISC-COL   (MISC)  RATIO OF THE MEASURED SPECTRUM TO THE MAXWEL-
-                   LIAN ONE WITH TEMPERATURE 1.42 MEV
-ENDBIB               4
-NOCOMMON
-DATA                 4         70
-E          DATA       ERR-T      MISC
-KEV        ARB-UNITS  ARB-UNITS  NO-DIM
-  25.        3.530       0.478     1.140
-  35.        2.870       0.463     0.790
-  45.        4.406       0.477     1.075
-  55.        4.200       0.455     0.934
-  65.        4.435       0.443     0.913
-  75.        4.962       0.454     0.958
-  85.        4.834       0.427     0.883
-  95.        5.640       0.414     0.981
- 105.        5.688       0.391     0.948
- 115.        6.402       0.471     1.028
- 125.        7.032       0.470     1.089
- 135.        6.786       0.453     1.018
- 145.        6.495       0.424     0.947
- 155.        7.308       0.457     1.038
- 165.        7.140       0.438     0.990
- 175.        7.546       0.453     1.023
- 185.        7.545       0.445     1.002
- 195.        7.914       0.464     1.031
- 205.        7.674       0.448     0.979
- 215.        8.587       0.494     1.080
- 225.        7.354       0.423     0.911
- 235.        7.695       0.443     0.939
- 245.        7.749       0.445     0.933
- 255.        7.391       0.431     0.879
- 265.        8.167       0.466     0.959
- 275.        8.918       0.521     1.035
- 285.        8.907       0.534     1.022
- 295.        8.798       0.511     1.000
- 305.        8.538       0.499     0.961
- 315.        8.551       0.503     0.954
- 325.        8.984       0.528     0.994
- 335.        8.771       0.518     0.962
- 345.        8.454       0.505     0.920
- 355.        8.831       0.529     0.954
- 365.        9.357       0.560     1.004
- 375.        9.404       0.563     1.003
- 385.        9.075       0.549     0.962
- 395.        9.192       0.554     0.970
- 410.        9.577       0.560     1.001
- 430.        9.888       0.587     1.024
- 450.        9.393       0.550     0.964
- 470.        9.712       0.624     0.989
- 490.        9.362       0.564     0.947
- 510.        9.697       0.566     0.975
- 530.        9.889       0.598     0.989
- 550.        9.770       0.578     0.976
- 570.        9.711       0.580     0.963
- 590.        9.667       0.591     0.955
- 610.        9.982       0.614     0.985
- 630.        9.938       0.613     0.978
- 650.       10.020       0.626     0.985
- 670.        9.983       0.625     0.980
- 690.        9.924       0.653     0.974
- 710.       10.296       0.642     1.011
- 735.       10.467       0.646     1.028
- 765.       10.509       0.629     1.033
- 795.       10.032       0.625     0.988
- 825.        9.881       0.617     0.976
- 855.        9.970       0.626     0.988
- 885.       10.013       0.623     0.996
- 915.        9.768       0.616     0.974
- 945.        9.755       0.621     0.978
- 975.        9.597       0.592     0.969
-1005.        9.516       0.590     0.966
-1020.        9.401       0.587     0.958
-1060.        9.864       0.608     1.014
-1100.        9.822       0.621     1.019
-1140.        9.985       0.618     1.046
-1180.        9.486       0.590     1.005
-1220.        9.820       0.603     1.053
+DATA                 8         70
+E          DATA       ERR-T      MISC1      MISC2      MISC2-ERR
+MISC3      MISC3-ERR
+KEV        ARB-UNITS  ARB-UNITS  PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT
+  25.        3.530       0.478     0.145     1.748      0.043
+ 1.905      0.046
+  35.        2.870       0.463     0.125     1.609      0.041
+ 1.744      0.045
+  45.        4.406       0.477     0.113     1.505      0.036
+ 1.663      0.042
+  55.        4.200       0.455     0.106     1.444      0.035
+ 1.550      0.041
+  65.        4.435       0.443     0.101     1.389      0.032
+ 1.497      0.040
+  75.        4.962       0.454     0.098     1.318      0.033
+ 1.414      0.039
+  85.        4.834       0.427     0.097     1.305      0.032
+ 1.395      0.038
+  95.        5.640       0.414     0.096     1.331      0.025
+ 1.397      0.039
+ 105.        5.688       0.391     0.098     1.341      0.031
+ 1.415      0.040
+ 115.        6.402       0.471     0.101     1.388      0.038
+ 1.477      0.048
+ 125.        7.032       0.470     0.106     1.459      0.045
+ 1.556      0.052
+ 135.        6.786       0.453     0.113     1.558      0.068
+ 1.658      0.078
+ 145.        6.495       0.424     0.123     1.672      0.081
+ 1.806      0.086
+ 155.        7.308       0.457     0.136     1.860      0.093
+ 2.025      0.101
+ 165.        7.140       0.438     0.155     2.103      0.098
+ 2.292      0.114
+ 175.        7.546       0.453     0.182     2.473      0.105
+ 2.475      0.147
+ 185.        7.545       0.445     0.217     2.919      0.138
+ 3.222      0.153
+ 195.        7.914       0.464     0.264     3.523      0.148
+ 3.832      0.211
+ 205.        7.674       0.448     0.319     4.264      0.213
+ 4.529      0.254
+ 215.        8.587       0.494     0.384     5.256      0.255
+ 5.690      0.350
+ 225.        7.354       0.423     0.448     5.887      0.278
+ 6.381      0.347
+ 235.        7.695       0.443     0.489     6.580      0.283
+ 6.628      0.346
+ 245.        7.749       0.445     0.495     6.641      0.345
+ 6.648      0.360
+ 255.        7.391       0.431     0.460     6.211      0.310
+ 6.330      0.322
+ 265.        8.167       0.466     0.403     5.497      0.264
+ 5.792      0.276
+ 275.        8.918       0.521     0.343     4.900      0.253
+ 4.924      0.263
+ 285.        8.907       0.534     0.289     4.257      0.226
+ 4.333      0.250
+ 295.        8.798       0.511     0.246     3.635      0.174
+ 3.712      0.203
+ 305.        8.538       0.499     0.211     3.208      0.149
+ 3.246      0.177
+ 315.        8.551       0.503     0.184     2.904      0.145
+ 3.116      0.151
+ 325.        8.984       0.528     0.163     2.585      0.140
+ 2.721      0.150
+ 335.        8.771       0.518     0.146     2.343      0.110
+ 2.470      0.142
+ 345.        8.454       0.505     0.131     2.147      0.109
+ 2.300      0.121
+ 355.        8.831       0.529     0.119     1.981      0.105
+ 2.120      0.118
+ 365.        9.357       0.560     0.110     1.848      0.105
+ 2.061      0.115
+ 375.        9.404       0.563     0.101     1.745      0.091
+ 1.930      0.111
+ 385.        9.075       0.549     0.095     1.679      0.083
+ 1.947      0.101
+ 395.        9.192       0.554     0.090     1.565      0.081
+ 1.886      0.098
+ 410.        9.577       0.560     0.084     1.495      0.079
+ 1.782      0.096
+ 430.        9.888       0.587     0.079     1.375      0.075
+ 1.698      0.081
+ 450.        9.393       0.550     0.075     1.313      0.071
+ 1.563      0.080
+ 470.        9.712       0.624     0.066     1.114      0.060
+ 1.337      0.072
+ 490.        9.362       0.564     0.059     1.001      0.055
+ 1.154      0.066
+ 510.        9.697       0.566     0.055     0.902      0.052
+ 1.056      0.065
+ 530.        9.889       0.598     0.053     0.844      0.049
+ 0.943      0.054
+ 550.        9.770       0.578     0.051     0.762      0.046
+ 0.859      0.053
+ 570.        9.711       0.580     0.049     0.736      0.044
+ 0.827      0.053
+ 590.        9.667       0.591     0.047     0.726      0.043
+ 0.776      0.052
+ 610.        9.982       0.614     0.046     0.684      0.041
+ 0.728      0.050
+ 630.        9.938       0.613     0.044     0.657      0.036
+ 0.686      0.048
+ 650.       10.020       0.626     0.043     0.633      0.035
+ 0.654      0.043
+ 670.        9.983       0.625     0.042     0.623      0.035
+ 0.643      0.042
+ 690.        9.924       0.653     0.041     0.605      0.033
+ 0.613      0.042
+ 710.       10.296       0.642     0.040     0.562      0.034
+ 0.584      0.042
+ 735.       10.467       0.646     0.038     0.540      0.033
+ 0.547      0.042
+ 765.       10.509       0.629     0.037     0.526      0.032
+ 0.533      0.042
+ 795.       10.032       0.625     0.038     0.543      0.032
+ 0.550      0.042
+ 825.        9.881       0.617     0.037     0.544      0.032
+ 0.557      0.041
+ 855.        9.970       0.626     0.036     0.538      0.031
+ 0.550      0.041
+ 885.       10.013       0.623     0.036     0.531      0.030
+ 0.543      0.040
+ 915.        9.768       0.616     0.035     0.531      0.030
+ 0.547      0.040
+ 945.        9.755       0.621     0.035     0.530      0.030
+ 0.537      0.041
+ 975.        9.597       0.592     0.035     0.533      0.029
+ 0.542      0.041
+1005.        9.516       0.590     0.035     0.535      0.029
+ 0.549      0.041
+1020.        9.401       0.587     0.035     0.529      0.030
+ 0.539      0.040
+1060.        9.864       0.608     0.034     0.528      0.028
+ 0.538      0.038
+1100.        9.822       0.621     0.033     0.510      0.027
+ 0.514      0.039
+1140.        9.985       0.618     0.033     0.515      0.028
+ 0.516      0.039
+1180.        9.486       0.590     0.033     0.512      0.027
+ 0.515      0.039
+1220.        9.820       0.603     0.033     0.511      0.027
+ 0.518      0.038
+ENDDATA            144
+ENDSUBENT          182
+SUBENT        41158003   20111219   20120210   20120207       4155
+BIB                  3          6
+REACTION   (98-CF-252(0,F),PR,NU/DE,,MXD)
+                 Ratio of the measured spectrum to the Maxwellian
+                   one with temperature 1.42 MeV
+STATUS     (TABLE) Table 2 of J,NIM/A,293,555,1990 .
+           (DEP,41158002) In Subent 002 - measured spectrum.
+HISTORY    (20111219C) Data were moved from Subent 002.
+ENDBIB               6
+COMMON               1          3
+KT-NRM
+MEV
+ 1.42
+ENDCOMMON            3
+DATA                 2         70
+E          DATA
+KEV        NO-DIM
+  25.        1.140
+  35.        0.790
+  45.        1.075
+  55.        0.934
+  65.        0.913
+  75.        0.958
+  85.        0.883
+  95.        0.981
+ 105.        0.948
+ 115.        1.028
+ 125.        1.089
+ 135.        1.018
+ 145.        0.947
+ 155.        1.038
+ 165.        0.990
+ 175.        1.023
+ 185.        1.002
+ 195.        1.031
+ 205.        0.979
+ 215.        1.080
+ 225.        0.911
+ 235.        0.939
+ 245.        0.933
+ 255.        0.879
+ 265.        0.959
+ 275.        1.035
+ 285.        1.022
+ 295.        1.000
+ 305.        0.961
+ 315.        0.954
+ 325.        0.994
+ 335.        0.962
+ 345.        0.920
+ 355.        0.954
+ 365.        1.004
+ 375.        1.003
+ 385.        0.962
+ 395.        0.970
+ 410.        1.001
+ 430.        1.024
+ 450.        0.964
+ 470.        0.989
+ 490.        0.947
+ 510.        0.975
+ 530.        0.989
+ 550.        0.976
+ 570.        0.963
+ 590.        0.955
+ 610.        0.985
+ 630.        0.978
+ 650.        0.985
+ 670.        0.980
+ 690.        0.974
+ 710.        1.011
+ 735.        1.028
+ 765.        1.033
+ 795.        0.988
+ 825.        0.976
+ 855.        0.988
+ 885.        0.996
+ 915.        0.974
+ 945.        0.978
+ 975.        0.969
+1005.        0.966
+1020.        0.958
+1060.        1.014
+1100.        1.019
+1140.        1.046
+1180.        1.005
+1220.        1.053
 ENDDATA             72
-ENDSUBENT           81
-ENDENTRY             2
+ENDSUBENT           87
+ENDENTRY             3

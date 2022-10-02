@@ -1,44 +1,47 @@
-ENTRY            41450   20061003   20070521   20060816       4139
-SUBENT        41450001   20061003   20070521   20060816       4139
-BIB                 12         30
+ENTRY            41450   20111213   20120210   20120207       4155
+SUBENT        41450001   20111213   20120210   20120207       4155
+BIB                 12         32
 TITLE       Investigation Of The Neutron Spectra In Fission Of
              Nucleus 238-U Induced By Fast Neutrons With Energies
              Of 5.0 And 13.2 MeV
-AUTHOR     (A.M.TRUFANOV,G.N.LOVCHIKOVA,M.I.SVIRIN,A.B.POLYAKOV,
-            V.A.VINOGRADOV,V.D.DMITRIEV,G.S.BOYKOV)
+AUTHOR     (A.M.Trufanov,G.N.Lovchikova,M.I.Svirin,A.V.Polyakov,
+            V.A.Vinogradov,V.D.Dmitriev,G.S.Boykov)
 INSTITUTE  (4RUSFEI) A.M.Trufanov,G.N.Lovchikova,M.I.Svirin,
-                     A.B.Polyakov,V.A.Vinogradov
+                     A.V.Polyakov,V.A.Vinogradov
            (4RUSRI) V.D.Dmitriev,G.S.Boykov
 REFERENCE  (J,YF,64,(1),3,200101)
            (J,PAN,64,(1),1,200101) English translation of YF.
 FACILITY   (ACCEL,4RUSFEI) KG-2.5
            (SPECC,4RUSFEI)
-METHOD     (TOF) 1.7 flight lenght
-INC-SOURCE (D-T) deuteron Energy 600 keV
+METHOD     (TOF) 1.7 flight path
+INC-SOURCE (D-T) deuteron energy 600 keV
            (D-D) deuteron energy 1.9 MeV
-DETECTOR   (MWDC) Four-Sections Ionisation Chamber,
-              Methan (99.99%) As Drift Gas.
-              Fission Fragments Registration Efficiency Near 70%.
-           (SCIN) Stilbene Crystal of 63 mm Diameter,39mm Hight.
+DETECTOR   (MWDC) Four-sections ionization chamber,
+              methane (99.99%) as drift gas.
+              Fission fragments registration efficiency near 70%.
+           (SCIN) Stilbene crystal of 63 mm diameter,39mm height.
             Protected by paraffin with 6-LiH,Pb and Fe admixtures.
             Connected with FEU-30.
-            (PROPC) All-Waves Counter For Neutron Beam Monitoring,
-              From 4M from Target and Under 45 Degrees Angle.
-MONITOR    (98-CF-252(0,F),,DE,N)
+           (PROPC) All-waves counter for neutron beam monitoring,
+              from 4m from target and under 45 degrees angle.
+MONITOR    (98-CF-252(0,F),,NU/DE)
 ERR-ANALYS (ERR-T) Errors including statistical and errors of
             corrections
 HISTORY    (20050901C)   Compiled at the Centre - CJD (M.M)
+           (20060131R)
            (20060202A) Sub.003 was added (M.M.)
            (20061003U) 2nd Reference was added.
+           (20111213A) Subent 003 REACTION was corrected.
 COMMENT     E-Mail: svirin@ippe.obninsk.ru  - M.I.Svirin
-ENDBIB              30
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        41450002   20050901   20060525   20060324       4137
-BIB                  2          2
-REACTION   (92-U-238(N,F),PR,AKE,N)
-STATUS       From Text of Article (P.3,7,10), Table 2
-ENDBIB               2
+ENDSUBENT           35
+SUBENT        41450002   20111213   20120210   20120207       4155
+BIB                  3          3
+REACTION   (92-U-238(N,F)0-NN-1,PR,KE)
+STATUS     (TABLE) Text (P.3,7,10), Table 2 of J,YF,64,(1),3,2001
+HISTORY    (20111213A) "(N,F),PR,AKE,N " -> "(N,F)0-NN-1,PR,KE"
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          2
 EN         EN-ERR     DATA       ERR-T
@@ -46,16 +49,21 @@ MEV        MEV        MEV        MEV
  5.0       0.1        2.03       0.03
 13.2       0.2        1.97       0.04
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        41450003   20060202   20060525   20060324       4137
-BIB                  3          6
-REACTION   ((92-U-238(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N))
+ENDSUBENT           12
+SUBENT        41450003   20111213   20120210   20120207       4155
+BIB                  4         11
+REACTION   ((92-U-238(N,F),PR,NU/DE,,NPD)/
+           (98-CF-252(0,F),PR,NU/DE,,NPD))
             Experimental ratio of normalized to 1.0 neutron
             spectra
 EN-SEC     (E,N) Energy of fission neutrons
 STATUS     (APRVD) Data received from author M.Svirin 20060131.
-                   Fig.4 of reference.
-ENDBIB               6
+           (TABLE) Data are presented on Fig.4 of J,YF,64,(1),3 .
+HISTORY    (20111213A)
+            (92-U-238(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N) ->
+            (92-U-238(N,F),PR,NU/DE,,NPD)/
+            (98-CF-252(0,F),PR,NU/DE,,NPD)
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         75
 EN         E          DATA       ERR-T
@@ -136,5 +144,5 @@ MEV        MEV        NO-DIM     PER-CENT
 13.2       11.36       0.725     35.
 13.2       12.36       0.638     39.
 ENDDATA             77
-ENDSUBENT           88
+ENDSUBENT           93
 ENDENTRY             3

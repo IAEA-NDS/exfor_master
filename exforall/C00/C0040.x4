@@ -1,11 +1,11 @@
-ENTRY            C0040   20020213   20020411   20050926       0000
-SUBENT        C0040001   20020213   20020411   20050926       0000
-BIB                  9         19
+ENTRY            C0040   20111117   20120210   20120207       C113
+SUBENT        C0040001   20111117   20120210   20120207       C113
+BIB                  9         20
 INSTITUTE  (1USALAS)
 REFERENCE  (J,PR,82,786,1951)
 AUTHOR     (J.C.Allred,D.K.Froman,A.M.Hudson,L.Rosen)
 TITLE      The D-He4 Interaction for 10.3-MeV Deuterons
-FACILITY   (CYCLO)
+FACILITY   (CYCLO,1USALAS)
 SAMPLE     Helium scattering gas in nuclear plate camera.  Helium
             pressure of 5 to 20 cm Hg.
 DETECTOR   (PLATE) Nuclear plates mounted on periphery of an 18-
@@ -20,13 +20,14 @@ HISTORY    (19781213C)TWB
            (19960228A) ANG-RSL added, EN-ERR corrected to EN-RSL,
                      BIB update, converted to lower case.
            (20020213A) Converted to new date formats.
-ENDBIB              19
+           (20111117A) SD: REACTION code of Subent 4,5 changed.
+ENDBIB              20
 COMMON               3          3
 EN         EN-RSL     ANG-RSL
 MEV        MEV        ADEG
  10.3       0.5        0.9
 ENDCOMMON            3
-ENDSUBENT           26
+ENDSUBENT           27
 SUBENT        C0040002   20020213   20020411   20050926       0000
 BIB                  3          3
 REACTION   (2-HE-4(D,EL)2-HE-4,,DA)
@@ -161,34 +162,43 @@ ADEG       MB/SR
  122.5        3.
 ENDDATA             36
 ENDSUBENT           52
-SUBENT        C0040004   20020213   20020411   20050926       0000
-BIB                  4          4
-REACTION   (2-HE-4(D,EL)2-HE-4,,SIG)
+SUBENT        C0040004   20111117   20120210   20120207       C113
+BIB                  5          8
+REACTION   (2-HE-4(D,EL)2-HE-4,,IPA)
+           elastic scattering over the angular region investigated
 ANALYSIS   (INTAD)
 ERR-ANALYS (DATA-ERR) overall accuracy of cross section.
-STATUS     (DEP,C0040002)
-ENDBIB               4
+STATUS     (TABLE) data from p.790 of PR,82,786,1951
+           (DEP,C0040002)
+HISTORY    (20111117A) SD: Reaction code was changed (from SIG
+                   to IPA in SF6) ANG-MIN, ANG-MAX were added
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.01       0.06
+DATA                 4          1
+ANG-MIN    ANG-MAX    DATA       DATA-ERR
+ADEG       ADEG       B          B
+ 12.5        140.       1.01       0.06
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        C0040005   20020213   20020411   20050926       0000
-BIB                  4          6
-REACTION   ((2-HE-4(D,X)1-H-1,,SIG)=((2-HE-4(D,N+P)2-HE-4,,SIG)+
-           (2-HE-4(D,P)2-HE-5,,SIG)))
+ENDSUBENT           16
+SUBENT        C0040005   20111117   20120210   20120207       C113
+BIB                  5         11
+REACTION   ((2-HE-4(D,X)1-H-1,,IPA)=((2-HE-4(D,N+P)2-HE-4,,IPA)+
+           (2-HE-4(D,P)2-HE-5,,IPA)))
+           The total cross section for deuteron disintegration
+           over the angular region investigated
 ANALYSIS   (INTAD)
 ERR-ANALYS (DATA-ERR) Minimum statistical uncertainty as quoted by
             the authors.
-STATUS     (DEP,C0040003)
-ENDBIB               6
+STATUS     (TABLE) data from p.790 of PR,82,786,1951
+           (DEP,C0040003)
+HISTORY    (20111117A) SD: Reaction code was changed (from SIG
+                   to IPA in SF6) ANG-MIN, ANG-MAX were added
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 0.3        0.1
+DATA                 4          1
+ANG-MIN    ANG-MAX    DATA       DATA-ERR
+ADEG       ADEG       B          B
+ 12.5        140.        0.3        0.1
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           19
 ENDENTRY             5

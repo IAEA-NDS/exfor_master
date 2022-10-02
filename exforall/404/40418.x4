@@ -1,33 +1,42 @@
-ENTRY            40418     850329              20050926       0000
-SUBENT        40418001     850329              20050926       0000
-BIB                  9         14
-INSTITUTE  (4CCPRI)
-REFERENCE  (C,73KIEV,4,138,7305) PRELIMINARY DATA
-           (C,77KIEV,3,197,7704) CURVE IS GIVEN UNTIL 10 MEV
-           (P,YFI-25,43,7712)    DATA FOR  0.015 - 2.14 MEV
-AUTHOR     (M.V.BLINOV,V.A.VITENKO,V.T.TUZ,N.M.KAZARINOV,
-           I.T.KRISJUK)
-TITLE       MEASUREMENT OF NEUTRON SPECTRUM FROM SPONTANEOUS
-            FISSION OF CF-252 IN A BROAD ENERGY RANGE
-METHOD     (TOF)  TIME-OF-FLIGHT
-DETECTOR   (SOLST)  LI-J CRYSTAL WIT EU - LIJ(EU)
-           (IOCH)   IONIZATION CHAMBER WITH U-235 FILMS
-MONITOR     NO INFORMATION
-HISTORY    (790208C)
-ERR-ANALYS (DATA-ERR)  STATISTICAL ERROR
-ENDBIB              14
+ENTRY            40418   20111219   20120210   20120207       4155
+SUBENT        40418001   20111219   20120210   20120207       4155
+BIB                  7         19
+INSTITUTE  (4RUSRI)
+REFERENCE  (C,73KIEV,4,138,197305) Preliminary data - figures only
+            , relative to Li-6(n,a) reaction.
+           (C,77KIEV,3,197,197704) Curve is given up to 10 MeV.
+            Relative to U-235(n,f) reaction.
+           (P,YFI-25,43,197712)    Data for  0.015 - 2.14 MeV
+AUTHOR     (M.V.Blinov,V.A.Vitenko,V.T.Tuz,N.M.Kazarinov,
+           I.T.Krisyuk)
+TITLE       Measurement of neutron spectrum from spontaneous
+            fission of Cf-252 in a broad energy range
+METHOD     (TOF)  Time-of-flight
+DETECTOR  1(SOLST)  Li-I crystal with Eu - LiI(Eu)
+          2(IOCH)   Ionization chamber with U-235 films
+HISTORY    (19790208C)
+           (20111219A) Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            DATA-ERR -> ERR-S.
+            Reaction of Subent 002 was corrected ,DE,N, -> NU/DE,,
+            Subent 003 was added.
+ENDBIB              19
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        40418002     850329              20050926       0000
-BIB                  2          4
-REACTION   (98-CF-252(0,F),,DE,N,REL) REFERENCE QUANTITY NOT GIVEN
-INC-SPECT   ENERGY SPECTRUM IS PRACTICALLI MAXWELLIAN WITH
-            TEMPERATURE 1.38 MEV+-7.PERCENT FOR LIJ DETECTOR
-            AND 1.41+-0.03MEV FORIONIZATION CHAMBER DETECTOR
-ENDBIB               4
+ENDSUBENT           22
+SUBENT        40418002   20111219   20120210   20120207       4155
+BIB                  6          8
+REACTION   (98-CF-252(0,F),,NU/DE,,REL)
+            Reference quantity not given
+DETECTOR   (SOLST)  Li-I crystal with Eu - LiI(Eu)
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
+            For neutron detector efficiency.
+MONIT-REF  (,,3,ENDF/B-IV,,1974)
+ERR-ANALYS (ERR-S)     Statistical Error
+STATUS     (TABLE) Table of P,YFI-25,43,1977.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3         29
-E          DATA       DATA-ERR
+E          DATA       ERR-S
 MEV        ARB-UNITS  ARB-UNITS
  1.5000E-02 1.1400E+02 2.0000E+01
  2.5000E-02 1.5200E+02 1.8000E+01
@@ -59,5 +68,120 @@ MEV        ARB-UNITS  ARB-UNITS
  1.8800E+00 3.6100E+02 7.0000E+00
  2.1400E+00 3.3000E+02 6.0000E+00
 ENDDATA             31
-ENDSUBENT           40
-ENDENTRY             2
+ENDSUBENT           44
+SUBENT        40418003   20111219   20120210   20120207       4155
+BIB                  6         14
+REACTION  1(98-CF-252(0,F)0-NN-1,,KEM) Spectrum temperature.
+          2(98-CF-252(0,F)0-NN-1,,KEM) Spectrum temperature.
+DETECTOR  1(SOLST)  Li-I crystal with Eu - LiI(Eu)
+          2(IOCH)   Ionization chamber with U-235 films
+MONITOR   1(3-LI-6(N,T)2-HE-4,,SIG)
+            For neutron detector efficiency.
+          2(92-U-235(N,F),,SIG)
+MONIT-REF 1(,,3,ENDF/B-IV,,1974)
+          2(,G.V.Antcipov+,J,YK,1975,(20),1,1975)
+ERR-ANALYS (DATA-ERR) Not specified.
+            Error of DATA 1 is 5.- 7. % .
+STATUS     (TABLE) Text  of P,YFI-25,43,1977
+          1(DEP,40418002)
+          2(DEP,40418004)
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 3          1
+DATA      1DATA      2DATA-ERR  2
+MEV        MEV        MEV
+ 1.38       1.41       0.03
+ENDDATA              3
+ENDSUBENT           22
+SUBENT        40418004   20111219   20120210   20120207       4155
+BIB                  7         10
+REACTION   (98-CF-252(0,F),,NU/DE,,REL)
+            Data are given on fig. in arbitrary units.
+DETECTOR   (IOCH)   Ionization chamber with U-235 films
+MONITOR    (92-U-235(N,F),,SIG)
+MONIT-REF  (,G.V.Antcipov+,J,YK,1975,(20),1,1975)
+MISC-COL   (MISC) TOF base.
+ERR-ANALYS (DATA-ERR) Not specified. Error bars digitized.
+           (ERR-DIG) Error of digitizing of DATA and DATA-ERR.
+           (E-ERR-DIG) Error of digitizing of E .
+STATUS     (CURVE) Fig. of C,77KIEV,3,197,1977 was digitized.
+ENDBIB              10
+COMMON               2          3
+E-ERR-DIG  ERR-DIG
+PER-CENT   ARB-UNITS
+   0.38E-02   0.72E-02
+ENDCOMMON            3
+DATA                 4         68
+E          DATA       DATA-ERR   MISC
+MEV        ARB-UNITS  ARB-UNITS  CM
+  0.140E-01  1.999     0.893      25.
+  0.250E-01  3.186     0.680      25.
+  0.349E-01  2.665     0.595      25.
+  0.503E-01  3.363     0.397      25.
+  0.536E-01  4.397     0.680      50.
+  0.699E-01  4.318     0.397      25.
+  0.846E-01  4.680     0.652      50.
+  0.911E-01  4.224     0.354      25.
+  0.117      5.677     0.397      25.
+  0.124      4.498     0.397      50.
+  0.152      5.698     0.425      25.
+  0.175      6.615     0.482      50.
+  0.182      6.855     0.397      25.
+  0.223      6.693     0.354      25.
+  0.252      7.072     0.368      50.
+  0.275      7.353     0.326      25.
+  0.336      7.844     0.425      25.
+  0.362      7.912     0.411      50.
+  0.384      8.549     0.383      25.
+  0.435      7.892     0.397      25.
+  0.459      7.962     0.312      50.
+  0.490      8.910     0.440      25.
+  0.535      8.936     0.397      25.
+  0.567      7.629     0.297      50.
+  0.569      8.352     0.397      25.
+  0.627      8.945     0.326      25.
+  0.670      8.007     0.439      50.
+  0.677      8.716     0.368      25.
+  0.749      8.954     0.354      25.
+  0.768      8.144     0.312      50.
+  0.818      8.922     0.312      25.
+  0.900      7.912     0.255      25.
+  0.969      7.470     0.255      50.
+  1.008      8.193     0.283      25.
+  1.124      7.650     0.255      25.
+  1.160      8.032     0.397      50.
+  1.242      7.520     0.382      50.
+  1.252      7.888     0.227      25.
+  1.328      7.957     0.354      50.
+  1.378      7.133     0.368      50.
+  1.415      7.672     0.212      25.
+  1.504      6.932     0.297      50.
+  1.580      7.299     0.255      50.
+  1.625      7.086     0.170      25.
+  1.710      6.715     0.283      50.
+  1.817      5.919     0.269      50.
+  1.841      6.188                25.
+  1.964      6.129     0.255      50.
+  2.138      5.474     0.241      50.
+  2.161      5.233                25.
+  2.304      5.117     0.198      50.
+  2.465      4.520     0.170      50.
+  2.552      4.363                25.
+  2.703      4.049     0.156      50.
+  2.977      3.393                25.
+  2.981      3.620                50.
+  3.283      2.922                50.
+  3.575      2.295                50.
+  3.686      2.507                25.
+  3.940      1.739                50.
+  4.423      1.324                50.
+  4.613      1.479                25.
+  5.551      0.807                50.
+  5.746      0.635                25.
+  6.420      0.433                50.
+  7.219      0.288                50.
+  7.700      0.229                25.
+  8.710      0.126                50.
+ENDDATA             70
+ENDSUBENT           89
+ENDENTRY             4

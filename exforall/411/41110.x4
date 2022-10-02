@@ -1,25 +1,44 @@
-ENTRY            41110   20080414   20080801   20080721       4143
-SUBENT        41110001   20080414   20080801   20080721       4143
-BIB                 12         27
-INSTITUTE  (4RUSFEI,4RUSRI)
+ENTRY            41110   20111220   20120210   20120207       4155
+SUBENT        41110001   20111220   20120210   20120207       4155
+BIB                 14         48
+INSTITUTE  (4RUSFEI,4RUSRI) G.Boikov=G.Boykov
 REFERENCE  (J,YF,53,(3),628,1991)   Curves are given
            (J,YF,70,(4),656,2007) 1-st author -M.I.Svirin .
            (J,PAN,53,(3),392,1991)   Engl.translation of YF,53 .
            (J,PAN,70,(4),626,2007)   Engl.translation of YF,70 .
-AUTHOR     (G.S.Boykov, V.D.Dmitriev, G.A.Kudyaev, Yu.B.Ostapenko,
+           #doi:10.1134/S1063778807040035
+AUTHOR     (G.S.Boikov, V.D.Dmitriev, G.A.Kudyaev, Yu.B.Ostapenko,
            M.I.Svirin, G.N.Smirenkin)
 TITLE       Neutron spectrum in the fission of Th-232, U-235
             and U-238 by neutron with energies 2.9 and 14.7 MeV
-FACILITY   (VDG,4RUSRI )  Neutron Generator NG-400
+FACILITY   (VDG,4RUSRI)  Neutron Generator NG-400
 INC-SOURCE (D-D,D-T)
 SAMPLE      Two-sided metallic layers on aluminum  foil,
             thickness 2 milligram/cm2, diameter 100 mm
-METHOD     (TOF)
+METHOD     (TOF) 205 cm path.
+           (MOMIX) Cf-252 isotope was implanted in investigated
+            isotope sample.
 DETECTOR   (FISCH)  Four-section multi-layer ionization chamber
-                    filled with methane
-           (SCIN)  Stilben  crystal for neutron detection
+                    filled with methane .
+            Covered by Cd of 0.2 mm thickness.
+           (SCIN)  Stilbene crystal (40mm high, 100mm diameter)
+            for neutron detection . Connected with FEU-30.
+            Absolute efficiency was defined by Cf-252 energy
+            distribution, known with 3% uncertainty.
 MONITOR    ((MONIT)98-CF-252(0,F),PR,NU)
-ERR-ANALYS (ERR-T)   Total error
+           (98-CF-252(0,F),PR,NU/DE)
+MONIT-REF  (,,R,IAEA-TECDOC-277,1983) For NU .
+           1982 INDC/NEANDC Nuclear standard file. Tech Rep. #277.
+           (,W.Mannhart,R,IAEA-TECDOC-410,158,1987)
+            For Cf spectrum.
+CORRECTION  For TOF path difference for different FISCH sections,
+            for Cf-252 neutron induced fission events,
+            for neutron energy limits E > 0.25 MeV at definition
+            of NU and AKE.
+ERR-ANALYS (ERR-T)   Total error includes:
+            statistics, registration efficiency error, error of
+            corrections.
+           (ERR-1) Uncertainty of Cf spectrum.
 HISTORY    (19921204C)  + + Compiled at the Center - CJD + +
            (20010311A) DATE is corrected
            (20061020U) Misprint in Reference Year was corrected.
@@ -28,33 +47,37 @@ HISTORY    (19921204C)  + + Compiled at the Center - CJD + +
             Free text was corrected to be "human-readable".
             "PART/FIS" were changed into "PRT/FIS" in Subents 005,
             006,007.
-ENDBIB              27
-COMMON               2          3
-EN-RSL     MONIT
-NSEC/M     PRT/FIS
-  2.5          3.766
+           (20111220A) Subents 008-010 reactions were corrected
+            according to memo CP-D/701 .
+ENDBIB              48
+COMMON               3          3
+EN-RSL     MONIT      ERR-1
+NSEC/M     PRT/FIS    PER-CENT
+  2.5          3.766   3.
 ENDCOMMON            3
-ENDSUBENT           34
-SUBENT        41110002   20080414   20080801   20080721       4143
-BIB                  2          2
-REACTION   (90-TH-232(N,F),PR,AKE,N)
-STATUS       Data are taken from the reference one .
-ENDBIB               2
+ENDSUBENT           55
+SUBENT        41110002   20111220   20120210   20120207       4155
+BIB                  3          4
+REACTION   (90-TH-232(N,F)0-NN-1,PR,KE) AKE
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
+HISTORY    (20111220A) M.M. 1.86 -> 1.84 as given in table 2 of
+              J,YF,53,(3),628,1991 .
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          2
 EN         DATA       ERR-T
 MEV        MEV        MEV
   2.9        1.93       0.03
- 14.7        1.86       0.03
+ 14.7        1.84       0.03
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        41110003   20080414   20080801   20080721       4143
+ENDSUBENT           13
+SUBENT        41110003   20111220   20120210   20120207       4155
 BIB                  4          7
-REACTION   (92-U-235(N,F),PR,AKE,N,,DERIV)
+REACTION   (92-U-235(N,F)0-NN-1,PR,KE,,,DERIV)  AKE
 ANALYSIS   The shape of exp.energy distribution was reproduced by
            introducing a third neutron source .
-STATUS     (COREL,41094002)
-           (TABLE) Table of 2nd reference, page 666.
+STATUS     (COREL,41094002) See previously published data.
+           (TABLE) Table of J,YF,70,(4),656,2007, page 666.
            (DEP,41110009)
 HISTORY    (20080414A) Data were added from 2nd reference.
 ENDBIB               7
@@ -65,10 +88,10 @@ MEV        MEV        MEV
  14.7       2.03       0.03
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        41110004   20080414   20080801   20080721       4143
+SUBENT        41110004   20111220   20120210   20120207       4155
 BIB                  2          2
-REACTION   (92-U-238(N,F),PR,AKE,N)
-STATUS       Data are taken from the reference one.
+REACTION   (92-U-238(N,F)0-NN-1,PR,KE)   AKE
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 3          2
@@ -78,10 +101,10 @@ MEV        MEV        MEV
  14.7       1.96        0.03
 ENDDATA              4
 ENDSUBENT           11
-SUBENT        41110005   20080414   20080801   20080721       4143
+SUBENT        41110005   20111220   20120210   20120207       4155
 BIB                  2          2
 REACTION   (90-TH-232(N,F),PR,NU)
-STATUS       Data are taken from the reference one.
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 3          2
@@ -91,13 +114,13 @@ MEV        PRT/FIS    PRT/FIS
  14.7        3.92       0.09
 ENDDATA              4
 ENDSUBENT           11
-SUBENT        41110006   20080414   20080801   20080721       4143
+SUBENT        41110006   20111220   20120210   20120207       4155
 BIB                  4          7
 REACTION   (92-U-235(N,F),PR,NU,,,DERIV)
 ANALYSIS   The shape of exp.energy distribution was reproduced by
            introducing a third neutron source .
-STATUS     (COREL,41094003)
-           (TABLE) Table of 2nd reference, page 666.
+STATUS     (COREL,41094003) See previously published data.
+           (TABLE) Table of J,YF,70,(4),656,2007, page 666.
            (DEP,41110009)
 HISTORY    (20080414A) Data were added from 2nd reference.
 ENDBIB               7
@@ -108,10 +131,10 @@ MEV        PRT/FIS    PRT/FIS
  14.7       4.44       4.44
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        41110007   20080414   20080801   20080721       4143
+SUBENT        41110007   20111220   20120210   20120207       4155
 BIB                  2          2
 REACTION   (92-U-238(N,F),PR,NU)
-STATUS       Data are taken from the reference one.
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 3          2
@@ -121,17 +144,25 @@ MEV        PRT/FIS    PRT/FIS
  14.7       4.25        0.10
 ENDDATA              4
 ENDSUBENT           11
-SUBENT        41110008   20080414   20080801   20080721       4143
-BIB                  2          4
-REACTION  1((90-TH-232(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N))
-          2(90-TH-232(N,F),PR,DE,N,REL) Spectre is normalized to
+SUBENT        41110008   20111220   20120210   20120207       4155
+BIB                  3         12
+REACTION  1((90-TH-232(N,F),PR,NU/DE,,NPD)/
+           (98-CF-252(0,F),PR,NU/DE,,NPD))
+          2(90-TH-232(N,F),PR,NU/DE,,NPD) Spectre is normalized to
                                      unity
 STATUS     (APRVD)  M.I.Svirin, 19921125
-ENDBIB               4
+           (TABLE) From author.
+            Spectra ratio is on Fig.3 of J,YF,53,(3),628,1991
+HISTORY    (20111220A)
+            (90-TH-232(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N) ->
+            (90-TH-232(N,F),PR,NU/DE,,NPD)/
+            (98-CF-252(0,F),PR,NU/DE,,NPD) .
+            ARB-UNITS -> 1/FIS/MEV .
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 5        148
 EN         E          DATA      1DATA      2ERR-T     2
-MEV        MEV        NO-DIM     ARB-UNITS  PER-CENT
+MEV        MEV        NO-DIM     1/FIS/MEV  PER-CENT
   2.9       0.232       1.148     0.30180     23.6
   2.9       0.278       1.189     0.33133     14.5
   2.9       0.320       1.086     0.31575      9.1
@@ -281,18 +312,26 @@ MEV        MEV        NO-DIM     ARB-UNITS  PER-CENT
  14.7      10.915       0.611     0.00052     28.33
  14.7      11.77        0.883     0.00042     32.49
 ENDDATA            150
-ENDSUBENT          159
-SUBENT        41110009   20080414   20080801   20080721       4143
-BIB                  2          4
-REACTION  1((92-U-235(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N))
-          2(92-U-235(N,F),PR,DE,N,REL)  Spectre is normalized to
+ENDSUBENT          167
+SUBENT        41110009   20111220   20120210   20120207       4155
+BIB                  3         12
+REACTION  1((92-U-235(N,F),PR,NU/DE,,NPD)/
+           (98-CF-252(0,F),PR,NU/DE,,NPD))
+          2(92-U-235(N,F),PR,NU/DE,,NPD) Spectre is normalized to
                                         unity
 STATUS     (APRVD)  M.I.Svirin, 19921125
-ENDBIB               4
+           (TABLE) From author.
+            Spectra ratio is on Fig.3 of J,YF,53,(3),628,1991
+HISTORY    (20111220A)
+            (92-U-235(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N) ->
+            (92-U-235(N,F),PR,NU/DE,,NPD)/
+            (98-CF-252(0,F),PR,NU/DE,,NPD) .
+            ARB-UNITS -> 1/FIS/MEV .
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 5        148
 EN         E          DATA      1DATA      2ERR-T     2
-MEV        MEV        NO-DIM     ARB-UNITS  PER-CENT
+MEV        MEV        NO-DIM     1/FIS/MEV  PER-CENT
   2.9       0.232     1.006      0.26440     14.5
   2.9       0.278     1.150      0.32054      9.1
   2.9       0.320     1.039      0.30196      8.2
@@ -442,18 +481,26 @@ MEV        MEV        NO-DIM     ARB-UNITS  PER-CENT
  14.7      10.915     0.897      0.00076     13.6
  14.7      11.77      0.698      0.00033     23.59
 ENDDATA            150
-ENDSUBENT          159
-SUBENT        41110010   20080414   20080801   20080721       4143
-BIB                  2          4
-REACTION  1((92-U-238(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N))
-          2(92-U-238(N,F),PR,DE,N,REL)  Spectre is normalized to
+ENDSUBENT          167
+SUBENT        41110010   20111220   20120210   20120207       4155
+BIB                  3         12
+REACTION  1((92-U-238(N,F),PR,NU/DE,,NPD)/
+           (98-CF-252(0,F),PR,NU/DE,,NPD))
+          2(92-U-238(N,F),PR,NU/DE,,NPD) Spectre is normalized to
                                         unity
 STATUS     (APRVD)  M.I.Svirin, 19921125
-ENDBIB               4
+           (TABLE) From author.
+            Spectra ratio is on Fig.3 of J,YF,53,(3),628,1991
+HISTORY    (20111220A)
+            (92-U-238(N,F),PR,DE,N)/(98-CF-252(0,F),PR,DE,N) ->
+            (92-U-238(N,F),PR,NU/DE,,NPD)/
+            (98-CF-252(0,F),PR,NU/DE,,NPD) .
+            ARB-UNITS -> 1/FIS/MEV .
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 5        148
 EN         E          DATA      1DATA      2ERR-T     2
-MEV        MEV        NO-DIM     ARB-UNITS  PER-CENT
+MEV        MEV        NO-DIM     1/FIS/MEV  PER-CENT
   2.9       0.232      1.079      0.28374    15.4
   2.9       0.278      1.011      0.28172    10.2
   2.9       0.320      1.158      0.33655     6.6
@@ -603,5 +650,5 @@ MEV        MEV        NO-DIM     ARB-UNITS  PER-CENT
  14.7      10.915      0.86       0.00073    20.09
  14.7      11.77       0.566      0.00027    33.19
 ENDDATA            150
-ENDSUBENT          159
+ENDSUBENT          167
 ENDENTRY            10
