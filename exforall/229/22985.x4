@@ -1,23 +1,27 @@
-ENTRY            22985   20101107   20110107   20101213       2221
-SUBENT        22985001   20101107   20110107   20101213       2221
-BIB                 14        109
+ENTRY            22985   20111116   20120705   20120704       2228
+SUBENT        22985001   20111116   20120705   20120704       2228
+BIB                 14        117
 TITLE       Mass yield, isotopic yield,and kinetic energy
             distribution for heavy masses in thermal neutron
             induced fission.
 AUTHOR     (A.Bail, O.Serot, H.Faust, U.Koester, T.Materna,
            I.AlMahamid, T.E.Kuzmina, O.Litaize, L.Letourneau,
-           E.Dupont)
+           E.Dupont, L.Mathieu, S.Panebianco)
 INSTITUTE  (2FR ILL) H.Faust, U.Koester, T.Materna  - Institute
              Laue-Langevin, Grenoble, France.
-           (2FR CAD) A.Bail, O.Serot, O.Litaize  -CEA Cadarache,
-                    DEN/DER/SPRC/LEPh, St-Paul-Lez-Durance,France.
-           (2FR SAC)  L.Letourneau, E.Dupont - DAPNIA,CEA Saclay.
+           (2FR CAD) A.Bail, O.Serot, O.Litaize, L.Mathieu -CEA
+           Cadarache,DEN/DER/SPRC/LEPh, St-Paul-Lez-Durance,France
+           (2FR SAC)  L.Letourneau, E.Dupont,S.Panebianco
+            - DAPNIA,CEA Saclay.
            (1USAALB) I.AlMahamid -Wadsworth Center, New-York State
                     Department of Health, Albany NY, USA.
            (4RUSRI ) T.E.Kuzmina  -V.G.Khlopin Radium Institute,
                      St.Petersburg, Russia.
 REFERENCE  (T,BAIL,20090527) Ph.D.Thesis, CEA, Cadarache.
              Main reference. Data tables are given. In French.
+           (J,PR/C,84,034605,2011)
+           #doi:10.1103/PhysRevC.84.034605
+           Data tables for Subents 008,017,18-24.
            (C,2007CORSEN,79,200709) Preliminary results.
            (C,2007NICE,1,375,200704) Report #348. Prelim. results.
            #doi:10.1051/ndata:07348
@@ -100,23 +104,27 @@ ADD-RES    (E-DIS) Ek-distribution for ionic charge state q=22 for
            U-235 - Fig.6.10 of T,BAIL,(Ek= 62,68,71,74,78,84 MeV);
            Pu-239 - Fig.6.18 of T,BAIL,(Ek=51,58,64,74,83,90 MeV);
            Pu-241 - Fig.6.26 of T,Bail (Ek=43,51,60,68,77,85 MeV).
-ERR-ANALYS (ERR-1) Uncertainty due to experimental setup,
+ERR-ANALYS (DATA-ERR) Uncertainty due to experimental setup,
                    Uncertainty due to burn-up - 0.2% - 0.6%,
                    Uncertainty due to calculation method - 1%-7%,
                      Table 6.3 of T,BAIL .
+            Detail error analysis is given in Subent 008.
 HISTORY    (20071217C)   M.M.
            (20090119A)   Corrections made in SAN 002, 003.
               Reference  corrected. EN changed to EN-MEAN - S.M.
-           (20101107A) M.M. References C,2007CORSEN, T,BAIL,
+           (20101107A) M.M. References C,2007CORSEN, T,BAIL,2009,
            S,AIP-1175,23,2010 were added. Three authors' names
            were added. Subents 004 -017 were added.
-ENDBIB             109
+           (20111116A) M.M. Reference J,PR/C,84,034605,2011 was
+           added. Subents 008-015, 017 were corrected.
+            Subent 018 was added.
+ENDBIB             117
 COMMON               2          3
-EN-MEAN    ERR-1
+EN-MEAN    DATA-ERR
 EV         PER-CENT
    2.53E-02  0.6
 ENDCOMMON            3
-ENDSUBENT          116
+ENDSUBENT          124
 SUBENT        22985002   20091027   20110107   20101213       2221
 BIB                  6         20
 REACTION   (94-PU-239(N,F)MASS,,KE,,MXW)  Heavy FF kin. energy.
@@ -499,8 +507,8 @@ NO-DIM     PRD/FIS    PER-CENT   PER-CENT
    151.      9.25 E-03   0.4       4.1
 ENDDATA             24
 ENDSUBENT           38
-SUBENT        22985008   20091027   20110107   20101213       2221
-BIB                  6        126
+SUBENT        22985008   20111116   20120705   20120704       2228
+BIB                  7        147
 REACTION   (94-PU-239(N,F)ELEM/MASS,IND,FY,,MXW) Fission  yields.
 SAMPLE      300 microg/cm**2 actinide (99.5%) .
 DECAY-DATA (36-KR-93,,DG,253.4,0.412,DG,323.9,0.241)
@@ -622,81 +630,180 @@ DECAY-DATA (36-KR-93,,DG,253.4,0.412,DG,323.9,0.241)
              0.078+-0.040, 0.059+-0.030 . LBNL .
            (60-ND-152,,DG,278.6,0.29,DG,250.2,0.183)
              0.29+-0.170, 0.183+-0.090 . LBNL .
+             Uncertainty of 10% was considered when nothing
+             mentioned.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-           (ERR-SYS) Total systematical uncertainty.
-STATUS     (TABLE)  Tables 7.2, 7.3 of T,BAIL.
+           (ERR-1) Systematical uncertainty as sum of
+            uncertainties due to burn-up of sample,
+            mass yield determination (less 1.3%),
+            normalization procedure (about 1.5% )
+           (ERR-2) Detector efficiency uncertainty.
+           (ERR-3) Uncertainty of nuclear data used in analysis.
+           (ERR-4) Uncertainty of decay .
+           (ERR-T) Total error was calculated as
+             sqrt((ERR-S+ERR-1+ERR-2)**2+ERR-3**2+ERR-4**2)
+COMMENT    Of compiler M.M.  In Table III of J,PR/C,84,034605,2011
+            there are two lines given probably as misprint:
+             39Y  1.956  1.08  2.72     9.46     2.89     12.23
+             39Ym 0.477  1.08  2.93     3.99     1.77     8.60
+             Values are the same as for Y-98-G, Y-98-M.
+             These two lines were not included in DATA block.
+             Also ERR-4 values given as 0.00 were not included in
+             DATA block.
+STATUS     (TABLE) Tables III, IV of J,PR/C,84,034605,2011 .
+             Tables 7.2, 7.3 of T,BAIL.
 HISTORY    (20091022C)
              PRT/FIS -> PRD/FIS according to comment N.Otsuka,NDS
-ENDBIB             126
-NOCOMMON             0          0
-DATA                 5         58
-MASS       ELEMENT    DATA       ERR-S      ERR-SYS
-NO-DIM     NO-DIM     PRD/FIS    PER-CENT   PER-CENT
-   93.       36.        2.29 E-03  1.0       17.1
-   93.       37.        1.31 E-02  0.9       9.1
-   93.       38.        2.32 E-02  0.9       8.1
-   94.       37.        4.05 E-03  0.9       8.1
-   94.       38.        3.19 E-03  0.9       8.1
-   94.       39.        4.29 E-03  0.9       9.1
-   95.       37.        2.38 E-03  0.9       10.1
-   95.       38.        2.84 E-02  0.9       8.1
-   95.       39.        1.23 E-02  0.9       35.6
-   96.       38.        1.94 E-02  0.9       4.4
-   96.       39.        1.69 E-02  0.9       23.9
-   98.       38.        3.33 E-03  4.0       6.3
-   98.       39.        2.45 E-02  0.9       19.1
-   99.       38.        3.99 E-03  0.9       4.4
-   99.       39.        4.29 E-03  0.9       61.0
-   99.       40.        4.45 E-02  0.9       12.7
-   99.       41.        7.15 E-03  0.9       42.0
-  133.       51.        1.24 E-02  0.9       17.4
-  133.       52.        4.81 E-02  0.8       8.4
-  134.       51.        5.75 E-03  0.5       2.6
-  134.       52.        3.61 E-02  1.0       10.3
-  134.       53.        2.69 E-02  1.3       9.1
-  136.       52.        5.30 E-03  3.0       52.2
-  136.       53.        3.38 E-02  1.3       11.1
-  137.       53.        2.31 E-02  0.8       12.1
-  137.       54.        3.68 E-02  1.2       7.1
-  138.       53.        4.88 E-03  1.8       52.1
-  138.       54.        4.72 E-02  0.4       10.1
-  138.       55.        1.43 E-02  2.0       11.1
-  139.       53.        1.37 E-03  0.3       5.3
-  139.       54.        3.14 E-02  1.5       11.1
-  139.       55.        2.28 E-02  3.0       10.1
-  140.       53.        7.03 E-04  1.3       131.1
-  140.       54.        1.52 E-02  0.8       10.1
-  140.       55.        2.95 E-02  1.0       20.1
-  141.       55.        3.16 E-02  0.8       10.1
-  141.       56.        1.59 E-02  1.0       12.1
-  142.       55.        9.59 E-02  0.2       2.1
-  142.       56.        3.61 E-02  1.0       9.1
-  142.       57.        4.09 E-03  0.8       13.1
-  143.       56.        2.87 E-02  0.8       13.1
-  143.       57.        1.05 E-02  0.8       13.1
-  144.       56.        2.69 E-02  2.3       8.1
-  144.       57.        1.24 E-02  2.3       75.2
-  145.       56.        8.29 E-03  1.3       16.1
-  145.       57.        1.81 E-02  0.8       14.1
-  145.       58.        4.42 E-03  1.1       14.1
-  146.       56.        5.15 E-03  1.2       8.1
-  146.       57.        1.04 E-02  0.9       43.2
-  146.       58.        8.16 E-03  1.7       7.1
-  147.       57.        6.60 E-03  1.0       8.1
-  147.       58.        1.66 E-02  1.2       11.0
-  148.       57.        1.92 E-03  1.1       19.7
-  148.       58.        9.46 E-03  1.7       13.1
-  151.       59.        4.22 E-03  0.6       9.1
-  151.       60.        2.91 E-03  1.2       9.1
-  152.       59.        2.81 E-04  1.6       12.1
-  152.       60.        5.37 E-03  1.5       20.2
-ENDDATA             60
-ENDSUBENT          191
-SUBENT        22985009   20091027   20110107   20101213       2221
+           (20111116A) Data were replaced by newer publication in
+            J,PR/C,84,034605,2011.
+ENDBIB             147
+COMMON               1          3
+ERR-1
+PER-CENT
+ 3.40
+ENDCOMMON            3
+DATA                 9         65
+MASS       ELEMENT    ISOMER     DATA       ERR-S      ERR-2
+ERR-3      ERR-4      ERR-T
+NO-DIM     NO-DIM     NO-DIM     PC/FIS     PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT
+   93.       36.                  0.227      1.17       3.78
+ 5.54                  10.01
+   93.       37.                  1.301      1.08       2.79
+ 7.47       0.34       10.43
+   93.       38.                  2.31       1.08       3.64
+ 6.94       0.05       10.68
+   94.       37.                  0.402      1.08       2.34
+ 3.44                  7.64
+   94.       38.                  3.168      1.08       2.89
+ 0.74       0.03       7.41
+   94.       39.                  0.426      1.08       2.40
+ 4.51       0.35       8.23
+   95.       37.                  0.236      1.08       3.82
+ 2.96                  8.81
+   95.       38.                  2.82       1.08       1.70
+ 4.92       0.01       7.90
+   95.       39.                  1.221      1.08       1.88
+ 3.50       0.28       7.27
+   96.       38.                  1.927      1.08       3.76
+ 3.62                  9.00
+   96.       39.        1.        1.678      1.08       2.72
+ 3.25       0.50       7.91
+   98.       38.                  0.331      4.04       6.67
+ 6.04                  15.35
+   98.       39.        0.        1.956      1.08       2.72
+ 9.46       2.89       12.23
+   98.       39.        1.        0.477      1.08       2.93
+ 3.99       1.77       8.60
+   99.       38.                  0.04       1.08       6.60
+ 14.91                 18.57
+   99.       39.                  0.426      1.08       6.64
+ 6.82       0.35       13.05
+   99.       40.                  4.419      1.08       4.37
+ 4.35       0.89       9.90
+   99.       41.        0.        0.568      1.08       6.45
+ 10.00      0.58       14.83
+   99.       41.        1.        0.142      1.08       6.96
+ 11.94      0.18       16.54
+  133.       51.                  1.231      1.62       3.30
+ 5.53                  9.99
+  133.       52.        0.        1.881      1.08       5.22
+ 0.80       1.04       9.79
+  133.       52.        1.        2.898      1.25       3.66
+ 5.13       0.32       9.78
+  134.       51.        1.        0.571      1.25       3.06
+ 5.00                  9.19
+  134.       52.                  3.581      1.71       3.21
+ 1.76       0.01       8.50
+  134.       53.        0.        1.496      1.00       2.59
+ 1.65       9.92       12.24
+  134.       53.        1.        1.116      1.80       5.43
+ 3.79       36.90      38.59
+  136.       52.                  0.527      3.65       2.10
+ 7.90                  12.08
+  136.       53.        0.        0.807      1.08       3.01
+ 7.26       1.13       10.49
+  136.       53.        1.        2.483      1.71       4.92
+ 6.00       0.74       11.71
+  137.       53.                  2.244      1.52       3.13
+ 6.87                  10.59
+  137.       54.                  3.653      1.90       4.65
+ 1.60       0.48       10.08
+  138.       53.                  0.475      1.80       4.25
+ 11.65                 15.00
+  138.       54.                  4.687      1.17       3.58
+ 2.85       0.01       8.63
+  138.       55.        0.        0.564      2.67       3.42
+ 2.01       6.03       11.42
+  138.       55.        1.        0.857      2.67       5.95
+ 11.04      33.42      37.19
+  139.       53.                  0.133      1.08       4.30
+ 8.43                  12.18
+  139.       54.                  3.115      2.18       3.90
+ 7.70       0.03       12.21
+  139.       55.                  2.263      3.65       2.46
+ 14.52      0.59       17.37
+  140.       53.                  0.068      1.80       4.93
+ 10.00                 14.24
+  140.       54.                  1.512      1.52       2.30
+ 7.07       0.05       10.11
+  140.       55.                  2.932      1.71       2.73
+ 1.91       0.79       8.11
+  141.       55.                  3.135      1.52       3.16
+ 7.50                  11.03
+  141.       56.                  1.583      1.43       3.95
+ 5.04       0.27       10.13
+  142.       55.                  0.953      1.00       2.57
+ 7.07                  9.93
+  142.       56.                  3.582      1.52       2.74
+ 2.61       0.01       8.09
+  142.       57.                  0.406      1.43       4.12
+ 1.05       4.88       10.25
+  143.       56.                  2.851      1.52       3.78
+ 1.92                  8.92
+  143.       57.                  1.045      1.52       4.12
+ 5.16       0.12       10.41
+  144.       56.                  2.679      1.99       6.87
+ 0.52                  12.28
+  144.       57.                  1.228      1.99       4.85
+ 1.70       1.81       10.54
+  145.       56.                  0.824      1.99       4.96
+ 7.07                  12.54
+  145.       57.                  1.796      1.52       6.68
+ 16.67      0.77       20.32
+  145.       58.                  0.430      1.80       2.49
+ 9.96       2.76       12.89
+  146.       56.                  0.511      1.90       5.55
+ 2.55                  11.14
+  146.       57.        0.        0.293      1.08       3.56
+ 5.33       1.00       9.70
+  146.       57.        1.        0.742      1.34       3.17
+ 5.51       1.71       9.79
+  146.       58.                  0.793      2.38       5.20
+ 5.34       0.02       12.20
+  147.       57.                  0.655      1.71       4.47
+ 6.19                  11.40
+  147.       58.                  1.619      1.90       4.31
+ 5.36       0.25       11.00
+  148.       57.                  0.191      1.80       3.02
+ 1.98                  8.46
+  148.       58.                  0.920      2.38       5.44
+ 5.29       0.07       12.41
+  151.       59.                  0.419      1.34       3.21
+ 4.28                  9.03
+  151.       60.                  0.289      1.90       4.26
+ 1.25       0.14       9.64
+  152.       59.                  0.028      2.28       5.70
+ 5.13                  12.49
+  152.       60.                  0.534      2.18       5.39
+ 5.86                  12.44
+ENDDATA            134
+ENDSUBENT          290
+SUBENT        22985009   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)39-Y-98-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)39-Y-98-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)39-Y-98-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -706,11 +813,11 @@ NO-DIM
   0.244
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        22985010   20091027   20110107   20101213       2221
+SUBENT        22985010   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)41-NB-99-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)41-NB-99-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)41-NB-99-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -720,11 +827,11 @@ NO-DIM
   0.249
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        22985011   20091027   20110107   20101213       2221
+SUBENT        22985011   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)52-TE-133-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)52-TE-133-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)52-TE-133-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -734,11 +841,11 @@ NO-DIM
   1.54
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        22985012   20091027   20110107   20101213       2221
+SUBENT        22985012   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)53-I-134-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)53-I-134-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)53-I-134-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -748,11 +855,11 @@ NO-DIM
   0.746
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        22985013   20091027   20110107   20101213       2221
+SUBENT        22985013   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)53-I-136-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)53-I-136-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)53-I-136-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -762,11 +869,11 @@ NO-DIM
   3.07
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        22985014   20091027   20110107   20101213       2221
+SUBENT        22985014   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)55-CS-138-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)55-CS-138-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)55-CS-138-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -776,11 +883,11 @@ NO-DIM
   1.52
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        22985015   20091027   20110107   20101213       2221
+SUBENT        22985015   20111116   20120705   20120704       2228
 BIB                  3          4
-REACTION   ((94-PU-239(N,F)57-LA-146-M,IND,FY,,MXW)/
-           (94-PU-239(N,F)57-LA-146-G,IND,FY,,MXW))
+REACTION   (94-PU-239(N,F)57-LA-146-M/G,IND,FY/RAT,,MXW)
 STATUS     (TABLE)  Table Fig.7.8 on page 151 of T,BAIL.
+           (COREL,22985018) Superseded by newer publication.
 HISTORY    (20091022C)
 ENDBIB               4
 NOCOMMON             0          0
@@ -812,26 +919,78 @@ NO-DIM     NO-DIM     NO-DIM
    58.      147.1      1.4
 ENDDATA             10
 ENDSUBENT           20
-SUBENT        22985017   20091027   20110107   20101213       2221
-BIB                  5          5
+SUBENT        22985017   20111116   20120705   20120704       2228
+BIB                  5          7
 REACTION   (94-PU-239(N,F)MASS,,ZP,,MXW)
 ANALYSIS    Gaussian fitting.
 MISC-COL   (MISC) Variance.
-STATUS     (TABLE)  Table 7.6 of T,BAIL.
+STATUS     (TABLE) Table V of J,PR/C,84,034605,2011 .
+             Table 7.6 of T,BAIL.
 HISTORY    (20091022C)
-ENDBIB               5
+           (20111116A) Data were replaced by newer publication.
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 3          8
+DATA                 3          9
 MASS       DATA       MISC
 NO-DIM     NO-DIM     NO-DIM
    94.     38.0       0.5
    95.     38.2       0.5
+   99.     40.1       0.5
   134.     52.4       0.7
-  138.     54.3       0.5
+  138.     54.2       0.5
   139.     54.4       0.5
   142.     55.9       0.5
   145.     56.9       0.7
   146.     57.2       1.
-ENDDATA             10
-ENDSUBENT           20
-ENDENTRY            17
+ENDDATA             11
+ENDSUBENT           23
+SUBENT        22985018   20111116   20120705   20120704       2228
+BIB                  3          5
+REACTION   (94-PU-239(N,F)ELEM/MASS,IND,FY,,MXW)
+             Sum of ground state and isomeric-state yield.
+STATUS     (TABLE) Table V of J,PR/C,84,034605,2011 .
+           (DEP,22985008) Individual yields for G and M states.
+HISTORY    (20111116C)
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 4          7
+MASS       ELEMENT    DATA       ERR-T
+NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 98.        39.        2.433     0.280
+ 99.        41.        0.710     0.108
+133.        52.        4.779     0.468
+134.        53.        2.612     0.614
+136.        53.        3.290     0.375
+138.        55.        1.420     0.383
+146.        57.        1.035     0.101
+ENDDATA              9
+ENDSUBENT           19
+SUBENT        22985019   20111116   20120705   20120704       2228
+BIB                  3          8
+REACTION   ((94-PU-239(N,F)ELEM/MASS,IND,FY,,MXW)//
+           (94-PU-239(N,F)ELEM/MASS,IND,FY,,MXW))
+             Ratio of yields  M/(G+M) for several isotopes yields.
+            In Table V data are given in per-cents, multiplied by
+            1.E-2 by compiler.
+STATUS     (TABLE) Table V of J,PR/C,84,034605,2011 .
+           (DEP,22985008) Individual yields for G and M states.
+HISTORY    (20111116C)
+ENDBIB               8
+COMMON               3          3
+ISOMER-NM  ISOMER-DN  ISOMER-DN
+NO-DIM     NO-DIM     NO-DIM
+ 1.         0.         1.
+ENDCOMMON            3
+DATA                 4          7
+MASS       ELEMENT    DATA       ERR-T
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 98.        39.           19.6E-2    3.3 E-2
+ 99.        41.           20.0E-2    4.2 E-2
+133.        52.           60.6E-2    8.4 E-2
+134.        53.           42.7E-2    11.3E-2
+136.        53.           75.5E-2    11.7E-2
+138.        55.           60.3E-2    17.7E-2
+146.        57.           71.7E-2    9.9 E-2
+ENDDATA              9
+ENDSUBENT           26
+ENDENTRY            19
