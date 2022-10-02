@@ -1,47 +1,106 @@
-ENTRY            41112   20070730   20071206   20071120       4141
-SUBENT        41112001   20070730   20071206   20071120       4141
-BIB                 12         20
+ENTRY            41112   20150627   20150817   20150810       4169
+SUBENT        41112001   20150627   20150817   20150810       4169
+BIB                 12         43
 TITLE       Correction of the results of absolute measurements
             of U-235 fission cross-section by neutrons with
             energy 1.9 and 2.4 MeV
-AUTHOR     (V.A.Kalinin, V.N.Kuz'Min, L.M.Solin, B.I.Shpakov,
+AUTHOR     (V.A.Kalinin, V.N.Kuz'min, L.M.Solin, B.I.Shpakov,
            K.Merla)
-INSTITUTE  (4RUSRI ) Kalinin,Kuz'min,Solin,Shpakov
+INSTITUTE  (4RUSRI) Kalinin,Kuz'min,Solin,Shpakov
            (2GERDRE) Merla, former 3DDRTUD
-REFERENCE  (J,AE,71,(2),181,199108) Main Reference.
+REFERENCE  (J,AE,71,(2),181,1991) Main Reference.
+           (J,SJA,71,700,1991) Engl.translation of AE,71,(2),181
            (J,AE,64,(3),194,1988) Preliminary results.
-MONITOR     Absolute measurements
+           (J,SJA,64,239,1988) Engl.translation of AE,64,(3),194
+MONITOR     Absolute counting
 METHOD     (ASSOP) Method of time-correlated associated particles
-INC-SOURCE (D-T)
+           He-3 ( ~ 3 MeV).
+           Separation of CP trajectories in uniform magnetic field
+INC-SOURCE (D-T) Deuteron energy 2.8 MeV and 3.4 MeV .
 FACILITY   (VDG,4RUSRI)   Electrostatic accelerator EG-5
-DETECTOR   (FISCH)
-ERR-ANALYS (ERR-T)  Total error
-STATUS      Data are taken from main reference
+DETECTOR   (FISCH) Ionization chamber for FF detection.
+           (SIBAR) Si surface-barrier detector 25 x 45 mm,
+           layer thickness 45 micron as associated particle
+           detector.
+           He-3 counting rate:
+            (1.5-1.7)*10**3 1/sec for En=1.88 MeV,
+            (1.2-1.5)*10**3 1/sec for En=2.37 MeV.
+SAMPLE     U-234 - 0.00111+-0.00001 %, U-235 - 99.9972+-0.0003 %,
+           U-238 - 0.0017+-0.0003 % .
+           Target thickness:
+            0.9+-0.1 mg/cm2 for En=1.88 MeV,
+            1.6+-0.1 mg/cm2 for En=2.37 MeV.
+           Surface density of U-235 target 1285+-13 microg/cm2 .
+ANALYSIS   Fis. c-s is described as:
+           Nc/(n*Nap), where
+           Nc - number of coincidences,
+           n - number of fissile material per cm2 of the target,
+           Nap - number of detected associated particles.
 HISTORY    (19921220C)  + + Compiled at the Centre - CJD + +
-           (20040517A) DATE is corrected. Status specified
+           (20040517A) Date is corrected. Status specified
            (20070730A) M.M. 2nd Reference was added. MISC in
            SUB .002 was added.
-ENDBIB              20
+           (20150513A) V.Z. COVARIANCE lines were corrected
+           according to new format.
+           (20150627U) M.M. Articles were checked, BIB information
+           was updated.
+ENDBIB              43
 NOCOMMON             0          0
-ENDSUBENT           23
-SUBENT        41112002   20070730   20071206   20071120       4141
-BIB                  5          9
+ENDSUBENT           46
+SUBENT        41112002   20150627   20150817   20150810       4169
+BIB                  6         37
 REACTION   (92-U-235(N,F),,SIG)
-STATUS     (COREL,40927003)   Data corrected compared to
-                              those in Entry 40927.
-           (TABLE)  Table 2 of main reference.
 COVARIANCE  Correlation matrix is given in the form
+            (XY,2,MEV,EN)
+             1.88
+             2.37
+            Correlation matrix of CS at given energy EN
+            (Z,4,NO-DIM,COR)
             1.00     0.24
             0.24     1.00
-CORRECTION   Correction for absorbtion in the target.
-MISC-COL   (MISC) Correction for absorbtion in the target(+-0.4%).
-ENDBIB               9
-NOCOMMON             0          0
-DATA                 4          2
-EN         DATA       ERR-T      MISC
-MEV        B          B          PER-CENT
-  1.88       1.28       0.03     4.0
-  2.37       1.27       0.03     3.9
-ENDDATA              4
-ENDSUBENT           18
+CORRECTION            En                    1.88MeV    2.37 MeV
+           Random coincidences              1.81%      4.88%
+           Extrapolation of FF spectrum
+            to zero                       - 4.02%      2.13%
+           Absorption of FF in layer of
+           target (revised in
+           AE,71,(2),181,1991,see MISC)   -       2.18%
+           Effective thickness of target  -       0.31%
+           Inhomogeneity of target        - 0.47%      0.48%
+           Background in
+           associated-particle channel    - 0-0.25     0.52-0.25
+MISC-COL   (MISC) Correction for FF absorption in the target.
+ERR-ANALYS (ERR-T)  Total error.
+            Source of errors:
+           (ERR-S) Coincidence statistics
+           (ERR-1) Random coincidences
+           (ERR-2) Extrapolation of FF spectrum to zero
+           (ERR-3) Determination of surface density of target
+           (ERR-4) Effective thickness of target
+           (ERR-5) Inhomogeneity of target
+           (ERR-6) Correction for background in
+           associated-particle channel
+           (MISC-ERR) Absolute error of correction for
+           FF absorption in the target.
+STATUS     (COREL,40927003)   Data corrected compared to
+                              those in Entry 40927.
+           (TABLE)  Table 2 of J,AE,71,(2),181,1991.
+           Errors - Table 3 of J,AE,64,(3),194,1988
+ENDBIB              37
+COMMON               5          3
+ERR-3      ERR-4      ERR-5      ERR-6      MISC-ERR
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+1.00       0.10       0.10       0.10       0.4
+ENDCOMMON            3
+DATA                 8          2
+EN         EN-ERR     DATA       ERR-T      MISC       ERR-S
+ERR-1      ERR-2
+MEV        MEV        B          B          PER-CENT   PER-CENT
+PER-CENT   PER-CENT
+  1.88      0.003      1.28       0.03      4.0         1.95
+0.26       0.1
+  2.37      0.003      1.27       0.03      3.9         2.10
+0.5        0.3
+ENDDATA              8
+ENDSUBENT           54
 ENDENTRY             2

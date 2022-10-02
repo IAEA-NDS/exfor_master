@@ -1,6 +1,6 @@
-ENTRY            41240   20130720   20140110   20131224       4161
-SUBENT        41240001   20130720   20140110   20131224       4161
-BIB                 12        120
+ENTRY            41240   20150701   20150817   20150810       4169
+SUBENT        41240001   20150701   20150817   20150810       4169
+BIB                 13        125
 TITLE      .Systematic Measurement of Activation Cross Sections
             At Neutron Energies from 13.4 to 14.9 MeV
 AUTHOR     (A.A.Filatenkov,S.V.Chuvaev,V.N.Aksenov,V.A.Yakovlev,
@@ -36,10 +36,12 @@ DETECTOR   (SCIN)  Scanning scintillation detection online with PC
            -for Am-241 measurement and most difficult measurements
 METHOD     (ACTIV) Activation
 STATUS     (APRVD)   Data are approved by authors
-           (COREL,41298001) Data of Table 1 of RI-252 (derived
-           c-s at 14.1 MeV point) are given in Entry 41298 .
+                            Data in 41298 were derived from data
+            in 41240. Data of Table 1 of RI-252 (derived cross
+           sections at 14.1 MeV point) are given in Entry 41298 .
             Also in Table 5.71 of R,INDC(CCP)-402,1997 data are
            the same as in Table 1 of RI-252,1999.
+REL-REF    (O,41298001,A.Filatenkov+,R,RI-252,1999)
 COMMENT    Of author V.Filatenkov, received 29 March 2013 by
            S.Simakov (NDS IAEA), forwarded to CJD 6 April 2013:
            "27Al(n,a) cs were taken from the evaluation EAF-4 of
@@ -120,10 +122,13 @@ HISTORY    (19970528C)  + + Compiled at the centre - CJD + +
            033-041, 046, 048-057, 065-070, 076, 081-083, 095-100,
            103,105 according to comment of N.Otsuka (NDS,IAEA).
            (20130720A) M+G was deleted from REACTION in Subent 013
-ERR-ANALYS (ERR-T) Errors are Total, error structure is not given
-ENDBIB             120
+           (20150701A) Subents 068, 134 were corrected.
+           "COREL,41298001" was deleted according to comment of
+           N.Otsuka (NDS,IAEA).
+ERR-ANALYS (ERR-T) Errors are total, error structure is not given
+ENDBIB             125
 NOCOMMON             0          0
-ENDSUBENT          123
+ENDSUBENT          128
 NOSUBENT      41240002   20130320   20130812   20130621       4160
 SUBENT        41240003   20130320   20130812   20130621       4160
 BIB                  7         20
@@ -2192,9 +2197,10 @@ MEV        MB         MB         MB         MB
  1.4780E+01 2.6600E+02 3.9000E+01  457.3       5.5
 ENDDATA              9
 ENDSUBENT           35
-SUBENT        41240068   20130320   20130812   20130621       4160
-BIB                  6         16
-REACTION   (63-EU-153(N,2N)63-EU-152-M2+G,,SIG)
+SUBENT        41240068   20150701   20150817   20150810       4169
+BIB                  7         18
+REACTION   (63-EU-153(N,2N)63-EU-152-G+M2,,SIG)
+            Includes M2 state ( 96 min )
 MONITOR    (41-NB-93(N,2N)41-NB-92-M,,SIG)
                   Main monitor.
 MONIT-REF  (41240003,A.Filatenkov+,R,INDC(CCP)-402,199701)
@@ -2210,7 +2216,8 @@ DECAY-DATA (63-EU-152-G,13.573YR,DG,121.8,0.2840,
            14.62+-0.06 %, 13.54+-0.06 %, 20.85+-0.08 %
 STATUS     (TABLE) Table 95 of Attachment  2 in RI-252.
                  = Table 5.66 of R,INDC(CCP)-402,1997.
-ENDBIB              16
+HISTORY    (20150701A) M2+G -> G+M2 in REACTION .
+ENDBIB              18
 COMMON               1          3
 ERR-HL
 YR
@@ -2227,7 +2234,7 @@ MEV        MB         MB         MB         MB
  1.4610E+01 1.5450E+03 6.3000E+01  459.9       5.6
  1.4780E+01 1.4600E+03 5.8000E+01  457.3       5.5
 ENDDATA              9
-ENDSUBENT           34
+ENDSUBENT           36
 SUBENT        41240069   20130320   20130812   20130621       4160
 BIB                  6         11
 REACTION   (82-PB-204(N,2N)82-PB-203,,SIG)
@@ -4027,16 +4034,18 @@ MEV        NO-DIM     NO-DIM
       14.78      0.285       0.07
 ENDDATA              9
 ENDSUBENT           21
-SUBENT        41240134   20130320   20130812   20130621       4160
-BIB                  3          7
-REACTION   (63-EU-153(N,2N)63-EU-152-M/T,,SIG/RAT)
+SUBENT        41240134   20150701   20150817   20150810       4169
+BIB                  4          9
+REACTION   (63-EU-153(N,2N)63-EU-152-M1/T,,SIG/RAT)
+DECAY-DATA (63-EU-152-M1,9.3116HR)
 STATUS     (TABLE) Table 130 of Attachment  2 in RI-252.
            (DEP,41240067)
            (DEP,41240068)
 HISTORY    (19990709C)   + + Compiled at the center
            (20000828A)   .Code 'M/M+G' changed to 'M/T'
            (20000828U) Last checking has been done.
-ENDBIB               7
+           (20150701A) M/T -> M1/T in REACTION .
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          7
 EN         DATA       ERR-T
@@ -4049,7 +4058,7 @@ MEV        NO-DIM     NO-DIM
       14.61      0.151       0.03
       14.78      0.154       0.03
 ENDDATA              9
-ENDSUBENT           21
+ENDSUBENT           23
 SUBENT        41240135   20130320   20130812   20130621       4160
 BIB                  3          7
 REACTION   (75-RE-185(N,2N)75-RE-184-M/T,,SIG/RAT)

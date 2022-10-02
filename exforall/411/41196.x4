@@ -1,38 +1,133 @@
-ENTRY            41196     960702              20050926       0000
-SUBENT        41196001     960702              20050926       0000
-BIB                 12         15
-AUTHOR     (L.L.LITVINSKIY,A.P.KROTENKO,V.A.LIBMAN,A.V.MURZIN,
-           G.M.NOVOSELOV,A.M.SHKARUPA,O.G.YABLONOVSKAYA)
-TITLE       GAMMA-RAY SPECTRA FROM THE GD-155(N,GAMMA) REACTION
-            AND SPIN SPLITTING OF S-NEUTRON STRENGTH FUNCTION
-INSTITUTE  (4UKRIJI)
-REFERENCE  (J,YF,58,(8),1353,9508) STRENGH FUNCTIONS ARE GIVEN
-FACILITY   (REAC)  REACTOR WWR-M
-INC-SPECT   FILTERED REACTOR NEUTRONS
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-ERR-ANALYS (DATA-ERR)    ERRORS ARE NOT SPECIFIED
-MONITOR     NO INFORMATION
-DETECTOR   (GELI)
-SAMPLE      GADOLINIUM OXIDE GD2-O3, WEIGHT 52.7 GRAM,
-            GD-155 CONTENT IS 91.9 PC
-HISTORY    (960702C)  + + COMPILED AT THE CENTRE - CJD + +
-ENDBIB              15
+ENTRY            41196   20150513   20150817   20150810       4169
+SUBENT        41196001   20150513   20150817   20150810       4169
+BIB                 14         34
+AUTHOR     (L.L.Litvinskiy,A.P.Krotenko,V.A.Libman,A.V.Murzin,
+           G.M.Novoselov,A.M.Shkarupa,O.G.Yablonovskaya)
+TITLE       Gamma-ray spectra from the Gd-155(n,gamma) reaction
+            and spin splitting of s-neutron strength function
+INSTITUTE  (4UKRIJD)
+REFERENCE  (J,YF,58,(8),1347,1995) Strength functions are given
+           (J,PAN,58,1265,1995) Engl.translation of YF,58,1347
+FACILITY   (REAC,4UKRIJD)  Reactor WWR-M
+INC-SPECT   Filtered reactor neutrons.
+           For all energies neutron flux at sample position >
+           10E+6 n/cm2/sec .
+METHOD     (FNB) Neutron filters on base of natural Si, S, Sc, V
+           and enriched B-10, Fe-54,-56, Cr-52, Ni-58,-60.
+ERR-ANALYS (DATA-ERR)    Errors are not specified
+MONITOR     No information
+DETECTOR   (GELI,NAICR)  Gamma-spectrometer consists of Ge(Li)
+           detector and two NaI(Tl) detectors.
+           For 8 MeV gamma lines - efficiency ~2.E-5, energy
+           resolution (HW) ~7 keV.
+           Gamma spectrum measurement time for each neutron energy
+           was from 200 to 400 hr.
+SAMPLE      Gadolinium oxide Gd(2)-O(3), weight 52.7 g,
+            Gd-155 content is 91.9 %.
+CORRECTION - for energy dependence of registration efficiency,
+           - for gamma selfabsorption by sample,
+           - for resonance self-shielding.
+REL-REF    (O,41356001,J.Klora+,J,NP/A,561,(1),1,1993)
+HISTORY    (19960702C)  + + Compiled at the centre - CJD + +
+           (20150513A) M.M. Ref.of Engl.translation was added.
+           Page 1353 -> 1347. BIB information was updated.
+            DATA-ERR value was corrected in Subent 002.
+           Subent 003 was added.
+             "COREL,41356001 - other data for Gd-155" was deleted
+           according to comment of N.Otsuka (NDS,IAEA).
+ENDBIB              34
 NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        41196002     960702              20050926       0000
-BIB                  1          1
-REACTION   (64-GD-155(N,EL),PAR,STF)  PARTIAL STRENGTH FUNCTION
-ENDBIB               1
+ENDSUBENT           37
+SUBENT        41196002   20150513   20150817   20150810       4169
+BIB                  5          9
+REACTION   (64-GD-155(N,EL),,STF,,,DERIV)  Strength functions
+ANALYSIS   Derived by approximation of average reduced intensities
+           - see formula (8). D0= 1.8+-0.2 eV, Ggamma0=110+-3 meV,
+           Sn0=(2.0+-0.2)*10**-4 were fixed from:
+REL-REF    (R,,S.F.Mughabghab,R,BNL-325,1984)
+STATUS     (TABLE) From Table 2 of YF,58,(8),1347,1995
+           (DEP,41196003) Reduced intensities .
+HISTORY    (20150513A) DATA-ERR value was corrected.
+           PAR was deleted, DERIV was added in REACTION.
+ENDBIB               9
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 EV         EV
     1.9E+03   1.34E+05
 ENDCOMMON            3
 DATA                 3          2
 MOMENTUM L DATA       DATA-ERR
 NO-DIM     NO-DIM     NO-DIM
-   1.         1.35E-04    1.2E-05
+   1.         1.35E-04    1.1E-05
    2.         1.87E-04    4.0E-05
 ENDDATA              4
-ENDSUBENT           14
-ENDENTRY             2
+ENDSUBENT           22
+SUBENT        41196003   20150513   20150817   20150810       4169
+BIB                  5         18
+REACTION   (64-GD-155(N,G)64-GD-156,,SPC,,AV/MSC)
+            Relative reduced intensities of primary gamma
+           transitions, average for final states with given spin
+           and parity .
+ANALYSIS    Exp. intensities I for each type of transition (E1,M1,
+           were approximated : I=Io*(E**N), where
+           Io - relative induced intensity,
+           n - varied by least square method ,
+           equal to 5.2+-0.5 for E1 transitions, 4.4+-0.9 for M1 ,
+           for E2 was fixed as 5.
+            Relative reduced intensities of primary gamma
+           transitions, average for final states with given spin
+           and parity, were obtained by data extrapolation to
+           assumed gamma energy 7 MeV.
+EN-SEC     (E,G) Gamma energy assumed in analysis.
+MISC-COL   (MISC1) Spin of levels
+           (MISC2) Parity of levels
+STATUS     (TABLE)  Table 1 of YF,58,(8),1347,1995
+ENDBIB              18
+COMMON               1          3
+E
+MEV
+ 7.
+ENDCOMMON            3
+DATA                 5         37
+EN         DATA       DATA-ERR   MISC1      MISC2
+KEV        ARB-UNITS  ARB-UNITS  NO-DIM     NO-DIM
+        1.9    49.     2.        0.          +1.
+        1.9   111.    11.        1.          +1.
+        1.9   110.     5.        2.          +1.
+        1.9    49.     2.        3.          +1.
+        1.9    15.5    0.8       1.          -1.
+        1.9    14.2    0.7       2.          -1.
+        1.9     8.5    0.5       3.          -1.
+        1.9     2.2    0.2       4.
+        3.5    52.     3.        0.          +1.
+        3.5    95.     9.        1.          +1.
+        3.5   100.     3.        2.          +1.
+        3.5    55.     3.        3.          +1.
+        3.5    17.3    0.5       1.          -1.
+        3.5    15.7    0.5       2.          -1.
+        3.5    10.0    0.3       3.          -1.
+        3.5     2.4    0.4       4.
+       45.     47.     4.        0.          +1.
+       45.    100.     3.        2.          +1.
+       45.     51.     6.        1.          -1.
+       45.     67.     7.        2.          -1.
+       45.     49.    13.        3.          -1.
+       45.     10.     2.        4.
+       59.     48.     2.        0.          +1.
+       59.    100.     4.        2.          +1.
+       59.     56.     2.        3.          +1.
+       59.     52.     5.        1.          -1.
+       59.     76.     5.        2.          -1.
+       59.     44.     5.        3.          -1.
+       59.     19.     1.        4.
+      134.     39.     3.        0.          +1.
+      134.    100.     3.        2.          +1.
+      134.     65.     4.        3.          +1.
+      134.     64.     6.        1.          -1.
+      134.     61.     6.        2.          -1.
+      134.     40.     9.        3.          -1.
+      134.     32.     4.        4.
+      134.      7.5    0.6       4.          +1.
+ENDDATA             39
+ENDSUBENT           66
+ENDENTRY             3
