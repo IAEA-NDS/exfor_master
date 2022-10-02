@@ -1,6 +1,6 @@
-ENTRY            41380   20090506   20090724   20090724       4146
-SUBENT        41380001   20090506   20090724   20090724       4146
-BIB                 12         44
+ENTRY            41380   20110425   20110624   20110623       4152
+SUBENT        41380001   20110425   20110624   20110623       4152
+BIB                 12         49
 TITLE       Investigation  of neutron cross-sections and alpha-
             value Alpha=Sigma-G/Sigma-F for 235U in energy range
             1 milli-eV - 2 eV .
@@ -13,6 +13,9 @@ INSTITUTE  (4RUSFEI)  Grigoriev, Sinitsa
 REFERENCE  (J,YK,2000,(1),3,20000630)     Main reference.
            ((S,ISINN-8,328,200005)=(S,JINR-E3-2000-192,200005))
                 First author S.B.Borzakov.
+           (T,GRIGORIEV,2005) Dissertation of Yu.Grigoriev.
+           (R,INDC(CCP)-430,7,2001)
+                  English translation of YK,2000.
 FACILITY   (REAC,4ZZZDUB)  Pulse neutron booster IBR-2 of the
              Frank Laboratory of Neutron Physics.
 INC-SPECT  .Mirror neutron guide on  6th neutron channel of the
@@ -45,10 +48,12 @@ HISTORY    (20001005C)  + + Compiled at the Center - Cjd + +
            (20090504A) Reference S,ISINN-8 was added.
             Free text was corrected to be human-readable.
             BIB and COMMON information was added.
-ENDBIB              44
+           (20110424A) M.M. Reference T,GRIGORIEV,2005 was added.
+            Subent 003 was added.
+ENDBIB              49
 NOCOMMON             0          0
-ENDSUBENT           47
-SUBENT        41380002   20090506   20090724   20090724       4146
+ENDSUBENT           52
+SUBENT        41380002   20110425   20110624   20110623       4152
 BIB                  7         16
 REACTION   (92-U-235(N,ABS),,ALF)  Alpha
 MONITOR    ((MONIT)92-U-235(N,ABS),,ALF) at thermal energy.
@@ -63,8 +68,8 @@ ANALYSIS   (AREA) Value of ALF was calculated as ratio of sum of
             (707, 815, 1279 keV). Then was normalized to value for
             thermal neutrons 0.169.
 MONIT-REF  ((MONIT),H.Weigman+,C,91JUELIC,38,199105)
-ERR-ANALYS (ERR-T)  Max Total Error at 95% Confidence Level
-STATUS     (TABLE)  From Table of Main Reference
+ERR-ANALYS (DATA-ERR)  Max Total Error at 95% Confidence Level
+STATUS     (TABLE)  From Table of J,YK,2000,(1),3,2000 .
                    Table 1 of ISINN-8 .
 ENDBIB              16
 COMMON               2          3
@@ -73,7 +78,7 @@ EV         NO-DIM
    2.53E-02 0.169
 ENDCOMMON            3
 DATA                 3          6
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 EV         NO-DIM     NO-DIM
       6.0-3      0.171      0.045
       8.6-3      0.189       0.01
@@ -83,4 +88,49 @@ EV         NO-DIM     NO-DIM
       5.5-2      0.172      0.012
 ENDDATA              8
 ENDSUBENT           33
-ENDENTRY             2
+SUBENT        41380003   20110425   20110624   20110623       4152
+BIB                  6         12
+REACTION   (92-U-235(N,ABS),,ALF)  Alpha
+MONITOR    (92-U-235(N,ABS),,ALF) at thermal energy and
+           at resonances 0.29, 1.135 eV.
+SAMPLE     .Metallic disk samples-radiator with 90% 235U and
+            10% 238U, 0.25 mm thickness, sample diameter 48 mm,
+            weight 8 gram .
+ANALYSIS   (AREA) Areas for radiative capture line 642, triplet
+           910, 913, 915 keV, and fission gamma-lines 707, 815,
+           duplets 1178+1181 and 1222+124, 1279 keV were defined.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE)  Table 52 of T,GRIGORIEV,2005.
+                   Table 1 of ISINN-8 .
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 4         24
+EN-MAX     EN-MIN     DATA       DATA-ERR
+EV         EV         NO-DIM     NO-DIM
+1.62       1.37         0.28      0.07
+1.37       1.09         0.21      0.06
+0.70       0.46         0.24      0.07
+0.46       0.34         0.22      0.06
+0.34       0.26         0.18      0.05
+0.26       0.20         0.21      0.06
+0.20       0.14         0.19      0.05
+0.14       0.11         0.14      0.03
+0.11       0.09         0.16      0.04
+0.09       0.07         0.21      0.06
+0.07       0.06         0.17      0.04
+0.06       0.05         0.19      0.05
+0.05       0.04         0.15      0.04
+0.04       0.03         0.10      0.03
+0.03       0.02         0.10      0.03
+0.0225     0.0158       0.12      0.03
+0.0158     0.0117       0.12      0.03
+0.0117     0.00836      0.22      0.06
+0.00836    0.00625      0.20      0.05
+0.00625    0.00388      0.34      0.08
+0.00388    0.00263      0.22      0.06
+0.00263    0.00191      0.37      0.09
+0.00191    0.00144      0.43      0.010
+0.00144    0.00101      0.53      0.012
+ENDDATA             26
+ENDSUBENT           43
+ENDENTRY             3
