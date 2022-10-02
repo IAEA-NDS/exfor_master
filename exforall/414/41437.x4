@@ -1,18 +1,19 @@
-ENTRY            41437   20111025   20111215   20111212       4154
-SUBENT        41437001   20111025   20111215   20111212       4154
-BIB                 12         27
-TITLE       Measurements of a partial cross section for the
-            reaction 48Ti(n,gamma1)49Ti and evaluation of
-            radiative strength functions of E1 and M1 transitions
+ENTRY            41437   20171220   20180402   20180319       4177
+SUBENT        41437001   20171220   20180402   20180319       4177
+BIB                 12         31
+TITLE       Measurements of the partial cross section for the
+            reaction 48Ti(n,gamma1)49Ti and estimation of the
+            radiative strength functions for E1 and M1 transitions
 AUTHOR     (A.V.Voinov, D.G.Serov, Yu.P.Popov, N.A.Gundorin,
            A.P.Kobzev, S.S.Parzhitski)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,YF,66,(1),47,200301)  Main reference, data given for
+REFERENCE  (J,PAN,66,(1),44,2003) Eng.translation of YF,66,47,2003
+           #doi:10.1134/1.1540655
+           (J,YF,66,(1),47,2003)  Main reference, data given for
                                  resonance parameters
            ((S,ISINN-9,193,2001)=(S,JINR-E3-2001-192,193,2001))
-                                         Prelim. results.
-           (J,PAN,66,(1),44,200301) Engl.translation of YF,66,,47
-           #doi:10.1134/1.1540655
+               Prelim. results for Subent 003 in Table 1 .
+           (C,2002PRUHON,,264,2002) First author Yu.P.Popov .
 FACILITY   (VDG,4ZZZDUB)  Van de Graaff accelerator. Proton energy
               is 60 keV above Li-7(P,N)Be-7 reaction threshold
 SAMPLE      Annual sample of natural isotopic content, thickness
@@ -28,18 +29,23 @@ HISTORY    (20040708C)  + + Compiled at the center - CJD + +
            (20090423A) M.M. Reference C,ISINN-9 was added.
            (20091113U) Reference J,PAN,66 was added.
            (20111025U) DOI identifier was corrected: " -> # .
-ENDBIB              27
+           (20171220A) M.M. Ref. C,2002PRUHON was added.
+            Subent 005 was added in prelim., information was moved
+            in Subent 004 in final trans.
+ENDBIB              31
 NOCOMMON             0          0
-ENDSUBENT           30
-SUBENT        41437002   20060215   20060525   20060324       4137
-BIB                  4          6
+ENDSUBENT           34
+SUBENT        41437002   20171220   20180402   20180319       4177
+BIB                  4          8
 REACTION   (22-TI-48(N,G)22-TI-49,PAR,SIG)
 EN-SEC     (E-LVL,22-TI-49)
 ERR-ANALYS (EN-ERR-DIG) Digitizing error
            (ERR-DIG)    Digitizing error
-STATUS     (CURVE) Fig.5 of Reference. No reply of author,
-             e-mail:  voinov@nf.jinr.ru
-ENDBIB               6
+           (DATA-ERR) Type of error is not explained in the
+           article.
+STATUS     (CURVE) Fig.5 of J,PAN,66,(1),44,2003.
+           No reply of author, e-mail:  voinov@nf.jinr.ru
+ENDBIB               8
 COMMON               3          3
 E-LVL      EN-ERR-DIG ERR-DIG
 KEV        KEV        MB
@@ -106,20 +112,23 @@ KEV        MB         MB
  77.8       0.6154    0.298
  79.4       0.7056    0.242
 ENDDATA             59
-ENDSUBENT           74
-SUBENT        41437003   20040708              20050926       0000
-BIB                  5         10
+ENDSUBENT           76
+SUBENT        41437003   20171220   20180402   20180319       4177
+BIB                  6         13
 REACTION  1(22-TI-48(N,0),,EN)  Resonance energy
-          2(((22-TI-48(N,EL),,WID)*(22-TI-48(N,G),PAR,WID))/
-           (22-TI-48(N,TOT),,WID))   Stat-wt times (el-wid)
+          2(22-TI-48(N,G),PAR,WID/STR)
+                                     Stat-wt times (el-wid)
             times (gamma-wid-partial) divided (tot-wid)
 ASSUMED    (ASSUM,22-TI-48(N,G),,WID/STR)  Total strength of
             resonance = g*(el-wid)*(g-wid)/(tot-wid)
 EN-SEC     (E-LVL,22-TI-49)
 ERR-ANALYS (ERR-S)  Statistical error
-STATUS     .From the table in main reference
-           (DEP,41437002)
-ENDBIB              10
+STATUS     (TABLE) From the table in J,PAN,66,(1),44,2003
+           (DEP,41437002) Measured CS
+HISTORY    (20171220A) REACTION 2 was corrected
+             ((..(N,EL),,WID)*(..(N,G),PAR,WID))/(..(N,TOT),,WID)
+              ->   (..(N,G),PAR,WID/STR)
+ENDBIB              13
 COMMON               1          3
 E-LVL
 KEV
@@ -143,24 +152,44 @@ NO-DIM
       51.9         64.        10.      1500.         0.       0.5
         +1.
 ENDDATA             16
-ENDSUBENT           35
-SUBENT        41437004   20040708              20050926       0000
-BIB                  4          9
-REACTION  1(22-TI-48(N,G),,STF)      In the article units are
-                                     1/MeV**3
-          2(22-TI-48(N,G),,STF)      In the article units are
-                                     1/MeV**3
-ANALYSIS  1.Electric dipole transition
-          2.Magnetic dipole transition
-STATUS     .From the text in main reference
-           (DEP,41437002)
-ERR-ANALYS (DATA-ERR)   Not specified
-ENDBIB               9
-NOCOMMON             0          0
+ENDSUBENT           38
+SUBENT        41437004   20171220   20180402   20180319       4177
+BIB                  6         25
+REACTION  1(22-TI-48(N,G),PAR,STF,,MSC)
+           In the article units are  1/MeV**3
+          2(22-TI-48(N,G),PAR,STF,,MSC)
+           In the article units are 1/MeV**3
+ANALYSIS  1.Magnetic dipole transition STF was determined as
+           = <GAMMAgamma(M1)> / (D1 * Egamma**3)
+          2.Electric dipole transition STF was determined as
+           = <GAMMAgamma(E1)> / (D0 * Egamma**3) ,
+            where D0=13 keV, D1=8.5 keV - mean level spacings
+           calculated from systematics,
+           Egamma=(81142-1382)=6760 keV - gamma transition to
+           1st excited state.
+ADD-RES      Partial strength function for gamma-1 transition;
+            (Table 1 of C,2002PRUHON,,264,2002 ; gamma energy and
+            level energies are not given in the article):
+            for magnetic dipole transition
+                (0.21+-0.16)*10**-08 1/MeV**3 ,
+            for electric dipole transition
+                (0.33+-0.22)*10**-08 1/MeV**3
+            at energy range 10 - 100 keV .
+STATUS     (TABLE)  From the text,p.46 in J,PAN,66,(1),44,2003
+           (DEP,41437002) Measured CS
+ERR-ANALYS (DATA-ERR) Error type is not explained in the article
+HISTORY    (20171220A) M.M. PAR was added in reaction,
+           gamma energy in COMMON.
+ENDBIB              25
+COMMON               1          3
+E
+KEV
+6760.
+ENDCOMMON            3
 DATA                 6          1
-EN-MIN     EN-MAX     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+EN-RES-MIN EN-RES-MAX DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 KEV        KEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM
         10.       120.     5.E-08     4.E-08    2.5E-08     2.E-08
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           37
 ENDENTRY             4

@@ -1,42 +1,123 @@
-ENTRY            40586     870506              20050926       0000
-SUBENT        40586001     870506              20050926       0000
-BIB                 12         19
-TITLE       DIRECT THERMAL NEUTRON RADIATIVE CAPTURE CROSS-SECTION
-            FOR DEUTERONS
-AUTHOR     (V.P.ALFIMENKOV,S.B.BORZAKOV,VO-VAN-TKHUAN,
-           L.B.PIKEL'NER,E.I.SHARAPOV,
-           B.P.OSIPENKO,V.G.TISHIN,JA.WERZBICKI)
+ENTRY            40586   20180203   20180402   20180319       4177
+SUBENT        40586001   20180203   20180402   20180319       4177
+BIB                 13         30
+TITLE       Direct measurements of the effective cross-section of
+           thermal neutron radiative capture by deuterons
+AUTHOR     (V.P.Alfimenkov, S.B.Borzakov, E.V.Vasil'eva,
+           Vo-Van-Tkhuan, B.P.Osipenko, L.B.Pikel'ner, V.G.Tishin,
+           E.I.Sharapov, Ja.Werzbicki)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (C,80KIEV,2,194,8009)
-           (R,JINR-P3-12667,79)  PRELIMINARY RESULTS
-MONITOR   1(17-CL-0(N,G),PAR,SIG)
-          2(17-CL-0(N,G),,SPC,,REL)
-INC-SOURCE (REAC) IBR-30 REACTOR
-SAMPLE      HARD WATER (VOLUME=250CM3),CYLINDRICAL SHIELD
-            FROM(LI-6)F (THICKNESS IS 1.CM)
-INC-SPECT   THERMAL NEUTRONS
-METHOD     (TOF)
-DETECTOR   (GELI)
+REFERENCE  (J,YF,32,(6),1491,1980)
+           (J,SNP,32,771,1980)
+            Engl.translation of YF,32,(6),1491,1980
+           (C,80KIEV,2,194,1980)
+           (R,JINR-P3-12667,1979)
+           Preliminary results of 1st series
+REL-REF    (R,,M.L.Stelts+,J,NIM,155,253,1978)
+            Gamma lines intensities.
+FACILITY   (REAC,4ZZZDUB) Pulsed reactor IBR-30, 20 kWt power,
+           neutron burst frequency 4 /sec.
+INC-SOURCE (REAC) IBR-30 reactor
+SAMPLE     Heavy water (volume=250cm3),cylindrical shield
+            from(Li-6)F (thickness is 1.cm) .
+            Cl sample as NaCl in heavy water .
+INC-SPECT   Thermal neutrons
+METHOD     (TOF) Flight path 33.m .
+DETECTOR   (GELI) Energy resolution 9 keV at 5 MeV.
 PART-DET   (G)
-HISTORY    (810604C)  COMPILED AT THE CJD
-           (870506U)  THREE  AUTHORS AND ONE REFERENCE ADDED
-ENDBIB              19
-COMMON               6          3
-E-NRM      MONIT     1MONIT-ERR 1MONIT     2MONIT-ERR 2EN-DUMMY
-MEV        B          B          ARB-UNITS  ARB-UNITS  EV
-   6.11       6.57       .19        .198        .005     .0253
-ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        40586002     810604              20050926       0000
-BIB                  1          2
-REACTION  1((1-H-2(N,G)1-H-3,,SIG)/(17-CL-0(N,G),,SIG))
-          2(1-H-2(N,G)1-H-3,,SIG)
-ENDBIB               2
+HISTORY    (19810604C)  Compiled at the CJD
+           (19870506U)  Three  authors and one reference added
+           (20180103A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           BIB information was updated .
+           Subents 003, 004 were added.
+ENDBIB              30
 NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-T     1DATA      2ERR-T     2
-NO-DIM     NO-DIM     MICRO-B    MICRO-B
-   7.25E-05    .23E-05   476.        20.
+ENDSUBENT           33
+SUBENT        40586002   20180203   20180402   20180319       4177
+BIB                  6         15
+REACTION  1((1-H-2(N,G)1-H-3,,SIG)/(17-CL-0(N,G),PAR,SIG))
+          2(1-H-2(N,G)1-H-3,,SIG)
+MONITOR   2(17-CL-0(N,G),PAR,SIG)
+            Monitor CS was determined by partial 6.11 MeV gamma
+           yield (0.198+-0.005) and capture CS ( ASSUM )
+ASSUMED    (ASSUM,17-CL-0(N,G),,SIG)
+ANALYSIS  1 Average value of two measurements
+          2 Defined by measured ratio ( DATA 1) and monitor CS
+            assuming 1/v low for both CS.
+ERR-ANALYS2(DATA-ERR) Includes monitor error (MONIT-ERR) and ratio
+           error ( DATA-ERR 1).
+          1(DATA-ERR) Not explained in the article.
+STATUS     (TABLE) Text, page 1493 and table 3 of J,YF,32,(6),1980
+             Text, page 196 and table 2 of C,80KIEV,2,194,1980
+          1(DEP,40586003) Directly measured ratios.
+ENDBIB              15
+COMMON               5          3
+E-NRM     2MONIT     2MONIT-ERR 2ASSUM      ASSUM-ERR
+MEV        B          B          B          B
+   6.11       6.57      0.19      33.2       0.5
+ENDCOMMON            3
+DATA                 6          1
+EN-DUMMY   E         1DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+EV         MEV        NO-DIM     NO-DIM     MICRO-B    MICRO-B
+ 0.0253     6.11         7.25E-05    .23E-05   476.        20.
 ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             2
+ENDSUBENT           27
+SUBENT        40586003   20180203   20180402   20180319       4177
+BIB                  7         15
+REACTION   ((1-H-2(N,G)1-H-3,,SIG)/(17-CL-0(N,G),PAR,SIG))
+SAMPLE      Two series of measurements:
+                                         I              II
+           Sample volume,cm3           247.5           220
+           H(2)O, %                    3.47            8.6
+           NaCl, g                     1.000           4.000
+METHOD     (GSPEC) Intensities were measured for gamma lines
+            6.11 MeV ( Cl ), 6.26 MeV ( H-3) .
+FLAG       (1.) First series of measurement
+           (2.) Second series of measurement
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           article.
+STATUS     (TABLE) Table 1 of J,YF,32,(6),1980
+             Table 1 of C,80KIEV,2,194,1980
+HISTORY    (20180103C)
+ENDBIB              15
+COMMON               2          3
+EN-DUMMY   E
+EV         MEV
+ 0.0253     6.11
+ENDCOMMON            3
+DATA                 3          2
+DATA       DATA-ERR   FLAG
+NO-DIM     NO-DIM     NO-DIM
+ 7.41       0.37       1.
+ 7.10       0.30       2.
+ENDDATA              4
+ENDSUBENT           28
+SUBENT        40586004   20180203   20180402   20180319       4177
+BIB                  7         13
+REACTION   (1-H-2(N,G)1-H-3,,SIG)
+SAMPLE     Sample volume,cm3           247.5           220
+           H(2)O, %                    3.47            8.6
+           NaCl, g                     1.000           4.000
+METHOD     (GSPEC) An additional measurement to obtain energy
+           dependence of detector efficiency in gamma energy range
+           1.9 - 8.6 MeV . Intensities were measured for all
+           strong gamma lines.
+MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           article.
+STATUS     (TABLE) Text, page 1494 of J,YF,32,(6),1980
+HISTORY    (20180103C)
+ENDBIB              13
+COMMON               3          3
+EN-DUMMY   MONIT      MONIT-ERR
+EV         B          B
+ 0.0253     0.332      0.002
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+MICRO-B    MICRO-B
+ 478.       35.
+ENDDATA              3
+ENDSUBENT           25
+ENDENTRY             4
