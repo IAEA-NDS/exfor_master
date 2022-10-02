@@ -1,6 +1,6 @@
-ENTRY            O2020   20120827   20121218   20121211       O049
-SUBENT        O2020001   20120827   20121218   20121211       O049
-BIB                 11         30
+ENTRY            O2020   20140825   20150311   20150202       O053
+SUBENT        O2020001   20140825   20150311   20150202       O053
+BIB                 12         39
 TITLE      Preparation of Cu-67 via deuteron irradiation of Zn-70.
 AUTHOR     (J.Kozempel,  K.Abbas, F.Simonelli, A.Bulgheroni,
            U.Holzwarth, N.Gibson)
@@ -24,6 +24,13 @@ DETECTOR   (HPGE)
 METHOD     (STTA)
            (BCINT)
            (CHSEP)
+COMMENT    From Dr. J.Kozempel (2014-08-21): For beam monitoring,
+           we used both monitor reaction on Ti foil (48-V) and a
+           Faraday cup, so we detected 0, 34 uA using monitor
+           reaction and 0, 31 uA using Faraday cup. For the yield
+           calculation the 0, 31 uA value was used. In any case we
+           expect the overall beam current uncertainty to be
+           around 10%.
 ERR-ANALYS (ERR-1).Counting uncertainty including detector
            calibration, geometry and statistical deviations is 12%
            (ERR-2).Error in foil thicknesses is 6.5%.
@@ -31,13 +38,15 @@ ERR-ANALYS (ERR-1).Counting uncertainty including detector
            (ERR-4).Error in beam current is 10%.
            (ERR-5).Error in separation yield is 5%.
 HISTORY    (20120828C) SB
-ENDBIB              30
+           (20140825A) SD: COMMENT from Dr. J.Kozempel was added.
+           REACTION code corrected in Subent 3.
+ENDBIB              39
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 12.        6.5        0.1        10.        5.
 ENDCOMMON            3
-ENDSUBENT           37
+ENDSUBENT           46
 SUBENT        O2020002   20110121   20121218   20121211       O049
 BIB                  4         12
 REACTION   (30-ZN-70(D,X)29-CU-67,,SIG)
@@ -77,12 +86,16 @@ MEV        MEV        MB         MB
 19.7       0.6        22.0       2.4
 ENDDATA             20
 ENDSUBENT           37
-SUBENT        O2020003   20110121   20121218   20121211       O049
-BIB                  2          3
-REACTION   (30-ZN-70(D,X)ELEM/MASS,,TTY,,DT)
+SUBENT        O2020003   20140825   20150311   20150202       O053
+BIB                  3          7
+REACTION   (30-ZN-70(D,X)ELEM/MASS,,TTY,,PHY/MSC)
            Yield at EOB after 0.34 muA, 3 hr irradiation
+             (EOB activity/current/irradiation time)
 STATUS     (TABLE).Table 4 of J,RCA,100,419,2012
-ENDBIB               3
+HISTORY    (20140825A) SD. In RECTION code:TTY,,DT -> TTY,,PHY/MSC
+            (EOB activity/current/irrad.time). Confirmed by
+            Dr.J.Kozempel (2014-08-21).
+ENDBIB               7
 COMMON               2          3
 EN-MIN     EN-MAX
 MEV        MEV
@@ -98,5 +111,5 @@ NO-DIM     NO-DIM     NO-DIM     MBQ/MUAHR
 31.        66.                   0.03
 31.        67.                   0.06
 ENDDATA              8
-ENDSUBENT           20
+ENDSUBENT           24
 ENDENTRY             3
