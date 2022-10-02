@@ -1,10 +1,12 @@
-ENTRY            41442   20090429   20090724   20090724       4146
-SUBENT        41442001   20090429   20090724   20090724       4146
-BIB                 14         38
+ENTRY            41442   20100227   20100915   20100913       4149
+SUBENT        41442001   20100227   20100915   20100913       4149
+BIB                 15         47
 INSTITUTE  (4RUSFEI)
 REFERENCE  (J,YF,67,(7),1263,200407) Experiment details, schemes,
                                      graphs
            (S,ISINN-11,138,200305)
+           (J,PAN,67,(7),1239,200407) Engl. translation of J,YF.
+           #doi:10.1134/1.1777280
 AUTHOR     (V.A.Khryachkov,M.V.Dunaev,I.V.Dunaeva,N.N.Semenova,
             A.I.Sergachev)
 TITLE       Measuring of Probability of 232-Th Ternary Fission
@@ -15,7 +17,7 @@ FACILITY   (ACCEL,4RUSFEI) EG-1 Accelerator
 INC-SOURCE (P-T)
 SAMPLE      232-Th of 3cm diameter and 200 microgram/cm2 thickness
             on the Al2-O3 backing in the cathode center.
-DETECTOR   (FISCH) Double ionization chamber with frish's grids
+DETECTOR   (FISCH) Double ionization chamber with Frisch's grids
                 filled with argon - 90%, methane - 10% at
                 pressure 0.75 Atmosphere.
            (SCIN) CsI(Tl) crystal of 1 mm thickness and 70 mm
@@ -28,31 +30,39 @@ DETECTOR   (FISCH) Double ionization chamber with frish's grids
               decay,
             - Using the data of Cf-252 ternary fission and basing
              on value of ternary fission probability for Cf-252.
-ASSUMED    (ASSUM,98-CF-252(N,F),TER/BIN,SIG/RAT)
+ASSUMED    (ASSUM,98-CF-252(0,F),TER,FY,LCP)
+            Probability of ternary fission of Cf-252 - T/B.
 REL-REF    (R,12814001,J.F.Wild+,J,PR/C,32,(2),488,1985) Ref. for
                                             ASSUM value.
 MONITOR     No Information
-STATUS     (APRVD) V.A.Khryachkov, E-Mail: Hva@ippe.Ru
+ERR-ANALYS (ERR-1) Uncertainty of geometrical efficiency of
+                   registration.
+STATUS     (APRVD) V.A.Khryachkov, e-mail: hva@ippe.ru
+                   Data from author.
 HISTORY    (20050119C)   M.M. Compiled at CJD
            (20050425U) Last checking has been done.
            (20050513U) Last checking has been done.
            (20090429A) Reference S,ISINN-11 was added.
                 BIB and COMMON information was added.
-COMMENT     .This work was made by support of RFBR (#03-02-96358)
-ENDBIB              38
-COMMON               2          3
-ASSUM      ASSUM-ERR
-NO-DIM     NO-DIM
- 3.77       0.11
+           (20100227A) MM. Reactions were corrected in Subents
+           004-006 - particles codes were moved from SF7 into SF4.
+            Ref. J,PAN was added.
+COMMENT     .This work was made by support of ISTC (#03-02-96358)
+ENDBIB              47
+COMMON               3          3
+ASSUM      ASSUM-ERR  ERR-1
+PRT/FIS    PRT/FIS    PER-CENT
+   3.77E-03   0.11E-03 4.
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        41442002   20090429   20090724   20090724       4146
-BIB                  3          4
+ENDSUBENT           54
+SUBENT        41442002   20100227   20100915   20100913       4149
+BIB                  3          5
 REACTION   (90-TH-232(N,F),PRE,DA,FF,REL)
+            Relative angular distribution in arbitrary units.
 ERR-ANALYS (DATA-ERR) Errors are not specified .
-STATUS     . Fig. 5 of the Reference J,YF,67,(7),1263,2004 .
+STATUS     (TABLE) Fig. 5 of the Reference J,YF,67,(7),1263,2004 .
              Fig.2 , S,ISINN-11 .
-ENDBIB               4
+ENDBIB               5
 COMMON               1          3
 EN
 MEV
@@ -110,33 +120,36 @@ NO-DIM     ARB-UNITS  ARB-UNITS
       0.966    0.61132     0.0269
       0.987    0.53188    0.02509
 ENDDATA             50
-ENDSUBENT           63
-SUBENT        41442003   20090429   20090724   20090724       4146
-BIB                  3          6
-REACTION   (90-TH-232(N,F),TER/BIN,SIG/RAT)
+ENDSUBENT           64
+SUBENT        41442003   20100227   20100915   20100913       4149
+BIB                  4          7
+REACTION   (90-TH-232(N,F),TER,FY,LCP)
                Probability of Ternary Fission Depending of
                 Neutron Energy
 ERR-ANALYS (DATA-ERR) Errors are not specified .
-STATUS     . Fig. 6 of the Reference J,YF,67,(7),1263,2004 .
+STATUS     (TABLE) Fig. 6 of the Reference J,YF,67,(7),1263,2004.
              Fig.3 bottom, S,ISINN-11 .
-ENDBIB               6
+HISTORY    (20100227A) NO-DIM -> PRT/FIS.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          3
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/FIS    PRT/FIS
         1.6    1.68-03    0.47-03
       1.775   1.051-03     0.5-03
         2.2    2.33-03     0.7-03
 ENDDATA              5
-ENDSUBENT           16
-SUBENT        41442004   20090429   20090724   20090724       4146
-BIB                  5          5
-REACTION   (98-CF-252(0,F),TER,DE,A,REL)
+ENDSUBENT           17
+SUBENT        41442004   20100227   20100915   20100913       4149
+BIB                  5          7
+REACTION   (98-CF-252(0,F)2-HE-4,TER,FY/DE,,REL)
+            Energy distribution of alphas at ternary fission given
+            in arbitrary units.
 SAMPLE      Cf-252 of 5 mm  diameter and 15 fis/second activity
 EN-SEC     (E,A)
 ERR-ANALYS (DATA-ERR) Errors are not specified .
-STATUS     . Fig. 4 of the Reference J,YF,67,(7),1263,2004 .
-ENDBIB               5
+STATUS     (TABLE) Fig. 4 of the Reference J,YF,67,(7),1263,2004.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3        118
 E          DATA       DATA-ERR
@@ -260,31 +273,33 @@ MEV        ARB-UNITS  ARB-UNITS
    27.78182         0.
    27.94545         0.
 ENDDATA            120
-ENDSUBENT          130
-SUBENT        41442005   20090429   20090724   20090724       4146
-BIB                  3          3
-REACTION   ((98-CF-252(0,F),TER,FY,T)/(98-CF-252(0,F),TER,FY,A))
+ENDSUBENT          132
+SUBENT        41442005   20100227   20100915   20100913       4149
+BIB                  3          4
+REACTION   ((98-CF-252(0,F)1-H-3,TER,FY)/
+           (98-CF-252(0,F)2-HE-4,TER,FY))
 SAMPLE      Cf-252 of 5 mm  diameter and 15 fis/second activity
-STATUS     . Text P.1265, J,YF,67,(7),1263,2004 .
-ENDBIB               3
+STATUS     (TABLE)  Text P.1265, J,YF,67,(7),1263,2004 .
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 1          1
 DATA
 NO-DIM
      0.0696
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        41442006   20090429   20090724   20090724       4146
-BIB                  3          3
-REACTION   ((98-CF-252(0,F),TER,FY,P)/(98-CF-252(0,F),TER,FY,A))
-SAMPLE      Cf-252 OF 5 MM  DIAMETER AND 15 FIS/SECOND ACTIVITY
-STATUS     . Text P.1265, J,YF,67,(7),1263,2004 .
-ENDBIB               3
+ENDSUBENT           12
+SUBENT        41442006   20100227   20100915   20100913       4149
+BIB                  3          4
+REACTION   ((98-CF-252(0,F)1-H-1,TER,FY)/
+           (98-CF-252(0,F)2-HE-4,TER,FY))
+SAMPLE      Cf-252 of 5 mm  diameter and 15 fis/second activity
+STATUS     (TABLE)  Text P.1265, J,YF,67,(7),1263,2004 .
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 1          1
 DATA
 NO-DIM
       0.014
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           12
 ENDENTRY             6
