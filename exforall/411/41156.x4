@@ -1,169 +1,216 @@
-ENTRY            41156   20080512   20080801   20080721       4143
-SUBENT        41156001   20080512   20080801   20080721       4143
-BIB                 13         28
-TITLE       14-MeV Facility And Research In IPPE
+ENTRY            41156   20100730   20101201   20101129       4150
+SUBENT        41156001   20100730   20101201   20101129       4150
+BIB                 15         54
+TITLE       14-MeV facility and research in IPPE
 AUTHOR     (S.P.Simakov,A.A.Androsenko,P.A.Androsenko,B.V.Devkin,
            M.G.Kobozev,A.A.Lychagin,V.V.Sinitsa,V.A.Talalaev,
            D.Yu.Chuvilin,A.A.Borisov,V.A.Zagryadskiy)
-REFERENCE  (J,YK,,(4),93,199203)    Data tables are given
+REFERENCE  (J,YK,1992,(3-4),93,199203)    Data tables are given
+           (R,INDC(CCP)-351,1993)   Engl.translation.
 INSTITUTE  (4RUSFEI)  Simakov, Androsenko, Devkin, Kobozev,
                       Lychagin, Sinitsa, Talalaev
            (4RUSKUR)  Chuvilin, Borisov, Zagryadskiy
 FACILITY   (CCW,4RUSFEI)  Pulsed neutron generator KG-0.3.
             Neutron yield 1E+8 1/sec.
-METHOD     (TOF)
+METHOD     (TOF) Short 2-4 m path for lower energy 0.5-10 MeV,
+           long 7m path for high energy 3-14 MeV.
+           (ASSOP) Assotiated alpha-particle (of 2.9 MeV energy )
+           method was used to define detector efficiency at 14 MeV
+           neutron energy.
+           (ACTIV) Al foil activation - for absolute normalization
+           (COINC) Neutrons with gammas  - for inelastic .
 INC-SOURCE (D-T) Air cooled TiT targets on Cu backing of 11 mm
             diameter.
-MONITOR     NO INFORMATION
-DETECTOR   (SCIN) NE-218 liquid scintillator.
+MONITOR   1(98-CF-252(N,F),PR,NU/DE) To define efficiency of
+            detector. Spertrum of prompt fission neutrons was
+           measured by TOF and compared with standard one.
+            For energy < 6 MeV.   Of W.Mannhart.
+          2(1-H-1(N,EL)1-H-1,,SIG) n-p scattering c-s was used
+           to define the detector efficiency for energy > 6 MeV.
+           And for absolute normalization.
+          3(13-AL-27(N,A)11-NA-24,,SIG) For incident neutron flux.
+MONIT-REF 1(,W.Mannhart+,R,IAEA-410,158,1987) IAEA-TECHDOC-410 .
+          2(,,R,IAEA-227,1983) IAEA-TECHDOC-227 .
+DETECTOR   (SCIN) NE-218 liquid scintillator for scattered
+           neutrons for DDX measurement
                   Paratenfinil crystal.
            (NAICR) For gamma detection
+           (SIBAR) Silicon surface barrier detector SSB for ASSOP.
+           Calibrated by Pu-238 alpha-source with 5.7 MeV energy,
+           supposing  SSD efficiency of energy independent.
+           (LONGC) Long counter - for monitoring neutron yield.
 ANALYSIS   (INTED) Energy-angle-integrated cross-section.
            (INTAD)
+CORRECTION For neutron flux attenuation and multiple scattering in
+           samples by Monte-Carlo code SSE or BRAND.
+           Elastically scattered neutrons were subtracted.
 STATUS      Data are taken from the reference
 ERR-ANALYS (ERR-T)   Errors are total
-           (ERR-S) Maximal statistical error ( 3-50 %)
+           (ERR-S,3.,50.) Maximal statistical error ( 3-50 %)
            (ERR-1) Detector efficiency error
            (ERR-2) Error of absolute normalization
            (ERR-3) Error of correction function
 HISTORY    (19940902C)  + + Compiled at the center - CJD + +
            (20060203A) Sub.001-011   were corrected. (M.M.)
            (20080512A) Subent 003 was corrected. M.M.
-ENDBIB              28
-COMMON               4          3
-ERR-S      ERR-1      ERR-2      ERR-3
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-50.        5.         4.         3.
+           (20100730A) Subents 008,009 were corrected.
+            Reference R,INDC(CCP)-351,1993 was added.
+ENDBIB              54
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+5.         4.         3.
 ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        41156002   20080512   20080801   20080721       4143
-BIB                  3          4
-REACTION   (24-CR-52(N,X)0-NN-1,,SIG)
+ENDSUBENT           61
+SUBENT        41156002   20100730   20101201   20101129       4150
+BIB                  4          6
+REACTION   (24-CR-52(N,X)0-NN-1,EM,SIG)
 METHOD     (TOF) Flight path 3 m.
-STATUS     (TABLE) From Table 3
+SAMPLE      Cr52 isotope abundance 99.9%.
+STATUS     (TABLE) From Table 3 of J,YK,1992,(3-4),93,1992.
+               Table 3 of R,INDC(CCP)-351,1993.
            (DEP,41329002)
-ENDBIB               4
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
    14.1      1443.      120.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        41156003   20080512   20080801   20080721       4143
-BIB                  4          5
+ENDSUBENT           14
+SUBENT        41156003   20100730   20101201   20101129       4150
+BIB                  5          8
 REACTION   (24-CR-52(N,INL)24-CR-52,,SIG)
+SAMPLE      Cr52 isotope abundance 99.9%.
 METHOD     (TOF) Flight path 2 m.
-STATUS     (TABLE)  From Table 3
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+               Table 3 of R,INDC(CCP)-351,1993.
+           (SPSDD,41329004)
 HISTORY    (20080512A) Data was deleted as duplication of Subent
                        41329004 .  M.M.
-ENDBIB               5
+ENDBIB               8
 NOCOMMON             0          0
 NODATA               0          0
-ENDSUBENT            9
-SUBENT        41156004   20080512   20080801   20080721       4143
-BIB                  2          3
-REACTION   ((24-CR-52(N,2N)24-CR-51,,SIG)+
-           (24-CR-52(N,N+A)22-TI-48,,SIG))
-STATUS     (TABLE)  From Table 3
-ENDBIB               3
+ENDSUBENT           12
+SUBENT        41156004   20100730   20101201   20101129       4150
+BIB                  3          7
+REACTION   ((24-CR-52(N,X)0-NN-1,EM,SIG)-
+           (24-CR-52(N,INL)24-CR-52,,SIG))
+COMMENT     These data are given by authors as (n,2n)+(n,n+a) .
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+               Table 3 of R,INDC(CCP)-351,1993.
+           (DEP,41156002) Obtained from c-s given in
+           (DEP,41329004)           these Subents.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
   14.1       537.       45.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        41156005   20080512   20080801   20080721       4143
-BIB                  3          3
-REACTION   (26-FE-56(N,X)0-NN-1,,SIG)
+ENDSUBENT           15
+SUBENT        41156005   20100730   20101201   20101129       4150
+BIB                  4          4
+REACTION   (26-FE-56(N,X)0-NN-1,EM,SIG)
 METHOD     (TOF) Flight path 7.1 m.
-STATUS     (TABLE)  From Table 3
-ENDBIB               3
+SAMPLE      Natural.
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
    14.1      1732.      140.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        41156006   20080512   20080801   20080721       4143
-BIB                  3          3
+ENDSUBENT           12
+SUBENT        41156006   20100730   20101201   20101129       4150
+BIB                  4          4
 REACTION   (26-FE-56(N,INL)26-FE-56,,SIG)
 METHOD     (TOF) Flight path 1.7 m.
-STATUS     (TABLE)  From Table 3
-ENDBIB               3
+SAMPLE      Fe-56 isotopic abundance 100 5.
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
   14.1       704.       70.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        41156007   20080512   20080801   20080721       4143
-BIB                  2          4
-REACTION   ((26-FE-56(N,2N)26-FE-55,,SIG)+
-           (26-FE-56(N,N+A)24-CR-52,,SIG)+
-           (26-FE-56(N,N+P)25-MN-55,,SIG))
-STATUS     (TABLE)  From Table 3
-ENDBIB               4
+ENDSUBENT           12
+SUBENT        41156007   20100730   20101201   20101129       4150
+BIB                  3          7
+REACTION   ((26-FE-56(N,X)0-NN-1,EM,SIG)-
+           (26-FE-56(N,INL)26-FE-56,,SIG))
+COMMENT     These data are given by authors as sum
+             (n,2n)+(n,n+a)+(n,n+p) .
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+           (DEP,41156005) Obtained from c-s given in
+           (DEP,41156006)                 Subents 005, 006.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
   14.1      1028.       95.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        41156008   20080512   20080801   20080721       4143
-BIB                  3          3
-REACTION   (82-PB-208(N,X)0-NN-1,,SIG)
+ENDSUBENT           15
+SUBENT        41156008   20100730   20101201   20101129       4150
+BIB                  4          4
+REACTION   (82-PB-208(N,X)0-NN-1,EM,SIG)
 METHOD     (TOF) Flight path 3.1 m and 7.1 m.
-STATUS     (TABLE)  From Table 3
-ENDBIB               3
+SAMPLE       Pb-208 isotopic abundance 98 %.
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
    14.1      5165.      300.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        41156009   20080512   20080801   20080721       4143
-BIB                  3          4
+ENDSUBENT           12
+SUBENT        41156009   20100730   20101201   20101129       4150
+BIB                  4          6
 REACTION   (82-PB-208(N,INL)82-PB-208,,SIG)
+SAMPLE       Pb-208 isotopic abundance 99 %.
 METHOD     (TOF) Flight path 2.2 m.
-           (COINC)
-STATUS     (TABLE)  From Table 3
-ENDBIB               4
+           (COINC) 2.61 MeV gamma from the 1st level (3-) to g.s.
+             was measured in coincidence with neutron.
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
   14.1       405.       30.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        41156010   20080512   20080801   20080721       4143
-BIB                  2          2
+ENDSUBENT           14
+SUBENT        41156010   20100730   20101201   20101129       4150
+BIB                  2          5
 REACTION   (82-PB-208(N,2N)82-PB-207,,SIG)
-STATUS     (TABLE)  From Table 3
-ENDBIB               2
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+           (DEP,41156008) Obtained from c-s given in
+           (DEP,41156009)                 Subents 008, 009
+            using ratio (n,xn)=(n,inl)+2*(n,2n) .
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
   14.1      2380.      140.
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        41156011   20080512   20080801   20080721       4143
-BIB                  3          3
-REACTION   (83-BI-209(N,X)0-NN-1,,SIG)
+ENDSUBENT           13
+SUBENT        41156011   20100730   20101201   20101129       4150
+BIB                  4          4
+REACTION   (83-BI-209(N,X)0-NN-1,EM,SIG)
 METHOD     (TOF) Flight path 2.2 m and 7.1 m.
-STATUS     (TABLE)  From Table 3
-ENDBIB               3
+SAMPLE      Bi-209 isotopic abundance 100 % .
+STATUS     (TABLE)  From Table 3 of J,YK,1992,(3-4),93,1992.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 MEV        MB         MB
    14.1      5220.      310.
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           12
 ENDENTRY            11
