@@ -1,49 +1,62 @@
-ENTRY            21756   20070927   20071206   20071125       2187
-SUBENT        21756001   20070927   20071206   20071125       2187
-BIB                 12         21
+ENTRY            21756   20140818   20150107   20141107       2240
+SUBENT        21756001   20140818   20150107   20141107       2240
+BIB                 12         27
 INSTITUTE  (2AUSIRK)
 REFERENCE  (J,ZP/A,302,(3),271,198110)
 AUTHOR     (H.Friedmann)
 TITLE      -Precision measurement of the total cross section for
-            the reaction Al-27(N,a)Na-24 relative to the cross
+            the reaction Al-27(n,alpha)Na-24 relative to the cross
             section of Au-197(N,2N)Au-196 in the energy range
             from 13.70 to 14.42 MeV. -
-FACILITY   (CCW)  .Fast neutron generator of IRK.
+FACILITY   (CCW,2AUSIRK)  .Fast neutron generator of IRK.
 INC-SOURCE (D-T)  .The deuteron energy = 200 KeV.
 SAMPLE     . Al sample = 8 * 16 mm, 0.18 grams,
            . Au sample = 2.5 grams.
+           Each aluminium sample was irradiated between two
+           samples of gold. The size of all samples was 8 x 16mm,
+           the masses of the aluminium samples were about 0.18 g,
+           the masses of the gold samples were approximately 2.5g.
 METHOD     (ACTIV)
-DETECTOR   (NAICR)  .Well type naj(Tl) detector.
-STATUS     .Data were taken from main ref.
+DETECTOR   (NAICR)  5. x 5. inch (127 x 127. mm) well type
+            NaI(Tl) detector.
+STATUS     (TABLE) Table 1 of Z.Phys.A302(1981)271
 ERR-ANALYS (ERR-T) One standard deviation.
-            Statistical error = less than 0.2 percent,
-            impurities        = less than 0.02 percent.
+           (ERR-S,,0.2) Statistical error = less than 0.2%,
+           (ERR-1,,0.02) impurities       = less than 0.02%.
 HISTORY    (19811127C) T.N
            (19820217E)
            (20070926A) Date and units in SAN 002 are corrected-SM
            (20070927U) Last corrections have been done.
-ENDBIB              21
+           (20140818A) SD: Important corrections in Subents 2,3,4.
+ENDBIB              27
 COMMON               1          3
 EN-ERR
 MEV
      3.E-02
 ENDCOMMON            3
-ENDSUBENT           28
-SUBENT        21756002   20070927   20071206   20071125       2187
-BIB                  2          5
-REACTION   ((13-AL-27(N,A)11-NA-24,,SIG)/
+ENDSUBENT           34
+SUBENT        21756002   20140818   20150107   20141107       2240
+BIB                  5         12
+REACTION   ((13-AL-27(N,A)11-NA-24,,SIG)//
+           (13-AL-27(N,A)11-NA-24,,SIG))
+ANALYSIS    The relative shape of the excitation function for
+           27Al(n,alpha)24Na is given if one assumes a linear
+           increase of 9% (see MONIT-REF) for the cross section
+           of 197Au(n,2n)a96Au between 13.6 and 14.6 MeV
+MONITOR    ((79-AU-197(N,2N)79-AU-196,,SIG)//
            (79-AU-197(N,2N)79-AU-196,,SIG))
-            Normalized to 1.0 at 14.42 MeV.
+MONIT-REF  (20815025,H.K.Vonach+,C,68WASH,2,885,1968)
 HISTORY    (20070926A)   Data heading ratio changed to data
-           (20070927U) Last checking has been done.
-ENDBIB               5
-COMMON               1          3
-ERR-T
-PER-CENT
-     3.E-01
+           (20140818A) SD: Reaction code was changed (denominator:
+           Au-197(n,2n) -> Al-27(n,alpha)). MONITOR was added.
+ENDBIB              12
+COMMON               2          3
+EN-DN      ERR-T
+MEV        PER-CENT
+     14.42     0.3
 ENDCOMMON            3
 DATA                 3         20
-EN         EN-RSL     DATA
+EN-NM      EN-RSL     DATA
 MEV        MEV        NO-DIM
  1.3700E+01 8.0000E-02 1.0904E+00
  1.3710E+01 7.5000E-02 1.0726E+00
@@ -66,14 +79,19 @@ MEV        MEV        NO-DIM
  1.4390E+01 1.1500E-01 1.0187E+00
  1.4420E+01 1.3000E-01 1.0000E+00
 ENDDATA             22
-ENDSUBENT           36
-SUBENT        21756003   20070927   20071206   20071125       2187
-BIB                  3          4
+ENDSUBENT           43
+SUBENT        21756003   20140818   20150107   20141107       2240
+BIB                  6          9
 REACTION   (13-AL-27(N,A)11-NA-24,,SIG)
-ANALYSIS   .Au-197(N,2N) cross section was assumed to  linearly
-            increase by 0.9 percent between 13.6 and 14.6 MeV.
-MONITOR    (79-AU-197(N,2N)79-AU-196,,SIG)
-ENDBIB               4
+ANALYSIS   CS obtained by the measured ratio and the slope
+           parameter (9%) of the 197Au(n,2n)196Au reaction cross
+           section between 13.6 and 14.6 MeV
+MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
+MONIT-REF  (20111002,H.Vonach+,J,ZP,237,155,1970)
+STATUS     (DEP,21756002)
+HISTORY    (20140818A) SD: MONITOR reaction was corrected:
+            Au-197(n,2n) -> Al-27(n,alpha).
+ENDBIB               9
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
 MEV        MB         MB
@@ -103,20 +121,24 @@ MEV        MEV        MB
  1.4390E+01 1.1500E-01 1.1920E+02
  1.4420E+01 1.3000E-01 1.1700E+02
 ENDDATA             22
-ENDSUBENT           35
-SUBENT        21756004   20070927   20071206   20071125       2187
-BIB                  3         10
+ENDSUBENT           40
+SUBENT        21756004   20140818   20150107   20141107       2240
+BIB                  6         14
 REACTION   (13-AL-27(N,A)11-NA-24,,SIG)
-ANALYSIS   .Au-197(N,2N) cross section was assumed to linearly
-            increase by 0.9 percent between 13.6 and 14.6 MeV.
-           .Al-27(N,a) cross section was normalized to values in
-            the following references,
-              H.K. Vonach, et Al., Z. Phys. 237(1970)155.
-              G.Winkler, personal communication.
-              J.C. Robertson, et Al.,J.Nucl. Energy 27(1972)139.
-              T.B. Ryves, et Al.,J. Phys. G4(1978)1783.
-MONITOR    (79-AU-197(N,2N)79-AU-196,,SIG)
-ENDBIB              10
+ANALYSIS   CS obtained by the measured ratio and the slope
+           parameter (9%) of the 197Au(n,2n)196Au reaction cross
+           section between 13.6 and 14.6 MeV
+MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
+           .Al-27(n,alpha) cross section was normalized to values
+            mentioned in MONIT-REF.
+MONIT-REF  (20111002,H.Vonach+,J,ZP,237,155,1970)
+           (,G.Winkler,W,WINKLER,1981) personal communication.
+           (20798002,J.C.Robertson+,J,JNE,27,139,1972)
+           (20867006,T.B.Ryves+,J,JP/G,4,1783,1978)
+STATUS     (DEP,21756002)
+HISTORY    (20140818A) SD: MONITOR reaction was corrected:
+            Au-197(n,2n) -> Al-27(n,alpha).
+ENDBIB              14
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -146,5 +168,5 @@ MEV        MEV        MB
  1.4390E+01 1.1500E-01 1.1830E+02
  1.4420E+01 1.3000E-01 1.1620E+02
 ENDDATA             22
-ENDSUBENT           41
+ENDSUBENT           45
 ENDENTRY             4

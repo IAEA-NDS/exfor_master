@@ -1,6 +1,6 @@
-ENTRY            41502   20111212   20120210   20120207       4155
-SUBENT        41502001   20111212   20120210   20120207       4155
-BIB                 16         53
+ENTRY            41502   20141105   20150107   20141212       4165
+SUBENT        41502001   20141105   20150107   20141212       4165
+BIB                 16         54
 TITLE       Prompt neutrons emission in neutron-induced fission
              of 239-Pu, 235-U.
 AUTHOR     (O.A.Batenkov, G.A.Boykov, F.J.Hambsch, J.H.Hamilton,
@@ -47,28 +47,53 @@ ERR-ANALYS (ERR-S) Statistical error
                 Resolution of COS of angle about 0.07.
 ADD-RES    (ANGD) Fission fragment angular distributions measured
             with IC. Neutron angular distributions
+STATUS     (PRELM) Preliminary data.
+           (TABLE)  Data received from A.Vorobyev 06.02.2008
+COMMENT    -The work was made in framework of ISTC-554(2) project.
 HISTORY    (20070831C)  Compiled At CJD. M.M.
            (20080206R)
            (20111212A) Reaction was corrected in Subents 002-004
             according to memo CP-D/701 (PFNS).
-STATUS     (PRELM)
-           (TABLE)  Data received from A.Vorobyev 06.02.2008
-COMMENT     The work was made in framework of ISTC-554(2) project.
-ENDBIB              53
+           (20141105A) Reaction was corrected in Subents 002-004:
+ENDBIB              54
 NOCOMMON             0          0
-ENDSUBENT           56
-SUBENT        41502002   20111212   20120210   20120207       4155
-BIB                  5          9
-REACTION   ((92-U-235(N,F),PR,NU/DE)/(98-CF-252(0,F),PR,NU/DE))
-            Ratio of total prompt neutron spectra to Cf-252 as
-           dependence from E -prompt neutron energy in lab.system.
+ENDSUBENT           57
+SUBENT        41502002   20141105   20150107   20141212       4165
+BIB                  7         33
+REACTION   ((92-U-235(N,F),PR,NU/DE,,MSC)/
+           (98-CF-252(0,F),PR,NU/DE,,MSC))
+           Dependence from E -prompt neutron energy in lab.system.
+           See COMMENT for explanation of MSC.
 INC-SPECT   Neutron flux at target position about 1.E+7 n/s/cm**2.
 EN-SEC     (E,N) Prompt neutron energy.
+ADD-RES    Formula (1) in the article
+            R(E)=((Tcf/Tu5)**1.5)*exp(-(Tcf-Tu5)/(TCf*Tu5)),
+            was used in fitting,
+            where Tcf, Tu5 -spectrum temperature for Cf and U-235.
+            Tcf=1.42 MeV was used,
+           Tu5 was defined to be 1.31 MeV ( preliminary value).
+COMMENT     Of Roberto Capote (2014-10-23):
+           The temperature quoted in the article (1.31 MeV for
+           235U) does not reproduce the calculated ratio in Fig.5
+           (top) well.
+           Better agreement is seen by changing it to 1.29 MeV.
+           Best fitting was obtained by formula:
+            -E/1.2876+E/1.42+0.70598 ,
+           using DATA of energy range 0.5-5 MeV.
+           - Of author A.S.Vorobyev 06.11.2014
+           Subents 002-004: plots were prepared in RI institute,
+           probably log (or ln) was implemented for scale Y.
+           Futher analysis could be applied.
 STATUS              Data are presented on Fig.5 - top.
 HISTORY    (20111212A)
              (92-U-235(N,F),PR,DE,N)/(98-CF-252(N,F),PR,DE,N) ->
             (92-U-235(N,F),PR,NU/DE)/(98-CF-252(N,0),PR,NU/DE)
-ENDBIB               9
+           (20141105A) PR,NU/DE -> PR/NU/DE,,MSC according to the
+           request of NDS,IAEA - see explanation in COMMENT of
+           Roberto Capote in Subent 002.
+            NO-DIM -> ARB-UNITS.
+            Comment of author was added .
+ENDBIB              33
 COMMON               1          3
 EN-DUMMY
 EV
@@ -76,7 +101,7 @@ EV
 ENDCOMMON            3
 DATA                 3         63
 E          DATA       ERR-S
-MEV        NO-DIM     NO-DIM
+MEV        ARB-UNITS  ARB-UNITS
 0.12        0.22659     0.27651
 0.145       0.70621     0.23425
 0.175       0.78953     0.19025
@@ -141,19 +166,35 @@ MEV        NO-DIM     NO-DIM
 16.5        0.12391     0.86042
 17.5        0.96083     5.06185
 ENDDATA             65
-ENDSUBENT           83
-SUBENT        41502003   20111212   20120210   20120207       4155
-BIB                  5          9
-REACTION   ((94-PU-239(N,F),PR,NU/DE)/(98-CF-252(0,F),PR,NU/DE))
-            Ratio of total prompt neutron spectra to Cf-252 as
-           dependence from E -prompt neutron energy in lab.system.
+ENDSUBENT          107
+SUBENT        41502003   20141105   20150107   20141212       4165
+BIB                  7         25
+REACTION   ((94-PU-239(N,F),PR,NU/DE,,MSC)/
+           (98-CF-252(0,F),PR,NU/DE,,MSC))
+           Dependence from E -prompt neutron energy in lab.system.
+           See COMMENT for explanation of MSC.
 INC-SPECT   Neutron flux at target position about 1.E+7 n/s/cm**2.
 EN-SEC     (E,N) Prompt neutron energy.
+ADD-RES    Formula (1) in the article
+            R(E)=((Tcf/Tpu)**1.5)*exp(-(Tcf-Tpu5/(TCf*Tpu)),
+            was used in fitting,
+            where Tcf, Tpu -spectrum temperature for Cf and Pu-239
+            Tcf=1.42 MeV was used,
+            Tpu was defined to be 1.36 MeV ( preliminary value).
+COMMENT    - Of author A.S.Vorobyev 06.11.2014
+           Subents 002-004: plots were prepared in RI institute,
+           probably log (or ln) was implemented for scale Y.
+           Futher analysis could be applied.
 STATUS           Data are presented on Fig.5 - middle.
 HISTORY    (20111212A)
             (94-PU-239(N,F),PR,DE,N)/(98-CF-252(N,F),PR,DE,N) ->
             (94-PU-239(N,F),PR,NU/DE)/(98-CF-252(N,0),PR,NU/DE)
-ENDBIB               9
+           (20141105A) PR,NU/DE -> PR/NU/DE,,MSC according to the
+           request of NDS,IAEA - see explanation in COMMENT of
+           Roberto Capote in Subent 002.
+            NO-DIM -> ARB-UNITS.
+            Comment of author was added .
+ENDBIB              25
 COMMON               1          3
 EN-DUMMY
 EV
@@ -161,7 +202,7 @@ EV
 ENDCOMMON            3
 DATA                 3         63
 E          DATA       ERR-S
-MEV        NO-DIM     NO-DIM
+MEV        ARB-UNITS  ARB-UNITS
 0.12        0.5821     0.44882
 0.145       0.79541    0.27945
 0.175       0.93906    0.21079
@@ -226,21 +267,37 @@ MEV        NO-DIM     NO-DIM
 18.5        0.06368    5.49468
 19.5        0.28172    2.19021
 ENDDATA             65
-ENDSUBENT           83
-SUBENT        41502004   20111212   20120210   20120207       4155
-BIB                  5         11
-REACTION   ((94-PU-239(N,F),PR,NU/DE)/(98-CF-252(0,F),PR,NU/DE))
-            Ratio of total prompt neutron spectra to Cf-252 as
-           dependence from E -prompt neutron energy in lab.system.
+ENDSUBENT           99
+SUBENT        41502004   20141105   20150107   20141212       4165
+BIB                  7         27
+REACTION   ((94-PU-239(N,F),PR,NU/DE,,MSC)/
+           (98-CF-252(0,F),PR,NU/DE,,MSC))
+           Dependence from E -prompt neutron energy in lab.system.
+           See COMMENT for explanation of MSC.
 INC-SPECT  Strong resonance at 0.296 eV was selected by Sm filter.
             Admixture of thermal neutrons - less 5%,
             of neutrons of higher energy - less 10%.
 EN-SEC     (E,N) Prompt neutron energy.
+ADD-RES    Formula (1) in the article
+            R(E)=((Tcf/Tpu)**1.5)*exp(-(Tcf-Tpu)/(TCf*Tpu)),
+            was used in fitting,
+            where Tcf, Tpu -spectrum temperature for Cf and Pu-239
+            Tcf=1.42 MeV was used,
+            Tpu was defined to be 1.37 MeV ( preliminary value).
+COMMENT    - Of author A.S.Vorobyev 06.11.2014
+           Subents 002-004: plots were prepared in RI institute,
+           probably log (or ln) was implemented for scale Y.
+           Futher analysis could be applied.
 STATUS           Data are presented on Fig.5 - bottom.
 HISTORY    (20111212A)
             (94-PU-239(N,F),PR,DE,N)/(98-CF-252(N,F),PR,DE,N) ->
             (94-PU-239(N,F),PR,NU/DE)/(98-CF-252(N,0),PR,NU/DE)
-ENDBIB              11
+           (20141105A) PR,NU/DE -> PR/NU/DE,,MSC according to the
+           request of NDS,IAEA - see explanation in COMMENT of
+           Roberto Capote in Subent 002.
+            NO-DIM -> ARB-UNITS.
+            Comment of author was added .
+ENDBIB              27
 COMMON               1          3
 EN
 EV
@@ -248,7 +305,7 @@ EV
 ENDCOMMON            3
 DATA                 3         58
 E          DATA       ERR-S
-MEV        NO-DIM     NO-DIM
+MEV        ARB-UNITS  ARB-UNITS
 0.12        0.24305    0.34906
 0.145       0.74497    0.21466
 0.175       0.98019    0.16779
@@ -308,7 +365,7 @@ MEV        NO-DIM     NO-DIM
 12.75       1.14149    2.15739
 14.75       0.72386    4.89568
 ENDDATA             60
-ENDSUBENT           80
+ENDSUBENT           96
 SUBENT        41502005   20070831   20080402   20080312       4142
 BIB                  2          4
 REACTION   (92-U-235(N,F)MASS,PR,NU)
