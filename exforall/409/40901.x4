@@ -1,22 +1,22 @@
-ENTRY            40901   20051027   20060215   20060215       4136
-SUBENT        40901001   20051027   20060215   20060215       4136
-BIB                 11         30
-TITLE       NP-237 FISSION CROSS-SECTION AND FISSION RESONANCE
-            INTEGRAL FOR THERMAL NEUTRONS
-AUTHOR     (V.V.KOZHARIN,S.S.KOVALENKO,JU.A.SELICKIJ,JU.A.NEMILOV,
-           S.V.KHLEBNIKOV,V.S.BELYKH,B.JA.GALKIN,V.JA.MISHIN,
-           V.I.ORLOV,E.M.RUBZOV,B.I.TARLER,G.V.VAL'SKIJ,
-           G.A.PETROV,JU.S.PLEVA)
+ENTRY            40901   20160604   20180122   20180119       4176
+SUBENT        40901001   20160604   20180122   20180119       4176
+BIB                 12         37
+TITLE      The thermal-neutron fission cross section of Np-237
+           and the resonant fission integral
+AUTHOR     (V.V.Kozharin,S.S.Kovalenko,Yu.A.Selitskii,
+           Yu.A.Nemilov, S.V.Khlebnikov,V.S.Belykh,B.Ya.Galkin,
+           V.Ya.Mishin, V.I.Orlov,E.M.Rubtsov,B.I.Tarler,
+           G.V.Val'skii, G.A.Petrov,Yu.S.Pleva)
 INSTITUTE  (4RUSRI ,4RUSLIN)
-REFERENCE  (J,AE,60,(6),419,198606)
-FACILITY   (REAC,4RUSLIN)   REACTOR WWR-M
-MONITOR    ((MONIT1)92-U-235(N,F),,SIG)
-           ((MONIT2)94-PU-239(N,F),,SIG)
-           ((MONIT3)92-U-235(N,F),,RI)
-           ((MONIT4)94-PU-239(N,F),,RI)
+REFERENCE  (J,AE,60,(6),419,1986)
+           (J,SJA,60,498,1986) Engl.Transl.of AE,60,419,1986
+FACILITY   (REAC,4RUSLIN)   Reactor WWR-M
+REL-REF    (R,,E.Gryntakis+,J,RCA,22,128,1975)
+            Ref. for Westcott factors
 METHOD     (ASEP)
-DETECTOR   (TRD) Mica Solid-state Detector,Efficiency 96+-1%
-SAMPLE      Isotopes ambudancies for plutonium (% of mass):
+            Cd filter of 1 mm thickness.
+DETECTOR   (TRD) Mica solid-state detector,efficiency 96+-1%
+SAMPLE      Isotopes ambudances for plutonium (% of mass):
                 Pu-238 -  0.007
                 Pu-239 - 99.978
                 Pu-240 -  0.015
@@ -24,42 +24,67 @@ SAMPLE      Isotopes ambudancies for plutonium (% of mass):
                 Pu-242 -  0.005
             Pu-239 mass = 0.55+-0.01 mkg.
             U-235  mass = 175.+-5 ng (as natural uranium).
-ERR-ANALYS (ERR-1)  ERROR DUE TO THE SAMPLE NUCLEAR NUMBER
-                    DETERMINATION
-           (ERR-2)  ERROR DUE TO THE NUMBER-OF-FISSIONS
-                    DETERMINATION
-HISTORY    (19860825C)  COMPILED AT CJD
+ERR-ANALYS (ERR-1)  Error due to the sample nuclear number
+                    determination
+           (ERR-2)  Error due to the number-of-fissions
+                    determination
+           (ERR-T) Total error
+STATUS     (TABLE) Data from the text of AE,60,(6),419,1986
+HISTORY    (19860825C)  Compiled at CJD
            (20051028A) Sub.002 DATA units were corrected,
-                Dates were corrected. SAMPE lines added (sub.001)
-ENDBIB              30
-COMMON               6          3
-MONIT1     MONIT2     MONIT3     MONIT4     ERR-1      ERR-2
-B          B          B          B          PER-CENT   PER-CENT
- 582.2      742.5      275.       301.        2.         3.
+                Dates were corrected. SAMPLE lines added (sub.001)
+           (20160604U) SD: Ref. SJA,60,498,1986 was added.  Title
+           and list of authors update following SJA,60,498.
+           (20170710A) M.M. Previous correction of SD was
+           checked at CJD. Minor corrections at authors list.
+           Monitors were moved in data Subents.
+ENDBIB              37
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+ 2.         3.
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        40901002   20051027   20060215   20060215       4136
-BIB                  1          1
+ENDSUBENT           44
+SUBENT        40901002   20160604   20180122   20180119       4176
+BIB                  2          6
 REACTION   (93-NP-237(N,F),,SIG)
-ENDBIB               1
-NOCOMMON             0          0
+MONITOR    ((MONIT1)92-U-235(N,F),,SIG)
+           ((MONIT2)94-PU-239(N,F),,SIG)
+           From book V.M.Gorbachev+,The interaction of Radiations
+           with Heavy-Element Nuclei and Nuclear Fission( in
+           Russian),Atomizdat,Moscow,1976 .
+ENDBIB               6
+COMMON               2          3
+MONIT1     MONIT2
+B          B
+ 582.2      742.5
+ENDCOMMON            3
 DATA                 3          1
 EN         DATA       ERR-T
 EV         MB         MB
   0.0253    20.         1.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        40901003   20051027   20060215   20060215       4136
-BIB                  2          3
+ENDSUBENT           18
+SUBENT        40901003   20160604   20180122   20180119       4176
+BIB                  3          8
 REACTION   (93-NP-237(N,F),,RI)
 INC-SPECT   Resonance energy neutron spectrum is 1/e
             Cadmium cut-off energy is lower limit of res.integral
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    ((MONIT3)92-U-235(N,F),,RI)
+           ((MONIT4)94-PU-239(N,F),,RI)
+           From book V.M.Gorbachev+,The interaction of Radiations
+           with Heavy-Element Nuclei and Nuclear Fission( in
+           Russian),Atomizdat,Moscow,1976 .
+ENDBIB               8
+COMMON               2          3
+MONIT3     MONIT4
+B          B
+ 275.       301.
+ENDCOMMON            3
 DATA                 3          1
 EN-MIN     DATA       ERR-T
 EV         B          B
   0.5        4.70      0.23
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           20
 ENDENTRY             3

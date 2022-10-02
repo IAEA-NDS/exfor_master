@@ -1,53 +1,89 @@
-ENTRY            40997   20020729   20030127   20050926       0000
-SUBENT        40997001   20020729   20030127   20050926       0000
-BIB                 10         13
+ENTRY            40997   20160604   20180122   20180119       4176
+SUBENT        40997001   20160604   20180122   20180119       4176
+BIB                 10         19
 INSTITUTE  (4UKRKFT)
-REFERENCE  (C,87KIEV,3,281,198709)  DATA  ARE GIVEN
-AUTHOR     (V.YA.GOLOVNYA,K.S.GONCHAROV,G.P.DOLYA,V.A.KUZ'MENKO,
-           S.G.PASECHNIK,V.V.REMAEV)
-TITLE       ABSOLUTE CROSS-SECTION OF THE REACTION U-238(N,2N)
-            AT THE ENERGY 14.76 MEV
+REFERENCE  (C,87KIEV,3,281,1987)  Data  are given
+AUTHOR     (V.Ya.Golovnya,K.S.Goncharov,G.P.Dolya,V.A.Kuz'menko,
+           S.G.Pasechnik,V.V.Remaev)
+TITLE       Absolute cross-section of the reaction U-238(n,2n)
+            at the energy 14.76 MeV
 INC-SOURCE (D-T)
 METHOD     (ACTIV)
-DETECTOR   (SOLST)  SEMICONDUCTOR DETECTOR OF THE TYPE DGDK-50B
+DETECTOR   (SOLST)  Semiconductor detector of the type DGDK-50B
 DECAY-DATA (92-U-237,6.752D,DG,208.,0.218)
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-HISTORY    (19890926C)  COMPILED AT THE CENTRE - CJD
-           (20020729A) DATE is corrected.BIB- INFORM. ADDED
-ENDBIB              13
-NOCOMMON             0          0
-ENDSUBENT           16
-SUBENT        40997002   20020729   20030127   20050926       0000
-BIB                  6          8
+STATUS     (TABLE) Data are taken from the text of 87KIEV,3,281
+HISTORY    (19890926C)  Compiled at the centre - CJD
+           (20020729A) Date is corrected.BIB- inform. added
+           (20160604A) SD:Updated to new date formats,lower case.
+           DECAY-DATA corrected in Subent 002.
+           (20170710A) M.M. Previous correction of SD was
+           checked at CJD.
+           METHOD was added in data Subents. EN-RSL-HW was added.
+           ERR-1 was added in Subent 002.
+ENDBIB              19
+COMMON               1          3
+EN-RSL-HW
+MEV
+ 0.25
+ENDCOMMON            3
+ENDSUBENT           26
+SUBENT        40997002   20160604   20180122   20180119       4176
+BIB                  8         24
 REACTION   (92-U-238(N,2N)92-U-237,,SIG)
-SAMPLE      NATURAL METALLIC URANIUM, METALLIC THULIUM
+SAMPLE      Natural metallic uranium, metallic thulium
 MONITOR    (69-TM-169(N,2N)69-TM-168,,SIG)
 DECAY-MON  (69-TM-168,93.1D,DG,198.25,0.00522)
-           (92-U-239,2.35D,DG,209.,0.0347,DG,278.,0.15)
-ERR-ANALYS (+DATA-ERR) POSITIVE ERROR
-           (-DATA-ERR) NEGATIVE ERROR
-HISTORY    (20020729U) MONITORS CORRECTED
-ENDBIB               8
-NOCOMMON             0          0
+METHOD     4 runs :
+              Samples   Thickness,g/cm2  Integral flux    CS,mb
+                         U       Tm
+           1  Al-U-Al    1.189   -         7.7E+12
+              Al-TM-Al   -       2.053     4.3E+12
+                                                         706+-29
+           2  U-TM-U     0.787x2 1.365     1.2E+13       686+-21
+           3  Al-U-Al    1.871   -         7.6E+12
+              Al-TM-Al   -       3.227     7.8E+12
+                                                         725+-28
+           4  U-TM-U     0.754x2 1.301     2.8E+13       713+-21
+            U-235 205.keV peak and Np-239 309.7 keV peak were
+            subtracted from gamma spectrum.
+CORRECTION  Background was 5 % .
+ERR-ANALYS (DATA-ERR)  Type of uncertainty is not explained in the
+           article.
+           (ERR-1) Uncertainty of cross section due to background
+HISTORY    (20020729U) Monitors corrected
+           (20160604A) SD: Decay data for U-239 deleted from
+           DECAY-MON (not relevant).
+ENDBIB              24
+COMMON               1          3
+ERR-1
+PER-CENT
+ -0.7
+ENDCOMMON            3
 DATA                 6          1
 EN         DATA       +DATA-ERR  -DATA-ERR  MONIT      MONIT-ERR
 MEV        MB         MB         MB         MB         MB
   14.76      705.       26.        31.       1980.       40.
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        40997003   20020729   20030127   20050926       0000
-BIB                  5          5
+ENDSUBENT           36
+SUBENT        40997003   20160604   20180122   20180119       4176
+BIB                  8         11
 REACTION   (92-U-238(N,2N)92-U-237,,SIG)
+SAMPLE       U-235 content 0.72 %.
 MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
 DECAY-MON  (11-NA-24,15.03HR,DG,1368.,1.0)
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-HISTORY    (20020729U) MONITOR  CORRECTED
-ENDBIB               5
+METHOD      1368 keV gamma line registration absolute efficiency
+            was defined by Co-60 standard source.
+            Number of U-237 nuclei was measured by intensities
+            ratio - 208 keV of U-237 and 205.3 keV of U-235.
+DECAY-DATA (92-U-235,7.038E+8YR,DG,205.3,0.000503)
+ERR-ANALYS (DATA-ERR)  Not specified
+HISTORY    (20020729U) Monitor  corrected
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 5          1
 EN         DATA       DATA-ERR   MONIT      MONIT-ERR
 MEV        MB         MB         MB         MB
   14.76      704.       64.         113.       5.
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           19
 ENDENTRY             3

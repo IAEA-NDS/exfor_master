@@ -1,14 +1,16 @@
-ENTRY            40420   20141111   20150311   20150303       4166
-SUBENT        40420001   20141111   20150311   20150303       4166
-BIB                 14         49
+ENTRY            40420   20170203   20180122   20180119       4176
+SUBENT        40420001   20170203   20180122   20180119       4176
+BIB                 14         57
 INSTITUTE  (4RUSKUR,4RUSNIR)
 REFERENCE  (J,YF,30,(1),36,1979) Graphs and curves are given
-           (J,SNP,30,(1),19,1979) Eng.translation of J,YF,30,,36.
-REL-REF    (N,,B.G.Basova+,R,NIIAR-269,1976) Experimental details
-           (N,40432001,V.P.Zakharova+,J,YF,18,1145,1973)
+           (J,SNP,30,19,1979) Eng.translation of J,YF,30,,36 .
+REL-REF    (M,,B.G.Basova+,R,NIIAR-269,1976) Experimental details
+           (I,40232001,V.P.Zakharova+,J,YF,18,1145,1973)
              Details of sample production.
-           (N,,B.G.Basova+,R,NIIAR-262,1975)
+           (M,,B.G.Basova+,R,NIIAR-262,1975)
                 Corrections method details
+           (N,40232001,V.P.Zakharova,J,SNP,18,589,1974)
+             FY and TKE for this experiment.
 AUTHOR     (V.P.Zakharova, D.K.Ryazanov, B.G.Basova,
            A.D.Rabinovich, V.A.Korostylev)
 TITLE       Neutron yields from spontaneous fission
@@ -25,14 +27,13 @@ DETECTOR   (IOCH)  Double ionization chamber. Argon plus
 METHOD     (COINC) Triple coincidence of two fission fragments and
                    neutron.
 MONITOR    ((MONIT)98-CF-252(0,F),,NU) Used  for normalization
-MONIT-REF  (,V.A.Konshin+,R,INDC(NDS)-019,4,197006)
+MONIT-REF  (,V.A.Konshin+,R,INDC(NDS)-019,4,1970)
              INDC(NDS)-019 = INDC-342 .
 CORRECTION  Corrections were made on detector size, detector
             sensitivity, neutron anisotropy, neutron spectrum .
 ERR-ANALYS  Errors are statistical if available
 STATUS     (APRVD)    Data are given by the authors
            (TABLE) From authors.
-           (COREL,40232001)
 HISTORY    (19800818C) -- Compiled at the Center - CJD --
            (19920821A) Reaction codes changed, Subent structure
                       modified, large  number of new Subents added
@@ -42,21 +43,28 @@ HISTORY    (19800818C) -- Compiled at the Center - CJD --
                        New date format introduced.
            (20050616A) Somebody (who?) changed (when?)
                        REACTION code 'PR' to 'DL'.
-           (20060814A) M.M. Correction in according to Memo
+           (20060814A) M.M. Correction according to Memo
                             CP-E/089.
-           (20090804U) M.M. Misprint in TITLE was corrected.
+           (20090804U) M.M. Misprint in Title was corrected.
            (20130814A) REACTIONS were corrected according to the
            comments of N.Otsuka (NDS,IAEA) - Subents 002,003,005.
            (20141111A) REACTION was corrected in Subents 014-016:
            ,NU/DE,FF, -> PR/FRG,NU/TKE,,
            according to memo CP-D/856 ( NDS,IAEA, N.Otsuka),
-ENDBIB              49
+           (20150217A) SD:REACTIONS were corrected according to
+           comments of N.Otsuka (NDS,IAEA) - Subents 014,015,016.
+           (20170203A) M.M. REL-REF was corrected.
+            E-MIN/MAX -> TKE-MIN/MAX .
+            COREL,40232 was deleted according to comment of
+            N.Otsuka ( NDS,IAEA) .
+            DATA-ERR -> ERR-S in Subents 003,005,059 .
+ENDBIB              57
 COMMON               1          3
 MONIT
 PRT/FIS
 3.756
 ENDCOMMON            3
-ENDSUBENT           56
+ENDSUBENT           64
 SUBENT        40420002   20130814   20140110   20131224       4161
 BIB                  5         15
 REACTION  1(98-CF-252(0,F)MASS,PR/FRG,NU)  Neutron yield from the
@@ -146,22 +154,23 @@ NO-DIM     PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
  174.        0.                    0.
 ENDDATA             67
 ENDSUBENT           87
-SUBENT        40420003   20130814   20140110   20131224       4161
-BIB                  4         10
+SUBENT        40420003   20170203   20180122   20180119       4176
+BIB                  4         11
 REACTION   (98-CF-252(0,F)MASS,PR,NU/TKE)
             Dependence of NU from both fragments energy and
             fragment mass
-EN-SEC     (E,FF)  Total  kinetic energy of both fragments
-ERR-ANALYS (DATA-ERR)  Relative error
+EN-SEC     (TKE,FF)  Total  kinetic energy of both fragments
+ERR-ANALYS (ERR-S)  Relative statistical error
 HISTORY    (19930420U) 'PR/PAR,NU'  changed to 'PR,NU,FF'
            (19990526A) Subentries 003 004 merged
                       .SF6-SF7 changed to 'PR,NU/DE,FF'
            (20130814A) REACTION were corrected
            PAR,NU,FF -> ,NU/TKE
-ENDBIB              10
+           (20170203A) E -> TKE , DATA-ERR -> ERR-S
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 5         88
-MASS-MIN   MASS-MAX   E          DATA       DATA-ERR
+MASS-MIN   MASS-MAX   TKE        DATA       ERR-S
 NO-DIM     NO-DIM     MEV        PRT/FIS    PER-CENT
   120.       121.5      122.5      0.
   120.       121.5      125.       0.
@@ -252,25 +261,27 @@ NO-DIM     NO-DIM     MEV        PRT/FIS    PER-CENT
   126.       127.5      227.5      2.1         26.
   126.       127.5      230.       0.
 ENDDATA             90
-ENDSUBENT          105
+ENDSUBENT          106
 NOSUBENT      40420004   19990526   20050616   20050926       0000
-SUBENT        40420005   20130814   20140110   20131224       4161
-BIB                  5         11
+SUBENT        40420005   20170203   20180122   20180119       4176
+BIB                  5         13
 REACTION   (98-CF-252(0,F)MASS,PR/FRG,NU/TKE)
             Dependence of NU from both fragments energy and
             fragment mass
-EN-SEC     (E,FF)  Total kinetic energy of both fragments
-ERR-ANALYS (DATA-ERR)  Unspecified relative error
+EN-SEC     (TKE,FF)  Total kinetic energy of both fragments
+ERR-ANALYS (ERR-S)  Statistical relative error
 STATUS       Data are presented on Fig.4 of 1st Reference
 HISTORY    (19930420U) 'PR/PAR,NU'  changed to 'PR,NU,FF'
            (19990526A) Subentries 005-013 merged
                       .SF6-SF7 changed to 'PR,NU/DE,FF'
            (20130814A) REACTION were corrected
            PAR,NU,FF -> PR/FRG,NU/TKE
-ENDBIB              11
+           (20170203A) E-MIN/MAX -> TKE-MIN/MAX  ,
+                       DATA-ERR -> ERR-S
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 5        437
-E-MIN      E-MAX      MASS       DATA       DATA-ERR
+TKE-MIN    TKE-MAX    MASS       DATA       ERR-S
 MEV        MEV        NO-DIM     PRT/FIS    PER-CENT
   130.       135.        78.        0.4        25.
   130.       135.        79.5       0.
@@ -710,7 +721,7 @@ MEV        MEV        NO-DIM     PRT/FIS    PER-CENT
   210.       215.       138.       0.95        9.8
   210.       215.       139.5      0.4        17.
 ENDDATA            439
-ENDSUBENT          455
+ENDSUBENT          457
 NOSUBENT      40420006   19990526   20050616   20050926       0000
 NOSUBENT      40420007   19990526   20050616   20050926       0000
 NOSUBENT      40420008   19990526   20050616   20050926       0000
@@ -719,72 +730,80 @@ NOSUBENT      40420010   19990526   20050616   20050926       0000
 NOSUBENT      40420011   19990526   20050616   20050926       0000
 NOSUBENT      40420012   19990526   20050616   20050926       0000
 NOSUBENT      40420013   19990526   20050616   20050926       0000
-SUBENT        40420014   20141111   20150311   20150303       4166
-BIB                  5          8
-REACTION   (98-CF-252(0,F)MASS,PR/FRG,NU/TKE,,RAW) No. of events.
+SUBENT        40420014   20170203   20180122   20180119       4176
+BIB                  5         12
+REACTION   (98-CF-252(0,F)MASS,PR/FRG,NU/TKE,,RAW) No. of events
 COMMENT    Of authors in the article J,YF,30,(1),36,1979  :
             the results of this work have to be defined more
             exactly.
-EN-SEC     (E-MIN,FF)  Minimal kinetic energy of both fragments
+EN-SEC     (TKE-MIN,FF) Minimal kinetic energy of both fragments
 ERR-ANALYS (ERR-S)  Relative stat. error
-HISTORY    (19990526A) 'PR/PAR,NU'  changed to 'PR,NU/DE,FF'
+HISTORY    (19990526A) 'PR/PAR,NU'  Changed To 'PR,NU/DE,FF'
            (20141111A) Units were corrected NO-DIM -> PRT/FIS.
-ENDBIB               8
+           (20150217A) SD: SF5=PR/FRG added and NU/DE -> NU/TKE
+            in REACTION code.
+           (20170203A) M.M. FF was deleted from SF7.
+             E-MIN -> TKE-MIN ; PRT/FIS -> ARB-UNITS
+ENDBIB              12
 COMMON               1          3
-E-MIN
+TKE-MIN
 MEV
   230.
 ENDCOMMON            3
 DATA                 4          2
 MASS-MIN   MASS-MAX   DATA       ERR-S
-NO-DIM     NO-DIM     PRT/FIS    PER-CENT
+NO-DIM     NO-DIM     ARB-UNITS  PER-CENT
   123.       124.5      1.7         25.
   124.5      126.       1.3         28.
 ENDDATA              4
-ENDSUBENT           21
-SUBENT        40420015   20141111   20150311   20150303       4166
-BIB                  5          8
+ENDSUBENT           25
+SUBENT        40420015   20170203   20180122   20180119       4176
+BIB                  5         12
 REACTION   (98-CF-252(0,F)MASS,PR/FRG,NU/TKE,,RAW) No. of events
 COMMENT    Of authors in the article J,YF,30,(1),36,1979  :
             the results of this work have to be defined more
             exactly.
-EN-SEC     (E,FF) Kinetic energy of both fragments
+EN-SEC     (TKE-MIN,FF) Kinetic energy of both fragments
 ERR-ANALYS (ERR-S)  Relative stat. error
-HISTORY    (19990526A) 'PR/PAR,NU'  changed to 'PR,NU/DE,FF'
+HISTORY    (19990526A) 'PR/PAR,NU'  Changed To 'PR,NU/DE,FF'
            (20141111A) Units were corrected NO-DIM -> PRT/FIS.
-ENDBIB               8
+           (20150217A) SD: SF5=PR/FRG added and NU/DE -> NU/TKE
+            in REACTION code.
+           (20170203A) M.M. FF was deleted from SF7.
+             E-MIN/MAX -> TKE-MIN/MAX ; PRT/FIS -> ARB-UNITS
+ENDBIB              12
 COMMON               1          3
 MASS-MIN
 NO-DIM
   171.
 ENDCOMMON            3
 DATA                 4          2
-E-MIN      E-MAX      DATA       ERR-S
-MEV        MEV        PRT/FIS    PER-CENT
+TKE-MIN    TKE-MAX    DATA       ERR-S
+MEV        MEV        ARB-UNITS  PER-CENT
   165.       167.5       2.4       27.
   167.5      170.        1.2       28.
 ENDDATA              4
-ENDSUBENT           21
-SUBENT        40420016   20141111   20150311   20150303       4166
-BIB                  5         13
-REACTION   (98-CF-252(0,F)MASS,PR/FRG,NU/TKE,,RAW)
-                      Number of events
-COMMENT    Of authors in the article J,YF,30,(1),36,1979  :
-            the results of this work have to be defined more
-            exactly.
-EN-SEC     (E-MIN,FF) Min kinetic energy of both fragments
-           (E-MAX,FF) Max kinetic energy of both fragments
+ENDSUBENT           25
+SUBENT        40420016   20170203   20180122   20180119       4176
+BIB                  4         13
+REACTION   (98-CF-252(0,F)MASS,PR/FRG,NU/TKE,,RAW) Numb.of events
+EN-SEC     (TKE-MIN,FF) Min kinetic energy of both fragments
+           (TKE-MAX,FF) Max kinetic energy of both fragments
 ERR-ANALYS (ERR-S)  Relative stat. error
-HISTORY    (19920821C)  + +  Compiled at the centre - CJD  + +
+HISTORY    (19920821C)  + +  Compiled at the Centre - CJD  + +
            (19990526A)  Subents 016-058 merged
-                       .SF6-SF7 changed to 'PR,NU/DE,FF'
+                       .SF6-SF7 Changed To 'PR,NU/DE,FF'
            (20141111A) Units were corrected ARB-UNITS -> PRT/FIS,
-           REL was deleted.
+           (20150217A) SD: SF5=PR/FRG added and NU/DE -> NU/TKE
+            in REACTION code.
+           (20170203A) M.M. FF was deleted from SF7.
+             E-MIN/MAX -> TKE-MIN/MAX , DATA-ERR -> ERR-S ;
+             PRT/FIS -> ARB-UNITS
 ENDBIB              13
 NOCOMMON             0          0
 DATA                 6       1712
-E-MIN      E-MAX      MASS-MIN   MASS-MAX   DATA       ERR-S
-MEV        MEV        NO-DIM     NO-DIM     PRT/FIS    PER-CENT
+TKE-MIN    TKE-MAX    MASS-MIN   MASS-MAX   DATA       ERR-S
+MEV        MEV        NO-DIM     NO-DIM     ARB-UNITS  PER-CENT
 122.5      125.       142.5      144.       1.5         32.
 122.5      125.       144.       145.5      2.0         25.
 125.0      127.5      103.5      105.0        1.2       33.0
@@ -2541,22 +2560,26 @@ NOSUBENT      40420055   19990526   20050616   20050926       0000
 NOSUBENT      40420056   19990526   20050616   20050926       0000
 NOSUBENT      40420057   19990526   20050616   20050926       0000
 NOSUBENT      40420058   19990526   20050616   20050926       0000
-SUBENT        40420059   19980629   20061121   20060816       4138
-BIB                  4          5
-REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,,RAW)  Number Of Events
-EN-SEC     (E,FF)   Total Kinetic Energy Of Both Fragments
-ERR-ANALYS (DATA-ERR)  Not Specified
-HISTORY    (19930421U) 'RAW' Added To SF8
+SUBENT        40420059   20170203   20180122   20180119       4176
+BIB                  3          9
+REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,LF+HF,RAW)
+                Number of events
+             TKE - total kinetic energy of both fragments
+ERR-ANALYS (ERR-S) Statistical error
+HISTORY    (19930421U) 'RAW' Added to SF8
            (19980629U)  Reaction SF6 Changed
-ENDBIB               5
+           (20170203A) M.M. E -> TKE
+            NO-DIM -> ARB-UNITS . LF+HF was added in SF7.
+            DATA-ERR -> ERR-S
+ENDBIB               9
 COMMON               2          3
 MASS-MIN   MASS-MAX
 NO-DIM     NO-DIM
   126.       127.5
 ENDCOMMON            3
 DATA                 3         52
-E          DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+TKE        DATA       ERR-S
+MEV        ARB-UNITS  ARB-UNITS
   100.       0.
   102.5      0.
   105.       0.4
@@ -2610,21 +2633,24 @@ MEV        NO-DIM     NO-DIM
   225.       0.
   227.5      0.
 ENDDATA             54
-ENDSUBENT           68
-SUBENT        40420060   19980622   20061121   20060816       4138
-BIB                  3          3
-REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,,RAW) Number Of Fragmts
-EN-SEC     (E,FF)  Kinetic Energy Of  Both Fragments
+ENDSUBENT           72
+SUBENT        40420060   20170203   20180122   20180119       4176
+BIB                  2          6
+REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,LF+HF,RAW)
+             Number of events
+              TKE - kinetic energy of  both fragments
 HISTORY    (19980629U)  Reaction SF6 Changed
-ENDBIB               3
+           (20170203A) M.M.  E-MIN/MAX -> TKE-MIN/MAX .
+            NO-DIM -> ARB-UNITS . LF+HF was added in SF7.
+ENDBIB               6
 COMMON               1          3
 MASS-MAX
 NO-DIM
   78.
 ENDCOMMON            3
 DATA                 3         11
-E-MIN      E-MAX      DATA
-MEV        MEV        NO-DIM
+TKE-MIN    TKE-MAX    DATA
+MEV        MEV        ARB-UNITS
   137.5      140.        1.
   140.       142.5       1.
   142.5      145.        1.
@@ -2637,41 +2663,46 @@ MEV        MEV        NO-DIM
   160.       162.5       1.
   162.5      165.        1.
 ENDDATA             13
-ENDSUBENT           25
-SUBENT        40420061   19980622   20061121   20060816       4138
-BIB                  3          3
-REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,,RAW) Number Of Fragmts
-EN-SEC     (E,FF)  Minimum Kinetic Energy Of Both Fragments
-HISTORY    (19980629U)  Reaction SF6 Changed
-ENDBIB               3
+ENDSUBENT           28
+SUBENT        40420061   20170203   20180122   20180119       4176
+BIB                  2          6
+REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,LF+HF,RAW)
+             Number of events
+            TKE-MIN- min kinetic energy of both fragments.
+HISTORY    (19980629U)  Reaction SF6 changed
+           (20170203A) M.M.  E -> TKE-MIN
+            NO-DIM -> ARB-UNITS . LF+HF was added in SF7.
+ENDBIB               6
 COMMON               1          3
-E
+TKE-MIN
 MEV
   225.
 ENDCOMMON            3
 DATA                 3          5
 MASS-MIN   MASS-MAX   DATA
-NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     ARB-UNITS
   120.       121.5       1.
   121.5      123.        1.
   123.       124.5       1.
   124.5      126.        1.
   126.       127.5       1.
 ENDDATA              7
-ENDSUBENT           19
-SUBENT        40420062   19980629   20061121   20060816       4138
-BIB                  3          6
-REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,,RAW) Number Of Events
-EN-SEC     (E-MIN,FF) Min Kinetic Energy Of Both Fragments
-           (E-MAX,FF) Max Kinetic Energy Of Both Fragments
-HISTORY    (19920821C)  + +  Compiled At The Centre - CJD  + +
-           (19940420U)  FY,,RAW IN SF5-SF8 Changed To FY/DE,,RAW
+ENDSUBENT           22
+SUBENT        40420062   20170203   20180122   20180119       4176
+BIB                  2          8
+REACTION   (98-CF-252(0,F)MASS,PRE,FY/DE,LF+HF,RAW)
+                Number of events
+            TKE-MIN/MAX- min/max kinetic energy of both fragments
+HISTORY    (19920821C)  + +  Compiled at the centre - CJD  + +
+           (19940420U)  FY,,RAW IN SF5-SF8 changed to FY/DE,,RAW
            (19980629A)  Subents 062-097 Merged
-ENDBIB               6
+           (20170203A) M.M.  E-MIN/MAX -> TKE-MIN/MAX
+            NO-DIM -> ARB-UNITS . LF+HF was added in SF7.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5       1516
-E-MIN      E-MAX      MASS-MIN   MASS-MAX   DATA
-MEV        MEV        NO-DIM     NO-DIM     NO-DIM
+TKE-MIN    TKE-MAX    MASS-MIN   MASS-MAX   DATA
+MEV        MEV        NO-DIM     NO-DIM     ARB-UNITS
 135.0      137.5      114.0      115.5        1.0
 135.0      137.5      115.5      117.0        1.0
 135.0      137.5      117.0      118.5        1.0
@@ -4189,7 +4220,7 @@ MEV        MEV        NO-DIM     NO-DIM     NO-DIM
 222.5      225.0      126.0      127.5        1.0
 222.5      225.0      127.5      129.0        1.0
 ENDDATA           1518
-ENDSUBENT         1529
+ENDSUBENT         1531
 NOSUBENT      40420063   19980629   20050616   20050926       0000
 NOSUBENT      40420064   19980629   20050616   20050926       0000
 NOSUBENT      40420065   19980629   20050616   20050926       0000

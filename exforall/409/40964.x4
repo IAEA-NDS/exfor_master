@@ -1,47 +1,64 @@
-ENTRY            40964     910729              20050926       0000
-SUBENT        40964001     910729              20050926       0000
-BIB                 11         16
-TITLE       FISSION PRODUCTS YIELD DURING THE NP-238 FISSION
-            BY THE THERMAL NEUTRONS
-AUTHOR     (A.A.SOLONKIN,V.F.TEPLYKH,E.V.PLATYGINA,K.A.PETRZHAK,
-           A.V.MOSESOV)
-INSTITUTE  (4CCPRI,4CCPLIN)
-REFERENCE  (J,AE,64,(6),435,8806) DATA TABLES ARE GIVEN
-           (C,83KIEV,3,251,8310)
-FACILITY   (REAC,4CCPLIN)
-SAMPLE      SHORT-LIVING NP-238 ISOTOPE WAS OBTAINED AFTER
-            NP-237 TARGETS IRRADIATION IN THE REACTOR
-METHOD     (CHSEP)   CHEMICAL SEPATION
-INC-SPECT   THERMAL NEUTRON SPECTRUM OF THE REACTOR
-MONITOR     NO INFORMATION
-STATUS      DATA TAKEN FROM THE TABLES GIVEN IN THE FIRST
-            REFERENCE
-HISTORY    (890425C)  COMPILED AT THE CENTER CJD
-ENDBIB              16
+ENTRY            40964   20160604   20180122   20180119       4176
+SUBENT        40964001   20160604   20180122   20180119       4176
+BIB                 13         27
+TITLE       Yield of the fission products in the fission of
+            Np-238 by thermal neutrons
+AUTHOR     (A.A.Solonkin,V.F.Teplykh,E.V.Platygina,K.A.Petrzhak,
+           A.V.Mosesov)
+INSTITUTE  (4RUSRI,4RUSLIN)
+REFERENCE  (J,AE,64,(6),435,1988) Data tables are given
+           (J,SJA,64,497,1988) Engl.Transl.of AE,64,435,1988
+REL-REF    (R,40877001,V.F.Teplykh,C,83KIEV,2,251,1983)=
+           (R,40877001,V.F.Teplykh,R,INDC(CCP)-235,251,1983)Part 2
+            Xe isotopes cum. yields for U-233,236,238, Np-238,
+            Pu-239 fission by reactor neutrons.
+FACILITY   (REAC,4RUSLIN)
+SAMPLE      Short-living Np-238 isotope was obtained after
+            Np-237 targets irradiation in the reactor
+METHOD     (CHSEP)   Chemical separation
+INC-SPECT   Thermal neutron spectrum of the reactor
+MONITOR     No information
+ADD-RES       Table 4 - Parameters of mass distribution calculated
+            by data from other works.
+STATUS     (TABLE) Data taken from the tables of AE,64,(6),435,198
+HISTORY    (19890425C)  Compiled at the center CJD
+           (20160604U) SD:Updated to new date formats,lower case.
+           Ref. SJA,64,497,1988 was added. Title update following
+           SJA,64,497,1988. ERR-T -> DATA-ERR.
+           (20170710A) M.M. Previous correction of SD was not
+           checked at CJD. Ref.INDC(CCP)-235,2,251,1983 was added,
+           vol.3 -> 2 in 83KIEV ref. and ref. moved in REL-REF.
+ENDBIB              27
 COMMON               1          3
 EN-DUMMY
 EV
    2.53E-02
 ENDCOMMON            3
-ENDSUBENT           23
-SUBENT        40964002     890425              20050926       0000
-BIB                  3          8
-REACTION   (93-NP-238(N,F)ELEM/MASS,CUM,FY,,REL) RELATIVE UNITS
-ERR-ANALYS (ERR-T) TOTAL ERROR CONSIST OF STATISTICAL ERROR,
-                   UNSERNAINTY OF NATURAL ADMIXTURES,ERROR DUE
-                   TO MASS DISCRIMINATION,YIELD DISTORTION DUE
-                   TO DECAY AND (N,GAMMA) REACTION
-FLAG       (1.) DATA ARE OBTAINED BY THE METHOD GIVEN IN THE
-                REFERENCE 2
-           (2.) DATA ARE OBTAINED BY THE DIFFERENT METHOD
-ENDBIB               8
+ENDSUBENT           34
+SUBENT        40964002   20160604   20180122   20180119       4176
+BIB                  6         14
+REACTION   (93-NP-238(N,F)ELEM/MASS,CUM,FY,,REL) Relative units
+ERR-ANALYS (DATA-ERR) Total error consist of statistical error,
+                   uncertainty of natural admixtures,error due
+                   to mass discrimination,yield distortion due
+                   to decay and (n,gamma) reaction
+FLAG       (1.) Data are obtained by the method given in the
+                83KIEV,2,251,1983 (see REL-REF of Subent 001)
+           (2.) data are obtained by exp.determined isotope ratios
+           136Xe/134Xe and 135Cs/133Cs taking into account the
+           relative cum.yields of Xe-136 and Xe-133 from REL-REF
+           of B.Tracy+.
+REL-REF    (R,,B.L.Tracy+,J,JIN,35,2639,1973) IS.8
+STATUS     (TABLE) Table 2 from AE,64,(6),435,1988
+HISTORY    (20160604U) SD: ERR-T -> DATA-ERR.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 5         24
-ELEMENT    MASS       DATA       ERR-T      FLAG
+ELEMENT    MASS       DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  NO-DIM
   54.       131.        .417       .002       1.
   54.       132.        .618       .002       1.
-  54.       134.       1.
+  54.       134.       1.000
   54.       135.        .778       .023       1.
   54.       136.        .817       .027       2.
   55.       133.       1.07        .04
@@ -64,15 +81,18 @@ NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  NO-DIM
   63.       153.       2.5         .3
  63.        155.       1.000
 ENDDATA             26
-ENDSUBENT           39
-SUBENT        40964003     890425              20050926       0000
-BIB                  3          5
-REACTION  1(93-NP-238(N,F)MASS,CUM,FY,,REL) RELATIVE YIELD
-          2(93-NP-238(N,F)MASS,CUM,FY)
-ERR-ANALYS (DATA-ERR)  NORMALIZATION ERROR
-FLAG       (1.) EXTRAPOLATED VALUE FROM THE MASS REGION 131-136
-           (2.) EVALUATED FROM THE ADJUNSET YIELDS
-ENDBIB               5
+ENDSUBENT           45
+SUBENT        40964003   20170710   20180122   20180119       4176
+BIB                  5          8
+REACTION  1(93-NP-238(N,F)MASS,CHN,FY,,REL) Relative yield
+          2(93-NP-238(N,F)MASS,CHN,FY)      Absolute yield
+ERR-ANALYS (DATA-ERR)  Normalization error
+FLAG       (1.) Extrapolated value from the mass region 131-136
+           (2.) evaluated from the adjusted yields
+STATUS     (TABLE) Table 3 from AE,64,(6),435,1988
+HISTORY    (20170710A) Flag 2. was added for mass 153.
+           CUM -> CHN according to a comment of N.Otsuka, NDS,IAEA
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 6         28
 MASS       DATA      1DATA-ERR  1DATA      2DATA-ERR  2FLAG
@@ -103,22 +123,30 @@ NO-DIM     ARB-UNITS  ARB-UNITS  PC/FIS     PC/FIS     NO-DIM
  150.       .370        .002      1.12         .03
  151.       .236        .012       .72         .04
  152.       .230        .012       .71         .04
- 153.       .15         .03        .46         .09
+ 153.       .15         .03        .46         .09        2.
  154.       .069        .001       .21         .01
 ENDDATA             30
-ENDSUBENT           40
-SUBENT        40964004     890425              20050926       0000
-BIB                  3          4
-REACTION   (93-NP-238(N,F),PR,NU)
+ENDSUBENT           43
+SUBENT        40964004   20160604   20180122   20180119       4176
+BIB                  5         12
+REACTION   (93-NP-238(N,F),PR,NU,,,DERIV)
+ANALYSIS    Average number of fission neutrons was derived from
+            average HF mass <Ah> and average LF mass
+            <Al>=97.98 a.m.u. assuming linear dependence of <Al>
+            from Af in the range 236<Af<240 .
+ERR-ANALYS (DATA-ERR)  Not specified
 STATUS     (DEP,40964002)
            (DEP,40964003)
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-ENDBIB               4
+           (TABLE) Value from  the text of AE,64,(6),435,1988
+HISTORY    (20160604A) SD: NO-DIM -> PRT/FIS.
+           (20170710A) M.M. DERIV in reaction and ANALYSIS were
+           added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
-NO-DIM     NO-DIM
+PRT/FIS    PRT/FIS
  2.3         .5
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           20
 ENDENTRY             4

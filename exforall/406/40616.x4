@@ -1,115 +1,153 @@
-ENTRY            40616   20030523   20040112   20050926       0000
-SUBENT        40616001   20030523   20040112   20050926       0000
-BIB                 11         29
-TITLE       Fission Cross-Sections Measurement For U-233 and U-235
-            In the Energy Range  0.1 - 100 KeV and Cross-Section
-            Ratio Measurement  U-233/U-235  Up to  2. MeV
-AUTHOR     (T.A.MOSTOVAYA, V.I.MOSTOVOY, S.A.BIRYUKOV,
-           A.A.OSOCHNIKOV, A.V.TSVETKOV)
+ENTRY            40616   20170608   20180122   20180119       4176
+SUBENT        40616001   20170608   20180122   20180119       4176
+BIB                 12         36
+TITLE      Measurement of 233U and 235U fission cross sections
+           at 0.1 - 100 keV energy region and 233U/235U fission
+           cross sections ratio up to 2 MeV
+AUTHOR     (T.A.Mostovaya, V.I.Mostovoy, S.A.Biryukov,
+            A.A.Osochnikov, A.V.Svestov)
 INSTITUTE  (4RUSKUR)
-REFERENCE  (C,80KIEV,3,30,198009)  Data For U-233, U-235 Cross-
-                                 Sections.  Graph For U-235/U-233
-           (R,IAE-2627,1976)       Experimental Details
-PART-DET  A(FF)
-          B(N)
-DETECTOR  A(IOCH)   Ionization Chamber, Resolution  20 Nsec
-          B(HE3SP)  He-3 Counters 'CM-12'
-FACILITY   (LINAC)  Electron Linear Accelerator 'FAKEL'- Torch
-                    Electron Energy is 60 MeV, Pulse Duration =
-                    50 Nsec, Current = 1.2 Amperes,
-                    Pulse Frequency  460 and 690  Hz
-METHOD     (TOF)    Flight Base Until Ioniz.Chamber is  26 cm
-CORRECTION  Recycling Neutrons were Eliminated by the Borous-10
-            Plate  0.15 Gramm/cm2 Thickness, Neutron
-            Background  was Measured by Neans of the Black
-            Resonance Filters (AG, CO, MN) And was Found to be
-            Less Than  1.5 Percent For Energies Higher Than 10 KeV
-ERR-ANALYS (DATA-ERR)  Not Specified
+REFERENCE  (C,80KIEV,3,30,1980)
+REL-REF    (I,,S.A.Biryukov+,R,IAE-2627,1976)
+            Details of the ionization chamber
+FACILITY   (LINAC,4RUSKUR) Electron linac FAKEL
+INC-SOURCE (PHOTO) 60 MeV electrons (1.2 Amperes) with pulse
+            width of 50 nsec, repetition rate of 460 and 690 Hz
+PART-DET  1(FF)
+          2(N)
+DETECTOR  1(IOCH) Time resolution of 20 nsec
+             with U-233 and U-238 layers at 3.5 cm distance.
+          2(HE3SP)  Helium-3 counters CHM-12
+             for neutron spectrum measurement.
+METHOD     (TOF) Flight path of 26 cm till ionization chamber
+           Neutrons from the previous pulses were eliminated by
+            a 10B plate (0.15 g/cm2 thick).
+           Pb (60 cm thick) was used for shielding the
+            gamma-flash.
+           Neutron background was measured by black resonance
+            filters (Ag, Co, Mn) and was found to be less than
+            1.5% for energies higher than 10 keV.
+           (COINC) Fissions and neutrons were registered in
+           coincidence by separate analyzers AI-4096 , channel
+           width 50 nsec.
+ERR-ANALYS (DATA-ERR) No information on the sources of uncertainty
 HISTORY    (19811210C) Compiled at the Center - CJD
            (19821010U)
-           (20021128A) Date is Corrected
-           (20030523A) CORRECTED AT CJD - SAN 005 DELETED
-                       SAN 003 CORRECTED
-ENDBIB              29
-NOCOMMON
-ENDSUBENT           32
-SUBENT        40616002   20021128   20030502   20050926       0000
-BIB                  4          5
-REACTION   (92-U-235(N,F),,SIG,,AV) Averaged on the Energy Range
-MONITOR    (92-U-235(N,F),,SIG,,AV) Averaged  on the 0.2 - 1.0 KeV
-                                    Energy Range
-SAMPLE      Oxide U-O(8), Enrichment 99 Percent,Mass 0.8 Gram
-STATUS     (DEP,40616004)
-ENDBIB               5
+           (20021128A) Date is corrected
+           (20030523A) Corrected at CJD - SAN 005 deleted
+                       SAN 003 corrected
+           (20170608A) On. Major revision in 002. 005 restored.
+ENDBIB              36
+NOCOMMON             0          0
+ENDSUBENT           39
+SUBENT        40616002   20170608   20180122   20180119       4176
+BIB                  7         25
+REACTION   (92-U-235(N,F),,SIG,,AV)
+MONITOR    ((MONIT)92-U-235(N,F),,SIG,,AV) Absolute normalization
+            at energy region 0.2-1.0 keV
+           (5-B-10(N,A)3-LI-7,,SIG)         Shape normalization
+            sig(n,a)=13.837/sqrt(E)-0.312-1.014E-02*sqrt(E)
+                    +2.089E+05/[sqrt(E)*[(170.3-E)**2+2.243E+04],
+            where sig(n,a) in barn and E in keV
+MONIT-REF  (20462001,M.G.Sowerby+,R,AERE-R-6316,1970)
+            Analytical form of sig(n,a) in Eq.(9) of this report
+SAMPLE     (92-U-235,ENR=0.99) UO8 with mass of 0.8 gram
+COMMENT    By compiler On (2017-06-08):
+            The GMA database (#530) adopted in the IAEA Standard
+            evaluation provides point-wise partial uncertainties
+            for the following sources:
+            - Statistics                 (0.2%-1.3%)
+            - Background                 (0.6%-2.0%)
+            - Boron detector efficiency  (0.2%-0.7%)
+            - Fission chamber efficiency (0.3%-0.5%)
+            - Transmission and scattering     (1.0%)
+            but it is not clear if they were received from the
+            authors.
+STATUS     (TABLE) Table 1 of 80KIEV,3,30,1980
+           (DEP,40616004) U-235 point-wise cross sections up to
+           20 keV
+HISTORY    (20170608A) On. 3.94 b -> 3.95 b at 5 keV -6 keV
+ENDBIB              25
 COMMON               3          3
 EN-NRM-MIN EN-NRM-MAX MONIT
 KEV        KEV        B
-        0.2         1.     13.704
+ 0.2        1.0        13.704
 ENDCOMMON            3
 DATA                 4         26
 EN-MIN     EN-MAX     DATA       DATA-ERR
 KEV        KEV        B          B
-        0.1        0.2      21.88       .04
-        0.2        0.3      20.87       .04
-        0.3        0.4      12.97       .04
-        0.4        0.5      14.04       .06
-        0.5        0.6      15.33       .06
-        0.6        0.7      11.7        .06
-        0.7        0.8      11.3        .06
-        0.8        0.9      8.37        .05
-        0.9        1.       7.6         .05
-        1.         2.       7.33        .02
-        2.         3.       5.29        .02
-        3.         4.       4.85        .03
-        4.         5.       4.34        .03
-        5.         6.       3.94        .03
-        6.         7.       3.45        .03
-        7.         8.       3.28        .02
-        8.         9.       3.          .02
-        9.        10.       3.09        .02
-       10.        20.       2.49        .01
-       20.        30.       2.09        .01
-       40.        50.       1.84        .01
-       50.        60.       1.82        .01
-       60.        70.       1.74        .01
-       70.        80.       1.67        .01
-       80.        90.       1.6         .02
-       90.       100.       1.51        .01
+  0.1         0.2      21.88      0.04
+  0.2         0.3      20.87      0.04
+  0.3         0.4      12.97      0.04
+  0.4         0.5      14.04      0.06
+  0.5         0.6      15.33      0.06
+  0.6         0.7      11.70      0.06
+  0.7         0.8      11.30      0.06
+  0.8         0.9       8.37      0.05
+  0.9         1.0       7.60      0.05
+  1.          2.        7.33      0.02
+  2.          3.        5.29      0.02
+  3.          4.        4.85      0.03
+  4.          5.        4.34      0.03
+  5.          6.        3.95      0.03
+  6.          7.        3.45      0.03
+  7.          8.        3.28      0.02
+  8.          9.        3.00      0.02
+  9.         10.        3.09      0.02
+ 10.         20.        2.49      0.01
+ 20.         30.        2.09      0.01
+ 40.         50.        1.84      0.01
+ 50.         60.        1.82      0.01
+ 60.         70.        1.74      0.01
+ 70.         80.        1.67      0.01
+ 80.         90.        1.60      0.02
+ 90.        100.        1.51      0.01
 ENDDATA             28
-ENDSUBENT           42
-SUBENT        40616003   20030523   20040112   20050926       0000
-BIB                  5          6
-REACTION   (92-U-233(N,F),,SIG,,AV) Averaged on the Energy Intervl
-SAMPLE       Oxide U-O8, Enrichment 97 Percent
-MONITOR    (92-U-235(N,F),,RI,,LIM)
-MONIT-REF  (,R.GWIN+,J,NSE,59,79,1976)
-STATUS     (DEP,40616004)
-           .FROM TABLE 2 OF MAIN REFERENCE
-ENDBIB               6
+ENDSUBENT           62
+SUBENT        40616003   20170608   20180122   20180119       4176
+BIB                  6          9
+REACTION   (92-U-233(N,F),,SIG,,AV)
+MONITOR    (92-U-235(N,F),,SIG,,AV)
+           ((MONIT)(92-U-233(N,F),,SIG,,AV)/
+           (92-U-235(N,F),,SIG,,AV))
+MONIT-REF  ((MONIT),J.W.Behrens+,R,UCRL-79577,1977)
+SAMPLE     (92-U-233,ENR=0.97) UO8 with mass of 0.180 gram
+STATUS     (TABLE) Table 2 of 80KIEV,3,30,1980
+           (DEP,40616002) 235U(n,f) cross section given
+HISTORY    (20170608A) On. MONITOR revised. MONIT-REF deleted.
+ENDBIB               9
 COMMON               3          3
 EN-NRM-MIN EN-NRM-MAX MONIT
-EV         EV         B
-      166.9     1223.3      32.95
+MEV        MEV        NO-DIM
+ 1.         2.         1.523
 ENDCOMMON            3
 DATA                 4          9
 EN-MIN     EN-MAX     DATA       DATA-ERR
 KEV        KEV        B          B
-         5.        10.       4.32        .04
-        10.        20.       3.15        .03
-        20.        30.       2.95        .03
-        40.        50.       2.54        .04
-        50.        60.       2.33        .04
-        60.        70.       2.28        .04
-        70.        80.       2.23        .05
-        80.        90.       2.24        .05
-        90.       100.       2.28        .05
+  5.         10.       4.32       0.04
+ 10.         20.       3.15       0.03
+ 20.         30.       2.95       0.03
+ 40.         50.       2.54       0.04
+ 50.         60.       2.33       0.04
+ 60.         70.       2.28       0.04
+ 70.         80.       2.23       0.05
+ 80.         90.       2.24       0.05
+ 90.        100.       2.28       0.05
 ENDDATA             11
-ENDSUBENT           26
-SUBENT        40616004   20021128   20030502   20050926       0000
-BIB                  1          1
+ENDSUBENT           29
+SUBENT        40616004   20170608   20180122   20180119       4176
+BIB                  5          9
 REACTION   (92-U-235(N,F),,SIG)
-ENDBIB               1
-NOCOMMON
+MONITOR    (5-B-10(N,A)3-LI-7,,SIG)         Shape normalization
+            sig(n,a)=13.837/sqrt(E)-0.312-1.014E-02*sqrt(E)
+                    +2.089E+05/[sqrt(E)*[(170.3-E)**2+2.243E+04],
+            where sig(n,a) in barn and E in keV
+MONIT-REF  (20462001,M.G.Sowerby+,R,AERE-R-6316,1970)
+            Analytical form of sig(n,a) in Eq.(9) of this report
+SAMPLE     (92-U-235,ENR=0.99) UO8 with mass of 0.8 gram
+STATUS     (TABLE) From authors.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 4       4000
 EN         EN-ERR     DATA       DATA-ERR
 EV         EV         B          PER-CENT
@@ -4114,6 +4152,37 @@ EV         EV         B          PER-CENT
    78.730               5.067E+00     7.143
    78.678       .0524   7.607E+00     6.758
 ENDDATA           4002
-ENDSUBENT         4008
-NOSUBENT      40616005   20030523   20040112   20050926       0000
+ENDSUBENT         4016
+SUBENT        40616005   20170608   20180122   20180119       4176
+BIB                  6          9
+REACTION   (92-U-233(N,F),,RI,,LIM)
+MONITOR    (92-U-233(N,F),,RI,,LIM)
+MONIT-REF  (10267001,R.Gwin+,J,NSE,59,79,1976)
+SAMPLE     (92-U-233,ENR=0.97) UO8 with mass of 0.180 gram
+STATUS     (TABLE) Table 2 of 80KIEV,3,30,1980
+HISTORY    (20021127C) Compiled at CJD
+           (20021128U) Last checking has been done.
+           (20030523D)
+           (20170608S) On. Restored.
+ENDBIB               9
+COMMON               3          3
+EN-NRM-MIN EN-NRM-MAX MONIT
+EV         EV         B
+ 166.9      1223.3     32.95
+ENDCOMMON            3
+DATA                 4         10
+EN-MIN     EN-MAX     DATA       DATA-ERR
+EV         EV         B          B
+ 101.3       130.0     8.75       0.07
+ 130.0       166.9     5.60       0.06
+ 166.9       214.9     5.76       0.06
+ 214.9       275.2     5.38       0.05
+ 275.2       353.4     5.10       0.05
+ 353.4       453.8     3.79       0.04
+ 453.8       582.6     3.59       0.04
+ 582.6       748.1     3.73       0.04
+ 748.1       960.5     3.25       0.03
+ 960.5      1223.3     2.35       0.05
+ENDDATA             12
+ENDSUBENT           30
 ENDENTRY             5

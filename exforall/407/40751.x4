@@ -1,48 +1,46 @@
-ENTRY            40751   20070925   20071206   20071120       4141
-SUBENT        40751001   20070925   20071206   20071120       4141
-BIB                 12         49
+ENTRY            40751   20160602   20180122   20180119       4176
+SUBENT        40751001   20160602   20180122   20180119       4176
+BIB                 13         55
 INSTITUTE  (4RUSJIA)
            (4RUSFEI)
-REFERENCE  (J,YK,1/36,3,198003) Data Tables were given.
-           (J,YK,7,50,1971)Facility and measurement method details
+REFERENCE  (J,YK,,(1/36),3,1980) Data Tables were given.
+REL-REF    (M,,A.A.Bergman+,R,YK-7,50,1971)  Facility and measure-
+           ment method details (Engl.transl.INDC(CCP)-43,50,1974)
+           (M,,A.A.Bergman+,R,INDC(CCP)-43,50,1974)
 AUTHOR     (A.A.Bergman, A.G.Kolosovskij, S.P.Kuznetsov,
            A.N.Medvedev, A.E.Samsonov, V.A.Tolstikov)
 TITLE       Measurement of the fission cross-sections of Pu-239,
             U-235 and the ratio of this cross-sections for neutron
             with energies from 100.eV to 50.keV
-INC-SOURCE (D-T)  Deutron pulse duration 0.5micros,
-                  friquency 500 Hz.
+INC-SOURCE (D-T)  Deuteron pulse duration 0.5 micros,
+                  frequency 500 Hz.
 METHOD     (SLODT) Method of the slowing-down-time in lead
 FACILITY   (CCW,4RUSJIA)
              Lead cube, graphite prism.
 DETECTOR   (IOCH) Two ionization chambers with layers of Pu-239
             (20 mg) and U-235 (40 mg) on aluminum cylinders of
-            30mm diameter and 45 mm lenght. Filled with mixture of
-            Argon and 50% methan under presure 2 Athm (2.E+5 Pa).
+            30mm diameter and 45 mm length. Filled with mixture of
+            Argon and 50% methane under pressure 2 Atm (2.E+5 Pa)
              Used for fission fragment registration.
            (BF3) Boron counters: SNM-20 in lead cube, SNM-3 in
              graphite prism. Used for measurement of neutron beam
              energy dependence.
 MONITOR    ((MONIT1)94-PU-239(N,F),,SIG)
            ((MONIT2)92-U-235(N,F),,SIG)
-            Corrected by Vestcott factors(1.052 for Pu-239,
+            Corrected by Westcott factors(1.052 for Pu-239,
            0.977 for U-235) values of c-s, used for normalization.
 ERR-ANALYS (ERR-T) Total Error
            (ERR-S) Mean-square error for sctatistics,maximal-1.5%.
            (ERR-1) Error of normalization.
-           (ERR-2) Error due to bacground neutrons. Maximal at
-                 15 - 5 keV energy range.
-           (ERR-3) Error due to increasing of B-10(n,alpha)
+           (ERR-2,,0.3) Error due to background neutrons. Maximal
+                at 15 - 5 keV energy range.
+           (ERR-3,,0.2) Error due to increasing of B-10(n,alpha)
              reaction registration efficiency, at 50keV neutron
-             average energy.
-           (ERR-4) Error due to absorbtion in other materials of
-                 detectors, for cross sections - 0.2-0.3%.
-           (ERR-5) Error due to detectors time resolution
+             average energy was less 0.2%.
+           (ERR-5,,1.8) Error due to detectors time resolution
              (+-0.02 microsec - for Fission chambers,
               +-0.03 microsec - for boron counter);
-              Maximal at about 50 keV.
-           (ERR-6) Uncertainty in neutron average energy
-                  determination.
+              Maximal 1.8% at about 50 keV.
            (ERR-7) Error of corrections for spectrometer
                    resolution.
 STATUS      DATA of Tables 5,6,7 are presented in SUBENTs
@@ -50,19 +48,24 @@ STATUS      DATA of Tables 5,6,7 are presented in SUBENTs
 HISTORY    (19840613C)
            (20070925A) M.M. BIB information was added.
              Errors were added in COMMON and DATA blocks.
-ENDBIB              49
-COMMON               8          6
-EN-NRM     MONIT1     MONIT2     ERR-1      ERR-2      ERR-3
-ERR-5      ERR-7
-EV         B          B          PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT
- 2.5300E-02 7.8060E+02 5.7260E+02  0.7       0.3         0.2
- 1.8         0.3
-ENDCOMMON            6
-ENDSUBENT           59
-SUBENT        40751002   20070925   20071206   20071120       4141
-BIB                  3         18
-REACTION   (94-PU-239(N,F),,SIG)
+           (20160602U) SD: Ref. YK,7,50,1971 -> R,YK-7,50,1971
+            (ref. moved to REL-REF);  YK,1/36,3,1980 ->
+           YK,1980,(1/36),3,1980.
+           (20170710U) M.M. Previous correction of SD was
+           checked at CJD.
+           J,YK,1980,(1/36),3,1980) -> J,YK,,(1/36),3,1980) .
+            SDT was added in SF8 in Subents 002-004 .
+            ERR-ALALYS was corrected according to now-day rules.
+ENDBIB              55
+COMMON               5          3
+EN-NRM     MONIT1     MONIT2     ERR-1      ERR-7
+EV         B          B          PER-CENT   PER-CENT
+ 2.5300E-02 780.6      572.6       0.7       0.3
+ENDCOMMON            3
+ENDSUBENT           62
+SUBENT        40751002   20160602   20180122   20180119       4176
+BIB                  4         22
+REACTION   (94-PU-239(N,F),,SIG,,SDT)
 CORRECTION  Corrections:
             -for neutrons from previous cycles <= 2%;
             -for neutron absorbtion in gas of SNM-3 counter at
@@ -79,13 +82,13 @@ CORRECTION  Corrections:
                 15.                     1.005
                  5.                     1.002
                  3.                     1.001
-STATUS     (TABLE) Table 3 of 1st Reference.
-ENDBIB              18
-COMMON               2          3
-ERR-6      ERR-4
-PER-CENT   PER-CENT
- 2.         0.3
-ENDCOMMON            3
+ERR-ANALYS (ERR-4,0.2,0.3) Error due to absorption in other
+            materials of detectors, for cross sections - 0.2-0.3%.
+           (ERR-6,,2.) Uncertainty due to neutron average energy
+                  determination.
+STATUS     (TABLE) Table 3 of J,YK,,(1/36),3,1980
+ENDBIB              22
+NOCOMMON             0          0
 DATA                 4         68
 EN         DATA       ERR-T      ERR-S
 KEV        B          PER-CENT   PER-CENT
@@ -159,9 +162,9 @@ KEV        B          PER-CENT   PER-CENT
  1.0300E-01 3.1330E+01 2.3000E+00  0.8
 ENDDATA             70
 ENDSUBENT           97
-SUBENT        40751003   20070925   20071206   20071120       4141
-BIB                  3         19
-REACTION   (92-U-235(N,F),,SIG)
+SUBENT        40751003   20160602   20180122   20180119       4176
+BIB                  4         23
+REACTION   (92-U-235(N,F),,SIG,,SDT)
 CORRECTION  Corrections:
             -for neutrons from previous cycles <= 2%;
             -for neutron absorbtion in gas of SNM-3 counter at
@@ -179,13 +182,13 @@ CORRECTION  Corrections:
                  5.                     1.
                  3.                     1.
                  1.                     1.002
-STATUS     (TABLE) Table 3 of 1st Reference.
-ENDBIB              19
-COMMON               2          3
-ERR-6      ERR-4
-PER-CENT   PER-CENT
- 1.5        0.3
-ENDCOMMON            3
+ERR-ANALYS (ERR-4,0.2,0.3) Error due to absorption in other
+            materials of detectors, for cross sections - 0.2-0.3%.
+           (ERR-6,,1.5) Uncertainty due to neutron average energy
+                  determination.
+STATUS     (TABLE) Table 3 of J,YK,,(1/36),3,1980
+ENDBIB              23
+NOCOMMON             0          0
 DATA                 4         68
 EN         DATA       ERR-T      ERR-S
 KEV        B          PER-CENT   PER-CENT
@@ -259,10 +262,10 @@ KEV        B          PER-CENT   PER-CENT
  1.0300E-01 2.2870E+01 1.8000E+00  0.6
 ENDDATA             70
 ENDSUBENT           98
-SUBENT        40751004   20070925   20071206   20071120       4141
-BIB                  3         17
-REACTION   ((94-PU-239(N,F),,SIG)/
-           (92-U-235(N,F),,SIG))
+SUBENT        40751004   20160602   20180122   20180119       4176
+BIB                  4         21
+REACTION   ((94-PU-239(N,F),,SIG,,SDT)/
+           (92-U-235(N,F),,SIG,,SDT))
 CORRECTION  Corrections:
             -for neutrons from previous cycles <= 2%;
             -for deviation of B-10(n,alpha) reaction cross-section
@@ -277,12 +280,16 @@ CORRECTION  Corrections:
                 15.                     1.002
                  5.                     1.002
                  3.                     1.001
-STATUS     (TABLE) Table 3 of 1st Reference.
-ENDBIB              17
-COMMON               2          3
-ERR-6      ERR-4
-PER-CENT   PER-CENT
- 2.         0.1
+ERR-ANALYS (ERR-4)         Error due to absorption in other
+            materials of detectors.
+           (ERR-6,,2.) Uncertainty due to neutron average energy
+                  determination.
+STATUS     (TABLE) Table 3 of J,YK,,(1/36),3,1980
+ENDBIB              21
+COMMON               1          3
+ERR-4
+PER-CENT
+ 0.1
 ENDCOMMON            3
 DATA                 4         67
 EN         DATA       ERR-T      ERR-S
@@ -355,13 +362,14 @@ KEV        NO-DIM     PER-CENT   PER-CENT
  1.0900E-01 1.2900E+00 1.3000E+00  0.8
  1.0300E-01 1.3710E+00 1.3000E+00  0.8
 ENDDATA             69
-ENDSUBENT           95
-SUBENT        40751005   20070925   20071206   20071120       4141
-BIB                  2          3
-REACTION   (94-PU-239(N,F),,SIG,,AV) Data averaged over energetic
+ENDSUBENT           99
+SUBENT        40751005   20160602   20180122   20180119       4176
+BIB                  2          4
+REACTION   (94-PU-239(N,F),,SIG,,AV) Data averaged over energy
                                      interval
-STATUS     (TABLE) Table 4 of 1st Reference.
-ENDBIB               3
+STATUS     (TABLE) Table 4 of J,YK,,(1/36),3,1980
+           (DEP,40751002) CS used for averaging .
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 5         24
 EN-MIN     EN-MAX     DATA       ERR-T      ERR-S
@@ -391,13 +399,14 @@ KEV        KEV        B          PER-CENT   PER-CENT
  2.0000E-01 3.0000E-01 1.7060E+01 1.8000E+00   0.5
  1.0000E-01 2.0000E-01 2.1510E+01 2.0000E+00   0.4
 ENDDATA             26
-ENDSUBENT           34
-SUBENT        40751006   20070925   20071206   20071120       4141
-BIB                  2          3
+ENDSUBENT           35
+SUBENT        40751006   20160602   20180122   20180119       4176
+BIB                  2          4
 REACTION   (92-U-235(N,F),,SIG,,AV)  Data averaged over
                                    interval of energies
-STATUS     (TABLE) Table 4 of 1st Reference.
-ENDBIB               3
+STATUS     (TABLE) Table 4 of J,YK,,(1/36),3,1980
+           (DEP,40751003) CS used for averaging .
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 5         24
 EN-MIN     EN-MAX     DATA       ERR-T      ERR-S
@@ -427,14 +436,15 @@ KEV        KEV        B          PER-CENT   PER-CENT
  2.0000E-01 3.0000E-01 1.9200E+01 1.6000E+00  0.3
  1.0000E-01 2.0000E-01 2.1630E+01 1.4000E+00  0.3
 ENDDATA             26
-ENDSUBENT           34
-SUBENT        40751007   20070925   20071206   20071120       4141
-BIB                  2          4
+ENDSUBENT           35
+SUBENT        40751007   20160602   20180122   20180119       4176
+BIB                  2          5
 REACTION   ((94-PU-239(N,F),,SIG,,AV)/
            (92-U-235(N,F),,SIG,,AV))    Averaged over
                                         energy interval
-STATUS     (TABLE) Table 4 of 1st Reference.
-ENDBIB               4
+STATUS     (TABLE) Table 4 of J,YK,,(1/36),3,1980
+           (DEP,40751004) Ratio used for averaging .
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 5         24
 EN-MIN     EN-MAX     DATA       ERR-T      ERR-S
@@ -464,5 +474,5 @@ KEV        KEV        NO-DIM     PER-CENT   PER-CENT
  2.0000E-01 3.0000E-01 8.8800E-01 1.3000E+00  0.7
  1.0000E-01 2.0000E-01 9.9000E-01 1.4000E+00  0.6
 ENDDATA             26
-ENDSUBENT           35
+ENDSUBENT           36
 ENDENTRY             7
