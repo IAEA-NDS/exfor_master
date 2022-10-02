@@ -1,10 +1,10 @@
-ENTRY            13733   20141126   20150311   20150212       1404
-SUBENT        13733001   20141126   20150311   20150212       1404
-BIB                  9         14
+ENTRY            13733   20170912   20180108   20180107       1434
+SUBENT        13733001   20170912   20180108   20180107       1434
+BIB                  9         15
 TITLE      Solid State Effects on Thermal Neutron Cross Section
            and on Low Energy Resonances
 AUTHOR     (J.A.Harvey,H.A.Mook,N.W.Hill,O.Shahal)
-REFERENCE  (C,82ANTWER,,961,198209)
+REFERENCE  (C,82ANTWER,,961,1982)
 INSTITUTE  (1USAORL)
 FACILITY   (LINAC,1USAORL) ORELA.
 INC-SOURCE (PHOTO) Photoneutrons from 30 nsec pulses at 25 Hz.
@@ -15,13 +15,14 @@ HISTORY    (20000210C) TK + DW
            case. corrections according last EXFOR rules and
            Dict. Digitized Figs. 2,3,6,7, added 240Pu resonance
            parameter data.
-ENDBIB              14
+           (20170904A) OS. Addition to subs. 9,11,12
+ENDBIB              15
 COMMON               1          3
 EN-RSL
 PER-CENT
    0.3
 ENDCOMMON            3
-ENDSUBENT           21
+ENDSUBENT           22
 SUBENT        13733002   20141126   20150311   20150212       1404
 BIB                  6          7
 REACTION   (4-BE-9(N,TOT),,SIG) run id 9641.
@@ -10568,14 +10569,19 @@ EV         B          B
  1.6816E-03 3.0669E+01 9.9881E+00
 ENDDATA           1102
 ENDSUBENT         1114
-SUBENT        13733009   20141126   20150311   20150212       1404
-BIB                  4          4
+SUBENT        13733009   20170912   20180108   20180107       1434
+BIB                  5          5
 REACTION   (73-TA-181(N,TOT),,TRN)
 SAMPLE     Rolled Ta sample. Areal density 0.131 atoms/b.
 METHOD     (TOF) 17.870-m flight path.
 STATUS     (CURVE) Fig.6, page 963.
-ENDBIB               4
-NOCOMMON             0          0
+HISTORY    (20170904A) Added THICKNESS to COMMON
+ENDBIB               5
+COMMON               1          3
+THICKNESS
+ATOMS/B
+  0.131
+ENDCOMMON            3
 DATA                 2        190
 EN         DATA
 EV         NO-DIM
@@ -10770,7 +10776,7 @@ EV         NO-DIM
    0.049646    0.05061
    0.049953    0.05061
 ENDDATA            192
-ENDSUBENT          201
+ENDSUBENT          206
 SUBENT        13733010   20141126   20150311   20150212       1404
 BIB                  4          4
 REACTION   (83-BI-209(N,TOT),,SIG)
@@ -11106,17 +11112,19 @@ EV         B
    0.023006    4.51064
 ENDDATA            324
 ENDSUBENT          333
-SUBENT        13733011   20141126   20150311   20150212       1404
-BIB                  4          4
-REACTION   (94-PU-240(N,TOT),,TRN/TMP)
+SUBENT        13733011   20170912   20180108   20180107       1434
+BIB                  5          6
+REACTION   (94-PU-240(N,TOT),,TRN,,TMP)
 SAMPLE     Sample areal density 0.472 atoms/b.
 METHOD     (TOF) 17.858-m flight path, temperature = 95 K.
 STATUS     (CURVE) Fig.7, page 963.
-ENDBIB               4
-COMMON               1          3
-TEMP
-K
-       95.0
+HISTORY    (20170904A) Added THICKNESS to COMMON;
+             TMP moved to SF8
+ENDBIB               6
+COMMON               2          3
+TEMP       THICKNESS
+K          ATOMS/B
+       95.0   0.472
 ENDCOMMON            3
 DATA                 2         28
 EN         DATA
@@ -11150,19 +11158,21 @@ EV         NO-DIM
    1.159433    0.98196
    1.190732    0.98757
 ENDDATA             30
-ENDSUBENT           43
-SUBENT        13733012   20141201   20150311   20150212       1404
-BIB                  5          5
-REACTION   (94-PU-240(N,TOT),,TRN/TMP)
-SAMPLE     Sample areal density 0.472 atoms/b.
-METHOD     (TOF) 17.858-m flight path, temperature = 293 K.
+ENDSUBENT           45
+SUBENT        13733012   20170912   20180108   20180107       1434
+BIB                  5          7
+REACTION   (94-PU-240(N,TOT),,TRN)
+SAMPLE     Sample areal density 0.472 atoms/b, temperature 298 K.
+METHOD     (TOF) 17.858-m flight path
 STATUS     (CURVE) Fig.7, page 963.
 HISTORY    (20141201C) BP
-ENDBIB               5
+           (20170904A) Added THICKNESS to COMMON;
+             TMP moved to SF8
+ENDBIB               7
 COMMON               1          3
-TEMP
-K
-      293.0
+THICKNESS
+ATOMS/B
+  0.472
 ENDCOMMON            3
 DATA                 2         28
 EN         DATA
@@ -11196,7 +11206,7 @@ EV         NO-DIM
    1.160349    0.98028
    1.191771    0.98443
 ENDDATA             30
-ENDSUBENT           44
+ENDSUBENT           46
 SUBENT        13733013   20141201   20150311   20150212       1404
 BIB                  4         11
 REACTION  1(94-PU-240(N,0),,EN)
