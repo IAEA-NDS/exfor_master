@@ -1,6 +1,6 @@
-ENTRY            23148   20120228   20121029   20121025       2230
-SUBENT        23148001   20120228   20121029   20121025       2230
-BIB                 11         60
+ENTRY            23148   20130510   20131120   20131113       2235
+SUBENT        23148001   20130510   20131120   20131113       2235
+BIB                 11         65
 TITLE      Neutron-induced fission cross-section of U-233,Am-241
            and Am-243 in the energy range 0.5 < En < 20 MeV.
 AUTHOR     (F.Belloni,P.M.Milazzo,M.Calviani, N.Colonna,P.Mastinu,
@@ -28,7 +28,7 @@ AUTHOR     (F.Belloni,P.M.Milazzo,M.Calviani, N.Colonna,P.Mastinu,
            L.Tavora, R.Terlizzi, G.Vannini, P.Vaz, A.Ventura,
            D.Villamarin, M.C.Vincente, V.Vlachoudis, R.Vlastou,
            F.Voss, S.Walter, M.Wiescher, K.Wisshak,M.Barbagallo,
-           M.H.Meaze)
+           M.H.Meaze, D.Tarrio)
 INSTITUTE  (2ZZZCER,2ITYTRI,2ITYPAD,2ITYBAU,2FR SAC,2SPNSAU,
            3POLLOU,2GERKFK,2AUSATI,2FR STR,3CZRCHU,3ZZZIAE,
            2SPNSEU,1USANOT,2SPNVAL,2GRCARU,4ZZZDUB,4RUSFEI,
@@ -38,12 +38,15 @@ INSTITUTE  (2ZZZCER,2ITYTRI,2ITYPAD,2ITYBAU,2FR SAC,2SPNSAU,
            (2PRTLFE) Instituto Tecnologico e Nuclear (ITN),Lisbon;
            (2PRTPRT) LIP - Coimbra and Departamento de Fisica da
                      Universidade de Coimbra .
-            The n TOF Collaboration.
+           (2ZZZNTF)    The n TOF Collaboration.
 REFERENCE  (C,2010KRAKOW,,113,2010)
             U-233, Am-241,-143 preliminary data on figures.
            (J,EPJ/A,47,160,2011)
            #doi:10.1140/epja/i2011-11160-x
             Main reference for Am-243 data.
+           (J,EPJ/A,49,2,2013)
+           #doi:10.1140/epja/i2013-13002-3
+            Main reference for Am-241
 FACILITY   (SYNCH,2ZZZCER)
 INC-SOURCE (SPALL) 20 GeV pulsed proton beam with 6 ns r.m.s.,
            repetition rate 2.4 sec hit thick lead target of
@@ -52,7 +55,7 @@ INC-SOURCE (SPALL) 20 GeV pulsed proton beam with 6 ns r.m.s.,
            backgrounds components are suppressed by a 1.5 T
            sweeping magnet, heavy concrete walls, 3.5m thick iron
            shielding located along the beam line.
-INC-SPECT   Instantaneous neutron flux of 10**5 m/cm**2/pulse at
+INC-SPECT   Instantaneous neutron flux of 10**5 n/cm**2/pulse at
            sample position.
 METHOD     (TOF) 185 m long evacuated beam pipe.
 DETECTOR   (IOCH) Fast ionization chamber (16 sections) operated
@@ -61,9 +64,11 @@ DETECTOR   (IOCH) Fast ionization chamber (16 sections) operated
 STATUS     (COREL,23128001) U-233 data of C,2010KRAKOW,,113,2010 .
 HISTORY    (20120301C) M.M.
             Request for the data was sent.
-ENDBIB              60
+           (20130510A) M.M. Reference J,EPJ/A,49,2,2013 was added.
+           Subent 004 was corrected.
+ENDBIB              65
 NOCOMMON             0          0
-ENDSUBENT           63
+ENDSUBENT           68
 SUBENT        23148002   20120228   20121029   20121025       2230
 BIB                  6         43
 REACTION   ((95-AM-243(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
@@ -243,30 +248,95 @@ MEV        MEV        B          B
 17.78      19.95       2.33        0.1
 ENDDATA             34
 ENDSUBENT           89
-SUBENT        23148004   20120228   20121029   20121025       2230
-BIB                  7         16
-REACTION   (95-AM-241(N,F),,SIG,,AV)
-SAMPLE      No information.
-MONITOR    (92-U-235(N,F),,SIG)
-MONIT-REF  (,,3,ENDF/B-VII.0,,2006)
-CORRECTION For dead time and effects and detection efficiency.
-ERR-ANALYS (ERR-SYS) Overall systematic uncertainty in c-s.
-           (ERR-1) Sample mass of investigated isotope .
+SUBENT        23148004   20130510   20131120   20131113       2235
+BIB                  8         60
+REACTION  1((95-AM-241(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
+            Measured ratio.
+          2(95-AM-241(N,F),,SIG,,AV)
+            Average value in energy bins.
+SAMPLE     Samples in chemical form of oxides AmO(2) and U(3)O(8).
+           Sample     Mass     Thickness    Uncertainty
+                      (mg)     (microg/cm2)  (%)
+           241Am      0.234     4.65         1.2
+           241Am      0.230     4.57         1.2
+           241Am      0.280     5.57         1.2
+           241Am      0.279     5.56         1.2
+           241Am      0.304     6.04         1.2
+           241Am      0.336     6.69         1.2
+           241Am      0.321     6.38         1.2
+           241Am      0.277     5.52         1.2
+           235U       15.2      303          1.4
+           235U       16.6      330          1.3
+           Samples were prepared in IPPE,Obninsk,Russia by
+           painting technique. Uniformity 5-10 % of sample
+           thickness.
+           Alpha activity of Am-241 samples 112 MBq/mg.
+           (92-AM-241,ENR=0.96)  Am-241/Am enrichment higher
+           than 96%.
+           (92-U-235,ENR=0.99992) U-235 isotopically pure.
+           All samples were exposed to the same neutron flux and
+           were measured with nearly identical detectors showing
+           very similar signal shapes.
+MONITOR   2(92-U-235(N,F),,SIG)
+MONIT-REF 2(,,3,ENDF/B-VII.0,,2006)
+           (,M.B.Chadwick+,J,NDS,107,2931,2006)
+CORRECTION For dead time effects( average about 6%) .
+           For detection efficiency (5.4 %).
+           For absorption losses in the samples.
+           For the threshold effect imposed by alpha-activity.
+ERR-ANALYS (ERR-1) Sample mass of investigated isotope .
            (ERR-2) Sample mass of U-235
-           (ERR-3,,1.) Uncertainty due to correction for
-           efficiency and dead-time effect.
-STATUS     (UNOBT) Request for the data was sent to Paolo Milazzo
+           (ERR-3) Uncertainty due to dead-time correction of the
+                   order of 1% .
+           (ERR-4) Uncertainty due to detection efficiency
+           correction of the order of 1% .
+           (ERR-5) Uncertainty due to high alpha activity of the
+                   sample.
+           (ERR-6,1.,1.5) Uncertainty due to trance of 0.15% of
+           Pu-239 impurity - 1.5% at the lowest energy value
+           500 keV and smaller than 1% above 700 keV.
+           (MONIT-ERR) U-235 reference cross-section about 2 %.
+           (ERR-S) Statistical uncertainty per bin about 2%.
+           (ERR-T) Total uncertainty of cross-sections about 5%.
+           (EN-ERR,0.1,0.6) Uncertainty in neutron energy results
+           from the time resolution of the initial proton beam and
+           increases from about 0.1% at 0.5MeV to 0.6% at 20MeV .
+STATUS     (TABLE) Table 2 of J,EPJ/A,49,2,2013 .
+           Request for the data was sent to Paolo Milazzo
            paolo.milazzo@ts.infn.it 07.03.2012.
             Reply from Paolo Maria Milazzo 12.03.2012:
-           (PRELM) Preliminary data, not ready for EXFOR yet,
+            Preliminary data, not ready for EXFOR yet,
             further publication is planned.
-            Data are on Fig.3 of C,2010KRAKOW,,113,2010 .
-ENDBIB              16
-COMMON               3          3
-ERR-1      ERR-2      ERR-SYS
-PER-CENT   PER-CENT   PER-CENT
- 1.2           1.35       3.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           24
+            Preliminary data on Fig.3 of C,2010KRAKOW,,113,2010 .
+HISTORY    (20130510A) M.M. Data were added from J,EPJ/A,49,2,2013
+           BIB information was updated.
+ENDBIB              60
+COMMON               7          6
+ERR-S      ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
+MONIT-ERR 2
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+ 2.         1.2         1.35      1.         1.         4.
+  2.
+ENDCOMMON            6
+DATA                 6         15
+EN-MIN     EN-MAX     DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MEV        NO-DIM     NO-DIM     B          B
+ 0.501      0.562      0.17       0.02       0.19       0.02
+ 0.562      0.631      0.19       0.02       0.21       0.02
+ 0.631      0.708      0.31       0.02       0.35       0.02
+ 0.708      0.794      0.55       0.03       0.61       0.03
+ 0.794      0.891      0.78       0.03       0.87       0.04
+ 0.891      1.03       1.07       0.04       1.25       0.04
+ 1.03       1.26       1.39       0.03       1.66       0.03
+ 1.26       1.63       1.51       0.03       1.85       0.03
+ 1.63       2.24       1.44       0.02       1.83       0.03
+ 2.24       3.16       1.46       0.02       1.82       0.03
+ 3.16       4.47       1.58       0.04       1.83       0.04
+ 4.47       6.31       1.68       0.05       1.79       0.05
+ 6.31       9.17       1.45       0.04       2.51       0.07
+ 9.17      15.40       1.31       0.04       2.31       0.06
+15.40      31.62       1.11       0.02       2.39       0.05
+ENDDATA             17
+ENDSUBENT           89
 ENDENTRY             4

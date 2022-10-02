@@ -1,63 +1,138 @@
-ENTRY            10988     821101              20050926       0000
-SUBENT        10988001     821101              20050926       0000
-BIB                 12         23
+ENTRY            10988   20130523   20131120   20131101       1392
+SUBENT        10988001   20130523   20131120   20131101       1392
+BIB                 14         44
+TITLE      Angular distribution of fission fragments from fast
+           fission of U-235
+AUTHOR     (S.T.Hsue,G.F.Knoll,J.Meadows)
+REFERENCE  (J,NSE,66,24,197804)
 INSTITUTE  (1USAANL,1USAMHG)
-REFERENCE  (J,NSE,66,24,7804)
-AUTHOR     (S.T.HSUE,G.F.KNOLL,J.MEADOWS)
-TITLE      ANGULAR DISTRIBUTION OF FISSION FRAGMENTS FROM FAST
-            FISSION OF U-235
 FACILITY   (DYNAM,1USAANL)
-N-SOURCE   (P-LI7)
-DETECTOR   (TRD) POLYESTER TRACK DETECTOR
-SAMPLE     99.86 PERCENT ISOTOPICALLY PURE U-235 MOUNTED ON A
-            PLATINUM FOIL AND COVERED BY A TA MASK WITH A
-            0.953 CM CIRCULAR OPENING. THE U-235 THICKNESS WAS
-            0.937 MG/CM2.
-CORRECTION DATA ARE CORRECTED FOR OBSERVED THERMAL FISSION
-            ANISOTROPY, FINITE DETECTOR SIZE, THERMAL NEUTRON
-            INDUCED FISSIONS, LOW ENERGY NEUTRON GROUP FROM
-            P-LI7 SOURCE AND SCATTERING OF NEUTRONS FROM ALL
-            COMPONENTS OF THE EXPERIMENTAL ASSEMBLY.
-ERR-ANALYS (DATA-ERR) UNCERTAINTY INCLUDES 1.4 PERCENT FOR
-            ALL CORRECTIONS, 1. PERCENT SYSTEMATIC COUNTING
-            ERROR AND COUNTING STATISTICS.
-STATUS     DATA FROM PRIVATE COMMUNICATION J.W.MEADOWS 82/10/13
-           (APRVD) APPROVED BY J.W.MEADOWS, 82/11/17.
-HISTORY    (821021C)
-ENDBIB              23
-COMMON               2          3
-EN-RSL-FW  ANG-RSL
-MEV        ADEG
- 0.060      6.
+INC-SOURCE (P-LI7)
+DETECTOR   (TRD) Polyester track detector.
+SAMPLE     (92-U-235,ENR=0.9986) A 235U target 99.86 percent
+            (isotopically pure) with a deposit thickness of 0.937
+           mg/cm2 backed by a 0.127-mm-thick platinum foil.
+METHOD     (EXTB,CHSEP) After the exposure, the polyester film
+           detector was etched in a solution of KOH. Fragment
+           tracks for angles of 1, 15, 30, 60, 75 and 90 were
+           counted. The experiments were carried out using
+           average neutron energies of 265, 770, and 964 keV,
+           corresponding to the median energies of
+           sodium-deuterium, lanthan-beryllium, and
+           sodium-beryllium photoneutron sources.
+CORRECTION Data were corrected for: 1. solid angle; 2.
+           thermal-neutron fission; 3. For low-energy neutrons
+           in the 7Li(p,n)7Be reaction; 4. scattering;
+ANALYSIS   With s-wave neutron capture, the fission
+           angular distribution is expected to be isotropic.
+           Small deviations from isotropic yield were observed
+           in the thermal-neutron data. After normalization by
+           the thermal-neutron run, the corrected data for each
+           neutron energy were least-square fitted with the
+           expression W(theta) = 1 + A2 x cos2 theta, where A2 is
+            defined as the anisotropy factor.
+ERR-ANALYS (ERR-T) The estimated error values are based on the
+           uncertainties in the corrections as well as from
+           counting statistics and an assumed possible
+           systematic error.
+           (ERR-1) 1.5 % for all corrections.
+           (ERR-2) 1.0 % systematic error in the normal counting
+           process.
+STATUS     Data from private communication J.W.Meadows 82/10/13
+           (APRVD) approved by J.W.Meadows, 82/11/17.
+HISTORY    (19821021C)
+           (20130523A) BP: Updated to new date formats,lower
+           case. corrections according last EXFOR rules and Dict.
+           Corrected subentries according to the NSE article data,
+            digitized Fig. 2-4.
+ENDBIB              44
+COMMON               4          3
+EN-RSL     ANG-RSL    ERR-1      ERR-2
+MEV        ADEG       PER-CENT   PER-CENT
+0.035      6.         1.5        1.0
 ENDCOMMON            3
-ENDSUBENT           30
-SUBENT        10988002     821101              20050926       0000
-BIB                  1          1
+ENDSUBENT           51
+SUBENT        10988002   20130523   20131120   20131101       1392
+BIB                  3          4
 REACTION   (92-U-235(N,F),,DA,FF,COS/RSD)
-ENDBIB               1
+STATUS     (TABLE) Table I, page 26.
+HISTORY    (20130523A) Corrected data according to Table I and
+           Fig. 5 of the published NSE article.
+ENDBIB               4
 COMMON               1          3
 NUMBER
 NO-DIM
  2.
 ENDCOMMON            3
 DATA                 3          3
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        NO-DIM     NO-DIM
- 0.265      -0.008     0.020
- 0.770       0.127     0.023
- 0.965       0.130     0.026
+      0.265     -0.010      0.014
+      0.770      0.137      0.016
+      0.964      0.157      0.026
 ENDDATA              5
-ENDSUBENT           15
-SUBENT        10988003     821101              20050926       0000
+ENDSUBENT           18
+SUBENT        10988003   20130523   20131120   20131101       1392
 BIB                  2          2
-REACTION   (92-U-235(N,F),,DA,FF)
-STATUS     (UNOBT)
+REACTION   (92-U-235(N,F),,DA,FF,RSD)
+STATUS     (CURVE) Fig. 2, page 26.
 ENDBIB               2
-COMMON               4          3
-EN-MIN     EN-MAX     ANG-MIN    ANG-MAX
-KEV        KEV        ADEG       ADEG
- 265.       964.        1.        90.
+COMMON               1          3
+EN
+KEV
+265.0
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-ENDENTRY             3
+DATA                 3          6
+ANG        DATA       ERR-T
+ADEG       NO-DIM     NO-DIM
+  1.000E+00  9.947E-01  1.283E-02
+  1.500E+01  9.692E-01  1.283E-02
+  3.000E+01  9.957E-01  1.283E-02
+  6.000E+01  9.916E-01  1.282E-02
+  7.500E+01  9.882E-01  1.211E-02
+  9.000E+01  1.000E+00  1.354E-02
+ENDDATA              8
+ENDSUBENT           19
+SUBENT        10988004   20130523   20131120   20131101       1392
+BIB                  2          2
+REACTION   (92-U-235(N,F),,DA,FF,RSD)
+STATUS     (CURVE) Fig. 3, page 26.
+ENDBIB               2
+COMMON               1          3
+EN
+KEV
+770.0
+ENDCOMMON            3
+DATA                 3          6
+ANG        DATA       ERR-T
+ADEG       NO-DIM     NO-DIM
+  1.000E+00  1.123E+00  1.564E-02
+  1.500E+01  1.115E+00  1.493E-02
+  3.000E+01  1.091E+00  1.493E-02
+  6.000E+01  1.026E+00  1.422E-02
+  7.500E+01  1.007E+00  1.422E-02
+  9.000E+01  1.000E+00  1.422E-02
+ENDDATA              8
+ENDSUBENT           19
+SUBENT        10988005   20130523   20131120   20131101       1392
+BIB                  2          2
+REACTION   (92-U-235(N,F),,DA,FF,RSD)
+STATUS     (CURVE) Fig. 4, page 26.
+ENDBIB               2
+COMMON               1          3
+EN
+KEV
+964.0
+ENDCOMMON            3
+DATA                 3          6
+ANG        DATA       ERR-T
+ADEG       NO-DIM     NO-DIM
+  1.000E+00  1.131E+00  1.769E-02
+  1.500E+01  1.148E+00  1.769E-02
+  3.000E+01  1.123E+00  1.769E-02
+  6.000E+01  1.058E+00  1.627E-02
+  7.500E+01  1.012E+00  1.627E-02
+  9.000E+01  1.000E+00  1.557E-02
+ENDDATA              8
+ENDSUBENT           19
+ENDENTRY             5

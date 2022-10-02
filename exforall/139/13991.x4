@@ -1,33 +1,46 @@
-ENTRY            13991   20050505   20050707   20050926       1335
-SUBENT        13991001   20050505   20050707   20050926       1335
-BIB                 10         15
-INSTITUTE  (1USALTI)
-REFERENCE  (J,PR/C,26,841,1982)
+ENTRY            13991   20130729   20131120   20131101       1392
+SUBENT        13991001   20130729   20131120   20131101       1392
+BIB                 10         23
 AUTHOR     (D.W.S.Chan,J.J.Egan,A.Mittler,E.Sheldon)
-TITLE      Analyses of fast neutron inelastic scattering cross
-            sections to higher (vibrational) states of 232Th and
-            238U. I. Standard formalism
-FACILITY   (ACCEL,1USALTI)
+TITLE      Analyses of Fast Neutron Inelastic Scattering Cross
+           Sections to Higher (Vibrational) States of 232Th and
+           238U. I. Standard Formalism
+REFERENCE  (J,PR/C,26,841,1982)
+           #doi:10.1103/PhysRevC.26.841
+INSTITUTE  (1USALTI)
+FACILITY   (VDG,1USALTI)
 DETECTOR   (GELI) Ge(Li) detector
 METHOD     (TOF)
 SAMPLE     Enriched targets of 232Th and 238U
-ERR-ANALYS (DATA-ERR) Uncertainties are the weighted combination
-            of statistical error (1-10%), calibration of the
-            Ge(Li) detector (4-6 %), inciednt neutron flux
-            (4-5 %), source-sample distance(1 %)
+ERR-ANALYS Uncertainites are the weighted combination of
+           (ERR-S) statistical error (1-10%, in some exceptional
+            cases of weak transitions up to 40%)
+           (ERR-1,4.,6.) uncertainty in calibration of the
+            Ge(Li) detector
+           (ERR-2,4.,5.) uncertainty in incident neutron flux
+           (ERR-3) uncertainty in the distance target source -
+            scattering sample
+           (ERR-4,,1.) Error in the number of nuclei in scatterer
 HISTORY    (20050504C) DR
-ENDBIB              15
-NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        13991002   20050505   20050707   20050926       1335
-BIB                  3          3
+           (20130729A) BP: Added doi, cross reference to related
+           entry 10851, error analysis updated
+ENDBIB              23
+COMMON               1          3
+ERR-3
+PER-CENT
+  1.
+ENDCOMMON            3
+ENDSUBENT           30
+SUBENT        13991002   20131101   20131120   20131101       1392
+BIB                  4          4
 REACTION   (90-TH-232(N,INL)90-TH-232,PAR,SIG)
 EN-SEC     (E-EXC,90-TH-232)
 STATUS     (CURVE)Data taken from Figs. 2 to 4
-ENDBIB               3
+HISTORY    (20130729A) Error heading changed
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 4        446
-E-EXC      EN         DATA       DATA-ERR
+E-EXC      EN         DATA       ERR-S
 KEV        MEV        B          B
  714.2        7.57E-01   8.03E-02   9.88E-03
  714.2        8.05E-01   1.48E-01   1.76E-02
@@ -476,16 +489,19 @@ KEV        MEV        B          B
 1217.6        1.73E+00   3.90E-03   3.21E-03
 1217.6        1.76E+00   3.80E-03   2.35E-03
 ENDDATA            448
-ENDSUBENT          456
-SUBENT        13991003   20050505   20050707   20050926       1335
-BIB                  3          3
+ENDSUBENT          457
+SUBENT        13991003   20130729   20131120   20131101       1392
+BIB                  5          6
 REACTION   (92-U-238(N,INL)92-U-238,PAR,SIG)
-EN-SEC     (E-EXC,90-TH-232)
-STATUS     (CURVE)Data taken from Figs. 5 to 7
-ENDBIB               3
+EN-SEC     (E-EXC,92-U-238)
+STATUS     (CURVE) Data taken from figs. 5 to 7
+REL-REF    (O,10851001,A.Mittler+,C,79KNOX,,680,1979)
+            Data for additional 4 levels
+HISTORY    (20130729A) REL-REF added, error heading changed
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4        268
-E-EXC      EN         DATA       DATA-ERR
+E-EXC      EN         DATA       ERR-S
 KEV        MEV        B          B
  680.0        6.98E-01   5.07E-02   9.12E-03
  680.0        7.56E-01   1.69E-01   8.59E-03
@@ -756,5 +772,5 @@ KEV        MEV        B          B
 1269.4        1.87E+00   1.81E-02   2.74E-03
 1269.4        1.95E+00   9.46E-03   1.86E-03
 ENDDATA            270
-ENDSUBENT          278
+ENDSUBENT          281
 ENDENTRY             3
