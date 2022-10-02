@@ -1,6 +1,6 @@
-ENTRY            20025   20160907   20170201   20170124       2252
-SUBENT        20025001   20160907   20170201   20170124       2252
-BIB                 14         41
+ENTRY            20025   20170125   20170403   20170325       2257
+SUBENT        20025001   20170125   20170403   20170325       2257
+BIB                 13         43
 INSTITUTE  (2SWDFOA)
 REFERENCE  (J,AF,29,293,196503) Main reference.
            (C,65SALZBURG,2,57,1965) Prelim. thermal value given.
@@ -21,10 +21,9 @@ METHOD     (COINC)  Coincidence
            (TOF)    Time of flight technique at 7.5 and 14.8 MeV
 DETECTOR   (SCIN)   Large spherical liquid scintillator for the
            liquid 60 keV and 14.8 MeV data and a large cylindrical
-            scintillator for the 7.5 MeV data.
-MONITOR    (98-CF-252(0,F),PR,NU)
+           scintillator for the 7.5 MeV data.
 COMMENT     Data are compared with other measurements a mean value
-            for nu-bar(thermal)(U235)=2.412+-0.015 is derived
+            for nu-bar(thermal)(U-235)=2.412+-0.015 is derived
 CORRECTION .Pile-up (0.1 - 0.4%),
            .false gates (0.1%),
            .differences in fission neutron spectra (0.3 - 0.6%),
@@ -36,52 +35,99 @@ CORRECTION .Pile-up (0.1 - 0.4%),
            The total correction was estimated to be -0.013+-0.007
 ERR-ANALYS (DATA-ERR) The stated error includes counting
             statistics and uncertainties in the corrections.
+           (MONIT-ERR) Uncertainty in Cf standard
 HISTORY    (19710517T)  From NEUDADA file
            (19800825A) changed to reaction formalism.
            (20160907A) SD:Updated to new date formats,lower case.
            REACTION code update in Subent 003 according to comment
            from N.Otsuka. Data units were changed following EXFOR
            rules.
-ENDBIB              41
+           (20170125A) SD: Subent 004 was added from 20112 Entry.
+           MONITOR (-ERR) moved to Subents 002-003.
+ENDBIB              43
+NOCOMMON             0          0
+ENDSUBENT           46
+SUBENT        20025002   20170125   20170403   20170325       2257
+BIB                  5          5
+REACTION   (92-U-235(N,F),PR,NU)
+COMMENT     Nu-bar at 60 keV is not given.
+MONITOR    (98-CF-252(0,F),PR,NU)
+STATUS     (TABLE)  Data from the abstract of AF,29,293,1965
+HISTORY    (20170125A) SD: MONIT (-ERR) were added from Subent 001
+ENDBIB               5
 COMMON               2          3
 MONIT      MONIT-ERR
 PRT/FIS    PRT/FIS
  3.767       0.020
 ENDCOMMON            3
-ENDSUBENT           48
-SUBENT        20025002   20160907   20170201   20170124       2252
-BIB                  3          3
-REACTION   (92-U-235(N,F),PR,NU)
-COMMENT     Nu-bar at 60 keV is not given.
-STATUS     (TABLE)  Data from the abstract of AF,29,293,1965
-ENDBIB               3
-NOCOMMON             0          0
 DATA                 3          2
 EN         DATA       DATA-ERR
 MEV        PRT/FIS    PRT/FIS
   7.5       3.49       0.06
  14.8       4.47       0.09
 ENDDATA              4
-ENDSUBENT           12
-SUBENT        20025003   20160907   20170201   20170124       2252
-BIB                  4         11
+ENDSUBENT           18
+SUBENT        20025003   20170125   20170403   20170325       2257
+BIB                  5         12
 REACTION  1(92-U-235(N,F),PR,NU,,,DERIV)
           2((92-U-235(N,F),PR,NU,,,DERIV)/
            (98-CF-252(0,F),PR,NU))
-                            by the multiple reaction formalism
+MONITOR   1(98-CF-252(0,F),PR,NU)
 ANALYSIS    The thermal nu-bar value is calculated by
             an extrapolation to thermal energy assuming a linear
             energy dependence of nu-bar with a slope of 0.085
             neutrons per MeV.
 STATUS     (TABLE)  Table 3 of Ark.Fys.29(1965)293
 HISTORY    (20160907A) SD: SF9=DERIV added to REACTION code.
-           Second REACTION code was added.
-ENDBIB              11
-NOCOMMON             0          0
+           Second REACTION code and data were added.
+           (20170125A) SD: MONIT (-ERR) were added from Subent 001
+ENDBIB              12
+COMMON               2          3
+MONIT     1MONIT-ERR 1
+PRT/FIS    PRT/FIS
+ 3.767       0.020
+ENDCOMMON            3
 DATA                 5          1
 EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 MEV        PRT/FIS    PRT/FIS    NO-DIM     NO-DIM
  2.5300E-08  2.411      0.023     0.6400      0.0053
 ENDDATA              3
-ENDSUBENT           19
-ENDENTRY             3
+ENDSUBENT           24
+SUBENT        20025004   20170122   20170403   20170325       2257
+BIB                  9         23
+REACTION   (92-U-235(N,F),PR,NU,,,DERIV)
+MONITOR    (98-CF-252(0,F),PR,NU)
+ANALYSIS   .The thermal nu-bar-value was calculated by
+            an extrapolation to thermal energy assuming a linear
+            energy dependence of nu-bar with a slope of
+            0.085 neutrons/MeV, starting from nu-bar at 60 keV.
+REL-REF    (A,12326004,J.C.Hopkins+,J,NP,48,433,1963) and
+            A.Moat,D.S.Mather,P.Fieldhouse priv.communication
+COMMENT    .Nu-bar(total) = 2.433+-0.015 at thermal energy is
+            obtained by adding nu-bar(delayed) from S.Cox et al.,
+            Phys.Rev., 112(1958)960.
+           .Estimated nu-bar for 7.5 MeV is 3.47 +- 0.06.
+           .the 60 keV value is not given.
+CORRECTION .The total correction was estimated to be 0.013+-0.007.
+ERR-ANALYS .The error given for the relative value includes
+            counting statistics and uncertainties in the
+            corrections
+STATUS     (TABLE) Data are from 65SALZBURG,2,57,1965
+           (SPSDD,20025003) The values of 20025.003 Subent
+           supersedes this Subent.
+HISTORY    (19710513T)  From NEUDADA file
+           (20170122T) SD: Subent was originally from 20112.003.
+           BIB update. SF9=DERIV added to REACTION code.
+ENDBIB              23
+COMMON               2          3
+MONIT      MONIT-ERR
+PRT/FIS    PRT/FIS
+ 3.775      0.002
+ENDCOMMON            3
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        PRT/FIS    PRT/FIS
+   2.53E-08   2.417      0.015
+ENDDATA              3
+ENDSUBENT           35
+ENDENTRY             4

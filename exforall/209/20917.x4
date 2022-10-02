@@ -1,100 +1,136 @@
-ENTRY            20917     790528              20050926       0000
-SUBENT        20917001     790528              20050926       0000
-BIB                 16         38
+ENTRY            20917   20170126   20170403   20170325       2257
+SUBENT        20917001   20170126   20170403   20170325       2257
+BIB                 12         34
 INSTITUTE  (2UK HAR)
-REFERENCE  (R,AERE-M-1709,,6609)
-           (R,EANDC(UK)-42L,,63) TECHNIQUE.
-           (C,66SDIEGO,2,193,6602)
-           (P,AERE-PR/NP-11,,6704)
-           (P,AERE-PR/NP-9,11,6604)
-           (P,AERE-PR/NP-7,6,6406)
-           (P,AERE-PR/NP-6,13,6312)
-           (P,AERE-PR/NP-3,,60) SUPERSEDED.
-           (W,BROOKS,6608) NUMERICAL DATA.
-AUTHOR     (F.D.BROOKS,J.E.JOLY,M.G.SCHOMBERG,M.G.SOWERBY)
-TITLE      -ETA AND NEUTRON CROSS SECTIONS OF PU-239 AND U-233-.
-FACILITY   (LINAC)
+REFERENCE  (R,AERE-M-1709,196609)
+           (R,EANDC(UK)-42,1963) technique.
+           (C,66SDIEGO,2,193,196602)
+           (P,AERE-PR/NP-11,1,196704)
+           (P,AERE-PR/NP-9,11,196604)
+           (P,AERE-PR/NP-7,6,196406)
+           (P,AERE-PR/NP-6,13,196312)
+           (P,AERE-PR/NP-3,19,1960) Superseded.
+           (W,BROOKS,196608) Numerical data.
+AUTHOR     (F.D.Brooks,J.E.Jolly,M.G.Schomberg,M.G.Sowerby)
+TITLE       Eta and neutron cross sections of Pu-239 and U-233
+FACILITY   (LINAC,2UK HAR)
 INC-SOURCE (PHOTO)
-SAMPLE     .NO DETAILS, METAL DISCS OF SEVERAL THICKNESSES.
-METHOD     (TOF  ) TIME OF FLIGHT.
-            DATA IS GIVEN FOR VARIOUS FLIGHT PATHS AND TIMING
-            CHANNEL WIDTHS.
-DETECTOR   (SCIN ) NO DETAILS.
-ANALYSIS   .BECAUSE OF THE 1.8 PERCENT OF PU-240 IMPURITY IN THE
-            PU SAMPLE, NO DATA IS GIVEN BETWWEEN 0.8 AND 1.6 EV
-            WHERE THE PU-240 RESONANCE AT 1.054EV GIVES A LARGE
-            CONTRIBUTION.
-           .RESONANCE INTEGRALS ARE CALCULATED FROM THE MEASURED
-            CROSS SECTION DATA.
-MONITOR   1(92-U-233(N,EL)92-U-233,,SIG)
-          2(94-PU-239(N,EL)94-PU-239,,SIG)
-            VALUES TAKEN AS 12.0+-2.0 AND 10.5+-0.6 B RESPECTIVELY
-PART-DET   (N    )
-           (FF   ) FISSION FRAGMENTS.
-STATUS     .DATA RECOMPILED FROM NEUDADA AND FROM EXFOR20623,
-            WHICH IS NOW DELETED.
-HISTORY    (790509C)
-           (790528E)
-CORRECTION .SCATTERING IN CANNING MATERIAL, AND MULTIPLE
-            REACTIONS IN THE TARGET.
-ERR-ANALYS  SYSTEMATIC ERRORS FROM BACKGROUND AND NORMALISATION,
-            AND STATISTICAL ERRORS.
-ENDBIB              38
-COMMON               4          3
-MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
-B          B          B          B
- 1.2000E+01 2.0000E+00 1.0500E+01 6.0000E-01
+METHOD     (TOF) Time of flight.
+            Data is given for various flight paths and timing
+            channel widths.
+           (TRN)
+DETECTOR   (SCIN) No details.
+PART-DET   (N)
+           (FF) fission fragments.
+CORRECTION .Scattering in canning material, and multiple
+            reactions in the target.
+ANALYSIS   .Because of the 1.8% of Pu-240 impurity in the
+            Pu sample, no data is given between 0.8 and 1.6 eV
+            where the Pu-240 resonance at 1.054 eV gives a large
+            contribution.
+           .Resonance integrals are calculated from the measured
+            cross section data.
+HISTORY    (19790509C)
+           (20170126A) SD:Updated to new date formats,lower case.
+           Refs corrected (extra commas deleted). Author's names
+           corrected. BIB update and MONITOR (-> ASSUMED), SAMPLE,
+           ERR-ANALYS moved to Subents 002-032.
+ENDBIB              34
+NOCOMMON             0          0
+ENDSUBENT           37
+SUBENT        20917002   20170126   20170403   20170325       2257
+BIB                  7         16
+REACTION   (92-U-233(N,G)92-U-234,,SIG,,AV,DERIV)
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ANALYSIS    sig(cap)=sig(tot)-sig(fis)-sig(scat)
+SAMPLE     Metal discs of several thicknesses:
+            U-233 - 0.022, 0.011, 0.0039  atoms/b
+ERR-ANALYS (ERR-S) Statistical errors.
+           (ERR-SYS) Systematic errors mainly to monitoring
+           and other errors in processing the raw data.
+           (ASSUM-ERR) Uncertainty in the reaction
+STATUS     (TABLE) Table 3 from AERE-M-1709,1966
+           (DEP,20917008) total cross section
+           (DEP,20917013) fission cross section
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. 'DEP' in STATUS was added.
+           SF9= DERIV added in REACTION code (see ANALYSIS).
+ENDBIB              16
+COMMON               3          3
+ASSUM      ASSUM-ERR  ERR-SYS
+B          B          PER-CENT
+ 12.         2.         2.
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        20917002     790528              20050926       0000
-BIB                  2          2
-REACTION   (92-U-233(N,G)92-U-234,,SIG,,AV)
-STATUS     .RECOMPILED FROM 20623.
-ENDBIB               2
-NOCOMMON             0          0
 DATA                 4         10
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         B          B
- 3.5000E-01 4.5000E-01 1.6900E+01 3.0000E+00
- 4.5000E-01 5.0000E-01 1.2500E+01 3.6000E+00
- 5.0000E-01 5.5000E-01 1.3100E+01 4.5000E+00
- 5.5000E-01 7.0000E-01 1.1000E+01 2.3000E+00
- 7.0000E-01 1.0000E+00 8.8000E+00 1.8000E+00
- 1.0000E+00 1.3000E+00 1.7800E+01 2.3000E+00
- 1.3000E+00 1.8000E+00 8.0300E+01 8.9000E+00
- 1.8000E+00 4.5000E+00 4.0000E+01 1.6000E+00
- 4.5000E+00 5.0000E+00 8.9000E+00 1.4000E+00
- 5.0000E+00 1.0000E+01 1.9400E+01 7.3400E+01
+       0.35       0.45       16.9        3.0
+       0.45       0.50       12.5        3.6
+       0.50       0.55       13.1        4.5
+       0.55       0.70       11.0        2.3
+       0.70       1.00        8.8        1.8
+       1.00       1.30       17.8        2.3
+       1.30       1.80       80.3        8.9
+       1.80       4.50       40.0        1.6
+       4.50       5.00        8.9        1.4
+       5.00      10.00       19.4       73.4
 ENDDATA             12
-ENDSUBENT           19
-SUBENT        20917003     790528              20050926       0000
-BIB                  2          2
-REACTION   (92-U-233(N,G)92-U-234,,RI,,AV)
-STATUS     .RECOMPILED FROM 20623.
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           37
+SUBENT        20917003   20170126   20170403   20170325       2257
+BIB                  6         13
+REACTION   (92-U-233(N,G)92-U-234,,RI,,AV,DERIV)
+ANALYSIS    sig(cap)=sig(tot)-sig(fis)-sig(scat)
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (ERR-S) Statistical errors.
+           (ERR-SYS) Systematic errors mainly to monitoring
+           and other errors in processing the raw data.
+           (ASSUM-ERR) Uncertainty in the reaction
+STATUS     (TABLE) Table 3 from AERE-M-1709,1966
+           (DEP,20917002) cross section
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S.  ASSUMED and 'DEP' in STATUS
+           were added. SF9= DERIV added in REACTION code.
+ENDBIB              13
+COMMON               3          3
+ASSUM      ASSUM-ERR  ERR-SYS
+B          B          PER-CENT
+ 12.         2.         2.
+ENDCOMMON            3
 DATA                 4         10
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         B          B
- 3.5000E-01 4.5000E-01 4.2000E+00 6.0000E-01
- 4.5000E-01 5.0000E-01 1.5000E+00 2.0000E-01
- 5.0000E-01 5.5000E-01 1.3000E+00 2.0000E-01
- 5.5000E-01 7.0000E-01 2.7000E+00 3.0000E-01
- 7.0000E-01 1.0000E+00 3.2000E+00 4.0000E-01
- 1.0000E+00 1.3000E+00 4.6000E+00 4.0000E-01
- 1.3000E+00 1.8000E+00 2.5000E+01 6.7000E+00
- 1.8000E+00 4.5000E+00 4.6000E+01 4.3000E+00
- 4.5000E+00 5.0000E+00 9.0000E-01 1.0000E-01
- 5.0000E+00 1.0000E+01 1.4000E+01 9.0000E-01
+       0.35       0.45        4.2        0.6
+       0.45       0.50        1.5        0.2
+       0.50       0.55        1.3        0.2
+       0.55       0.70        2.7        0.3
+       0.70       1.00        3.2        0.4
+       1.00       1.30        4.6        0.4
+       1.30       1.80       25.0        6.7
+       1.80       4.50       46.0        4.3
+       4.50       5.00        0.9        0.1
+       5.00      10.00       14.0        0.9
 ENDDATA             12
-ENDSUBENT           19
-SUBENT        20917004     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT           34
+SUBENT        20917004   20170126   20170403   20170325       2257
+BIB                  7         10
 REACTION   (92-U-233(N,TOT),,SIG)
-COMMENT    .FLIGHT PATH 22.5M,TIMING CHANNELS 1.0 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+CRITIQUE   O.Cabellos (31-01-2017): Data errors (see DATA-ERR) at
+            energy range 5.0 eV - 5.378 eV is too high.
+COMMENT    .Flight path 22.5m,timing channels 1.0 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126U) SD:ASSUMED, ERR-ANALYS, CRITIQUE were added
+ENDBIB              10
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3        474
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -573,14 +609,23 @@ MEV        B          B
  1.0730E-05 1.4870E+02 6.9000E+00
  1.1040E-05 9.9380E+01 2.1900E+00
 ENDDATA            476
-ENDSUBENT          484
-SUBENT        20917005     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT          495
+SUBENT        20917005   20170126   20170403   20170325       2257
+BIB                  6          8
 REACTION   (92-U-233(N,TOT),,SIG)
-COMMENT    .FLIGHT PATH 22.5M, TIMING CHANNELS 8.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 22.5m, timing channels 8.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126U) SD:ASSUMED, ERR-ANALYS, CRITIQUE were added
+ENDBIB               8
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3         83
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -668,14 +713,23 @@ MEV        B          B
  2.7820E-06 7.0600E+01 1.3200E+00
  2.8280E-06 7.0250E+01 7.1000E-01
 ENDDATA             85
-ENDSUBENT           93
-SUBENT        20917006     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT          102
+SUBENT        20917006   20170126   20170403   20170325       2257
+BIB                  6          8
 REACTION   (92-U-233(N,TOT),,SIG)
-COMMENT    .FLIGHT PATH 5.05M, TIMING CHANNELS 0.50 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 5.05m, timing channels 0.50 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126U) SD:ASSUMED, ERR-ANALYS, CRITIQUE were added
+ENDBIB               8
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3         74
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -754,14 +808,23 @@ MEV        B          B
  9.8300E-07 1.6550E+02 2.8000E+00
  1.0270E-06 1.7380E+02 4.1000E+00
 ENDDATA             76
-ENDSUBENT           84
-SUBENT        20917007     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT           93
+SUBENT        20917007   20170126   20170403   20170325       2257
+BIB                  6          8
 REACTION   (92-U-233(N,TOT),,SIG)
-COMMENT    .FLIGHT PATH 5.05M, TIMING CHANNELS 32.0 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 5.05m, timing channels 32.0 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126U) SD:ASSUMED, ERR-ANALYS, CRITIQUE were added
+ENDBIB               8
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3         32
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -798,35 +861,64 @@ MEV        B          B
  1.3900E-07 2.4430E+02 2.5000E+00
  1.4800E-07 2.3380E+02 2.5000E+00
 ENDDATA             34
-ENDSUBENT           42
-SUBENT        20917008     790528              20050926       0000
-BIB                  2          2
+ENDSUBENT           51
+SUBENT        20917008   20170126   20170403   20170325       2257
+BIB                  5         15
 REACTION   (92-U-233(N,TOT),,SIG,,AV)
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               2
-NOCOMMON             0          0
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (ERR-S) Statistical errors.
+           (ERR-SYS) Systematic errors mainly to monitoring
+           and other errors in processing the raw data.
+           (ASSUM-ERR) Uncertainty in the reaction
+STATUS     (TABLE) Table 3 from AERE-M-1709,1966
+           (DEP,20917004)
+           (DEP,20917005)
+           (DEP,20917006)
+           (DEP,20917007)
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. ASSUMED, ERR-ANALYS were
+           added. STATUS 'DEP' was added.
+ENDBIB              15
+COMMON               3          3
+ASSUM      ASSUM-ERR  ERR-SYS
+B          B          PER-CENT
+ 12.         2.          2.
+ENDCOMMON            3
 DATA                 4         10
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         B          B
- 3.5000E-01 4.5000E-01 1.7670E+02 2.3000E+00
- 4.5000E-01 5.0000E-01 1.6610E+02 2.3000E+00
- 5.0000E-01 5.5000E-01 1.5890E+02 3.3000E+00
- 5.5000E-01 7.0000E-01 1.5060E+02 1.4000E+00
- 7.0000E-01 1.0000E+00 1.5080E+02 1.0000E+00
- 1.0000E+00 1.3000E+00 2.0970E+02 1.4000E+00
- 1.3000E+00 1.8000E+00 5.4100E+02 6.2000E+00
- 1.8000E+00 4.5000E+00 2.0560E+02 1.0000E+00
- 4.5000E+00 5.0000E+00 1.2360E+02 8.0000E-01
- 5.0000E+00 1.0000E+01 1.1940E+02 5.7000E+01
+       0.35       0.45      176.7        2.3
+       0.45       0.50      166.1        2.3
+       0.50       0.55      158.9        3.3
+       0.55       0.70      150.6        1.4
+       0.70       1.00      150.8        1.0
+       1.00       1.30      209.7        1.4
+       1.30       1.80      541.0        6.2
+       1.80       4.50      205.6        1.0
+       4.50       5.00      123.6        0.8
+       5.00      10.00      119.4       57.0
 ENDDATA             12
-ENDSUBENT           19
-SUBENT        20917009     790528              20050926       0000
-BIB                  3          3
-REACTION   (92-U-233(N,F),,SIG)
-COMMENT    .FLIGHT PATH 22.5M, TIMING CHANNELS 1.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           36
+SUBENT        20917009   20170126   20170403   20170325       2257
+BIB                  7         11
+REACTION   (92-U-233(N,F),,SIG,,,DERIV)
+ANALYSIS   Derived from transmission, and prompt fission
+           neutron yield
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 22.5m, timing channels 1.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added. SF9=DERIV was added
+           to REACTION code (see ANALYSIS).
+ENDBIB              11
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3        474
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -1305,14 +1397,26 @@ MEV        B          B
  1.0730E-05 1.1610E+02 7.1000E+00
  1.1040E-05 7.5800E+01 4.0600E+00
 ENDDATA            476
-ENDSUBENT          484
-SUBENT        20917010     790528              20050926       0000
-BIB                  3          3
-REACTION   (92-U-233(N,F),,SIG)
-COMMENT    .FLIGHT PATH 22.5M, TIMING CHANNELS 8.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT          496
+SUBENT        20917010   20170126   20170403   20170325       2257
+BIB                  7         11
+REACTION   (92-U-233(N,F),,SIG,,,DERIV)
+ANALYSIS   Derived from transmission, and prompt fission
+           neutron yield
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 22.5m, timing channels 8.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added. SF9=DERIV was added
+           to REACTION code (see ANALYSIS).
+ENDBIB              11
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3         83
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -1400,14 +1504,26 @@ MEV        B          B
  2.7820E-06 5.1030E+01 1.7300E+00
  2.8280E-06 4.9870E+01 1.7100E+00
 ENDDATA             85
-ENDSUBENT           93
-SUBENT        20917011     790528              20050926       0000
-BIB                  3          3
-REACTION   (92-U-233(N,F),,SIG)
-COMMENT    .FLIGHT PATH 5.05M, TIMING CHANNELS 8.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT          105
+SUBENT        20917011   20170126   20170403   20170325       2257
+BIB                  7         11
+REACTION   (92-U-233(N,F),,SIG,,,DERIV)
+ANALYSIS   Derived from transmission, and prompt fission
+           neutron yield
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 5.05m, timing channels 8.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added. SF9=DERIV was added
+           to REACTION code (see ANALYSIS).
+ENDBIB              11
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3         74
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -1486,14 +1602,26 @@ MEV        B          B
  9.8300E-07 1.4610E+02 3.9000E+00
  1.0270E-06 1.5540E+02 4.0000E+00
 ENDDATA             76
-ENDSUBENT           84
-SUBENT        20917012     790528              20050926       0000
-BIB                  3          3
-REACTION   (92-U-233(N,F),,SIG)
-COMMENT    .FLIGHT PATH 5.05M TIMING CHANNELS 32.0 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           96
+SUBENT        20917012   20170126   20170403   20170325       2257
+BIB                  7         11
+REACTION   (92-U-233(N,F),,SIG,,,DERIV)
+ANALYSIS   Derived from transmission, and prompt fission
+           neutron yield
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+           (ASSUM-ERR) Uncertainty in the reaction
+COMMENT    .Flight path 5.05m timing channels 32.0 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added. SF9=DERIV was added
+           to REACTION code (see ANALYSIS).
+ENDBIB              11
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+ 12.         2.
+ENDCOMMON            3
 DATA                 3         32
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -1530,59 +1658,99 @@ MEV        B          B
  1.3900E-07 2.0650E+02 8.3000E+00
  1.4800E-07 1.9290E+02 8.1000E+00
 ENDDATA             34
-ENDSUBENT           42
-SUBENT        20917013     790528              20050926       0000
-BIB                  2          2
-REACTION   (92-U-233(N,F),,SIG,,AV)
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           54
+SUBENT        20917013   20170126   20170403   20170325       2257
+BIB                  5         15
+REACTION   (92-U-233(N,F),,SIG,,AV,DERIV)
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (ERR-S) Statistical error
+           (ERR-SYS) The error in average cr.section values
+           depends on the energy range but typically for an
+           interval containing resonances it is +-2%.
+           (ASSUM-ERR) Uncertainty in the reaction
+STATUS     (TABLE) Table 3 from AERE-M-1709,1966
+           (DEP,20917009)
+           (DEP,20917010)
+           (DEP,20917011)
+           (DEP,20917012)
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. STATUS 'DEP' was added.
+ENDBIB              15
+COMMON               3          3
+ASSUM      ASSUM-ERR  ERR-SYS
+B          B          PER-CENT
+ 12.         2.          2.
+ENDCOMMON            3
 DATA                 4         10
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         B          B
- 3.5000E-01 4.5000E-01 1.4780E+02 1.9000E+00
- 4.5000E-01 5.0000E-01 1.4160E+02 2.5000E+00
- 5.0000E-01 5.5000E-01 1.3370E+02 2.8000E+00
- 5.5000E-01 7.0000E-01 1.2760E+02 1.6000E+00
- 7.0000E-01 1.0000E+00 1.3000E+02 1.3000E+00
- 1.0000E+00 1.3000E+00 1.7990E+02 1.3000E+00
- 1.3000E+00 1.8000E+00 4.4870E+02 6.4000E+00
- 1.8000E+00 4.5000E+00 1.5370E+02 1.1000E+00
- 4.5000E+00 5.0000E+00 1.0270E+02 1.1000E+00
- 5.0000E+00 1.0000E+01 8.8000E+01 4.6300E+01
+       0.35       0.45      147.8        1.9
+       0.45       0.50      141.6        2.5
+       0.50       0.55      133.7        2.8
+       0.55       0.70      127.6        1.6
+       0.70       1.00      130.0        1.3
+       1.00       1.30      179.9        1.3
+       1.30       1.80      448.7        6.4
+       1.80       4.50      153.7        1.1
+       4.50       5.00      102.7        1.1
+       5.00      10.00       88.0       46.3
 ENDDATA             12
-ENDSUBENT           19
-SUBENT        20917014     790528              20050926       0000
-BIB                  2          2
-REACTION   (92-U-233(N,F),,RI,,AV)
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           36
+SUBENT        20917014   20170126   20170403   20170325       2257
+BIB                  5         13
+REACTION   (92-U-233(N,F),,RI,,AV,DERIV)
+ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
+ERR-ANALYS (ERR-S) Statistical error
+           (ERR-SYS) The error in average cr.section values
+           depends on the energy range but typically for an
+           interval containing resonances it is +-2%.
+           (ASSUM-ERR) Uncertainty in the reaction
+STATUS     (TABLE) Table 3 from AERE-M-1709,1966
+           (DEP,20917013) cross section
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. ASSUMED, STATUS 'DEP' were
+           added. SF9=DERIV was added to REACTION code.
+ENDBIB              13
+COMMON               3          3
+ASSUM      ASSUM-ERR  ERR-SYS
+B          B          PER-CENT
+ 12.         2.          2.
+ENDCOMMON            3
 DATA                 4         10
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         B          B
- 3.5000E-01 4.5000E-01 3.6500E+01 2.0000E-01
- 4.5000E-01 5.0000E-01 1.7000E+01 1.0000E-01
- 5.0000E-01 5.5000E-01 1.2700E+01 1.0000E-01
- 5.5000E-01 7.0000E-01 3.0900E+01 2.0000E-01
- 7.0000E-01 1.0000E+00 4.6600E+01 2.0000E-01
- 1.0000E+00 1.3000E+00 4.6600E+01 2.0000E-01
- 1.3000E+00 1.8000E+00 1.4130E+02 3.6000E+00
- 1.8000E+00 4.5000E+00 1.7180E+02 2.3000E+00
- 4.5000E+00 5.0000E+00 1.0700E+01 2.0000E-01
- 5.0000E+00 1.0000E+01 6.4000E+01 1.6300E+01
+       0.35       0.45       36.5        0.2
+       0.45       0.50       17.0        0.1
+       0.50       0.55       12.7        0.1
+       0.55       0.70       30.9        0.2
+       0.70       1.00       46.6        0.2
+       1.00       1.30       46.6        0.2
+       1.30       1.80      141.3        3.6
+       1.80       4.50      171.8        2.3
+       4.50       5.00       10.7        0.2
+       5.00      10.00       64.0       16.3
 ENDDATA             12
-ENDSUBENT           19
-SUBENT        20917015     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT           34
+SUBENT        20917015   20170126   20170403   20170325       2257
+BIB                  6          7
 REACTION   (92-U-233(N,ABS),,ETA)
-COMMENT    .FLIGHT PATH 22.5M, TIMING CHANNELS 1.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    (92-U-233(N,ABS),,ETA)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+COMMENT    .Flight path 22.5m, timing channels 1.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB               7
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.073      2.290
+ENDCOMMON            3
 DATA                 3        479
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  2.7990E-06 2.0760E+00 1.6900E-01
  2.8050E-06 2.3080E+00 1.7800E-01
  2.8100E-06 2.0350E+00 1.7200E-01
@@ -2063,17 +2231,25 @@ MEV        NO-DIM     NO-DIM
  1.1000E-05 2.1160E+00 8.2000E-02
  1.1040E-05 2.1530E+00 7.2000E-02
 ENDDATA            481
-ENDSUBENT          489
-SUBENT        20917016     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT          497
+SUBENT        20917016   20170126   20170403   20170325       2257
+BIB                  6          7
 REACTION   (92-U-233(N,ABS),,ETA)
-COMMENT    .FLIGHT PATH 22.5M, TIMING CHANNELS 8.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    (92-U-233(N,ABS),,ETA)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+COMMENT    .Flight path 22.5m, timing channels 8.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB               7
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.073      2.290
+ENDCOMMON            3
 DATA                 3         83
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  1.0050E-06 2.2690E+00 8.6000E-02
  1.0150E-06 2.2760E+00 8.4000E-02
  1.0250E-06 2.2630E+00 8.4000E-02
@@ -2158,17 +2334,25 @@ MEV        NO-DIM     NO-DIM
  2.7820E-06 2.1750E+00 6.3000E-02
  2.8280E-06 2.1390E+00 6.2000E-02
 ENDDATA             85
-ENDSUBENT           93
-SUBENT        20917017     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT          101
+SUBENT        20917017   20170126   20170403   20170325       2257
+BIB                  6          7
 REACTION   (92-U-233(N,ABS),,ETA)
-COMMENT    .LIGHT PATH 5.05M, TIMMING CHANNELS 8.0 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    (92-U-233(N,ABS),,ETA)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+COMMENT    .Light path 5.05m, timing channels 8.0 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB               7
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.073      2.290
+ENDCOMMON            3
 DATA                 3         74
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  1.5000E-07 2.1770E+00 9.8000E-02
  1.5200E-07 2.1440E+00 7.8000E-02
  1.5500E-07 2.2440E+00 1.0100E-01
@@ -2244,17 +2428,25 @@ MEV        NO-DIM     NO-DIM
  9.8300E-07 2.3250E+00 4.4000E-02
  1.0270E-06 2.4180E+00 3.5000E-02
 ENDDATA             76
-ENDSUBENT           84
-SUBENT        20917018     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT           92
+SUBENT        20917018   20170126   20170403   20170325       2257
+BIB                  6          7
 REACTION   (92-U-233(N,ABS),,ETA)
-COMMENT    .LIGHT PATH 5.05M, TIMMING CHANNELS 32.0 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    (92-U-233(N,ABS),,ETA)
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+COMMENT    .Light path 5.05m, timing channels 32.0 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB               7
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.073      2.290
+ENDCOMMON            3
 DATA                 3         32
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  3.5000E-08 2.3460E+00 8.4000E-02
  3.7000E-08 2.3400E+00 1.3200E-01
  3.8000E-08 2.2630E+00 6.7000E-02
@@ -2288,40 +2480,62 @@ MEV        NO-DIM     NO-DIM
  1.3900E-07 2.2350E+00 4.9000E-02
  1.4800E-07 2.1690E+00 4.9000E-02
 ENDDATA             34
-ENDSUBENT           42
-SUBENT        20917019     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT           50
+SUBENT        20917019   20170126   20170403   20170325       2257
+BIB                  5         12
 REACTION   (92-U-233(N,ABS),,ETA,,AV)
-COMMENT    .STATISTICAL ERRORS ONLY.
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    (92-U-233(N,ABS),,ETA)
+ERR-ANALYS (ERR-S) Statistical errors only.
+STATUS     (TABLE) Table 3 from AERE-M-1709,1966
+           (DEP,20917015)
+           (DEP,20917016)
+           (DEP,20917017)
+           (DEP,20917018)
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. MONITOR was added. STATUS
+           'DEP' was added.
+ENDBIB              12
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.073      2.290
+ENDCOMMON            3
 DATA                 4         10
-EN-MIN     EN-MAX     DATA       DATA-ERR
-EV         EV         NO-DIM     NO-DIM
- 3.5000E-01 4.5000E-01 2.2590E+00 2.2000E-02
- 4.5000E-01 5.0000E-01 2.3140E+00 2.6000E-02
- 5.0000E-01 5.5000E-01 2.3000E+00 3.8000E-02
- 5.5000E-01 7.0000E-01 2.3020E+00 1.9000E-02
- 7.0000E-01 1.0000E+00 2.3290E+00 1.4000E-02
- 1.0000E+00 1.3000E+00 2.2790E+00 1.5000E-02
- 1.3000E+00 1.8000E+00 2.1320E+00 1.0000E-02
- 1.8000E+00 4.5000E+00 2.0940E+00 7.0000E-03
- 4.5000E+00 5.0000E+00 2.3310E+00 1.9000E-02
- 5.0000E+00 1.0000E+01 2.2010E+00 3.0000E-02
+EN-MIN     EN-MAX     DATA       ERR-S
+EV         EV         PRT/REAC   PRT/REAC
+       0.35       0.45      2.259      0.022
+       0.45       0.50      2.314      0.026
+       0.50       0.55      2.300      0.038
+       0.55       0.70      2.302      0.019
+       0.70       1.00      2.329      0.014
+       1.00       1.30      2.279      0.015
+       1.30       1.80      2.132      0.010
+       1.80       4.50      2.094      0.007
+       4.50       5.00      2.331      0.019
+       5.00      10.00      2.201      0.030
 ENDDATA             12
-ENDSUBENT           20
-SUBENT        20917020     790528              20050926       0000
-BIB                  3          4
+ENDSUBENT           33
+SUBENT        20917020   20170126   20170403   20170325       2257
+BIB                  6         13
 REACTION   (92-U-233(N,ABS),,ALF)
 ASSUMED    (ASSUM,92-U-233(N,F),,NU)
-STATUS     (NDD  )
-           (DEP) DERIVED FROM MEASURED ETA.
-ENDBIB               4
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+CRITIQUE   O.Cabellos (31-01-2017): Strange data at En= 4.7240 eV
+            cr.sect.=0b, and ERR=8b
+STATUS     (NDD)
+           (DEP,20917015) derived from measured eta.
+           (DEP,20917016)
+           (DEP,20917017)
+           (DEP,20917018)
+HISTORY    (20170126A) SD: STATUS 'DEP' was added. CRITIQUE
+           was added.
+ENDBIB              13
 COMMON               1          3
 ASSUM
-NO-DIM
- 2.5000E+00
+PRT/FIS
+  2.50
 ENDCOMMON            3
 DATA                 3        659
 EN         DATA       DATA-ERR
@@ -2986,15 +3200,25 @@ MEV        NO-DIM     NO-DIM
  1.0730E-05 1.7800E-01 3.5000E-02
  1.1040E-05 1.6100E-01 3.9000E-02
 ENDDATA            661
-ENDSUBENT          674
-SUBENT        20917021     790528              20050926       0000
-BIB                  3          4
+ENDSUBENT          683
+SUBENT        20917021   20170126   20170403   20170325       2257
+BIB                  6         10
 REACTION   (94-PU-239(N,TOT),,SIG)
-SAMPLE     .SAMPLE COMPOSITION 98.2 PERCENT PU-239
-                                1.8 PERCENT PU-240
-STATUS     (NDD  )
-ENDBIB               4
-NOCOMMON             0          0
+ASSUMED    (ASSUM,94-PU-239(N,EL)94-PU-239,,SIG)
+SAMPLE     .Sample composition 98.2% Pu-239
+                                1.8% Pu-240
+              Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044, 0.00021 atoms/b
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added.
+ENDBIB              10
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+  10.5        0.6
+ENDCOMMON            3
 DATA                 3         57
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -3056,16 +3280,26 @@ MEV        B          B
  1.0190E-05 3.2730E+01 1.1400E+00
  1.0230E-05 3.5940E+01 3.2400E+00
 ENDDATA             59
-ENDSUBENT           68
-SUBENT        20917022     790528              20050926       0000
-BIB                  4          5
+ENDSUBENT           78
+SUBENT        20917022   20170126   20170403   20170325       2257
+BIB                  7         11
 REACTION   (94-PU-239(N,TOT),,SIG)
-SAMPLE     .COMPOSITION 98.2 PERCENT PU-239
-                         1.8 PERCENT PU-240
-COMMENT    .FLIGHT PATH 5.05M, TIMING CHANNELS 0.50 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               5
-NOCOMMON             0          0
+ASSUMED    (ASSUM,94-PU-239(N,EL)94-PU-239,,SIG)
+SAMPLE     .Composition 98.2% Pu-239
+                         1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044, 0.00021 atoms/b
+COMMENT    .Flight path 5.05m, timing channels 0.50 micro-sec.
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added.
+ENDBIB              11
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+  10.5        0.6
+ENDCOMMON            3
 DATA                 3        280
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -3350,15 +3584,28 @@ MEV        B          B
  5.9650E-06 1.7270E+01 1.6600E+00
  6.0050E-06 1.8470E+01 1.6400E+00
 ENDDATA            282
-ENDSUBENT          292
-SUBENT        20917023     790528              20050926       0000
-BIB                  3          4
-REACTION   (94-PU-239(N,F),,SIG)
-SAMPLE     .COMPOSITION 98.2 PERCENT PU-239
-                         1.8 PERCENT PU-240
-STATUS     (NDD  )
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT          302
+SUBENT        20917023   20170126   20170403   20170325       2257
+BIB                  7         13
+REACTION   (94-PU-239(N,F),,SIG,,,DERIV)
+ANALYSIS   Derived from transmission, and prompt fission
+           neutron yield
+ASSUMED    (ASSUM,94-PU-239(N,EL)94-PU-239,,SIG)
+SAMPLE     .Composition 98.2% Pu-239
+                         1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044, 0.00021 atoms/b
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added. SF9=DERIV was added
+           to REACTION code (see ANALYSIS).
+ENDBIB              13
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+  10.5        0.6
+ENDCOMMON            3
 DATA                 3         57
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -3420,16 +3667,29 @@ MEV        B          B
  1.0190E-05 1.4290E+01 9.8000E-01
  1.0230E-05 1.5500E+01 9.7000E-01
 ENDDATA             59
-ENDSUBENT           68
-SUBENT        20917024     790528              20050926       0000
-BIB                  4          5
-REACTION   (94-PU-239(N,F),,SIG)
-SAMPLE     .COMPOSITION 98.2 PERCENT PU-239
-                         1.8 PERCENT PU-240
-COMMENT    .FLIGHT PATH 5.05M, TIMING CHANNELS 0.50 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               5
-NOCOMMON             0          0
+ENDSUBENT           81
+SUBENT        20917024   20170126   20170403   20170325       2257
+BIB                  8         14
+REACTION   (94-PU-239(N,F),,SIG,,,DERIV)
+ANALYSIS   Derived from transmission, and prompt fission
+           neutron yield
+ASSUMED    (ASSUM,94-PU-239(N,EL)94-PU-239,,SIG)
+SAMPLE     .Composition 98.2% Pu-239
+                         1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044, 0.00021 atoms/b
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+COMMENT    .Flight path 5.05m, timing channels 0.50 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: ASSUMED was added. SF9=DERIV was added
+           to REACTION code (see ANALYSIS).
+ENDBIB              14
+COMMON               2          3
+ASSUM      ASSUM-ERR
+B          B
+  10.5        0.6
+ENDCOMMON            3
 DATA                 3        280
 EN         DATA       DATA-ERR
 MEV        B          B
@@ -3714,19 +3974,29 @@ MEV        B          B
  5.9650E-06 6.3600E+00 1.4100E+00
  6.0050E-06 6.5400E+00 1.3400E+00
 ENDDATA            282
-ENDSUBENT          292
-SUBENT        20917025     790528              20050926       0000
-BIB                  4          5
+ENDSUBENT          305
+SUBENT        20917025   20170126   20170403   20170325       2257
+BIB                  7         11
 REACTION   (94-PU-239(N,ABS),,ETA)
-SAMPLE     .SAMPLE COMPOSITION 98.2 PERCENT PU-239
-                                 1.8 PERCENT PU-240
-COMMENT    .FLIGHT PATH 22.5M, TIMMING CHANNELS 1.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               5
-NOCOMMON             0          0
+MONITOR    (94-PU-239(N,ABS),,ETA)
+SAMPLE     .Sample composition 98.2% Pu-239
+                                 1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+COMMENT    .Flight path 22.5m, timing channels 1.00 micro-sec.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB              11
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.08        2.000
+ENDCOMMON            3
 DATA                 3        176
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  6.0110E-06 2.0980E+00 2.3300E-01
  6.0290E-06 2.1650E+00 2.3900E-01
  6.0470E-06 2.2790E+00 2.3900E-01
@@ -3904,19 +4174,29 @@ MEV        NO-DIM     NO-DIM
  1.1040E-05 2.1010E+00 1.6100E-01
  1.1230E-05 1.5500E+01 9.7000E-01
 ENDDATA            178
-ENDSUBENT          188
-SUBENT        20917026     790528              20050926       0000
-BIB                  4          5
+ENDSUBENT          198
+SUBENT        20917026   20170126   20170403   20170325       2257
+BIB                  7         11
 REACTION   (94-PU-239(N,ABS),,ETA)
-SAMPLE     .SAMPLE COMPOSITION 98.2 PERCENT PU-239
-                                 1.8 PERCENT PU-240
-COMMENT    .FLIGHT PATH 5.05M, TIMMING CHANNELS 0.50 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               5
-NOCOMMON             0          0
+MONITOR    (94-PU-239(N,ABS),,ETA)
+SAMPLE     .Sample composition 98.2% Pu-239
+                                 1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+COMMENT    .Flight path 5.05m, timing channels 0.50 micro-sec.
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB              11
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.08        2.000
+ENDCOMMON            3
 DATA                 3        280
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  1.6020E-06 2.5130E+00 1.9100E-01
  1.6070E-06 2.7240E+00 2.1400E-01
  1.6130E-06 2.6120E+00 1.9400E-01
@@ -4198,19 +4478,29 @@ MEV        NO-DIM     NO-DIM
  5.9650E-06 2.6910E+00 5.8300E-01
  6.0050E-06 2.3520E+00 4.2600E-01
 ENDDATA            282
-ENDSUBENT          292
-SUBENT        20917027     790528              20050926       0000
-BIB                  4          5
+ENDSUBENT          302
+SUBENT        20917027   20170126   20170403   20170325       2257
+BIB                  7         11
 REACTION   (94-PU-239(N,ABS),,ETA)
-SAMPLE     .SAMPLE COMPOSITION 98.2 PERCENT PU-239
-                                 1.8 PERCENT PU-240
-COMMENT    .FLIGHT PATH 5.05M, TIMMING CHANNELS 8.00 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               5
-NOCOMMON             0          0
+MONITOR    (94-PU-239(N,ABS),,ETA)
+SAMPLE     .Sample composition 98.2% Pu-239
+                                 1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+COMMENT    .Flight path 5.05m, timing channels 8.00 micro-sec.
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB              11
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.08        2.000
+ENDCOMMON            3
 DATA                 3         68
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  1.5000E-07 1.7400E+00 6.4000E-02
  1.5200E-07 1.7440E+00 3.2000E-02
  1.5500E-07 1.7320E+00 5.3000E-02
@@ -4280,19 +4570,29 @@ MEV        NO-DIM     NO-DIM
  7.7000E-07 2.1090E+00 9.6000E-02
  8.0000E-07 2.0900E+00 1.6800E+00
 ENDDATA             70
-ENDSUBENT           80
-SUBENT        20917028     790528              20050926       0000
-BIB                  4          5
+ENDSUBENT           90
+SUBENT        20917028   20170126   20170403   20170325       2257
+BIB                  7         11
 REACTION   (94-PU-239(N,ABS),,ETA)
-SAMPLE     .SAMPLE COMPOSITION 98.2 PERCENT PU-239
-                                 1.8 PERCENT PU-240
-COMMENT    .FLIGHT PATH 5.05M, TIMMING CHANNELS 32.0 MICRO-SEC.
-STATUS     (NDD  )
-ENDBIB               5
-NOCOMMON             0          0
+MONITOR    (94-PU-239(N,ABS),,ETA)
+SAMPLE     .Sample composition 98.2% Pu-239
+                                 1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+COMMENT    .Flight path 5.05m, timing channels 32.0 micro-sec.
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+            normalization, and statistical errors.
+STATUS     (NDD)
+HISTORY    (20170126A) SD: MONITOR was added.
+ENDBIB              11
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.08        2.000
+ENDCOMMON            3
 DATA                 3         30
 EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+MEV        PRT/REAC   PRT/REAC
  3.9000E-08 2.1500E+00 3.3000E-02
  4.1000E-08 2.0650E+00 2.5000E-02
  4.2000E-08 2.1190E+00 2.4000E-02
@@ -4324,39 +4624,61 @@ MEV        NO-DIM     NO-DIM
  1.4800E-07 1.7780E+00 1.3000E-02
  1.5900E-07 1.7440E+00 1.3000E-02
 ENDDATA             32
-ENDSUBENT           42
-SUBENT        20917029     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT           52
+SUBENT        20917029   20170126   20170403   20170325       2257
+BIB                  6         13
 REACTION   (94-PU-239(N,ABS),,ETA,,AV)
-COMMENT    .STATISTICAL ERRORS ONLY.
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    (94-PU-239(N,ABS),,ETA)
+SAMPLE     Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+ERR-ANALYS (ERR-S) Statistical errors only.
+STATUS     (TABLE) Table 2 from AERE-M-1709,1966
+           (DEP,20917025)
+           (DEP,20917026)
+           (DEP,20917027)
+           (DEP,20917028)
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. STATUS 'DEP' was added.
+ENDBIB              13
+COMMON               2          3
+EN-NRM     MONIT
+EV         PRT/REAC
+  0.08        2.000
+ENDCOMMON            3
 DATA                 4          7
-EN-MIN     EN-MAX     DATA       DATA-ERR
-EV         EV         NO-DIM     NO-DIM
- 3.5000E-01 4.5000E-01 1.8500E+00 1.0000E-02
- 4.5000E-01 5.0000E-01 1.9300E+00 2.0000E-02
- 5.0000E-01 5.5000E-01 1.9900E+00 2.0000E-02
- 5.5000E-01 7.0000E-01 2.0600E+00 2.0000E-02
- 1.8000E+00 4.5000E+00 2.4200E+00 3.0000E-02
- 4.5000E+00 5.0000E+00 2.3800E+00 1.2000E-01
- 5.0000E+00 1.0000E+01 1.7700E+00 1.0000E-02
+EN-MIN     EN-MAX     DATA       ERR-S
+EV         EV         PRT/REAC   PRT/REAC
+       0.35       0.45       1.85       0.01
+       0.45       0.50       1.93       0.02
+       0.50       0.55       1.99       0.02
+       0.55       0.70       2.06       0.02
+       1.80       4.50       2.42       0.03
+       4.50       5.00       2.38       0.12
+       5.00      10.00       1.77       0.01
 ENDDATA              9
-ENDSUBENT           17
-SUBENT        20917030     790528              20050926       0000
-BIB                  5          6
+ENDSUBENT           31
+SUBENT        20917030   20170126   20170403   20170325       2257
+BIB                  6         14
 REACTION   (94-PU-239(N,ABS),,ALF)
-SAMPLE     .SAMPLE COMPOSITION 98.2 PERCENT PU-239
-                                 1.8 PERCENT PU-240
 ASSUMED    (ASSUM,94-PU-239(N,F),,NU)
-COMMENT    .DERIVED FROM MEASURED ETA ASSUMING NUBAR=2.87
-STATUS     (NDD  )
-ENDBIB               6
+SAMPLE      Sample composition 98.2% Pu-239
+                                 1.8% Pu-240
+           Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+ERR-ANALYS (DATA-ERR) Systematic errors from background and
+                   normalization, and statistical errors
+STATUS     (NDD)
+           (DEP,20917025)
+           (DEP,20917026)
+           (DEP,20917027)
+           (DEP,20917028)
+HISTORY    (20170126A) SD: ASSUMED was added.
+ENDBIB              14
 COMMON               1          3
 ASSUM
-NO-DIM
- 2.8700E+00
+PRT/FIS
+ 2.87
 ENDCOMMON            3
 DATA                 3        543
 EN         DATA       DATA-ERR
@@ -4905,38 +5227,56 @@ MEV        NO-DIM     NO-DIM
  1.0560E-05 5.4000E-01 2.9000E-02
  1.0600E-05 6.3700E-01 2.0600E-01
 ENDDATA            545
-ENDSUBENT          560
-SUBENT        20917031     790528              20050926       0000
-BIB                  3          3
+ENDSUBENT          568
+SUBENT        20917031   20170126   20170403   20170325       2257
+BIB                  6         10
 REACTION   (94-PU-239(N,ABS),,ALF,,AV)
-COMMENT    .SYSYTEMATIC ERRORS ONLY.
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               3
-NOCOMMON             0          0
+ASSUMED    (ASSUM,94-PU-239(N,F),,NU)
+SAMPLE     Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044, 0.00021 atoms/b
+ERR-ANALYS (ERR-S) Statistical error
+STATUS     (TABLE) Tbl. 2 from AERE-M-1709
+           (DEP,20917029)
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros
+           deleted from values. DATA-ERR -> ERR-S.
+ENDBIB              10
+COMMON               1          3
+ASSUM
+PRT/FIS
+  2.87
+ENDCOMMON            3
 DATA                 4          7
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         NO-DIM     NO-DIM
- 3.5000E-01 4.5000E-01 5.5600E-01 7.0000E-03
- 4.5000E-01 5.0000E-01 4.8600E-01 1.5000E-02
- 5.0000E-01 5.5000E-01 4.4000E-01 1.7000E-02
- 5.5000E-01 7.0000E-01 3.9400E-01 1.6000E-02
- 1.8000E+00 4.5000E+00 2.1400E-01 1.4000E-02
- 4.5000E+00 5.0000E+00 2.3900E-01 5.4000E-02
- 5.0000E+00 1.0000E+01 6.8900E-01 1.2000E-02
+       0.35       0.45      0.556      0.007
+       0.45       0.50      0.486      0.015
+       0.50       0.55      0.440      0.017
+       0.55       0.70      0.394      0.016
+       1.80       4.50      0.214      0.014
+       4.50       5.00      0.239      0.054
+       5.00      10.00      0.689      0.012
 ENDDATA              9
-ENDSUBENT           17
-SUBENT        20917032     790528              20050926       0000
-BIB                  2          2
-REACTION   (94-PU-239(N,ABS),,ETA/NU,,RES)
-STATUS     .RECOMPILED FROM EXFOR20623.
-ENDBIB               2
+ENDSUBENT           28
+SUBENT        20917032   20170126   20170403   20170325       2257
+BIB                  5          9
+REACTION   (94-PU-239(N,ABS),,ETA,,RES)
+SAMPLE     Metal discs of several thicknesses:
+            Pu-239 - 0.024, 0.0044 atoms/b
+ERR-ANALYS (ERR-S) Statistical error
+STATUS     (TABLE) Tbl. 1 from AERE-M-1709
+HISTORY    (19790509T) Recompiled from 20623 Entry.
+           (20170126U) SD: BIB update. Extra zeros deleted from
+           values. DATA-ERR -> ERR-S. SF6=ETA/NU -> ETA in
+           REACTION code; data were changed following table.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          3
-EN-RES     DATA       DATA-ERR
-EV         NO-DIM     NO-DIM
- 2.9600E-01 6.1200E-01 5.0000E-03
- 7.8300E+00 5.2100E-01 1.8000E-02
- 1.0930E+01 7.1200E-01 1.8000E-02
+EN-RES     DATA       ERR-S
+EV         PRT/REAC   PRT/REAC
+      0.296      1.756      0.015
+       7.83      1.496      0.050
+      10.93      2.045      0.050
 ENDDATA              5
-ENDSUBENT           12
+ENDSUBENT           19
 ENDENTRY            32
