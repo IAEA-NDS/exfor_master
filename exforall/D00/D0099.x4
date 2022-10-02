@@ -1,13 +1,17 @@
-ENTRY            D0099   20070622   20070824   20070822       D053
-SUBENT        D0099001   20070622   20070824   20070822       D053
-BIB                 11         27
+ENTRY            D0099   20160324   20160503   20160429       D103
+SUBENT        D0099001   20160324   20160503   20160429       D103
+BIB                 11         32
 TITLE      Analysis of the excitation functions of (a,xnyp)
            reactions on natural copper
 AUTHOR     (N.L.Singh,B.J.Patel,D.R.S.Somayajulu,S.N.Chintalapudi)
-INSTITUTE  (3INDIND,3INDVEC)
+INSTITUTE  (3INDBDA)
+           (3INDIND)IUC-DAEF, Calcutta Centre, 3/LB-8, Bidhan
+            Nagar, Calcutta 700091, India.
 REFERENCE  (J,PRM,42,349,1994)
 FACILITY   (CYCLO,3INDVEC)
-SAMPLE     Natural copper targets that have two odd-mass
+SAMPLE     (29-CU-65,NAT=0.6817)
+           (29-CU-63,NAT=0.3083)
+           Natural copper targets that have two odd-mass
            isotopes of abundances 63Cu(68.17%) and 65Cu(30.83%)
            The excitation functions were measured in three steps
            namely 50-20 MeV, 40-10 MeV and 30-10 MeV, using copper
@@ -20,21 +24,22 @@ DETECTOR   (GELI) 95 cc Ge(Li) detector
 STATUS     (TABLE) Tables from the article
 ERR-ANALYS (ERR-T) The total error in the experimental
            cross-section is contributed by:
-           photopeak area (1-5)%,
-           photopeak efficiency (4-5)%,
-           uniforfmity of the foil thickness (1-2)%,
-           spectroscopic data (0.08-8)%,
-           the beam current (2-3)%.
+           (ERR-S,1.,5.) photopeak area (1-5)%,
+           (ERR-1,4.,5.)photopeak efficiency (4-5)%,
+           (ERR-2,0.08,8.)spectroscopic data (0.08-8)%,
+           (ERR-3,2.,3.)the beam current (2-3)%.
            (EN-ERR) Scale error
 HISTORY    (20040206C) SD
            (20070621A) Reference was corrected.
-ENDBIB              27
+           (20160223A) VS. REACTION corrected in 005,007
+             c.f. Memo CP-D/891. Coded inf. added to ERR-ANALYS.
+ENDBIB              32
 COMMON               1          3
 EN-RSL-FW
 KEV
   2.0
 ENDCOMMON            3
-ENDSUBENT           34
+ENDSUBENT           39
 SUBENT        D0099002   20040206   20040429   20050926       0000
 BIB                  2          2
 REACTION   (29-CU-65(A,N)31-GA-68,,SIG)
@@ -107,11 +112,13 @@ MEV        MEV        MB         MB
   26.5       0.9        126.0       10.5
 ENDDATA             10
 ENDSUBENT           17
-SUBENT        D0099005   20040206   20040429   20050926       0000
-BIB                  2          2
-REACTION   (29-CU-0(A,X)31-GA-66,,SIG)
+SUBENT        D0099005   20160324   20160503   20160429       D103
+BIB                  3          4
+REACTION   ((29-CU-65(A,3N)31-GA-66,,SIG)+
+           (29-CU-63(A,N)31-GA-66,,SIG,,RAB))
 DECAY-DATA (31-GA-66,9.45HR,DG,834.,0.0606,DG,1039.,0.38)
-ENDBIB               2
+HISTORY    (20160223A) VS. REACTION corrected.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
@@ -125,7 +132,7 @@ MEV        MEV        MB         MB
   46.7       1.2         266.0     22.0
   49.0       1.0         216.0     17.9
 ENDDATA             10
-ENDSUBENT           17
+ENDSUBENT           19
 SUBENT        D0099006   20040206   20040429   20050926       0000
 BIB                  2          3
 REACTION   (29-CU-63(A,X)30-ZN-65,CUM,SIG)
@@ -151,12 +158,14 @@ MEV        MEV        MB         MB
   39.6       1.2        437.0      35.0
 ENDDATA             15
 ENDSUBENT           23
-SUBENT        D0099007   20040206   20040429   20050926       0000
-BIB                  2          3
-REACTION   (29-CU-0(A,X)30-ZN-65,CUM,SIG)
+SUBENT        D0099007   20160324   20160503   20160429       D103
+BIB                  3          5
+REACTION   ((29-CU-65(A,X)30-ZN-65,CUM,SIG)+
+           (29-CU-63(A,X)30-ZN-65,CUM,SIG,,RAB))
 DECAY-DATA (31-GA-65,15.2MIN,DG,153.,0.0598,DG,752.,0.0549)
            (30-ZN-65,244.D,DG,1115.5,0.5075)
-ENDBIB               3
+HISTORY    (20160223A) VS. REACTION corrected.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 4          3
 EN         EN-ERR     DATA       ERR-T
@@ -165,5 +174,5 @@ MEV        MEV        MB         MB
   46.7       1.2         452.0      36.2
   49.0       1.0         530.0
 ENDDATA              5
-ENDSUBENT           13
+ENDSUBENT           15
 ENDENTRY             7
