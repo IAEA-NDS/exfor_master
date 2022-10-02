@@ -29,8 +29,6 @@ logging.basicConfig(filename="process.log", level=logging.DEBUG, filemode="w")
 
 # sys.path.append("../")
 from config import EXFOR_ALL_URL, EXFOR_ALL_PATH, EXFOR_ALL_TEMP
-from gitconf import repo_path
-
 
 
 ####################################################################
@@ -235,7 +233,7 @@ def del_files(filename:str):
 ####################################################################
 # Git functions
 ####################################################################
-
+repo_path = "./"
 repo = Repo(repo_path)
 # Repo.clone_from("git@github.com:shinokumura/exfor_master.git" , repo_path, branch="main")
 assert not repo.bare
