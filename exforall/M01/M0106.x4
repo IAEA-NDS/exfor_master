@@ -1,32 +1,42 @@
-ENTRY            M0106     910205              20050926       0000
-SUBENT        M0106001     910205              20050926       0000
-BIB                 13         16
-TITLE      PHOTONEUTRONS FROM LI-6 AND CO-59.
-AUTHOR     (E.B.BAZHANOV,A.P.KOMAR,A.V.KULIKOV)
-INSTITUTE  (4CCPFTI)
-REFERENCE  (J,ZET,46,1497,64)
-FACILITY   (SYNCH,4CCPFTI)
+ENTRY            M0106   20130531   20130823   20130819       M067
+SUBENT        M0106001   20130531   20130823   20130819       M067
+BIB                 13         22
+TITLE      Photoneutrons from Li-6 and Co-59.
+AUTHOR     (E.B.Bazhanov,A.P.Komar,A.V.Kulikov)
+INSTITUTE  (4RUSFTI)
+REFERENCE  (J,ZET,46,1497,1964)
+           (J,JET,19,1014,1964)
+           English translation of J,ZET,46,1497,1964.
+FACILITY   (SYNCH,4RUSFTI)
 INC-SOURCE (BRST)
 METHOD     (EXTB,SITA)
+ANALYSIS   (UNFLD)
+ERR-ANALYS (DATA-ERR) Root-mean-squared errors.
 DETECTOR   (BF3)
 PART-DET   (N)
-ERR-ANALYS (ERR-S) STATISTICAL ERRORS ONLY.
-COMMENT    PHOTONEUTRONS CROSS SECTIONS OF THE LI-6 AND CO-59
-            (GAMMA,N) REACTIONS WERE INVESTIGATED.  INTEGRATED
-            CROSS SECTIONS IN ENERGY RANGE TO 60 MEV WERE OBTANED.
-STATUS     (CURVE)
-HISTORY    (840407C)
-           (910202A) CORRECTED BY V.VARLAMOV, V.MCLANE
-ENDBIB              16
+COMMENT    Photoneutron cross  sections  of  the  Li-6 and Co-59
+            (gamma,n) reactions  were  investigated.  Integrated
+            cross  sections  in  energy  range  to  60  MeV were
+            obtained.
+HISTORY    (19840407C)
+           (19910202A) Corrected by V.Varlamov, V.Mclane.
+           (20130531A) Corrected     by    V.Varlamov:    dates,
+            REFERENCE,  REACTION,  STATUS,  DATA in SUBENT  004,
+            DATA-ERR, SUBENTS 005 and 006 added, lowercase.
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        M0106002     910205              20050926       0000
-BIB                  1          1
-REACTION   (3-LI-6(G,N)3-LI-5,,SIG,,BRA,EXP)
-ENDBIB               1
+ENDSUBENT           25
+SUBENT        M0106002   20130531   20130823   20130819       M067
+BIB                  3          5
+REACTION   (3-LI-6(G,X)0-NN-1,,SIG,,BRS)
+            Reaction (g,xn) = (g,n) + 2(g,2n) + ...
+STATUS     (CURVE) Data from Fig. 1.
+HISTORY    (20130531A) Corrected by V.Varlamov: (g,n) -> (g,xn),
+            BRA -> BRS.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3         37
-EN         DATA       ERR-S
+EN         DATA       DATA-ERR
 MEV        MB         MB
      5.4        0.4
      6.3        0.59
@@ -66,14 +76,18 @@ MEV        MB         MB
     49.4        0.29
     51.9        0.19
 ENDDATA             39
-ENDSUBENT           45
-SUBENT        M0106003     910205              20050926       0000
-BIB                  1          1
-REACTION   (27-CO-59(G,N)27-CO-58,,SIG,,BRA,EXP)
-ENDBIB               1
+ENDSUBENT           49
+SUBENT        M0106003   20130531   20130823   20130819       M067
+BIB                  3          5
+REACTION   (27-CO-59(G,N)27-CO-58,,SIG,,BRS)
+STATUS     (CURVE) Data from Fig. 2.
+           (DEP,M0106004) Neutron  multiplicity  sorting   using
+             statistical theory.
+HISTORY    (20130531A) Corrected by V.Varlamov: BRA -> BRS.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3         39
-EN         DATA       ERR-S
+EN         DATA       DATA-ERR
 MEV        MB         MB
        9.3        1.8
        9.86       6.4
@@ -115,15 +129,36 @@ MEV        MB         MB
       29.29       6.4
       29.83       6.5
 ENDDATA             41
-ENDSUBENT           47
-SUBENT        M0106004     910205              20050926       0000
-BIB                  1          1
-REACTION   (27-CO-59(G,X)0-NN-1,,SIG,,BRA,EXP)
-ENDBIB               1
+ENDSUBENT           51
+SUBENT        M0106004   20130531   20130823   20130819       M067
+BIB                  3          5
+REACTION   (27-CO-59(G,X)0-NN-1,,SIG,,BRS)
+            Reaction (g,xn) = (g,n) + 2(g,2n) + ...
+STATUS     (CURVE) Data from Fig. 2.
+HISTORY    (20130531A) Corrected by V.Varlamov: DATA
+            substituted, BRA -> BRS.
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2         22
-EN         DATA
-MEV        MB
+DATA                 3         39
+EN         DATA       DATA-ERR
+MEV        MB         MB
+       9.3        1.8
+       9.86       6.4
+      10.39       9.3
+      10.96      11.
+      11.5       14.
+      12.        18.1        0.6
+      12.55      23.2        0.7
+      13.11      27.1        0.8
+      13.66      35.         1.3
+      14.17      47.4        2.
+      14.7       65.4        2.
+      15.22      76.2        2.2
+      15.75      80.9        2.
+      16.3       81.         2.2
+      16.86      75.8        2.6
+      17.38      76.         3.
+      17.9       79.8        3.4
       18.43      79.8
       18.95      74.2
       19.49      71.
@@ -146,6 +181,36 @@ MEV        MB
       28.73      15.1
       29.27      12.7
       29.84      13.
-ENDDATA             24
-ENDSUBENT           30
-ENDENTRY             4
+ENDDATA             41
+ENDSUBENT           51
+SUBENT        M0106005   20130531   20130823   20130819       M067
+BIB                  3          5
+REACTION   (3-LI-6(G,X)0-NN-1,,INT,,BRA)
+            Reaction (g,xn) = (g,n) + 2(g,2n) + ...
+STATUS     (TABLE) Data from text.
+           (DEP,M0106002) Reaction cross section.
+HISTORY    (20130531C)
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       DATA-ERR
+MEV        MB*MEV     MB*MEV
+   60.        53.         .8
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        M0106006   20130531   20130823   20130819       M067
+BIB                  3          5
+REACTION   (27-CO-59(G,X)0-NN-1,,INT,,BRA)
+            Reaction (g,xn) = (g,n) + 2(g,2n) + ...
+STATUS     (TABLE) Data from text.
+           (DEP,M0106004) Reaction cross section.
+HISTORY    (20130531C)
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+EN-MAX     DATA       DATA-ERR
+MEV        MB*MEV     PER-CENT
+   29.       700.        13.
+ENDDATA              3
+ENDSUBENT           13
+ENDENTRY             6
