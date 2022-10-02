@@ -1,45 +1,66 @@
-ENTRY            20428     840112              20050926       0000
-SUBENT        20428001     840112              20050926       0000
-BIB                 11         24
+ENTRY            20428   20170724   20180123   20180123       2262
+SUBENT        20428001   20170724   20180123   20180123       2262
+BIB                 12         32
+TITLE      Measurement of the 239Pu fission cross-section and its
+            ratio to the 235U fission cross-section in the energy
+            range from 1 keV to 1 MeV
+AUTHOR     (D.B.Gayther)
 INSTITUTE  (2UK HAR)
-REFERENCE  (C,75WASH,2,564,7503) PLOTS, AVERAGED C/S TABULATED.
-           (C,72VIENNA,201,7211) SIMILAR EXPERIMENT FOR U-235
-            FISSION X-SECT.
-           (W,GAYTHER,7507) TABULATED 94-PU-239 FISSION DATA.
-AUTHOR     (D.B.GAYTHER)
-TITLE      -MEASUREMENT OF THE PU-239 FISSION CROSS-SECTION AND
-            ITS RATIO TO THE U-235 FISSION CROSS-SECTION IN THE
-            ENERGY RANGE FROM 1-KEV TO 1-MEV.-
-FACILITY   (LINAC)    45 MEV LINAC
-SAMPLE     .7.9 CM DIAMETER SAMPLES OF U-235, 1.08*10**(-3) AND
-            3.8*10**(-3) ATOMS/B, AND 5.1 CM DIAM. PU-239,
-            1.2*10**(-3) ATOMS/B.
-METHOD     (TOF  )    100 M FLIGHT PATH OF LINAC, NOMINAL OVERALL
-            RESOLUTION ABOUT 1.7 NANOS./M.
-DETECTOR   .N-213 PROTON RECOIL DETECTORS FOR DETECTION
-            OF FISSION NEUTRONS. GAMMA RAYS FROM CAPTURE OR
-            SCATTERING REJECTED BY PULSE-SHAPE DISCRIMINATION.
-PART-DET   (N    )    FISSION NEUTRONS.
-HISTORY    (750724C)
-           (750925E)
-CORRECTION .FOR BACKGROUND, ENERGY DEPENDENCE OF FISSION DETECTOR
-            EFFICIENCY, SAMPLE THICKNESS EFFECTS, ENERGY
-            DEPENDENCE OF NU-PROMPT. DETAILS IN 75WASH, PAPER GB6.
-ENDBIB              24
+REFERENCE  (C,75WASH,2,564,1975) Average cross sections in table
+           (W,GAYTHER,197507) Tabulated 239Pu fission data
+REL-REF    (O,20422001,D.B.Gayther,C,75WASH,2,564,1975)
+            Similar experiment for 235U(n,f) cross section
+FACILITY   (LINAC,2UK HAR) Harwell 45 MeV linac
+SAMPLE     235U: 7.9 cm diam, 1.08E-03 and 3.8E-03 atoms/b
+           239Pu: 5.1 cm diam, 1.2E-03 atoms/b. Alloy containing
+            1% by weight of Al and was clad in Al (wall thickness
+            0.13 mm)
+METHOD     (TOF) 100 m flight path of linac, nominal overall
+            resolution ~1.7 nsec/m.
+           (PSD) Gamma rays from capture or scattering rejected
+            by pulse-shape discrimination.
+DETECTOR   (SCIN) NE213 proton recoil detectors for detection
+            of fission neutrons.
+           (NAICR) Detection of 478 keV gammas from 10B(n,a1)7Li
+PART-DET   (N) Fission neutrons
+           (G) 10B(n,a1)7Li 478 keV gammas
+CORRECTION Corrected for
+            - background determined by black resonance filters
+            - count loss
+            - energy dependence of fission detector efficiency,
+            - sample thickness effects,
+            - energy dependence of prompt neutron multiplicities.
+HISTORY    (19750724C)
+           (19750925E)
+           (20170724A) On. Major revisions in 002-004
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           27
-SUBENT        20428002     840112              20050926       0000
-BIB                  3          8
+ENDSUBENT           35
+SUBENT        20428002   20170724   20180123   20180123       2262
+BIB                  4         17
 REACTION   (94-PU-239(N,F),,SIG)
-MONITOR    (94-PU-239(N,F),,SIG,,AV)
-            = 1.6775 B, AVERAGE VALUE 10 TO
-            30 KEV. INCIDENT N-FLUX MEASURED WITH B-10(N,ALPHA-
-            GAMMA(478 KEV)), DETAILS IN 75WASH,PAPER GB-6.
-ERR-ANALYS .TOTAL SYSTEMATIC ERROR 3.5 TO 4 PERC.. ERROR FOR
-            NORMALIZATION (ABOUT 4 PERC.) NOT INCLUDED.
-           .STATISTICAL ERROR SMALL.
-ENDBIB               8
-NOCOMMON             0          0
+MONITOR    ((MONIT)94-PU-239(N,F),,SIG,,AV) Absolute normalization
+           (5-B-10(N,A)3-LI-7,PAR,SIG)      Shape normalization
+ERR-ANALYS (ERR-SYS,3.5,4.) Total systematic uncertainty  (3.5-4%)
+            excluding absolute normalization uncertainty (~4%)
+           (ERR-1,2.5,3.5) Neutron spectrum measurement (2.5-3.5%)
+            including
+            - standard detector efficiency  (~2%),
+            - boron-vaseline plug detector (2-3%),
+            - actual spectrum measurement (~1.5%).
+           (ERR-2,0.,0.5)  Fission neutron detector efficiency
+                                                          (0-0.5%)
+           (ERR-3,1.,1.5)  Background determination       (1-1.5%)
+           (ERR-4)         Sample thickness correction        (1%)
+           (ERR-5)         nu-p values                        (1%)
+           (MONIT-ERR)     Normalization at 10-30 keV         (4%)
+STATUS     (TABLE) Values received by private. comm., July, 1975
+ENDBIB              17
+COMMON               6          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR  ERR-4      ERR-5
+KEV        KEV        B          PER-CENT   PER-CENT   PER-CENT
+ 10.        30.        1.6775     4.0        1.         1.
+ENDCOMMON            3
 DATA                 2        294
 EN         DATA
 EV         B
@@ -338,100 +359,139 @@ EV         B
  9.7021E+05 1.7815E+00
  1.0039E+06 1.8646E+00
 ENDDATA            296
-ENDSUBENT          309
-SUBENT        20428003     840112              20050926       0000
-BIB                  3          8
+ENDSUBENT          322
+SUBENT        20428003   20170724   20180123   20180123       2262
+BIB                  5         20
 REACTION   (94-PU-239(N,F),,SIG,,AV)
-MONITOR    (94-PU-239(N,F),,SIG,,AV)
-            = 1.6775 B, AVERAGE VALUE 10 TO
-            30 KEV. INCIDENT N-FLUX MEASURED WITH B-10(N,ALPHA-
-            GAMMA(478 KEV)), DETAILS IN 75WASH,PAPER GB-6.
-ERR-ANALYS .TOTAL SYSTEMATIC ERROR 3.5 TO 4 PERC.. ERROR FOR
-            NORMALIZATION (ABOUT 4 PERC.) NOT INCLUDED.
-           .STATISTICAL ERROR SMALL.
-ENDBIB               8
-NOCOMMON             0          0
+MONITOR    ((MONIT)94-PU-239(N,F),,SIG,,AV) 1.6775 b+/-4.0%
+           (5-B-10(N,A)3-LI-7,PAR,SIG)
+ERR-ANALYS (ERR-T) Total uncertainty
+            excluding absolute normalization uncertainty (~4.0%)
+           (ERR-SYS,3.5,4.) Total systematic uncertainty  (3.5-4%)
+            excluding absolute normalization uncertainty (~4%)
+           (ERR-1,2.5,3.5) Neutron spectrum measurement (2.5-3.5%)
+            including
+            - standard detector efficiency  (~2%),
+            - boron-vaseline plug detector (2-3%),
+            - actual spectrum measurement (~1.5%).
+           (ERR-2,0.,0.5)  Fission neutron detector efficiency
+                                                          (0-0.5%)
+           (ERR-3,1.,1.5)  Background determination       (1-1.5%)
+           (ERR-4)         Sample thickness correction        (1%)
+           (ERR-5)         nu-p values                        (1%)
+STATUS     (TABLE) Table II of 75WASH,vol.2,p.564 (1975)
+HISTORY    (20170724A) On. ERR-ANALYS updated. DATA-ERR -> ERR-T.
+            Numerical data checked against the source article.
+ENDBIB              20
+COMMON               5          3
+EN-NRM-MIN EN-NRM-MAX MONIT      ERR-4      ERR-5
+KEV        KEV        B          PER-CENT   PER-CENT
+ 10.        30.        1.6775     1.         1.
+ENDCOMMON            3
 DATA                 4         33
-EN-MAX     EN-MIN     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-T
 KEV        KEV        B          B
- 1.5000E+00 1.0000E+00 5.6720E+00 2.3300E-01
- 2.0000E+00 1.5000E+00 3.4170E+00 1.3700E-01
- 2.5000E+00 2.0000E+00 3.1090E+00 1.2400E-01
- 3.0000E+00 2.5000E+00 3.5410E+00 1.4200E-01
- 4.0000E+00 3.0000E+00 3.0970E+00 1.1800E-01
- 5.0000E+00 4.0000E+00 2.3910E+00 9.1000E-02
- 6.0000E+00 5.0000E+00 2.2780E+00 8.4000E-02
- 7.0000E+00 6.0000E+00 2.0470E+00 7.6000E-02
- 8.0000E+00 7.0000E+00 2.1300E+00 7.9000E-02
- 9.0000E+00 8.0000E+00 2.2220E+00 8.2000E-02
- 1.0000E+01 9.0000E+00 1.8200E+00 6.7000E-02
- 1.5000E+01 1.0000E+01 1.7730E+00 6.2000E-02
- 2.0000E+01 1.5000E+01 1.7090E+00 6.0000E-02
- 2.5000E+01 2.0000E+01 1.6500E+00 5.8000E-02
- 3.0000E+01 2.5000E+01 1.5790E+00 5.5000E-02
- 4.0000E+01 3.0000E+01 1.6320E+00 5.7000E-02
- 5.0000E+01 4.0000E+01 1.5520E+00 5.4000E-02
- 6.0000E+01 5.0000E+01 1.5700E+00 5.5000E-02
- 7.0000E+01 6.0000E+01 1.5960E+00 5.6000E-02
- 8.0000E+01 7.0000E+01 1.5720E+00 5.5000E-02
- 9.0000E+01 8.0000E+01 1.5930E+00 5.7000E-02
- 1.0000E+02 9.0000E+01 1.5450E+00 5.7000E-02
- 1.5000E+02 1.0000E+02 1.4960E+00 5.4000E-02
- 2.0000E+02 1.5000E+02 1.4800E+00 5.5000E-02
- 2.5000E+02 2.0000E+02 1.5130E+00 5.6000E-02
- 3.0000E+02 2.5000E+02 1.4970E+00 5.7000E-02
- 4.0000E+02 3.0000E+02 1.5110E+00 5.6000E-02
- 5.0000E+02 4.0000E+02 1.5580E+00 5.9000E-02
- 6.0000E+02 5.0000E+02 1.6190E+00 6.3000E-02
- 7.0000E+02 6.0000E+02 1.6480E+00 6.4000E-02
- 8.0000E+02 7.0000E+02 1.6810E+00 6.6000E-02
- 9.0000E+02 8.0000E+02 1.7440E+00 6.8000E-02
- 1.0000E+03 9.0000E+02 1.7830E+00 7.0000E-02
+   1.          1.5     5.672      0.233
+   1.5         2.      3.417      0.137
+   2.          2.5     3.109      0.124
+   2.5         3.      3.541      0.142
+   3.          4.      3.097      0.118
+   4.          5.      2.391      0.091
+   5.          6.      2.278      0.084
+   6.          7.      2.047      0.076
+   7.          8.      2.130      0.079
+   8.          9.      2.222      0.082
+   9.         10.      1.820      0.067
+  10.         15.      1.773      0.062
+  15.         20.      1.709      0.060
+  20.         25.      1.650      0.058
+  25.         30.      1.579      0.055
+  30.         40.      1.632      0.057
+  40.         50.      1.552      0.054
+  50.         60.      1.570      0.055
+  60.         70.      1.596      0.056
+  70.         80.      1.572      0.055
+  80.         90.      1.593      0.057
+  90.        100.      1.545      0.057
+ 100.        150.      1.496      0.054
+ 150.        200.      1.480      0.055
+ 200.        250.      1.513      0.056
+ 250.        300.      1.497      0.057
+ 300.        400.      1.511      0.056
+ 400.        500.      1.558      0.059
+ 500.        600.      1.619      0.063
+ 600.        700.      1.648      0.064
+ 700.        800.      1.681      0.066
+ 800.        900.      1.744      0.068
+ 900.       1000.      1.783      0.070
 ENDDATA             35
-ENDSUBENT           48
-SUBENT        20428004     840112              20050926       0000
-BIB                  2          3
-REACTION   ((94-PU-239(N,F),,SIG)/
-           (92-U-235(N,F),,SIG))
-ERR-ANALYS .TOTAL SYSTEMATIC ERROR 2.5 TO 3 PERC..
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           64
+SUBENT        20428004   20170724   20180123   20180123       2262
+BIB                  5         19
+REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+MONITOR    ((MONIT1)94-PU-239(N,F),,SIG,,AV) 1.6775 b+/- 4.0%
+           ((MONIT2)92-U-235(N,F),,SIG,,AV)  2.349  b+/- 3.9%
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-SYS,2.5,3.) Total systematic uncertainty  (2.5-3%)
+           (ERR-1,0.,0.5)  239Pu fission neutron detector
+                            efficiency                    (0-0.5%)
+           (ERR-2,0.,0.5)  235U fission neutron detector
+                            efficiency                    (0-0.5%)
+           (ERR-3,1.,1.5)  239Pu background determination (1-1.5%)
+           (ERR-4,0.,1.5)  235U background determination  (0-1.5%)
+           (ERR-5)         239Pu sample thickness correction  (1%)
+           (ERR-6)         235U sample thickness correction   (1%)
+           (ERR-7)         239P nu-p values                   (1%)
+           (ERR-8)         235U nu-p values                   (1%)
+STATUS     (TABLE) Table II of 75WASH,vol.2,p.564 (1975)
+HISTORY    (20170724A) On. ERR-ANALYS updated. DATA-ERR -> ERR-T.
+            Numerical data checked against the source article.
+            239Pu(n,f)/235U(n,f)=1.265 -> 1.263 at 300 keV-400 keV
+ENDBIB              19
+COMMON               8          6
+EN-NRM-MIN EN-NRM-MAX MONIT1     MONIT2     ERR-5      ERR-6
+ERR-7      ERR-8
+KEV        KEV        B          B          PER-CENT   PER-CENT
+PER-CENT   PER-CENT
+ 10.        30.        1.6775     2.349      1.         1.
+ 1.         1.
+ENDCOMMON            6
 DATA                 4         33
-EN-MAX     EN-MIN     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-T
 KEV        KEV        NO-DIM     NO-DIM
- 1.5000E+00 1.0000E+00 6.5400E-01 1.4000E-02
- 2.0000E+00 1.5000E+00 4.8200E-01 1.1000E-02
- 2.5000E+00 2.0000E+00 5.2200E-01 1.3000E-02
- 3.0000E+00 2.5000E+00 6.4600E-01 1.6000E-02
- 4.0000E+00 3.0000E+00 6.1400E-01 1.5000E-02
- 5.0000E+00 4.0000E+00 5.3400E-01 1.3000E-02
- 6.0000E+00 5.0000E+00 5.6300E-01 1.4000E-02
- 7.0000E+00 6.0000E+00 6.0600E-01 1.6000E-02
- 8.0000E+00 7.0000E+00 6.4900E-01 1.8000E-02
- 9.0000E+00 8.0000E+00 7.2400E-01 2.0000E-02
- 1.0000E+01 9.0000E+00 5.7700E-01 1.8000E-02
- 1.5000E+01 1.0000E+01 6.5600E-01 1.5000E-02
- 2.0000E+01 1.5000E+01 7.2400E-01 1.7000E-02
- 2.5000E+01 2.0000E+01 7.3800E-01 1.8000E-02
- 3.0000E+01 2.5000E+01 7.5400E-01 1.8000E-02
- 4.0000E+01 3.0000E+01 8.2500E-01 2.0000E-02
- 5.0000E+01 4.0000E+01 8.2000E-01 2.0000E-02
- 6.0000E+01 5.0000E+01 8.4100E-01 2.0000E-02
- 7.0000E+01 6.0000E+01 8.7900E-01 2.1000E-02
- 8.0000E+01 7.0000E+01 9.0700E-01 2.2000E-02
- 9.0000E+01 8.0000E+01 9.8800E-01 2.5000E-02
- 1.0000E+02 9.0000E+01 9.7300E-01 2.6000E-02
- 1.5000E+02 1.0000E+02 9.9400E-01 2.4000E-02
- 2.0000E+02 1.5000E+02 1.0700E+00 2.6000E-02
- 2.5000E+02 2.0000E+02 1.1580E+00 2.8000E-02
- 3.0000E+02 2.5000E+02 1.2200E+00 3.1000E-02
- 4.0000E+02 3.0000E+02 1.2650E+00 3.3000E-02
- 5.0000E+02 4.0000E+02 1.3510E+00 3.5000E-02
- 6.0000E+02 5.0000E+02 1.4280E+00 3.9000E-02
- 7.0000E+02 6.0000E+02 1.4690E+00 4.1000E-02
- 8.0000E+02 7.0000E+02 1.4980E+00 4.2000E-02
- 9.0000E+02 8.0000E+02 1.5090E+00 4.4000E-02
- 1.0000E+03 9.0000E+02 1.4640E+00 4.2000E-02
+   1.          1.5     0.654      0.014
+   1.5         2.      0.482      0.011
+   2.          2.5     0.522      0.013
+   2.5         3.      0.646      0.016
+   3.          4.      0.614      0.015
+   4.          5.      0.534      0.013
+   5.          6.      0.563      0.014
+   6.          7.      0.606      0.016
+   7.          8.      0.649      0.018
+   8.          9.      0.724      0.020
+   9.         10.      0.577      0.018
+  10.         15.      0.656      0.015
+  15.         20.      0.724      0.017
+  20.         25.      0.738      0.018
+  25.         30.      0.754      0.018
+  30.         40.      0.825      0.020
+  40.         50.      0.820      0.020
+  50.         60.      0.841      0.020
+  60.         70.      0.879      0.021
+  70.         80.      0.907      0.022
+  80.         90.      0.988      0.025
+  90.        100.      0.973      0.026
+ 100.        150.      0.994      0.024
+ 150.        200.      1.070      0.026
+ 200.        250.      1.158      0.028
+ 250.        300.      1.220      0.031
+ 300.        400.      1.263      0.033
+ 400.        500.      1.351      0.035
+ 500.        600.      1.428      0.039
+ 600.        700.      1.469      0.041
+ 700.        800.      1.498      0.042
+ 800.        900.      1.509      0.044
+ 900.       1000.      1.464      0.042
 ENDDATA             35
-ENDSUBENT           43
+ENDSUBENT           66
 ENDENTRY             4

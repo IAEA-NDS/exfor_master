@@ -1,6 +1,6 @@
-ENTRY            22835   20160915   20170201   20170124       2252
-SUBENT        22835001   20160915   20170201   20170124       2252
-BIB                 17         63
+ENTRY            22835   20170403   20180123   20180123       2261
+SUBENT        22835001   20170403   20180123   20180123       2261
+BIB                 17         68
 TITLE        Measurement of the thermal neutron cross section and
              resonance integral of the 237Np(n,gamma)238Np
              reaction
@@ -10,12 +10,14 @@ INSTITUTE  (2JPNJNC)  Nakamura, Furutaka, Harada, Nuclear Cycle
                       Development Dept.
            (2JPNKTO) Fujiwara, Fujii, Yamana, Research Reactor
                      Institute. Experimental site
+           (2JPNGMT) T.Katoh, Gifu College of Medical Technologies
 REFERENCE  (J,NST,40,559,2003)        Main reference
+           (S,JAERI-C-2005-003,121,2005) the same result
 REL-REF    (M,22295001,H.Harada+,J,NST,32,395,1995) Exp.details
-FACILITY   (REAC,2JPNKTO)  Kyoto university reactor  KURRI
+FACILITY   (REAC,2JPNKTO)  Kyoto University reactor  KURRI
 DETECTOR   (HPGE)  High purity germanium detector, relative
             efficiency 90% relative to 7.6*7.6 cm2 Na-I(Tl)
-            detector. Energy resolution 2.1 KeV at 1.33 MeV peak
+            detector. Energy resolution 2.1 keV at 1.33 MeV peak
             of Co-60
 METHOD     (ACTIV)  Activation
            (GSPEC)  Gamma spectrum analysis
@@ -64,7 +66,10 @@ HISTORY    (20040628C)  + + JOS
            N.Otsuka's remark. ERR-ANALYS update.
            (20160915A) SD: Data from priv. comm. deleted from
            Subent 002 following remark from N.Otsuka.
-ENDBIB              63
+           (20170403A) SD: Ref. (JAERI-C-2005-003) was added.
+           Data from Table 10 of NST,40,559,2003 were added to
+           Subents 002-004.
+ENDBIB              68
 COMMON              12          6
 MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR ERR-1      ERR-2
 ERR-3      ERR-4      ERR-5      ERR-6      ERR-7      ERR-8
@@ -73,54 +78,68 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
       37.18       0.06      98.65       0.09        3.0        1.5
         1.8        1.5        0.5        0.1        1.0        3.0
 ENDCOMMON            6
-ENDSUBENT           73
-SUBENT        22835002   20151003   20160603   20160523       2245
-BIB                  4          8
-REACTION   (93-NP-237(N,G)93-NP-238,,SIG)
+ENDSUBENT           78
+SUBENT        22835002   20170403   20180123   20180123       2261
+BIB                  4         12
+REACTION  1(93-NP-237(N,G)93-NP-238,,SIG,,RAW) - not corrected
+             for reduction of neutrons at the 0.49 eV resonance
+          2(93-NP-237(N,G)93-NP-238,,SIG)
 REL-REF    (C,22977001,H.Harada+,J,NST,43,1289,2006) Renormalized
            value 168+/-6 b given
-STATUS     (TABLE) From Table 8 of NST,40,559,2003
+STATUS     (TABLE) From Tables 8, 10 of NST,40,559,2003
 HISTORY    (20060204U)   SF8 erased, EN-MEAN to EN changed
                          DATA-ERR changed to ERR-T
            (20151003A) SD: REL-REF added following N.Otsuka remark
             Value from priv. comm. changed on value from the Tbl.8
-ENDBIB               8
+           (20170402A) SD: SF8=RAW was added to REACTION (1) code.
+           REACTION (2) was added from Table 10 from NST,40,559.
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       ERR-T
-EV         B          B
-   2.53E-02      144.1     5.4
+DATA                 5          1
+EN         DATA      1ERR-T     1DATA      2ERR-T     2
+EV         B          B          B          B
+   2.53E-02      144.1     5.4       141.7      5.4
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        22835003   20160915   20170201   20170124       2252
-BIB                  3          7
-REACTION   (93-NP-237(N,G)93-NP-238,,RI)
-STATUS     (TABLE) From Table 8 of NST,40,559,2003
+ENDSUBENT           20
+SUBENT        22835003   20170403   20180123   20180123       2261
+BIB                  3         11
+REACTION  1(93-NP-237(N,G)93-NP-238,,RI,,RAW) - not corrected
+             for reduction of neutrons at the 0.49 eV resonance
+          2(93-NP-237(N,G)93-NP-238,,RI)
+STATUS     (TABLE) From Tables 8, 10 of NST,40,559,2003
 HISTORY    (20060204A)   Data added for pointer 2
                          DATA-ERR changed to ERR-T
            (20160915A) SD: Data from priv. comm. deleted following
            remark from N.Otsuka ('No reason to keep the priv.comm.
            data received before its final publication').
-ENDBIB               7
+           (20170402A) SD: SF8=RAW was added to REACTION (1) code.
+           REACTION (2) was added from Table 10 from NST,40,559.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 3          1
-EN-MIN     DATA       ERR-T
-EV         B          B
-      0.358    799.        50.
+DATA                 5          1
+EN-MIN     DATA      1ERR-T     1DATA      2ERR-T     2
+EV         B          B          B          B
+      0.358    799.        50.      862.        51.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        22835004   20040626   20060525   20060430       2176
-BIB                  3          4
-REACTION   (93-NP-237(N,G)93-NP-238,,RI,,RNV) Non 1/v part of the
-                                        resonance integral
-STATUS     . From Table 8 of main reference
+ENDSUBENT           19
+SUBENT        22835004   20170403   20180123   20180123       2261
+BIB                  3         10
+REACTION  1(93-NP-237(N,G)93-NP-238,,RI,,RNV/RAW) Non 1/v part of
+           the resonance integral;  not corrected for reduction
+           of neutrons at the 0.49 eV resonance
+          2(93-NP-237(N,G)93-NP-238,,RI,,RNV)    Non 1/v part of
+           the resonance integral
+STATUS     (TABLE) From Tables 8, 10 of NST,40,559,2003
 HISTORY    (20060204C)   SM
-ENDBIB               4
+           (20170402A) SD: SF8=RAW was added to REACTION (1) code.
+           REACTION (2) was added. Data were added from Table 10
+           from NST,40,559.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 3          1
-EN-MIN     DATA       ERR-T
-EV         B          B
-      0.358       722.        49.
+DATA                 5          1
+EN-MIN     DATA      1ERR-T     1DATA      2ERR-T     2
+EV         B          B          B          B
+      0.358       722.        49.    787.      50.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           18
 ENDENTRY             4

@@ -1,76 +1,92 @@
-ENTRY            20060     830901              20050926       0000
-SUBENT        20060001     830901              20050926       0000
-BIB                 13         25
+ENTRY            20060   20170421   20180123   20180123       2261
+SUBENT        20060001   20170421   20180123   20180123       2261
+BIB                 12         30
+TITLE       Inelastic scattering of 95 keV neutrons from the
+            45 keV level in U-238
+REFERENCE  (J,NP,71,511,1965)
+AUTHOR     (L.G.Stroemberg,S.Schwarz)
 INSTITUTE  (2SWDFOA)
-REFERENCE  (J,NP,71,511,6503)
-AUTHOR     (L.G.STROEMBERG,S.SCHWARZ)
-TITLE      -INELASTIC SCATTERING OF 95 KEV NEUTRONS FROM THE
-            45 KEV LEVEL IN U-238.-
-FACILITY   (VDG)      VAN DE GRAAFF ACCELERATOR
-INC-SOURCE (P-LI7)    7LI(P,N)7BE REACTION
-SAMPLE                2 CM DIAMETER SPHERE OF NATURAL URANIUM
-METHOD     (TOF  )    STANDARD TIME OF FLIGHT TECHNIQUE
-           .THE SCATTERING SPHERE WAS PLACED 60 MM FROM THE TARGET
-            AND THE DETECTOR ABOUT 210 MM FROM THE SCATTERER IN
-            105 DEG. SCATTERING ANGLE
-DETECTOR   (SCIN )    6LI GLASS SCINTILLATION DETECTOR
-STATUS                DATA FROM PUBLICATION
-HISTORY    (710512T)  FROM NEUDADA FILE
-           (710908E)
-CORRECTION .THE GENERAL BACKGROUND OF NEUTRONS SCATTERED BY THE
-            TARGET ASSEMBLY AND THE SURROUNDING AIR WAS SUBTRACTED
-            FROM THE 92-U-238 AND 82-PB SPECTRA.
-           .THE FLAT BACKGROUND CORRESPONDING TO THE NATURAL RADIO
-            ACTIVITY WAS FURTHER SUBTRACTED FROM THE U238 SPECTRUM
-ERR-ANALYS .BY FAR THE MOST IMPORTANT CONTRIBUTION TO THE TOTAL
-            ERROR IS DUE TO THE BACKGROUND OF AIR-SCATTERED
-            NEUTRONS COMPARED TO WHICH THE OTHER TERMS ARE
-            PRACTICALLY NEGLIGABLE.
-ENDBIB              25
+FACILITY   (VDG,2SWDFOA)      Van de Graaff accelerator
+INC-SOURCE (P-LI7)    7Li(p,n)7Be reaction
+INC-SPECT  (EN-RSL-HW) neutron energy spread
+SAMPLE     (92-U-238,ENR=0.9927) 2 cm diameter sphere of
+           natural uranium
+METHOD     (TOF) Standard time of flight technique. The scattering
+           sphere was placed 60 mm from the target and the
+           detector about 210 mm from the scatterer in 105 deg.
+           (BCINT) Two methods were used for monitoring of the
+           incident neutron flux, viz. beam current integration
+           and a LiI-polythene counter, the latter being placed
+           well within the cone of neutron emission to avoid undue
+           dependence on fluctuations of the proton energy, and
+           further at a position such as to eliminate any possible
+           interference from scattering.
+DETECTOR   (SCIN)  6Li glass scintillation detector
+CORRECTION .The general background of neutrons scattered by the
+            target assembly and the surrounding air was subtracted
+            from the 92-U-238 and 82-Pb spectra.
+           .The flat background corresponding to the natural radio
+            activity was further subtracted from the U238 spectrum
+HISTORY    (19710512T)  From NEUDADA file
+           (20170421A) SD:Updated to new date formats,lower case.
+           BIB update.  Corrections in Subents 002,003.
+           EN-RSL -> EN-RSL-HW. INC-SPECT was added.
+ENDBIB              30
 COMMON               2          3
-EN         EN-RSL
+EN         EN-RSL-HW
 MEV        MEV
- 9.5000E-02 6.0000E-03
+ 0.095        0.006
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        20060002     830901              20050926       0000
-BIB                  3         11
+ENDSUBENT           37
+SUBENT        20060002   20170421   20180123   20180123       2261
+BIB                  5         15
 REACTION   ((92-U-238(N,EL)92-U-238,,DA)/
-           (82-PB-0(N,EL),,DA))
-COMMENT    .ESTIMATED VALUE OF THE QUOTIENT OF THE DIFFERENTIAL
-            ELASTIC CROSS SECTIONS AT 95 KEV
-           .THIS RESULT IS NOT CONSISTENT WITH THE VALUE 1.56
-            CALCULATED BY ABACUS-II, EVEN IF ALLOWANCE IS MADE FOR
-            THE FACT THAT THE CALCULATION WAS PERFORMED FOR PB-208
-            NEGLECTING THE MULTIPLE SCATTERING CORRECTION OF A FEW
-            PERCENT.
-HISTORY    (710512T)  FROM NEUDADA FILE
-           (710908E)
-ENDBIB              11
+           (82-PB-0(N,EL)82-PB-0,,DA))
+COMMENT    .Estimated value of the quotient of the differential
+            elastic cross sections at 95 keV
+           .This result is not consistent with the value 1.56
+            calculated by ABACUS-II, even if allowance is made for
+            the fact that the calculation was performed for Pb-208
+            neglecting the multiple scattering correction of a few
+            percent.
+ERR-ANALYS (DATA-ERR) No description of the source of
+                      uncertainties
+STATUS     (TABLE) Data from the text on p.521 of NP,71,511,1965
+HISTORY    (20170421A) SD: Data were update according presentation
+           in the text of the article. ERR-ANALYS, STATUS were
+           added. SF4=Pb-0 was added to REACTION code.
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 3          1
-COS        DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM
--2.5881E-01 1.2600E+00 2.0000E-02
+ANG        DATA       DATA-ERR
+ADEG       NO-DIM     NO-DIM
+  105.        1.26      0.02
 ENDDATA              3
-ENDSUBENT           19
-SUBENT        20060003     830901              20050926       0000
-BIB                  4          9
+ENDSUBENT           23
+SUBENT        20060003   20170421   20180123   20180123       2261
+BIB                  6         16
 REACTION   (92-U-238(N,INL)92-U-238,PAR,SIG)
-           .INELASTIC SCATTERING FROM THE FIRST EXCITED
-            (ROTATIONAL) LEVEL IN U-238 (45 KEV).
+            Inelastic scattering from the first excited
+            (rotational) level in U-238 (45 keV).
 MONITOR    (92-U-238(N,EL)92-U-238,,SIG)
-             SIGMA(N,N) = 12.3 BARNS  BNL-325
-COMMENT    .AN ISOTROPIC INELASTIC SCATTERING ANGULAR DISTRIBUTION
-            WAS ASSUMED
-HISTORY    (710512T)  FROM NEUDADA FILE
-           (710908E)
-ENDBIB               9
+             sigma(n,n) = 12.3 barns  BNL-325
+COMMENT    .An isotropic inelastic scattering angular distribution
+            was assumed
+ERR-ANALYS (ERR-S) Statistical error
+            By far the most important contribution to the total
+            error is due to the background of air-scattered
+            neutrons compared to which the other terms are
+            practically negligible.
+STATUS     (TABLE) Data from the text on p.520 of NP,71,511,1965
+HISTORY    (20170421A) SD: Data were update according presentation
+           in the text of the article. DATA-ERR -> ERR-S.
+           ERR-ANALYS, STATUS were added.
+ENDBIB              16
 NOCOMMON             0          0
 DATA                 3          1
-E-LVL      DATA       DATA-ERR
+E-LVL      DATA       ERR-S
 MEV        B          B
- 4.5000E-02 5.7000E-02 1.4500E-01
+ 0.045      0.057        0.145
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           24
 ENDENTRY             3

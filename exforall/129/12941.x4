@@ -1,13 +1,13 @@
-ENTRY            12941   20000103   20010913   20050926       0000
-SUBENT        12941001   20000103   20010913   20050926       0000
-BIB                 10         16
+ENTRY            12941   20171113   20180123   20180122       1436
+SUBENT        12941001   20171113   20180123   20180122       1436
+BIB                 10         18
 INSTITUTE  (1USAORL)
-REFERENCE  (J,NSE,96,318,198708)
+REFERENCE  (J,NSE,96,318,1987)
 AUTHOR     (R.R.Spencer,J.A.Harvey,N.W.Hill,L.W.Weston)
 TITLE      Parameters of the 1.056-eV resonance in 240Pu and the
             2200 m/s Neutron Total Cross Sections of 235U, 239Pu,
             and 240Pu.
-FACILITY   (LINAC) ORELA.
+FACILITY   (LINAC,1USAORL) ORELA.
 INC-SOURCE (PHOTO). Electrons on tantalum.
 METHOD     (TOF). 18-m flight path.
 DETECTOR   (GLASD) NE-912 6Li loaded glass detector viewed by 2
@@ -17,86 +17,112 @@ STATUS     (APRVD) R.R. Spencer, 1985/10/25
 HISTORY    (19850930C)
            (19990715A) Reference updated. Converted to new date
             formats and lower case.
-ENDBIB              16
+           (20171112A) OS. REACTION in subs.4,5 corrected;
+            STATUS, BIB details added in subs.2-5
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        12941002   19990715   20000121   20050926       0000
-BIB                  4          9
+ENDSUBENT           21
+SUBENT        12941002   20171113   20180123   20180122       1436
+BIB                  5         11
 REACTION   (94-PU-240(N,TOT),,SIG)
-SAMPLE     2 Pu metal samples, 99.972% 240Pu.
-           Areal densities 0.001676, 0.004461 atoms/b.
+SAMPLE     (94-PU-240,ENR=0.99972) 2 Pu metal samples,
+            99.972% 240Pu.
+            Areal densities 0.001676, 0.004461 atoms/b.
 ANALYSIS   From fit to transmission data in range 0.02 - 0.03 eV.
-ERR-ANALYS (DATA-ERR) Error includes:
-           . uncertainty in sample thickness (0.6%),
-           . sample-to-open normalization (0.2%),
-           . overlap correction (0.2%),
-           . counting statistics (0.1 - 0.2%).
-ENDBIB               9
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Error includes:
+           (ERR-1) uncertainty in sample thickness (0.6%),
+           (ERR-2) sample-to-open normalization (0.2%),
+           (ERR-3) overlap correction (0.2%),
+           (ERR-S,0.1,0.2) counting statistics (0.1 - 0.2%).
+STATUS     (TABLE) Table II, Nucl.Sci.Eng.96,318,1987
+ENDBIB              11
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+   0.6        0.2        0.2
+ENDCOMMON            3
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 EV         B          B
  0.0253     284.         2.
 ENDDATA              3
-ENDSUBENT           17
-SUBENT        12941003   19990715   20000121   20050926       0000
-BIB                  4          8
+ENDSUBENT           23
+SUBENT        12941003   20171113   20180123   20180122       1436
+BIB                  5         10
 REACTION  1(94-PU-240(N,0),,EN)
           2(94-PU-240(N,EL),,WID)
           3(94-PU-240(N,G),,WID)
-SAMPLE     3 Pu metal samples - 0.726% 240Pu.
+SAMPLE     (94-PU-240,ENR=0.00762)
+           3 Pu metal samples - 0.726% 240Pu.
            Areal densities 0.0002914, 0.0006160, 0.001167 atoms/b.
 ANALYSIS   (MLA) R-matrix analysis using SAMMY code.
 ERR-ANALYS (ERR-S) Statistical uncertainty
            Correlation matrix given in Table I of reference.
-ENDBIB               8
+STATUS     (TABLE) Table III, Nucl.Sci.Eng.96,318,1987
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 6          1
 DATA      1ERR-S     1DATA      2ERR-S     2DATA      3ERR-S     3
 EV         EV         MILLI-EV   MILLI-EV   MILLI-EV   MILLI-EV
  1.0564     0.0006     2.45       0.02       30.3       0.3
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        12941004   19990715   20000121   20050926       0000
-BIB                  4         10
-REACTION   (92-U-235(N,TOT),,SIG)
+ENDSUBENT           18
+SUBENT        12941004   20171113   20180123   20180122       1436
+BIB                  6         16
+REACTION   (92-U-235(N,TOT),,SIG,,,DERIV)
 SAMPLE     Uranium disk. Isotopic composition 235U (93.162%),
             238U (5.471%), 234U (0.993%), 236U (0.374%).
            Areal density 0.001468 atoms/b.
+           (92-U-235,ENR=0.93162)
+           (92-U-238,ENR=0.05471)
+           (92-U-234,ENR=0.00993)
+           (92-U-236,ENR=0.00374)
 ANALYSIS   From fit to transmission data in range 0.02 - 0.03 eV.
-ERR-ANALYS (DATA-ERR) Error includes:
-           . uncertainty in sample thickness (0.6%),
-           . sample-to-open normalization (0.2%),
-           . overlap correction (0.2%),
-           . counting statistics (0.1 - 0.2%).
-ENDBIB              10
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Error includes:
+           (ERR-1) uncertainty in sample thickness (0.6%),
+           (ERR-2) sample-to-open normalization (0.2%),
+           (ERR-3) overlap correction (0.2%),
+           (ERR-S,0.1,0.2) counting statistics (0.1 - 0.2%).
+STATUS     (TABLE) Table II, Nucl.Sci.Eng.96,318,1987
+HISTORY    (20171112A) SF9=DERIV added
+ENDBIB              16
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+   0.6        0.2        0.2
+ENDCOMMON            3
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 EV         B          B
  0.0253     690.         5.
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        12941005   19990715   20000121   20050926       0000
-BIB                  4         10
-REACTION   (94-PU-239(N,TOT),,SIG)
-SAMPLE     Metal alloy foils of plutonium plus 1.07 % by weight
-            of Al, 99.267% 239Pu.
+ENDSUBENT           28
+SUBENT        12941005   20171113   20180123   20180122       1436
+BIB                  6         12
+REACTION   (94-PU-239(N,TOT),,SIG,,,DERIV)
+SAMPLE     (94-PU-239,ENR=0.99267) Metal alloy foils of plutonium
+           plus 1.07 % by weight of Al, 99.267% 239Pu.
            Areal density 0.0006160 atoms/b.
 ANALYSIS   From fit to transmission data in range 0.02 - 0.03 eV.
-ERR-ANALYS (DATA-ERR) Error includes:
-           . uncertainty in sample thickness (0.6%),
-           . sample-to-open normalization (0.2%),
-           . overlap correction (0.2%),
-           . counting statistics (0.1 - 0.2%).
-ENDBIB              10
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Error includes:
+           (ERR-1) uncertainty in sample thickness (0.6%),
+           (ERR-2) sample-to-open normalization (0.2%),
+           (ERR-3) overlap correction (0.2%),
+           (ERR-S,0.1,0.2) counting statistics (0.1 - 0.2%).
+STATUS     (TABLE) Table II, Nucl.Sci.Eng.96,318,1987
+HISTORY    (20171112A) SF9=DERIV added
+ENDBIB              12
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+   0.6        0.2        0.2
+ENDCOMMON            3
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 EV         B          B
  0.0253    1025.         6.
 ENDDATA              3
-ENDSUBENT           18
+ENDSUBENT           24
 SUBENT        12941006   19990715   20000121   20050926       0000
 BIB                  5         11
 REACTION   (94-PU-239(N,TOT),,SIG)

@@ -1,163 +1,143 @@
-ENTRY            21777   20160907   20170201   20170124       2252
-SUBENT        21777001   20160907   20170201   20170124       2252
-BIB                 14         43
-TITLE       Measurement of the neutron induced fission and
-            capture cross sections, and alpha of U-235 in
-            keV region
-AUTHOR     (F.Corvi,L.Calabretta,M.Merla,M.S.Moore,
-           T.Van Der Veen)
+ENTRY            21777   20170601   20180123   20180123       2262
+SUBENT        21777001   20170601   20180123   20180123       2262
+BIB                 11         38
+TITLE      Measurement of neutron capture cross section and alpha
+            of 235U from 2 to 85 keV
+AUTHOR     (F.Corvi, L.Calabretta, M.Merla, T.Van Der Veen,
+            M.S.Moore)
 INSTITUTE  (2ZZZGEL)
-           (1USALAS) M.S.Moore
-REFERENCE  (P,NEANDC(E)-232,(3),5,198203) Main reference,
-                                        Data are given.
-           (P,NEANDC(E)-222,(3),3,198103)
-           ((R,ANL-83-4,1983)=
-           (R,NEANDC(US)-214,1983))  ANL-83-4 report.
-                                     Data are given
-           (P,NEANDC(E)-212,(3),10,198006)
-FACILITY   (LINAC,2ZZZGEL)
-INC-SOURCE (PHOTO)
-SAMPLE     (92-U-235,ENR=0.99508).U-235 enrichment = 99.508
-           .Total mass of U-235 = about 2.5 gr.
-METHOD     (TOF)   28-m flight path.
+REFERENCE  ((S,ANL-83-4,347,1983)=(S,NEANDC(US)-214,347,1983))
+            Tabulated data given
+           (P,NEANDC(E)-232,(3),5,1982)
+            Same tabulated data given
+           ((P,NEANDC(E)-222,(3),3,1981)=(P,INDC(EUR)-014,3,1981))
+            alpha-values in fig.
+FACILITY   (LINAC,2ZZZGEL) Geel 140 MeV electron linac
+INC-SOURCE (PHOTO) 14 ns burst width and 800 Hz repetition
+            frequency
+SAMPLE     U3O8 (2.549 gram of 235U in total)
+           (92-U-235,ENR=0.99508)
+           (92-U-234,ENR=0.00169)
+           (92-U-236,ENR=0.00026)
+           (92-U-238,ENR=0.00301)
+METHOD     (TOF) Detector system at 28.8 m from target
            (COINC)
-DETECTOR   (FISCH) Multi-plate fission chamber - 21 plates,
-                   U3-O8 coated, U235 enriched.
-           (SCIN ) C6F6. 10.2 cm diam. and 7.6 cm height.
+DETECTOR   (FISCH) Multiplate fission chamber
+           (SCIN) C6F6 (10.2 cm diam. and 7.6 cm height).
             Pulses in coincidence with fission chamber pulses
             were considered to be due to fission gamma-rays.
-           (GLASD) Thin Li-glass(0.5 mm thick) for neutron
-                   flux measurement.
-ANALYSIS   .Background was determined by measuring Al black
+           (GLASD) Thin 6Li glass detector (0.5 mm thick)
+ANALYSIS   Background was determined by measuring Al black
             resonances at 35 and 88 keV.
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-            For capture yields normalization.
-ERR-ANALYS (ERR-T)   Total error
-STATUS     .Compiled from three progress reports.
 HISTORY    (19820803C) T.N
            (19820921E)
-           (20060426A) All dates and REACTION SF4 in SAN 004
-                       corrected
+           (20060426A) REACTION SF4 in SAN 004 corrected
            (20061023U) Reference ANL-83-4,1983 added - SM
-           (20111219A) BIB information corrected.
-                       Three SUBENTs added
+           (20111219A) BIB information corrected. 3 SUBENTs added
            (20160907A) SD:Subent 005, 006 deleted according
-           'NRDC 2014' Conclusion 30 ('Data sets derived by other
-           than the author are not for compilation...').
-ENDBIB              43
+            'NRDC 2014' Conclusion 30 ('Data sets derived by
+            other than the author are not for compilation...').
+           (20170601A) On. 004 merged into 003. Major revision in
+            002 and 003.
+ENDBIB              38
 COMMON               1          3
 EN-RSL
 NSEC/M
-     5.E-01
+ 0.5
 ENDCOMMON            3
-ENDSUBENT           50
-SUBENT        21777002   20111219   20130207   20130107       2231
-BIB                  3          4
-REACTION   (92-U-235(N,F),,SIG,,AV) Averaged over energy interval
-STATUS     (TABLE) .Data were taken from Table 1.1
-                    of NEANDC(E)-232,(3),5,198203
-HISTORY    (20111219U) Last checking has been done.
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           45
+SUBENT        21777002   20170601   20180123   20180123       2262
+BIB                  6          8
+REACTION   (92-U-235(N,F),,SIG,,AV)
+MONITOR    ((MONIT)92-U-235(N,F),,INT)
+           (3-LI-6(N,T)2-HE-4,,SIG) Flux shape
+MONIT-REF  ((MONIT),,3,ENDF/B-V,,1978)
+ERR-ANALYS (ERR-1) Fission chamber efficiency (1%)
+           (ERR-2) Shape normalization to 6Li(n,a)
+STATUS     (TABLE) Table III of ANL-83-4, p347 (1983)
+HISTORY    (20170601A) On. ERR-ANALYS revised. ERR-T -> ERR-2
+ENDBIB               8
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      ERR-1
+EV         EV         B*EV       PER-CENT
+ 7.8        11.        241.2      1.
+ENDCOMMON            3
 DATA                 4         22
-EN-MIN     EN-MAX     DATA       ERR-T
+EN-MIN     EN-MAX     DATA       ERR-2
 KEV        KEV        B          B
- 2.0000E+00 3.0000E+00 5.2310E+00 7.3000E-02
- 3.0000E+00 4.0000E+00 4.6840E+00 7.2000E-02
- 4.0000E+00 5.0000E+00 4.1570E+00 6.9000E-02
- 5.0000E+00 5.8000E+00 3.7720E+00 6.5000E-02
- 6.0000E+00 7.0000E+00 3.2350E+00 5.9000E-02
- 7.0000E+00 8.0000E+00 3.1480E+00 5.9000E-02
- 8.0000E+00 9.0000E+00 2.9370E+00 5.7000E-02
- 9.0000E+00 1.0000E+01 3.0800E+00 6.1000E-02
- 1.0000E+01 1.2000E+01 2.6450E+00 5.4000E-02
- 1.2000E+01 1.4000E+01 2.5810E+00 5.5000E-02
- 1.4000E+01 1.6000E+01 2.4510E+00 5.3000E-02
- 1.6000E+01 1.8000E+01 2.2970E+00 5.1000E-02
- 1.8000E+01 2.0000E+01 2.3250E+00 5.3000E-02
- 2.0000E+01 2.5000E+01 2.1480E+00 5.0000E-02
- 2.5000E+01 3.0000E+01 2.0600E+00 5.0000E-02
- 3.0000E+01 3.3000E+01 2.0160E+00 5.0000E-02
- 3.8000E+01 4.0000E+01 1.8700E+00 4.9000E-02
- 4.0000E+01 5.0000E+01 1.8350E+00 4.9000E-02
- 5.0000E+01 6.0000E+01 1.7810E+00 4.9000E-02
- 6.0000E+01 7.0000E+01 1.7270E+00 4.9000E-02
- 7.0000E+01 8.0000E+01 1.6520E+00 4.8000E-02
- 8.0000E+01 8.5000E+01 1.5800E+00 4.6000E-02
+  2.0        3.0       5.231      0.073
+  3.0        4.0       4.684      0.072
+  4.0        5.0       4.157      0.069
+  5.0        5.8       3.772      0.065
+  6.0        7.0       3.235      0.059
+  7.0        8.0       3.148      0.059
+  8.0        9.0       2.937      0.057
+  9.0       10.        3.080      0.061
+ 10.        12.        2.645      0.054
+ 12.        14.        2.581      0.055
+ 14.        16.        2.451      0.053
+ 16.        18.        2.297      0.051
+ 18.        20.        2.325      0.053
+ 20.        25.        2.148      0.050
+ 25.        30.        2.060      0.050
+ 30.        33.        2.016      0.050
+ 38.        40.        1.870      0.049
+ 40.        50.        1.835      0.049
+ 50.        60.        1.781      0.049
+ 60.        70.        1.727      0.049
+ 70.        80.        1.652      0.048
+ 80.        85.        1.580      0.046
 ENDDATA             24
-ENDSUBENT           33
-SUBENT        21777003   20111219   20130207   20130107       2231
-BIB                  3          5
-REACTION   (92-U-235(N,G)92-U-236,,SIG,,AV) Averaged over energy
-                                           interval
-STATUS     (TABLE) .Data were taken from Table 1.1 of
-                    NEANDC(E)-232,(3),5,198203
-HISTORY    (20111219A) Last checking has been done.
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4         22
-EN-MIN     EN-MAX     DATA       ERR-T
-KEV        KEV        B          B
- 2.0000E+00 3.0000E+00 1.8980E+00 2.3000E-01
- 3.0000E+00 4.0000E+00 1.6150E+00 1.6000E-01
- 4.0000E+00 5.0000E+00 1.4350E+00 1.3000E-01
- 5.0000E+00 5.8000E+00 1.1660E+00 1.2000E-01
- 6.0000E+00 7.0000E+00 1.2340E+00 1.2000E-01
- 7.0000E+00 8.0000E+00 1.1710E+00 9.0000E-02
- 8.0000E+00 9.0000E+00 1.2960E+00 8.0000E-02
- 9.0000E+00 1.0000E+01 1.1110E+00 7.0000E-02
- 1.0000E+01 1.2000E+01 9.6700E-01 6.0000E-02
- 1.2000E+01 1.4000E+01 9.2600E-01 5.4000E-02
- 1.4000E+01 1.6000E+01 8.4600E-01 4.9000E-02
- 1.6000E+01 1.8000E+01 8.8300E-01 4.5000E-02
- 1.8000E+01 2.0000E+01 7.4500E-01 4.1000E-02
- 2.0000E+01 2.5000E+01 7.7000E-01 3.8000E-02
- 2.5000E+01 3.0000E+01 6.8300E-01 3.5000E-02
- 3.0000E+01 3.3000E+01 6.3000E-01 4.5000E-02
- 3.8000E+01 4.0000E+01 5.6100E-01 4.9000E-02
- 4.0000E+01 5.0000E+01 5.7200E-01 4.2000E-02
- 5.0000E+01 6.0000E+01 5.3700E-01 3.6000E-02
- 6.0000E+01 7.0000E+01 5.2300E-01 3.4000E-02
- 7.0000E+01 8.0000E+01 4.8200E-01 3.8000E-02
- 8.0000E+01 8.5000E+01 4.6800E-01 4.8000E-02
+ENDSUBENT           41
+SUBENT        21777003   20170601   20180123   20180123       2262
+BIB                  6         13
+REACTION  1(92-U-235(N,ABS),,ALF,,AV)
+          2(92-U-235(N,G)92-U-236,,SIG,,AV)
+MONITOR   2(92-U-235(N,F),,SIG,,AV)
+METHOD     (PHWT)
+ERR-ANALYS (ERR-1) Fission efficiency    (1%)
+           (ERR-2) Capture normalization (6%)
+          1(ERR-3) Background subtraction and undetected fissions
+          2(ERR-3) Background subtraction, undetected fissions,
+            and 6Li(n,a) normalization.
+STATUS     (TABLE) Table III of ANL-83-4, p347 (1983)
+           (DEP,21777002) 235U(n,f) cross section
+HISTORY    (20170601A) On. ERR-ANALYS revised. ERR-T -> ERR-3.
+            004 merged into 003.
+ENDBIB              13
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+ 1.         6.
+ENDCOMMON            3
+DATA                 6         22
+EN-MIN     EN-MAX     DATA      1ERR-3     1DATA      2ERR-3     2
+KEV        KEV        NO-DIM     NO-DIM     B          B
+  2.0        3.0       0.363      0.045      1.898      0.23
+  3.0        4.0       0.345      0.035      1.615      0.16
+  4.0        5.0       0.345      0.031      1.435      0.13
+  5.0        5.8       0.309      0.033      1.166      0.12
+  6.0        7.0       0.381      0.036      1.234      0.12
+  7.0        8.0       0.372      0.028      1.171      0.09
+  8.0        9.0       0.441      0.026      1.296      0.08
+  9.0       10.        0.361      0.022      1.111      0.070
+ 10.        12.        0.366      0.021      0.967      0.060
+ 12.        14.        0.359      0.020      0.926      0.054
+ 14.        16.        0.345      0.018      0.846      0.049
+ 16.        18.        0.384      0.018      0.883      0.045
+ 18.        20.        0.321      0.016      0.745      0.041
+ 20.        25.        0.359      0.016      0.770      0.038
+ 25.        30.        0.332      0.015      0.683      0.035
+ 30.        33.        0.312      0.021      0.630      0.045
+ 38.        40.        0.300      0.025      0.561      0.049
+ 40.        50.        0.312      0.021      0.572      0.042
+ 50.        60.        0.301      0.018      0.537      0.036
+ 60.        70.        0.302      0.018      0.523      0.034
+ 70.        80.        0.291      0.021      0.482      0.038
+ 80.        85.        0.297      0.029      0.468      0.048
 ENDDATA             24
-ENDSUBENT           34
-SUBENT        21777004   20111219   20130207   20130107       2231
-BIB                  3          5
-REACTION   (92-U-235(N,ABS),,ALF,,AV) Averaged over energy
-STATUS     (TABLE)  Data were taken from Table 1.1 of
-                    NEANDC(E)-232,(3),5,198203
-HISTORY    (20060426U) SF4 in REACTION deleted
-           (20111219U) Last checking has been done.
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4         22
-EN-MIN     EN-MAX     DATA       ERR-T
-KEV        KEV        NO-DIM     NO-DIM
- 2.0000E+00 3.0000E+00 3.6300E-01 4.5000E-02
- 3.0000E+00 4.0000E+00 3.4500E-01 3.5000E-02
- 4.0000E+00 5.0000E+00 3.4500E-01 3.1000E-02
- 5.0000E+00 5.8000E+00 3.0900E-01 3.3000E-02
- 6.0000E+00 7.0000E+00 3.8100E-01 3.6000E-02
- 7.0000E+00 8.0000E+00 3.7200E-01 2.8000E-02
- 8.0000E+00 9.0000E+00 4.4100E-01 2.6000E-02
- 9.0000E+00 1.0000E+01 3.6100E-01 2.2000E-02
- 1.0000E+01 1.2000E+01 3.6600E-01 2.1000E-02
- 1.2000E+01 1.4000E+01 3.5900E-01 2.0000E-02
- 1.4000E+01 1.6000E+01 3.4500E-01 1.8000E-02
- 1.6000E+01 1.8000E+01 3.8400E-01 1.8000E-02
- 1.8000E+01 2.0000E+01 3.2100E-01 1.6000E-02
- 2.0000E+01 2.5000E+01 3.5900E-01 1.6000E-02
- 2.5000E+01 3.0000E+01 3.3200E-01 1.5000E-02
- 3.0000E+01 3.3000E+01 3.1200E-01 2.1000E-02
- 3.8000E+01 4.0000E+01 3.0000E-01 2.5000E-02
- 4.0000E+01 5.0000E+01 3.1200E-01 2.1000E-02
- 5.0000E+01 6.0000E+01 3.0100E-01 1.8000E-02
- 6.0000E+01 7.0000E+01 3.0200E-01 1.8000E-02
- 7.0000E+01 8.0000E+01 2.9100E-01 2.1000E-02
- 8.0000E+01 8.5000E+01 2.9700E-01 2.9000E-02
-ENDDATA             24
-ENDSUBENT           34
+ENDSUBENT           46
+NOSUBENT      21777004   20170601   20180123   20180123       2262
 NOSUBENT      21777005   20160907   20170201   20170124       2252
 NOSUBENT      21777006   20160907   20170201   20170124       2252
 ENDENTRY             6

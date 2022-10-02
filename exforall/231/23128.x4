@@ -1,6 +1,6 @@
-ENTRY            23128   20120228   20121029   20121025       2230
-SUBENT        23128001   20120228   20121029   20121025       2230
-BIB                 15         88
+ENTRY            23128   20170628   20180123   20180123       2262
+SUBENT        23128001   20170628   20180123   20180123       2262
+BIB                 15         77
 TITLE      Neutron-induced fission cross-section of 233U in the
             energy range 0.5 < En < 20MeV
 AUTHOR     (F.Belloni, M.Calviani, N.Colonna, P.Mastinu,
@@ -33,21 +33,13 @@ AUTHOR     (F.Belloni, M.Calviani, N.Colonna, P.Mastinu,
             D.Villamarin, M.C.Vincente, V.Vlachoudis, R.Vlastou,
             F.Voss, S.Walter, M.Wiescher, K.Wisshak)
 INSTITUTE  (2ITYTRI,2ITYPAD,2ZZZCER,2ITYBAU,2FR SAC,2SPNSAU,
-           3POLLOU,2GERKFK,2AUSATI,2FR STR,3CZRCHU,3ZZZIAE,
-           2SPNSEU,1USANOT,2SPNVAL,2GRCARU,4ZZZDUB,4RUSFEI,
-           2FR GRA,1USALAS)
-           (2SPNPCM) Centro de Investigaciones Energeticas
-                     Medioambientales y Technologicas, Madrid
-           (2SPNUPC) Universitat Politecnica de Catalunya,
-                     Barcelona
-           (2PRTLFE) Instituto Tecnologico e Nuclear (ITN), Lisbon
-           (2PRTPRT) LIP - Coimbra and Departamento de Fisica da
-                     Universidade de Coimbra .
-            The n TOF Collaboration.
-REFERENCE  (J,EPJ/A,47,2,2011)
-           #doi:10.1140/epja/i2011-11002-y
-           (C,2010KRAKOW,,113,2010)
-            U-233/U-235 c-s ratio on Fig.1, preliminary data.
+            2SPNPCM,3POLLOU,2GERKFK,2AUSATI,2FR STR,3CZRCHU,
+            2SPNUPC,3ZZZIAE,2SPNSEU,2PRTLFE,2PRTCMB,1USANOT,
+            2SPNVAL,2GRCARU,4ZZZDUB,4RUSFEI,2FR GRA,1USALAS)
+REFERENCE  (J,EPJ/A,47,2,2011) Final data in table
+           (C,2010KRAKOW,,113,2010) 233U(n,f)/235U(n,f) in fig
+REL-REF    (O,23148001,F.Belloni+,C,2010KRAKOW,,113,2010)
+            241,243Am(n,f) data sets given
 FACILITY   (SYNCH,2ZZZCER) 7e+12 protons/bunch, pulse width=6 ns
 INC-SOURCE (SPALL) 10e+5 neutrons/cm2/pulse at sample position .
             20 GeV proton beam of 7E+12 protons/bunch.
@@ -66,8 +58,6 @@ CORRECTION Corrected for difference between U-233 and U-235 for
               2.6% (U-233: 97.7%, U-235: 95.1%)
            - Loss of counts due to dead-time and pile-up
               1% at 1 MeV,  3.8% at 20 MeV (increase with En)
-MISC-COL   (MISC1)  Neutron energy relative to the average value
-                   of considered bin
 COMMENT    By Paolo Maria Milazzo (2011-03-21):
             A small difference in statistical uncertainty between
             the cross section ratio (002) and absolute cross
@@ -78,34 +68,38 @@ ERR-ANALYS (ERR-1) Sample mass of U-233             (1.2%)
            (ERR-SYS) Overall systematic uncertainty.
 STATUS     (TABLE) Data received from Paolo Maria Milazzo
            (APRVD) Proof-read by Paolo Maria Milazzo (2010-03-15)
-           (COREL,14257002) Averaged cross section until 1 MeV
-           (COREL,14257003) Pointwise cross section until 1.12 MeV
            (COREL,23148001) Am data of C,2010KRAKOW,,113,2010 .
 HISTORY    (20110312C) On
            (20110315R) On. Received from Paolo Maria Milazzo
            (20120228A) M.M. Reference C,2010KRAKOW,,113,2010 was
-           added. Misprint in Subent 003 was corrected.
+            added. Misprint in Subent 003 was corrected.
             J,ND/B, -> J,NDS according to memo CP-D/711.
             Absolute total errors values were added .
             STATUS was added in Subents 002, 003.
             ENDF/B-VII.0 was added as MONIT-REF in Subent 003.
-ENDBIB              88
+           (20170628A) On. Major revisions in 002 and 003.
+ENDBIB              77
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      ERR-SYS
 PER-CENT   PER-CENT   PER-CENT   PER-CENT
  1.2        1.35       0.5        3.
 ENDCOMMON            3
-ENDSUBENT           95
-SUBENT        23128002   20120228   20121029   20121025       2230
-BIB                  3          4
+ENDSUBENT           84
+SUBENT        23128002   20170628   20180123   20180123       2262
+BIB                  5          9
 REACTION   ((92-U-233(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
+MISC-COL   (MISC) Neutron energy relative to the average value
+            of considered bin
 ERR-ANALYS (ERR-S) Statistical uncertainty
-STATUS     (TABLE) Table 2 of J,EPJ/A,47,2,2011  - DATA and
-            absolute total error values.
-ENDBIB               4
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Data received from Paolo Maria Milazzo.
+            The total uncertainty (ERR-T) was additionally
+            compiled from Table 2 of Eur.Phys.J.A47(2011)2
+HISTORY    (20170628A) On. MISC1 -> MISC.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 6         32
-EN-MIN     EN-MAX     MISC1      DATA       ERR-S      ERR-T
+EN-MIN     EN-MAX     MISC       DATA       ERR-S      ERR-T
 MEV        MEV        MEV        NO-DIM     NO-DIM     NO-DIM
   0.501      0.562      0.53      1.76       0.02       0.06
   0.562      0.631      0.60      1.72       0.02       0.06
@@ -140,111 +134,62 @@ MEV        MEV        MEV        NO-DIM     NO-DIM     NO-DIM
  15.85      17.78      16.79      1.17       0.02       0.04
  17.78      19.95      18.84      1.24       0.02       0.04
 ENDDATA             34
-ENDSUBENT           43
-SUBENT        23128003   20120228   20121029   20121025       2230
-BIB                  7         27
+ENDSUBENT           48
+SUBENT        23128003   20170628   20180123   20180123       2262
+BIB                  7         12
 REACTION   (92-U-233(N,F),,SIG,,AV)
 MONITOR    (92-U-235(N,F),,SIG)
 MONIT-REF  (,,3,ENDF/B-VII.0,,2006)
            (,A.D.Carlson+,J,NDS,110,(12),3215,2009)
-             U-235 is well-established as standard.
-ERR-ANALYS (ERR-T) Total uncertainty in per-cents.
-           (ERR-S) Statistical uncertainty in per-cents.
-           (MONIT-ERR) U-235(n,f) cross section(~2%)
-MISC-COL   (MISC2) Absolute total error in barns.
-           (MISC3) Absolute statistical error in barns.
-ADD-RES    Integrated cross-sections over the respective
-           energy regions of overlap are summarized in Table 3,
-           deviation of present result from previous exp. data
-           and evaluation are given:
-            Authors      Energy range,MeV   Difference,%
-           Meadows        1.-9.4             +2.1
-           Fursov+        1.-7.4             +4.3
-           Carlson+       1.-20.             +6.3
-           Kanda+         1.-7.0             +1.3
-           Lisowski+      1.-20.             +0.8
-           Shcherbakov+   1.-20.             +1.9
-           ENDF/B-VII.0   1.-20.             +3.2
-           ENDF/B-VI.8    1.-20.             +6.1
-           JENDL-3.3      1.-20.             +3.9
-STATUS     (DEP,23128002) U-233(n,f)/U-235(n,f) ratio.
-           (TABLE) Table 2 of J,EPJ/A,47,2,2011 - DATA and
-            absolute total error values.
-ENDBIB              27
+MISC-COL   (MISC) Neutron energy relative to the average value
+            of considered bin
+ERR-ANALYS (ERR-S) Statistical uncertainty
+           (ERR-T) Total uncertainty
+           (MONIT-ERR) 235U(n,f) cross section(~2%)
+STATUS     (TABLE) Data received from Paolo Maria Milazzo
+           (DEP,23128002) 233U233(n,f)/235U(n,f) ratio
+HISTORY    (20170628A) On. MISC1 -> MISC. MISC2 and MISC3 deleted.
+ENDBIB              12
 COMMON               1          3
 MONIT-ERR
 PER-CENT
  2.
 ENDCOMMON            3
-DATA                 8         32
-EN-MIN     EN-MAX     MISC1      DATA       ERR-S      ERR-T
-MISC2      MISC3
+DATA                 6         32
+EN-MIN     EN-MAX     MISC       DATA       ERR-S      ERR-T
 MEV        MEV        MEV        B          PER-CENT   PER-CENT
-B          B
   0.501      0.562      0.53      2.00       1.0        2.9
-0.06       0.02
   0.562      0.631      0.60      1.92       0.9        2.9
-0.06       0.02
   0.631      0.708      0.67      1.94       0.9        2.9
-0.06       0.02
   0.708      0.794      0.75      1.92       0.9        2.8
-0.06       0.02
   0.794      0.891      0.84      1.87       0.9        2.9
-0.06       0.02
   0.891      1.000      0.94      1.86       0.9        2.9
-0.06       0.02
   1.00       1.12       1.06      1.84       0.9        2.9
-0.06       0.02
   1.12       1.26       1.19      1.84       0.8        2.8
-0.06       0.02
   1.26       1.41       1.33      1.90       0.8        2.8
-0.06       0.02
   1.41       1.58       1.50      1.91       0.8        2.8
-0.06       0.02
   1.58       1.78       1.68      1.95       0.8        2.8
-0.06       0.02
   1.78       2.00       1.88      1.95       0.8        2.8
-0.06       0.02
   2.00       2.24       2.11      1.98       0.8        2.8
-0.06       0.02
   2.24       2.51       2.37      1.92       0.9        2.8
-0.06       0.02
   2.51       2.82       2.66      1.91       1.0        2.9
-0.06       0.02
   2.82       3.16       2.99      1.88       1.1        2.9
-0.06       0.02
   3.16       3.55       3.35      1.84       1.2        3.0
-0.06       0.02
   3.55       3.98       3.76      1.74       1.4        3.0
-0.06       0.02
   3.98       4.47       4.22      1.76       1.4        3.1
-0.06       0.03
   4.47       5.01       4.73      1.67       1.6        3.1
-0.06       0.03
   5.01       5.62       5.31      1.60       1.7        3.2
-0.05       0.03
   5.62       6.31       5.96      1.71       1.7        3.2
-0.06       0.03
   6.31       7.08       6.68      2.14       1.6        3.2
-0.07       0.03
   7.08       7.94       7.50      2.27       1.6        3.1
-0.08       0.04
   7.94       8.91       8.41      2.31       1.6        3.1
-0.08       0.04
   8.91      10.00       9.44      2.35       1.6        3.2
-0.08       0.04
  10.00      11.22      10.59      2.25       1.7        3.2
-0.08       0.04
  11.22      12.59      11.89      2.40       1.8        3.2
-0.08       0.04
  12.59      14.13      13.34      2.42       1.8        3.2
-0.08       0.04
  14.13      15.85      14.96      2.50       1.8        3.2
-0.08       0.05
  15.85      17.78      16.79      2.39       1.7        3.2
-0.08       0.04
  17.78      19.95      18.84      2.40       1.8        3.2
-0.08       0.04
-ENDDATA             68
-ENDSUBENT          104
+ENDDATA             34
+ENDSUBENT           55
 ENDENTRY             3
