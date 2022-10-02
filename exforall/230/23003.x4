@@ -1,6 +1,6 @@
-ENTRY            23003   20161016   20170403   20170325       2257
-SUBENT        23003001   20161016   20170403   20170325       2257
-BIB                 12         19
+ENTRY            23003   20170825   20180129   20180126       2265
+SUBENT        23003001   20170825   20180129   20180126       2265
+BIB                 12         21
 TITLE      Measurements of 122Sn neutron resonance parameters
 AUTHOR     (Y.Nakajima, M.Ohkubo, Y.Furuta, M.Mizumoto,
            M.Sugimoto, Y.Kawarasaki)
@@ -20,9 +20,11 @@ ANALYSIS   (SHAPE) Analysis code SIOB with multi-level
 DETECTOR   (GLASD) To measure neutron TOF spectra
 HISTORY    (20070930C)
            (20161016U) SD: THICKNESS was added to Subents 002,003.
-ENDBIB              19
+           (20170825A) SD: Small correction in Subents 004,006.
+           REACTION code corrected in Subent 006.
+ENDBIB              21
 NOCOMMON             0          0
-ENDSUBENT           22
+ENDSUBENT           24
 SUBENT        23003002   20161016   20170403   20170325       2257
 BIB                  4          4
 REACTION   (50-SN-122(N,TOT),,TRN)
@@ -409,9 +411,12 @@ EV         NO-DIM     NO-DIM
  29306.     0.867      0.033
 ENDDATA            203
 ENDSUBENT          216
-SUBENT        23003004   20071203   20071206   20071203       2189
-BIB                  5         14
-REL-REF    (R,,S.F.Mughabghab+,B,NEUT.CS 1A,,,1981)
+SUBENT        23003004   20170825   20180129   20180126       2265
+BIB                  6         16
+REACTION  1(50-SN-122(N,0),,EN)
+          2(50-SN-122(N,EL),,WID,,G)
+ASSUMED    (ASSUM,50-SN-122(N,G),,WID)
+REL-REF    (R,,S.F.Mughabghab+,B,NEUT.CS 1A,,1981)
            Radiative width for all resonances (110 meV) from
            systematics of s-wave resonances
            (A,40086008,Yu.V.Adamchuk+,J,SNP,3,589,1966)
@@ -420,12 +425,11 @@ REL-REF    (R,,S.F.Mughabghab+,B,NEUT.CS 1A,,,1981)
            Compared but no comment
            (A,11962017,T.Fuketa+,R,ORNL-3425,36,1963)
            Agree for large resonances at 1.75 and 6.82 keV
-REACTION  1(50-SN-122(N,0),,EN)
-          2(50-SN-122(N,EL),,WID,,G)
-ASSUMED    (ASSUM,50-SN-122(N,G),,WID)
 ERR-ANALYS (ERR-S) Statistical uncertainty
 STATUS     (TABLE) Taken from Table 2, p97 of reference
-ENDBIB              14
+HISTORY    (20170825U) SD: Illegal repetition of commas deleted
+           from REL-REF (NEUT.CS 1A ref.)
+ENDBIB              16
 COMMON               1          3
 ASSUM
 MILLI-EV
@@ -456,7 +460,7 @@ EV         EV         EV         EV
  28280.     2.         10.4       1.4
  28419.     2.         6.7        1.2
 ENDDATA             23
-ENDSUBENT           46
+ENDSUBENT           48
 SUBENT        23003005   20071203   20071206   20071203       2189
 BIB                  3          5
 REACTION   (50-SN-122(N,0),,D)
@@ -472,21 +476,24 @@ KEV        KEV        KEV        KEV
  15.        1.17       0.09       0.08
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        23003006   20071203   20071206   20071203       2189
-BIB                  4          5
-REL-REF    (A,,S.F.Mughabghab+,B,NEUT.CS 1A,,,1981) 5.7+-0.3 fm
+SUBENT        23003006   20170825   20180129   20180126       2265
+BIB                  5          8
+REACTION   (50-SN-122(N,EL)50-SN-122,,RAD)
+REL-REF    (A,,S.F.Mughabghab+,B,NEUT.CS 1A,,1981) 5.7+-0.3 fm
            (A,,V.G.Nikolenko+,C,82ANTWER,,781,1982) 5.55+-0.21 fm
-REACTION   (50-SN-122(0,0),,RAD)
 ERR-ANALYS (DATA-ERR) No information on source of uncertainties
-STATUS     (TABLE) Taken from Table 3, p98 of reference
-ENDBIB               5
+STATUS     (TABLE) Taken from Table 3, p98 of ANE,17,95,1990
+HISTORY    (20170825A) SD: SF2-SF4 changed in REACTION code
+           corrected. Illegal repetition of commas deleted
+           from REL-REF (NEUT.CS 1A ref.) EN-RES-MIN/MAX added.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-FERMI      FERMI
- 5.60       0.05
+DATA                 4          1
+EN-MIN     EN-MAX     DATA       DATA-ERR
+KEV        KEV        FERMI      FERMI
+ 1.5         30.         5.60       0.05
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           16
 SUBENT        23003007   20071203   20071206   20071203       2189
 BIB                  4          9
 REL-REF    (D,40086009,Yu.V.Adamchuk+,J,SNP,3,589,1966)
