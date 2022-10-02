@@ -1,18 +1,18 @@
-ENTRY            23042   20090303   20090508   20090507       2209
-SUBENT        23042001   20090303   20090508   20090507       2209
-BIB                 16         66
+ENTRY            23042   20101106   20110803   20110721       2225
+SUBENT        23042001   20101106   20110803   20110721       2225
+BIB                 17         80
 TITLE      .Measurement of gamma-rays from the keV-neutron
             capture by 139La
-AUTHOR     (M.Igashira, M.Saito, J.Nishiyama, T.Ohsakib,
+AUTHOR     (M.Igashira, M.Saito, J.Nishiyama, T.Ohsaki,
            T.Katabuchi)
 INSTITUTE  (2JPNTIT)  Research Laboratory for Nuclear Reactors,
              Tokyo Institute of Technology, Tokyo, Japan.
-REFERENCE  (C,2007NICE,2,1299,200704)   International Conference
-             on Nuclear Data for Science and Technology 2007.
-             DOI: 10.1051/ndata:07574.Main reference, graphs
-             are given.
-           (J,NST,36,(6),493,199906)  S.Mizuno, M.Igashira,
-             K.Masuda. Experimental and data processing details
+REFERENCE  (C,2007NICE,2,1299,200704)
+           #doi:10.1051/ndata:07574
+             International Conference on Nuclear Data for Science
+           and Technology 2007. Main reference, graphs are given.
+REL-REF    (M,22482001,S.Mizuno+,J,NST,36,(6),493,199906)
+                     Experimental and data processing details
 FACILITY   (VDGT,2JPNTIT) The 3.2 MV PELLETRON accelerator of the
             Research Laboratory For Nuclear Reactors at the Tokyo
             Institute of Technology.
@@ -20,9 +20,9 @@ INC-SOURCE (P-LI7)  Lithium target bombarded by 1.5 ns bunch
             proton beam. For neutron energies 10-100 keV proton
             energy is 1.903 MeV (22 keV above threshold energy of
             P-LI7 reaction), pulse repetition rate 2 MHz, average
-            proton current 5 micro-a. For 550 keV neutron energy
+            proton current 5 micro-A. For 550 keV neutron energy
             proton energy is 2.3 MeV,pulse repetition rate 4 MHz,
-            average proton current 9 micro-a (from REL-REF)
+            average proton current 9 micro-A (from REL-REF)
 INC-SPECT  .Broad neutron spectrum with maximum at aprx 35 and
             550 keV
 PART-DET   (G,N)
@@ -42,46 +42,57 @@ METHOD     (TOF)    Flight base is 12 and 20 cm
            (PHD)    Pulse height discrimination
            (SITA)   Cyclic sample-monitor-blank irradiation
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-SAMPLE      .Gold sample for monitor, metallic, chemical purity
-             99.999%, weight 12.04 gram, thickness 2.0 mm/11.7E-3
-             nuclei/barn, diameter 20.0 mm
+SAMPLE     The capture sample was natural La2O3 powder (about
+           50 g) which was contained in a graphite case with an
+           inner diameter of 55 mm and an inner length of 14 mm.
+           A gold (Au) disk with a diameter of 55 mm and a
+           thickness of 1 mm was used as a standard sample. Each
+           located at capture sample was an angle of 0 degree with
+           respect to the proton beam direction. The distance
+           between the neutron source and the sample was 12 cm for
+           the measurement in the 10-100 keV region and 20 cm for
+           that at 550 keV.
 ERR-ANALYS (ERR-T)  total error composed of partial ones given
                     below
-           (ERR-S)  Max statistical error
+           (ERR-S,2.,4.)  statistical error
            (MONIT-ERR)  Error of the standard cross-section
-           (ERR-1)      Max error of the response function
+           (ERR-1,3.,6.) error of the response function
            (ERR-2)      Error due to the trial function
            (ERR-3)      Resultant error due to weighting function
            (ERR-4)      Error due to the extrapolation of gamma
                         spectrum
-           (ERR-5)      Max error of sample chemical-impurity
+           (ERR-5,0.2,1.)  error of sample chemical-impurity
                         content
-           (ERR-6)      Max error of the multiplicity of observed
-                        gamma-rays
+           (ERR-6)error of the multiplicity of observed gamma-rays
+           The capture cross sections of 139La were derived with
+           uncertainties of about 5% in the incident neutron
+           energy region from 10 to 100 keV and at 550 keV.
            !Error structure taken from J. of Nucl.Sc. and Techn.,
             vol.36, #6, p.493, ENTRY 22482
 CORRECTION .Corrections were made for neutron self-shielding and
             multiple scattering in the sample, for gamma-ray
-            absorption and scatteing in sample, for neutron cross-
-            sections employed in calculations
+            absorption and scattering in sample, for neutron
+            cross-sections employed in calculations
 STATUS     (COREL,22482001)
 HISTORY    (20081230C)  + +  Compiled by S.M.
            (20090303U)  Author name corrected - Igashira: S.M.
-ENDBIB              66
-COMMON               8          6
-MONIT-ERR  ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
-ERR-6      ERR-S
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT
-         3.         6.         2.         2.         2.         1.
-         2.         4.
-ENDCOMMON            6
-ENDSUBENT           76
-SUBENT        23042002   20081230   20090306   20090302       2206
-BIB                  3          3
+           (20101106A) SD: Author's name corrected: T.Ohsaki;
+            doi corrected for ref. on 2007NICE; one ref. moved
+            to REL-REF; ERR-S, ERR-1, ERR-5 deleted from COMMON.
+            SAMPLE added to Subent 001.
+            SAMPLE deleted from Subents 002-004.
+ENDBIB              80
+COMMON               5          3
+MONIT-ERR  ERR-2      ERR-3      ERR-4      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+         3.         2.         2.         2.        2.
+ENDCOMMON            3
+ENDSUBENT           87
+SUBENT        23042002   20101106   20110803   20110721       2225
+BIB                  2          3
 REACTION   (57-LA-139(N,G)57-LA-140,,SIG)
-SAMPLE     .No information
 STATUS     (TABLE)  Dr. Igashira by INTERNET, 2008-11-27
+                    (fig.4 in 2007NICE,2,1299,2007)
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          5
@@ -94,14 +105,13 @@ KEV        MB         MB
 558.           5.64       0.3
 ENDDATA              7
 ENDSUBENT           15
-SUBENT        23042003   20081230   20090306   20090302       2206
-BIB                  4          5
+SUBENT        23042003   20101106   20110803   20110721       2225
+BIB                  3          4
 REACTION   (57-LA-139(N,G)57-LA-140,,MLT/DE,,AV) Averaged over
               energy interval given in data section
-SAMPLE     .No information
 EN-SEC     (E,G)
 STATUS     (TABLE)  Dr. Igashira by INTERNET, 2008-11-27
-ENDBIB               5
+ENDBIB               4
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
@@ -311,15 +321,15 @@ MEV        PT/RCT/MEV PT/RCT/MEV
   5.575        0.00056   0.000628
   5.6          0.00017   0.000511
 ENDDATA            202
-ENDSUBENT          216
-SUBENT        23042004   20081230   20090306   20090302       2206
-BIB                  5          6
+ENDSUBENT          215
+SUBENT        23042004   20101106   20110803   20110721       2225
+BIB                  4          6
 REACTION   (57-LA-139(N,G)57-LA-140,,MLT/DE,,SPA) Spectrum
-                                                  avraged
+                                                  averaged
 INC-SPECT  .Broad neutron spectrum
-SAMPLE     .No information
 EN-SEC     (E,G)
-STATUS     (TABLE)  Dr. Igashira by INTERNET, 2008-11-27
+STATUS     (TABLE)  Dr. Igashira by INTERNET, 2008-11-27,
+                    (fig.5 in 2007NICE,2,1299,2007)
 ENDBIB               6
 COMMON               2          3
 EN-MEAN    EN-RSL

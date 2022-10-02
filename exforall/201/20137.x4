@@ -1,10 +1,11 @@
-ENTRY            20137   20090401   20090724   20090722       2211
-SUBENT        20137001   20090401   20090724   20090722       2211
-BIB                 14         40
+ENTRY            20137   20101102   20110803   20110721       2225
+SUBENT        20137001   20101102   20110803   20110721       2225
+BIB                 14         45
 INSTITUTE  (2ZZZGEL)
 REFERENCE  (J,ZP,244,358,197107)  Main reference, data are given
            (P,EANDC(E)-150U,197205)
            (C,71VIENNA,,41,197108) Review, no data given
+           (J,NSD/BS,1,33,1977) Kin.Energy given
 AUTHOR     (H.-H.Knitter, M.Coppola, N.Ahmed, B.Jay)
 TITLE      -Scattering of fast neutrons on 92-U-238, average
             energy and angular distributions of fission neutrons.-
@@ -21,14 +22,14 @@ MONITOR    (1-H-1(N,EL)1-H-1,,DA) Scattering from a polyethylene
             sample.
 STATUS     (TABLE)  Tables in ZP,244,358.
 CORRECTION .The contribution of fission neutrons was calculated
-            on the assumption of a maxwellian shape for the
+            on the assumption of a Maxwellian shape for the
             fission spectrum, normalized to the part of the
             fission spectrum above the elastic peak.
            .The cross sections were corrected for finite sample
             size, beam attenuation and multiple scattering within
             the sample using the Monte Carlo program 'MAGGIE',
             (modified CBNM version, horstmann and schmid,
-            rept. No 087, nea computer progr.Library, ispra).
+            rept. No 087, NEA computer progr.library, ISPRA).
 ERR-ANALYS (DATA-ERR) The errors are due to counting statistics,
             uncertainties in the reference N-P scattering cross-
             section and detector efficiencies, and include errors
@@ -36,14 +37,18 @@ ERR-ANALYS (DATA-ERR) The errors are due to counting statistics,
 INC-SPECT  .EN-RSL-HW =  Half width at half maximum.
 HISTORY    (19710721C)
            (19730309E)
-           (19810120A) Monitor, reaction and err-analys coding
+           (19810120A) MONITOR, REACTION and ERR-ANALYS coding
                        revision
            (19810213E)
            (20090401A) Date is corrected
                        Upper case transformed to low case
-ENDBIB              40
+           (20101102A) SD: ref. on  NSD/BS, 1, 33, 1977 was added
+            In Subent 023 DATA-ERR: 8.E03 -> 0.080 and REACTION
+            code was changed according to new EXFOR rules:
+               ",,AKE,N" ==> "0-NN-1,,KE"
+ENDBIB              45
 NOCOMMON             0          0
-ENDSUBENT           43
+ENDSUBENT           48
 SUBENT        20137002   20090401   20090724   20090722       2211
 BIB                  5         10
 REACTION   (92-U-238(N,SCT)92-U-238,PAR,SIG) Elastic and partial
@@ -725,28 +730,36 @@ NO-DIM     MEV        MEV
    7.66E-01      1.774    1.5E-01
 ENDDATA              5
 ENDSUBENT           26
-SUBENT        20137023   20090401   20090724   20090722       2211
-BIB                  4         11
-REACTION   (92-U-238(N,F),,AKE,N) Average kinetic energy of fissio
-            neutrons.
+SUBENT        20137023   20101102   20110803   20110721       2225
+BIB                  4         15
+REACTION   (92-U-238(N,F)0-NN-1,,KE) Average kinetic energy of
+            fission neutrons.
             This quantity is related to the nuclear temperature
-            of the fission neutron evaporation process,(t(F)), as
-            e(av) = 1.5*t(F).
-ANALYSIS   .A plot of ln(N(e)/sqrt(e)) versus e from the spectrum
+            of the fission neutron evaporation process,(T(F)), as
+            E(av) = 1.5*T(F).
+ANALYSIS   .A plot of ln(N(E)/sqrt(E)) versus E from the spectrum
             above the elastic peak gives a straight line with a
-            slope -1/t(F).
+            slope -1/T(F).
 STATUS     (TABLE) From table 4 of Z.Physik,244(1971)358.
-HISTORY    (19810120A) Reaction Re-coded.
+HISTORY    (19810120A) Reaction re-coded.
            (19810213E)
-ENDBIB              11
-NOCOMMON             0          0
-DATA                 4          2
-EN         EN-RSL-HW  DATA       DATA-ERR
-MEV        MEV        MEV        MEV
-        1.9   4.05E-02      2.019     8.E-03
-        2.3    3.7E-02       1.85     8.E-03
+           (20101102A) SD: DATA-ERR: 8.E03 -> 0.080 and copied
+                       to COMMON and REACTION code was changed
+                       according to new EXFOR rules:
+                           ",,AKE,N" ==> "0-NN-1,,KE"
+ENDBIB              15
+COMMON               1          3
+DATA-ERR
+MEV
+  0.080
+ENDCOMMON            3
+DATA                 3          2
+EN         EN-RSL-HW  DATA
+MEV        MEV        MEV
+        1.9   4.05E-02      2.019
+        2.3    3.7E-02       1.85
 ENDDATA              4
-ENDSUBENT           20
+ENDSUBENT           28
 SUBENT        20137024     831102              20050926       0000
 BIB                  6         10
 REACTION   (92-U-238(N,F),PAR,DA,N)

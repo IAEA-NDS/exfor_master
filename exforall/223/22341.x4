@@ -1,35 +1,45 @@
-ENTRY            22341     970709              20050926       0000
-SUBENT        22341001     970709              20050926       0000
-BIB                 10         13
-TITLE       EXTENSION OF 208-PB (N,GAMMA) ANALYSIS UP TO 800 KEV
-AUTHOR     (P.MUTTI,F.CORVI,K.ATHANASSOPOULOS)
-INSTITUTE  (2ITYTUR)
-REFERENCE  (S,INDC(EUR)-030/G,28,9606)  ANNUAL PROGRESS REPORT
-             ON NUCLEAR DATA, 1995. INST. FOR REFERENCE MATERIALS
-             AND MEASUREMENTS EDITION, GEEL (BELGIUM). JUNE 1995,
+ENTRY            22341   20101122   20110803   20110721       2225
+SUBENT        22341001   20101122   20110803   20110721       2225
+BIB                 11         20
+TITLE       Extension of 208-Pb (n,gamma) analysis up to 800 keV
+AUTHOR     (P.Mutti,F.Corvi,K.Athanassopulos)
+INSTITUTE  (2ITYTUR,2ZZZGEL)
+REFERENCE  (S,INDC(EUR)-030,28,199606)  Annual progress report
+             on Nuclear Data, 1995. Inst. for Reference Materials
+             and Measurements edition, Geel (Belgium). June 1995,
              EUR 16417 EN
-DETECTOR   (FISCH)  235-U FISSION CHAMBER
-MONITOR    .NO INFORMATION
-ANALYSIS   .NO INFORMATION, PROBABLY AREA ANALYSIS
-ERR-ANALYS (DATA-ERR)  ERRORS ARE NOT SPECIFIED
-STATUS     .DATA ARE TAKEN FROM THE MAIN REFERENCE
-HISTORY    (970709C)  + +  COMPILED BY S.MAEV   ***
-ENDBIB              13
+FACILITY   (LINAC,2ZZZGEL) GELINA facility
+DETECTOR   (FISCH)  235-U fission chamber
+MONITOR    .No information
+ANALYSIS   .No information, probably area analysis
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+STATUS     (TABLE) .Data from Tbl.7 of INDC(EUR)-030,28,1996
+HISTORY    (19970709C)  + +  Compiled by S.Maev   ***
+           (20101122A) SD:Updated to new date formats,lower case.
+                corrected according to last EXFOR rules and Dict.
+                Author's name corrected: K.Athanassopoulos =>
+                                            K.Athanassopulos
+           Institute IRMM and FACILITY added from INDC(EUR)-030
+           REACTION code for fifth reaction in Subent 002 changed.
+ENDBIB              20
 NOCOMMON             0          0
-ENDSUBENT           16
-SUBENT        22341002     970709              20050926       0000
-BIB                  1          7
-REACTION  1(82-PB-208(N,0),,EN)   RESONANCE ENERGY
-          2(82-PB-208(N,0),,L)    ANGULAR MOMENTUM OF RESONANCE
-          3(82-PB-208(N,0),,J)    SPIN OF RESONANCE
-          4(82-PB-208(N,G),,WID)  GAMMA-WIDTH OF RESONANCE
-          5(((82-PB-208(N,G),,WID)*(82-PB-208(N,EL),,WID,,G))/
-           (82-PB-208(N,TOT),,WID))  (G-WIG) TIMES (EL-WID*G)
-                                    DIVIDED BY TOT-WID
-ENDBIB               7
+ENDSUBENT           23
+SUBENT        22341002   20101122   20110803   20110721       2225
+BIB                  2         10
+REACTION  1(82-PB-208(N,0),,EN)   Resonance energy
+          2(82-PB-208(N,0),,L)    angular momentum of resonance
+          3(82-PB-208(N,0),,J)    spin of resonance
+          4(82-PB-208(N,G),,WID)  gamma-width of resonance
+          5(82-PB-208(N,G),,WID/STR)
+HISTORY    (20101122A) SD: REACTION code in fifth line changed:
+            (((82-PB-208(N,G),,WID)*(82-PB-208(N,EL),,WID,,G))/
+            (82-PB-208(N,TOT),,WID)) =>
+                           (82-PB-208(N,G)82-PB-209,,WID/STR)
+                     Pointer 5 added to DATA col.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 7         15
-DATA      1DATA      2DATA      3DATA      4DATA-ERR  4DATA
+DATA      1DATA      2DATA      3DATA      4DATA-ERR  4DATA      5
 DATA-ERR  5
 KEV        NO-DIM     NO-DIM     EV         EV         EV
 EV
@@ -64,31 +74,24 @@ EV
  787.39      2.5        3.         1.281      0.054      2.80
      0.16
 ENDDATA             34
-ENDSUBENT           46
-SUBENT        22341003     970709              20050926       0000
-BIB                  3          6
-REACTION   (82-PB-208(N,G),,ARE)  TOTAL AREA OF THE RESONANCE
-FLAG       (1.) THIS DATA POINT FOR RESONANCE AREA IS TAKEN FROM
-                THE ARTICLE OF R.MACKLIN ET.AL., ASTROPHYS.J.,
-                VOL.17,P.222,1977
-           (2.) VALUE DERIVED FROM A FIT THE PRESENT CAPTURE DATA
-STATUS     (DEP,22341002)   RESONANCE ENERGY TAKEN FROM SAN 002
-ENDBIB               6
+ENDSUBENT           49
+SUBENT        22341003   20101122   20110803   20110721       2225
+BIB                  4          8
+REACTION   (82-PB-208(N,EL),,WID)
+            Values derived from a fit the present capture data:
+REL-REF    (R,10693002,R.L.Maclin+,J,AJ,217,222,1977)
+           (R,13738002,D.J.Horen+,J,PR/C,34,429,1986)
+STATUS     (DEP,22341002)   Capture kernel taken from San 002
+HISTORY    (20101122A) SD: FLAG with data from Macklin and
+            Horen deleted. REL-REF on Macklin's and Horen's
+            data added. REACTION code corrected.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 4         11
-EN-RES     DATA       DATA-ERR   FLAG
-KEV        B*EV       B*EV       NO-DIM
- 320.34     1136.       524.         2.
- 350.41      788.       258.         2.
- 526.98     4625.        50.
- 715.13      130.                    1.
- 721.30     3938.        43.
- 723.26      165.         6.
- 739.21      193.         5.
- 764.62     2643.        30.
- 765.12      369.         9.
- 773.26       60.                    1.
- 787.39      116.         5.
-ENDDATA             13
-ENDSUBENT           24
+DATA                 3          2
+EN-RES     DATA       DATA-ERR
+KEV        EV         EV
+ 320.34     1136.       524.
+ 350.41      788.       258.
+ENDDATA              4
+ENDSUBENT           17
 ENDENTRY             3

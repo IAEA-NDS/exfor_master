@@ -1,19 +1,19 @@
-ENTRY            22657   20071219   20080131   20080123       2190
-SUBENT        22657001   20071219   20080131   20080123       2190
-BIB                 13         38
-TITLE      .Neutron activation cross sections for copper,
-            europium, hafnium, iron, nickel, silver, terbium and
-            titanium from Argonne, Los Alamos and JAERI
-            collaboration
+ENTRY            22657   20101105   20110803   20110721       2225
+SUBENT        22657001   20101105   20110803   20110721       2225
+BIB                 14         48
+TITLE      Measurement of fast-neutron activation cross sections
+           for Copper, Europium, Hafnium, Iron, Nickel, Silver,
+           Terbium and Titanium at 10.0 and 14.7 MeV and for the
+           Be(d,n) thick-target spectrum
 AUTHOR     (J.W.Meadows, D.L.Smith, L.R.Greenwood, R.C.Haight,
            Y.Ikeda, C.Konno)
-INSTITUTE  (1USAANL) Meadows, smith, greenwood
+INSTITUTE  (1USAANL) Meadows, Smith, Greenwood
            (1USAANL) Haight
            (2JPNJAE) Y.Ikeda, C.Konno
 REFERENCE  (J,ANE,23,877,199607)  Main reference
            (S,INDC(NDS)-342,7,199602)  Preliminary publication
                                        data are given
-           (S,INDC(NDS)-286,13,1993)    Experimental details
+REL-REF    (I,,D.L.Smith+,S,INDC(NDS)-286,13,1993) Experim.details
 FACILITY   (FNS,2JPNJAE)   Facility of fusion neutronic source -
                            'FNS' of JAERI
 DETECTOR   (HPGE)
@@ -25,7 +25,10 @@ SAMPLE     .Monitor target Ni-58 isotope abundance 68.077%
 CORRECTION .Corrections were made for counting losses,
             for low-energy neutrons
 STATUS     (TABLE) Data are taken from the table 5, errors are
-                   taken from table 7 of main reference.
+                  taken from table 7 of Ann.Nucl.Ener.,23,877,1996
+           (COREL,13586001) Results from measurements at LANL,
+             ANL and on CCW of JAERI.
+            Experiments made in one Coord.Res.Program.
 ERR-ANALYS (ERR-T)      Total error.
            (MONIT-ERR)  Error of the monitor cross section
            (ERR-1)  .Error of gamma-ray measurement, includes
@@ -39,17 +42,24 @@ ERR-ANALYS (ERR-T)      Total error.
 HISTORY    (20020220C)  + +  Compiled by S.M.          + +
            (20071219A) New reference added
            (20071219U) Last checking has been done.
-ENDBIB              38
+           (20101102A) SD: in EACTION code 2nd term: SF3:N+P -> X,
+                     SF8: RAB added at Subent 002,
+           Values for ERR-T in Subents 009, 010 corrected as it
+           is given in Ann.Nucl.Ener.,23,877,1996
+           Title was changed according to first ref. on
+           Ann.Nucl.Ener.,23,877,1996;
+           Ref. on INDC(NDS)-286 report was changed on REL-REF
+ENDBIB              48
 COMMON               2          3
 EN         MONIT-ERR
 MEV        PER-CENT
        14.7        4.9
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        22657002   20020223   20030221   20050926       0000
-BIB                  4          9
+ENDSUBENT           55
+SUBENT        22657002   20101105   20110803   20110721       2225
+BIB                  5         11
 REACTION   ((22-TI-46(N,P)21-SC-46,,SIG)+
-           (22-TI-47(N,N+P)21-SC-46,,SIG))
+           (22-TI-47(N,X)21-SC-46,,SIG,,RAB))
 DECAY-DATA (21-SC-46-M,18.75SEC,DG)
            (21-SC-46-G,83.810D,B-,889.,0.99984)
 SAMPLE     .Ti-46 Isotope Abundance is 8.0%,
@@ -57,7 +67,9 @@ SAMPLE     .Ti-46 Isotope Abundance is 8.0%,
 STATUS     (COREL,13586002)
            (COREL,13586012)
            (COREL,13586021)
-ENDBIB               9
+HISTORY    (20101102A) SD: in EACTION code 2nd term: SF3:N+P -> X,
+                     SF8: RAB added
+ENDBIB              11
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
@@ -68,7 +80,7 @@ DATA       ERR-T
 MB         PER-CENT
        311.        7.5
 ENDDATA              3
-ENDSUBENT           21
+ENDSUBENT           23
 SUBENT        22657003   20020223   20030221   20050926       0000
 BIB                  4          6
 REACTION   (26-FE-54(N,P)25-MN-54,,SIG)
@@ -188,15 +200,17 @@ MB         PER-CENT
       2072.        8.6
 ENDDATA              3
 ENDSUBENT           19
-SUBENT        22657009   20020223   20030221   20050926       0000
-BIB                  4          6
+SUBENT        22657009   20101102   20110803   20110721       2225
+BIB                  5          8
 REACTION   (72-HF-176(N,2N)72-HF-175,,SIG)
 DECAY-DATA (72-HF-175,70.D,DG,343.,0.840)
 SAMPLE     .Hf-176 Isotopic Abundance is 5.206 %
 STATUS     (COREL,13586009)
            (COREL,13586019)
            (COREL,13586028)
-ENDBIB               6
+HISTORY    (20101102A) SD: Value for ERR-T corrected: 6.2=>7.2 as
+           it is given in the Tabl.5 at Ann.Nucl.Ener.,23,877,1996
+ENDBIB               8
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
@@ -205,17 +219,20 @@ ENDCOMMON            3
 DATA                 2          1
 DATA       ERR-T
 MB         PER-CENT
-      2057.        6.2
+      2057.        7.2
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        22657010   20020223   20030221   20050926       0000
-BIB                  3          5
+ENDSUBENT           20
+SUBENT        22657010   20101102   20110803   20110721       2225
+BIB                  4          8
 REACTION   ((72-HF-179(N,2N)72-HF-178-M2,,SIG)+
-           (72-HF-178(N,INL)72-HF-178-M2,,SIG))
+           (72-HF-178(N,INL)72-HF-178-M2,,SIG,,RAB))
 DECAY-DATA (72-HF-178-M2,31.YR,DG,325.,0.9411)
 SAMPLE     .Hf-179 Isotopic Abundance is 13.629 %
             Hf-178 Isotopic Abundance is 27.297 %
-ENDBIB               5
+HISTORY    (20101102A) SD: in EACTION code SF8: RAB added
+           Value for ERR-T corrected: 9. => 9.2 as it is given
+           in the Tabl.5 at Ann.Nucl.Ener.,23,877,1996
+ENDBIB               8
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
@@ -224,7 +241,7 @@ ENDCOMMON            3
 DATA                 2          1
 DATA       ERR-T
 MB         PER-CENT
-        7.2         9.
+        7.2        9.2
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           20
 ENDENTRY            10

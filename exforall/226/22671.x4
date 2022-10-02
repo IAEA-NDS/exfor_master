@@ -1,13 +1,13 @@
-ENTRY            22671   20080520   20080828   20080828       2199
-SUBENT        22671001   20080520   20080828   20080828       2199
-BIB                 15         46
+ENTRY            22671   20101105   20110803   20110721       2225
+SUBENT        22671001   20101105   20110803   20110721       2225
+BIB                 16         50
 TITLE       Radiochemical measurement of excitation function
-            Of 63Cu(N,P)63Ni reaction from 7.2 to 14.6 MeV
-AUTHOR     (S.M.QAIM, ST.SPELLERBERG, F.CSERPAK, J.CSIKAI)
+            of 63Cu(n,p)63Ni reaction from 7.2 to 14.6 MeV
+AUTHOR     (S.M.Qaim,St.Spellerberg,F.Cserpak,J.Csikai)
 INSTITUTE  (2GERJUL) Qaim, Spellerberg
            (3HUNDEB) Cserpak, Csikai
 REFERENCE  (J,RCA,73,111,1996)  Main reference, data are given
-           (J,NSE,88,143,1988)  Experimental details
+REL-REF    (M,,S.M.Qaim+,J,NSE,88,143,1984)  Experimental details
 FACILITY  A(CYCLO,2GERJUL) Compact CV-28 cyclotron in Juelich
           B(VDG,3HUNDEB)   D-T Neutron generator in Debrecen
 INC-SOURCEA(D-D)  For Neutron Production in the Range 7.2 - 9.2
@@ -22,17 +22,15 @@ MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
 DECAY-MON  (11-NA-24,15.0HR,DG,1368.,1.00)
            (41-NB-92-M,10.15D,DG,934.,0.99)
            (27-CO-60,5.27YR,DG,1173.,0.999)
-MONIT-REF  .(IRDF - INTERNATIONAL RADIATION DOSIMETRY FILE, 1990)
+MONIT-REF  (,,3,IRDF-90,,1990)
             Issued by International Atomic Energy Agency, Vienna,
             as a computer file
-METHOD     (ACTIV,CHSEP)
-          A(SITA)
-          B(STTA)
+METHOD     (ACTIV,CHSEP,STTA)
 PART-DET   (DG,B-)
 DETECTOR   (TELES,PROPC,PROPC) For beta-minus counting two stable
             detectors via low-level anti-coincidence counting were
             used - (BERTHOLD LB 2711, MULTI-LOGGER LB 5310)
-           (GELI)   For Gamma counting
+           (GELI)   For gamma counting
            .For beta counting low-level anticoincidence beta-minus
             counting was used. for this purpose two very stable
             detector systems were used (BERTHOLD, LB 2711 AND
@@ -47,12 +45,19 @@ SAMPLE    A.High purity copper 99.9999%, 1.8 cm diameter, 2.8 cm
             sample stack
 HISTORY    (20020715C)  + +  Compiled by S.M.
            (20080520U)  BIB-information corrected
-ENDBIB              46
+           (20101102A) SD: MONIT-REF corrected:
+            (IRDF - INTERNATIONAL RADIATION DOSIMETRY FILE,1990)=>
+                                            (,,3,IRDF-90,,1990)
+           Year in ref. on Nucl.Scien.Eng. 88 corrected on 1984
+           and ref. moved to REL-REF.
+           POINTERS added to REACTION in Subent 002
+ENDBIB              50
 NOCOMMON             0          0
-ENDSUBENT           49
-SUBENT        22671002   20080520   20080828   20080828       2199
-BIB                  6         14
-REACTION   (29-CU-63(N,P)28-NI-63,,SIG)
+ENDSUBENT           53
+SUBENT        22671002   20101102   20110803   20110721       2225
+BIB                  7         16
+REACTION  A(29-CU-63(N,P)28-NI-63,,SIG) D-D neutron experiment
+          B(29-CU-63(N,P)28-NI-63,,SIG) D-T neutron experiment
 DECAY-DATA (28-NI-63,,B-,67.)
 CORRECTION .Corrections were made for the efficiency of the detec-
             tor, for the self-absorption in the counting source,
@@ -65,20 +70,27 @@ ERR-ANALYS (ERR-T) Total error
            (ERR-4) Error in the beta-minus detection
 REL-REF    (N,,S.M.QAIM+,J,PR/C,46,1398,1992)  Description of the
                  Errors Determination
-STATUS     (TABLE)  From Table 1 of main reference
-ENDBIB              14
+STATUS     (TABLE)  From Table 1 of RCA,73,111,1996
+HISTORY    (20101102A) SD: POINTERS added to REACTION
+ENDBIB              16
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
 PER-CENT   PER-CENT   PER-CENT
         10.         3.        12.
 ENDCOMMON            3
-DATA                 5          4
-EN         EN-ERR     DATA       ERR-T      ERR-3
-MEV        MEV        MB         MB         PER-CENT
-        7.2        0.4        91.        23.        10.
-        8.2        0.4       105.        18.        20.
-        9.2        0.4       112.        29.        20.
-       14.6        0.3        70.        13.        10.
-ENDDATA              6
-ENDSUBENT           29
+DATA                 8          4
+EN         EN-ERR     DATA      AERR-T     AERR-3     ADATA      B
+ERR-T     BERR-3     B
+MEV        MEV        MB         MB         PER-CENT   MB
+MB         PER-CENT
+  7.2       0.4         91.       23.        10.
+
+  8.2       0.4        105.       18.        20.
+
+  9.2       0.4        112.       29.        20.
+
+ 14.6       0.3                                           70.
+  13.        10.
+ENDDATA             12
+ENDSUBENT           37
 ENDENTRY             2
