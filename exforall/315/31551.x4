@@ -1,12 +1,12 @@
-ENTRY            31551   20050923   20060327   20060323       3118
-SUBENT        31551001   20050923   20060327   20060323       3118
-BIB                 15         85
+ENTRY            31551   20160929   20161212   20161115       3175
+SUBENT        31551001   20160929   20161212   20161115       3175
+BIB                 14         85
 TITLE      Activation cross sections for reactions induced by
            14 MeV neutrons on natural tin and enriched 112Sn
            targets with reference to 111In production via
            radioisotope generator 112Sn(n,2n)111Sn -- 111In
 AUTHOR     (E.Betak,R.Mikolajczak,J.Staniszewska,S.Mikolajewski,
-           Ed.Rurarz)
+           E.Rurarz)
 INSTITUTE  (3SLKSLO,3POLIPJ)
            (3CZRCZR) Faculty of Philosophy and Sciences,
            Silesian University, 74601 Opava, Czech Rep. J
@@ -20,7 +20,7 @@ MONIT-REF  (,Paulsen+,J,NKA,7,117,1965)
            (,IAEA,R,IAEA-273,301,1987) Handbook on nuclear
            activation data
 SAMPLE     Three samples (112Sn, natSn and Cu) were placed
-           in that order in a stick-like arrangement along the
+           in that order in a stack-like arrangement along the
            deuteron beam axis and were irradiated by the same
            incident neutron flux. These disks (triad) were weighed
            and grouped into three stacks.
@@ -44,7 +44,7 @@ SAMPLE     Three samples (112Sn, natSn and Cu) were placed
            112Sn - 62.5%; 114Sn - 2.1%; 115Sn - 0.7%;
            116Sn - 9.6%; 117Sn - 3.4%; 118Sn - 7.9%;
            119Sn - 2.9%; 120Sn-7.6%; 122Sn-1.4%; 124Sn-1.9%
-           Abundance in the inriched sample 2. is: 112Sn-84.0%;
+           Abundance in the enriched sample 2. is: 112Sn-84.0%;
            114Sn-13.%; 115Sn-0.75%; 116Sn-2.0%; 117Sn-0.25%.
 DETECTOR   (GELI) Small, enriched irradiated samples of 112Sn
            were measured on a 72 cm3 Ge(Li) spectrometer.
@@ -56,24 +56,22 @@ DETECTOR   (GELI) Small, enriched irradiated samples of 112Sn
            2. a second detector in the form of copper disks. The
            copper monitor foil 44 mm diam. 1 mm thick
             (mass 13.25 g) was 99.9% pure.
-REL-REF    The decay-data were from database NuDaT 2.0, 2004
-            http://www-nds.iaea.org/nudat2
 ERR-ANALYS (ERR-T) Total error. Uncertainties in the cross
            section values reported in this work are composed of
            uncertainties from various sources entering into well
            known activation formula. The dominant sources are:
-              * gamma-ray detector efficiency (5%),
-              * photo-peak counting statistics (1 to 18%),
-              * neutron flux determination (standard cross section
-                of the 65Cu(n,2n)64Cu for the neutron flux monitor
-                with error +-3%),
-              * error of the half-lives (1 to 18%),
-              * the gamma-ray branching ratios (1 to 14%),
-              * cascade (coincidence) summing (1 to 33%) for
-                close geometry (source-to-detector distance
-                0.3 cm) and
-              * self-absorption of gamma-rays in the sample (1%).
-           Other uncertaities, such as sample weight, isotopic
+           (ERR-1) gamma-ray detector efficiency (5%),
+           (ERR-S,1.,18.) photo-peak counting statistics (1 to 18%
+           (MONIT-ERR)  neutron flux determination (standard cross
+                section of the 65Cu(n,2n)64Cu for the neutron flux
+                monitor with error (3%),
+                error of the half-lives (1 to 18%),
+           (ERR-2,1.,14.) the gamma-ray branching ratios (1 to 14%
+           (ERR-3,1.,33.) cascade (coincidence) summing (1 to 33%)
+                for close geometry (source-to-detector distance
+                0.3 cm)
+           (ERR-4) self-absorption of gamma-rays in the sample (1%
+           Other uncertainties, such as sample weight, isotopic
            abundance, irradiation, cooling and measuring time
            were of the order of 0.1 % each.
            Wherever it was possible, the authors used a few gamma
@@ -86,11 +84,13 @@ ERR-ANALYS (ERR-T) Total error. Uncertainties in the cross
 STATUS     (TABLE) Table from the reference
            (APRVD) Entry was approved by Dr. E.Betak
 HISTORY    (20050923C) SD
+           (20160923A) VS. Coded information added to ERR-ANALYS.
+                       DECAY-DATA corrected in 017.
 ENDBIB              85
-COMMON               4          3
-EN         EN-ERR     MONIT      MONIT-ERR
-MEV        MEV        MB         MB
-  14.4      0.2         964.       68.
+COMMON               6          3
+EN         EN-ERR     MONIT      MONIT-ERR  ERR-1      ERR-4
+MEV        MEV        MB         MB         PER-CENT   PER-CENT
+  14.4      0.2         964.       68.        5.         1.
 ENDCOMMON            3
 ENDSUBENT           92
 SUBENT        31551002   20050923   20060327   20060323       3118
@@ -289,16 +289,17 @@ MB         MB
   0.29       0.06
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        31551017   20050923   20060327   20060323       3118
-BIB                  2          2
+SUBENT        31551017   20160929   20161212   20161115       3175
+BIB                  3          3
 REACTION   (50-SN-124(N,2N)50-SN-123-M,,SIG)
-DECAY-DATA (50-SN-123,40.0MIN,DG,160.3,0.857)
-ENDBIB               2
+DECAY-DATA (50-SN-123-M,40.0MIN,DG,160.3,0.857)
+HISTORY    (20160923U) VS. DECAY-DATA corrected.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
    590.       26.
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           11
 ENDENTRY            17
