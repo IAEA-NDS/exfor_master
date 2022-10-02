@@ -1,10 +1,11 @@
-ENTRY            C1030   20040420   20040513   20050926       0000
-SUBENT        C1030001   20040420   20040513   20050926       0000
-BIB                 12         18
+ENTRY            C1030   20111226   20120328   20120325       C114
+SUBENT        C1030001   20111226   20120328   20120325       C114
+BIB                 12         22
 INSTITUTE  (1USAOSU)
 REFERENCE  (J,NP,45,647,1963)
 AUTHOR     (R.F.Seiler,C.H.Jones,W.J.Anzick,D.F.Herring,K.W.Jones)
-TITLE      The elastic scattering of deuterons by O16
+TITLE      The elastic scattering of deuterons by O-16 from
+            0.65 to 2.0 MeV
 FACILITY   (ACCEL,1USAOSU) Electrostatic accelerator.
 INC-SOURCE HH+ beam.
 SAMPLE     99.6% pure oxygen gas target.
@@ -12,20 +13,23 @@ METHOD     (BCINT)
 DETECTOR   (SIBAR) Silicon gold surface barrier detector.
 CORRECTION No correction for nitrogen and nitrous oxide impurities
             in target.
-ERR-ANALYS Total RMS uncertainty in experimental data is generally
-            <5%; statistical uncertainty <3%, systematic
-            uncertainties <2%.
+ERR-ANALYS (ERR-T,,5.) Total RMS uncertainty in experimental data
+                    is generally <5%;
+           (ERR-S,,3.)  statistical uncertainty <3%,
+           (ERR-SYS,,2.) systematic uncertainties <2%.
            (EN-ERR-DIG) Digitizing error in energy.
            (EN-ERR) Total RMS uncertainty in beam energy.
            (ERR-DIG)    Digitizing error in data.
 HISTORY    (20040420C) VM
-ENDBIB              18
+           (20111226A) SD: In Subent 4 E-LVL added in COMMON and
+                             SF5=PAR added to REACTION code .
+ENDBIB              22
 COMMON               1          3
 EN-ERR
 KEV
   5.
 ENDCOMMON            3
-ENDSUBENT           25
+ENDSUBENT           29
 SUBENT        C1030002   20040420   20040513   20050926       0000
 BIB                  2          2
 REACTION   (8-O-16(D,EL)8-O-16,,DA)
@@ -2630,15 +2634,17 @@ MEV        MEV        MB/SR
   0.87       2.121     17.178
 ENDDATA            595
 ENDSUBENT          606
-SUBENT        C1030004   20040420   20040513   20050926       0000
-BIB                  2          2
-REACTION   (8-O-16(D,A)7-N-14,,DA)
+SUBENT        C1030004   20111226   20120328   20120325       C114
+BIB                  3          4
+REACTION   (8-O-16(D,A)7-N-14,PAR,DA)
 STATUS     (CURVE) Scanned from Fig.5 in reference at IAEA-NDS.
-ENDBIB               2
-COMMON               3          3
-ANG-CM     EN-ERR-DIG ERR-DIG
-ADEG       MEV        MB/SR
-  166.       0.003     0.02
+HISTORY    (20111226A) SD: E-LVL added in COMMON and
+                             SF5=PAR added to REACTION code .
+ENDBIB               4
+COMMON               4          3
+E-LVL      ANG-CM     EN-ERR-DIG ERR-DIG
+MEV        ADEG       MEV        MB/SR
+  0.0         166.       0.003     0.02
 ENDCOMMON            3
 DATA                 2        288
 EN         DATA-CM
@@ -2932,5 +2938,5 @@ MEV        MB/SR
   2.111      5.592
   2.115      5.154
 ENDDATA            290
-ENDSUBENT          301
+ENDSUBENT          303
 ENDENTRY             4

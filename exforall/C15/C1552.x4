@@ -1,19 +1,25 @@
-ENTRY            C1552   20070430   20070720   20070716       C080
-SUBENT        C1552001   20070430   20070720   20070716       C080
-BIB                 10         20
+ENTRY            C1552   20111229   20120328   20120325       C114
+SUBENT        C1552001   20111229   20120328   20120325       C114
+BIB                 11         28
 INSTITUTE  (1USAWIS)
 REFERENCE  (J,NP/A,349,445,1980)
 AUTHOR     (J.A.Bieszk,L.D.Knutson)
-TITLE      Determination of the D2 parameter for (d, 3He)
+TITLE      Determination of the D2 parameter for (d,3He)
             reactions
 FACILITY   (VDGT,1USAWIS) The University of Wisconsin Lamb-shift
             polarized ion source
-SAMPLE     The target was a 2.06 mg/cm2 metallic Cu foil enriched
-            to 99.87% in 63Cu.
+REL-REF    (M,,N.Rohrig+,J,NP/A,206,225,1973) - similar method
+                     used to measure the tensor analyzing powers
+           (I,,T.B.Clegg+,C,70MADISON,,835,1971) - Lamb-shift
+                             polarized ion source description
+           (I,,K.Stephenson+,J,NIM,169,483,1980) - polarimeter
+                                                 description
+SAMPLE     (29-CU-63,ENR=0.9987) The target was a 2.06 mg/cm2
+            metallic Cu foil enriched to 99.87% in 63Cu.
 DETECTOR   (TELES) At 9 MeV two telescopes with thin (30 microm)
-            DE detectors were used while at 12 MeV we used four
-            counter telescopes with 60 microm thick DE detectors.
-METHOD     (EDE) Reaction products were detected by DE-E counter
+            dE detectors were used while at 12 MeV we used four
+            counter telescopes with 60 microm thick dE detectors.
+METHOD     (EDE) Reaction products were detected by dE-E counter
             telescopes located to one side of the incident beam.
 ERR-ANALYS The error bars shown in subsequent figures include the
             contributions from statistics, from uncertainties in
@@ -21,18 +27,20 @@ ERR-ANALYS The error bars shown in subsequent figures include the
             uncertainty in the determination of the beam
             polarizations.
 HISTORY    (20070430C) DR
-ENDBIB              20
+           (20111229A) SD: BIB updated. MONITOR was added.
+            REACTION code in Subents 007-011 corrected.
+ENDBIB              28
 NOCOMMON             0          0
-ENDSUBENT           23
-SUBENT        C1552002   20070430   20070720   20070716       C080
+ENDSUBENT           31
+SUBENT        C1552002   20111229   20120328   20120325       C114
 BIB                  3          4
 REACTION   (29-CU-63(D,EL)29-CU-63,,DA,,RTH)
-ERR-ANALYS (ERR-T) The uncertainty in the cross sections is
-            estimated to be 10%.
-STATUS     (CURVE) Data taken from Fig. 2
+ERR-ANALYS (DATA-ERR) The uncertainty in the overall
+                   normalization estimated to be 10%.
+STATUS     (CURVE) Data taken from Fig. 2 of NP/A,349,445,1980
 ENDBIB               4
 COMMON               1          3
-ERR-T
+DATA-ERR
 PER-CENT
 10.
 ENDCOMMON            3
@@ -307,17 +315,25 @@ MEV        ADEG       NO-DIM     PER-CENT
 12.          2.033E+02  3.563E-02   4.
 ENDDATA             42
 ENDSUBENT           52
-SUBENT        C1552007   20070430   20070720   20070716       C080
-BIB                  3          4
-REACTION   (29-CU-63(D,HE3)28-NI-62,,DA)
-ERR-ANALYS (ERR-T) The uncertainty in the cross sections is
-            estimated to be 10%.
-STATUS     (CURVE) Data taken from Fig. 3
-ENDBIB               4
-COMMON               1          3
-ERR-T
-PER-CENT
-10.
+SUBENT        C1552007   20111229   20120328   20120325       C114
+BIB                  5         12
+REACTION   (29-CU-63(D,HE3)28-NI-62,PAR,DA)
+MONITOR    (29-CU-63(D,EL)29-CU-63,,DA,,RTH)
+           To obtain absolute cross sections, an optical-model
+           calculation was used to determine the elastic
+           scattering cross section at the monitor detector angle.
+           This procedure is reasonably accurate since the monitor
+           cross section differs only slightly (i.e. by about 2%
+           at Ed = 9 MeV and 12% at Ed = 12 MeV) from Rutherford.
+ERR-ANALYS (DATA-ERR) The uncertainty in the overall
+                   normalization estimated to be 10%.
+STATUS     (CURVE) Data taken from Fig. 3 of NP/A,349,445,1980
+HISTORY    (20111229A) SD: REACTION code corrected: SF5=PAR added.
+ENDBIB              12
+COMMON               2          3
+DATA-ERR   E-LVL
+PER-CENT   MEV
+10.          0.0
 ENDCOMMON            3
 DATA                 3         40
 EN         ANG-CM     DATA-CM
@@ -363,17 +379,22 @@ MEV        ADEG       MU-B/SR
 12.          1.648E+02  2.180E+01
 12.          1.711E+02  2.203E+01
 ENDDATA             42
-ENDSUBENT           55
-SUBENT        C1552008   20070430   20070720   20070716       C080
-BIB                  3          6
-REACTION   (29-CU-63(D,HE3)28-NI-62,20,POL/DA,,TAP)
+ENDSUBENT           63
+SUBENT        C1552008   20111229   20120328   20120325       C114
+BIB                  4          7
+REACTION   (29-CU-63(D,HE3)28-NI-62,20/PAR,POL/DA,,TAP)
 ERR-ANALYS (ERR-SYS) In addition to the displayed errors,
             all of the analyzing power measurements are subject
             to an uncertainty of 2% at 9 MeV and 4% at 12 MeV.
            (ERR-S) Statistical uncertainty
-STATUS     (CURVE) Data taken from Fig. 3
-ENDBIB               6
-NOCOMMON             0          0
+STATUS     (CURVE) Data taken from Fig. 3 of NP/A,349,445,1980
+HISTORY    (20111229A) SD: REACTION code corrected: SF5=PAR added.
+ENDBIB               7
+COMMON               1          3
+E-LVL
+MEV
+  0.0
+ENDCOMMON            3
 DATA                 5         40
 EN         ANG-CM     DATA       ERR-S      ERR-SYS
 MEV        ADEG       NO-DIM     NO-DIM     PER-CENT
@@ -418,17 +439,22 @@ MEV        ADEG       NO-DIM     NO-DIM     PER-CENT
 12.          1.641E+02 -3.226E-01  3.584E-02   4.
 12.          1.700E+02 -3.546E-01  3.396E-02   4.
 ENDDATA             42
-ENDSUBENT           53
-SUBENT        C1552009   20070430   20070720   20070716       C080
-BIB                  3          6
-REACTION   (29-CU-63(D,HE3)28-NI-62,22,POL/DA,,TAP)
+ENDSUBENT           58
+SUBENT        C1552009   20111229   20120328   20120325       C114
+BIB                  4          7
+REACTION   (29-CU-63(D,HE3)28-NI-62,22/PAR,POL/DA,,TAP)
 ERR-ANALYS (ERR-SYS) In addition to the displayed errors,
             all of the analyzing power measurements are subject
             to an uncertainty of 2% at 9 MeV and 4% at 12 MeV.
            (ERR-S) Statistical uncertainty
-STATUS     (CURVE) Data taken from Fig. 3
-ENDBIB               6
-NOCOMMON             0          0
+STATUS     (CURVE) Data taken from Fig. 3 of NP/A,349,445,1980
+HISTORY    (20111229A) SD: REACTION code corrected: SF5=PAR added.
+ENDBIB               7
+COMMON               1          3
+E-LVL
+MEV
+  0.0
+ENDCOMMON            3
 DATA                 5         40
 EN         ANG-CM     DATA       ERR-S      ERR-SYS
 MEV        ADEG       NO-DIM     NO-DIM     PER-CENT
@@ -473,17 +499,22 @@ MEV        ADEG       NO-DIM     NO-DIM     PER-CENT
 12.          1.621E+02 -6.512E-03  2.674E-02   4.
 12.          1.687E+02  1.444E-02  3.056E-02   4.
 ENDDATA             42
-ENDSUBENT           53
-SUBENT        C1552010   20070430   20070720   20070716       C080
-BIB                  3          6
-REACTION   (29-CU-63(D,HE3)28-NI-62,21,POL/DA,,TAP)
+ENDSUBENT           58
+SUBENT        C1552010   20111229   20120328   20120325       C114
+BIB                  4          7
+REACTION   (29-CU-63(D,HE3)28-NI-62,21/PAR,POL/DA,,TAP)
 ERR-ANALYS (ERR-SYS) In addition to the displayed errors,
             all of the analyzing power measurements are subject
             to an uncertainty of 2% at 9 MeV and 4% at 12 MeV.
            (ERR-S) Statistical uncertainty
-STATUS     (CURVE) Data taken from Fig. 3
-ENDBIB               6
-NOCOMMON             0          0
+STATUS     (CURVE) Data taken from Fig. 3 of NP/A,349,445,1980
+HISTORY    (20111229A) SD: REACTION code corrected: SF5=PAR added.
+ENDBIB               7
+COMMON               1          3
+E-LVL
+MEV
+  0.0
+ENDCOMMON            3
 DATA                 5         40
 EN         ANG-CM     DATA       ERR-S      ERR-SYS
 MEV        ADEG       NO-DIM     NO-DIM     PER-CENT
@@ -528,20 +559,21 @@ MEV        ADEG       NO-DIM     NO-DIM     PER-CENT
 12.          1.571E+02 -3.289E-02  2.619E-02   4.
 12.          1.628E+02  1.246E-02  2.803E-02   4.
 ENDDATA             42
-ENDSUBENT           53
-SUBENT        C1552011   20070430   20070720   20070716       C080
-BIB                  3          6
-REACTION   (29-CU-63(D,HE3)28-NI-62,,POL/DA,,VAP)
+ENDSUBENT           58
+SUBENT        C1552011   20111229   20120328   20120325       C114
+BIB                  4          7
+REACTION   (29-CU-63(D,HE3)28-NI-62,PAR,POL/DA,,VAP)
 ERR-ANALYS (ERR-SYS) In addition to the displayed errors,
             all of the analyzing power measurements are subject
             to an uncertainty of 2% at 9 MeV and 4% at 12 MeV.
            (ERR-S) Statistical uncertainty
-STATUS     (CURVE) Data taken from Fig. 3
-ENDBIB               6
-COMMON               2          3
-EN         ERR-SYS
-MEV        PER-CENT
-12.        4.
+STATUS     (CURVE) Data taken from Fig. 3 of NP/A,349,445,1980
+HISTORY    (20111229A) SD: REACTION code corrected: SF5=PAR added.
+ENDBIB               7
+COMMON               3          3
+EN         ERR-SYS    E-LVL
+MEV        PER-CENT   MEV
+12.        4.           0.0
 ENDCOMMON            3
 DATA                 3         20
 ANG-CM     DATA       ERR-S
@@ -567,5 +599,5 @@ ADEG       NO-DIM     NO-DIM
   1.615E+02 -2.787E-02  4.510E-02
   1.670E+02  6.090E-02  4.316E-02
 ENDDATA             22
-ENDSUBENT           37
+ENDSUBENT           38
 ENDENTRY            11
