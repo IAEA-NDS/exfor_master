@@ -1,6 +1,6 @@
-ENTRY            23026   20090115   20090306   20090302       2206
-SUBENT        23026001   20090115   20090306   20090302       2206
-BIB                 11         45
+ENTRY            23026   20100403   20100712   20100629       2218
+SUBENT        23026001   20100403   20100712   20100629       2218
+BIB                 11         50
 TITLE      .Ternary alpha and triton emission in the spontaneous
             fission of 244Cm, 246Cm and 248Cm and in the neutron
             induced fission of 243Cm, 245Cm and 247Cm
@@ -19,10 +19,12 @@ INSTITUTE  (2ZZZGEL)  EC-JRC Institute for Reference Materials
              E-mail address: sofie.vermote@ugent.be
            (2FR CAD)  CEA Cadarache, Saint-Paul-lez-Durance,
              France. O.Serot
-REFERENCE  (J,NP/A,806,1,2008)  Main reference, average data
-             values and graphs are given
-             doi: 10.1016/j.nuclphysa.2008.03.06
-REL-REF    (N,,F.Goulding+,J,NIM,31,1,1964) Description of E-DE
+REFERENCE  (J,NP/A,806,1,2008)
+           #doi:10.1016/j.nuclphysa.2008.03.006
+             Main reference, average data values table and
+             graphs are given
+           (C,2006SMOLEN,,259,2006) Average values for 243,244-Cm
+REL-REF    (M,,F.Goulding+,J,NIM,31,1,1964) Description of E-DE
                                             method
 METHOD     (EDE)
 DECAY-DATA (96-CM-243,29.1YR,A)
@@ -43,16 +45,19 @@ ASSUMED    (ASSUM1,96-CM-243(N,F),,SIG)    For thermal neutrons
            (ASSUM5,96-CM-247(N,F),,SIG)    For thermal neutrons
 MISC-COL   (MISC)  96-CM-248(N,F),,SIG     For thermal neutrons
 ERR-ANALYS .Errors, if present, specified in DATA SUBENTS
-HISTORY    (20080707C)   SM
-           (20080115A)   SAN 004 corrected,
-                         Doi REFERENCE text added - S.M.
-ENDBIB              45
+HISTORY    (20080707C)  Compiled S.M.
+           (20091021A)  SUBENTRIES from 23026-025 to 23026-030
+             added with data from 2006SMOLEN,,259. In SAN 007-024
+             REACTION codes and BIB information corrected - S.M.
+           (20100403A)  Additional REACTION corrections in
+                        SAN 013 - 018, S.M.
+ENDBIB              50
 COMMON               6          3
 ASSUM1     ASSUM2     ASSUM3     ASSUM4     ASSUM5     MISC
 B          B          B          B          B          B
    613.51    1.038      2.14 E+03  0.144      111.29      0.087
 ENDCOMMON            3
-ENDSUBENT           52
+ENDSUBENT           57
 SUBENT        23026002   20080707   20081028   20081023       2201
 BIB                  6         21
 REACTION  1(96-CM-244(0,F)2-HE-4,TER,FY/DE,,REL) Number of counts
@@ -1220,10 +1225,10 @@ MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS  ARB-UNITS
   34.8           1.      1.             0.
 ENDDATA            231
 ENDSUBENT          268
-SUBENT        23026007   20080707   20081028   20081023       2201
-BIB                  7         14
-REACTION  1(96-CM-243(N,F),TER,AKE,A,SPA)
-          2(96-CM-243(N,F),TER,AKE,T,SPA)
+SUBENT        23026007   20091021   20100712   20100629       2218
+BIB                  8         15
+REACTION  1(96-CM-243(N,F)2-HE-4,TER,KE,,SPA)
+          2(96-CM-243(N,F)1-H-3,TER,KE,,SPA)
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
@@ -1234,8 +1239,40 @@ MISC-COL  1(MISC1)   Full width of the alpha energy distribution
           2(MISC1)   Full width of the triton energy distribution
 STATUS     (DEP,23026005)
            (DEP,23026006)
-           (TABLE)  From Table 3 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
+           (TABLE)  From Table 3 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB              15
+COMMON               1          3
+EN-MEAN
+MILLI-EV
+   5.4
+ENDCOMMON            3
+DATA                 8          1
+DATA      1DATA-ERR  1MISC1     1MISC1-ERR 1DATA      2DATA-ERR  2
+MISC1     2MISC1-ERR 2
+MEV        MEV        MEV        MEV        MEV        MEV
+MEV        MEV
+   16.14       0.06      10.32      0.11        8.15       0.31
+    8.13       0.47
+ENDDATA              6
+ENDSUBENT           30
+SUBENT        23026008   20091021   20100712   20100629       2218
+BIB                  9         14
+REACTION  1(96-CM-245(N,F)2-HE-4,TER,KE,,SPA)
+          2(96-CM-245(N,F)1-H-3,TER,KE,,SPA)
+FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
+              Langevin, Grenoble, France
+INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
+                   reactor
+INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
+            neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
+SAMPLE     .No information
+MISC-COL  1(MISC1)   Full width of the alpha energy distribution
+          2(MISC1)   Full width of the triton energy distribution
+STATUS     (TABLE)  From Table 3 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
 ENDBIB              14
 COMMON               1          3
 EN-MEAN
@@ -1243,48 +1280,18 @@ MILLI-EV
    5.4
 ENDCOMMON            3
 DATA                 8          1
-DATA      1DATA-ERR  1MISC1      MISC1-ERR 1DATA      2DATA-ERR  2
-MISC1     2MISC1-ERR 2
-MEV        MEV        MEV        MEV        MEV        MEV
-MEV        MEV
-   16.14       0.06      10.32      0.11        8.15       0.31
-    8.13       0.47
-ENDDATA              6
-ENDSUBENT           29
-SUBENT        23026008   20080707   20081028   20081023       2201
-BIB                  8         13
-REACTION  1(96-CM-245(N,F),TER,AKE,A,SPA)
-          2(96-CM-245(N,F),TER,AKE,T,SPA)
-FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
-              Langevin, Grenoble, France
-INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
-                   reactor
-INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
-            neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
-SAMPLE     .No information
-MISC-COL  1(MISC1)   Full width of the alpha energy distribution
-          2(MISC1)   Full width of the triton energy distribution
-STATUS     (TABLE)  From Table 3 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              13
-COMMON               1          3
-EN-MEAN
-MILLI-EV
-   5.4
-ENDCOMMON            3
-DATA                 8          1
-DATA      1DATA-ERR  1MISC1      MISC1-ERR 1DATA      2DATA-ERR  2
+DATA      1DATA-ERR  1MISC1     1MISC1-ERR 1DATA      2DATA-ERR  2
 MISC1     2MISC1-ERR 2
 MEV        MEV        MEV        MEV        MEV        MEV
 MEV        MEV
    16.35       0.15      10.10      0.20        8.40       0.25
     7.76       0.38
 ENDDATA              6
-ENDSUBENT           28
-SUBENT        23026009   20080707   20081028   20081023       2201
-BIB                  8         13
-REACTION  1(96-CM-247(N,F),TER,AKE,A,SPA)
-          2(96-CM-247(N,F),TER,AKE,T,SPA)
+ENDSUBENT           29
+SUBENT        23026009   20091021   20100712   20100629       2218
+BIB                  9         14
+REACTION  1(96-CM-247(N,F)2-HE-4,TER,KE,,SPA)
+          2(96-CM-247(N,F)1-H-3,TER,KE,,SPA)
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
@@ -1294,89 +1301,93 @@ INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
 SAMPLE     .No information
 MISC-COL  1(MISC1)   Full width of the alpha energy distribution
           2(MISC1)   Full width of the triton energy distribution
-STATUS     (TABLE)  From Table 3 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              13
+STATUS     (TABLE)  From Table 3 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB              14
 COMMON               1          3
 EN-MEAN
 MILLI-EV
    5.4
 ENDCOMMON            3
 DATA                 8          1
-DATA      1DATA-ERR  1MISC1      MISC1-ERR 1DATA      2DATA-ERR  2
+DATA      1DATA-ERR  1MISC1     1MISC1-ERR 1DATA      2DATA-ERR  2
 MISC1     2MISC1-ERR 2
 MEV        MEV        MEV        MEV        MEV        MEV
 MEV        MEV
    16.01       0.13      10.37      0.24        8.55       0.27
     7.52       0.33
 ENDDATA              6
-ENDSUBENT           28
-SUBENT        23026010   20080707   20081028   20081023       2201
-BIB                  4          9
-REACTION  1(96-CM-244(0,F),TER,AKE,A)
-          2(96-CM-244(0,F),TER,AKE,T)
+ENDSUBENT           29
+SUBENT        23026010   20091021   20100712   20100629       2218
+BIB                  5         10
+REACTION  1(96-CM-244(0,F)2-HE-4,TER,KE)
+          2(96-CM-244(0,F)1-H-3,TER,KE)
 MISC-COL  1(MISC1)   Full width of the alpha energy distribution
           2(MISC1)   Full width of the triton energy distribution
 STATUS     (DEP,23026002)
            (DEP,23026003)
            (DEP,23026004)
-           (TABLE)  From Table 3 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               9
+           (TABLE)  From Table 3 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 8          1
-DATA      1DATA-ERR  1MISC1      MISC1-ERR 1DATA      2DATA-ERR  2
+DATA      1DATA-ERR  1MISC1     1MISC1-ERR 1DATA      2DATA-ERR  2
 MISC1     2MISC1-ERR 2
 MEV        MEV        MEV        MEV        MEV        MEV
 MEV        MEV
    15.99       0.08       9.99      0.29        8.05       0.29
     7.89       0.48
 ENDDATA              6
-ENDSUBENT           20
-SUBENT        23026011   20080707   20081028   20081023       2201
-BIB                  5          7
-REACTION  1(96-CM-246(0,F),TER,AKE,A)
-          2(96-CM-246(0,F),TER,AKE,T)
+ENDSUBENT           21
+SUBENT        23026011   20091021   20100712   20100629       2218
+BIB                  6          8
+REACTION  1(96-CM-246(0,F)2-HE-4,TER,KE)
+          2(96-CM-246(0,F)1-H-3,TER,KE)
 SAMPLE     .No information
 MISC-COL  1(MISC1)   Full width of the alpha energy distribution
           2(MISC1)   Full width of the triton energy distribution
-STATUS     (TABLE)  From Table 3 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               7
+STATUS     (TABLE)  From Table 3 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 8          1
-DATA      1DATA-ERR  1MISC1      MISC1-ERR 1DATA      2DATA-ERR  2
+DATA      1DATA-ERR  1MISC1     1MISC1-ERR 1DATA      2DATA-ERR  2
 MISC1     2MISC1-ERR 2
 MEV        MEV        MEV        MEV        MEV        MEV
 MEV        MEV
    16.41       0.20       9.73      0.28        8.05       0.34
     7.77       0.47
 ENDDATA              6
-ENDSUBENT           18
-SUBENT        23026012   20080707   20081028   20081023       2201
-BIB                  5          7
-REACTION  1(96-CM-248(0,F),TER,AKE,A)
-          2(96-CM-248(0,F),TER,AKE,T)
+ENDSUBENT           19
+SUBENT        23026012   20091021   20100712   20100629       2218
+BIB                  6          8
+REACTION  1(96-CM-248(0,F)2-HE-4,TER,KE)
+          2(96-CM-248(0,F)1-H-3,TER,KE)
 SAMPLE     .No information
 MISC-COL  1(MISC1)   Full width of the alpha energy distribution
           2(MISC1)   Full width of the triton energy distribution
-STATUS     (TABLE)  From Table 3 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               7
+STATUS     (TABLE)  From Table 3 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 8          1
-DATA      1DATA-ERR  1MISC1      MISC1-ERR 1DATA      2DATA-ERR  2
+DATA      1DATA-ERR  1MISC1     1MISC1-ERR 1DATA      2DATA-ERR  2
 MISC1     2MISC1-ERR 2
 MEV        MEV        MEV        MEV        MEV        MEV
 MEV        MEV
    15.97       0.12      10.03      0.14        8.86       0.18
     7.47       0.29
 ENDDATA              6
-ENDSUBENT           18
-SUBENT        23026013   20080707   20081028   20081023       2201
-BIB                  6         12
-REACTION  1(96-CM-243(N,F),TER/BIN,FY/RAT,A,SPA)
-          2(96-CM-243(N,F),TER/BIN,FY/RAT,T,SPA)
+ENDSUBENT           19
+SUBENT        23026013   20100403   20100712   20100629       2218
+BIB                  7         13
+REACTION  1(96-CM-243(N,F)2-HE-4,TER,FY,,SPA)
+          2(96-CM-243(N,F)1-H-3,TER,FY,,SPA)
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
@@ -1385,8 +1396,35 @@ INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
             neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
 STATUS     (DEP,23026005)
            (DEP,23026006)
-           (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
+           (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20100403A)  REACTION recompiled, S.M.
+ENDBIB              13
+COMMON               1          3
+EN-MEAN
+MILLI-EV
+   5.4
+ENDCOMMON            3
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+   2.43E-03   8.  E-05   1.96E-04    2.5E-05
+ENDDATA              3
+ENDSUBENT           25
+SUBENT        23026014   20100403   20100712   20100629       2218
+BIB                  8         12
+REACTION  1(96-CM-245(N,F)2-HE-4,TER,FY,,SPA)
+          2(96-CM-245(N,F)1-H-3,TER,FY,,SPA)
+FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
+              Langevin, Grenoble, France
+INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
+                   reactor
+INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
+            neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
+SAMPLE     .No information
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20100403A)  REACTION recompiled, S.M.
 ENDBIB              12
 COMMON               1          3
 EN-MEAN
@@ -1395,39 +1433,14 @@ MILLI-EV
 ENDCOMMON            3
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
-   2.43E-03   8.  E-05   1.96E-04    2.5E-05
-ENDDATA              3
-ENDSUBENT           24
-SUBENT        23026014   20080707   20081028   20081023       2201
-BIB                  7         11
-REACTION  1(96-CM-245(N,F),TER/BIN,FY/RAT,A,SPA)
-          2(96-CM-245(N,F),TER/BIN,FY/RAT,T,SPA)
-FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
-              Langevin, Grenoble, France
-INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
-                   reactor
-INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
-            neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
-SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              11
-COMMON               1          3
-EN-MEAN
-MILLI-EV
-   5.4
-ENDCOMMON            3
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
    2.15E-03   1.2 E-04   1.85E-04    2.1E-05
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        23026015   20080707   20081028   20081023       2201
-BIB                  7         11
-REACTION  1(96-CM-247(N,F),TER/BIN,FY/RAT,A,SPA)
-          2(96-CM-247(N,F),TER/BIN,FY/RAT,T,SPA)
+ENDSUBENT           24
+SUBENT        23026015   20100403   20100712   20100629       2218
+BIB                  8         12
+REACTION  1(96-CM-247(N,F)2-HE-4,TER,FY,,SPA)
+          2(96-CM-247(N,F)1-H-3,TER,FY,,SPA)
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
@@ -1435,9 +1448,10 @@ INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
 INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
             neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              11
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20100403A)  REACTION recompiled, S.M.
+ENDBIB              12
 COMMON               1          3
 EN-MEAN
 MILLI-EV
@@ -1445,72 +1459,78 @@ MILLI-EV
 ENDCOMMON            3
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
-   1.85E-03   1.0 E-04   1.85E-04    2.0E-05
+PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+   1.85E-03   1.0 E-04   1.84E-04    2.0E-05
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        23026016   20080707   20081028   20081023       2201
-BIB                  3          7
-REACTION  1(96-CM-244(0,F),TER/BIN,FY/RAT,A)
-          2(96-CM-244(0,F),TER/BIN,FY/RAT,T)
+ENDSUBENT           24
+SUBENT        23026016   20100618   20100712   20100629       2218
+BIB                  4         10
+REACTION  1(96-CM-244(0,F)2-HE-4,TER,FY)
+          2(96-CM-244(0,F)1-H-3,TER,FY)
 STATUS     (DEP,23026002)
            (DEP,23026003)
            (DEP,23026004)
-           (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               7
+          1(COREL,23026027)
+           (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20100403A)  REACTION recompiled, S.M.
+           (20100618U)  Correlation to SAN 027
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
    3.16E-03    9. E-05   1.98E-04    2.4E-05
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        23026017   20080707   20081028   20081023       2201
-BIB                  4          5
-REACTION  1(96-CM-246(0,F),TER/BIN,FY/RAT,A)
-          2(96-CM-246(0,F),TER/BIN,FY/RAT,T)
+ENDSUBENT           18
+SUBENT        23026017   20100403   20100712   20100629       2218
+BIB                  5          6
+REACTION  1(96-CM-246(0,F)2-HE-4,TER,FY)
+          2(96-CM-246(0,F)1-H-3,TER,FY)
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               5
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20100403A)  REACTION recompiled, S.M.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
    2.49E-03    1.2E-04   1.72E-04    2.4E-05
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        23026018   20080707   20081028   20081023       2201
-BIB                  4          5
-REACTION  1(96-CM-248(0,F),TER/BIN,FY/RAT,A)
-          2(96-CM-248(0,F),TER/BIN,FY/RAT,T)
+ENDSUBENT           14
+SUBENT        23026018   20100403   20100712   20100629       2218
+BIB                  5          6
+REACTION  1(96-CM-248(0,F)2-HE-4,TER,FY)
+          2(96-CM-248(0,F)1-H-3,TER,FY)
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               5
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20100403A)  REACTION recompiled, S.M.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
    2.30E-03    1.0E-04   1.79E-04    2.1E-05
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        23026019   20080707   20081028   20081023       2201
-BIB                  6         12
-REACTION   ((96-CM-243(N,F),TER,FY,T,SPA)/
-           (96-CM-243(N,F),TER,FY,A,SPA))
+ENDSUBENT           14
+SUBENT        23026019   20091021   20100712   20100629       2218
+BIB                  7         13
+REACTION   ((96-CM-243(N,F)1-H-3,TER,FY,,SPA)/
+           (96-CM-243(N,F)2-HE-4,TER,FY,,SPA))
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
                    reactor
 INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
             neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
-STATUS     (TABLE)  From Table 4 of main reference
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
            (DEP,23026005)
            (DEP,23026006)
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              12
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB              13
 COMMON               1          3
 EN-MEAN
 MILLI-EV
@@ -1521,11 +1541,11 @@ DATA       DATA-ERR
 NO-DIM     NO-DIM
    0.0805     0.0099
 ENDDATA              3
-ENDSUBENT           24
-SUBENT        23026020   20080707   20081028   20081023       2201
-BIB                  7         11
-REACTION   ((96-CM-245(N,F),TER,FY,T,SPA)/
-           (96-CM-245(N,F),TER,FY,A,SPA))
+ENDSUBENT           25
+SUBENT        23026020   20091021   20100712   20100629       2218
+BIB                  8         12
+REACTION   ((96-CM-245(N,F)1-H-3,TER,FY,,SPA)/
+           (96-CM-245(N,F)2-HE-4,TER,FY,,SPA))
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
@@ -1533,9 +1553,10 @@ INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
 INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
             neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              11
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB              12
 COMMON               1          3
 EN-MEAN
 MILLI-EV
@@ -1546,11 +1567,11 @@ DATA       DATA-ERR
 NO-DIM     NO-DIM
    0.0860     0.0109
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        23026021   20080707   20081028   20081023       2201
-BIB                  7         11
-REACTION   ((96-CM-247(N,F),TER,FY,T,SPA)/
-           (96-CM-247(N,F),TER,FY,A,SPA))
+ENDSUBENT           24
+SUBENT        23026021   20091021   20100712   20100629       2218
+BIB                  8         12
+REACTION   ((96-CM-247(N,F)1-H-3,TER,FY,,SPA)/
+           (96-CM-247(N,F)2-HE-4,TER,FY,,SPA))
 FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
               Langevin, Grenoble, France
 INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
@@ -1558,9 +1579,10 @@ INC-SOURCE (REAC)  PF1b  cold neutron guide of the ILL High flux
 INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
             neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB              11
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB              12
 COMMON               1          3
 EN-MEAN
 MILLI-EV
@@ -1571,52 +1593,201 @@ DATA       DATA-ERR
 NO-DIM     NO-DIM
    0.0994     0.0121
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        23026022   20080707   20081028   20081023       2201
-BIB                  3          7
-REACTION   ((96-CM-244(0,F),TER,FY,T,SPA)/
-           (96-CM-244(0,F),TER,FY,A,SPA))
-STATUS     (TABLE)  From Table 4 of main reference
+ENDSUBENT           24
+SUBENT        23026022   20091021   20100712   20100629       2218
+BIB                  4          8
+REACTION   ((96-CM-244(0,F)1-H-3,TER,FY,,SPA)/
+           (96-CM-244(0,F)2-HE-4,TER,FY,,SPA))
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
            (DEP,23026002)
            (DEP,23026003)
            (DEP,23026004)
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               7
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 NO-DIM     NO-DIM
    0.0628     0.0075
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        23026023   20080707   20081028   20081023       2201
-BIB                  4          5
-REACTION   ((96-CM-246(0,F),TER,FY,T,SPA)/
-           (96-CM-246(0,F),TER,FY,A,SPA))
+ENDSUBENT           16
+SUBENT        23026023   20091021   20100712   20100629       2218
+BIB                  5          6
+REACTION   ((96-CM-246(0,F)1-H-3,TER,FY,,SPA)/
+           (96-CM-246(0,F)2-HE-4,TER,FY,,SPA))
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               5
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 NO-DIM     NO-DIM
    0.0691     0.0102
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        23026024   20080707   20081028   20081023       2201
-BIB                  4          5
-REACTION   ((96-CM-248(0,F),TER,FY,T,SPA)/
-           (96-CM-248(0,F),TER,FY,A,SPA))
+ENDSUBENT           14
+SUBENT        23026024   20091021   20100712   20100629       2218
+BIB                  5          6
+REACTION   ((96-CM-248(0,F)1-H-3,TER,FY,,SPA)/
+           (96-CM-248(0,F)2-HE-4,TER,FY,,SPA))
 SAMPLE     .No information
-STATUS     (TABLE)  From Table 4 of main reference
-ERR-ANALYS (DATA-ERR)  Errors not specified
-ENDBIB               5
+STATUS     (TABLE)  From Table 4 of NP/A, v.806, p.1
+ERR-ANALYS (DATA-ERR) Combination of statistical and systematic
+HISTORY    (20091012A)  REACTION recompiled, S.M.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 NO-DIM     NO-DIM
    0.0778     0.0097
 ENDDATA              3
-ENDSUBENT           13
-ENDENTRY            24
+ENDSUBENT           14
+SUBENT        23026025   20091021   20100712   20100629       2218
+BIB                  9         15
+REACTION   (96-CM-243(N,F)2-HE-4,TER,FY,,SPA)  Absolute emission
+                                          probability
+FACILITY   (REAC,2FR ILL)  High flux reactor
+INC-SOURCE (THCOL) Cold neutron guide PF1b, neutron flux at
+                   sample position 2.E+9 n/cm2/sec
+INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
+            neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
+SAMPLE     .Spot of curium oxide 15 mm diameter on a 30 micro-m
+            thick Al foil. Weight 2 microgram, enrichment 98.35%
+DETECTOR   (SIBAR,SIBAR)  DE detector - sample side 29.8 micro-m,
+             backing side 49.8 micro-m; E detector - sample side
+             500 micro-m, backing side 1500 micro-m
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE)  Table 3 of 2006SMOLEN,259, p.266
+HISTORY    (20091021C)     S.M.
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+MILLI-EV   PC/FIS     PC/FIS
+   5.4        2.45E-03    1.2E-04
+ENDDATA              3
+ENDSUBENT           23
+SUBENT        23026026   20091021   20100712   20100629       2218
+BIB                  9         18
+REACTION  1((96-CM-243(N,F)2-HE-6,TER,FY,,SPA)/
+           (96-CM-243(N,F)2-HE-4,TER,FY,,SPA))  Relative emission
+                                           probability
+          2(96-CM-243(N,F)2-HE-6,TER,FY,,SPA)  Absolute emission
+                                               probability
+FACILITY   (REAC,2FR ILL)  High flux reactor
+INC-SOURCE (THCOL) Cold neutron guide PF1b, neutron flux at
+                   sample position 2.E+9 n/cm2/sec
+INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
+            neutron flux 2.E+9 and aprx. 1.E+10 neutrons/cm2/sec
+SAMPLE     .Spot of curium oxide 15 mm diameter on a 30 micro-m
+            thick Al foil. Weight 2 microgram, enrichment 98.35%
+DETECTOR   (SIBAR,SIBAR)  DE detector - sample side 29.8 micro-m,
+             backing side 49.8 micro-m; E detector - sample side
+             500 micro-m, backing side 1500 micro-m
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE)  Table 3 of 2006SMOLEN,259, p.266
+HISTORY    (20091021C)     S.M.
+ENDBIB              18
+NOCOMMON             0          0
+DATA                 5          1
+EN-MEAN    DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MILLI-EV   NO-DIM     NO-DIM     PC/FIS     PC/FIS
+   5.4      0.0165      0.0032      4.04E-05    8.1E-06
+ENDDATA              3
+ENDSUBENT           26
+SUBENT        23026027   20091021   20100712   20100629       2218
+BIB                  6         12
+REACTION   (96-CM-244(0,F)2-HE-4,TER,FY)  Absolute emission
+                                          probability
+SAMPLE     .Spot of curium oxide 15 mm diameter on a 30 micro-m
+            thick Al foil. Weight 18.5 microgram, enrichment
+            99.48%
+DETECTOR   (SIBAR,SIBAR)  DE detector - sample side 28.9 micro-m,
+             backing side 31.7 micro-m; E detector - sample side
+             1500 micro-m, backing side 1500 micro-m
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE)  Table 3 of 2006SMOLEN,259, p.266
+           (COREL,23026016) Pointer 1.
+HISTORY    (20091021C)     S.M.
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+PC/FIS     PC/FIS
+   3.14E-03    9. E-05
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        23026028   20091021   20100712   20100629       2218
+BIB                  6         13
+REACTION  1((96-CM-244(0,F)2-HE-6,TER,FY)/
+           (96-CM-244(0,F)2-HE-4,TER,FY))      Relative emission
+                                           probability
+          2(96-CM-244(0,F)2-HE-6,TER,FY)   Absolute emission
+                                           probability
+SAMPLE     .Spot of curium oxide 15 mm diameter on a 30 micro-m
+            thick Al foil. Weight 18.5 microgram, enrichment
+            99.48%
+DETECTOR   (SIBAR,SIBAR)  DE detector - backing side 49.8 micro-m,
+                          E detector - backing side 1500 micro-m
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE)  Table 3 of 2006SMOLEN,259, p.266
+HISTORY    (20091021C)     S.M.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 0.0205      0.0052      6.44E-05   1.64E-05
+ENDDATA              3
+ENDSUBENT           21
+SUBENT        23026029   20091021   20100712   20100629       2218
+BIB                 10         16
+REACTION   (96-CM-243(N,F)2-HE-6,TER,KE,,SPA)  Average He-6
+                                          kinetic energy
+FACILITY   (REAC,2FR ILL)   High flux reactor of Institute Laue-
+              Langevin, Grenoble, France
+INC-SOURCE (THCOL) Cold neutron guide PF1b, neutron flux at
+                   sample position 2.E+9 n/cm2/sec
+INC-SPECT  .Cold neutrons with average energy 5.4 milli-eV,
+SAMPLE     .Spot of curium oxide 15 mm diameter on a 30 micro-m
+            thick Al foil. Weight 2 microgram, enrichment 98.35%
+DETECTOR   (SIBAR,SIBAR)  DE detector - sample side 29.8 micro-m,
+             backing side 49.8 micro-m; E detector - sample side
+             500 micro-m, backing side 1500 micro-m
+MISC-COL   (MISC1)   Full width of the He-6 energy distribution
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE)  Table 2 of 2006SMOLEN,259, p.265
+HISTORY    (20091021C)     S.M.
+ENDBIB              16
+NOCOMMON             0          0
+DATA                 5          1
+EN-MEAN    DATA       DATA-ERR   MISC1      MISC1-ERR
+MILLI-EV   MEV        MEV        MEV        MEV
+   5.4        11.28        0.53      9.79        0.71
+ENDDATA              3
+ENDSUBENT           24
+SUBENT        23026030   20091021   20100712   20100629       2218
+BIB                  7         12
+REACTION   (96-CM-244(0,F)2-HE-6,TER,KE)  Average He-6 kinetic
+                                          energy
+SAMPLE     .Spot of curium oxide 15 mm diameter on a 30 micro-m
+            thick Al foil. Weight 18.5 microgram, enrichment
+            99.48%
+DETECTOR   (SIBAR,SIBAR)  DE detector - sample side 28.9 micro-m,
+             backing side 31.7 micro-m; E detector - sample side
+             1500 micro-m, backing side 1500 micro-m
+MISC-COL   (MISC1)   Full width of the He-6 energy distribution
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE)  Table 2 of 2006SMOLEN, p.265
+HISTORY    (20091021C)     S.M.
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 4          1
+DATA       DATA-ERR   MISC1      MISC1-ERR
+MEV        MEV        MEV        MEV
+   11.22        0.74      9.90        1.14
+ENDDATA              3
+ENDSUBENT           20
+ENDENTRY            30

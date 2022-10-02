@@ -1,20 +1,24 @@
-ENTRY            23002   20081103   20090209   20090209       2205
-SUBENT        23002001   20081103   20090209   20090209       2205
-BIB                 17         32
+ENTRY            23002   20091015   20100712   20100629       2218
+SUBENT        23002001   20091015   20100712   20100629       2218
+BIB                 17         51
 TITLE      New measurement of the 12C(n,g)13C reaction cross
            section
 AUTHOR     (T.Ohsaki, Y.Nagai, M.Igashira, T.Shima, K.Takeda,
            S.Seino, T.Irie)
 INSTITUTE  (2JPNTIT) Department of Applied Physics
            (2JPNTIT) Research Laboratory for Nuclear Reactors
-REFERENCE  (J,AJ,422,(2),912,199402)
-REL-REF    (R,,M.A.Lone,C,81GRENOB,,383,1981)
-           Branching ratios of cascade gamma at thermal neutron
-           energy
+REFERENCE  (J,AJ,422,(2),912,199402)   Main reference
+           ((S,ISINN-2,184,199405)=(R,JINR-E3-94-419,184,199405))
+             Same as AJ,422. Graphs and formulas are given
+REL-REF    (R,,M.A.Lone,C,81GRENOB,,383,1981)  Branching ratios
+                     of cascade gamma at thermal neutron energy
+FACILITY   (VDGT,2JPNTIT) The 3.2 MV PELLETRON accelerator of the
+            Research Laboratory for Nuclear Reactors at the Tokyo
+            Institute of Technology.
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
 MONIT-REF  (,R.L.Macklin+,J,PR,159,1007,1967)
            197Au(n,g)198Au cross section (ENDF/B-V)
-PART-DET   (G)
+PART-DET   (N,G)
 INC-SOURCE (P-LI7) 7Li(p,n)7Be at 1.895 and 1.995 MeV
 SAMPLE     - Target is natural.
            - Chemical-form of target is element.
@@ -22,29 +26,46 @@ SAMPLE     - Target is natural.
            - Target-thickness: 60.2 mm (diameter) and 24.8 mm
              (thickness)
 METHOD     (TOF) To determine incident neutron energy spectrum
-FACILITY   (VDG,2JPNTIT) 3.2 MV Pelletron at Research Laboratory
-                         for Nuclear Reactors
-DETECTOR   (GLASD) To measure incident neutron energy spectrum
-           (NAICR) To detect captured gamma-rays
-CORRECTION Corrected for (1)multiple scattering effect and
-            (2)absorption of incident neutrons in sample
-ADD-RES    Analytic form of Maxwellian averaged cross section and
-           reaction rate
+DETECTOR   (NAICR)  Anti-Compton NaI(TL) scintillation detector
+            for prompt gamma ray detection. Consists of 7.6 cm
+            diameter, 15.2 cm long NaI(Tl) detector surrounded
+            by annular 25.4 cm diam. * 28.0 cm ling anti-Compton
+            detector
+           (GLASD)  Li-6 scintillation glass detector for neutron
+                    spectrum measurement
+CORRECTION .Corrections were made for multiple scattering and
+            capture of neutrons in gold monitor and sample.
+            Corrections obtained by Monte-Carlo method
+ADD-RES    .Analytic form of Maxwellian averaged cross section and
+           .Data capture cross section obtained by the fit of the
+            partial cross sections represented by the formula (3)
+            given in the text, page 187. of ISINN-2,1994 :
+           ! Sigma(E) = (17.0+-0.3)/sqrt(E) + (1.50+-0.11)*sqrt(E)
+            where E is the center-of-mass energy
+           .Data for MACS obtained from the fit of the total
+            capture cross sections and represented by the formula
+            (6) given in the text, page 188. of ISINN-2,1994 :
+           ! <Sigma(T)> = (17.0+-0.3) + (2.25+-0.17)*KT)*/sqrt(KT)
 STATUS     (APRVD) Proofread by Toshiro Ohsaki (2007.11.19)
 HISTORY    (20070929C)
            (20081103U)  MONITOR keyword added - SM
-ENDBIB              32
+           (20091015U)  Analytic forms of cross sections added.
+                        FACILITY code (VDG to VDGT) corrected.
+                        Reference ISINN-2,184 added - SM
+ENDBIB              51
 NOCOMMON             0          0
-ENDSUBENT           35
-SUBENT        23002002   20071203   20071206   20071203       2189
-BIB                  3          3
+ENDSUBENT           54
+SUBENT        23002002   20091015   20100712   20100629       2218
+BIB                  5          5
 REACTION   (6-C-12(N,G)6-C-13,PAR,SIG)
+EN-SEC     (E-LVL,6-C-13)
 ERR-ANALYS (DATA-ERR) No information on source of uncertainties
-STATUS     (TABLE) Taken from Table 2, p914 of reference
-ENDBIB               3
+STATUS     (TABLE) Taken from Table 2, p.914 of AJ,422
+HISTORY    (20091015U) E-LVL-FIN changed to E-LVL
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 6         24
-EN-MEAN    +EN-RSL    -EN-RSL    E-LVL-FIN  DATA       DATA-ERR
+EN-MEAN    +EN-RSL    -EN-RSL    E-LVL      DATA       DATA-ERR
 KEV        KEV        KEV        KEV        MICRO-B    MICRO-B
  21.        5.         9.         0.00       3.0        0.8
  21.        5.         9.         3.09       6.7        1.2
@@ -71,7 +92,7 @@ KEV        KEV        KEV        KEV        MICRO-B    MICRO-B
  199.       51.        39.        3.68       0.7        0.7
  199.       51.        39.        3.85       2.8        3.4
 ENDDATA             26
-ENDSUBENT           34
+ENDSUBENT           36
 SUBENT        23002003   20071203   20071206   20071203       2189
 BIB                  3          4
 REACTION   (6-C-12(N,G)6-C-13,,SIG)

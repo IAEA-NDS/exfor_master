@@ -1,0 +1,113 @@
+ENTRY            23088   20100301   20100809   20100806       2220
+SUBENT        23088001   20100301   20100809   20100806       2220
+BIB                 12         60
+TITLE      .Neutron Capture Cross Section Measurement on 243Am
+            with a 4pi-Ge spectrometer
+AUTHOR     (J.Hori, M.Oshima, H.Harada, K.Furutaka, M.Koizumi,
+           F.Kitatani, Y.Toh, S.Nakamura, A.Kimura, M.Igashira,
+           M.Mizumoto, T.Ohsaki, T.Katabuchi, J.Goto)
+INSTITUTE  (2JPNKTO) Research Reactor Institute, Kyoto University,
+              Osaka, Japan. Hori. Correspondence author,
+              e-mail: hori@rri.kyoto-u.ac.jp
+           (2JPNJAE) Nuclear Science and Engineering Directorate,
+            Japan Atomic Energy Agency, Tokai-mura, Japan. Oshima,
+            Harada, Furutaka, Koizumi, Kitatani, Toh, Nakamura,
+            Kimura.
+           (2JPNTIT) Research Laboratory for Nuclear Reactor,
+            Tokyo Institute of Technology, Tokyo, Japan. Igashira,
+            Mizumoto, Ohsaki, Katabuchi.
+           (2JPNNII) Radioisotope Center, Niigata University,
+            Niigata, Japan. Goto
+REFERENCE  (S,JAEA-C-2009-004,123,200904)  Main reference, Table
+             for Res-Int, graph for cross section
+FACILITY   (LINAC,2JPNKTO)  46-MeV linear accelerator of KURRI.
+             Pulsed electron beam energy 30 MeV, current 30 micro-
+             amperes, pulse width 100 ns, repetition rate 100Hz
+INC-SOURCE (PHOTO)  Fast neutrons were produced from the water-
+             cooled photo-neutron target assembly, 5 cm in diam.
+             and 6 cm long, which was composed of 12 sheets of
+             tantalum plates with total thickness of 29 mm.
+            .The target was surrounded with a water moderator.
+METHOD     (TOF)  The flight path used in the experiment is in
+             direction of 90-degree to the LINAC electron beam.
+           (SITA) Intermittent capture sample, dummy sample and
+              lead sample irradiation
+           (PHD)  Pulse height discrimination
+DETECTOR   (HPGE) 4pi Ge spectrometer surrounded with large
+             Bi4Ge3O12 (BGO) detectors for anti-Compton suppres-
+             sion was employed.
+           (PROPC)  BF3 proportional counter was set at the exit
+             of the first flight tube used as a neutron intensity
+             monitor
+           .To decrease the background, a 10 mm thick lead was
+            set on the surface of each detector
+SAMPLE     .The sample of 243Am was 128 mg of americium oxide
+            Am-O2 powder packed in an aluminum disk container 30
+            mm in diameter and 0.5 mm thick walls. The thickness
+            of sample 8.92E-5 atoms/b, sample radioactivity
+            835 MBq.
+           .The dummy sample of identical Al case without the
+            americium oxide powder was used for the background
+            measurements. The identical Al case with Pb was also
+            used for determination of background level due to
+            neutrons scattered by the capture sample.
+           .The enriched 10B sample, purity 93 %, was used for
+            the measurement of the incident neutron flux/spectrum
+            on the sample. The 10B sample was encapsulated in a
+            cylinder thin-walled (0.2 mm) aluminum container 25
+            mm in diameter, with a sample material thickness
+            5.68E-2 atoms/b.
+MONITOR    (5-B-10(N,A)3-LI-7,,SIG) For neutron flux and spectrum
+                                    determination
+CORRECTION .Corrections are made for background  and for dead time
+HISTORY    (20100301C)  S.M.
+ENDBIB              60
+NOCOMMON             0          0
+ENDSUBENT           63
+SUBENT        23088002   20100301   20100809   20100806       2220
+BIB                  2          2
+REACTION   (95-AM-243(N,G)95-AM-244,,SIG)
+STATUS     (UNOBT)   Request for data sent 2010-02-03 to J.Hori
+ENDBIB               2
+COMMON               2          3
+EN-MIN     EN-MAX
+EV         EV
+   0.01        400.
+ENDCOMMON            3
+NODATA               0          0
+ENDSUBENT           10
+SUBENT        23088003   20100301   20100809   20100806       2220
+BIB                  4          6
+REACTION   ((95-AM-243(N,G)95-AM-244,,RI)//
+           (95-AM-243(N,G)95-AM-244,,SIG))
+MONITOR    ((MONIT1)95-AM-243(N,G)95-AM-244,,SIG)
+MONIT-REF  (,,3,JENDL-3.3,,2002)
+STATUS     (TABLE)  Table 1 of JAEA-C-2009-004
+           (DEP,23088002)
+ENDBIB               6
+COMMON               3          3
+EN-DN      EN-NRM     MONIT1
+EV         EV         B
+  0.0253      0.0253    76.6
+ENDCOMMON            3
+DATA                 3          1
+EN-MIN-NM  DATA       DATA-ERR
+EV         NO-DIM     NO-DIM
+    0.5      25.7        1.5
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        23088004   20100301   20100809   20100806       2220
+BIB                  3          4
+REACTION   (95-AM-243(N,G)95-AM-244,,RI)
+ASSUMED    (ASSUM,95-AM-243(N,G)95-AM-244,,SIG)
+STATUS     (TABLE)  Table 1 of JAEA-C-2009-004
+           (DEP,23088003)
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 4          1
+EN-MIN     DATA       DATA-ERR   ASSUM
+EV         B          B          B
+    0.5      1969.        111.       76.6
+ENDDATA              3
+ENDSUBENT           12
+ENDENTRY             4

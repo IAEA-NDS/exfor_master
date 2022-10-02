@@ -1,6 +1,6 @@
-ENTRY            11675   20091005   20100128   20100119       1357
-SUBENT        11675001   20091005   20100128   20100119       1357
-BIB                 10         18
+ENTRY            11675   20100523   20100712   20100627       1363
+SUBENT        11675001   20100523   20100712   20100627       1363
+BIB                 10         20
 INSTITUTE  (1USAWIS)
 REFERENCE  (J,PR,116,927,1959)
 AUTHOR     (A.E.Johnsrud,M.G.Silbert,H.H.Barschall)
@@ -8,9 +8,9 @@ TITLE      Energy dependence of fast-neutron activation cross
            section.
 METHOD     (ACTIV) Activation
 DETECTOR   (NAICR) NaI crystal
-MONITOR    (92-U-235(N,G)92-U-236,,SIG)
-MONIT-REF  (,ALLEN+,B,PR.NUC.EN.,2,1,1958) Relative to data
-            of Allen and Henkel.
+           (FISCH) for thermal and fast neutrons
+MONITOR    ((MONIT1)92-U-235(N,F),,SIG)
+MONIT-REF  ((MONIT1),W.D.ALLEN+,B,PR.NUC.EN.,2,1,1958)
 STATUS     (SCSRS)
            (CURVE) Data read from large graphs received from
                    H. Barschall, May 1955.
@@ -19,13 +19,15 @@ HISTORY    (19760730T) Translated from SCISRS
            (19860612A) BIB update.
            (20091005A) VM:Updated to new date formats,lower case.
                        BIB updates.
-ENDBIB              18
+           (20100523A) BIB update, monitor information in Sub.26
+             updated
+ENDBIB              20
 COMMON               2          3
 EN-NRM     MONIT1
 EV         B
  0.0253     584.
 ENDCOMMON            3
-ENDSUBENT           25
+ENDSUBENT           27
 SUBENT        11675002   20091005   20100128   20100119       1357
 BIB                  3          3
 REACTION   (23-V-51(N,G)23-V-52,,SIG)
@@ -811,16 +813,19 @@ MEV        B
  2.550  +00 2.84   -02
 ENDDATA             24
 ENDSUBENT           36
-SUBENT        11675026   20091005   20100128   20100119       1357
-BIB                  3          3
+SUBENT        11675026   20100523   20100712   20100627       1363
+BIB                  6          6
 REACTION   (79-AU-197(N,G)79-AU-198,,SIG)
 DECAY-DATA (79-AU-198,2.70D)
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-ENDBIB               3
-COMMON               1          3
-MONIT2
-B
- 99.
+MONITOR    ((MONIT2)79-AU-197(N,G)79-AU-198,,SIG)
+MONIT-REF  ((MONIT2),F.T.Gould+,J,PR,100,1248,1955)
+ERR-ANALYS (ERR-1) Uncertainty in measured thermal cross section
+HISTORY    (20100523A) MONIT-REF, MONIT2-ERR, ERR-1 added
+ENDBIB               6
+COMMON               3          3
+MONIT2     MONIT2-ERR ERR-1
+B          B          PER-CENT
+ 99.          2.0       7.
 ENDCOMMON            3
 DATA                 2         21
 EN         DATA
@@ -847,5 +852,5 @@ MEV        B
  4.800  +00 1.45   -02
  5.400  +00 1.55   -02
 ENDDATA             23
-ENDSUBENT           35
+ENDSUBENT           38
 ENDENTRY            26

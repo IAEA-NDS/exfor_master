@@ -1,7 +1,7 @@
-ENTRY            32201   20100305   20100610   20100603       3144
-SUBENT        32201001   20100305   20100610   20100603       3144
-BIB                 14         35
-INSTITUTE  (4UKRIJI)
+ENTRY            32201   20100318   20100809   20100806       3145
+SUBENT        32201001   20100318   20100809   20100806       3145
+BIB                 14         41
+INSTITUTE  (4UKRIJD)
 REFERENCE  (J,UFZ,39,785,1994)
 AUTHOR     (I.A.Korzh,V.A.Mishchenko,N.M.Pravdivy,N.T.Sklyar,
            D.A.Bazavov,V.P.Lunyov)
@@ -15,7 +15,12 @@ DETECTOR   (GELI)
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
 INC-SOURCE (P-T) Neutron spread 40-60 KeV is mainly due to target
            thickness and finite size of sample
-ERR-ANALYS (DATA-ERR) Total error
+ERR-ANALYS (ERR-T) total uncertainty includes:
+           (ERR-S) statistical uncertainty  - 2%
+           (ERR-1) attenuation of neutron beam - 3%
+           (ERR-2) multiple scattering - 1.4%
+           (ERR-3) attenuation of gamma-rays - 1.6%
+           (ERR-4) monitor  - 4.3%
 ANALYSIS   Excitation cross sections of the first 2+ levels of
            Fe-56,Mo-94,Mo-96,Mo-98 isotopes were obtained by TOF
            method at neutron energy 1.4 MeV.The energy dependen-
@@ -29,17 +34,22 @@ ANALYSIS   Excitation cross sections of the first 2+ levels of
 CORRECTION Corrected for  multiple scattering,attenuation of neut-
            rons and gammas in sample and angular resolution by Mon
            te Carlo method.
-STATUS     (APRVD) Approved by author
+STATUS     (TABLE) Data from the author
+           (APRVD) Approved by author
 HISTORY    (19981211C) Directly from author. Compiled at UkrNDC MV
-           (19990901) Finalized at NDS (VZ)
+           (19990901A) Finalized at NDS (VZ)
            (20100305A) SD: AUTHOR and TITLE letters were changed
-           on lower case. ERR-T in data sets were changed on
-           DATA-ERR (no any information about source of
-                                               uncertainties)
-ENDBIB              35
-NOCOMMON             0          0
-ENDSUBENT           38
-SUBENT        32201002   20100305   20100610   20100603       3144
+           on lower case.
+           (20100318A) OG:Total uncertainty components are added
+           concerning information from I.A.Korzh.
+ENDBIB              41
+COMMON               5          3
+ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  2.          3.         1.4      1.6         4.3
+ENDCOMMON            3
+ENDSUBENT           48
+SUBENT        32201002   20100318   20100809   20100806       3145
 BIB                  2          4
 REACTION   (26-FE-56(N,INL)26-FE-56,,SIG)
 SAMPLE     Natural iron,metal
@@ -48,7 +58,7 @@ SAMPLE     Natural iron,metal
 ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          6
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        MB         MB
  856.       75.       15.
  907.      213.       37.
@@ -58,7 +68,7 @@ KEV        MB         MB
 1400.      720.       50.
 ENDDATA              8
 ENDSUBENT           17
-SUBENT        32201003   20100305   20100610   20100603       3144
+SUBENT        32201003   20100318   20100809   20100806       3145
 BIB                  3          5
 REACTION   (42-MO-94(N,INL)42-MO-94,,SIG)
 SAMPLE     Metal powder enriched in MO-94 (87.7 %),
@@ -68,7 +78,7 @@ COMMENT    847 keV gammas were registered
 ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          5
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        MB         MB
  907.       114.       30.
 1013.       536.       95.
@@ -77,7 +87,7 @@ KEV        MB         MB
 1400.      1057.      103.
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        32201004   20100305   20100610   20100603       3144
+SUBENT        32201004   20100318   20100809   20100806       3145
 BIB                  3          6
 REACTION   (42-MO-96(N,INL)42-MO-96,PAR,SIG)
 SAMPLE     Metal powder enriched in MO-96 (92.3 %),
@@ -92,7 +102,7 @@ KEV
 -778.
 ENDCOMMON            3
 DATA                 3          6
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        MB         MB
  856.      246.        39.
  907.      389.        51.
@@ -102,7 +112,7 @@ KEV        MB         MB
 1400.      876.        45.
 ENDDATA              8
 ENDSUBENT           23
-SUBENT        32201005   20100305   20100610   20100603       3144
+SUBENT        32201005   20100318   20100809   20100806       3145
 BIB                  3          8
 REACTION   (42-MO-98(N,INL)42-MO-98,PAR,SIG)
 SAMPLE     Metal powder enriched in MO-98 (95.9 %),
@@ -119,7 +129,7 @@ KEV
 -787.
 ENDCOMMON            3
 DATA                 3          6
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        MB         MB
  856.       314.       45.
  907.       442.       54.
