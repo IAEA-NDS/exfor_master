@@ -1,24 +1,38 @@
-ENTRY            P0100   20000814   20010330   20050926       0000
-SUBENT        P0100001   20000814   20010330   20050926       0000
-BIB                  8         11
+ENTRY            P0100   20111115   20120207   20111212       P004
+SUBENT        P0100001   20111115   20120207   20111212       P004
+BIB                 10         16
 INSTITUTE  (3AULCBR)
-REFERENCE  (J,NP,60,503,1963)
-AUTHOR     (D.R.OSGOOD,J.R.PATTERSON,E.W.TITTERTON)
-TITLE      The excitation function for the reaction C12(He3,n0)O14
+REFERENCE  (J,NP,60,503,1964)
+AUTHOR     (D.R.Osgood,J.R.Patterson,E.W.Titterton)
+TITLE      The excitation function for the reaction 12C(3He,n0)14O
             between threshold and 11.45 MeV
 FACILITY   (ACCEL,3AULCBR)
-DETECTOR   (NAICR)
+REL-REF    (I,,L.G.Earwaker+,J,NP,42,521,1963)
+METHOD     (BCINT) "Leaky" integrator for measuring the total
+             charge incident on the target.
+           (ACTIV)
+DECAY-DATA (8-O-14,,DG,2310.,0.994)
+DETECTOR   (NAICR) 7.6 cm x 7.6 cm NaI(Tl) crystal scintillator
+           was used with an A8 double delay line linear amplifier
+HISTORY    (19830620T) Converted to EXFOR format by IAEA-NDS
+           (20000815A) SD: Ref. corrected. BIB updated.
+                           Subent 003 added.
+ENDBIB              16
+NOCOMMON             0          0
+ENDSUBENT           19
+SUBENT        P0100002   20111115   20120207   20111212       P004
+BIB                  5         10
+REACTION   (6-C-12(HE3,N)8-O-14,,SIG)
+SAMPLE     Above 3 MeV an electromagnetically separated 99.9% 12C
+           target on a gold backing was used and which had a
+           nominal thickness of 116 mu-g/cm2 (or 65 keV) at 6 MeV
+           for a He3++ beam. Below 3 MeV a 40 mu-g/cm2 target was
+           used, which was 10 keV thick at 2.4 MeV He3+ energy.
+MONITOR    (6-C-12(HE3,N)8-O-14,,SIG)
+MONIT-REF  (P0100003,D.R.Osgood+,J,NP,60,503,1964)
 STATUS     (CPX) Data from CPX file compiled in 1964/67 by
            F.K.McGowan et al.
-HISTORY    (19830620T) Converted to EXFOR format by IAEA-NDS
-           (20000814A) Converted to new date formats; BIB updated.
-ENDBIB              11
-NOCOMMON             0          0
-ENDSUBENT           14
-SUBENT        P0100002   20000814   20010330   20050926       0000
-BIB                  1          1
-REACTION   (6-C-12(HE3,N)8-O-14,,SIG)
-ENDBIB               1
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 2         82
 EN         DATA
@@ -106,5 +120,34 @@ MEV        MB
    11.300     12.400
    11.500     12.500
 ENDDATA             84
-ENDSUBENT           90
-ENDENTRY             2
+ENDSUBENT           99
+SUBENT        P0100003   20111115   20120207   20111212       P004
+BIB                  5         13
+REACTION   (6-C-12(HE3,N)8-O-14,,SIG)
+SAMPLE     A selfsupporting natural carbon target. With this the
+           yield per mu-C was measured at several energies so as
+           to provide a fit to the curve. Target thickness of
+           43 mu-g/cm2 was calculated.
+ERR-ANALYS (ERR-T) Total uncertainty includes:
+           (DATA-ERR) Fit to excitation function  (7%)
+           (ERR-1) Target thickness               (10%)
+           (ERR-2) Detection efficiency            (5%)
+           (ERR-3) Dead time loss correction       (1%)
+           (ERR-4) Decay constant                  (0.1%)
+STATUS     (TABLE) Tbl. 1 from Nucl.Phys.60,503,1963
+HISTORY    (20111115C) SD: Subent added.
+ENDBIB              13
+COMMON               5          3
+DATA-ERR   ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  7.0        10.        5.         1.         0.1
+ENDCOMMON            3
+DATA                 3          3
+EN         DATA       ERR-T
+MEV        MB         MB
+  3.00       15.2        2.0
+  3.30        5.6        0.7
+  6.60       26.2        3.4
+ENDDATA              5
+ENDSUBENT           27
+ENDENTRY             3

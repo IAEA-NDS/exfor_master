@@ -1,46 +1,92 @@
-ENTRY            12017   20061109   20070306   20070213       1342
-SUBENT        12017001   20061109   20070306   20070213       1342
-BIB                  8         11
+ENTRY            12017   20110807   20120207   20111126       1377
+SUBENT        12017001   20110807   20120207   20111126       1377
+BIB                 10         34
 INSTITUTE  (1CANCRC,2UK HAR)
 REFERENCE  (J,JIN,5,259,1958)
 AUTHOR     (J.Bayly,F.Brown,G.Hall,A.Walter)
-TITLE      The cross-section of the reaction Cs134(n,gamma)Cs135
-           and the half-life of Cs134.
+TITLE      The cross-section of the reaction Cs-134(n,gamma)Cs-135
+           and the half-life of Cs-134.
+FACILITY   (REAC,1USAINL) Materials Test Reactor (MTR), Idaho, USA
+           (REAC,1CANCRC)  heavy water moderated, light water
+           cooled, nuclear research reactor (NRX) at the Can.
+                                         Chalk River Laboratories
+SAMPLE     Two long irradiations were carried out:
+           1. approximately 10 mg of spectroscopically pure Cs2CO3
+           in the M.T.R., for 140 days.
+           2. approximately 10 mg of CsNO3 in the NRX reactor,
+           for 356 days. Two short irradiations were made, each
+           of 16 hr. using a position in NRX similar to that used
+           for the long irradiation. For these irradiations the
+           cesium compounds which were of spectroscopic purity,
+           were dried at 110.C and weighed into silica tubes which
+           were then sealed. CsC1, 36.8 mg, was used in the first
+           irradiation and Cs2CO3, 32.1 mg, in the second.
+METHOD     (ACTIV)
+DETECTOR   (D4PI) The Beta-counter was of conventional 4Pi design,
+            using methane as counting gas.
+           (IOCH) The monitors were irradiated in the same
+           capsule as the cesium samples and then, after a
+           decay period of 5 days the 60Co activity was measured
+           in an ionization chamber.
 STATUS     (SCSRS)
-FACILITY   (SPECM)
-MONITOR    (27-CO-59(N,G)27-CO-60,,SIG)
 HISTORY    (19760802T) Translated from SCISRS
            (19841018A) Data heading added, BIB corrections.
            (20061109A) DR Format updated
-ENDBIB              11
-COMMON               1          3
-MONIT
-B
- 37.0
+           (20110807A) SD: Subent 002:
+                                SF4 in REACTION code was added.
+                                BIB updated.
+ENDBIB              34
+NOCOMMON             0          0
+ENDSUBENT           37
+SUBENT        12017002   20110807   20120207   20111126       1377
+BIB                  8         17
+REACTION   (55-CS-133(N,G)55-CS-134,,SIG,,MXW)
+DECAY-DATA (55-CS-134,2.19YR)
+MONITOR    (27-CO-59(N,G)27-CO-60,,SIG)
+            Cobalt wires of certain standard dimensions and weight
+           diam. 0.013 cm, length 1.0 cm, weight 1.14 4+-0.005 mg.
+DECAY-MON  (27-CO-60,5.28YR)
+MONIT-REF  (,D.J.Hughers+,R,BNL-325,1955)
+REL-REF    (R,,W.F.Merritt+,J,CJP,35,16,1957) - decay data
+ERR-ANALYS (ERR-T) Overall uncertainty includes:
+           (ERR-1) error in the absolute disintegration rate
+           (ERR-2) error in the calibration of the flux
+                                             monitoring system
+           (MONIT-ERR) uncertainty in monitor reaction
+           (DATA-ERR) The errors quoted are the non-systematic
+           ones of which the fluctuation between sources, standard
+           deviation +-2%, is the most important.
+HISTORY    (20110807A) SD: SF4 in REACTION code was added.
+ENDBIB              17
+COMMON               5          3
+ERR-1      ERR-2      MONIT      MONIT-ERR  DATA-ERR
+PER-CENT   PER-CENT   B          PER-CENT   PER-CENT
+  2.0         1.5       37.0         4.0        2.
 ENDCOMMON            3
-ENDSUBENT           18
-SUBENT        12017002     771101              20050926       0000
-BIB                  1          1
-REACTION   (55-CS-133(N,G),,SIG,,MXW)
-ENDBIB               1
-NOCOMMON
 DATA                 3          1
-EN-DUMMY   DATA       DATA-ERR
+EN-DUMMY   DATA       ERR-T
 EV         B          B
  0.0253     30.4       1.7
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        12017003   20061109   20070306   20070213       1342
-BIB                  3          3
+ENDSUBENT           29
+SUBENT        12017003   20110807   20120207   20111126       1377
+BIB                  4         10
 REACTION   (55-CS-134(N,G)55-CS-135,,SIG,,MXW)
 ASSUMED    (ASSUM,55-CS-133(N,G)55-CS-134,,SIG,,MXW)
+ERR-ANALYS (DATA-ERR) The errors include those arising from the
+           experimental errors in the isotopic composition, from
+           the uncertainty in the 134Cs half-life and from the
+           uncertainty in the 135Cs(n,gamma)136Cs cross-section,
+           but not that from the uncertainty in the
+           133Cs(n,gamma)134Cs cross-section which introduces a
+           further error of +-7 barns (see ASSUM).
 INC-SPECT  (REAC) Thermal spectrum
-ENDBIB               3
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 4          1
-EN-DUMMY   DATA       DATA-ERR   ASSUM
-MEV        B          B          B
-   2.53E-08   1.34E+02    1.2E+01 29.
+DATA                 5          1
+EN-DUMMY   DATA       DATA-ERR   ASSUM      ASSUM-ERR
+MEV        B          B          B          B
+   2.53E-08   1.34E+02    1.2E+01 29.          7.
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           18
 ENDENTRY             3
