@@ -1,14 +1,12 @@
-ENTRY            O0913   20040312              20050926       0000
-SUBENT        O0913001   20040312              20050926       0000
-BIB                 12         21
+ENTRY            O0913   20110130   20110621   20110607       O043
+SUBENT        O0913001   20110130   20110621   20110607       O043
+BIB                 12         28
 TITLE      The absolute yield, angular distribution and resonance
            widths of the 6.13, 6.92 and 7.12-MeV photons from the
-           340.5-KeV resonance of the F-19(P,A+G)O-16 reaction.
+           340.5-keV resonance of the F-19(P,A+G)O-16 reaction.
 AUTHOR     (S.Croft)
 INSTITUTE  (2UK HAR)
 REFERENCE  (J,NIM/A,307,353,1991)
-HISTORY    (20011122C)
-           (20040312U) Last checking has been done.
 SAMPLE     Ca-F/2 targets, 150 and 650-mug/cm**2 thick, were
            deposited onto tantalum supports 0.265-mm thick and
            37.9-mm in diameter.
@@ -22,16 +20,27 @@ FACILITY   (VDG,2UK HAR)
 PART-DET   (G)
 EN-SEC     (E,G)
 METHOD     (BCINT)
-ENDBIB              21
-NOCOMMON
-ENDSUBENT           24
-SUBENT        O0913002   20040312              20050926       0000
-BIB                  3          4
-REACTION   (9-F-19(P,A)8-O-16,PAR,SIG,G,TT/REL) Figure 4
+HISTORY    (20011122C)
+           (20040312U) Last checking has been done.
+           (20101002A) SD: REACTION code in Subent 0002, 003
+                changed. DATA in Subent 004 changed according to
+                units given in the text. Subent 005 with resonance
+                width was added. + Cosmetic corrections:
+                digits of the year updated two digits => four
+                digits  in REF.,MONIT-REF, HISTORY;
+                SF9=EXP in all REACTIONs deleted
+ENDBIB              28
+NOCOMMON             0          0
+ENDSUBENT           31
+SUBENT        O0913002   20110130   20110621   20110607       O043
+BIB                  4          6
+REACTION   (9-F-19(P,A)8-O-16,PAR,TTY/MLT,G,REL) Figure 4
 ERR-ANALYS (ERR-DIG)  Data-point reader uncertainty.
            (EN-ERR-DIG). Proton beam energy uncertainty.
 STATUS     (CURVE) By CAJAD
-ENDBIB               4
+HISTORY    (20110130A) SD: REACTION code changed in SF6:
+                                                SIG => TTY/MLT
+ENDBIB               6
 COMMON               3          3
 E          EN-ERR-DIG ERR-DIG
 MEV        KEV        ARB-UNITS
@@ -60,21 +69,23 @@ KEV        ARB-UNITS
       349.9      1.035
       350.9      0.978
 ENDDATA             21
-ENDSUBENT           34
-SUBENT        O0913003   20040312              20050926       0000
-BIB                  3          4
-REACTION   (9-F-19(P,A)8-O-16,PAR,DA,G,TT/REL) Figures 5 and 6
-ERR-ANALYS (ERR-T).The uncertainty is reported by authors.
-           (COS-ERR).Data-point reader uncertainty.
+ENDSUBENT           36
+SUBENT        O0913003   20110130   20110621   20110607       O043
+BIB                  4          6
+REACTION   (9-F-19(P,A)8-O-16,PAR,TTY/MLT/DA,G,REL) Fig. 5 and 6
+ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors.
+           (COS-ERR-D).Data-point reader uncertainty.
 STATUS     (CURVE).By CAJAD.
-ENDBIB               4
+HISTORY    (20110130A) SD: REACTION code changed in SF6:
+                                                 DA => TTY/MLT/DA
+ENDBIB               6
 COMMON               2          3
-EN         COS-ERR
+EN         COS-ERR-D
 KEV        NO-DIM
       340.5      0.007
 ENDCOMMON            3
 DATA                 4         14
-E          COS        DATA       ERR-T
+E          COS        DATA       DATA-ERR
 KEV        NO-DIM     ARB-UNITS  ARB-UNITS
       6129.     -0.872      1.021      0.013
       6129.      -0.51      1.011      0.014
@@ -91,18 +102,24 @@ KEV        NO-DIM     ARB-UNITS  ARB-UNITS
       7115.      0.867       1.02       0.04
       7115.      1.002      1.007      0.023
 ENDDATA             16
-ENDSUBENT           29
-SUBENT        O0913004   20040312              20050926       0000
-BIB                  4          8
-REACTION   (9-F-19(P,A)8-O-16,PAR,PY,G,TT)
-ERR-ANALYS (DATA-ERR) Author'S data without any analysis
+ENDSUBENT           31
+SUBENT        O0913004   20110130   20110621   20110607       O043
+BIB                  6         14
+REACTION   (9-F-19(P,A)8-O-16,PAR,TTY/MLT,G)
+ERR-ANALYS (DATA-ERR) Author's data without any analysis
 ANALYSIS   (INTAD)
 ADD-RES    (STRUC) Relative branching ratios for the 6129, 6915
-           and 7115 KeV transitions of 0.9701:0.0033:0.0266.  The
+           and 7115 keV transitions of 0.9701:0.0033:0.0266.  The
            experimental uncertainties in the individual ratios
             (G2/G1) and (G3/G1) are 28% and 1.7% respectively when
            expressed at the one standard deviation level.
-ENDBIB               8
+STATUS     (TABLE) data from pag.357 of
+                               Nucl.Instr.&Meth. A307,353,1991
+HISTORY    (20101002A) SD: DATA in Subent changed according to
+                units given in the text of the article
+                REACTION code changed: PY,G,TT => TTY/MLT,G
+                 (p.357 from Nucl.Instr.&Meth. A307,353,1991)
+ENDBIB              14
 COMMON               1          3
 E
 MEV
@@ -110,8 +127,27 @@ MEV
 ENDCOMMON            3
 DATA                 3          1
 EN         DATA       DATA-ERR
-KEV        PRT/INC    PER-CENT
-      340.5  1.397E-08        4.2
+KEV        PRT/MUCOUL PER-CENT
+      340.5  87200.           4.2
 ENDDATA              3
-ENDSUBENT           20
-ENDENTRY             4
+ENDSUBENT           26
+SUBENT        O0913005   20110130   20110621   20110607       O043
+BIB                  3          5
+REACTION  1(9-F-19(P,A),PAR,WID)
+          2(9-F-19(P,A),PAR,WID/STR)
+STATUS     (TABLE) data from pag.357 of
+                               Nucl.Instr.&Meth. A307,353,1991
+HISTORY    (20101002C) SD
+ENDBIB               5
+COMMON               1          3
+E-LVL
+MEV
+      6.129
+ENDCOMMON            3
+DATA                 5          1
+EN-RES     DATA-CM   1DATA-ERR  1DATA      2DATA-ERR  2
+KEV        KEV        KEV        EV         PER-CENT
+      340.5  2.08       0.13       23.7        4.6
+ENDDATA              3
+ENDSUBENT           17
+ENDENTRY             5
