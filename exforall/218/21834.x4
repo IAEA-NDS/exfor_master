@@ -1,17 +1,17 @@
-ENTRY            21834   20080808   20081110   20081110       2202
-SUBENT        21834001   20080808   20081110   20081110       2202
-BIB                 15         57
+ENTRY            21834   20150803   20160302   20160209       2243
+SUBENT        21834001   20150803   20160302   20160209       2243
+BIB                 15         60
 INSTITUTE  (2GERKFK) Experimental site. A.A.Naqvi, F.Kaeppeler
            (2GERTUE) R.Mueller
            (3CPRAEP) Z.Y.Bao
-REFERENCE  (R,KFK-3220,198112) Main Reference.
-           (P,KFK-3068,1,198010)
+REFERENCE  (R,KFK-3220,198112) Main reference.
+           (P,KFK-3068,1,198010) Short presentation
            (J,PR/C,34,(1),218,1986) Measurement for Np-237 details
            (J,PR/C,29,885,1984) Measurement for U-235 details.
 AUTHOR     (R.Mueller, A.A.Naqvi, F.Kaeppeler, Z.Y.Bao)
-TITLE      -Numerical results of a (2E,2V)-measurement for
+TITLE       Numerical results of a (2E,2V)-measurement for
             Fast neutron induced fission of U-235 and Np-237.
-FACILITY   (VDG) 3 MV Van De Graaff at Karlsruhe.
+FACILITY   (VDG,2GERKFK) 3 MV Van De Graaff at Karlsruhe.
 INC-SOURCE (P-LI7)    Li-7(p,n)
            (D-D)      H-2(d,n)
 SAMPLE      100 microg/cm**2 thick layers of uranium dioxide
@@ -26,7 +26,7 @@ SAMPLE      100 microg/cm**2 thick layers of uranium dioxide
               U      less than 0.1    Th      less than 0.02
 METHOD     (TOF) Time Of Flight with four different
                    fission fragment path lengths.
-DETECTOR   (SOLST) Large area surface barrier detectors
+DETECTOR   (SIBAR) Large area surface barrier detectors
                    calibrated daily with  Cf-252 sources.
 ANALYSIS    Pulse heights were converted to kinetic energies
             using a corrected version of the calibration
@@ -39,13 +39,14 @@ ANALYSIS    Pulse heights were converted to kinetic energies
             analysis was  carried out. The experimental mass
             resolution was limited to 2.1 amu. Figures show
             distributions in mass intervals of 1 amu.
-REL-REF    (N,,W.H.Schmitt+,C,65SALZBURG,1,531,1965) Calibration
+REL-REF    (M,,W.H.Schmitt+,C,65SALZBURG,1,531,1965) Calibration
                                                      scheme.
+           (O,21661001,A.A.Naqvi,R,KFK-2919,1980) - previous
+            experiment for Np-237
 COMMENT    -A detailed presentation of the experiment, the data
             analysis and a discussion of the results is in
             preparation.
-STATUS      Data taken from main reference.
-           (COREL,21661001) 21661 - previous data for Np-237.
+STATUS     (TABLE) Data taken from KFK-3220,1981.
 CORRECTION  The following were taken into account :
              Incident neutron momentum,
              Fission fragment energy loss in the sample,
@@ -53,14 +54,16 @@ CORRECTION  The following were taken into account :
              Geometric effects,
              Flight path dependent effects.
 HISTORY    (19830228C) A.P.T.
-           (19830322E)
            (20080808A) M.M. BIB information was added.
             Dates were corrected for 4-digits year.
             Free text was corrected to be "human-readable".
             3-rd and 4-th References were added.
-ENDBIB              57
+           (20150803A) SD: SOLST -> SIBAR in DETECTOR code.
+            Changes in REACTION code in Subents 11,21.
+            STATUS "COREL" deleted, info moved to REL-REF.
+ENDBIB              60
 NOCOMMON             0          0
-ENDSUBENT           60
+ENDSUBENT           63
 SUBENT        21834002   20080808   20081110   20081110       2202
 BIB                  4          7
 REACTION   (92-U-235(N,F)MASS,PRE,FY)
@@ -853,48 +856,47 @@ NO-DIM     PRT/FIS    PRT/FIS    NO-DIM
  1.6300E+02 7.7400E+00 0.0000E+00 0.0000E+00
 ENDDATA             93
 ENDSUBENT          117
-SUBENT        21834011   20080808   20081110   20081110       2202
-BIB                  6         27
-REACTION  1(92-U-235(N,F),PR,NU)
-            The average number of neutrons emitted per
-            fission.
-          2(92-U-235(N,F),PR,NU,LF)
+SUBENT        21834011   20150803   20160302   20160209       2243
+BIB                  6         26
+REACTION  2(92-U-235(N,F),PR/FRG,NU,LF)
             Average number of neutrons emitted per light fragment.
-          3(92-U-235(N,F),PR,NU,HF)
+          3(92-U-235(N,F),PR/FRG,NU,HF)
             Average number of neutrons emitted per heavy fragment.
-COMMENT     The data quoted in the main reference is the
+COMMENT     The data quoted in KFK-3220,1981 is the
             number of neutrons emitted per light and heavy
-            fragment. The DATA 1 in this subwork have been
+            fragment. The DATA 1 in this Subent have been
             obtained by summing these two values and
             quadratically summing their errors.
 FLAG       (1.) The data were calculated by combining
                 the results of this experiment with radiochemical
                 data. The error 'ERR-S' include a contribution
                 from the normalization.
+ERR-ANALYS (ERR-S) Statistical error
 STATUS     (DEP,21834009)
            (DEP,21834010)
-           (TABLE)      Table II of the main reference.
-                    Table IV of 4-th reference.
+           (TABLE) Table II of KFK-3220,1981.
+            (same in Table IV of PR/C,29,885,1984).
 HISTORY    (19830228C) A.P.T.
-           (19830322E)
            (20080808A) M.M. "DL" was changed into "PR" in
                             REACTION 1  line.
            REACTION 2 and REACTION 3 and their data were added.
             Data units were changed NO-DIM -> PRT/FIS.
-ERR-ANALYS (ERR-S) Statistical error.
-ENDBIB              27
+           (20150803A) SD: SF5=PR -> PR/FRG in REACTIONs 2,3.
+           REACTION 1 and DATA 1 deleted (these values are not
+           given in the articles).
+ENDBIB              26
 NOCOMMON             0          0
-DATA                 9          2
-EN         EN-ERR     DATA      1ERR-S     1DATA      2ERR-S     2
-DATA      3ERR-S     3FLAG
+DATA                 7          2
+EN         EN-ERR     DATA      2ERR-S     2DATA      3ERR-S     3
+FLAG
 MEV        MEV        PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
-PRT/FIS    PRT/FIS    NO-DIM
- 5.0000E-01 8.0000E-02 2.4600E+00 1.1000E-01 1.44       0.08
- 1.02        0.08      1.
- 5.5500E+00 2.5000E-01 3.1900E+00 9.0000E-02 1.48       0.05
- 1.71        0.07
+NO-DIM
+       0.50       0.08       1.44       0.08       1.02       0.08
+         1.
+       5.55       0.25       1.48       0.05       1.71       0.07
+
 ENDDATA              8
-ENDSUBENT           40
+ENDSUBENT           39
 SUBENT        21834012   20080808   20081110   20081110       2202
 BIB                  4          9
 REACTION   (93-NP-237(N,F)MASS,PRE,FY)
@@ -1682,46 +1684,47 @@ NO-DIM     PRT/FIS    PRT/FIS    NO-DIM
  1.6300E+02 0.0000E+00 0.0000E+00 0.0000E+00
 ENDDATA             93
 ENDSUBENT          118
-SUBENT        21834021   20080808   20081110   20081110       2202
-BIB                  6         27
+SUBENT        21834021   20150803   20160302   20160209       2243
+BIB                  6         28
 REACTION  1(93-NP-237(N,F),PR,NU)
             The average number of neutrons emitted per
             fission.
-          2(93-NP-237(N,F),PR,NU,LF)
+          2(93-NP-237(N,F),PR/FRG,NU,LF)
             Average number of neutrons emitted per light fragment.
-          3(93-NP-237(N,F),PR,NU,HF)
+          3(93-NP-237(N,F),PR/FRG,NU,HF)
             Average number of neutrons emitted per heavy fragment.
 COMMENT    -The data quoted in the main reference is the
             number of neutrons emitted per light and heavy
-            fragment. The DATA 1 in this subwork have been
+            fragment. The DATA 1 in this Subent have been
             obtained by summing these two values and
             quadratically summing their errors.
 FLAG       (1.) The data were calculated by combining
                 the results of this experiment with radiochemical
-                data. The error 'ERR-S' includes a contribution
-                from the normalization.
+                data.
+ERR-ANALYS (ERR-S) Statistical error
 STATUS     (DEP,21834019)
            (DEP,21834011)
-           (TABLE)  Table III of the main reference.
-                    Table II of 3-rd Reference.
+           (TABLE) Table III of KFK-3220,1981.
+            (same in Table II of PR/C,34,(1),218,1986). Data for
+            REACTION 1 are from Tbl.I of PR/C,34,(1),218,1986.
 HISTORY    (19830228C) A.P.T.
-           (19830322E)
            (20080808A) M.M. "DL" was changed into "PR" in
                             REACTION 1  line.
            REACTION 2 and REACTION 3 and their data were added.
             Data units were changed NO-DIM -> PRT/FIS .
-ERR-ANALYS (ERR-S) Statistical error
-ENDBIB              27
+           (20150803A) SD: SF5=PR -> PR/FRG in REACTION (2,3) code
+           DATA-ERR added.
+ENDBIB              28
 NOCOMMON             0          0
 DATA                 9          2
 EN         EN-ERR     DATA      1ERR-S     1DATA      2ERR-S     2
 DATA      3ERR-S     3FLAG
 MEV        MEV        PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
 PRT/FIS    PRT/FIS    NO-DIM
- 8.0000E-01 5.0000E-02 2.7300E+00            1.59
+ 0.80       0.05         2.73      0.45      1.59
   1.14                  1.
- 5.5500E+00 2.5000E-01 3.4600E+00 1.1000E-01 1.59       0.08
+ 5.55       0.25        3.43       0.05       1.59       0.08
   1.87       0.08
 ENDDATA              8
-ENDSUBENT           40
+ENDSUBENT           41
 ENDENTRY            21

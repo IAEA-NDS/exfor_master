@@ -1,394 +1,447 @@
-ENTRY            22507   20060605   20070104   20061127       2180
-SUBENT        22507001   20060605   20070104   20061127       2180
-BIB                 14         39
-TITLE      .Neutron kerma factor measurements in the energy
-            range between 5 MeV and 66 MeV
-AUTHOR     (U.J.SCHREWE, W.D.NEWHAUSER, H.J.BREDE, P.M.DELUCA JR)
+ENTRY            22507   20150831   20160302   20160209       2243
+SUBENT        22507001   20150831   20160302   20160209       2243
+BIB                 13         59
+TITLE      Experimental kerma coefficients and dose distributions
+           of C, N, O, Mg, Al, Si, Fe, Zr, A-150 plastic, Al2O3,
+           AlN, SiO2 and ZrO2 for neutron energies up to 66 MeV
+AUTHOR     (U.J.Schrewe,W.D.Newhauser,H.J.Brede,P.M.DeLuca Jr)
 INSTITUTE  (2GERPTB)  Schrewe, Newhauser, Brede, and experimental
                       site
            (1USAMGH)  Newhauser, MGH, Boston, USA
-           (1USAWIS)  Deluca
+           (1USAWIS)  DeLuca
            (2SWTPSI)  Paul Scherrer Institute, experimental site
-REFERENCE  (C,97TRIEST,2,1643,199705)  Main reference, data table
-                                       is given
+REFERENCE  (J,PMB,45,651,2000) - final publ., corrected data
+           (C,97TRIEST,2,1643,199705)  Prelim. data without
+            correction on low neutron energy tail at En > 34. MeV
            (J,AND,65,37,1997)  Details of analysis, gas-to-wall
                                ratio calculation
-REL-REF    (R,,R.E.PRAEL+,R,LA-UR-3014,1989)  Code for secondary
+REL-REF    (M,,R.E.Prael+,R,LA-UR-3014,1989)  Code for secondary
               charged particles spectra calculation
-FACILITY   (VDG,2GERPTB)    .Van de Graaf accelerator for 5, 8,
-                             14.8 and 17 MeV neutrons
+           (M,,M.D.Bethesda+,R,ICRU-63,2000) - A comprehensive
+           compilation of experimental kerma coefficients
+           including the results of the present work and an
+           extensive discussion and comparisons with theoretical
+           values were presented.
+FACILITY   (VDG,2GERPTB)    .Van de Graaff accelerator for 5, 8,
+                             15.0 and 17 MeV neutrons
            (ACCEL,2SWTPSI)  .For 34, 45, 66 MeV neutrons
 INC-SOURCE (D-D)   For producing neutrons with energies 5 MeV and
                    8 MeV
-           (D-T)   For producing neutrons with energies 14.8 MeV
+           (D-T)   For producing neutrons with energies 15.0 MeV
                    and 17 MeV
            (P-BE)  For producing neutrons with energies 34, 45,
                    66 MeV
 METHOD     (TOF)
 ANALYSIS   .Kerma factors are derived from absorbed dose measure-
             ments.
-DETECTOR   (TELES)  Proton recoil telescope for pulse rate
+DETECTOR   (TELES,PROPC)  Proton recoil telescope for pulse rate
                     calibration
            (LONGC)  Long counter for neutron flux monitoring
            (FISCH)  U-238 fission foil chamber for neutron flux
                     monitoring
-SAMPLE     .No information
-ERR-ANALYS (DATA-ERR1)    Minimal total error
-           (DATA-ERR2)    Maximal total error
-STATUS     (PRELM)  Declared by authors
-           .From table 1 of main reference.
+ERR-ANALYS (ERR-T)    total error  includes ERR-1, ERR-3 (see
+            Subents 2-29) and:
+           (ERR-S,1.8,7.9) uncertainty in counting statistics
+           (ERR-2) uncertainty in peak fluence
+           (ERR-4) uncertainty in attenuation and scattering in
+            the low-pressure proportional counters (LPPC) wall
+           (ERR-5,0.,4.0) uncertainty in the gas-to-wall
+                        conversion factor
+           (ERR-6) uncertainty in the ratio of the W value
+            averaged over the dose distribution of neutron
+            energy En and the W value of the 'edges'
+STATUS     (TABLE) Tables 2(a), 2(b) of PMB,45,651,2000
 HISTORY    (20031231C)   +  +  J.O.S.
            (20040101U) Last checking has been done.
            (20060605U)  Corrected according to MEMO CP-E/088
-ENDBIB              39
-COMMON               2          3
-DATA-ERR1  DATA-ERR2
-PER-CENT   PER-CENT
-        10.        15.
+           (20150831A) SD: ERR-ANALYS, data in all Subents were
+           updated following final publ. (PMB,45,651,2000) and
+           SF8=FCT was deleted from REACTION code in Subents 2-26.
+           ERR-T, ERR-2, ERR-3, ERR-4 were added to Subents 2-26.
+           COMMENT moved to Subent 1.Data units were changed in
+           Subents 002-031 (GY*M-SQ -> PGY*CM2).
+ENDBIB              59
+COMMON               1          3
+ERR-6
+PER-CENT
+  3.0
 ENDCOMMON            3
-ENDSUBENT           46
-SUBENT        22507002   20060605   20070104   20061127       2180
-BIB                  7         19
-REACTION  1(13-AL-CMP(N,TOT),,KER,,FCT)     Kerma factor for
-             aluminium nitrate Al-N divided by neutron flux
-          2(13-AL-CMP(N,TOT),,KER,,FCT)    Kerma factor for
+ENDSUBENT           66
+SUBENT        22507002   20150831   20160302   20160209       2243
+BIB                  6         19
+REACTION   (13-AL-CMP(N,TOT),,KER)     Kerma factor for
              aluminium nitrate Al-N divided by neutron flux
 SAMPLE     .Aluminum nitrate AL-N
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+           Element (mass fraction): Al (0.658); N (0.342)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of Al-N.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-HISTORY    (20060605U)  Sample keyword added,
-                        AL-CMP to AL-27 changed
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20060605A) Sample keyword added
+           (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
 ENDBIB              19
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    7.6E-08
-        8.0    5.8E-08
-       14.8   18. E-08
-       17.0   21. E-08
-       34.0               30.E-08
-ENDDATA              7
-ENDSUBENT           31
-SUBENT        22507003   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(13-AL-27(N,TOT),,KER,,FCT)    Kerma factor for
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.759      0.047
+        8.0  0.583      0.037
+       15.0  1.794      0.105
+       17.0  2.055      0.138
+ENDDATA              6
+ENDSUBENT           34
+SUBENT        22507003   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (13-AL-27(N,TOT),,KER)    Kerma factor for
              aluminium divided by neutron flux
-          2(13-AL-27(N,TOT),,KER,,FCT)    Kerma factor for
-             aluminium divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     Aluminium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of Al.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    2.0E-08
-        8.0    4.4E-08
-       14.8   11. E-08
-       17.0   14. E-08
-       34.0               21.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507004   20040101   20040705   20050926       0000
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE added. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.196      0.014
+        8.0  0.438      0.028
+       15.0  1.140      0.065
+       17.0  1.436      0.102
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507004   20150831   20160302   20160209       2243
 BIB                  6         13
-REACTION  1(7-N-14(N,TOT),,KER,,FCT,DERIV)    Kerma factor for
+REACTION   (7-N-14(N,TOT),,KER,,,DERIV)    Kerma factor for
                               nitrogen divided by neutron flux
-          2(7-N-14(N,TOT),,KER,,FCT,DERIV)    Kerma factor for
-                              nitrogen divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
 ANALYSIS   .Derived from data for aluminium and aluminium nitrate
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
 STATUS     (DEP,22507002)
            (DEP,22507003)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
 ENDBIB              13
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0   18. E-08
-        8.0    8.6E-08
-       14.8   31. E-08
-       17.0   32. E-08
-       34.0               48.E-08
-ENDDATA              7
-ENDSUBENT           25
-SUBENT        22507005   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(13-AL-OXI(N,TOT),,KER,,FCT)    Kerma factor for
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  1.844      0.135
+        8.0  0.863      0.112
+       15.0  3.054      0.309
+       17.0  3.247      0.399
+ENDDATA              6
+ENDSUBENT           28
+SUBENT        22507005   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (13-AL-OXI(N,TOT),,KER)    Kerma factor for
              aluminium oxide Al2-O3 divided by neutron flux
-          2(13-AL-OXI(N,TOT),,KER,,FCT)    Kerma factor for
-             aluminium oxide Al2-O3 divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     .Al2O3, element (mass fraction): Al (0.529); O (0.471)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of aluminium oxide.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    4.0E-08
-        8.0    6.4E-08
-       14.8   18. E-08
-       17.0   19. E-08
-       34.0               31.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507006   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(14-SI-OXI(N,TOT),,KER,,FCT)    Kerma factor for
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.402      0.025
+        8.0  0.641      0.040
+       15.0  1.753      0.099
+       17.0  1.915      0.129
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507006   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (14-SI-OXI(N,TOT),,KER)    Kerma factor for
              silicon oxide Si-O2 divided by neutron flux
-          2(14-SI-OXI(N,TOT),,KER,,FCT)    Kerma factor for
-             silicon oxide Si-O2 divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     .SiO2, Element (mass fraction): Si (0.467) O (0.533)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of silicon oxide.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    4.1E-08
-        8.0    7.6E-08
-       14.8   19. E-08
-       17.0   20. E-08
-       34.0               37.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507007   20040101   20040705   20050926       0000
-BIB                  6         18
-REACTION  1(14-SI-0(N,TOT),,KER,,FCT)       Kerma factor for
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.406      0.026
+        8.0  0.757      0.048
+       15.0  1.914      0.137
+       17.0  2.048      0.143
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507007   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (14-SI-0(N,TOT),,KER)       Kerma factor for
                               silicon divided by neutron flux
-          2(14-SI-0(N,TOT),,KER,,FCT)       Kerma factor for
-                              silicon divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     Silicon
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of silicon
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-STATUS     (DEP,22507002)
-           (DEP,22507003)
-ENDBIB              18
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    1.8E-08
-        8.0    8.1E-08
-       14.8   14. E-08
-       17.0   16. E-08
-       34.0               27.E-08
-ENDDATA              7
-ENDSUBENT           30
-SUBENT        22507008   20040101   20040705   20050926       0000
-BIB                  6         16
-REACTION  1(8-O-16(N,TOT),,KER,,FCT,DERIV)    Kerma factor for
-                              oxigen divided by neutron flux
-          2(8-O-16(N,TOT),,KER,,FCT,DERIV)    Kerma factor for
-                              oxigen divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ. STATUS 'DEP' deleted
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.175      0.011
+        8.0  0.812      0.054
+       15.0  1.436      0.124
+       17.0  1.571      0.136
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507008   20150831   20160302   20160209       2243
+BIB                  6         14
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                              oxygen divided by neutron flux
 ANALYSIS   .Derived from data for aluminium, aluminium oxide,
             silicon and silicon oxide
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-STATUS     (DEP,22507003)
-           (DEP,22507005)
-           (DEP,22507006)
-           (DEP,22507007)
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0   18. E-08
-        8.0    8.6E-08
-       14.8   31. E-08
-       17.0   32. E-08
-       34.0               48.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507009   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(12-MG-0(N,TOT),,KER,,FCT)    Kerma factor for
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+STATUS     (DEP,22507030)
+           (DEP,22507031)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651), SF8=FCT was deleted from REACTION code.
+           En=14.8 -> 15.MeV. Second reaction code deleted
+           following final publ.
+ENDBIB              14
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.620      0.037
+        8.0  0.798      0.066
+       15.0  2.403      0.170
+       17.0  2.460      0.200
+ENDDATA              6
+ENDSUBENT           29
+SUBENT        22507009   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (12-MG-0(N,TOT),,KER)    Kerma factor for
              magnesium divided by neutron flux
-          2(12-MG-0(N,TOT),,KER,,FCT)    Kerma factor for
-             magnesium divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     Magnesium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of magnesium
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    2.3E-08
-        8.0    7.2E-08
-       14.8   14. E-08
-       17.0   17. E-08
-       34.0               30.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507010   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(6-C-12(N,TOT),,KER,,FCT)    Kerma factor for
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.229      0.015
+        8.0  0.716      0.048
+       15.0  1.382      0.082
+       17.0  1.661      0.103
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507010   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (6-C-12(N,TOT),,KER)    Kerma factor for
                 carbon divided by neutron flux
-          2(6-C-12(N,TOT),,KER,,FCT)    Kerma factor for
-                carbon divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      graphite
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of carbon
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    4.9E-08
-        8.0    11.E-08
-       14.8    22.E-08
-       17.0    29.E-08
-       34.0               40.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507011   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(26-FE-0(N,TOT),,KER,,FCT)    Kerma factor for
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.489      0.032
+        8.0  1.103      0.071
+       15.0  2.191      0.126
+       17.0  2.909      0.202
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507011   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (26-FE-0(N,TOT),,KER)    Kerma factor for
                   iron divided by neutron flux
-          2(26-FE-0(N,TOT),,KER,,FCT)    Kerma factor for
-                  iron divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Iron
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of iron
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    1.4E-08
-        8.0    3.0E-08
-       14.8    5.4E-08
-       17.0    7.6E-08
-       34.0               14.E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507012   20040101   20040705   20050926       0000
-BIB                  5         16
-REACTION  1(40-ZR-0(N,TOT),,KER,,FCT)    Kerma factor for
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.144      0.009
+        8.0  0.304      0.019
+       15.0  0.537      0.036
+       17.0  0.759      0.061
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507012   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (40-ZR-0(N,TOT),,KER)    Kerma factor for
              zirconium divided by neutron flux
-          2(40-ZR-0(N,TOT),,KER,,FCT)    Kerma factor for
-             zirconium divided by neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     ZrO2; Element (mass fraction) Zr (0.740); O (0.260)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of zirconium
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
-ENDBIB              16
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    1.0E-08
-        8.0    1.5E-08
-       14.8    2.9E-08
-       17.0    3.1E-08
-       34.0               6.6E-08
-ENDDATA              7
-ENDSUBENT           28
-SUBENT        22507013   20040101   20040705   20050926       0000
-BIB                  5         19
-REACTION  1(6-C-CMP(N,TOT),,KER,,FCT)    Kerma factor for
-             a-150 (tissue-equivalent plastic) divided by
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
+ENDBIB              17
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.102      0.006
+        8.0  0.145      0.009
+       15.0  0.287      0.019
+       17.0  0.313      0.025
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        22507013   20150831   20160302   20160209       2243
+BIB                  6         19
+REACTION   (6-C-CMP(N,TOT),,KER)    Kerma factor for
+             A-150 (tissue-equivalent plastic) divided by
              neutron flux
-          2(6-C-CMP(N,TOT),,KER,,FCT)    Kerma factor for
-             a-150 (tissue-equivalent plastic) divided by
-             neutron flux
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      A-150 plastic (76.8% - carbon)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
              design. Walls made of a-150 = tissue- equivalent
              plastic
@@ -396,130 +449,173 @@ DETECTOR   (PROPC)  Proportional counters of nearly identical
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT 1.Monoenergetic neutron beam
-          2.Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-CORRECTION2.Data corrected for low-energy tail EN<28 MeV
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=FCT was deleted from REACTION code.
+           SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
+           code deleted following final publ.
 ENDBIB              19
-NOCOMMON             0          0
-DATA                 3          5
-EN         DATA      1DATA      2
-MEV        GY*M-SQ    GY*M-SQ
-        5.0    45.E-08
-        8.0    54.E-08
-       14.8    67.E-08
-       17.0    75.E-08
-       34.0               80.E-08
-ENDDATA              7
-ENDSUBENT           31
-SUBENT        22507014   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (40-ZR-OXI(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  4.546      0.323
+        8.0  5.364      0.372
+       15.0  6.732      0.517
+       17.0  7.505      0.588
+ENDDATA              6
+ENDSUBENT           34
+SUBENT        22507014   20150831   20160302   20160209       2243
+BIB                  7         20
+REACTION   (40-ZR-OXI(N,TOT),,KER)    Kerma factor for
              zirconium oxide Zr-O2 divided by neutron flux
              not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      ZrO2, Element (mass fraction):  Zr (0.740); O (0.260)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of zirconium oxide.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              20
 NOCOMMON             0          0
-DATA                 2          1
-EN         DATA
-MEV        GY*M-SQ
-        44.    27.E-08
-ENDDATA              3
-ENDSUBENT           21
-SUBENT        22507015   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (14-SI-OXI(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+DATA                 7          1
+EN         DATA       ERR-T      ERR-2      ERR-3      ERR-4
+MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   PER-CENT   PER-CENT
+NO-DIM
+        44.   2.10       0.21        6.4         2.0       2.0
+   0.66
+ENDDATA              6
+ENDSUBENT           31
+SUBENT        22507015   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (14-SI-OXI(N,TOT),,KER)    Kerma factor for
                silicon oxide Si-O2 divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      SiO2, Element (mass fraction):  Si (0.467); O (0.533)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of silicon oxide.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    51.E-08
-        44.    59.E-08
-        66.    72.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   3.62       0.29       5.4        0.69
+        44.   3.99       0.34       6.4        0.62
+        66.   4.77       0.42       7.2        0.56
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507016   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (13-AL-OXI(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           33
+SUBENT        22507016   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (13-AL-OXI(N,TOT),,KER)    Kerma factor for
                aluminium oxide Al2-O3 divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE     .Al2O3, Element (mass fraction): Al (0.529); O (0.471)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of aluminium oxide.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    45.E-08
-        44.    60.E-08
-        66.    71.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   3.31       0.26       5.4         0.70
+        44.   3.77       0.32       6.4         0.64
+        66.   4.85       0.43       7.2         0.57
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507017   20060605   20070104   20061127       2180
-BIB                  6         15
-REACTION   (13-AL-CMP(N,TOT),,KER,,RAW/FCT)   Kerma factor for
+ENDSUBENT           33
+SUBENT        22507017   20150831   20160302   20160209       2243
+BIB                  6         19
+REACTION   (13-AL-CMP(N,TOT),,KER)   Kerma factor for
                aluminium nitrate Al-N divided by neutron flux
-             not corrected for low neutron energy tail
 SAMPLE     .Aluminum nitrate AL-N
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+           Element (mass fraction): Al (0.658); N (0.342)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of aluminium nitrate.
             These are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
 HISTORY    (20060605U)  Sample keyword added
-ENDBIB              15
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    46.E-08
-        44.    59.E-08
-        66.    69.E-08
+           (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   3.33       0.26       5.4        0.70
+        44.   3.93       0.31       6.4        0.64
+        66.   4.57       0.41       7.2        0.56
 ENDDATA              5
-ENDSUBENT           25
-SUBENT        22507018   20040101   20040705   20050926       0000
-BIB                  4         15
-REACTION   (6-C-CMP(N,TOT),,KER,,RAW/FCT)    Kerma factor for
-               a-150 (tissue-equivalent plastic) divided by
+ENDSUBENT           33
+SUBENT        22507018   20150831   20160302   20160209       2243
+BIB                  7         21
+REACTION   (6-C-CMP(N,TOT),,KER)    Kerma factor for
+               A-150 (tissue-equivalent plastic) divided by
                neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      A-150 plastic (76.8% - carbon)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of a-150 = tissue-equivalent
                plastic
@@ -527,213 +623,425 @@ DETECTOR   (PROPC)  Proportional counters of nearly identical
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              15
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.   148.E-08
-        44.   155.E-08
-        66.   157.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              21
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   8.67       0.74       5.4        0.57
+        44.   8.07       0.79       6.4        0.49
+        66.   7.95       0.74       7.2        0.44
 ENDDATA              5
-ENDSUBENT           25
-SUBENT        22507019   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (40-ZR-0(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           35
+SUBENT        22507019   20150831   20160302   20160209       2243
+BIB                  6         17
+REACTION   (40-ZR-0(N,TOT),,KER)    Kerma factor for
                zirconium divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Zirconium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of zirconium
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    10.E-08
-        44.    16.E-08
-        66.    23.E-08
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              17
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   0.80       0.06       5.4        0.77
+        44.   1.27       0.11       6.4        0.71
+        66.   1.76       0.17       7.2        0.64
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507020   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (26-FE-0(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           31
+SUBENT        22507020   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (26-FE-0(N,TOT),,KER)    Kerma factor for
                     iron divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Iron
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of iron
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    20.E-08
-        44.    30.E-08
-        66.    34.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   1.64       0.12       5.4       0.77
+        44.   2.21       0.25       6.4       0.72
+        66.   2.74       0.25       7.2       0.65
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507021   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (14-SI-0(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           33
+SUBENT        22507021   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (14-SI-0(N,TOT),,KER)    Kerma factor for
                   silicon divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Silicon
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of silicon
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    38.E-08
-        44.    45.E-08
-        66.    57.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   2.75       0.22       5.4        0.70
+        44.   3.05       0.34       6.4        0.64
+        66.   3.84       0.33       7.4        0.58
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507022   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (13-AL-27(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           33
+SUBENT        22507022   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (13-AL-27(N,TOT),,KER)    Kerma factor for
                aluminium  divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Aluminium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of aluminium
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    32.E-08
-        44.    40.E-08
-        66.    54.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   2.40       0.19       5.4        0.73
+        44.   2.82       0.24       6.4        0.66
+        66.   3.82       0.40       7.4        0.58
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507023   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (12-MG-0(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           33
+SUBENT        22507023   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (12-MG-0(N,TOT),,KER)    Kerma factor for
                magnesium  divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Magnesium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of magnesium
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    41.E-08
-        44.    47.E-08
-        66.    66.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   3.00       0.23      5.4          0.68
+        44.   3.36       0.29      6.4          0.64
+        66.   4.35       0.40      7.4          0.57
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507024   20040101   20040705   20050926       0000
-BIB                  4         13
-REACTION   (6-C-12(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           33
+SUBENT        22507024   20150831   20160302   20160209       2243
+BIB                  7         19
+REACTION   (6-C-12(N,TOT),,KER)    Kerma factor for
                carbon  divided by neutron flux
-             not corrected for low neutron energy tail
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
+SAMPLE      Graphite
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of carbon
             these are commercially available LET-1/2 counters
             with cavity diameter 12.7 mm. Counters are operating
             with propan-based tissue-equivalent gas mixture
             at 90 hPa pressure
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    61.E-08
-        44.    70.E-08
-        66.    95.E-08
+INC-SPECT  .Polyenergetic neutron beam
+MISC-COL   (MISC) Factors correcting the measured absorbed doses
+           for the contributions of non-peak energy neutrons
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
+            code. SAMPLE added.
+ENDBIB              19
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 5          3
+EN         DATA       ERR-T      ERR-2      MISC
+MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+        34.   4.38       0.35       5.4        0.69
+        44.   4.80       0.41       6.4        0.61
+        66.   5.76       0.56       7.4        0.53
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        22507025   20040101   20040705   20050926       0000
-BIB                  5         10
-REACTION   (7-N-14(N,TOT),,KER,,RAW/FCT)    Kerma factor for
+ENDSUBENT           33
+SUBENT        22507025   20150831   20160302   20160209       2243
+BIB                  6         13
+REACTION   (7-N-14(N,TOT),,KER,,,DERIV)    Kerma factor for
                nitrogen divided by neutron flux
-             not corrected for low neutron energy tail
 ANALYSIS   .Derived from data for aluminium and aluminium nitrate
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
 STATUS     (DEP,22507016)
            (DEP,22507022)
-ENDBIB              10
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    73.E-08
-        44.    97.E-08
-        66.    97.E-08
-ENDDATA              5
-ENDSUBENT           20
-SUBENT        22507026   20040101   20040705   20050926       0000
-BIB                  5         13
-REACTION   (8-O-16(N,TOT),,KER,,RAW/FCT)    Kerma factor for
-                 oxigen divided by neutron flux
-             not corrected for low neutron energy tail
-ANALYSIS   .Derived from data for aluminium, aluminium oxide,
-            silicon and silicon oxide
-COMMENT    .Units given by the authors are pgy*cm2.
-            Units in data table derived by compiler
-INC-SPECT  .Quasi-monocromatic neutron beam with considerable
-            low-energy tail
-STATUS     (DEP,22507015)
-           (DEP,22507017)
-           (DEP,22507021)
-           (DEP,22507022)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted and SF9=DERIV
+           was added to REACTION code.
 ENDBIB              13
-NOCOMMON             0          0
-DATA                 2          3
-EN         DATA
-MEV        GY*M-SQ
-        34.    60.E-08
-        44.    77.E-08
-        66.    88.E-08
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 4          3
+EN         DATA       ERR-T      ERR-2
+MEV        PGY*CM2    PGY*CM2    PER-CENT
+        34.   5.13       0.66      5.4
+        44.   6.07       0.72      6.4
+        66.   6.02       1.00      7.4
 ENDDATA              5
-ENDSUBENT           23
-ENDENTRY            26
+ENDSUBENT           27
+SUBENT        22507026   20150831   20160302   20160209       2243
+BIB                  6         13
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                 oxygen divided by neutron flux
+ANALYSIS   .Derived from data for aluminium, aluminium oxide
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+STATUS     (DEP,22507016)
+           (DEP,22507022)
+HISTORY    (20150831A) SD: Data were updated following final publ.
+            (PMB,45,651) SF8=RAW/FCT was deleted and SF9=DERIV
+           was added to REACTION code.
+ENDBIB              13
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 4          3
+EN         DATA       ERR-T      ERR-2
+MEV        PGY*CM2    PGY*CM2    PER-CENT
+        34.   4.33       0.48        5.4
+        44.   4.84       0.56        6.4
+        66.   6.01       0.76        7.4
+ENDDATA              5
+ENDSUBENT           27
+SUBENT        22507027   20150831   20160302   20160209       2243
+BIB                  6         11
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                 oxygen divided by neutron flux
+ANALYSIS   .Derived from data for silicon and silicon oxide
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+STATUS     (DEP,22507015)
+           (DEP,22507021)
+HISTORY    (20150831C) SD
+ENDBIB              11
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 4          3
+EN         DATA       ERR-T      ERR-2
+MEV        PGY*CM2    PGY*CM2    PER-CENT
+        34.   4.39       0.49        5.4
+        44.   4.81       0.58        6.4
+        66.   5.60       0.62        7.4
+ENDDATA              5
+ENDSUBENT           25
+SUBENT        22507028   20150831   20160302   20160209       2243
+BIB                  6         11
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                 oxygen divided by neutron flux
+ANALYSIS   .Derived from data for zirconium, zirconium oxide
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+STATUS     (DEP,22507014)
+           (DEP,22507019)
+HISTORY    (20150831C) SD
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 6          1
+EN         DATA       ERR-T      ERR-2      ERR-3      ERR-4
+MEV        PGY*CM2    PGY*CM2    PER-CENT   PER-CENT   PER-CENT
+        44.   4.48       0.60        6.4       2.0       2.0
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        22507029   20150831   20160302   20160209       2243
+BIB                  6         13
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                 oxygen divided by neutron flux
+ANALYSIS   .Mean values derived from Al2O3=Al, SiO2=Si and
+            ZrO2=Zr-walled LPPCs
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+STATUS     (DEP,22507026)
+           (DEP,22507027)
+           (DEP,22507028)
+HISTORY    (20150831C) SD
+ENDBIB              13
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 4          3
+EN         DATA       ERR-T      ERR-2
+MEV        PGY*CM2    PGY*CM2    PER-CENT
+        34.   4.36       0.38        5.4
+        44.   4.74       0.42        6.4
+        66.   5.74       0.56        7.4
+ENDDATA              5
+ENDSUBENT           27
+SUBENT        22507030   20150831   20160302   20160209       2243
+BIB                  6         10
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                              oxygen divided by neutron flux
+ANALYSIS   .Derived from data for silicon and silicon oxide
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+STATUS     (DEP,22507006)
+           (DEP,22507007)
+HISTORY    (20150831C) SD
+ENDBIB              10
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.609      0.048
+        8.0  0.709      0.096
+       15.0  2.335      0.268
+       17.0  2.466      0.269
+ENDDATA              6
+ENDSUBENT           25
+SUBENT        22507031   20150831   20160302   20160209       2243
+BIB                  6         10
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
+                              oxygen divided by neutron flux
+ANALYSIS   .Derived from data for aluminium, aluminium oxide
+INC-SPECT  .Monoenergetic neutron beam
+ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
+            (low energy neutron background was not subtracted at
+            En between 5 and 17 MeV)
+STATUS     (DEP,22507003)
+           (DEP,22507005)
+HISTORY    (20150831C) SD
+ENDBIB              10
+COMMON               3          3
+ERR-1      ERR-2      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+   1.5         2.0       3.0
+ENDCOMMON            3
+DATA                 3          4
+EN         DATA       ERR-T
+MEV        PGY*CM2    PGY*CM2
+        5.0  0.634      0.053
+        8.0  0.869      0.087
+       15.0  2.442      0.209
+       17.0  2.454      0.267
+ENDDATA              6
+ENDSUBENT           25
+ENDENTRY            31

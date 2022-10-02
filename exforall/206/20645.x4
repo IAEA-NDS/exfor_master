@@ -1,45 +1,48 @@
-ENTRY            20645   20080417              20080417       0000
-SUBENT        20645001   20080417              20080417       0000
-BIB                 15         47
+ENTRY            20645   20150630   20160302   20160209       2243
+SUBENT        20645001   20150630   20160302   20160209       2243
+BIB                 18         61
 INSTITUTE  (2BLGGHT)
 REFERENCE  (J,JRC,20,695,1974)
-           (C,73PARIS,2,241,197303) Ratios Of Resonance Integrals
-            To Thermal Cross Sections.
-AUTHOR     (R.VAN DER LINDEN,F.DE CORTE,J.HOSTE)
-TITLE      -A COMPILATION OF INFINITE DILUTION
-            RESONANCE INTEGRALS,II-.
-INC-SOURCE (REAC )Thesis Reactor Of University Of Ghent.
-SAMPLE     .Gold-Aluminium Alloy.
-           .For The Nuclides Of Interest High-purity Compounds
-            Have Been Used.
+           (C,73PARIS,2,241,197303) Ratios of resonance integrals
+            to thermal cross sections.
+REL-REF    (O,20643001,R.Van Der Linden+,J,JRC,11,133,1972)
+            - The first part of the compilation is published
+AUTHOR     (R.Van der Linden,F.De Corte,J.Hoste)
+TITLE       A compilation of infinite dilution
+            resonance integrals, II.
+FACILITY   (REAC,2BLGGHT)
+INC-SOURCE (REAC) Thetis Reactor of University of Ghent.
+SAMPLE     .Gold-aluminium alloy.
+           .For the nuclides of interest high-purity compounds
+            have been used.
 METHOD     (ACTIV) Activation.
-DETECTOR   (GELI ) Germanium-Lithium Detector.
-           (NAICR) Sodium-Iodine Crystal.
-ANALYSIS   .Cadmium Ratio Measurements (Wall Thickness Of Cd-
-            Capsules 1 mm, Cd-cut-off-energy 0.55 eV).
-           .The Resonance Integral (RI) Was Determined From The
-            Relation RI=sigma*R/(CR-1)  Were Sigma = Thermal
-            Cross Section,CR = Cadmium Ratio And R The Ratio
-            Of The Thermal To Epithermal Neutron Flux.
-           .The R Were Determined With Gold Monitor.
-           .The Thermal Cross Sections Were Taken From The Chart
-            Of Nuclides.
-MONITOR    (79-AU-197(N,G)79-AU-198,,RI)
-            Thermal Cross Section = 98.8 Barns,
-            Resonance Integral Including 1/V-contribution =
-            1551 +- 20 Barns.
-COMMENT    .The First Part Of The Compilation Is Published In
-            J.OF RADIOANAL.CHEM.11(1972)133.
-           .In Addition To The Resonance Integral Are Given The
-            Half Life Of The Produced Isotope,The Main Gamma-
-            Line, The Thermal Cross Section, The Ratio Of Res.
-            Integral To Thermal Cross Section,Some  Literature
-            Values  For Resonance Integral And The Main
-            Resonance Energies.
-STATUS     .Taken From J.RADIOANAL.CHEM. 20(1974)695.
-CORRECTION .For Thermal And Epithermal Self-shielding For The
-            Elements With High Neutron Absorption.
-ERR-ANALYS .Standard Deviations (Average over 20 Experiments)
+DETECTOR   (GELI) Germanium-lithium detector(resolution 2. 28 keV,
+            efficiency 7.8%) or a Low Energy Photon Detector
+            (resolution 248 eV for the 5. 9 keV Fe X-ray);
+           (NAICR) 240 cm3 NaI(Tl) well-type detector (well-
+            volume 40 cm3) for Some long-lived radioisotopes
+ANALYSIS   .Cadmium ratio measurements (wall thickness of Cd-
+            capsules 1 mm, Cd-cut-off-energy 0.55 eV).
+           .The resonance integral (RI) was determined from the
+            relation RI=sigma*R/(CR-1)  were sigma = thermal
+            cross section,CR = Cadmium ratio and R the ratio
+            of the thermal to epithermal neutron flux.
+           .The R were determined with gold monitor.
+           .The thermal cross sections were taken from the Chart
+            of Nuclides.
+MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,RI) - used as flux
+            monitor. Res.integral including the 1/V-part = 1550b.
+ASSUMED    (ASSUM,79-AU-197(N,G)79-AU-198,,SIG)
+COMMENT    .In addition to the resonance integral are given the
+            half life of the produced isotope, the main gamma-
+            line, the thermal cross section, the ratio of res.
+            integral to thermal cross section, some  literature
+            values  for resonance integral and the main
+            resonance energies.
+STATUS     (TABLE)  Tbl.1 from J.Radioanal.Chem. 20(1974)695.
+CORRECTION .For thermal and epithermal self-shielding for the
+            elements with high neutron absorption.
+ERR-ANALYS (ERR-S) .Standard deviations (average over 20 experim.)
 HISTORY    (19760713C)
            (19770331E)
            (20060330U) Dates were corrected for 4 digits year.
@@ -48,1043 +51,1090 @@ HISTORY    (19760713C)
            (20080416A) SD NDS: isomeric state for 73-TA-182-M
            isotope at SUBENT 041 was changed on 73-TA-182-M2
            according to EXFOR reaction formalism.
-ENDBIB              47
-COMMON               1          3
-EN-MIN
-EV
- 5.5000E-01
+           (20150630A) SD: SF4: -M -> -M1 in REACTION code in
+            Subent 24.  Minor corrections in all Subents.
+            DATA-ERR -> ERR-S in Subents 002 - 064. REL-REF added.
+            MONIT is added to COMMON section. Decay data from
+            Tbl. 1 of J.Radioanal.Chem. 20(1974)695 were added as
+            DECAY-DATA to Subents 4-7, 9, 10, 14-23, 25-35, 37,
+            38, 40, 42-45, 47, 48, 51-56, 58, 60-62,64.
+            HALF-LIFE -> DECAY-DATA; HL deleted from DATA section
+            (value moved to DECAY-DATA) in other Subents.  Cr.sec.
+            were added to Subents 002-064 as MONIT2. ASSUMED was
+            added to Subent 001.
+ENDBIB              61
+COMMON               5          3
+EN-MIN     MONIT1     MONIT-ERR  ASSUM      EN-NRM2
+EV         B          B          B          EV
+ 5.5000E-01  1551.      20.       98.8        0.0253
 ENDCOMMON            3
-ENDSUBENT           54
-SUBENT        20645002   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           68
+SUBENT        20645002   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (48-CD-110(N,G)48-CD-111-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (48.6 M)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,48-CD-111-M1) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          MIN
- 2.0000E+00 1.0000E-01 4.8600E+01
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645003   20060330   20060720   20060708       2177
-BIB                  3          7
-REACTION   (48-CD-114(N,G)48-CD-115-G,,RI)
-            Resonance Integral For
-            The Building Of The Ground State (53.5 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,48-CD-115-G)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 3.4000E+00 2.0000E-01 5.3500E+01
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645004   20060330   20060720   20060708       2177
-BIB                  3          8
-REACTION   (52-TE-126(N,G)52-TE-127,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 8.0000E+00 6.0000E-01
-ENDDATA              3
-ENDSUBENT           16
-SUBENT        20645005   20060330   20060720   20060708       2177
-BIB                  3          8
-REACTION   (52-TE-128(N,G)52-TE-129,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.5900E+00 6.0000E-02
-ENDDATA              3
-ENDSUBENT           16
-SUBENT        20645006   20060330   20060720   20060708       2177
-BIB                  3          8
-REACTION   (52-TE-130(N,G)52-TE-131,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable States (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.4000E-01 3.0000E-02
-ENDDATA              3
-ENDSUBENT           16
-SUBENT        20645007   20060330   20060720   20060708       2177
-BIB                  2          5
-REACTION   (53-I-127(N,G)53-I-128,,RI)
-             Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.4700E+02 1.0000E+01
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        20645008   20060330   20060720   20060708       2177
-BIB                  3          7
-REACTION   (55-CS-133(N,G)55-CS-134-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (2.9 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,55-CS-134-M1) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 2.9200E+01 6.2000E+00 2.9000E+00
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645009   20060330   20060720   20060708       2177
-BIB                  3          7
-REACTION   (55-CS-133(N,G)55-CS-134,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.5900E+02 9.0000E+01
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645010   20060330   20060720   20060708       2177
-BIB                  3          7
-REACTION   (56-BA-130(N,G)56-BA-131,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.6300E+02 8.0000E+00
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645011   20060330   20060720   20060708       2177
-BIB                  3          9
-REACTION   (56-BA-132(N,G)56-BA-133-M,,RI)
-           From The Given Value 5.6+-0.3 For
-            The Ratio Res. Integral To Thermal Cross Section We
-            Calculated The Res.Integral (Including 1/V-part)
-            Using The Value 0.68 Of The Thermal Cross Section
-            For The Building Of The Metastable State (38.9 H)
-HALF-LIFE  (HL,56-BA-133-M1) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral for the building of the metastable
+            state (48.6 m) including the 1/V-contribution
+DECAY-DATA (48-CD-111-M,48.6MIN,DG,245.) Half life used in the
+                                          experiment
+MONITOR    ((MONIT2)48-CD-110(N,G)48-CD-111-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+           from DATA section (value moved to DECAY-DATA). MONITOR
+           was added.
 ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 3.8100E+00 2.1000E-01 3.8900E+01
+DATA       ERR-S      MONIT2
+B          B          B
+        2.0        0.1        0.1
 ENDDATA              3
 ENDSUBENT           17
-SUBENT        20645012   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645003   20150630   20160302   20160209       2243
+BIB                  4          9
+REACTION   (48-CD-114(N,G)48-CD-115-G,,RI)
+            Resonance integral for the building of the ground
+            state (53.5 h) including the 1/V-contribution.
+DECAY-DATA (48-CD-115-G,53.5HR,DG,528.) Half life used in the
+                                        experiment.
+MONITOR    ((MONIT2)48-CD-114(N,G)48-CD-115-G,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA). MONITOR
+           was added.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        3.4        0.2        0.3
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        20645004   20150630   20160302   20160209       2243
+BIB                  5          8
+REACTION   (52-TE-126(N,G)52-TE-127,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (52-TE-127-G,9.3HR,DG,417.)
+MONITOR    ((MONIT2)52-TE-126(N,G)52-TE-127,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: DECAY-DATA added. MONITOR was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        8.0        0.6        0.9
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        20645005   20150630   20160302   20160209       2243
+BIB                  5          8
+REACTION   (52-TE-128(N,G)52-TE-129,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (52-TE-129-G,69.MIN,DG,459.)
+MONITOR    ((MONIT2)52-TE-128(N,G)52-TE-129,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: DECAY-DATA added. MONITOR was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       1.59       0.06       0.2
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        20645006   20150630   20160302   20160209       2243
+BIB                  5          8
+REACTION   (52-TE-130(N,G)52-TE-131,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (52-TE-131-G,25.MIN,DG,150.)
+MONITOR    ((MONIT2)52-TE-130(N,G)52-TE-131,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: DECAY-DATA added. MONITOR was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       0.34       0.03        0.2
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        20645007   20150630   20160302   20160209       2243
+BIB                  4          5
+REACTION   (53-I-127(N,G)53-I-128,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (53-I-128,25.0MIN,DG,443.)
+MONITOR    ((MONIT2)53-I-127(N,G)53-I-128,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       147.        10.        6.2
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        20645008   20150630   20160302   20160209       2243
+BIB                  4          9
+REACTION   (55-CS-133(N,G)55-CS-134-M,,RI)
+            Resonance integral for the building of the metastable
+            state (2.9 h) including the 1/V-contribution.
+DECAY-DATA (55-CS-134-M,2.9HR,DG,127.) Half life used in the
+                                       experiment
+MONITOR    ((MONIT2)55-CS-133(N,G)55-CS-134-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            In DECAY-DATA CS-134-M1 -> CS-134-M. MONITOR was added
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       29.2        6.2        2.7
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        20645009   20150630   20160302   20160209       2243
+BIB                  5          7
+REACTION   (55-CS-133(N,G)55-CS-134,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (55-CS-134-G,2.06YR,DG,605.)
+MONITOR    ((MONIT2)55-CS-133(N,G)55-CS-134,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       359.        90.       29.9
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        20645010   20150630   20160302   20160209       2243
+BIB                  5          7
+REACTION   (56-BA-130(N,G)56-BA-131,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (56-BA-131-G,11.7D,DG,124.)
+MONITOR    ((MONIT2)56-BA-130(N,G)56-BA-131,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       263.         8.       10.5
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        20645011   20150630   20160302   20160209       2243
+BIB                  4         12
+REACTION   (56-BA-132(N,G)56-BA-133-M,,RI)
+            Later from the given value 5.6+-0.3 for the ratio res.
+            integral to thermal cross section authors
+            calculated the res.integral (including 1/V-part)
+            using the value 0.68b of the thermal cross section
+            for the building of the metastable state (38.9 h)
+DECAY-DATA (56-BA-133-M,38.9HR,DG,276.) Half life used in the
+                                        experiment
+MONITOR    ((MONIT2)56-BA-132(N,G)56-BA-133-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+           from DATA section (value moved to DECAY-DATA). In
+           DECAY-DATA BA-133-M1 -> BA-133-M.  MONITOR was added.
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       3.81       0.21       0.68
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        20645012   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (56-BA-134(N,G)56-BA-135-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (28.7 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,56-BA-135-M)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (28.7 h) including the 1/V-contribution.
+DECAY-DATA (56-BA-135-M,28.7HR,DG,268.)  Half life used in the
+                                         experiment
+MONITOR    ((MONIT2)56-BA-134(N,G)56-BA-135-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 2.4200E+01 1.2000E+00 2.8700E+01
+DATA       ERR-S      MONIT2
+B          B          B
+       24.2        1.2       0.16
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645013   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           17
+SUBENT        20645013   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (56-BA-136(N,G)56-BA-137-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (2.55 M)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,56-BA-137-M)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (2.55 m) including the 1/V-contribution.
+DECAY-DATA (56-BA-137-M,2.55MIN,DG,662.)  Half life used in the
+                                          experiment
+MONITOR    ((MONIT2)56-BA-136(N,G)56-BA-137-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          MIN
- 7.5000E-01 4.0000E-02 2.5500E+00
+DATA       ERR-S      MONIT2
+B          B          B
+       0.75       0.04      0.011
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645014   20060330   20060720   20060708       2177
-BIB                  2          5
+ENDSUBENT           17
+SUBENT        20645014   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (56-BA-138(N,G)56-BA-139,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (56-BA-139,83.2MIN,DG,166.)
+MONITOR    ((MONIT2)56-BA-138(N,G)56-BA-139,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.3000E-01 2.0000E-02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       0.33       0.02       0.38
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645015   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645015   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (57-LA-139(N,G)57-LA-140,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (57-LA-140,40.2HR,DG,1595.)
+MONITOR    ((MONIT2)57-LA-139(N,G)57-LA-140,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.1600E+01 7.0000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       11.6        0.7        9.1
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645016   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645016   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (58-CE-140(N,G)58-CE-141,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (58-CE-141,32.5D,DG,145.)
+MONITOR    ((MONIT2)58-CE-140(N,G)58-CE-141,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 4.3000E-01 2.0000E-02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       0.43       0.02       0.56
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645017   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645017   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (58-CE-142(N,G)58-CE-143,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (58-CE-143,33.HR,DG,293.)
+MONITOR    ((MONIT2)58-CE-142(N,G)58-CE-143,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.1000E+00 6.0000E-02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       1.10       0.06      0.96
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645018   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645018   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (59-PR-141(N,G)59-PR-142,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (59-PR-142-G,19.2HR,DG,1575.)
+MONITOR    ((MONIT2)59-PR-141(N,G)59-PR-142,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.1400E+01 1.8000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       21.4        1.8       11.9
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645019   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645019   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (60-ND-146(N,G)60-ND-147,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (60-ND-147,11.06D,DG,91.)
+MONITOR    ((MONIT2)60-ND-146(N,G)60-ND-147,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.8400E+00 2.1000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       2.84       0.21        1.4
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645020   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645020   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (60-ND-148(N,G)60-ND-149,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (60-ND-149,1.73HR,DG,211.)
+MONITOR    ((MONIT2)60-ND-148(N,G)60-ND-149,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.4000E+01 7.0000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       14.0        0.7        2.5
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645021   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645021   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (60-ND-150(N,G)60-ND-151,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (60-ND-151,12.4MIN,DG,116.)
+MONITOR    ((MONIT2)60-ND-150(N,G)60-ND-151,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.0500E+01 1.2000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       20.5        1.2        1.3
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645022   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645022   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (62-SM-152(N,G)62-SM-153,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (62-SM-153,46.8HR,DG,103.)
+MONITOR    ((MONIT2)62-SM-152(N,G)62-SM-153,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.1410E+03 1.5700E+02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      3141.       157.       208.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645023   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645023   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (62-SM-154(N,G)62-SM-155,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (62-SM-155,22.3MIN,DG,104.)
+MONITOR    ((MONIT2)62-SM-154(N,G)62-SM-155,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.1000E+01 1.0000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       21.0        1.0        5.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645024   20060330   20060720   20060708       2177
-BIB                  3          7
-REACTION   (63-EU-151(N,G)63-EU-152-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (9.3 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,63-EU-152-M2)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+SUBENT        20645024   20150630   20160302   20160209       2243
+BIB                  4         10
+REACTION   (63-EU-151(N,G)63-EU-152-M1,,RI)
+            Resonance integral for the building of the metastable
+            state (9.3 h) including the 1/V-contribution.
+DECAY-DATA (63-EU-152-M1,9.3HR,DG,842.)  Half life used in the
+                                    experiment
+MONITOR    ((MONIT2)63-EU-151(N,G)63-EU-152-M1,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            SF4: -M -> -M1 in REACTION code. In DECAY-DATA
+            EU-152-M2 -> EU-152-M1. MONITOR was added.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 2.7640E+03 1.3800E+02 9.3000E+00
+DATA       ERR-S      MONIT2
+B          B          B
+      2764.       138.     3004.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645025   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           18
+SUBENT        20645025   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (63-EU-151(N,G)63-EU-152,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (63-EU-152-G,14.YR,DG,344.)
+MONITOR    ((MONIT2)63-EU-151(N,G)63-EU-152,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 5.5640E+03 2.7800E+02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      5564.       278.      8304.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645026   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645026   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (63-EU-153(N,G)63-EU-154,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (63-EU-154-G,7.8YR,DG,123.)
+MONITOR    ((MONIT2)63-EU-153(N,G)63-EU-154,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.8290E+03 9.1000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      1829.        91.       480.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645027   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645027   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (64-GD-158(N,G)64-GD-159,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (64-GD-159,18.0HR,DG,363.)
+MONITOR    ((MONIT2)64-GD-158(N,G)64-GD-159,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 8.0000E+01 4.0000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        80.         4.        2.4
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645028   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645028   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (65-TB-159(N,G)65-TB-160,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (65-TB-160,72.4D,DG,879.)
+MONITOR    ((MONIT2)65-TB-159(N,G)65-TB-160,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 4.3400E+02 2.1000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       434.        21.       27.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645029   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645029   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (66-DY-164(N,G)66-DY-165,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (66-DY-165-G,2.35HR,DG,95.)
+MONITOR    ((MONIT2)66-DY-164(N,G)66-DY-165,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 7.8000E+02 5.2000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       780.        52.      2600.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645030   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645030   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (67-HO-165(N,G)67-HO-166,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (67-HO-166-G,26.8HR,DG,81.)
+MONITOR    ((MONIT2)67-HO-165(N,G)67-HO-166,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 6.2600E+02 9.3000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       626.        93.       62.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645031   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645031   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (68-ER-170(N,G)68-ER-171,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (68-ER-171,7.5HR,DG,308.)
+MONITOR    ((MONIT2)68-ER-170(N,G)68-ER-171,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.4000E+01 2.8000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        24.        2.8       5.7
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645032   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645032   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (69-TM-169(N,G)69-TM-170,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (69-TM-170,129.D,DG,84.)
+MONITOR    ((MONIT2)69-TM-169(N,G)69-TM-170,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.5480E+03 5.6000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      1548.        56.       113.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645033   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645033   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (70-YB-168(N,G)70-YB-169,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (70-YB-169-G,31.D,DG,63.)
+MONITOR    ((MONIT2)70-YB-168(N,G)70-YB-169,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.3040E+04 5.4400E+03
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+    23040.       5440.     3200.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645034   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645034   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (70-YB-174(N,G)70-YB-175,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (70-YB-175,4.19D,DG,396.)
+MONITOR    ((MONIT2)70-YB-174(N,G)70-YB-175,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.7700E+01 1.3000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       37.7        1.3        65.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645035   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645035   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (70-YB-176(N,G)70-YB-177,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (70-YB-177-G,1.9HR,DG,150.)
+MONITOR    ((MONIT2)70-YB-176(N,G)70-YB-177,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition= 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.4400E+01 1.2000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       14.4        1.2        6.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645036   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645036   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (71-LU-175(N,G)71-LU-176-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (3.69 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,71-LU-176-M)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (3.69 h) including the 1/V-contribution.
+DECAY-DATA (71-LU-176-M,3.69HR,DG,88.)  Half life used in the
+                                    experiment
+MONITOR    ((MONIT2)71-LU-175(N,G)71-LU-176-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 5.4700E+02 8.1000E+01 3.6900E+00
+DATA       ERR-S      MONIT2
+B          B          B
+       547.        81.        18.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645037   20060330   20060720   20060708       2177
-BIB                  3          8
+ENDSUBENT           17
+SUBENT        20645037   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (71-LU-176(N,G)71-LU-177,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (71-LU-177-G,6.71D,DG,208.)
+MONITOR    ((MONIT2)48-CD-110(N,G)48-CD-111-M,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.0690E+03 4.1000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      1069.        41.      2055.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645038   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645038   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (72-HF-174(N,G)72-HF-175,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (72-HF-175,70.D,DG,344.)
+MONITOR    ((MONIT2)72-HF-174(N,G)72-HF-175,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.0400E+02 1.5000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       304.        15.      390.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645039   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645039   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (72-HF-179(N,G)72-HF-180-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (5.5 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,72-HF-180-M)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (5.5 h) including the 1/V-contribution.
+DECAY-DATA (72-HF-180-M,5.5HR,DG,332.) Half life used in the
+                                    experiment
+MONITOR    ((MONIT2)72-HF-179(N,G)72-HF-180-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 4.7500E+00 1.6000E-01 5.5000E+00
+DATA       ERR-S      MONIT2
+B          B          B
+       4.75       0.16       0.33
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645040   20060330   20060720   20060708       2177
-BIB                  2          5
+ENDSUBENT           17
+SUBENT        20645040   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (72-HF-180(N,G)72-HF-181,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (72-HF-181,42.4D,DG,482.)
+MONITOR    ((MONIT2)72-HF-180(N,G)72-HF-181,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.1500E+01 1.6000E+00
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       31.5        1.6       12.2
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645041   20080417              20080417       0000
-BIB                  3          7
+SUBENT        20645041   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (73-TA-181(N,G)73-TA-182-M2,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (15.9 M)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,73-TA-182-M2) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (15.9 m) including the  1/V-contribution.
+DECAY-DATA (73-TA-182-M2,15.9MIN,DG,172.) Half life used in the
+                                      experiment
+MONITOR    ((MONIT2)73-TA-181(N,G)73-TA-182-M2,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          MIN
- 2.8000E-01 1.0000E-02 1.5900E+01
+DATA       ERR-S      MONIT2
+B          B          B
+       0.28       0.01       0.01
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645042   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           17
+SUBENT        20645042   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (73-TA-181(N,G)73-TA-182,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (73-TA-182-G,115.D,DG,1121.)
+MONITOR    ((MONIT2)73-TA-181(N,G)73-TA-182,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 7.1500E+02 6.6000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       715.        66.        22.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645043   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645043   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (74-W-184(N,G)74-W-185,,RI)
-             Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (74-W-185-G,75.D,DG,125.)
+MONITOR    ((MONIT2)74-W-184(N,G)74-W-185,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.2000E+01 9.0000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       22.0        0.9       1.8
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645044   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645044   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (74-W-186(N,G)74-W-187,,RI)
-             Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (74-W-187,23.9HR,DG,686.)
+MONITOR    ((MONIT2)74-W-186(N,G)74-W-187,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 4.1000E+02 4.7000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       410.        47.       36.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645045   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645045   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (75-RE-185(N,G)75-RE-186,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (75-RE-186-G,91.HR,DG,137.)
+MONITOR    ((MONIT2)75-RE-185(N,G)75-RE-186,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.4190E+03 7.7000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      1419.        77.      110.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645046   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645046   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (75-RE-187(N,G)75-RE-188-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (18.6 M)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,75-RE-188-M1) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (18.6 m) including the 1/V-contribution.
+DECAY-DATA (75-RE-188-M,18.6MIN,DG,106.) Half life used in the
+                                     experiment
+MONITOR    ((MONIT2)75-RE-187(N,G)75-RE-188-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+           from DATA section (value moved to DECAY-DATA).
+           In DECAY-DATA RE-188-M1 -> RE-188-M. MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          MIN
- 8.8000E+00 8.0000E-01 1.8600E+01
+DATA       ERR-S      MONIT2
+B          B          B
+        8.8        0.8        2.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645047   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           17
+SUBENT        20645047   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (75-RE-187(N,G)75-RE-188,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (75-RE-188-G,16.8HR,DG,155.)
+MONITOR    ((MONIT2)75-RE-187(N,G)75-RE-188,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.1100E+02 3.0000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       311.        30.       74.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645048   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645048   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (76-OS-184(N,G)76-OS-185,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (76-OS-185,94.D,DG,646.)
+MONITOR    ((MONIT2)76-OS-184(N,G)76-OS-185,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 6.0000E+02 3.0000E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       600.        30.      3000.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645049   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645049   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (76-OS-189(N,G)76-OS-190-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (9.9 M)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,76-OS-190-M)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (9.9 m) including the 1/V-contribution.
+DECAY-DATA (76-OS-190-M,9.9MIN,DG,361.) Half life used in the
+                                    experiment
+MONITOR    ((MONIT2)76-OS-189(N,G)76-OS-190-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          MIN
- 1.3000E-02 1.3000E-03 9.9000E+00
+DATA       ERR-S      MONIT2
+B          B          B
+     0.0131     0.0013    0.00026
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645050   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           17
+SUBENT        20645050   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (76-OS-190(N,G)76-OS-191-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (13 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,76-OS-191-M1) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
+            Resonance integral for the building of the metastable
+            state (13 h) including the 1/V-contribution.
+DECAY-DATA (76-OS-191-M,13.HR,DG,74.) Half life used in the
+                                   experiment
+MONITOR    ((MONIT2)76-OS-190(N,G)76-OS-191-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+           from DATA section (value moved to DECAY-DATA).
+           In DECAY-DATA OS-191-M1 -> OS-191-M. MONITOR was added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 2.4000E+01 5.0000E-01 1.3000E+01
+DATA       ERR-S      MONIT2
+B          B          B
+        24.        0.5        10.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645051   20060330   20060720   20060708       2177
-BIB                  3          7
+ENDSUBENT           17
+SUBENT        20645051   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (76-OS-190(N,G)76-OS-191,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (76-OS-191-G,15.5D,DG,129.)
+MONITOR    ((MONIT2)76-OS-190(N,G)76-OS-191,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.1700E+01 5.0000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       31.7        0.5        13.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645052   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645052   20150630   20160302   20160209       2243
+BIB                  4          5
 REACTION   (76-OS-192(N,G)76-OS-193,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (76-OS-193,31.HR,DG,460.)
+MONITOR    ((MONIT2)76-OS-192(N,G)76-OS-193,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 4.5000E+00 1.0000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        4.5        0.1         2.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20645053   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645053   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (77-IR-191(N,G)77-IR-192,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (77-IR-192-G,74.3D,DG,316.)
+MONITOR    ((MONIT2)77-IR-191(N,G)77-IR-192,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 3.4800E+03 3.8200E+02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      3480.       382.       956.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645054   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645054   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (77-IR-193(N,G)77-IR-194,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (77-IR-194-G,17.8HR,DG,328.)
+MONITOR    ((MONIT2)77-IR-193(N,G)77-IR-194,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.3860E+03 1.1000E+02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      1386.       110.     110.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645055   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645055   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (78-PT-196(N,G)78-PT-197,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (78-PT-197-G,20.0HR,DG,78.)
+MONITOR    ((MONIT2)78-PT-196(N,G)78-PT-197,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 6.7000E+00 2.0000E-01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        6.7        0.2       0.95
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645056   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645056   20150630   20160302   20160209       2243
+BIB                  5          7
 REACTION   (78-PT-198(N,G)78-PT-199,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground And Metastable
-            State (Internal Transition = 100 Per Cent ).
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 5.2000E+01 3.2000E+00
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20645057   20060330   20060720   20060708       2177
-BIB                  3          7
-REACTION   (80-HG-196(N,G)80-HG-197-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (23.8 H)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,80-HG-197-M1) Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (78-PT-199-G,31.MIN,DG,186.)
+MONITOR    ((MONIT2)78-PT-198(N,G)78-PT-199,,SIG)
+COMMENT    .Value for the building of the ground and metastable
+            state (internal transition = 100%).
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          HR
- 4.6800E+01 2.4000E+00 2.3800E+01
+DATA       ERR-S      MONIT2
+B          B          B
+        52.        3.2        4.0
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645058   20060330   20060720   20060708       2177
-BIB                  3          8
+SUBENT        20645057   20150630   20160302   20160209       2243
+BIB                  4          9
+REACTION   (80-HG-196(N,G)80-HG-197-M,,RI)
+            Resonance integral for the building of the metastable
+            state (23.8 h) including the 1/V-contribution.
+DECAY-DATA (80-HG-197-M,23.8HR,DG,134.) Half life used in the
+                                    experiment
+MONITOR    ((MONIT2)80-HG-196(N,G)80-HG-197-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+           from DATA section (value moved to DECAY-DATA).
+           In DECAY-DATA HG-197-M1 -> HG-197-M. MONITOR was added.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       46.8        2.4       120.
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        20645058   20150630   20160302   20160209       2243
+BIB                  5          8
 REACTION   (80-HG-196(N,G)80-HG-197,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-COMMENT    .Value For The Building Of The Ground State And
-            For Part Of The Metastable State  (Internal
-            Transition) Which Decays To The Ground State.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (80-HG-197-G,64.1HR,DG,77.6)
+MONITOR    ((MONIT2)80-HG-196(N,G)80-HG-197,,SIG)
+COMMENT    .Value for the building of the ground state and
+            for part of the metastable state  (internal
+            transition) which decays to the ground state.
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 1.2300E+03 1.2000E+02
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+      1230.       120.     3000.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        20645059   20060330   20060720   20060708       2177
-BIB                  3          7
+SUBENT        20645059   20150630   20160302   20160209       2243
+BIB                  4          9
 REACTION   (80-HG-198(N,G)80-HG-199-M,,RI)
-            Resonance Integral For The
-            Building Of The Metastable State (43 M)
-            Including The 1/V-contribution.
-HALF-LIFE  (HL,80-HG-199-M)  Half Life Used In The Experiment.
-HISTORY    (19760715C)
-           (19770331E)
+            Resonance integral for the building of the metastable
+            state (43 m) including the 1/V-contribution.
+DECAY-DATA (80-HG-199-M,43.MIN,DG,158.)  Half life used in the
+                                     experiment
+MONITOR    ((MONIT2)80-HG-198(N,G)80-HG-199-M,,SIG)
+HISTORY    (20150630A) SD: HALF-LIFE -> DECAY-DATA; HL deleted
+            from DATA section (value moved to DECAY-DATA).
+            MONITOR was added.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        1.8        0.3     0.018
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        20645060   20150630   20160302   20160209       2243
+BIB                  4          5
+REACTION   (80-HG-202(N,G)80-HG-203,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (80-HG-203,46.6D,DG,279.)
+MONITOR    ((MONIT2)80-HG-202(N,G)80-HG-203,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+        4.0        0.2       4.8
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        20645061   20150630   20160302   20160209       2243
+BIB                  4          5
+REACTION   (80-HG-204(N,G)80-HG-205,,RI)
+            Resonance integral including the 1/V-contribution.
+DECAY-DATA (80-HG-205,5.5MIN,DG,204.)
+MONITOR    ((MONIT2)80-HG-204(N,G)80-HG-205,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       0.80       0.04        0.4
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        20645062   20150630   20160302   20160209       2243
+BIB                  4          6
+REACTION   (90-TH-232(N,G)90-TH-233,,RI)
+            Activation resonance integral including
+            the 1/V-contribution
+DECAY-DATA (90-TH-233,22.2MIN,DG,87.)
+MONITOR    ((MONIT2)90-TH-232(N,G)90-TH-233,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       72.4        4.5       7.4
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        20645063   20150630   20160302   20160209       2243
+BIB                  4          7
+REACTION   (92-U-235(N,F),,RI)
+            Fission resonance integral
+            including the 1/V-contribution
+SAMPLE     (92-U-235,ENR=0.90) U3O8 samples enriched to 90% in
+                               the 235U isotope were used
+MONITOR    ((MONIT2)92-U-235(N,F),,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
-DATA       DATA-ERR   HL
-B          B          MIN
- 1.8000E+00 3.0000E-01 4.3000E+01
+DATA       ERR-S      MONIT2
+B          B          B
+       295.        15.      580.
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        20645060   20060330   20060720   20060708       2177
-BIB                  2          5
-REACTION   (80-HG-202(N,G)80-HG-203,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 4.0000E+00 2.0000E-01
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        20645061   20060330   20060720   20060708       2177
-BIB                  2          5
-REACTION   (80-HG-204(N,G)80-HG-205,,RI)
-            Resonance Integral Including
-            The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 8.0000E-01 4.0000E-02
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        20645062   20060330   20060720   20060708       2177
-BIB                  2          5
-REACTION   (90-TH-232(N,G)90-TH-233,,RI)
-            Activation Resonance Integral
-            Including The 1/V-contribution.
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 7.2400E+01 4.5000E+00
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        20645063   20060330   20060720   20060708       2177
-BIB                  2          5
-REACTION   (92-U-235(N,F),,RI)
-             Fission Resonance Integral
-            Including The 1/V-contribution
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.9500E+02 1.5000E+01
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        20645064   20060330   20060720   20060708       2177
-BIB                  2          5
+SUBENT        20645064   20150630   20160302   20160209       2243
+BIB                  4          6
 REACTION   (92-U-238(N,G)92-U-239,,RI)
-             Activation Resonance Integral
-            Including The 1/V-contribution
-HISTORY    (19760715C)
-           (19770331E)
-ENDBIB               5
+            Activation resonance integral
+            including the 1/V-contribution
+DECAY-DATA (92-U-239,23.5MIN,DG,75.)
+MONITOR    ((MONIT2)92-U-238(N,G)92-U-239,,SIG)
+HISTORY    (20150630A) SD: MONITOR was added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.6500E+02 2.1800E+01
+DATA                 3          1
+DATA       ERR-S      MONIT2
+B          B          B
+       265.       21.8      2.73
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           14
 ENDENTRY            64

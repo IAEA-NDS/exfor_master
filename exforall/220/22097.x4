@@ -1,9 +1,15 @@
-ENTRY            22097   20061006   20070104   20061127       2180
-SUBENT        22097001   20061006   20070104   20061127       2180
-BIB                 13         43
-REFERENCE  (C,88MITO,,743,1988)   Main reference
-TITLE      -NU(m) measurements for U-233 and U-235(N,F) reactions
+ENTRY            22097   20150816   20160302   20160209       2243
+SUBENT        22097001   20150816   20160302   20160209       2243
+BIB                 13         55
+TITLE       NU(m*) measurements for U-233 and U-235(n-th,f)
+            reactions
 AUTHOR     (Y.Nakagome,I.Kanno,I.Kimura)
+REFERENCE  (C,88MITO,,743,1988) Main reference. same data for
+             U-233 are presented in following publications:
+           (J,NST,25,111,1988) Data only for U-233 (tbl.2).
+           (R,JAERI-M-87-173,1987) Data only for U-233 (Tbl.5.2)
+            and full description of Double-energy double-velocity
+            measurement system for fission fragments
 INSTITUTE  (2JPNKTO) Y.Nakagome, I.Kimura, experimental site
            (2JPNJAE) I.Kanno.
 FACILITY   (REAC,2JPNKTO) Kyoto University reactor, KUR.
@@ -11,46 +17,52 @@ INC-SOURCE (REAC) Thermal neutrons from a super mirror neutron
             guide tube facility. The neutrons were guided through
             the facility to a distance of 11.7 m from the reactor
             core, and then collimated to 1cm * 7 cm by a beam slit
-            made of lif. The neutron flux was 5.0E+07 N/cm2/sec.
+            made of LiF. The neutron flux was 5.0E+07 n/cm2/sec.
 INC-SPECT  .Thermal neutron spectrum.
 METHOD     (TOF) The fission fragment velocities were detected by
             time-of-flight in two opposite directions with flight
             paths of 59 cm, while the fragment energies were
-            determined with Si detectors.
+            determined with Si detectors.  ( Double-energy double-
+            velocity measurement system for fission fragments was
+            used.) The resolution of TOF measurement system (about
+            133 ps).
 DETECTOR   (SCIN) Two 20 microgram/cm2 NE-102A plastic scin-
-            tillator film detectors, coupled via lucite light
+            tillator film detectors, coupled via Lucite light
             guides to photomultiplier tubes, were used as start
             detectors for the time-of-flight. The scintillators
             were placed at a distance of 3 cm from the uranium
             target.
            (SIBAR) On each end of the flight tubes, three silicon
-            surface barrier detectors were mounted to detect the
-            stop time and also to measure the fragment kinetic
-            energy. Energy calibration was performed using a
-            Cf-252 fission source.
+            surface barrier detectors (SSB) were mounted to detect
+            the stop time and also to measure the fragment kinetic
+            energy. Energy calibration was performed by using a
+            spontaneous fission fragments of 252 Cf. The energy
+            resolution of the SSB (about 78 keV)
 SAMPLE     .The uranium targets were made from very thin nitro-
             cellulose films in which organic uranium compounds
             were dissolved. The diameter of the targets were 8 mm
             and the thicknesses were 7 and 9 microgram/cm2 for
             U-233 and U-235, respectively. The enrichments were
-            99.47 and 90 percent for the two isotopes, respec-
-            tively.
-ERR-ANALYS (DATA-ERR) No details discussed.
-STATUS     .Data were taken from the main ref.
+            99.47 and 90% for the two isotopes, respectively.
+ERR-ANALYS (DATA-ERR)  Errors concerning fragment masses, kinetic
+            energies and velocities for both the light and heavy
+            fragments (information from NST,25,111).
+STATUS     (TABLE) .Tbl.1 from 88MITO,,743
 HISTORY    (19881202C) N.O.
            (19881216E)
            (19890919E)
            (20061006A) Date and energy EN-DUMMY corrected.
-                       SF8 'SPA' changed to 'MXW'.
-                       'MISC' changed to 'ERR-S'
+            SF8=SPA' changed to 'MXW'. 'MISC' changed to 'ERR-S'
            (20061006U) Last corrections have been done.
-ENDBIB              43
+           (20150816A) SD: SF6=PR -> PR/FRG in REACTION code in
+           Subents 7, 13. Ref. NST,25,111 and JAERI-M-87-173 added
+ENDBIB              55
 COMMON               1          3
 EN-DUMMY
 EV
    2.53E-02
 ENDCOMMON            3
-ENDSUBENT           50
+ENDSUBENT           62
 SUBENT        22097002   20061006   20070104   20061127       2180
 BIB                  2          3
 REACTION   (92-U-233(N,F),PRE,AP,LF,MXW)
@@ -116,18 +128,19 @@ MEV        MEV        MEV
  1.7016E+02     8.E-01  1.065E+01
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        22097007   20061006   20070104   20061127       2180
-BIB                  1          2
-REACTION  1(92-U-233(N,F),PR,NU,LF,MXW)
-          2(92-U-233(N,F),PR,NU,HF,MXW)
-ENDBIB               2
+SUBENT        22097007   20150816   20160302   20160209       2243
+BIB                  2          3
+REACTION  1(92-U-233(N,F),PR/FRG,NU,LF,MXW)
+          2(92-U-233(N,F),PR/FRG,NU,HF,MXW)
+HISTORY    (20150816A) SD: SF6=PR -> PR/FRG in both REACTIONs.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
        1.68    6.9E-01    8.5E-01    7.2E-01
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           11
 SUBENT        22097008   20061006   20070104   20061127       2180
 BIB                  2          3
 REACTION   (92-U-235(N,F),PRE,AP,LF,MXW)
@@ -193,16 +206,17 @@ MEV        MEV        MEV
   1.698E+02    7.9E-01  1.159E+01
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        22097013   20061006   20070104   20061127       2180
-BIB                  1          2
-REACTION  1(92-U-235(N,F),PR,NU,LF,MXW)
-          2(92-U-235(N,F),PR,NU,HF,MXW)
-ENDBIB               2
+SUBENT        22097013   20150816   20160302   20160209       2243
+BIB                  2          3
+REACTION  1(92-U-235(N,F),PR/FRG,NU,LF,MXW)
+          2(92-U-235(N,F),PR/FRG,NU,HF,MXW)
+HISTORY    (20150816A) SD: SF6=PR -> PR/FRG in both REACTIONs.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
        1.94    6.9E-01    8.9E-01    7.2E-01
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           11
 ENDENTRY            13

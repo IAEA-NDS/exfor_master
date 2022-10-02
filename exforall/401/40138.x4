@@ -1,40 +1,88 @@
-ENTRY            40138     870612              20050926       0000
-SUBENT        40138001     870612              20050926       0000
-BIB                 12         23
-TITLE       ENERGY DEPENDENCE OF AVERAGE NEUTRON NUMBER
-            FOR FISSION OF U-238 BY FAST NEUTRONS
-AUTHOR     (M.U.SAVIN,YU.KHOKHLOV,I.N.PARAMONOVA,V.A.CHIRKIN)
-INSTITUTE  (4CCPKUR)
-REFERENCE  (J,AE,32,408,7205)
-           (R,FEI-12,16,71) ABSTRACT, DATA GIVEN
-MONITOR     ABSOLUTE MEASUREMENTS OF AVERAGE NEUTRON NUMBER
-            OF FISSION OF U-238
-STATUS                THE DATA FROM THE REPORT ADDUCED TO THE
-                      CONFERENCE ON NEUTRON PHYSICS (KIEV,1971)
-FACILITY   (LINAC)    ELECTRON LINEAR ACCELERATOR
-METHOD     (TOF) THE TIME-OF-FLIGHT METHOD (RESOLUTION 1NSEC/M)
-DETECTOR   (STANK)    THE LIQUID SCINTILLATION DETECTOR
-ERR-ANALYS            NO INFORMATION AVAILABLE
-COMMENT     IN THE REGION OF NEUTRON ENERGY BELOW 3 MEV THE NU(EN)
-            DEPENDENCE IS DESCRIBED BY A STRAIGHT LINE WITH
-            THE SLOPE DNU/DEN=0.10 AND IN THE REGION ABOVE 3 MEV
-            -BY   STRAIGHT LINE WITH THE SLOPE DNU/DEN=0.18
-HISTORY    (730310C)
-           (740920U)
-           (870612U) SEVERAL OBSOLETE KEYWORDS CORRECTED, ONE RE-
-                     FERENCE INTRODUCED (AE,32,408,72), ISO-QUANT
-                     INTO REACTION CONVERTED
-ENDBIB              23
-NOCOMMON             0          0
-ENDSUBENT           26
-SUBENT        40138002     870612              20050926       0000
-BIB                  1          1
-REACTION   (92-U-238(N,F),,NU)
-ENDBIB               1
+ENTRY            40138   20150109   20160302   20160216       4172
+SUBENT        40138001   20150109   20160302   20160216       4172
+BIB                 15         54
+TITLE       Energy dependence of average neutron number
+            for fast-neutron fission of U-238
+AUTHOR     (M.V.Sabin,Yu.A.Khokhlov,I.N.Paramonova,V.A.Chirkin)
+            M.V.Sabin= M.V.Savin
+INSTITUTE  (4RUSKUR)
+REFERENCE  (J,SJA,32,474,1972) Eng.Trans.of AE,32,408,1972
+           (J,AE,32,408,197205)
+           (R,FEI-12,16,1971) abstract, data given
+           ((C,71KIEV,1,328,1971)=(R,INDC(CCP)-456,328,1972))
+           Prelim.publication.
+MONITOR    ((MONIT)98-CF-252(0,F),PR,NU) Cf-252 layer was used to
+           measure gamma and neutron detection efficiency to be
+           0.347+-0.002 and 0.700+-0.003, respectively.
+FACILITY   (LINAC,4RUSKUR)    Electron linear accelerator
+METHOD     (TOF) The time-of-flight method (resolution 1 nsec/m)
+            Flight path 35 m.
+SAMPLE     The U-238 sample consisted of a stack of metal discs
+            15 mm in diameter and 1 mm thick with a total
+            mass of 20 g.
+DETECTOR   (STANK)  The liquid scintillation detector, ~400 litre
+PART-DET   (G,N) Fission gamma and neutron.
+CORRECTION  For background of scattered neutrons ( measured with
+           lead sample) - 4-8% .
+ERR-ANALYS (ERR-T) The indicated errors are mean square. Following
+           errors the following were taken into account:
+           (ERR-S,1.5,2.) The statistical accuracy of each set
+                           is 1.5 - 2%.
+           (ERR-1)  variation of the neutron counting efficiency
+                as a result of the instability of the apparatus ;
+           (ERR-2) the error due to the inaccuracy in determining
+                background;
+           (ERR-3) the error arising in the determination of the
+                number of cases of radiative capture of neutrons.
+COMMENT     In the region of neutron energy below 3 MeV the NU(En)
+            dependence is described by a straight line with
+            the slope dNU/dEn=0.10 and in the region above 3 MeV
+            -by   straight line with the slope dNU/dEn=0.18
+STATUS     (TABLE)  Table 1 of SJA,32,474
+            = Table of 71KIEV,1,328,1971
+HISTORY    (19730310C)
+           (19740920U)
+           (19870612U) Several obsolete keywords corrected, one
+                  Reference introduced (AE,32,408,72), ISO-QUANT
+                  into REACTION converted
+           (20150109A) SD: Updated to new date formats,lower case.
+             Ref. on Engl.transl. of AE added. Author's name
+             corrected. BIB updated (ERR-ANALYS added). DATA units
+             in Subent 002 changed (NO-DIM -> PRT/FIS).
+             Ref. on 71KIEV added.
+           (20151020A) M.M. Articles were checked, BIB information
+           was updated in AUTHOR, MONITOR, PART-DET,CORRECTION,
+           ANALYSIS.
+           MONIT was added in COMMON. REACTION was corrected.
+           DATA-ERR -> ERR-T .
+ENDBIB              54
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      MONIT
+PER-CENT   PER-CENT   PER-CENT   PRT/FIS
+  0.5        1.         0.5       3.756
+ENDCOMMON            3
+ENDSUBENT           61
+SUBENT        40138002   20150109   20160302   20160216       4172
+BIB                  3         14
+REACTION   (92-U-238(N,F),PR,NU)
+            The values of NU are averaged over two sets of
+            measurements performed at different times.
+ANALYSIS   In calculating of NU, the following were taken into
+           account:
+           - angular correlation of fission neutrons and incident
+           neutrons arising as a consequence of fragments angular
+           anisotropy;
+           - the variation of mean energy of fission neutrons with
+           increasing NU and the difference between Cf-252
+           fission-neutron spectrum ( used for calibration) and
+           U-238 fission-neutron spectrum;
+           - the neutron multiplication in the sample.
+HISTORY    (20151020A) M.M. PR was added in SF5 .
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 3         46
-EN         DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM
+EN         DATA       ERR-T
+MEV        PRT/FIS    PRT/FIS
 1.27       2.503      0.055
 1.30       2.498      0.052
 1.33       2.544      0.051
@@ -82,5 +130,5 @@ MEV        NO-DIM     NO-DIM
 5.62       3.186      0.092
 5.87       3.184      0.092
 ENDDATA             48
-ENDSUBENT           54
+ENDSUBENT           67
 ENDENTRY             2

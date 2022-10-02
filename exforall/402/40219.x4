@@ -1,51 +1,74 @@
-ENTRY            40219     850329              20050926       0000
-SUBENT        40219001     850329              20050926       0000
-BIB                  8         14
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,AE,17,(1),28,6403)
-AUTHOR     (V.I.BOLOSHOV,L.I.PROKHOROVA,V.N.OKOLOVITCH,
-           G.N.SMIRENKIN)
-TITLE      SOME DATA ABOUT SPONTANEOUS FISSION OF CM-244
-METHOD     (COINC)    COINCIDENCE BETWEEN FISSION FRAGMENTS
-                      EITHER BETWEEN EMITTED NEUTRON AND
-                      FISSION FRAGMENT
-DETECTOR   DOUBLE GRID IONIZATION CHAMBER - FOR MEASUREMENTS OF
-           KINETIC ENERGY OF FRAGMENTS
-HISTORY    (740604T)  CONVERTED FROM DASTAR-00444 AND 00690
-ERR-ANALYS ALL ERRORS ARE MEAN SOUARE ERRORS CALCULATED FROM
-           VARIABILITY OF RESULTS IN INDIVIDUAL SERIES
-           OF MEASUREMENTS
-ENDBIB              14
+ENTRY            40219   20151203   20160302   20160210       4173
+SUBENT        40219001   20151203   20160302   20160210       4173
+BIB                  8         19
+INSTITUTE  (4RUSFEI)
+REFERENCE  (J,SJA,17,715,1964) Eng.transl.of AE,17,28,1964
+           (J,AE,17,(1),28,1964)
+AUTHOR     (V.I.Bol'shov,L.I.Prokhorova,V.N.Okolovich,
+           G.N.Smirenkin)
+TITLE      Some data on the spontaneous fission of Cm-244
+METHOD     (COINC)    Coincidence between fission fragments
+            either between emitted neutron and fission fragment
+DETECTOR   (IOCH) Double grid ionization chamber - for
+           measurements of kinetic energy of fragments
+ERR-ANALYS (DATA-ERR) All errors are mean square errors calculated
+           from variability of results in individual series
+           of measurements
+HISTORY    (19740604T)  Converted from DASTAR-00444 and 00690
+           (20150109A) SD: Updated to new date formats,lower case.
+             Ref. on Engl.transl. of AE added. DATA units were
+             changed (NO-DIM -> PRT/FIS) in Subent 2.
+           (20151203A) M.M. Article was checked, BIB information
+           was updated  in AUTHOR,DETECTOR,SAMPLE,ANALYSIS.
+ENDBIB              19
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        40219002     850329              20050926       0000
-BIB                  2          4
+ENDSUBENT           22
+SUBENT        40219002   20151203   20160302   20160210       4173
+BIB                  6          9
 REACTION  1((96-CM-244(0,F),,NU)/
            (94-PU-240(0,F),,NU))
           2(96-CM-244(0,F),,NU)
+SAMPLE      Cm-244 ~0.2 microg, Pu-240 ~ 2.5 microg.
 MONITOR   2(94-PU-240(0,F),,NU)
-ENDBIB               4
+MONIT-REF  (20072001,I.Asplund-Nilsson+,J,NSE,15,213,1963)
+DETECTOR   Neutron detector : group of boron counters in paraffin
+           block; efficiency ~ 10% .
+STATUS     (TABLE) Text of abstract in SJA,17,715,1964
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 6          1
 DATA      1DATA-ERR  1MONIT     2MONIT-ERR 2DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
- 1.2500E+00 1.8000E-02 2.1700E+00 1.5000E-02 2.7100E+00 4.0000E-02
+NO-DIM     NO-DIM     PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+ 1.250      0.018      2.17       0.015      2.71       0.04
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40219003     850329              20050926       0000
-BIB                  2          2
-REACTION   (96-CM-244(0,F),,AKE,FF)
-MONITOR    (92-U-235(N,F),,AKE,FF)
-ENDBIB               2
-COMMON               2          3
-MONIT      MONIT-ERR
-MEV        MEV
- 1.6690E+02 8.0000E-01
+ENDSUBENT           17
+SUBENT        40219003   20151203   20160302   20160210       4173
+BIB                 10         15
+REACTION   (96-CM-244(0,F),,AKE,LF+HF)
+SAMPLE     Mixture of U-235 and isotopically pure Cm-244 on
+           organic backing of 5-10 microg/cm2 thickness.
+METHOD     (MOMIX)
+MONITOR    (92-U-235(N,F),,AKE,LF+HF)
+            At incident neutron thermal energy.
+           Average value of several works.
+ANALYSIS    Energy distribution was fitted by Gaussian.
+CORRECTION For difference in the number of neutrons emitted at
+           fission.
+MISC-COL   (MISC) Kinetic energy distribution (HWHM)
+ERR-ANALYS (ERR-1)  Assumed uncertainty in the value of ionization
+           defect.
+STATUS     (TABLE) Text of abstract and Table in SJA,17,715,1964.
+HISTORY    (20151102A) M.M. FF -> LF+HF. MISC was added.
+ENDBIB              15
+COMMON               4          3
+MONIT      MONIT-ERR  EN-NRM     ERR-1
+MEV        MEV        EV         MEV
+ 166.9      0.8         0.0253     0.5
 ENDCOMMON            3
-DATA                 2          1
-DATA       DATA-ERR
-MEV        MEV
- 1.8230E+02 2.3000E+00
+DATA                 4          1
+DATA       DATA-ERR   MISC       MISC-ERR
+MEV        MEV        MEV        MEV
+ 182.3      2.3        24.8       2.5
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           27
 ENDENTRY             3
