@@ -1,51 +1,87 @@
-ENTRY            40476   20000505   20010329   20050926       0000
-SUBENT        40476001   20000505   20010329   20050926       0000
-BIB                 14         25
-TITLE      Fission Cross-Sections of U-235 and Pu-239
-           For Neutrons of 2, 24, 55, 144 KeV Energy
-AUTHOR     (K.D.ZHURAVLEV,N.I.KROSHKIN,L.V.KARIN)
+ENTRY            40476   20121003   20130207   20130114       4158
+SUBENT        40476001   20121003   20130207   20130114       4158
+BIB                 10         32
+TITLE      Cross-Sections for the Fission of U-235 and Pu-239
+           by 2-, 24-, 55-, and 144-keV energy neutrons
+AUTHOR     (K.D.Zhuravlev,N.I.Kroshkin,L.V.Karin)
 INSTITUTE  (4RUSNIR)
-REFERENCE  (P,YK-22,3,197612)
+REFERENCE  (R,YK-22,3,197612)
            (C,75KIEV,6,67,197506)
-           (C,77KIEV,3,131,197704)  Data For U-233
-MONITOR    ((MONIT1)92-U-235(N,F),,SIG)  Cs For .0253 eV Energy
-           ((MONIT2)94-PU-239(N,F),,SIG) Cs For .0253 eV Energy
-METHOD      Method of Scandium, Iron and Silicon Filters
-FACILITY   (REAC)  Reactor
+            Preliminary data for U-235 and Pu-239 at 2.,24.keV and
+            thermal point.
+           (C,77KIEV,3,131,197704)  Data for U-233
+           (J,AE,42,(1),56,1977)
+           (J,SJA,42,62,1977) Engl.translation of AE,42,(1),56 .
+           #doi:10.1007/BF01119709
+FACILITY   (REAC)  Reactor SM-2
 INC-SOURCE (REAC)
 PART-DET   (FF)
-DETECTOR   (FISCH) For Ff Detection
-           (IOCH)  For Alpha-Particles Detection from B-10(N,
-            ALPHA)Li-7 Reaction
-ERR-ANALYS  No Information
-STATUS       Data are Taken from the References
-CORRECTION  Neutron Flux Background Don'T Exceed 15. Percent
+DETECTOR   (FISCH) For FF detection
+           (IOCH)  For alpha-particles detection from B-10(N,
+            ALPHA)Li-7 reaction used to determine ratio of neutron
+           beam at E to that at thermal energy E0 .
+ERR-ANALYS (DATA-ERR) Not specified.
 HISTORY    (19780708C)  Compiled at the Centre
-           (19870417U)  One Author Name, Some Keyword Codes and
-                        One Energy-Point in San 005 Corrected
-           (19880812U)  Pointer '2' in San 005 Deleted
-           (20000505A)  Corrected at Cjd
+           (19870417U)  One author name, some keyword codes and
+                        one energy-point in SAN 005 corrected
+           (19880812U)  Pointer '2' in SAN 005 deleted
+           (20000505A)  Corrected at CJD
            (20000505U) Last checking has been done.
-ENDBIB              25
-COMMON               5          3
-EN-NRM     MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
-EV         B          B          B          B
-   2.53E-02      582.2        1.3      742.5         3.
-ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        40476002   20000505   20010329   20050926       0000
-BIB                  2          9
+           (20121004A) M.M. Upper -> lower case correction.
+            BIB information was updated.
+           Reference J,AE,42,(1),56,1977 and it's Engl.translation
+           were added. Monitors were moved in proper Subents.
+           Duplications were deleted.
+           Subent 010 was added.
+ENDBIB              32
+NOCOMMON             0          0
+ENDSUBENT           35
+SUBENT        40476002   20121003   20130207   20130114       4158
+BIB                  8         38
 REACTION   (92-U-235(N,F),,SIG)
-SAMPLE      First Sample  .0010 Percent of U-234
-                        99.9955+-0.0100 Percent of U-235
-                          .0035+-0.0005 Percent of U-236
-                          .0005 Percent of U-238
-            Second Sample .98+-0.08 Percent of U-234
-                        89.37+-.022 Percent of U-235
-                          .206  Percent of U-236
-                         9.65+-.02 Percent of U-238
-ENDBIB               9
-NOCOMMON
+SAMPLE      First sample  .0010 +- 0.0005 % of U-234,
+                        99.9955 +- 0.0100 % of U-235,
+                          .0035 +- 0.0005 % of U-236,
+                          .0005 % of U-238 .
+            Second sample .98+-0.08 % of U-234,
+                        89.37+-.022 % of U-235,
+                          .206  % of U-236,
+                         9.65+-.02 % of U-238 .
+           B-10 sample made by vacuum evaporation, of 0.3 mg/cm**2
+           thickness on Al backing of 0.1 mm thickness.
+METHOD     (FNB) Method of scandium (900 mm, for 2.keV), iron
+            (650mm, for 24 keV) and silicon ( 800 mm for 55 keV,
+            900mm for 144 keV) filters.
+            Additional Al (220mm for 24 keV), B-10 (5mm for 55 and
+           144 keV), S (50mm for 24 keV, 250mm for 55 keV), Ti
+            (10mm for 2 keV, 40mm for 144 keV) filters to increase
+           monochromaticity.
+            Mn (30mm for 2 keV), Ti (10mm for 24keV, 40mm for
+           55keV), S(250mm for 144keV) filters were used for
+           background measurement.
+INC-SPECT  Monochromatic neutrons neutrons at 2, 24, 55, 144 keV,
+           obtained by resonance filters.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+            2.        1.E+7                 9.
+           24.        1.6E+5                10.
+           55.        1.6E+6                15.
+           144.       1.E+7                 5.
+MONITOR    ((MONIT1)92-U-235(N,F),,SIG)  CS for .0253 eV energy
+MONIT-REF  (,,R,BNL-325,1973)
+CORRECTION For sample isotopic content, for deviation of B-10 c-s
+           from 1/sqrt(E) dependence.
+STATUS     (TABLE) Table 2 of J,AE,42,(1),56,1977.
+            Table 2 of P,YK-22,3,1976.
+            Table 2 of C,75KIEV,6,67,1975 - preliminary data
+            for 2., 24. keV (normalized to U-235 thermal c-s of
+            G.C.Hanna+,J,At.En.Rev.,7,(4),3,1969, 580.2+-1.8 b.
+ENDBIB              38
+COMMON               3          3
+EN-NRM     MONIT1     MONIT1-ERR
+EV         B          B
+   2.53E-02      582.2        1.3
+ENDCOMMON            3
 DATA                 3          4
 EN         DATA       DATA-ERR
 KEV        B          B
@@ -54,109 +90,267 @@ KEV        B          B
         55.       1.92       0.04
        144.       1.49       0.03
 ENDDATA              6
-ENDSUBENT           20
-SUBENT        40476003   20000505   20010329   20050926       0000
-BIB                  1          1
+ENDSUBENT           53
+SUBENT        40476003   20121003   20130207   20130114       4158
+BIB                  8         32
 REACTION   (94-PU-239(N,F),,SIG)
-ENDBIB               1
-NOCOMMON
+SAMPLE     Pu-239 sample of 15 mm diameter of Al backing of 0.1 mm
+           thickness.
+           B-10 sample made by vacuum evaporation, of 0.3 mg/cm**2
+           thickness on Al backing of 0.1 mm thickness.
+METHOD     (FNB) Method of scandium (900 mm, for 2.keV), iron
+            (650mm, for 24 keV) and silicon ( 800 mm for 55 keV,
+            900mm for 144 keV) filters.
+            Additional Al (220mm for 24 keV), B-10 (5mm for 55 and
+           144 keV), S (50mm for 24 keV, 250mm for 55 keV), Ti
+            (10mm for 2 keV, 40mm for 144 keV) filters to increase
+           monochromaticity.
+            Mn (30mm for 2 keV), Ti (10mm for 24keV, 40mm for
+           55keV), S(250mm for 144keV) filters were used for
+           background measurement.
+INC-SPECT  Monochromatic neutrons neutrons at 2, 24, 55, 144 keV,
+           obtained by resonance filters.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+            2.        1.E+7                 9.
+           24.        1.6E+5                10.
+           55.        1.6E+6                15.
+           144.       1.E+7                 5.
+MONITOR    ((MONIT2)94-PU-239(N,F),,SIG) CS for .0253 eV energy
+MONIT-REF  (,,R,BNL-325,1973)
+CORRECTION For sample isotopic content, for deviation of B-10 c-s
+           from 1/sqrt(E) dependence.
+STATUS     (TABLE) Table 2 of J,AE,42,(1),56,1977.
+            Table 2 of P,YK-22,3,1976.
+            Table 2 of C,75KIEV,6,67,1975 - preliminary data
+            for 2., 24. keV (normalized to Pu-239 thermal c-s of
+            G.C.Hanna+,J,At.En.Rev.,7,(4),3,1969, 741.+-3.76 b.
+ENDBIB              32
+COMMON               3          3
+EN-NRM     MONIT2     MONIT2-ERR
+EV         B          B
+   2.53E-02      742.5         3.
+ENDCOMMON            3
 DATA                 3          4
 EN         DATA       DATA-ERR
 KEV        B          B
          2.       3.97        .08
         24.       1.73        .04
         55.       1.58        .03
-       144.        1.5        .03
+       144.       1.50        .03
 ENDDATA              6
-ENDSUBENT           12
-SUBENT        40476004   20000505   20010329   20050926       0000
-BIB                  2          3
+ENDSUBENT           47
+SUBENT        40476004   20121003   20130207   20130114       4158
+BIB                  8         30
 REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
-COMMENT     This Ratio Obtained by Direct Comparison of
-            Fission Numbers
-ENDBIB               3
-NOCOMMON
-DATA                 3          5
+SAMPLE      Samples are described in Subents 002, 003.
+METHOD     (FNB) Method of scandium (900 mm, for 2.keV), iron
+            (650mm, for 24 keV) and silicon ( 800 mm for 55 keV,
+            900mm for 144 keV) filters.
+            Additional Al (220mm for 24 keV), B-10 (5mm for 55 and
+           144 keV), S (50mm for 24 keV, 250mm for 55 keV), Ti
+            (10mm for 2 keV, 40mm for 144 keV) filters to increase
+           monochromaticity.
+            Mn (30mm for 2 keV), Ti (10mm for 24keV, 40mm for
+           55keV), S(250mm for 144keV) filters were used for
+           background measurement.
+INC-SPECT  Monochromatic neutrons neutrons at 2, 24, 55, 144 keV,
+           obtained by resonance filters.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+            2.        1.E+7                 9.
+           24.        1.6E+5                10.
+           55.        1.6E+6                15.
+           144.       1.E+7                 5.
+ANALYSIS    This ratio was obtained by direct comparison of
+            fission event numbers in U-235 and Pu-239 samples and
+            nuclei numbers in samples.
+ERR-ANALYS (ERR-1) Error of number of nuclei in samples.
+STATUS     (TABLE) Table 2 of J,AE,42,(1),56,1977.
+            Table 2 of P,YK-22,3,1976.
+            Table 2 of C,75KIEV,6,67,1975 - preliminary data
+            for 2., 24. keV - the same values.
+HISTORY    (20121003A) M.M. Data for thermal point were deleted
+            ( they had been moved in Subent 009 in 1998 year).
+ENDBIB              30
+COMMON               1          3
+ERR-1
+PER-CENT
+ 1.
+ENDCOMMON            3
+DATA                 3          4
 EN         DATA       DATA-ERR
 KEV        NO-DIM     NO-DIM
-    2.53E-5      1.274       .025
-         3.       .603       .022
+         2.       .603       .022
         24.       .785       .035
         55.       .847       .028
        144.      1.034        .03
-ENDDATA              7
-ENDSUBENT           15
-SUBENT        40476005   20000505   20010329   20050926       0000
-BIB                  2          3
+ENDDATA              6
+ENDSUBENT           45
+SUBENT        40476005   20121003   20130207   20130114       4158
+BIB                 10         37
 REACTION  1((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(92-U-233(N,F),,SIG)
-MONITOR    (92-U-235(N,F),,SIG)
-ENDBIB               3
-NOCOMMON
-DATA                 6          5
+SAMPLE      U-235 and U-233 samples of active diameter 18 mm on
+           Al backings of 0.1 mm thickness.
+METHOD     (FNB) Method of scandium (900 mm, for 2.keV), iron
+            (650mm, for 24 keV) and silicon ( 800 mm for 55 keV,
+            900mm for 144 keV) filters.
+            Additional Al (220mm for 24 keV), B-10 (5mm for 55 and
+           144 keV), S (50mm for 24 keV, 250mm for 55 keV), Ti
+            (10mm for 2 keV, 40mm for 144 keV) filters to increase
+           monochromaticity.
+            Mn (30mm for 2 keV), Ti (10mm for 24keV, 40mm for
+           55keV), S(250mm for 144keV) filters were used for
+           background measurement.
+INC-SPECT  Monochromatic neutrons neutrons at 2, 24, 55, 144 keV,
+           obtained by resonance filters.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+            2.        1.E+7                 9.
+           24.        1.6E+5                10.
+           55.        1.6E+6                15.
+           144.       1.E+7                 5.
+MONITOR   2((MONIT)92-U-235(N,F),,SIG)
+MONIT-REF  (40476002,K.D.Zhuravlev+,J,AE,42,(1),56,1977)
+ANALYSIS    Absolute values of U-233 fission c-s were determined
+           by measured ratio U-233/U-235 and U-235 fission c-s,
+           measured by authors, see Subent 002.
+ERR-ANALYS (ERR-1) Error of number of nuclei in samples.
+            EN-ERR is probably EN-RSL-HW (as was coded in Subent
+           007), but there is no information in article about
+            this error.
+STATUS     (TABLE) Table of C,77KIEV,3,131,1977.
+          2(DEP,40476002) Data for monitor.
+HISTORY    (20121003A) M.M. Data for thermal point were deleted
+            ( they had been moved in Subent 006  in 1998 year).
+            EN-ERR value for EN=2.keV was added ( as was given in
+           Subent 007 )
+ENDBIB              37
+COMMON               1          3
+ERR-1
+PER-CENT
+1.
+ENDCOMMON            3
+DATA                 8          4
 EN         EN-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MONIT     2MONIT-ERR 2
 KEV        KEV        NO-DIM     NO-DIM     B          B
-    2.53E-5                 0.908      0.014      528.6         8.
-         2.                 1.335       0.02       8.93       0.22
+B          B
+         2.        0.6      1.335      0.020       8.93       0.22
+ 6.69       0.13
         24.         2.      1.301      0.026       2.94       0.08
+ 2.26       0.05
         55.         5.      1.275      0.019       2.45       0.06
+ 1.92       0.04
        144.        15.      1.451      0.022       2.16       0.05
-ENDDATA              7
-ENDSUBENT           15
-SUBENT        40476006   19981111   19990308   20050926       0000
-BIB                  2          3
-REACTION  1((92-U-233(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))
-          2(92-U-233(N,F),,SIG,,MXW)
-HISTORY    (19981111C)  MOVED FROM SAN 005
-ENDBIB               3
+ 1.49       0.03
+ENDDATA             12
+ENDSUBENT           58
+SUBENT        40476006   20121003   20130207   20130114       4158
+BIB                  8         17
+REACTION  1((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
+          2(92-U-233(N,F),,SIG)
+METHOD      Cd(1mm ) filter was used for background measurement.
+INC-SPECT  Thermal neutrons were obtained by two-crystals neutron
+           monochromator.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+           2.53E-5    2.E+4                 0.5
+MONITOR   2((MONIT)92-U-235(N,F),,SIG)
+MONIT-REF  (,,R,BNL-325,1973)
+ANALYSIS    Absolute of U-233 fission c-s was determined
+           by measured ratio U-233/U-235 and U-235 fission c-s
+           recommended c-s at 0.0253 eV .
+STATUS     (TABLE) Table of C,77KIEV,3,131,1977.
+HISTORY    (19981111C)  Moved from SAN 005
+           (20121003A) M.M. MXW code was deleted - not broad
+           spectrum. Monitor information was added.
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 5          1
-EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-KEV        NO-DIM     NO-DIM     B          B
- 2.53000E-5 0.908      0.014       528.6      8.0
-ENDDATA              3
-ENDSUBENT           11
-SUBENT        40476007   19981111   19990308   20050926       0000
-BIB                  3          3
+DATA                 7          1
+EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2MONIT     2
+MONIT-ERR 2
+KEV        NO-DIM     NO-DIM     B          B          B
+B
+ 2.53000E-5 0.908      0.014       528.6      8.0       582.2
+ 1.3
+ENDDATA              6
+ENDSUBENT           28
+SUBENT        40476007   20121003   20130207   20130114       4158
+BIB                  4          6
 REACTION   (92-U-233(N,F),,SIG,,SPA)
 MONITOR    (92-U-235(N,F),,SIG)
-HISTORY    (19981111T)  CONVERTED FROM SUBENT 88004002
-ENDBIB               3
+STATUS     (SPSDD,40476005) See HISTORY.
+HISTORY    (19981111T)  Converted from SUBENT 88004002
+           (20121003D) M.M. Data were deleted as duplication of
+            Subent 005.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 6          4
-EN         EN-RSL-HW  DATA       DATA-ERR   MONIT      MONIT-ERR
-KEV        KEV        B          B          B          B
- 2.0000E+00 6.0000E-01 8.9300E+00 2.2000E-01 6.6900E+00 1.3000E-01
- 2.4000E+01 2.0000E+00 2.9400E+00 8.0000E-02 2.2600E+00 5.0000E-02
- 5.5000E+01 5.0000E+00 2.4500E+00 6.0000E-02 1.9200E+00 4.0000E-01
- 1.4400E+02 1.5000E+01 2.1600E+00 5.0000E-02 1.4900E+00 3.0000E-01
-ENDDATA              6
-ENDSUBENT           14
-SUBENT        40476008   19981111   19990308   20050926       0000
-BIB                  3          3
-REACTION   (92-U-233(N,F),,SIG,,MXW)
+NODATA               0          0
+ENDSUBENT           10
+SUBENT        40476008   20121003   20130207   20130114       4158
+BIB                  4          7
+REACTION   (92-U-233(N,F),,SIG)
 MONITOR    (92-U-235(N,F),,SIG)
-HISTORY    (19981111T)  CONVERTED FROM SUBENT 88004002
-ENDBIB               3
+STATUS     (SPSDD,40476006) See HISTORY.
+HISTORY    (19981111T)  Converted from SUBENT 88004002
+           (20121003D) M.M. Data were deleted as duplication of
+            Subent 006. MXW code was deleted - not broad
+           spectrum.
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 5          1
-EN-DUMMY   DATA       DATA-ERR   MONIT      MONIT-ERR
-KEV        B          B          B          B
- 2.5300E-05 5.2860E+02 8.0000E+00 5.8220E+02 1.3000E+01
-ENDDATA              3
+NODATA               0          0
 ENDSUBENT           11
-SUBENT        40476009   19981111   19990308   20050926       0000
-BIB                  3          4
-REACTION   ((94-PU-239(N,F),,SIG,,MXW)/(92-U-235(N,F),,SIG,,MXW))
-COMMENT     THIS RATIO OBTAINED BY DIRECT COMPARISON OF
-            FISSION NUMBERS
-HISTORY    (19981111C)  MOVED FROM SAN 004
-ENDBIB               4
-NOCOMMON             0          0
+SUBENT        40476009   20121003   20130207   20130114       4158
+BIB                  6         13
+REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+METHOD      Cd(1mm ) filter was used for background measurement.
+INC-SPECT  Thermal neutrons were obtained by two-crystals neutron
+           monochromator.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+           2.53E-5    2.E+4                 0.5
+ANALYSIS   This ratio was obtained by direct comparison of
+           fission event numbers in U-235 and Pu-239 samples and
+           nuclei numbers in samples.
+STATUS     (TABLE) Table 2 of J,AE,42,(1),56,1977.
+HISTORY    (19981111C)  Moved from SAN 004
+           (20121003A) MXW code was deleted - not broad spectrum.
+ENDBIB              13
+COMMON               1          3
+ERR-1
+PER-CENT
+ 1.
+ENDCOMMON            3
 DATA                 3          1
 EN         DATA       DATA-ERR
 KEV        NO-DIM     NO-DIM
     2.53E-5  1.274      .025
 ENDDATA              3
-ENDSUBENT           12
-ENDENTRY             9
+ENDSUBENT           25
+SUBENT        40476010   20121003   20130207   20130114       4158
+BIB                  8         14
+REACTION   (94-PU-239(N,F),,SIG)
+METHOD      Cd(1mm ) filter was used for background measurement.
+INC-SPECT  Thermal neutrons were obtained by two-crystals neutron
+           monochromator.
+            Energy    Neutron beam          Background
+            keV       n/cm**2/s             %
+           2.53E-5    2.E+4                 0.5
+MONITOR    (92-U-235(N,F),,SIG)
+MONIT-REF  (,,R,BNL-325,1973)
+ANALYSIS    Absolute c-s was determined by measured ratio (Subent
+           009) and U-235 monitor c-s.
+STATUS     (TABLE) Text,page 57 of J,AE,42,(1),56,1977.
+           (DEP,40476009) See ANALYSIS
+HISTORY    (20121003C) M.M.
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 5          1
+EN         DATA       DATA-ERR   MONIT      MONIT-ERR
+KEV        B          B          B          B
+    2.53E-5  741.7      15.0      582.2      1.3
+ENDDATA              3
+ENDSUBENT           22
+ENDENTRY            10
