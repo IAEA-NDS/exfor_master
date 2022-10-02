@@ -1,37 +1,56 @@
-ENTRY            G4014   20160402   20160701   20160628       G035
-SUBENT        G4014001   20160402   20160701   20160628       G035
-BIB                 12         17
+ENTRY            G4014   20180212   20180316   20180313       G040
+SUBENT        G4014001   20180212   20180316   20180313       G040
+BIB                 14         24
 TITLE      Production of 178m2Hf on a 1.2-GeV electron accelerator
-AUTHOR     (I.G.Goncharov, A.M.Dovbnya,Yu.M.Ranyuk,
+AUTHOR     (I.G.Goncharov, A.M.Dovbnya, Yu.M.Ranyuk,
             O.S.Shevchenko)
 INSTITUTE  (4UKRKFT)
-REFERENCE  (J,UFZ,52,823,2007)
-           (J,UJP,52,823,2007) Eng. trans. of J,UFZ,52,823,2007
+REFERENCE  (J,UJP,52,823,2007)
+           (J,UFZ,52,823,2007) Ukrainian orig.of J,UJP,52,823,2007
 FACILITY   (LINAC,4UKRKFT) 1.2-GeV electron accelerator
 INC-SOURCE (BRST)
 SAMPLE     A Ta plate of 0.3 mm in thickness at the output of the
             accelerator on the electron beam way.
 METHOD     (ACTIV)
 DETECTOR   (GELI) working volume 40 cm3, energy resolution 2.5 keV
+ANALYSIS   <sigma>=sigmaq/[ln(E0)-ln(Eth)], where
+            Eth:    effective threshold energy   (50 MeV)
+            E0:     maximum energy             (1050 MeV)
+            <sigma>:average cross section between Eth and E0 (BRS)
+            sigmaq: cross section per equivalent quantum (BRA)
+DECAY-DATA (72-HF-178-M2,31.0YR)
 ERR-ANALYS The error of determination of the number of generated
             178m2Hf nuclei amounts to 3-5%.
 STATUS     (TABLE) Table (p825) of Ukr.J.Phys.52(2007)823
 HISTORY    (20071114C) UkrNDC
            (20160402U) On. REFERENCE: J,UJP,52,823,2007 added.
-ENDBIB              17
+           (20180212A) On. Major revision in 002. 003 addded.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           20
-SUBENT        G4014002   20071114   20080530   20080530       G017
+ENDSUBENT           27
+SUBENT        G4014002   20180212   20180316   20180313       G040
 BIB                  3          3
-REACTION   (73-TA-181(G,2N+P)72-HF-178-M2,,INT,,BRA,EXP)
-DECAY-DATA (72-HF-178-M,31.0YR)
-COMMENT    The threshold of (G,P2N) reaction is 50 MeV
+REACTION   (73-TA-181(G,X)72-HF-178-M2,,INT)
+STATUS     (SPSDD,G4015005)
+HISTORY    (20180212A) On. Superseded.
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          1
 EN-MIN     EN-MAX     DATA
 MEV        GEV        B*MEV
-50.        1.050      0.033
+ 50.        1.050      0.033
 ENDDATA              3
 ENDSUBENT           11
-ENDENTRY             2
+SUBENT        G4014003   20180212   20180316   20180313       G040
+BIB                  2          2
+REACTION   (73-TA-181(G,X)72-HF-178-M2,,SIG,,BRS)
+HISTORY    (20180212C) On
+ENDBIB               2
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     EN-MAX     DATA
+MEV        GEV        MB
+ 50.        1.050         3.0E-02
+ENDDATA              3
+ENDSUBENT           10
+ENDENTRY             3
