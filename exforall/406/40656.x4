@@ -1,47 +1,68 @@
-ENTRY            40656     960123              20050926       0000
-SUBENT        40656001     960123              20050926       0000
-BIB                 13         18
-TITLE       RADIATION CAPTURE OF THERMAL NEUTRONS BY HE-3
-AUTHOR     (V.P.ALFIMENKOV,S.B.BORZAKOV,G.G.BUNATJAN,
-           J.WIERZBICKI,L.B.PIKEL'NER,E.I.SHARAPOV)
+ENTRY            40656   20120301   20120702   20120621       4156
+SUBENT        40656001   20120301   20120702   20120621       4156
+BIB                 11         25
+TITLE       Radiation capture of thermal neutrons by He-3
+AUTHOR     (V.P.Alfimenkov,S.B.Borzakov,G.G.Bunatjan,
+           J.Wierzbicki,L.B.Pikel'ner,E.I.Sharapov)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,YF,31,(1),21,8001)
-MONITOR     NO INFORMATION, PROBABLY ABSOLUTE MEASUREMENTS
-METHOD     (TOF) FLIGHT BASE IS 15 M
-FACILITY   (REAC) FAST PULSE REACTOR IBR-30
-SAMPLE      GASEOUS SAMPLE IN ALUMINIUM CONTAINER 200 MM LONG
-            AND 170 MM DIAMETER. HE-3 PRESSURE IS 780 TORR
-DETECTOR   (NAICR) NA-J(TL) CRYSTAL
+REFERENCE  (J,YF,31,(1),21,198001)
+           (J,SNP,31,(1),10,1980)
+METHOD     (TOF) Flight base is 15 m
+FACILITY   (REAC) Fast pulse reactor IBR-30
+SAMPLE      Gaseous sample in aluminium container 200 mm long
+            and 170 mm diameter. He-3 pressure is 730 Torr
+DETECTOR   (NAICR) Na-I(Tl) crystal of 10 cm diameter, 10 cm
+           thickness. Placed at 28 cm distance from beam and at
+           90 deg angle relative to beam.
 PART-DET   (G)
-CORRECTION   ON THE NEUTRON BACKGROUND
-ERR-ANALYS (ERR-1) SYSTEMATIC ERROR
-HISTORY    (840102C)
-           (860702U)    SOME MINOR ERRORS CORRECTED
-           (950926A) DATA CORRECTED ACCORDING TO MEMO 4C-3/373
-           (960123U) SAN 002 CORRECTED ACCORDING TO MEMO 4C-3/379
-ENDBIB              18
-COMMON               1          3
-ERR-S
-PER-CENT
- 15.
-ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        40656002     960123              20050926       0000
-BIB                  3          5
+CORRECTION   For the neutron background.
+             For gamma-ray attenuation.
+HISTORY    (19840102C)
+           (19860702U)    Some minor errors corrected
+           (19950926A) DATA corrected according to MEMO 4C-3/373
+           (19960123U) SAN 002 corrected according to memo
+                       4C-3/379
+           (20120301A) M.M. Upper -> lower case correction.
+            Subent 002 data from Fig. 4 were moved in Subent 003.
+           Dates were corrected for 4-digits year.
+           MONITOR value, ERR-S right values were added .
+ENDBIB              25
+NOCOMMON             0          0
+ENDSUBENT           28
+SUBENT        40656002   20120301   20120702   20120621       4156
+BIB                  5          9
 REACTION   (2-HE-3(N,G)2-HE-4,,SIG)
-FLAG       (1.) DATA READ FROM A CURVE
-HISTORY    (950926A)  DATA UNITS CORRECTED FROM MB TO MICROB
-           (960123U)  'STATUS' KEYWORD DELETED
-                              ACCORDING TO MEMO 4C-3/379
+MONITOR    (2-HE-3(N,TOT),,SIG)
+ERR-ANALYS (ERR-1) Systematic Error mainly due to detector
+           efficiency.
+           (ERR-S) Statistical error.
+STATUS     (TABLE) Text, page 26, of J,YF,31,(1),21,1980 .
+HISTORY    (19950926A)  DATA units corrected from MB to MICROB
+           (19960123U)  'STATUS' keyword deleted
+                              according to memo 4C-3/379
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 5          1
+EN         DATA       ERR-1      MONIT      ERR-S
+EV         MICRO-B    MICRO-B    B          PER-CENT
+0.025       27.        9.         5327.      15.
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        40656003   20120301   20120702   20120621       4156
+BIB                  4          5
+REACTION   (2-HE-3(N,G)2-HE-4,,SIG)
+ERR-ANALYS (ERR-S,30.) Minimal statistical error.
+           (DATA-ERR) Not specified. Error bar from Fig.4 .
+STATUS     (CURVE) Fig.4 of J,YF,31,(1),21,1980 .
+HISTORY    (20120301C) Data were moved from Subent 002.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 5          4
-EN         DATA       ERR-1      DATA-ERR   FLAG
-EV         MICRO-B    MICRO-B    MICRO-B    NO-DIM
-0.025       27.        9.
-0.028       17.                   5.          1.
-0.062       14.                   4.          1.
-0.37         5.                   2.          1.
-ENDDATA              6
-ENDSUBENT           16
-ENDENTRY             2
+DATA                 3          3
+EN         DATA       DATA-ERR
+EV         MICRO-B    MICRO-B
+0.028       17.        5.
+0.062       14.        4.
+0.37         5.        2.
+ENDDATA              5
+ENDSUBENT           15
+ENDENTRY             3
