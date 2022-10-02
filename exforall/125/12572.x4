@@ -1,34 +1,50 @@
-ENTRY            12572     780323              20050926       0000
-SUBENT        12572001     780323              20050926       0000
-BIB                  9         11
+ENTRY            12572   20160608   20160902   20160824       1418
+SUBENT        12572001   20160608   20160902   20160824       1418
+BIB                 10         29
 INSTITUTE  (1USALRL)
-REFERENCE  (J,PR,166,1219,68)
-           (J,NSE,32,131,68) AVERAGE C/S AND RESONANCE INTEGRAL
-           (C,66PARIS,2,149(38),6610) DATA SUPERSEDED
-AUTHOR     (C.D.BOWMAN,G.F.AUCHAMPAUGH,S.C.FULTZ,R.W.HOFF)
-TITLE      NEUTRON-INDUCED FISSION CROSS SECTION OF AM242M.
-FACILITY   (LINAC) 30-MEV ELECTRON LINAC
-METHOD     (TOF) TIME-OF-FLIGHT
-DETECTOR   (TRD) SPARK CHAMBER
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-ENDBIB              11
-COMMON               1          3
-HL
-YR
- 152.0
-ENDCOMMON            3
-ENDSUBENT           18
-SUBENT        12572002     780706              20050926       0000
-BIB                  3          7
-REACTION  1(95-AM-242-M1(N,0),,EN)
-          2(95-AM-242-M1(N,TOT),,WID)
-          3(95-AM-242-M1(N,TOT),,SIG,,RES)
-          4(95-AM-242-M1(N,EL),,WID)
-          5(95-AM-242-M1(N,F),,WID)
+REFERENCE  (J,PR,166,1219,1968)
+           (J,NSE,32,131,1968) Average c/s and resonance integral
+           (C,66PARIS,2,149(38),196610) Data superseded
+AUTHOR     (C.D.Bowman,G.F.Auchampaugh,S.C.Fultz,R.W.Hoff)
+TITLE      Neutron-induced fission cross section of Am242m.
+FACILITY   (LINAC,1USALRL) 30-MeV electron Linac
+METHOD     (TOF) Time-of-flight. Flight paths 6.50 and 15.47 m
+           Apart from the Am foil, 3 other foils were irradiated:
+           - Pu239, as flux monitor at lowest and highest energies
+           - Am241 for correction of high Am241 contaminant in
+             the sample
+           - U238 to determine background and resolution in the
+             higher energy region
+DETECTOR   (TRD) Spark chamber
+           (BF3) as flux monitor except for lowest and highest
+            energy region
+DECAY-DATA (95-AM-242-M,152.YR)
+SAMPLE     50 mg of isotopic mixture, electroplated on both sides
+           of a 0.076 mm thick, 10 cm diam. nickel foil, to a
+           thickness of 350 mug/cm2.
+           (95-AM-242-M,ENR=0.198)
+           (95-AM-241,ENR=0.795)
+           (95-AM-243,ENR=0.007)
+HISTORY    (19760804T) Translated from SCISRS
+           (20160601A) OS. Isomer codes modified in subentries
+            2,8,9. Added SAMPLE and updated METHOD, DETECTOR,
+            STATUS. Monitor in sub.7 corrected.
+            Converted to lower case.
+ENDBIB              29
+NOCOMMON             0          0
+ENDSUBENT           32
+SUBENT        12572002   20160608   20160902   20160824       1418
+BIB                  5          9
+REACTION  1(95-AM-242-M(N,0),,EN)
+          2(95-AM-242-M(N,TOT),,WID)
+          3(95-AM-242-M(N,TOT),,SIG,,RES)
+          4(95-AM-242-M(N,EL),,WID)
+          5(95-AM-242-M(N,F),,WID)
 ANALYSIS   (SHAPE,SLA)
-ASSUMED    (ASSUM,95-AM-242-M1(N,G),,WID)
-ENDBIB               7
+ASSUMED    (ASSUM,95-AM-242-M(N,G),,WID)
+STATUS     (TABLE) Table 3, Phys.Rev.166,1219,1968
+HISTORY    (20160601A) Isomer code changed from M1 to M.
+ENDBIB               9
 COMMON               1          3
 ASSUM
 MILLI-EV
@@ -44,22 +60,34 @@ EV         EV         B          MILLI-EV   EV
  2.09       0.375      266.       0.186      0.325
  3.25       0.700      426.       0.806      0.650
 ENDDATA              8
-ENDSUBENT           24
+ENDSUBENT           26
 NOSUBENT      12572003     780706              20050926       0000
 NOSUBENT      12572004     780706              20050926       0000
 NOSUBENT      12572005     780706              20050926       0000
 NOSUBENT      12572006     780706              20050926       0000
-SUBENT        12572007     860403              20050926       0000
-BIB                  5          7
+SUBENT        12572007   20160608   20160902   20160824       1418
+BIB                  6         15
 REACTION   (95-AM-242-M(N,F),,SIG)
-MONITOR    (94-PU-239(N,F),,SIG) BASED ON PU-239 FISSION ABOVE 3
-            KEV.
-ERR-ANALYS CROSS SECTIONS ACCURATE TO 3 FIGURES.
-STATUS     DATA TAKEN FROM PRIVATE COMM., BOWMAN, 67/8.
-HISTORY    (841024A) REACTION CORRECTED.
-           (860403A) STATUS ADDED.
-ENDBIB               7
-NOCOMMON             0          0
+MONITOR    (95-AM-242-M(N,F),,SIG,,MXW)
+CORRECTION Corrected for background and Am-241 contribution,
+           both varying with energy.
+ERR-ANALYS Cross sections accurate to 3 figures.
+           Comment by compiler: This statement (apparently from
+           author) obviously concerns the relative uncertainty.
+           Absolute error in cross sections must be considerably
+           higher, considering the corrections made and the
+           uncertainty of the monitor.
+STATUS     (TABLE) Data taken from private comm., Bowman, 67/8.
+HISTORY    (19841024A) REACTION corrected.
+           (19860403A) STATUS added.
+           (20160601A) Monitor corrected, ERR-ANALYS updated,
+             CORRECTION added
+ENDBIB              15
+COMMON               3          3
+EN-NRM     MONIT      MONIT-ERR
+EV         B          B
+  0.0253    6600.        300.
+ENDCOMMON            3
 DATA                 2       1091
 EN         DATA
 MEV        B
@@ -1155,29 +1183,54 @@ MEV        B
  5.000  +00 1.920  +00
  5.689  +00 2.040  +00
 ENDDATA           1093
-ENDSUBENT         1105
-SUBENT        12572008     780706              20050926       0000
-BIB                  2          2
-REACTION   (95-AM-242-M1(N,F),,RI,,,DERIV)
-STATUS     (DEP,12572007) DERIVED FROM INTEGRATION OF FISSION C/S.
-ENDBIB               2
-NOCOMMON
+ENDSUBENT         1117
+SUBENT        12572008   20160608   20160902   20160824       1418
+BIB                  4          5
+REACTION   (95-AM-242-M(N,F),,RI,,,DERIV)
+ERR-ANALYS (DATA-ERR) No details on sources of uncertainties
+STATUS     (DEP,12572007) Derived from integration of fission c/s.
+           (TABLE) Table 2, Phys.Rev.166,1219,1968
+HISTORY    (20160601A) Isomer code changed from M1 to M.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 3          1
 EN-MIN     DATA       DATA-ERR
 MEV        B          B
  5.     -07 1.570  +03 1.10   +02
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        12572009     780706              20050926       0000
-BIB                  1          2
-REACTION  1(95-AM-242-M1(N,EL),,STF)
-          2(95-AM-242-M1(N,0),,D)
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           13
+SUBENT        12572009   20160608   20160902   20160824       1418
+BIB                  3          4
+REACTION  1(95-AM-242-M(N,EL),,STF)
+          2(95-AM-242-M(N,0),,D)
+STATUS     (TABLE) Text on p.1225 of Phys.Rev.166,1219,1968
+HISTORY    (20160601A) Isomer code changed from M1 to M.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          1
-EN-MIN     EN-MAX     DATA      1DATA      2
+EN-RES-MIN EN-RES-MAX DATA      1DATA      2
 EV         EV         NO-DIM     EV
   0.0        3.25      1.4    -04  1.2
 ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             9
+ENDSUBENT           12
+SUBENT        12572010   20160608   20160902   20160824       1418
+BIB                  6          6
+REACTION   (95-AM-241(N,F),,SIG)
+MONITOR    (94-PU-239(N,F),,SIG,,MXW)
+CORRECTION Corrected for background
+ERR-ANALYS (DATA-ERR) No details on sources of uncertainties
+STATUS     (TABLE) Text on p.1223 of Phys.Rev.166,1219,1968
+HISTORY    (20160601C)
+ENDBIB               6
+COMMON               2          3
+EN-NRM     MONIT
+EV         B
+  0.0253     787.
+ENDCOMMON            3
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        B          B
+ 2.5         1.96       0.2
+ENDDATA              3
+ENDSUBENT           18
+ENDENTRY            10

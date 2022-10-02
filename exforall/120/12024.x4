@@ -1,41 +1,55 @@
-ENTRY            12024   20061109   20070306   20070213       1342
-SUBENT        12024001   20061109   20070306   20070213       1342
-BIB                  7         10
+ENTRY            12024   20160608   20160902   20160824       1418
+SUBENT        12024001   20160608   20160902   20160824       1418
+BIB                  7         15
 INSTITUTE  (1USAORL)
 REFERENCE  (J,NSE,8,112,1960)
 AUTHOR     (R.C.Block,G.G.Slaughter,J.A.Harvey)
 TITLE      Neutron total cross sections of U233, U235, PU240,
            U234, I-129.
-FACILITY   (CHOPF) Fast chopper
-STATUS     (SCSRS)
+FACILITY   (CHOPF,1USAORL) Fast chopper
+INC-SOURCE (REAC)
 HISTORY    (19760802T) Translated from SCISRS
            (19830802A) Converted to reaction formalism
            (20061109A) DR Format updated
-ENDBIB              10
+           (20160429A) OS. Updated STATUS and ERR-ANALYS in all
+            subents, added METHOD, DETECTOR, SAMPLE in relevant
+            subents, added point in sub.8, modified reaction in
+            sub.10, added subentries 12-16, added DERIV in
+            subs. 2,4,6,9,10.
+ENDBIB              15
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        12024002   20061109   20070306   20070213       1342
-BIB                  4          4
-REACTION   (53-I-129(N,ABS),,SIG)
-STATUS     (DEP,12024003)
+ENDSUBENT           18
+SUBENT        12024002   20160608   20160902   20160824       1418
+BIB                  6          7
+REACTION   (53-I-129(N,ABS),,SIG,,,DERIV)
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024016)
 ANALYSIS   From total, assuming scattering=4+-1b.
 ASSUMED    (ASSUM,53-I-129(N,EL)53-I-129,,SIG)
-ENDBIB               4
+ERR-ANALYS (DATA-ERR) No information
+HISTORY    (20160429A) Added REACTION SF9=DERIV
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 5          1
 EN         DATA       DATA-ERR   ASSUM      ASSUM-ERR
 MEV        B          B          B          B
    2.53E-08    3.1E+01     4.E+00 4.         1.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        12024003   20061109   20070306   20070213       1342
-BIB                  2          2
+ENDSUBENT           15
+SUBENT        12024003   20160608   20160902   20160824       1418
+BIB                  6          8
 REACTION   (53-I-129(N,TOT),,SIG)
-ERR-ANALYS (DATA-ERR) Data error given is statistical error
-ENDBIB               2
+SAMPLE     Powdered PbI2 sample
+           (53-I-129,ENR=0.710)
+           (53-I-127,ENR=0.290)
+METHOD     (TOF)
+DETECTOR   (BF3) Six 10BF3 proportional counters
+ERR-ANALYS (ERR-S) Data error given is statistical error
+STATUS     (TABLE) Table VII, Nucl.Sci.Eng.8,112,1960
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3         24
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        B          B
    2.05E-08   3.60E+01
    2.11E-08   3.69E+01    1.2E+00
@@ -62,30 +76,41 @@ MEV        B          B
    4.33E-08   2.73E+01
    4.53E-08   2.94E+01
 ENDDATA             26
-ENDSUBENT           33
-SUBENT        12024004   20061109   20070306   20070213       1342
-BIB                  4          5
-REACTION   (92-U-233(N,ABS),,SIG)
+ENDSUBENT           39
+SUBENT        12024004   20160608   20160902   20160824       1418
+BIB                  6          8
+REACTION   (92-U-233(N,ABS),,SIG,,,DERIV)
 ANALYSIS   Obtained from total cross section, assuming thermal
             scattering cross section = 11+-2 b.
 ASSUMED    (ASSUM,92-U-233(N,EL)92-U-233,,SIG)
-STATUS     (DEP,12024005)
-ENDBIB               5
+ERR-ANALYS (DATA-ERR) No information
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024012)
+HISTORY    (20160429A) Added REACTION SF9=DERIV
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          1
 EN         DATA       DATA-ERR   ASSUM      ASSUM-ERR
 MEV        B          B          B          B
    2.53E-08   5.76E+02     4.E+00 11.        2.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        12024005   20061109   20070306   20070213       1342
-BIB                  2          2
+ENDSUBENT           16
+SUBENT        12024005   20160608   20160902   20160824       1418
+BIB                  6         10
 REACTION   (92-U-233(N,TOT),,SIG)
-ERR-ANALYS (DATA-ERR) Data error given is statistical error
-ENDBIB               2
+SAMPLE     Metallic foils, 0.013 and 0.025 in thick
+           (92-U-233,ENR=0.9976)
+           (92-U-234,ENR=0.00022)
+           (92-U-235,ENR=0.00007)
+           (92-U-238,ENR=0.0021)
+METHOD     (TOF)
+DETECTOR   (BF3) Six 10BF3 proportional counters
+ERR-ANALYS (ERR-S) Data error given is statistical error
+STATUS     (TABLE) Table III, Nucl.Sci.Eng.8,112,1960
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 3         41
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        B          B
    1.84E-08   6.86E+02
    1.97E-08   6.64E+02     6.E+00
@@ -129,31 +154,40 @@ MEV        B          B
    9.03E-08   3.11E+02
    9.58E-08   3.02E+02     3.E+00
 ENDDATA             43
-ENDSUBENT           50
-SUBENT        12024006   20061109   20070306   20070213       1342
-BIB                  5          6
-REACTION   (92-U-234(N,ABS),,SIG)
-ERR-ANALYS (DATA-ERR ) No information
-STATUS     (DEP,12024007)
+ENDSUBENT           58
+SUBENT        12024006   20160608   20160902   20160824       1418
+BIB                  6          8
+REACTION   (92-U-234(N,ABS),,SIG,,,DERIV)
+ERR-ANALYS (DATA-ERR) No information
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024015)
 ANALYSIS   Obtained from total cross section, assuming thermal
             scattering cross section = 11+-2 b.
 ASSUMED    (ASSUM,92-U-234(N,EL)92-U-234,,SIG)
-ENDBIB               6
+HISTORY    (20160429A) Added REACTION SF9=DERIV
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          1
 EN         DATA       DATA-ERR   ASSUM      ASSUM-ERR
 MEV        B          B          B          B
    2.53E-08    9.2E+01     5.E+00 11.        2.
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        12024007   20061109   20070306   20070213       1342
-BIB                  2          2
+ENDSUBENT           16
+SUBENT        12024007   20160608   20160902   20160824       1418
+BIB                  6          9
 REACTION   (92-U-234(N,TOT),,SIG)
-ERR-ANALYS (DATA-ERR )Data error given is statistical error
-ENDBIB               2
+SAMPLE     U3O8 sample
+           (92-U-234,ENR=0.9688)
+           (92-U-235,ENR=0.0229)
+           (92-U-233,ENR=0.0083)
+METHOD     (TOF)
+DETECTOR   (BF3) Six 10BF3 proportional counters
+ERR-ANALYS (ERR-S)Data error given is statistical error
+STATUS     (TABLE) Table VI, Nucl.Sci.Eng.8,112,1960
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         26
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        B          B
    1.99E-08   1.25E+02
    2.05E-08   1.25E+02
@@ -182,16 +216,26 @@ MEV        B          B
    4.29E-08    8.8E+01
    4.44E-08    8.3E+01
 ENDDATA             28
-ENDSUBENT           35
-SUBENT        12024008   20061109   20070306   20070213       1342
-BIB                  2          2
+ENDSUBENT           42
+SUBENT        12024008   20160608   20160902   20160824       1418
+BIB                  7         11
 REACTION   (92-U-235(N,TOT),,SIG)
-ERR-ANALYS (DATA-ERR) Data error given is statistical error
-ENDBIB               2
+SAMPLE     Metallic foils, 0.013 and 0.025 in thick
+           (92-U-235,ENR=0.9336)
+           (92-U-234,ENR=0.0105)
+           (92-U-236,ENR=0.0058)
+           (92-U-238,ENR=0.0501)
+METHOD     (TOF)
+DETECTOR   (BF3) Six 10BF3 proportional counters
+ERR-ANALYS (ERR-S) Data error given is statistical error
+STATUS     (TABLE) Table IV, Nucl.Sci.Eng.8,112,1960
+HISTORY    (20160430A) Added 1 point from table (0.0181 eV)
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 3         48
-EN         DATA       DATA-ERR
+DATA                 3         49
+EN         DATA       ERR-S
 MEV        B          B
+   1.81E-08   8.20E+02
    1.84E-08   8.29E+02     6.E+00
    1.88E-08   8.08E+02
    1.92E-08   7.98E+02
@@ -240,46 +284,59 @@ MEV        B          B
   1.268E-07   2.67E+02
   1.430E-07   2.52E+02
   1.589E-07   2.39E+02
-ENDDATA             50
-ENDSUBENT           57
-SUBENT        12024009   20061109   20070306   20070213       1342
-BIB                  5          5
-REACTION   (92-U-235(N,ABS),,SIG)
-STATUS     (DEP,12024008)
+ENDDATA             51
+ENDSUBENT           67
+SUBENT        12024009   20160608   20160902   20160824       1418
+BIB                  6          7
+REACTION   (92-U-235(N,ABS),,SIG,,,DERIV)
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024013)
 ERR-ANALYS (DATA-ERR) No information
 ANALYSIS   Calculated from total, assuming scattering = 13 b.
 ASSUMED    (ASSUM,92-U-235(N,EL)92-U-235,,SIG)
-ENDBIB               5
+HISTORY    (20160429A) Added REACTION SF9=DERIV
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          1
 EN         DATA       DATA-ERR   ASSUM
 MEV        B          B          B
    2.53E-08   6.80E+02     6.E+00 13.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        12024010   20061109   20070306   20070213       1342
-BIB                  5          5
-REACTION   (94-PU-240(N,G)94-PU-241,,SIG)
-STATUS     (DEP,12024011)
+ENDSUBENT           15
+SUBENT        12024010   20160608   20160902   20160824       1418
+BIB                  6          8
+REACTION   (94-PU-240(N,ABS),,SIG,,,DERIV)
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024014)
 ANALYSIS   Derived from total, assuming scattering=2+-1b.
 ERR-ANALYS (DATA-ERR) No information
 ASSUMED    (ASSUM,94-PU-240(N,EL)94-PU-240,,SIG)
-ENDBIB               5
+HISTORY    (20160430A) Changed SF3 to ABS for consistency with
+            table, added SF9=DERIV
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          1
 EN         DATA       DATA-ERR   ASSUM      ASSUM-ERR
 MEV        B          B          B          B
    2.53E-08   2.88E+02     8.E+00 2.         1.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        12024011   20061109   20070306   20070213       1342
-BIB                  2          2
+ENDSUBENT           16
+SUBENT        12024011   20160608   20160902   20160824       1418
+BIB                  6         10
 REACTION   (94-PU-240(N,TOT),,SIG)
-ERR-ANALYS (DATA-ERR) Data error given is statistical error
-ENDBIB               2
+SAMPLE     PuO2 sample
+           (94-PU-240,ENR=0.9219)
+           (94-PU-239,ENR=0.0586)
+           (94-PU-241,ENR=0.0184)
+           (94-PU-242,ENR=0.0011)
+METHOD     (TOF)
+DETECTOR   (BF3) Six 10BF3 proportional counters
+ERR-ANALYS (ERR-S) Data error given is statistical error
+STATUS     (TABLE) Table V, Nucl.Sci.Eng.8,112,1960
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 3         40
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        B          B
    2.05E-08   3.32E+02    1.0E+01
    2.11E-08   3.18E+02
@@ -322,5 +379,103 @@ MEV        B          B
   1.402E-07   1.56E+02
   1.520E-07   1.50E+02
 ENDDATA             42
-ENDSUBENT           49
-ENDENTRY            11
+ENDSUBENT           57
+SUBENT        12024012   20160608   20160902   20160824       1418
+BIB                  5          8
+REACTION   (92-U-233(N,TOT),,SIG,,,DERIV)
+ANALYSIS   Determined by least-squares fit to data in thermal
+           energy range
+ERR-ANALYS (DATA-ERR) Total uncertainty, main source is
+            uncertainty in sample thickness
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024005)
+HISTORY    (20160430C)
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        B          B
+   2.53E-08   587.      3.
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        12024013   20160608   20160902   20160824       1418
+BIB                  5         10
+REACTION   (92-U-235(N,TOT),,SIG,,,DERIV)
+ANALYSIS   Determined by least-squares fit to data in thermal
+           energy range
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty in sample thickness
+           (ERR-2) Other systematic uncertainties
+           (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024008)
+HISTORY    (20160430C)
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 6          1
+EN         DATA       ERR-T      ERR-1      ERR-2      ERR-S
+MEV        B          B          B          B          B
+   2.53E-08   693.      5.          4.        1.          2.
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        12024014   20160608   20160902   20160824       1418
+BIB                  5         11
+REACTION   (94-PU-240(N,TOT),,SIG,,,DERIV)
+ANALYSIS   Determined by least-squares fit to data in thermal
+           energy range
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty in sample thickness
+           (ERR-2) Uncertainty in correction for Pu-241
+            contribution
+           (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024011)
+HISTORY    (20160430C)
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 6          1
+EN         DATA       ERR-T      ERR-1      ERR-2      ERR-S
+MEV        B          B          B          B          B
+   2.53E-08   290.      8.          6.        1.7         4.
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        12024015   20160608   20160902   20160824       1418
+BIB                  5         10
+REACTION   (92-U-234(N,TOT),,SIG,,,DERIV)
+ANALYSIS   Determined by least-squares fit to data in thermal
+           energy range
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty in sample thickness
+           (ERR-2) Uncertainty due to crystal scattering effects
+           (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024007)
+HISTORY    (20160430C)
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 6          1
+EN         DATA       ERR-T      ERR-1      ERR-2      ERR-S
+MEV        B          B          B          B          B
+   2.53E-08   110.      4.          2.        2.          3.
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        12024016   20160608   20160902   20160824       1418
+BIB                  5          9
+REACTION   (53-I-129(N,TOT),,SIG,,,DERIV)
+ANALYSIS   Determined by least-squares fit to data in thermal
+           energy range
+ERR-ANALYS (DATA-ERR) Estimated total uncertainty, including
+            errors from statistics, sample thickness, and
+            corrections for contributions of I-127 and Pb
+STATUS     (TABLE) Table VIII, Nucl.Sci.Eng.8,112,1960
+           (DEP,12024003)
+HISTORY    (20160430C)
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        B          B
+   2.53E-08    35.      4.
+ENDDATA              3
+ENDSUBENT           17
+ENDENTRY            16
