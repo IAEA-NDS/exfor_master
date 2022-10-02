@@ -1,32 +1,35 @@
-ENTRY            13134   20050927   20060111   20060111       1337
-SUBENT        13134001   20050927   20060111   20060111       1337
-BIB                 12         41
+ENTRY            13134   20170724   20171110   20171103       1432
+SUBENT        13134001   20170724   20171110   20171103       1432
+BIB                 14         46
+TITLE      The fission cross sections of 230Th, 232Th, 233U, 234U,
+            236U, 238U, 237Np, 239Pu and 242Pu relative to 235U
+            at 14.74 MeV neutron energy
+AUTHOR     (J.W.Meadows)
 INSTITUTE  (1USAANL)
 REFERENCE  (J,ANE,15,421,1988)
-           (P,DOE-NDC-38,4,1986)
-           (P,DOE-NDC-43,5,1987)
-           (P,ANL-NDM-97,1986)
-           (P,ANL-NDM-98,1987)
-AUTHOR     (J.W.MEADOWS)
-TITLE      The fission cross sections of 230Th, 232Th, 233U,
-            234U, 236U, 238U, 237Np, 239Pu and 242Pu relative to
-            235U at 14.74 MeV neutron energy
-INC-SOURCE (D-T) Deuterons on Ti-T target
-MONITOR   2(92-U-235(N,F),,SIG) value taken from ENDF/B-V
-DETECTOR   (IOCH) Low mass double ionization chamber
-MISC-COL   XI**2
+           (R,ANL-NDM-97,1986) Same data in table
+           (R,ANL-NDM-98,1987) Detailed error analysis
+FACILITY   (NGEN) Texas Nuclear Generator Model 9400
+INC-SOURCE (D-T) 150+/-10 keVdeuterons on Ti-T target
+INC-SPECT  (EN-RSL-FW) Full-width-at-half-maximum
+MONITOR   2(92-U-235(N,F),,SIG)
+MONIT-REF 2(,,3,ENDF/B-V,,1978) 2.101 b +/- 6%
+DETECTOR   (FISCH) Low mass double ionization chamber
 ERR-ANALYS Sources of uncertainties given include:
-            .uncorrelated errors, primarily counting statistics
-            .alpha count
-            .scattering correction
-            .alpha half-lives
-            .thickness correction
-            .extrapolation correction
-            .thermal fission cross section ratios
-            .isotopic analysis
-            .neutron energy
-           See article for a complete discussion of uncertainties
-COVARIANCE Correlation matrix for fission cross section ratios
+            - counting statistics
+            - neutron energy
+            - thickness correction
+            - extrapolation correction
+            - alpha count
+            - isotopic analysis
+            - alpha half-lives
+            - thermal fission cross section ratios
+            - scattering correction.
+           The common uncertainties fully correlated with the
+            same combination tabulated in Table II of ANL/NDM-98
+            are provided as coded information in the COMMON
+            section data subentries.
+COVARIANCE Correlation matrix between fission cross section ratios
                            1   2   3   4   5   6   7   8   9
             230Th/235U 1  100
             232Th/235U 2   57 100
@@ -37,133 +40,228 @@ COVARIANCE Correlation matrix for fission cross section ratios
             237Np/235U 7   53  51  41  53  53  56 100
             239Pu/235U 8   52  43  50  59  62  59  36 100
             242Pu/235U 9   42  40  37  44  43  39  37  35 100
-STATUS     (APRVD) J.W.MEADOWS, 88/12/14.
+STATUS     (APRVD) J.W.Meadows, 1988/12/14.
+           (TABLE) Table 3 of Ann.Nucl.Energy 15(1988)421
 HISTORY    (19881110C)
-           (19900326U) BIB UPDATE
-           (20050926C) Format updated and second, third
-                       fourth and fifth references added
-ENDBIB              41
-COMMON               4          3
-EN         EN-ERR     EN-RSL-FW  MONIT
-MEV        MEV        MEV        B
- 14.74      0.05       0.32       2.101
+           (19900326U) BIB update
+           (20050926U) Format updated and second, third fourth
+            and fifth references added
+           (20170724A) On. Major revisions in 002-010.
+ENDBIB              46
+COMMON               1          3
+MONIT     2
+B
+ 2.101
 ENDCOMMON            3
-ENDSUBENT           48
-SUBENT        13134002     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           53
+SUBENT        13134002   20170724   20171110   20171103       1432
+BIB                  4          9
 REACTION  1((90-TH-230(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(90-TH-230(N,F),,SIG)
 DECAY-DATA (90-TH-230,7.538E+4YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 0.290      1.85       0.61       1.37
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-3) Extrapolation correction
+           (ERR-4) Isotopic analysis of reaction sample
+           (ERR-5) Alpha-decay half-life of reaction sample
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               9
+COMMON               4          3
+ERR-1      ERR-3      ERR-4      ERR-5
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 1.00       0.30       0.00       0.39
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       0.290      0.61       1.85
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134003     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           21
+SUBENT        13134003   20170724   20171110   20171103       1432
+BIB                  4         14
 REACTION  1((90-TH-232(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(90-TH-232(N,F),,SIG)
-DECAY-DATA (90-TH-232,1.405E+5YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 0.191      1.85       0.401      0.26
+DECAY-DATA (90-TH-232,1.405E+10YR)
+            T1/2=1.405E+10 yr in INDC(NDS)-108 and Table IV of
+            ANL/NDM-97, but 1.405E+05 Table 2 of Ann.Nucl.Energy
+            15(1988)421.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+           (ERR-4) Isotopic analysis of reaction sample
+           (ERR-5) Alpha-decay half-life of reaction sample
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB              14
+COMMON               6          3
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 1.00       0.30       0.30       0.40       0.39       0.67
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       0.191      0.401      1.85
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134004     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           26
+SUBENT        13134004   20170724   20171110   20171103       1432
+BIB                  4          8
 REACTION  1((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(92-U-233(N,F),,SIG)
 DECAY-DATA (92-U-233,1.592E+5YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 1.132      0.74       2.378      1.21
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               8
+COMMON               3          3
+ERR-2      ERR-3      ERR-6
+PER-CENT   PER-CENT   PER-CENT
+ 0.30       0.30       0.25
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       1.132      2.378      0.74
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134005     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           20
+SUBENT        13134005   20170724   20171110   20171103       1432
+BIB                  4          9
 REACTION  1((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(92-U-234(N,F),,SIG)
 DECAY-DATA (92-U-234,2.457E+5YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 0.998      1.03       2.097      1.07
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               9
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.75       0.30       0.30       0.20
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       0.998      2.097      1.03
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134006     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           21
+SUBENT        13134006   20170724   20171110   20171103       1432
+BIB                  4          9
 REACTION  1((92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(92-U-236(N,F),,SIG)
 DECAY-DATA (92-U-236,2.343E+7YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 0.791      1.07       1.661      0.44
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               9
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.72       0.30       0.30       0.39
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       0.791      1.661      1.07
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134007     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           21
+SUBENT        13134007   20170724   20171110   20171103       1432
+BIB                  4          8
 REACTION  1((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(92-U-238(N,F),,SIG)
 DECAY-DATA (92-U-238,4.468E+9YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 0.587      1.11       1.232      0.79
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               8
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+ 0.66       0.30       0.30
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       0.587      1.232      1.11
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134008     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           20
+SUBENT        13134008   20170724   20171110   20171103       1432
+BIB                  4         10
 REACTION  1((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(93-NP-237(N,F),,SIG)
 DECAY-DATA (93-NP-237,2.14E+6YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 1.060      1.42       2.227      0.02
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+           (ERR-5) Alpha-decay half-life of reaction sample
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB              10
+COMMON               5          3
+ERR-1      ERR-2      ERR-3      ERR-5      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.60       0.30       0.30       0.47       0.20
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       1.060      2.227      1.42
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134009     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           22
+SUBENT        13134009   20170724   20171110   20171103       1432
+BIB                  4          8
 REACTION  1((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(94-PU-239(N,F),,SIG)
 DECAY-DATA (94-PU-239,2.411E+4YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 1.152      1.14       2.420      0.45
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-3) Extrapolation correction
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               8
+COMMON               3          3
+ERR-1      ERR-3      ERR-6
+PER-CENT   PER-CENT   PER-CENT
+ 0.28       0.30       0.20
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       1.152      2.420      1.14
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13134010     890111              20050926       0000
-BIB                  2          3
+ENDSUBENT           20
+SUBENT        13134010   20170724   20171110   20171103       1432
+BIB                  4          9
 REACTION  1((94-PU-242(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(94-PU-242(N,F),,SIG)
 DECAY-DATA (94-PU-242,3.735E+5YR,A)
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2MISC
-NO-DIM     PER-CENT   B          NO-DIM
- 0.967      1.04       2.032      0.06
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Neutron energy
+           (ERR-2) Thickness correction
+           (ERR-3) Extrapolation correction
+           (ERR-6) Prompt neutron scattering
+HISTORY    (20170724A) On. ERR-ANALYS updated.
+ENDBIB               9
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.10       0.30       0.30       0.20
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        MEV        NO-DIM     B          PER-CENT
+ 14.74      0.05       0.32       0.967      2.032      1.04
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           21
 ENDENTRY            10

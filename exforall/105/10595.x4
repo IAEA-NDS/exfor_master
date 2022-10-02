@@ -1,58 +1,65 @@
-ENTRY            10595   20040723              20050926       0000
-SUBENT        10595001   20040723              20050926       0000
-BIB                 11         28
-INSTITUTE  (1USANBS)
-REFERENCE  ((R,ANL-76-90,183,197606)=(C,70ANL,,183,197606))
-           (J,NSE,81,196,198206) REVISIONS.
-AUTHOR     (O.A.Wasson)
+ENTRY            10595   20170510   20171110   20171103       1432
+SUBENT        10595001   20170510   20171110   20171103       1432
+BIB                 11         29
 TITLE      The U235 neutron fission cross section measurement at
-            the NBS linac.
+            the NBS linac
+AUTHOR     (O.A.Wasson)
+INSTITUTE  (1USANBS)
+REFERENCE  (C,70ANL,,183,1976)
+           (J,NSE,81,196,1982) Revised data in table
+REL-REF    (O,10950001,O.A.Wasson+,J,NSE,81,196,1982)
+            235U(n,f) cross sections from the same fission chamber
 FACILITY   (LINAC,1USANBS) NBS linear accelerator
-SAMPLE     235U in the form of UO2 deposited on ten plates of the
-            fission chamber. Each deposit is about 100
-            microg/cm**2.
-METHOD      Background measured using resonance filter technique.
-DETECTOR   (FISCH) Ten plate fission chamber with cadmium shield.
-CORRECTION Corrections made for:
-            . background,
-            . deadtime,
-            . neutron scattering in fission chamber,
-            . detector effeciencies,
-            . neutron transmission between fission chamber and
+SAMPLE     10 surfaces each coated with ~0.1 mg/cm2 of 235U
+            placed at 69 m along the flight path
+DETECTOR   (FISCH) 10-plate fission chamber with Cd shield
+CORRECTION Corrections made for
+            - background (measured by resonance filter technique),
+            - deadtime,
+            - neutron scattering in fission chamber,
+            - detector effeciencies,
+            - neutron transmission between fission chamber and
                flux monitor,
-            . spectrum loss in proportional counter,
-            . timing shift in proportional counter.
-STATUS     (APRVD) Approved by O.A.Wasson 1982/4/22.
-            Revised data received in private comm., O.Wasson,
-            1981/12.
+            - spectrum loss in proportional counter,
+            - timing shift in proportional counter.
+STATUS     (TABLE) Revised data received in private communication,
+            O.Wasson, 1981/12.
+           (APRVD) Approved by O.A.Wasson 1982/4/22.
 HISTORY    (19760413C)
            (19820112A) BIB corrections and additions.
            (19830922A) BIB corrections.
-           (20040723A) Converted to new data formts, lower case.
-ENDBIB              28
+           (20040723A) Converted to new data formats, lower case.
+           (20170510A) On. Major revisions in 002+003. 005 added.
+ENDBIB              29
 NOCOMMON             0          0
-ENDSUBENT           31
-SUBENT        10595002   20040723              20050926       0000
-BIB                  6         14
+ENDSUBENT           32
+SUBENT        10595002   20170510   20171110   20171103       1432
+BIB                  8         20
 REACTION   (92-U-235(N,F),,SIG,,AV)
-METHOD     (TOF) 200-m flight path.
-DETECTOR   (PROPC) Hydrogen gas proportional counter used as flux
-            monitor
-MONITOR    (92-U-235(N,F),,SIG) Normalized to 2.55+-0.05 b for
-             10-20 keV region, which is based on thermal
-             cross section = 583.054 b.
-           (1-H-1(N,TOT),,SIG) Used in determination of neutron
-            flux.
+METHOD     (TOF) 200 m flight path
+DETECTOR   (PROPC) Hydrogen proportional counter flux monitor
+MONITOR    ((MONIT)92-U-235(N,F),,SIG)
+            Normalized to 2.55+/-0.05 b at 10-20 keV,
+            which is from 243.7+/-1.0 b*eV at 7.8-11.0 eV,
+            which is from thermal cross section of 583.54 b
+           (1-H-1(N,EL)1-H-1,,SIG)
+            Shape normalization from ENDF/B-V
+MONIT-REF  (,W.P.Poenitz,R,ANL-NDM-45,1979) 235U(n,f)
+           (,J.C.Hopkins+,J,ND/A,9,137,1971) n-p data in ENDF/B-V
 ERR-ANALYS (ERR-T) Total uncertainty
-           (ERR-S) Statistical error
-           (ERR-1) Shape uncertainty
+           (ERR-S) Statistical uncertainty
+           (ERR-1) Shape systematic uncertainty
            (ERR-2) Normalization uncertainty
+STATUS     (TABLE) Received from O.Wasson, 1981/12
+           (COREL,10595003) 6 eV to 30 keV with 6Li glass detector
+           (COREL,10595005) Broader group structure
 HISTORY    (19820112A) Data replaced
-ENDBIB              14
-COMMON               5          3
-ERR-2      EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
-PER-CENT   KEV        KEV        B          B
- 2.4        10.       20.         2.55       0.05
+           (20170510A) On.MONIT-ERR moved to text(a part of ERR-2)
+ENDBIB              20
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      ERR-2
+KEV        KEV        B          PER-CENT
+ 10.       20.         2.55       2.4
 ENDCOMMON            3
 DATA                 6         77
 EN-MIN     EN-MAX     DATA       ERR-T      ERR-S      ERR-1
@@ -135,42 +142,47 @@ KEV        KEV        B          PER-CENT   PER-CENT   PER-CENT
  600.0      700.0      1.122      3.1        0.5        1.9
  700.0      800.0      1.108      3.1        0.5        2.0
 ENDDATA             79
-ENDSUBENT          102
-SUBENT        10595003   20040723              20050926       0000
-BIB                  6         19
+ENDSUBENT          108
+SUBENT        10595003   20170510   20171110   20171103       1432
+BIB                  8         24
 REACTION   (92-U-235(N,F),,SIG,,AV)
-METHOD     (TOF) 23-m flight path
-DETECTOR   (SCIN) 6Li glass scintillator used as flux monitor
-MONITOR    (92-U-235(N,F),,INT) Absolute normalization
-           (3-LI-6(N,T)2-HE-4,,SIG) From ENDF/B-V,
-            used for 6Li glass scintillator shape normalization.
+METHOD     (TOF) 23 m flight path
+DETECTOR   (GLASD) 6Li glass scintillator flux monitor
+MONITOR    ((MONIT)92-U-235(N,F),,INT)
+            Absolute normalization
+           (3-LI-6(N,T)2-HE-4,,SIG)
+            Shape normalization from ENDF/B-V
+MONIT-REF  (,W.P.Poenitz,R,ANL-NDM-45,1979) 235U(n,f)
+           (,L.Stewart+,R,LA-7663-MS,1979) 6Li(n,t) in ENDF/B-V
 ERR-ANALYS (ERR-T) Total uncertainty
-           (ERR-S) Statistical error
-           (ERR-1) Normalization of 235U in 7.8-11 eV interval
+           (ERR-S) Statistical uncertainty
            (ERR-2) Backgrounds in detector and fission chamber
            (ERR-3) Neutron scattering and transmission in
                    6Li glass detector
-           (ERR-4) Cross section uncertainty for 6Li(n,alpha)
-                   reaction
-HISTORY    (19820112A) Subentries 3 and 4 combined.
-                       New data coded.
+           (ERR-4) 6Li(n,a) cross section uncertainty
+           (MONIT-ERR) Normalization of 235U in 7.8-11 eV interval
+STATUS     (TABLE) Received from O.Wasson, 1981/12 (=Table A.II of
+            Nucl.Sci.Eng.81(1982)196 with detailed uncertainties)
+           (COREL,10595002) 5 to 800 keV by hydrogen prop. counter
+HISTORY    (19820112A) 003 and 004 combined. New data coded.
            (19820426A) BIB corrections.
            (19830330U) Data sorted.
            (19860825A) Data units corrected.
-ENDBIB              19
-COMMON               5          3
-ERR-1      EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
-PER-CENT   EV         EV         B*EV       B*EV
- 0.4        7.8        11.0       243.7      1.0
+           (20170510A) On. ERR-1 deleted (equivalent to MONIT-ERR)
+ENDBIB              24
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
+EV         EV         B*EV       B*EV
+ 7.8        11.0       243.7      1.0
 ENDCOMMON            3
 DATA                 8         13
 EN-MIN     EN-MAX     DATA       ERR-T      ERR-S      ERR-2
 ERR-3      ERR-4
 EV         EV         B          PER-CENT   PER-CENT   PER-CENT
 PER-CENT   PER-CENT
-     7.4       10.     87.1       1.2        0.8        0.7
+     7.4       10.0    87.1       1.2        0.8        0.7
  0.0        0.0
-     7.8       11.     76.2       1.2        0.8        0.7
+     7.8       11.0    76.2       1.2        0.8        0.7
  0.0        0.0
     10.0       15.0    44.5       1.3        1.0        0.7
  0.0        0.0
@@ -193,8 +205,55 @@ PER-CENT   PER-CENT
  10000.     20000.      2.55      1.5        0.9        0.7
  0.7        0.5
  20000.     30000.      2.16      1.8        1.2        0.7
- 0.7        0.6
+0.7        0.6
 ENDDATA             30
-ENDSUBENT           58
-NOSUBENT      10595004     820408              20050926       0000
-ENDENTRY             4
+ENDSUBENT           63
+NOSUBENT      10595004   19820408   20171110   20171103       1432
+SUBENT        10595005   20170510   20171110   20171103       1432
+BIB                  7         16
+REACTION   (92-U-235(N,F),,SIG,,AV)
+METHOD     (TOF) 200 m flight path
+DETECTOR   (PROPC) Hydrogen proportional counter flux monitor
+MONITOR    ((MONIT)92-U-235(N,F),,SIG)
+            Normalized to 2.55+/-0.05 b at 10-20 keV,
+            which is from 243.7+/-1.0 b*eV at 7.8-11.0 eV,
+            which is from thermal cross section of 583.54 b
+           (1-H-1(N,EL)1-H-1,,SIG)
+            Shape normalization from ENDF/B-V
+ERR-ANALYS (ERR-S) Statistical uncertainty
+           (ERR-1) Shape systematic uncertainty
+           (ERR-T) Total uncertainty
+           (ERR-2) Normalization uncertainty
+STATUS     (TABLE) Table A.III of Nucl.Sci.Eng.81(1982)196
+           (COREL,10595002) Narrower group structure
+HISTORY    (20170510C) On
+ENDBIB              16
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      ERR-2
+KEV        KEV        B          PER-CENT
+ 10.       20.         2.55       2.4
+ENDCOMMON            3
+DATA                 6         18
+EN-MIN     EN-MAX     DATA       ERR-S      ERR-1      ERR-T
+KEV        KEV        B          PER-CENT   PER-CENT   PER-CENT
+   5.        10.       3.403      0.7        1.9        3.1
+  10.        20.       2.550      0.5        1.5        2.9
+  20.        30.       2.170      0.8        1.4        2.9
+  30.        40.       1.994      0.9        1.9        3.2
+  40.        50.       1.828      0.9        1.3        2.9
+  50.        60.       1.803      1.0        1.4        3.0
+  60.        70.       1.733      1.0        1.5        3.0
+  70.        80.       1.651      1.0        1.6        3.0
+  80.        90.       1.614      1.0        1.8        3.2
+  90.       100.       1.614      1.0        1.4        3.0
+ 100.       150.       1.473      0.5        1.5        2.9
+ 150.       200.       1.400      0.5        2.4        3.4
+ 200.       300.       1.259      0.4        1.3        2.8
+ 300.       400.       1.200      0.5        1.3        2.8
+ 400.       500.       1.167      0.5        1.9        3.1
+ 500.       600.       1.130      0.4        2.0        3.1
+ 600.       700.       1.122      0.5        1.9        3.1
+ 700.       800.       1.108      0.5        2.0        3.1
+ENDDATA             20
+ENDSUBENT           45
+ENDENTRY             5

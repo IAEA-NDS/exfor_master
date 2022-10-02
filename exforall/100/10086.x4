@@ -1,85 +1,99 @@
-ENTRY            10086   19991013   20000119   20050926       0000
-SUBENT        10086001   19991013   20000119   20050926       0000
-BIB                  9         17
+ENTRY            10086   20170724   20171110   20171103       1432
+SUBENT        10086001   20170724   20171110   20171103       1432
+BIB                  8         17
+TITLE      Measurement of the ratios of capture and fission
+            neutron cross sections of 235U, 238U, and 239Pu at
+            130 to 1400 keV
+AUTHOR     (W.P.Poenitz)
 INSTITUTE  (1USAANL)
-REFERENCE  (J,NSE,40,383,197006)
-           (J,ANS,12,279,196907)
-AUTHOR     (W.P.POENITZ)
-TITLE      Measurement of the Ratios of Capture and Fission
-            Neutron Cross Sections of 235U, 238U, and 239Pu at
-            130 to 1400 keV.
-FACILITY   (VDG) 3-MeV Van de Graaff.
-INC-SOURCE (P-LI7) 7Li(p,n) source. Target thicknesses varied from
-            10 to 20 keV at low energies (less than 300 keV) to 50
-            to 80 keV at higher energies.
-METHOD     Fission detection for 235U and 239Pu fission,
-           (ACTIV) Activation measurement for 238U capture.
-STATUS     (APRVD) APPROVED BY AUTHOR.
+REFERENCE  (J,NSE,40,383,1970)
+           (J,ANS,12,279(2),1969) Prelim.239Pu(n,f)/235U(n,f)
+            in tab.
+FACILITY   (VDG) 3-MeV Van de Graaff
+INC-SOURCE (P-LI7) Metallic Li (10 to 20 keV thick at lower than
+            300 keV to 50 to 80 keV thick at higher energies)
+            evaporated on Ta backing (0.025 cm thick)
+STATUS     (APRVD) Approved by author
 HISTORY    (19701208C)
-           (19811125A) CONVERTED TO REACTION FORMALISM
+           (19811125A) Converted to REACTION formalism
            (19991013A) Converted to new data formalism.
+           (20170724A) On. Major rev. in 002-005. 006-008 added.
 ENDBIB              17
 NOCOMMON             0          0
 ENDSUBENT           20
-SUBENT        10086002   19991013   20000119   20050926       0000
-BIB                  8         26
-REACTION   ((92-U-238(N,G)92-U-239,,SIG)/
-           (92-U-235(N,F),,SIG))
-SAMPLE     Metallic 238U foils, 0.0125-cm thick, 1.6-cm diameter,
-            depleted to 0.4% 235U. 235U foils 250 microg/cm2 on
-            0.013-cm thick Mo backings.
-DETECTOR   (FISCH) Low mass fission ionization chamber. 238U foil
-            sandwiched between two 235U foils.
-           (GELI) 30-cm3 Ge(Li) gamma counter.
-MONITOR    Calibrated with thermal beam, used thermal ratio of
-            0.00473+-0.00008, derived from recommended values in
-            BNL-325 (1965).
+SUBENT        10086002   20170724   20171110   20171103       1432
+BIB                 12         33
+REACTION   ((92-U-238(N,G)92-U-239,,SIG)/(92-U-235(N,F),,SIG))
 DECAY-DATA (92-U-239,23.MIN)
            (93-NP-239,2.35D,DG,278.)
-CORRECTION No counter correction for elastic scattering needed to
-            first order. Negligible correction for thermal or
-            epithermal neutrons. correction as high as 5%  for
-            scattering in target backing and beam tube support.
-            Correction up to 6% for 7Li(p,n) second neutron group.
-            Effects due to fission neutrons less than 0.1%, thus
-            neglected.
-ERR-ANALYS (DATA-ERR) Uncertainty due to:
-           . normalization procedure (2%),
-           . statistics (1-2%),
-           . correction uncertainties (0-3%),
-           . energy uncertainties (0-1%).
-STATUS     Data taken from Table I of main reference.
-ENDBIB              26
-NOCOMMON             0          0
+RAD-DET    (93-NP-239,DG)
+SAMPLE     238U foil sandwiched between two 235U foils.
+           238U: Metallic U foils (0.0125 cm thick, 1.6 cm diam.)
+                 depleted to 0.4% 235U).
+           235U: Two 235U foils (250 ug/cm2 thick) on Mo backings
+            (0.013 cm thick)
+METHOD     (ACTIV) for 238U(n,g)239U
+DETECTOR   (FISCH) Low mass fission ionization chamber
+           (GELI) 30 cm3 Ge(Li) gamma counter
+MONITOR    ((92-U-238(N,G)92-U-239,,SIG)/(92-U-235(N,F),,SIG))
+            0.00473+/-0.00008 b
+MONIT-REF  (,J.R.Stehn+,R,BNL-325,1965) 2nd ed. Suppl. No.2
+CORRECTION Corrections due to neutron scattered elastically in
+            the foils and fission counter walls were eliminated
+            in the first order.
+           - Contribution of thermal or epithermal neutrons
+             (negligible),
+           - Neutrons scattered in the target backing and the
+             beam tube (~5%),
+           - Lower energy 7Li(p,n1)7Be neutron (up to 6%),
+           - Fission neutron contributions (<1%, neglected).
+ERR-ANALYS (ERR-T) Uncertainty due to
+           (ERR-S,1.,2.) Statistics               (1-2%)
+           (ERR-1) Normalization procedure          (2%)
+           (ERR-2,0.,3.) Correction uncertainties (0-3%)
+           (ERR-3,0.,1.) Energy uncertainties     (0-1%)
+STATUS     (TABLE) Table I of Nucl.Sci.Eng.40(1970)383
+           (SPSDD,10086006) Renormalized 1.3% for 235U mass and
+            238U time factor
+HISTORY    (20170724A) On. Superseded.
+ENDBIB              33
+COMMON               3          3
+EN-NRM     MONIT      ERR-1
+EV         B          PER-CENT
+ 0.0253     0.00473    2.
+ENDCOMMON            3
 DATA                 3         12
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        NO-DIM     NO-DIM
-130.       0.126      0.006
-150.       0.126      0.006
-250.       0.114      0.004
-300.       0.103      0.003
-400.       0.104      0.003
-500.       0.111      0.003
-600.       0.122      0.004
-700.       0.133      0.004
-900.       0.124      0.004
-1200.      0.097      0.004
-1250.      0.092      0.004
-1400.      0.074      0.003
+  130.      0.126      0.006
+  150.      0.126      0.006
+  250.      0.114      0.004
+  300.      0.103      0.003
+  400.      0.104      0.003
+  500.      0.111      0.003
+  600.      0.122      0.004
+  700.      0.133      0.004
+  900.      0.124      0.004
+ 1200.      0.097      0.004
+ 1250.      0.092      0.004
+ 1400.      0.074      0.003
 ENDDATA             14
-ENDSUBENT           45
-SUBENT        10086003   19991013   20000119   20050926       0000
-BIB                  8         34
-REACTION   ((92-U-238(N,G)92-U-239,,SIG)/
-           (94-PU-239(N,F),,SIG))
-SAMPLE     Metallic 238U foils, 0.0125-cm thick, 1.6-cm diameter,
-            depleted to 0.4% 235U. 239Pu foil layer of 25
-            microg/cm2 239Pu (99.95 weight-%) electro-deposited
-            on steel backing.
-DETECTOR   (FISCH) Low mass fission ionization chamber for 239Pu.
-           (GELI) 30-cm3 Ge(Li) gamma counter.
-           Capture gamma counter and fission counter in back-to-
+ENDSUBENT           56
+SUBENT        10086003   20170724   20171110   20171103       1432
+BIB                 11         38
+REACTION   ((92-U-238(N,G)92-U-239,,SIG)/(94-PU-239(N,F),,SIG))
+DECAY-DATA (92-U-239,23.MIN)
+           (93-NP-239,2.35D,DG,278.)
+RAD-DET    (93-NP-239,DG)
+SAMPLE     238U: Metallic U foils (0.0125 cm thick, 1.6 cm diam.)
+                 depleted to 0.4% 235U).
+           239Pu: 239Pu foil layer (25 ug/cm2 239Pu thick,
+                  99.95 wt%) electro-deposited on steel backing
+METHOD     (ACTIV) for 238U(n,g)239U
+DETECTOR   Capture gamma counter and fission counter in back-to-
             back arrangement.
+           (FISCH) Low mass fission ionization chamber
+           (GELI) 30 cm3 Ge(Li) gamma counter
 MONITOR    Absolute fission rate from extrapolation of fission-
             fragment energy spectra to zero pulse height and
             correcting for total absorption.
@@ -87,108 +101,274 @@ MONITOR    Absolute fission rate from extrapolation of fission-
             counting.
            Absolute Ge(Li) efficiency from calibrated 243Am
             sample in equilibrium with 239Np daughter.
-DECAY-DATA (92-U-239,23.MIN)
-           (93-NP-239,2.35D,DG,278.)
-CORRECTION Corrected for:
-           . elastic scattering in counter (1%),
-           . thermal or epithermal neutrons (negligible),
-           . scattering in target backing and beam tube support
-             (as high as 5%),
-           . 7Li(p,n) second neutron group (up to 6%).
-           . gamma absorption in uranium foil (9%).
-           Effects due to fission neutrons <0.1%, thus neglected.
-ERR-ANALYS (DATA-ERR) Uncertainty due to:
-           . normalization procedure (2%),
-           . statistics (1-2%),
-           . correction uncertainties (0-3%),
-           . energy uncertainties (0-1%).
-           . absolute fission and capture determination (2.5%).
-STATUS     Data taken from Table II in main reference.
-ENDBIB              34
-NOCOMMON             0          0
+CORRECTION - Elastic scattering in counter (1%),
+           - Contribution of thermal or epithermal neutrons
+             (negligible),
+           - Neutrons scattered in the target backing and the
+             beam tube (~5%),
+           - Lower energy 7Li(p,n1)7Be neutron (up to 6%),
+           - Fission neutron contributions (<1%, neglected).
+           - gamma absorption in uranium foil (9%)
+ERR-ANALYS (ERR-T) Uncertainty due to:
+           (ERR-S,1.,2.) Statistics                         (1-2%)
+           (ERR-1) Normalization procedure                    (2%)
+           (ERR-2,0.,3.) Correction uncertainties           (0-3%)
+           (ERR-3,0.,1.) Energy uncertainties               (0-1%)
+           (ERR-4) Absolute fission & capture determination (2.5%)
+STATUS     (TABLE) Table II of Nucl.Sci.Eng.40(1970)383
+           (SPSDD,10086007) Renormalized 1.8% for 239Pu mass and
+            238U time factor
+HISTORY    (20170724A) On. Superseded.
+ENDBIB              38
+COMMON               2          3
+ERR-1      ERR-4
+PER-CENT   PER-CENT
+ 2.         2.5
+ENDCOMMON            3
 DATA                 3          5
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        NO-DIM     NO-DIM
-400.       0.082      0.003
-500.       0.082      0.002
-700.       0.087      0.003
-900.       0.086      0.003
-1400.      0.048      0.002
+  400.      0.082      0.003
+  500.      0.082      0.002
+  700.      0.087      0.003
+  900.      0.086      0.003
+ 1400.      0.048      0.002
 ENDDATA              7
-ENDSUBENT           46
-SUBENT        10086004   19811125   20000119   20050926       0000
-BIB                  8         26
-REACTION   ((94-PU-239(N,F),,SIG)/
-           (92-U-235(N,F),,SIG))
-SAMPLE     239Pu foil layer of 25 microg/cm2 239Pu (99.95
-            weight-%), electro-deposited on steel backing.
-           235U foils arial density approximately 150 microg/cm2.
-METHOD     (TOF) Time-of-flight. 1-nsec neutron pulses. 30 to 80
-            cm flight paths.
-DETECTOR   (FISCH,SCIN) Back-to-back gas scintillation counter,
-            walls too thin for evacuation and filling so Ar-N(15%)
-            mixture continuously flowed.
+ENDSUBENT           54
+SUBENT        10086004   20170724   20171110   20171103       1432
+BIB                  9         26
+REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+SAMPLE     239Pu and 235U foils mounted back-to-back.
+           239Pu: 239Pu foil (25 ug/cm2 239Pu (99.95 weight-%),
+            electro-deposited on steel backing.
+           235U: 235U foils (~150 ug/cm2 thick) on Mo backings
+            (0.013 cm thick)
+METHOD     (TOF) for low energy background neutron supression
+DETECTOR   (SCIN) Double chamber gas scintillation counter
 MONITOR    Absolute fission rates from extrapolation of fission-
             fragment energy spectra to zero pulse height and
             correcting for total absorption.
            Amount of fissile material from low geometry alpha
             counting.
-CORRECTION Corrected for:
-           . extrapolation to zero pulse height (1.5% 239Pu, same
-             order for 235U),
-           . total absorption of both fragments (1.2% for 235U,
-             0.2% 239Pu),
-           . scattering in backings and counter (small).
-ERR-ANALYS (DATA-ERR) Includes uncertainites in:
-           . statistics (1-2%),
-           . amounts of fissile materials (1.5%),
-           . corrections and energy determination (1-2%).
-STATUS     Data taken from Table III in main reference.
+CORRECTION Corrected for
+           - extrapolation to zero pulse height (1.5% for 239Pu,
+             same order for 235U),
+           - total absorption of both fragments (1.2% for 235U,
+             0.2% for 239Pu),
+           - scattering in backings and counter (small).
+ERR-ANALYS (ERR-T) Uncertainty due to:
+           (ERR-S,1.,2.) Statistics                         (1-2%)
+           (ERR-1) Amounts of fissile materials             (1.5%)
+           (ERR-2,1.,2.) Corrections & energy determination (1-2%)
+STATUS     (TABLE) Table III of Nucl.Sci.Eng.40(1970)383
+           (SPSDD,10086008)
+HISTORY    (20170724A) On. Superseded by 10086.008.
 ENDBIB              26
-NOCOMMON             0          0
+COMMON               1          3
+ERR-1
+PER-CENT
+ 1.5
+ENDCOMMON            3
 DATA                 3         11
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 KEV        NO-DIM     NO-DIM
-150.       0.958      0.024
-200.       1.072      0.031
-250.       1.080      0.032
-325.       1.191      0.030
-500.       1.320      0.027
-700.       1.429      0.026
-850.       1.461      0.041
-1000.      1.356      0.031
-1200.      1.420      0.050
-1300.      1.418      0.031
-1400.      1.446      0.029
+  150.      0.958      0.024
+  200.      1.072      0.031
+  250.      1.080      0.032
+  325.      1.191      0.030
+  500.      1.320      0.027
+  700.      1.429      0.026
+  850.      1.461      0.041
+ 1000.      1.356      0.031
+ 1200.      1.420      0.050
+ 1300.      1.418      0.031
+ 1400.      1.446      0.029
 ENDDATA             13
-ENDSUBENT           44
-SUBENT        10086005   19811125   20000119   20050926       0000
-BIB                  6         12
-REACTION   ((92-U-238(N,G)92-U-239,,SIG)/
-           (92-U-235(N,F),,SIG))
-METHOD     Direct application of method used for 238U capture to
-            239Pu fission measurement of this reference, using
-            different 235U foils and different Ge(Li) detectors.
-MONITOR    Calibration of Ge(Li) detector checked by
-            independently calibrated 243Am source.
-ERR-ANALYS (DATA-ERR) No information on source of uncertainty.
+ENDSUBENT           48
+SUBENT        10086005   20170724   20171110   20171103       1432
+BIB                  8         12
+REACTION   ((92-U-238(N,G)92-U-239,,SIG)/(92-U-235(N,F),,SIG))
+DECAY-DATA (92-U-239,23.MIN)
+           (93-NP-239,2.35D,DG,278.)
+SAMPLE     Several 235U foils
+DETECTOR   (GELI) Several Ge(Li) foils which calibration checked
+            by independently calibrated 243Am source
+METHOD     (ACTIV) for 238U(n,g)239U
+ERR-ANALYS (DATA-ERR) No information on source of uncertainty
 FLAG       (1.) Absolute determination of counting efficiencies.
            (2.) Counting efficiencies eliminated by thermal
-                  cross sections.
-STATUS     Data taken from Table V of main reference.
+                cross sections.
+STATUS     (TABLE) Table V of Nucl.Sci.Eng.40(1970)383
 ENDBIB              12
 COMMON               1          3
 EN
 KEV
-500.
+ 500.
 ENDCOMMON            3
 DATA                 3          4
 DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     NO-DIM
-0.108      0.008      2.
-0.109      0.003      1.
-0.110      0.003      1.
-0.111      0.003      2.
+ 0.110      0.003      1.
+ 0.109      0.003      1.
+ 0.111      0.003      2.
+ 0.108      0.008      2.
 ENDDATA              6
 ENDSUBENT           27
-ENDENTRY             5
+SUBENT        10086006   20170724   20171110   20171103       1432
+BIB                  9         26
+REACTION   ((92-U-238(N,G)92-U-239,,SIG)/(92-U-235(N,F),,SIG))
+RAD-DET    (93-NP-239,DG)
+SAMPLE     238U foil sandwiched between two 235U foils.
+           238U: Metallic U foils (0.0125 cm thick, 1.6 cm diam.)
+                 depleted to 0.4% 235U).
+           235U: Two 235U foils (250 ug/cm2 thick) on Mo backings
+            (0.013 cm thick)
+METHOD     (ACTIV) for 238U(n,g)239U
+DETECTOR   (FISCH) Low mass fission ionization chamber
+           (GELI) 30 cm3 Ge(Li) gamma counter
+ERR-ANALYS (ERR-T) Total uncertainty from
+           (ERR-S) Statistics                          (1.0%-1.4%)
+           (ERR-1,,,F) 235U mass                            (3.0%)
+           (ERR-2,,,F) 239Np decay calibration              (2.5%)
+           (ERR-3,,,P) Self-shielding and scattering   (1.0%-2.0%)
+           (ERR-4,,,P) Background                      (0.2%-2.0%)
+           (ERR-5,,,P) Fission fragment detection      (0.5%-0.9%)
+           (ERR-6,,,P) Neutron scattering from fission chamber and
+            target                                     (1.0%-1.9%)
+           (ERR-7,,,P)Fission fragment gamma background(1.0%-3.7%)
+COMMENT    By compiler:
+            Poenitz separately compiles 14 data points of
+            238U(n,f)/235U(n,f) ratio shape in thermal to 1.4 MeV
+            in GMA input #405.
+STATUS     (PENTZ) GMA input #406
+HISTORY    (20170724C) On
+ENDBIB              26
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  3.0        2.5
+ENDCOMMON            3
+DATA                11          5
+EN         EN-ERR     EN-RSL-HW  DATA       ERR-T      ERR-S
+ERR-3      ERR-4      ERR-5      ERR-6      ERR-7
+KEV        PER-CENT   PER-CENT   NO-DIM     PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  30.       3.5        23.3       0.2019     4.4        1.0
+ 1.0        0.2        0.5        1.0        1.0
+ 130.       2.3        15.0       0.1172     5.3        1.1
+ 2.0        2.0        0.6        1.1        1.3
+ 500.       1.5        10.0       0.1073     5.8        1.2
+ 2.0        2.0        0.7        1.5        2.5
+ 500.       1.5        10.0       0.1083     5.8        1.2
+ 2.0        2.0        0.7        1.5        2.5
+ 900.       1.8        12.0       0.1241     6.6        1.4
+ 2.0        2.0        0.9        1.9        3.7
+ENDDATA             14
+ENDSUBENT           49
+SUBENT        10086007   20170724   20171110   20171103       1432
+BIB                  8         24
+REACTION   ((92-U-238(N,G)92-U-239,,SIG)/(94-PU-239(N,F),,SIG))
+RAD-DET    (93-NP-239,DG)
+SAMPLE     238U: Metallic U foils (0.0125 cm thick, 1.6 cm diam.)
+                 depleted to 0.4% 235U).
+           239Pu: 239Pu foil layer (25 ug/cm2 239Pu thick,
+                  99.95 wt%) electro-deposited on steel backing
+METHOD     (ACTIV) for 238U(n,g)239U
+DETECTOR   Capture gamma counter and fission counter in back-to-
+            back arrangement.
+           (FISCH) Low mass fission ionization chamber
+           (GELI) 30 cm3 Ge(Li) gamma counter
+ERR-ANALYS (ERR-T) Total uncertainty from
+           (ERR-S) Statistics
+           (ERR-1,,,F) 239Pu mass                           (1.0%)
+           (ERR-2,,,F) 239Np decay calibration              (2.5%)
+           (ERR-3,,,P) Neutron scattering                   (2.0%)
+           (ERR-4,,,P) Neutron background                   (2.0%)
+           (ERR-5,,,P) Fission fragment detection      (0.6%-1.0%)
+           (ERR-6,,,P) Neutron scattering from fissionamber
+            and target                                 (1.2%-1.9%)
+           (ERR-7,,,P)Fission fragment gamma background(1.8%-4.7%)
+           (ERR-8,,,P) 7Li(p,n1)7Be low energy neutron (0.1%-1.8%)
+STATUS     (PENTZ) GMA input #407
+HISTORY    (20170724C) On
+ENDBIB              24
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  1.0        2.5       2.0        2.0
+ENDCOMMON            3
+DATA                10          5
+EN         EN-ERR     EN-RSL-HW  DATA       ERR-T      ERR-S
+ERR-5      ERR-6      ERR-7      ERR-8
+KEV        PER-CENT   PER-CENT   NO-DIM     PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  400.      0.8        5.0        0.08052    4.6        1.0
+ 0.6        1.2        1.8        0.1
+  500.      0.8        5.2        0.08052    4.8        1.1
+ 0.6        1.3        2.1        0.1
+  700.      0.8        5.6        0.08543    5.1        1.1
+ 0.7        1.4        2.7        0.1
+  900.      0.9        5.9        0.08445    5.6        1.2
+ 0.8        1.6        3.3        0.6
+ 1400.      1.0        6.8        0.04714    6.9        1.5
+ 1.0        1.9        4.7        1.8
+ENDDATA             14
+ENDSUBENT           47
+SUBENT        10086008   20170724   20171110   20171103       1432
+BIB                  7         20
+REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+SAMPLE     239Pu and 235U foils mounted back-to-back.
+           239Pu: 239Pu foil (25 ug/cm2 239Pu (99.95 weight-%),
+            electro-deposited on steel backing.
+           235U: 235U foils (~150 ug/cm2 thick) on Mo backings
+            (0.013 cm thick)
+METHOD     (TOF) for low energy background neutron supression
+DETECTOR   (SCIN) Double chamber gas scintillation counter
+ERR-ANALYS (ERR-T) Total uncertainty from
+           (ERR-S)    Statistics                       (0.8%-2.1%)
+           (ERR-1,,,F) 235U mass                            (3.0%)
+           (ERR-2,,,F) 239Pu mass                           (0.5%)
+           (ERR-3,,,P) Fission fragment absorption     (0.5%-1.4%)
+           (ERR-4,,,P) Fission fragment extrapolation       (0.5%)
+           (ERR-5,,,P) 7Li(p,n1)7Be low energy neutrons(0.1%-0.7%)
+           (ERR-6,,,P) Background                           (2.0%)
+           (ERR-7,,,P) Non 235U fission                (0.1%-0.5%)
+           (ERR-8,,,P) Neutron scattering                   (1.0%)
+STATUS     (PENTZ) GMA input #626
+HISTORY    (20170724C) On
+ENDBIB              20
+COMMON               5          3
+ERR-1      ERR-2      ERR-4      ERR-6      ERR-8
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 3.0        0.5        0.5        2.0        1.0
+ENDCOMMON            3
+DATA                 9         11
+EN         EN-ERR     EN-RSL-HW  DATA       ERR-T      ERR-S
+ERR-3      ERR-5      ERR-7
+KEV        PER-CENT   PER-CENT   NO-DIM     PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT
+  150.      1.0         6.7       0.958      4.0        1.0
+ 0.5        0.1       0.1
+  200.      0.8         5.0       1.072      4.0        1.1
+ 0.5        0.1       0.1
+  250.      3.0        20.0       1.080      4.0        1.1
+ 0.6        0.1       0.1
+  325.      2.3        15.4       1.191      4.0        0.9
+ 0.6        0.1       0.2
+  500.      2.4        16.0       1.320      4.0        0.9
+ 0.8        0.1       0.2
+  700.      1.1         7.1       1.429      4.0        0.8
+ 0.9        0.1       0.3
+  850.      1.2         8.2       1.461      4.5        2.1
+ 1.0        0.2       0.3
+ 1000.      1.2         8.0       1.356      4.2        1.1
+ 1.1        0.4       0.4
+ 1200.      1.0         6.7       1.420      4.6        2.1
+ 1.3        0.5       0.4
+ 1300.      1.0         6.5       1.418      4.3        1.1
+ 1.4        0.6       0.4
+ 1400.      0.9         6.1       1.446      4.3        1.0
+ 1.4        0.7       0.5
+ENDDATA             26
+ENDSUBENT           55
+ENDENTRY             8
