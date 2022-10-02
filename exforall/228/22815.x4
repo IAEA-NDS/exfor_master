@@ -1,6 +1,6 @@
-ENTRY            22815   20130102   20130812   20130718       2234
-SUBENT        22815001   20130102   20130812   20130718       2234
-BIB                 13         23
+ENTRY            22815   20151216   20160603   20160523       2246
+SUBENT        22815001   20151216   20160603   20160523       2246
+BIB                 13         24
 TITLE       Neutron activation measurements on natural tellurium
 AUTHOR     (R.Reifarth,F.Kaeppeler)
 INSTITUTE  (2GERKFK)   Reifart, Kaeppeler
@@ -9,7 +9,7 @@ REFERENCE  (J,PR/C,66,(5),054605,200211)  Main reference
 METHOD     (ACTIV) Activation method
 DETECTOR   (HPGE)    40-cm3 coaxial high-purity germanium detector
 MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG,,MXW)
-DECAY-MON  (79-AU-198,,DG,412.)
+DECAY-MON  (79-AU-198,,DG,412.,0.9558) +-0.0012
 SAMPLE     .Natural tellurium metallic powder mixed in 1 to 1
             proportion with carbon powder and pressed producing
             sample disk 6 mm diameter
@@ -24,9 +24,10 @@ HISTORY    (20040103C)  +  +  J.O.S.
            (20040103U) Last checking has been done.
            (20130102A) SD: EN-MEAN -> KT and values were corrected
             in Subents 5-7.
-ENDBIB              23
+           (20151216A) SD: DECAY-DATA corrected in Subent 004.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           26
+ENDSUBENT           27
 SUBENT        22815002   20040103   20040705   20050926       0000
 BIB                  9         20
 REACTION   (52-TE-126(N,G)52-TE-127-M/T,,SIG/RAT,,SPA)  SUM OF
@@ -107,10 +108,10 @@ MILLI-EV   NO-DIM     NO-DIM     PER-CENT   PER-CENT
         22.      0.124      0.008        2.2        6.2
 ENDDATA              3
 ENDSUBENT           38
-SUBENT        22815004   20040103   20040705   20050926       0000
-BIB                  9         20
-REACTION   (52-TE-130(N,G)52-TE-131-M/T,,SIG/RAT,,SPA)   SUM OF
-             THERMAL AND EPITHERMAL CROSS SECTIONS
+SUBENT        22815004   20151216   20160603   20160523       2246
+BIB                 10         22
+REACTION   (52-TE-130(N,G)52-TE-131-M/T,,SIG/RAT,,SPA)   Sum of
+             thermal and epithermal cross sections
 FACILITY   (REAC,2GERDKZ) TRIGA-HD II  Reactor of the German
                           Research cancer center
 INC-SOURCE (REAC)
@@ -120,16 +121,18 @@ MONITOR    ((MONIT2)79-AU-197(N,G)79-AU-198,,RI)
            ((MONIT4)21-SC-45(N,G)21-SC-46,,RI)
            ((MONIT5)27-CO-59(N,G)27-CO-60,,SIG,,MXW)
            ((MONIT6)27-CO-59(N,G)27-CO-60,,RI)
-MONIT-REF  (,C.NORDBORG+,C,91JUELIC,,782,199105)
+MONIT-REF  (,C.Nordborg+,C,91JUELIC,,782,199105)
 DECAY-DATA (52-TE-131-M,33.25HR,DG,149.7,0.689)  Internal decay is
                                                0.259+-0.005
-           (52-TE-131-G,33.25HR,DG,149.7,0.689)
-SAMPLE     .Monitor samples were used for thermal neutron flux
+           (52-TE-131-G,25.0MIN,DG,149.7,0.689)
+SAMPLE      Monitor samples were used for thermal neutron flux
             determination and thermal-to-epithermal neutrons
             ratio. Sc-45 metallic sample, weight 1.69 milligram
                    Co-59 metallic sample, weight 0.0286 milligram
-STATUS     .From table 3 of main reference
-ENDBIB              20
+STATUS     (TABLE) From table 3 of PR/C,66,(5),054605,2002
+HISTORY    (20151216A) SD: hl=33.25hr -> 25.0min for Te-131g
+           following table 3 in the PR/C,66,(5),054605,2002.
+ENDBIB              22
 COMMON              13          9
 EN-NRM-MIN MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR MONIT3
 MONIT3-ERR MONIT4     MONIT4-ERR MONIT5     MONIT5-ERR MONIT6
@@ -142,11 +145,11 @@ PER-CENT
         2.7
 ENDCOMMON            9
 DATA                 5          1
-EN-MEAN    DATA       ERR-T      ERR-S      ERR-1
+EN-MEAN    DATA       ERR-T      ERR-S      ERR-SYS
 MILLI-EV   NO-DIM     NO-DIM     PER-CENT   PER-CENT
         22.      0.067      0.005        3.2        7.3
 ENDDATA              3
-ENDSUBENT           38
+ENDSUBENT           40
 SUBENT        22815005   20130102   20130812   20130718       2234
 BIB                  9         12
 REACTION   (52-TE-126(N,G)52-TE-127-M/T,,SIG/RAT,,MXW)

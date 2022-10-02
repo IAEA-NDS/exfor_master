@@ -1,6 +1,6 @@
-ENTRY            C0185   20070501   20070521   20070501       C079
-SUBENT        C0185001   20070501   20070521   20070501       C079
-BIB                 11         35
+ENTRY            C0185   20160328   20160603   20160526       C156
+SUBENT        C0185001   20160328   20160603   20160526       C156
+BIB                 12         41
 INSTITUTE  (1USAORL)
 REFERENCE  (J,PR,133,B911,1964)
 AUTHOR     (P.H.Stelson,F.K.McGowan)
@@ -32,28 +32,40 @@ DETECTOR   Flat-energy response 4-pi, 5-ft-diam graphite sphere
            It was estimated that an unidirectional beam of emitted
             neutrons would be detected with an efficiency which is
             only 1-2%  different from an isotropic distribution.
-STATUS     Data taken from Table II in reference.
+ERR-ANALYS (ERR-1) Error due to uncertainty in efficiency
+            calibration
+STATUS     (TABLE) Data taken from Table II of Phys.Rev.133,B911.
 HISTORY    (19990129C) VV
            (20060309U) DR Name of the first author corrected
            (20061128A) DR Reference corrected to follow APS format
-ENDBIB              35
-NOCOMMON             0          0
-ENDSUBENT           38
-SUBENT        C0185002   19990129   19990610   20050926       0000
-BIB                  3          8
-REACTION   (13-AL-27(A,N)15-P-30,,MLT,,TT/MSC)
+           (20160318A) OS. Corrected REACTION and units in
+            even-numbered subentries, added DERIV to odd-numbered
+            subentries, added ANALYSIS to odd-numbered subentries
+            from 21 to 37, updated ERR-ANALYS.
+ENDBIB              41
+COMMON               1          3
+ERR-1
+PER-CENT
+  4.
+ENDCOMMON            3
+ENDSUBENT           48
+SUBENT        C0185002   20160328   20160603   20160526       C156
+BIB                  3         10
+REACTION   (13-AL-27(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
-ERR-ANALYS No information about sources of uncertainties.
 COMMENT    *** By compiler: Yield value at 10.2 MeV of
             (10.3 x 10**8) corrected by compiler to 1.03 x 10**8
             in accordance with sequence of data in table.
-ENDBIB               8
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 2         30
 EN         DATA
-MEV        ARB-UNITS
+MEV        PRD/MUCOUL
     5.2        1.33E+6
     5.4        1.92E+6
     5.6        2.67E+6
@@ -85,20 +97,27 @@ MEV        ARB-UNITS
    10.8        1.36E+8
    11.0        1.46E+8
 ENDDATA             32
-ENDSUBENT           45
-SUBENT        C0185003   19990129   19990610   20050926       0000
-BIB                  4          9
-REACTION   (13-AL-27(A,N)15-P-30,,SIG)
-ANALYSIS   Obtained by the differentiation of measured thick-targe
-            yield curves.
+ENDSUBENT           47
+SUBENT        C0185003   20160328   20160603   20160526       C156
+BIB                  5         12
+REACTION   (13-AL-27(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 ERR-ANALYS Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185002)
-ENDBIB               9
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2         30
 EN         DATA
 MEV        MB
@@ -133,19 +152,21 @@ MEV        MB
    10.8       290.0
    11.0       290.0
 ENDDATA             32
-ENDSUBENT           46
-SUBENT        C0185004   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (27-CO-59(A,N)29-CU-62,,MLT,,TT/MSC)
+ENDSUBENT           53
+SUBENT        C0185004   20160328   20160603   20160526       C156
+BIB                  3          7
+REACTION   (27-CO-59(A,N)29-CU-62,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         27
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     5.8         6.2E+2   15.0
     6.0         2.7E+3    5.0
     6.2         8.1E+3
@@ -174,20 +195,26 @@ MEV        ARB-UNITS  PER-CENT
    10.8        5.35E+7
    11.0        6.14E+7
 ENDDATA             29
-ENDSUBENT           39
-SUBENT        C0185005   19990129   19990610   20050926       0000
-BIB                  4          9
-REACTION   (27-CO-59(A,N)29-CU-62,,SIG)
-ANALYSIS   Obtained by the differentiation of measured thick-targe
-            yield curves.
+ENDSUBENT           41
+SUBENT        C0185005   20160328   20160603   20160526       C156
+BIB                  5         11
+REACTION   (27-CO-59(A,N)29-CU-62,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 ERR-ANALYS Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185004)
-ENDBIB               9
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              11
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2         27
 EN         DATA
 MEV        MB
@@ -219,21 +246,23 @@ MEV        MB
    10.8      356.0
    11.0      363.0
 ENDDATA             29
-ENDSUBENT           43
-SUBENT        C0185006   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (28-NI-58(A,N)30-ZN-61,,MLT,,TT/MSC)
+ENDSUBENT           49
+SUBENT        C0185006   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (28-NI-58(A,N)30-ZN-61,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          6
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
    10.8        1.27E+5   10.0
    10.9        2.25E+5   10.0
    11.0        3.40E+5   10.0
@@ -241,12 +270,12 @@ MEV        ARB-UNITS  PER-CENT
    11.2        6.25E+5    5.0
    11.3        7.97E+5    5.0
 ENDDATA              8
-ENDSUBENT           20
-SUBENT        C0185007   19990129   19990610   20050926       0000
-BIB                  5         11
-REACTION   (28-NI-58(A,N)30-ZN-61,,SIG)
-ANALYSIS   Obtained by the differentiation of measured thick-targe
-            yield curves.
+ENDSUBENT           22
+SUBENT        C0185007   20160328   20160603   20160526       C156
+BIB                  6         13
+REACTION   (28-NI-58(A,N)30-ZN-61,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS Under favorable conditions, absolute cross section
@@ -254,9 +283,15 @@ ERR-ANALYS Under favorable conditions, absolute cross section
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185006)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2          6
 EN         DATA
 MEV        MB
@@ -267,21 +302,23 @@ MEV        MB
    11.2       14.3
    11.3       16.7
 ENDDATA              8
-ENDSUBENT           24
-SUBENT        C0185008   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (28-NI-60(A,N)30-ZN-63,,MLT,,TT/MSC)
+ENDSUBENT           30
+SUBENT        C0185008   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (28-NI-60(A,N)30-ZN-63,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         12
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     8.6         3.0E+4   20.0
     8.8         9.1E+4    5.0
     9.0        3.72E+5
@@ -295,12 +332,12 @@ MEV        ARB-UNITS  PER-CENT
    10.6        1.13E+7
    10.8        1.41E+7
 ENDDATA             14
-ENDSUBENT           26
-SUBENT        C0185009   19990129   19990610   20050926       0000
-BIB                  5         11
-REACTION   (28-NI-60(A,N)30-ZN-63,,SIG)
-ANALYSIS   Obtained by the differentiation of measured thick-targe
-            yield curves.
+ENDSUBENT           28
+SUBENT        C0185009   20160328   20160603   20160526       C156
+BIB                  6         13
+REACTION   (28-NI-60(A,N)30-ZN-63,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS Under favorable conditions, absolute cross section
@@ -308,9 +345,15 @@ ERR-ANALYS Under favorable conditions, absolute cross section
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185008)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2         12
 EN         DATA
 MEV        MB
@@ -327,21 +370,23 @@ MEV        MB
    10.6      123.0
    10.8      139.0
 ENDDATA             14
-ENDSUBENT           30
-SUBENT        C0185010   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (28-NI-62(A,N)30-ZN-65,,MLT,,TT/MSC)
+ENDSUBENT           36
+SUBENT        C0185010   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (28-NI-62(A,N)30-ZN-65,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         19
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     7.2         4.2E+4   10.0
     7.4        1.37E+5
     7.6        2.81E+5
@@ -362,12 +407,12 @@ MEV        ARB-UNITS  PER-CENT
    10.6        2.97E+7
    10.8        3.52E+7
 ENDDATA             21
-ENDSUBENT           33
-SUBENT        C0185011   19990129   19990610   20050926       0000
-BIB                  5         11
-REACTION   (28-NI-62(A,N)30-ZN-65,,SIG)
-ANALYSIS   Obtained by the differentiation of measured thick-targe
-            yield curves.
+ENDSUBENT           35
+SUBENT        C0185011   20160328   20160603   20160526       C156
+BIB                  6         13
+REACTION   (28-NI-62(A,N)30-ZN-65,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS Under favorable conditions, absolute cross section
@@ -375,9 +420,15 @@ ERR-ANALYS Under favorable conditions, absolute cross section
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185010)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2         19
 EN         DATA
 MEV        MB
@@ -401,21 +452,22 @@ MEV        MB
    10.6      243.0
    10.8      272.0
 ENDDATA             21
-ENDSUBENT           37
-SUBENT        C0185012   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (29-CU-63(A,N)31-GA-66,,MLT,,TT/MSC)
+ENDSUBENT           43
+SUBENT        C0185012   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (29-CU-63(A,N)31-GA-66,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
-ERR-ANALYS No information about sources of uncertainties.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2         12
 EN         DATA
-MEV        ARB-UNITS
+MEV        PRT/MUCOUL
     8.4         5.9E+4
     8.6        2.06E+5
     8.8        5.10E+5
@@ -429,12 +481,12 @@ MEV        ARB-UNITS
    10.4        1.18E+7
    10.6        1.48E+7
 ENDDATA             14
-ENDSUBENT           26
-SUBENT        C0185013   19990129   19990610   20050926       0000
-BIB                  5         11
-REACTION   (29-CU-63(A,N)31-GA-66,,SIG)
-ANALYSIS   Obtained by the differentiation of measured thick-
-            target yield curves.
+ENDSUBENT           27
+SUBENT        C0185013   20160328   20160603   20160526       C156
+BIB                  6         13
+REACTION   (29-CU-63(A,N)31-GA-66,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS Under favorable conditions, absolute cross section
@@ -442,9 +494,15 @@ ERR-ANALYS Under favorable conditions, absolute cross section
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185012)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2         12
 EN         DATA
 MEV        MB
@@ -461,21 +519,23 @@ MEV        MB
    10.4      139.0
    10.6      154.0
 ENDDATA             14
-ENDSUBENT           30
-SUBENT        C0185014   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (29-CU-65(A,N)31-GA-68,,MLT,,TT/MSC)
+ENDSUBENT           36
+SUBENT        C0185014   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (29-CU-65(A,N)31-GA-68,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         22
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     6.4        1.36E+3   10.0
     6.6        4.75E+3    5.0
     6.8        1.52E+4
@@ -499,23 +559,29 @@ MEV        ARB-UNITS  PER-CENT
    10.4        2.18E+7
    10.6        2.48E+7
 ENDDATA             24
-ENDSUBENT           36
-SUBENT        C0185015   19990129   19990610   20050926       0000
-BIB                  5         12
-REACTION   (29-CU-65(A,N)31-GA-68,,SIG)
+ENDSUBENT           38
+SUBENT        C0185015   20160328   20160603   20160526       C156
+BIB                  6         14
+REACTION   (29-CU-65(A,N)31-GA-68,,SIG,,,DERIV)
 ANALYSIS   Obtained by the differentiation of measured thick-
             target yield curves.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185014)
-ENDBIB              12
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              14
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3         22
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -542,21 +608,23 @@ MEV        MB         MB
    10.4      218.0
    10.6      242.0
 ENDDATA             24
-ENDSUBENT           41
-SUBENT        C0185016   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (30-ZN-64(A,N)32-GE-67,,MLT,,TT/MSC)
+ENDSUBENT           47
+SUBENT        C0185016   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (30-ZN-64(A,N)32-GE-67,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     9.8        2.68E+4   10.0
    10.0        1.45E+5    5.0
    10.2        4.69E+5
@@ -566,10 +634,10 @@ MEV        ARB-UNITS  PER-CENT
    11.0        3.55E+6
    11.2        4.80E+6
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        C0185017   19990129   19990610   20050926       0000
-BIB                  5         11
-REACTION   (30-ZN-64(A,N)32-GE-67,,SIG)
+ENDSUBENT           24
+SUBENT        C0185017   20160328   20160603   20160526       C156
+BIB                  6         13
+REACTION   (30-ZN-64(A,N)32-GE-67,,SIG,,,DERIV)
 ANALYSIS   Obtained by the differentiation of measured thick-
             target yield curves.
 CORRECTION Measured yields corrected for possible contributions
@@ -579,9 +647,15 @@ ERR-ANALYS Under favorable conditions, absolute cross section
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185016)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2          7
 EN         DATA
 MEV        MB
@@ -593,21 +667,23 @@ MEV        MB
    10.8       46.0
    11.0       59.0
 ENDDATA              9
-ENDSUBENT           25
-SUBENT        C0185018   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (30-ZN-66(A,N)32-GE-69,,MLT,,TT/MSC)
+ENDSUBENT           31
+SUBENT        C0185018   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (30-ZN-66(A,N)32-GE-69,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         17
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     7.8         6.1E+3   15.0
     8.0        2.76E+4    5.0
     8.2        7.46E+4
@@ -626,10 +702,10 @@ MEV        ARB-UNITS  PER-CENT
    10.8        2.02E+7
    11.0        2.47E+7
 ENDDATA             19
-ENDSUBENT           31
-SUBENT        C0185019   19990129   19990610   20050926       0000
-BIB                  5         11
-REACTION   (30-ZN-66(A,N)32-GE-69,,SIG)
+ENDSUBENT           33
+SUBENT        C0185019   20160328   20160603   20160526       C156
+BIB                  6         13
+REACTION   (30-ZN-66(A,N)32-GE-69,,SIG,,,DERIV)
 ANALYSIS   Obtained by the differentiation of measured thick-
             target yield curves.
 CORRECTION Measured yields corrected for possible contributions
@@ -639,9 +715,15 @@ ERR-ANALYS Under favorable conditions, absolute cross section
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
+           (ERR-2) Error due to uncertainty in stopping power
 STATUS     (DEP,C0185018)
-ENDBIB              11
-NOCOMMON             0          0
+HISTORY    (20160318A) Added REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 2         16
 EN         DATA
 MEV        MB
@@ -662,21 +744,23 @@ MEV        MB
    10.8      213.0
    11.0      231.0
 ENDDATA             18
-ENDSUBENT           34
-SUBENT        C0185020   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (30-ZN-68(A,N)32-GE-71,,MLT,,TT/MSC)
+ENDSUBENT           40
+SUBENT        C0185020   20160328   20160603   20160526       C156
+BIB                  4          9
+REACTION   (30-ZN-68(A,N)32-GE-71,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         23
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRT/MUCOUL PER-CENT
     6.4        2.06E+3   10.0
     6.6        6.20E+3   10.0
     6.8        1.41E+4    5.0
@@ -701,20 +785,28 @@ MEV        ARB-UNITS  PER-CENT
    10.6        2.22E+7
    10.8        2.69E+7
 ENDDATA             25
-ENDSUBENT           37
-SUBENT        C0185021   19990129   19990610   20050926       0000
-BIB                  3          9
-REACTION   (30-ZN-68(A,N)32-GE-71,,SIG)
+ENDSUBENT           39
+SUBENT        C0185021   20160328   20160603   20160526       C156
+BIB                  5         13
+REACTION   (30-ZN-68(A,N)32-GE-71,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               9
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3         23
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -742,21 +834,24 @@ MEV        MB         MB
    10.6      217.0
    10.8      248.0
 ENDDATA             25
-ENDSUBENT           39
-SUBENT        C0185022   19990129   19990610   20050926       0000
-BIB                  3          7
-REACTION   (30-ZN-70(A,N)32-GE-73,,MLT,,TT/MSC)
+ENDSUBENT           47
+SUBENT        C0185022   20160328   20160603   20160526       C156
+BIB                  4         10
+REACTION   (30-ZN-70(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               7
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 3         24
 EN         DATA       ERR-S
-MEV        ARB-UNITS  PER-CENT
+MEV        PRD/MUCOUL PER-CENT
     6.2        1.37E+4   20.0
     6.4        1.85E+4   15.0
     6.6        2.65E+4   10.0
@@ -782,20 +877,29 @@ MEV        ARB-UNITS  PER-CENT
    10.6        2.34E+7
    10.8        2.80E+7
 ENDDATA             26
-ENDSUBENT           38
-SUBENT        C0185023   19990129   19990610   20050926       0000
-BIB                  3          9
-REACTION   (30-ZN-70(A,N)32-GE-73,,SIG)
+ENDSUBENT           41
+SUBENT        C0185023   20160328   20160603   20160526       C156
+BIB                  5         14
+REACTION   (30-ZN-70(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
 CORRECTION Measured yields corrected for possible contributions
             from other isotopes.
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               9
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV,
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              14
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3         24
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -824,10 +928,10 @@ MEV        MB         MB
    10.6      216.0
    10.8      224.0
 ENDDATA             26
-ENDSUBENT           40
-SUBENT        C0185024   19990129   19990610   20050926       0000
-BIB                  3          9
-REACTION   (40-ZR-0(A,N),,MLT,,TT/MSC)
+ENDSUBENT           49
+SUBENT        C0185024   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (40-ZR-0(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
@@ -836,11 +940,14 @@ COMMENT    *** By compiler: The yield values (1.11 x 10**5) for
             10.8 MeV and 1.57 x 10**5 for 11.0 MeV were corrected
             to 1.11 x 10**6 and 1.57 X 10**6, correspondingly,
             in accordance with sequence of data in table.
-ENDBIB               9
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 3         12
 EN         DATA       ERR-S
-MEV        ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL
     8.8         2.5E+4     1.0E+4
     9.0         3.6E+4     1.0E+4
     9.2         5.5E+4     1.0E+4
@@ -854,18 +961,27 @@ MEV        ARB-UNITS  ARB-UNITS
    10.8        1.11E+6    0.05E+6
    11.0        1.57E+6    0.06E+6
 ENDDATA             14
-ENDSUBENT           28
-SUBENT        C0185025   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (40-ZR-0(A,N),,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           31
+SUBENT        C0185025   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (40-ZR-0(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV,
+            (A,N) changed to(A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3         12
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -882,19 +998,22 @@ MEV        MB         MB
    10.8      22.5
    11.0      31.0
 ENDDATA             14
-ENDSUBENT           26
-SUBENT        C0185026   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (41-NB-93(A,N)43-TC-96,,MLT,,TT/MSC)
+ENDSUBENT           35
+SUBENT        C0185026   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (41-NB-93(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5         13
 EN         DATA       ERR-S      -ERR-S     +ERR-S
-MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL PRD/MUCOUL PRD/MUCOUL
     8.6        1.28E+4                0.5E+4     1.0E+4
     8.8        1.86E+4                0.5E+4     1.0E+4
     9.0        2.73E+4                0.6E+4     1.2E+4
@@ -909,18 +1028,27 @@ MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS  ARB-UNITS
    10.8        8.05E+5    0.40E+5
    11.0        1.14E+6    0.05E+6
 ENDDATA             15
-ENDSUBENT           25
-SUBENT        C0185027   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (41-NB-93(A,N)43-TC-96,,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           28
+SUBENT        C0185027   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (41-NB-93(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3         13
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -938,19 +1066,22 @@ MEV        MB         MB
    10.8      16.7        2.5
    11.0      23.6        3.6
 ENDDATA             15
-ENDSUBENT           27
-SUBENT        C0185028   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (42-MO-0(A,N),,MLT,,TT/MSC)
+ENDSUBENT           36
+SUBENT        C0185028   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (42-MO-0(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3         12
 EN         DATA       ERR-S
-MEV        ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL
     8.8         3.9E+3     2.0E+3
     9.0         6.9E+3     3.0E+3
     9.2        1.20E+4    0.40E+4
@@ -964,18 +1095,27 @@ MEV        ARB-UNITS  ARB-UNITS
    10.8        5.31E+5    0.30E+5
    11.0        7.82E+5    0.30E+5
 ENDDATA             14
-ENDSUBENT           24
-SUBENT        C0185029   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (42-MO-0(A,N),,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           27
+SUBENT        C0185029   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (42-MO-0(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3         12
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -992,19 +1132,22 @@ MEV        MB         MB
    10.8      12.9        1.8
    11.0      18.3        2.7
 ENDDATA             14
-ENDSUBENT           26
-SUBENT        C0185030   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (46-PD-0(A,N),,MLT,,TT/MSC)
+ENDSUBENT           35
+SUBENT        C0185030   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (46-PD-0(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          7
 EN         DATA       ERR-S
-MEV        ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL
     9.8         7.5E+3     3.7E+3
    10.0        1.26E+4    0.50E+4
    10.2        2.19E+4    0.50E+4
@@ -1013,18 +1156,27 @@ MEV        ARB-UNITS  ARB-UNITS
    10.8        9.93E+4    0.60E+4
    11.0        1.50E+5    0.08E+5
 ENDDATA              9
-ENDSUBENT           19
-SUBENT        C0185031   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (46-PD-0(A,N),,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           22
+SUBENT        C0185031   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (46-PD-0(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3          7
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -1036,19 +1188,22 @@ MEV        MB         MB
    10.8       2.78       0.40
    11.0       3.71       0.52
 ENDDATA              9
-ENDSUBENT           21
-SUBENT        C0185032   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (47-AG-107(A,N)49-IN-110,,MLT,,TT/MSC)
+ENDSUBENT           30
+SUBENT        C0185032   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (47-AG-107(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          9
 EN         DATA       ERR-S
-MEV        ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL
    10.2         6.1E+3     3.0E+3
    10.3         8.5E+3     4.0E+3
    10.4         1.2E+4     0.5E+4
@@ -1059,18 +1214,27 @@ MEV        ARB-UNITS  ARB-UNITS
    10.9        5.35E+4     0.7E+4
    11.0        6.85E+4     0.7E+4
 ENDDATA             11
-ENDSUBENT           21
-SUBENT        C0185033   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (47-AG-107(A,N)49-IN-110,,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           24
+SUBENT        C0185033   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (47-AG-107(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3          9
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -1084,19 +1248,22 @@ MEV        MB         MB
    10.9       1.75       0.35
    11.0       2.11       0.41
 ENDDATA             11
-ENDSUBENT           23
-SUBENT        C0185034   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (47-AG-109(A,N)49-IN-112,,MLT,,TT/MSC)
+ENDSUBENT           32
+SUBENT        C0185034   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (47-AG-109(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          9
 EN         DATA       ERR-S
-MEV        ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL
    10.2         1.0E+4     0.5E+4
    10.3        1.34E+4     0.6E+4
    10.4        1.79E+4     0.6E+4
@@ -1107,18 +1274,27 @@ MEV        ARB-UNITS  ARB-UNITS
    10.9         6.6E+4     0.7E+4
    11.0        8.03E+4     0.7E+4
 ENDDATA             11
-ENDSUBENT           21
-SUBENT        C0185035   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (47-AG-109(A,N)49-IN-112,,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           24
+SUBENT        C0185035   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (47-AG-109(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3          9
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -1132,37 +1308,49 @@ MEV        MB         MB
    10.9       1.96       0.40
    11.0       2.30       0.46
 ENDDATA             11
-ENDSUBENT           23
-SUBENT        C0185036   19990129   19990610   20050926       0000
-BIB                  2          5
-REACTION   (49-IN-0(A,N),,MLT,,TT/MSC)
+ENDSUBENT           32
+SUBENT        C0185036   20160328   20160603   20160526       C156
+BIB                  3          8
+REACTION   (49-IN-0(A,X)0-NN-1,,MLT,,TT/CH)
             Absolute thick target neutron yield for one micro-
             Coulomb of He++ particles (3.12 x 10**12 incident
             particles)
 ERR-ANALYS (ERR-S) Statistical uncertainty.
-ENDBIB               5
+HISTORY    (20160318A) REACTION SF8 changed from TT/MSC to TT/CH,
+            units from ARB-UNITS to PRT/MUCOUL, (A,N) changed to
+            (A,X)0-NN-1
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          5
 EN         DATA       ERR-S
-MEV        ARB-UNITS  ARB-UNITS
+MEV        PRD/MUCOUL PRD/MUCOUL
    10.6         1.0E+3     0.5E+3
    10.7         2.7E+3     1.0E+3
    10.8         1.0E+4     0.8E+4
    10.9         1.6E+4     0.5E+4
    11.0         2.3E+4     0.7E+4
 ENDDATA              7
-ENDSUBENT           17
-SUBENT        C0185037   19990129   19990610   20050926       0000
-BIB                  2          7
-REACTION   (49-IN-0(A,N),,SIG)
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           Under favorable conditions, absolute cross section
+ENDSUBENT           20
+SUBENT        C0185037   20160328   20160603   20160526       C156
+BIB                  4         12
+REACTION   (49-IN-0(A,X)0-NN-1,,SIG,,,DERIV)
+ANALYSIS   Obtained by differentiation of measured thick-target
+            yield curve.
+ERR-ANALYS  Under favorable conditions, absolute cross section
             uncertainty approximately 15% and includes errors in
             . efficiency calibration of graphite sphere (4%),
             . alpha-particle stopping powers (8%),
             . differentiation of yield curve (estimated 10%).
-ENDBIB               7
-NOCOMMON             0          0
+           (ERR-S) Statistical uncertainty.
+           (ERR-2) Error due to uncertainty in stopping power
+HISTORY    (20160318A) Added ANALYSIS and REACTION SF9=DERIV
+            (A,N) changed to (A,X)0-NN-1
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   8.
+ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-S
 MEV        MB         MB
@@ -1171,5 +1359,5 @@ MEV        MB         MB
    10.9       0.88       0.18
    11.0       0.99       0.20
 ENDDATA              6
-ENDSUBENT           18
+ENDSUBENT           27
 ENDENTRY            37

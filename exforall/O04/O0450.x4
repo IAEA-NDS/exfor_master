@@ -1,22 +1,17 @@
-ENTRY            O0450   20071101   20071206   20071128       O033
-SUBENT        O0450001   20071101   20071206   20071128       O033
-BIB                 16         72
+ENTRY            O0450   20151202   20160603   20160516       O056
+SUBENT        O0450001   20151202   20160603   20160516       O056
+BIB                 17         76
 TITLE      Excitation function and integral recoil properties of
            the Cu-65(p,p+pip)Ni-65 reaction.
 AUTHOR     (L.P.Remsberg)
 INSTITUTE  (1USABNL)
 REFERENCE  (J,PR,138,B572,1965)
-           (J,PR,130,2069,1963) It is C0261  and
+REL-REF    (M,C0269001,L.P.Remsberg+,J,PR,130,2069,1963)  -
            annihilation coincidence method.
-HISTORY    (19980902C)
-           (20040630A) Reference is corrected. Updated too
-           (20071128A).Reference was changed from
-            PR,B138,572,1965 to PR,138,B572,1965 as it coded in
-            Phys.Rev.
 SAMPLE     Three types of targets were used. The targets for which
            the beam intensity was monitored consisted of a Cu
            target foil, a 0.001-inch Al monitor foil and two or
-           three alumimum guard foils.
+           three aluminum guard foils.
            The foils for the cosmotron targets were aligned with
            shears prior to irradiation except for one guard foil
            which protruded 0.5-1 mm beyond the leading edge of the
@@ -60,41 +55,56 @@ METHOD     (CHSEP)
 ANALYSIS   (DECAY) To resolve the Ni decay curves into 2.58 hours
            and 36 hours components
 MONITOR    ((MONIT)13-AL-27(P,X)11-NA-24,CUM,SIG)
-MONIT-REF  (B0022001,J.B.CUMMING,J,ARN,13,261,1963)
+MONIT-REF  (B0022003,J.B.Cumming,J,ARN,13,261,1963)
 ERR-ANALYS (ERR-T) The standard deviations were obtained from rms
-           combinations of 7% for the monitor cross sections, 2%
-           for the Na-24 counting efficiency, 3% for the counting
-           efficiencies of each of the Ni isotopes, 1-3% for
-           secondary corrections and an estimated 5% for chemical
-           yields, monitoring technique and counter variations.
+           combinations of:
+           (MONIT-ERR) uncertainty of the monitor cross sections,
+           (ERR-1) uncertainty of the Na-24 counting efficiency,
+           (ERR-S) uncertainty of the counting efficiencies of
+                                 each of the Ni isotopes,
+           (ERR-2,1.,3.) uncertainty of secondary corrections
+           (ERR-3) uncertainty of chemical yields, monitoring
+                     technique and counter variations.
            The 12% uncertainty in the positron branching ratio for
            Ni-57 was not included in the error estimated for the
            Ni-57 cross sections.
 CORRECTION Production cross section of Ni-65 was corrected on
            Cu-65(n,p)Ni-65 reaction.
-STATUS     (TABLE)
-ENDBIB              72
-NOCOMMON             0          0
-ENDSUBENT           75
-SUBENT        O0450002   20040701              20050926       0000
-BIB                  4         15
+STATUS     (TABLE) Tbl.III from PR,138,B572,1965
+HISTORY    (19980902C)
+           (20040630A) Reference is corrected. Updated too
+           (20071128A).Ref. PR,B138,572,1965 -> PR,138,B572,1965
+            as it coded in Phys.Rev.
+           (20151202A) SD: DECAY-DATA corrected in Subent 002.
+           ERR-ANALYS update. One ref. moved to REL-REF.
+ENDBIB              76
+COMMON               4          3
+MONIT-ERR  ERR-1      ERR-S      ERR-3
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+   7.         2.         3.        5.
+ENDCOMMON            3
+ENDSUBENT           83
+SUBENT        O0450002   20151202   20160603   20160516       O056
+BIB                  5         17
 REACTION  1(29-CU-65(P,PIP+P)28-NI-65,,SIG)       Table 3.
            The sigma (Ni-65) values were calculated from the Cu-65
            content of the targets.
           2(29-CU-0(P,X)28-NI-57,,SIG)
            The sigma (Ni-57) values were calculated from the total
            Cu in the targets.
-DECAY-DATA1(28-NI-65,36.HR)
-          2(28-NI-57,2.58HR,B+,,0.47) According to ENSDF, the
+DECAY-DATA1(28-NI-65,2.58HR)
+          2(28-NI-57,36.0HR,B+,,0.47) According to ENSDF, the
            number of positrons per decay is 0.436+-0.014.
             (Comment by compiler).
 COMMENT    -By authors- the impurities contribute less than 1
            mu-barn to the production of Ni-65 in the copper foil
            used.
-REL-REF    (A,C0281001,S.C.FUNG+,J,PR,95,176,1954)
-           See also - V.P.Crespo, rev.Port.Quim,5,6,1963.
-ENDBIB              15
-NOCOMMON
+REL-REF    (A,C0281003,S.C.Fung+,J,PR,95,176,1954)
+           (A,O0497002,V.P.Crespo,J,RPQ,5,6,1963)
+HISTORY    (20151202A) SD: 36.0hr -> 2.58hr in DECAY-DATA (1) and
+           2.58hr -> 36.0hr in DECAY-DATA (2).
+ENDBIB              17
+NOCOMMON             0          0
 DATA                 6          7
 EN         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
 GEV        MB         MB         MB         MB         MB
@@ -106,5 +116,5 @@ GEV        MB         MB         MB         MB         MB
         2.8       0.16      0.014      0.594      0.053        9.2
         28.      0.093      0.008        0.5      0.045        8.6
 ENDDATA              9
-ENDSUBENT           29
+ENDSUBENT           31
 ENDENTRY             2

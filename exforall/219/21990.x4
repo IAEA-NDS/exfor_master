@@ -1,12 +1,12 @@
-ENTRY            21990   20080829   20081110   20081110       2202
-SUBENT        21990001   20080829   20081110   20081110       2202
-BIB                 17         51
+ENTRY            21990   20151213   20160603   20160523       2246
+SUBENT        21990001   20151213   20160603   20160523       2246
+BIB                 17         72
 INSTITUTE  (2GERJUL)
 REFERENCE  (J,NP/A,435,43,198503) Main Reference.
 AUTHOR     (M.M.Rahman, S.M.Qaim)
-TITLE      -Excitation functions of some neutron threshold
+TITLE       Excitation functions of some neutron threshold
             reactions on isotopes of molybdenum
-FACILITY   (CYCLO) Variable energy compact cyclotron CV 28 .
+FACILITY   (CYCLO,2GERJUL) Variable energy compact cyclotron CV 28
 INC-SOURCE (D-D) Quasi-monoenergetic neutron source.
 SAMPLE      Mo powder(99.98% pure) of natural isotopic composition
             was packed in polyethylene tubes of 1.1 cm diameter
@@ -23,14 +23,15 @@ MONITOR    (28-NI-58(N,P)27-CO-58,,SIG)
            (26-FE-56(N,P)25-MN-56,,SIG)
             Ni and Fe monitor foils were placed in front as well
             as at the back of the sample.
-MONIT-REF  (,B.A.Magurno,R,BNL-NCS-50446,,1975) ENDF/B-IV,
+MONIT-REF  (,B.A.Magurno,R,BNL-NCS-50446,1975) ENDF/B-IV,
                                                dosimetry file.
-REL-REF    (A,,H.Lisken+,J,ND/A,11,569,1973) Data used for
+REL-REF    (R,,H.Lisken+,J,ND/A,11,569,1973) Data used for
             relative neutron flux densities calculation.
-           (A,,C.M.Lederer+,B,LEDERER-7,,1978) Reference for decay
+           (R,,C.M.Lederer+,B,LEDERER-7,,1978) Reference for decay
                                               data.
-           (N,,S.M.Qaim+,J,NSE,88,143,1984)Error analysis details.
-STATUS      Data taken from main reference .
+           (R,21958001,S.M.Qaim+,J,NSE,88,143,1984)Error
+                                              analysis details.
+STATUS     (TABLE) Data taken from NP/A,435,43,1985.
 CORRECTION -From the count rates of the activation products
             obtained the contributions due to background neutrons,
             which were produced via the interaction of deuterons
@@ -40,21 +41,48 @@ CORRECTION -From the count rates of the activation products
            -Decay, gamma-ray intensity, efficiency of the detector
             counting geometry, self-absorption, coincidence
             losses, pile-up of gamma-rays, etc. were corrected.
-ERR-ANALYS -Described in NSE 88(1984) 143.
-           (ERR-T) Include both statistical and systematic errors.
-            Minimum overall error was about 12%.
-            Subents 008, 009 were added.
+ERR-ANALYS (ERR-T) Include both statistical and systematic errors.
+            Detailed description was taken from NSE 88(1984) 143.
+           (ERR-1) Uncertainty in sample weight
+           (ERR-2) Uncertainty in irradiation time
+           (ERR-3,1.,2.) Error in half-life-dependent effects
+           (ERR-4) Uncertainty in neutron source characteristics
+           (ERR-5) Uncertainty in irradiation geometry
+           (ERR-6,1.,15.) Uncertainty in correction for activity
+             induced by back-ground neutrons (gas in/out, breakup)
+           (ERR-7) Uncertainty in correction for absorption and
+            scattering of neutrons in the sample
+           (ERR-8) Error in excitation function of monitor react.
+           (ERR-9,2.,20.) Uncertainty in determination of detector
+            counts 2 to 20 (statistics, pileup, coincidence
+            losses, geometry)
+           (ERR-10,,2.) Uncertainty in absorption of gamma rays
+                       in the sample
+           (ERR-11) Uncertainty in detector efficiency
+           (ERR-12,2.,3.) Uncertainty in chemical yield
+           (ERR-13,1.,5.) Uncertainty in decay data
+            The minimum overall error was about 12%; in some cases
+           it was much higher due to low count rates (large
+           statistical errors) and/or due to high errors in
+           background neutron corrections for E > 6.0 MeV.
 HISTORY    (19860124C)
-           (19860210E)
            (20080829A) M.M. BIB information was added.
             Free text was corrected to be "human-readable".
             Dates were corrected for 4-digits year.
             REACTION in Subents 002, 006 was corrected.
             DATA-ERR was changed into ERR-T in according to text,
-            page 45.
-ENDBIB              51
-NOCOMMON             0          0
-ENDSUBENT           54
+            page 45. Subents 008, 009 were added.
+           (20151213A) SD: DECAY-DATA corrected in Subent 009.
+ENDBIB              72
+COMMON               7          6
+ERR-1      ERR-2      ERR-4      ERR-5      ERR-7      ERR-8
+ERR-11
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+  0.1         0.1        3.          3.        4.         8.
+   3.
+ENDCOMMON            6
+ENDSUBENT           82
 SUBENT        21990002   20080829   20081110   20081110       2202
 BIB                  4          9
 REACTION   (42-MO-92(N,P)41-NB-92-M,,SIG)
@@ -247,17 +275,18 @@ MEV        MEV        MB         MB
  9.577     0.215      14.0       2.9
 ENDDATA             10
 ENDSUBENT           22
-SUBENT        21990009   20080829   20081110   20081110       2202
-BIB                  5          8
+SUBENT        21990009   20151213   20160603   20160523       2246
+BIB                  5          9
 REACTION   (42-MO-98(N,A)40-ZR-95,,SIG)
-DECAY-DATA (40-ZR-85,63.98D,DG,757.,0.546)
+DECAY-DATA (40-ZR-95,63.98D,DG,757.,0.546)
 ANALYSIS    Special analyzing of gamma-ray spectrum was made over
             the energy region of 730 to 790 keV since four
             radioactive products Zr-95, Nb-95, Nb-98m, Mo-99 with
             very different counts rates had to be analyzed.
-STATUS     (TABLE) Table 1 of main reference .
+STATUS     (TABLE) Table 1 of NP/A,435,43,1985.
 HISTORY    (20080829C) M.M.
-ENDBIB               8
+           (20151213A) SD: Zr-85 -> Zr-95 in DECAY-DATA.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          7
 EN         EN-RSL     DATA       ERR-T
@@ -270,5 +299,5 @@ MEV        MEV        MB         MB
  9.153     0.123       1.17      0.33
  9.577     0.215       1.65      0.30
 ENDDATA              9
-ENDSUBENT           22
+ENDSUBENT           23
 ENDENTRY             9

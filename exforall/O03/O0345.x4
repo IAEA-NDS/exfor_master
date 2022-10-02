@@ -1,47 +1,52 @@
-ENTRY            O0345     970515              20050926       0000
-SUBENT        O0345001     970515              20050926       0000
-BIB                 13         24
-TITLE      Spallation Reaction (P,N+P),(P,2N+P) And (P,3N) On
-           Gold. Production Effective Cross Section at
-           Variation Proton Energy.
-AUTHOR     (M.GUSAKOW,Y.LEGOUX,H.SERGOLLE)
+ENTRY            O0345   20151202   20160603   20160516       O056
+SUBENT        O0345001   20151202   20160603   20160516       O056
+BIB                 14         29
+TITLE      Spallation reaction (p,n+p),(p,2n+p) and (p,3n) on
+           gold. Production effective cross section at
+           variation proton energy.
+AUTHOR     (M.Gusakow,Y.Legoux,H.Sergolle)
 INSTITUTE  (2FR PAR)
-REFERENCE  (J,CR,251,70,60)
-HISTORY    (970506C)
-           (970515U) Last checking has been done.
-SAMPLE     Au-197 was Used As Target.Other Information is Absent.
+REFERENCE  (J,CR,251,70,1960)
+SAMPLE     Au-197 was used as target.Other information is absent.
 ADD-RES    (COMP)
-DETECTOR   (NAICR).Na-I(TL) Scintillator.
+DETECTOR   (NAICR).Na-I(Tl) Scintillator.
 FACILITY   (SYNCY,2FR PAR)
-MONITOR    (13-AL-27(P,N+3P)11-NA-24,CUM/UND,SIG,,,EVAL) E>80 MeV.
-           (6-C-12(P,N+P)6-C-11,CUM/UND,SIG,,,EVAL) E<80 MeV
+MONITOR    (13-AL-27(P,X)11-NA-24,CUM,SIG) E>80 MeV.
+           (6-C-12(P,X)6-C-11,CUM,SIG,,,EVAL) E<80 MeV
+MONIT-REF  (C0257002,H.G.Hicks+,J,PR,102,1390,1956)
+           (B0101002,W.E.Crandall+,J,PR,101,329,1956)
 METHOD     (CHSEP)
            (ACTIV)
            (SITA) Gold+Monitor Foil.
 STATUS     (CURVE).By CAJAD.
-ANALYSIS   (DECAY) After Chemical Separation For Gold Fraction
-           Two Half-Lives were Observed. These Half-Lives 180 Days
-           For 195-Au and 5.6 Days For 196-Au.
-           Mercury Fraction had One Half-Life = 9.5 Hours Only.
-           The Authors did not Discuss a Reason of Invisible 41
-           Hours Isomer of 195-Hg and 9.7 Hours Isomer of 196-Au.
-ENDBIB              24
-NOCOMMON
-ENDSUBENT           27
-SUBENT        O0345002     970515              20050926       0000
-BIB                  3          4
-REACTION   (79-AU-197(P,3N)80-HG-195-G,IND,SIG,,,EXP)
-DECAY-DATA (80-HG-195-G,9.5HR). Half-Live is Reported by Authors.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (EN-ERR).Data-Point Reader Uncertainty.
+ANALYSIS   (DECAY) After chemical separation for gold fraction
+           two half-lives were observed. These half-lives 180 Days
+           for 195-Au and 5.6 days for 196-Au.
+           Mercury fraction had one half-life = 9.5 hours only.
+           The authors did not discuss a reason of invisible 41
+           hours isomer of 195-Hg and 9.7 hours isomer of 196-Au.
+HISTORY    (19970506C)
+           (19970515U) Last checking has been done.
+           (20151202A) SD: Cosmetic changes in all Subents (four
+           digits year; SF9=EXP deleted from all REACTION codes,
+           etc). DECAY-DATA corrected in Subent 003.
+ENDBIB              29
+NOCOMMON             0          0
+ENDSUBENT           32
+SUBENT        O0345002   20151202   20160603   20160516       O056
+BIB                  4          4
+REACTION   (79-AU-197(P,3N)80-HG-195-G,,SIG)
+DECAY-DATA (80-HG-195-G,9.5HR). Half-live is reported by authors.
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties
+HISTORY    (20151202A) SD: SF5=IND deleted from REACTION code.
 ENDBIB               4
 COMMON               1          3
-EN-ERR
+EN-ERR-DIG
 MEV
         0.6
 ENDCOMMON            3
 DATA                 3         11
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        37.4       146.         4.
        43.4       155.         7.
@@ -56,24 +61,26 @@ MEV        MB         MB
       158.1       11.2        2.7
 ENDDATA             13
 ENDSUBENT           26
-SUBENT        O0345003     970515              20050926       0000
-BIB                  5          8
-REACTION   (79-AU-197(P,N+P)79-AU-196-G,(M),SIG,,,EXP) Independent
-COMMENT    - By Compiler - Chemical Separation Process Duration is
-           Unknown.
+SUBENT        O0345003   20151202   20160603   20160516       O056
+BIB                  6         10
+REACTION   (79-AU-197(P,X)79-AU-196-G,(M),SIG) Independent
+COMMENT    - By Compiler - Chemical separation process duration is
+           unknown.
 RAD-DET    (79-AU-196-G,XR)
-DECAY-DATA (79-AU-196-G,5.6HR).Half-Live is Reported by Authors.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (EN-ERR).Data-Point Reader Uncertainty.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-ENDBIB               8
+DECAY-DATA (79-AU-196-G,5.6D) Half-live is reported by authors.
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties
+           (EN-ERR-DIG) Digitizing uncertainty of energy
+           (ERR-DIG) Digitizing uncertainty of data
+HISTORY    (20151202A) SD: 5.6HR -> 5.6D in DECAY-DATA.
+           SF3=N+P -> X in REACTION code.
+ENDBIB              10
 COMMON               2          3
-EN-ERR     DATA-ERR
+EN-ERR-DIG ERR-DIG
 MEV        MB
         0.6        2.3
 ENDCOMMON            3
 DATA                 3         10
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        35.2       44.5
        42.4       61.3        3.3
@@ -86,23 +93,24 @@ MEV        MB         MB
        139.       77.4        3.3
        155.        81.         4.
 ENDDATA             12
-ENDSUBENT           29
-SUBENT        O0345004     970515              20050926       0000
-BIB                  4          6
-REACTION   (79-AU-197(P,2N+P)79-AU-195-G,,SIG,,,EXP)
+ENDSUBENT           31
+SUBENT        O0345004   20151202   20160603   20160516       O056
+BIB                  5          7
+REACTION   (79-AU-197(P,X)79-AU-195-G,,SIG)
 RAD-DET    (79-AU-195-G,XR)
-DECAY-DATA (79-AU-195-G,180.D).Half-Live is Reported by Authors.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (EN-ERR).Data-Point Reader Uncertainty.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-ENDBIB               6
+DECAY-DATA (79-AU-195-G,180.D) Half-live is reported by authors.
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties
+           (EN-ERR-DIG) Digitizing uncertainty of energy
+           (ERR-DIG) Digitizing uncertainty of data
+HISTORY    (20151202A) SD: SF3=2N+P -> X in REACTION code.
+ENDBIB               7
 COMMON               2          3
-EN-ERR     DATA-ERR
+EN-ERR-DIG ERR-DIG
 MEV        MB
         0.6        2.3
 ENDCOMMON            3
 DATA                 3          9
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
        35.9       19.1
        41.7       30.3         3.
@@ -114,5 +122,5 @@ MEV        MB         MB
       127.1       50.9         3.
       154.8        56.         3.
 ENDDATA             11
-ENDSUBENT           26
+ENDSUBENT           27
 ENDENTRY             4

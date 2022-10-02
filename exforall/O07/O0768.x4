@@ -1,29 +1,29 @@
-ENTRY            O0768   20140121   20140701   20140623       O052
-SUBENT        O0768001   20140121   20140701   20140623       O052
-BIB                 12         34
+ENTRY            O0768   20151204   20160603   20160516       O056
+SUBENT        O0768001   20151204   20160603   20160516       O056
+BIB                 13         36
 TITLE      Production rate of proton-induced isotopes in different
            materials.
 AUTHOR     (E.Porras, F.Sanchez, V.Reglero, B.Cordier, A.J.Dean,
            F.Lei, J.M.Perez, B.M.Swinyard)
 INSTITUTE  (2SPNVAL)
-           (2SPNSPN) Institute of Corpuscular Physics.
            (2FR SAT)
            (2UK UK) University of Southampton.
            (2SPNPCM) CIEMAT, Madrid.
            (2UK NIN)
 REFERENCE  (J,NIM/B,160,73,2000)
-ADD-RES    (COMP) GEANT/GCALOR MONTE-CARLO code. Silberberg and
-            Tsao semiempirical expressions.
+ADD-RES    (COMP) GEANT/GCALOR MONTE-CARLO code.
+REL-REF    (M,,R.Silberberg+,J,AJ/S,25,315,1973) - GEANT/GCALOR
+            MONTE-CARLO code, semiempirical expressions..
 DETECTOR   (HPGE)
 FACILITY   (SYNCH,2FR SAC)
            (SYNCH,2UK NIN)
 METHOD     (SITA)
            (GSPEC)
-ERR-ANALYS (ERR-S).The errors associated to the calculated
+ERR-ANALYS (ERR-S) The errors associated to the calculated
            production cross section values have been estimated by
            taking into account only the statistical errors
            associated with the peak areas.
-STATUS     (TABLE)
+STATUS     (TABLE) Tbl.2 from NIM/B,160,73,2000
 CRITIQUE   -By compiler. Very much cases are presented, which have
            not any explanation for excluding product production
            due to radioactive decay of precursors.
@@ -35,9 +35,11 @@ HISTORY    (20000816C)
            isotope at SUBENT 006 was changed on 73-TA-182-M2
            according to EXFOR reaction formalism.
            (20140121A) SD: REACTION code corrected in Subent 204.
-ENDBIB              34
+           (20151204A) SD: In Subents 026, 027 data were corrected
+           DECAY-DATA corrected in Subents 026,027,132,163,337,400
+ENDBIB              36
 NOCOMMON             0          0
-ENDSUBENT           37
+ENDSUBENT           39
 SUBENT        O0768002   20040211   20040407   20050926       0000
 BIB                  4          5
 REACTION   (55-CS-133(P,3N)56-BA-131,,SIG)
@@ -587,11 +589,11 @@ MEV        MB         MB         NO-DIM
       1700.       3.92       0.06         3.
 ENDDATA              5
 ENDSUBENT           22
-SUBENT        O0768026   20040211   20040407   20050926       0000
-BIB                  5         12
-REACTION   (55-CS-CMP(P,X)49-IN-110-M,IND,SIG)
+SUBENT        O0768026   20151204   20160603   20160516       O056
+BIB                  6         14
+REACTION   (55-CS-CMP(P,X)49-IN-110-G,IND,SIG)
 METHOD     (ACTIV) Irradiation time: 0.3-0.6 hour.
-DECAY-DATA (49-IN-110-M,4.9HR,DG,657.7,98.3E-02,
+DECAY-DATA (49-IN-110-G,4.9HR,DG,657.7,98.3E-02,
                               DG,884.7,92.9E-02,
                               DG,937.5,68.4E-02)
 SAMPLE     Cs-I(Tl) 1*1*1 cm**3.
@@ -601,33 +603,35 @@ FLAG       (1.) Irradiation time:  0.3 - 0.6 hour.  Sample size:
            1*1*0.1 cm**3
            (3.) Irradiation time: 37 hours.  Sample size:  1*1*1
            cm**3
-ENDBIB              12
-NOCOMMON
+HISTORY    (20151119A) SD: Value at En=1200 MeV was corrected.
+            In-110m -> In-110g in REACTION code and DECAY-DATA.
+ENDBIB              14
+NOCOMMON             0          0
 DATA                 4          3
 EN         DATA       ERR-S      FLAG
 MEV        MB         MB         NO-DIM
       1000.        18.         5.         1.
-      1200.        4.6        0.4         2.
+      1200.         9.         1.         2.
       1700.       4.16       0.07         3.
 ENDDATA              5
-ENDSUBENT           22
-SUBENT        O0768027   20040211   20040407   20050926       0000
-BIB                  5          8
-REACTION   (55-CS-CMP(P,X)49-IN-110-G,IND,SIG)
+ENDSUBENT           24
+SUBENT        O0768027   20151204   20160603   20160516       O056
+BIB                  6          8
+REACTION   (55-CS-CMP(P,X)49-IN-110-M,IND,SIG)
 METHOD     (ACTIV)
-DECAY-DATA (49-IN-110-G,1.15HR,DG,657.7,98.E-02)
+DECAY-DATA (49-IN-110-M,1.15HR,DG,657.7,0.98)
 SAMPLE     Cs-I(Tl)
-FLAG       (2.) Irradiation time:  8 seconds.  Sample size:
-           1*1*0.1 cm**3
-           (1.) Irradiation time:  0.3-0.6 hour.  Sample size:
-           1*1*1 cm**3
+FLAG       (2.) Irradiation time: 8 sec. Sample size: 1*1*0.1 cm3
+           (1.) Irrad. time: 0.3-0.6 hour. Sample size: 1*1*1 cm3
+HISTORY    (20151119A) SD: Value at En=1200 MeV was corrected.
+            In-110g -> In-110m in REACTION code and DECAY-DATA.
 ENDBIB               8
-NOCOMMON
+NOCOMMON             0          0
 DATA                 4          2
 EN         DATA       ERR-S      FLAG
 MEV        MB         MB         NO-DIM
       1000.        19.         6.         1.
-      1200.         9.         1.         2.
+      1200.        4.6        0.4         2.
 ENDDATA              4
 ENDSUBENT           17
 SUBENT        O0768028   20040211   20040407   20050926       0000
@@ -2459,22 +2463,24 @@ MEV        MB         MB
       1700.        3.1        1.2
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        O0768132   20040211   20040407   20050926       0000
-BIB                  4          6
-REACTION   (52-TE-CMP(P,X)47-AG-106-M,IND,SIG)
+SUBENT        O0768132   20151204   20160603   20160516       O056
+BIB                  5          8
+REACTION   (52-TE-CMP(P,X)47-AG-106-M,,SIG)
 METHOD     (ACTIV)  Irradiation time: 8.3 hours.
-DECAY-DATA (47-AG-110-M,8.28D,DG,450.97,28.2E-02,
-                              DG,717.3,28.9E-02,
-                              DG,1045.8,29.6E-02)
+DECAY-DATA (47-AG-106-M,8.28D,DG,450.97,0.282,
+                              DG,717.3,0.289,
+                              DG,1045.8,0.296)
 SAMPLE     Cd-Te 5*5*2 mm**3.
-ENDBIB               6
-NOCOMMON
+HISTORY    (20151119A) SD: Ag-110m -> Ag-106m in DECAY-DATA.
+           SF5=IND deleted from REACTION code.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-S
 MEV        MB         MB
       1700.        5.3        0.3
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           16
 SUBENT        O0768133   20040211   20040407   20050926       0000
 BIB                  5         10
 REACTION   (52-TE-CMP(P,X)47-AG-105-G,IND/M+,SIG)
@@ -2966,22 +2972,24 @@ MEV        MB         MB
       1700.        4.3        0.6
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        O0768163   20040211   20040407   20050926       0000
-BIB                  4          6
-REACTION   (52-TE-CMP(P,X)39-Y-84-M,IND,SIG)
+SUBENT        O0768163   20151204   20160603   20160516       O056
+BIB                  5          8
+REACTION   (52-TE-CMP(P,X)39-Y-84-G,IND,SIG)
 METHOD     (ACTIV)  Irradiation time: 8.3 hours.
-DECAY-DATA (39-Y-84-M,40.MIN,DG,793.0,98.6E-02,
+DECAY-DATA (39-Y-84-G,40.MIN,DG,793.0,0.986,
                              DG,974.1,0.75,
                              DG,1039.8,0.56)
 SAMPLE     Cd-Te 5*5*2 mm**3.
-ENDBIB               6
-NOCOMMON
+HISTORY    (20151119A) SD: Y-84m -> Y-84g in REACTION code and
+            DECAY-DATA.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-S
 MEV        MB         MB
       1700.        0.9        0.2
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           16
 SUBENT        O0768164   20040211   20040407   20050926       0000
 BIB                  4          5
 REACTION   (52-TE-CMP(P,X)38-SR-92,IND,SIG)
@@ -5666,21 +5674,24 @@ MEV        MB         MB
       1200.        1.5        0.1
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        O0768337   20040211   20040407   20050926       0000
-BIB                  4          5
-REACTION   (55-CS-CMP(P,X)39-Y-84-M,IND,SIG)
+SUBENT        O0768337   20151204   20160603   20160516       O056
+BIB                  5          8
+REACTION   (55-CS-CMP(P,X)39-Y-84-G,IND,SIG)
 METHOD     (ACTIV) Irradiation time - 8 seconds.
-DECAY-DATA (39-Y-84-M,40.MIN,DG,793.0,98.6E-02,
-           DG,974.1,75.E-02,DG,1039.8,56.E-02)
+DECAY-DATA (39-Y-84-G,40.MIN,DG,793.0,0.986,
+                             DG,974.1,0.75,
+                             DG,1039.8,0.56)
 SAMPLE     Cs-I(Tl)  thickness 1*1*0.1 cm**3
-ENDBIB               5
-NOCOMMON
+HISTORY    (20151119A) SD: Y-84m -> Y-84g in REACTION code and
+            DECAY-DATA.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-S
 MEV        MB         MB
       1200.        1.6        0.2
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           16
 SUBENT        O0768338   20040211   20040407   20050926       0000
 BIB                  4          5
 REACTION   (53-I-127(P,3N)54-XE-125,,SIG)
@@ -6683,20 +6694,22 @@ MEV        MB         MB
       1200.       1.05       0.06
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        O0768400   20040211   20040407   20050926       0000
-BIB                  4          6
-REACTION   (53-I-127(P,X)39-Y-84-M,IND,SIG)
+SUBENT        O0768400   20151204   20160603   20160516       O056
+BIB                  5          8
+REACTION   (53-I-127(P,X)39-Y-84-G,IND,SIG)
 METHOD     (ACTIV) Irradiation time - 14 seconds.
-DECAY-DATA (39-Y-84-M,40.MIN,DG,793.0,98.6E-02,
-                             DG,974.1,75.E-02,
-                             DG,1039.8,56.E-02)
+DECAY-DATA (39-Y-84-G,40.MIN,DG,793.0,0.986,
+                             DG,974.1,0.75,
+                             DG,1039.8,0.56)
 SAMPLE     Na-I(Tl)  thickness 1*1*0.1 cm**3
-ENDBIB               6
-NOCOMMON
+HISTORY    (20151119A) SD: Y-84m -> Y-84g in REACTION code and
+            DECAY-DATA.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-S
 MEV        MB         MB
       1200.       0.71       0.08
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           16
 ENDENTRY           400

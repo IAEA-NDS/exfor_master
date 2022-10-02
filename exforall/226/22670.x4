@@ -1,7 +1,7 @@
-ENTRY            22670   20121229   20130812   20130718       2234
-SUBENT        22670001   20121229   20130812   20130718       2234
-BIB                 18         81
-TITLE       S-Process Branching at 151Sm, 154Eu, 163Dy
+ENTRY            22670   20151008   20160603   20160523       2245
+SUBENT        22670001   20151008   20160603   20160523       2245
+BIB                 18         84
+TITLE       S-Process branching at 151Sm, 154Eu, 163Dy
 AUTHOR     (J.Best,H.Stoll,C.Arlandini,S.Jaag,F.Kaeppeler,
             K.Wisshak,A.Mengoni,G.Reffo,T.Rauscher)
 INSTITUTE  (2GERKFK)   Best, Stoll, Arlandini, Jaag, Kaeppeler,
@@ -14,16 +14,16 @@ REFERENCE  (J,PR/C,64,(1),015801,200107)  Main reference, data
                                           are given
            (T,STOLL,1993)     Thesis, University Karlsruhe
            (R,FZKA-5824,1996) Technical report, experimental
-                              details
+             details, data for Er-164,170.
            ((P,INDC(GER)-048,2,200207)=(P,JUEL-3996,2,200207))
 REL-REF    (I,22305001,K.A.Toukan+,J,PR/C,51,1540,1995)
                                              Experimental setup
 FACILITY   (VDG,2GERKFK)  3.75 MV Van De Graaff Accelerator
              pulse width is aprx. 1 ns, repetition rate 250 KHz,
-             average beam current 1.5-2 microAmperes
+             average beam current 1.5-2 microamperes
 INC-SOURCE (P-LI7) Protons bombarding 30 micron thick metallic
                lithium target
-INC-SPECT  .Protons have energy 1912 keV, 31 keV above 7Li(p,n)
+INC-SPECT   Protons have energy 1912 keV, 31 keV above 7Li(p,n)
             reaction threshold which yields continuous neutron
             energy distribution with high energy cutoff at 106
             keV. Resulting neutrons are emitted into a forward
@@ -39,7 +39,7 @@ SAMPLE     The investigated Sm, Eu, and Er samples were sandwiched
            between 0.03 mm thick gold foils of the same diameter
            for normalization to the well-known (n,gamma) cross
            section of 197-Au (648+-10 mb at kT=25 keV)
-ADD-RES    (THEO)   Calculations by statistical model
+ADD-RES    (THEO) (1) Calculations by statistical model
             ----------------------------------------------------
             Energy   Eu-151   Eu-152   Eu-153   Eu-154    Eu-155
              keV     Mb       Mb       Mb       Mb        Mb
@@ -69,6 +69,8 @@ ADD-RES    (THEO)   Calculations by statistical model
              Eu-154  7780.  3910.  4704.  3906.  3443.+-750.
              Eu-155  2830.  2134.  1764.  1526.  1360.+- 84.
              -----------------------------------------------------
+            (2) Level density parameters calculated( Table V),
+            (3) Evaluated strength functions (Table VI)
 ERR-ANALYS (ERR-T)  Total error
            (ERR-1)  Statistical error for gold sample
            (ERR-2)  Error for gamma-ray intensity of gold per
@@ -82,13 +84,14 @@ HISTORY    (20020708C)  Compiled by S.M.
            (20121229A) SD. In Subents 2-14: SF8=FCT was removed
             from REACTION code; EN-MEAN -> KT, values were
             corrected. MONIT and KT were added to COMMON in Sub.1
-ENDBIB              81
+           (20151008A) SD:Correction in REACTION code in Subent 5.
+ENDBIB              84
 COMMON               6          3
 KT-NRM     MONIT      MONIT-ERR  ERR-1      ERR-2      ERR-3
 KEV        MB         MB         PER-CENT   PER-CENT   PER-CENT
   25.        648.         10.       0.3        0.1        1.5
 ENDCOMMON            3
-ENDSUBENT           88
+ENDSUBENT           91
 SUBENT        22670002   20121229   20130812   20130718       2234
 BIB                  6         15
 REACTION   (62-SM-152(N,G)62-SM-153,,SIG,,MXW) Averaged value
@@ -175,20 +178,23 @@ PER-CENT   PER-CENT
       12.4        0.5
 ENDDATA              6
 ENDSUBENT           28
-SUBENT        22670005   20121229   20130812   20130718       2234
-BIB                  6         20
-REACTION   (63-EU-151(N,G)63-EU-152-G,,SIG,,MXW) Averaged value
+SUBENT        22670005   20151008   20160603   20160523       2245
+BIB                  6         25
+REACTION   (63-EU-151(N,G)63-EU-152-G+M2,,SIG,,MXW) Averaged value
              of (sigma*V)/(V-thermal)
-COMMENT    . Data are averaged over three sets of measurements
+COMMENT      Data are averaged over three sets of measurements.
+            Data given for an isomeric state includes formation by
+            partial feeding via isomeric transition of Eu-152m2
+            with hl=96.min while irradiation time was 7.8-16.8hr
 DECAY-DATA (63-EU-152-G,13.542YR,DG,244.7,0.0749,
                              DG,344.3,0.266,
                              DG,778.9,0.1379,
                              DG,964.1,0.1434,
                              DG,1112.1,0.135,
                              DG,1408.0,0.2087)
-SAMPLE     .Oxide powder pressed to pellets of 5 and 10 mm diam,
-            1.0 - 1.2 mm thickness, Eu natural isotopic composi-
-            tion - Eu-151 content is (47.9+-0.3)%,
+SAMPLE     (63-EU-151,NAT=0.479) Oxide powder pressed to pellets
+           of 5 and 10 mm diam, 1.0 - 1.2 mm thickness, Eu natural
+           isotopic composition - Eu-151 content is (47.9+-0.3)%,
             total mass 93.6 - 328.1 milligram
 ERR-ANALYS (ERR-S)  Statistical error
            (ERR-5)  Error of isotopic composition
@@ -197,7 +203,9 @@ ERR-ANALYS (ERR-S)  Statistical error
            (ERR-8)  Error due to spectrum cutoff at 106 keV
 HISTORY    (20121229A) SD. SF8=FCT was removed from REACTION code;
             EN-MEAN -> KT, values were corrected.
-ENDBIB              20
+           (20151008A) SD: SF4=Eu-152g -> Eu-152g+m2 in REACTION.
+            COMMENT added.
+ENDBIB              25
 NOCOMMON             0          0
 DATA                 8          1
 KT         DATA       ERR-T      ERR-S      ERR-5      ERR-6
@@ -207,7 +215,7 @@ PER-CENT   PER-CENT
       25.      2520.        71.        0.4        0.3        0.3
        0.5        0.5
 ENDDATA              6
-ENDSUBENT           31
+ENDSUBENT           36
 SUBENT        22670006   20121229   20130812   20130718       2234
 BIB                  6         21
 REACTION   (63-EU-153(N,G)63-EU-154,,SIG,,MXW) Averaged value

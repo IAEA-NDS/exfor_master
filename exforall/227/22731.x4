@@ -1,9 +1,9 @@
-ENTRY            22731   20060210   20060525   20060430       2176
-SUBENT        22731001   20060210   20060525   20060430       2176
-BIB                 13         61
-TITLE      .Measurement of fission cross-section of neptunium-237
-            in resonance region with electron linac-driven lead
-            spectrometer.
+ENTRY            22731   20151009   20160603   20160523       2245
+SUBENT        22731001   20151009   20160603   20160523       2245
+BIB                 14         67
+TITLE       Measurement of fission cross-section of neptunium-237
+            in resonance region with Electron Linac-driven Lead
+            Spectrometer.
 AUTHOR     (A.Yamanaka, I.Kimura, S.Kanazawa, K.Kobayashi,
            S.Yamamoto, Y.Nakagome, Y.Fujita, T.Tamai)
 INSTITUTE  (2JPNKTO) Yamanaka, Kimura, Kinazawa - Departament
@@ -11,13 +11,13 @@ INSTITUTE  (2JPNKTO) Yamanaka, Kimura, Kinazawa - Departament
                Katsuhei Kobayashi, Yamamoto, Nakagome, Fujita,
                Tamai - Research Reactor Institute.
 REFERENCE  (J,NST,30,863,1993)   Main reference
-           (S,JAERI-M-92,375,1992)   JAERI-M-92-027,375,1992,
+REL-REF    (I,,A.Yamanaka+,S,JAERI-M-92-027,375,1992)
                                   Experimental details
 FACILITY   (LINAC,2JPNKTO) Electron linear  accelerator in pulsed
              mode. Pulse repetition rate 180 pps, pulse width
              33 nanosec, peak neutron current 2 A, accelerating
              energy 32 MeV, average neutron yield  = 1.0E+11 n/s
-INC-SOURCE (PHOTO)  Pb(g,N) reaction. Lead slowing-down
+INC-SOURCE (PHOTO)  Pb(gamma,n) reaction. Lead slowing-down
             spectrometer of the Kyoto University research reactor
             institute. The size and weight of this lead
             spectrometer are 1.5 m cubic and about 38 t,
@@ -36,49 +36,64 @@ DETECTOR   (BF3,PROPC) For the slowing-down characteristics of
             with a Si-surface barrier detector in vacuum.
 INC-SPECT  .Neutron spectrum was modified with the help of the
             resonance filters In, Ta, Au, Ag, Mo, Co, Mn.
-           *En-rsl* the energy resolution at 27.5-eV is
+           *EN-RSL* the energy resolution at 27.5-eV is
             39+-1%, i.e. 11 eV
 PART-DET   (FF)
 METHOD     (SLODT) Slowing-down time
-           (STTA)  Stack target irradiaton
-SAMPLE     .Neptunium oxide Np-O2 of about 2 mg weight with high
+           (STTA)  Stack target irradiation using back-to-back
+            fission chambers
+SAMPLE      Neptunium oxide Np-O2 of about 2 mg weight with high
             purity was electrodeposited on a stainless steel plate
             28-mm in diameter and 0.2-mm thick. The diameter of
             the deposit was 2-cm. Number of Np237 atoms is
             (1.99 +- 0.02)E+17, thickness 25 microgram/cm2.
             Pu-238 admixture was 0.320+-0.003 ppm,
             Pu-239 admixture was 1.10 +-0.13  ppm,
-           .Uranium-235 monitor sample, highly enriched uranium
+            Uranium-235 monitor sample, highly enriched uranium
             oxide, purity 99.91%, electrodeposited in the same
             way as Np-237. After the electrodeposition, each plate
             was sintered with gas burner, and the reference
             deposit became U3-O8. Number of U-235 in the sample
             is (4.12 +- 0.09)E+17, Thickness is 50 microgram/cm2
-ERR-ANALYS (ERR-T). The uncertainty is reported by authors in
-            table, in which the statistical error for the fission,
-            the error in the determination of the numbers of
-            Np-237 and U-235, 2% as systematic error and the
-            uncertainty in the fission cross section for U-235
-            were taken into account.
+ERR-ANALYS (ERR-T)  The uncertainty is reported by authors in
+            table, in which:
+             * the statistical error for the fission,
+             * the error in the determination of the numbers of
+               Np-237 and U-235,
+           (ERR-SYS) 2% as systematic error and
+             * the uncertainty in the fission cross section for
+               U-235 were taken into account.
 HISTORY    (20060111C) S.M.
            (20060210U) Last corrections have been done.
-ENDBIB              61
-NOCOMMON             0          0
-ENDSUBENT           64
-SUBENT        22731002   20060111   20060525   20060430       2176
-BIB                  6         10
-REACTION   (93-NP-237(N,F),,SIG)
-ANALYSIS   The cross section for the Np-237(N,F) reaction from
-           about 1 eV to about 5-KeV normalized to that for the
-           U-235(N,F) reaction.
+           (20151009A) SD: SF8=SDT to REACTION code in Subent 002.
+           Ref. on report moved to REL-REF and
+           corrected: JAERI-M-92 -> JAERI-M-92-027.
+ENDBIB              67
+COMMON               1          3
+ERR-SYS
+PER-CENT
+  2.0
+ENDCOMMON            3
+ENDSUBENT           74
+SUBENT        22731002   20151009   20160603   20160523       2245
+BIB                  7         11
+REACTION   (93-NP-237(N,F),,SIG,,SDT)
+ANALYSIS   The cross section for the Np-237(n,f) reaction from
+           about 1 eV to about 5-keV normalized to that for the
+           U-235(n,f) reaction.
 CORRECTION .Corrections were made for setting position of Np-237
             and U-235 deposits. The loss of fission fragments in
             the both deposited was found to be negligible.
 MONITOR    (92-U-235(N,F),,SIG)
-MONIT-REF  (,R.F.ROSE,R,BNL-NCS-17541,1991)  ENDF/B-VI
-STATUS     .Table 1 in main reference
-ENDBIB              10
-NOCOMMON             0          0
+MONIT-REF  (,R.F.Rose,R,BNL-NCS-17541,1991)  ENDF/B-VI
+STATUS     (TABLE) .Table 1 in NST,30,863,1993
+HISTORY    (20151009A) SD: SF8=SDT to REACTION code.
+ENDBIB              11
+COMMON               2          3
+EN-NRM-MIN EN-NRM-MAX
+EV         EV
+  1.         5000.
+ENDCOMMON            3
 DATA                 4         74
 EN         EN-RSL     DATA       ERR-T
 EV         EV         MB         MB
@@ -157,5 +172,5 @@ EV         EV         MB         MB
    4120.                    32.6       2.
    4630.                    37.9       2.3
 ENDDATA             76
-ENDSUBENT           91
+ENDSUBENT           96
 ENDENTRY             2

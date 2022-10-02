@@ -1,7 +1,7 @@
-ENTRY            22470   20091009   20100712   20100629       2218
-SUBENT        22470001   20091009   20100712   20100629       2218
-BIB                 14         43
-TITLE      .Study of the Np-237 (N,F) - Reaction at MeV
+ENTRY            22470   20150825   20160603   20160523       2245
+SUBENT        22470001   20150825   20160603   20160523       2245
+BIB                 14         49
+TITLE       Study of the Np-237(n,f) - reaction at MeV
             neutron energies
 AUTHOR     (F.-J.Hambsch, F.Vives, P.Siegler, S.Oberstedt,
            J.P.Theobald)
@@ -10,33 +10,37 @@ INSTITUTE  (2ZZZGEL)   Hambsch, Vives, Siegler
            (2GERTHD)   Tech.Universitaet, Darmstadt. Theobald
 REFERENCE  (J,NP/A,679,(1),3,2000)      Main reference
            ((S,ISINN-3,299,1995)=
-           (S,JINR-E3-95-NNN,299,1995)) Graphs for Np-237.
+           (S,JINR-E3-95-307,299,1995)) Graphs for Np-237.
              Graphs and table for Cf-52 data
-           ((S,ISINN-2,259,199405)=(R,JINR-E3-94-419,259,199405))
+           ((S,ISINN-2,259,199405)=(S,JINR-E3-94-419,259,199405))
                 First publication. Graphs for 1. MeV energy
            (W,HAMBSCH,200008)   Data obtained via Internet
-REL-REF    (N,,C.BUDTZ-JORGENSEN+,J,NIM/A,258,209,1987)    Experi-
+REL-REF    (I,,C.Budtz-Jorgensen+,J,NIM/A,258,209,1987)    Experi-
                                                 mental details
-           (N,,CH.STRAEDE+,J,NP/A,462,85,1987)   Experimental
+           (I,,Ch.Straede+,J,NP/A,462,85,1987)   Experimental
                                                  details
-FACILITY   (VDG,2ZZZGEL)  7 MeV Van De Graaff accelerator
+           (R,,A.Wahl,J,AND,39,1,1988) - nu-values were taken for
+            analysis.
+FACILITY   (VDG,2ZZZGEL)  7 MeV Van de Graaff accelerator
 INC-SOURCE (P-LI7,P-T,D-D)
-DETECTOR   (IOCH)  Double Frisch-gridded ionisation chamber filled
+DETECTOR   (IOCH)  Double Frisch-gridded ionization chamber filled
                    with 90%Ar+10%CH-4 at pressure 1.05E+5 Pa
                    acting as a flow chamber (0.1 liter/min)
-ANALYSIS   .Energy dependence of average number of neutrons was
-            taken as Nu-Bar = 0.15*En + 2.64
 METHOD     (PHD)
-MONITOR    (92-U-235(N,F),PR,NU)
-           (94-PU-239(N,F),PR,NU)
-CORRECTION .Corrections were made for efficiency of Frisch
+ASSUMED    (ASSUM,92-U-235(N,F),PRE,AKE,FF)  The absolute energy
+            calibration was based on the thermal neutron induced
+            fission of 235U using the recommended value of TKE for
+            the thermal fission of 235U.
+ANALYSIS    Energy dependence of average number of neutrons was
+            taken as Nu-Bar = 0.15*En + 2.64
+CORRECTION  Corrections were made for efficiency of Frisch
             grids, pulse-height defect of the counter and the
             energy loss on the target
-SAMPLE     .Vacuum evaporated neptunium on polyimide layer,
+SAMPLE      Vacuum evaporated neptunium on polyimide layer,
             np thickness is 69+-2 microgram/cm2, polyimide
-            thickness is 24.2 micro-g/cm2. sample covered with
+            thickness is 24.2 micro-g/cm2. Sample covered with
             gold layer 50 micro-g/cm2
-           . U-235 sample with thickness 45+-2 micro-g/cm2, vacuum
+             U-235 sample with thickness 45+-2 micro-g/cm2, vacuum
             evaporated on polyimide layer 33 micro-g/cm2 and
             covered with gold layer 20 micro-g/cm2
 HISTORY    (20000809C)  + +  Compiled by S.Maev                + +
@@ -44,13 +48,15 @@ HISTORY    (20000809C)  + +  Compiled by S.Maev                + +
            (20091009U)  METHOD keyword, ISINN-2, ISINN-3 referen-
               ces and one author name (Theobald) added.
                 BIB information corrected in all SUBENTs - S.M.
-ENDBIB              43
-COMMON               1          3
-EN-NRM
-EV
-   2.53E-02
+           (20150825A) SD: JINR-95-NNN -> JINR-E3-95-307.
+           MONITOR deleted, ASSUMED added.
+ENDBIB              49
+COMMON               3          3
+EN-NRM     ASSUM      ASSUM-ERR
+EV         EV         EV
+   2.53E-02    1.7E+08     5.E+05
 ENDCOMMON            3
-ENDSUBENT           50
+ENDSUBENT           56
 SUBENT        22470002   20091009   20100712   20100629       2218
 BIB                  4          7
 REACTION   (93-NP-237(N,F)MASS,PRE,FY/DE,,RAW)  Number of Events
@@ -54409,24 +54415,15 @@ NO-DIM     NO-DIM     NO-DIM
 
 ENDDATA           2450
 ENDSUBENT         2475
-SUBENT        22470005   20091009   20100712   20100629       2218
-BIB                  4         10
-REACTION   (93-NP-237(N,F),PRE,AKE,FF) Average value of the pre-
-             neutron emission TKE for Np237(n,f) obtained using
-             the recommended value of TKE for the thermal fission
-             of 235U, namely TKE =170.5 +/- 0.5 MeV as an absolute
-             energy calibration
-MONITOR    (92-U-235(N,F),PRE,AKE,FF)
+SUBENT        22470005   20150825   20160603   20160523       2245
+BIB                  4          5
+REACTION   (93-NP-237(N,F),PRE,AKE,FF)
 ERR-ANALYS (DATA-ERR)  Errors are not specified
 STATUS     (DEP,22470002)
-           (TABLE)  Data obtained via Internet, F.-J.Hambsch,
-                    2000.06.25
-ENDBIB              10
-COMMON               2          3
-MONIT      MONIT-ERR
-EV         EV
-    1.7E+08     5.E+05
-ENDCOMMON            3
+           (TABLE) Data obtained from F.-J.Hambsch, 2000.06.25
+HISTORY    (20150825A) SD: MONITOR deleted, info moved to ASSUMED.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 3         12
 EN         DATA       DATA-ERR
 MEV        MEV        MEV
@@ -54443,7 +54440,7 @@ MEV        MEV        MEV
         5.      172.61       0.04
         5.5     172.7        0.05
 ENDDATA             14
-ENDSUBENT           33
+ENDSUBENT           24
 SUBENT        22470006   20091009   20100712   20100629       2218
 BIB                  5         11
 REACTION  1(93-NP-237(N,F),PRE,AKE,FF)

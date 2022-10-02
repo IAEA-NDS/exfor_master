@@ -1,8 +1,8 @@
-ENTRY            O1738   20090416   20090724   20090723       O039
-SUBENT        O1738001   20090416   20090724   20090723       O039
-BIB                 14         65
+ENTRY            O1738   20151207   20160603   20160516       O056
+SUBENT        O1738001   20151207   20160603   20160516       O056
+BIB                 14         64
 TITLE      Excitation functions of radionuclides produced by
-           proton induced reactions on gadolinium targets.
+           proton induced reactions on gadolinium targets
 AUTHOR     (M.B.Challan, G.S.Moawad, M.A.Abou-Zeid, M.N.H.Comsan)
 INSTITUTE  (3EGYCAI)
            (3EGYEGY) Al-Azhar University, Cairo,Egypt
@@ -32,9 +32,24 @@ DETECTOR   (HPGE) 70% HPGe gamma-ray detector, resolution approx.
 CORRECTION  The correction for the activity due to the self-
            absorption of gamma-rays in the targets itself was
            taken into account very carefully.
-ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors in
-            table-all the main sources of uncertainties and their
-           resulting error is
+ERR-ANALYS (ERR-T) The root average of total error due to
+           all following factors after quadrate sum:
+           (ERR-1) The error in half-lives.
+           (ERR-2) The error in intensity of gamma-ray.
+           (ERR-3,,1.0) Error in self absorption of gamma-rays
+           in target foils.
+           (ERR-4) The error in absolute efficiency calibration.
+           (ERR-5) The error in quality of the monitor data
+            (proton fluence).
+           (ERR-6,,1.0) The error in mass of monitor foil.
+           (ERR-S,1.0,5.0) Statistical uncertainty in net peak
+           areas.
+           (ERR-7,,1.0) The error in geometry dependent detector
+           efficiency.
+           (ERR-8) The error in secondary particles contribution
+           in nuclides production and beam intensity loss as the
+           beam traverses the stack thickness.
+           (EN-ERR) The error is reported by authors in table.
             -number of target nuclei in the sample(target mass)
             is negligible.
             -flux fluctuation during irradiation time is
@@ -45,43 +60,27 @@ ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors in
             negligible
             -dead time and pile-up losses in gamma-spectroscopy is
             negligible.
-           (ERR-1).The error in half-lives.
-           (ERR-2).The error in intensity of gamma-ray.
-           (ERR-3,,1.0).Error in self absorption of gamma-rays
-           in target foils.
-           (ERR-4).The error in absolute efficiency calibration.
-           (ERR-5).The error in quality of the monitor data
-            (proton fluence).
-           (ERR-6,,1.0).The error in mass of monitor foil.
-           (ERR-S,1.0,5.0).Statistical uncertainty in net peak
-           areas.
-           (ERR-7,,1.0).The error in geometry dependent detector
-           efficiency.
-           (ERR-8).The error in secondary particles contribution
-           in nuclides production and beam intensity loss as the
-           beam traverses the stack thickness.
-           (ERR-T,,10.).The root average of total error due to
-           all these factors after quadrate sum .
-           (EN-ERR).The error is reported by authors in table.
-ADD-RES    (COMP).Computer codes IMPIRE-II and ALICE-91
-STATUS     (TABLE) Table 3
+ADD-RES    (COMP) Computer codes IMPIRE-II and ALICE-91
+STATUS     (TABLE) Table 3 from 2007LUXOR,,159,2007
 HISTORY    (20090416C) SB
-ENDBIB              65
+           (20151207A) SD: DECAY-DATA corrected in Subent 002.
+           ERR-ANALYS update: DATA-ERR -> ERR-T in all Subents.
+ENDBIB              64
 COMMON               5          3
 ERR-1      ERR-2      ERR-4      ERR-5      ERR-8
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 1.0        1.0        2.5        5.0        7.0
 ENDCOMMON            3
-ENDSUBENT           72
-SUBENT        O1738002   20090416   20090724   20090723       O039
-BIB                  2          3
-REACTION   (64-GD-152(P,N)65-TB-152,,SIG)
+ENDSUBENT           71
+SUBENT        O1738002   20151207   20160603   20160516       O056
+BIB                  3          3
+REACTION   (64-GD-152(P,N)65-TB-152-G,M+,SIG)
 DECAY-DATA (65-TB-152-G,17.5HR,DG,344.4,0.65,DG,596.3,0.094)
-           (65-TB-152-M,25.SEC)
+HISTORY    (20151207A) SD: SF4-SF5: 65-TB-152, -> 65-TB-152-G, M+
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 4         18
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
 17.87      1.07       165.59     19.27
 16.95      1.02       189.25     22.02
@@ -103,7 +102,7 @@ MEV        MEV        MB         MB
 7.55       0.45       15.56      3.01
 ENDDATA             20
 ENDSUBENT           28
-SUBENT        O1738003   20090416   20090724   20090723       O039
+SUBENT        O1738003   20151207   20160603   20160516       O056
 BIB                  2          7
 REACTION  1(64-GD-154(P,N)65-TB-154-G,,SIG)
           2(64-GD-154(P,N)65-TB-154-M,,SIG)
@@ -115,7 +114,7 @@ DECAY-DATA1(65-TB-154-G,21.5MIN,DG,722.1,0.08,DG,996.3,0.05,
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 7         18
-EN         EN-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
 DATA      3
 MEV        MEV        MB         MB         MB         MB
 NO-DIM

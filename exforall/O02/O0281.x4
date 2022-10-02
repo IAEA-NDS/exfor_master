@@ -1,6 +1,6 @@
-ENTRY            O0281   20140822   20150311   20150202       O053
-SUBENT        O0281001   20140822   20150311   20150202       O053
-BIB                 13         41
+ENTRY            O0281   20151116   20160603   20160516       O056
+SUBENT        O0281001   20151116   20160603   20160516       O056
+BIB                 13         44
 TITLE      AMS measurements of thin-target cross sections for the
            production of 10-Be and 26-Al by high-energy protons.
 AUTHOR     (B.Dittrich, U.Herpers, H.J.Hofmann, W.Wolfli,
@@ -15,7 +15,7 @@ REL-REF    (O,A0479001,B.Dittrich+,R,NEANDC(E)-312-U,51,1990)
            (M,,M.Suter+,J,NIM/B,5,117,1984) The technique of AMS
            determination.
 METHOD     (STTA) For energies below 200 MeV, where generally
-           the production of secondaries is less important,
+           the production of secondary's is less important,
            (SITA) For 600,800,1200 and 2600 MeV protons.
            (EXTB)
            (CHSEP)
@@ -24,13 +24,13 @@ SAMPLE     Metallic foils.
 MONITOR    ((MONIT)13-AL-27(P,X)11-NA-22,CUM,SIG)
 MONIT-REF  (,J.Tobaillem+,R,CEA-N-1466,1981)
 FACILITY   (SYNCY,2ZZZCER) 600 MeV.
-           (MESON,1USALAS) 800 MeV.
+           (LINAC,1USALAS) 800 MeV.
            (SYNCH,2FR SAT) 1200 and 2600 MeV.
            (CYCLO,2SWDUPP) Energies below 100 MeV.
            (ISOCY,2FR PAR) For energies between 100 and 200 MeV.
            (CYCLO,2BLGLVN) For energies 73.7 and 80.0 MeV.
-           (SPECM,2GERMPM) Ams facility.
-ADD-RES    (COMP) Hetc Code.
+           (SPECM,2GERMPM) AMS facility.
+ADD-RES    (COMP) HETC Code.
            Chemical separation procedure.
 ERR-ANALYS (ERR-T) Total uncertainties from author tables.
            (ERR-1) Uncertainty of determination of target masses.
@@ -40,15 +40,18 @@ ERR-ANALYS (ERR-T) Total uncertainties from author tables.
            No error was assigned to the monitor cross-section.
 HISTORY    (19960712C)  By CAJAD.
            (20131030A).Correction according Memo CP-D/805
-           (20140822A) SD. Subents 7,8 corrected according
+           (20140822A) SD. Subents 007,008 corrected according
             to Dr. R.Michel remarks.
-ENDBIB              41
+           (20151116A) SD: STATUS 'supersede' added and multiple
+           REACTION formalism was introduced in Subents 006, 008,
+           010-012 . FACILITY code was changed (MESON -> LINAC).
+ENDBIB              44
 COMMON               3          3
 ERR-1      ERR-2      ERR-3
 PER-CENT   PER-CENT   PER-CENT
          1.         3.         2.
 ENDCOMMON            3
-ENDSUBENT           48
+ENDSUBENT           51
 SUBENT        O0281002     970111   20050616   20050926       0000
 BIB                  4         14
 REACTION   (8-O-0(P,X)4-BE-10,,SIG)
@@ -170,13 +173,14 @@ MEV        MEV        MB         MB         MB
   0.600E+03             0.570E+00  0.400E-01       16.0
 ENDDATA              7
 ENDSUBENT           28
-SUBENT        O0281006   20131030   20140422   20140415       O051
-BIB                  5         14
-REACTION   (25-MN-55(P,X)4-BE-10,,SIG)
+SUBENT        O0281006   20151116   20160603   20160516       O056
+BIB                  6         17
+REACTION  1(25-MN-55(P,X)4-BE-10,,SIG)
+          2(25-MN-55(P,X)4-BE-10,,SIG)
 COMMENT    *By authors*.For 10-Be the standard 'S433' was used,
            which has a 10-Be/9-Be ratio of (9.31+-0.23)*10**(-11).
            *By authors*.Data section includes revised data. See
-           'Rel-Ref'.
+           'REL-REF'.
 REL-REF    (R,O0282001,R.Bodemann+,J,NIM/B,82,9,1993) Revised
            experimental cross section for the production of 10-Be.
            The data are recalculated according to the new
@@ -184,29 +188,43 @@ REL-REF    (R,O0282001,R.Bodemann+,J,NIM/B,82,9,1993) Revised
            paper.
 ERR-ANALYS (ERR-4) Uncertainty of Standard 10-Be/9Be Ratio.
            (EN-ERR) From authors' data tables.
-STATUS     (COREL,O0277078) at 800, 1200 and 2600 MeV
-           (TABLE).Table K.2 of INDC(GER)-0052
-ENDBIB              14
+STATUS     (TABLE).Table K.2 of INDC(GER)-0052
+          2(SPSDD,O0277078) at 800, 1200 and 2600 MeV (REACTION 2)
+HISTORY    (20151116A) SD: STATUS 'COREL' -> 'SPSDD'; multiple
+           REACTION formalism was introduced.
+ENDBIB              17
 COMMON               1          3
 ERR-4
 PER-CENT
         2.5
 ENDCOMMON            3
-DATA                 5         10
-EN         EN-ERR     DATA       ERR-T      MONIT
-MEV        MEV        MB         MB         MB
+DATA                 7         10
+EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
+MONIT
+MEV        MEV        MB         MB         MB         MB
+MB
   0.594E+02  0.100E+01  0.190E-01  0.300E-02
+
   0.931E+02  0.500E+00  0.450E-01  0.400E-02
+
   0.115E+03  0.170E+01  0.390E-01  0.100E-01
+
   0.132E+03  0.160E+01  0.580E-01  0.800E-02
+
   0.171E+03  0.170E+01  0.630E-01  0.120E-01
+
   0.188E+03  0.160E+01  0.710E-01  0.120E-01
-  0.600E+03             0.768E+00  0.400E-01       16.0
-  0.800E+03             0.124E+01  0.900E-01       15.5
-  0.120E+04             0.230E+01  0.140E+00       14.6
-  0.260E+04             0.392E+01  0.240E+00       11.7
-ENDDATA             12
-ENDSUBENT           35
+
+  0.600E+03             0.768E+00  0.400E-01
+       16.0
+  0.800E+03                        0.900E-01  0.124E+01  0.900E-01
+       15.5
+  0.120E+04                        0.140E+00  0.230E+01  0.140E+00
+       14.6
+  0.260E+04                        0.240E+00  0.392E+01  0.240E+00
+       11.7
+ENDDATA             24
+ENDSUBENT           50
 SUBENT        O0281007   20140822   20150311   20150202       O053
 BIB                  7         17
 REACTION   (26-FE-0(P,X)4-BE-10,,SIG)       Independent.
@@ -244,9 +262,10 @@ MEV        MEV        MB         MB         MB         NO-DIM
   0.600E+03             0.510E+00  0.300E-01       16.0
 ENDDATA              9
 ENDSUBENT           35
-SUBENT        O0281008   20140822   20150311   20150202       O053
-BIB                  7         18
-REACTION   (28-NI-0(P,X)4-BE-10,,SIG)       Independent.
+SUBENT        O0281008   20151116   20160603   20160516       O056
+BIB                  7         21
+REACTION  1(28-NI-0(P,X)4-BE-10,,SIG)
+          2(28-NI-0(P,X)4-BE-10,,SIG)
 COMMENT    *By authors*.For 10-Be the standard 'S433' was used,
            which has a 10-Be/9-Be ratio of (9.31+-0.23)*10**(-11).
            *By authors*.Data section includes revised data. See
@@ -258,34 +277,49 @@ REL-REF    (R,O0282001,R.Bodemann+,J,NIM/B,82,9,1993) Revised
            paper.
 ERR-ANALYS (ERR-4) Uncertainty of Standard 10-Be/9Be ratio.
            (EN-ERR) From authors' data tables.
-STATUS     (COREL,O0277148) at 800, 1200 and 2600 MeV
-           (TABLE).Table N.5 of INDC(GER)-0052
+STATUS     (TABLE).Table N.5 of INDC(GER)-0052
+          2(SPSDD,O0277148) at 800, 1200 and 2600 MeV
 FLAG       (1.) This data line has been revised, See 'REL-REF'.
 HISTORY    (20140822A) SD. Two data points from Theis's thesis
            deleted (values at 140.7 and 194.5 MeV).
            Their final values are in O0276.097.
-ENDBIB              18
+           (20151116A) SD: STATUS 'COREL' -> 'SPSDD'; multiple
+           REACTION formalism was introduced.
+ENDBIB              21
 COMMON               1          3
 ERR-4
 PER-CENT
         2.5
 ENDCOMMON            3
-DATA                 6         11
-EN         EN-ERR     DATA       ERR-T      MONIT      FLAG
-MEV        MEV        MB         MB         MB         NO-DIM
-  0.533E+02  0.120E+01  0.300E-02  0.100E-02                    1.
-  0.869E+02  0.700E+00  0.700E-02  0.200E-02                    1.
+DATA                 8         11
+EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
+MONIT      FLAG
+MEV        MEV        MB         MB         MB         MB
+MB         NO-DIM
+  0.533E+02  0.120E+01  0.300E-02  0.100E-02
+                    1.
+  0.869E+02  0.700E+00  0.700E-02  0.200E-02
+                    1.
   0.115E+03  0.160E+01  0.210E-01  0.600E-02
+
   0.132E+03  0.150E+01  0.180E-01  0.200E-02
+
   0.148E+03  0.140E+01  0.250E-01  0.300E-02
+
   0.166E+03  0.170E+01  0.260E-01  0.500E-02
+
   0.188E+03  0.150E+01  0.190E-01  0.300E-02
-  0.600E+03             0.380E+00  0.200E-01       16.0
-  0.800E+03             0.680E+00  0.300E-01       15.5
-  0.120E+04             0.129E+01  0.600E+00       14.6
-  0.260E+04             0.258E+01  0.120E+00       11.7
-ENDDATA             13
-ENDSUBENT           40
+
+  0.600E+03             0.380E+00  0.200E-01
+       16.0
+  0.800E+03             0.680E+00             0.680E+00  0.300E-01
+       15.5
+  0.120E+04             0.129E+01             0.129E+01  0.600E+00
+       14.6
+  0.260E+04             0.258E+01             0.258E+01  0.120E+00
+       11.7
+ENDDATA             26
+ENDSUBENT           56
 SUBENT        O0281009   20131030   20140422   20140415       O051
 BIB                  5         13
 REACTION   (13-AL-27(P,X)13-AL-26-G,,SIG)
@@ -314,76 +348,109 @@ MEV        MEV        MB         MB         MB
   0.600E+03             0.226E+02  0.100E+01       16.0
 ENDDATA              8
 ENDSUBENT           26
-SUBENT        O0281010     970111   20050616   20050926       0000
-BIB                  3         10
-REACTION   (25-MN-55(P,X)13-AL-26-G,,SIG)
-COMMENT    -By Authors- For 26-Al the Standard 'Al9' was Used,
-           Which has a 26-Al/27-Al Ratio of (1.19)*10**(-9).
-           -By Compiler- Al-26-G Production Due to Si-26 Decay  is
-           Impossible  As  this  Decay  Produces Isomeric State of
-           Al-26 Only.  Direct Isomeric Transition to Ground State
-           Of Al-26 is Absent.
-FLAG       (1.) These Data are Quoted in Original Paper,
-           But Ones was not Included by R.Michel in His Data
-           Table.
-ENDBIB              10
+SUBENT        O0281010   20151116   20160603   20160516       O056
+BIB                  5         14
+REACTION  1(25-MN-55(P,X)13-AL-26-G,,SIG)
+          2(25-MN-55(P,X)13-AL-26-G,,SIG)
+COMMENT    -By Authors- For 26-Al the standard 'Al9' was used,
+           which has a 26-Al/27-Al ratio of (1.19)*10**(-9).
+           -By Compiler- Al-26-G Production due to Si-26 decay is
+           impossible  as  this  decay  produces isomeric state of
+           Al-26 only.  Direct isomeric transition to ground state
+           of Al-26 is absent.
+FLAG       (1.) These data are quoted in original paper, but
+           ones was not included by R.Michel in his data table.
+STATUS     (TABLE) Table 3 of Nucl.Insrum.Meth.B52(1990)588
+          2(SPSDD,O0277082) at 800, 1200 and 2600 MeV
+HISTORY    (20151116U) SD: STATUS 'SPSDD' was added; multiple
+           REACTION formalism was introduced.
+ENDBIB              14
 NOCOMMON             0          0
-DATA                 6          5
-EN         DATA       ERR-T      MONIT      DATA-MAX   FLAG
-MEV        MB         MB         MB         MB         NO-DIM
-       171.                                        0.06         1.
-  0.600E+03  0.460E+00  0.900E-01       16.0
-  0.800E+03  0.860E+00  0.100E+00       15.5
-  0.120E+04  0.161E+01  0.130E+00       14.6
-  0.260E+04  0.199E+01  0.220E+00       11.7
-ENDDATA              7
-ENDSUBENT           22
-SUBENT        O0281011     970111   20050616   20050926       0000
-BIB                  3         10
-REACTION   (26-FE-0(P,X)13-AL-26-G,,SIG)
-COMMENT    -By Authors- For 26-Al the Standard 'Al9' was Used,
-           Which has a 26-Al/27-Al Ratio of (1.19)*10**(-9).
-           -By Compiler- Al-26-G Production Due to Si-26 Decay  is
-           Impossible  As  this  Decay  Produces Isomeric State of
-           Al-26 Only.  Direct Isomeric Transition to Ground State
-           Of Al-26 is Absent.
-FLAG       (1.) These Data are Quoted in Original Paper,
-           But Ones was not Included by R.Michel in His Data
-           Table.
-ENDBIB              10
+DATA                 8          5
+EN         DATA      1DATA-MAX  1ERR-T     1DATA      2ERR-T     2
+MONIT      FLAG
+MEV        MB         MB         MB         MB         MB
+MB         NO-DIM
+       171.                  0.06
+                    1.
+  0.600E+03  0.460E+00             0.900E-01
+       16.0
+  0.800E+03                                   0.860E+00  0.100E+00
+       15.5
+  0.120E+04                                   0.161E+01  0.130E+00
+       14.6
+  0.260E+04                                   0.199E+01  0.220E+00
+       11.7
+ENDDATA             14
+ENDSUBENT           33
+SUBENT        O0281011   20151116   20160603   20160516       O056
+BIB                  5         14
+REACTION  1(26-FE-0(P,X)13-AL-26-G,,SIG)
+          2(26-FE-0(P,X)13-AL-26-G,,SIG)
+COMMENT    -By Authors- For 26-Al the standard 'Al9' was used,
+           which has a 26-Al/27-Al ratio of (1.19)*10**(-9).
+           -By Compiler- Al-26-G production due to Si-26 decay  is
+           impossible  As  this  decay  Produces isomeric state of
+           Al-26 only.  Direct isomeric transition to ground state
+           of Al-26 is absent.
+FLAG       (1.) These data are quoted in original paper, but
+           ones was not included by R.Michel in his data table.
+STATUS     (TABLE) Table 3 of Nucl.Insrum.Meth.B52(1990)588
+          2(SPSDD,O0277104) at 800, 1200 and 2600 MeV
+HISTORY    (20151116U) SD: STATUS 'SPSDD' was added; multiple
+           REACTION formalism was introduced.
+ENDBIB              14
 NOCOMMON             0          0
-DATA                 6          5
-EN         DATA       ERR-T      MONIT      DATA-MAX   FLAG
-MEV        MB         MB         MB         MB         NO-DIM
-       189.                                       0.010         1.
-  0.600E+03  0.540E+00  0.400E-01       16.0
-  0.800E+03  0.900E+00  0.600E-01       15.5
-  0.120E+04  0.174E+01  0.900E-01       14.6
-  0.260E+04  0.222E+01  0.130E+00       11.7
-ENDDATA              7
-ENDSUBENT           22
-SUBENT        O0281012     970111   20050616   20050926       0000
-BIB                  3         10
-REACTION   (28-NI-0(P,X)13-AL-26-G,,SIG)
-COMMENT    -By Authors- For 26-Al the Standard 'Al9' was Used,
-           Which has a 26-Al/27-Al Ratio of (1.19)*10**(-9).
-           -By Compiler- Al-26-G Production Due to Si-26 Decay  is
-           Impossible  As  this  Decay  Produces Isomeric State of
-           Al-26 Only.  Direct Isomeric Transition to Ground State
-           Of Al-26 is Absent.
-FLAG       (1.) These Data are Quoted in Original Paper,
-           But Ones was not Included by R.Michel in His Data
-           Table.
-ENDBIB              10
+DATA                 8          5
+EN         DATA      1DATA-MAX  1ERR-T     1DATA      2ERR-T     2
+MONIT      FLAG
+MEV        MB         MB         MB         MB         MB
+MB         NO-DIM
+       189.                 0.010
+                    1.
+  0.600E+03  0.540E+00             0.400E-01
+       16.0
+  0.800E+03                                   0.900E+00  0.600E-01
+       15.5
+  0.120E+04                                   0.174E+01  0.900E-01
+       14.6
+  0.260E+04                                   0.222E+01  0.130E+00
+       11.7
+ENDDATA             14
+ENDSUBENT           33
+SUBENT        O0281012   20151116   20160603   20160516       O056
+BIB                  5         14
+REACTION  1(28-NI-0(P,X)13-AL-26-G,,SIG)
+          2(28-NI-0(P,X)13-AL-26-G,,SIG)
+COMMENT    -By Authors- For 26-Al the standard 'Al9' was used,
+           which has a 26-Al/27-Al ratio of (1.19)*10**(-9).
+           -By Compiler- Al-26-G production due to Si-26 decay  is
+           impossible  as  this  decay  produces isomeric state of
+           Al-26 only.  Direct isomeric transition to ground state
+           of Al-26 is absent.
+FLAG       (1.) These data are quoted in original paper, but
+           ones was not included by R.Michel in his data table.
+STATUS     (TABLE) Table 3 of Nucl.Insrum.Meth.B52(1990)588
+          2(SPSDD,O0277155) at 800, 1200 and 2600 MeV
+HISTORY    (20151116U) SD: STATUS 'SPSDD' was added; multiple
+           REACTION formalism was introduced.
+ENDBIB              14
 NOCOMMON             0          0
-DATA                 6          5
-EN         DATA       ERR-T      MONIT      DATA-MAX   FLAG
-MEV        MB         MB         MB         MB         NO-DIM
-       148.                                       0.262         1.
-  0.600E+03  0.390E+00  0.700E-01       16.0
-  0.800E+03  0.760E+00  0.600E-01       15.5
-  0.120E+04  0.162E+01  0.100E+00       14.6
-  0.260E+04  0.275E+01  0.240E+00       11.7
-ENDDATA              7
-ENDSUBENT           22
+DATA                 8          5
+EN         DATA      1DATA-MAX  1ERR-T     1DATA      2ERR-T     2
+MONIT      FLAG
+MEV        MB         MB         MB         MB         MB
+MB         NO-DIM
+       148.                 0.262
+                    1.
+  0.600E+03  0.390E+00             0.700E-01
+       16.0
+  0.800E+03                                   0.760E+00  0.600E-01
+       15.5
+  0.120E+04                                   0.162E+01  0.100E+00
+       14.6
+  0.260E+04                                   0.275E+01  0.240E+00
+       11.7
+ENDDATA             14
+ENDSUBENT           33
 ENDENTRY            12

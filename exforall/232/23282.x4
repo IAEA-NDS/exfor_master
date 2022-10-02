@@ -1,0 +1,108 @@
+ENTRY            23282   20151215   20160603   20160524       2248
+SUBENT        23282001   20151215   20160603   20160524       2248
+BIB                 13         27
+TITLE      Measurement of the 197Au(n,gamma) stellar cross section
+           at kT=30keV by activation.
+AUTHOR     (P.Jimenez-Bonilla,J.Praena)
+INSTITUTE  (2SPNSEU)
+REFERENCE  (C,2014DEBREC,(102),2014)
+            XIII Nuclei in the Cosmos, Debrecen,Hungary,
+           7-11 July 2014 .
+FACILITY   (ACCEL,2SPNSEU) 3 MV Tandem Pelletron at Centro
+           Nacional de Aceleradores, Seville .
+           Proton energy 1912 keV. Energy spread of proton beam
+           was < 1 keV.
+INC-SOURCE (P-LI7) Metallic Li target on copper backing of 0.5 mm
+           thickness. Li layer of 380 microm thickness.
+SAMPLE     Au sample of 2.5 cm diameter, 0.1 mm ( 5.67E-4 at/b)
+           thickness, 0.3820g mass, 206.12 mm2 surface .
+           Placed on the back surface of the Li backing.
+DETECTOR   (HPGE) HPGe Ortec GMX gamma detector, placed at 28 mm
+           distance from backing to measure induced activities in
+           beryllium and gold.  Efficiency was defined :
+           - experimentally by calibrated point sources;
+           - by MNCP simulation.
+DECAY-DATA (79-AU-198-G,2.6947D,DG,411.8,0.9554)
+MONITOR    (3-LI-7(P,N)4-BE-7,,SIG)
+DECAY-MON  (4-BE-7,53.29D,DG,477.6,0.1044)
+METHOD     (ACTIV) Neutron irradiation time 4hr 45min.
+           Activities measurement 6hr 30min .Cooling time 15 min.
+HISTORY    (20151215C) M.M.
+ENDBIB              27
+NOCOMMON             0          0
+ENDSUBENT           30
+SUBENT        23282002   20151215   20160603   20160524       2248
+BIB                  6         40
+REACTION   (79-AU-197(N,G)79-AU-198,,SIG,,MXW) MACS
+CORRECTION For gamma absorption and scattering in materials :
+           for Au - 0.9801 for Be - 0.9286.
+           For neutron scattering ( mainly in Cu backing) - 0.977.
+           For the flat sample - 1.263 .
+           For decay during irradiation, cooling, measurement
+           for Au - 0.06718, for Be - 0.00353.
+           For difference of exp. quasi-Maxwellian spectrum from
+            true Maxwellian neutron spectrum of kT=25 keV - 0.955
+ANALYSIS   MACS at kT=25 keV was defined
+            = 2/sqrt(PI) * Kmax * SIGexp, where
+           SIGexp - exp. cross section,
+           Kmax - coefficient 0.955 for kT=25 keV, calculated by
+           using exp.measurements from REL-REFs of C.Lederer+ and
+           G.Feinberg and gold cross section from ENDF/B-VII.1,
+           see formula 7 in C,20014DEBREC,(102),2014 .
+REL-REF    (R,23152001,C.Lederer+,J,PR/C,83,034608,2011)
+           (R,O2230001,C.Lederer+,J,PR/C,85,055809,2012)
+           (R,O1983001,G.Feinberg+,J,PR/C,85,055810,2012)
+            Neutron spectrum.
+           (A,23284001,G.Feinberg+,J,PR/C,85,055810,2012)
+            MACS=616+-17 mb.
+ERR-ANALYS (ERR-T) Total uncertainty ~ 4% .
+            Considered uncertainties:
+           (ERR-S) Counting statistics for Au - 0.7%
+           (ERR-1) Counting statistics for Be  - 0.3%
+           (ERR-2) Correction factor for decay of Au - 0.01%
+           (ERR-3) Correction factor for decay of Be - 0.01%
+           (ERR-4) Correction for gamma absorption and scattering
+                   for Au - 0.3%
+           (ERR-5) Correction for gamma absorption and scattering
+                   for Be - 0.3%
+           (ERR-6) Ratio of gamma detection intensities Be to Au
+                   - 1.8%
+           (ERR-7) Correction for the flat sample - 2%
+           (ERR-8) Correction for neutron scattering - 0.3%
+           (ERR-9) Correction for true Maxwellian spectrum - 1.5%
+           (ERR-10) Au sample thickness - 1.5% .
+STATUS     (TABLE) Text, pages 1, 5 ; uncertainties - Table 1 of
+           C,20014DEBREC,(102),2014 .
+ENDBIB              40
+COMMON              10          6
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-6
+ERR-7      ERR-8      ERR-9      ERR-10
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.3        0.01       0.01       0.3        0.3        1.8
+ 2.         0.3        1.5        1.5
+ENDCOMMON            6
+DATA                 4          1
+KT         DATA       ERR-T      ERR-S
+KEV        MB         MB         PER-CENT
+ 25.        645.       25.        0.7
+ENDDATA              3
+ENDSUBENT           55
+SUBENT        23282003   20151215   20160603   20160524       2248
+BIB                  4          7
+REACTION   (79-AU-197(N,G)79-AU-198,,SIG,,MXW,DERIV) MACS
+ANALYSIS   MACS at kT=30 keV was derived by extrapolation of MACS
+           at 25 keV as MACS(30keV) = 0.901 * MACS(25keV)
+ERR-ANALYS (DATA-ERR) Total uncertainty ~ 4% .
+STATUS     (TABLE) Text, pages 1, 5 ; uncertainties - Table 1 of
+           C,20014DEBREC,(102),2014 .
+           (DEP,23282002) MACS at kT=25 keV in Subent 002.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+KT         DATA       DATA-ERR
+KEV        MB         MB
+ 30.        626.       25.
+ENDDATA              3
+ENDSUBENT           15
+ENDENTRY             3

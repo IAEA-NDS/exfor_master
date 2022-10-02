@@ -1,21 +1,21 @@
-ENTRY            C0328     961011              20050926       0000
-SUBENT        C0328001     961011              20050926       0000
-BIB                 13         31
+ENTRY            C0328   20160328   20160603   20160526       C156
+SUBENT        C0328001   20160328   20160603   20160526       C156
+BIB                 13         33
 INSTITUTE  (1USABNL)
-REFERENCE  (J,JIN,32,1,70)
-AUTHOR     (K.BAECHMANN)
-TITLE      Rare earth yields in the interaction of 28-geV protons
+REFERENCE  (J,JIN,32,1,1970)
+AUTHOR     (K.Baechmann)
+TITLE      Rare earth yields in the interaction of 28-GeV protons
             with uranium, bismuth and gold
-FACILITY   (SYNCH) AGS
+FACILITY   (SYNCH,1USABNL) Alternating Gradient Synchrotron
 METHOD     (ACTIV,CHSEP)
 DETECTOR   (NAICR) NaI crystal.
            (GELI) Ge(Li) detector.
            (PROPC) End-window beta-proportional counter.
-MONITOR    ((MONIT1)13-AL-27(P,N+3P)11-NA-24,,SIG)
-           ((MONIT2)13-AL-27(P,3N+3P)11-NA-22,,SIG)
-MONIT-REF  (,J.B.CUMMING,J,ARN,13,261,63)
+MONITOR    ((MONIT1)13-AL-27(P,X)11-NA-24,,SIG)
+           ((MONIT2)13-AL-27(P,X)11-NA-22,,SIG)
+MONIT-REF  (B0022001,J.B.Cumming,J,ARN,13,261,1963)
 CORRECTION Corrected for:
-            . efficiency of the countor,
+            . efficiency of the counter,
             . branching ratios in the decay scheme,
             . chemical yield of the separation,
             . decay.
@@ -28,18 +28,20 @@ ERR-ANALYS (DATA-ERR) Estimates from the uncertainties due to:
            Not included are systematic errors, such as the error
             in the monitor cross section (+-8%) and errors from
             erroneous decay schemes.
-STATUS     Data taken from reference, Tables 1 and 2.
-HISTORY    (871214C)
-           (961011A) Data units, isomers corrected. BIB
+STATUS     (TABLE) Data taken from reference, Tables 1 and 2.
+HISTORY    (19871214C)
+           (19961011A) Data units, isomers corrected. BIB
                      corrections, converted to lower case.
-ENDBIB              31
-COMMON               3          3
-EN         MONIT1     MONIT2
-GEV        MB         MB
- 28.        8.9        10.
+           (20160321A) OS. Correction in DECAY-DATA in sub.3,
+            date format in HISTORY corrected in subs.1,2,3,7.
+ENDBIB              33
+COMMON               5          3
+EN         MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
+GEV        MB         PER-CENT   MB         PER-CENT
+ 28.        8.9          8.        10.         8.
 ENDCOMMON            3
-ENDSUBENT           38
-SUBENT        C0328002     961011              20050926       0000
+ENDSUBENT           40
+SUBENT        C0328002   20160328   20160603   20160526       C156
 BIB                  5         25
 REACTION   (92-U-0(P,X)ELEM/MASS,CUM,SIG)
 DECAY-DATA ((1.)58-CE-134,75.HR,B+,,0.61)
@@ -65,7 +67,7 @@ DECAY-DATA ((1.)58-CE-134,75.HR,B+,,0.61)
            ((21.)66-DY-155,10.HR,DG,227.,0.72)
 SAMPLE     Commercially available uranium.
 FLAG       (1.) Values only relative because no carrier present
-HISTORY    (881228A) Data headings added, Pm data moved.
+HISTORY    (19881228A) Data headings added, Pm data moved.
 ENDBIB              25
 NOCOMMON             0          0
 DATA                 8         22
@@ -119,8 +121,8 @@ MB         NO-DIM
 
 ENDDATA             48
 ENDSUBENT           78
-SUBENT        C0328003     961011              20050926       0000
-BIB                  5         20
+SUBENT        C0328003   20160328   20160603   20160526       C156
+BIB                  5         22
 REACTION   (92-U-0(P,X)ELEM/MASS,IND,SIG)
 DECAY-DATA ((1.)58-CE-139-G,140.D,DG,170.,1.0)
            ((2.)59-PR-139,4.5HR)
@@ -131,7 +133,7 @@ DECAY-DATA ((1.)58-CE-139-G,140.D,DG,170.,1.0)
            ((7.)63-EU-147,23.6D,DG,200.,0.24)
            ((8.)63-EU-148,54.D,DG,550.,1.0)
            ((9.)63-EU-149,106.D,DG,328.,0.13)
-           ((10.)63-EU-150-G,12.8HR,DG,330.,0.04,B+,,0.06)
+           ((10.)63-EU-150-M,12.8HR,DG,330.,0.04,B+,,0.06)
            ((11.)63-EU-156,15.D,DG,1230.,0.11)
            ((12.)64-GD-149,9.5D,DG,300.,0.30)
            ((13.)65-TB-152-G,17.4HR,DG,340.,1.0)
@@ -140,8 +142,10 @@ DECAY-DATA ((1.)58-CE-139-G,140.D,DG,170.,1.0)
            ((16.)65-TB-156-G,5.1D,DG,530.,0.71)
 SAMPLE     Commercially available uranium.
 FLAG       (1.) Values only relative because no carrier present
-HISTORY    (881228A) Data headings added, Pm data moved.
-ENDBIB              20
+HISTORY    (19881228A) Data headings added, Pm data moved.
+           (20160321A) Isomer assignment of Eu-150 changed to M
+            in DECAY-DATA and ISOMER.
+ENDBIB              22
 NOCOMMON             0          0
 DATA                 8         16
 ELEMENT    MASS       ISOMER     DECAY-FLAG DATA       DATA-ERR
@@ -166,7 +170,7 @@ MB         NO-DIM
 
  63.        149.                   9.        0.08       0.02
 
- 63.        150.                  10.        0.02       0.05
+ 63.        150.       1.         10.        0.02       0.05
 
  63.        156.                  11.        0.28       0.04
 
@@ -181,7 +185,7 @@ MB         NO-DIM
  65.        156.       0.         16.        0.14       0.02
 
 ENDDATA             36
-ENDSUBENT           61
+ENDSUBENT           63
 SUBENT        C0328004     961011              20050926       0000
 BIB                  3         13
 REACTION   (83-BI-209(P,X)ELEM/MASS,CUM,SIG)
@@ -290,7 +294,7 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     MB         MB
  66.        155.                  17.        12.0       3.0
 ENDDATA             20
 ENDSUBENT           44
-SUBENT        C0328007     970225              20050926       0000
+SUBENT        C0328007   20160328   20160603   20160526       C156
 BIB                  4         13
 REACTION   (79-AU-197(P,X)ELEM/MASS,IND,SIG)
 DECAY-DATA ((1.)58-CE-139-G,140.D,DG,170.,1.0)
@@ -304,7 +308,7 @@ DECAY-DATA ((1.)58-CE-139-G,140.D,DG,170.,1.0)
            ((9.)65-TB-155,5.D,DG,180.,0.15)
            ((10.)65-TB-156-G,5.1D,DG,530.,0.71)
 SAMPLE     Commercially available gold.
-HISTORY    (970225A) COMMON deleted.
+HISTORY    (19970225A) COMMON deleted.
 ENDBIB              13
 NOCOMMON             0          0
 DATA                 6         11

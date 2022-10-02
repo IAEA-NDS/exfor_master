@@ -1,45 +1,75 @@
-ENTRY            O0320   19990712   20050616   20050926       0000
-SUBENT        O0320001   19990712   20050616   20050926       0000
-BIB                 16         36
-TITLE      Production of Residual Nuclei from Irradiation of Thin
-           Pb-Targets with Protons Up to 1.6 GeV.
-AUTHOR     (M.GLORIS,R.MICHEL,U.HERPERS,F.SUDBROCK,D.FILGES)
+ENTRY            O0320   20151118   20160603   20160516       O056
+SUBENT        O0320001   20151118   20160603   20160516       O056
+BIB                 16         62
+TITLE      Production of residual nuclei from irradiation of thin
+           Pb-targets with protons up to 1.6 GeV.
+AUTHOR     (M.Gloris,R.Michel,U.Herpers,F.Sudbrock,D.Filges)
 INSTITUTE  (2GERUH ,2GERKLN,2GERJUL)
 REFERENCE  (J,NIM/B,113,429,1996)
-HISTORY    (19960319C)
-           (19970331U) Last checking has been done.
-SAMPLE     Stack Masses from 0.75 G/Cm**2, were Used.
-           The  Individual  High-Purity Lead Foils had Diameters
-           15.0 mm and Weighted About 120 Mg/Cm**2.
-FACILITY   (SYNCY,2FR SAC).The Laboratory National Saturne,Saclay.
+SAMPLE     Stack masses from 0.75 g/cm**2, were used.
+           The  individual  high-purity lead foils had diameters
+           15.0 mm and weighted about 120 mg/cm**2.
+FACILITY   (SYNCY,2FR SAC).The Laboratory National SATURNE,Saclay.
 MONITOR    (13-AL-27(P,X)11-NA-22,CUM,SIG,,,EVAL)
-MONIT-REF  (,J.TOBAILEM,R,CEA-N-1466,,1981)
-ADD-RES    (COMP).A Comparison with Calculated Cross Sections
-           Using an Inc/E-Model As Well As a Semiempirical Formula
-           Has Been Performed Showing That For Applications Which
-           Depend on Highly Accurate Data It is Still Necessary to
-           Measure Cross Sections.
+MONIT-REF  (,J.Tobailem,R,CEA-N-1466,1981)
+ADD-RES    (COMP).A comparison with calculated cross sections
+           using an INC/E-Model as well as a semiempirical formula
+           has been performed showing that for applications which
+           depend on highly accurate data. It is still necessary
+           to measure cross sections.
            Hetc-Calculations.
 METHOD     (STTA)
            (EXTB)
            (ACTIV)
            (GSPEC)
            (MOSEP)
-ANALYSIS   (AREA).The Determination of Peak Areas from the Very
-           Complex Spectra was Performed with the Program Gamma-W.
+ANALYSIS   (AREA).The determination of peak areas from the very
+           complex spectra was performed with the program gamma-W.
 DETECTOR   (GELI)
-           (HPGE).Using Several Heavily Shielded Ge(LI) And Hpge-
-           Detectors Each Sample was Measured Up to 20 Times in a
-           Period of Up to One and a Half Year After the
-           Corresponding Irradiation.
-REL-REF    (R,O0277001,R.MICHEL+,J,NIM/B,103,183,1995).
-            Errors Result From Many Sources were Reported.
-           (R,O0282001,R.BODEMANN+,J,NIM/B,82,9,1993).See Above.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
+           (HPGE).Using several heavily shielded Ge(LI) and HPGe-
+           detectors each sample was measured up to 20 times in a
+           period of up to one and a half year after the
+           corresponding irradiation.
+REL-REF    (M,O0277001,R.Michel+,J,NIM/B,103,183,1995).
+            Details about error sources and experim. procedures
+           (M,O0282001,R.Bodemann+,J,NIM/B,82,9,1993).See above.
+ERR-ANALYS (ERR-T) Total uncertainty includes (detailed
+           description was taken from other refs (see REL-REF):
+           (ERR-1) Uncertainties in the determination of the
+           number of targets atoms in the beam and their
+           homogeneity over the target area - 2%.
+           (ERR-2) Uncertainties in the fluctuation in beam
+           intensity during irradiation
+           (ERR-3,,1.) Uncertainty of measurement of monitoring
+           radionuclide, here 22-Na : <1%.
+           (ERR-4,,5.) Error of the absolute calibration of
+           gamma-spectrometers: <5%
+            * uncertainty in dead-time and pile up losses in
+              gamma-spectrometry.
+            * Reproducibility of photopeak integration.
+            * Statistical counting error.
+            * Impurities in the target materials causing
+           interfering nuclear reactions and errors resulting from
+           the correction of contributions of other target
+           constituents.
+           Recoil loss and recoil contamination - these errors
+           cancel out.
+           Error of monitor cross section was adopted to be zero.
+           Self-absorption of gamma-rays in the sample was
+           neglected. Consider both the thickness of the target
+           foils and the error introduced by the energy straggling
 STATUS     (TABLE) Besides Rb-83, Ru-103, Hf-175 and Bi-205
-ENDBIB              36
-NOCOMMON             0          0
-ENDSUBENT           39
+HISTORY    (19960319C)
+           (19970331U) Last checking has been done.
+           (20151118A) SD: SF4 was changed in REACTION code of
+            Subent 039.
+ENDBIB              62
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+2.0        2.0
+ENDCOMMON            3
+ENDSUBENT           69
 SUBENT        O0320002   19990712   20050616   20050926       0000
 BIB                  1          1
 REACTION   (82-PB-0(P,X)21-SC-46-G,M+,SIG) Isolated.
@@ -505,17 +535,19 @@ GEV        MB         MB
         1.6       10.8        1.4
 ENDDATA              3
 ENDSUBENT            9
-SUBENT        O0320039   19990712   20050616   20050926       0000
-BIB                  1          1
-REACTION   (82-PB-0(P,X)63-EU-152-G,IND,SIG)
-ENDBIB               1
+SUBENT        O0320039   20151118   20160603   20160516       O056
+BIB                  2          3
+REACTION   (82-PB-0(P,X)63-EU-152-G+M2,,SIG) shielded
+HISTORY    (20151118A) SD: SF4=Eu-152g -> Eu-152g+m2; SF5=IND
+           deleted in REACTION code.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       ERR-T
 GEV        MB         MB
         1.6       17.3        3.2
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           11
 SUBENT        O0320040   19990712   20050616   20050926       0000
 BIB                  1          1
 REACTION   (82-PB-0(P,X)64-GD-146,CUM,SIG)

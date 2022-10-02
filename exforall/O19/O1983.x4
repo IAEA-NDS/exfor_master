@@ -1,6 +1,6 @@
-ENTRY            O1983   20100924   20121218   20121211       O049
-SUBENT        O1983001   20100924   20121218   20121211       O049
-BIB                 12         34
+ENTRY            O1983   20160108   20160603   20160516       O056
+SUBENT        O1983001   20160108   20160603   20160516       O056
+BIB                 13         39
 TITLE      Quasi-stellar neutrons from the Li-7(p,n)Be-7 reaction
            with an energy-broadened proton beam.
 AUTHOR     (G.Feinberg, M.Friedman, A.Krasa, A.Shor, Y.Eisen,
@@ -16,6 +16,8 @@ FACILITY   (VDGT,2ZZZGEL) 7-MV Van de Graaff accelerator at IRMM
 DETECTOR   (GLASD) Schematic of the 6Li-glass detector -
            aluminum can-0.6-mm thick, Si rubber-1 mm,
            Teflon layer- 0.25 mm,  6Li glass- 25.4 mm
+           The stationary 6Li-glass detector was used to
+           monitor beam stability and for normalization.
 METHOD     (TOF)
 SAMPLE     LiF targets of 6-mm diameter were prepared by
            evaporation on a 1-mm thick Cu disk, 40.7 mm in
@@ -32,22 +34,29 @@ ANALYSIS    Authors use the term "broad-energy proton beam" for
            2096.5 keV before the degrader and use the term
             "narrow-energy proton beam" for a proton beam of
            1912 keV directly from the Van de Graaff accelerator.
-STATUS     (TABLE).Table data were received from Dr.G.Feinberg
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE) Table data were received from Dr.G.Feinberg
            26.07.2012.
-HISTORY    (20120731C) s.b.
-ENDBIB              34
+HISTORY    (20120731C) S.B.
+           (20160108A) SD: A few parameters were added to
+             Subents 002-005.
+ENDBIB              39
 NOCOMMON             0          0
-ENDSUBENT           37
-SUBENT        O1983002   20120821   20121218   20121211       O049
-BIB                  2          3
-REACTION   (3-LI-7(P,N)4-BE-7,,DA/DE,,REL)
+ENDSUBENT           42
+SUBENT        O1983002   20160108   20160603   20160516       O056
+BIB                  4          7
+REACTION   (3-LI-7(P,N)4-BE-7,,MLT/DA/DE,,TT/REL)
            broad-energy proton beam
 EN-SEC     (E,N)
-ENDBIB               3
-COMMON               1          3
-EN
-KEV
-2096.5
+STATUS     (COREL,O1983004) Ep=1912+/-1.5 keV data
+HISTORY    (20160108A) SD: ANG-ERR, EN-RSL, EN-ERR were added.
+           En=2096.5 -> 1913.keV. SF6=DA/DE -> MLT/DA/DE,
+           SF8=REL -> TT/REL in REACTION code.
+ENDBIB               7
+COMMON               4          3
+EN         ANG-ERR    EN-RSL     EN-ERR
+KEV        ADEG       KEV        KEV
+ 1913.       0.3        21.         6.
 ENDCOMMON            3
 DATA                 5       1419
 ANG        E          E-ERR      DATA       DATA-ERR
@@ -1472,19 +1481,23 @@ ADEG       KEV        KEV        ARB-UNITS  ARB-UNITS
     80.0000  182.00000   15.63610    0.00548    0.00333
     80.0000  192.00000   16.60610    0.06885    0.05699
 ENDDATA           1421
-ENDSUBENT         1433
-SUBENT        O1983003   20120821   20121218   20121211       O049
-BIB                  4          5
-REACTION   (3-LI-7(P,N)4-BE-7,,DE,,REL)
+ENDSUBENT         1437
+SUBENT        O1983003   20160108   20160603   20160516       O056
+BIB                  5          9
+REACTION   (3-LI-7(P,N)4-BE-7,,MLT/DE,,TT/REL)
            broad-energy proton beam
 EN-SEC     (E,N)
-STATUS     (DEP,O1983002)
 ANALYSIS   (INTAD)
-ENDBIB               5
-COMMON               1          3
-EN
-KEV
-2096.5
+STATUS     (DEP,O1983002)
+           (COREL,O1983005) Ep=1912+/-1.5 keV data
+HISTORY    (20160108A) SD: EN-RSL, EN-ERR were added. En=2096.5 ->
+           1913.keV.  SF6=DE -> MLT/DE, SF8=REL -> TT/REL in
+           REACTION code.
+ENDBIB               9
+COMMON               4          3
+EN         ANG-ERR    EN-RSL     EN-ERR
+KEV        ADEG       KEV        KEV
+ 1913.       0.3        21.         6.
 ENDCOMMON            3
 DATA                 4         90
 E          E-ERR      DATA       DATA-ERR
@@ -1580,17 +1593,20 @@ KEV        KEV        ARB-UNITS  ARB-UNITS
 178.       8.64772    0.601596   0.0853251
 180.       9.67263    0.582867   0.0878576
 ENDDATA             92
-ENDSUBENT          106
-SUBENT        O1983004   20120821   20121218   20121211       O049
-BIB                  2          3
-REACTION   (3-LI-7(P,N)4-BE-7,,DA/DE,,REL)
+ENDSUBENT          110
+SUBENT        O1983004   20160108   20160603   20160516       O056
+BIB                  4          6
+REACTION   (3-LI-7(P,N)4-BE-7,,MLT/DA/DE,,TT/REL)
            Narrow-energy proton beam
 EN-SEC     (E,N)
-ENDBIB               3
-COMMON               1          3
-EN
-KEV
-1912.
+STATUS     (COREL,O1983002) Ep=1913+/-21 keV data
+HISTORY    (20160108A) SD: ANG-ERR, EN-RSL were added. SF6=DA/DE->
+           MLT/DA/DE, SF8=REL -> TT/REL in REACTION code.
+ENDBIB               6
+COMMON               3          3
+EN         ANG-ERR    EN-RSL
+KEV        ADEG       KEV
+1912.         0.3        1.5
 ENDCOMMON            3
 DATA                 5       1474
 ANG        E          E-ERR      DATA       DATA-ERR
@@ -3070,19 +3086,22 @@ ADEG       KEV        KEV        ARB-UNITS  ARB-UNITS
     65.0000  189.00000    12.6181    0.00001    0.00001
     65.0000  195.00000    10.7059    0.00009    0.00006
 ENDDATA           1476
-ENDSUBENT         1488
-SUBENT        O1983005   20120821   20121218   20121211       O049
-BIB                  4          5
-REACTION   (3-LI-7(P,N)4-BE-7,,DE,,REL)
+ENDSUBENT         1491
+SUBENT        O1983005   20160108   20160603   20160516       O056
+BIB                  5          8
+REACTION   (3-LI-7(P,N)4-BE-7,,MLT/DE,,TT/REL)
            Narrow -energy proton beam
 EN-SEC     (E,N)
-STATUS     (DEP,O1983004)
 ANALYSIS   (INTAD)
-ENDBIB               5
-COMMON               1          3
-EN
-KEV
-1912.
+STATUS     (DEP,O1983004)
+           (COREL,O1983003) Ep=1913+/-21 keV data
+HISTORY    (20160108A) SD: EN-RSL was added. SF6=DE -> MLT/DE,
+           SF8=REL -> TT/REL in  REACTION code.
+ENDBIB               8
+COMMON               2          3
+EN         EN-RSL
+KEV        KEV
+1912.        1.5
 ENDCOMMON            3
 DATA                 4         64
 E          E-ERR      DATA       DATA-ERR
@@ -3152,5 +3171,5 @@ KEV        KEV        ARB-UNITS  ARB-UNITS
   124.00000   10.59680    0.07507    0.04610
   126.00000   10.66670    0.06092    0.02081
 ENDDATA             66
-ENDSUBENT           80
+ENDSUBENT           83
 ENDENTRY             5

@@ -1,6 +1,6 @@
-ENTRY            23107   20120712   20130328   20130326       2233
-SUBENT        23107001   20120712   20130328   20130326       2233
-BIB                 13         52
+ENTRY            23107   20151216   20160603   20160523       2246
+SUBENT        23107001   20151216   20160603   20160523       2246
+BIB                 12         52
 TITLE       Thermal neutron capture cross-section of Ge-74.
 AUTHOR     (G.Meierhofer,P.Grabmayr,J.Jochum,P.Kudejova,L.Canella,
            J.Jolie)
@@ -40,7 +40,6 @@ DETECTOR   (HPGE)
 METHOD     (ACTIV)
 COMMENT     This work was supported by the German Federal Ministry
            BMBF (05CD5VT1,05A08VT1).
-STATUS     (COREL,23092001) Data for Ge-76 .
 HISTORY    (20100514C)       M.M.
            (20111105U) M.M. Misprint in year of REL-REF
             Z.Chunmei,J,NDS,95,59 was corrected 2003 -> 2002.
@@ -48,11 +47,12 @@ HISTORY    (20100514C)       M.M.
             article J,PR/C,81,027603,2010 .
            (20120712A) M.M. Two references were added -
             J,EPJ/A,48,20,2012, J,EPJ/CS,2,05002,2010 .
-            BIB information was added.
-            Subent 008 was added.
+            BIB information was added. Subent 008 was added.
             Free text in MONIT (explanation of code B,NEUT.RES)
             was deleted in Subents 002-004 according to comment of
             N.Otsuka (NDS,IAEA).
+           (20151216A) SD: DECAY-DATA corrected in Subent 004.
+            STATUS 'COREL' deleted.
 ENDBIB              52
 NOCOMMON             0          0
 ENDSUBENT           55
@@ -233,9 +233,9 @@ MB         MB         NO-DIM
  480.       50.        6.
 ENDDATA              8
 ENDSUBENT           88
-SUBENT        23107004   20120712   20130328   20130326       2233
-BIB                 11         86
-REACTION   (32-GE-74(N,G)32-GE-75-G,,SIG) Direct to ground
+SUBENT        23107004   20151216   20160603   20160523       2246
+BIB                 12         89
+REACTION   (32-GE-74(N,G)32-GE-75-G,M-,SIG) Direct to ground
                                           capture c-s.
 SAMPLE     Two samples -
            A: 435.7 mg mass, activation time 1200 s, waiting time
@@ -258,13 +258,13 @@ SAMPLE     Two samples -
 DECAY-DATA (32-GE-75-G,82.78MIN,DG,198.6,0.0119,DG,264.6,0.114)
             HL=82.78+-0.04min, Ig=(1.19+-0.12)% for 198.6 keV,
                                Ig=(11.4+-1.1)% for 264.6 keV.
-           (32-GE-77-G,11.30SEC,DG,264.4,0.539)
-            HL=11.30 sec, Ig=(53.9+-0.5)%.
+           (32-GE-77-G,11.30HR,DG,264.4,0.539)
+            HL=11.30 hr, Ig=(53.9+-0.5)%.
            (32-GE-77-M,52.9SEC,DG,264.7,0.022)
             HL=52.9+-0.6sec, Ig=(0.022+-0.004)%.
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
 MONIT-REF  (V1002484,S.F.Mughabghab,B,NEUT.RES,,2006)
-DECAY-MON  (79-AU-198,2.69517D,DG,411.8,0.9558)
+DECAY-MON  (79-AU-198-G,2.69517D,DG,411.8,0.9558)
             Half-life error 0.00021 d, intensity error 0.0012.
 ANALYSIS          Comparing the peak areas of Ge-75 decay with
             reference gold peak , the c-s were obtained relative
@@ -321,7 +321,10 @@ FLAG       (1.) Measured by 1st detector, 264.6 keV gamma,
 STATUS     (TABLE) Table IV of J,PR/C,81,027603,2010
            (DEP,23107002) capture to metastable (see CORRECTION)
            (DEP,23107003) total capture (see CORRECTION)
-ENDBIB              86
+HISTORY    (20151216A) SD: hl=11.30sec -> 11.30hr for Ge-77 in
+           DECAY-DATA (from Tbl. I of PR/C,81,027603,2010). SF5=M-
+           in REACTION code.
+ENDBIB              89
 COMMON               5          3
 EN         MONIT      MONIT-ERR  ERR-6      ERR-9
 EV         B          B          PER-CENT   PER-CENT
@@ -337,7 +340,7 @@ MB         MB         NO-DIM
  366.       55.        5.
  348.       49.        6.
 ENDDATA              8
-ENDSUBENT          103
+ENDSUBENT          106
 SUBENT        23107005   20120712   20130328   20130326       2233
 BIB                  5         24
 REACTION   (32-GE-74(N,G)32-GE-75-M,,SIG)

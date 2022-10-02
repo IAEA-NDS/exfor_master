@@ -1,14 +1,12 @@
-ENTRY            22464   20121223   20130812   20130718       2234
-SUBENT        22464001   20121223   20130812   20130718       2234
-BIB                 14         57
-TITLE      .A system for correlation measurements of fission
-            fragments and prompt neutrons and multiplicity and
-            energy of neutrons from 235U(N-thermal,F) fission
-            fragments
+ENTRY            22464   20150925   20160603   20160523       2245
+SUBENT        22464001   20150925   20160603   20160523       2245
+BIB                 14         58
+TITLE       Multiplicity and energy of neutrons from
+            235U(n-thermal,f) fission fragments
 AUTHOR     (K.Nishio, Y.Nakagome, H.Yamamoto, I.Kimura, I.Kanno)
 INSTITUTE  (2JPNKTO)  Nishio, Yamamoto, Kimura - department
-                                     of nuclear engineering
-                      Nakagome - research reactor institute
+                                     of Nuclear Engineering
+                      Nakagome - Research Reactor Institute
 REFERENCE  (J,NP/A,632,540,1998)  Main reference
            (J,NP/A,637,601,1998)  Corrected graphs
            ((S,ISINN-5,325,199704)=(S,JINR-E3-97-213,325,199704))
@@ -39,45 +37,48 @@ DETECTOR   (SIBAR)   Silicon surface-barrier detector for first
              container with 5 cm thick walls, time resolution
              1.5 nanosec, for neutron detection
 ADD-RES    (COMP)
-SAMPLE     (92-U-235,0.999) .99.9% enriched 235U obtained by
+SAMPLE     (92-U-235,ENR=0.999) .99.9% enriched 235U obtained by
              electrodeposition of U-O2(N-O3)2 on 90 microgram/cm2
              nickel foil, thickness of U-235 sample is 140
              microgram/cm2
-CORRECTION .Corrections  were made for flight-path length of
+CORRECTION  Corrections  were made for flight-path length of
             fission-fragments, for a number of neutrons emitted
             by fiss.fragments, for energy loss of fiss. fragments
             in uranium target
-ERR-ANALYS .Error defined in proper subents (if relevant)
+ERR-ANALYS  Error defined in proper Subents (if relevant)
 HISTORY    (20000305C)  + +  Compiled by S.M.
-           (20010624A)  . .  One subent added. Reaction codes
+           (20010624A)  . .  One Subent added. Reaction codes
                              corrected
            (20021203A)  Corrected, S.M.
            (20060806A)  Reference 4 corrected
            (20090119A)  SUBENT 22464003 corrected - S.M.
            (20110506U)  JINR-E3 updated with ISINN
-           (20110706A)  BIB-info in SAN 001 and REACTION code in
-                        SAN 002 corrected
+           (20110706A)  BIB-info in Subent 001 and REACTION code
+                        in Subent 002 corrected
            (20121223U) SD: JAERI-98-003 -> JAERI-C-98-003
-ENDBIB              57
+           (20150925A) SD: REACTION code was modified in Subents
+            004 - 009 according to MEMO CP-D/856. Title changed
+            following first ref. MONITOR added to Subents 2,4-9.
+ENDBIB              58
 COMMON               1          3
 EN-MEAN
 EV
    2.53E-02
 ENDCOMMON            3
-ENDSUBENT           64
-SUBENT        22464002   20110706   20120427   20120411       2227
+ENDSUBENT           65
+SUBENT        22464002   20150925   20160603   20160523       2245
 BIB                  5         11
-REACTION   (92-U-235(N,F)MASS,PR,NU/DE,,RRE/MXW/REL)  Neutron
+REACTION   (92-U-235(N,F)MASS,PR,NU/DE,,MXW/REL)  Neutron
             spectra in the C.M. system for specified fragment
-            mass divided by sqrt(E-CM)
+            mass
 EN-SEC     (E-CM,N)    Energy of fission neutron
-           (MASS,FF)   Central value of the mass bin
 ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (APRVD) K.Nishio, 2000-03-02. Data given in Fig.3 of
-                   NP/A,632,540,1998
+STATUS     (TABLE) Data corresponding to Fig.3 of NP/A,632,540
 HISTORY    (20021203U)  REACTION Code Corrected
            (20110706A)  Code PR,DE,N changed to PR,NU/DE after
                         MEMO CP-D635
+           (20150925A) SD: MONITOR added. 'RRE' from SF8 deleted
+            from REACTION code according to remark from K.Nishio.
 ENDBIB              11
 NOCOMMON             0          0
 DATA                 4        192
@@ -327,18 +328,26 @@ NO-DIM     MEV        MEV
       154.5     1.5289      .0684
 ENDDATA             35
 ENDSUBENT           48
-SUBENT        22464004   20021203   20030221   20050926       0000
-BIB                  5          8
-REACTION   (92-U-235(N,F)MASS,PR,NU,FF,MXW) Average Neutron
-              Multiplicity As a Function of Fragment Mass
-REL-REF    (A,,E.E.MASLIN+,J,PR,164,1520,1964)
-           (D,,V.F.APALIN+,J,NP,71,553,1965)
-STATUS     (APRVD)  K.Nishio, 20000301. Data in Fig.5 of Main
-                    Reference
-ERR-ANALYS (ERR-S)  Errors are Statistical
-HISTORY    (20021203U)  REACTION Code Corrected. Units changed
-ENDBIB               8
-NOCOMMON
+SUBENT        22464004   20150925   20160603   20160523       2245
+BIB                  6         12
+REACTION   (92-U-235(N,F)MASS,PR/FRG,NU,,MXW) Average neutron
+              multiplicity as a function of fragment mass
+MONITOR    (92-U-235(N,F),PR,NU)  from C.Wagemans, 'The Nuclear
+            Fission Process' (CRC Press, 1991) p. 514
+REL-REF    (A,,E.E.Maslin+,J,PR,164,1520,1967)
+           (D,,V.F.Apalin+,J,NP,71,553,1965)
+STATUS     (TABLE) Data from K.Nishio,2000/03/01.(corresponding
+                                        to fig.5 of NP/A,632,540)
+ERR-ANALYS (ERR-S)  Errors are statistical
+HISTORY    (20021203A)  REACTION Code corrected. Units changed
+           (20150925A) SD: SF5=PR -> PR/FRG, SF7=FF deleted in
+            REACTION code. MONITOR added.
+ENDBIB              12
+COMMON               1          3
+MONIT
+PRT/FIS
+  2.43
+ENDCOMMON            3
 DATA                 3         66
 MASS       DATA       ERR-S
 NO-DIM     PRT/FIS    PRT/FIS
@@ -409,19 +418,26 @@ NO-DIM     PRT/FIS    PRT/FIS
        153.  .1653E+01      .1123
        154.  .1674E+01      .1241
 ENDDATA             68
-ENDSUBENT           81
-SUBENT        22464005   20021203   20030221   20050926       0000
-BIB                  4          8
-REACTION   ((92-U-235(N,F)MASS,PR,NU,HF,FCT/MXW)+
-           (92-U-235(N,F)MASS,PR,NU,LF,FCT/MXW)) Sum of Neutron
-            Multiplicities from Both Fragments As a Function
-            Of Heavy Fragment'S Mass
-ERR-ANALYS (DATA-ERR)  Errors not Specified
-STATUS     (APRVD)  K.Nishio, 20000302. Data Given in Fig.6
-                    Of Main Reference
-HISTORY    (20021203A) REACTION Code Corrected
-ENDBIB               8
-NOCOMMON
+ENDSUBENT           89
+SUBENT        22464005   20150925   20160603   20160523       2245
+BIB                  5         11
+REACTION   (92-U-235(N,F)MASS,PR,NU,,MXW)  Sum of neutron
+            multiplicities from both fragments as a function
+            of heavy fragment's mass
+MONITOR    (92-U-235(N,F),PR,NU)  from C.Wagemans, 'The Nuclear
+            Fission Process' (CRC Press, 1991) p. 514
+ERR-ANALYS (DATA-ERR)  Errors not specified
+STATUS     (TABLE) Data from K.Nishio,2000/03/01.(corresponding
+                                        to fig.6 of NP/A,632,540)
+HISTORY    (20021203A) REACTION code corrected
+           (20150925A) SD: SF7=HF deleted, SF8=FCT/MXW -> MXW in
+           REACTION code according to MEMO CP-D/856. MONITOR added
+ENDBIB              11
+COMMON               1          3
+MONIT
+PRT/FIS
+  2.43
+ENDCOMMON            3
 DATA                 3         30
 MASS       DATA       DATA-ERR
 NO-DIM     PRT/FIS    PRT/FIS
@@ -456,22 +472,30 @@ NO-DIM     PRT/FIS    PRT/FIS
        153.  .2402E+01  .1123
        154.  .2396E+01  .1241
 ENDDATA             32
-ENDSUBENT           45
-SUBENT        22464006   20021203   20030221   20050926       0000
-BIB                  5          8
-REACTION   ((92-U-235(N,F),PR,NU/DE,HF,FCT/MXW)+
-           (92-U-235(N,F),PR,NU/DE,LF,FCT/MXW))  Neutron Multip-
-            licity As a Function of Fission Fragments'Total Kin.E
-EN-SEC     (E,FF)   Total Kinetic Energy of Both Fragments
-STATUS     (APRVD)  K.Nishio, 20000301. Data in Fig.7 of Main
-                    Reference
+ENDSUBENT           52
+SUBENT        22464006   20150925   20160603   20160523       2245
+BIB                  5         12
+REACTION   (92-U-235(N,F),PR,NU/TKE,,MXW)  Neutron multiplicity
+             as a function of fission fragments' total kin.energy
+MONITOR    (92-U-235(N,F),PR,NU)  from C.Wagemans, 'The Nuclear
+            Fission Process' (CRC Press, 1991) p. 514
+STATUS     (TABLE) Data from K.Nishio,2000/03/01.(corresponding
+                                        to fig.7 of NP/A,632,540)
 ERR-ANALYS (DATA-ERR)  Errors not Specified
-HISTORY    (20021203A) REACTION Code Corrected
-ENDBIB               8
-NOCOMMON
+HISTORY    (20021203A) REACTION code corrected
+           (20150925A) SD: SF6=NU/DE -> NU/TKE, SF7=HF deleted,
+           SF8=FCT/MXW -> MXW in REACTION code according to
+           MEMO CP-D/856. Col.E -> TKE in DATA section. DATA units
+           were changed (PT/FIS/MEV -> PRT/FIS). MONITOR added.
+ENDBIB              12
+COMMON               1          3
+MONIT
+PRT/FIS
+  2.43
+ENDCOMMON            3
 DATA                 3         16
-E          DATA       DATA-ERR
-MEV        PT/FIS/MEV PT/FIS/MEV
+TKE        DATA       DATA-ERR
+MEV        PRT/FIS    PRT/FIS
        125.  .2422E+01  .3044
        130.  .2359E+01  .2034
        135.  .2987E+01  .1866
@@ -489,21 +513,30 @@ MEV        PT/FIS/MEV PT/FIS/MEV
        195.  .1162E+01  .4872E-01
        200.  .9173      .1276
 ENDDATA             18
-ENDSUBENT           31
-SUBENT        22464007   20010625   20021212   20050926       0000
-BIB                  4          7
-REACTION   (92-U-235(N,F)MASS,PR,NU/DE,FF,FCT/MXW) Neutron Multip-
-            licity vs Fragment Mass For Specific 5 MeV Tke Bins.
-EN-SEC     (E-MIN,FF) Min Total Kinetic Energy of Both Fragments
-           (E-MAX,FF) Max Total Kinetic Energy of Both Fragments
-STATUS     (APRVD)   K.Nishio, 20000301. Data in Fig. 8 of
-                     2-Nd Reference
+ENDSUBENT           39
+SUBENT        22464007   20150925   20160603   20160523       2245
+BIB                  5         12
+REACTION   (92-U-235(N,F)MASS,PR/FRG,NU/TKE,,MXW) Neutron multip-
+            licity vs fragment mass for specific 5 MeV TKE bins.
+MONITOR    (92-U-235(N,F),PR,NU)  from C.Wagemans, 'The Nuclear
+            Fission Process' (CRC Press, 1991) p. 514
+STATUS     (TABLE) Data from K.Nishio,2000/03/01.(corresponding
+                                        to fig.8 of NP/A,632,540)
 ERR-ANALYS (DATA-ERR)  Errors not Specified
-ENDBIB               7
-NOCOMMON             0          0
+HISTORY    (20150925A) SD: SF5=PR -> PR/FRG, SF6=NU/DE -> NU/TKE,
+           SF7=FF deleted, SF8=FCT/MXW -> MXW in REACTION code
+           according to MEMO CP-D/856.  Col. E-MIN -> TKE-MIN and
+           E-MAX -> TKE-MAX in DATA section. DATA units were
+           changed (PT/FIS/MEV -> PRT/FIS). MONITOR added.
+ENDBIB              12
+COMMON               1          3
+MONIT
+PRT/FIS
+  2.43
+ENDCOMMON            3
 DATA                 5        343
-E-MIN      E-MAX      MASS       DATA       DATA-ERR
-MEV        MEV        NO-DIM     PT/FIS/MEV PT/FIS/MEV
+TKE-MIN    TKE-MAX    MASS       DATA       DATA-ERR
+MEV        MEV        NO-DIM     PRT/FIS    PRT/FIS
       137.5      142.5       79.5  .1154E+01         .3
       137.5      142.5       81.5  .1428E+01      .2995
       137.5      142.5       83.5  .1796E+01      .4009
@@ -848,20 +881,30 @@ MEV        MEV        NO-DIM     PT/FIS/MEV PT/FIS/MEV
       192.5      197.5      149.5      .1502  .7193E-01
       192.5      197.5      153.5  .3605E-02  .3291E-02
 ENDDATA            345
-ENDSUBENT          357
-SUBENT        22464008   20010625   20021212   20050926       0000
-BIB                  4          6
-REACTION   (92-U-235(N,F)MASS,PR,NU/DE,FF,FCT/MXW) Neutron Multip-
-                 licity Versus Total FF Kinetic Energy
-EN-SEC     (E,FF)  Total Kin. Energy of Both Fragments
-ERR-ANALYS (DATA-ERR)  Not Specified
-STATUS     (APRVD)   K.Nishio, 20000301. Data in Fig. 9 Main
-                     Reference
-ENDBIB               6
-NOCOMMON             0          0
+ENDSUBENT          366
+SUBENT        22464008   20150925   20160603   20160523       2245
+BIB                  5         12
+REACTION   (92-U-235(N,F)MASS,PR/FRG,NU/TKE,,MXW) Neutron multip-
+                 licity versus total FF kinetic Energy
+MONITOR    (92-U-235(N,F),PR,NU)  from C.Wagemans, 'The Nuclear
+            Fission Process' (CRC Press, 1991) p. 514
+ERR-ANALYS (DATA-ERR)  Not specified
+STATUS     (TABLE) Data from K.Nishio,2000/03/01.(corresponding
+                                        to fig.9 of NP/A,632,540)
+HISTORY    (20150925A) SD: SF5=PR -> PR/FRG, SF6=NU/DE -> NU/TKE,
+           SF7=FF deleted, SF8=FCT/MXW -> MXW in REACTION code
+           according to MEMO CP-D/856. Col. E->TKE in DATA section
+           DATA units were changed (PT/FIS/MEV -> PRT/FIS)
+           MONITOR added.
+ENDBIB              12
+COMMON               1          3
+MONIT
+PRT/FIS
+  2.43
+ENDCOMMON            3
 DATA                 5        146
-E          MASS-MIN   MASS-MAX   DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM     PT/FIS/MEV PT/FIS/MEV
+TKE        MASS-MIN   MASS-MAX   DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM     PRT/FIS    PRT/FIS
        140.        85.        86.  .1636E+01      .3393
        140.        89.        90.  .1972E+01      .4426
        140.        93.        94.  .1963E+01      .4406
@@ -1009,25 +1052,34 @@ MEV        NO-DIM     NO-DIM     PT/FIS/MEV PT/FIS/MEV
        200.       147.       148.      .3443      .1937
        200.       151.       152.      .4433      .4856
 ENDDATA            148
-ENDSUBENT          159
-SUBENT        22464009   20010625   20021212   20050926       0000
-BIB                  4         11
-REACTION   (92-U-235(N,F)MASS,PR,NU/DE,FF,FCT/MXW) Total Neutron
-             Multiplicity Versus Heavy Fragment Mass For Specific
-             5 MeV Tke Bins As a Function of Heavy Fragment Mass.
-EN-SEC     (E-MIN,FF) Min Total Kinetic Energy of Heavy Fragments
-           (E-MAX,FF) Max Total Kinetic Energy of Heavy Fragments
-STATUS     (APRVD)   K.Nishio, 2000-03-07. Data in Fig.11 of
-                     Main Reference
-           (DEP,22464007)  Data Given in this Subent are the Sum
-             Of Data from Subent 22464007 - Nu-Total=Nu(MASSHF)+
-             Nu(236-MASSHF),Masshf=Mass of Heavy Fragment
-ERR-ANALYS (DATA-ERR)  Errors not Specified
-ENDBIB              11
-NOCOMMON             0          0
+ENDSUBENT          169
+SUBENT        22464009   20150925   20160603   20160523       2245
+BIB                  5         16
+REACTION   (92-U-235(N,F)MASS,PR,NU/TKE,,MXW) Total neutron
+             multiplicity versus heavy fragment mass for specific
+             5 MeV TKE Bins as a function of heavy fragment mass.
+MONITOR    (92-U-235(N,F),PR,NU)  from C.Wagemans, 'The Nuclear
+            Fission Process' (CRC Press, 1991) p. 514
+STATUS     (TABLE) Data from K.Nishio,2000/03/01.(corresponding
+                                        to fig.11 of NP/A,632,540)
+           (DEP,22464007)  Data given in this Subent are the sum
+             of data from Subent 22464007 - Nu-Total=Nu(massHF)+
+             Nu(236-massHF),massHF=mass of Heavy Fragment
+ERR-ANALYS (DATA-ERR)  Errors not specified
+HISTORY    (20150925A) SD: SF6=NU/DE -> NU/TKE, SF7=FF deleted,
+           SF8=FCT/MXW -> MXW in REACTION code according to
+           MEMO CP-D/856. Col. E-MIN->TKE-MIN and E-MAX->TKE-MAX
+           in DATA section.DATA units changed: PT/FIS/MEV->PRT/FIS
+           MONITOR added.
+ENDBIB              16
+COMMON               1          3
+MONIT
+PRT/FIS
+  2.43
+ENDCOMMON            3
 DATA                 5        173
-E-MIN      E-MAX      MASS       DATA       DATA-ERR
-MEV        MEV        NO-DIM     PT/FIS/MEV PT/FIS/MEV
+TKE-MIN    TKE-MAX    MASS       DATA       DATA-ERR
+MEV        MEV        NO-DIM     PRT/FIS    PRT/FIS
       142.5      147.5      129.5  .4445E+01  .1087E+01
       142.5      147.5      131.5  .3601E+01      .9042
       142.5      147.5      133.5  .3644E+01      .5435
@@ -1202,7 +1254,7 @@ MEV        MEV        NO-DIM     PT/FIS/MEV PT/FIS/MEV
       197.5      202.5      143.5      .9469      .4183
       197.5      202.5      145.5      .5721      .5182
 ENDDATA            175
-ENDSUBENT          191
+ENDSUBENT          200
 SUBENT        22464010   20010625   20021212   20050926       0000
 BIB                  3          4
 REACTION  1(92-U-235(N,F),PRE,AP,HF,MXW) Avg Mass of Heavy Fragm
