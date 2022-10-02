@@ -1,9 +1,9 @@
-ENTRY            22500   20090216   20090508   20090507       2207
-SUBENT        22500001   20090216   20090508   20090507       2207
-BIB                 17         73
+ENTRY            22500   20090820   20090901   20090820       2212
+SUBENT        22500001   20090820   20090901   20090820       2212
+BIB                 17         75
 TITLE      .Neutron capture of 46Ca at thermonuclear energies
 AUTHOR     (P.Mohr, P.V.Sedyshev, H.Beer, W.Stadler, H.Oberhummer,
-            Yu.V.Popov, W.Rochow)
+           Yu.V.Popov, W.Rochow)
 INSTITUTE  (2GERKFK) Beer.              Karlsruhe Research Center,
                 Inst. of Nucl.Physics. Experimental site .
            (2GERTUE) Rochow. Tuebingen Univ., Physical Institute,
@@ -14,8 +14,8 @@ INSTITUTE  (2GERKFK) Beer.              Karlsruhe Research Center,
            (2AUSTHV) Mohr, Stadler, Oberhummer. Techn.Univ.Vienna,
                      Inst. of Nucl. Phys.
 REFERENCE  (J,PR/C,59,(6),3410,199906)    Main Reference
-           (S,JINR-E3-98-202,205,199805)  Preliminary results
-              for 46Ca and 50Ti .
+           ((S,ISINN-6,205,199804)=(S,JINR-E3-98-202,205,199805))
+              Preliminary results for 46Ca and 50Ti -
 REL-REF    (N,,F.Kaeppeler+,J,PR/C,35,936,1987)  Exp. details
               on activation technique.
            (N,,H.Beer+,J,PR/C,52,3442,1995) Experimental details
@@ -64,9 +64,9 @@ SAMPLE     -Calcium carbonate Ca-C-O3 powder pressed to tablets
            -Metallic gold, 100% purity, mass near 16 milligram on
             each side.
 ERR-ANALYS (ERR-T)       Total Error
-            (MONIT-ERR)  Au Standard c-s Error  1.5%- 3.%.
+           (MONIT-ERR,1.5,3.0)  Au Standard c-s Error
+           (ERR-IDD)  Ca-40 decay intensity error
 HISTORY    (20010130C)  + +  Compiled by S.M.
-           (20010131U) Last Checking has Been done.
            (20090216U) M.M. Misprint in Subent 006, N1 of DATA was
             corrected : 5 -> 4. BIB information was added.
             KT was added in Subents 002,005,006 as given in
@@ -74,12 +74,19 @@ HISTORY    (20010130C)  + +  Compiled by S.M.
             was corrected: 214. -> 215. in energy value.
             ERR-1 (defined as min Au standard error) was moved in
             free text. Subent 007 was added.
-ENDBIB              73
-NOCOMMON             0          0
-ENDSUBENT           76
-SUBENT        22500002   20090216   20090508   20090507       2207
-BIB                  7         25
-REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW/AV)
+           (20090509U) JINR-E3 updated with ISINN. Energy headings
+            corrected. Ranged errors and ERR-IDD introduced - S.M.
+ENDBIB              75
+COMMON               1          3
+ERR-IDD
+NO-DIM
+   0.09
+ENDCOMMON            3
+ENDSUBENT           82
+SUBENT        22500002   20090820   20090901   20090820       2212
+BIB                  8         26
+REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW)
+INC-SPECT  .Near Maxwellian obtained in experiment
 SAMPLE      Au back side   Ca-CO3  Au front side (in mg)
             For kT=25 keV:
              16.620         75.298  16.630
@@ -93,8 +100,8 @@ ANALYSIS    For kT=25 keV: data given is average of two
 ERR-ANALYS (ERR-2) Ge-detector efficiency error
            (ERR-3) Gamma-rays intensity determination error for
                    Ca-47.
-            ERR-4 -Divergence neutron beam error- 2.-5. %.
-            ERR-5 -Sample weight error < 0.5%.
+           (ERR-4,2.,5.) Divergence neutron beam error = 2.-5.%.
+           (ERR-5,,0.5) -Sample weight error < 0.5%.
            (ERR-S) Statistical error
            (ERR-6) Error of gamma-ray intensity per decay for
                    Au-198 - 0.1%.
@@ -103,8 +110,8 @@ STATUS     (TABLE)   Data from Table 2 of Main Reference
            (COREL,22456002)
            (DEP,22500008)
 HISTORY    (20090216A) ERR-6 was added from main Reference.
-            ERR-4, ERR-5 were moved in free text.
-ENDBIB              25
+           (20090509U) BIB info updated: INC-SPECT added
+ENDBIB              26
 COMMON               3          3
 ERR-2      ERR-3      ERR-6
 PER-CENT   PER-CENT   PER-CENT
@@ -113,19 +120,19 @@ ENDCOMMON            3
 DATA                 4          2
 KT         DATA       ERR-T      ERR-S
 KEV        MB         MB         PER-CENT
-25.         4.58       0.59
+25.         4.58       0.59       0.61
 52.         3.13       0.74      19.70
 ENDDATA              4
-ENDSUBENT           38
-SUBENT        22500003   20090216   20090508   20090507       2207
-BIB                  5         19
+ENDSUBENT           39
+SUBENT        22500003   20090820   20090901   20090820       2212
+BIB                  5         18
 REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,SPA/AV) Averaged over
                spectrum interval and several runs.
 ERR-ANALYS (ERR-2)  Ge-detector efficiency error
            (ERR-3)  Gamma-rays intensity determination error for
                     Ca-47 .
-            ERR-4 - Divergence neutron beam error - 2.-5.%.
-            ERR-5 - Sample weight error < 5% .
+           (ERR-4,2.,5.) Divergence neutron beam error = 2.-5.%.
+           (ERR-5,,0.5) - Sample weight error < 5% .
            (EN-ERR) Error in energy spectrum center
            (ERR-6) Error of gamma-ray intensity per decay for
                    Au-198 - 0.1%.
@@ -136,9 +143,8 @@ STATUS     (TABLE)   Data from Table 2 of Main Reference
 HISTORY    (20090216A) ERR-6 was added from main Reference.
             ERR-S was deleted, proper statistical error is given
             in Subent 007 (as in Table 2 of main reference).
-            ERR-4, ERR-5 were moved in free text.
             AV was added - averaged od several runs of Subent 007.
-ENDBIB              19
+ENDBIB              18
 COMMON               3          3
 ERR-2      ERR-3      ERR-6
 PER-CENT   PER-CENT   PER-CENT
@@ -154,8 +160,8 @@ KEV        KEV        MB         MB
        180.        20.       1.05       0.14
        215.        23.       1.11       0.14
 ENDDATA              8
-ENDSUBENT           36
-SUBENT        22500004   20090216   20090508   20090507       2207
+ENDSUBENT           35
+SUBENT        22500004   20090509   20090901   20090820       2212
 BIB                  3          8
 REACTION  1(20-CA-46(N,0),,EN)   Resonance energy
           2(20-CA-46(N,EL),,WID) Neutron width
@@ -177,16 +183,17 @@ KEV        KEV        KEV        KEV        EV         EV
        28.4       17.4        3.6        2.8        2.4        0.3
 ENDDATA              3
 ENDSUBENT           20
-SUBENT        22500005   20090216   20090508   20090507       2207
-BIB                  3          7
-REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW,DERIV)  Value
+SUBENT        22500005   20090509   20090901   20090820       2212
+BIB                  4          8
+REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW)        Value
             given in data Table is ((SIGMA*V)-AVERAGE)/V-Thermal
             Derived from data measured in this work
+INC-SPECT  .Maxwellian
 STATUS     (TABLE)  From Table 3 of Main Reference
            (DEP,22500002)
            (DEP,22500003)
-HISTORY    (20090216A) FCT was dalated from REACTION.
-ENDBIB               7
+HISTORY    (20090216A) FCT was deleted from REACTION.
+ENDBIB               8
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -231,24 +238,26 @@ KEV        MB
 200.00      1.1483
 250.00      0.97616
 ENDDATA             37
-ENDSUBENT           53
-SUBENT        22500006   20090216   20090508   20090507       2207
-BIB                  2         14
-REACTION  1(20-CA-46(N,G)20-CA-47,,SGV,,FCT/MXW,DERIV)  Value
+ENDSUBENT           54
+SUBENT        22500006   20090509   20090901   20090820       2212
+BIB                  4         16
+REACTION  1(20-CA-46(N,G)20-CA-47,,SGV,,MXW)            Value
              given in data Table is (SIGMA*V)-Average Times
-             Avogadro Number N-A. Units = cm**3/sec/mol .
-          2(20-CA-46(N,G)20-CA-47,,SGV,,RNV/FCT/MXW,DERIV)  Value
+             Avogadro Number Na,  Units = cm**3/sec/mol .
+          2(20-CA-46(N,G)20-CA-47,,SGV,,RNV/MXW)        Value
              given in data Table is (SIGMA*V)-Average Times
-             Avogadro Number  N-A - Compound nucleus part .
+             Avogadro Number  Na, - Compound nucleus part .
              Units = cm**3/sec/mol .
-          3(20-CA-46(N,G)20-CA-47,,SGV,,RV/FCT/MXW,DERIV)  Value
+          3(20-CA-46(N,G)20-CA-47,,SGV,,RV/MXW)        Value
              given in data Table is (SIGMA*V)-Average Times
-             Avogadro Number N-A - 1/V part. Units = cm**3/sec/mol
+             Avogadro Number Na, - 1/V part. Units = cm**3/sec/mol
+INC-SPECT  .Maxwellian
 STATUS     (TABLE)  From Table 3 of Main Reference
            (DEP,22500002)
            (DEP,22500003)
            (DEP,22500004)
-ENDBIB              14
+HISTORY    (20090509U)   FCT/MXW,DERIV changed to MXW
+ENDBIB              16
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -293,16 +302,17 @@ KEV        CM3/S/MOL  CM3/S/MOL  CM3/S/MOL
 200.00       4.3237E+5  6.5971E+4 3.6568E+05
 250.00       4.2095E+5  4.8479E+4 3.6108E+05
 ENDDATA             37
-ENDSUBENT           60
-SUBENT        22500007   20090216   20090508   20090507       2207
-BIB                  5         15
+ENDSUBENT           62
+SUBENT        22500007   20090820   20090901   20090820       2212
+BIB                  6         17
 REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,SPA) Averaged over
                spectrum interval
-ERR-ANALYS (ERR-2)  Ge-detector efficiency error
-           (ERR-3)  Gamma-rays intensity determination error for
+INC-SPECT  .Neutron energy width
+ERR-ANALYS (ERR-2)   Ge-detector efficiency error
+           (ERR-3)   Gamma-rays intensity determination error for
                     Ca-47 .
-            ERR-4   Divergence neutron beam error - 2.-5.%.
-            ERR-5   Sample weight error < 5% .
+           (ERR-4,2.,5.) Divergence neutron beam error - 2.-5.%.
+           (ERR-5,,0.5)   Sample weight error < 5% .
            (EN-ERR) Error in energy spectrum center
            (ERR-6) Error of gamma-ray intensity per decay for
                    Au-198 - 0.1%.
@@ -310,12 +320,13 @@ MISC-COL   (MISC1) Mass of Au back side, mg.
            (MISC2) Mass of Ca-C-O3, mg.
            (MISC3) Mass of Au front side, mg.
 STATUS     (TABLE)   Data from Table 2 of Main Reference
-HISTORY    (20090216C)
-ENDBIB              15
-COMMON               5          3
-ERR-2      ERR-3      ERR-4      ERR-5      ERR-6
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-         2.        12.         7.        0.5   0.1
+HISTORY    (20090216C) M.M.
+           (20090509U) INC-SPECT added, ERR-3 changed to ERR-IDD
+ENDBIB              17
+COMMON               3          3
+ERR-2      ERR-3      ERR-6
+PER-CENT   PER-CENT   PER-CENT
+         2.        12.        0.1
 ENDCOMMON            3
 DATA                 8         18
 EN-MEAN    EN-ERR     DATA       ERR-S      ERR-T      MISC1
@@ -359,20 +370,21 @@ SEE TEXT   SEE TEXT
        215.       23.    0.92      5.20       14.1       16.670
   75.298     16.663
 ENDDATA             40
-ENDSUBENT           64
-SUBENT        22500008   20090216   20090508   20090507       2207
-BIB                  7         20
-REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW/AV)
+ENDSUBENT           66
+SUBENT        22500008   20090820   20090901   20090820       2212
+BIB                  8         22
+REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW)
+INC-SPECT  .Maxwellian
 SAMPLE      Au back side   Ca-CO3  Au front side (in mg)
              16.620         75.298  16.630
              16.460         60.118  16.433
             Two measurements using different masses of samples
             Ca-CO3 and Au (back and front) were done.
-ERR-ANALYS (ERR-2) Ge-detector efficiency error
-           (ERR-3) Gamma-rays intensity determination error for
+ERR-ANALYS (ERR-2)   Ge-detector efficiency error
+           (ERR-3)   Gamma-rays intensity determination error for
                    Ca-47.
-            ERR-4 -Divergence neutron beam error- 2.-5. %.
-            ERR-5 -Sample weight error < 0.5%.
+           (ERR-4,2.,5.) Divergence neutron beam error - 2.-5.%.
+           (ERR-5,,0.5)   Sample weight error < 5% .
            (ERR-S) Statistical error
            (ERR-6) Error of gamma-ray intensity per decay for
                    Au-198 - 0.1%.
@@ -381,12 +393,13 @@ MISC-COL   (MISC1) Mass of Au back side, mg.
            (MISC2) Mass of Ca-C-O3, mg.
            (MISC3) Mass of Au front side, mg.
 STATUS     (TABLE)   Data from Table 2 of Main Reference
-HISTORY    (20090216C)
-ENDBIB              20
+HISTORY    (20090216C)  M.M.
+           (20090509U)  ERR-3 changed to ERR-IDD
+ENDBIB              22
 COMMON               5          3
 KT         ERR-2      ERR-3      ERR-6      ERR-T
 KEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT
-25.                 2.        12.   0.1       13.0
+25.                 2.       12.    0.1       13.0
 ENDCOMMON            3
 DATA                 5          2
 DATA       ERR-S      MISC1      MISC2      MISC3
@@ -394,5 +407,5 @@ MB         PER-CENT   SEE TEXT   SEE TEXT   SEE TEXT
  4.807      0.32       16.620     75.298     16.630
  4.423      0.61       16.460     60.118     16.433
 ENDDATA              4
-ENDSUBENT           33
+ENDSUBENT           35
 ENDENTRY             8

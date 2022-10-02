@@ -1,6 +1,6 @@
-ENTRY            22959   20070717   20071002   20071002       2186
-SUBENT        22959001   20070717   20071002   20071002       2186
-BIB                 15         68
+ENTRY            22959   20090626   20090901   20090818       2213
+SUBENT        22959001   20090626   20090901   20090818       2213
+BIB                 15         70
 TITLE      .Stellar (n, GAMMA) Cross Section of 62Ni
 AUTHOR     (H.Nassar, M.Paul, I.Ahmad, D.Berkovits, M.Bettan,
            P.Collon, S.Dababneh, S.Ghelberg, J.P.Greene, A.Heger,
@@ -27,15 +27,16 @@ INSTITUTE  (2GERKFK)   Dababneh, Heil, Kaeppeler, Plag. Forsch-
               University of Notre Dame, Notre Dame, Indiana, USA.
            (1USALAN)   Heger, Reifarth. Los Alamos National
               Laboratory, Los Alamos, New Mexico, USA.
-REFERENCE  (J,PRL,94,092504,2005)  Main reference, data are given
-REL-REF    (N,,H.BEER+,J,PR/C,21,534,1980) Experimental details
-           (R,10608006,G.H.E.SIMS+,J,JIN,32,2839,197010)  Ni-62
+REFERENCE  (J,PRL,94,092504,2005) Main reference (28.4 +/- 2.8 mb)
+           (W,PAUL,20090626) M.Paul, Revised data(25.7 +/- 2.6 mb)
+REL-REF    (N,,H.Beer+,J,PR/C,21,534,1980) Experimental details
+           (R,10608006,G.H.E.Sims+,J,JIN,32,2839,197010)  Ni-62
                (n,gamma) sigma for thermal energy
-           (R,10608009,G.H.E.SIMS+,J,JIN,32,2839,197010)  Ni-62
+           (R,10608009,G.H.E.Sims+,J,JIN,32,2839,197010)  Ni-62
                (n,gamma) RES.integral for 0.5 eV min-energy
-           (R,20625016,E.GRYNTAKIS+,J,JRC,69,131,1978)  Ni-64
+           (R,20625016,E.Gryntakis+,J,JRC,69,131,1978)  Ni-64
                (n,gamma) sigma for thermal energy
-           (R,20625017,E.GRYNTAKIS+,J,JRC,69,131,1978)  Ni-64
+           (R,20625017,E.Gryntakis+,J,JRC,69,131,1978)  Ni-64
                (n,gamma) RES.integral for 0.5 eV min-energy
 FACILITY   (VDG,2GERKFK)  3.7 MV Van de Graaff accelerator.
                    Proton energy is 1911 keV, just above reaction
@@ -68,8 +69,9 @@ ASSUMED    (ASSUM1,28-NI-62(N,G)28-NI-63,,SIG,,MXW) For E-therm
            (ASSUM3,28-NI-64(N,G)28-NI-65,,SIG,,MXW) For E-therm
            (ASSUM4,28-NI-64(N,G)28-NI-65,,RI) For E-MIN = 0.5 eV
               See references under REL-REF
-HISTORY    (20070717C)   SM
-ENDBIB              68
+HISTORY    (20070717C) SM
+           (20090626A) On. Revised cross sections added
+ENDBIB              70
 COMMON              11          6
 KT-NRM     MONIT      MONIT-ERR  ASSUM1     ASSUM1-ERR ASSUM2
 ASSUM2-ERR ASSUM3     ASSUM3-ERR ASSUM4     ASSUM4-ERR
@@ -78,18 +80,45 @@ B          B          B          B          B
     25.      586.         8.        14.2       0.3       9.6
        3.5       1.52        0.03       0.98        0.3
 ENDCOMMON            6
-ENDSUBENT           78
-SUBENT        22959002   20070717   20071002   20071002       2186
-BIB                  3          3
+ENDSUBENT           80
+SUBENT        22959002   20090626   20090901   20090818       2213
+BIB                  5         12
 REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW)
-STATUS     .Text of main reference
+            Normalized by f(inf) = 1.05 +/- 0.01
+REL-REF    (R,,K.H.Guber,J,PR/C,66,028802,2002)
+            Direct captuer cross section to obtain f(inf)
+           (R,,T.Rauscher+,J,PR/C,71,059903,2005)
+            Erratum of H.Guber et al. (2002)
+STATUS     (TABLE) Text of main reference
+           (PRELM) Evaluation of f(inf) was based on an erroneous
+                   formula (see erratum by T.Rauscher et al.).
+           (SPSDD,22959003) Result with f(inf)=0.95 +/- 0.01
 ERR-ANALYS (DATA-ERR)  Not specified
-ENDBIB               3
+HISTORY    (20090626A) On. REL-REF added and STATUS updated
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          1
 KT         KT-ERR     DATA       DATA-ERR
 KEV        KEV        MB         MB
    25.        0.5        28.4       2.8
 ENDDATA              3
-ENDSUBENT           11
-ENDENTRY             2
+ENDSUBENT           20
+SUBENT        22959003   20090626   20090901   20090818       2213
+BIB                  5          8
+REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW)
+            Normalized by f(inf) = 0.95 +/- 0.01
+REL-REF    (R,,K.Shibata,J,NST,39,1125,2002)
+            JENDL-3.3 capture cross section to obtain f(inf)
+STATUS     (TABLE) E-mail from M.Paul
+ERR-ANALYS (DATA-ERR)  Not specified
+HISTORY    (20090626C) On.
+           (20090626R) On. Received from M.Paul
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 4          1
+KT         KT-ERR     DATA       DATA-ERR
+KEV        KEV        MB         MB
+   25.        0.5        25.7       2.6
+ENDDATA              3
+ENDSUBENT           16
+ENDENTRY             3
