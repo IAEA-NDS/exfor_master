@@ -1,18 +1,24 @@
-ENTRY            12529   20120412   20121203   20121127       1385
-SUBENT        12529001   20120412   20121203   20121127       1385
-BIB                 10         28
-INSTITUTE  (1USAMTR)
+ENTRY            12529   20170713   20171016   20170914       1429
+SUBENT        12529001   20170713   20171016   20170914       1429
+BIB                 11         35
+TITLE      Low-energy neutron fission cross section of Pu-241
+AUTHOR     (T.Watanabe,O.D.Simpson)
 REFERENCE  (J,PR,133,B390,1964)
+           #doi:10.1103/PhysRev.133.B390
            (R,IDO-16995,1964)
            (J,BAP,7,303,1962) data superseded
            (P,IDO-16781,14,1962) data superseded
-AUTHOR     (T.Watanabe,O.D.Simpson)
-TITLE      Low-energy neutron fission cross section of Pu-241.
+INSTITUTE  (1USAMTR)
 FACILITY   (CHOPF,1USAMTR) MTR fast chopper
-METHOD     (TOF) Time-of-flight. 8.5-M flight path
+SAMPLE     (94-PU-241,ENR=0.802)
+           (94-PU-239,ENR=0.082) Each chamber contained a 2x3-
+           in. foil on which was deposited the fissile material
+            (80.2% Pu-241 with contaminant of 8.2% Pu-239) by a
+           painting and firing technique.
+METHOD     (TOF) Time-of-flight. 8.5-m flight path
 DETECTOR   (SCIN) Gas scintillation detector
 MONITOR    (94-PU-241(N,F),,SIG)
-           From the shapes of the total and fission cross section
+           from the shapes of the total and fission cross section
            curves shown in Figs. 1 and 2 (Phys.Rev.133,B390,1964)
            it is evident that the broad 6-eV resonance is
            primarily due to fission. From the resonance parameters
@@ -20,22 +26,23 @@ MONITOR    (94-PU-241(N,F),,SIG)
            scattering and radiative capture cross sections of
            14+4 and 14+7 b, respectively, were calculated at 6 eV,
            using the multilevel formula. Subtracting the
-           calculated value of Sig(n,n), and Sig(n,gamma), from
+           calculated value of sig(n,n), and sig(n,gamma), from
            the measured total cross section of 434+-6 b, one
-           obtains a fission cross section of 406+-10b.
-STATUS     (SCSRS)
+           obtains a fission cross section of 406+-10 b.
+STATUS     (TABLE)
 HISTORY    (19760804T) Translated from SCISRS
-           (19841004A) converted to REACTION formalism
-           (20120412A) SD:Updated to new date formats,lower case.
-                Corrected according to last EXFOR rules and Dict.
+           (19841004A) converted to reaction formalism
+           (20120412A) SD:updated to new date formats,lower case.
+                Corrected according to last exfor rules and dict.
                 Ref. Phys.Rev.133,B390 was added.
-ENDBIB              28
+           (20170713A) BP: Added doi, WP2017-19 updates.
+ENDBIB              35
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
 EV         B          B
- 6.         406.       10.
+         6.       406.        10.
 ENDCOMMON            3
-ENDSUBENT           35
+ENDSUBENT           42
 SUBENT        12529002   20120412   20121203   20121127       1385
 BIB                  2          2
 REACTION   (94-PU-241(N,F),,SIG)
@@ -897,19 +904,21 @@ MEV        B
   2.854E-03  1.196E+01
 ENDDATA            250
 ENDSUBENT          261
-SUBENT        12529005   20120412   20121203   20121127       1385
-BIB                  3          5
-REACTION   (94-PU-241(N,F),,SIG)
+SUBENT        12529005   20170713   20171016   20170914       1429
+BIB                  5          7
+REACTION   (94-PU-241(N,F),,SIG,,,DERIV)
 STATUS     (DEP,12529002) From least squares fit to data.
            (DEP,12529003)
            (DEP,12529004)
 ANALYSIS   From least squares parabolic fit to data
-ENDBIB               5
+ERR-ANALYS (DATA-ERR) No details on sources of uncertainties.
+HISTORY    (20170713A) BP: Added SF9.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
    2.53E-08   9.62E+02    3.8E+01
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 ENDENTRY             5
