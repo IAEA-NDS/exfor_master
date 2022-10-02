@@ -1,24 +1,24 @@
-ENTRY            21936   20080430   20080828   20080828       2198
-SUBENT        21936001   20080430   20080828   20080828       2198
-BIB                 18        117
+ENTRY            21936   20121108   20130812   20130718       2234
+SUBENT        21936001   20121108   20130812   20130718       2234
+BIB                 18        119
 INSTITUTE  (2GERKIG)  Experimental Site
 REFERENCE  (R,GKSS-85-E-11,1985)
            (P,NEANDC(E)-252/U,(5),28,198406)
 AUTHOR     (B.M.Bahal, R.Pepelnik)
-TITLE      -Cross section measurements of Cr,Mn,Fe,Co,Ni for an
+TITLE       Cross section measurements of Cr,Mn,Fe,Co,Ni for an
             accurate determination of these elements in natural
             and synthetic samples using a 14 MeV neutron generator
-FACILITY   (ACCEL) Neutron generator 'KORONA'
+FACILITY   (ACCEL,2GERKIG) Neutron generator 'KORONA'
             Neutron tube with cylindrical acceleration structure.
             Integrated fast pneumatic rabbit system.
-REL-REF    (N,,H.U.Fanger+,J,JRC,61,147,1981)
-           (N,,K.A.Schmidt+,J,AKE,27,159,1981)
-           (N,,J.L.Barreira-Filho+,R,GKSS-81-E-53,1981)
+REL-REF    (I,,H.-U.Fanger+,J,JRC,61,147,1981)
+           (I,,K.A.Schmidt+,J,AKE,27,159,1981)
+           (I,,J.L.Barreira-Filho+,R,GKSS-81-E-53,1981)
              References for facility details.
            (A,,C.M.Lederer+,B,LEDERER-7,,1978) Reference for
              gamma-intensities and their errors estimates.
-INC-SOURCE (D-T)    Intensity=3.E12 n/sec.
-                      Flux=3.10E10 n/cm**2/sec
+INC-SOURCE (D-T)    Intensity=3.x 10**12 n/sec.
+                      Flux=3.10 x 10*10 n/cm**2/sec
                      .N.B. 1MeV variation in EN could change the
                      cross sections by about 100 %.
 INC-SPECT   Neutron spectrum has median at 14.7 MeV, FWHM 600 keV.
@@ -60,7 +60,7 @@ METHOD     (ACTIV) Cyclic activation-for short-lived radioisotopes
             Gamma-spectrum of background measured at 57 600 s.
            (MOMIX) Checks were made concerning the homogeneity
              of the mixtures,were found to be quite homogeneous.
-DETECTOR   (GELI) Closed end coaxial Ge(Li) detector of 98cm**3,
+DETECTOR   (GELI) Closed-end coaxial Ge(Li) detector of 93cm**3,
              relative efficiency=18 % .
            (BF3)   For neutron flux.
 MONITOR    ((MONIT1)13-AL-27(N,P)12-MG-27,,SIG) For short-lived
@@ -72,11 +72,11 @@ ANALYSIS   (SHAPE) Spectrum shape and peak-to-background ratios
             are characteristic for single element analysis.
            (AREA) Peak areas and the background are estimated by
            fitting the gamma-ray peak to asymmetric Gaussian curve
-STATUS      Main reference text and Table 3
+STATUS     (TABLE) Main reference text and Table 3 of GKSS-85-E-11
 CORRECTION -Detector efficiency
            -Neutron flux+flux variation
            -Peak area
-           -G-Intensities. Lederer Table Of Isotopes 7th ed N.Y.78
+           -G-Intensities. Lederer Table Of Isot. 7th ed N.Y.1978
            -Detector source distance=56.5mm,although coincidence
            summing corrections are often small
            -Absorption correction for
@@ -118,7 +118,9 @@ HISTORY    (19850121C) BL
             checked for data values. DATA-ERR was changed into
             ERR-T. Reaction were corrected in Subents 002,005,007,
              011, 025.
-ENDBIB             117
+           (20121108A) SD: REACTION code in Subents 2,5,7,11,25
+                           was changed.
+ENDBIB             119
 COMMON              11          6
 EN         EN-ERR     MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
@@ -127,28 +129,29 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
  1.4700E+01 0.3        1.1300E+02 2.0000E+00 6.8300E+01 1.0000E+00
    0.1       0.2        0.5        3.        3.5
 ENDCOMMON            6
-ENDSUBENT          127
-SUBENT        21936002   20080430   20080828   20080828       2198
-BIB                  5         11
-REACTION   ((24-CR-0(N,X)23-V-52,,SIG,,FCT)=
-           ((24-CR-52(N,P)23-V-52,,SIG)+
-           (24-CR-53(N,N+P)23-V-52,,SIG,,FCT)))
+ENDSUBENT          129
+SUBENT        21936002   20121108   20130812   20130718       2234
+BIB                  5         12
+REACTION   ((24-CR-52(N,P)23-V-52,,SIG)+
+           (24-CR-53(N,X)23-V-52,,SIG,,RAB))
 COMMENT     Data value was defined by authors taking the abundance
              of the first mentioned isotope Cr-52.
 DECAY-DATA (23-V-52,226.SEC,DG,1434.,1.)
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+                   NEANDC(E)-252/U,(5),28,Table 1.
 HISTORY    (19850121C)
            (19850423E)
            (20080430A) M.M. First line in REACTION was added.
             "FCT" was added in last line of REACTION.
-ENDBIB              11
+           (20121108A) SD: REACTION code was changed.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  8.5700E+01 2.6000E+00
 ENDDATA              3
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        21936003   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (24-CR-53(N,P)23-V-53,,SIG)
@@ -179,27 +182,28 @@ MB         MB
  2.7200E+01 1.9000E+00
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936005   20080430   20080828   20080828       2198
-BIB                  5         11
-REACTION   ((24-CR-0(N,X)22-TI-51,,SIG,,FCT)=
-           ((24-CR-54(N,A)22-TI-51,,SIG)+
-           (24-CR-53(N,HE3)22-TI-51,,SIG,,FCT)))
+SUBENT        21936005   20121108   20130812   20130718       2234
+BIB                  5         12
+REACTION   ((24-CR-54(N,A)22-TI-51,,SIG)+
+           (24-CR-53(N,X)22-TI-51,,SIG,,RAB))
 DECAY-DATA (22-TI-51,348.SEC,DG,320.,0.94)
 COMMENT     Data value was defined by authors taking the abundance
              of the first mentioned isotope.
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+                   NEANDC(E)-252/U,(5),28,Table 1.
 HISTORY    (19850121C)
            (19850423E)
            (20080430A) M.M. First line in REACTION was added.
             "FCT" was added in last line of REACTION.
-ENDBIB              11
+           (20121108A) SD: REACTION code was changed.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  1.2600E+01 5.0000E-01
 ENDDATA              3
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        21936006   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (24-CR-54(N,P)23-V-54,,SIG)
@@ -215,27 +219,28 @@ MB         MB
  1.6400E+01 5.0000E-01
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936007   20080430   20080828   20080828       2198
-BIB                  5         11
-REACTION   ((24-CR-0(N,X)24-CR-51,,SIG,,FCT)=
-           ((24-CR-52(N,2N)24-CR-51,,SIG)+
-           (24-CR-50(N,G)24-CR-51,,SIG,,FCT)))
+SUBENT        21936007   20121108   20130812   20130718       2234
+BIB                  5         12
+REACTION   ((24-CR-52(N,2N)24-CR-51,,SIG)+
+           (24-CR-50(N,G)24-CR-51,,SIG,,RAB))
 DECAY-DATA (24-CR-51,2.39E+06SEC,DG,320.,0.102)
 COMMENT    Data value was defined by authors taking the abundance
             of the first mentioned isotope Cr-52.
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+                   NEANDC(E)-252/U,(5),28,Table 1.
 HISTORY    (19850121C)
            (19850423E)
            (20080430A) M.M. First line in REACTION was added.
             "FCT" was added in last line of REACTION.
-ENDBIB              11
+           (20121108A) SD: REACTION code was changed.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  3.5600E+02 2.4000E+01
 ENDDATA              3
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        21936008   20080430   20080828   20080828       2198
 BIB                  5          7
 REACTION   (25-MN-55(N,A)23-V-52,,SIG)
@@ -288,28 +293,29 @@ MB         MB
  7.4100E+02 2.2000E+01
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936011   20080430   20080828   20080828       2198
-BIB                  5         12
-REACTION   ((26-FE-0(N,X)25-MN-56,,SIG,,FCT)=
-           (26-FE-56(N,P)25-MN-56,,SIG)+
-           (26-FE-57(N,N+P)25-MN-56,,SIG,,FCT))
+SUBENT        21936011   20121108   20130812   20130718       2234
+BIB                  5         13
+REACTION   ((26-FE-56(N,P)25-MN-56,,SIG)+
+           (26-FE-57(N,X)25-MN-56,,SIG,,RAB))
 DECAY-DATA (25-MN-56,9284.SEC,DG,847.,0.989,DG,1811.,0.272,
             DG,2113.,0.143)
 COMMENT     Data value was defined by authors taking the abundance
              of the first mentioned isotope Fe-56.
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+                   NEANDC(E)-252/U,(5),28,Table 1.
 HISTORY    (19850121C)
            (19850423E)
            (20080430A) M.M. First line in REACTION was added.
             "FCT" was added in last line of REACTION.
-ENDBIB              12
+           (20121108A) SD: REACTION code was changed.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  1.1100E+02 5.5000E+00
 ENDDATA              3
-ENDSUBENT           20
+ENDSUBENT           21
 SUBENT        21936012   20080430   20080828   20080828       2198
 BIB                  4          6
 REACTION   (26-FE-57(N,P)25-MN-57,,SIG)
@@ -341,21 +347,23 @@ MB         MB
  7.9000E+00 7.0000E-01
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936014   20080430   20080828   20080828       2198
-BIB                  4          5
-REACTION   (26-FE-58(N,P)25-MN-58,,SIG)
+SUBENT        21936014   20121108   20130812   20130718       2234
+BIB                  4          7
+REACTION   (26-FE-58(N,P)25-MN-58-M,,SIG)
 DECAY-DATA (25-MN-58-G,65.SEC,DG,811.,0.822)
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+                   NEANDC(E)-252/U,(5),28,Table 1.
 HISTORY    (19850121C)
            (19850423E)
-ENDBIB               5
+           (20121108A) SD: "-M" was added to SF4
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  1.3600E+01 7.0000E-01
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 SUBENT        21936015   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (26-FE-54(N,P)25-MN-54,,SIG)
@@ -402,27 +410,33 @@ MB         MB
  3.0200E+01 1.5000E+00
 ENDDATA              3
 ENDSUBENT           14
-SUBENT        21936018   20080430   20080828   20080828       2198
-BIB                  6         11
+SUBENT        21936018   20121108   20130812   20130718       2234
+BIB                  6         17
 REACTION   (27-CO-59(N,G)27-CO-60,,SIG)
 DECAY-DATA (27-CO-60,1.66E+08SEC,DG,1173.,1.,DG,1333.,1.)
 ANALYSIS    Value refers to the sum of groundstate and isomeric
             state cross-section.
             The value will increase with moisture enhancement.
-STATUS     (TABLE) Main Reference Table 3
-COMMENT     Of E.Dupont(CEA,Saclay). Data value is about 100 times
-            too large.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+CRITIQUE    Of E.Dupont(CEA,Saclay,2008-04). Data value is about
+             100 times too large.
+           A.Koning/V.Semkova (2013-03-22) This should be around
+           1 mb. The cross section is very sensitive to the low
+           energy background neutrons which must be determined
+           experimentally.
 HISTORY    (19850122C)
            (19850423E)
            (20080430A) M.M. COMMENT was added.
-ENDBIB              11
+           (20121108U) SD: COMMENT -> CRTITIQUE and additional
+           critique was added.
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  1.1900E+02 8.0000E+00
 ENDDATA              3
-ENDSUBENT           19
+ENDSUBENT           25
 SUBENT        21936019   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (27-CO-59(N,2N)27-CO-58-G,,SIG)
@@ -517,27 +531,30 @@ MB         MB
  1.4600E+01 9.0000E-01
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936025   20080430   20080828   20080828       2198
-BIB                  5         11
-REACTION   ((28-NI-0(N,P)27-CO-61,,SIG,,FCT)=
-           ((28-NI-61(N,P)27-CO-61,,SIG)+
-           (28-NI-62(N,N+P)27-CO-61,,SIG,,FCT)))
+SUBENT        21936025   20121108   20130812   20130718       2234
+BIB                  5         14
+REACTION   ((28-NI-61(N,P)27-CO-61,,SIG)+
+           (28-NI-62(N,X)27-CO-61,,SIG,,RAB))
+            The value is calculated taking the abundance of the
+            first mentioned isotope
 DECAY-DATA (27-CO-61,5940.SEC,DG,67.,0.86)
 COMMENT    Data value was defined by authors taking the abundance
             of the first mentioned isotope.
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+STATUS     (TABLE) GKSS-85-E-11, Table 3.
+                   NEANDC(E)-252/U,(5),28,Table 1.
 HISTORY    (19850122C)
            (19850423E)
            (20080430A) M.M. First line in REACTION was added.
             "FCT" was added in last line of REACTION.
-ENDBIB              11
+           (20121108A) SD: REACTION code was changed.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  8.4000E+01 4.0000E+00
 ENDDATA              3
-ENDSUBENT           19
+ENDSUBENT           22
 SUBENT        21936026   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (28-NI-60(N,P)27-CO-60-M,,SIG)

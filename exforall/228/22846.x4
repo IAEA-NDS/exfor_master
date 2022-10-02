@@ -1,6 +1,6 @@
-ENTRY            22846   20101105   20110803   20110721       2225
-SUBENT        22846001   20101105   20110803   20110721       2225
-BIB                 21         89
+ENTRY            22846   20130112   20130812   20130718       2234
+SUBENT        22846001   20130112   20130812   20130718       2234
+BIB                 21         94
 TITLE      .Neutron capture studies on unstable 135-Cs for
             nucleosynthesis and transmutation
 AUTHOR     (N.Patronis,S.Dababneh,P.A.Assimakopoulos,R.Gallino,
@@ -13,7 +13,7 @@ INSTITUTE  (2GERKFK) Dababneh, Gallino, Heil, Kaeppeler, Plag
            (1USAORL) Koehler
            (1USALAN) Sample preparation site
            (2GERMNZ) Experimental site
-REFERENCE  (J,PR/C,69,(2),025803,200402)  Main reference, data are
+REFERENCE  (J,PR/C,69,025803,200402)  Main reference, data are
                                           given
            #doi:10.1103/PhysRevC.69.025803
 REL-REF    (I,,G.Duchene+,J,NIM/A,432,90,1999) Description of the
@@ -76,8 +76,12 @@ SAMPLE     .Cs-135 sample was prepared on a high resolution mass
             sample mass.
 CORRECTION .Corrections were made for neutron flux variation and
             for decay data corrections
-ADD-RES    (DECAY,THEO)
-ERR-ANALYS .If present, TOTAL ERRORS are given
+ADD-RES    (DECAY)   Half-life of Cs-136 was measured.
+            The Maxwellian-averaged neutron capture cross section
+            for thermal energies characteristic of the He burning
+            scenarios for Cs-134, 135,137,138 were included in
+            Tbl.VIII of PR/C,69,025803,2004
+ERR-ANALYS .If present, total errors are given
            (ERR-1,,0.5) Max error of the time factor
            (ERR-2) Cs-135 thermal cross section error
            (ERR-3) Cs-135 resonance integral effect error
@@ -87,10 +91,11 @@ ERR-ANALYS .If present, TOTAL ERRORS are given
            (ERR-HL) Cs-136-G Half-Life error
            (ERR-IDD) Cs-136-G gamma-intensity error
 HISTORY    (20041206C)  SM
-           (20101105A) SD: author's name corrected.
-              ( S.Dababrich => S. Dababneh)
-           DOI for Phys.Rev. added. ERR-1 deleted from COMMON
-ENDBIB              89
+           (20101105A) SD: DOI for Phys.Rev. added. Author's name
+           corrected. ERR-1 deleted from COMMON
+           (20130112A) SD: EN-MEAN -> KT in Subent 6. Subents 7-10
+            were deleted (No data measured in this experiment).
+ENDBIB              94
 COMMON              17          9
 EN-NRM     MONIT2     MONIT2-ERR MONIT3     MONIT3-ERR MONIT4
 MONIT4-ERR ASSUM3     ASSUM3-ERR ASSUM4     ASSUM4-ERR ERR-HL
@@ -102,7 +107,7 @@ NO-DIM     PER-CENT   PER-CENT   PER-CENT   PER-CENT
      0.1       1717.         50.       300.        20.     0.3
       0.006  3.6            0.1       2.1        1.8
 ENDCOMMON            9
-ENDSUBENT          102
+ENDSUBENT          107
 SUBENT        22846002   20041206              20050926       0000
 BIB                  7         14
 REACTION   (55-CS-135(N,G)55-CS-136,,SIG,,SPA)
@@ -223,17 +228,19 @@ KEV        MB         MB
   30.         175.       15.
 ENDDATA              3
 ENDSUBENT           24
-SUBENT        22846006   20041206              20050926       0000
-BIB                  3          5
+SUBENT        22846006   20130112   20130812   20130718       2234
+BIB                  5          7
 REACTION   (55-CS-135(N,G)55-CS-136,,SIG,,MXW,DERIV) Averaged
                   over Maxwell spectrum
 ANALYSIS   .Calculated by averaging of the point data
-STATUS     .From Table VIII of main reference
+ERR-ANALYS (ERR-T) Total error.
+STATUS     (TABLE) .From Table VIII of PR/C,69,025803
            (DEP,22846004)
-ENDBIB               5
+HISTORY    (20130112A) SD: EN-MEAN -> KT.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         12
-EN-MEAN    DATA       ERR-T
+KT         DATA       ERR-T
 KEV        MB         MB
    5.          522.         52.
    8.          383.         36.
@@ -248,104 +255,9 @@ KEV        MB         MB
   80.           88.0         6.2
  100.           78.7         5.7
 ENDDATA             14
-ENDSUBENT           24
-SUBENT        22846007   20041206              20050926       0000
-BIB                  3          4
-REACTION   (55-CS-133(N,G)55-CS-134,,SIG,,MXW,DERIV) Averaged
-                  over Maxwell spectrum
-ANALYSIS   .Calculated by averaging of the point data
-STATUS     .From Table VIII of main reference
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 3         11
-EN-MEAN    DATA       ERR-T
-KEV        MB         MB
-   5.         1365.         56.
-  10.          931.         38.
-  15.          745.         31.
-  20.          636.         26.
-  25.          563.         23.
-  30.          509.         21.
-  40.          434.         18.
-  50.          384.         16.
-  60.          317.         14.
-  80.          296.         12.
- 100.          262.         11.
-ENDDATA             13
-ENDSUBENT           22
-SUBENT        22846008   20041206              20050926       0000
-BIB                  3          4
-REACTION   (55-CS-134(N,G)55-CS-135,,SIG,,MXW,DERIV) Averaged
-                  over Maxwell spectrum
-ANALYSIS   .Calculated by averaging of the point data
-STATUS     .From Table VIII of main reference
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 3         12
-EN-MEAN    DATA       ERR-T
-KEV        MB         MB
-   5.         2421.        218.
-   8.         1765.        159.
-  10.         1520.        137.
-  15.         1159.        104.
-  20.          955.         86.
-  25.          820.         74.
-  30.          724.         65.
-  40.          595.         53.
-  50.          509.         46.
-  60.          450.         41.
-  80.          372.         33.
- 100.          323.         29.
-ENDDATA             14
-ENDSUBENT           23
-SUBENT        22846009   20041206              20050926       0000
-BIB                  3          4
-REACTION   (55-CS-136(N,G)55-CS-137,,SIG,,MXW,DERIV) Averaged
-                  over Maxwell spectrum
-ANALYSIS   .Calculated by averaging of the point data
-STATUS     .From Table VIII of main reference
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 2         12
-EN-MEAN    DATA
-KEV        MB
-   5.          558.
-   8.          408.
-  10.          352.
-  15.          269.
-  20.          222.
-  25.          191.
-  30.          169.
-  40.          138.
-  50.          118.
-  60.          104.
-  80.           85.
- 100.           73.
-ENDDATA             14
-ENDSUBENT           23
-SUBENT        22846010   20041206              20050926       0000
-BIB                  3          4
-REACTION   (55-CS-137(N,G)55-CS-138,,SIG,,MXW,DERIV) Averaged
-                  over Maxwell spectrum
-ANALYSIS   .Calculated by averaging of the point data
-STATUS     .From Table VIII of main reference
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 2         12
-EN-MEAN    DATA
-KEV        MB
-   5.           15.
-   8.           11.
-  10.            8.9
-  15.            6.6
-  20.            5.3
-  25.            4.5
-  30.            4.0
-  40.            3.2
-  50.            2.8
-  60.            2.5
-  80.            2.1
- 100.            1.8
-ENDDATA             14
-ENDSUBENT           23
+ENDSUBENT           26
+NOSUBENT      22846007   20130112   20130812   20130718       2234
+NOSUBENT      22846008   20130112   20130812   20130718       2234
+NOSUBENT      22846009   20130112   20130812   20130718       2234
+NOSUBENT      22846010   20130112   20130812   20130718       2234
 ENDENTRY            10

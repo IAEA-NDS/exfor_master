@@ -1,6 +1,6 @@
-ENTRY            21690   20101117   20110803   20110721       2225
-SUBENT        21690001   20101117   20110803   20110721       2225
-BIB                 13         59
+ENTRY            21690   20121108   20130812   20130718       2234
+SUBENT        21690001   20121108   20130812   20130718       2234
+BIB                 13         60
 INSTITUTE  (2GERKFK) K.W., J.W., F.K.
            (2ITYUBO) G.R, F.F.
 REFERENCE  (J,NSE,81,(3),396,198207)
@@ -11,8 +11,8 @@ REFERENCE  (J,NSE,81,(3),396,198207)
            (P,KFK-2868,24,197910) Abstract, no data given.
 AUTHOR     (K.Wisshak,J.Wickenhauser,F.Kaeppeler,
             G.Reffo,F.Fabbri)
-TITLE      -The isomeric ratio in thermal and fast neutron
-            of americium-241.
+TITLE       The isomeric ratio in thermal and fast neutron
+            capture of americium-241
 FACILITY   (REAC,2GERKFK) The Karlsruhe FR2 reactor.
            (VDG,2GERKFK) 3 MV Van de Graaff accelerator.
 INC-SOURCE (REAC ) Thermal monoenergetic neutrons at 14.75
@@ -41,17 +41,9 @@ DETECTOR   (MAGSP) A mini orange spectrometer consisting of a
             filter of permanent magnets and a Si(Li)-detector
             for energy analysis.
 PART-DET   (B-   ) Betas.
-STATUS     .Subentries 2 3 and 4 contain superseded data from
-            the KFK report. Subentries 5 and 6 contain data taken
-            from tables 3 and 4 in the Nucl.Sci.&Eng.81,396,1982.
-HISTORY    (19801205C) CN.
-           (19801218E)
-           (19820913A) A.P.T. Final report published.
-           (19820921E)
-           (19830418U) A.P.T. Subwork 6 corrected.
-           (19830429E)
-           (20101117A) SD:Updated to new date formats,lower case.
-                corrected according to last EXFOR rules and Dict.
+STATUS     (TABLE) .Subentries 2 3 and 4 contain superseded data
+            from the KFK report. Subentries 5 and 6 contain data
+            taken from tables 3 and 4 in the Nucl.Sci.&Eng.81,396
 CORRECTION .Background counts, due principally to conversion
             electrons from Am-241 decay.
            .Beta particle transmission factors for the magnetic
@@ -60,9 +52,18 @@ CORRECTION .Background counts, due principally to conversion
             threshold.
            .Difference in neutron flux incident on Am-241 and Au
             samples.
-ENDBIB              59
+HISTORY    (19801205C) CN.
+           (19801218E)
+           (19820913A) A.P.T. Final report published.
+           (19820921E)
+           (19830418U) A.P.T. Subwork 6 corrected.
+           (19830429E)
+           (20101117A) SD:Updated to new date formats,lower case.
+                corrected according to last EXFOR rules and Dict.
+           (20121108A) SD: DECAY-DATA was added in Subents 5,6
+ENDBIB              60
 NOCOMMON             0          0
-ENDSUBENT           62
+ENDSUBENT           63
 SUBENT        21690002   20101117   20110803   20110721       2225
 BIB                  4          9
 REACTION   ((95-AM-241(N,G)95-AM-242-G,,SIG)/
@@ -119,15 +120,16 @@ ENDBIB              14
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT           18
-SUBENT        21690005   20101117   20110803   20110721       2225
-BIB                  5         26
+SUBENT        21690005   20121108   20130812   20130718       2234
+BIB                  6         28
 REACTION   ((95-AM-241(N,G)95-AM-242-G,,SIG)/
            (79-AU-197(N,G)79-AU-198,,SIG))
+DECAY-DATA (95-AM-242-G,16.HR)
 STATUS     (TABLE) .Data taken from tables 3 and 4 in the
                                        Nucl.Sci.&Eng.81,396,1982.
 ERR-ANALYS (ERR-T) Total error.
            (ERR-S) Total statistical error for Am-241 and Au
-                   sample.
+                   samples.
            (ERR-1) Quadratic sum of errors in Am-241 and gold
                    sample masses.
            (ERR-2) Quadratic sum of errors in time dependence and
@@ -147,7 +149,8 @@ FLAG       (1.) sample was 251.0 mu-g, gold - 0.86 mu-g
 HISTORY    (19820914C) A.P.T.
            (19820921E)
            (20101117A) SD: FLAG added.
-ENDBIB              26
+           (20121108A) SD: DECAY-DATA was added.
+ENDBIB              28
 NOCOMMON             0          0
 DATA                17          4
 EN         EN-RSL     +EN-RSL    -EN-RSL    DATA       ERR-T
@@ -169,12 +172,13 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT   NO-DIM
  2.6000E+00 1.1000E+00 7.1000E-01 1.8000E+00 2.5000E+00 3.0000E+00
  9.0000E-01 3.6000E+00 1.5000E+00 5.0000E-01 1.0
 ENDDATA             18
-ENDSUBENT           49
-SUBENT        21690006   20101117   20110803   20110721       2225
-BIB                  7         40
+ENDSUBENT           51
+SUBENT        21690006   20121108   20130812   20130718       2234
+BIB                  9         51
 REACTION  1(95-AM-241(N,G)95-AM-242-G/T,,SIG/RAT)
-          2((95-AM-241(N,G)95-AM-242,,SIG)/
-           (79-AU-197(N,G)79-AU-198,,SIG))
+          2((79-AU-197(N,G)79-AU-198,,SIG)/
+           (95-AM-241(N,G)95-AM-242,,SIG))
+DECAY-DATA (95-AM-242-G,16.HR)
 ASSUMED    (ASSUM1,95-AM-241(N,G)95-AM-242,,SIG)
             The value at 14.75 milli-eV was extrapolated,
             assuming 1/V dependence, from the 2200 m/s value
@@ -202,7 +206,14 @@ REL-REF    (R,,B.Goel+,R,BNL-50991,177,1978)
            (R,,Wisshak+,J,NSE,76,148,1980)
            (R,,L.W.Weston+,J,NSE,61,356,1976)
            (R,,D.B.Gayther+,C,77KIEV,3,3,1973)
+           (R,,S.F.Mughabghab+,R,BNL-325,1973)  "Neutron Cross
+           Sections, Resonance Parameters," BNL-325, 3rd ed.,
+           Vol. 1, Brookhaven National Laboratory (1973).
 COMMENT    .The data for the two samples at 29 keV are identical.
+ADD-RES    The resonance scheme in ref.(see S.F.Mughabghab et.al.
+           BNL-325) allows authors to deduce an experimental
+           value <G>." = 41.5 +- 7 meV, which is an average over
+           three resonances of unknown spin and parity.
 STATUS     (DEP,21690005) Data taken from tables 2 3 and 4
            (TABLE)        in the Nucl.Sci.Eng.81,396,1982.
 HISTORY    (19820914C) A.P.T.
@@ -212,7 +223,10 @@ HISTORY    (19820914C) A.P.T.
            (19830429E)
            (20101117A) SD: MISC moved to REACTION 2.
             Comments from ASSUMED are added to REL-REF
-ENDBIB              40
+           (20121108A) SD: DECAY-DATA was added. Second REACTION
+            code was corrected (nominator and denominator were
+            exchanged)
+ENDBIB              51
 NOCOMMON             0          0
 DATA                10          3
 EN         EN-RSL     +EN-RSL    -EN-RSL    DATA      1DATA-ERR  1
@@ -226,5 +240,5 @@ B          B          NO-DIM     PER-CENT
  2.9000E+04            8.0000E+03 1.0000E+04 6.5000E-01 5.0000E-02
  5.5500E-01 2.3200E+00 2.3900E-01 5.6000E+00
 ENDDATA             10
-ENDSUBENT           55
+ENDSUBENT           66
 ENDENTRY             6

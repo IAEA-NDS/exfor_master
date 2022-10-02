@@ -1,42 +1,48 @@
-ENTRY            22493   20101102   20110803   20110721       2225
-SUBENT        22493001   20101102   20110803   20110721       2225
-BIB                 16         45
+ENTRY            22493   20121223   20130812   20130718       2234
+SUBENT        22493001   20121223   20130812   20130718       2234
+BIB                 17         52
 TITLE      .High resolution inelastic scattering cross sections
             in 27Al and 23Na
 AUTHOR     (S.Kopecky,R.Shelley,H.Maerten,J.Wartena,H.Weigmann)
 INSTITUTE  (2ZZZGEL)  Kopecky, Shelley, Weigmann, Wartena
            (2GERDRE)  Maertens
-REFERENCE  (C,97TRIEST,1,523,199705)  Main Reference, Graphs are
-             Given. Experimental Details are to be Found in -
+REFERENCE  (C,97TRIEST,1,523,199705)  Main reference, graphs are
+             given. Experimental details are to be found in -
              IRMM-Report GE/R/ND/02/94, 1994, Institute of
              Reference Materials and Measurements, Geel, Belgium
            (W,KOPECKY,200011) Data for 27Al obtained via Internet
            (W,KOPECKY,20001218) Data for 27Al and 23Na elastic
              angular differential obtained via Internet
 FACILITY   (LINAC,2ZZZGEL) Pulsed Geel Linear Accelerator- GELINA,
-              Electron Beam Energy is 140 MeV, Averaged Electron
-              Current 60 Micro-Amp, Electron Bursts Duration 1 ns,
-              Repetition Rate 800 Hz
+              electron beam energy is 140 MeV, averaged electron
+              current 60 micro-Amp, electron bursts duration 1 ns,
+              repetition rate 800 Hz
 INC-SOURCE (PHOTO)  Mercury cooled rotary U target as a source of
                     white neutron spectrum
-INC-SPECT   .26.5 M Downstream the beam two filters of Pb and U
+INC-SPECT   .26.5 m downstream the beam two filters of Pb and U
              were inserted to reduce gamma-flash intensity
 METHOD     (TOF)  Time-of-Flight for determination of neutron
               energy, using the electron beam reaching Uranium
               target as a start signal and gamma ray detection as
-              a stop signal. flight base 400 m
-MONITOR    (92-U-235(N,F),,SIG)
-           (5-B-10(N,INL)5-B-10,PAR,SIG,G)
+              a stop signal, flight base 400 m
+MONITOR    (92-U-235(N,F),,SIG) - Approximately 1 m downstream a
+              235U fission chamber is monitoring the neutron flux
+              continuously
+ANALYSIS   (MLA) Data analysis was performed with the help of
+               'SAMMY' code which uses a Multi-Level Breit-Wigner
+               R-Matrix in the Reich-Moore Approximation
+            The experimental setup and the data processing
+            procedure where checked with a measurement of the
+            10B(n,n1+gamma) cross section.
+REL-REF    (A,,,3,ENDF/B-VI,,1990) The derived data are in good
+            agreement with the values given by ENDF/B-VI.
 DETECTOR   (STANK)  Eight 2*2 inch NE-213 scintillators are used
                     as gamma detectors
            (FISCH)  U-235 fission chamber for neutron flux
                     monitoring
-ANALYSIS   (MLA) Data analysis was performed with the help of
-               'Sammy' code which uses a Multi-Level Breit-Wigner
-               R-Matrix in the Reich-Moore Approximation
 PART-DET   (G,N)
-CORRECTION .No Information
-ERR-ANALYS (DATA-ERR) No Information
+CORRECTION .No information
+ERR-ANALYS (DATA-ERR) No information
 STATUS     (TABLE) Data were obtained from Dr. S.Kopecky
 HISTORY    (20001120C)   + +  Compiled by S.M.
            (20001218A)   + +  New Data Added
@@ -46,9 +52,10 @@ HISTORY    (20001120C)   + +  Compiled by S.M.
            (20101102A) SD: PAR in SF5 of REACTION keyword and
            LVL-NUMB=1 were deleted from Subent 004
            Author's name corrected: H.Maertens => H.Maerten
-ENDBIB              45
+           (20121223A) SD: Units of E-LVL corrected in Subent 3.
+ENDBIB              52
 NOCOMMON             0          0
-ENDSUBENT           48
+ENDSUBENT           55
 SUBENT        22493002   20001221   20030506   20050926       0000
 BIB                  5          5
 REACTION   (13-AL-27(N,INL)13-AL-27,PAR,SIG)
@@ -617,17 +624,18 @@ MEV        MEV        B          B
     2.25017      .0032 .39846E-01 .14829E-01
 ENDDATA            552
 ENDSUBENT          566
-SUBENT        22493003   20001221   20030506   20050926       0000
-BIB                  5          5
+SUBENT        22493003   20121223   20130812   20130718       2234
+BIB                  6          6
 REACTION   (13-AL-27(N,INL)13-AL-27,PAR,SIG)
-SAMPLE     .No Information
-EN-SEC     (E-LVL,13-AL-27)  2-Nd Excitation Level
+SAMPLE     .No information
+EN-SEC     (E-LVL,13-AL-27)  2-nd excitation Level
 LEVEL-PROP (13-AL-27,E-LVL=1.015,SPIN=0.5,PARITY=+1.)
 STATUS     (APRVD)  S.Kopecky, 2000-11-15
-ENDBIB               5
+HISTORY    (20121223A) SD: Units of E-LVL corrected
+ENDBIB               6
 COMMON               1          3
 E-LVL
-KEV
+MEV
       1.015
 ENDCOMMON            3
 DATA                 4        635
@@ -1269,7 +1277,7 @@ MEV        MEV        B          B
     2.24698     .00319     .14428 .10367E-01
     2.25017      .0032     .15039 .10579E-01
 ENDDATA            637
-ENDSUBENT          651
+ENDSUBENT          652
 SUBENT        22493004   20101102   20110803   20110721       2225
 BIB                  4          5
 REACTION   (11-NA-23(N,INL)11-NA-23,,SIG)

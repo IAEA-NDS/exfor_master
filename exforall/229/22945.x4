@@ -1,13 +1,19 @@
-ENTRY            22945   20070725   20071002   20071002       2186
-SUBENT        22945001   20070725   20071002   20071002       2186
-BIB                 17        178
+ENTRY            22945   20130203   20130812   20130718       2234
+SUBENT        22945001   20130203   20130812   20130718       2234
+BIB                 16        192
 TITLE      .Measurement of the neutron capture cross section
             of the s-only isotope 204Pb from 1 eV to 440 keV
 REFERENCE  (J,PR/C,75,015806,2007)   Main reference, data given
            (W,DOMINGO-PARDO,200612)  Preliminary data for respars
-           (J,NIM/A,496,425,2003)   Description of the n-TOF
-                                    facility
            (C,2005NOTRED,,288,2005)  Preliminary results
+REL-REF    (I,,R.Plag+,J,NIM/A,496,425,2003)   Description of the
+             C6D6 detector
+            U.Abbondanno+,R,CERN-SL-2002-053,2003 -
+            Description of the n-TOF facility
+           (M,,S.Marrone+,J,NIM/A,517,389,2004) - Description of
+            the neutron flux monitor by 6Li(n,t+a)
+           (M,,C.Borcea+,J,NIM/A,513,524,2003)- Description of the
+            flux determination with PTB fission chamber
 AUTHOR     (C.Domingo-Pardo, U.Abbondanno, G.Aerts, H.Alvarez-Pol,
            F.Alvarez-Velarde, S.Andriamonje, J.Andrzejewski,
            P.Assimakopoulos, L.Audouin, G.Badurek, P.Baumann,
@@ -125,30 +131,30 @@ INSTITUTE  (2GERKFK) Forschungszentrum Karlsruhe GmbH (FZK),
              C.Eleftheriadis, I.Savvidis
            (2GRCTUA) National Technical University of Athens,
               Greece; C.Papadopoulos, R.Vlastou
-           (2PRTPRT) Instituto Tecnologico e Nuclear(ITN), Lisbon,
+           (2PRTLFE) Instituto Tecnologico e Nuclear(ITN), Lisbon,
              Portugal; A.Carrillo de Albornoz, L.Marques,
              J.Salgado, L.Tavora, P.Vaz
            .LIP - Coimbra & Departamento de Fisica da Universidade
             de Coimbra,Portugal; V.Chepel, R.Ferreira-Marques,
              I.Goncalves, A.Lindote, I.Lopes, F.Neves
-           (2SPNSPN) Centro de Investigaciones Energeticas
+           (2SPNPCM) Centro de Investigaciones Energeticas
               Medioambientales y Technologicas,Madrid, Spain;
              F.Alvarez-Velarde, M.C. Vincente, D.Cano-Ott,
              M.Embid-Segura, E.Gonzalez-Romero, C.Guerrero,
              D.Villamarin
-           .Universitat Politecnica de Catalunya, Barcelona,Spain;
-               F.Calvino, G.Cortes, A.Poch
+           (2SPNUPC) .Universitat Politecnica de Catalunya,
+              Barcelona,Spain; F.Calvino, G.Cortes, A.Poch
 FACILITY   (SYNCH,2ZZZCER)  Proton synchrotron of CERN producing
             a pulsed proton beam 6 ns(rms), 20 GeV/c protons
-            impingimg a lead block. Low n-TOF duty cycle, pulse
+            impinging a lead block. Low n-TOF duty cycle, pulse
             rate 0.4 Hz
 INC-SOURCE (SPALL) Spallation neutron source. A water layer around
-                   a lead block seres as neutron moderator and a
+                   a lead block serves as neutron moderator and a
                    coolant of the lead block
 INC-SPECT  .Continuous initial neutron spectrum in the range 1 MeV
             down to 1 eV.
 METHOD     (TOF)  Time of flight
-           (PHD)  Pulse hight weighting technique - PHWT
+           (PHD)  Pulse height weighting technique - PHWT
            (SITA) Intermittent sample /monitor irradiation
 DETECTOR   (SCIN) A set of two C6-D6 detectors for prompt g-rays
                   detection optimized with respect to neutron
@@ -157,14 +163,18 @@ DETECTOR   (SCIN) A set of two C6-D6 detectors for prompt g-rays
            (SI)   A thin Li-6 foil surrounded by a set of four
              large silicon detectors for recording of products of
              Li-6(N,A)1-H-3 reaction products
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-           (82-PB-208(N,G)82-PB-209,,SPC)
-           (3-LI-6(N,T)2-HE-4,,SIG)
-MONIT-REF  (,S.MARRONE+,J,NIM/A,517,389,2004)
-ASSUMED    (ASSUM,79-AU-197(N,0),,EN) A saturated 4.9 eV resonance
-SAMPLE     .Metallic Pb-204 sample of 99.7% isotopic content,
-            thickness 0.00376 atoms/barn, diameter 20 mm, mass
-            4.039 gram.
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
+            for monitor neutron at the sample position, also for
+            determination of energy dependence of flux
+           (92-U-235(N,F),,SIG)
+            for determination of energy dependence of flux
+           (92-U-238(N,F),,SIG) used for shape determination
+            for determination of energy dependence of flux
+           (79-AU-197(N,G)79-AU-198,,SIG)
+            for absolute normalization at 4.9 eV resonance
+SAMPLE     (82-PB-204,ENR=0.997) .Metallic Pb-204 sample of
+            99.7% isotopic content, thickness 0.00376 atoms/barn,
+           diameter 20 mm, mass 4.039 gram.
            .Metallic Pb-208 sample of 99.86% isotopic content,
             thickness 0.01155 atoms/barn, diameter 20 mm, mass
             12.53 gram.
@@ -179,13 +189,17 @@ ERR-ANALYS (DATA-ERR)   Not specified, probably total.
 STATUS     (COREL,22944001)
 HISTORY    (20061229C)   SM
            (20070725U)   Reference added
-ENDBIB             178
+           (20130203A) SD: Ref. NIM/A moved to REL-REF.
+            ASSUMED moved to MONITOR and monitor reactions were
+            added ( 235,238U(n,f) ) after discussion
+            with Dr. C.Domingo-Pardo.
+ENDBIB             192
 COMMON               1          3
-ASSUM
+EN-NRM
 EV
    4.9
 ENDCOMMON            3
-ENDSUBENT          185
+ENDSUBENT          199
 SUBENT        22945002   20070326   20070521   20070506       2184
 BIB                  8         27
 REACTION  1(82-PB-204(N,0),,EN)       Resonance energy
