@@ -1,6 +1,6 @@
-ENTRY            32208   20100305   20100610   20100603       3144
-SUBENT        32208001   20100305   20100610   20100603       3144
-BIB                 13         39
+ENTRY            32208   20141212   20150202   20150130       3167
+SUBENT        32208001   20141212   20150202   20150130       3167
+BIB                 13         43
 INSTITUTE  (4UKRIJD)
 REFERENCE  (J,ZNJD,1/7,(1),15,2002)   //Zbirnyk naukovyh prac
            Institutu yadernyh doslidzhen, IJD,Kyiv,2002
@@ -13,8 +13,8 @@ INC-SOURCE (REAC) Neutron filters installed in horizontal channel
            of the reactor
 INC-SPECT  Filtered neutron spectrum with average energy
            24.3+-0.8keV and flux density at the filter output
-           (2.28+-0.20)*10**5 neutron/cm2*s
-METHOD     (TRN) Transmission measurement of filtered neutrons
+            (2.28+-0.20)*10**5 neutron/cm2*s
+METHOD     (TRN,FNB) Transmission measurement of filtered neutrons
            Neutron filter composition:
            Fe(236.1g/cm2), Al(115.02g/cm2),S(19.02g/cm),
            B-10(1g/cm2);
@@ -26,27 +26,31 @@ SAMPLE     Metal powder of Cr (with isotope Cr-52 enrichment
            diameter 31.75 mm, sample thickness
            0.1208+-0.004 at/barn
 ERR-ANALYS (ERR-T) Total error includes the following components:
-            * statistical error of the transmission measurements;
-            * measurement errors of dimension and weight of the
-                                                       sample;
-            * error due to presence of admixtures in the
-                                               sample, etc.
+           (ERR-S) statistical error of the transmission
+                   measurements - 0.35%
+           (ERR-1) measurement errors of dimension and weight of
+                   the sample - 0.33%
+           (ERR-2) error due to presence of 50Cr  - 0.1%
+           (ERR-3) error due to presence of 53Cr  - 0.5%
+           (ERR-4) error due to presence of 54Cr  - 0.1%
            correction on the contribution of other chromium
            isotopes(Cr-50(0.1%),Cr-53(0.5%),Cr-54(0.1%) to the
            Cr-52 total cross section was fulfilled
 STATUS     (APRVD) Approved by author(Gritzay)
+           (TABLE) Abstract of the article
 HISTORY    (20010921C) LC
            (20021018A)  NDS
            (20021202U) NK
            (20100305A) SD: AUTHOR and TITLE letters were changed
            on lower case, ref. was corrected.
-ENDBIB              39
+           (20141212A) VS. ERR-ANALYS updated.
+ENDBIB              43
 NOCOMMON             0          0
-ENDSUBENT           42
-SUBENT        32208002   20021202   20021204   20050926       0000
+ENDSUBENT           46
+SUBENT        32208002   20141212   20150202   20150130       3167
 BIB                  2          9
 REACTION   (24-CR-52(N,TOT),,SIG)
-CORRECTION No resonance self-shielding factor was taken
+ADD-RES    (COMP) No resonance self-shielding factor was taken
            into account.
            Evaluated value of data (with self-shielding factor
            taken into account) were calculated from different
@@ -56,10 +60,13 @@ CORRECTION No resonance self-shielding factor was taken
            2.493+-0.014 barns.
 ENDBIB               9
 NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       ERR-T
-KEV        B          B
-24.3       2.099      0.012
-ENDDATA              3
-ENDSUBENT           17
+DATA                 9          1
+EN         EN-RSL     DATA       ERR-T      ERR-S      ERR-1
+ERR-2      ERR-3      ERR-4
+KEV        KEV        B          B          PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT
+24.3         0.8        2.099      0.012       0.35         0.33
+    0.1      0.5          0.1
+ENDDATA              6
+ENDSUBENT           20
 ENDENTRY             2
