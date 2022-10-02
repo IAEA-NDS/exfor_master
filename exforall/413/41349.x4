@@ -1,46 +1,59 @@
-ENTRY            41349   20000209   20000427   20050926       0000
-SUBENT        41349001   20000209   20000427   20050926       0000
-BIB                 11         21
-TITLE      .An Improuved Experimental Facility For Study of
-            Delayed Neutrons and Preliminary Results of the
-            Beta-Eff Value For 233U Relative to 235U
-AUTHOR     (S.B.BORZAKOV, E.DERMENDJIEV, V.M.NAZAROV, S.S.PAVLOV,
-            IV.RUSKOV, YU.S.ZAMYATMIN)
+ENTRY            41349   20091030   20100209   20100209       4148
+SUBENT        41349001   20091030   20100209   20100209       4148
+BIB                 12         30
+TITLE       An improved experimental facility for studying of
+            delayed neutrons and preliminary results of the
+            Beta-Eff value for U-233 relative to U-235.
+AUTHOR     (S.B.Borzakov, E.Dermendjiev, V.M.Nazarov, S.S.Pavlov,
+           Iv.Ruskov, Yu.S.Zamyatmin)
 INSTITUTE  (4ZZZDUB)  Frank Lab of Neutron Physics
-REFERENCE  (S,JINR-E3-94-419,192,199404)  Main Reference
-FACILITY   (REAC)  IBR-2 Pulse Fast Reactor, Pulse Frequency is
-                   5 Hz, Pulse Width 215 Microsec
-           (CHOPS)  Slow Chopper in Connection with IBR-2 Reactor
-MONITOR    (92-U-235(N,F),PR,NU,,SPA)  Total Number of Prompt
-                Neutrons. Taken from M.C.Blachot Et.Al, OECD-NEA,
+REFERENCE  ((S,ISINN-2,192,1994)=(S,JINR-E3-94-419,192,1994))
+FACILITY   (REAC)  IBR-2 Pulse Fast Reactor, pulse frequency is
+                   5 Hz, pulse width 215 microsec
+           (CHOPS)  Slow Chopper in connection with IBR-2 Reactor
+MONITOR    ((MONIT)(92-U-235(N,F),DL,NU,,SPA)/
+           (92-U-235(N,F),PR,NU,,SPA))
+MONIT-REF  ((MONIT),J.Blachot+,R,NEACRP-L-323,1990)   OECD-NEA,
                 NEACRP-L-323,1990
-DETECTOR   (PROPC)  Battery of 12 He-3 Counters
-INC-SOURCE .A Bent Down Mirror Neutron Guide
-INC-SPECT  .Bent Down Mirror Guide Transmits Neutrons with Energy
-            Less Than 0.1 eV
-ERR-ANALYS (DATA-ERR)  Systematic Error. Statistical Error is
-                       Several Times Less
+DETECTOR   (PROPC)  Battery of 12 He-3 counters.
+            Neutron detection efficiency about 12 %.
+INC-SOURCE -A Bent Down Mirror Neutron Guide
+INC-SPECT  -Bent Down Mirror Guide Transmits Neutrons with Energy
+            Less Than 0.1 eV. Mean thermal neutron flux at target
+            2.E+5 n/cm**2/sec.
+            Background was measured by Cd filter in the beam.
+ERR-ANALYS (ERR-SYS)   Systematic Error.
+           (ERR-S,,1.) Stat. error is several times less (< 1.% )
 HISTORY    (20000209C)  + + Compiled at the Centre - CJD + +
            (20000209U)  Last checking has been done.
-ENDBIB              21
-NOCOMMON
-ENDSUBENT           24
-SUBENT        41349002   20000209   20000427   20050926       0000
-BIB                  3          8
-REACTION   (92-U-233(N,F),DL,NU,,SPA)  Averaged Over Energy
-               Less Than En-Max
-SAMPLE     .233-U Metallic Sample has Weight 0.1 G, Enrichment
-             98.11%, Thickness 2.7E+19 Nucl/Cm2
-           .235-U Samples have Weights 7 and 0.3 G, Enrichment
-            90%, Thicknesses 2.7E+21 and 8.E+19 Nucl/cm2
-STATUS     .Data from the Text of Main Reference
+           (20091030A) M.M. MONITOR was corrected:
+            (92-U-235(N,F),PR,NU,,SPA) ->
+            (92-U-235(N,F),DL,NU,,SPA)/(92-U-235(N,F),PR,NU,,SPA).
+            BIB information was added.
+            DATA-ERR -> ERR-SYS.
+ENDBIB              30
+NOCOMMON             0          0
+ENDSUBENT           33
+SUBENT        41349002   20091030   20100209   20100209       4148
+BIB                  4         12
+REACTION   ((92-U-233(N,F),DL,NU,,SPA)/(92-U-233(N,F),PR,NU,,SPA))
+             Average for neutrons of energy less EN-MAX.
+SAMPLE     -233-U metallic sample has weight 0.1 g, enrichment
+             98.11%, thickness 2.7e+19 nucl/cm**2.
+           -235-U samples have weights 7 and 0.3 g, enrichment
+            90%, thicknesses 2.7e+21 and 8.e+19 nucl/cm**2 .
+STATUS     (TABLE) Data from the Text S,ISINN-2,192,1994,page 197.
            (PRELM)   Classified by authors as preliminary
-ENDBIB               8
-NOCOMMON
+HISTORY    (20091030A) M.M. REACTION was changed:
+            (92-U-233(N,F),DL,NU,,SPA) ->
+            (92-U-233(N,F),DL,NU,,SPA)/(92-U-233(N,F),PR,NU,,SPA).
+            Units were corrected: PART/FIS -> NO-DIM .
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 5          1
-EN-MAX     DATA       DATA-ERR   MONIT      MONIT-ERR
-EV         PART/FIS   PART/FIS   PART/FIS   PART/FIS
+EN-MAX     DATA       ERR-SYS    MONIT      MONIT-ERR
+EV         NO-DIM     NO-DIM     NO-DIM     NO-DIM
         0.1     0.0029     0.0002     0.0068     0.0002
 ENDDATA              3
-ENDSUBENT           16
+ENDSUBENT           20
 ENDENTRY             2

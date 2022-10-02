@@ -1,84 +1,301 @@
-ENTRY            22997   20080220   20080402   20080311       2194
-SUBENT        22997001   20080220   20080402   20080311       2194
-BIB                 10         25
-TITLE      .Measurement of natZr (n,2n) Reaction Cross Section
+ENTRY            22997   20090831   20100209   20100209       2217
+SUBENT        22997001   20090831   20100209   20100209       2217
+BIB                 14         50
+TITLE      .Measurement of Zr-nat (n,2n) Reaction Cross Section
             from the Angle-Correlated Neutron Spectrum with
             Pencil-beam DT Neutron Source
-AUTHOR     (K.Shiken, S.Takaki, K.Kondo, M.Matsunaka H.Miyamaru,
-           I.Murata, K.Ochiai, C.Konno, T.Nishitani)
+AUTHOR     (K.Shiken, S.Takaki, K.Kondo, M.Matsunaka, H.Miyamaru,
+           I.Murata, K.Ochiai, C.Konno, T.Nishitani, M.Ohta)
 INSTITUTE  (2JPNOSA) K.Shiken, corresponding author,
              e-mail: shiken@ef.eie.eng.osaka-u.ac.jp; S.Takaki,
-             K.Kondo, M.Matsunaka, H.Miyamaru, I.Murata.
+             K.Kondo, M.Matsunaka, H.Miyamaru, I.Murata,M.Ohta.
              Department of Electric, Information Systems and
              Energy Engineering, Graduate School of Engineering,
              Osaka University, Suita, Japan
            (2JPNJAE)  K.Ochiai, C.Konno, T.Nishitani. Japan Atomic
             Energy Agency, Tokai-mura, Ibaraki, Japan.
-REFERENCE  (C,2007TOKAI,,(V04),200701)  Symposium on Nuclear
-               Data, Tokai, Japan, January 2007)
+REFERENCE  (S,JAEA-C-2008-006,52,2008)  Symposium on Nuclear Data,
+                     Tokai, Japan, January 2007 .
+           (J,FED,84,1376,2009) Fussion Engineering and Design,
+            v.84,p.1376-1379, 2009 year. First author Isao Murata.
+           #doi:10.1016/j.fusengdes.2009.02.053
+REL-REF    (M,22839001,I.Murata+,J,NIM/A,595,(2),439,2008)
+             Exp. method details.
 FACILITY   (FNS,2JPNJAE) Fusion Neutron Source, JAEA.
-METHOD     (COINC)
+INC-SOURCE (D-T) Pencil-beam DT neutron source of 10**5 n/cm**2/s
+            inside the beam.
+METHOD     (COINC) Neutron-neutron coincidence.
            (PSD)  Pulse shape discrimination
+                Neutron/gamma-ray discrimination.
+           (PHD) Pulse height spectra were measured.
+           Calibration with standard gamma-rays of Na-22, Mn-54.
 DETECTOR   (COIN,SCIN,SCIN)  Two spherical 4 cm in diameter
-             NE213 detector for neutron detection
+             NE213 detector for neutron detection.
+            Located at 18.8 cm from sample.
+            Polyethylene shielding brick up to 10.16 cm in
+            thickness to prevent the inter-detector scattering.
+            Measurable energy range from 800 keV to about 10 MeV.
+           (FISCH) U-238 fission chamber to monitor neutron flux.
 SAMPLE     .Metal zirconium sample (2.4cm in diameter, 2cm long).
             The distance between the neutron source and sample
-            was 550cm
-ERR-ANALYS (DATA-ERR) Not specified
+            was 550cm .
+ANALYSIS   (UNFLD) Net spectra were unfolded by code FORIST.
+           Detector response function for unfolding was calculated
+           by code SCINFUL.
+CORRECTION  For inter-detector scattering, correction factor for
+            zirconium is several to maximum 15% at ANG1=90,
+            ANG2=90, ANG-AZ=60 degrees; by Monte Carlo MCNP-4C.
+STATUS     (APRVD) Aproved. I.Murata 23.10.2009 .
 HISTORY    (20080220C)  SM
-ENDBIB              25
+           (20090831A) M.M. Reference J,FED was added.
+            BIB information was added.
+            EN-DUMMY was corrected into EN.
+            Subents 005 -007 were added.
+ENDBIB              50
 COMMON               1          3
-EN-DUMMY
+EN
 MEV
    14.
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        22997002   20080220   20080402   20080311       2194
-BIB                  3          3
+ENDSUBENT           57
+SUBENT        22997002   20090831   20100209   20100209       2217
+BIB                  4          6
 REACTION   (40-ZR-0(N,2N),PAR,SIG)
+ANALYSIS   (INTAD)
 EN-SEC     (E-MIN,N)  Neutron minimal secondary energy
-STATUS     (TABLE)       Table 1 of main reference
-ENDBIB               3
+STATUS     (TABLE)       Table 1 of C,2007TOKAI.
+                Table 1 of J,FED.
+           (DEP,22997003)
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 E-MIN      DATA       DATA-ERR
 KEV        MB         MB
    800.      745.         23.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        22997003   20080220   20080402   20080311       2194
-BIB                  3          3
+ENDSUBENT           14
+SUBENT        22997003   20090831   20100209   20100209       2217
+BIB                  5          8
 REACTION   (40-ZR-0(N,2N),PAR,DA)
-EN-SEC     (E-MIN,N)  Neutron minimal secondary energy
-STATUS     (TABLE)      Table 1 of main reference
-ENDBIB               3
+ANALYSIS   (INTAD) Integration over azimuthal angle.
+EN-SEC     (E-MIN,N) Secondary neutron minimal measurable energy
+STATUS     (TABLE)  Table 1 of J,FED.
+                    Table 1 of C,2007TOKAI.
+           (DEP,22997006)
+HISTORY    (20090831A) M.M. DATA value was corrected 63.-> 64. in
+           according to given in J,FED (as newer publication).
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4          1
 ANG        E-MIN      DATA       DATA-ERR
 ADEG       KEV        MB/SR      MB/SR
-   55.        800.       63.         3.
+   55.        800.       64.         3.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        22997004   20080220   20080402   20080311       2194
-BIB                  3          6
-REACTION   (40-ZR-0(N,2N),PAR,SIG,,,DERIV)        Estimated
-             cross section as function of nuclear temperature
-EN-SEC     .TEMP  =        Average nuclear matter temperature
-           (E-MAX,N)  Neutron maximal secondary energy
-STATUS     (TABLE)   Table 2 of main reference
-           (DEP,22997002)
-ENDBIB               6
+ENDSUBENT           16
+SUBENT        22997004   20090831   20100209   20100209       2217
+BIB                  6         29
+REACTION   (40-ZR-0(N,2N),,SIG,,,DERIV) Total n,2n cross section.
+ANALYSIS   Extrapolation of the obtained spectra for energies
+           below 800 keV down to zero energy was carried out with
+           an evaporation spectrum to estimate the total n,2n
+           reaction cross section. Extrapolation fitting was done
+           with the nuclear temperatures of 0.65 MeV (JENDL-3.3),
+           1.0 MeV (RIPL-2) and 1.73 MeV (ENDF).
+           Value of 1.0 MeV was selected in this study as
+           recommended.
+FLAG       (1.) Nuclear temperature 0.65 MeV from JENDL-3.3 was
+                used in analysis.
+           (2.) Nuclear temperature 1. MeV from RIPL-2 was used
+                in analysis.
+                Recommended value (by authors), agrees with
+                measurement of Frehaut+ (946+-67 mb at 14.3 MeV).
+           (3.) Nuclear temperature 1.73 MeV from ENDF/B-VI was
+                used in analysis.
+REL-REF    (A,20416027,J.Frehaut+,C,75GAUSSIG,,17,197511)
+STATUS     (TABLE)   Table 2 of C,2007TOKAI .
+                     Table 2 of J,FED .
+           (DEP,22997005)
+HISTORY    (20090831A) M.M. "PAR" was deleted from REACTION.
+            E-MAX=800.keV was deleted from EN-SEC and COMMON.
+            ANALYSIS was added. TEMP was moved in last column as
+            additional data used in analysis.
+            DATA value of 1090. -> 1095., error value 16. -> 26.
+            were corrected in according to value given in J,FED,
+            Table 2 ( as newer publication).
+            FLAG was added.
+ENDBIB              29
+NOCOMMON             0          0
+DATA                 3          3
+DATA       DATA-ERR   FLAG
+MB         MB         NO-DIM
+ 1095.        30.      1.
+  997.        27.      2.
+  919.        26.      3.
+ENDDATA              5
+ENDSUBENT           39
+SUBENT        22997005   20090831   20100209   20100209       2217
+BIB                  6         13
+REACTION   (40-ZR-0(N,2N),,DA/DA/DE,N/N/N)
+                Triple differential cross section.
+EN-SEC     (E,N) Neutron energy
+            ANG1 - first detector angle.
+            ANG2 - second detector angle.
+            ANG-AZ - azimuthal angle.
+ERR-ANALYS (DATA-ERR) Error contains statistical and unfolding
+            process errors evaluated by FORIST.
+STATUS     (TABLE) Data were received from I.Murata 05.10.2009 .
+                   Fig.4 of J,FED . ANG2=125, 90,55 deg.
+COMMENT    Of author. In Fig.4, factors x100 (for 90 deg) and
+           x10000 (for 125 deg) are missing.
+HISTORY    (20090831C) M.M.
+ENDBIB              13
+COMMON               2          3
+ANG1       ANG-AZ
+ADEG       ADEG
+ 55.        110.
+ENDCOMMON            3
+DATA                 4         71
+ANG2       E          DATA       DATA-ERR
+ADEG       MEV        MB/SR2/MEV MB/SR2/MEV
+    55.     0.2          2.59E+00   4.66E-01
+    55.     0.4          8.38E+01   9.34E+00
+    55.     0.6          7.72E+02   5.77E+01
+    55.     0.8          2.13E+03   7.30E+01
+    55.     1.           2.40E+03   5.72E+01
+    55.     1.2          2.12E+03   5.17E+01
+    55.     1.4          1.28E+03   4.63E+01
+    55.     1.6          6.12E+02   3.91E+01
+    55.     1.8          7.92E+02   3.50E+01
+    55.     2.           1.06E+03   3.47E+01
+    55.     2.2          7.83E+02   2.88E+01
+    55.     2.4          3.02E+02   2.26E+01
+    55.     3.2          6.78E+01   1.96E+01
+    55.     3.4          7.52E+01   2.43E+01
+    55.     3.6          6.63E+01   3.01E+01
+    55.     3.8          6.27E+01   3.14E+01
+    55.     4.           6.88E+01   2.92E+01
+    55.     4.2          7.53E+01   2.69E+01
+    55.     4.4          7.31E+01   2.94E+01
+    55.     4.6          6.19E+01   3.76E+01
+    55.     4.8          4.81E+01   4.13E+01
+    55.     5.           3.67E+01   1.88E+01
+    55.     5.2          2.92E+01   1.53E+01
+    55.     5.4          2.53E+01   1.48E+01
+    55.     5.6          2.43E+01   1.89E+01
+    55.     5.8          2.52E+01   2.27E+01
+    90.     0.2          4.20E+00  0.498
+    90.     0.4          1.21E+02  8.06
+    90.     0.6          8.85E+02  5.030E+01
+    90.     0.8          1.60E+03  6.754E+01
+    90.     1.           1.38E+03  5.147E+01
+    90.     1.2          1.87E+03  5.279E+01
+    90.     1.4          1.47E+03  4.993E+01
+    90.     1.6          8.90E+02  4.130E+01
+    90.     1.8          6.73E+02  3.619E+01
+    90.     2.           6.51E+02  3.622E+01
+    90.     2.2          6.24E+02  3.238E+01
+    90.     2.4          5.03E+02  3.003E+01
+    90.     2.6          3.25E+02  2.656E+01
+    90.     2.8          2.26E+02  2.592E+01
+    90.     3.           2.08E+02  2.117E+01
+    90.     3.2          2.03E+02  2.219E+01
+    90.     3.4          1.65E+02  2.913E+01
+    90.     3.6          1.15E+02  2.355E+01
+    90.     3.8          1.12E+02  1.674E+01
+    90.     4.           1.47E+02  3.376E+01
+    90.     4.2          1.45E+02  4.533E+01
+    90.     4.4          7.93E+01  3.899E+01
+   125.     0.2          2.58E+00    0.555
+   125.     0.4          8.78E+01   1.24E+01
+   125.     0.6          9.00E+02   7.70E+01
+   125.     0.8          3.03E+03   9.59E+01
+   125.     1.           3.82E+03   7.46E+01
+   125.     1.2          2.80E+03   6.70E+01
+   125.     1.4          2.13E+03   6.43E+01
+   125.     1.6          1.49E+03   5.50E+01
+   125.     1.8          1.29E+03   5.12E+01
+   125.     2.           1.37E+03   4.72E+01
+   125.     2.2          1.23E+03   4.20E+01
+   125.     2.4          8.28E+02   3.81E+01
+   125.     2.6          4.68E+02   3.34E+01
+   125.     2.8          3.18E+02   3.21E+01
+   125.     3.           3.15E+02   3.07E+01
+   125.     3.2          3.15E+02   2.78E+01
+   125.     3.4          2.50E+02   3.17E+01
+   125.     3.6          1.70E+02   3.19E+01
+   125.     3.8          1.46E+02   3.00E+01
+   125.     4.           1.86E+02   4.39E+01
+   125.     4.2          2.34E+02   7.33E+01
+   125.     4.4          2.21E+02   9.17E+01
+   125.     4.6          1.22E+02   8.68E+01
+ENDDATA             73
+ENDSUBENT           95
+SUBENT        22997006   20090831   20100209   20100209       2217
+BIB                  6         21
+REACTION   (40-ZR-0(N,2N),,DA/DA)
+                Double differential cross section.
+            ANG1 - first detector angle.
+            ANG2 - second detector angle.
+            ANG-AZ - azimuthal angle.
+            COS - COS(ANG2) .
+ANALYSIS   (INTED) Integration over energy.
+ERR-ANALYS (DATA-ERR) Error contains statistical and unfolding
+            process errors evaluated by FORIST.
+COMMENT    Of compiler. Authors' data received from I.Murata were
+           converted: COS= 0.7660    -> ANG= 40 deg
+                      COS= 0.5736    -> ANG= 55 deg
+                      COS= 6.126E-17 -> ANG= 90 deg
+                      COS=-0.5736    -> ANG=125 deg
+                      COS=-0.6947    -> ANG=134 deg
+STATUS     (TABLE) Data were received from I.Murata 05.10.2009 .
+                   Fig.5 of J,FED .
+           (DEP,22997005)
+             Request for the data was sent to Isao Murata
+             01.09.2009.
+HISTORY    (20090831C) M.M.
+ENDBIB              21
+COMMON               2          3
+ANG1       ANG-AZ
+ADEG       ADEG
+ 55.        110.
+ENDCOMMON            3
+DATA                 3          5
+ANG2       DATA       DATA-ERR
+ADEG       MB/SR2     MB/SR2
+ 40.        5.32       0.79
+ 55.        5.72       0.62
+ 90.        4.90       0.59
+125.        5.11       0.52
+134.        4.61       0.65
+ENDDATA              7
+ENDSUBENT           37
+SUBENT        22997007   20091005   20100209   20100209       2217
+BIB                  7         13
+REACTION   (40-ZR-0(N,2N),PAR,DA)
+ANALYSIS   (INTAD) Integration over azimuthal angle.
+EN-SEC     (E-MIN,N) Secondary neutron minimal measurable energy
+             COS - cos(ANG).
+ERR-ANALYS (ERR-S) Statistical error.
+COMMENT    Of compiler. Authors' data received from I.Murata were
+           converted: COS= 0.5736    -> ANG= 55 deg
+                      COS= 6.126E-17 -> ANG= 90 deg
+                      COS=-0.6947    -> ANG=134 deg
+STATUS     (TABLE) Data were received from I.Murata 05.10.2009 .
+                   Fig.6 of J,FED .
+           (DEP,22997006)
+HISTORY    (20090831C) M.M.
+ENDBIB              13
 COMMON               1          3
-E-MAX
+E-MIN
 KEV
-  800.
+ 800.
 ENDCOMMON            3
 DATA                 3          3
-TEMP       DATA       DATA-ERR
-MEV        MB         MB
-   0.65     1090.        30.
-   1.        997.        27.
-   1.73      919.        16.
+ANG        DATA       ERR-S
+ADEG       MB/SR      MB/SR
+  55.         64.3      3.6
+  90.         59.8      3.2
+ 134.         52.7      2.8
 ENDDATA              5
-ENDSUBENT           20
-ENDENTRY             4
+ENDSUBENT           27
+ENDENTRY             7
