@@ -1,13 +1,18 @@
-ENTRY            40271   20070821   20071206   20071120       4141
-SUBENT        40271001   20070821   20071206   20071120       4141
-BIB                 13         24
+ENTRY            40271   20130208   20130502   20130410       4159
+SUBENT        40271001   20130208   20130502   20130410       4159
+BIB                 14         31
 INSTITUTE  (4ZZZDUB)
 REFERENCE  (J,AE,19,(1),43,196507)
-AUTHOR     (Van Shi-Di, Van Jun-Chan, E.Dermendzhiev, Yu.V.Rjabov)
+           (J,SJA,19,907,1965) Engl.translation of J,AE.
+           #doi:10.1007/BF01125379
+AUTHOR     (Wang Shih-Ti, Wang Yung-Ch'ang, E.Dermendzhiev,
+           Yu.V.Ryabov )
 TITLE      U-235 fission cross-section for resonance energy
            neutrons
-INC-SOURCE (REAC) Pulsed reactor
-METHOD     (TOF) Time of flight lenght 1000 m.
+FACILITY   (REAC,4ZZZDUB)
+INC-SOURCE (REAC)         Pulsed reactor
+METHOD     (TOF) Time of flight length 1000 m.
+            Time resolution about 0.04 microsec/m.
            (COINC)  G-G coincidence.
 DETECTOR   (STANK) Cylindrical tank with liquid scintillator,
                    containing cadmium. 32 photomultipliers.
@@ -16,22 +21,24 @@ MONITOR    ((MONIT)92-U-235(N,F),,SIG)
 PART-DET   (G)  Gammas. Delayed coincidence between fission gammas
            and gamma-rays from fission neutron capture by Cd.
 STATUS     (DEP,40070002) See Entry 40070 for data from Table of
-             this Article.
+             this article.
 SAMPLE      U-235 oxide of 8.E+19, 4.E+20, 1.E+21 nucleus/cm**2
             thickness on aluminum backing.
 HISTORY    (19750226T)  Previously DASTAR 00054,00055
            (20070821A) M.M. Authors' names were corrected.
             BIB information was added.
-ERR-ANALYS (ERR-S) Statistical error is about 0.6% at data value
-           of 1500 barn*ROOT(eV) and about 3% at data value of
-           25 barn*ROOT(eV). (Maximal)
-ENDBIB              24
-COMMON               3          3
-EN-NRM     MONIT      ERR-S
-EV         B          PER-CENT
- 2.5300E-02 5.8200E+02   3.
+           (20130208A) Ref. J,SJA was added.
+            Subent 003 was corrected.
+ERR-ANALYS (ERR-S,0.6,3.) Statistical error is about 0.6% at data
+           value of 1500 barn*ROOT(eV) and about 3% at data value
+           of 25 barn*ROOT(eV). (Maximal)
+ENDBIB              31
+COMMON               2          3
+EN-NRM     MONIT
+EV         B
+ 2.5300E-02 5.8200E+02
 ENDCOMMON            3
-ENDSUBENT           31
+ENDSUBENT           38
 SUBENT        40271002   20070821   20071206   20071120       4141
 BIB                  3          3
 REACTION   (92-U-235(N,F),,SIG)
@@ -553,16 +560,19 @@ EV         B
  8.8960E+00 2.0410E+02
 ENDDATA            511
 ENDSUBENT          519
-SUBENT        40271003   20070821   20071206   20071120       4141
-BIB                  3          3
+SUBENT        40271003   20130208   20130502   20130410       4159
+BIB                  5          6
 REACTION   (92-U-235(N,F),,SIG)
 SAMPLE     Sample thickness  4.1E+19 nuclei/cm**2
-STATUS     Data from DASTAR 00055
-ENDBIB               3
+STATUS     (DASTR)Data from DASTAR 00055
+FLAG       (1.) Duplicative point. Reason is not clear, as also
+           a source of data - from authors?
+HISTORY    (20130208A) FLAG was added.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2       2404
-EN         DATA
-EV         B
+DATA                 3       2404
+EN         DATA       FLAG
+EV         B          NO-DIM
  1.2460E+00 3.1300E+01
  1.2480E+00 3.2100E+01
  1.2490E+00 3.4100E+01
@@ -879,7 +889,7 @@ EV         B
  1.7410E+00 1.6200E+01
  1.7430E+00 1.4900E+01
  1.7450E+00 1.4900E+01
- 1.7470E+00 1.8200E+01
+ 1.7470E+00 1.8200E+01  1.
  1.7470E+00 1.8900E+01
  1.7490E+00 1.7700E+01
  1.7510E+00 1.6800E+01
@@ -2968,5 +2978,5 @@ EV         B
  2.9540E+04 2.8000E+00
  3.0620E+04 2.7000E+00
 ENDDATA           2406
-ENDSUBENT         2414
+ENDSUBENT         2417
 ENDENTRY             3

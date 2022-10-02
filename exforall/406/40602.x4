@@ -1,43 +1,53 @@
-ENTRY            40602   20010129   20010427   20050926       0000
-SUBENT        40602001   20010129   20010427   20050926       0000
-BIB                 13         25
-TITLE       Measurement of Neutrons Induced Fission Cross-Section
-            Of Cm-248 Near Threshold
-AUTHOR     (E.F.FOMUSHKIN,YU.I.VINOGRADOV,V.V.GAVRILOV,
-           G.F.NOVOSELOV,V.M.SURIN,V.A.ZHEREBTSOV)
+ENTRY            40602   20130208   20130502   20130410       4159
+SUBENT        40602001   20130208   20130502   20130410       4159
+BIB                 12         32
+TITLE       Measurement of neutrons induced fission cross-section
+            of Cm-248 near threshold
+AUTHOR     (E.F.Fomushkin,Yu.I.Vinogradov,V.V.Gavrilov,
+           G.F.Novoselov,V.M.Surin,V.A.Zherebtsov)
 INSTITUTE  (4RUSKUR)
 REFERENCE  (C,80KIEV,3,25,198009)
-MONIT-REF  (,KON'SHIN+,R,YK-34,3,1979)
-           (,FOMUSHKIN+,J,YF,17,24,1973)
+MONIT-REF  (,V.A.Kon'shin+,R,YK-34,3,1979) For U-235 c-s
+           (40150006,E.F.Fomushkin+,J,YF,17,24,1973)
+            For Cm-248 effective c-s on fast reactor neutron
+            spectrum.
 MONITOR    (92-U-235(N,F),,SIG,,,EVAL)
-           ((MONIT2)96-CM-248(N,F),,SIG,,AV)
-INC-SOURCE  No Information
-STATUS      No Information
-ERR-ANALYS  No Information
-METHOD     (TOF)  Resolution is 7.2 Nsec/M
-DETECTOR    Polycarbonate Film
+           ((MONIT2)96-CM-248(N,F),,SIG,,SPA)
+INC-SOURCE  No information
+METHOD     (TOF) Resolution value is mentioned twice in the
+           article: 7.2 nsec/m(FWHM) in text, page 26,
+                    7.5 nsec/m in abstract.
+DETECTOR   (TRD) Polycarbonate film
 PART-DET   (FF)
-HISTORY    (19810716C)  Compiled at the Cjd
-           (19870205U)  Data-Err Units in San 002 Corrected
-                      En-Rsl in Common Section Introduced
-           (19881004U)  Pointers For Monit-Ref and Monitor Key-
-                      Words in San 001 Deleted
-           (19920604U)  Pointers in San 001 Removed and Changed to
-                      Monit2
+CORRECTION For contribution of other Cm isotopes admixtures  in
+           sample.
+HISTORY    (19810716C)  Compiled at the CJD
+           (19870205U)  DATA-ERR units in SAN 002 corrected
+                      EN-RSL in COMMON section introduced
+           (19881004U)  Pointers foR MONIT-REF and MONITOR key-
+                      words in SAN 001 deleted
+           (19920604U)  Pointers in SAN 001 removed and changed to
+                      MONIT2
            (20010129A)
            (20010129U) Last checking has been done.
-ENDBIB              25
+           (20130208A) M.M. EN-RSL was corrected :
+            EN-RSL -> EN-RSL-FW, MICROSEC/M -> NSEC/M,
+            as given in the article.
+ENDBIB              32
 COMMON               3          3
-EN-RSL     MONIT2     MONIT2-ERR
-MICROSEC/M B          B
-        7.2        .93        .06
+EN-RSL-FW  MONIT2     MONIT2-ERR
+NSEC/M     B          B
+        7.2       0.93       0.06
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        40602002   20010129   20010427   20050926       0000
-BIB                  1          1
+ENDSUBENT           39
+SUBENT        40602002   20130208   20130502   20130410       4159
+BIB                  3          4
 REACTION   (96-CM-248(N,F),,SIG)
-ENDBIB               1
-NOCOMMON
+ERR-ANALYS (ERR-S) Statistical error.
+           (ERR-SYS,,6.8) Systematical error less 6.8% .
+STATUS     (TABLE) Table of C,80KIEV,3,25,1980 .
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 3         20
 EN         DATA       ERR-S
 MEV        B          PER-CENT
@@ -62,5 +72,5 @@ MEV        B          PER-CENT
          5.      1.268        5.9
         5.5      1.324        5.9
 ENDDATA             22
-ENDSUBENT           28
+ENDSUBENT           31
 ENDENTRY             2

@@ -1,14 +1,17 @@
-ENTRY            41302   20090410   20090724   20090724       4146
-SUBENT        41302001   20090410   20090724   20090724       4146
-BIB                 14         34
+ENTRY            41302   20130131   20130502   20130410       4159
+SUBENT        41302001   20130131   20130502   20130410       4159
+BIB                 15         43
 AUTHOR     (N.S.Biryukov, B.V.Zhuravlev, N.V.Kornilov,
            V.I.Plyaskin, A.P.Rudenko, O.A.Sal'nikov, V.I.Trykova)
 TITLE       Angle and energy distributions of inelastically
             scattered neutrons with initial energy of 9.1 MeV.
 INSTITUTE  (4RUSFEI)
 REFERENCE  (C,75KIEV,4,118,197505)Main Reference, data are given.
-           (J,YF,19,(6),1190,197406)  Experimental details .
-FACILITY   (CYCLO)  Neutron spectrometer on the basis of
+REL-REF    (I,40287001,N.S.Biryukov+,J,YF,19,(6),1190,197406)
+           Exp. details .
+           (I,40287001,N.S.Biryukov+,J,SNP,19,608,1975)
+           Engl.translation of J,YF
+FACILITY   (CYCLO,4RUSFEI)  Neutron spectrometer on the basis of
                 FEI cyclotron .
 INC-SOURCE (P-T) Proton-tritium. Tritium gas target.
 SAMPLE     .Hollow cylinders with outer diameter 5 cm, inner
@@ -35,13 +38,19 @@ HISTORY    (19981001C)  + +  Compiled at the Center  + +
            (20090410A) M.M. BIB and COMMON information was added.
              Subents 007 - 011 were added.
              Free text was corrected to be human-readable.
-ENDBIB              34
+           (20130131A)    Subents 007-011 were corrected
+           according to N.Otsuka ( NDS, IAEA ) opinion:
+            4PI -> FCT,
+            formula was added (received 01 Feb.2013 from
+            B.Zhuravlev ),
+            B0 was compiled also in new Subents 012-016.
+ENDBIB              43
 COMMON               6          3
 EN         EN-ERR     ERR-1      ERR-2      ERR-3      ERR-4
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT
  9.1000E+00 1.0000E-01  4.5       3.         4.         4.
 ENDCOMMON            3
-ENDSUBENT           41
+ENDSUBENT           50
 SUBENT        41302002   20090410   20090724   20090724       4146
 BIB                  4          8
 REACTION   (24-CR-0(N,INL)24-CR-0,,SIG)
@@ -132,124 +141,218 @@ B          B
  1.8800E+00 2.1000E-01
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        41302007   20090410   20090724   20090724       4146
-BIB                  4          9
-REACTION   (24-CR-0(N,INL)24-CR-0,PAR,DA,,LEG/4PI)
-ANALYSIS    A0 = total c-s in defined energy interval.
-            E-MIN, E-MAX  Max and min energy of
+SUBENT        41302007   20130131   20130502   20130410       4159
+BIB                  4         12
+REACTION   (24-CR-0(N,INL)24-CR-0,PAR,DA,,LEG/FCT)
+           Legendre coefficients are given in barns.
+ANALYSIS    B0 = total c-s in defined energy interval.
+            dsigma/dOmega=(1/4pi)(B0*P0+B1*P1+B2*P2)
+            E-MIN, E-MAX - max and min energy of
                 secondary neutrons.
 STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302012) B0 is in Subent 012.
            (DEP,40461002)
            (DEP,40461003)
            (DEP,40461004)
 HISTORY    (20090410C)  Subent was added.
-ENDBIB               9
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 5          6
+DATA                 5          4
 E-MIN      E-MAX      NUMBER     DATA       ERR-T
 MEV        MEV        NO-DIM     B          B
- 0.5        3.         0.         1.000      0.030
  0.5        3.         1.         0.060      0.050
  0.5        3.         2.         0.280      0.050
- 4.         6.         0.         0.113      0.100
  4.         6.         1.         0.024      0.014
  4.         6.         2.         0.030      0.020
-ENDDATA              8
-ENDSUBENT           22
-SUBENT        41302008   20090410   20090724   20090724       4146
-BIB                  4          9
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,DA,,LEG/4PI)
-ANALYSIS    A0 = total c-s in defined energy interval.
-           E-MIN, E-MAX  Max and min energy of
+ENDDATA              6
+ENDSUBENT           23
+SUBENT        41302008   20130131   20130502   20130410       4159
+BIB                  4         12
+REACTION   (26-FE-0(N,INL)26-FE-0,PAR,DA,,LEG/FCT)
+           Legendre coefficients are given in barns.
+ANALYSIS    B0 = total c-s in defined energy interval.
+            dsigma/dOmega=(1/4pi)(B0*P0+B1*P1+B2*P2)
+           E-MIN, E-MAX - max and min energy of
                secondary neutrons.
 STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302013)  B0 is in Subent 013
            (DEP,40461005)
            (DEP,40461006)
            (DEP,40461007)
 HISTORY    (20090410C)  Subent was added.
-ENDBIB               9
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 5          6
+DATA                 5          4
 E-MIN      E-MAX      NUMBER     DATA       ERR-T
 MEV        MEV        NO-DIM     B          B
- 0.5        3.         0.         0.960      0.030
  0.5        3.         1.         0.040      0.030
  0.5        3.         2.         0.260      0.060
- 4.         6.         0.         0.144      0.010
  4.         6.         1.         0.017      0.005
  4.         6.         2.         0.040      0.014
-ENDDATA              8
-ENDSUBENT           22
-SUBENT        41302009   20090410   20090724   20090724       4146
-BIB                  4          9
-REACTION   (28-NI-0(N,INL)28-NI-0,PAR,DA,,LEG/4PI)
-ANALYSIS    A0 = total c-s in defined energy interval.
-           E-MIN, E-MAX  Max and min energy of
+ENDDATA              6
+ENDSUBENT           23
+SUBENT        41302009   20130131   20130502   20130410       4159
+BIB                  4         12
+REACTION   (28-NI-0(N,INL)28-NI-0,PAR,DA,,LEG/FCT)
+           Legendre coefficients are given in barns.
+ANALYSIS    B0 = total c-s in defined energy interval.
+            dsigma/dOmega=(1/4pi)(B0*P0+B1*P1+B2*P2)
+           E-MIN, E-MAX - max and min energy of
                secondary neutrons.
 STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302014)  B0 is in Subent 014
            (DEP,40461011)
            (DEP,40461012)
            (DEP,40461013)
 HISTORY    (20090410C)  Subent was added.
-ENDBIB               9
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 5          6
+DATA                 5          4
 E-MIN      E-MAX      NUMBER     DATA       ERR-T
 MEV        MEV        NO-DIM     B          B
- 0.5        3.         0.         0.640      0.030
  0.5        3.         1.         0.040      0.030
  0.5        3.         2.         0.180      0.060
- 4.         6.         0.         0.080      0.010
  4.         6.         1.         0.010      0.004
  4.         6.         2.         0.020      0.010
-ENDDATA              8
-ENDSUBENT           22
-SUBENT        41302010   20090410   20090724   20090724       4146
-BIB                  4          9
-REACTION   (27-CO-59(N,INL)27-CO-59,PAR,DA,,LEG/4PI)
-ANALYSIS    A0 = total c-s in defined energy interval.
-           E-MIN, E-MAX  Max and min energy of
+ENDDATA              6
+ENDSUBENT           23
+SUBENT        41302010   20130131   20130502   20130410       4159
+BIB                  4         12
+REACTION   (27-CO-59(N,INL)27-CO-59,PAR,DA,,LEG/FCT)
+           Legendre coefficients are given in barns.
+ANALYSIS    B0 = total c-s in defined energy interval.
+            dsigma/dOmega=(1/4pi)(B0*P0+B1*P1+B2*P2)
+           E-MIN, E-MAX - max and min energy of
                secondary neutrons.
 STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302015)  B0 is in Subent 015
            (DEP,40461008)
            (DEP,40461009)
            (DEP,40461010)
 HISTORY    (20090410C)  Subent was added.
-ENDBIB               9
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 5          6
+DATA                 5          4
 E-MIN      E-MAX      NUMBER     DATA       ERR-T
 MEV        MEV        NO-DIM     B          B
- 0.5        3.         0.         1.050      0.020
  0.5        3.         1.         0.050      0.040
  0.5        3.         2.         0.140      0.040
- 4.         6.         0.         0.150      0.013
  4.         6.         1.         0.025      0.010
  4.         6.         2.         0.032      0.020
-ENDDATA              8
-ENDSUBENT           22
-SUBENT        41302011   20090410   20090724   20090724       4146
-BIB                  4          9
-REACTION   (39-Y-89(N,INL)39-Y-89,PAR,DA,,LEG/4PI)
-ANALYSIS    A0 = total c-s in defined energy interval.
-           E-MIN, E-MAX  Max and min energy of
+ENDDATA              6
+ENDSUBENT           23
+SUBENT        41302011   20130131   20130502   20130410       4159
+BIB                  4         11
+REACTION   (39-Y-89(N,INL)39-Y-89,PAR,DA,,LEG/FCT)
+           Legendre coefficients are given in barns.
+ANALYSIS    B0 = total c-s in defined energy interval.
+           E-MIN, E-MAX - max and min energy of
                secondary neutrons.
 STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302016)  B0 is in Subent 016
            (DEP,40461014)
            (DEP,40461015)
            (DEP,40461016)
 HISTORY    (20090410C)  Subent was added.
-ENDBIB               9
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 5          6
+DATA                 5          4
 E-MIN      E-MAX      NUMBER     DATA       ERR-T
 MEV        MEV        NO-DIM     B          B
- 0.5        3.         0.         1.360      0.050
  0.5        3.         1.         0.050      0.040
  0.5        3.         2.         0.120      0.050
- 4.         6.         0.         0.110      0.040
  4.         6.         1.         0.027      0.010
  4.         6.         2.         0.020      0.010
-ENDDATA              8
+ENDDATA              6
 ENDSUBENT           22
-ENDENTRY            11
+SUBENT        41302012   20130131   20130502   20130410       4159
+BIB                  4          7
+REACTION   (24-CR-0(N,INL)24-CR-0,PAR,SIG)
+ANALYSIS    B0 = total c-s in defined energy interval.
+            E-MIN, E-MAX - max and min energy of
+                secondary neutrons.
+STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302007) Legendre coefficients for L=1,2
+HISTORY    (20130131C)  Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+E-MIN      E-MAX      DATA       ERR-T
+MEV        MEV        B          B
+ 0.5        3.         1.000      0.030
+ 4.         6.         0.113      0.100
+ENDDATA              4
+ENDSUBENT           16
+SUBENT        41302013   20130131   20130502   20130410       4159
+BIB                  4          7
+REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG)
+ANALYSIS    B0 = total c-s in defined energy interval.
+           E-MIN, E-MAX - max and min energy of
+               secondary neutrons.
+STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302008) Legendre coefficients for L=1,2
+HISTORY    (20130131C)  Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+E-MIN      E-MAX      DATA       ERR-T
+MEV        MEV        B          B
+ 0.5        3.         0.960      0.030
+ 4.         6.         0.144      0.010
+ENDDATA              4
+ENDSUBENT           16
+SUBENT        41302014   20130131   20130502   20130410       4159
+BIB                  4          7
+REACTION   (28-NI-0(N,INL)28-NI-0,PAR,SIG)
+ANALYSIS    B0 = total c-s in defined energy interval.
+           E-MIN, E-MAX - max and min energy of
+               secondary neutrons.
+STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302009) Legendre coefficients for L=1,2
+HISTORY    (20130131C)  Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+E-MIN      E-MAX      DATA       ERR-T
+MEV        MEV        B          B
+ 0.5        3.         0.640      0.030
+ 4.         6.         0.080      0.010
+ENDDATA              4
+ENDSUBENT           16
+SUBENT        41302015   20130131   20130502   20130410       4159
+BIB                  4          7
+REACTION   (27-CO-59(N,INL)27-CO-59,PAR,SIG)
+ANALYSIS    B0 = total c-s in defined energy interval.
+           E-MIN, E-MAX - max and min energy of
+               secondary neutrons.
+STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302010) Legendre coefficients for L=1,2
+HISTORY    (20130131C)  Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+E-MIN      E-MAX      DATA       ERR-T
+MEV        MEV        B          B
+ 0.5        3.         1.050      0.020
+ 4.         6.         0.150      0.013
+ENDDATA              4
+ENDSUBENT           16
+SUBENT        41302016   20130131   20130502   20130410       4159
+BIB                  4          7
+REACTION   (39-Y-89(N,INL)39-Y-89,PAR,SIG)
+ANALYSIS    B0 = total c-s in defined energy interval.
+           E-MIN, E-MAX - max and min energy of
+               secondary neutrons.
+STATUS     (TABLE) Table 2 of C,75KIEV .
+           (COREL,41302011) Legendre coefficients for L=1,2
+HISTORY    (20130131C)  Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+E-MIN      E-MAX      DATA       ERR-T
+MEV        MEV        B          B
+ 0.5        3.         1.360      0.050
+ 4.         6.         0.110      0.040
+ENDDATA              4
+ENDSUBENT           16
+ENDENTRY            16

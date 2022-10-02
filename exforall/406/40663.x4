@@ -1,28 +1,49 @@
-ENTRY            40663     840320              20050926       0000
-SUBENT        40663001     840320              20050926       0000
-BIB                  7         10
-INSTITUTE  (4CCPLEB)
-REFERENCE  (J,AE,15,120,63)
-           (J,SJA,15,808,64)
-AUTHOR     (S.V.KAPCHIGASHEV,YU.P.POPOV)
-TITLE      CAPTURE CROSS SECTIONS IN CONSTRUCTION MATERIALS FOR
-           NEUTRONS WITH ENERGIES UP TO 50 KEV.
-METHOD     (SLODT) METHOD OF SLOWING-DOWN IN LEAD IN CONNECTION
-                   WITH THE INVERSE SPHERICAL GEOMETRY
+ENTRY            40663   20130205   20130502   20130410       4159
+SUBENT        40663001   20130205   20130502   20130410       4159
+BIB                  7         17
+INSTITUTE  (4RUSLEB)
+REFERENCE  (J,AE,15,120,1963)
+           (J,SJA,15,808,1964) Engl.translation of J,AE,15,120 .
+           #doi:10.1007/BF01117566
+AUTHOR     (S.V.Kapchigashev,Yu.P.Popov)
+TITLE      Capture cross sections in construction materials for
+           neutrons with energies up to 50 keV.
+METHOD     (SLODT) Method of slowing-down in lead in connection
+                   with the inverse spherical geometry
 STATUS     (SCSRS)
-HISTORY    (831227T)  CONVERTED FROM ENTRY 80064
-ENDBIB              10
+HISTORY    (19831227T)  Converted from ENTRY 80064
+           (20130205) M.M. Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+           BIB information was updated.
+           Subent 008 was deleted - data were moved in Subent 006,
+           see HISTORY in Subent 006.
+           Subents 010-023 were added.
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        40663002     840320              20050926       0000
-BIB                  2          2
+ENDSUBENT           20
+SUBENT        40663002   20130205   20130502   20130410       4159
+BIB                  6         16
 REACTION   (29-CU-0(N,G),,SIG)
+SAMPLE     3.2*10**22 and 5.6*10**22 nucl/cm**2 .
 MONITOR    (29-CU-0(N,G),,SIG)
-ENDBIB               2
+           Normalization was done to thermal c-s.
+           Also it was done by thermal c-s of Ni and W resonances-
+           results agree with accuracy 5%.
+MONIT-REF  (,D.Hughes+,R,BNL-325,1960)
+CRITIQUE   Of compiler M.M. Data in DATA block look like digitized
+           ones, but different samples data were not digitized
+           correctly. So, data of figure for Cu-0 were
+           re-digitized and are given in Subents 012,013 -
+           separately for two different samples.
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.1 lower of J,AE,15,120,1963.
+           (SPSDD,40663012) See
+           (SPSDD,40663013)     CRITIQUE.
+ENDBIB              16
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
 EV         B          B
- 2.5300E-02 3.7700E+00 3.0000E-02
+ 2.5300E-02 3.77       0.03
 ENDCOMMON            3
 DATA                 2         66
 EN         DATA
@@ -94,20 +115,43 @@ MEV        B
  3.5000E-02 3.3000E-02
  4.8000E-02 2.7000E-02
 ENDDATA             68
-ENDSUBENT           79
-SUBENT        40663003     840320              20050926       0000
-BIB                  2          2
+ENDSUBENT           93
+SUBENT        40663003   20130205   20130502   20130410       4159
+BIB                  6         25
 REACTION   (42-MO-0(N,G),,SIG)
+SAMPLE     Six samples of different thickness and five sorts of
+           material.
 MONITOR    (42-MO-0(N,G),,SIG)
-ENDBIB               2
+            Normalization coefficients determined from
+            levels of 45,71,133 and 166 eV belonging to different
+            isotopes and from capture c-s at thermal region 2.7 b
+           agree in range 5-8%.
+FLAG       (1.) Data at the same energy
+           (2.)                         for different samples.
+                Three values were given at EN=33 eV
+           (3.) 1.6 b - one point (open circle),
+           (4.) 3.1 b - one point (closed circle),
+           (5.) 1.95 b - one point (closed circle ) and near other
+           point (open circle, not given in DATA block).
+CRITIQUE   Of compiler M.M. Data in DATA block look like digitized
+           ones, but different samples data were not digitized
+           correctly. So, data of figure for Mo-0 were
+           re-digitized and are given in Subents 010,011 -
+           separately for two different samples.
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.3 of J,AE,15,120,1963 - for
+           two samples -open and closed circles.
+           (SPSDD,40663010) See
+           (SPSDD,40663011)     CRITIQUE.
+ENDBIB              25
 COMMON               2          3
 EN-NRM     MONIT
 EV         B
- 2.5300E-02 2.7000E+00
+ 2.5300E-02 2.7
 ENDCOMMON            3
-DATA                 2        136
-EN         DATA
-MEV        B
+DATA                 3        136
+EN         DATA       FLAG
+MEV        B          NO-DIM
  1.0000E-06 4.3000E-01
  1.3500E-06 3.5500E-01
  1.7000E-06 3.3000E-01
@@ -136,9 +180,9 @@ MEV        B
  2.9000E-05 6.6500E-01
  3.0000E-05 9.0000E-01
  3.1000E-05 1.1500E+00
- 3.3000E-05 1.6000E+00
- 3.3000E-05 3.1000E+00
- 3.3000E-05 1.9500E+00
+ 3.3000E-05 1.6000E+00  3.
+ 3.3000E-05 3.1000E+00  4.
+ 3.3000E-05 1.9500E+00  5.
  3.4000E-05 4.0000E+00
  3.5000E-05 5.2500E+00
  3.6000E-05 7.7500E+00
@@ -179,10 +223,10 @@ MEV        B
  1.4500E-04 3.2000E+00
  1.5000E-04 2.9000E+00
  1.6000E-04 2.4000E+00
- 1.7000E-04 8.2000E-01
- 1.7000E-04 1.7500E+00
- 1.8000E-04 1.0500E+00
- 1.8000E-04 5.8000E-01
+ 1.7000E-04 8.2000E-01   1.
+ 1.7000E-04 1.7500E+00   2.
+ 1.8000E-04 1.0500E+00   1.
+ 1.8000E-04 5.8000E-01   2.
  1.9000E-04 7.0000E-01
  2.1000E-04 5.2000E-01
  2.2000E-04 6.7000E-01
@@ -190,12 +234,12 @@ MEV        B
  2.4000E-04 8.8000E-01
  2.5000E-04 9.8000E-01
  2.6000E-04 8.4000E-01
- 2.7000E-04 1.2000E+00
- 2.7000E-04 1.0000E+00
+ 2.7000E-04 1.2000E+00   1.
+ 2.7000E-04 1.0000E+00   2.
  2.8000E-04 1.3000E+00
  2.9000E-04 1.5000E+00
- 3.2000E-04 1.8000E+00
- 3.2000E-04 1.6000E+00
+ 3.2000E-04 1.8000E+00   1.
+ 3.2000E-04 1.6000E+00   2.
  3.5000E-04 2.1000E+00
  3.6000E-04 1.8000E+00
  3.7000E-04 2.1000E+00
@@ -214,8 +258,8 @@ MEV        B
  7.4000E-04 1.3000E+00
  7.5000E-04 1.4000E+00
  8.0000E-04 1.2500E+00
- 9.0000E-04 1.1500E+00
- 9.0000E-04 1.0300E+00
+ 9.0000E-04 1.1500E+00   1.
+ 9.0000E-04 1.0300E+00   2.
  9.3000E-04 9.4000E-01
  9.7000E-04 8.9000E-01
  1.0000E-03 9.9000E-01
@@ -245,15 +289,20 @@ MEV        B
  3.7000E-02 1.6500E-01
  4.9000E-02 1.4000E-01
 ENDDATA            138
-ENDSUBENT          149
-SUBENT        40663004     840320              20050926       0000
-BIB                  2          5
+ENDSUBENT          172
+SUBENT        40663004   20130205   20130502   20130410       4159
+BIB                  4         10
 REACTION   (42-MO-98(N,G)42-MO-99,,SIG)
+SAMPLE     (42-MO-98,ENR=0.95) Weight about 10 g.
 MONITOR    (42-MO-0(N,G),,SIG)
-            USING NORMALIZATION COEFFICIENTS DETERMINED FROM
-            LEVELS OF 45,71,133 AND 166 EV BELONGING TO DIFFERENT
-            ISOTOPES.
-ENDBIB               5
+            Normalization by level 480 eV (Mo-98), by levels 45 eV
+           and 133 eV of Mo and levels of Ag. Normalization
+           coefficients agree with 5% accuracy.
+           Due to low thermal capture c-s (0.45 b) normalization
+           by 1/v region is not possible.
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.3 of J,AE,15,120,1963.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 2         63
 EN         DATA
@@ -322,15 +371,17 @@ MEV        B
  2.1000E-02 1.3000E-01
  3.1000E-02 1.0500E-01
 ENDDATA             65
-ENDSUBENT           75
-SUBENT        40663005     840320              20050926       0000
-BIB                  2          5
+ENDSUBENT           80
+SUBENT        40663005   20130205   20130502   20130410       4159
+BIB                  4          7
 REACTION   (42-MO-100(N,G)42-MO-101,,SIG)
+SAMPLE     (42-MO-100,ENR=0.94) Weight 5.8 g.
 MONITOR    (42-MO-0(N,G),,SIG)
-            USING NORMALIZATION COEFFICIENTS DETERMINED FROM
-            LEVELS OF 45,71,133,AND 166 EV BELONGING TO DIFFERENT
-            ISOTOPES.
-ENDBIB               5
+            For normalization the same levels as for Mo-98 were
+           used (see Subent 004).
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.3 of J,AE,15,120,1963.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2         39
 EN         DATA
@@ -375,16 +426,25 @@ MEV        B
  3.0000E-02 1.4500E-01
  3.5000E-02 1.1700E-01
 ENDDATA             41
-ENDSUBENT           51
-SUBENT        40663006     840320              20050926       0000
-BIB                  3          4
+ENDSUBENT           53
+SUBENT        40663006   20130205   20130502   20130410       4159
+BIB                  5         13
 REACTION   (74-W-0(N,G),,SIG)
-SAMPLE     SAMPLE THICKNESS 4.6*10**21GM/CM2.
-MONITOR    NORMALIZATION COEFFICIENTS DETERMINED FROM RESONANCE
-            PARAMETERS.
-ENDBIB               4
+SAMPLE     Sample thickness 4.6*10**21 nucl/cm2.
+MONITOR    Normalization coefficients determined from resonance
+           parameters at 4.14, 7.62 eV energies and group of
+           levels 18.8, 21.2, 27.1 eV agree with each other and
+           with data in thermal region taking into account
+           correction for neutron capture event registration
+           efficiency .
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.4 (open circles) of
+           J,AE,15,120,1963.
+HISTORY    (20130205A) M.M. Data of EN=(1.1-5.)E-2 were added as
+           moved from Subent 008.
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 2        113
+DATA                 2        122
 EN         DATA
 MEV        B
  6.9000E-07 3.7000E+00
@@ -500,15 +560,34 @@ MEV        B
  6.9000E-03 6.6000E-01
  8.0000E-03 6.1000E-01
  8.9000E-03 6.0000E-01
-ENDDATA            115
-ENDSUBENT          124
-SUBENT        40663007     840320              20050926       0000
-BIB                  3          4
+ 1.1000E-02 4.7000E-01
+ 1.4000E-02 4.2000E-01
+ 1.6000E-02 3.9000E-01
+ 1.8000E-02 3.7000E-01
+ 2.0000E-02 3.6000E-01
+ 2.2000E-02 3.4000E-01
+ 2.7000E-02 3.0000E-01
+ 3.2000E-02 2.7000E-01
+ 5.0000E-02 2.3000E-01
+ENDDATA            124
+ENDSUBENT          142
+SUBENT        40663007   20130205   20130502   20130410       4159
+BIB                  5         14
 REACTION   (74-W-0(N,G),,SIG)
-SAMPLE     SAMPLE THICKNESS 1.7*10**21GM/CM2.
-MONITOR    NORMALIZATION COEFFICIENTS DETERMINED FROM RESONANCE
-            PARAMETERS.
-ENDBIB               4
+SAMPLE     Sample thickness 1.7*10**21 nucl/cm2.
+MONITOR    Normalization coefficients determined from resonance
+           parameters at 4.14, 7.62 eV energies and group of
+           levels 18.8, 21.2, 27.1 eV agree with each other and
+           with data in thermal region taking into account
+           correction for neutron capture event registration
+           efficiency .
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.4 (closed circles) of
+           J,AE,15,120,1963.
+HISTORY    (20130205A) M.M. One duplicative data point was
+           corrected as given on figure:
+           2.0500E-04 8.0000E+00 -> 2.1500E-4 8.0000E+00
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 2         98
 EN         DATA
@@ -583,8 +662,8 @@ MEV        B
  1.7500E-04 8.2000E+00
  1.8500E-04 9.0000E+00
  1.9500E-04 9.2000E+00
- 2.0500E-04 8.0000E+00
  2.0500E-04 8.7000E+00
+ 2.1500E-04 8.0000E+00
  2.2000E-04 7.5000E+00
  2.4000E-04 7.0000E+00
  2.6000E-04 6.8000E+00
@@ -612,35 +691,19 @@ MEV        B
  1.4000E-03 2.1000E+00
  1.5500E-03 1.8500E+00
 ENDDATA            100
-ENDSUBENT          109
-SUBENT        40663008     840320              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(N,G),,SIG)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 2          9
-EN         DATA
-KEV        B
- 1.1000E+01 4.7000E-01
- 1.4000E+01 4.2000E-01
- 1.6000E+01 3.9000E-01
- 1.8000E+01 3.7000E-01
- 2.0000E+01 3.6000E-01
- 2.2000E+01 3.4000E-01
- 2.7000E+01 3.0000E-01
- 3.2000E+01 2.7000E-01
- 5.0000E+01 2.3000E-01
-ENDDATA             11
-ENDSUBENT           17
-SUBENT        40663009     840320              20050926       0000
-BIB                  2          2
+ENDSUBENT          119
+NOSUBENT      40663008   20130205   20130502   20130410       4159
+SUBENT        40663009   20130205   20130502   20130410       4159
+BIB                  3          4
 REACTION   (28-NI-0(N,G),,SIG)
 MONITOR    (28-NI-0(N,G),,SIG)
-ENDBIB               2
-COMMON               2          3
-EN-NRM     MONIT
-EV         B
- 2.5300E-02 4.6000E+00
+STATUS     Source of data is not clear -digitized or from authors.
+           Data are presented on Fig.1 of J,AE,15,120,1963.
+ENDBIB               4
+COMMON               3          3
+EN-NRM     MONIT      MONIT-ERR
+EV         B          B
+ 2.5300E-02 4.6        0.1
 ENDCOMMON            3
 DATA                 3         69
 EN         DATA       DATA-ERR
@@ -715,5 +778,535 @@ MEV        B          B
  2.1000E-02 2.1000E-02 2.0000E-04
  3.2000E-02 1.6000E-02
 ENDDATA             71
+ENDSUBENT           84
+SUBENT        40663010   20130205   20130502   20130410       4159
+BIB                  5         14
+REACTION   (42-MO-0(N,G),,SIG)
+SAMPLE     Six samples of different thickness and five sorts of
+           material were used.
+           In this Subent - data for one sample (thicker,
+           thickness is not given).
+MONITOR    (42-MO-0(N,G),,SIG)
+            Normalization coefficients determined from
+            levels of 45,71,133 and 166 eV belonging to different
+            isotopes and from capture c-s at thermal region 2.7 b
+           agree in range 5-8%.
+ERR-ANALYS (EN-ERR-DIG) Digitizing error of scale X (EN).
+           (ERR-DIG)    Digitizing error of scale Y (DATA).
+STATUS     (CURVE) Digitized Fig.3 of J,AE,15,120,1963 -open
+           circles.
+ENDBIB              14
+COMMON               4          3
+EN-NRM     MONIT      EN-ERR-DIG ERR-DIG
+EV         B          PER-CENT   PER-CENT
+ 2.5300E-02 2.7         0.384E-02  0.530E-02
+ENDCOMMON            3
+DATA                 2         97
+EN         DATA
+MEV        B
+ 1.0029    0.42662
+ 1.3119    0.37463
+ 1.6576    0.33771
+ 2.8982    0.26397
+ 3.2411    0.27139
+ 3.4755    0.24969
+ 4.4052    0.25254
+ 5.4545    0.19930
+ 6.7872    0.22713
+ 8.0923    0.24861
+ 9.1459    0.32323
+ 9.8541    0.43709
+ 10.291    0.65418
+ 11.795    0.76153
+ 12.842    0.86279
+ 13.738    0.65329
+ 14.721    0.41995
+ 15.441    0.26515
+ 17.666    0.24196
+ 19.377    0.30759
+ 22.510    0.34110
+ 24.184    0.39856
+ 25.189    0.50415
+ 27.522    0.61313
+ 29.817    0.73576
+ 32.097     1.6700
+ 32.287     2.1877
+ 34.065     2.7923
+ 35.748     3.9633
+ 38.508     5.4551
+ 39.183     8.2714
+ 41.370     9.8356
+ 43.335     10.895
+ 45.401     11.857
+ 49.310     11.105
+ 51.864     8.1866
+ 52.422     6.6498
+ 53.230     5.2601
+ 54.757     4.1430
+ 59.997     3.8126
+ 60.355     3.2368
+ 64.485     2.7865
+ 69.485     2.4312
+ 72.039     2.0739
+ 79.087     1.5707
+ 84.574     1.2377
+ 87.309     1.0511
+ 92.611    0.78877
+ 99.480    0.93810
+ 109.56     1.2193
+ 115.53     1.6412
+ 123.62     1.8756
+ 131.12     2.1623
+ 149.98     2.0173
+ 157.61     1.6249
+ 164.98     1.2520
+ 173.68    0.84856
+ 191.64    0.59614
+ 211.83    0.53901
+ 226.39    0.69419
+ 234.96    0.81442
+ 263.80    0.87140
+ 278.54     1.0271
+ 286.43     1.2875
+ 320.87     1.7113
+ 358.45     1.9566
+ 400.79     2.0475
+ 452.68     1.8517
+ 502.66     1.6377
+ 558.03     1.4808
+ 605.74     1.4626
+ 657.33     1.4900
+ 704.69     1.4077
+ 736.52     1.2664
+ 796.49     1.1861
+ 876.87     1.0442
+ 916.31    0.95622
+ 1006.9     1.0094
+ 1066.7    0.86124
+ 1229.7    0.86637
+ 1519.8    0.82705
+ 1678.1    0.83159
+ 1918.8    0.80025
+ 2288.9    0.83434
+ 2475.5    0.77450
+ 2893.1    0.72595
+ 3293.0    0.71736
+ 3896.8    0.70291
+ 4457.2    0.65579
+ 5145.6    0.57511
+ 6060.8    0.58382
+ 7686.8    0.55501
+ 9071.3    0.46577
+ 11980.    0.37440
+ 18411.    0.28333
+ 32100.    0.19051
+ 38022.    0.17011
+ENDDATA             99
+ENDSUBENT          122
+SUBENT        40663011   20130205   20130502   20130410       4159
+BIB                  5         14
+REACTION   (42-MO-0(N,G),,SIG)
+SAMPLE     Six samples of different thickness and five sorts of
+           material were used.
+           In this Subent - data for one sample (thinner,
+           thickness is not given).
+MONITOR    (42-MO-0(N,G),,SIG)
+            Normalization coefficients determined from
+            levels of 45,71,133 and 166 eV belonging to different
+            isotopes and from capture c-s at thermal region 2.7 b
+           agree in range 5-8%.
+ERR-ANALYS (EN-ERR-DIG) Digitizing error of scale X (EN).
+           (ERR-DIG)    Digitizing error of scale Y (DATA).
+STATUS     (CURVE) Digitized Fig.3 of J,AE,15,120,1963 -closed
+           circles.
+ENDBIB              14
+COMMON               4          3
+EN-NRM     MONIT      EN-ERR-DIG ERR-DIG
+EV         B          PER-CENT   PER-CENT
+ 2.5300E-02 2.7         0.384E-02  0.530E-02
+ENDCOMMON            3
+DATA                 2         65
+EN         DATA
+MEV        B
+ 27.604    0.70022
+ 28.993    0.91369
+ 30.449     1.1975
+ 32.579     3.2300
+ 32.871     2.0476
+ 33.205     4.1578
+ 35.322     5.5230
+ 36.644     10.405
+ 38.533     12.048
+ 40.311     15.173
+ 41.452     19.021
+ 43.797     21.072
+ 45.659     24.397
+ 48.313     23.354
+ 49.902     18.807
+ 50.051     21.479
+ 50.852     16.040
+ 56.128     10.925
+ 56.784     8.1223
+ 59.143     6.7175
+ 61.339     5.5309
+ 63.328     4.6555
+ 67.659     4.0257
+ 69.256     3.3733
+ 74.938     2.9826
+ 78.032     2.5331
+ 80.573     2.1041
+ 84.191     1.9439
+ 86.570     1.5933
+ 89.736     1.3834
+ 92.240     1.1747
+ 99.625     1.2453
+ 104.26     1.5071
+ 104.44     1.9569
+ 113.55     2.5320
+ 119.30     3.2031
+ 128.23     3.5648
+ 141.64     3.4750
+ 150.58     3.1968
+ 155.55     2.5517
+ 170.82     1.8737
+ 180.47     1.3571
+ 194.71     1.0461
+ 203.14    0.73121
+ 238.80    0.90586
+ 256.70    0.99928
+ 279.29     1.2099
+ 297.37     1.4645
+ 313.79     1.8446
+ 348.86     2.2141
+ 382.01     2.1677
+ 429.07     2.2189
+ 488.58     2.1071
+ 526.30     1.8962
+ 586.87     1.6920
+ 656.52     1.6866
+ 761.82     1.3599
+ 883.51     1.1614
+ 982.37    0.89943
+ 1163.5    0.80666
+ 1340.6    0.85952
+ 1622.7    0.76087
+ 14952.    0.31718
+ 23264.    0.25316
+ 49990.    0.13917
+ENDDATA             67
+ENDSUBENT           90
+SUBENT        40663012   20130205   20130502   20130410       4159
+BIB                  6         11
+REACTION   (29-CU-0(N,G),,SIG)
+SAMPLE     3.2*10**22 nucl/cm**2 .
+MONITOR    (29-CU-0(N,G),,SIG)
+           Normalization was done to thermal c-s.
+           Also it was done by thermal c-s of Ni and W resonances-
+           results agree with accuracy 5%.
+MONIT-REF  (,D.Hughes+,R,BNL-325,1960)
+ERR-ANALYS (EN-ERR-DIG) Digitizing error of scale X (EN).
+           (ERR-DIG)    Digitizing error of scale Y (DATA).
+STATUS     (CURVE) Digitized Fig.1 of J,AE,15,120,1963 -open
+           circles.
+ENDBIB              11
+COMMON               5          3
+EN-NRM     MONIT      MONIT-ERR  EN-ERR-DIG ERR-DIG
+EV         B          B          PER-CENT   PER-CENT
+ 2.5300E-02 3.77       0.03        0.333E-02  0.278E-02
+ENDCOMMON            3
+DATA                 2         60
+EN         DATA
+MEV        B
+ 18.707    0.10052
+ 22.616    0.87295E-01
+ 26.779    0.79901E-01
+ 29.698    0.67975E-01
+ 29.809    0.74917E-01
+ 32.658    0.60707E-01
+ 35.915    0.53998E-01
+ 39.488    0.50626E-01
+ 43.067    0.45951E-01
+ 47.931    0.45047E-01
+ 51.208    0.41384E-01
+ 59.156    0.38184E-01
+ 66.419    0.32354E-01
+ 81.313    0.26335E-01
+ 92.811    0.22316E-01
+ 109.42    0.21617E-01
+ 132.34    0.16692E-01
+ 149.09    0.17250E-01
+ 169.18    0.67315E-01
+ 181.99    0.89409E-01
+ 208.78    0.17313
+ 225.52    0.22626
+ 240.77    0.24942
+ 266.94    0.22732
+ 282.03    0.15225
+ 304.27    0.94041E-01
+ 316.46    0.51642E-01
+ 348.20    0.40187E-01
+ 388.99    0.43244E-01
+ 406.44    0.61526E-01
+ 440.82    0.81722E-01
+ 479.38    0.15757
+ 511.26    0.22972
+ 534.01    0.35875
+ 560.55    0.44837
+ 605.67    0.54256
+ 691.23    0.47490
+ 773.36    0.34498
+ 797.10    0.23672
+ 838.84    0.15225
+ 915.43    0.11751
+ 978.55    0.93687E-01
+ 1003.7    0.78399E-01
+ 1099.6    0.63787E-01
+ 1194.7    0.53174E-01
+ 1319.6    0.44150E-01
+ 1404.1    0.39907E-01
+ 1594.5    0.44181E-01
+ 1860.1    0.79218E-01
+ 2008.5    0.11410
+ 2279.6    0.14380
+ 2632.6    0.14388
+ 2847.6    0.13059
+ 3414.9    0.10934
+ 4479.4    0.11306
+ 5303.8    0.10475
+ 6332.4    0.94337E-01
+ 7685.1    0.87766E-01
+ 9482.0    0.80345E-01
+ 12493.    0.76302E-01
+ENDDATA             62
 ENDSUBENT           82
-ENDENTRY             9
+SUBENT        40663013   20130205   20130502   20130410       4159
+BIB                  6         11
+REACTION   (29-CU-0(N,G),,SIG)
+SAMPLE      5.6*10**22 nucl/cm**2 .
+MONITOR    (29-CU-0(N,G),,SIG)
+           Normalization was done to thermal c-s.
+           Also it was done by thermal c-s of Ni and W resonances-
+           results agree with accuracy 5%.
+MONIT-REF  (,D.Hughes+,R,BNL-325,1960)
+ERR-ANALYS (EN-ERR-DIG) Digitizing error of scale X (EN).
+           (ERR-DIG)    Digitizing error of scale Y (DATA).
+STATUS     (CURVE) Digitized Fig.1 of J,AE,15,120,1963 -closed
+           circles.
+ENDBIB              11
+COMMON               5          3
+EN-NRM     MONIT      MONIT-ERR  EN-ERR-DIG ERR-DIG
+EV         B          B          PER-CENT   PER-CENT
+ 2.5300E-02 3.77       0.03        0.333E-02  0.278E-02
+ENDCOMMON            3
+DATA                 2         48
+EN         DATA
+MEV        B
+ 157.14    0.22000E-01
+ 171.47    0.50492E-01
+ 191.12    0.99761E-01
+ 198.65    0.19000
+ 212.79    0.25961
+ 229.02    0.29803
+ 256.96    0.30303
+ 270.17    0.24751
+ 296.50    0.12845
+ 310.79    0.79334E-01
+ 338.08    0.48413E-01
+ 390.40    0.49230E-01
+ 423.32    0.69206E-01
+ 450.64    0.16273
+ 472.59    0.26144
+ 514.40    0.39854
+ 546.59    0.51662
+ 587.86    0.71455
+ 648.81    0.72943
+ 665.17    0.68649
+ 729.42    0.43803
+ 854.84    0.23582
+ 892.02    0.16182
+ 973.85    0.11242
+ 1089.2    0.88916E-01
+ 1169.3    0.67252E-01
+ 1307.5    0.57680E-01
+ 1420.1    0.52565E-01
+ 1693.0    0.69844E-01
+ 1842.6    0.10865
+ 2039.5    0.15337
+ 2363.4    0.18265
+ 2685.4    0.17266
+ 3001.8    0.15865
+ 3398.4    0.13174
+ 3940.5    0.13451
+ 4495.3    0.13134
+ 5386.7    0.13357
+ 6248.7    0.12176
+ 7935.7    0.10880
+ 9058.3    0.90712E-01
+ 11942.    0.73260E-01
+ 15355.    0.65201E-01
+ 19662.    0.57792E-01
+ 23485.    0.47036E-01
+ 29217.    0.42368E-01
+ 35191.    0.33115E-01
+ 47754.    0.26104E-01
+ENDDATA             50
+ENDSUBENT           70
+SUBENT        40663014   20130205   20130502   20130410       4159
+BIB                  4          6
+REACTION  1(29-CU-65(N,G),,WID)
+          2(29-CU-65(N,EL),,WID,,2G)
+SAMPLE      Samples of thickness from 4*10**21 to 6.5*10**22
+           nucl/cm**2 .
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Text, page 122 of J,AE,15,120,1963.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 5          1
+EN-RES     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+EV         EV         EV         EV         EV
+ 227.       0.6        0.2        0.016      0.002
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        40663015   20130205   20130502   20130410       4159
+BIB                  4          5
+REACTION   (29-CU-63(N,G),,WID)
+SAMPLE      Samples of thickness from 4*10**21 to 6.5*10**22
+           nucl/cm**2 .
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Text, page 122 of J,AE,15,120,1963.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+EN-RES     DATA       DATA-ERR
+EV         EV         EV
+ 580.       0.65       0.10
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        40663016   20130205   20130502   20130410       4159
+BIB                  5          7
+REACTION  1(29-CU-63(N,0),,EN)
+          2(29-CU-63(N,EL),,WID)
+SAMPLE      Samples of thickness from 4*10**21 to 6.5*10**22
+           nucl/cm**2 .
+ASSUMED    (ASSUM,29-CU-63(N,G),,WID)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Text, page 122 of J,AE,15,120,1963.
+ENDBIB               7
+COMMON               2          3
+MOMENTUM L ASSUM
+NO-DIM     EV
+0.           0.65
+ENDCOMMON            3
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+EV         EV         EV         EV
+-100.       20.        0.035      0.010
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        40663017   20130205   20130502   20130410       4159
+BIB                  3          3
+REACTION   (28-NI-0(N,G),,RI,,RNV/LIM)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table, page 123 of J,AE,15,120,1963.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+EV         B          B
+ 2.3        0.06       0.02
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        40663018   20130205   20130502   20130410       4159
+BIB                  3          3
+REACTION   (29-CU-0(N,G),,RI,,RNV/LIM)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table, page 123 of J,AE,15,120,1963.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+EV         B          B
+ 230.      2.6         0.3
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        40663019   20130205   20130502   20130410       4159
+BIB                  3          3
+REACTION   (42-MO-0(N,G),,RI,,RNV/LIM)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table, page 123 of J,AE,15,120,1963.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+EV         B          B
+ 1.         1.0        0.2
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        40663020   20130205   20130502   20130410       4159
+BIB                  4          5
+REACTION   (42-MO-100(N,G)42-MO-101,,RI,,RNV/LIM)
+ERR-ANALYS (DATA-ERR) Not specified.
+ADD-RES    For Mo-98 RI,,RNV/LIM is given in Table as value 1.8 b,
+           but energy range is not given.
+STATUS     (TABLE) Table, page 123 of J,AE,15,120,1963.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+EV         B          B
+ 400.       1.1        0.2
+ENDDATA              3
+ENDSUBENT           13
+SUBENT        40663021   20130205   20130502   20130410       4159
+BIB                  3          3
+REACTION   (74-W-0(N,G),,RI,,RNV/LIM)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table, page 123 of J,AE,15,120,1963.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          1
+EN-MIN     DATA       DATA-ERR
+EV         B          B
+ 800.       22.        2.
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        40663022   20130205   20130502   20130410       4159
+BIB                  5          6
+REACTION  1(42-MO-98(N,EL),,EN)
+          2(42-MO-98(N,EL),,WID,,G)
+ASSUMED    (ASSUM,42-MO-98(N,G),,WID)  From REL-REF:
+REL-REF    (R,,D.Hughes+,R,BNL-325,1960)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Text, page 124 of J,AE,15,120,1963.
+ENDBIB               6
+COMMON               2          3
+MOMENTUM L ASSUM
+NO-DIM     EV
+ 0.         0.260
+ENDCOMMON            3
+DATA                 2          1
+DATA      1DATA-APRX 2
+EV         EV
+ 12.             2.E-5
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        40663023   20130205   20130502   20130410       4159
+BIB                  5          5
+REACTION   (42-MO-98(N,EL),,WID)
+ASSUMED    (ASSUM,42-MO-100(N,G),,WID) From REL-REF
+REL-REF    (D,,D.Hughes+,R,BNL-325,1960)  1.eV in BNL-325.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Text, page 124 of J,AE,15,120,1963.
+ENDBIB               5
+COMMON               1          3
+ASSUM
+EV
+ 0.26
+ENDCOMMON            3
+DATA                 4          1
+EN-RES     DATA       -DATA-ERR  +DATA-ERR
+EV         EV         EV         EV
+ 367.       0.05      0.03        0.05
+ENDDATA              3
+ENDSUBENT           17
+ENDENTRY            23

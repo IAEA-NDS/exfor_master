@@ -1,40 +1,51 @@
-ENTRY            40607   19850329   20061121   20060816       4138
-SUBENT        40607001   19850329   20061121   20060816       4138
-BIB                 12         18
+ENTRY            40607   20121204   20130502   20130410       4159
+SUBENT        40607001   20121204   20130502   20130410       4159
+BIB                 13         28
 INSTITUTE  (4RUSFEI)
 REFERENCE  (C,80KIEV,3,35,198009)
-AUTHOR     (D.L.SHPAK,G.G.KOROLYOV)
-TITLE      MEASUREMENT OF RATIO OF FISSION CROSS SECTION
-           OF U-233 TO U-235 IN NEUTRON ENERGY RANGE .060 - 3.28
-           MEV
-FACILITY   (VDG)
-INC-SOURCE (P-LI7)  For En Less Than  600.keV
-           (P-T)    En Less Than 1.MeV
-SAMPLE      Layers Of Uranium Oxide (U-233 - 93.31% , U-235-
-            99.97% )
-DETECTOR   (GLASD)
-MONITOR     Absolute Measurement
+AUTHOR     (D.L.Shpak,G.G.Korolev)
+TITLE      Measurement of ratio of fission cross section
+           of U-233 to U-235 in neutron energy range .060 - 3.28
+           MeV
+FACILITY   (VDG,4RUSFEI)
+INC-SOURCE (P-LI7)  For En less than  600.keV
+           (P-T)    En less than 1.MeV
+SAMPLE      Layers of uranium oxide (U-233 - 93.31% , U-235-
+            99.97% ) on Al backings.
+DETECTOR   (GLASD)  In 4PI geometry.
+MONITOR    ((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
+           Absolute normalization of c-s ratio was done by thermal
+           column of BR-10 reactor ( ratio of thermal to
+           epithermal neutrons - 1.E-4 ); temperature  of neutron
+           spectrum was estimated by Au filter transmission and
+           was found to be 27+-11 deg. Ratio of U-233/U235 c-s
+           for Maxwellian spectrum of temperature 20 deg was taken
+           as 0.9293 from REL-REF of H.Lemmel.
+REL-REF    (R,,H.Lemmel,C,75WASH,1,286,1975)
 PART-DET   (FF)
 STATUS     Data Checked By NNDC
 HISTORY    (19810806C)
-           (20060801A) Errors And Correction were added.
-                       data corrected for monotonuos.M.M.
-ENDBIB              18
+           (20060801A) Errors and CORRECTION were added.
+                       Data corrected for monotonous.M.M.
+           (20121204A) M.M. FLAG was added in Subent 002.
+            Information about absolute normalization was added.
+ENDBIB              28
 NOCOMMON             0          0
-ENDSUBENT           21
-SUBENT        40607002   19850329   20061121   20060816       4138
-BIB                  6         22
+ENDSUBENT           31
+SUBENT        40607002   20121204   20130502   20130410       4159
+BIB                  7         34
 REACTION   ((92-U-233(N,F),,SIG)/
            (92-U-235(N,F),,SIG))
 ERR-ANALYS (ERR-T) Total error
            (ERR-S) Statistical error
-           (ERR-1) Error of Ratio of fissible nucleus number
+           (ERR-1) Error of Ratio of fissile  nucleus number
            (ERR-2) Glass detector error
            (ERR-3) Error due Fission of other isotopes
            (ERR-4) Error due Neutron scattering by sample holder
            (ERR-5) Error due Background of experim. hall neutrons
            (ERR-6) Error due Background of other reactions
-           (ERR-7) Error due Nonuniformity of fissible layers
+           (ERR-7) Error due Nonuniformity of fissile  layers
+            Partial errors at EN=3.2 MeV.
                    thickness
 CORRECTION  Corrections were made for:
             Fission of other isotopes               - 2.46%
@@ -45,8 +56,19 @@ ASSUMED    (ASSUM,(92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
            At Maxwellian spectrum neutrons temperature 20 degrees.
             From REL-REF. Used For Normalization.
 REL-REF    (R,,H.LEMMEL,C,75WASH,1,286,1975)
-STATUS     (DEP,40361002)  From Table 1
-ENDBIB              22
+FLAG       (1.) At En=0.630 MeV two DATA points are given in Table
+           of article. Data are printed on figure, but due to low
+           size and also overlapping with data of other
+           experiments - it's difficult to say, how many points
+           were printed on this figure - it looks like point of
+           1.701 value is absent, probably.
+           No explanation is given in text.
+STATUS     (DEP,40361001) C-s ratio results was obtained from
+           measurement of FF angular distributions in 40361,
+           in Subent 40361.003 - c-s ratio of different
+           normalization.
+           (TABLE) Table 1 of C,80KIEV,3,35,1980 .
+ENDBIB              34
 COMMON               9          6
 ASSUM      ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
 ERR-5      ERR-6      ERR-7
@@ -55,9 +77,9 @@ PER-CENT   PER-CENT   PER-CENT
 0.9293     0.84       0.74       0.40       0.14       0.12
 0.26       0.14       0.30
 ENDCOMMON            6
-DATA                 4         86
-EN         EN-ERR     DATA       ERR-T
-MEV        KEV        NO-DIM     PER-CENT
+DATA                 5         86
+EN         EN-ERR     DATA       ERR-T      FLAG
+MEV        KEV        NO-DIM     PER-CENT   NO-DIM
  6.0000E-02 8.0000E+00 1.3610E+00 1.8200E+00
  7.0000E-02 8.0000E+00 1.4540E+00 1.7200E+00
  8.0000E-02 8.0000E+00 1.3190E+00 1.8300E+00
@@ -92,7 +114,7 @@ MEV        KEV        NO-DIM     PER-CENT
  5.8000E-01 8.0000E+00 1.6790E+00 1.3700E+00
  6.0000E-01 8.0000E+00 1.6870E+00 1.2600E+00
  6.2000E-01 8.0000E+00 1.6730E+00 1.2600E+00
- 6.3000E-01 8.0000E+00 1.7010E+00 1.2800E+00
+ 6.3000E-01 8.0000E+00 1.7010E+00 1.2800E+00  1.
  6.3000E-01 8.0000E+00 1.6810E+00 1.2900E+00
  6.4200E-01 8.0000E+00 1.7030E+00 1.2300E+00
  6.6000E-01 8.0000E+00 1.7280E+00 1.3100E+00
@@ -145,5 +167,5 @@ MEV        KEV        NO-DIM     PER-CENT
  3.2000E+00 3.0000E+01 1.4840E+00 1.2700E+00
  3.2800E+00 3.0000E+01 1.4920E+00 1.2400E+00
 ENDDATA             88
-ENDSUBENT          122
+ENDSUBENT          134
 ENDENTRY             2
