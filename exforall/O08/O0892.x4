@@ -1,9 +1,11 @@
-ENTRY            O0892   20030424              20050926       0000
-SUBENT        O0892001   20030424              20050926       0000
-BIB                 11         48
+ENTRY            O0892   20090623   20100128   20100120       O040
+SUBENT        O0892001   20090623   20100128   20100120       O040
+BIB                 11         52
 TITLE      Spallation neutron production by 0.8, 1.2, and 1.6 GeV
            protons on Pb targets
 REFERENCE  (J,PRL,82,4412,19990531)
+           (J,PR/C,65,044621,2002) Neutron multiplicity for natPb
+            are revised by authors in this reference
 AUTHOR     (X.Ledoux, F.Borne, A.Boudard, F.Brochard, S.Crespin,
            D.Drake, C.Duchazeaubeneix, D.Durand, J.M.Durand,
            J.Frehaut, F.Hanappe, L.Kowalski, C.Lebrun,
@@ -13,9 +15,10 @@ AUTHOR     (X.Ledoux, F.Borne, A.Boudard, F.Brochard, S.Crespin,
            L.Stuttge, Y.Terrien, J.Thun, M.Uematsu, C.Varignon,
            D.M.Whittal, W.Wlazlo)
 INSTITUTE  (2FR BRC) DPTA/SPN
-           (2FR FR ) National laboratory SATURNE and DAPNIA/SPhN.
+           (2FR SAT) National laboratory SATURNE
+           (2FR SAC) DAPNIA/SPhN.
            (2SWDUPP)
-           (2FR PAR) Institute of nucleare physics, Orsay
+           (2FR PAR) Institute of nuclear physics, Orsay
            (2FR CAE)
            (2BLGBRU) Interactions Ion-Matiere
            (2FR STR)
@@ -38,20 +41,21 @@ METHOD     (SITA) 2-cm-thick lead target
            (TOF) For low energy neutrons, < 400 MeV
            (PSD) For neutron-gamma discrimination.
            High energy measurements, >200 MeV, were done using
-            (N,P) scattering on a liquid hydrogen converter and
+            (n,p) scattering on a liquid hydrogen converter and
            reconstruction of the proton trajectory in a rotating
            magnetic spectrometer.
 REL-REF    (N,,F.BORNE+,J,NIM/A,385,339,1997)
            (N,,E.MARTINEZ+,J,NIM/A,385,345,1997)
-           Expermental techniques, described in details.
+           Experimental techniques, described in details.
 HISTORY    (20010729C)
            (20010720R) Data tables from Mark A. Kellett
-           (20030424U) Last checking has been done.
+           (20090623A) New reference and new data for sub003 were
+            added, according N.Otsuka comments.
 STATUS     (TABLE) All data were rounded for five decimal places
            by compiler.
-ENDBIB              48
-NOCOMMON
-ENDSUBENT           51
+ENDBIB              52
+NOCOMMON             0          0
+ENDSUBENT           55
 SUBENT        O0892002   20030424              20050926       0000
 BIB                  5         22
 REACTION   (82-PB-0(P,X)0-NN-1,,DA/DE)
@@ -1709,33 +1713,31 @@ MEV        ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
       1600.       160.  220.42982   17.52023         0.
 ENDDATA           1628
 ENDSUBENT         1655
-SUBENT        O0892003   20030424              20050926       0000
-BIB                  7         14
-REACTION   (82-PB-0(P,X)0-NN-1,,PY)
-STATUS     (DEP,O0892002)
-COMMENT    By authors. To obtain the experimental values, data
-           have been integrated over 4*pi, by interpolating
-           between the measured angles, then divided by the
-           reaction cross section from  TIERCE.
-ADD-RES    Averaged kinetic energy carried out by the emitted
-           neutrons.
-ANALYSIS   (INTED)
-           (INTAD)
-MISC-COL   (MISC1) Reaction cross section from TIERCE.
-           (MISC2) Low limit of neutron energy.
-           (MISC3) High limit of neutron energy.
-ERR-ANALYS (ERR-T) Noany analysis is presented.
-ENDBIB              14
-NOCOMMON
+SUBENT        O0892003   20090623   20100128   20100120       O040
+BIB                  8         12
+REACTION   (82-PB-0(P,X)0-NN-1,PAR,PY,,TT)
+MONITOR    ((MONIT)82-PB-0(P,NON),,SIG)
+EN-SEC     (E,N)
+COMMENT    *By compiler*.MONIT-REF is B.C. Barashenkov "Cross
+           Sections of Interactions of Particle and Nuclei
+            with Nuclei, JINR, Dubna, 1993.
+ANALYSIS   (INTED,INTAD)
+ERR-ANALYS (DATA-ERR). No information on source of uncertainties
+STATUS     (TABLE) Table V,VI,VII of J,PR,C,65,044621,2002
+           (DEP,O0892002) Double differential cross section
+HISTORY    (20090619A).Subent  was changed. Data are revised by
+           authors in J,PR,C,65,044621,2002
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 6          6
-EN         DATA       ERR-T      MISC1      MISC2      MISC3
-MEV        PRT/REAC   PRT/REAC   MB         MEV        MEV
-       800.        6.5        1.5      1723.         2.        20.
-       800.        1.9        0.2                   20.       800.
-      1200.        8.3         1.      1719.         2.        20.
-      1200.        2.7        0.3                   20.      1200.
-      1600.       10.1        1.4      1717.         2.        20.
-      1600.        3.4        0.3                   20.      1600.
+EN         E-MIN      E-MAX      DATA       DATA-ERR   MONIT
+MEV        MEV        MEV        PRD/REAC   PRD/REAC   MB
+800.       2.         20.        6.5        0.7        1723.
+800.       20.        800.       1.9        0.2        1723.
+1200.      2.         20.        8.3        0.8        1719.
+1200.      20.        1200.      2.7        0.3        1719.
+1600.      2.         20.        10.1       1.0        1717.
+1600.      20.        1600.      3.4        0.5        1717.
 ENDDATA              8
-ENDSUBENT           27
+ENDSUBENT           25
 ENDENTRY             3
