@@ -1,13 +1,14 @@
-ENTRY            C0130   20071108   20080131   20080124       Y002
-SUBENT        C0130001   20071108   20080131   20080124       Y002
-BIB                 10         18
+ENTRY            C0130   20131022   20140129   20140112       C135
+SUBENT        C0130001   20131022   20140129   20140112       C135
+BIB                 10         21
 INSTITUTE  (1USAORL)
 REFERENCE  (J,PR,129,1298,1963)
-AUTHOR     (J.L.NEED,B.LINDER)
+AUTHOR     (J.L.Need,B.Linder)
 TITLE      Cross Sections for Formation of the Isomeric Pair
             In117 and In117m in the Sn120(p,alpha) Reaction
 FACILITY   (CYCLO,1USAORL)
-SAMPLE     Tin metal foils, enriched to 97% 120Sn.
+SAMPLE     (50-SN-120,ENR=0.97)
+           Tin metal foils, enriched to 97% 120Sn.
 INC-SPECT  Maximum energy of cyclotron beam 22.4 MeV.  Target
             foils separated with aluminum absorbers to give
             desired energies.  Energy given is calculated for
@@ -19,56 +20,67 @@ CORRECTION Corrected for:
            . source scattering and absorption,
            . dead time.
 HISTORY    (19990915C) VM
-ENDBIB              18
+           (20131022A) OS. Data in sub.2 corrected, SAMPLE,
+            DETECTOR, ERR-ANALYS updated
+ENDBIB              21
 NOCOMMON             0          0
-ENDSUBENT           21
-SUBENT        C0130002   19990915   20000119   20050926       0000
-BIB                  5         11
+ENDSUBENT           24
+SUBENT        C0130002   20131022   20140129   20140112       C135
+BIB                  6         12
 REACTION   (50-SN-120(P,A)49-IN-117-G/M,,SIG/RAT)
-DETECTOR   (SCIN) Gamma-ray scintillation spectrometer containing
-            NaI(Tl) attached to photomultiplier.
+DETECTOR   (NAICR) Gamma-ray scintillation spectrometer
+            containing NaI(Tl) attached to photomultiplier.
 DECAY-DATA (49-IN-117-M,115.7MIN,DG,311.,0.25)
            (49-IN-117-G,44.6MIN,DG,161.,,DG,565.)
 ERR-ANALYS (DATA-ERR) Best estimate of probable error obtained
            from propagation of fitting errors in:
            . decay constants,
-           . ratio of fitting coeFficients: C(i), C(m),
-           . branching ratio for 311-keV gamma (10%).
-STATUS     Data taken from Table I of reference.
-ENDBIB              11
-NOCOMMON             0          0
+           . ratio of fitting coefficients: C(i), C(m),
+           (ERR-1) branching ratio for 311-keV gamma (10%).
+STATUS     (TABLE) Data taken from Table I of reference.
+HISTORY    (20131022A) EN values replaced according to Table I
+ENDBIB              12
+COMMON               1          3
+ERR-1
+PER-CENT
+  10.
+ENDCOMMON            3
 DATA                 3         12
 EN         DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM
- 10.2        2.75       0.23
- 10.2        2.75       0.22
- 10.2        2.59       0.23
- 10.2        2.01       0.16
- 10.2        1.74       0.14
- 10.2        1.55       0.42
- 10.2        1.50       0.13
- 10.2        1.27       0.10
- 10.2        1.02       0.09
- 10.2        1.06       0.10
- 10.2        1.12       0.17
+ 22.2        2.75       0.23
+ 22.2        2.75       0.22
+ 20.8        2.59       0.23
+ 19.3        2.01       0.16
+ 17.7        1.74       0.14
+ 17.7        1.55       0.42
+ 16.0        1.50       0.13
+ 14.6        1.27       0.10
+ 13.1        1.02       0.09
+ 13.1        1.06       0.10
+ 11.7        1.12       0.17
  10.2        1.96       0.24
 ENDDATA             14
-ENDSUBENT           30
-SUBENT        C0130003   20061108   20080131   20080124       Y002
+ENDSUBENT           35
+SUBENT        C0130003   20131022   20140129   20140112       C135
 BIB                  5          9
 REACTION   (50-SN-120(P,A)49-IN-117-M,,SIG)
 DETECTOR   (GEMUC) Lead-shielded end-window Geiger counters.
 DECAY-DATA (49-IN-117-M,115.7MIN,B,1620.,,B,1770.)
-ERR-ANALYS (DATA-ERR) Uncertainties given represent errors
+ERR-ANALYS (ERR-1) Uncertainties given represent errors
             involved in fitting of decay curves.
-           Absolute uncertainty estimated to be 25%.
+           (DATA-ERR) Absolute uncertainty estimated to be 25%.
 STATUS     (CPX) From CPX file compiled in 1964/67 by F.K.McGowan
             et al. Converted to EXFOR format by IAEA-NDS.
             Converted from data set P0007.
 ENDBIB               9
-NOCOMMON             0          0
+COMMON               1          3
+DATA-ERR
+PER-CENT
+  25.
+ENDCOMMON            3
 DATA                 3         16
-EN         DATA       DATA-ERR
+EN         DATA       ERR-1
 MEV        MB         MB
     3.500      0.009      0.002
     5.810      0.021      0.007
@@ -87,5 +99,5 @@ MEV        MB         MB
    59.400      2.320
    69.900      2.320
 ENDDATA             18
-ENDSUBENT           32
+ENDSUBENT           36
 ENDENTRY             3
