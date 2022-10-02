@@ -1,43 +1,65 @@
-ENTRY            10768   20100518   20100809   20100806       1364
-SUBENT        10768001   20100518   20100809   20100806       1364
-BIB                 12         34
-INSTITUTE  (1USAORL)
-REFERENCE  (J,NSE,65,454,197803)
-           (J,NSE,68,125,197810)
+ENTRY            10768   20140609   20150112   20150107       1402
+SUBENT        10768001   20140609   20150112   20150107       1402
+BIB                 15         56
 AUTHOR     (L.W.Weston,J.H.Todd)
 TITLE      Neutron Capture and Fission Cross Sections of
-            Plutonium-241
-FACILITY   (LINAC,1USAORL) Orela
+           Plutonium-241
+REFERENCE  (J,NSE,65,454,197803)
+           (J,NSE,68,125,197810)
+REL-REF    (O,10301001,L.W.Weston+,J,ANS,15,480,1972)
+INSTITUTE  (1USAORL)
+FACILITY   (LINAC,1USAORL) ORELA.
+INC-SOURCE (PHOTO)
 SAMPLE     Sample used at 20-m flight path: PuO2 sample
-            containing 2 g of 241Pu.
-            Isotopic composition: 239Pu (0.86%), 240Pu (2.97%),
-                    241Pu (88.0%),242Pu (1.52%), 241Am (6.58%).
-           Sample used at 85-m flight path: 4.225-g
-            metallic foil.
+           containing 2 g of 241Pu. Isotopic composition:
+           239Pu (0.86%), 240Pu (2.97%), 241Pu (88.0%),
+           242Pu (1.52%), 241Am (6.58%).
+           sample used at 85-m flight path: 4.225-g metallic foil.
             Isotopic composition: 239Pu (0.6%), 240Pu (3.0%),
-                   241Pu (92.0%), 242Pu (2.7%), 241Am (1.7%).
-METHOD     (TOF) Time-of-flight. 20- and 85-m flight paths.
-DETECTOR   (SCIN) Ne226 liquid scintillators for gamma-rays
-                  Ne213 liquid scintillators for neutrons
+           241Pu (92.0%), 242Pu (2.7%), 241Am (1.7%).
+PART-DET   (N,G)
+DETECTOR   (SCIN) NE226 liquid scintillators for gamma-rays
+           NE213 liquid scintillators for neutrons
            (IOCH) Flux monitored with a parallel-plate B10F3
-            ionization chamber.
+           ionization chamber.
+METHOD     (TOF,PSD) 20- and 85-m flight paths. The data taken
+           at an 85-m flight path were normalized to those taken
+           at a 20-m flight path over the neutron energy from
+           300 eV to 1 keV. Pulse-shape discrimination was
+           employed to discriminate between fast neutrons and
+           gamma rays. The neutron flux from thermal-neutron
+           energies to 30 keV was measured with a parallel plate
+           10BF3 ionization chamber that intercepted the full
+           neutron stream.
 CORRECTION Corrected for resonance self-shielding and for 239Pu,
-            242Pu, 241Am content of sample.
-ERR-ANALYS Estimated uncertainties (%) -
-                                 fission  alpha
-                0.01 - 0.4  eV     2.7      6.
-                 0.4 - 1000 eV     2.9      7.
-                   1 - 30  keV     4.4      9.
-                  30 - 300 keV             10.
-           See article for more detail.
+           242Pu, 241Am content of sample.
+ERR-ANALYS            Components of estimated uncertainties (%)
+                                 Neutron Energy Range
+                      0.01-0.4 eV0.4-1000 eV  1-30 keV  30-300 keV
+           Fission:
+           Back.subtr.    1.0       1.0         1.0
+           Flux-shape     1.5       1.5         2.5
+           10B c.s.       0.5       1.0         2.5
+           Det. effic.    2.0       2.0         2.5
+           Total          2.7       2.9         4.4
+           Alpha:
+           C.Back.Sub.    2.0       1.0         1.0        1.0
+           T.Back.Sub.    4.0       5.0         7.0        8.0
+           Det. Effic.    4.0       5.0         6.0        6.0
+           Total          6.0       7.0         9.0       10.0
 STATUS     (APRVD) Approved by L.W.Weston, 1979/1/2.
 HISTORY    (19780725C)
            (19820602A) BIB correction.
-           (20100518A) VM:Updated to new date formats,lower case.
+           (20100518A) VM:updated to new date formats,lower case.
                        BIB updates
-ENDBIB              34
+           (20140609A) BP: Updated the information, linked related
+                       publications, added average value of
+                       fission and alpha data. Subentry 3 split
+                       into 3 (with new subents. 7,8) because of
+                       different error analysis.
+ENDBIB              56
 NOCOMMON             0          0
-ENDSUBENT           37
+ENDSUBENT           59
 SUBENT        10768002   20100518   20100809   20100806       1364
 BIB                  3          9
 REACTION   (94-PU-241(N,G)94-PU-242,,SIG)
@@ -3436,20 +3458,30 @@ EV         B
  3.0030E+04-9.5050E-02
 ENDDATA           3382
 ENDSUBENT         3396
-SUBENT        10768003   20100518   20100809   20100806       1364
-BIB                  3          5
+SUBENT        10768003   20140609   20150112   20150107       1402
+BIB                  6         12
 REACTION   (94-PU-241(N,F),,SIG)
-MONITOR    (94-PU-241(N,F),,SIG) Normalized to ENDF/B-IV between
-                                 0.02 and 0.03 eV.
+MONITOR    (94-PU-241(N,F),,SIG)
+MONIT-REF  (,,3,ENDF/B-IV,1266,1974)
+ERR-ANALYS (ERR-1) Uncertainty due to background subtraction
+           (ERR-2) Uncertainty due to flux shape
+           (ERR-3) Uncertainty due to 10B cross section error
+           (ERR-4) Uncertainty due to detector efficiency error
+           (ERR-T) Total uncertainty
 STATUS     (TABLE) Data received on magnetic tape from L. Weston,
-                   March 1978..
-ENDBIB               5
-COMMON               2          3
-EN-NRM     MONIT
-EV         B
- 0.0253     1007.8
-ENDCOMMON            3
-DATA                 2       3380
+           March 1978.
+HISTORY    (20140609A) Data points above 0.4 eV moved to new
+            subentries 7, 8 because of different error analysis
+ENDBIB              12
+COMMON               7          6
+EN-NRM     MONIT      ERR-1      ERR-2      ERR-3      ERR-4
+ERR-T
+EV         B          PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+ 0.0253     1007.8      1.0        1.5        0.5         2.0
+ 2.7
+ENDCOMMON            6
+DATA                 2        248
 EN         DATA
 EV         B
  1.0070E-02 1.4860E+03
@@ -3700,6 +3732,236 @@ EV         B
  3.8670E-01 1.9510E+02
  3.9220E-01 1.7780E+02
  3.9780E-01 1.6970E+02
+ENDDATA            250
+ENDSUBENT          274
+SUBENT        10768004   20100518   20100809   20100806       1364
+BIB                  4         13
+REACTION  1(94-PU-241(N,0),,EN,,AA)
+          2(94-PU-241(N,TOT),,WID,,AA)
+          3(94-PU-241(N,F),,AG,,AA/FCT)
+          4(94-PU-241(N,F),,AH,,AA/FCT)
+          5(94-PU-241(N,G),,AG,,AA/FCT)
+           The definitions of G and H used are those of
+            deSaussure and are larger than those defined by Adler
+            and Adler by a constant factor of 6.52e+05 B*eV.
+ANALYSIS   (MLA) Adler-Adler multilevel analysis
+STATUS     (TABLE) Data taken from Table I in Nuc.Sci.Eng. 68,
+                   125 (1978).
+HISTORY    (19781211C)
+           (19790618A) Data lines reordered
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 5         86
+DATA      1DATA      2DATA      3DATA      4DATA      5
+EV         EV         B*EV*RT-EV B*EV*RT-EV B*EV*RT-EV
+  -1.478      0.060   6959.00     177.00     444.31
+  -0.209      0.066     14.81       2.28      22.39
+   0.258      0.052     44.02       6.36      20.48
+   4.285      0.031     96.31      -5.92     134.88
+   4.603      0.067     62.96      49.85      22.98
+   6.056      0.707    763.38    -114.32      37.41
+   6.947      0.070    139.03      -3.23      50.95
+   8.630      0.043    134.72      11.47      75.95
+   9.686      0.087    -30.90      42.81       9.71
+   9.902      0.497    425.75      19.11      31.40
+  12.815      0.131    110.61       0.0       22.81
+  13.446      0.032    192.11       0.0      312.38
+  14.785      0.065    801.13       0.0      291.70
+  15.987      0.370    318.39       0.0       29.24
+  16.699      0.073    126.88       0.0       24.76
+  17.874      0.028    161.11       0.0      355.83
+  18.259      0.012      9.42       0.0       12.75
+  19.464      0.450     14.53       0.0        0.73
+  20.757      0.090     46.14       0.0       29.20
+  21.350      0.400     12.91       0.0        0.73
+  21.976      0.040      4.83       0.0       15.29
+  23.046      0.107    103.68       0.0       14.60
+  23.709      0.208     63.34       0.0        7.50
+  24.107      0.060    110.75       0.0       63.27
+  24.622      0.188     18.52       0.0        3.41
+  26.451      0.140    485.64      28.67      94.75
+  28.200      0.440     71.01     -50.57       1.11
+  28.911      0.231    393.69      -3.53      38.61
+  29.463      0.132    136.35      21.60      30.07
+  31.094      0.164    283.10       0.0       50.84
+  32.235      0.515     50.59       0.0        1.18
+  33.309      0.248     46.29       0.0        5.37
+  33.874      0.060     27.55       0.0        8.41
+  34.384      0.492     86.42       0.0        7.55
+  35.067      0.264    127.25       0.0       50.19
+  35.600      0.253     17.18       0.0        4.25
+  36.248      0.039      5.29       0.0        0.78
+  37.594      0.267      6.40       0.0        1.75
+  38.211      0.133     47.49       0.0       27.58
+  39.428      0.122    144.63       0.0       18.54
+  39.980      0.067    109.43       0.0       62.22
+  40.950      0.515    213.17       0.0       24.73
+  42.880      0.152     30.40       0.0        7.51
+  43.548      0.017     13.10       0.0       17.62
+  46.696      0.139    136.66       0.0       25.59
+  47.970      0.057     39.56       0.0       35.73
+  48.269      0.270    511.06       0.0       45.16
+  50.452      0.296     81.12       0.0       19.97
+  52.348      0.211      6.71       0.0        1.25
+  53.483      0.495      5.45       0.0       64.45
+  58.495      0.287    141.83       0.0        3.62
+  59.352      0.246    179.03       0.0       12.94
+  60.660      0.073    291.51       0.0       61.00
+  62.386      0.166    232.66       0.0       39.36
+  62.753      0.253    136.13       0.0       18.56
+  63.484      0.514     85.19       0.0       16.03
+  64.411      1.872     96.33       0.0        4.53
+  65.841      0.127    351.33       0.0       77.09
+  66.678      0.118    206.93       0.0      106.68
+  68.383      0.078     79.92       0.0       40.74
+  69.359      0.060     53.17       0.0       52.28
+  70.540      0.548     32.38       0.0        1.03
+  71.711      0.229     25.44       0.0        7.45
+  72.320      0.195    107.00       0.0       33.41
+  73.960      0.021      7.56       0.0       31.13
+  75.265      0.286     20.69       0.0        2.78
+  75.974      0.083    258.46       0.0      141.92
+  77.240      0.106    105.37       0.0      249.11
+  78.047      0.982    144.23       0.0       12.87
+  80.312      0.072    239.34       0.0      145.46
+  81.610      0.130    470.39       0.0       80.88
+  82.398      0.760    291.03       0.0        7.09
+  83.299      0.072    185.33       0.0      154.41
+  85.535      0.065    173.44       0.0       54.09
+  85.894      0.094    168.72       0.0       48.24
+  86.493      0.682    129.01       0.0        6.27
+  87.121      0.077    285.86       0.0      189.84
+  87.952      0.231    170.77       0.0       27.99
+  89.327      0.367    138.57       0.0       22.41
+  90.856      0.199    106.39       0.0       26.88
+  93.988      0.142     26.87       0.0        0.62
+  95.496      0.245     49.06       0.0        1.21
+  96.404      0.523     98.79       0.0        6.60
+  97.971      0.323     99.20       0.0       11.51
+  98.491      0.068    351.38       0.0      114.21
+ 100.064      0.311    230.75       0.0       28.13
+ENDDATA             88
+ENDSUBENT          106
+SUBENT        10768005   20140610   20150112   20150107       1402
+BIB                  4          6
+REACTION   (94-PU-241(N,F),,SIG,,AV)
+STATUS     (TABLE) Table II, J,NSE,65,454,1978.
+COMMENT    An unweighted average is given because the
+           quoted uncertainties of experimental data are
+           inconsistent.
+HISTORY    (20140609C) BP
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3         29
+EN-MIN     EN-MAX     DATA
+KEV        KEV        B
+       0.01       0.02     148.13
+       0.02       0.03      79.53
+       0.03       0.04      45.20
+       0.04       0.05      39.09
+       0.05       0.06      17.31
+       0.06       0.07      55.91
+       0.07       0.08      27.83
+       0.08       0.09      68.59
+       0.09       0.10      27.92
+       0.10       0.20      26.60
+       0.20       0.30      27.80
+       0.30       0.40      21.29
+       0.40       0.50      18.51
+       0.50       0.60      16.14
+       0.60       0.70      11.03
+       0.70       0.80      10.47
+       0.80       0.90       9.52
+       0.90        1.0      10.71
+        1.0        2.0       8.71
+        2.0        3.0       6.72
+        3.0        4.0       6.32
+        4.0        5.0       5.40
+        5.0        6.0       4.57
+        6.0        7.0       4.62
+        7.0        8.0       3.95
+        8.0        9.0       4.07
+        9.0       10.0       3.59
+       10.0       20.0       3.28
+       20.0       30.0       2.85
+ENDDATA             31
+ENDSUBENT           42
+SUBENT        10768006   20140610   20150112   20150107       1402
+BIB                  3          3
+REACTION   (94-PU-241(N,ABS),,ALF,,AV)
+STATUS     (TABLE) Table III, J,NSE,65,454,1978.
+HISTORY    (20140609C) BP
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3         38
+EN-MIN     EN-MAX     DATA
+KEV        KEV        NO-DIM
+       0.01       0.02      0.559
+       0.02       0.03      0.213
+       0.03       0.04      0.216
+       0.04       0.05      0.184
+       0.05       0.06      0.198
+       0.06       0.07      0.279
+       0.07       0.08      0.572
+       0.08       0.09      0.337
+       0.09       0.10      0.207
+       0.10       0.20      0.268
+       0.20       0.30      0.264
+       0.30       0.40      0.316
+       0.40       0.50      0.350
+       0.50       0.60      0.317
+       0.60       0.70      0.354
+       0.70       0.80      0.263
+       0.80       0.90      0.276
+       0.90        1.0      0.262
+        1.0        2.0      0.297
+        2.0        3.0      0.255
+        3.0        4.0      0.244
+        4.0        5.0      0.246
+        5.0        6.0      0.259
+        6.0        7.0      0.217
+        7.0        8.0      0.288
+        8.0        9.0      0.231
+        9.0       10.0      0.201
+       10.0       20.0      0.244
+       20.0       30.0      0.217
+       30.0       40.0      0.173
+       40.0       50.0      0.217
+       50.0       60.0      0.202
+       60.0       70.0      0.177
+       70.0       80.0      0.191
+       80.0       90.0      0.141
+       90.0      100.0      0.157
+      100.0      200.0      0.152
+      200.0      300.0      0.148
+ENDDATA             40
+ENDSUBENT           48
+SUBENT        10768007   20141216   20150112   20150107       1402
+BIB                  6         12
+REACTION   (94-PU-241(N,F),,SIG)
+MONITOR    (94-PU-241(N,F),,SIG)
+MONIT-REF  (,,3,ENDF/B-IV,1266,1974)
+ERR-ANALYS (ERR-1) Uncertainty due to background subtraction
+           (ERR-2) Uncertainty due to flux shape
+           (ERR-3) Uncertainty due to 10B cross section error
+           (ERR-4) Uncertainty due to detector efficiency error
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Data received on magnetic tape from L. Weston,
+           March 1978.
+HISTORY    (20140609C) Data points moved from subentry 3 because
+            of different error analysis
+ENDBIB              12
+COMMON               7          6
+EN-NRM     MONIT      ERR-1      ERR-2      ERR-3      ERR-4
+ERR-T
+EV         B          PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+ 0.0253     1007.8      1.0        1.5        1.0         2.0
+ 2.9
+ENDCOMMON            6
+DATA                 2       2329
+EN         DATA
+EV         B
  4.0360E-01 1.5590E+02
  4.0950E-01 1.3890E+02
  4.1550E-01 1.3510E+02
@@ -6029,6 +6291,34 @@ EV         B
  9.9440E+02 2.5350E+01
  9.9540E+02 1.5180E+01
  9.9830E+02 2.1470E+01
+ENDDATA           2331
+ENDSUBENT         2355
+SUBENT        10768008   20141216   20150112   20150107       1402
+BIB                  6         12
+REACTION   (94-PU-241(N,F),,SIG)
+MONITOR    (94-PU-241(N,F),,SIG)
+MONIT-REF  (,,3,ENDF/B-IV,1266,1974)
+ERR-ANALYS (ERR-1) Uncertainty due to background subtraction
+           (ERR-2) Uncertainty due to flux shape
+           (ERR-3) Uncertainty due to 10B cross section error
+           (ERR-4) Uncertainty due to detector efficiency error
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Data received on magnetic tape from L. Weston,
+           March 1978.
+HISTORY    (20140609C) Data points moved from subentry 3 because
+            of different error analysis
+ENDBIB              12
+COMMON               7          6
+EN-NRM     MONIT      ERR-1      ERR-2      ERR-3      ERR-4
+ERR-T
+EV         B          PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT
+ 0.0253     1007.8      1.0        2.5        2.5         2.5
+ 4.4
+ENDCOMMON            6
+DATA                 2        803
+EN         DATA
+EV         B
  1.0010E+03 5.0910E+00
  1.0040E+03 2.0610E+01
  1.0070E+03 2.0340E+01
@@ -6832,114 +7122,6 @@ EV         B
  2.9790E+04 2.5850E+00
  2.9910E+04 2.4610E+00
  3.0030E+04 3.0840E+00
-ENDDATA           3382
-ENDSUBENT         3396
-SUBENT        10768004   20100518   20100809   20100806       1364
-BIB                  4         13
-REACTION  1(94-PU-241(N,0),,EN,,AA)
-          2(94-PU-241(N,TOT),,WID,,AA)
-          3(94-PU-241(N,F),,AG,,AA/FCT)
-          4(94-PU-241(N,F),,AH,,AA/FCT)
-          5(94-PU-241(N,G),,AG,,AA/FCT)
-           The definitions of G and H used are those of
-            deSaussure and are larger than those defined by Adler
-            and Adler by a constant factor of 6.52e+05 B*eV.
-ANALYSIS   (MLA) Adler-Adler multilevel analysis
-STATUS     (TABLE) Data taken from Table I in Nuc.Sci.Eng. 68,
-                   125 (1978).
-HISTORY    (19781211C)
-           (19790618A) Data lines reordered
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 5         86
-DATA      1DATA      2DATA      3DATA      4DATA      5
-EV         EV         B*EV*RT-EV B*EV*RT-EV B*EV*RT-EV
-  -1.478      0.060   6959.00     177.00     444.31
-  -0.209      0.066     14.81       2.28      22.39
-   0.258      0.052     44.02       6.36      20.48
-   4.285      0.031     96.31      -5.92     134.88
-   4.603      0.067     62.96      49.85      22.98
-   6.056      0.707    763.38    -114.32      37.41
-   6.947      0.070    139.03      -3.23      50.95
-   8.630      0.043    134.72      11.47      75.95
-   9.686      0.087    -30.90      42.81       9.71
-   9.902      0.497    425.75      19.11      31.40
-  12.815      0.131    110.61       0.0       22.81
-  13.446      0.032    192.11       0.0      312.38
-  14.785      0.065    801.13       0.0      291.70
-  15.987      0.370    318.39       0.0       29.24
-  16.699      0.073    126.88       0.0       24.76
-  17.874      0.028    161.11       0.0      355.83
-  18.259      0.012      9.42       0.0       12.75
-  19.464      0.450     14.53       0.0        0.73
-  20.757      0.090     46.14       0.0       29.20
-  21.350      0.400     12.91       0.0        0.73
-  21.976      0.040      4.83       0.0       15.29
-  23.046      0.107    103.68       0.0       14.60
-  23.709      0.208     63.34       0.0        7.50
-  24.107      0.060    110.75       0.0       63.27
-  24.622      0.188     18.52       0.0        3.41
-  26.451      0.140    485.64      28.67      94.75
-  28.200      0.440     71.01     -50.57       1.11
-  28.911      0.231    393.69      -3.53      38.61
-  29.463      0.132    136.35      21.60      30.07
-  31.094      0.164    283.10       0.0       50.84
-  32.235      0.515     50.59       0.0        1.18
-  33.309      0.248     46.29       0.0        5.37
-  33.874      0.060     27.55       0.0        8.41
-  34.384      0.492     86.42       0.0        7.55
-  35.067      0.264    127.25       0.0       50.19
-  35.600      0.253     17.18       0.0        4.25
-  36.248      0.039      5.29       0.0        0.78
-  37.594      0.267      6.40       0.0        1.75
-  38.211      0.133     47.49       0.0       27.58
-  39.428      0.122    144.63       0.0       18.54
-  39.980      0.067    109.43       0.0       62.22
-  40.950      0.515    213.17       0.0       24.73
-  42.880      0.152     30.40       0.0        7.51
-  43.548      0.017     13.10       0.0       17.62
-  46.696      0.139    136.66       0.0       25.59
-  47.970      0.057     39.56       0.0       35.73
-  48.269      0.270    511.06       0.0       45.16
-  50.452      0.296     81.12       0.0       19.97
-  52.348      0.211      6.71       0.0        1.25
-  53.483      0.495      5.45       0.0       64.45
-  58.495      0.287    141.83       0.0        3.62
-  59.352      0.246    179.03       0.0       12.94
-  60.660      0.073    291.51       0.0       61.00
-  62.386      0.166    232.66       0.0       39.36
-  62.753      0.253    136.13       0.0       18.56
-  63.484      0.514     85.19       0.0       16.03
-  64.411      1.872     96.33       0.0        4.53
-  65.841      0.127    351.33       0.0       77.09
-  66.678      0.118    206.93       0.0      106.68
-  68.383      0.078     79.92       0.0       40.74
-  69.359      0.060     53.17       0.0       52.28
-  70.540      0.548     32.38       0.0        1.03
-  71.711      0.229     25.44       0.0        7.45
-  72.320      0.195    107.00       0.0       33.41
-  73.960      0.021      7.56       0.0       31.13
-  75.265      0.286     20.69       0.0        2.78
-  75.974      0.083    258.46       0.0      141.92
-  77.240      0.106    105.37       0.0      249.11
-  78.047      0.982    144.23       0.0       12.87
-  80.312      0.072    239.34       0.0      145.46
-  81.610      0.130    470.39       0.0       80.88
-  82.398      0.760    291.03       0.0        7.09
-  83.299      0.072    185.33       0.0      154.41
-  85.535      0.065    173.44       0.0       54.09
-  85.894      0.094    168.72       0.0       48.24
-  86.493      0.682    129.01       0.0        6.27
-  87.121      0.077    285.86       0.0      189.84
-  87.952      0.231    170.77       0.0       27.99
-  89.327      0.367    138.57       0.0       22.41
-  90.856      0.199    106.39       0.0       26.88
-  93.988      0.142     26.87       0.0        0.62
-  95.496      0.245     49.06       0.0        1.21
-  96.404      0.523     98.79       0.0        6.60
-  97.971      0.323     99.20       0.0       11.51
-  98.491      0.068    351.38       0.0      114.21
- 100.064      0.311    230.75       0.0       28.13
-ENDDATA             88
-ENDSUBENT          106
-ENDENTRY             4
+ENDDATA            805
+ENDSUBENT          829
+ENDENTRY             8
