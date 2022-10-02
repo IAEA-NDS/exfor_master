@@ -1,13 +1,14 @@
-ENTRY            14136   20120706   20121029   20120927       1383
-SUBENT        14136001   20120706   20121029   20120927       1383
-BIB                 11         35
+ENTRY            14136   20140417   20141203   20141111       1401
+SUBENT        14136001   20140417   20141203   20141111       1401
+BIB                 11         43
 TITLE      Measurement and model analysis of (n,xalpha) cross
            sections for Cr, Fe, 59Co, and 58,60Ni from threshold
            energy to 150 MeV
 AUTHOR     (S.Kunieda,R.C.Haight,T.Kawano,M.B.Chadwick,
            S.M.Sterbenz,F.B.Bateman,O.A.Wasson,S.M.Grimes,
            P.Maier-Komor,H.Vonach,T.Fukahori,Y.Watanabe)
-INSTITUTE  (1USALAS,1USANIS)
+INSTITUTE  (1USALAS,1USANIS,2JPNJAE,1USAOHO,2GERMUN,
+           2AUSIRK,2JPNKYU)
 REFERENCE  (J,PR/C,85,054602,2012) Summary and analysis of several
             previous experiments with comparison with theory,
             numerical data obtained from authors
@@ -22,6 +23,10 @@ COMMENT    Authors given under code AUTHOR are those of the PR/C
            R.C.Haight,F.B.Bateman,S.M.Sterbenz,M.B.Chadwick,
            P.G.Young,S.M.Grimes,O.A.Wasson,P.Maier-Komor,
            H.Vonach
+           Comment of Dr.R.C.Haight (2012-05-30):"The resolution
+           of the gas counters was not sufficient to separate
+           isotopes of hydrogen ions or to separate 3He from
+           alpha particles."
 REL-REF    (M,13696001,S.M.Grimes+,J,NSE,124,271,1996)
 FACILITY   (LINAC,1USALAS) LANSCE proton linac
 INC-SOURCE (SPALL) Neutrons were produced by spallation
@@ -36,12 +41,15 @@ HISTORY    (20070525C) DR
            (20120603A) S.H. Reference PR/C,85,054602 compiled,
                        edited, data in subs 2,3 replaced
                        Reference FED added, SAMPLE code updated
-ENDBIB              35
+           (20140417A) SD: REACTION code corrected in Subents 2-4
+            according Dr. P.Pereslavtsev remarks. Comment from
+            Dr. R.C.Haight added.
+ENDBIB              43
 NOCOMMON             0          0
-ENDSUBENT           38
-SUBENT        14136002   20120706   20121029   20120927       1383
-BIB                  5          8
-REACTION   (28-NI-58(N,X)2-HE-4,,SIG)
+ENDSUBENT           46
+SUBENT        14136002   20140417   20141203   20141111       1401
+BIB                  6         10
+REACTION   (28-NI-58(N,X)ELEM,,SIG)
 ERR-ANALYS (ERR-S) Statistical uncertainty
            (ERR-SYS) Systematic uncertainty
 STATUS     (TABLE) Data presented in fig. 7 of the reference
@@ -49,11 +57,13 @@ STATUS     (TABLE) Data presented in fig. 7 of the reference
 SAMPLE     (28-NI-58,ENR=0.9966) 58Ni foil with a thickness of
             3.38 mg/cm2
 EXP-YEAR   (1997)
-ENDBIB               8
-COMMON               1          3
-ERR-SYS
-PER-CENT
-15.0
+HISTORY    (20140417A) SD: SF4=He-4 -> ELEM in REACTION code;
+           Col. ELEMENT added to COMMON.
+ENDBIB              10
+COMMON               2          3
+ELEMENT    ERR-SYS
+NO-DIM     PER-CENT
+   2.         15.0
 ENDCOMMON            3
 DATA                 3         47
 EN         DATA       ERR-S
@@ -106,10 +116,10 @@ MEV        MB         MB
      47.0     168.50      25.56
      49.0     172.30      26.15
 ENDDATA             49
-ENDSUBENT           66
-SUBENT        14136003   20120706   20121029   20120927       1383
-BIB                  5          8
-REACTION   (28-NI-60(N,X)2-HE-4,,SIG)
+ENDSUBENT           68
+SUBENT        14136003   20140417   20141203   20141111       1401
+BIB                  6         10
+REACTION   (28-NI-60(N,X)ELEM,,SIG)
 ERR-ANALYS (ERR-S) Statistical uncertainty
            (ERR-SYS) Systematic uncertainty
 STATUS     (TABLE) Data presented in fig. 7 of the reference
@@ -117,11 +127,13 @@ STATUS     (TABLE) Data presented in fig. 7 of the reference
 SAMPLE     (28-NI-60,ENR=0.9979) 60Ni with a thickness of
             2.98 mg/cm2
 EXP-YEAR   (1997)
-ENDBIB               8
-COMMON               1          3
-ERR-SYS
-PER-CENT
-15.0
+HISTORY    (20140417A) SD: SF4=He-4 -> ELEM in REACTION code;
+           Col. ELEMENT added to COMMON.
+ENDBIB              10
+COMMON               2          3
+ELEMENT    ERR-SYS
+NO-DIM     PER-CENT
+  2.         15.0
 ENDCOMMON            3
 DATA                 3         44
 EN         DATA       ERR-S
@@ -171,14 +183,20 @@ MEV        MB         MB
      47.0     129.80      19.72
      49.0     133.70      20.32
 ENDDATA             46
-ENDSUBENT           63
-SUBENT        14136004   20070525   20070824   20070809       1344
-BIB                  3          3
-REACTION   (28-NI-60(N,X)2-HE-4,,DE)
+ENDSUBENT           65
+SUBENT        14136004   20140417   20141203   20141111       1401
+BIB                  4          5
+REACTION   (28-NI-60(N,X)ELEM,,DE)
 ERR-ANALYS (ERR-S) Statistical uncertainty
 STATUS     (CURVE) Data taken from Figs. 1, 3 and 4
-ENDBIB               3
-NOCOMMON             0          0
+HISTORY    (20140417A) SD: SF4=He-4 -> ELEM in REACTION code;
+           Col. ELEMENT added to COMMON.
+ENDBIB               5
+COMMON               1          3
+ELEMENT
+NO-DIM
+  2.
+ENDCOMMON            3
 DATA                 4        121
 EN         E          DATA       ERR-S
 MEV        MEV        MB/MEV     MB/MEV
@@ -304,5 +322,5 @@ MEV        MEV        MB/MEV     MB/MEV
 31.          2.946E+01  2.767E-01  2.538E-01
 31.          2.995E+01  1.837E-01  1.950E-01
 ENDDATA            123
-ENDSUBENT          131
+ENDSUBENT          137
 ENDENTRY             4

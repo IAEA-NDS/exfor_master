@@ -1,6 +1,6 @@
-ENTRY            14055   20120811   20121203   20121127       1385
-SUBENT        14055001   20120811   20121203   20121127       1385
-BIB                 10         23
+ENTRY            14055   20140424   20141203   20141111       1401
+SUBENT        14055001   20140424   20141203   20141111       1401
+BIB                  9         24
 INSTITUTE  (1USABRK)
 REFERENCE  (J,PR/C,41,631,1990)
 AUTHOR     (D.C.Hoffman,D.M.Lee,K.E.Gregorich,M.J.Nurmia,
@@ -8,7 +8,6 @@ AUTHOR     (D.C.Hoffman,D.M.Lee,K.E.Gregorich,M.J.Nurmia,
             H.L.Hall,R.A.Henderson,B.Kadkhodayan,S.A.Kreek,
             J.D.Leyba)
 TITLE      Spontaneous fission properties of 2.9-s No-256
-FACILITY   (CYCLO,1USALBL) 88 Inch. cyclotron
 METHOD     (ACTIV)
 DETECTOR   (SI) Pairs of passivated, ion-implanted planar silicon
            detectors had a depletion depth of 100 microns and an
@@ -16,7 +15,8 @@ DETECTOR   (SI) Pairs of passivated, ion-implanted planar silicon
            Six pairs of detectors were used to measure the
            kinetic energies of the fission fragments and
            alpha particles.
-SAMPLE     Target produced by 248Cm(12C,4n) reaction
+SAMPLE     Target produced by 248Cm(12C,4n) reaction on
+            88 inch. cyclotron.
            Initial 248Cm2O3 targets, 0.66 or 0.49 mg/cm2,
             97 % pure, on a 2.75 mg/cm2 Be foil. Multiple target
            system with two Cm-248 targets to maximize the
@@ -24,19 +24,22 @@ SAMPLE     Target produced by 248Cm(12C,4n) reaction
 DECAY-DATA (102-NO-256,2.9SEC)
 HISTORY    (20051004C) DR
            (20120811U) SD: INC-SOURCE deleted. BIB update.
-ENDBIB              23
+           (20140424A) SD: REACTION code corrected in Subents 2,3.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           26
-SUBENT        14055002   20051004   20060111   20060111       1337
-BIB                  4          7
-REACTION   (102-NO-256(0,F),TER,DE,A,REL)
+ENDSUBENT           27
+SUBENT        14055002   20140424   20141203   20141111       1401
+BIB                  5          9
+REACTION   (102-NO-256(0,F)2-HE-4,TER,FY/DE,,REL)
             -Alpha particle yields as a function of alpha
             energy
             -Data are number of events/ 5 keV
-EN-SEC     E is the kinetic energy of the alpha particle
+EN-SEC     (E,A) E is the kinetic energy of the alpha part.
 ERR-ANALYS (DATA-ERR) No information
 STATUS     (CURVE) Data taken from Fig. 5
-ENDBIB               7
+HISTORY    (20140424A) SD: SF4=He-4 added, SF7=A deleted in
+           REACTION code.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         20
 E          DATA       DATA-ERR
@@ -62,17 +65,19 @@ MEV        ARB-UNITS  ARB-UNITS
   8.470E+00   3.15E+00   1.82E+00
   8.474E+00   1.04E+00   1.05E+00
 ENDDATA             22
-ENDSUBENT           34
-SUBENT        14055003   20051004   20060111   20060111       1337
-BIB                  4          7
-REACTION   (88-RA-214(0,F),TER,DE,A,REL)
+ENDSUBENT           36
+SUBENT        14055003   20140424   20141203   20141111       1401
+BIB                  5          9
+REACTION   (88-RA-214(0,F)2-HE-4,TER,FY/DE,,REL)
             -Alpha particle yields as a function of alpha
             energy
             -Data are number of events/ 5 keV
-EN-SEC     E is the kinetic energy of the alpha particle
+EN-SEC     (E,A) E is the kinetic energy of the alpha part.
 ERR-ANALYS (DATA-ERR) No information
 STATUS     (CURVE) Data taken from Fig. 5
-ENDBIB               7
+HISTORY    (20140424A) SD: SF4=He-4 added, SF7=A deleted in
+           REACTION code.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         16
 E          DATA       DATA-ERR
@@ -94,22 +99,24 @@ MEV        ARB-UNITS  ARB-UNITS
   7.160E+00   1.71E+02   1.25E+01
   7.165E+00   6.05E+01   6.72E+00
 ENDDATA             18
-ENDSUBENT           30
-SUBENT        14055004   20051004   20060111   20060111       1337
-BIB                  4          5
-REACTION   (102-NO-256(0,F)MASS,PRE,DE,LF+HF,REL)
+ENDSUBENT           32
+SUBENT        14055004   20140424   20141203   20141111       1401
+BIB                  5          7
+REACTION   (102-NO-256(0,F)MASS,PRE,FY/DE,LF+HF,REL)
             Data are number of events/ 10 MeV
 EN-SEC     (E,LF+HF) kinetic energy of fission fragment pairs
 ERR-ANALYS (DATA-ERR) No information
 STATUS     (CURVE) Data taken from Fig. 6
-ENDBIB               5
+HISTORY    (20140424A) SD: SF6=DE -> FY/DE in REACTION code;
+            col.E -> TKE in DATA section
+ENDBIB               7
 COMMON               2          3
 MASS-MIN   MASS-MAX
 NO-DIM     NO-DIM
 60.        160.
 ENDCOMMON            3
 DATA                 3         11
-E          DATA       DATA-ERR
+TKE        DATA       DATA-ERR
 MEV        ARB-UNITS  ARB-UNITS
    1.45E+02   5.85E+00   2.31E+00
    1.55E+02   3.91E+00   2.05E+00
@@ -123,5 +130,96 @@ MEV        ARB-UNITS  ARB-UNITS
    2.35E+02   6.91E+00   2.56E+00
    2.45E+02   8.68E-01
 ENDDATA             13
+ENDSUBENT           29
+SUBENT        14055005   20140424   20141203   20141111       1401
+BIB                  8         22
+REACTION  1(102-NO-256(0,F),SEC,AKE,LF+HF)
+          2(102-NO-256(0,F),SEC,KEP,LF+HF)
+          3(102-NO-256(0,F),SEC,AKE,HF)
+          4(102-NO-256(0,F),SEC,KEP,HF)
+          5(102-NO-256(0,F),SEC,AKE,LF)
+          6(102-NO-256(0,F),SEC,KEP,LF)
+METHOD     These energies based on the SKW (Schmitt, Kiker, and
+           Williams) calibration method (see REL-REF) with the
+           Weissenberger constants (see REL-REF) which give
+           181.0 MeV for the post-neutron emission average TKE
+           for SF of Cf-252.
+REL-REF    (M,,H.W.Schmitt+,J,PR,137,B837,1965)
+           (M,,E.Weissenberger+,J,NIM/A,248,506,1986)
+ADD-RES    Pre-neutron-emission were deduced from the measured
+           post-neutron data using the procedure described in the
+           PR/C,41,631,1990
+MISC-COL   Full width at half maximum, calculated from 2.35*sigma
+           for Gaussian fit to the top half of the peak
+ERR-ANALYS (DATA-ERR) Standard deviation from Gaussian fit
+            from abstract (REACTION 1)
+STATUS     (TABLE) Data taken from Table 1 of PR/C,41,631,1990
+HISTORY    (20140424C) SD
+ENDBIB              22
+NOCOMMON             0          0
+DATA                12          1
+DATA      1DATA      2DATA-ERR  2MISC      2DATA      3DATA      4
+DATA-ERR  4MISC      4DATA      5DATA      6DATA-ERR  6MISC      6
+MEV        MEV        PER-CENT   MEV        MEV        MEV
+MEV        MEV        MEV        MEV        PER-CENT   MEV
+   192.1      192.1      1.5       40.2      85.7       86.8
+     1.5       29.6    106.4      106.8        1.5      22.1
+ENDDATA              6
+ENDSUBENT           33
+SUBENT        14055006   20140424   20141203   20141111       1401
+BIB                  4          7
+REACTION   (102-NO-256(0,F)MASS,PRE,FY/DE,LF,REL)
+            Data are number of events/ 10 MeV
+EN-SEC     (E,LF)
+ERR-ANALYS (E-ERR-DIG)  Digitizing error
+           (ERR-DIG)    Digitizing error
+           (DATA-ERR) No information
+STATUS     (CURVE) Data taken from Fig. 7 of PR/C,41,631,1990
+ENDBIB               7
+COMMON               4          3
+MASS-MIN   MASS-MAX   E-ERR-DIG  ERR-DIG
+NO-DIM     NO-DIM     MEV        NO-DIM
+60.        160.        0.1         0.1
+ENDCOMMON            3
+DATA                 3          7
+E          DATA       DATA-ERR
+MEV        ARB-UNITS  ARB-UNITS
+       75.1        0.3        0.9
+       85.2       11.4        3.2
+       94.5       51.1        7.3
+      104.7      133.8       11.7
+      114.5      114.0       10.4
+      124.4       35.1        5.7
+      134.9         1.        1.3
+ENDDATA              9
+ENDSUBENT           25
+SUBENT        14055007   20140424   20141203   20141111       1401
+BIB                  4          7
+REACTION   (102-NO-256(0,F)MASS,PRE,FY/DE,HF,REL)
+            Data are number of events/ 10 MeV
+EN-SEC     (E,HF)
+ERR-ANALYS (E-ERR-DIG)  Digitizing error
+           (ERR-DIG)    Digitizing error
+           (DATA-ERR) No information
+STATUS     (CURVE) Data taken from Fig. 7 of PR/C,41,631,1990
+ENDBIB               7
+COMMON               4          3
+MASS-MIN   MASS-MAX   E-ERR-DIG  ERR-DIG
+NO-DIM     NO-DIM     MEV        NO-DIM
+60.        160.        0.1         0.1
+ENDCOMMON            3
+DATA                 3          9
+E          DATA       DATA-ERR
+MEV        ARB-UNITS  ARB-UNITS
+       45.2        0.2        1.3
+       54.9        9.1        3.2
+       65.0       31.8        5.7
+       75.0       59.0        7.9
+       84.6       91.2        9.2
+       94.7      105.1        9.8
+      104.6       41.1        6.3
+      114.7        9.2        2.8
+      124.8        0.4        1.3
+ENDDATA             11
 ENDSUBENT           27
-ENDENTRY             4
+ENDENTRY             7

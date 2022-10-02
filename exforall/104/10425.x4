@@ -1,11 +1,11 @@
-ENTRY            10425   20121108   20130226   20130207       1386
-SUBENT        10425001   20121108   20130226   20130207       1386
-BIB                 15         62
-TITLE      Neutron Interactions with 3He Revisited-I:
-           Elastic Scattering Around and Beyond 10 MeV
+ENTRY            10425   20140412   20141203   20141111       1401
+SUBENT        10425001   20140412   20141203   20141111       1401
+BIB                 15         63
+TITLE      Neutron interactions with 3He revisited-I:
+           Elastic scattering around and beyond 10 MeV
 REFERENCE  (J,NSE,172,87,2012)  Final data with corrections
                                 applied
-           (R,LA-7269-MS,1978) Revised data
+           (R,LA-7269-MS,1978) Revised 12-24 MeV data given
            (J,PR/C,9,179,197401)    Original paper
            Title of original paper:
            Elastic scattering of neutrons from 3He between 7.9
@@ -25,6 +25,9 @@ DETECTOR   (SCIN) NE-213 liquid scintillator
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG) Relative to n-p scattering
 CORRECTION Corrected for flux attenuation, multiple scattering,
             dead-time, and inscattering.
+ANALYSIS   Self-attenuation correction factors for scattered
+           neutrons were calculated using MCNPX code and applied
+           to data published in PR/C,9,179,1974
 ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-1) Systematic uncertainty in standard cross
               section
@@ -60,10 +63,8 @@ HISTORY    (19740917C)
            (20121008A) S.H. Replaced original PR/C data with
                     corrected data from NSE, error analysis in
                     subs 2,3 updated, status in subs. 4,5 updated
-ANALYSIS   Self-attenuation correction factors for scattered
-           neutrons were calculated using MCNPX code and applied
-           to data published in PR/C,9,179,1974
-ENDBIB              62
+           (20140412U) SD: Small correction in Subent 5.
+ENDBIB              63
 COMMON              12          6
 EN-ERR     ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
 ERR-6      ERR-7      ERR-SYS    ERR-9      ERR-11     ERR-14
@@ -72,7 +73,7 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 0.03       0.5        0.5        0.1        0.13       1.1
 1.0        0.1        1.7        0.1        0.1        0.4
 ENDCOMMON            6
-ENDSUBENT           72
+ENDSUBENT           73
 SUBENT        10425002   20121011   20130226   20130207       1386
 BIB                  3          4
 REACTION   (2-HE-3(N,EL)2-HE-3,,DA)
@@ -203,19 +204,21 @@ MEV        B          B          B          B
  23.70      0.22       0.06        0.70        0.055
 ENDDATA              7
 ENDSUBENT           20
-SUBENT        10425005   20121109   20130226   20130207       1386
-BIB                  5         21
+SUBENT        10425005   20140412   20141203   20141111       1401
+BIB                  5         24
 REACTION   ((2-HE-3(N,N+P)1-H-2,,SIG)+(2-HE-3(N,2N+P)1-H-1,,SIG))
 STATUS     (DEP,10425004)
            (TABLE) Data are from Phys.Rev.C9,179,1974, Table 4
 ANALYSIS   Data derived as difference of nonelastic cross section
-            (from subentry 4) and sum of (n,pn) and (n,2np.
-            For (n,pn) converted data from McDaniels et al., and
-            for (n,2np) adjusted data from Brolley et al.;
+            (from subentry 4) and sum of (n,p) and (n,d)
+            reactions that is due to the unobserved (n,pn) and
+            the (n,2n)2p breakup reactions
+            For (n,p) converted data from McDaniels et al., and
+            for (n,d) adjusted data from Brolley et al.;
             Goldberg et al., and Van Oers et al. were used
             (see REL-REF)
 REL-REF    (R,,D.K.McDaniels,J,PR/C,6,1593,1972)
-             T(p,n) data, which were converted to give (n,pn) data
+             T(p,n) data, which were converted to give (n,p) data
            (R,,J.E.Brolley,J,PR,107,821,1957)
              Data were adjusted
            (R,,M.D.Goldberg,J,PR,119,1992,1960)
@@ -226,7 +229,8 @@ HISTORY    (19790406C)
            (19790928A) REACTION corrected.
            (20121008A) S.H. Status updated, ANALSIS and REL-REF
             added
-ENDBIB              21
+           (20140412U) SD: Free text in ANALYSIS corrected.
+ENDBIB              24
 NOCOMMON             0          0
 DATA                 3          5
 EN         DATA       DATA-ERR
@@ -237,5 +241,5 @@ MEV        B          B
  14.40      0.03       0.05
  23.70      0.07       0.06
 ENDDATA              7
-ENDSUBENT           33
+ENDSUBENT           36
 ENDENTRY             5

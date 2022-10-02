@@ -1,63 +1,82 @@
-ENTRY            31570   20060711   20060814   20060809       3119
-SUBENT        31570001   20060711   20060814   20060809       3119
-BIB                 12         27
+ENTRY            31570   20140930   20141203   20141125       3166
+SUBENT        31570001   20140930   20141203   20141125       3166
+BIB                 11         28
 TITLE      Determination of thermal neutron radiative capture
-           cross section of 6Li
-AUTHOR     (Chang Su Park,Gwang Min Sun,H.D.Choi)
+            cross section of 6Li
+AUTHOR     (Chang Su Park, Gwang Min Sun, H.D.Choi)
 INSTITUTE  (3KORNSU)
 REFERENCE  (J,NIM/B,245,367,2006)
-FACILITY   (REAC,3KORKAE) Hanaro, the 24MW research reactor
-DETECTOR   (HPGE) A HPGe detector with a relative efficiency of
-           43% was used.
-SAMPLE     The Li target sample consisted of 95.6 at.% enriched
-           6Li2CO3 powder,  whose 6Li abundance was confirmed by
-           mass spectrometry. The  homogeneous mixture samples of
-           6Li2CO3 and melamine (C3H6N6)  were prepared and
-           irradiated with neutrons.
+FACILITY   (REAC,3KORKAE) HANARO
 INC-SPECT  The true integrated neutron flux at the sample
-           position was increased to 1.0x10**8 n/cm2/s,
-           and the Cd-ratio was over 200.
-MONITOR    ((MONIT)1-H-1(N,G)1-H-2,PAR,SIG)
-MONIT-REF  IAEA Nuclear Data Section, Database developed by IAEA
-           Coordinated Research Project, 1999-2003.
-           Available from: <http://www-nds.iaea.org/pgaa/>.
-ERR-ANALYS (ERR-T) Total uncertainty includs following components:
-             * efficiency;
-             * Net peak count rate;
-             * k(0,H) factor.
-           (MONIT-ERR) the uncertainty includes the same
-           components as ERR-T.
+            position was increased to 1.0x10**8 n/cm2/s with
+            the Cd-ratio of over 200.
+DETECTOR   (HPGE) Relative efficiency of 43% and resolution of
+            2.5 keV (FWHM) for the 60Co 1332 keV gamma-line.
+SAMPLE     (3-LI-6,ENR=0.956) Enriched (95.6 at.%) 6Li2CO3
+            powder, whose 6Li abundance was confirmed by mass
+            spectrometry.
+METHOD     (MOMIX) 6Li2CO3 sample was mixed with melamine, and
+            the mass ratio of 6Li2CO3 to melamine was determined
+            by predicting the approximate count rates for the 6Li
+            and 1H capture gamma-rays.
+           (ACTIV) Two samples 6Li2CO3:melamine=224 mg:211 mg,
+            and 157 mg:306 mg were irradiated for about 70 hrs.
+CORRECTION Empty run was done for about 60 hrs to measure
+            background.
+           Two graphite samples (203 and 562 mg, 99.999% purity)
+            were also irradiated for about 50 hrs to estimate
+            background variation due to scattering effect of the
+            sample.
 HISTORY    (20060711C) SD
-ENDBIB              27
-COMMON               4          3
-EN-DUMMY   E-NRM      MONIT      MONIT-ERR
-EV         KEV        MB         MB
-  0.0253     2223.25     332.6     0.7
+           (20140930A) On. Recompiled.
+ENDBIB              28
+COMMON               2          3
+EN-DUMMY   E-NRM
+EV         KEV
+ 0.0253     2223.25
 ENDCOMMON            3
-ENDSUBENT           34
-SUBENT        31570002   20060711   20060814   20060809       3119
-BIB                  2          2
-REACTION   (3-LI-6(N,G)3-LI-7,PAR,SIG,,MXW)
-STATUS     (TABLE) Table 2 from the ref.
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 3          2
-E          DATA       ERR-T
-KEV        MB         MB
-  6768.81     15.1       1.8
-  7245.91     22.6       2.5
+ENDSUBENT           35
+SUBENT        31570002   20140930   20141203   20141125       3166
+BIB                  5         15
+REACTION   (3-LI-6(N,G)3-LI-7,PAR,SIG,,SPA)
+MONITOR    (1-H-1(N,G)1-H-2,PAR,SIG) from IAEA PGAA database
+ERR-ANALYS (ERR-T)A Total uncertainty propagated from:
+           (ERR-1) Uncertainty due to detector efficiency (6Li)
+           (ERR-2) Uncertainty due to detector efficiency (1H)
+           (ERR-3) Uncertainty due to net peak count rate (6Li)
+           (ERR-4) Uncertainty due to net peak count rate (1H)
+           (MONIT-ERR) Uncertainty in reference cross section
+ADD-RES    Absolute intensities:
+            40.1+/-4.7 % for 6768.81 keV gamma line,
+            59.9+/-6.4 % for 7245.91 keV gamma line.
+           k0,H factors:
+            (5.01+/-0.60)E-04 for 6768.81 keV gamma line,
+            (7.48+/-0.81)E-04 for 7245.91 keV gamma line.
+STATUS     (TABLE) Table 3 of Nucl.Instrum.Meth.B245(2006)367
+ENDBIB              15
+COMMON               4          3
+MONIT      MONIT-ERR  ERR-2      ERR-4
+MB         PER-CENT   PER-CENT   PER-CENT
+ 332.6      0.2        2.4        0.1
+ENDCOMMON            3
+DATA                 5          2
+E          DATA       ERR-T      ERR-1      ERR-3
+KEV        MB         PER-CENT   PER-CENT   PER-CENT
+ 6768.81    15.1       12.0       11.7       1.0
+ 7245.91    22.6       10.9       10.6       0.7
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        31570003   20060711   20060814   20060809       3119
-BIB                  2          2
-REACTION   (3-LI-6(N,G)3-LI-7,,SIG,,MXW)
-STATUS     (TABLE) Table 2 from the ref.
-ENDBIB               2
+ENDSUBENT           28
+SUBENT        31570003   20140930   20141203   20141125       3166
+BIB                  2          3
+REACTION   (3-LI-6(N,G)3-LI-7,,SIG,,SPA)
+STATUS     (TABLE) Text (p370) of Nucl.Instrum.Meth.B245(2006)367
+           (DEP,31570002) partial cross sections given
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
-MB         MB
-  37.7       3.0
+MB         PER-CENT
+ 37.7       8.1
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           11
 ENDENTRY             3

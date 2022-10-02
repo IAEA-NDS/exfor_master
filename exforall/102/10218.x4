@@ -1,30 +1,37 @@
-ENTRY            10218   20010305   20010426   20050926       0000
-SUBENT        10218001   20010305   20010426   20050926       0000
-BIB                 11         17
+ENTRY            10218   20140223   20141203   20141111       1401
+SUBENT        10218001   20140223   20141203   20141111       1401
+BIB                 12         24
 INSTITUTE  (1USAMTR)
 REFERENCE  (C,72KIAMESHA,2,614,197208)
            (C,71KNOX,1,113,197103)
-AUTHOR     (Y.D.HARKER,E.H.TURK)
+AUTHOR     (Y.D.Harker,E.H.Turk)
 TITLE      The use of CFRMF integral data in cross section
            evaluations.
-FACILITY   Coupled fast reactivity measurement facility (CFRMF)
+FACILITY   (CRASS,1USAINL) Coupled fast reactivity measurement
+            facility (CFRMF)
 INC-SOURCE (REAC)
+INC-SPECT   ~95% of neutrons are between 4 keV and 4 MeV. Median
+            energy is 370 keV and mean energy is 760 keV.
 METHOD     (ACTIV) Decay gamma activity after irradiation.
 DETECTOR   (GELI) Germanium-lithium detector
 ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
 STATUS     (APRVD) Approved by author
-            Data taken from both conference papers.
+           (TABLE) Data taken from 72KIAMESHA,2,614 except:
+             Ho-165 and Tm-169 ( from tbl. given in 71KNOX,1,113)
 HISTORY    (19720831C)
            (19821014A) Converted to REACTION formalism
            (19860613A) BIB updates.
            (20010305A) Updated to new date formats, lower case.
-ENDBIB              17
+           (20140223A) SD: REACTION code corrected in Subent 24
+            according to MEMO CP-D/795. EN-DUMMY -> EN-MEAN, value
+            corrected: 1.MeV -> 760.keV.
+ENDBIB              24
 COMMON               1          3
-EN-DUMMY
-MEV
- 1.0
+EN-MEAN
+KEV
+ 760.
 ENDCOMMON            3
-ENDSUBENT           24
+ENDSUBENT           31
 SUBENT        10218002   20010305   20010426   20050926       0000
 BIB                  1          2
 REACTION   ((43-TC-99(N,G)43-TC-100,,SIG,,FIS)/
@@ -293,20 +300,21 @@ NO-DIM
  0.45
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        10218024   20010305   20010426   20050926       0000
-BIB                  2          4
-REACTION   ((39-Y-88(N,G)39-Y-89-M,,SIG,,FIS)/
-           (79-AU-197(N,G)79-AU-198,,SIG))
-DECAY-DATA (39-Y-89-M,15.7SEC,DG) Half life taken from chart of
-            nuclides.
-ENDBIB               4
+SUBENT        10218024   20140223   20141203   20141111       1401
+BIB                  2          5
+REACTION   ((39-Y-89(N,G)39-Y-90-M,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+HISTORY    (20140223A) SD: REACTION code corrected (SF1=Y-88 ->
+           Y-89; Y-89-m -> Y-90-m; SF8=FIS -> SPA). DECAY-DATA
+           deleted.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 1          1
 DATA
 NO-DIM
     8.8E-04
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        10218025   20010305   20010426   20050926       0000
 BIB                  1          2
 REACTION   ((37-RB-87(N,G)37-RB-88,,SIG,,FIS)/

@@ -1,6 +1,6 @@
-ENTRY            12033   20120521   20120921   20120725       1381
-SUBENT        12033001   20120521   20120921   20120725       1381
-BIB                 13         38
+ENTRY            12033   20140413   20141203   20141111       1401
+SUBENT        12033001   20140413   20141203   20141111       1401
+BIB                 13         40
 INSTITUTE  (1USAARK)
 REFERENCE  (J,PR,118,242,1960)
            (J,PR,112,1950,1958) only Sm  - isotopes
@@ -29,8 +29,7 @@ CORRECTION Corrections for the following counting factors
             * background.
 ERR-ANALYS (DATA-ERR) Largest source of error is uncertainty in
              self-absorption, self-scattering factor.
-STATUS     (SCSRS)
-           (TABLE) Data taken from Table II in PR,118,242,1960
+STATUS     (TABLE) Data taken from Table II in PR,118,242,1960
 HISTORY    (19760802T) Translated from SCISRS
            (19830802A) Converted to REACTION formalism
            (19840801A) BIB corrections.
@@ -39,26 +38,30 @@ HISTORY    (19760802T) Translated from SCISRS
                        BIB updates.
            (20120521U) SD: Ref. on PR,112,1950,1958 was added.
                            BIB update.
-ENDBIB              38
+           (20140413A) SD: REACTION code corrected in Subent 4.
+           Units in MONIT corrected in Sub. 2,10. MONIT1, MONIT2
+           added to DATA section in Sub. 9,13,14,16,34,42,43,51.
+ENDBIB              40
 COMMON               2          3
 EN         EN-RSL
 MEV        MEV
  14.8       0.8
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        12033002     830802   20050616   20050926       0000
-BIB                  3          3
+ENDSUBENT           47
+SUBENT        12033002   20140413   20141203   20141111       1401
+BIB                  4          4
 REACTION   (56-BA-134(N,2N)56-BA-133-M,,SIG)
 DECAY-DATA (56-BA-133-M,38.9HR)
 MONITOR    (29-CU-65(N,2N)29-CU-64,,SIG)
-ENDBIB               3
+HISTORY    (20140413A) SD: MONIT value divided by 1000.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 DATA       DATA-ERR   MONIT
 B          B          B
- 9.40   -01 8.0    -02 1020.
+  0.940     0.08       1.020
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           12
 SUBENT        12033003   20080624   20080909   20080909       1349
 BIB                  3          3
 REACTION   (56-BA-136(N,2N)56-BA-135-M,,SIG)
@@ -72,20 +75,21 @@ B          B          MB
  7.00   -01 8.0    -02 1020.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        12033004   20080624   20080909   20080909       1349
-BIB                  4          4
-REACTION   (56-BA-136(N,P)55-CS-136-G,,SIG)
+SUBENT        12033004   20140413   20141203   20141111       1401
+BIB                  4          5
+REACTION   (56-BA-136(N,P)55-CS-136-G,(M),SIG)
 DECAY-DATA (55-CS-136-G,13.5D)
 MONITOR    (29-CU-65(N,2N)29-CU-64,,SIG)
 HISTORY    (19870116A) Reaction product corrected
-ENDBIB               4
+           (20140413A) SD: SF5=(M) added to REACTION code.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          1
 DATA       DATA-ERR   MONIT
 MB         MB         MB
- 4.9    +01 1.0    +01 1020.
+ 49.         10.        1020.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        12033005     830802   20050616   20050926       0000
 BIB                  3          3
 REACTION   (56-BA-138(N,2N)56-BA-137-M,,SIG)
@@ -141,33 +145,35 @@ B          B          MB
  1.1    -03 2.     -04 1020.
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        12033009   20080624   20080909   20080909       1349
-BIB                  3          4
+SUBENT        12033009   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (57-LA-139(N,P)56-BA-139,,SIG)
 DECAY-DATA (56-BA-139,85.MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 5.     -03 1.     -03
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+ 5.          1.        519.       1020.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        12033010     830802   20050616   20050926       0000
-BIB                  3          3
+ENDSUBENT           13
+SUBENT        12033010   20140413   20141203   20141111       1401
+BIB                  4          4
 REACTION   (58-CE-140(N,2N)58-CE-139-M,,SIG)
 DECAY-DATA (58-CE-139-M,65.SEC)
 MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG)
-ENDBIB               3
+HISTORY    (20140413A) SD: MONIT value divided by 1000.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 DATA       DATA-ERR   MONIT
 B          B          B
- 1.200  +00 4.00   -01 519.
+ 1.200       0.400     0.519
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           12
 SUBENT        12033011     840801   20050616   20050926       0000
 BIB                  3          3
 REACTION   (58-CE-140(N,A)56-BA-137-M,,SIG)
@@ -194,34 +200,36 @@ B          B          MB
  1.0    -02 2.     -03 1020.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        12033013   20080624   20080909   20080909       1349
-BIB                  3          4
+SUBENT        12033013   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (58-CE-142(N,A)56-BA-139,,SIG)
 DECAY-DATA (56-BA-139,85.MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 8.     -03 2.     -03
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+   8.         2.        519.       1020.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        12033014   20080624   20080909   20080909       1349
-BIB                  3          4
+ENDSUBENT           13
+SUBENT        12033014   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (58-CE-142(N,P)57-LA-142,,SIG)
 DECAY-DATA (57-LA-142,77.MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 5.     -03 2.     -03
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+B          B          MB         MB
+ 0.005       0.002      519.       1020.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        12033015     830802   20050616   20050926       0000
 BIB                  3          3
 REACTION   (58-CE-142(N,2N)58-CE-141,,SIG)
@@ -235,20 +243,21 @@ B          B          MB
  1.600  +00 3.00   -01 1020.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        12033016   20080624   20080909   20080909       1349
-BIB                  3          4
+SUBENT        12033016   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (59-PR-141(N,G)59-PR-142,,SIG)
-DECAY-DATA (59-PR-142,19.HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+DECAY-DATA (59-PR-142-G,19.HR)
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.1    -03 1.0    -03
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+ 2.1          1.0       519.       1020.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        12033017     830802   20050616   20050926       0000
 BIB                  3          3
 REACTION   (59-PR-141(N,P)58-CE-141,,SIG)
@@ -477,21 +486,22 @@ MB         MB         MB
  500.       200.       1020.
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        12033034   20080624   20080909   20080909       1349
-BIB                  4          5
+SUBENT        12033034   20140413   20141203   20141111       1401
+BIB                  4          6
 REACTION   (63-EU-153(N,2N)63-EU-152-M1+M2,,SIG)
 DECAY-DATA (63-EU-152-M1,9.3HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
 HISTORY    (19870116A) Reaction product corrected.
-ENDBIB               5
+           (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 750.       200.
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+ 750.       200.        519.       1020.
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           14
 SUBENT        12033035   20080624   20080909   20080909       1349
 BIB                  5          5
 REACTION   (64-GD-160(N,A)62-SM-157,,SIG)
@@ -587,34 +597,36 @@ MB         MB         MB
  8.         3.         519.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        12033042   20080624   20080909   20080909       1349
-BIB                  3          4
+SUBENT        12033042   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (68-ER-166(N,2N)68-ER-165,,SIG)
 DECAY-DATA (68-ER-165,10.HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 1000.      400.
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+ 1000.      400.        519.       1020.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        12033043   20080624   20080909   20080909       1349
-BIB                  3          4
+ENDSUBENT           13
+SUBENT        12033043   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (68-ER-167(N,P)67-HO-167,,SIG)
 DECAY-DATA (67-HO-167,3.1HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 3.0        1.0
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+ 3.0        1.0         519.       1020.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        12033044     830802   20050616   20050926       0000
 BIB                  3          3
 REACTION   (68-ER-168(N,A)66-DY-165-M,,SIG)
@@ -709,20 +721,21 @@ MB         MB         MB
  430.       100.       1020.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        12033051   20080624   20080909   20080909       1349
-BIB                  3          4
+SUBENT        12033051   20140413   20141203   20141111       1401
+BIB                  4          5
 REACTION   (71-LU-175(N,G)71-LU-176-M,,SIG)
 DECAY-DATA (71-LU-176-M,3.7HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n) = 519 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1020 mb.
-ENDBIB               4
+MONITOR    ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+HISTORY    (20140413A) SD: MONIT1, MONIT2 added to DATA section
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 2.        1.
+DATA                 4          1
+DATA       DATA-ERR   MONIT1     MONIT2
+MB         MB         MB         MB
+ 2.          1.        519.       1020.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        12033052   20080624   20080909   20080909       1349
 BIB                  4          4
 REACTION   (71-LU-175(N,2N)71-LU-174-M,,SIG)

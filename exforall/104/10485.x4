@@ -1,11 +1,12 @@
-ENTRY            10485   20040114   20040406   20050926       0000
-SUBENT        10485001   20040114   20040406   20050926       0000
-BIB                 12         22
+ENTRY            10485   20140528   20141203   20141111       1401
+SUBENT        10485001   20140528   20141203   20141111       1401
+BIB                 12         24
 INSTITUTE  (1USATNC,1USATEX)
 REFERENCE  (J,PR/C,9,1972,197405)
+           (P,ORO-2791-32,92,1971) -data tables from several publ.
 AUTHOR     (D.O.Nellis,I.L.Morgan,E.L.Hudspeth)
 TITLE      Neutron-induced gamma-ray production in 208Pb.
-FACILITY   (VDG,1USATNC)) Texas Nuclear Van de Graaff
+FACILITY   (VDG,1USATNC) Texas Nuclear Van de Graaff
 INC-SPECT  Average spread of neutron energy consisted of:
            . target thickness effects (+- 100 keV),
            . angular spread  (+- 50 keV),
@@ -14,30 +15,37 @@ SAMPLE     Isotopically enriched (99.75%) cylinders
 METHOD     (TOF,COINC) Time-of-flight
                        Anti-coincidence spectrometer
 DETECTOR   (GELI,SCIN) Ge(Li) and NaI detectors
-ERR-ANALYS (DATA-ERR) Experimental errors given include:
+ERR-ANALYS (ERR-T) Experimental errors given include:
            . statistical error,
-           . uncertainty in photon yield (7%),
-           . uncertainty in effective neutron flux (7.5%).
+           (ERR-1) uncertainty in photon yield (7%),
+           (ERR-2) uncertainty in effective neutron flux (7.5%).
 STATUS     No reply to author proof.
-           Data taken from Table I in reference.
 HISTORY    (19750401C)
            (19830614A) Converted to REACTION formalism
            (20040114A) Converted to new date formats, lower case.
-ENDBIB              22
-NOCOMMON             0          0
-ENDSUBENT           25
-SUBENT        10485002   20040114   20040406   20050926       0000
-BIB                  2          2
+           (20140528A) SD: Minor corrections. STATUS updated in
+            Subents 2,3. Subent 4 added.
+ENDBIB              24
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  7.         7.5
+ENDCOMMON            3
+ENDSUBENT           31
+SUBENT        10485002   20140528   20141203   20141111       1401
+BIB                  3          4
 REACTION   (82-PB-208(N,INL)82-PB-208,PAR,DA,G)
+STATUS     (TABLE) Data taken from Table I in PR/C,9,1972,1974
+             (same in ORO-2791-32, p.89)
 HISTORY    (19830614A) Data corrected.
-ENDBIB               2
+ENDBIB               4
 COMMON               1          3
 ANG
 ADEG
 90.
 ENDCOMMON            3
 DATA                 6         21
-E          E          EN         EN-RSL     DATA       DATA-ERR
+E          E          EN         EN-RSL     DATA       ERR-T
 MEV        MEV        MEV        MEV        MB/SR      MB/SR
 0.583                 3.5        0.2         11.        2.
 0.583                 4.1        0.15        47.        5.
@@ -61,18 +69,20 @@ MEV        MEV        MEV        MEV        MB/SR      MB/SR
 2.615                 5.25       0.08       121.       13.
 4.08                  5.25       0.08         6.4       1.0
 ENDDATA             23
-ENDSUBENT           34
-SUBENT        10485003   20040114   20040406   20050926       0000
-BIB                  1          1
+ENDSUBENT           36
+SUBENT        10485003   20140528   20141203   20141111       1401
+BIB                  2          3
 REACTION   (82-PB-208(N,INL)82-PB-208,PAR,DA,G)
-ENDBIB               1
+STATUS     (TABLE) Data taken from Table I in PR/C,9,1972,1974
+             (same in ORO-2791-32, p.90)
+ENDBIB               3
 COMMON               3          3
 ANG        EN         EN-ERR
 ADEG       MEV        MEV
 55.        5.0        0.08
 ENDCOMMON            3
 DATA                 3         11
-E          DATA       DATA-ERR
+E          DATA       ERR-T
 MEV        MB/SR      MB/SR
 0.583       58.        7.
 0.749        4.2       0.5
@@ -86,5 +96,47 @@ MEV        MB/SR      MB/SR
 2.615      135.       14.
 4.08         6.6       1.1
 ENDDATA             13
-ENDSUBENT           23
-ENDENTRY             3
+ENDSUBENT           25
+SUBENT        10485004   20140528   20141203   20141111       1401
+BIB                  3          4
+REACTION   (82-PB-208(N,INL)82-PB-208,PAR,DA,G,RSD)
+STATUS     (TABLE) Data taken from ORO-2791-32, p.92
+           (DEP,10485002)
+HISTORY    (20140528C) SD
+ENDBIB               4
+COMMON               2          3
+E          EN-ERR
+MEV        MEV
+ 2.615        0.08
+ENDCOMMON            3
+DATA                 5         25
+EN         EN-ERR     ANG        DATA       ERR-T
+MEV        MEV        ADEG       NO-DIM     NO-DIM
+  3.10       0.15       30.        1.54       0.10
+  3.10       0.15       40.        1.35       0.06
+  3.10       0.15       50.        1.28       0.09
+  3.10       0.15       70.        1.05       0.07
+  3.10       0.15       90.        1.00       0.06
+  3.10       0.15      130.        1.25       0.10
+  3.10       0.15      130.        1.54       0.12
+  3.50       0.20       30.        1.72       0.06
+  3.50       0.20       35.        1.70       0.06
+  3.50       0.20       40.        1.65       0.06
+  3.50       0.20       45.        1.48       0.05
+  3.50       0.20       55.        1.22       0.05
+  3.50       0.20       65.        1.13       0.04
+  3.50       0.20       90.        1.00       0.03
+  4.10       0.15       20.        1.80       0.05
+  4.10       0.15       30.        1.60       0.04
+  4.10       0.15       40.        1.47       0.04
+  4.10       0.15       50.        1.33       0.04
+  4.10       0.15       60.        1.09       0.03
+  4.10       0.15       70.        1.04       0.03
+  4.10       0.15       90.        1.00       0.02
+  4.10       0.15      100.        1.07       0.03
+  4.10       0.15      110.        1.08       0.03
+  4.10       0.15      120.        1.15       0.03
+  4.10       0.15      130.        1.34       0.04
+ENDDATA             27
+ENDSUBENT           40
+ENDENTRY             4

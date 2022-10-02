@@ -1,6 +1,6 @@
-ENTRY            11097   20100608   20100917   20100801       1365
-SUBENT        11097001   20100608   20100917   20100801       1365
-BIB                  9         15
+ENTRY            11097   20140413   20141203   20141111       1401
+SUBENT        11097001   20140413   20141203   20141111       1401
+BIB                 11         40
 INSTITUTE  (1USALRL)
 REFERENCE  (J,PR,111,616,1958)
 AUTHOR     (V.J.Ashby,H.C.Catron,L.L.Newkirk,C.J.Taylor)
@@ -8,443 +8,567 @@ TITLE      Absolute measurement of (n,2n) cross sections at 14.1
             MeV.
 FACILITY   (CCW,1USALRL) 500-keV Cockcroft-Walton
 INC-SOURCE (D-T)
+SAMPLE     The target purities were at least 99.5%.
 DETECTOR   (SCIN) Cd-loaded liquid scintillator
-STATUS     (SCSRS)
+           (PLATE) The energy spectrum of the collimated neutrons
+           was examined by means of photographic plates.
+CRITIQUE   Comment from Dr.N.Otsuka: H.Vonach et al.,
+           Nucl.Sci.Eng.106(1990)409 corrected data published in
+           V.J.Ashby et al., Phys.Rev.111(1958)616 with a
+           normalization factor of 0.815. This correction is not
+           applied to values compiled in this EXFOR entry.
+ERR-ANALYS (ERR-T) Total error consists from:
+           (ERR-1) Uncertainty in neutron flux
+           (ERR-2) Error in the self-absorption of the
+                   incident neutrons
+           (ERR-3) Uncertainty in cross section due to
+              uncertainty in efficiency definition
+           (ERR-S,,8.) The spread in observed values of the
+           cross section for a particular element was in good
+           agreement with the statistical error calculated from
+           the observed number of counts, and was less than 8% for
+           all elements with cross sections greater than 0.5 barn.
+           Errors in solid angle and mass of target material were
+           much smaller and were neglected.
 HISTORY    (19760628T) Translated from SCISRS
            (19820106A) Converted to reaction formalism
            (19830817U) BIB corrections.
            (19860121U) BIB update.
            (20100608A) VM:Updated to new date formats,lower case.
                        Subentries 004, 005, and 006 corrected.
-ENDBIB              15
-COMMON               1          3
-EN-NRM
-EV
- 0.0253
+           (20140413A) SD: CRITIQUE added.  EN-NRM moved to
+            Subents 3,5,7,9,11,13,15,17,21,23,25,28. Monitor
+            reaction units also corrected in these Subents.
+            ERR-ANALYS was added in Subent 1. DATA-ERR --> ERR-T
+            in Subents 2-28.
+ENDBIB              40
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+   3.4        4.        5.
 ENDCOMMON            3
-ENDSUBENT           22
-SUBENT        11097002   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           47
+SUBENT        11097002   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (1-H-2(N,2N)1-H-1,,SIG)
 SAMPLE     CD2 sample.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097003)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        B          PER-CENT
- 1.41   +01 2.00   -01   10.
+EN         DATA       ERR-T
+MEV        B          B
+   14.1      0.20       0.02
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097003   20100608   20100917   20100801       1365
-BIB                  5          6
+ENDSUBENT           19
+SUBENT        11097003   20140413   20141203   20141111       1401
+BIB                  6          8
 REACTION   (1-H-2(N,2N)1-H-1,,SIG)
 REFERENCE  (J,PR,123,218,1961)
 SAMPLE     CD2 sample.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
-STATUS     (TABLE) Renormalization to 235U nu values received
-                   from Taylor, April 1966.
-ENDBIB               6
+STATUS     (TABLE) received from Taylor, April 1966.
+           (DEP,11097002) Renormalization to 235U nu values
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 14.1       1.80   -01 11.        2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          PER-CENT   PRT/FIS
+ 14.1       0.0253     0.180        11.        2.43
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097004   20100608   20100917   20100801       1365
-BIB                  5          7
-REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG)
+ENDSUBENT           16
+SUBENT        11097004   20140413   20141203   20141111       1401
+BIB                  5         13
+REACTION   (4-BE-9(N,X)2-HE-4,,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+            The efficiency was then determined by dividing the
+           observed average number of neutrons per fission by the
+           values of nu for Cm244 and Cf262 determined by
+           Diven et al.
 STATUS     (OUTDT,11097005) Renormalized by author
-           (TABLE) Data taken from Table I in reference.
+           (TABLE) Tbl.1 from PR,111,616
 HISTORY    (20100608A) Reaction output particles corrected.
-ENDBIB               7
+           (20140413A) SD: MONIT-REF added. SF3=N+2A -> X in
+            REACTION code.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 5.4    -01 4.     -02
+   14.1     0.54         0.04
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11097005   20100608   20100917   20100801       1365
-BIB                  6          7
-REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG)
+ENDSUBENT           21
+SUBENT        11097005   20140413   20141203   20141111       1401
+BIB                  6         10
+REACTION   (4-BE-9(N,X)2-HE-4,,SIG)
 SAMPLE     Thin disks.
 REFERENCE  (J,PR,123,218,1961)
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
 HISTORY    (20100608A) Reaction output particles corrected.
-ENDBIB               7
+           (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS). SF3=N+2A -> X in
+            REACTION code.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 14.1       0.52       0.04       2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+ 14.1       0.0253     0.52       0.04       2.43
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11097006   20100608   20100917   20100801       1365
-BIB                  5          7
+ENDSUBENT           18
+SUBENT        11097006   20140413   20141203   20141111       1401
+BIB                  6         12
 REACTION   (6-C-12(N,2N)6-C-11,,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
-STATUS     (TABLE) Data taken from Table I in reference.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
+STATUS     (TABLE) Tbl.1 from PR,111,616
 HISTORY    (19860121A) Reaction corrected.
            (20100609A) Reaction corrected.
-ENDBIB               7
+           (20140413U) SD: MONIT-REF added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
- 1.41   +01 6.     -03 6.     -03
+   14.1     0.006      0.006
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11097007   20100608   20100917   20100801       1365
-BIB                  5          6
+ENDSUBENT           20
+SUBENT        11097007   20140413   20141203   20141111       1401
+BIB                  5          8
 REACTION   (7-N-14(N,2N)7-N-13,,SIG)
 SAMPLE     Melamine targets in aluminum cans.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
 HISTORY    (19860121A) Reaction corrected.
-ENDBIB               6
+           (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 1.8    -02 1.0    -02 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     0.018       0.010      2.43
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097008   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           16
+SUBENT        11097008   20140413   20141203   20141111       1401
+BIB                  5         11
 REACTION   (7-N-14(N,2N)7-N-13,,SIG)
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097007)
-           (TABLE) Data taken from Table I in reference.
+           (TABLE) Tbl.1 from PR,111,616
 HISTORY    (19860121A) Reaction corrected.
-ENDBIB               6
+           (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
- 1.41   +01 1.9    -02 1.0    -02
+   14.1      0.019     0.010
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097009   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097009   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (9-F-19(N,2N)9-F-18,,SIG)
 SAMPLE     CF2 sample.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 6.0    -02 9.     -03 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     0.060        0.009     2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097010   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097010   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (9-F-19(N,2N)9-F-18,,SIG)
 SAMPLE     CF2 sample.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097009)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 6.2    -02 9.     -03
+   14.1     0.062       0.009
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097011   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097011   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (23-V-0(N,2N),,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 6.4    -01 5.     -02 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     0.64        0.05       2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097012   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097012   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (23-V-0(N,2N),,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097011)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 6.6    -01 5.     -02
+       14.1    0.66     0.05
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097013   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097013   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (26-FE-0(N,2N),,SIG)
 SAMPLE     Fe spherical shell.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 4.8    -01 4.     -02 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     0.48         0.04       2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097014   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097014   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (26-FE-0(N,2N),,SIG)
 SAMPLE     Fe spherical shell.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097013)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 5.0    -01 4.     -02
+   14.1     0.50        0.04
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097015   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097015   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (29-CU-0(N,2N),,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 7.4    -01 6.     -02 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     0.74        0.06       2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097016   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           15
+SUBENT        11097016   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (29-CU-0(N,2N),,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097015)
-ENDBIB               5
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 7.6    -01 6.     -02
+   14.1     0.76          0.06
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097017   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097017   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (47-AG-0(N,2N),,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 1.67   +00 1.3    -01 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     1.67        0.13        2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097018   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097018   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (47-AG-0(N,2N),,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097017)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 1.73   +00 1.3    -01
+   14.1     1.73        0.13
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097019   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097019   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (48-CD-0(N,2N),,SIG)
 SAMPLE     Cd spherical shell.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 1.86   +00 1.4    -01 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     1.86        0.14        2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097020   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097020   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (48-CD-0(N,2N),,SIG)
 SAMPLE     Cd spherical shell.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097019)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 1.92   +00 1.4    -01
+   14.1     1.92        0.14
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097021   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097021   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (73-TA-181(N,2N)73-TA-180,,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 2.56   +00 1.9    -01 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     2.56         0.19      2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097022   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097022   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (73-TA-181(N,2N)73-TA-180,,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097021)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 2.64   +00 2.0    -01
+   14.1     2.64         0.20
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097023   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097023   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (79-AU-197(N,2N)79-AU-196,,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 2.52   +00 1.9    -01 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     2.52         0.19     2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097024   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097024   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (79-AU-197(N,2N)79-AU-196,,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097023)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 2.60   +00 2.0    -01
+   14.1     2.60        0.20
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097025   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097025   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (82-PB-0(N,2N),,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 2.65   +00 1.9    -01 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          B          PRT/FIS
+   14.1     0.0253     2.65        0.19       2.43
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11097026   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11097026   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (82-PB-0(N,2N),,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
 STATUS     (OUTDT,11097025)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 2.74   +00 2.0    -01
+   14.1     2.74        0.020
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097027   20100608   20100917   20100801       1365
-BIB                  4          6
+ENDSUBENT           19
+SUBENT        11097027   20140413   20141203   20141111       1401
+BIB                  6         11
 REACTION   (83-BI-209(N,2N)83-BI-208,,SIG)
 SAMPLE     Thin disks.
-MONITOR    (98-CF-252(0,F),,NU) Detector efficiency measured
-           (96-CM-244(0,F),,NU) relative to 244Cm and 252Cf nu.
-STATUS     (OUTDT,11097028)
-           (TABLE) Data taken from Table I in reference.
-ENDBIB               6
+MONITOR    (98-CF-252(0,F),,NU)
+           (96-CM-244(0,F),,NU)
+           The efficiency was determined by dividing the observed
+           average number of neutrons per fission by the values of
+           nu for Cm-244 and Cf-262 determined by Diven et al.
+MONIT-REF  (12337001,B.C.Diven+,J,PR,101,1012,1956)
+STATUS     (OUTDT,11097028)ERR-T
+           (TABLE) Tbl.1 from PR,111,616
+HISTORY    (20140413U) SD: MONIT-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
- 1.41   +01 2.60   +00 1.9    -01
+       14.1       2.60    0.19
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11097028   20100608   20100917   20100801       1365
-BIB                  4          5
+ENDSUBENT           19
+SUBENT        11097028   20140413   20141203   20141111       1401
+BIB                  5          7
 REACTION   (83-BI-209(N,2N)83-BI-208,,SIG)
 SAMPLE     Thin disks.
 MONITOR    (92-U-235(N,F),,NU) Normalized to 235U thermal nu.
 STATUS     (TABLE) Renormalization to 235U nu values received
                    from Taylor, April 1966.
-ENDBIB               5
+HISTORY    (20140413A) SD: Units of col.MONIT in DATA section
+           changed (NO-DIM -> PRT/FIS)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   NO-DIM
- 1.41   +01 2.52   +00 1.8    +00 2.43
+DATA                 5          1
+EN         EN-NRM     DATA       ERR-T      MONIT
+MEV        EV         B          PER-CENT   PRT/FIS
+   14.1        0.0253       2.52        1.8    2.43
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 ENDENTRY            28
