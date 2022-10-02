@@ -1,66 +1,76 @@
-ENTRY            O0995   20080611   20080828   20080828       O036
-SUBENT        O0995001   20080611   20080828   20080828       O036
-BIB                 12         18
-TITLE      Emission-angle dependence of fission fragment spin.
+ENTRY            O0995   20160716   20161101   20160922       O058
+SUBENT        O0995001   20160716   20161101   20160922       O058
+BIB                 12         21
+TITLE      Emission-angle dependence of fission fragment spin
 AUTHOR     (T.Datta, S.P.Dange, H.Naik, S.Prakash)
 INSTITUTE  (3INDTRM)
 REFERENCE  (J,PR/C,46,1445,1992)
-ADD-RES    (COMP) The collective mode model.
 SAMPLE     Electrodeposited U targets, 150 mug/cm**2 thick, on
            Al-backing foils were used.
-DETECTOR   (HPGE) A 60-cm**3 high purity Ge detector.
-FACILITY   (ISOCY,3INDCAU) The 88-inch variable energy cyclotron.
+DETECTOR   (HPGE) A 60-cm**3 high purity Ge detector. Resolution
+           of the detector system was 2.0 keV at 1332 keV.
+FACILITY   (CYCLO,3INDVEC) The 88-inch variable energy cyclotron.
 METHOD     (EXTB)
            (ACTIV) Typical integral beam current was 2-3 muA/Hr
            (GSPEC)
            (REC)
-STATUS     (TABLE)
+STATUS     (TABLE) Tbl. I from PR/C,46,1445,1992
+ADD-RES    (COMP) The collective mode model.
 ERR-ANALYS (EN-ERR) The uncertainty is alpha beam energy.
 HISTORY    (20030916C)
            (20080610A) Correction in sub 002 was made
             according Nicolas remarks.
-ENDBIB              18
+           (20160716U) SD: Facility corrected. ERR-ANALYS update
+           in Subent 002.
+ENDBIB              21
 COMMON               2          3
 EN         EN-ERR
 MEV        MEV
         40.        0.4
 ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        O0995002   20080611   20080828   20080828       O036
-BIB                  6         29
-REACTION   ((92-U-238(P,F)53-I-132-M,IND,DA)/
-           (92-U-238(P,F)53-I-132,IND,DA))
-RAD-DET    (53-I-132-G,DG)
-           (53-I-132-M,DG)
-           (52-TE-132,DG)
+ENDSUBENT           28
+SUBENT        O0995002   20160716   20161101   20160922       O058
+BIB                  7         32
+REACTION   ((92-U-238(P,F)53-I-132-M,,DA)/
+           (92-U-238(P,F)53-I-132,,DA))
 DECAY-DATA (53-I-132-M,83.4MIN,DG,772.)  JPI=8-.  Isomer
            Transition 87%.
            (53-I-132-G,2.28HR,DG,772.)  JPI=4+.
            (52-TE-132,78.2HR,DG,228.2)
-ERR-ANALYS (ERR-T).Error limits quoted on the independent isomeric
-           ratios at different angles are essentially the
-           precisions from five sets of measurements. Other
-           sources of error in each single measurement include
-           counting statistics-5%, least-squares fitting, detector
-           efficiencies besides negligible errors in decay-scheme
-           data. Error in a single measurement was estimated to
-           be around 10%.
-MISC-COL   (MISC1).Average value of fragment initial spin.
-           (MISC2).Normalized activity per unit solid angle for
-           Iodine-132 fragments.
+CORRECTION  132Te precursor contribution subtracted
+ERR-ANALYS (DATA-ERR1) Error limits quoted on the independent
+           isomeric ratios at different angles are essentially the
+           precisions from five sets of measurements.
+           Other sources of error in each single measurement
+           include:
+           (ERR-S) uncertainty in counting statistics-5%,
+            * least-squares fitting, detector efficiencies besides
+           negligible errors in decay-scheme data.
+           (DATA-ERR2) Error in a single measurement was estimated
+            to be around 10%.
+           (MISC1-ERR) No information on source of uncertainties
+           (MISC2-ERR) No information on source of uncertainties
+           (MISC3-ERR) No information on source of uncertainties
+MISC-COL   (MISC1) Average value of fragment initial spin.
+           (MISC2) Normalized activity per unit solid angle for
+           Iodine-132 deduced from individual gamma lines
            (MISC3) Normalized activity per unit solid angle for
-           Tellurium-132 fragments.
-           (MISC1-ERR) An analysis is not given.
-           (MISC2-ERR) See ERR-T.
-           (MISC3-ERR) See ERR-T.
+           Tellurium-132 deduced from individual gamma lines
 COMMENT    *By authors. The observed 132-I/132-Te ratio of
            0.44 +/- 0.05 is in reasonable agreement with the
            expected from charge distribution systematics (0.42) in
            the present fissioning system.
-ENDBIB              29
-NOCOMMON             0          0
+HISTORY    (20160716A) SD: ERR-ANALYS update. ERR-T -> DATA-ERR1.
+           SF5=IND deleted from REACTION code, CORRECTION was
+           added (remarks from N.Otsuka).
+ENDBIB              32
+COMMON               2          3
+ERR-S      DATA-ERR2
+PER-CENT   PER-CENT
+  5.          10.
+ENDCOMMON            3
 DATA                10          6
-ANG-CM     ANG-RSL    DATA       ERR-T      MISC1      MISC1-ERR
+ANG-CM     ANG-RSL    DATA       DATA-ERR1  MISC1      MISC1-ERR
 MISC2      MISC2-ERR  MISC3      MISC3-ERR
 ADEG       ADEG       NO-DIM     NO-DIM     NO-DIM     NO-DIM
 NO-DIM     NO-DIM     NO-DIM     NO-DIM
@@ -77,5 +87,5 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM
        25.7       8.61       0.56       0.02        6.5        0.3
        0.41       0.01       0.42       0.04
 ENDDATA             16
-ENDSUBENT           50
+ENDSUBENT           57
 ENDENTRY             2

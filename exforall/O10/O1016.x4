@@ -1,9 +1,9 @@
-ENTRY            O1016   20151205   20160603   20160516       O056
-SUBENT        O1016001   20151205   20160603   20160516       O056
-BIB                 16         78
+ENTRY            O1016   20160804   20161101   20160922       O058
+SUBENT        O1016001   20160804   20161101   20160922       O058
+BIB                 15         79
 TITLE      Cross section data for the production of the positron
            emitting niobium isotope Nb-90 via the Zr-90(p,n)
-           reaction.
+           reaction
 AUTHOR     (S.Busse, F.Rosch, S.M.Qaim)
 INSTITUTE  (2GERMNZ)
            (2GERJUL) Institut fuer Nuklearchemie
@@ -16,7 +16,7 @@ METHOD     (STTA)
            beam current of 100 nano-Ampere.
            (BCINT) The proton beam current was measured directly
            using a  Faraday  cup as well as indirectly via the
-           Cu-63(P,N)Zn-63 reaction.  At low intensity the proton
+           Cu-63(p,n)Zn-63 reaction.  At low intensity the proton
            flux measured via the two techniques differed
            considerably.  The authors therefore put more reliance
            on the monitor reaction.
@@ -73,35 +73,39 @@ ERR-ANALYS The overall uncertainty in each cross section (ERR-T)
            the effective energy of the front foil was estimated to
            be 0.3-MeV. Due to propagation of error it increased
            to 0.7-MeV in the sixth foil of a stack.
-           PER-CENT
-STATUS     (TABLE)  Tbl.2, 3 of RCA,90,1,2002
 HISTORY    (20021204C)
            (20021229U) Last checking has been done.
            (20151204A) SD: DECAY-DATA corrected in Subent 005.
            ERR-ANALYS update.
-ENDBIB              78
+           (20160804A) SD: REACTION code corrected in
+           Subents 002,003. All corrections were made following
+           N.Otsuka comments.
+ENDBIB              79
 COMMON               2          3
 ERR-1      ERR-3
 PER-CENT   PER-CENT
   2.         6.
 ENDCOMMON            3
-ENDSUBENT           85
-SUBENT        O1016002   20021229              20050926       0000
-BIB                  5         10
-REACTION   (40-ZR-0(P,N)41-NB-90-G,M+,SIG)
-SAMPLE     Natural zirconium target was used.
-RAD-DET    (41-NB-90-G,DG)
+ENDSUBENT           86
+SUBENT        O1016002   20160804   20161101   20160922       O058
+BIB                  7         13
+REACTION   (40-ZR-90(P,N)41-NB-90-G,M+,SIG)
+SAMPLE     (40-ZR-90,NAT=0.5145) Natural zirconium target used.
 DECAY-DATA (41-NB-90-G,14.6HR,DG,1129.1,0.92,DG,2319.1,0.828,
             DG,141.2,0.69)
-           (41-NB-90-M,18.8SEC,DG,122.4,0.642) 100% isomer
-           transition.
-ERR-ANALYS (ERR-T).The uncertainty is given in data table.
-           Analysis see in first subentry.
-           (EN-ERR). Proton beam energy uncertainty.
-ENDBIB              10
-NOCOMMON
+MISC-COL   (MISC) Thickness of the target
+ERR-ANALYS (ERR-T) The total uncertainty.
+                          Analysis see in first Subent.
+           (EN-ERR) Proton beam energy uncertainty.
+STATUS     (TABLE) Table 2 of Radiochim.Acta.90(2002)1
+HISTORY    (20160804A) SD: SF1=Zr-0 -> Zr-90 in REACTION code.
+           Nb-90m deleted from DECAY-DATA (not used for derivation
+           of the compiled data set). THICHNESS -> MISC (thickness
+           not an independent variable in this case). STATUS added
+ENDBIB              13
+NOCOMMON             0          0
 DATA                 5         16
-EN         EN-ERR     DATA       ERR-T      THICKNESS
+EN         EN-ERR     DATA       ERR-T      MISC
 MEV        MEV        MB         MB         G/CM-SQ
        15.3        0.3       859.       123.     0.0075
        14.3        0.4       816.       148.     0.0072
@@ -120,25 +124,35 @@ MEV        MEV        MB         MB         G/CM-SQ
         7.9        0.7       292.        70.     0.0072
         7.5        0.5       132.        31.     0.0075
 ENDDATA             18
-ENDSUBENT           33
-SUBENT        O1016003   20021229              20050926       0000
-BIB                  3          4
-REACTION   (40-ZR-0(P,N)41-NB-90,,TTY,,DT)
+ENDSUBENT           36
+SUBENT        O1016003   20160804   20161101   20160922       O058
+BIB                  6         10
+REACTION   (40-ZR-90(P,N)41-NB-90,,TTY,,EOB/A)
 SAMPLE     Natural Zr target was used.
 ADD-RES    (TTY-C) Activity yields for natural zirconium and
            enriched Zr-90, for pure metal and oxide.
-ENDBIB               4
-NOCOMMON
+COMMENT     Frank Roesch (2016-09-09): The yield for
+                   an 1-hour irradiation is given.
+STATUS     (TABLE) Table 3 of Radiochim.Acta.90(2002)1
+HISTORY    (20160804A) SD: SF1=Zr-0 -> Zr-90; SF8=DT -> EOB/A
+           in REACTION code. Units MBQ/MUAHR -> MBQ/MUA;
+           TIME-IRRD was added. COMMENT, STATUS added.
+ENDBIB              10
+COMMON               1          3
+TIME-IRRD
+HR
+  1.
+ENDCOMMON            3
 DATA                 3          5
 EN-MAX     EN-MIN     DATA
-MEV        MEV        MBQ/MUAHR
+MEV        MEV        MBQ/MUA
        17.6        15.       128.
        17.6        8.1       330.
         15.       11.9       120.
         15.        8.1       202.
        11.9        8.1        82.
 ENDDATA              7
-ENDSUBENT           16
+ENDSUBENT           26
 SUBENT        O1016004   20021229              20050926       0000
 BIB                  5         18
 REACTION   (40-ZR-90(P,N)41-NB-90,,SIG)

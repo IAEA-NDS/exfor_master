@@ -1,40 +1,43 @@
-ENTRY            O0159     950704              20050926       0000
-SUBENT        O0159001     950704              20050926       0000
-BIB                 12         18
-TITLE      PRODUCTION CROSS SECTION OF RADIOACTIVE NUCLIDES IN
-           IRON TARGET,RADIATED BY 660 MEV PROTONS .
-AUTHOR     (YU.V.ALEKSANDROV,S.K.VASIL'EV,R.B.IVANOV,
-           L.M.KRIZHANSKIY,M.A.MIKHAYLOVA,V.P.PRIKHODTSEVA)
+ENTRY            O0159   20160823   20161101   20160922       O058
+SUBENT        O0159001   20160823   20161101   20160922       O058
+BIB                 14         24
+TITLE      Production cross section of radioactive nuclides in
+           iron target,radiated by 660 MeV protons
+AUTHOR     (Yu.V.Aleksandrov,S.K.Vasil'ev,R.B.Ivanov,
+           L.M.Krizhanskiy,M.A.Mikhaylova,V.P.Prikhodtseva)
 INSTITUTE  (4RUSRI)
-REFERENCE  (C,95PETRBG,,244,95)
-HISTORY    (950704C)
-           (951003U). LAST CHECKING HAS BEEN DONE.
-SAMPLE     THIN TARGET OF NATURAL IRON,THICKNESS 0.0618 G/CM**2,
-           PURITY 99.95%,WAS USED.
+REFERENCE  (C,95PETRBG,,244,1995)
+SAMPLE     Thin target of natural iron,thickness 0.0618 g/cm**2,
+           purity 99.95%,was used.
 FACILITY   (SYNCY,4ZZZDUB)
+INC-SPECT  Proton spectra around 1.75 x 10**12 /cm2/s.
 METHOD     (ACTIV)
            (STTA)
            (EXTB)
-MONITOR    ((MONIT)13-AL-27(P,3N+3P)11-NA-22,,SIG,,,EXP)
-DETECTOR   (GELI)
-ADD-RES    (COMP).
+MONITOR    ((MONIT)13-AL-27(P,X)11-NA-22,,SIG)
+DETECTOR   (GELI) 50 cm3
+ADD-RES    (COMP)
 STATUS     (TABLE)
-ENDBIB              18
+ERR-ANALYS (ERR-1,5.,7.) Uncertainty of detector calibration
+HISTORY    (19950704C)
+           (19951003U)  last checking has been done.
+           (20160823A) SD:Updated to new date formats,lower case.
+           SF3=3n+3p -> X in MONITOR reaction. Two values were
+           corrected in DECAY-DATA in Subent 002 (misprint in the
+           article). BIB update.
+ENDBIB              24
 COMMON               2          3
 EN         MONIT
 MEV        MB
        660.        16.
 ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        O0159002     950704              20050926       0000
-BIB                  4         37
-REACTION   (26-FE-0(P,X)ELEM/MASS,,SIG,,,EXP)
-ERR-ANALYS (ERR-T).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-           THE UNCERTAINTIES OF GAMMA-RAYS ABUNDANCES, HALF-LIVES
-           AND MONITOR REACTION ARE NOT INCLUDED.
+ENDSUBENT           31
+SUBENT        O0159002   20160823   20161101   20160922       O058
+BIB                  5         40
+REACTION   (26-FE-0(P,X)ELEM/MASS,,SIG)
 DECAY-DATA ((1.)27-CO-57,272.D)
            ((2.)27-CO-56,78.8D)
-           ((3.)27-CO-55,17.5D)
+           ((3.)27-CO-55,17.5HR)
            ((4.)26-FE-52-G,8.27HR)
            ((5.)25-MN-56,2.5785HR)
            ((6.)25-MN-54,312.D)
@@ -55,20 +58,26 @@ DECAY-DATA ((1.)27-CO-57,272.D)
            ((21.)19-K-42,12.36HR)
            ((22.)18-AR-41,1.83HR)
            ((23.)17-CL-39,55.6MIN)
-           ((24.)17-CL-38,37.24MIN)
+           ((24.)17-CL-38-G,37.24MIN)
            ((25.)17-CL-34-M,32.MIN)
-           ((26.)12-MG-28,20.90MIN)
-           ((27.)11-NA-24-G,15.02HR)
+           ((26.)12-MG-28,20.90HR)
+           ((27.)11-NA-24,15.02HR)
            ((28.)11-NA-22,2.60YR)
            ((29.)4-BE-7,53.3D)
-FLAG       (1.) INDEPENDENT PRODUCTION.
-           (2.) CUMULATIVE PRODUCTION.
-           (3.) THE PRODUCTION DUE TO ISOMER STATE IS INCLUDED.
-           (5.) THE TYPE OF PRODUCTION IS UNKNOWN.
-ENDBIB              37
+FLAG       (1.) Independent production.
+           (2.) Cumulative production.
+           (3.) The production due to isomer state is included.
+           (5.) The type of production is unknown.
+ERR-ANALYS (DATA-ERR) total uncertainty excluding uncertainties of
+           gamma-rays abundances, half-lives and monitor reaction
+           are not included.
+HISTORY    (20160823A) SD: Half-lives of two isotopes were
+           corrected (hl=20.90min -> 20.90hr for Mg-28 and
+           hl=17.5d -> 17.5hr for Co-55). ERR-T -> DATA-ERR.
+ENDBIB              40
 NOCOMMON             0          0
 DATA                 7         29
-ELEMENT    MASS       DATA       ERR-T      ISOMER     DECAY-FLAG
+ELEMENT    MASS       DATA       DATA-ERR   ISOMER     DECAY-FLAG
 FLAG
 NO-DIM     NO-DIM     MB         MB         NO-DIM     NO-DIM
 NO-DIM
@@ -131,10 +140,10 @@ NO-DIM
          4.         7.       3.13       0.25                   29.
          1.
 ENDDATA             62
-ENDSUBENT          104
-SUBENT        O0159003     950704              20050926       0000
+ENDSUBENT          107
+SUBENT        O0159003   20160823   20161101   20160922       O058
 BIB                  2          2
-REACTION   (26-FE-0(P,X)26-FE-53-G,CUM,SIG,,,EXP)
+REACTION   (26-FE-0(P,X)26-FE-53-G,CUM,SIG)
 DECAY-DATA (26-FE-53-G,8.51MIN)
 ENDBIB               2
 NOCOMMON             0          0

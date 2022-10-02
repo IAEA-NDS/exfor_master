@@ -1,59 +1,80 @@
-ENTRY            O0084     970122   20050616   20050926       0000
-SUBENT        O0084001     970122   20050616   20050926       0000
-BIB                 15         32
+ENTRY            O0084   20160727   20161101   20160922       O058
+SUBENT        O0084001   20160727   20161101   20160922       O058
+BIB                 14         53
 TITLE      Measurements and Optical-Model Analyses of Quasielastic
-            (P,N) Reactions.
-AUTHOR     (C.WONG,J.D.ANDERSON,J.W.MCCLURE,B.A.POHL,
-           J.J.WESOLOWSKI)
+            (p,n) reactions.
+AUTHOR     (C.Wong,J.D.Anderson,J.W.McClure,B.A.Pohl,
+           J.J.Wesolowski)
 INSTITUTE  (1USALRL)
-REFERENCE  (J,PR/C,5,158,72)
-HISTORY    (950223C)
-           (961026A) Converted to Lower Case. Correction of Some
-           Errors
-           (970122U) Last checking has been done.
-SAMPLE     The Target Used Varied in Thickness from 100 to
-            300 KeV.Ni,V,Nb-Commercially Foils.Ti,Fe,Co were
-           Evaporated and Lifted As Free Films,While the Cr and
-           Mn were Sandwich Construction,I.E. Electrodeposited
-           On Both Sides of a 1/10-Mil Gold Foil.Sc and Zr-Metal
-           Foils.Se was Made As Colloidal Suspensions with 1/2-Mil
-           Mylar Backing.
-ADD-RES    (COMP).Optical-Model Analyses.
-DETECTOR   (SCIN).10 Pilot B Detectors.
-FACILITY   (CYCLO,1USALRL).90-In.Cyclotron.
+REFERENCE  (J,PR/C,5,158,1972)
+SAMPLE     The target used varied in thickness from 100 to
+            300 keV. Ni,V,Nb-commercially foils. Ti,Fe,Co were
+           evaporated and lifted as free films, while the Cr and
+           Mn were sandwich construction, i.e. electrodeposited
+           on both sides of a 1/10-mil gold foil. Sc and Zr-metal
+           foils. Se was made as colloidal suspensions with
+           1/2-mil Mylar backing.
+ADD-RES    (COMP) Optical-Model Analyses
+DETECTOR   (SCIN) 10 Pilot B Detectors
+FACILITY   (CYCLO,1USALRL) 90-in. Cyclotron
 METHOD     (TOF)
-REL-REF    (R,,J.D.ANDERSON+,J,PR/B,136,118,64).Experimental
-           Method.
-EN-SEC     Neutron Energy Corresponds to Analog Resonance.
-ERR-ANALYS (ERR-1).Detector Efficiency Uncertainty.
-           (ERR-2).Corrected For Dead Time.
-STATUS     (CURVE).By CAJAD.
-COMMENT     - By Compiler - The Authors did not Publishe Isobar
-            Analogue Resonane Energies. Therefore Compiler has
-            Been Forced to Include (Q-VAL-APRX) As His
-            Understanding of this Value. The User Must be Careful
-            Of this Values.
-ENDBIB              32
+REL-REF    (R,,J.D.Anderson+,J,PR,136,B118,1964) Experimental
+           method; target description
+EN-SEC     Neutron Energy corresponds to analog resonance
+ERR-ANALYS (DATA-ERR) The errors are compounded from the
+           statistical counting errors and the uncertainties
+           introduced in drawing a line shape which subtracts out
+           the continuum neutrons. This uncertainty in the
+           background subtraction introduces most of the error in
+           the cross section at the backward angle, where the
+           analog (p,n) cross sections are small, and no
+           appreciable error at the forward angles, where the
+           cross sections are large.
+           However, in no case is the error in the cross sections
+           less than 7%, which represents an estimate
+           of the absolute accuracy of the detector efficiency.
+           (ERR-1) Detector efficiency uncertainty
+COMMENT    - By Compiler + N.Otsuka (28/07/2016)- Compiler
+           believes that author extracted a part of (p,n)
+           reaction which leaves the reaction product to the
+           lowest level of the isobaric analogue state. There is
+           no information on the excitation energy of the
+           isobaric analog state in the article, and compiler
+           believes use of IAS-NUMB=0 is the proper coding way.
+           The user must be careful of these values.
+HISTORY    (19950223C) By CAJAD.
+           (19961026A) Converted to lower case. Correction of some
+           errors
+           (19970122U) Last checking has been done.
+           (20160727A) SD: Q-VAL-APRX -> IAS-NUMB in Subents 002-
+           030 (see COMMENT). IAS-NUMB moved to Subent 001.
+           Others corrections in Subents (see HISTORY in Subents)
+           SAMPLE, STATUS moved to Subents 002-030. ERR-ANALYS
+           update. ERR-2 deleted (no such value in the text of
+           the article). ERR-T -> DATA-ERR. DATA -> DATA-CM.
+           Ref. PR/B,136,118 -> PR,136,B118 in REL-REF. SF7=(A)
+           was added to REACTION code in relevant Subents.
+ENDBIB              53
 COMMON               2          3
-ERR-1      ERR-2
-PER-CENT   PER-CENT
-        10.        10.
+IAS-NUMB   ERR-1
+NO-DIM     PER-CENT
+     0.      7.
 ENDCOMMON            3
-ENDSUBENT           39
-SUBENT        O0084002     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (22-TI-48(P,N)23-V-48,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           60
+SUBENT        O0084002   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (22-TI-48(P,N)23-V-48,PAR,DA,,(A))
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.1        0.6         7.
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.1        0.6
 ENDCOMMON            3
 DATA                 4          9
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         25.       1.34        10.        10.
        39.9       0.61        15.        18.
@@ -66,20 +87,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       155.8       1.11         9.        15.
 ENDDATA             11
 ENDSUBENT           24
-SUBENT        O0084003     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084003   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (23-V-51(P,N)24-CR-51,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.1        0.6       0.75
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.1        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
        26.1       1.71        10.        12.
        39.6       1.05        15.        10.
@@ -92,21 +112,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       143.2       0.56        21.        18.
       157.6        1.4        10.         7.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084004     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084004   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA,,(A))
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.1        0.6         6.
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.1        0.6
 ENDCOMMON            3
 DATA                 4         15
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         17.       2.35         7.         7.
        32.4       0.76         9.         7.
@@ -125,20 +145,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       156.5        0.5        30.        18.
 ENDDATA             17
 ENDSUBENT           30
-SUBENT        O0084005     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084005   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (21-SC-45(P,N)22-TI-45,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.3        0.6         2.
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.3        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.5       2.38         7.         8.
         18.        1.9         9.         7.
@@ -151,21 +170,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       122.9       0.74        27.        27.
       137.8       0.64        23.        19.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084006     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (24-CR-52(P,N)25-MN-52,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084006   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (24-CR-52(P,N)25-MN-52,PAR,DA,,(A))
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.3        0.6        2.5
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.3        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.4        4.6         7.         7.
        16.6       2.15         7.         8.
@@ -179,20 +198,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       139.1       0.44        23.        18.
 ENDDATA             12
 ENDSUBENT           25
-SUBENT        O0084007     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084007   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (25-MN-55(P,N)26-FE-55,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.3        0.6        3.5
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.3        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.3       3.64         7.         8.
        16.2       1.91         7.         8.
@@ -205,21 +223,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
        123.       0.36        30.        30.
        136.       0.41        30.        27.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084008     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (34-SE-0(P,N)35-BR-80,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084008   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (34-SE-80(P,N)35-BR-80,PAR,DA,,(A))
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: Se-0 -> Se-80, SF8=A was added to
+           REACTION code. ANG-ERR-D -> ANG-ERR-D (digitized error)
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.3        0.6        2.1
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.3        0.6
 ENDCOMMON            3
 DATA                 4         18
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.2       3.32         3.         3.
         3.2       3.11         3.         3.
@@ -241,20 +259,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       135.5       0.24                   60.
 ENDDATA             20
 ENDSUBENT           33
-SUBENT        O0084009     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084009   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (23-V-51(P,N)24-CR-51,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.7        0.6        0.8
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.7        0.6
 ENDCOMMON            3
 DATA                 4         20
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         5.4        2.9        2.4         3.
        18.5       2.33         5.         5.
@@ -277,21 +294,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       142.6       0.84        11.        11.
       157.3       1.35        10.        10.
 ENDDATA             22
-ENDSUBENT           35
-SUBENT        O0084010     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           34
+SUBENT        O0084010   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA,,(A))
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.7        0.6         6.
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.7        0.6
 ENDCOMMON            3
 DATA                 4         15
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.6       2.94        10.        10.
        19.1       2.31        10.        10.
@@ -310,20 +327,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       123.2       0.28        25.        25.
 ENDDATA             17
 ENDSUBENT           30
-SUBENT        O0084011     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084011   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (27-CO-59(P,N)28-NI-59,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       17.7        0.6        2.4
+STATUS     (CURVE) fig.1 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       17.7        0.6
 ENDCOMMON            3
 DATA                 4         20
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         6.4        4.4         7.         7.
        18.8       2.96         7.         7.
@@ -346,21 +362,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       143.4       0.37        40.        27.
       157.9       0.72        15.        12.
 ENDDATA             22
-ENDSUBENT           35
-SUBENT        O0084012     970122   20050616   20050926       0000
-BIB                  2          4
+ENDSUBENT           34
+SUBENT        O0084012   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (21-SC-45(P,N)22-TI-45,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        4.4
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.4       1.75        15.        15.
         8.5       0.88        14.        15.
@@ -373,21 +388,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       113.9       0.49        30.        30.
       128.5       0.33        40.        40.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084013     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (22-TI-48(P,N)23-V-48,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084013   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (22-TI-48(P,N)23-V-48,PAR,DA,,(A))
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6         7.
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.6        1.7        18.        18.
        10.4       1.23        16.        16.
@@ -401,20 +416,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       130.4       0.39        21.        18.
 ENDDATA             12
 ENDSUBENT           25
-SUBENT        O0084014     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084014   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (23-V-51(P,N)24-CR-51,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        0.8
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.3        3.9        15.        15.
        12.2        2.8        14.        14.
@@ -427,21 +441,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       119.1       0.88        10.        10.
       132.6       0.36        28.        25.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084015     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (24-CR-52(P,N)25-MN-52,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084015   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (24-CR-52(P,N)25-MN-52,PAR,DA,,(A))
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        2.5
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         2.9       2.47        12.        12.
        14.3       2.47        12.        11.
@@ -455,20 +469,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       134.8       0.28        40.        30.
 ENDDATA             12
 ENDSUBENT           25
-SUBENT        O0084016     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084016   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (25-MN-55(P,N)26-FE-55,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        3.5
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: ANG-ERR-D -> ANG-ERR-D (digitized error
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.5       3.39        15.        15.
        15.6       2.62         8.         9.
@@ -481,21 +494,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       120.6       0.42        14.        14.
       135.9       0.21        15.        25.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084017     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084017   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA,,(A))
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6         6.
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         25
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.1       2.75        10.        10.
         7.6        3.3        12.        12.
@@ -524,20 +537,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       136.2       0.16        30.        19.
 ENDDATA             27
 ENDSUBENT           40
-SUBENT        O0084018     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084018   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (27-CO-59(P,N)28-NI-59,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        2.4
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         28
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.0         3.        13.        13.
         7.2        3.9        10.        10.
@@ -568,21 +580,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       134.8       0.31        40.        40.
       156.2        0.7        40.        90.
 ENDDATA             30
-ENDSUBENT           43
-SUBENT        O0084019     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (28-NI-0(P,N)29-CU-58,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           42
+SUBENT        O0084019   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (28-NI-58(P,N)29-CU-58,PAR,DA,,(A))
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF4=Ni-0 -> Ni-58, SF8=A was added to
+           REACTION code. ANG-ERR-D -> ANG-ERR-D (digitized error)
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        8.8
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4          9
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.9        5.4        20.        20.
        16.6       1.48        20.        20.
@@ -595,20 +607,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       120.1       0.13        30.        23.
 ENDDATA             11
 ENDSUBENT           24
-SUBENT        O0084020     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (34-SE-0(P,N)35-BR-80,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+SUBENT        O0084020   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (34-SE-80(P,N)35-BR-80,PAR,DA,,(A))
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF4=Se-0 -> Se-80, SF8=A was added to
+           REACTION code. ANG-ERR-D -> ANG-ERR-D (digitized error)
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        2.1
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.0       3.99        10.        10.
        14.3        2.9        10.        10.
@@ -622,20 +634,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       164.6       0.46        40.        30.
 ENDDATA             12
 ENDSUBENT           25
-SUBENT        O0084021     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (40-ZR-0(P,N)41-NB-90,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+SUBENT        O0084021   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (40-ZR-90(P,N)41-NB-90,PAR,DA,,(A))
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:SF4=Zr-0 -> Zr-90, SF8=A was added to
+           REACTION code. ANG-ERR-D -> ANG-ERR-D (digitized error)
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        7.2
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         25
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         2.9        2.6        13.        13.
         2.9         2.        40.        30.
@@ -664,20 +676,19 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       141.7       0.43        70.        40.
 ENDDATA             27
 ENDSUBENT           40
-SUBENT        O0084022     970122   20050616   20050926       0000
-BIB                  2          4
+SUBENT        O0084022   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (41-NB-93(P,N)42-MO-93,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.0        0.6        1.7
+STATUS     (CURVE) fig.2 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.0        0.6
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         2.9       0.97        40.        15.
        15.7       1.24        13.        14.
@@ -690,21 +701,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       119.9       0.42        40.        30.
       135.5        0.6        20.        15.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084023     970122   20050616   20050926       0000
-BIB                  2          4
+ENDSUBENT           24
+SUBENT        O0084023   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (23-V-51(P,N)24-CR-51,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.7        0.7        0.8
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.7        0.7
 ENDCOMMON            3
 DATA                 4         20
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.4       3.86        10.        10.
        18.8       2.94        10.        10.
@@ -727,21 +737,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       150.1       0.51        16.        16.
       162.3       0.93        16.        16.
 ENDDATA             22
-ENDSUBENT           35
-SUBENT        O0084024     970122   20050616   20050926       0000
-BIB                  2          4
+ENDSUBENT           34
+SUBENT        O0084024   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (27-CO-59(P,N)28-NI-59,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.7        0.7        2.4
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.7        0.7
 ENDCOMMON            3
 DATA                 4         17
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.5        4.8        10.        17.
        18.8       3.03         6.        18.
@@ -761,22 +770,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       124.8       0.44        27.         7.
       131.4      0.138                   60.
 ENDDATA             19
-ENDSUBENT           32
-SUBENT        O0084025     970122   20050616   20050926       0000
-BIB                  2          5
-REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               5
-COMMON               4          3
-EN         ANG-ERR    DATA-ERR   Q-VAL-APRX
-MEV        ADEG       PER-CENT   MEV
-       18.7        0.7        10.         6.
+ENDSUBENT           31
+SUBENT        O0084025   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA,,(A))
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
+ENDBIB               4
+COMMON               3          3
+EN         ANG-ERR-D  ERR-DIG
+MEV        ADEG       PER-CENT
+       18.7        0.7        10.
 ENDCOMMON            3
 DATA                 4         16
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         7.5       2.89
        16.9       2.31
@@ -795,21 +803,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
        122.       0.25        40.        24.
       131.4        0.1        50.        60.
 ENDDATA             18
-ENDSUBENT           32
-SUBENT        O0084026     970122   20050616   20050926       0000
-BIB                  2          4
+ENDSUBENT           31
+SUBENT        O0084026   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (41-NB-93(P,N)42-MO-93,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       18.7        0.7        1.7
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       18.7        0.7
 ENDCOMMON            3
 DATA                 4         16
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
        14.1       1.02        22.        19.
        23.5        1.6        25.        19.
@@ -828,21 +835,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       136.1       0.19                   70.
       143.6       0.46        50.        40.
 ENDDATA             18
-ENDSUBENT           31
-SUBENT        O0084027     970122   20050616   20050926       0000
-BIB                  2          4
+ENDSUBENT           30
+SUBENT        O0084027   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (23-V-51(P,N)24-CR-51,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       19.7        0.7       0.75
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       19.7        0.7
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         2.9       3.28         3.         3.
        15.9       2.48         3.        2.4
@@ -855,21 +861,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       123.3       0.47        23.         9.
       135.9       0.36        30.        19.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084028     970122   20050616   20050926       0000
-BIB                  2          4
+ENDSUBENT           24
+SUBENT        O0084028   20160727   20161101   20160922       O058
+BIB                  3          3
 REACTION   (27-CO-59(P,N)28-NI-59,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
-ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       19.7        0.7        2.4
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD:ANG-ERR-D -> ANG-ERR-D (digitized error)
+ENDBIB               3
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       19.7        0.7
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         2.9         5.         3.         3.
        14.5       2.55        2.4         3.
@@ -882,21 +887,21 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       121.9        0.2                   60.
       135.4       0.14                   90.
 ENDDATA             12
-ENDSUBENT           25
-SUBENT        O0084029     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+ENDSUBENT           24
+SUBENT        O0084029   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (26-FE-56(P,N)27-CO-56,PAR,DA,,(A))
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF8=A was added to REACTION code.
+           ANG-ERR-D -> ANG-ERR-D (digitized error).
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       19.7        0.7         6.
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       19.7        0.7
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.1        3.3         3.         3.
        16.2         2.        10.        10.
@@ -910,20 +915,20 @@ ADEG       MB/SR      PER-CENT   PER-CENT
       136.6    0.7E-01                  160.
 ENDDATA             12
 ENDSUBENT           25
-SUBENT        O0084030     970122   20050616   20050926       0000
-BIB                  2          4
-REACTION   (40-ZR-0(P,N)41-NB-90,PAR,DA)
-ERR-ANALYS (ANG-ERR).Data-Point Reader Uncertainty.
-           (-ERR-T).The Uncertainty is Reported by Authors.
-           (+ERR-T).See Above.
+SUBENT        O0084030   20160727   20161101   20160922       O058
+BIB                  3          4
+REACTION   (40-ZR-90(P,N)41-NB-90,PAR,DA,,(A))
+STATUS     (CURVE) fig.3 of PR/C,5,158,1972
+HISTORY    (20160727A) SD: SF1=Zr-0 -> Zr-90, SF8=A was added to
+           REACTION code. ANG-ERR-D -> ANG-ERR-D (digitized error)
 ENDBIB               4
-COMMON               3          3
-EN         ANG-ERR    Q-VAL-APRX
-MEV        ADEG       MEV
-       19.7        0.7        7.2
+COMMON               2          3
+EN         ANG-ERR-D
+MEV        ADEG
+       19.7        0.7
 ENDCOMMON            3
 DATA                 4         10
-ANG-CM     DATA       -ERR-T     +ERR-T
+ANG-CM     DATA-CM    -DATA-ERR  +DATA-ERR
 ADEG       MB/SR      PER-CENT   PER-CENT
         3.2        4.9         6.         8.
        16.5        2.7        10.        10.

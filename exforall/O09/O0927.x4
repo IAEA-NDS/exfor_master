@@ -1,21 +1,13 @@
-ENTRY            O0927   20030503              20050926       0000
-SUBENT        O0927001   20030503              20050926       0000
-BIB                 14         30
+ENTRY            O0927   20160801   20161101   20160922       O058
+SUBENT        O0927001   20160801   20161101   20160922       O058
+BIB                 11         24
 TITLE      Experimental investigation of the ion-ion potential
            for the O-16+Ni-60 system at large interaction
-           distances.
-AUTHOR     (L.C.Chamon, D.Pereira, E.S.Rossi Jr., C.P.Silva,
+           distances
+AUTHOR     (L.C.Chamon, D.Pereira, E.S.Rossi Jr, C.P.Silva,
            R.Lichtenthaler Filho, L.C.Gomes)
 INSTITUTE  (3BZLUSP)
 REFERENCE  (J,NP/A,582,305,1995)
-REL-REF    (N,,L.WEST+,J,PR/C,11,859,1975)
-           (N,,L.WEST+,J,PR/C,15,2052,1977)
-           Similar data for 36.- And 38-MeV
-           (N,O0937001,A.M.BORGES+,J,PR/C,46,2360,1992)
-           The data for O-16+Ni-60 system in the bombarding energy
-           range 40-64 MeV.
-HISTORY    (20020117C)
-           (20030503U) Last checking has been done.
 SAMPLE     The Ni-60 targets, thickness about 30 mug/cm**2,
            enrichment 99.9%, evaporated onto a carbon foil,
            thickness 5 mug/cm**2. A layer of gold was evaporated
@@ -23,33 +15,37 @@ SAMPLE     The Ni-60 targets, thickness about 30 mug/cm**2,
 ADD-RES    (COMP).Coupled channel analysis.
            (POT) Deduced optical potential.
 DETECTOR   (SIBAR) A set of nine surface barrier detectors.
-INC-SPECT  *En-rsl* the energy resolution was about 200-KeV that
+INC-SPECT  *EN-RSL* The energy resolution was about 200-keV that
            allowed a complete separation between the elastic and
            the inelastic (2+,1.33-MeV) scattering peaks.
-FACILITY   (VDGT,3BZLUSP) The Sao Paulo 8UD pelletron accelerator.
+FACILITY   (VDGT,3BZLUSP) The Sao Paulo 8UD Pelletron accelerator.
 METHOD     (TOF) To detect of the few nucleon transfer processes.
            (EXTB)
-ERR-ANALYS (ANG-ERR-D).Data-point reader uncertainty.
-STATUS     (CURVE).By CAJAD.
-ENDBIB              30
+HISTORY    (20020117C)
+           (20030503U) Last checking has been done.
+           (20160801U) SD: Small correction in REFERENCE. REL-REF
+           deleted (data used only in analysis). ERR-T -> DATA-ERR
+ENDBIB              24
 COMMON               1          3
 EN-RSL
 KEV
        200.
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        O0927002   20030503              20050926       0000
-BIB                  2          2
+ENDSUBENT           31
+SUBENT        O0927002   20160801   20161101   20160922       O058
+BIB                  4          4
 REACTION   (28-NI-60(8-O-16,EL)28-NI-60,,DA,,RTH)
-ERR-ANALYS (ERR-T).The uncertainty is reported by authors.
-ENDBIB               2
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
+STATUS     (CURVE) data digitized from fig.2 of NP/A,582,305,1995
+HISTORY    (20160801U) SD:  ERR-T -> DATA-ERR.
+ENDBIB               4
 COMMON               1          3
 ANG-ERR-D
 ADEG
         0.5
 ENDCOMMON            3
 DATA                 4         84
-EN         ANG-CM     DATA       ERR-T
+EN         ANG-CM     DATA       DATA-ERR
 MEV        ADEG       NO-DIM     NO-DIM
         35.       49.3         1.     0.0025
         35.       52.6      0.995      0.003
@@ -136,21 +132,28 @@ MEV        ADEG       NO-DIM     NO-DIM
         37.      169.6      0.883      0.012
         37.       174.      0.858      0.005
 ENDDATA             86
-ENDSUBENT           97
-SUBENT        O0927003   20030503              20050926       0000
-BIB                  4          4
+ENDSUBENT           99
+SUBENT        O0927003   20160801   20161101   20160922       O058
+BIB                  7         11
 REACTION   (28-NI-60(8-O-16,INL)28-NI-60,PAR,DA)
-EN-SEC     (E-LVL,28-NI-60)
-LEVEL-PROP (28-NI-60,E-LVL=1.33,SPIN=2.,PARITY=+1.)
-ERR-ANALYS (ERR-T).The uncertainty is reported by authors.
-ENDBIB               4
-COMMON               2          3
-E-LVL      ANG-ERR-D
-MEV        ADEG
-       1.33        0.5
+EN-SEC     (E-LVL1,8-O-16)
+           (E-LVL2,28-NI-60)
+LEVEL-PROP (28-NI-60,E-LVL2=1.33,SPIN=2.,PARITY=+1.)
+COMMENT    'No evidence was found in the energy spectra for
+           population of other target or projectile excited
+           states.' in  p.306 of NP/A,582,305,1995
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
+STATUS     (CURVE) data digitized from fig.3 of NP/A,582,305,1995
+HISTORY    (20160801U) SD:  ERR-T -> DATA-ERR. E-LVL1, COMMENT
+           were added.
+ENDBIB              11
+COMMON               3          3
+E-LVL1     E-LVL2     ANG-ERR-D
+MEV        MEV        ADEG
+  0.0        1.33        0.5
 ENDCOMMON            3
 DATA                 4         81
-EN         ANG-CM     DATA       ERR-T
+EN         ANG-CM     DATA-CM    DATA-ERR
 MEV        ADEG       MB/SR      PER-CENT
         35.       49.3        5.2        29.
         35.       56.2        3.9        18.
@@ -234,5 +237,5 @@ MEV        ADEG       MB/SR      PER-CENT
         37.      169.5       0.57        19.
         37.       173.       0.84        19.
 ENDDATA             83
-ENDSUBENT           96
+ENDSUBENT          103
 ENDENTRY             3

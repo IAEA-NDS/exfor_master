@@ -1,58 +1,81 @@
-ENTRY            O1718   20090311   20090323   20090318       O038
-SUBENT        O1718001   20090311   20090323   20090318       O038
-BIB                 11         26
-TITLE      Measurement of the Mg-24(He3,p)Al-26 cross section.
+ENTRY            O1718   20160730   20161101   20160922       O058
+SUBENT        O1718001   20160730   20161101   20160922       O058
+BIB                  9         24
+TITLE      Measurement of the Mg-24(He3,p)Al-26 cross section:
            Implication for Al-26 production in the early solar
            system.
 REFERENCE  (J,PR/C,78,044613,2008)
 AUTHOR     (C.Fitoussi,J.Duprat,V.Tatischeff,J.Kiener,F.Naulin,
            G.Raisbeck, M.Assuncao, C.Bourgeois, M.Chabot, A.Coc,
            C.Engrand, M.Gounelle, F.Hammache, A.Lefebvre,
-           M.G.Porquet, J.-A.Scarpaci, N.de Sereville,
+           M.-G.Porquet, J.-A.Scarpaci, N.de Sereville,
            J.-P.Thibaud, F.Yiou)
 INSTITUTE  (2FR CSN)
            (2FR PAR)
-SAMPLE     Self-supported Mg-24 and natural Mg targets,
-           thicknesses from 0.5 to 17.7-mg/cm**2, were used.
+FACILITY   (VDGT,2FR CSN) The 14-MV tandem accelerator of IPN-
+            Orsay.
+METHOD     (BCINT)
+COMMENT    *By authors* A direct measurement of the Al-26
+           production on Mg target by means of gamma-ray
+           spectroscopy and accelerator mass spectrometry were
+           performed.
+DECAY-DATA (13-AL-26-G,720000.YR)
+HISTORY    (20081208C) S.B
+           (20160730A) SD: REACTION code corrected in Subent 003.
+           ANALYSIS, ERR-ANALYS update. SAMPLE, DETECTOR moved to
+           Subents 002-004. Small corrections in all Subents.
+           METHOD was added. FACILITY 'VDGT' moved to Subent 001.
+ENDBIB              24
+NOCOMMON             0          0
+ENDSUBENT           27
+SUBENT        O1718002   20160730   20161101   20160922       O058
+BIB                 11         38
+REACTION   (12-MG-24(HE3,P)13-AL-26,PAR,SIG,G)
+METHOD     (GSPEC)
+ANALYSIS   (INTAD)  The angular dependence of the 417 keV line was
+           fitted as Legendre polynomial and the attenuation
+           coefficients which have been analytically calculated
+           from the experimental setup geometry (see A.J.Ferguson,
+            'Angular Correlation Methods in Gamma-Ray
+           Spectroscopy' (North-Holland, Amsterdam, 1965)).
+           The total cr.section is given as 4 x Pi x A0.
+           Data were measured at 90, 112.5, 135 and 157.5 deg.
+SAMPLE     Self-supported Mg-24 targets were used. The thicknesses
+           of the targets ranged from 0.5 to 17.7 mg/cm2
            All Mg-24 targets were enriched more than 99%.
 DETECTOR   (HPGE,BGO) The gamma rays were detected with four large
            volume HP-Ge detectors. The Ge crystals were surrounded
            by bismuth germinate(BGO) detectors for Compton
            suppression.
-COMMENT    *By authors*.A direct measurement of the Al-26
-           production on Mg target by means of gamma-ray
-           spectroscopy and accelerator mass spectrometry were
-           performed.
-ERR-ANALYS (EN-ERR).The error is reported by authors in table.
-STATUS     (TABLE) Tables 1-3.
-DECAY-DATA (13-AL-26-G,720000.YR)
-HISTORY    (20081208C) S.B
-ENDBIB              26
-NOCOMMON             0          0
-ENDSUBENT           29
-SUBENT        O1718002   20090311   20090323   20090318       O038
-BIB                  7         13
-REACTION   (12-MG-24(HE3,P)13-AL-26-G,PAR,SIG,G)
-METHOD     (GSPEC)
-FACILITY   (VDGT,2FR CSN) The 14-MV tandem accelerator of IPN-
-            Orsay.
-ANALYSIS   (INTAD).Ther uncertainty in d-sigma/d-angle for each
-           detector takes into account the error on target
-           thickness 10%, the error on Q-value 5%, the dead time
-           correction 3%.
+           The detectors efficiencies were determined using
+           calibrated radioactive sources (60Co,88Y,137Cs,152Eu)
+           and proton-induced reactions for which gamma-production
+           cross sections are known:
+            24Mg(p,p')24Mg (Egamma = 1.37 MeV) and 16O(p,p')16O
+            (Egamma = 2.74 and 6.13 MeV).
+ERR-ANALYS (ERR-1) uncertainty of the target thickness 10%,
+           (ERR-2) uncertainty of the Q-value 5%,
+           (ERR-3) uncertainty of the dead time correction 3%.
+           (EN-ERR) uncertainty of the effective energy for the
+           cross section measurement
+           (ERR-T) Total error
 EN-SEC     (E,G)
+MISC-COL   (MISC) Thickness of the target
 CORRECTION  The dead-time-correction. The dead time was found to
            range from 15% to 40% for the thin target(5mg/cm**2)
            and from 50% to 60% for the thicker targets.
-ERR-ANALYS (DATA-ERR).The error is reported by authors in table
-ENDBIB              13
-COMMON               1          3
-E
-KEV
-417.
+STATUS     (TABLE) Table 1 of PR/C,78,044613,2008
+HISTORY    (20160730A) SD: THICKNESS -> MISC (THICKNESS is not an
+            independent variable of cross section).
+            SF4=Al-26g -> Al-26 in REACTION code.
+ENDBIB              38
+COMMON               4          3
+E          ERR-1      ERR-2      ERR-3
+KEV        PER-CENT   PER-CENT   PER-CENT
+417.          10.         5.        3.
 ENDCOMMON            3
 DATA                 5         46
-EN         EN-ERR     DATA       DATA-ERR   THICKNESS
+EN         EN-ERR     DATA       ERR-T      MISC
 MEV        MEV        MB         MB         G/CM-SQ
 3.1        0.6        4.4        0.4        0.00188
 3.5        0.2        6.9        0.7        0.00056
@@ -76,15 +99,15 @@ MEV        MEV        MB         MB         G/CM-SQ
 7.9        0.4        97.        9.         0.00188
 8.2        0.1        92.        9.         0.00056
 8.4        0.1        91.        9.         0.00056
-8.7        0.1        88.        9.         0.00056
 8.7        0.3        79.        8.         0.00188
+8.7        0.1        88.        9.         0.00056
 8.9        0.7        76.        7.         0.00412
 9.2        0.1        77.        7.         0.00056
-9.4        0.1        74.        7.         0.00056
 9.4        0.3        72.        7.         0.00188
+9.4        0.1        74.        7.         0.00056
 9.7        0.1        69.        7.         0.00056
-10.2       0.1        65.        6.         0.00056
 10.2       0.6        56.        5.         0.00393
+10.2       0.1        65.        6.         0.00056
 10.4       0.4        53.        5.         0.00238
 11.2       0.4        49.        5.         0.00238
 11.7       0.3        45.        4.         0.00238
@@ -101,30 +124,61 @@ MEV        MEV        MB         MB         G/CM-SQ
 29.8       0.2        3.9        0.4        0.00238
 35.9       0.2        1.7        0.2        0.00238
 ENDDATA             48
-ENDSUBENT           70
-SUBENT        O1718003   20081208   20090323   20090318       O038
-BIB                  7         13
-REACTION   (12-MG-0(HE3,P)13-AL-26-G,PAR,SIG,G)
+ENDSUBENT           95
+SUBENT        O1718003   20160730   20161101   20160922       O058
+BIB                 11         44
+REACTION   ((12-MG-24(HE3,P)13-AL-26,PAR,SIG,G)+
+           (12-MG-25(HE3,X)13-AL-26,PAR,SIG,G,RAB)+
+           (12-MG-26(HE3,X)13-AL-26,PAR,SIG,G,RAB))
 METHOD     (GSPEC)
-FACILITY   (VDGT,2FR CSN) The 14-MV tandem accelerator of IPN-
-            Orsay.
-ANALYSIS   (INTAD).Ther uncertainty in d-sigma/d-angle for each
-           detector takes into account the error on target
-           thickness 10%, the error on Q-value 5%, the dead time
-           correction 3%.
+ANALYSIS   (INTAD)  The angular dependence of the 417 keV line was
+           fitted as Legendre polynomial and the attenuation
+           coefficients which have been analytically calculated
+           from the experimental setup geometry (see A.J.Ferguson,
+            'Angular Correlation Methods in Gamma-Ray
+           Spectroscopy' (North-Holland, Amsterdam, 1965)).
+           The total cr.section is given as 4 x Pi x a0.
+           Data were measured at 90, 112.5, 135 and 157.5 deg.
+SAMPLE     (12-MG-24,NAT=0.7899)
+           (12-MG-25,NAT=0.10)
+           (12-MG-26,NAT=0.1101)
+           Self-supported natMg targets were used. The thicknesses
+           of the targets ranged from 0.5 to 17.7 mg/cm2
+DETECTOR   (HPGE,BGO) The gamma rays were detected with four large
+           volume HP-Ge detectors. The Ge crystals were surrounded
+           by bismuth germinate(BGO) detectors for Compton
+           suppression.
+           The detectors efficiencies were determined using
+           calibrated radioactive sources (60Co,88Y,137Cs,152Eu)
+           and proton-induced reactions for which gamma-production
+           cross sections are known:
+            24Mg(p,p')24Mg (Egamma = 1.37 MeV) and 16O(p,p')16O
+            (Egamma = 2.74 and 6.13 MeV).
+ERR-ANALYS (ERR-1) uncertainty of the target thickness 10%,
+           (ERR-2) uncertainty of the Q-value 5%,
+           (ERR-3) uncertainty of the dead time correction 3%.
+           (EN-ERR) uncertainty of the effective energy for the
+           cross section measurement
+           (ERR-T) Total error
 EN-SEC     (E,G)
-ERR-ANALYS (DATA-ERR).The error is reported by authors in table
+MISC-COL   (MISC) Thickness of the target
 CORRECTION  The dead-time-correction. The dead time was found to
            range from 15% to 40% for the thin target(5mg/cm**2)
            and from 50% to 60% for the thicker targets.
-ENDBIB              13
-COMMON               1          3
-E
-KEV
-417.
+STATUS     (TABLE) Table 2 of PR/C,78,044613,2008
+HISTORY    (20160730A) SD: REACTION code changed (one reaction ->
+           sum of reactions). ANALYSIS, ERR-ANALYS update.
+           DATA-ERR -> ERR-T. THICKNESS -> MISC (THICKNESS is not
+           an independent variable of cross section).
+            SF4=Al-26g -> Al-26 in REACTION code.
+ENDBIB              44
+COMMON               4          3
+E          ERR-1      ERR-2      ERR-3
+KEV        PER-CENT   PER-CENT   PER-CENT
+417.          10.         5.        3.
 ENDCOMMON            3
 DATA                 5         36
-EN         EN-ERR     DATA       DATA-ERR   THICKNESS
+EN         EN-ERR     DATA       ERR-T      MISC
 MEV        MEV        MB         MB         G/CM-SQ
 3.6        0.1        7.         1.         0.00033
 3.9        0.1        14.        1.         0.00033
@@ -163,32 +217,48 @@ MEV        MEV        MB         MB         G/CM-SQ
 29.9       0.0        15.        1.         0.00144
 35.9       0.0        12.        1.         0.00144
 ENDDATA             38
-ENDSUBENT           60
-SUBENT        O1718004   20081208   20090323   20090318       O038
-BIB                  6         16
+ENDSUBENT           91
+SUBENT        O1718004   20160730   20161101   20160922       O058
+BIB                 11         28
 REACTION   (12-MG-24(HE3,P)13-AL-26-G,,SIG)
 METHOD     (AMS)
 FACILITY   (SPECM,2FR SAT) Accelerator Mass Spectroscopy at the
             Tandetron of Gif-sur-Yvette.
+SAMPLE     11 24Mg targets, of thicknesses ranging from 0.5 up
+           to 17.7 mg/cm2 as a compromise between 26Al production
+           and beam straggling and energy losses.
+ANALYSIS   After irradiation, the targets were left apart for two
+           years for short period nuclei radioactive decay (the
+           activity was essentially coming from 22Na, t1/2 = 2.603
 CORRECTION  Correction for potential escape of the recoiling
            Al-26 was made. The correction factors are below
             10% for all targets, except for the thinnest targets
             0.5 and 1.51 mg/cm**2.
-MISC-COL   (MISC).The target thickness
-ERR-ANALYS (MISC-ERR).The error in the target thickness in G/CM-SQ
-           (+DATA-ERR).The error is reported by authors in table,
-           includes uncertainties in target thickness, He3
-           integrated flux in the Faraday cup, counting
-           statistics, stability of the AMS(5%) and the
-           uncertainty on the escape correction factor.
-           (-DATA-ERR).See above.
-ENDBIB              16
-NOCOMMON             0          0
+MISC-COL   (MISC) The target thickness
+REL-REF    (M,,J.F.Ziegler,J,NIM/B,219-220,1027,2004)
+ERR-ANALYS (MISC-ERR) The error in the target thickness in G/CM-SQ
+           (ERR-T) The error includes:
+             * uncertainties in target thickness, He3
+           integrated flux in the Faraday cup,
+             * counting  statistics,
+           (ERR-1) uncertainty in stability of the AMS(5%) and
+             * the uncertainty on the escape correction factor.
+           correction factor.
+           (EN-ERR) the energy loss in the target calculated
+            with TRIM (see REL-REF)
+STATUS     (TABLE) Table 3 of PR/C,78,044613,2008
+HISTORY    (20160730U) SD: ERR-ANALYS update. DATA-ERR -> ERR-T.
+ENDBIB              28
+COMMON               1          3
+ERR-1
+PER-CENT
+  5.0
+ENDCOMMON            3
 DATA                 7         11
-EN         EN-ERR     DATA       +DATA-ERR  -DATA-ERR  MISC
+EN         EN-ERR     DATA       +ERR-T     -ERR-T     MISC
 MISC-ERR
 MEV        MEV        MB         MB         MB         G/CM-SQ
-SEE TEXT
+G/CM-SQ
 5.9        0.1        147.       47.        37.        0.00050
 0.00005
 7.6        0.6        155.       29.        26.        0.00340
@@ -212,5 +282,5 @@ SEE TEXT
 24.9       0.1        20.        5.         4.         0.00151
 0.00015
 ENDDATA             26
-ENDSUBENT           47
+ENDSUBENT           63
 ENDENTRY             4

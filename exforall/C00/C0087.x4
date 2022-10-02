@@ -1,6 +1,6 @@
-ENTRY            C0087   20140417   20140711   20140711       C141
-SUBENT        C0087001   20140417   20140711   20140711       C141
-BIB                  8         13
+ENTRY            C0087   20160810   20161101   20161016       C161
+SUBENT        C0087001   20160810   20161101   20161016       C161
+BIB                  9         17
 INSTITUTE  (1USABNL)
 REFERENCE  (J,PR,150,851,1966)
            (J,AJ,145,960,1966)
@@ -11,29 +11,31 @@ FACILITY   (VDG,1USABNL) 4-MeV electrostatic accelerator
 DETECTOR   (SIBAR) Totally depleted silicon surface-barrier
             detector.
 STATUS     (APRVD) Approved by P. Parker, 30 July 1999.
+ERR-ANALYS (EN-ERR) Uncertainty in energy lost by beam in carbon
+            layer in front of target.
 HISTORY    (19980827C)
            (20060817C) DR Third reference corrected
            (20140417U) SD: Ref. AJ/L -> AJ, 85 -> L85.
-ENDBIB              13
+           (20160626A) OS. Units and reaction in sub.3 corrected,
+            sub.4 added.
+ENDBIB              17
 COMMON               1          3
 EN-ERR
 KEV
  15.
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        C0087002   19990713   19991118   20050926       0000
-BIB                  5         10
+ENDSUBENT           24
+SUBENT        C0087002   20160810   20161101   20161016       C161
+BIB                  4          8
 REACTION   (4-BE-7(P,G)5-B-8,,SIG)
 SAMPLE     7Be target prepared by evaporating BeF2 onto platinum
             backing, then exposing to warm NH4OH fumes and
             heating to form BeO.
 MONITOR    (3-LI-7(D,P)3-LI-8,,SIG) At 770-keV resonance.
             Renormalized by P. Parker 17 July 1999.
-ERR-ANALYS (EN-ERR) Uncertainty in energy lost by beam in carbon
-            layer in front of target.
-           Relative data uncertainties are given in figures.
-STATUS     Data received by email from P. Parker, 17 July 1999.
-ENDBIB              10
+STATUS     (TABLE) Data received by email from P. Parker,
+            17 July 1999.
+ENDBIB               8
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
 KEV        MB         MB
@@ -51,24 +53,54 @@ KEV        MICRO-B
 1468.        0.70
 1932.        1.02
 ENDDATA             10
-ENDSUBENT           29
-SUBENT        C0087003   19990713   19991118   20050926       0000
-BIB                  5          9
-REACTION   (3-LI-7(D,P)3-LI-8,,SIG)
+ENDSUBENT           27
+SUBENT        C0087003   20160810   20161101   20161016       C161
+BIB                  6         11
+REACTION   (3-LI-7(D,P)3-LI-8,,SIG,,RES)
 SAMPLE     LiF targets. Areal density about 50 microg/cm2.
 METHOD     Areal density of target determined using flame-
             photometry techniques.
-ERR-ANALYS (DATA-ERR) Includes uncertainties in:
-           . lithium density determination (5%),
-           . uncertainty in absolute target-detector geometry
-             (5%).
-STATUS     (OUTDT)
-ENDBIB               9
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Includes uncertainties in:
+           (ERR-1) lithium density determination (5%),
+           (ERR-2) uncertainty in absolute target-detector
+            geometry (5%).
+STATUS     (TABLE) Text on p.855 of Phys.Rev.150,851,1966
+           (OUTDT)
+HISTORY    (20160626A) Data units corrected, added RES to SF8
+ENDBIB              11
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  5.         5.
+ENDCOMMON            3
 DATA                 3          1
-EN         DATA       DATA-ERR
-KEV        MICRO-B    MICRO-B
+EN-RES     DATA       ERR-T
+KEV        MB         MB
  770.      211.        15.
 ENDDATA              3
-ENDSUBENT           17
-ENDENTRY             3
+ENDSUBENT           23
+SUBENT        C0087004   20160810   20161101   20161016       C161
+BIB                  5          9
+REACTION   (4-BE-7(P,G)5-B-8,,SIG)
+SAMPLE     7Be target prepared by evaporating BeF2 onto platinum
+            backing, then exposing to warm NH4OH fumes and
+            heating to form BeO.
+COMMENT    First reanalysis of the 1966 data. Superseded by
+           author's renormalization of 1999 (see subentry 2).
+STATUS     (TABLE) Table 1, Astrophys.J.153,L85,1968
+           (SPSDD,C0087002)
+HISTORY    (20160810C)
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 2          6
+EN         DATA
+KEV        MICRO-B
+ 483.        0.26
+ 614.        0.50
+ 826.        0.85
+ 956.        0.90
+1182.        0.94
+1468.        1.19
+ENDDATA              8
+ENDSUBENT           22
+ENDENTRY             4
