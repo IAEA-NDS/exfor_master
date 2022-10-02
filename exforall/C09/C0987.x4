@@ -1,44 +1,66 @@
-ENTRY            C0987   20040426   20040512   20050926       0000
-SUBENT        C0987001   20040426   20040512   20050926       0000
-BIB                 13         30
-INSTITUTE  (1USAMIN)
-REFERENCE  (J,PR,90,292,195304)
-AUTHOR     (J.L.Yarnell,R.H.Lovberg,W.R.Stratton)
+ENTRY            C0987   20140228   20140604   20140528       C139
+SUBENT        C0987001   20140228   20140604   20140528       C139
+BIB                 12         33
 TITLE      Angular Distributions of the Reaction He3(d,p)He4
-            between 240 keV and 3.56 MeV
-FACILITY   (ACCEL,1USAMIN) Electrostatic generator.
+           between 240 keV and 3.56 MeV
+AUTHOR     (J.L.Yarnell,R.H.Lovberg,W.R.Stratton)
+REFERENCE  (J,PR,90,292,1953)
+           #doi:10.1103/PhysRev.90.292
+INSTITUTE  (1USAMIN)
+FACILITY   (VDG,1USAMIN) Electrostatic generator.
 INC-SPECT  Energy calculated assuming energy loss for deuterons
-            in 3He was the same as that in 4He.
+           in 3He was the same as that in 4He.
 SAMPLE     3He contained in flat cylinder. Gas pressure about 85
-            mm Hg at deuteron energies of 0.978-3.56 MeV and
-            25 mm at deuteron energies of 0.240-0.978 MeV.
-METHOD     (BCINT)
-            Four runs taken at each energy and angle.
+           mm Hg at  deuteron energies of 0.978-3.56 MeV and 25
+           mm at deuteron energies  of 0.240-0.978 MeV.
+PART-DET   (P)
 DETECTOR   (NAICR)
+METHOD     (BCINT) Four runs taken at each energy and angle.
+           Since only a few standard cm3 of He3 were available
+           for this experiment, it was necessary to concentrate
+           as much as possible of the He3 reaction volume. This
+           was accomplished by collimating the deuteron beam,
+           and detecting protons formed in the reaction, outside
+           the region containing the He3. The NaI crystal was
+           1/8 in. thick, which was sufficient to stop the
+           protons and at the same time thin enough that the
+           background from neutrons and gamma-rays was negligible.
+           Light pulses from the sodium iodine crystal were
+           detected in a type 5819 photomultiplier tube and the
+           resulting electrical pulses were amplified and
+           recorded on a 10-channel pulse-height analyzer.
 CORRECTION Below 1.51 MeV, corrected for effects of multiple
-            scattering of deuteron beam in entrance window.
-ERR-ANALYS Errors estimated to be >5% at 978 keV and above,
-            11% at 455 keV and 25% at 260 keV.
-           Relative uncertainty 5%.
-           Other contributions to uncertainty include:
-           . statistical fluctuations in counting rate (<2%),
-           . charge collection (<1%),
-           . measurement of geometry (1%),
-           . determination of pressure (0.5%),
-           . measurement of angle (0.5%).
-           (EN-ERR) Includes estimated upper bound on absolute
-            value of rate of energy loss in target used to
-            calculate energies.
-STATUS     Data taken from Table I of reference.
+           scattering of deuteron beam in entrance window.
 HISTORY    (20040324C) VM
-ENDBIB              30
+           (20140228A) BP: Added doi, digitized Fig. 6, updated
+           subentries.
+ENDBIB              33
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        C0987002   20040324   20040512   20050926       0000
-BIB                  1          1
+ENDSUBENT           36
+SUBENT        C0987002   20140228   20140604   20140528       C139
+BIB                  3         16
 REACTION   (2-HE-3(D,P)2-HE-4,,DA)
-ENDBIB               1
-NOCOMMON             0          0
+ERR-ANALYS Total uncertainty estimated to be <5% at 978 keV and
+           above, 11% at 455 keV and 25% at 260 keV. The relative
+           angular distributions are estimated to be accurate to
+           5% at all energies.
+           Other contributions to uncertainty include:
+           (ERR-S,,2.) statistical fluctuations in counting rate
+            (<2%),
+           (ERR-1,,1.) charge collection (<1%),
+           (ERR-2) measurement of geometry (1%),
+           (ERR-3) determination of pressure (0.5%),
+           (ERR-4) measurement of angle (0.5%).
+           (EN-ERR) Includes estimated upper bound on absolute
+           value of rate of energy loss in target used to
+           calculate energies.
+STATUS     (TABLE) Table I, page 296.
+ENDBIB              16
+COMMON               3          3
+ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+1.         0.5        0.5
+ENDCOMMON            3
 DATA                 4        112
 EN         EN-ERR     ANG-CM     DATA-CM
 MEV        KEV        ADEG       MB/SR
@@ -155,5 +177,63 @@ MEV        KEV        ADEG       MB/SR
   3.56      20.       126.6        5.26
   3.56      20.       135.9        5.66
 ENDDATA            114
-ENDSUBENT          120
-ENDENTRY             2
+ENDSUBENT          139
+SUBENT        C0987003   20140228   20140604   20140528       C139
+BIB                  4          7
+REACTION   (2-HE-3(D,P)2-HE-4,,DA)
+ERR-ANALYS (DATA-ERR) The data error is due to possible errors
+           in the multiple scattering correction,
+           (EN-ERR) Energy error is due to computation of the
+           deuteron energy loss in the entrance window.
+HISTORY    (20140228C) BP
+STATUS     (CURVE) Fig. 6, page 295.
+ENDBIB               7
+COMMON               1          3
+ANG
+ADEG
+86.0
+ENDCOMMON            3
+DATA                 4         18
+EN         EN-ERR     DATA-CM    DATA-ERR
+KEV        KEV        MB/SR      MB/SR
+    239.489     33.245     22.761      6.002
+    283.144     36.808     36.781      7.443
+    321.100     35.605     54.527      9.125
+    365.711     32.065     64.944      9.127
+    382.646     33.261     69.736      9.363
+    406.336     29.675     68.760      8.405
+    426.703     30.878     71.508      7.925
+    445.666     30.870     70.895      7.084
+    471.678     29.667     69.077      6.963
+    488.104     29.682     65.944      6.123
+    506.944     30.878     63.410      5.882
+    525.692     30.870     59.436      5.522
+    565.685     30.862     53.406      5.282
+    605.717     30.862     47.976      3.724
+    681.177     26.112     39.402      3.362
+    756.768     26.127     32.868      2.161
+    832.428     26.120     27.415      1.682
+    912.993     24.940     24.361      1.322
+ENDDATA             20
+ENDSUBENT           36
+SUBENT        C0987004   20140228   20140604   20140528       C139
+BIB                  5         10
+REACTION   (2-HE-3(D,P)2-HE-4,,SIG)
+ANALYSIS   The integral cross section was obtained by
+           multiplication of the diff. cs at 86deg by 4pi which
+           is isotropic in the CM system.
+ERR-ANALYS (DATA-ERR) No explanation given by authors. Data were
+           obtained from experiment described in subentry 2,
+           where pertinent uncertainties are given.
+HISTORY    (20140228C) BP
+STATUS     (TABLE) page 296.
+           (DEP,C0987003)
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-ERR     DATA       DATA-ERR
+KEV        KEV        B          B
+      430.0       30.0       0.90       0.10
+ENDDATA              3
+ENDSUBENT           18
+ENDENTRY             4
