@@ -1,47 +1,51 @@
-ENTRY            30424   20090310   20090724   20090720       3135
-SUBENT        30424001   20090310   20090724   20090720       3135
-BIB                 15         38
-TITLE      Neutron capture cross section of Fe-57.
-AUTHOR     (B.J.Allen,A.R.de L.Musgrove,R.Taylor,R.L.Macklin)
-INSTITUTE  (3AULAUA)
-           (1USAORL) Location of exp., last author's address.
-REFERENCE  (C,77GEEL,,476,197712)
-           (W,ALLEN,19771024) Preprint. Compilation was performed.
-           (J,NSE,82,(2),230,1982) Correction factor (=1.0360) for
-            neutron capture cross-section is given
-SAMPLE     Enriched metallic sample, enriched to 93.6% Fe-57
-           thickness 0.00183 atom/b and 2.6*5.2 cm2.
-FACILITY   (LINAC,1USAORL)
-           ORNL electron linac,(ORELA)
+ENTRY            30424   20171122   20171122   20171122       3180
+SUBENT        30424001   20171122   20171122   20171122       3180
+BIB                 17         42
+TITLE      Neutron capture cross section of 57Fe
+AUTHOR     (B.J.Allen, A.R.de L.Musgrove, R.Taylor, R.L.Macklin)
+INSTITUTE  (3AULAUA,1USAORL)
+           (3AULAUL) James Cook Univ., Townsville
+REFERENCE  (C,77GEEL,,476,1977)
+           (W,ALLEN,19771024)  Preprint used for compilation
+           (J,NSE,82,230,1982) Correction factor given
+FACILITY   (LINAC,1USAORL) ORELA
 INC-SOURCE (PHOTO)
-METHOD     (TOF) Time of flight, path = 40 m.
-           Energy resolution of 0.2%.
-DETECTOR   (SCIN) Two non-hydrogenous liquid scintillators.  See
-           detail in Macklin and Allen,Nucl.Instr.Meth.91(1971)565
-           . 0.5 mm thick Li-6 glass scintillator as neutron flux
-           monitor.
-PART-DET   (G) Gammas.
+METHOD     (TOF) 40 m flight path, energy resolution of 0.2%
+SAMPLE     (26-FE-57,ENR=0.936)
+            Metallic sample (enriched to 93.6% Fe-57,
+            0.00183 atoms/b, 2.6 cm x 5.2 cm)
+DETECTOR   (SCIN) Two non-hydrogenous liquid scintillators.
+           (GLASD) 0.5 mm thick Li-6 glass scintillator as
+            neutron flux monitor
+REL-REF    (I,,R.L.Macklin+,J,NIM,91,565,1971)
+            Details about the liquid scintillator
+           (N,,J.G.Sullivan+,R,RPI-328-155,1969)
+            Details of ORNL/RPI Monte Carlo code
+PART-DET   (G)
 MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
-           See detail in Macklin et al.,Phys.Rev.C11(1975)1270.
+MONIT-REF  (10432001,R.L.Macklin+,J,PR/C,11,1270,1975)
+            Parametrization of 6Li(n,a) cross section
 ANALYSIS   (AREA) Area analysis using a modified version of the
-           ORNL/RPI Monte Carlo code by J.G.Sullivan et al.,Report
-           RPI-328-155(1969).
-           .When the neutron-width is greater than 0.2*(energy
-           resolution-width), a shape fit was also performed.
-CORRECTION Self-shielding and multiple-scattering corrections were
-           considered in Monte Carlo code.
-           Prompt background correction was made for resonance
-           scattered neutrons.
+            ORNL/RPI Monte Carlo code.
+           (SHAPE) Shape fit when the neutron-width is greater
+            than 0.2*(energy resolution-width)
+CORRECTION Corrected for
+            - self-shielding and multiple-scattering corrections
+              (in Monte Carlo code)
+            - prompt background correction (for resonance
+              scattered neutrons)
 STATUS     (APRVD) Approved with amendments by Allen, 78/04/07.
 HISTORY    (19771115C) KO.
-           (19780421A) KO.-'Aprvd' added. Correction of subentries
+           (19780421A) KO.- APRVD added. Correction of subentries
             .002 and .003.-
            (19821108U) DG.-Insertion of corregendum in reference.
            (19930202U) HW.-Sequence institute codes altered.-
            (20090310A) SD:Updated to new date formats,lower case.
-ENDBIB              38
+           (20171006A) VS. Subent 005 REACTION correctiom.
+           (20171122U) On. BIB updated.
+ENDBIB              42
 NOCOMMON             0          0
-ENDSUBENT           41
+ENDSUBENT           45
 SUBENT        30424002   20090310   20090724   20090720       3135
 BIB                  7         26
 REACTION  1(26-FE-57(N,0),,EN)
@@ -479,23 +483,24 @@ KEV        KEV        MB         MB
  1.5000E+02 2.0000E+02 3.5000E+00 3.0000E-01
 ENDDATA             19
 ENDSUBENT           30
-SUBENT        30424005   20090310   20090724   20090720       3135
-BIB                  5          7
-REACTION   (26-FE-57(N,G)26-FE-58,,SIG,,SPA)
-INC-SPECT  Maxwellian average for stellar temperature,
-            ''kT'' = 30 keV.
-STATUS     (TABLE) Data from Table 3 of preprint sent by
-                                               Allen, 77/10/24.
+SUBENT        30424005   20171122   20171122   20171122       3180
+BIB                  4          8
+REACTION   (26-FE-57(N,G)26-FE-58,,SIG,,MXW)
 ERR-ANALYS (DATA-ERR) No further information.
+STATUS     (TABLE) Table 3 of Proc. of Specialist's Meeting on
+            Neutron Data of Structural Materials for Fast
+            Reactors, CBNM, Geel, 5-8 Dec 1977
 HISTORY    (20090428U) OS. EN-DUMMY=45 keV replaced by KT=30 keV
-ENDBIB               7
+           (20171006A) VS. SPA -> MXW
+           (20171122U) On. BIB updated.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 KT         DATA       DATA-ERR
 KEV        MB         MB
- 3.0000E+01 3.4700E+01 2.3000E+00
+ 30.        34.7       2.3
 ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           16
 SUBENT        30424006   20090310   20090724   20090720       3135
 BIB                  3          4
 REACTION   (26-FE-57(N,G)26-FE-58,,RI)
