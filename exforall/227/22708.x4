@@ -1,12 +1,13 @@
-ENTRY            22708   20151009   20160603   20160523       2245
-SUBENT        22708001   20151009   20160603   20160523       2245
-BIB                 17         59
+ENTRY            22708   20170202   20170614   20170613       2259
+SUBENT        22708001   20170202   20170614   20170613       2259
+BIB                 17        100
 TITLE      A systematic study of (n,7Be) reactions on medium and
            heavy mass nuclei induced by 53 MeV d(Be)-Breakup
            neutrons
-AUTHOR     (B.Scholten,S.M.Qaim,G.Stocklin)
+AUTHOR     (B.Scholten,S.M.Qaim,G.Stoecklin)
 INSTITUTE  (2GERJUL)
 REFERENCE  (J,RCA,62,107,1993)
+           (C,91JUELIC,,711,1991) Prelim.data on Figs.
 INC-SOURCE (D-BE) The 53 MeV deuteron beam impinging on a 1 cm
            thick water-cooled Be disc produced breakup neutrons
            which were very strongly forward peaked.
@@ -22,13 +23,48 @@ INC-SPECT  Mean neutron flux density of about 3.x10**10 n/cm2/sec
            extrapolated up to 53 MeV  was used as a standard in
            the present work. The integrated neutron flux was
            adopted as 6.377 x 10**11 n/mu-C/sr.
-REL-REF    (M,,G.W.Schweimer,J,NP/A,100,537,1967) - Neutron
+            Originally adopted spectrum is in EXFOR Subent
+            o1924.002 - neutron energy range 12.5 -43.5 MeV.
+            Then neutron spectrum shape was reconstructed using
+            extensive measurement data ( 4- 50 MeV energy range)
+            of Meulders+.
+            Neutron spectrum provided by S.M.Qaim ( 29-12-2016):
+             units: energy - MeV, yield - 10**8n/(muC*MeV*sr)
+            Energy   Neutron yield       Energy   Neutron yield
+             4.        51.5              30.      126.7
+             5.        61.2              31.      111.0
+             6.        72.7              32.       97.3
+             7.        85.7              33.       85.3
+             8.        99.4              34.       75.0
+             9.       113.1              35.       66.1
+            10.       126.4              36.       58.4
+            11.       139.2              37.       51.9
+            12.       151.9              38.       46.2
+            13.       164.8              39.       41.4
+            14.       178.0              40.       37.1
+            15.       191.7              41.       33.2
+            16.       205.9              42.       29.5
+            17.       220.0              43.       25.9
+            18.       233.4              44.       22.3
+            19.       245.0              45.       18.8
+            20.       253.6              46.       15.7
+            21.       257.9              47.       12.9
+            22.       256.9              48.       10.6
+            23.       250.2              49.        8.8
+            24.       238.3              50.        7.2
+            25.       222.1              51.        5.9
+            26.       203.2              52.        4.9
+            27.       183.1              53.        4.0
+            28.       163.1              54.        3.1
+            29.       144.1
+REL-REF    (R,O1924002,G.W.Schweimer,J,NP/A,100,537,1967) Neutron
            (M,,J.P.Meulders+,J,PMB,20,235,1975)      spectrum
-MONITOR    (13-AL-27(N,A)11-NA-24,,SIG) The neutron flux density
-           effective at the irradiated sample was determined via
-           27Al(n,a) monitor reaction, the excitation function of
-           which is known well up to 28 MeV.
+MONITOR    (13-AL-27(N,A)11-NA-24,,SIG,,SPA) The neutron flux
+           density effective at the irradiated sample was
+           determined via 27Al(n,a) monitor reaction, the
+           excitation function of which is known well up to 28 MeV
 DECAY-DATA (4-BE-7,53.D,DG,477.6,0.104)
+            53.+-1. day HL was measured.
 MONIT-REF  (,H.Vonach,R,IAEA/TA-227,59,1984)
            (,B.P.Hayhurst+,J,PR/C,12,451,1975)
 FACILITY   (ISOCY,2GERJUL) The Julich Isochron.Cyclotron
@@ -51,8 +87,11 @@ ERR-ANALYS (ERR-1) The total error in the neutron flux density
            (ERR-2) Error related to the efficiency of the detector
            (ERR-3) The error due to the chemical yield of 7Be
            separation;
+           (ERR-4,5.,50.) Error in the peak area analysis
+             (error in determination of Be-7 activity
+            originated from the low counting rates )
            (ERR-T) Total errors in the (n,7Be) cross sections.
-STATUS     (TABLE) Tbl.4 from RCA,62,107,1993
+STATUS     (TABLE) Table 4 from RCA,62,107,1993
 HISTORY    (20010422C)
            (20151009A) SD: DECAY-DATA added to Subent 001,
            EN=53.MeV -> EN-DUMMY=22.5MeV. SF4 in REACTION code was
@@ -60,13 +99,15 @@ HISTORY    (20010422C)
            Isotope abundance of target was added in Subents 2-10.
            METHOD (TOF) deleted, (CHSEP) added. SAMPLE,
            INC-SOURCE update.
-ENDBIB              59
+           (20170202A)  M.M. INC-SPECT information was added.
+            SPA was added in MONITOR reaction. ERR-4 was added.
+ENDBIB             100
 COMMON               6          3
 EN-DUMMY   MONIT      MONIT-ERR  ERR-1      ERR-2      ERR-3
 MEV        MB         MB         PER-CENT   PER-CENT   PER-CENT
   22.5        20.7       2.0        12.0      7.0        4.0
 ENDCOMMON            3
-ENDSUBENT           66
+ENDSUBENT          107
 SUBENT        22708002   20151009   20160603   20160523       2245
 BIB                  3          5
 REACTION   (13-AL-27(N,X)4-BE-7,,SIG,,SPA)

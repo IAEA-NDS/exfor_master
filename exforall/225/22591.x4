@@ -1,27 +1,33 @@
-ENTRY            22591   20061214   20070306   20070214       2181
-SUBENT        22591001   20061214   20070306   20070214       2181
-BIB                 15         36
+ENTRY            22591   20170204   20170614   20170613       2259
+SUBENT        22591001   20170204   20170614   20170613       2259
+BIB                 17         45
 TITLE      .Excitation function of La-139(N,He3)Cs-137 reaction
             near its threshold.
 AUTHOR     (S.M.Qaim, R.Woelfle)
-REFERENCE  (J,AHP,69,137,1991)    Main reference
-           (J,RCA,50,5,1990)  Experimental details
+REFERENCE  (J,AHP,69,137,1991)
+REL-REF    (I,,R.Woelfle+,J,RCA,50,5,1990)  Experimental details,
+             (n,t) reaction data .
 INSTITUTE  (2GERJUL)  Waim, Woelfle
            (2ZZZGEL)  Experimental site
 FACILITY   (VDG,2ZZZGEL) The Geel CN-type Van de Graaff machine.
-METHOD     (ACTIV)
-           (RCHEM)
-DETECTOR   (GELI) A large-sized Ge(Li) detector.
-MONITOR    ((MONIT)57-LA-139(N,A)55-CS-136,,SIG)
-MONIT-REF  (22108005,R.WOELFLE+,J,ARI,39,407,1988)
 INC-SOURCE (D-T) Monoenergetic neutrons in the energy range of
              16.32 to 19.02-MeV were produced via the
              H-3(d,N)He-4 reaction.
-SAMPLE     .The La-segment, 20 to 28-g, was dissolved in 350-ml of
-            2 Mol HCl acid containing 240-mg of Cs carrier. After
+INC-SPECT    Monoenergetic neutrons.
+METHOD     (ACTIV) Irradiation time 55.39 hr.
+           (CHSEP)
+             Radiated sample was dissolved in 350-ml of
+            2M HCl acid containing 240-mg of Cs carrier. After
             chemical separation radiocesium sample was counted for
             several weeks periodically over several years.
-ADD-RES    (COMP).Hauser-feshbach calculations.
+           Chemical yield ~80%, the decontamination factor >10**6.
+DETECTOR   (GELI) A large-sized Ge(Li) detector.
+MONITOR    ((MONIT)57-LA-139(N,A)55-CS-136,,SIG)
+MONIT-REF  (22108005,R.Woelfle+,J,ARI,39,407,1988)
+CORRECTION  For background, for decay, chemical yield,absorption,
+            detector efficiency,geometry of counting, gamma-ray
+            abundance.
+ADD-RES    (COMP).Hauser-Feshbach calculations.
 ERR-ANALYS (DATA-ERR) The overall error was obtained by combining
                       all the individual errors in quadrature and
             amounted to between 45 to 80%. The major sources of
@@ -33,39 +39,45 @@ ERR-ANALYS (DATA-ERR) The overall error was obtained by combining
            (MONIT-ERR).The uncertainty in the excitation function
             of the monitor reaction is 8%, which was used for
             neutron flux measurements.
-STATUS     .Table I in main reference
-           (COREL,21916001)
+STATUS     (TABLE) Table I of AHP,69,137,1991
 HISTORY    (20061115C) S.M.
            (20061214A) Last corrections have been done
-ENDBIB              36
+           (20170204A) M.M. "COREL,21916001" was deleted -
+            in 21916 measurement at Juelich.
+            Ref. RCA,50,5,1990 was moved in REL-REF.
+            Reaction was corrected in Subent 002.
+ENDBIB              45
 NOCOMMON             0          0
-ENDSUBENT           39
-SUBENT        22591002   20061214   20070306   20070214       2181
-BIB                  3         11
-REACTION   (57-LA-139(N,HE3)55-CS-137,,SIG)  This is the major
+ENDSUBENT           48
+SUBENT        22591002   20170204   20170614   20170613       2259
+BIB                  5         19
+REACTION   (57-LA-139(N,X)55-CS-137,,SIG)  This is the major
             contributing process, however, small contribution,
             less than 20% from the (N,dp) and (N,2Np) processes
             may also occur.
 DECAY-DATA (55-CS-137,30.17YR,DG,662.,0.935)
-FLAG       (1.) The weight La-segment is 20.04 g, angular range
-                is 0 - 40 degree.
-           (2.).The weight La-segment is 28.70 g, angular range
-                is 40 - 65 degree.
-           (3.).The weight La-segment is 21.88 g, angular range
-                is 65 - 62 degree.
-ENDBIB              11
+SAMPLE     .The La-segment, 20 to 28-g. Purity 99.6% .
+            1.  The weight La-segment is 20.04 g, angular range
+                is 0 - 40 degree, for EN=19.02 MeV
+            2.  The weight La-segment is 28.70 g, angular range
+                is 40 - 65 degree, for EN=17.68 MeV
+            3.  The weight La-segment is 21.88 g, angular range
+                is 65 - 62 degree, for EN=16.32 MeV
+ANALYSIS    La-139(N,HE3)La-137 is major contributing process,
+            however, small contribution, < 20% from the (n,dp) and
+            (n,2np) processes on La-139 ( Q-values  -7.53, -13.03,
+            -15.25 MeV,respectively) may also occur.
+HISTORY    (20170204A) M.M.  FLAG was deleted, information was
+           moved in SAMPLE.
+            (N,HE3) -> (N,X) - see ANALYSIS.
+ENDBIB              19
 NOCOMMON             0          0
-DATA                 7          3
+DATA                 6          3
 EN         EN-ERR     DATA       DATA-ERR   MONIT      MONIT-ERR
-FLAG
 MEV        MEV        MICRO-B    MICRO-B    MB         MB
-NO-DIM
-      19.02       0.56        48.        28.       3.35       0.27
-         1.
-      17.68       0.77        60.        27.       3.29       0.26
-         2.
-      16.32       0.58         7.        5.5       3.05       0.24
-         3.
-ENDDATA             10
-ENDSUBENT           26
+      19.02       0.56        48.        28.       3.35      0.27
+      17.68       0.77        60.        27.       3.29      0.26
+      16.32       0.58         7.        5.5       3.05      0.24
+ENDDATA              5
+ENDSUBENT           29
 ENDENTRY             2

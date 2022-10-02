@@ -1,9 +1,9 @@
-ENTRY            21649   20101114   20110803   20110721       2225
-SUBENT        21649001   20101114   20110803   20110721       2225
-BIB                 15         44
+ENTRY            21649   20170215   20170614   20170613       2259
+SUBENT        21649001   20170215   20170614   20170613       2259
+BIB                 17         99
 INSTITUTE  (2GERJUL)
 REFERENCE  (R,BNL-NCS-51245,539,1980)
-           (W,QAIM,198007) Private communication of Qaim,
+           (W,QAIM,198007) Private communication of S.Qaim,
             text of contributed paper to Symposium on
             Cross Sections from 10 to 50 MeV, Brookhaven,
             12-14 May 1980.
@@ -11,6 +11,10 @@ AUTHOR     (S.M.Qaim,S.Khatun,R.Woelfle)
 TITLE      -Integral cross section measurements on (n,x)
             reactions induced by 30 MeV d(Be) break-up
             neutrons on FRT wall and structural materials.
+REL-REF    (M,,S.M.Qaim+,J,JIN,35,19,1973)
+           (M,,S.M.Qaim,J,NP/A,224,319,1974)
+           (M,,N.I.Molla+,J,NP/A,283,269,1977)
+           (M,,S.M.Qaim+,J,JRC,30,35,1976)
 FACILITY   (ISOCY,2GERJUL) Juelich isochronous cyclotron.
 INC-SOURCE (D-BE) 30 MeV deuterons on a 1. cm thick Be target.
 INC-SPECT  Effective neutron spectrum from low energy to
@@ -18,16 +22,53 @@ INC-SPECT  Effective neutron spectrum from low energy to
            be roughly divided into 3 groups. 2 to 8 MeV
             (39.5%), 8 to 13.5 MeV (25.5%) and
            13.5 to 30 MeV (35.0%).
+            Spectrum (digitized data from Fig.1 of
+            BNL-NCS-51245,539,1980, digitization errors:
+           energy scale - 0.050 MeV,
+           intensity - 0.0036,
+           Intensity units -10**10 n/(sr*microA*sec*MeV)
+           Energy units - MeV
+           En       Intensity             En      Intensity
+            1.966     24.622              12.605    9.459
+            2.168     22.657              13.075    9.682
+            2.332     20.770              13.542    9.713
+            2.574     18.844              14.006    9.591
+            2.785     17.418              14.467    9.276
+            2.956     15.992              14.928    8.923
+            3.243     14.449              15.270    8.456
+            3.450     12.792              15.612    7.951
+            3.736     11.249              15.952    7.369
+            4.064      9.821              16.407    6.631
+            4.470      8.469              16.863    6.008
+            4.880      7.386              17.241    5.349
+            5.370      6.417              17.699    4.803
+            5.862      5.640              18.195    4.257
+            6.435      4.977              18.768    3.633
+            7.126      4.467              19.420    3.084
+            7.627      4.228              19.996    2.652
+            8.171      4.181              20.612    2.297
+            8.717      4.327              21.424    2.015
+            9.071      4.590              22.274    1.733
+            9.426      4.931              23.241    1.487
+            9.744      5.426              24.053    1.205
+           10.025      5.960              24.982    0.999
+           10.306      6.571              26.028    0.790
+           10.627      7.220              26.996    0.583
+           10.946      7.754              28.081    0.451
+           11.343      8.286              29.012    0.359
+           11.740      8.780              29.904    0.230
+           12.134      9.120
 SAMPLE     . 0.1 g  of high purity (generally enriched isotope),
              sandwiched in Al foil (1. x 1. x 0.1 cm ) and
              irradiated for 2 min to 5 hr.
             For tritium counting, 10 target metal foils with
-             aluminium foil in between irradiated for 10 hours.
+             aluminum  foil in between irradiated for 10 hours.
 METHOD     (ACTIV) Activation and identification of rad. prods.
+            Irradiation at distance ~ 6cm from Be-converter.
            (CHSEP) Chem. separation for the soft radiation
                    emitters and low-yield reaction products.
-DETECTOR   (GELI)  For decay gamma detection.
-           . Si(Li) detector used for x-ray spectroscopy.
+DETECTOR   (GELI)  For decay gamma detection - Ge(Li) detector.
+           (SILI) Si(Li) detector used for x-ray spectroscopy.
              Low-level anticoincidence beta- counting,
              4-pi-beta-gamma-coincidence.
            . Vacuum extraction and gas counting of tritium
@@ -36,8 +77,15 @@ MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
 CORRECTION .Includes decay, beta and gamma branching ratios,
             counting efficiency, geometry, absorption.
 STATUS     (TABLE) .Tables in private communication.
-            The same values in Tbl.1 of rep.BNL-NCS-51245,539,1980
 ERR-ANALYS (DATA-ERR) Nothing said about uncertainties
+COMMENT    Of compiler M.M. 2017-02-15 :
+           Q-value was moved in free text, "PAR" was deleted,
+           because it's not partial cross section, Q-value can be
+           used to calculate threshold energy Eth and use spectrum
+           at En > threshold for averaging of point-wise data(e.g.
+           from evaluated libraries) to compare with measured
+           data. EN-DUMMY is given as 20 MeV, but energy at higher
+           peak of spectrum is ~14 MeV.
 HISTORY    (19800825C)
            (19800829E)
            (19860311U)N.Ch
@@ -45,273 +93,358 @@ HISTORY    (19800825C)
            (20101114A) SD:Updated to new date formats,lower case.
                 corrected according to last EXFOR rules and Dict.
                 ref. on BNL-NCS-51245,539,1980 added.
-ENDBIB              44
-COMMON               1          3
-EN-DUMMY
-MEV
- 2.0000E+01
+           (20170215A) M.M. INC-SPECT information was added.
+            Article was checked, BIB information was updated in
+            STATUS,METHOD,REL-REF.
+            Subent 019 REACTION SF1 was corrected.
+             PAR was deleted from SF5 in Subents 002-011,
+             Q-value was moved in free text - see COMMENT.
+            EN-MAX=30 MeV was added.
+ENDBIB              99
+COMMON               2          3
+EN-DUMMY   EN-MAX
+MEV        MEV
+ 20.        30.
 ENDCOMMON            3
-ENDSUBENT           51
-SUBENT        21649002   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (22-TI-47(N,3N)22-TI-45,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT          106
+SUBENT        21649002   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (22-TI-47(N,3N)22-TI-45,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -22.07 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--2.2070E+01 1.1000E+00 2.5000E-01
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 1.10       0.25
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649003   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (24-CR-50(N,3N)24-CR-48,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649003   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (24-CR-50(N,3N)24-CR-48,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -23.58 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--2.3580E+01 7.0000E-02 3.0000E-02
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 0.07       0.03
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649004   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (24-CR-53(N,3N)24-CR-51,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649004   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (24-CR-53(N,3N)24-CR-51,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -20.11 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--2.0110E+01 1.0560E+01 1.6000E+00
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 10.56      1.6
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649005   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (27-CO-59(N,3N)27-CO-57,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649005   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (27-CO-59(N,3N)27-CO-57,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -19.03 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--1.9030E+01 1.1220E+01 1.8000E+00
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 11.22      1.8
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649006   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (28-NI-58(N,3N)28-NI-56,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649006   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (28-NI-58(N,3N)28-NI-56,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -22.46 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--2.2460E+01 2.0000E-02 1.0000E-02
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 0.02       0.01
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649007   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (29-CU-63(N,3N)29-CU-61,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649007   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (29-CU-63(N,3N)29-CU-61,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -19.74 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--1.9740E+01 4.2600E+00 1.2100E+00
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 4.26       1.21
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649008   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (23-V-51(N,N+A)21-SC-47,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649008   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (23-V-51(N,N+A)21-SC-47,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -10.29 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--1.0290E+01 3.5000E+00 8.0000E-01
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 3.5        0.8
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649009   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (29-CU-65(N,N+A)27-CO-61,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649009   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (29-CU-65(N,N+A)27-CO-61,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -6.79 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--6.7900E+00 5.1000E+00 1.3000E+00
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 5.1        1.3
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649010   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (23-V-51(N,HE3)21-SC-49,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649010   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (23-V-51(N,HE3)21-SC-49,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -12.50 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--1.2500E+01 2.5000E-01 8.0000E-02
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 0.25       0.08
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649011   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (24-CR-53(N,HE3)22-TI-51,PAR,SIG,,SPA)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        21649011   20170215   20170614   20170613       2259
+BIB                  3          6
+REACTION   (24-CR-53(N,HE3)22-TI-51,,SIG,,SPA)
+            CS averaged over spectrum at En > Ethresold,
+            Q value -12.41 MeV
+STATUS     (TABLE) The same values in Table I of
+            BNL-NCS-51245,539,1980
+HISTORY    (20170215A) M.M. PAR was deleted.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          1
-Q-VAL      DATA       DATA-ERR
-MEV        MB         MB
--1.2410E+01 2.6000E-01 8.0000E-02
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 0.26       0.08
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649012   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           14
+SUBENT        21649012   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (13-AL-27(N,X)1-H-3,,SIG,,SPA) Tritium formation
-PART-DET   (T    ) Tritium counting.
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 1.5100E+00 3.0000E-01
+ 1.51       3.0000E-01
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649013   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           12
+SUBENT        21649013   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (25-MN-55(N,X)1-H-3,,SIG,,SPA)  Tritium formation
-PART-DET   (T   ) Tritium counting
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 1.4000E+00 7.0000E-01
+ 1.40       7.0000E-01
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649014   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           12
+SUBENT        21649014   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (27-CO-59(N,X)1-H-3,,SIG,,SPA) Tritium formation
-PART-DET   (T   ) Tritium counting
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 4.9000E-01 1.0000E-01
+    4.9E-01 1.0000E-01
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649015   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           12
+SUBENT        21649015   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (41-NB-93(N,X)1-H-3,,SIG,,SPA) Tritium formation
-PART-DET   (T   ) Tritium counting
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 4.9000E-01 1.0000E-01
+    4.9E-01 1.0000E-01
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649016   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           12
+SUBENT        21649016   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (24-CR-0(N,X)1-H-3,,SIG,,SPA) Tritium formation
-PART-DET   (T   ) Tritium counting
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 3.3000E-01 7.0000E-02
+ 0.33       7.0000E-02
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649017   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           12
+SUBENT        21649017   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (26-FE-0(N,X)1-H-3,,SIG,,SPA) Tritium formation
-PART-DET   (T   ) Tritium counting
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 4.1000E-01 8.0000E-02
+  0.41      8.0000E-02
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649018   20101114   20110803   20110721       2225
-BIB                  2          2
+ENDSUBENT           12
+SUBENT        21649018   20170215   20170614   20170613       2259
+BIB                  3          4
 REACTION   (28-NI-0(N,X)1-H-3,,SIG,,SPA) Tritium formation
-PART-DET   (T   ) Tritium counting
-ENDBIB               2
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 2.8000E-01 6.0000E-02
+ 0.28       6.0000E-02
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        21649019   20101114   20110803   20110721       2225
-BIB                  3          3
-REACTION   (26-FE-0(N,X)1-H-3,,SIG,,SPA) Tritium formation for
-SAMPLE                           Stainless steel.
-PART-DET   (T   ) Tritium counting
+ENDSUBENT           12
+SUBENT        21649019   20170215   20170614   20170613       2259
+BIB                  5          7
+REACTION   (26-FE-CMP(N,X)1-H-3,,SIG,,SPA) Tritium formation for
+SAMPLE          stainless steel V2A( DIN 10 Cr Ni Ti 18 9).
+           Contents: Cr - 18%, Ni - 10% , Mn < 2.00%, Fe - 70.% .
+RAD-DET    (1-H-3,B-)   Tritium counting.
+STATUS     (TABLE)  In Table II of  BNL-NCS-51245,539,1980 :
+               the same DATA , error +-20%
+HISTORY    (20170215A) M.M. SF1 : FE-0 -> FE-CMP
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+MB         MB
+ 0.37       7.4000E-02
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        21649020   20170215   20170614   20170613       2259
+BIB                  2          3
+REACTION   (13-AL-27(N,A)11-NA-24,,SIG,,SPA)
+STATUS     (TABLE) The same values in Table III of
+            BNL-NCS-51245,539,1980
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 3.7000E-01 7.4000E-02
+ 45.        8.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        21649020   20101114   20110803   20110721       2225
-BIB                  1          1
-REACTION   (13-AL-27(N,A)11-NA-24,,SIG,,SPA)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-MB         MB
- 4.5000E+01 8.0000E+00
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649021   20101114   20110803   20110721       2225
-BIB                  1          1
+SUBENT        21649021   20170215   20170614   20170613       2259
+BIB                  2          3
 REACTION   (22-TI-46(N,P)21-SC-46,,SIG,,SPA)
-ENDBIB               1
+STATUS     (TABLE) The same values in Table III of
+            BNL-NCS-51245,539,1980
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 1.2600E+02 2.4000E+01
+ 126.       24.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649022   20101114   20110803   20110721       2225
-BIB                  1          1
+ENDSUBENT           11
+SUBENT        21649022   20170215   20170614   20170613       2259
+BIB                  2          3
 REACTION   (28-NI-60(N,P)27-CO-60,,SIG,,SPA)
-ENDBIB               1
+STATUS     (TABLE) The same values in Table III of
+            BNL-NCS-51245,539,1980
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 8.2000E+01 1.6000E+01
+ 82.        16.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649023   20101114   20110803   20110721       2225
-BIB                  1          1
+ENDSUBENT           11
+SUBENT        21649023   20170215   20170614   20170613       2259
+BIB                  2          3
 REACTION   (29-CU-65(N,P)28-NI-65,,SIG,,SPA)
-ENDBIB               1
+STATUS     (TABLE) The same values in Table III of
+            BNL-NCS-51245,539,1980
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 1.2000E+01 3.0000E+00
+ 12.        3.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        21649024   20101114   20110803   20110721       2225
-BIB                  1          1
+ENDSUBENT           11
+SUBENT        21649024   20170215   20170614   20170613       2259
+BIB                  2          3
 REACTION   (41-NB-93(N,2N)41-NB-92-M,,SIG,,SPA)
-ENDBIB               1
+STATUS     (TABLE) The same values in Table III of
+            BNL-NCS-51245,539,1980
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
- 1.7800E+02 2.4000E+01
+ 178.       24.
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           11
 ENDENTRY            24
