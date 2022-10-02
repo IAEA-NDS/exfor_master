@@ -1,19 +1,19 @@
-ENTRY            22962   20070714   20071206   20071127       2188
-SUBENT        22962001   20070714   20071206   20071127       2188
-BIB                 16         72
+ENTRY            22962   20090225   20090508   20090507       2209
+SUBENT        22962001   20090225   20090508   20090507       2209
+BIB                 15         72
 TITLE      .Determination of Differential Elastic and
             Double-differential Neutron Scattering Cross
             Sections of Elemental Tungsten at Energies between
             7.19 MeV and 14.10 MeV.
-AUTHOR     (D.SCHMIDT, W.MANNHART, S.KHURANA)
+AUTHOR     (D.Schmidt, W.Mannhart, S.Khurana)
 INSTITUTE  (2GERPTB)    PTB Braunschweig, Germany.
 REFERENCE  (R,PTB-N-51,2006)  Report PTB-N-51, PTB Braunschweig,
-                              Germany,
+             Germany. Main reference, data are partly given
 FACILITY   (CYCLO) Turnable CV-28 compact cyclotron, 1 ns pulse
                    width, and multi-angle neutron time-of-flight
                    spectrometer.
 INC-SOURCE (D-D) Deuterium gas target, 1.0 cm in diameter and
-                 3.0 cm in length, gas pressure 1.9-2.0 hPa.
+                 3.0 cm in length, gas pressure 0.19-0.2 MPa.
 INC-SPECT  .Mean neutron energy is defined within +/- 20 keV.
 METHOD     (TOF) Time-of-flight, 12 m flight path.
            (PSD) N-gamma discrimination with pulse shape analysis.
@@ -58,7 +58,7 @@ CORRECTION .Monte Carlo simulated TOF spectra of the complete
             source (only breakup neutrons).
 ERR-ANALYS .Total errors comprise counting statistics and
             systematic contributions of
-           (ERR-1)   Error od detector efficiency (2%),
+           (ERR-1)   Error of detector efficiency (2%),
            (ERR-2)   Error of multiple scattering correction (5%).
            (ANG-ERR) Angle uncertainty (0.2 deg),
            (MONIT-ERR)  n-p scattering error(1%),
@@ -69,26 +69,41 @@ ERR-ANALYS .Total errors comprise counting statistics and
             consider the influence of the chosen maximum order
             l-max of the fitted Legendre polynomial on the
             integral cross section.
-STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
-                    D.Schmidt, 2006-10-18
 HISTORY    (20070714C)    SM
            (20071023A) Energy error given in digitized form - SM
+           (20090225A) REACTION and ANALYSIS codes are corrected.
+                       Three SUBENTS added
 ENDBIB              72
 COMMON               5          3
 EN-ERR     ERR-1      ERR-2      ANG-ERR    MONIT-ERR
-MEV        PER-CENT   PER-CENT   ADEG       PER-CENT
+KEV        PER-CENT   PER-CENT   ADEG       PER-CENT
        20.       2.         5.        0.2         1.
 ENDCOMMON            3
 ENDSUBENT           79
-SUBENT        22962002   20070714   20071002   20071002       2186
-BIB                  2          6
-REACTION   (74-W-0(N,SCT)74-W-0,,DA)
-ANALYSIS   .Elastic cross sections were obtained by including
+SUBENT        22962002   20090225   20090508   20090507       2209
+BIB                  5         21
+REACTION   (74-W-0(N,EL)74-W-0,,DA,,,DERIV)
+ANALYSIS   *By the authors* "Analysis EL" for smooth cross section
+            energy dependence.
+           *By the authors*: "Analysis SUM" for cross section
+            correction from inelastic scattering
+           *Emission DDX data are taken into account, SAN 007-014
+COMMENT    .Elastic cross sections were obtained by including
             nine low-lying levels. The inelastic cross sections
             of these nine levels were taken from the ENDF/B-VI
             evaluation. The inelastic data (sum of nine inelastic
-            angular distributions) are given.
-ENDBIB               6
+            angular distributions) are given below, SAN 005
+REL-REF    .Data for inelastic scattering taken from ENDF/B-VI
+            evaluation
+STATUS     (DEP,22962004)  Inelastic Legendre coefficients
+           (DEP,22962005)  Inelastic cross section
+           (DEP,22962026)  Initial partial scattering measured
+                           DDX data
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Data for EN=12.12 MeV are contained in Appendix D of
+            main reference including covariation matrix
+ENDBIB              21
 NOCOMMON             0          0
 DATA                 6        312
 EN         EN-RSL-FW  ANG-CM     DATA-CM    ERR-T      ERR-S
@@ -406,18 +421,23 @@ MEV        MEV        ADEG       MB/SR      PER-CENT   PER-CENT
  1.4100E+01 1.2000E-01 1.5266E+02 4.1500E+00 7.0000E+00 4.8000E+00
  1.4100E+01 1.2000E-01 1.5998E+02 3.2000E+00 1.0900E+01 5.9000E+00
 ENDDATA            314
-ENDSUBENT          325
-SUBENT        22962003   20070714   20071002   20071002       2186
-BIB                  5        304
-REACTION   (74-W-0(N,SCT)74-W-0,,DA,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ENDSUBENT          340
+SUBENT        22962003   20090225   20090508   20090507       2209
+BIB                  6        309
+REACTION   (74-W-0(N,EL)74-W-0,,DA,,LEG/RSL)
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 COMMENT     Elastic cross sections were derived by including
             nine low-lying levels. The inelastic cross sections
             of these nine levels were taken from the ENDF/B-VI
             evaluation. The inelastic data (sum of nine inelastic
             angular distributions) are given below.
+REL-REF    .Data for inelastic scattering taken from ENDF/B-VI
+            evaluation
 STATUS     (DEP,22962002)
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Also: Tables of Appendix B, natW(n,n'), pages 67-74
 COVARIANCE  Correlations of the Legendre coefficients
              .
                  EN =    7.19 MEV
@@ -713,7 +733,7 @@ COVARIANCE  Correlations of the Legendre coefficients
                  2nd Tail of corell. matrix
            21      100
            22       80 100
-ENDBIB             304
+ENDBIB             309
 NOCOMMON             0          0
 DATA                 5        142
 EN         EN-RSL-FW  NUMBER     DATA       DATA-ERR
@@ -861,24 +881,29 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  1.4100E+01 1.2000E-01 2.1000E+01 2.9400E-03 1.1569E+01
  1.4100E+01 1.2000E-01 2.2000E+01 5.4000E-04 4.3729E+01
 ENDDATA            144
-ENDSUBENT          453
-SUBENT        22962004   20070714   20071002   20071002       2186
-BIB                  4         14
+ENDSUBENT          458
+SUBENT        22962004   20090225   20090508   20090507       2209
+BIB                  6         19
 REACTION   (74-W-0(N,INL)74-W-0,PAR,DA,,LEG/RS,CALC)
-EN-SEC     (E-EXC,74-W-0)  Average excitation energy
+EN-SEC     (E-EXC,74-W-0)   Average excitation energy of four
+             stable tungsten isotopes 182W, 183W, 184W, 186W
 ANALYSIS   .Nine levels of the isotopes W-182, W-183, W-184 and
             W-186 were included in the simulation extracting
             elastic cross sections <W-182: 0.329 MeV; W-183:
             0.046, 0.099, 0.208, 0.412 MeV; W-184:0.111,0.364 MeV;
             W-186: 0.122, 0.397 MeV>. The corresponding data were
             taken from the ENDF/B-VI evaluation.
+REL-REF    .Data taken from ENDF/B-VI evaluation
 COMMENT    *By the authors: Elastic cross sections were derived
             by including nine low-lying levels. The inelastic
             cross sections of these nine levels were taken from
             the ENDF/B-VI evaluation. The inelastic data (sum of
             nine inelastic angular distributions) are given in
             this SUBENT.
-ENDBIB              14
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Tables from appendix B
+ENDBIB              19
 COMMON               1          3
 E-EXC
 MEV
@@ -1023,24 +1048,29 @@ MEV        NO-DIM     NO-DIM
  1.4100E+01 1.8000E+01 3.3000E-04
  1.4100E+01 1.9000E+01 2.0000E-05
 ENDDATA            137
-ENDSUBENT          160
-SUBENT        22962005   20070714   20071002   20071002       2186
-BIB                  4         14
+ENDSUBENT          165
+SUBENT        22962005   20090225   20090508   20090507       2209
+BIB                  6         19
 REACTION   (74-W-0(N,INL)74-W-0,PAR,SIG,,,CALC)
-EN-SEC     (E-EXC,74-W-0)   Average excitation energy
+EN-SEC     (E-EXC,74-W-0)   Average excitation energy of four
+             stable tungsten isotopes 182W, 183W, 184W, 186W
 ANALYSIS   .Nine levels of the isotopes W-182, W-183, W-184 and
             W-186 were included in the simulation extracting
             elastic cross sections <W-182: 0.329 MeV; W-183:
             0.046, 0.099, 0.208, 0.412 MeV; W-184:0.111,0.364 MeV;
             W-186: 0.122, 0.397 MeV>. The corresponding data were
             taken from the ENDF/B-VI evaluation.
+REL-REF    .Data taken from ENDF/B-VI evaluation
 COMMENT    *By the authors: Elastic cross sections were derived
             by including nine low-lying levels. The inelastic
             cross sections of these nine levels were taken from
             the ENDF/B-VI evaluation. The inelastic data (sum of
             nine inelastic angular distributions (A(0) as SIGMA
             *by compiler)) are given in this SUBENT.
-ENDBIB              14
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .    and Table A2 from main reference, page 66
+ENDBIB              19
 COMMON               1          3
 E-EXC
 MEV
@@ -1058,19 +1088,22 @@ MEV        MB
  1.3100E+01 2.6340E+02
  1.4100E+01 2.3532E+02
 ENDDATA             10
-ENDSUBENT           33
-SUBENT        22962006   20070714   20071002   20071002       2186
-BIB                  4          9
-REACTION   (74-W-0(N,SCT)74-W-0,,SIG)
+ENDSUBENT           38
+SUBENT        22962006   20090225   20090508   20090507       2209
+BIB                  4         12
+REACTION   (74-W-0(N,EL)74-W-0,,SIG)
 ANALYSIS   (INTAD) Measured angular distributions integrated
 STATUS     (DEP,22962002)
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .    and Table A2 from main reference, page 66
 COMMENT    *By the authors: Elastic cross sections were derived
             by including nine low-lying levels. The inelastic
             cross sections of these nine levels were taken from
             the ENDF/B-VI evaluation. The inelastic data (sum of
             nine inelastic angular distributions) are given below*
             !! Are given above - SUBENT 22962005: by compiler
-ENDBIB               9
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          8
 EN         EN-RSL-FW  DATA       ERR-T
@@ -1084,16 +1117,19 @@ MEV        MEV        MB         PER-CENT
  1.3100E+01 1.1700E-01 2.6803E+03 4.2470E+00
  1.4100E+01 1.2000E-01 2.7225E+03 2.5320E+00
 ENDDATA             10
-ENDSUBENT           24
-SUBENT        22962007   20070814   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT           27
+SUBENT        22962007   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E1 from main reference, page 86
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -1587,16 +1623,19 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  6.5000E+00 7.0000E+00 1.5390E+02 2.2000E-01 3.2000E+00
  6.5000E+00 7.0000E+00 1.5990E+02 2.1000E-01 3.6000E+00
 ENDDATA            486
-ENDSUBENT          501
-SUBENT        22962008   20070714   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          504
+SUBENT        22962008   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E2 from main reference, page 87
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -2153,16 +2192,19 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  7.5000E+00 8.0000E+00 1.5380E+02 1.4000E-01 3.2000E+00
  7.5000E+00 8.0000E+00 1.5970E+02 1.4000E-01 3.3000E+00
 ENDDATA            549
-ENDSUBENT          564
-SUBENT        22962009   20070714   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          567
+SUBENT        22962009   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E3 from main reference, page 88
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -2787,16 +2829,19 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  8.5000E+00 9.0000E+00 1.5400E+02 4.0000E-02 3.7000E+00
  8.5000E+00 9.0000E+00 1.6000E+02 4.0000E-02 3.7000E+00
 ENDDATA            617
-ENDSUBENT          632
-SUBENT        22962010   20070814   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          635
+SUBENT        22962010   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E4 from main reference, page 89
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -3463,16 +3508,19 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  9.5000E+00 1.0000E+01 1.5390E+02 2.0000E-02 3.9000E+00
  9.5000E+00 1.0000E+01 1.5990E+02 2.0000E-02 3.8000E+00
 ENDDATA            659
-ENDSUBENT          674
-SUBENT        22962011   20070814   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          677
+SUBENT        22962011   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E5 from main reference, page 90
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -4184,16 +4232,19 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  1.0500E+01 1.1000E+01 1.5420E+02 3.0000E-02 3.8000E+00
  1.0500E+01 1.1000E+01 1.6020E+02 3.0000E-02 4.3000E+00
 ENDDATA            704
-ENDSUBENT          719
-SUBENT        22962012   20070814   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          722
+SUBENT        22962012   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E6 from main reference, page 91
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -4948,16 +4999,19 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  1.1500E+01 1.2000E+01 1.5400E+02 3.0000E-02 4.1000E+00
  1.1500E+01 1.2000E+01 1.6000E+02 3.0000E-02 4.6000E+00
 ENDDATA            747
-ENDSUBENT          762
-SUBENT        22962013   20070814   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          765
+SUBENT        22962013   20090225   20090508   20090507       2209
+BIB                  3          9
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E7 from main reference, page 92
+ENDBIB               9
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -5711,16 +5765,18 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  1.2500E+01 1.3000E+01 1.5430E+02 6.0000E-02 4.6000E+00
  1.2500E+01 1.3000E+01 1.6030E+02 6.0000E-02 4.4000E+00
 ENDDATA            746
-ENDSUBENT          761
-SUBENT        22962014   20070814   20071002   20071002       2186
-BIB                  2          6
+ENDSUBENT          764
+SUBENT        22962014   20090225   20090508   20090507       2209
+BIB                  3          8
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE)
 ERR-ANALYS (ERR-3) An additional uncertainty of 5% of the ratio
             N-bu/N-in is taken into account for the DDX
             (N-bu = subtracted fraction of scattered breakup
             neutrons, N-in = fraction of inelastically scattered
             neutrons after breakup subtraction).
-ENDBIB               6
+STATUS     (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+ENDBIB               8
 COMMON               3          3
 EN         EN-RSL-FW  ERR-3
 MEV        MEV        PER-CENT
@@ -6411,9 +6467,9 @@ MEV        MEV        ADEG       MB/SR/MEV  PER-CENT
  1.3500E+01 1.4000E+01 1.5370E+02 4.0000E-02 5.6000E+00
  1.3500E+01 1.4000E+01 1.5960E+02 3.0000E-02 6.5000E+00
 ENDDATA            683
-ENDSUBENT          698
-SUBENT        22962015   20070714   20071002   20071002       2186
-BIB                  3         11
+ENDSUBENT          700
+SUBENT        22962015   20090225   20090508   20090507       2209
+BIB                  3         14
 REACTION   (74-W-0(N,X)0-NN-1,EM,DE)
 ANALYSIS   (INTAD) Angle-integrated secondary
             neutron-production cross sections
@@ -6425,7 +6481,10 @@ STATUS     (DEP,22962007)
            (DEP,22962012)
            (DEP,22962013)
            (DEP,22962014)
-ENDBIB              11
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Tables E1- E8 from main reference, pages 86-93
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 6        184
 EN         EN-RSL-FW  E-MIN      E-MAX      DATA       ERR-T
@@ -6615,14 +6674,17 @@ MEV        MEV        MEV        MEV        MB/MEV     PER-CENT
  1.4100E+01 1.2000E-01 1.3000E+01 1.3500E+01 3.5385E+00 3.5100E+00
  1.4100E+01 1.2000E-01 1.3500E+01 1.4000E+01 2.8792E-01 2.4100E+00
 ENDDATA            186
-ENDSUBENT          202
-SUBENT        22962016   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT          205
+SUBENT        22962016   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962007)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E1, page 86 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -6664,14 +6726,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  6.5000E+00 7.0000E+00 1.0000E+00 2.9305E-01 1.1540E+00
  6.5000E+00 7.0000E+00 2.0000E+00 1.5766E-01 1.6960E+00
 ENDDATA             34
-ENDSUBENT           47
-SUBENT        22962017   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           50
+SUBENT        22962017   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962008)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E2, page 87 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -6717,14 +6782,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  7.5000E+00 8.0000E+00 1.0000E+00 2.2843E-01 1.0460E+00
  7.5000E+00 8.0000E+00 2.0000E+00 9.7410E-02 2.0610E+00
 ENDDATA             38
-ENDSUBENT           51
-SUBENT        22962018   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           54
+SUBENT        22962018   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962009)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E3, page 88 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -6774,14 +6842,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  8.5000E+00 9.0000E+00 1.0000E+00 2.3681E-01 9.9200E-01
  8.5000E+00 9.0000E+00 2.0000E+00 1.1520E-02 1.7477E+01
 ENDDATA             42
-ENDSUBENT           55
-SUBENT        22962019   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           58
+SUBENT        22962019   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962010)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E4, page 89 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -6835,14 +6906,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  9.5000E+00 1.0000E+01 1.0000E+00 1.6945E-01 1.6360E+00
  9.5000E+00 1.0000E+01 2.0000E+00-4.7040E-02 4.8940E+00
 ENDDATA             46
-ENDSUBENT           59
-SUBENT        22962020   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           62
+SUBENT        22962020   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962011)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E5, page 90 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -6900,14 +6974,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  1.0500E+01 1.1000E+01 1.0000E+00 1.2488E-01 2.8690E+00
  1.0500E+01 1.1000E+01 2.0000E+00 4.4740E-02 6.4280E+00
 ENDDATA             50
-ENDSUBENT           63
-SUBENT        22962021   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           66
+SUBENT        22962021   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962012)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E6, page 91 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -6969,14 +7046,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  1.1500E+01 1.2000E+01 1.0000E+00 2.7135E-01 1.4140E+00
  1.1500E+01 1.2000E+01 2.0000E+00 1.5973E-01 1.9850E+00
 ENDDATA             54
-ENDSUBENT           67
-SUBENT        22962022   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           70
+SUBENT        22962022   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962013)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E7, page 92 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -7040,14 +7120,17 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  1.2500E+01 1.3000E+01 1.0000E+00-3.6873E-01 8.1200E-01
  1.2500E+01 1.3000E+01 2.0000E+00 1.0298E-01 2.0200E+00
 ENDDATA             56
-ENDSUBENT           69
-SUBENT        22962023   20070714   20071002   20071002       2186
-BIB                  3          4
+ENDSUBENT           72
+SUBENT        22962023   20090225   20090508   20090507       2209
+BIB                  3          7
 REACTION   (74-W-0(N,X)0-NN-1,EM,DA/DE,,LEG/RSL)
-ANALYSIS    A(0) = ANGLE-INTEGRATED CROSS SECTION,
-            A(L) [L=1 TO MAX] COEFF. AS IN ENDF
+ANALYSIS    A(0) = angle-integrated cross section,
+            A(L) [L=1 to Max] coeff. as in ENDF
 STATUS     (DEP,22962014)
-ENDBIB               4
+           (TABLE)  From quasi-exfor files delivered via INTERNET
+                    D.Schmidt, 2006-10-18
+           .Table E8, page 93 of main reference
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        MEV
@@ -7117,5 +7200,253 @@ MEV        MEV        NO-DIM     NO-DIM     PER-CENT
  1.3500E+01 1.4000E+01 1.0000E+00-1.3065E-01 4.1570E+00
  1.3500E+01 1.4000E+01 2.0000E+00-3.4010E-02 1.0871E+01
 ENDDATA             62
-ENDSUBENT           75
-ENDENTRY            23
+ENDSUBENT           78
+SUBENT        22962024   20090225   20090508   20090507       2209
+BIB                  5          6
+REACTION   (74-W-0(N,EL)74-W-0,,DA)
+MISC-COL   (MISC1)    Wick's limit = minimal data value
+           (MISC2)    Total cross section applied for analysis
+ERR-ANALYS (DATA-ERR) Not specified
+STATUS     (TABLE)  Table A1 from main reference, page 65
+HISTORY    (20090225C)   S.M.
+ENDBIB               6
+COMMON               1          3
+ANG
+ADEG
+   0.
+ENDCOMMON            3
+DATA                 6          8
+EN         EN-RSL-FW  DATA       DATA-ERR   MISC1      MISC2
+MEV        KEV        MB/SR      MB/SR      MB/SR      MB
+ 7.1900E+00 1.7800E-01   6174.     155.       5736.      5137.
+ 8.0800E+00 1.5300E-01   6668.     154.       6201.      5038.
+ 9.0800E+00 1.3400E-01   6992.     170.       6889.      5010.
+ 1.0110E+01 1.2400E-01   7381.     212.       7789.      5048.
+ 1.1040E+01 1.1900E-01   9486.     273.       8857.      5152.
+ 1.2120E+01 1.1600E-01  10447.     412.      10206.      5278.
+ 1.3100E+01 1.1700E-01  12380.     454.      11475.      5383.
+ 1.4100E+01 1.2000E-01  13031.     501.      12781.      5476.
+ENDDATA             10
+ENDSUBENT           25
+SUBENT        22962025   20090225   20090508   20090507       2209
+BIB                  6          7
+REACTION   (74-W-0(N,SCT)74-W-0,PAR,SIG)
+EN-SEC     (E-EXC,74-W-0)   Average excitation energy of four
+             stable tungsten isotopes 182W, 183W, 184W, 186W
+MISC-COL   (MISC) Inelastic cross section in MB used for analysis
+ERR-ANALYS (DATA-ERR) Not specified
+STATUS     (TABLE)  Table A2 from main reference, page 66
+HISTORY    (20090225C)   S.M.
+ENDBIB               7
+COMMON               1          3
+E-EXC
+MEV
+     0.134
+ENDCOMMON            3
+DATA                 5          8
+EN         EN-RSL-FW  DATA       DATA-ERR   MISC
+MEV        KEV        MB         MB         MB
+ 7.1900E+00 1.7800E-01   2752.      58.        422.
+ 8.0800E+00 1.5300E-01   2672.      57.        412.
+ 9.0800E+00 1.3400E-01   2586.      76.        399.
+ 1.0110E+01 1.2400E-01   2621.      82.        378.
+ 1.1040E+01 1.1900E-01   2751.      71.        342.
+ 1.2120E+01 1.1600E-01   2829.      66.        297.
+ 1.3100E+01 1.1700E-01   2928.      83.        263.
+ 1.4100E+01 1.2000E-01   2982.      73.        235.
+ENDDATA             10
+ENDSUBENT           26
+SUBENT        22962026   20090225   20090508   20090507       2209
+BIB                  5         10
+REACTION   (74-W-0(N,SCT)74-W-0,EM/PAR,DA/DE,,LEG/RSL)     Deter-
+             mination of Double-differential Neutron Scattering
+             Cross Sections of Elemental Tungsten at Energies
+             between 7.19 MeV and 14.10 MeV
+EN-SEC     (E-EXC,74-W-0)  Mean excitatin energy of ten low-lying
+              levels of tungsten four stable isotopes 182,183,184,
+              186W
+ERR-ANALYS (ERR-S)  One standard deviation
+STATUS     (TABLE)  Tables in Appendix B, W(n,n+n'), pages 67-74.
+HISTORY    (20090225C)   S.M.
+ENDBIB              10
+COMMON               1          3
+E-EXC
+MEV
+     0.134
+ENDCOMMON            3
+DATA                 5        170
+EN         EN-RSL-FW  NUMBER     DATA       ERR-S
+MEV        KEV        NO-DIM     NO-DIM     NO-DIM
+ 7.1900E+00 1.7800E-01       1.    0.75065      0.00270
+ 7.1900E+00 1.7800E-01       2.    0.60819      0.00371
+ 7.1900E+00 1.7800E-01       3.    0.50697      0.00409
+ 7.1900E+00 1.7800E-01       4.    0.42005      0.00430
+ 7.1900E+00 1.7800E-01       5.    0.33312      0.00448
+ 7.1900E+00 1.7800E-01       6.    0.24762      0.00462
+ 7.1900E+00 1.7800E-01       7.    0.19856      0.00446
+ 7.1900E+00 1.7800E-01       8.    0.14716      0.00440
+ 7.1900E+00 1.7800E-01       9.    0.08341      0.00440
+ 7.1900E+00 1.7800E-01      10.    0.03850      0.00417
+ 7.1900E+00 1.7800E-01      11.    0.01324      0.00381
+ 7.1900E+00 1.7800E-01      12.    0.00702      0.00331
+ 7.1900E+00 1.7800E-01      13.    0.00459      0.00282
+ 7.1900E+00 1.7800E-01      14.    0.00298      0.00239
+ 7.1900E+00 1.7800E-01      15.    0.00205      0.00197
+ 7.1900E+00 1.7800E-01      16.    0.00109      0.00156
+ 7.1900E+00 1.7800E-01      17.    0.00143      0.00116
+ 7.1900E+00 1.7800E-01      18.    0.00120      0.00080
+ 7.1900E+00 1.7800E-01      19.    0.00095      0.00052
+ 7.1900E+00 1.7800E-01      20.    0.00014      0.00026
+ 8.0800E+00 1.5300E-01       1.    0.76038      0.00265
+ 8.0800E+00 1.5300E-01       2.    0.60863      0.00383
+ 8.0800E+00 1.5300E-01       3.    0.50728      0.00424
+ 8.0800E+00 1.5300E-01       4.    0.42916      0.00435
+ 8.0800E+00 1.5300E-01       5.    0.35419      0.00439
+ 8.0800E+00 1.5300E-01       6.    0.28046      0.00441
+ 8.0800E+00 1.5300E-01       7.    0.23020      0.00423
+ 8.0800E+00 1.5300E-01       8.    0.18352      0.00413
+ 8.0800E+00 1.5300E-01       9.    0.11824      0.00414
+ 8.0800E+00 1.5300E-01      10.    0.05745      0.00401
+ 8.0800E+00 1.5300E-01      11.    0.02129      0.00367
+ 8.0800E+00 1.5300E-01      12.    0.00965      0.00314
+ 8.0800E+00 1.5300E-01      13.    0.00481      0.00264
+ 8.0800E+00 1.5300E-01      14.    0.00280      0.00222
+ 8.0800E+00 1.5300E-01      15.    0.00255      0.00182
+ 8.0800E+00 1.5300E-01      16.    0.00228      0.00146
+ 8.0800E+00 1.5300E-01      17.    0.00282      0.00109
+ 8.0800E+00 1.5300E-01      18.    0.00217      0.00076
+ 8.0800E+00 1.5300E-01      19.    0.00144      0.00053
+ 8.0800E+00 1.5300E-01      20.    0.00046      0.00026
+ 9.0800E+00 1.3400E-01       1.    0.77415      0.00311
+ 9.0800E+00 1.3400E-01       2.    0.61360      0.00488
+ 9.0800E+00 1.3400E-01       3.    0.51125      0.00559
+ 9.0800E+00 1.3400E-01       4.    0.43748      0.00588
+ 9.0800E+00 1.3400E-01       5.    0.37382      0.00600
+ 9.0800E+00 1.3400E-01       6.    0.31243      0.00611
+ 9.0800E+00 1.3400E-01       7.    0.26386      0.00609
+ 9.0800E+00 1.3400E-01       8.    0.22095      0.00598
+ 9.0800E+00 1.3400E-01       9.    0.15984      0.00600
+ 9.0800E+00 1.3400E-01      10.    0.08901      0.00609
+ 9.0800E+00 1.3400E-01      11.    0.04180      0.00590
+ 9.0800E+00 1.3400E-01      12.    0.02152      0.00540
+ 9.0800E+00 1.3400E-01      13.    0.01267      0.00477
+ 9.0800E+00 1.3400E-01      14.    0.00871      0.00410
+ 9.0800E+00 1.3400E-01      15.    0.00836      0.00346
+ 9.0800E+00 1.3400E-01      16.    0.00807      0.00288
+ 9.0800E+00 1.3400E-01      17.    0.00816      0.00229
+ 9.0800E+00 1.3400E-01      18.    0.00776      0.00168
+ 9.0800E+00 1.3400E-01      19.    0.00662      0.00118
+ 9.0800E+00 1.3400E-01      20.    0.00495      0.00082
+ 9.0800E+00 1.3400E-01      21.    0.00262      0.00056
+ 9.0800E+00 1.3400E-01      22.    0.00135      0.00026
+ 1.0110E+01 1.2400E-01       1.    0.79609      0.00303
+ 1.0110E+01 1.2400E-01       2.    0.63868      0.00487
+ 1.0110E+01 1.2400E-01       3.    0.52935      0.00570
+ 1.0110E+01 1.2400E-01       4.    0.45610      0.00592
+ 1.0110E+01 1.2400E-01       5.    0.39496      0.00594
+ 1.0110E+01 1.2400E-01       6.    0.34217      0.00585
+ 1.0110E+01 1.2400E-01       7.    0.29357      0.00572
+ 1.0110E+01 1.2400E-01       8.    0.25044      0.00555
+ 1.0110E+01 1.2400E-01       9.    0.19166      0.00558
+ 1.0110E+01 1.2400E-01      10.    0.11955      0.00574
+ 1.0110E+01 1.2400E-01      11.    0.06280      0.00571
+ 1.0110E+01 1.2400E-01      12.    0.03240      0.00537
+ 1.0110E+01 1.2400E-01      13.    0.01743      0.00487
+ 1.0110E+01 1.2400E-01      14.    0.01200      0.00426
+ 1.0110E+01 1.2400E-01      15.    0.01175      0.00363
+ 1.0110E+01 1.2400E-01      16.    0.01276      0.00299
+ 1.0110E+01 1.2400E-01      17.    0.01288      0.00234
+ 1.0110E+01 1.2400E-01      18.    0.01176      0.00170
+ 1.0110E+01 1.2400E-01      19.    0.00997      0.00117
+ 1.0110E+01 1.2400E-01      20.    0.00705      0.00078
+ 1.0110E+01 1.2400E-01      21.    0.00388      0.00051
+ 1.0110E+01 1.2400E-01      22.    0.00103      0.00024
+ 1.1040E+01 1.1900E-01       1.    0.81814      0.00256
+ 1.1040E+01 1.1900E-01       2.    0.66716      0.00419
+ 1.1040E+01 1.1900E-01       3.    0.55223      0.00500
+ 1.1040E+01 1.1900E-01       4.    0.47242      0.00522
+ 1.1040E+01 1.1900E-01       5.    0.40922      0.00517
+ 1.1040E+01 1.1900E-01       6.    0.35579      0.00501
+ 1.1040E+01 1.1900E-01       7.    0.30664      0.00482
+ 1.1040E+01 1.1900E-01       8.    0.26255      0.00463
+ 1.1040E+01 1.1900E-01       9.    0.20853      0.00461
+ 1.1040E+01 1.1900E-01      10.    0.13884      0.00468
+ 1.1040E+01 1.1900E-01      11.    0.07695      0.00454
+ 1.1040E+01 1.1900E-01      12.    0.03778      0.00412
+ 1.1040E+01 1.1900E-01      13.    0.01537      0.00357
+ 1.1040E+01 1.1900E-01      14.    0.00560      0.00300
+ 1.1040E+01 1.1900E-01      15.    0.00257      0.00246
+ 1.1040E+01 1.1900E-01      16.    0.00218      0.00198
+ 1.1040E+01 1.1900E-01      17.    0.00128      0.00150
+ 1.1040E+01 1.1900E-01      18.    0.00108      0.00109
+ 1.1040E+01 1.1900E-01      19.    0.00103      0.00075
+ 1.1040E+01 1.1900E-01      20.    0.00126      0.00048
+ 1.1040E+01 1.1900E-01      21.    0.00089      0.00023
+ 1.2120E+01 1.1600E-01       1.    0.83822      0.00231
+ 1.2120E+01 1.1600E-01       2.    0.69517      0.00382
+ 1.2120E+01 1.1600E-01       3.    0.57849      0.00470
+ 1.2120E+01 1.1600E-01       4.    0.49198      0.00503
+ 1.2120E+01 1.1600E-01       5.    0.42406      0.00506
+ 1.2120E+01 1.1600E-01       6.    0.36832      0.00494
+ 1.2120E+01 1.1600E-01       7.    0.31828      0.00477
+ 1.2120E+01 1.1600E-01       8.    0.27053      0.00463
+ 1.2120E+01 1.1600E-01       9.    0.21741      0.00462
+ 1.2120E+01 1.1600E-01      10.    0.15052      0.00470
+ 1.2120E+01 1.1600E-01      11.    0.08687      0.00457
+ 1.2120E+01 1.1600E-01      12.    0.04201      0.00419
+ 1.2120E+01 1.1600E-01      13.    0.01510      0.00365
+ 1.2120E+01 1.1600E-01      14.    0.00457      0.00307
+ 1.2120E+01 1.1600E-01      15.    0.00143      0.00253
+ 1.2120E+01 1.1600E-01      16.    -0.0001      0.00206
+ 1.2120E+01 1.1600E-01      17.    -0.0007      0.00155
+ 1.2120E+01 1.1600E-01      18.    -0.0005      0.00113
+ 1.2120E+01 1.1600E-01      19.    0.00027      0.00076
+ 1.2120E+01 1.1600E-01      20.    0.00045      0.00049
+ 1.2120E+01 1.1600E-01      21.    -0.0001      0.00024
+ 1.3100E+01 1.1700E-01       1.    0.85615      0.00240
+ 1.3100E+01 1.1700E-01       2.    0.72749      0.00404
+ 1.3100E+01 1.1700E-01       3.    0.61326      0.00516
+ 1.3100E+01 1.1700E-01       4.    0.52605      0.00572
+ 1.3100E+01 1.1700E-01       5.    0.45553      0.00594
+ 1.3100E+01 1.1700E-01       6.    0.39670      0.00596
+ 1.3100E+01 1.1700E-01       7.    0.34474      0.00586
+ 1.3100E+01 1.1700E-01       8.    0.29454      0.00571
+ 1.3100E+01 1.1700E-01       9.    0.24182      0.00559
+ 1.3100E+01 1.1700E-01      10.    0.17855      0.00557
+ 1.3100E+01 1.1700E-01      11.    0.11468      0.00549
+ 1.3100E+01 1.1700E-01      12.    0.06487      0.00514
+ 1.3100E+01 1.1700E-01      13.    0.03261      0.00462
+ 1.3100E+01 1.1700E-01      14.    0.01602      0.00398
+ 1.3100E+01 1.1700E-01      15.    0.00891      0.00337
+ 1.3100E+01 1.1700E-01      16.    0.00545      0.00279
+ 1.3100E+01 1.1700E-01      17.    0.00424      0.00222
+ 1.3100E+01 1.1700E-01      18.    0.00312      0.00168
+ 1.3100E+01 1.1700E-01      19.    0.00155      0.00123
+ 1.3100E+01 1.1700E-01      20.    0.00148      0.00083
+ 1.3100E+01 1.1700E-01      21.    0.00136      0.00052
+ 1.3100E+01 1.1700E-01      22.    0.00079      0.00024
+ 1.4100E+01 1.2000E-01       1.    0.87195      0.00196
+ 1.4100E+01 1.2000E-01       2.    0.75168      0.00329
+ 1.4100E+01 1.2000E-01       3.    0.63915      0.00423
+ 1.4100E+01 1.2000E-01       4.    0.54634      0.00480
+ 1.4100E+01 1.2000E-01       5.    0.46981      0.00505
+ 1.4100E+01 1.2000E-01       6.    0.40733      0.00509
+ 1.4100E+01 1.2000E-01       7.    0.35254      0.00503
+ 1.4100E+01 1.2000E-01       8.    0.29949      0.00497
+ 1.4100E+01 1.2000E-01       9.    0.24592      0.00495
+ 1.4100E+01 1.2000E-01      10.    0.18432      0.00497
+ 1.4100E+01 1.2000E-01      11.    0.12125      0.00491
+ 1.4100E+01 1.2000E-01      12.    0.06949      0.00462
+ 1.4100E+01 1.2000E-01      13.    0.03382      0.00418
+ 1.4100E+01 1.2000E-01      14.    0.01551      0.00359
+ 1.4100E+01 1.2000E-01      15.    0.00738      0.00302
+ 1.4100E+01 1.2000E-01      16.    0.00377      0.00248
+ 1.4100E+01 1.2000E-01      17.    0.00291      0.00196
+ 1.4100E+01 1.2000E-01      18.    0.00236      0.00147
+ 1.4100E+01 1.2000E-01      19.    0.00186      0.00107
+ 1.4100E+01 1.2000E-01      20.    0.00175      0.00073
+ 1.4100E+01 1.2000E-01      21.    0.00099      0.00047
+ 1.4100E+01 1.2000E-01      22.    0.00011      0.00024
+ENDDATA            172
+ENDSUBENT          191
+ENDENTRY            26

@@ -1,6 +1,6 @@
-ENTRY            22941   20080514   20080828   20080828       2199
-SUBENT        22941001   20080514   20080828   20080828       2199
-BIB                 15         52
+ENTRY            22941   20090320   20090508   20090507       2210
+SUBENT        22941001   20090320   20090508   20090507       2210
+BIB                 16         96
 TITLE      .Detailed studies of minor actinide transmutation- of
             incineration in high-intensity neutron fluxes.
 AUTHOR     (O.Bringer, I.Al Mahamid, Ch.Blandin, S.Chabod,
@@ -14,36 +14,76 @@ INSTITUTE  (2FR SAC) Bringer, Chabod, Dupont, Fioni, Marie,
                       Yvette, France.
            (2FR ILL)  Mutti, Institute Laue-Langevin, Grenoble
            (1USABRK)  Al Mahamid, Lawrence Berkeley Nat.Lab.
-REFERENCE  (C,2006VANCOU,,(C034),2006)   PHYSOR-2006, ANS Topical
+REFERENCE  (C,2007NICE,1,619,200704) Main reference.
+            DOI:10.1051/ndata:07612
+           (J,NIM/A,591,(3),510,200807) Data for Th,Pa,U.
+            DOI:10.1016/j.nima.2008.01.067
+           (C,2006VANCOU,,(C034),2006)   PHYSOR-2006, ANS Topical
                Meeting in Reactor Physics, Vancouver, Canada,
-               10-14 Sept 2006, Rept # C034
-REL-REF    (N,22924001,F.MARIE+,J,NIM/A,556,547,2006) The other
+               10-14 Sept 2006, Rept # C034  . First publication.
+REL-REF    (N,22924001,F.Marie+,J,NIM/A,556,547,2006) The other
                  conditions of experiment.
-           (R,22696001,G.FIONI+,J,NP/A,693,546,2001) The details
+           (R,22696001,G.Fioni+,J,NP/A,693,546,2001) The details
                  experiments.
+           (N,,S.Chabod+,J,NIM/A,566,633,2006) Details of fission
+            chambers functioning.
+            MERCS code from :
+            http//www-dapnia.cea.fr/Sphn/MNM/Modelisation.
 FACILITY   (REAC,2FR ILL) High flux reactor of Laue-Langevin
              Institute in Grenoble, MINI-INCA (incineration of
              actinides) set-up.
 INC-SPECT  .Three irradiation channels could be used .
            -The T4 channel provide pure thermal neutrons with
-            an intensity of the order of 2.E+13 N/cm*/S whereas
+            an intensity of the order of 2.E+13 n/cm**2/s .
            -The V4 channel can provide different irradiation
             positions with different neutron flux/energy spectra-
             the thermal neutron proportion varies from 100% to 85%
-            and intensities range from 6.E+13 N/cm2/S to 1.5E+15
-            N/cm2/S.
+            and intensities range from 6.E+13 n/cm2/s to 1.5E+15
+            n/cm2/s.
            -The H9 channel has a neutron flux close to the one
             available in an intermediate position of the V4 one.
+            MCNP code was used to calculate neutron flux
+            distributions at different irradiation positions -
+            see Fig.2 of C,2007NICE.
 INC-SOURCE (REAC)
-METHOD     (GSPEC)       Gamma- and alpha-spectrum analysis
-ANALYSIS   .Reaction chain analysis with the help of ROOT MERGE
-            analysis code
+METHOD     (GSPEC)  Gamma- and alpha-spectroscopy bench allows
+           (ASPEC) fast characterization of irradiated samples and
+             direct access to short-lived isotopes.
+           (MASSP)  Precise mass spectrometry (Thermal Ionization
+           and Inductive Coupled Plasma Mass Spectrometry)
+           analysis can be performed after irradiation in V4.
+ANALYSIS   .Reaction chain analysis with the help of ROOT MERCS
+            analysis code. MERCS was used for fit of nuclear
+           parameters on exp. data and to optimize irradiation
+           conditions -suitable neutron flux and irradiation time.
+           In mass spectrometry analysis the free parameters were:
+           Am-241, Am-242m, Cm-242m capture c-s and Am-241
+           isomeric branching ration.
+           In fission chamber analysis the previously measured
+           Am-241 capture and branching ratio were used as input
+           parameters - to obtain Am-242 fission c-s.
 PART-DET   (A,G,FF)
-DETECTOR   (SOLST)
-           (HPGE)
+DETECTOR   (SPEC,SOLST,HPGE) Lohengrin mass spectrometer,equipped
+            with Si- and Ge-detectors (at H9 channel).
             The Si and Ge-detector electronic system is able to
-            record in high counting rates up to 80-Khz for Ge-
-            detector and up to 20-Khz for Si-detector.
+            record in high counting rates up to 80-kHz for Ge-
+            detector and up to 20-kHz for Si-detector.
+           (FISCH) At V4 channel.Microscopic fission chambers  -
+           Triple-Deposit Fission-Chambers (TDFC). Operates
+           in current mode to measure on-line the actinide fission
+           current with respect to known U-235 fission current.
+            Each fis.chamber 2 cm long,8 mm diameter,filled with
+            pure argon gas.
+MONITOR    (27-CO-59(N,G)27-CO-60,,SIG,,MXW)
+           (92-U-235(N,F),,SIG,,SPA)
+            Effective cross section of standard reactions were
+            used to normalize the neutron flux:
+            Position Co-59(n,g) U-235(n,f)  Rth/Rtot
+             25 cm    28.33       424.68     0.898
+             50 cm    30.74       466.83     0.966
+             75 cm    31.66       484.17     0.997
+            100 cm    31.84       487.29     1.000
+              H9      31.10       473.93     0.981
 ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors in
                       table
 STATUS     (COREL,22696001)
@@ -53,15 +93,15 @@ HISTORY    (20070119C) S.M.
                        according to N.Ohtsuka remark
            (20080514A) Average energy changed. REACTION keyword
                        in SAN 007 corrected
-ENDBIB              52
-COMMON               1          3
-EN-DUMMY
-MILLI-EV
-        25.
-ENDCOMMON            3
-ENDSUBENT           59
-SUBENT        22941002   20080514   20080828   20080828       2199
-BIB                  7         17
+           (20090320A) M.M. Misprints were corrected.
+            Two references 2007NICE and NIM/A,591 were added.
+            Subents 002 - 011 were corrected.
+            Subents 012 - 040 were added.
+ENDBIB              96
+NOCOMMON             0          0
+ENDSUBENT           99
+SUBENT        22941002   20090320   20090508   20090507       2210
+BIB                  7         19
 REACTION   (95-AM-241(N,G)95-AM-242-G/T,,SIG/RAT,,SPA) Value
            i.b.r. in  authors notation. No additional information
             is given
@@ -69,72 +109,80 @@ METHOD     (MASSP) Mass-spectrometry of irradiated samples
 INC-SPECT  .Thermal Maxwellian with epithermal neutron admixture
 SAMPLE     .The samples were 97% in purity of Am-241 with 2.5%
             of Np-237 and with some plutonium traces. Two sets
-            were irradiated for 11 and 24-days in the t4 channel,
+            were irradiated for 11 and 24-days in the T4 channel,
             whereas four other sets were irradiated in the
-            H9-channel for 1, 5, 11 and 19-days.
+            H9-channel for 1, 5, 11 and 19-days.Cooling time 1 yr.
 ANALYSIS   .The obtained values result from the  average over T4
             and H9 channel measurements after correction from
             experimental values.
-STATUS     .Table 1 in main reference
+STATUS     (TABLE) Table 1 in reference C,2007VANCOU.
            (COREL,22696003)
+           (SPSDD,22941012) Superseded by newer published value.
 HISTORY    (20070524A) S.M. -  Corrections have been done in
             REACTION SF4 of SAN 002: G/M to G/T.
-ENDBIB              17
+           (20090320A) SPSDD was added in STATUS.
+ENDBIB              19
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-    0.89503   0.001632
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   NO-DIM     NO-DIM
+       25.    0.89503   0.001632
 ENDDATA              3
-ENDSUBENT           25
-SUBENT        22941003   20080514   20080828   20080828       2199
-BIB                  4          6
+ENDSUBENT           27
+SUBENT        22941003   20090320   20090508   20090507       2210
+BIB                  5          8
 REACTION   (95-AM-241(N,G)95-AM-242,,SIG,,SPA)
 METHOD     (MASSP) Mass-spectrometry of irradiated samples
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
 STATUS     (PRELM)  As specified by authors
-           .Table 1 in main reference
+           (SPSDD,22941013) Superseded by newer published value.
+           (TABLE) Table 1 in main reference.
            (DEP,22941002)
-ENDBIB               6
+HISTORY    (20090320A) SPSDD was added in STATUS.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-    714.179      23.34
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+       25.    714.179     23.34
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        22941004   20080514   20080828   20080828       2199
-BIB                  4          5
+ENDSUBENT           16
+SUBENT        22941004   20090320   20090508   20090507       2210
+BIB                  5          7
 REACTION   (95-AM-242-M(N,G)95-AM-243,,SIG,,SPA)
 METHOD     (MASSP) Mass-spectrometry of irradiated samples
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
-STATUS     .Table 1 in main reference
+STATUS     (TABLE) Table 1 in main reference .
            (DEP,22941002)
-ENDBIB               5
+           (SPSDD,22941015) Superseded by newer published value.
+HISTORY    (20090320A) SPSDD was added in STATUS.
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-    1147.49    114.103
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+        25.    1147.49    114.103
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        22941005   20080514   20080828   20080828       2199
-BIB                  4          5
+ENDSUBENT           15
+SUBENT        22941005   20090320   20090508   20090507       2210
+BIB                  5          7
 REACTION   (96-CM-242(N,G)96-CM-243,,SIG,,SPA)
 METHOD     (MASSP) Mass-spectrometry of irradiated samples
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
-STATUS     .Table 1 in main reference
+STATUS     (TABLE) Table 1 in main reference .
            (DEP,22941002)
-ENDBIB               5
+           (SPSDD,22941017) Superseded by newer published value.
+HISTORY    (20090320A) SPSDD was added in STATUS.
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          PER-CENT
-     20.968       1.82
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          PER-CENT
+        25.     20.968       1.82
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        22941006   20080514   20080828   20080828       2199
-BIB                  6         17
+ENDSUBENT           15
+SUBENT        22941006   20090320   20090508   20090507       2210
+BIB                  7         19
 REACTION   (95-AM-242-M(N,F),,SIG,,MXW)
 METHOD     (MASSP) Mass-spectrometry of irradiated samples
 DETECTOR   (IOCH) Specific fission micro-chambers were developed
@@ -150,19 +198,21 @@ COMMENT    *By authors*.In order to determine with a better
            non-deposits for 44-days at the upper position of the
            V4 channel were irradiated.
 STATUS     (PRELM)
-           .Table 1 in main reference
+           (TABLE) Table 1 in main reference .
            (DEP,22941002)
-ENDBIB              17
+           (SPSDD,22941019) Superseded by newer published value.
+HISTORY    (20090320A) SPSDD was added in STATUS.
+ENDBIB              19
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-    6838.71     341.94
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+        25.    6838.71     341.94
 ENDDATA              3
-ENDSUBENT           25
-SUBENT        22941007   20080514   20080828   20080828       2199
-BIB                  7         19
-REACTION   (95-AM-242(N,F),,SIG,,MXW)
+ENDSUBENT           27
+SUBENT        22941007   20090320   20090508   20090507       2210
+BIB                  7         23
+REACTION   (95-AM-242-G(N,F),,SIG,,MXW)
 METHOD     (MASSP) Mass-spectrometry of irradiated samples
 DETECTOR   (IOCH) Specific fission micro-chambers were developed
             to sustain high neutron fluxes and high temperature
@@ -177,77 +227,688 @@ COMMENT    *By authors*.In order to determine with a better
            non-deposits for 44-days at the upper position of the
            V4 channel were irradiated.
 STATUS     (PRELM)
-           .Table 1 in main reference
+           (TABLE) Table 1 in main reference.
            (DEP,22941002)
+           (SPSDD,22941021) Superseded by newer published value.
 HISTORY    (20080514A)  REACTION SF1 changed from Am-242-G
                         to Am-242
-ENDBIB              19
+           (20090320A) M.M. Misprints were corrected.
+            BIB information was added. SPSDD was added in STATUS.
+            Am-242 -> Am-242-G according to Table 1, C,2006VANCOU.
+ENDBIB              23
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-    2892.69     173.56
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+        25.    2892.69     173.56
 ENDDATA              3
-ENDSUBENT           27
-SUBENT        22941008   20080514   20080828   20080828       2199
-BIB                  6          6
+ENDSUBENT           31
+SUBENT        22941008   20090320   20090508   20090507       2210
+BIB                  7          8
 REACTION   (90-TH-232(N,G)90-TH-233,,SIG,,SPA)
 METHOD     .Fission chamber analysis
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
-SAMPLE     A pure 100-mug Th-232 sample in the V4 channel.
-MONITOR    (27-CO-59(N,G)27-CO-60,,SIG,,SPA)
-STATUS     .Table 2 in main reference
-ENDBIB               6
+SAMPLE     A pure 100-microg Th-232 sample in the V4 channel.
+MONITOR    (27-CO-59(N,G)27-CO-60,,SIG,,SPA) For neutron fluency.
+STATUS     (TABLE) Table 2 in C,2006VANCOU.
+           (SPSDD,22941023) Superseded by newer published value
+HISTORY    (20090320A) SPSDD was added in STATUS.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-        7.4       0.21
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+        25.        7.4       0.21
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        22941009   20080514   20080828   20080828       2199
-BIB                  4          5
+ENDSUBENT           16
+SUBENT        22941009   20090320   20090508   20090507       2210
+BIB                  5          7
 REACTION   (91-PA-233(N,G)91-PA-234,,SIG,,SPA)
 METHOD     .Fission chamber analysis
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
-STATUS     .Table 2 in main reference
+STATUS     (TABLE) Table 2 in main reference .
            (DEP,22941008)
-ENDBIB               5
+           (SPSDD,22941025) Superseded by newer published value
+HISTORY    (20090320A) SPSDD was added in STATUS.
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-      39.41       0.14
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+       25.       39.41       0.14
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        22941010   20080514   20080828   20080828       2199
-BIB                  4          5
-REACTION   (92-U-234(N,F),,SIG,,SPA)
+ENDSUBENT           15
+SUBENT        22941010   20090320   20090508   20090507       2210
+BIB                  5          9
+REACTION   (92-U-234(N,G)92-U-235,,SIG,,SPA)
 METHOD     .Fission chamber analysis
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
-STATUS     .Table 2 in main reference
+STATUS     (TABLE) Table 2 of 2006VANCOU.
            (DEP,22941008)
-ENDBIB               5
+           (SPSDD,22941027) Superseded by newer published value
+HISTORY    (20090320A) SPSDD was added in STATUS.
+             REACTION was changed (N,F) -> (N,G) according to
+             titles of Table 2.
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-      98.37        3.1
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+       25.       98.37        3.1
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        22941011   20080514   20080828   20080828       2199
-BIB                  4          5
-REACTION   (92-U-235(N,F),,SIG,,SPA)
+ENDSUBENT           17
+SUBENT        22941011   20090320   20090508   20090507       2210
+BIB                  5          9
+REACTION   (92-U-235(N,G)92-U-236,,SIG,,SPA)
 METHOD     .Fission chamber analysis
 INC-SPECT  .Thermal Maxwellian with epithermal admixture
-STATUS     .Table 2 in main reference
+STATUS     (TABLE) Table 2 in main reference .
            (DEP,22941008)
+           (SPSDD,22941029) Superseded by newer published value
+HISTORY    (20090320A) SPSDD was added in STATUS.
+             REACTION was changed (N,F) -> (N,G) according to
+             titles of Table 2.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MILLI-EV   B          B
+       25.       96.65      11.07
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        22941012   20090320   20090508   20090507       2210
+BIB                  5          6
+REACTION   (95-AM-241(N,G)95-AM-242-G/T,,SIG/RAT,,MXW,DERIV)
+           Isomeric branching ratio.
+METHOD     (MASSP)  Post irradiation mass-spectrometry analysis.
+INC-SPECT   Pure Maxwellian neutron flux.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320C) M.M. Subent added .
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         NO-DIM     NO-DIM
+  0.0253       0.8947    0.0038
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        22941013   20090320   20090508   20090507       2210
+BIB                  6          8
+REACTION   (95-AM-241(N,G)95-AM-242,,SIG,,MXW)
+             Effective cross-section.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+METHOD     (MASSP) Post irradiation mass-spectrometry analysis.
+INC-SPECT  Pure Maxwellian neutron flux.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320C) Subent was added .
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+   0.0253       609.      20.
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        22941014   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (95-AM-241(N,G)95-AM-242,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+           (DEP,22941013)
+HISTORY    (20090320C) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+   0.0253       705.         23.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941015   20090320   20090508   20090507       2210
+BIB                  6          7
+REACTION   (95-AM-242-M(N,G)95-AM-243,,SIG,,MXW)
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+METHOD     (MASSP) Post irradiation mass-spectrometry analysis.
+INC-SPECT  Pure Maxwellian neutron flux.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320C) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+   0.0253       1131.      108.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941016   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (95-AM-242-M(N,G)95-AM-243,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+           (DEP,22941015)
+HISTORY    (20090320C) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+   0.0253      1147.49    114.103
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941017   20090320   20090508   20090507       2210
+BIB                  6          8
+REACTION   (96-CM-242(N,G)96-CM-243,,SIG,,MXW)
+             Effective cross section.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+METHOD     (MASSP) Post irradiation mass-spectrometry analysis.
+INC-SPECT  Pure Maxwellian neutron flux.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320C) Subent was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+   0.0253       19.4       1.5
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        22941018   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (96-CM-242(N,G)96-CM-243,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+           (DEP,22941017)
+HISTORY    (20090320C) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+   0.0253       19.1       1.5
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941019   20090320   20090508   20090507       2210
+BIB                  6          7
+REACTION   (95-AM-242-M(N,F),,SIG,,MXW)
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+METHOD      Fission chambers measurement.
+INC-SPECT  Pure Maxwellian neutron flux.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+ 0.0253         6526.      62.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941020   20090320   20090508   20090507       2210
+BIB                  3          5
+REACTION   (95-AM-242-M(N,F),,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
-      96.65      11.07
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253       6855.97     657.
 ENDDATA              3
 ENDSUBENT           13
-ENDENTRY            11
+SUBENT        22941021   20090320   20090508   20090507       2210
+BIB                  6          7
+REACTION   (95-AM-242-G(N,F),,SIG,,MXW)
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+METHOD      Fission chambers measurement.
+INC-SPECT  Pure Maxwellian neutron flux.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+ 0.0253         2223.      215.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941022   20090320   20090508   20090507       2210
+BIB                  4          6
+REACTION   (95-AM-242-G(N,F),,SIG,,,DERIV)
+ANALYSIS    25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 4 of main reference C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253       2644.07     257.
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        22941023   20090320   20090508   20090507       2210
+BIB                  8         27
+REACTION   (90-TH-232(N,G)90-TH-233,,SIG,,MXW)
+SAMPLE     Pure 100-microgram Th-232 sample in nitrate powder form
+           canned in quartz capsule placed in Al container.
+INC-SPECT  Thermal Maxwellian flux.Neutron fluency was measured by
+           Al-0.1%Co-59 monitor. Less 3% of neutrons have energy
+           greater 1 eV. Neutron flux in analysis was assumed to
+           be constant at (7.56+-0.23)[10**14 n/cm**2/s(measured).
+METHOD     (MASSP) Precise  mass spectrometry (Thermal Ionization
+           and Inductive Coupled Plasma Mass Spectrometry)
+           analysis after 43 day irradiation in V4 at 50 cm
+           distance from fuel element.
+           Isotopic ratios measured (number of atoms):
+           U-234/U-233 - 0.05168 +- 0.00010,
+           U-235/U-233 - 0.00303 +- 0.00007,
+           U-236/U-238 - 0.000184 +- 0.000020,
+           Th-232/U-233 - 67.93 +- 0.55 (0.8% standard deviation).
+ANALYSIS   Effective cross sections were extracted using evaluated
+           data of libraries and calculated neutron flux by
+           fitting simultaneously to experimental isotopic ratios,
+           with the ROOT/MERCS code.
+ERR-ANALYS (ERR-1) Co-59 initial mass uncertainty around 2% ,
+                   Uncertainty included uncertainties for
+           Co-60(n,g)Co-61 cross section, Co-60 half-life,
+           Co49(n,g) Co-60 cross section - below 2 %.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+                   Table 2 of C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              27
+COMMON               1          3
+ERR-1
+PER-CENT
+2.
+ENDCOMMON            3
+DATA                 5          1
+EN-MEAN    DATA       DATA-ERR   MONIT1     MONIT1-ERR
+EV         B          B          B          B
+  0.0253          6.27       0.18 31.        1.
+ENDDATA              3
+ENDSUBENT           39
+SUBENT        22941024   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (90-TH-232(N,G)90-TH-233,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+           (DEP,22941023)
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253          7.34       0.21
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941025   20090320   20090508   20090507       2210
+BIB                  7         25
+REACTION   (91-PA-233(N,G)91-PA-234,,SIG,,MXW)
+INC-SPECT  Thermal Maxwellian flux.Neutron fluency was measured by
+           Al-0.1%Co-59 monitor. Less 3% of neutrons have energy
+           greater 1 eV. Neutron flux in analysis was assumed to
+           be constant at (7.56+-0.23)[10**14 n/cm**2/s(measured).
+METHOD     (MASSP) Precise  mass spectrometry (Thermal Ionization
+           and Inductive Coupled Plasma Mass Spectrometry)
+           analysis after 43 day irradiation in V4 at 50 cm
+           distance from fuel element.
+           Isotopic ratios measured (number of atoms):
+           U-234/U-233 - 0.05168 +- 0.00010,
+           U-235/U-233 - 0.00303 +- 0.00007,
+           U-236/U-238 - 0.000184 +- 0.000020,
+           Th-232/U-233 - 67.93 +- 0.55 (0.8% standard deviation).
+ANALYSIS   Effective cross sections were extracted using evaluated
+           data of libraries and calculated neutron flux by
+           fitting simultaneously to experimental isotopic ratios,
+           with the ROOT/MERCS code.
+ERR-ANALYS (ERR-1) Co-59 initial mass uncertainty around 2% ,
+                   Uncertainty included uncertainties for
+           Co-60(n,g)Co-61 cross section, Co-60 half-life,
+           Co49(n,g) Co-60 cross section - below 2 %.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+                   Table 2 of C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              25
+COMMON               1          3
+ERR-1
+PER-CENT
+2.
+ENDCOMMON            3
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253         34.16       1.54
+ENDDATA              3
+ENDSUBENT           37
+SUBENT        22941026   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (91-PA-233(N,G)91-PA-234,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+           (DEP,22941025)
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253         38.34       1.78
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941027   20090320   20090508   20090507       2210
+BIB                  7         25
+REACTION   (92-U-234(N,G)92-U-235,,SIG,,MXW)
+INC-SPECT  Thermal Maxwellian flux.Neutron fluency was measured by
+           Al-0.1%Co-59 monitor. Less 3% of neutrons have energy
+           greater 1 eV. Neutron flux in analysis was assumed to
+           be constant at (7.56+-0.23)[10**14 n/cm**2/s(measured).
+METHOD     (MASSP) Precise  mass spectrometry (Thermal Ionization
+           and Inductive Coupled Plasma Mass Spectrometry)
+           analysis after 43 day irradiation in V4 at 50 cm
+           distance from fuel element.
+           Isotopic ratios measured (number of atoms):
+           U-234/U-233 - 0.05168 +- 0.00010,
+           U-235/U-233 - 0.00303 +- 0.00007,
+           U-236/U-238 - 0.000184 +- 0.000020,
+           Th-232/U-233 - 67.93 +- 0.55 (0.8% standard deviation).
+ANALYSIS   Effective cross sections were extracted using evaluated
+           data of libraries and calculated neutron flux by
+           fitting simultaneously to experimental isotopic ratios,
+           with the ROOT/MERCS code.
+ERR-ANALYS (ERR-1) Co-59 initial mass uncertainty around 2% ,
+                   Uncertainty included uncertainties for
+           Co-60(n,g)Co-61 cross section, Co-60 half-life,
+           Co49(n,g) Co-60 cross section - below 2 %.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+                   Table 2 of C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              25
+COMMON               1          3
+ERR-1
+PER-CENT
+2.
+ENDCOMMON            3
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253         87.34       2.75
+ENDDATA              3
+ENDSUBENT           37
+SUBENT        22941028   20090320   20090508   20090507       2210
+BIB                  4          6
+REACTION   (92-U-234(N,G)92-U-235,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+HISTORY    (20090320A) Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253       106.12        3.34
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        22941029   20090320   20090508   20090507       2210
+BIB                  7         25
+REACTION   (92-U-235(N,G)92-U-236,,SIG,,MXW)
+INC-SPECT  Thermal Maxwellian flux.Neutron fluency was measured by
+           Al-0.1%Co-59 monitor. Less 3% of neutrons have energy
+           greater 1 eV. Neutron flux in analysis was assumed to
+           be constant at (7.56+-0.23)[10**14 n/cm**2/s(measured).
+METHOD     (MASSP) Precise  mass spectrometry (Thermal Ionization
+           and Inductive Coupled Plasma Mass Spectrometry)
+           analysis after 43 day irradiation in V4 at 50 cm
+           distance from fuel element.
+           Isotopic ratios measured (number of atoms):
+           U-234/U-233 - 0.05168 +- 0.00010,
+           U-235/U-233 - 0.00303 +- 0.00007,
+           U-236/U-238 - 0.000184 +- 0.000020,
+           Th-232/U-233 - 67.93 +- 0.55 (0.8% standard deviation).
+ANALYSIS   Effective cross sections were extracted using evaluated
+           data of libraries and calculated neutron flux by
+           fitting simultaneously to experimental isotopic ratios,
+           with the ROOT/MERCS code.
+ERR-ANALYS (ERR-1) Co-59 initial mass uncertainty around 2% ,
+                   Uncertainty included uncertainties for
+           Co-60(n,g)Co-61 cross section, Co-60 half-life,
+           Co49(n,g) Co-60 cross section - below 2 %.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+                   Table 2 of C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              25
+COMMON               1          3
+ERR-1
+PER-CENT
+2.
+ENDCOMMON            3
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253         79.01      9.05
+ENDDATA              3
+ENDSUBENT           37
+SUBENT        22941030   20090320   20090508   20090507       2210
+BIB                  4          6
+REACTION   (92-U-235(N,G)92-U-236,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 8 of J,NIM/A,591 .
+HISTORY    (20090320A) Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253         98.15      11.24
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        22941031   20090320   20090508   20090507       2210
+BIB                  7         10
+REACTION   (93-NP-237(N,G)93-NP-238,,SIG,,MXW)
+SAMPLE      13.82 microgram of Np-237, electrodeposited on Ti
+           backing, irradiated 2 hours in H9 channel.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+METHOD     (GSPEC) Alpha and gamma spectroscopy on H9 channel.
+           (ASPEC)
+INC-SPECT   Thermal Maxwellian .
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253         150.       4.2
+ENDDATA              3
+ENDSUBENT           18
+SUBENT        22941032   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (93-NP-237(N,G)93-NP-238,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+           (DEP,22941031)
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253        180.         5.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941033   20090320   20090508   20090507       2210
+BIB                  6          8
+REACTION   (93-NP-238(N,F),,SIG,,MXW)
+SAMPLE      Np-237 deposit of (42+-1.3) microgram in V4 channel
+            using TDFC , irradiated 43 days.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+INC-SPECT   Thermal Maxwellian.
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253        1828.       55.
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        22941034   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (93-NP-238(N,F),,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+           (DEP,22941033)
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253        2165.       70.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941035   20090320   20090508   20090507       2210
+BIB                  7          9
+REACTION   (94-PU-238(N,G)94-PU-239,,SIG,,MXW)
+SAMPLE      Np-237 deposit of (42+-1.3) microgram in V4 channel
+            using TDFC , irradiated 43 days.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+COMMENT    Of authors. Will be measured again.
+INC-SPECT   Thermal Maxwellian .
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253         388.       12.
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        22941036   20090320   20090508   20090507       2210
+BIB                  4          7
+REACTION   (94-PU-238(N,G)94-PU-239,,SIG,,,DERIV)
+ANALYSIS    25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+           (DEP,22941035)
+HISTORY    (20090320A) Subent was added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253         476.       33.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        22941037   20090320   20090508   20090507       2210
+BIB                  7         11
+REACTION   (96-CM-244(N,G)96-CM-245,,SIG,,MXW)
+SAMPLE      39.46+-0.4 microgram of curium. Cm-244 -66.9%,
+            Cm-245 -3.8%, Pu-240 -23.6% was irradiated in V4
+            channel. Measured by TDFC.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+INC-SPECT   Thermal Maxwellian .
+ERR-ANALYS  Error of isotopic concentration less 1.% .
+STATUS     (TABLE) Table 5 of main reference C,2007NICE.
+           (PRELM) Preliminary data.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253         28.7       3.4
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        22941038   20090320   20090508   20090507       2210
+BIB                  4          8
+REACTION   (96-CM-244(N,G)96-CM-245,,SIG,,,DERIV)
+ANALYSIS    25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+           (DEP,22941037)
+           (PRELM) Preliminary data.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253         476.       33.
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        22941039   20090320   20090508   20090507       2210
+BIB                  7         11
+REACTION   (96-CM-245(N,G)96-CM-246,,SIG,,MXW)
+SAMPLE      39.46+-0.4 microgram of curium. Cm-244 -66.9%,
+            Cm-245 -3.8%, Pu-240 -23.6% was irradiated in V4
+            channel. Measured by TDFC.
+ANALYSIS   Effective cross sections were extract by evaluated
+           data of libraries and calculated neutron flux.
+INC-SPECT   Thermal Maxwellian.
+ERR-ANALYS  Error of isotopic concentration less 1.% .
+STATUS     (TABLE) Table 5 of main reference C,2007NICE.
+           (PRELM) Preliminary data.
+HISTORY    (20090320A) Subent was added.
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 3          1
+EN-MEAN    DATA       DATA-ERR
+EV         B          B
+  0.0253        1400.       29.
+ENDDATA              3
+ENDSUBENT           19
+SUBENT        22941040   20090320   20090508   20090507       2210
+BIB                  4          8
+REACTION   (96-CM-245(N,G)96-CM-246,,SIG,,,DERIV)
+ANALYSIS   25.3 meV value was extracted from measured effective
+           cross section using the ratio of 25.3 meV c-s to
+           effective cross, calculated from data bases.
+STATUS     (TABLE) Table 3 of main reference C,2007NICE.
+           (DEP,22941039)
+           (PRELM) Preliminary data.
+HISTORY    (20090320A) Subent was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+  0.0253        2012.       61.
+ENDDATA              3
+ENDSUBENT           16
+ENDENTRY            40

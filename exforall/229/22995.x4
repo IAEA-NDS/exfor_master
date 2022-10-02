@@ -1,7 +1,7 @@
-ENTRY            22995   20080214   20080402   20080311       2194
-SUBENT        22995001   20080214   20080402   20080311       2194
-BIB                 19         82
-TITLE      .The 14C(n,gamma) cross section between 10 keV
+ENTRY            22995   20081222   20090508   20090507       2207
+SUBENT        22995001   20081222   20090508   20090507       2207
+BIB                 19         95
+TITLE      .The 14-C(n,gamma) cross section between 10 keV
             and 1 MeV
 AUTHOR     (R.Reifarth, M.Heil, C.Forssen, U.Besserer, A.Couture,
            S.Dababneh, L.Doerr, J.Goerres, R.C.Haight,F.Kaeppeler,
@@ -9,12 +9,17 @@ AUTHOR     (R.Reifarth, M.Heil, C.Forssen, U.Besserer, A.Couture,
            M.Wiescher, J.B.Wilhelmy)
 REFERENCE  (J,PR/C,77,015804,200801) Main reference. New analysis,
                              Final results.
+           (C,2006CERN,(223),200606) Re-analysis of prelim.data.
+                       Paper number 223.
            (J,NP/A,758,787,2005)   Preliminary results
-           (J,AJ,387,258,1992)     First result for Maxwell-
-            averaged cross section, and experimental details
 REL-REF    (N,,A.Anttila+,J,NIM,147,501,1977) Experimental details
                                          and C-15 decay-data
-           (N,,H.BEER+,J,NIM/A,337,492,1994) Experimental details
+           (N,,H.Beer+,J,NIM/A,337,492,1994) Experimental details
+           (A,,H.Beer+,J,AJ,387,258,1992) Previous activation
+            result for Maxwell-averaged cross section with
+            kT=23.3 keV. Agrees, if new sample mass is taken into
+            account and a similar dead-time problem like during
+            this experiment is assumed.
 INSTITUTE  (2GERKFK) Forschungszentrum Karlsruhe, Institut fuer
               Kernphysik, Germany. F.Kaeppeler, R.Plag,
               S.Dababneh, M.Heil;
@@ -25,7 +30,7 @@ INSTITUTE  (2GERKFK) Forschungszentrum Karlsruhe, Institut fuer
               R.S.Rundberg, J.B.Wilhelmy.
            (1USALRL)  Lawrence Livermore National Laboratory,
               Livermore, California, USA. C.Forssen, N.Patronis.
-           (2SWDSWD)  Fundamental Physics, Chalmers University
+           (2SWDCTH)  Fundamental Physics, Chalmers University
               of Technology, Goeteborg,  Sweden.    C.Forssen.
            (1USANOT)  University of Notre Dame, Physics Depart.,
               Notre Dame,  Indiana, USA. S.O'Brien, J.Goerres,
@@ -37,16 +42,19 @@ INSTITUTE  (2GERKFK) Forschungszentrum Karlsruhe, Institut fuer
               Greece. N.Patronis.
 FACILITY   (VDG,2GERKFK)   3.7 MV Van de Graaff accelerator
 ANALYSIS   .The main difference of this article data from that
-            of the preliminary in REFERENCE 2 is the discovery
-            of the huge dead time effect during the experiment
-METHOD     (ACTIV)  Activation
+            of the preliminary in REFERENCE NP/A,758 is discovery
+            of the huge dead time effect during the experiment.
+           (DECAY) Decay curve analysis.
+METHOD     (ACTIV)  Cyclic activation technique .
            (STTA)   Stack target irradiation
+           (GSPEC)
 INC-SOURCE (P-LI7) .A metallic Li-7 target of different Li-7 layer
              thicknesses with protons of different energies above
              the (P,N) reaction threshold.
 INC-SPECT  .Spectrum at the place of the sample is determined
             by averaging of the down- and upstream gold monitor
-            samples
+            samples.
+            Neutron fluxes between 1.E+7 - 1.E+9 1/cm**2/s .
 DETECTOR   (HPGE) A High-purity germanium detector with a relative
                   efficiency of 100%. The detector efficiency was
              determined with a set of calibration sources and via
@@ -72,55 +80,63 @@ DECAY-DATA (6-C-14,5700.YR,B-)      Half life = 5700 +- 30 years
 MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW)
            (13-AL-27(P,G)14-SI-28,,SIG)  For detector calibration
 DECAY-MON  (79-AU-198-G,2.694D,DG,411.8,0.9552)
-MONIT-REF  (,W.RATYNSKI+,J,PR/C,37,595,1988)
+MONIT-REF  (,W.Ratynski+,J,PR/C,37,595,1988)
 SAMPLE     .C-14 mass was determined with the help of its BETA-
             activity and is 283 +- 3 milligram. The sample was
             sandwiched between two thin gold foils.
 ERR-ANALYS (ERR-T)   Total error equal to quadratic sum of its
-                     constituents
-           (ERR-S)   Error of counting statistics
+                     constituents .
+            ERR-S    Error of counting statistics 2.-8. %.
            (ERR-1)   Error due to the gamma detector efficiency
-           (ERR-2)   Max error of the neutron flux determination
-           (ERR-3)   Min error of the neutron flux determination
+            ERR-2    Max error of the neutron flux determination
+            ERR-3    Min error of the neutron flux determination
 HISTORY    (20080214C)  SM
-ENDBIB              82
-COMMON               4          3
-ERR-S      ERR-1      ERR-2      ERR-3
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-    2.8        5.        10.         2.
+           (20081222A) M.M. Reference 2007CERN,223 was added.
+            Reference (J,AJ,387,258,1992) was moved in REL-REF
+            lines (previous activation result).
+            ERR-ANALYS was corrected, ERR-S, ERR-2, ERR-3 were
+            deleted from COMMON as min/max errors.
+ENDBIB              95
+COMMON               1          3
+ERR-1
+PER-CENT
+    5.
 ENDCOMMON            3
-ENDSUBENT           89
-SUBENT        22995002   20080214   20080402   20080311       2194
-BIB                  4          6
+ENDSUBENT          102
+SUBENT        22995002   20081222   20090508   20090507       2207
+BIB                  4          7
 REACTION   (6-C-14(N,G)6-C-15,,SIG,,MXW)
 INC-SOURCE .Li-7 target thickness is 30 micrometers, proton
             energy is 1912 keV, 30 keV above Li-7(p,n) reaction
             threshold
-INC-SPECT  .Maxwellian with temperature kT = 23.3 keV
+INC-SPECT  Spectrum can be approximated by Maxwellian with
+           temperature kT = 23.3 keV
 STATUS     (TABLE)   From Table V of main reference
-ENDBIB               6
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          1
 KT         DATA       ERR-T      ERR-T
 KEV        MICRO-B    MICRO-B    PER-CENT
    23.3        7.1        0.5       6.7
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        22995003   20080214   20080402   20080311       2194
-BIB                  6         12
+ENDSUBENT           15
+SUBENT        22995003   20081222   20090508   20090507       2207
+BIB                  6         14
 REACTION   (6-C-14(N,G)6-C-15,,SIG,,SPA) Averaged over neutron
                                          spectrum width
 INC-SOURCE .Li-7 target thickness is 5 micrometers, proton
             energies are 2001 - 2530 keV, above Li-7(p,n)
             reaction threshold
 INC-SPECT  .Unsymmetric broad neutron spectrum with resolution
-            taken by compiler from Fig.3.
+            taken by compiler from Fig.3 of main reference.
+            Spectra are typical for mono-energetic experiment with
+            wide energy uncertainty (for 150 and 500 keV).
 MISC-COL   (MISC)  Proton energy
 ERR-ANALYS (ERR-SYS)  Systematic error
 STATUS     (TABLE)   From Table V of main reference
-           (CURVE)   Spectrum width taken from the curves
-                     Fig.3, #2-#3-#4 from above
-ENDBIB              12
+           (CURVE)   Spectrum width EN-RSL-FW taken from the
+                    curves Fig.3, #2-#3-#4 from above
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 7          3
 EN-MEAN    EN-RSL-FW  DATA       ERR-T      ERR-T      ERR-SYS
@@ -134,5 +150,5 @@ KEV
    750.       1.5 E+02  15.8        1.6       10.          5.
       2530.
 ENDDATA             10
-ENDSUBENT           27
+ENDSUBENT           29
 ENDENTRY             3
