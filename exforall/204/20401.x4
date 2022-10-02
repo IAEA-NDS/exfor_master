@@ -1,75 +1,90 @@
-ENTRY            20401     840109              20050926       0000
-SUBENT        20401001     840109              20050926       0000
-BIB                 11         32
+ENTRY            20401   20110818   20120427   20120411       2227
+SUBENT        20401001   20110818   20120427   20120411       2227
+BIB                 13         36
+TITLE      -Measurements of the neutron energy spectrum of the
+            spontaneous fission of Cf-252.
+AUTHOR     (H.H.Knitter, A.Paulsen, H.Liskien, M.M.Islam)
 INSTITUTE  (2ZZZGEL)
-REFERENCE  (J,AKE,22,84,7310) GRAPHS ONLY.
-           (W,LISKIEN,7312) NUMERICAL VALUES.
-AUTHOR     (H.H.KNITTER,A.PAULSEN,H.LISKIEN,M.M.ISLAM)
-TITLE      -MEASUREMENTS OF THE NEUTRON ENERGY SPECTRUM OF THE
-            SPONTANEOUS FISSION OF CF-252.
-INC-SOURCE (CF252)    SPONTANEOUS FISSION OF CF-252.
-METHOD     (TOF  )    ENERGY SPECTRA WERE MEASURED USING NANO-
-            SECOND TIME-OF-FLIGHT TECHNIQUE.
-DETECTOR   (SCIN )    NE224 LIQUID SCINTILLATOR, 5 CM DIAMETER AND
-            3.8 CM LENGTH.
-           .THE DETECTOR TO GIVE THE TIME SIGNAL ARE
-            (1) NE102A PLASTIC SCINTILLATOR FOR GAMMA RAY AS
-            TIMING SIGNAL,
-            (2) 2 PLASTIC SCINTILLATOR FOILS OF 0.2 MM THICKNESS
-            FOR FISSION PRODUCT AS TIMING SIGNAL. SEE TEXT.
-MONITOR    .RELATIVE EFFICIENCY OF THE DETECTOR WAS MEASURED IN
-            THE ENERGY RANGE FROM 0.05 TO 8.2 MEV, RELATIVE TO THE
-            ANGULAR DISTRIBUTIONS OF REACTIONS T(P,N)HE-3,
-            D(D,N)HE-3, BE-9(A,N)C-12 AND H(N,N), AND RELATIVE TO
-            THE ZERO DEGREE YIELD OF THE LI-7(P,N)BE-7.
-           .THE EFFICIENCY FROM 12.4 TO 19.6 MEV WAS OBTAINED
-            RELATIVE TO THE T(D,N)HE-4 ANGULAR DISTRIBUTION.
-           .THE RELATIVE EFFICIENCY OF THE DETECTOR WAS KNOWN TO
-            ABOUT 2 PERC. BELOW 2.5 MEV AND ABOVE THIS ENERGY
-            UP TO 5 PERC. AT 19 MEV.
-HISTORY    (740705C)
-           (750430E)
-CORRECTION  NO CORRECTION WAS APPLIED FOR DELAYED NEUTRONS.
-ERR-ANALYS  STATISTICAL ERRORS GIVEN.
-           .ENERGY UNCERTAINTY OF EACH DATA POINT WERE DERIVED
-            FROM THE TIME UNCERTAINTY(+-1.5 NS). SOME ASYM. ERRORS
-ENDBIB              32
+REFERENCE  (J,AKE,22,84,197310) Main reference. Graphs for
+             neutron spectra and data for average energies
+           (W,Liskien,197312) Numerical values.
+INC-SOURCE (CF252)    Spontaneous fission of Cf-252 encapsulated
+             in a thin wall container giving 3.E+5 fission events
+             per minute
+FACILITY   (VDG,2ZZZGEL)  3 MV Van de Graaff accelerator of the
+               CBNM to measure detector efficiencies by reactions
+               listed under MONITOR keyword
+METHOD     (TOF)      Energy spectra were measured using nano-
+            second time-of-flight technique.
+DETECTOR   (SCIN)   NE224 liquid scintillator, 5 cm diameter and
+                    3.8 cm length for neutron detection.
+MONITOR    .Detector efficiencies measured at several energies
+            using many reactions.
+           (1-H-3(P,N)2-HE-3,,SIG)
+           (1-H-2(D,N)2-HE-3,,SIG)
+           (4-BE-9(A,N)6-C-12,,SIG)
+           (1-H-1(N,EL)1-H-1,,SIG)
+           (3-LI-7(P,N)4-BE-7,,DA)  At zero angle
+MONIT-REF  (,H.Liskien+,J,AND,11,569,1973)
+           (,H.Liskien+,J,NUK,8,315,1966)
+           (,J.B.Hunt+,C,72NEUHER,,935,1972)
+CORRECTION  No correction was applied for delayed neutrons.
+ERR-ANALYS .Errors, if present, given in proper SUBENTs.
+           .Energy uncertainty of each data point were derived
+            from the time uncertainty(+-1.5 ns).
+HISTORY    (19740705C)
+           (19750430E)
+           (20110707A) Date is corrected to 8 digit format, upper
+                       case comments converted to lower case
+           (20110818U) Last checking has been done.
+ENDBIB              36
 NOCOMMON             0          0
-ENDSUBENT           35
-SUBENT        20401002     840109              20050926       0000
-BIB                  4          7
-REACTION   (98-CF-252(0,F),PR,AKE,N)
-ANALYSIS    THE COMBINED RESULT OF THE TWO MAXWELLIAN FITS WITH
-             N(E) = C*(SQUARE ROOT(E))*EXP(-E/T).  TWO RESULTS ARE
-            2.17+-0.08 MEV FROM EXP.1 (START USING GAMMA FROM FP)
-            2.09+-0.08 MEV FROM EXP.2 (START USING FISSION PRODUCT
-PART-DET   (N    )    NEUTRONS.
-STATUS      FROM ATOMKERNENERGIE,22(1973)84.
-ENDBIB               7
+ENDSUBENT           39
+SUBENT        20401002   20110818   20120427   20120411       2227
+BIB                  5         11
+REACTION   (98-CF-252(0,F)0-NN-1,PR,KE,,AV,DERIV) Averaged over
+                      data in SUBENT 20401005
+ANALYSIS   .The combined result of the two maxwellian fits  and
+            two direct averaging of data obtained by start of the
+            experiments by fission gamma rays and fission
+            fragments
+ERR-ANALYS (ERR-S)   Given in the initial compilation
+STATUS     (TABLE) From text of Atomkernenergie, vol.22, page 84,
+           (DEP,20401005)
+HISTORY    (20110818A)  REACTION codes ",PR,AKE,N" changed to
+             "0-NN-1,PR,KE,,AV,DERIV".
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 2          1
-DATA       DATA-ERR
+DATA       ERR-S
 MEV        MEV
- 2.1300E+00 8.0000E-02
+       2.13     8.E-02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        20401003     840109              20050926       0000
-BIB                  4         10
-REACTION   (98-CF-252(0,F),PR,DE,N)
-            EXP. 1.  START USING GAMMA RAYS FROM FISSION PRODUCTS.
-PART-DET   (N,G  )    NEUTRONS, GAMMAS.
-            GAMMA RAYS EMITTED IN THE FISSION PROCESS WERE USED
-            TO GENERATE A TIMING SIGNAL TO INDICATE THE INSTANT OF
-            FISSION.
-COMMENT     NO CLEAR DEVIATION WAS FOUND FROM A MAXWELLIAN FORM,
-             N(E) = C*(SQUARE ROOT (E))*EXP(-E/T).
-STATUS      DATA FROM LISKIEN AS PRIV.COMM. TO A CCDN MISSION,
-            10/14/73.
-ENDBIB              10
+ENDSUBENT           19
+SUBENT        20401003   20110818   20120427   20120411       2227
+BIB                  8         17
+REACTION   (98-CF-252(0,F),PR,NU/DE,,REL) Reference quantity not
+                                          given
+METHOD     .Exp. 1. Start using gamma rays from fission products.
+DETECTOR   (SCIN) .The detector to give the time signal is NE102A
+              plastic scintillator for gamma ray as timing signal,
+PART-DET   (N,G)    Neutrons, gammas. Gamma rays emitted in the
+              fission process were used to generate a timing
+              signal to indicate the instant of fission.
+COMMENT    .No clear deviation was found from a maxwellian form,
+            N(E) = C*SQRT(E)*exp(-E/T).
+ERR-ANALYS (DATA-ERR) Includes statistical error and systematic
+              uncertainties due to timing and efficiency errors
+           (-E-ERR)    Energy errors were derived from the flight
+           (+E-ERR)    time uncertainty(+-1.5 ns).
+STATUS     (TABLE)  Data from H.Liskien as private communication
+                    to a CCDN mission, 1973-10-14
+HISTORY    (20110818A)
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 5         90
 E          +E-ERR     -E-ERR     DATA       DATA-ERR
-MEV        MEV        MEV        1/MEV      1/MEV
+MEV        MEV        MEV        ARB-UNITS  ARB-UNITS
  1.9000E-01 1.0000E-02 1.0000E-02 8.5400E+00 4.3000E-01
  2.4000E-01 1.0000E-02 1.0000E-02 1.0480E+01 4.1000E-01
  2.9000E-01 1.0000E-02 1.0000E-02 1.2040E+01 4.3000E-01
@@ -161,22 +176,28 @@ MEV        MEV        MEV        1/MEV      1/MEV
  1.4190E+01 1.3200E+00 1.1500E+00 6.0000E-03 6.0000E-03
  1.5060E+01 1.4400E+00 1.2500E+00 5.0000E-03 6.0000E-03
 ENDDATA             92
-ENDSUBENT          107
-SUBENT        20401004     840109              20050926       0000
-BIB                  4          8
-REACTION   (98-CF-252(0,F),PR,DE,N)
-            EXP. 2.  START USING FISSION PRODUCTS.
-PART-DET   (N,FF )    NEUTRON, FISSION FRAGMENTS.
-            FISSION FRAGMENT AS TIME ZERO SIGNAL.
-COMMENT     NO CLEAR DEVIATION WAS FOUND FROM A MAXWELLIAN FORM,
-             N(E) = C*(SQUARE ROOT (E))*EXP(-E/T).
-STATUS      DATA FROM LISKIEN AS PRIV.COMM. TO A CCDN MISSION,
-            10/14/73.
-ENDBIB               8
+ENDSUBENT          114
+SUBENT        20401004   20110818   20120427   20120411       2227
+BIB                  6         14
+REACTION   (98-CF-252(0,F),PR,NU/DE,,REL)  Exp. 2.  Starts using
+                                         fission products signal.
+DETECTOR   (SCIN) 2 plastic scintillator foils of 0.2 mm thickness
+             for fission product detection as timing signal.
+PART-DET   (N,FF)    Neutron, fission fragments. Fission fragment
+                     as time zero signal.
+COMMENT    .No clear deviation was found from a maxwellian form,
+            N(E) = C*SQRT(E)*exp(-E/T).
+ERR-ANALYS (DATA-ERR) Includes statistical error and systematic
+              uncertainties due to timing and efficiency errors
+           (-E-ERR)    Energy errors were derived from the flight
+           (+E-ERR)    time uncertainty(+-1.5 ns).
+STATUS     (TABLE)  Data from H.Liskien as private communication
+                    to a CCDN mission, 1973-10-14
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 5         93
 E          +E-ERR     -E-ERR     DATA       DATA-ERR
-MEV        MEV        MEV        1/MEV      1/MEV
+MEV        MEV        MEV        ARB-UNITS  ARB-UNITS
  1.4000E-01 1.0000E-02 1.0000E-02 5.3500E+00 6.6000E-01
  1.9000E-01 1.0000E-02 1.0000E-02 7.2800E+00 5.8000E-01
  2.4000E-01 1.0000E-02 1.0000E-02 8.5100E+00 4.4000E-01
@@ -271,5 +292,52 @@ MEV        MEV        MEV        1/MEV      1/MEV
  1.5490E+01 1.5100E+00 1.3100E+00 4.0000E-02 1.0000E-02
  1.6500E+01 1.6600E+00 1.4300E+00 9.0000E-03 8.0000E-03
 ENDDATA             95
-ENDSUBENT          108
-ENDENTRY             4
+ENDSUBENT          114
+SUBENT        20401005   20110818   20120427   20120411       2227
+BIB                  6         15
+REACTION  1(98-CF-252(0,F)0-NN-1,PR,KE,,,DERIV)
+          2(98-CF-252(0,F)0-NN-1,PR,KE,,,DERIV)
+METHOD    1.Measurements start by using gamma rays signal from
+            fission event.
+          2.Measurements start by fission products signal
+ANALYSIS   .Maxwellian fitting of the experimental data
+             N(E) = C*SQRT(E)*exp(-E/T).
+ERR-ANALYS (DATA-ERR) Include errors due to consistency between
+              data points and fit, systematic uncertainties
+              due to timing and efficiency errors
+STATUS     (TABLE) From the text in Atomkernenergie, vol.22,
+                   page 84,1973
+          1(DEP,20401003)
+          2(DEP,20401004)
+HISTORY    (20110818C)  S.M.
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MEV        MEV
+       2.17     0.08        2.08      0.08
+ENDDATA              3
+ENDSUBENT           23
+SUBENT        20401006   20110818   20120427   20120411       2227
+BIB                  6         12
+REACTION  1(98-CF-252(0,F)0-NN-1,PR,KE,,,DERIV)
+          2(98-CF-252(0,F)0-NN-1,PR,KE,,,DERIV)
+METHOD    1.Measurements start by using gamma rays signal from
+            fission event.
+          2.Measurements start by fission products signal
+ANALYSIS   .Numerical integration of the experimental data
+ERR-ANALYS (DATA-ERR) Not specified
+STATUS     (TABLE) From the text in Atomkernenergie, vol.22,
+                   page 84,1973
+          1(DEP,20401003)
+          2(DEP,20401004)
+HISTORY    (20110818C)  S.M.
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MEV        MEV
+       2.14     0.12        2.13      0.24
+ENDDATA              3
+ENDSUBENT           20
+ENDENTRY             6
