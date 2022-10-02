@@ -1,6 +1,6 @@
-ENTRY            10289   20011227   20020215   20050926       0000
-SUBENT        10289001   20011227   20020215   20050926       0000
-BIB                 11         16
+ENTRY            10289   20131029   20140110   20131216       1394
+SUBENT        10289001   20131029   20140110   20131216       1394
+BIB                 11         18
 INSTITUTE  (1USAVBT)
 REFERENCE  (J,JIN,34,1119,197204)
 AUTHOR     (N.C.Dyer,J.H.Hamilton)
@@ -8,18 +8,20 @@ TITLE      56Fe and 58Fe(n,p) cross sections for 14.4 MeV
             neutrons
 FACILITY   (CCW,1USAVBT)
 INC-SOURCE (D-T)
-SAMPLE     Ferric oxide enriched to 82.12% 58Fe.
+SAMPLE     (26-FE-58,ENR=0.8212) Ferric oxide enriched to
+             82.12% 58Fe.
 METHOD     (ACTIV)
 DETECTOR   (NAICR) Measured gamma activity with NaI(Tl) crystal.
 STATUS     (APRVD) Approved by N.Dyer.
-            Data taken from reference text.
+           (TABLE) Data taken from reference text.
 HISTORY    (19730912C)
            (19830117A) Converted to REACTION formalism
            (19860404A) BIB UPDATE.
            (20011227A) Updated to new date formats, lower case.
-ENDBIB              16
+           (20131024A) OS. Corrections in sub.3
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           19
+ENDSUBENT           21
 SUBENT        10289002   20011227   20020215   20050926       0000
 BIB                  4          6
 REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
@@ -36,20 +38,25 @@ MEV        MB         MB
 14.4       109.       10.
 ENDDATA              3
 ENDSUBENT           14
-SUBENT        10289003   20011227   20020215   20050926       0000
-BIB                  4          6
-REACTION   (26-FE-58(N,P)25-MN-58-G,,SIG)
+SUBENT        10289003   20131029   20140110   20131216       1394
+BIB                  7         11
+REACTION   (26-FE-58(N,P)25-MN-58-M,,SIG)
 MONITOR    (26-FE-56(N,P)25-MN-56,,SIG)
-DECAY-DATA (25-MN-58-G,65.3SEC,DG)
+MONIT-REF  (10289002,N.C.Dyer+,J,JIN,34,1119,1972)
+DECAY-DATA (25-MN-58-M,65.3SEC,DG)
+COMMENT    Authors give reaction product 58Mn, not mentioning
+           the isomeric state, with half-live 65.3 sec
 ERR-ANALYS (DATA-ERR) Main contributions to error given are
             counting statistics, uncertainty in reference cross
             sections and decay scheme assumed for 58Fe reaction.
-ENDBIB               6
+HISTORY    (20131024A) Changed reaction product to -M, added
+            MONIT-REF and COMMENT.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 4          1
-EN         DATA       DATA-ERR   MONIT
-MEV        MB         MB         MB
-14.4       10.8       1.0        109.
+DATA                 5          1
+EN         DATA       DATA-ERR   MONIT      MONIT-ERR
+MEV        MB         MB         MB         MB
+14.4       10.8       1.0        109.          10.
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           19
 ENDENTRY             3

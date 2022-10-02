@@ -1,41 +1,47 @@
-ENTRY            21963   20071122   20080131   20080123       2190
-SUBENT        21963001   20071122   20080131   20080123       2190
-BIB                 14         25
-INSTITUTE  (2JPNTOH)  Tohoku univ., Sendai
-REFERENCE  (R,JAERI-M-85-035,220,1985)
-AUTHOR     (K.KANDA,O.SATO,K.YOSHIDA,H.IMARUOKA,N.HIRAKAWA)
-TITLE      -Measurement of fast neutron induced fission
-            cross section
-FACILITY   (DYNAM)
-INC-SOURCE (P-T)For the energy range of 0.5 - 2.9 MeV
-           (D-D)For the energy range of 3.0 - 6.9 MeV
-           (D-T)For the energy range of 13.5 - 15.0 MeV
-METHOD     (TOF)
+ENTRY            21963   20130402   20140113   20140110       2236
+SUBENT        21963001   20130402   20140113   20140110       2236
+BIB                 11         25
+TITLE      Measurement of fast neutron induced fission cross
+            section
+AUTHOR     (K.Kanda, O.Sato, K.Yoshida, H.Imaruoka, N.Hirakawa)
+INSTITUTE  (2JPNTOH)
+REFERENCE  ((S,JAERI-M-85-035,220,1985)=(S,INDC(JPN)-98,220,1985))
+FACILITY   (DYNAM,2JPNTOH) 4.5 MV Dynamitron
+INC-SOURCE (P-T) For the energy range of 0.5 - 2.9 MeV
+           (D-D) For the energy range of 3.0 - 6.9 MeV
+           (D-T) For the energy range of 13.5 - 15.0 MeV
+METHOD     (TOF) Determination of incident neutron energy at 0 deg
 DETECTOR   (FISCH) Parallel plate type
-           (SCIN) Ne213 liquid scintillator counter 15m from
-                  target
-ANALYSIS   .No information given
-PART-DET   (N)
-STATUS     .Data taken from main reference
-CORRECTION .For background
-           .For low energy neutron impurities
-           .For inscattered neutrons
-           .For self absorption
-ERR-ANALYS (ERR-T)   Total error
+           (SCIN) NE213 liquid scintillator counter 15 m from
+                  target for TOF
+CORRECTION Corrected for
+            - background
+            - low energy neutron impurities
+            - inscattered neutrons
+            - self absorption
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Number of atoms in the 235U sample (1.7%)
 HISTORY    (19850719C)  H.H. previous
            (19850723E)
            (20051130A) Date is corrected
            (20071122A) Last corrections have been done - SM
+           (20130402A) On. ERR-1 added
 ENDBIB              25
-NOCOMMON             0          0
-ENDSUBENT           28
-SUBENT        21963002   20071122   20080131   20080123       2190
-BIB                  3          4
+COMMON               1          3
+ERR-1
+PER-CENT
+ 1.7
+ENDCOMMON            3
+ENDSUBENT           32
+SUBENT        21963002   20130402   20140113   20140110       2236
+BIB                  3          6
 REACTION   ((90-TH-232(N,F),,SIG)/(92-U-235(N,F),,SIG))
-STATUS     .Data taken from reference
-           (SPSDD,22014002)
+STATUS     (TABLE) Table II of JAERI-M 85-035, p220 (1985)
+           (SPSDD,22014002) Revised data for En < 10 MeV
+           (SPSDD,22282002) Revised data for En > 10 MeV
 HISTORY    (20071122A) Data superseded
-ENDBIB               4
+           (20130402U) On. STATUS corrected
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4         19
 EN         EN-RSL-FW  DATA       ERR-T
@@ -60,15 +66,27 @@ MEV        MEV        NO-DIM     NO-DIM
   1.435E+01    1.0E-01  1.733E-01    4.5E-03
   1.501E+01    1.0E-01  1.844E-01    4.5E-03
 ENDDATA             21
-ENDSUBENT           30
-SUBENT        21963003   20071122   20080131   20080123       2190
-BIB                  3          4
+ENDSUBENT           32
+SUBENT        21963003   20130402   20140113   20140110       2236
+BIB                  5         12
 REACTION   ((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
-STATUS     .Data taken from reference
-           (SPSDD,22014003)
+SAMPLE     (92-U-233,ENR=0.9947)
+           (92-U-234,ENR=0.00166)
+           (92-U-235,ENR=0.00064)
+           (92-U-236,ENR=0.00015)
+           (92-U-238,ENR=0.00282)
+ERR-ANALYS (ERR-2) Estimation of alpha signal counts
+STATUS     (TABLE) Table III of JAERI-M 85-035, p220 (1985)
+           (SPSDD,22014003) Revised data for En < 10 MeV
+           (SPSDD,22282003) Revised data for En > 10 MeV
 HISTORY    (20071122A) Data superseded
-ENDBIB               4
-NOCOMMON             0          0
+           (20130402A) On. ERR-2 added; STATUS corrected
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+ 1.5
+ENDCOMMON            3
 DATA                 4         25
 EN         EN-RSL-FW  DATA       ERR-T
 MEV        MEV        NO-DIM     NO-DIM
@@ -98,15 +116,28 @@ MEV        MEV        NO-DIM     NO-DIM
        6.53    1.3E-01      1.495    3.1E-02
        6.78    1.5E-01      1.455    3.1E-02
 ENDDATA             27
-ENDSUBENT           36
-SUBENT        21963004   20071122   20080131   20080123       2190
-BIB                  3          4
+ENDSUBENT           48
+SUBENT        21963004   20130402   20140113   20140110       2236
+BIB                  5         13
 REACTION   ((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))
-STATUS     .Data taken from reference
-           (SPSDD,22014004)
+SAMPLE     (92-U-234,ENR=0.9907)
+           (92-U-232,ENR=0.000027)
+           (92-U-233,ENR=0.00005)
+           (92-U-235,ENR=0.0008)
+           (92-U-236,ENR=0.00055)
+           (92-U-238,ENR=0.00789)
+ERR-ANALYS (ERR-2) Estimation of alpha signal counts
+STATUS     (TABLE) Table IV of JAERI-M 85-035, p220 (1985)
+           (SPSDD,22014004) Revised data for En < 10 MeV
+           (SPSDD,22282004) Revised data for En > 10 MeV
 HISTORY    (20071122A) Data superseded
-ENDBIB               4
-NOCOMMON             0          0
+           (20130402A) On. ERR-2 added; STATUS corrected
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+ 1.5
+ENDCOMMON            3
 DATA                 4         27
 EN         EN-RSL-FW  DATA       ERR-T
 MEV        MEV        NO-DIM     NO-DIM
@@ -138,12 +169,16 @@ MEV        MEV        NO-DIM     NO-DIM
        6.53    1.3E-01      1.292    2.6E-02
        6.78    1.5E-01      1.280    2.6E-02
 ENDDATA             29
-ENDSUBENT           38
-SUBENT        21963005   20051130   20060217   20060213       2175
-BIB                  2          2
+ENDSUBENT           51
+SUBENT        21963005   20130402   20140113   20140110       2236
+BIB                  4          6
 REACTION   ((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))
-STATUS     .Data taken from reference
-ENDBIB               2
+SAMPLE     (93-NP-237,ENR=1.)
+STATUS     (TABLE) Table VII of JAERI-M 85-035, p220 (1985)
+           (SPSDD,22024003) Revised data for En<10 MeV
+           (SPSDD,22282007) Revised data for En>10 MeV
+HISTORY    (20130402A) On. Data superseded
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4         22
 EN         EN-RSL-FW  DATA       ERR-T
@@ -171,18 +206,24 @@ MEV        MEV        NO-DIM     NO-DIM
  1.4350E+01 1.0000E-01 1.0220E+00 2.5000E-02
  1.5010E+01 1.0000E-01 1.0210E+00 2.4000E-02
 ENDDATA             24
-ENDSUBENT           31
-SUBENT        21963006   20051130   20060217   20060213       2175
-BIB                  3          4
-REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
-STATUS     .Data taken from reference
-HISTORY    (20051130A)  SM  -  REACTION SF1 changed after
-              Dr. T.Nakagawa and Dr. N.Otsuka comment
-ENDBIB               4
+ENDSUBENT           35
+SUBENT        21963006   20130402   20140113   20140110       2236
+BIB                  4         10
+REACTION  1((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
+           Data below 10 MeV
+          2((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
+           Data above 10 MeV
+SAMPLE     (92-U-238,ENR=1.)
+STATUS     (TABLE) Table V of JAERI-M 85-035, p220 (1985)
+          2(SPSDD,22282006) Revised data for En>10 MeV
+HISTORY    (20051130A) SM - REACTION SF1 changed after
+            Dr. T.Nakagawa and Dr. N.Otsuka comment
+           (20130402A) On. Data above 10 MeV superseded
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 4         15
-EN         EN-RSL-FW  DATA       ERR-T
-MEV        MEV        NO-DIM     NO-DIM
+DATA                 6         15
+EN         EN-RSL-FW  DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM
        1.52    1.3E-01  2.433E-01   9.50E-03
        1.74    7.0E-02  3.540E-01   1.43E-02
        2.04    1.0E-01  4.122E-01   1.62E-02
@@ -195,9 +236,9 @@ MEV        MEV        NO-DIM     NO-DIM
        6.02    9.0E-02  5.452E-01   1.13E-02
        6.47    5.0E-02  5.819E-01   1.22E-02
        6.87    1.3E-01  5.586E-01   1.27E-02
-  1.349E+01    8.0E-02  5.067E-01   1.24E-02
-  1.435E+01    1.0E-01  5.344E-01   1.24E-02
-  1.501E+01    1.0E-01  5.449E-01   1.24E-02
+  1.349E+01    8.0E-02                        5.067E-01   1.24E-02
+  1.435E+01    1.0E-01                        5.344E-01   1.24E-02
+  1.501E+01    1.0E-01                        5.449E-01   1.24E-02
 ENDDATA             17
-ENDSUBENT           26
+ENDSUBENT           32
 ENDENTRY             6

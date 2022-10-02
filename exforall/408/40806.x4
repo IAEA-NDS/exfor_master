@@ -1,84 +1,128 @@
-ENTRY            40806   20050827   20051111   20051111       4135
-SUBENT        40806001   20050827   20051111   20051111       4135
-BIB                  7         16
-AUTHOR     (N.N.FLEROV,V.M.TALYZIN)
-TITLE       The Average Number of Neutrons Nu Bar from the Fission
-            Of U-235 and U-238 by 14 MeV Neutrons.
+ENTRY            40806   20130803   20140110   20131224       4161
+SUBENT        40806001   20130803   20140110   20131224       4161
+BIB                 12         34
+AUTHOR     (N.N.Flerov,V.M.Talyzin)
+TITLE       NU, mean number of neutrons emitted in fission
+            of U-235 and U-238 by 14 MeV neutrons.
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,AE,5,(6),653,1958) Main Reference. Data Table is Giv
-           (J,AE,3,201,1957)     Experimental Details
-           (J,JNE/A,11,169,1959)  English Translation of Ae 5 653
+REFERENCE  (J,AE,5,(6),653,1958) Main Reference. Data Table.
+           (J,SJA,5,1593,1958) Engl.transl. of AE,5,(6),653,1958 .
+           (J,JNE/A,11,169,1960) Engl.translation of AE,5,653,1958
+REL-REF    (I,,N.N.Flerov+,J,AE,3,201,1957) Exp. details
+           (I,,N.N.Flerov+,J,SJA,3,1095,1957)
+           Engl.transl. of AE,3,201,1957.
 EXP-YEAR   (1954)
-METHOD     (SHELT)   Spherical Shell Transmission
+SAMPLE     Spherical samples of metallic U of external diameter
+           4cm, internal diameter 3.4 cm, aperture diameter 2.1cm,
+           were covered by Cd of 0.9mm thick and placed in
+           a thin-walled brass container.
+           Natural and enriched 90.1% U-235 samples.
+METHOD     (SHELT)   Spherical shell transmission
+            Ratio of detector sensitivities to 14 MeV neutrons and
+            to neutrons from nonelastic processes - 0.874+-0.030.
+DETECTOR   (BF3)  BF3 counter in graphite prism.
+CORRECTION Inelastic scattering and (n,3n) reactions were
+           neglected.
+ERR-ANALYS (DATA-ERR) Not explained.
 HISTORY    (19840904T) Converted from Entry 80263
-           (19970622A) *  * Corrected Numerical Error in San 004
-                          Corrected Institute Code  in San 001
-                          Energy Moved to San 001
-           (20000125U)  . . Corrected at Cjd
+           (19970622A) *  * Corrected numerical error in SAN 004
+                          Corrected Institute code  in SAN 001
+                          Energy moved to SAN 001
+           (20000125U)  . . Corrected at CJD
            (20000125U) Last checking has been done.
            (20050827U) Correction according to Memo CP-E/70
-ENDBIB              16
+           (20130803A) M.M. Engl.translations were added.
+           ABS -> NON in Subents 002,004 according to memo
+           CP-D/798 (N.Otsuka, NDS,IAEA) .
+           BIB information was updated.
+ENDBIB              34
 COMMON               1          3
 EN
 MEV
     1.4E+01
 ENDCOMMON            3
-ENDSUBENT           23
-SUBENT        40806002   20000125   20000427   20050926       0000
-BIB                  3          3
-REACTION   (92-U-235(N,ABS),,ETA)
-STATUS     (SCSRS)
-HISTORY    (19970622U) Neutron Energy Moved to San 001
-ENDBIB               3
-NOCOMMON
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-       3.71     2.E-01
+ENDSUBENT           41
+SUBENT        40806002   20130803   20140110   20131224       4161
+BIB                  7         11
+REACTION   (92-U-235(N,NON),,ETA)
+MONITOR    (92-U-235(N,NON),,SIG)
+MISC-COL   (MISC1) Coefficient taking into account increasing
+           number of neutrons due to fission induced by secondary
+           neutrons.Determined experimentally.
+           (MISC2) Coefficient taking into account fission induced
+           by slow neutrons. Determined experimentally.
+ASSUMED    (ASSUM,92-U-235(N,F),,SIG)  From:
+REL-REF    (R,,A.A.Berezin+,J,AE,5,659,1958)
+STATUS     (TABLE) Table of J,AE,5,(6),653,1958
+HISTORY    (19970622U) Neutron energy moved to Subent 001
+ENDBIB              11
+COMMON               4          3
+MONIT      MONIT-ERR  ASSUM      ASSUM-ERR
+B          B          B          B
+2.85        0.10       2.30      0.15
+ENDCOMMON            3
+DATA                 6          1
+DATA       DATA-ERR   MISC1      MISC1-ERR  MISC2      MISC2-ERR
+PRT/REAC   PRT/REAC   NO-DIM     NO-DIM     NO-DIM     NO-DIM
+       3.71     2.E-01 1.062     0.008       1.002      0.003
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        40806003   20000125   20000427   20050926       0000
-BIB                  4          4
+ENDSUBENT           23
+SUBENT        40806003   20130803   20140110   20131224       4161
+BIB                  4          5
 REACTION   (92-U-235(N,F),PR,NU)
-DETECTOR   (BF3)  Bf3 Counter in Graphite Prism.
-STATUS     (SCSRS)
-HISTORY    (19970622U) Neutron Energy Moved to San 001
-ENDBIB               4
-NOCOMMON
+ERR-ANALYS (ERR-1,2.,5.) Error due to neglected reactions -
+           inelastic and n,3n.
+STATUS     (TABLE) Table of J,AE,5,(6),653,1958
+HISTORY    (19970622U) Neutron energy moved to Subent 001
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
-PART/FIS   PART/FIS
+PRT/FIS    PRT/FIS
        4.13    2.4E-01
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40806004   20000125   20000427   20050926       0000
-BIB                  4          5
-REACTION   (92-U-238(N,ABS),,ETA)
-DETECTOR   Graphite Prism Detector.
-STATUS     (SCSRS)
-HISTORY    (19970622A) Corrected Numerical Error in U-238 Eta Valu
-                     Neutron Energy Moved to San 001
-ENDBIB               5
-NOCOMMON
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
-       2.99    1.5E-01
-ENDDATA              3
 ENDSUBENT           13
-SUBENT        40806005   20000125   20000427   20050926       0000
-BIB                  4          5
+SUBENT        40806004   20130803   20140110   20131224       4161
+BIB                  7         13
+REACTION   (92-U-238(N,NON),,ETA)
+MONITOR    (92-U-238(N,NON),,SIG)
+MISC-COL   (MISC1) Coefficient taking into account increasing
+           number of neutrons due to fission induced by secondary
+           neutrons.Computed under assumption that fission c-s is
+           0.27+-0.03 b.
+           (MISC2) Coefficient taking into account fission induced
+           by slow neutrons was 1.
+ASSUMED    (ASSUM,92-U-238(N,F),,SIG) From:
+REL-REF    (R,,N.N.Flerov+,J,AE,5,657,1958)
+STATUS     (TABLE) Table of J,AE,5,(6),653,1958
+HISTORY    (19970622A)Corrected numerical error in U-238 ETA value
+                     Neutron energy moved to Subent 001
+ENDBIB              13
+COMMON               4          3
+ASSUM      ASSUM-ERR  MONIT      MONIT-ERR
+B          B          B          B
+1.13       0.05       2.85        0.10
+ENDCOMMON            3
+DATA                 5          1
+DATA       DATA-ERR   MISC1      MISC1-ERR  MISC2
+PRT/REAC   PRT/REAC   NO-DIM     NO-DIM     NO-DIM
+       2.99    1.5E-01  1.011     0.001      1.
+ENDDATA              3
+ENDSUBENT           25
+SUBENT        40806005   20130803   20140110   20131224       4161
+BIB                  4          6
 REACTION   (92-U-238(N,F),PR,NU)
-DETECTOR   Graphite Prism Detector.
-STATUS     (SCSRS)
-           (COREL,41254002)
-HISTORY    (19970622U) Neutron Energy Moved to San 001
-ENDBIB               5
-NOCOMMON
+ERR-ANALYS (ERR-1,2.,5.) Error due to neglected reactions -
+           inelastic and n,3n.
+STATUS     (TABLE) Table of J,AE,5,(6),653,1958
+           (COREL,41254002) Different measurement
+HISTORY    (19970622U) Neutron energy moved to Subent 001
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
-PART/FIS   PART/FIS
+PRT/FIS    PRT/FIS
         4.5    3.2E-01
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           14
 ENDENTRY             5

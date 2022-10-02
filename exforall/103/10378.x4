@@ -1,6 +1,6 @@
-ENTRY            10378   20021206   20030219   20050926       0000
-SUBENT        10378001   20021206   20030219   20050926       0000
-BIB                 14         49
+ENTRY            10378   20131029   20140110   20131216       1394
+SUBENT        10378001   20131029   20140110   20131216       1394
+BIB                 14         52
 INSTITUTE  (1USAANL)
 REFERENCE  (J,ZP,268,359,197407)
 AUTHOR     (W.P.Poenitz)
@@ -40,19 +40,26 @@ CORRECTION Corrected for:
            . averaging caused by energy spread of neutron beam,
              for values measured at peak of resonance, (<1.1%).
 ERR-ANALYS (DATA-ERR) Main contributions to error:
-           . statistical and count rate determination (1.5-4.2%),
-           . corrections (0.5-3.0%),
-           . amount of 6Li in glass (1.5%),
-           . neutron detector calibration and efficiencies (2.0%).
+           (ERR-S,1.5,4.2) statistical and count rate
+             determination (1.5-4.2%),
+           (ERR-1,0.5,3.0) corrections (0.5-3.0%),
+           (ERR-2) amount of 6Li in glass (1.5%),
+           (ERR-3) neutron detector calibration and efficiencies
+             (2.0%).
 STATUS     (APRVD) Approved by author
             Data taken from tables in reference.
 HISTORY    (19740510C)
            (19750902A) REFERENCE changed
            (19830425A) Converted to REACTION formalism
            (20021206A) Converted to new date formats, lower case.
-ENDBIB              49
-NOCOMMON             0          0
-ENDSUBENT           52
+           (20131027A) OS. ERR-ANALYS updated, correction in sub.3
+ENDBIB              52
+COMMON               2          3
+ERR-2      ERR-3
+PER-CENT   PER-CENT
+  1.5        2.0
+ENDCOMMON            3
+ENDSUBENT           59
 SUBENT        10378002   20021206   20030219   20050926       0000
 BIB                  2          2
 REACTION   (3-LI-6(N,T)2-HE-4,,SIG)
@@ -131,15 +138,17 @@ KEV        KEV        B          B
      1500.        17.       0.284      0.014
 ENDDATA             69
 ENDSUBENT           76
-SUBENT        10378003   20021206   20030219   20050926       0000
-BIB                  2          6
+SUBENT        10378003   20131029   20140110   20131216       1394
+BIB                  3          8
 REACTION  1(3-LI-6(N,0),,EN)
           2(3-LI-6(N,0),,J)
           3(3-LI-6(N,0),,L)
           4(3-LI-6(N,EL),,WID/RED,,RMT)
-          5(3-LI-6(N,A),,WID/RED,,RMT)
+          5(3-LI-6(N,T),,WID/RED,,RMT)
+STATUS     (TABLE) Table 2 of Z.Phys.268(1974)359
 HISTORY    (19781103C)
-ENDBIB               6
+           (20131027A) SF3 in REACTION 5 changed from A to T
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          4
 DATA      1DATA      2DATA      3DATA      4DATA      5
@@ -149,5 +158,5 @@ KEV        NO-DIM     NO-DIM     KEV        KEV
  3268.      1.5        1.         1800.       220.
  3548.      1.5        0.         1700.       276.
 ENDDATA              6
-ENDSUBENT           17
+ENDSUBENT           19
 ENDENTRY             3
