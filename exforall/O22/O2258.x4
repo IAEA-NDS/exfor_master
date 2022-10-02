@@ -1,6 +1,6 @@
-ENTRY            O2258   20170408   20170609   20170603       O061
-SUBENT        O2258001   20170408   20170609   20170603       O061
-BIB                 12         34
+ENTRY            O2258   20170826   20180130   20180128       O063
+SUBENT        O2258001   20170826   20180130   20180128       O063
+BIB                 13         41
 TITLE      Cross section measurements of deuteron induced nuclear
            reactions on natural tungsten up to 34 MeV.
 AUTHOR     (C.Duchemin, A.Guertin, F.Haddad, N.Michel, V.Metivier)
@@ -27,6 +27,11 @@ METHOD     (STTA,BCINT,EXTB)
             (for more than 48h).
 MONITOR    (22-TI-0(D,X)23-V-48,,SIG)
 DECAY-MON  (23-V-48,,DG,944.13,,DG,983.525,,DG,1312.106)
+COMMENT    Charlotte Duchemin (2017-05-16): All gamma lines in
+           Table 3 of the article have been used for the
+           quantification except for the case of 181Re for which
+           the 365 keV gamma line has been used for quantification
+           and the two others for consistency check.
 ERR-ANALYS (ERR-1,5.,40.) Error in the measured activity in W
            target.
            (ERR-2,,2.) Error in the measured activity for V-48
@@ -35,13 +40,15 @@ ERR-ANALYS (ERR-1,5.,40.) Error in the measured activity in W
 HISTORY    (20150323C) SB
            (20170406U) SD: Comment from author added to Subent 006
            Free text corrected in ERR-ANNALYS in Subents 001-008.
-ENDBIB              34
+           (20170826U) SD: COMMENT from the author was added.
+           Correction of DECAY-DATA in Subent 007.
+ENDBIB              41
 COMMON               2          3
 ERR-3      MONIT-ERR
 PER-CENT   PER-CENT
   1.         12.
 ENDCOMMON            3
-ENDSUBENT           41
+ENDSUBENT           48
 SUBENT        O2258002   20170408   20170609   20170603       O061
 BIB                  5         11
 REACTION   (74-W-0(D,X)75-RE-186-G,,SIG)
@@ -241,11 +248,10 @@ MEV        MEV        MB         MB
 33.36      0.30       170.04     19.84
 ENDDATA             21
 ENDSUBENT           40
-SUBENT        O2258007   20170408   20170609   20170603       O061
-BIB                  5         10
+SUBENT        O2258007   20170826   20180130   20180128       O063
+BIB                  6         11
 REACTION   (74-W-0(D,X)75-RE-181,,SIG)
-DECAY-DATA (75-RE-181,19.9HR,DG,365.570,0.56,DG,639.30,0.064,
-                             DG,953.420,0.036)
+DECAY-DATA (75-RE-181,19.9HR,DG,365.570,0.56)
 ERR-ANALYS (ERR-T) total uncertainty
            (EN-ERR) Energy uncertainty calculated using the SRIM
            software(see REL-REF) increases up to +-0.7 MeV due to
@@ -253,7 +259,9 @@ ERR-ANALYS (ERR-T) total uncertainty
 REL-REF    (M,,J.F.Ziegler+,J,NIM/B,268,1818,2010) - SRIM - the
              stopping and range of ions in matter.
 STATUS     (TABLE).Table 5 of J,ARI,97,52,2015
-ENDBIB              10
+HISTORY    (20170826U) SD: gamma lines 639. and 953. keV were
+           deleted  from DECAY-DATA.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         18
 EN         EN-ERR     DATA       ERR-T
@@ -277,7 +285,7 @@ MEV        MEV        MB         MB
 32.13      0.35       220.30     69.32
 33.36      0.30       256.14     72.95
 ENDDATA             20
-ENDSUBENT           35
+ENDSUBENT           36
 SUBENT        O2258008   20170408   20170609   20170603       O061
 BIB                  5         11
 REACTION   (74-W-0(D,X)74-W-187,,SIG)
