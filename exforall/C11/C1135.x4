@@ -1,34 +1,50 @@
-ENTRY            C1135   20050113              20050926       0000
-SUBENT        C1135001   20050113              20050926       0000
-BIB                 10         12
-INSTITUTE  (1USANCA,1USATNL,1USAORL)
-REFERENCE  (J,PR/C,70,045802,2004)
-AUTHOR     (S.E.Hale,A.E.Champagne,C.Iliadis,V.Y.Hansper,
-            D.C.Powell,J.C.Blackmon)
+ENTRY            C1135   20131021   20140228   20140223       C136
+SUBENT        C1135001   20131021   20140228   20140223       C136
+BIB                 11         28
 TITLE      Investigation of the 23Na(p,gamma)24Mg and
-            23Na(p,gamma)20Ne reactions via (3He,d) spectroscopy
+           23Na(p,alpha)20Ne reactions via (3He,d) spectroscopy
+AUTHOR     (S.E.Hale,A.E.Champagne,C.Iliadis,V.Y.Hansper,
+           D.C.Powell,J.C.Blackmon)
+REFERENCE  (J,PR/C,70,045802,2004)
+           #doi:10.1103/PhysRevC.70.045802
+INSTITUTE  (1USANCA,1USATNL,1USAORL)
 FACILITY   (VDGT,1USATNL)
-INC-SPECT  20 MeV 3He beam
-DETECTOR   (TELES) Silicon telescope
-METHOD     (EDE)
-SAMPLE     Two targets of NaBr, 49 and 102 microg/cm2
-HISTORY    (20050113C) DR
-ENDBIB              12
-COMMON               1          3
-EN
-MEV
-20.
-ENDCOMMON            3
-ENDSUBENT           19
-SUBENT        C1135002   20050113              20050926       0000
+INC-SOURCE 20-MeV 3He2+ beam was provided by the
+           Triangle Universities Nuclear Laboratory FN tandem
+           accelerator, with typical beam currents between 100
+           and 150 pnA.
+SAMPLE     Two targets of NaBr, 49 and 102 microg/cm2. Third
+           target consisting  of 16 microg/cm2 metallic sodium.
+PART-DET   (D,HE3)
+DETECTOR   (SPEC,TELES) The outgoing deuterons and 3He were
+           momentum-analyzed with the TUNL Enge Split-Pole
+           Spectrometer and detected using a 42-cm long
+           position-sensitive avalanche counter. The target was
+           monitored using a DE-E silicon telescope, mounted in
+           the target chamber at 44.2 degrees.
+METHOD     (EDE)  The solid angle of the spectrometer was
+           fixed at 2.0 msr in order to reduce the widths of the
+           contaminant lines arising from carbon, nitrogen and
+           oxygen in the target.
+HISTORY    (20050113C) Dr
+           (20131021A) BP: Updated information, added doi and
+           reaction rates and resonance strengths.
+ENDBIB              28
+NOCOMMON             0          0
+ENDSUBENT           31
+SUBENT        C1135002   20131021   20140228   20140223       C136
 BIB                  3          3
 REACTION   (11-NA-23(HE3,EL)11-NA-23,,DA,,RTH)
 ERR-ANALYS (DATA-ERR) No information given
-STATUS     Data taken from Fig. 4 of the journal article
+STATUS     (CURVE) Fig.4, page 045802-3.
 ENDBIB               3
-NOCOMMON             0          0
+COMMON               1          3
+EN
+MEV
+20.0
+ENDCOMMON            3
 DATA                 3          7
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA       DATA-ERR
 ADEG       NO-DIM     NO-DIM
   1.734E+01  7.319E-01  3.699E-02
   2.288E+01  4.113E-01  3.059E-02
@@ -38,14 +54,18 @@ ADEG       NO-DIM     NO-DIM
   4.483E+01  1.589E-01  1.335E-02
   5.016E+01  1.325E-01  8.582E-03
 ENDDATA              9
-ENDSUBENT           17
-SUBENT        C1135003   20050113              20050926       0000
+ENDSUBENT           21
+SUBENT        C1135003   20131021   20140228   20140223       C136
 BIB                  3          3
 REACTION   (11-NA-23(HE3,D)12-MG-24,PAR,DA)
 ERR-ANALYS No information given
-STATUS     Data taken from Figs. 5 and 6 of the journal article
+STATUS     (CURVE) Fig. 5,6; pages 045802-4, 045802-5,
 ENDBIB               3
-NOCOMMON             0          0
+COMMON               1          3
+EN
+MEV
+20.0
+ENDCOMMON            3
 DATA                 5        198
 E-EXC      E-EXC      ANG-CM     DATA-CM    DATA-MX-CM
 MEV        MEV        ADEG       MB/SR      MB/SR
@@ -248,5 +268,182 @@ MEV        MEV        ADEG       MB/SR      MB/SR
 13.090                  2.562E+01  3.712E-01
 13.090                  2.825E+01  3.087E-01
 ENDDATA            200
-ENDSUBENT          208
-ENDENTRY             3
+ENDSUBENT          212
+SUBENT        C1135004   20131021   20140228   20140223       C136
+BIB                  4         14
+REACTION   (11-NA-23(P,G)12-MG-24,,SGV)
+MISC-COL   (MISC1) Low limit for reaction rates.
+           (MISC2) High limit for reaction rates.
+STATUS     (TABLE) Table VII.
+ANALYSIS   The thermonuclear reaction rate is Na <sv>,
+           where Na is Avagadros number and <sv> is the
+           thermally-averaged product of total cross section and
+           velocity (in the center of mass). The contribution
+           from an isolated, narrow resonance at Ec.m. depends
+           on the resonance strength. For situations where the
+           tails of resonances are important, or if the
+           resonances are broad, <sv> must be evaluated
+           numerically. The indirect determination by the
+            (3He,d) reaction.
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 4         40
+KT         DATA       MISC1      MISC2
+K9         CM3/S/MOL  CM3/S/MOL  CM3/S/MOL
+       0.01   1.35E-32   9.03E-33   2.02E-32
+      0.015   2.01E-27   1.34E-27   2.99E-27
+       0.02   3.65E-24   2.45E-24   5.45E-24
+      0.025   7.55E-22   5.06E-22   1.13E-21
+       0.03   4.39E-20   2.94E-20   6.46E-20
+       0.04   1.64E-17   1.02E-17   1.69E-15
+       0.05   3.63E-15   6.80E-16   3.32E-12
+       0.06   4.40E-13   1.67E-14   5.04E-10
+       0.07   1.53E-11   2.34E-13   1.76E-08
+       0.08   2.20E-10   4.36E-12   2.48E-07
+       0.09   1.80E-09   1.27E-10   1.90E-06
+        0.1   1.12E-08   2.57E-09   9.52E-06
+       0.11   6.71E-08   3.66E-08   3.52E-05
+       0.12   4.13E-07   2.91E-07   1.03E-04
+       0.13   2.36E-06   1.90E-06   2.56E-04
+       0.14   1.16E-05   9.76E-06   5.55E-04
+       0.15   4.77E-05   4.09E-05   1.09E-03
+       0.16   1.68E-04   1.44E-04   1.99E-03
+       0.18   1.40E-03   1.20E-03   5.92E-03
+        0.2   7.67E-03   6.52E-03   1.71E-02
+       0.25   1.61E-01   1.35E-01   2.14E-01
+        0.3   1.18E+00   9.89E-01   1.46E+00
+       0.35   4.73E+00   3.98E+00   5.76E+00
+        0.4   1.31E+01   1.10E+01   1.59E+01
+       0.45   2.86E+01   2.40E+01   3.42E+01
+        0.5   5.25E+01   4.40E+01   6.27E+01
+        0.6   1.28E+02   1.07E+02   1.52E+02
+        0.7   2.38E+02   2.01E+02   2.83E+02
+        0.8   3.79E+02   3.22E+02   4.48E+02
+        0.9   5.49E+02   4.70E+02   6.41E+02
+         1.   7.46E+02   6.48E+02   8.62E+02
+        1.3   1.51E+03   1.36E+03   1.69E+03
+        1.5   2.17E+03   1.98E+03   2.39E+03
+        1.8   3.39E+03   3.14E+03   3.65E+03
+         2.   4.35E+03   4.07E+03   4.66E+03
+        2.5   7.13E+03   6.71E+03   7.58E+03
+         3.   1.02E+04   9.65E+03   1.09E+04
+        3.5   1.34E+04   1.26E+04   1.42E+04
+         4.   1.63E+04   1.53E+04   1.74E+04
+         5.   2.11E+04   1.97E+04   2.25E+04
+ENDDATA             42
+ENDSUBENT           61
+SUBENT        C1135005   20131021   20140228   20140223       C136
+BIB                  4         14
+REACTION   (11-NA-23(P,A)10-NE-20,,SGV)
+MISC-COL   (MISC1) Low limit for reaction rates.
+           (MISC2) High limit for reaction rates.
+STATUS     (TABLE) Table VIII.
+ANALYSIS   The thermonuclear reaction rate is Na <sv>,
+           where Na is Avagadros number and <sv> is the
+           thermally-averaged product of total cross section and
+           velocity (in the center of mass). The contribution
+           from an isolated, narrow resonance at Ec.m. depends
+           on the resonance strength. For situations where the
+           tails of resonances are important, or if the
+           resonances are broad, <sv> must be evaluated
+           numerically. The indirect determination by the
+            (3He,d) reaction.
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 4         40
+KT         DATA       MISC1      MISC2
+K9         CM3/S/MOL  CM3/S/MOL  CM3/S/MOL
+       0.01   2.59E-30   1.62E-30   5.49E-30
+      0.015   3.67E-25   2.29E-25   1.75E-24
+       0.02   6.51E-22   4.07E-22   1.99E-21
+      0.025   1.33E-19   8.31E-20   2.62E-19
+       0.03   7.78E-18   4.86E-18   1.31E-17
+       0.04   2.99E-15   1.87E-15   4.94E-15
+       0.05   2.33E-13   1.46E-13   6.71E-13
+       0.06   8.46E-12   5.44E-12   5.99E-11
+       0.07   2.40E-10   1.68E-10   2.02E-09
+       0.08   4.60E-09   3.45E-09   3.00E-08
+       0.09   5.22E-08   4.06E-08   2.51E-07
+        0.1   3.79E-07   3.01E-07   1.41E-06
+       0.11   1.95E-06   1.57E-06   5.86E-06
+       0.12   7.51E-06   6.22E-06   1.92E-05
+       0.13   2.53E-05   2.13E-05   5.52E-05
+       0.14   7.49E-05   6.43E-05   1.41E-04
+       0.15   2.02E-04   1.77E-04   3.35E-04
+       0.16   5.09E-04   4.53E-04   7.55E-04
+       0.18   2.70E-03   2.46E-03   3.44E-03
+        0.2   1.14E-02   1.04E-02   1.35E-02
+       0.25   1.79E-01   1.63E-01   1.99E-01
+        0.3   1.18E+00   1.08E+00   1.30E+00
+       0.35   4.66E+00   4.30E+00   5.06E+00
+        0.4   1.37E+01   1.28E+01   1.48E+01
+       0.45   3.46E+01   3.26E+01   3.67E+01
+        0.5   7.93E+01   7.52E+01   8.37E+01
+        0.6   3.35E+02   3.17E+02   3.56E+02
+        0.7   1.07E+03   1.00E+03   1.14E+03
+        0.8   2.68E+03   2.51E+03   2.86E+03
+        0.9   5.62E+03   5.26E+03   6.01E+03
+         1.   1.04E+04   9.73E+03   1.12E+04
+        1.3   4.15E+04   3.92E+04   4.40E+04
+        1.5   8.29E+04   7.84E+04   8.76E+04
+        1.8   1.88E+05   1.77E+05   1.97E+05
+         2.   2.90E+05   2.75E+05   3.06E+05
+        2.5   6.60E+05   6.25E+05   6.97E+05
+         3.   1.17E+06   1.11E+06   1.23E+06
+        3.5   1.78E+06   1.68E+06   1.88E+06
+         4.   2.44E+06   2.30E+06   2.59E+06
+         5.   3.79E+06   3.56E+06   4.05E+06
+ENDDATA             42
+ENDSUBENT           61
+SUBENT        C1135006   20131022   20140228   20140223       C136
+BIB                  2          3
+REACTION  1(11-NA-23(P,0),,EN)
+          2(11-NA-23(P,G),,WID/STR,,,RECOM)
+STATUS     (TABLE) Table V.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 5          4
+DATA-CM   1SPIN J     PARITY     DATA      2DATA-MAX  2
+KEV        NO-DIM     NO-DIM     EV         EV
+        5.3         4.         1.    1.6E-56
+       36.9         0.         1.               1.3E-24
+      137.8         2.                           1.5E-8
+      169.5         1.        -1.     1.2E-9
+ENDDATA              6
+ENDSUBENT           14
+SUBENT        C1135007   20131022   20140228   20140223       C136
+BIB                  3          4
+REACTION  1(11-NA-23(P,0),,EN)
+          2(11-NA-23(P,A),,WID/STR,,,RECOM)
+STATUS     (TABLE) Table V and VI.
+ERR-ANALYS2(DATA-ERR) No information is given.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 6         22
+DATA-CM   1SPIN J     PARITY     DATA      2DATA-ERR  2DATA-MAX  2
+KEV        NO-DIM     NO-DIM     EV         EV         EV
+        5.3         4.         1.    1.9E-55
+       36.9         0.         1.                          3.3E-20
+      137.8         2.                                      2.8E-9
+      169.5         1.        -1.     2.3E-5     0.4E-5
+      217.5                           5.4E-5     1.3E-5
+      240.6                              0.1
+      273.9                            0.035      0.004
+      295.3                           4.4E-3
+      324.4                            0.071      0.002
+      358.6                           4.1E-3     1.0E-3
+      426.3                           5.7E-3     1.4E-3
+      490.6                            0.011
+      566.8                             38.0         3.
+      648.0                            0.041
+      692.6                             0.25
+      707.9                             0.12
+      712.6                              7.4        1.3
+      761.6                              3.3        0.5
+      778.9                              1.8        0.3
+      809.5                             0.51       0.10
+      880.4                             63.0       26.0
+      968.2                              46.        14.
+ENDDATA             24
+ENDSUBENT           33
+ENDENTRY             7

@@ -1,6 +1,6 @@
-ENTRY            41566   20121019   20130207   20130114       4158
-SUBENT        41566001   20121019   20130207   20130114       4158
-BIB                 10         26
+ENTRY            41566   20131130   20140228   20140214       4162
+SUBENT        41566001   20131130   20140228   20140214       4162
+BIB                 12         44
 TITLE       Total delayed neutron yield from 232Th fission by
            3.2-4.9 MeV neutrons.
 AUTHOR     (V.M.Piksaikin, A.S.Egorov, K.V.Mitrofanov,
@@ -9,8 +9,11 @@ INSTITUTE  (4RUSFEI)   V.M.Piksaikin alias V.M.Piksaykin .
 REFERENCE  (J,AE,112,(6),350,2012)
            (J,AE/T,112,(6),428,2012) Engl.translation of J,AE.
            #doi:10.1007/s10512-012-9579-5
-FACILITY   (VDG,4RUSFEI)    Cascade generator KG-2.5
+           (R,INDC(NDS)-0646,2013) In English.
+FACILITY   (VDG,4RUSFEI)    Cascade generator CG-2.5
+           Pneumatic sample transfer system.
 INC-SOURCE (D-D)
+INC-SPECT  Mono-energetic neutrons.
 DETECTOR   (FISCH)  Np-237 fission chamber - for neutron beam
            monitoring.
            (D4PI)  4pi detector for delayed neutrons registration-
@@ -18,25 +21,41 @@ DETECTOR   (FISCH)  Np-237 fission chamber - for neutron beam
            SNM-11 in polyethylene. Protected by boron carbide,
            borated polyethylene, cadmium .
             Neutron registration dead time 2.3+- 0.2 microsec.
-            Standard Am-Li source was used to monitor stability of
-            detector .
+            Standard Am(Li) and Pu(Li) sources were used to
+            monitor stability of detector .
             Energy dependence of neutron detector was calculated
            by Monte-Carlo method and absolute normalization by
            data of detector efficiency measured via V-51(p,n)Cr-51
            reaction and Cf-252 spontaneous fission source.
-METHOD     (ACTIV)
+METHOD     (ACTIV) The irradiation time intervals were 15,180 and
+           300 s. Depending on background conditions the delayed
+           neutron counting intervals were 424.5 and 724.5 s with
+           the time channel sequence after the end of sample
+           irradiation: 0.01s (150 channels), 0.02s (150 channels)
+           , 0.1 s (200 channels), 1 s (200 channels) and 10 s (30
+            or 50 channels).
+           The times of sample transportation from the irradiation
+           position to the neutron detector were from 150 to 200ms
+           depending on gas pressure and the weight of samples.
 SAMPLE      No information.
+CORRECTION For backgrounds:
+           Counting interval, s             724.5      224.5
+           Relative background, %           1.10-1.84  0.35-0.58
+           Intensity of background,n/s               0.16
 HISTORY    (20121018C) Compiled at CJD. M.M.
-ENDBIB              26
+           (20131130A) Ref. INDC(NDS)-0646 was added.
+           Subents 003-004 were added.
+ENDBIB              44
 NOCOMMON             0          0
-ENDSUBENT           29
-SUBENT        41566002   20121019   20130207   20130114       4158
-BIB                  4          4
+ENDSUBENT           47
+SUBENT        41566002   20131130   20140228   20140214       4162
+BIB                  4          5
 REACTION   (90-TH-232(N,F),DL,NU)
 SAMPLE      No information.
 ERR-ANALYS (DATA-ERR)  Errors are not specified
 STATUS     (TABLE) Table of J,AE,112,(6),350,2012.
-ENDBIB               4
+            Table on page 25 of R,INDC(NDS)-0646,2013
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          6
 EN         DATA       DATA-ERR
@@ -48,5 +67,151 @@ MEV        PRT/FIS    PRT/FIS
 4.7        0.0543     0.0031
 4.9        0.0568     0.0032
 ENDDATA              8
-ENDSUBENT           17
-ENDENTRY             2
+ENDSUBENT           18
+SUBENT        41566003   20131130   20140228   20140214       4162
+BIB                  5         15
+REACTION   ((90-TH-232(N,F),DL/GRP,NU)/(90-TH-232(N,F),DL,NU))
+           Relative abundances of delayed neutrons in 6-groups
+           model presentation.
+SAMPLE      No information.
+ADD-RES     Average half-life of delayed neutron precursors:
+                EN, MeV     HL, sec
+                3.2         6.66+-0.12
+                3.8         6.78+-0.06
+                4.2         6.73+-0.06
+                4.5         6.57+-0.08
+                4.7         6.63+-0.07
+                4.9         6.65+-0.09
+                5.1         6.51+-0.11
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+STATUS     (TABLE) Table on page 14 of R,INDC(NDS)-0646,2013 .
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 6         42
+EN         EN-ERR     HL         HL-ERR     DATA       DATA-ERR
+MEV        MEV        SEC        SEC        NO-DIM     NO-DIM
+3.2        0.2         55.24     0.64       0.0309     0.0011
+3.2        0.2         21.05     0.34       0.145      0.005
+3.2        0.2         5.51      0.16       0.147      0.007
+3.2        0.2         2.161     0.053      0.459      0.011
+3.2        0.2         0.547     0.027      0.178      0.009
+3.2        0.2         0.2155    0.0108     0.0399     0.0020
+3.8        0.1         55.19     0.27       0.0310     0.0005
+3.8        0.1         20.63     0.14       0.149      0.002
+3.8        0.1         5.81      0.07       0.151      0.003
+3.8        0.1         2.211     0.022      0.456      0.005
+3.8        0.1         0.592     0.011      0.174      0.003
+3.8        0.1         0.2143    0.0043     0.0393     0.0008
+4.2        0.2         54.22     0.27       0.0307     0.0005
+4.2        0.2         20.86     0.15       0.145      0.002
+4.2        0.2         5.952     0.068      0.153      0.003
+4.2        0.2         2.218     0.022      0.457      0.005
+4.2        0.2         0.598     0.011      0.175      0.003
+4.2        0.2         0.215     0.004      0.0399     0.0008
+4.5        0.2         53.77     0.34       0.0323     0.0006
+4.5        0.2         20.29     0.19       0.144      0.003
+4.5        0.2         5.539     0.093      0.149      0.003
+4.5        0.2         2.085     0.030      0.466      0.006
+4.5        0.2         0.582     0.014      0.167      0.004
+4.5        0.2         0.213     0.005      0.0409     0.0010
+4.7        0.2         54.29     0.30       0.0318     0.0005
+4.7        0.2         20.46     0.16       0.145      0.003
+4.7        0.2         5.53      0.07       0.157      0.003
+4.7        0.2         2.07      0.02       0.460      0.005
+4.7        0.2         0.58308   0.01231    0.163      0.004
+4.7        0.2         0.213     0.005      0.0418     0.0009
+4.9        0.2         54.07     0.38       0.0327     0.0007
+4.9        0.2         19.95     0.19       0.149      0.003
+4.9        0.2         5.49      0.09       0.147      0.004
+4.9        0.2         2.09      0.03       0.471      0.007
+4.9        0.2         0.566     0.016      0.158      0.005
+4.9        0.2         0.213     0.006      0.0411     0.0012
+5.1        0.2         53.86     0.53       0.0319     0.0011
+5.1        0.2         20.26     0.31       0.141      0.005
+5.1        0.2         5.62      0.13       0.159      0.007
+5.1        0.2         2.10      0.05       0.446      0.009
+5.1        0.2         0.559     0.027      0.181      0.008
+5.1        0.2         0.214     0.011      0.0413     0.0021
+ENDDATA             44
+ENDSUBENT           64
+SUBENT        41566004   20131130   20140228   20140214       4162
+BIB                  5         15
+REACTION   ((90-TH-232(N,F),DL/GRP,NU)/(90-TH-232(N,F),DL,NU))
+           Relative abundances of delayed neutrons in 8-groups
+           model presentation.
+SAMPLE      No information.
+ADD-RES     Average half-life of delayed neutron precursors:
+                EN, MeV     HL, sec
+                3.2         6.65+-0.12
+                3.8         6.77+-0.12
+                4.2         6.72+-0.12
+                4.5         6.58+-0.12
+                4.7         6.64+-0.12
+                4.9         6.66+-0.12
+                5.1         6.44+-0.14
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+STATUS     (TABLE) Table IV of R,INDC(NDS)-0646,2013 Appendix.
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 5         56
+EN         EN-ERR     HL         DATA       DATA-ERR
+MEV        MEV        SEC        NO-DIM     NO-DIM
+3.2        0.2         55.6        0.029    0.001
+3.2        0.2         24.5        0.078    0.003
+3.2        0.2         16.3        0.081    0.003
+3.2        0.2         5.21        0.121    0.005
+3.2        0.2         2.37        0.406    0.010
+3.2        0.2         1.04        0.133    0.006
+3.2        0.2         0.424       0.115    0.005
+3.2        0.2         0.195       0.036    0.002
+3.8        0.1         55.6        0.029    0.001
+3.8        0.1         24.5        0.713    0.003
+3.8        0.1         16.3        0.095    0.003
+3.8        0.1         5.21        0.136    0.006
+3.8        0.1         2.37        0.394    0.010
+3.8        0.1         1.04        0.142    0.007
+3.8        0.1         0.424       0.099    0.005
+3.8        0.1         0.195       0.033    0.001
+4.2        0.2         55.6        0.027    0.001
+4.2        0.2         24.5        0.079    0.003
+4.2        0.2         16.3        0.085    0.003
+4.2        0.2         5.21        0.148    0.006
+4.2        0.2         2.37        0.382    0.010
+4.2        0.2         1.04        0.150    0.007
+4.2        0.2         0.424       0.097    0.004
+4.2        0.2         0.195       0.032    0.001
+4.5        0.2         55.6        0.028    0.001
+4.5        0.2         24.5        0.073    0.003
+4.5        0.2         16.3        0.087    0.003
+4.5        0.2         5.21        0.123    0.005
+4.5        0.2         2.37        0.390    0.010
+4.5        0.2         1.04        0.177    0.008
+4.5        0.2         0.424       0.090    0.004
+4.5        0.2         0.195       0.031    0.001
+4.7        0.2         55.6        0.029    0.001
+4.7        0.2         24.5        0.073    0.003
+4.7        0.2         16.3        0.089    0.003
+4.7        0.2         5.21        0.128    0.005
+4.7        0.2         2.37        0.384    0.010
+4.7        0.2         1.04        0.178    0.008
+4.7        0.2         0.424       0.087    0.004
+4.7        0.2         0.195       0.031    0.001
+4.9        0.2         55.6        0.029    0.001
+4.9        0.2         24.5        0.068    0.003
+4.9        0.2         16.3        0.098    0.003
+4.9        0.2         5.21        0.118    0.005
+4.9        0.2         2.37        0.404    0.010
+4.9        0.2         1.04        0.161    0.007
+4.9        0.2         0.424       0.089    0.004
+4.9        0.2         0.195       0.033    0.001
+5.1        0.2         55.6        0.028        0.001
+5.1        0.2         24.5        0.070        0.002
+5.1        0.2         16.3        0.084        0.002
+5.1        0.2         5.21        0.143        0.003
+5.1        0.2         2.37        0.354        0.005
+5.1        0.2         1.04        0.169        0.004
+5.1        0.2         0.424       0.115        0.003
+5.1        0.2         0.195       0.038        0.001
+ENDDATA             58
+ENDSUBENT           78
+ENDENTRY             4

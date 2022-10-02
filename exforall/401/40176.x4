@@ -1,44 +1,57 @@
-ENTRY            40176   20021230   20030502   20050926       0000
-SUBENT        40176001   20021230   20030502   20050926       0000
-BIB                 12         21
-TITLE       Prompt Neutrons and Kinetic Energy of Fission
-            Fragments in Spontaneous Fission of Curium-244
-AUTHOR     (I.D.ALKHAZOV, S.S.KOVALENKO, O.I.KOSTOCHKIN,
-            L.Z.MALKIN, K.A.PETRZHAK, V.I.SHPAKOV)
+ENTRY            40176   20131020   20140228   20140214       4162
+SUBENT        40176001   20131020   20140228   20140214       4162
+BIB                 11         28
+TITLE       Prompt neutrons and kinetic energy of fragments from
+           spontaneous fission of curium-244
+AUTHOR     (I.D.Alkhazov, S.S.Kovalenko, O.I.Kostochkin,
+            L.Z.Malkin, K.A.Petrzhak, V.I.Shpakov)
 INSTITUTE  (4RUSRI)
-REFERENCE  (J,YF,15,(1),22,197201)  Graphs are Given
-           (P,YFI-12,91,197206)     Data are Given
-           (J,YF,11,501,1970)       Experimental Details
-MONITOR     No Information
-INC-SOURCE (CM244)
+REFERENCE  (J,YF,15,(1),22,197201)  Graphs are given
+           (J,SNP,15,12,1972) Engl.translation of J,YF,15,(1),22 .
+           (P,YFI-12,91,197206)     Data are given
+           (J,YF,11,501,1970)       Experimental details
+           (J,SNP,11,281,1970) Engl.translation of J,YF,11,501 .
+MONITOR     No information
 PART-DET   (N)
            (FF)
-DETECTOR   (SCIN)   Liquid Scintillation Detector
-           (SIBAR)  Surface-Barrier Semiconductor Detectors
+DETECTOR   (SCIN)  Liquid scintillation detector for neutrons.
+           Efficiency 0.571+-0.011 was defined by NU of Cm-244 .
+           (SIBAR) Surface-barrier semiconductor detectors for
+           fission fragments energy.
 ASSUMED    (ASSUM,96-CM-244(0,F),,NU)
-CORRECTION  Correction for Neutron Detector Background = 0.10
-ERR-ANALYS            Not Specified
-HISTORY    (19790228C)  COMPILED AT THE CENTRE - CJD
-           (20021230A) Restored from old Data Base. Status added.
-                       Date is Corrected. Units corrected
+CORRECTION  Correction for neutron detector background = 0.10
+ERR-ANALYS            Not specified
+HISTORY    (19790228C)  Compiled at the centre - CJD
+           (20021230A) Restored from old data base. Status added.
+                       Date is corrected. Units corrected
            (20021230U) Last checking has been done.
-ENDBIB              21
+           (20131020A) M.M. Refs.of Engl.translation were added.
+           BIB information was updated.
+           Upper -> lower case correction.
+            INC-SOURCE line was deleted.
+ENDBIB              28
 COMMON               2          3
 ASSUM      ASSUM-ERR
 PRT/FIS    PRT/FIS
        2.78       0.05
 ENDCOMMON            3
-ENDSUBENT           28
-SUBENT        40176002   20021230   20030502   20050926       0000
-BIB                  3          3
-REACTION   (96-CM-244(0,F)MASS,PRE,FY/DE,,RAW) Number of Counts
-EN-SEC     (E,FF)  Energy of Both Fragments
+ENDSUBENT           35
+SUBENT        40176002   20131020   20140228   20140214       4162
+BIB                  4          9
+REACTION   (96-CM-244(0,F)MASS,PRE,FY/DE,LF+HF,RAW) Number of
+           counts in energy bin 2 MeV, mass bin 2 amu.
+EN-SEC     (E,FF)  Energy of both fragments
 STATUS     .Source of data is unknown. Probably given by authors
-ENDBIB               3
-NOCOMMON
+           Data are presented on Fig.1 of J,YF,15,(1),22,1972 as
+           dashed line diagram .
+HISTORY    (20131020A) "LF+HF" was added in SF7 according to the
+            comment of N.Otsuka (NDS,IAEA).
+            NO-DIM -> ARB-UNITS .
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 3        548
 E          MASS       DATA
-MEV        NO-DIM     NO-DIM
+MEV        NO-DIM     ARB-UNITS
        150.        80.         5.
        150.        82.         6.
        150.        84.         5.
@@ -588,18 +601,25 @@ MEV        NO-DIM     NO-DIM
        208.       116.        27.
        208.       118.         7.
 ENDDATA            550
-ENDSUBENT          558
-SUBENT        40176003   20021230   20030502   20050926       0000
-BIB                  3          4
-REACTION   (96-CM-244(0,F)MASS,PR,NU/DE,HF,AV) Average for one
-              Fission act number of prompt neutrons
-EN-SEC     (E,HF)  Kin.Energy of the Heavy Fragments
-STATUS     .From tables 1 (Data) and 3 (errors) of reference 2
-ENDBIB               4
-NOCOMMON
+ENDSUBENT          564
+SUBENT        40176003   20131020   20140228   20140214       4162
+BIB                  4         11
+REACTION   (96-CM-244(0,F)MASS,PR,NU/TKE,,AV) Average for one
+              fission act number of prompt neutrons as
+           dependence from HF mass and kinetic energy of both
+           fragments, energy bin 2 MeV, mass bin 2 amu.
+EN-SEC     (E,HF)  Kin.energy of the heavy fragments
+STATUS     (TABLE) From tables 1 (Data) and 3 (errors) of
+                   P,YFI-12,91,1972 .
+           Data are presented on Fig.1 of J,YF,15,(1),22,1972 as
+           solid line diagram .
+HISTORY    (20131020A) M.M. Reaction was corrected :
+             NU/DE,HF,AV  -> NU/TKE,,AV. PT/FIS/MEV -> PRT/FIS .
+ENDBIB              11
+NOCOMMON             0          0
 DATA                 4        591
 E          MASS       DATA       DATA-ERR
-MEV        NO-DIM     PT/FIS/MEV PT/FIS/MEV
+MEV        NO-DIM     PRT/FIS    PRT/FIS
    152.       122.       3.43
    152.       124.       3.36
    152.       126.       3.36
@@ -1192,20 +1212,25 @@ MEV        NO-DIM     PT/FIS/MEV PT/FIS/MEV
    220.       134.       0.39
    220.       136.       1.14
 ENDDATA            593
-ENDSUBENT          602
-SUBENT        40176004   20021230   20030502   20050926       0000
-BIB                  3          6
-REACTION   (96-CM-244(0,F),PR,NU/DE,HF,AV) Average number of
-             prompt neutrons for one fission additionally Averaged
-             Over Mass Distribution
-EN-SEC     (E,HF)    Kinetic Energy of the heavy Fragments
-STATUS     (DEP,40176003)  Obtained from Data of Subent 40176003
-           .From table 1,3 of 2-nd reference - right columns
-ENDBIB               6
-NOCOMMON
+ENDSUBENT          609
+SUBENT        40176004   20131020   20140228   20140214       4162
+BIB                  5         11
+REACTION   (96-CM-244(0,F),PR,NU/TKE,,AV) Average number of
+            prompt neutrons for one fission as dependence from
+            energy of both fragments, energy bin 2 MeV.
+ANALYSIS           Averaged over mass distribution
+EN-SEC     (E,FF)    Kinetic energy of the both fragments
+STATUS     (DEP,40176003)  Obtained from data of Subent 40176003
+           (TABLE) From tables 1 (Data) and 3 (errors) of
+                   P,YFI-12,91,1972 .
+           Data are presented on Fig.2 upper of J,YF,15,(1),22.
+HISTORY    (20131020A) M.M. Reaction was corrected:
+            NU/DE,HF,AV -> NU/TKE,,AV . PT/FIS/MEV -> PRT/FIS.
+ENDBIB              11
+NOCOMMON             0          0
 DATA                 3         35
 E          DATA       DATA-ERR
-MEV        PT/FIS/MEV PT/FIS/MEV
+MEV        PRT/FIS    PRT/FIS
        220.       1.08       0.47
        218.       1.14
        216.       1.15
@@ -1242,16 +1267,19 @@ MEV        PT/FIS/MEV PT/FIS/MEV
        154.       3.43
        152.       3.45
 ENDDATA             37
-ENDSUBENT           48
-SUBENT        40176005   20021230   20030502   20050926       0000
-BIB                  2          5
+ENDSUBENT           53
+SUBENT        40176005   20131020   20140228   20140214       4162
+BIB                  2          8
 REACTION   (96-CM-244(0,F)MASS,PR,NU,,AV) Average number of
-            prompt neutrons for one fission additionally Averaged
-           over Energies of Fragments Mass -That of Heavy Fragment
-STATUS     (DEP,40176003)  Obtained from Data of Subent 40176003
-           .Data from tables 1,3 of 2-nd reference - lowest lines
-ENDBIB               5
-NOCOMMON
+            prompt neutrons for one fission as dependence of
+            heavy fragment mass, mass bin 2 amu.
+STATUS     (DEP,40176003)  Obtained from data of Subent 40176003
+           (TABLE) From tables 1 (Data) and 3 (errors) of
+                   P,YFI-12,91,1972 .
+           Data are presented on Fig.3 middle lower of
+           YF,15,(1),22.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 3         21
 MASS       DATA       DATA-ERR
 NO-DIM     PRT/FIS    PRT/FIS
@@ -1277,5 +1305,35 @@ NO-DIM     PRT/FIS    PRT/FIS
        160.       2.90       0.65
        162.       2.91
 ENDDATA             23
-ENDSUBENT           33
-ENDENTRY             5
+ENDSUBENT           36
+SUBENT        40176006   20131020   20140228   20140214       4162
+BIB                  3         17
+REACTION  1(96-CM-244(0,F),PRE,AKE,LF+HF)
+            Average pre-neutron kinetic energy of both fragments.
+          2(96-CM-244(0,F),PRE,AKE,LF)
+           Average pre-neutron kinetic energy of light fragment.
+          3(96-CM-244(0,F),PRE,AKE,HF)
+           Average pre-neutron kinetic energy of heavy fragment.
+          4(96-CM-244(0,F),PRE,AP,LF)
+           Average pre-neutron mass of light fragment.
+          5(96-CM-244(0,F),PRE,AP,HF)
+           Average pre-neutron mass of heavy fragment.
+MISC-COL   (MISC1) Standard deviation of kinetic energy
+           distribution of both fission fragments -
+           sqrt(<M**2>-<M>**2) .
+           (MISC2) Standard deviation of mass distribution
+           sqrt(<E**2>-<E>**2) .
+STATUS     (DEP,40176003)  Obtained from data of Subent 40176003
+           (TABLE) Table 1 of J,YF,11,501,1970 .
+ENDBIB              17
+NOCOMMON             0          0
+DATA                12          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
+DATA      4DATA-ERR  4DATA      5DATA-ERR  5MISC1      MISC2
+MEV        MEV        MEV        MEV        MEV        MEV
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     MEV        NO-DIM
+ 188.6      1.6        107.5      1.2        81.1       1.0
+ 104.6      1.0        139.0      1.4        11.5       5.9
+ENDDATA              6
+ENDSUBENT           28
+ENDENTRY             6

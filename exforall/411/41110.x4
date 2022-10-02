@@ -1,12 +1,17 @@
-ENTRY            41110   20111220   20120210   20120207       4155
-SUBENT        41110001   20111220   20120210   20120207       4155
-BIB                 14         48
+ENTRY            41110   20130516   20140228   20140214       4162
+SUBENT        41110001   20130516   20140228   20140214       4162
+BIB                 14         56
 INSTITUTE  (4RUSFEI,4RUSRI) G.Boikov=G.Boykov
-REFERENCE  (J,YF,53,(3),628,1991)   Curves are given
+REFERENCE  (J,YF,53,(3),628,1991)
+           Table for NU and AKE and curves for spectra.
+            "Submitted 14.09.1990" .
            (J,YF,70,(4),656,2007) 1-st author -M.I.Svirin .
-           (J,PAN,53,(3),392,1991)   Engl.translation of YF,53 .
+           (J,SNP,53,(3),392,1991)   Engl.translation of YF,53 .
            (J,PAN,70,(4),626,2007)   Engl.translation of YF,70 .
            #doi:10.1134/S1063778807040035
+            For Subents 014,015 .
+           (J,ZP/A,340,79,1991) Brief description of results.
+            "Received 8.06.1990, revised version 7.01.1991" .
 AUTHOR     (G.S.Boikov, V.D.Dmitriev, G.A.Kudyaev, Yu.B.Ostapenko,
            M.I.Svirin, G.N.Smirenkin)
 TITLE       Neutron spectrum in the fission of Th-232, U-235
@@ -15,10 +20,10 @@ FACILITY   (VDG,4RUSRI)  Neutron Generator NG-400
 INC-SOURCE (D-D,D-T)
 SAMPLE      Two-sided metallic layers on aluminum  foil,
             thickness 2 milligram/cm2, diameter 100 mm
-METHOD     (TOF) 205 cm path.
+METHOD     (TOF) 205 cm path. Total time resolution 2.5 ns.
            (MOMIX) Cf-252 isotope was implanted in investigated
             isotope sample.
-DETECTOR   (FISCH)  Four-section multi-layer ionization chamber
+DETECTOR   (FISCH)  Four-sections multi-layer ionization chamber
                     filled with methane .
             Covered by Cd of 0.2 mm thickness.
            (SCIN)  Stilbene crystal (40mm high, 100mm diameter)
@@ -41,7 +46,7 @@ ERR-ANALYS (ERR-T)   Total error includes:
            (ERR-1) Uncertainty of Cf spectrum.
 HISTORY    (19921204C)  + + Compiled at the Center - CJD + +
            (20010311A) DATE is corrected
-           (20061020U) Misprint in Reference Year was corrected.
+           (20061020U) Misprint in Reference year was corrected.
                        Second reference was added. M.M.
            (20080414A) M.M. Data were added in SUBENTs 003, 006.
             Free text was corrected to be "human-readable".
@@ -49,107 +54,143 @@ HISTORY    (19921204C)  + + Compiled at the Center - CJD + +
             006,007.
            (20111220A) Subents 008-010 reactions were corrected
             according to memo CP-D/701 .
-ENDBIB              48
-COMMON               3          3
-EN-RSL     MONIT      ERR-1
-NSEC/M     PRT/FIS    PER-CENT
-  2.5          3.766   3.
+           (20130516A) PAN -> SNP in one reference of Engl.transl.
+           Ref. J,ZP/A,340,79,1991 was added.
+           BIB information updated. Subents 011-015 were added.
+ENDBIB              56
+COMMON               2          3
+MONIT      ERR-1
+PRT/FIS    PER-CENT
+    3.766   3.
 ENDCOMMON            3
-ENDSUBENT           55
-SUBENT        41110002   20111220   20120210   20120207       4155
-BIB                  3          4
-REACTION   (90-TH-232(N,F)0-NN-1,PR,KE) AKE
-STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
+ENDSUBENT           63
+SUBENT        41110002   20130516   20140228   20140214       4162
+BIB                  4         12
+REACTION  1(90-TH-232(N,F)0-NN-1,PR,KE) AKE
+          2(90-TH-232(N,F)0-NN-1,PR,KE)
+CORRECTION2 Corrected for the angular correlation between the
+           prompt fission neutrons and the bombarding neutron.
+STATUS     (TABLE) Table 2 of J,ZP/A,340,79,1991.
+            Also in Table 2 of J,YF,53,(3),628,1991.
+           Data 1 in J,ZP/A,340,79,1991:
+           1.928 +-0.027,
+           1.874 +- 0.030 .
+          1(DEP,41110008) Spectrum.
 HISTORY    (20111220A) M.M. 1.86 -> 1.84 as given in table 2 of
               J,YF,53,(3),628,1991 .
-ENDBIB               4
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 3          2
-EN         DATA       ERR-T
-MEV        MEV        MEV
-  2.9        1.93       0.03
- 14.7        1.84       0.03
+DATA                 5          2
+EN         DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MEV        MEV        MEV        MEV
+  2.9        1.93      0.03       1.94       0.03
+ 14.7        1.84      0.03       1.87       0.03
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        41110003   20111220   20120210   20120207       4155
-BIB                  4          7
-REACTION   (92-U-235(N,F)0-NN-1,PR,KE,,,DERIV)  AKE
-ANALYSIS   The shape of exp.energy distribution was reproduced by
-           introducing a third neutron source .
-STATUS     (COREL,41094002) See previously published data.
-           (TABLE) Table of J,YF,70,(4),656,2007, page 666.
-           (DEP,41110009)
-HISTORY    (20080414A) Data were added from 2nd reference.
-ENDBIB               7
+ENDSUBENT           21
+SUBENT        41110003   20130516   20140228   20140214       4162
+BIB                  3         11
+REACTION  1(92-U-235(N,F)0-NN-1,PR,KE)  AKE
+          2(92-U-235(N,F)0-NN-1,PR,KE)
+CORRECTION2 Corrected for the angular correlation between the
+           prompt fission neutrons and the bombarding neutron.
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991.
+            Data 1 in J,ZP/A,340,79,1991:
+            2.016 +- 0.023
+            2.011 +- 0.023
+           (COREL,41110014) Data reanalyzed in YF,70,(4),656,2007
+            by M.I.Svirin for 14.7 MeV.
+          1(DEP,41110009) Spectrum.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        MEV        MEV
- 14.7       2.03       0.03
-ENDDATA              3
+DATA                 5          2
+EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MEV        MEV        MEV
+  2.9        2.02        0.03    2.03       0.03
+ 14.7        2.01        0.03    2.03       0.03
+ENDDATA              4
+ENDSUBENT           20
+SUBENT        41110004   20130516   20140228   20140214       4162
+BIB                  4         10
+REACTION  1(92-U-238(N,F)0-NN-1,PR,KE)   AKE
+          2(92-U-238(N,F)0-NN-1,PR,KE)
+CORRECTION2 Corrected for the angular correlation between the
+           prompt fission neutrons and the bombarding neutron.
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
+           Data 1 in J,ZP/A,340,79,1991:
+           1.998 +- 0.024
+           1.957 +- 0.026
+          1(DEP,41110010) Spectrum.
+HISTORY    (20131125A) Data were corrected as given in
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MEV        MEV        MEV        MEV
+  2.9       2.00        0.03      2.01       0.03
+ 14.7       1.96        0.03      1.98       0.03
+ENDDATA              4
+ENDSUBENT           19
+SUBENT        41110005   20130516   20140228   20140214       4162
+BIB                  3          6
+REACTION  1(90-TH-232(N,F),PR,NU)
+          2(90-TH-232(N,F),PR,NU)
+CORRECTION2 Corrected for the angular correlation between the
+           prompt fission neutrons and the bombarding neutron.
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991 .
+            The same data in TAble 2 of J,ZP/A,340,79,1991.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+  2.9        2.27       0.06      2.31       0.06
+ 14.7        3.92       0.09      4.04       0.12
+ENDDATA              4
 ENDSUBENT           15
-SUBENT        41110004   20111220   20120210   20120207       4155
-BIB                  2          2
-REACTION   (92-U-238(N,F)0-NN-1,PR,KE)   AKE
-STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
-ENDBIB               2
+SUBENT        41110006   20130516   20140228   20140214       4162
+BIB                  3          8
+REACTION  1(92-U-235(N,F),PR,NU)
+          2(92-U-235(N,F),PR,NU)
+CORRECTION2 Corrected for the angular correlation between the
+           prompt fission neutrons and the bombarding neutron.
+STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991.
+           The same DATA 1 in J,ZP/A,340,79,1991.
+           (COREL,41110015) Data reanalyzed in YF,70,(4),656,2007
+            by M.I.Svirin for 14.7 MeV.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 3          2
-EN         DATA       ERR-T
-MEV        MEV        MEV
-  2.9       2.00        0.03
- 14.7       1.96        0.03
+DATA                 5          2
+EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+  2.9        2.77       0.07      2.81       0.07
+ 14.7        4.39       0.11      4.48       0.13
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        41110005   20111220   20120210   20120207       4155
-BIB                  2          2
-REACTION   (90-TH-232(N,F),PR,NU)
+ENDSUBENT           17
+SUBENT        41110007   20130516   20140228   20140214       4162
+BIB                  3          6
+REACTION  1(92-U-238(N,F),PR,NU)
+          2(92-U-238(N,F),PR,NU)
+CORRECTION2 Corrected for the angular correlation between the
+           prompt fission neutrons and the bombarding neutron.
 STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
-ENDBIB               2
+            The same data in Table 2 of J,ZP/A,340,79,1991.
+ENDBIB               6
 NOCOMMON             0          0
-DATA                 3          2
-EN         DATA       ERR-T
-MEV        PRT/FIS    PRT/FIS
-  2.9        2.27       0.06
- 14.7        3.92       0.09
+DATA                 5          2
+EN         DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        PRT/FIS    PRT/FIS    PRT/FIS    PRT/FIS
+  2.9       2.71        0.07     2.76        0.07
+ 14.7       4.25        0.10     4.37        0.12
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        41110006   20111220   20120210   20120207       4155
-BIB                  4          7
-REACTION   (92-U-235(N,F),PR,NU,,,DERIV)
-ANALYSIS   The shape of exp.energy distribution was reproduced by
-           introducing a third neutron source .
-STATUS     (COREL,41094003) See previously published data.
-           (TABLE) Table of J,YF,70,(4),656,2007, page 666.
-           (DEP,41110009)
-HISTORY    (20080414A) Data were added from 2nd reference.
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        PRT/FIS    PRT/FIS
- 14.7       4.44       4.44
-ENDDATA              3
 ENDSUBENT           15
-SUBENT        41110007   20111220   20120210   20120207       4155
-BIB                  2          2
-REACTION   (92-U-238(N,F),PR,NU)
-STATUS     (TABLE) Table 2 of J,YF,53,(3),628,1991
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 3          2
-EN         DATA       ERR-T
-MEV        PRT/FIS    PRT/FIS
-  2.9       2.71        0.07
- 14.7       4.25        0.10
-ENDDATA              4
-ENDSUBENT           11
-SUBENT        41110008   20111220   20120210   20120207       4155
-BIB                  3         12
+SUBENT        41110008   20130516   20140228   20140214       4162
+BIB                  4         14
 REACTION  1((90-TH-232(N,F),PR,NU/DE,,NPD)/
            (98-CF-252(0,F),PR,NU/DE,,NPD))
-          2(90-TH-232(N,F),PR,NU/DE,,NPD) Spectre is normalized to
-                                     unity
+          2(90-TH-232(N,F),PR,NU/DE,,NPD) Spectrum is normalized
+                                   to unity.
+ADD-RES     Measured spectrum is approximated by Maxwellian one
+           of T= 1.285 +- 0.018 MeV.
 STATUS     (APRVD)  M.I.Svirin, 19921125
            (TABLE) From author.
             Spectra ratio is on Fig.3 of J,YF,53,(3),628,1991
@@ -158,7 +199,7 @@ HISTORY    (20111220A)
             (90-TH-232(N,F),PR,NU/DE,,NPD)/
             (98-CF-252(0,F),PR,NU/DE,,NPD) .
             ARB-UNITS -> 1/FIS/MEV .
-ENDBIB              12
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 5        148
 EN         E          DATA      1DATA      2ERR-T     2
@@ -312,13 +353,15 @@ MEV        MEV        NO-DIM     1/FIS/MEV  PER-CENT
  14.7      10.915       0.611     0.00052     28.33
  14.7      11.77        0.883     0.00042     32.49
 ENDDATA            150
-ENDSUBENT          167
-SUBENT        41110009   20111220   20120210   20120207       4155
-BIB                  3         12
+ENDSUBENT          169
+SUBENT        41110009   20130516   20140228   20140214       4162
+BIB                  4         14
 REACTION  1((92-U-235(N,F),PR,NU/DE,,NPD)/
            (98-CF-252(0,F),PR,NU/DE,,NPD))
-          2(92-U-235(N,F),PR,NU/DE,,NPD) Spectre is normalized to
+          2(92-U-235(N,F),PR,NU/DE,,NPD) Spectrum is normalized to
                                         unity
+ADD-RES     Measured spectrum is approximated by Maxwellian one
+           of T= 1.344 +- 0.015 MeV.
 STATUS     (APRVD)  M.I.Svirin, 19921125
            (TABLE) From author.
             Spectra ratio is on Fig.3 of J,YF,53,(3),628,1991
@@ -327,7 +370,7 @@ HISTORY    (20111220A)
             (92-U-235(N,F),PR,NU/DE,,NPD)/
             (98-CF-252(0,F),PR,NU/DE,,NPD) .
             ARB-UNITS -> 1/FIS/MEV .
-ENDBIB              12
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 5        148
 EN         E          DATA      1DATA      2ERR-T     2
@@ -481,13 +524,15 @@ MEV        MEV        NO-DIM     1/FIS/MEV  PER-CENT
  14.7      10.915     0.897      0.00076     13.6
  14.7      11.77      0.698      0.00033     23.59
 ENDDATA            150
-ENDSUBENT          167
-SUBENT        41110010   20111220   20120210   20120207       4155
-BIB                  3         12
+ENDSUBENT          169
+SUBENT        41110010   20130516   20140228   20140214       4162
+BIB                  4         14
 REACTION  1((92-U-238(N,F),PR,NU/DE,,NPD)/
            (98-CF-252(0,F),PR,NU/DE,,NPD))
-          2(92-U-238(N,F),PR,NU/DE,,NPD) Spectre is normalized to
+          2(92-U-238(N,F),PR,NU/DE,,NPD) Spectrum is normalized to
                                         unity
+ADD-RES     Measured spectrum is approximated by Maxwellian one
+           of T= 1.332 +- 0.016 MeV.
 STATUS     (APRVD)  M.I.Svirin, 19921125
            (TABLE) From author.
             Spectra ratio is on Fig.3 of J,YF,53,(3),628,1991
@@ -496,7 +541,7 @@ HISTORY    (20111220A)
             (92-U-238(N,F),PR,NU/DE,,NPD)/
             (98-CF-252(0,F),PR,NU/DE,,NPD) .
             ARB-UNITS -> 1/FIS/MEV .
-ENDBIB              12
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 5        148
 EN         E          DATA      1DATA      2ERR-T     2
@@ -650,5 +695,87 @@ MEV        MEV        NO-DIM     1/FIS/MEV  PER-CENT
  14.7      10.915      0.86       0.00073    20.09
  14.7      11.77       0.566      0.00027    33.19
 ENDDATA            150
-ENDSUBENT          167
-ENDENTRY            10
+ENDSUBENT          169
+SUBENT        41110011   20130516   20140228   20140214       4162
+BIB                  4          6
+REACTION   (90-TH-232(N,F),PR,KEM)
+            Prompt neutron spectrum temperature (Maxwellian).
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table 2 of J,ZP/A,340,79,1991.
+           (DEP,41110008) Spectrum.
+HISTORY    (20130516A) Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        MEV        MEV
+  2.9       1.285      0.018
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        41110012   20130516   20140228   20140214       4162
+BIB                  4          6
+REACTION   (92-U-235(N,F),PR,KEM)
+            Prompt neutron spectrum temperature (Maxwellian).
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table 2 of J,ZP/A,340,79,1991.
+           (DEP,41110008) Spectrum.
+HISTORY    (20130516A) Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        MEV        MEV
+  2.9       1.344     0.015
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        41110013   20130516   20140228   20140214       4162
+BIB                  4          6
+REACTION   (92-U-238(N,F),PR,KEM)
+            Prompt neutron spectrum temperature (Maxwellian).
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE) Table 2 of J,ZP/A,340,79,1991.
+           (DEP,41110008) Spectrum.
+HISTORY    (20130516A) Subent was added.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        MEV        MEV
+  2.9       1.332     0.016
+ENDDATA              3
+ENDSUBENT           14
+SUBENT        41110014   20130516   20140228   20140214       4162
+BIB                  4          7
+REACTION   (92-U-235(N,F)0-NN-1,PR,KE,,,DERIV)  AKE
+ANALYSIS   The shape of exp.energy distribution was reproduced by
+           introducing a third neutron source .
+STATUS     (COREL,41110003) See previously published data.
+           (TABLE) Table of J,YF,70,(4),656,2007, page 666.
+           (DEP,41110009) Spectrum.
+HISTORY    (20080414A) Data were added .
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       DATA-ERR
+MEV        MEV        MEV
+ 14.7       2.03       0.03
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        41110015   20130516   20140228   20140214       4162
+BIB                  4          7
+REACTION   (92-U-235(N,F),PR,NU,,,DERIV)
+ANALYSIS   The shape of exp.energy distribution was reproduced by
+           introducing a third neutron source .
+STATUS     (COREL,41110006) See previously published data .
+           (TABLE) Table of J,YF,70,(4),656,2007, page 666.
+           (DEP,41110009) Spectrum.
+HISTORY    (20080414A) Data were added .
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 2          1
+EN         DATA
+MEV        PRT/FIS
+ 14.7       4.44
+ENDDATA              3
+ENDSUBENT           15
+ENDENTRY            15
