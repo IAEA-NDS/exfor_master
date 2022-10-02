@@ -1,14 +1,13 @@
-ENTRY            O1028   20030214              20050926       0000
-SUBENT        O1028001   20030214              20050926       0000
-BIB                 17         36
-TITLE      Fission cross sections of Bi-209, Th-232, U-235,
-           U-238 and Np-235 for intermediate energy protons and
-           deuterons.
+ENTRY            O1028   20120607   20120921   20120918       O048
+SUBENT        O1028001   20120607   20120921   20120918       O048
+BIB                 16         53
+TITLE      Cross sections for Bi-209, Th-232, U-235, U-238 and
+           Np-237 fission induced by intermediate energy protons
+           and deuterons
 AUTHOR     (V.I.Yurevich, V.A.Nikolaev, R.M.Yakovlev, A.N.Sosnin)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,YF,65,1417,2002)
-HISTORY    (20030210C)
-           (20030214U) Last checking has been done.
+REFERENCE  (J,YF,65,1417,2002)  in Russian
+           (J,PAN,65,1383,2002)  an English
 SAMPLE     Fissioning layers on aluminium backing, thickness of
            1 mg/cm**2, were used.
 ADD-RES    (COMP) Theoretical model.
@@ -17,115 +16,131 @@ ADD-RES    (COMP) Theoretical model.
            were measured the number fission nuclei on 1-mg
            targets materials, it is 803+-90, 3622+-360, 4410+-440,
             4429+-440, respectively.
-DETECTOR   (TRD) The foil of 6 mm thickness of a lavsan.
+DETECTOR   (TRD) Solid-state nuclear track detectors (SSNTD)
+           based on a 6-mu-m film from Dupont polyester fiber (its
+           commercial name is Dacron), which were adjacent to
+           fissile layers.
 MONITOR    (13-AL-27(P,X)11-NA-24,CUM,SIG)
            The cross section of monitor reaction equal 10.8-mb at
            the proton energy 1-GeV and 10-mb at more high energy.
 FACILITY   (SYNCH,4ZZZDUB)
 METHOD     (STTA) In the experiments were used six targets, three
            were directed fissioning side from proton beam, another
-           three directed oppositive side, fission fragments
+           three directed opposite side, fission fragments
            detected in range angle more 119-degree and less
            61-degree.
            (EXTB)
-COMMENT    -By authors. Fission cross section were reported in
+CORRECTION -By authors. Fission cross section were reported in
            table with correction on detection nuclear fragments
            unfissioning type.
-MISC-COL   (MISC) The uncertainty of beam monitoring
 PART-DET   (FF)
-ERR-ANALYS (ERR-T) The uncertainty is reported by authors without
-           any analysis.
+ERR-ANALYS (ERR-T) Total error includes:
+           (ERR-1,6.,8.) The total methodological error in
+           determining the number of fission fragments - it is
+           associated with the uncertainty in knowledge of the
+           etching parameters, the uncertainty in film thickness,
+           and the error of the method for track counting-
+                                       ranges between 6 and 8%.
+           (MONIT-ERR,,5.) In the energy range under investigation
+           the cross section for the monitoring reaction is known
+           to a precision not poorer than 5%
+           (ERR-2) Uncertainty of beam monitoring
 ANALYSIS   (INTAD)
 STATUS     (TABLE)
-ENDBIB              36
-NOCOMMON
-ENDSUBENT           39
-SUBENT        O1028002   20030214              20050926       0000
-BIB                  2          8
-REACTION   (83-BI-208(P,F),,SIG)
-REL-REF    (A,O0707001,V.A.KON'SHIN+,J,YF,2,682,1965)
-           (A,O0221001,G.REMY+,J,NP/A,163,583,1971)
-           (A,O0605001,R.BRANDT+,J,RPA,7,243,1972)
-           (A,O0644001,J.HUDIS+,J,PR/C,13,1961,1976)
-           (A,A0047001,O.E.SHIGAEV+,P,RI-17,,1973)
-           (A,A0029001,B.A.BOCHAGOV+,J,YF,28,572,1978)
-           (A,O0611001,H.A.KHAN+,J,PR/C,29,2199,1984)
-ENDBIB               8
-NOCOMMON
-DATA                 4          5
-EN         DATA       ERR-T      MISC
-GEV        MB         MB         PER-CENT
-         1.       216.        49.        20.
-         2.       219.        33.        10.
-       2.55       215.        26.         9.
-       3.17       199.        24.         8.
-       3.65       180.        24.        10.
+HISTORY    (20030210C)
+           (20030214U) Last checking has been done.
+           (20120607A) SD: BIB update. Ref on translation added.
+            MISC moved to ERR-ANALYS and renamed as ERR-2.
+            SF1=83-BI-208 changed on 83-BI-209 in REACTION code of
+            Subent 2; col. MONIT was added to Subents 2-6.
+           Entry's numbers were added or corrected in REL-REFs.
+ENDBIB              53
+NOCOMMON             0          0
+ENDSUBENT           56
+SUBENT        O1028002   20120607   20120921   20120918       O048
+BIB                  3          9
+REACTION   (83-BI-209(P,F),,SIG)
+REL-REF    (A,O0707005,V.A.Kon'shin+,J,YF,2,682,1965)
+           (A,O0605006,R.Brandt+,J,RPA,7,243,1972)
+           (A,O0644004,J.Hudis+,J,PR/C,13,1961,1976)
+           (A,A0047003,O.E.Shigaev+,P,RI-17,1973)
+           (A,A0029005,B.A.Bochagov+,J,YF,28,572,1978)
+           (A,O0611003,H.A.Khan+,J,PR/C,29,2199,1984)
+HISTORY    (20120607A) SD:  SF1=83-BI-208 changed on 83-BI-209 in
+             REACTION code; col. MONIT was added.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 5          5
+EN         DATA       ERR-T      MONIT      ERR-2
+GEV        MB         MB         MB         PER-CENT
+         1.       216.        49.      10.8      20.
+         2.       219.        33.      10.0      10.
+       2.55       215.        26.      10.0       9.
+       3.17       199.        24.      10.0       8.
+       3.65       180.        24.      10.0      10.
 ENDDATA              7
-ENDSUBENT           20
-SUBENT        O1028003   20030214              20050926       0000
+ENDSUBENT           21
+SUBENT        O1028003   20120607   20120921   20120918       O048
 BIB                  2          5
 REACTION   (90-TH-232(P,F),,SIG)
-REL-REF    (A,O0707001,V.A.KON'SHIN+,J,YF,2,682,1965)
-           (A,A0029001,B.A.BOCHAGOV+,J,YF,28,572,1978)
-           (A,O0008001,L.A.VAISHNENE+,J,ZP/A,302,143,1981)
-           (A,O0641001,M.DEBEAUVAIS+,C,76NEUHER,2,1179,1976)
+REL-REF    (A,O0707004,V.A.Kon'shin+,J,YF,2,682,1965)
+           (A,A0029004,B.A.Bochagov+,J,YF,28,572,1978)
+           (A,O0008003,L.A.Vaishnene+,J,ZP/A,302,143,1981)
+           (A,O0641002,M.Debeauvais+,C,76NEUHER,2,1179,1976)
 ENDBIB               5
-NOCOMMON
-DATA                 4          2
-EN         DATA       ERR-T      MISC
-GEV        MB         MB         PER-CENT
-         1.       996.       110.        10.
-       2.55       909.       131.         9.
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA       ERR-T      MONIT      ERR-2
+GEV        MB         MB         MB         PER-CENT
+         1.       996.       110.      10.8         10.
+       2.55       909.       131.      10.0          9.
 ENDDATA              4
 ENDSUBENT           14
-SUBENT        O1028004   20030214              20050926       0000
-BIB                  2          5
+SUBENT        O1028004   20120607   20120921   20120918       O048
+BIB                  2          4
 REACTION   (92-U-235(P,F),,SIG)
-REL-REF    (A,O0707001,V.A.KON'SHIN+,J,YF,2,682,1965)
-           (A,A0029001,B.A.BOCHAGOV+,J,YF,28,572,1978)
-           (A,O0008001,L.A.VAISHNENE+,J,ZP/A,302,143,1981)
-           (A,O0641001,M.DEBEAUVAIS+,C,76NEUHER,2,1179,1976)
-ENDBIB               5
-NOCOMMON
-DATA                 4          1
-EN         DATA       ERR-T      MISC
-GEV        MB         MB         PER-CENT
-         1.      1282.       141.        10.
+REL-REF    (A,O0707003,V.A.Kon'shin+,J,YF,2,682,1965)
+           (A,A0029002,B.A.Bochagov+,J,YF,28,572,1978)
+           (A,O0605004,R.Brandt+,J,RPA,7,243,1972)
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 5          1
+EN         DATA       ERR-T      MONIT      ERR-2
+GEV        MB         MB         MB         PER-CENT
+         1.      1282.       141.      10.8         10.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        O1028005   20030214              20050926       0000
+ENDSUBENT           12
+SUBENT        O1028005   20120607   20120921   20120918       O048
 BIB                  2          8
 REACTION   (92-U-238(P,F),,SIG)
-REL-REF    (A,O0707001,V.A.KON'SHIN+,J,YF,2,682,1965)
-           (A,O0221001,G.REMY+,J,NP/A,163,583,1971)
-           (A,O0605001,R.BRANDT+,J,RPA,7,243,1972)
-           (A,O0644001,J.HUDIS+,J,PR/C,13,1961,1976)
-           (A,A0047001,O.E.SHIGAEV+,P,RI-17,,1973)
-           (A,A0029001,B.A.BOCHAGOV+,J,YF,28,572,1978)
-           (A,O0611001,H.A.KHAN+,J,PR/C,29,2199,1984)
+REL-REF    (A,O0707002,V.A.Kon'shin+,J,YF,2,682,1965)
+           (A,O0221002,G.Remy+,J,NP/A,163,583,1971)
+           (A,O0605002,R.Brandt+,J,RPA,7,243,1972)
+           (A,O0644002,J.Hudis+,J,PR/C,13,1961,1976)
+           (A,A0047002,O.E.Shigaev+,P,RI-17,1973)
+           (A,A0029003,B.A.Bochagov+,J,YF,28,572,1978)
+           (A,O0611002,H.A.Khan+,J,PR/C,29,2199,1984)
 ENDBIB               8
-NOCOMMON
-DATA                 4          2
-EN         DATA       ERR-T      MISC
-GEV        MB         MB         PER-CENT
-         1.      1364.       150.        10.
-       2.55      1213.       184.         9.
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA       ERR-T      MONIT      ERR-2
+GEV        MB         MB         MB         PER-CENT
+         1.      1364.       150.      10.8         10.
+       2.55      1213.       184.      10.0          9.
 ENDDATA              4
 ENDSUBENT           17
-SUBENT        O1028006   20030214              20050926       0000
-BIB                  2          5
+SUBENT        O1028006   20120607   20120921   20120918       O048
+BIB                  3          3
 REACTION   (93-NP-237(P,F),,SIG)
-REL-REF    (A,O0707001,V.A.KON'SHIN+,J,YF,2,682,1965)
-           (A,A0029001,B.A.BOCHAGOV+,J,YF,28,572,1978)
-           (A,O0008001,L.A.VAISHNENE+,J,ZP/A,302,143,1981)
-           (A,O0641001,M.DEBEAUVAIS+,C,76NEUHER,2,1179,1976)
-ENDBIB               5
-NOCOMMON
-DATA                 4          2
-EN         DATA       ERR-T      MISC
-GEV        MB         MB         PER-CENT
-         1.      1736.       195.        10.
-       2.55      1393.       236.         9.
+REL-REF    (A,,V.A.Kon'shin+,J,YF,4,97,1966)
+HISTORY    (20120607A) SD: Refs in REL-REF were changed.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA       ERR-T      MONIT      ERR-2
+GEV        MB         MB         MB         PER-CENT
+         1.      1736.       195.      10.8         10.
+       2.55      1393.       236.      10.0          9.
 ENDDATA              4
-ENDSUBENT           14
+ENDSUBENT           12
 ENDENTRY             6

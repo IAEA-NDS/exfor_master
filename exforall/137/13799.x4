@@ -1,6 +1,6 @@
-ENTRY            13799   20030128   20030306   20050926       0000
-SUBENT        13799001   20030128   20030306   20050926       0000
-BIB                 12         17
+ENTRY            13799   20120425   20120921   20120721       1380
+SUBENT        13799001   20120425   20120921   20120721       1380
+BIB                 12         22
 INSTITUTE  (1USALTI)
 REFERENCE  (J,NSE,98,341,1988)
            (T,SHARFUDDIN,1986)
@@ -14,21 +14,40 @@ SAMPLE     235U-lined hemispherical chamber.
 METHOD     (TOF)
 DETECTOR   (GLASD,SCIN) NE-912 6Li glass detector and BC-501
             liquid scintillators used.
-ERR-ANALYS No information on uncertainties.
-STATUS     Data taken from Appendix B of thesis.
+ERR-ANALYS (DATA-ERR) the uncertainties in the measurements
+           were approximately +- 10% of the spectrum yield over
+           most of the 150- to 600-keV region where the majority
+           of the DN counts reside
+STATUS     (TABLE) Data taken from Appendix B of thesis.
            No reply received from W.Schier to author proof.
 HISTORY    (20021212C)
-ENDBIB              17
+           (20120425A) SD: REACTION code and data units in
+                      Subent 2 changed. BIB update.
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           20
-SUBENT        13799002   20021212   20030306   20050926       0000
-BIB                  1          1
-REACTION   (92-U-235(N,F),DL/GRP,NU)
-ENDBIB               1
-NOCOMMON             0          0
+ENDSUBENT           25
+SUBENT        13799002   20120425   20120921   20120721       1380
+BIB                  3         11
+REACTION   (92-U-235(N,F),DL/GRP,NU/DE,,REL)
+           To normalize a pair of spectra (see REL-REF), a ratio
+           of gamma peak areas was taken, since the gamma peak and
+           the neutron 'peak' scaled together. (The vertical yield
+           scale and horizontal lO-keV neutron energy bin size are
+           consistent with the eight DN spectra normalized to
+           10**4 counts presented in the NSE,94,353,1986
+REL-REF    (A,13800002,R.S.Tanczyn+,J,NSE,94,353,1986) - data
+            used for comparison
+HISTORY    (20120425A) SD: REACTION code was changed. Data units
+                     were changed.
+ENDBIB              11
+COMMON               1          3
+EN-MEAN
+EV
+  1.8
+ENDCOMMON            3
 DATA                 3       1000
-GRP-NUM    EN         DATA
-NO-DIM     KEV        PC/FIS
+GRP-NUM    E          DATA
+NO-DIM     KEV        ARB-UNITS
   2.         10.        73.59187
   2.         20.        96.24543
   2.         30.       147.00351
@@ -1030,5 +1049,5 @@ NO-DIM     KEV        PC/FIS
   6.        1990.        0.00000
   6.        2000.        0.00000
 ENDDATA           1002
-ENDSUBENT         1008
+ENDSUBENT         1022
 ENDENTRY             2

@@ -1,39 +1,53 @@
-ENTRY            14029   20050712   20060111   20060111       1337
-SUBENT        14029001   20050712   20060111   20060111       1337
-BIB                 10         16
-INSTITUTE  (1CANCRC)
-REFERENCE  (C,85SANTA,1,537,1985)
-           (P,INDC(CAN)-20,6,1980)
-AUTHOR     (R.T.Jones,J.S.Merrit,A.Okazaki)
+ENTRY            14029   20120225   20120921   20120911       1379
+SUBENT        14029001   20120225   20120921   20120911       1379
+BIB                 13         18
 TITLE      A measurement of the thermal neutron capture cross
             section of Th232
-FACILITY   (REAC) NRU Reactor
-INC-SOURCE Graphite thermal column
+AUTHOR     (R.T.Jones, J.S.Merritt, A.Okazaki)
+INSTITUTE  (1CANCRC)
+REFERENCE  (C,85SANTA,1,537,1985)
+           (P,INDC(CAN)-20,6,1980) Prelim.value(7.32+/-0.05)b gvn
+FACILITY   (REAC,1CANCRC) NRU Reactor
+INC-SOURCE Graphite thermal column, neutron flux ~ 10e+10 n/cm2/s.
 SAMPLE     Thin disks of thorium metal and of sintered thoria
             ThO2
-DETECTOR   (GE-IN)
-METHOD     (ACTIV) Measurement of beta emission from decay of
-            Th233 (to Pa233) in coincidence the 311.9 keV of
-            Pa233
+DETECTOR   (GELI) for 311.9 keV gamma-ray counting
+DECAY-DATA (90-TH-233,22.3MIN,DG,311.9)
+RAD-DET    (91-PA-233,DG) 311.9 keV transition in U-233
+METHOD     (ACTIV) Irradiated for 3 hours
+ADD-RES    (STRUC) T(1/2) of Pa-233 (26.967+/-0.0002 days)
 HISTORY    (20050712C) DR
            (20050928C) DR Second reference added
-ENDBIB              16
+           (20120225U) On. BIB updated
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        14029002   20050712   20050909   20050926       1336
-BIB                  4          6
-REACTION   (90-TH-232(N,G)90-TH-233,,SIG,,MXW)
-ERR-ANALYS (ERR-T) Total uncertainty
-ASSUMED    (ASSUM1,(79-AU-197(N,G)79-AU-198,,SIG,,MXW))
-            Measurement relative to Au197 with a thermal capture
-            cross section of 98.8 barns
-STATUS     Data read from the text
-ENDBIB               6
+ENDSUBENT           21
+SUBENT        14029002   20120225   20120921   20120911       1379
+BIB                  6         18
+REACTION   (90-TH-232(N,G)90-TH-233,,SIG)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+COMMENT    By authors:
+           - Cd-ratios show Th-232 and Au-197 capture due to
+              epithermal activation was negligible.
+           - Using ENDF/B-V, sig(Th,2200 m/s)/sig(Au,2200 m/s)
+              is adopted 1% larger than the ratio for effective
+              cross sections.
+           - Neutron temperature was taken to be the same as
+              that of the graphite moderator at the irradiation
+              site (26 deg-C).
+           By Compiler (2012-06-14):
+            The uncertainty at the 95.4% confidence level (0.06 b)
+            was converted to standard deviation 0.03 b.
+ERR-ANALYS (DATA-ERR) Contributions from both random and
+            systematic sources
+STATUS     (TABLE) Abstract of Conf.Proc.of 85SANTA, vol.1,p.537
+HISTORY    (20120225A) On. SF8: MXW removed. ASSUMED -> MONITOR
+ENDBIB              18
 NOCOMMON             0          0
 DATA                 4          1
-EN         DATA       ERR-T      ASSUM1
-MEV        B          B          B
-   2.53E-08   7.33      0.06       98.8
+EN         DATA       DATA-ERR   MONIT
+EV         B          B          B
+ 0.0253     7.33       0.03       98.8
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           26
 ENDENTRY             2

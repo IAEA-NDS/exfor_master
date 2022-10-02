@@ -1,12 +1,12 @@
-ENTRY            10875   20001211   20050616   20050926       0000
-SUBENT        10875001   20001211   20050616   20050926       0000
-BIB                 12         27
+ENTRY            10875   20120513   20120921   20120725       1381
+SUBENT        10875001   20120513   20120921   20120725       1381
+BIB                 14         37
 INSTITUTE  (1USAORL)
 REFERENCE  (J,NSE,73,174,198002)
-AUTHOR     (R.L.MACKLIN,J.HALPERIN)
+AUTHOR     (R.L.Macklin,J.Halperin)
 TITLE      100,101,102,104Ru(n,gamma) and 103Rh(n,gamma) cross
             sections above 2.6-keV
-FACILITY   (LINAC) Oak Ridge Electron Linear Accelerator
+FACILITY   (LINAC,1USAORL) Oak Ridge Electron Linear Accelerator
 METHOD     (TOF) Time of flight with 40.12-meter flight path.
             Boron-10 filter used to eliminate slow neutron over-
             lap.
@@ -17,35 +17,47 @@ MONITOR    (92-U-235(N,F),,SIG) From ENDF/B-V used to determine
             monitor efficiency.
            Saturated resonance of gold used to determine absolute
             efficiency ratio of gamma and flux detectors.
+MONIT-REF  (,,3,ENDF/B-V,,1978)
+REL-REF    (M,10895002,R.L.Macklin+,J,NSE,71,205,1979) -
+            Determination of the monitor efficiency versus energy
+           above 70 keV relative to the ENDF/B-V standard
+           235U (n,gamma) cross section
 CORRECTION Corrected for deadtime, gamma energy loss in sample
             (4-10%), and background.
 ERR-ANALYS Statistical standard deviation ranges from 0.1-0.2 eV
             for well defined peaks.
-STATUS     Data taken from private comm., Macklin, May 1979.
+STATUS     (TABLE) Data taken from private comm., Macklin,May 1979
+            Resonance parameters are the same as in tables of
+            NSE,73,174,1980.
            (APRVD) R.L. Macklin, 23 September 1986.
 HISTORY    (19791002C)
            (19800310A) BIB Correction
            (19801205A) STATUS comment added.
            (19860813A) BIB update.
            (20001211A) Updated to new date formats, lower case.
-ENDBIB              27
+           (20120513A) SD: In Subents 2,4,6,8,10 one of REACTION
+              codes was written in short form. REACTION codes
+              1 and 2 in Subents 3,5,7,9,11 were swapped.
+ENDBIB              37
 NOCOMMON             0          0
-ENDSUBENT           30
-SUBENT        10875002   20001211   20050616   20050926       0000
-BIB                  7         12
+ENDSUBENT           40
+SUBENT        10875002   20120513   20120921   20120725       1381
+BIB                  7         14
 REACTION  1(44-RU-100(N,0),,EN)
-          2((44-RU-100(N,EL),,WID,,G)*(44-RU-100(N,G),,WID)/
-           (44-RU-100(N,TOT),,WID))
+          2(44-RU-100(N,G),,WID/STR)
           3(44-RU-100(N,EL),,WID,,G)
           4(44-RU-100(N,G),,WID)
-RESULT    2(CAPTA)
-SAMPLE     3.2976 g of 97.72% 100Ru. Sample size 2.6x2.8x0.085 cm.
+SAMPLE     (44-RU-100,ENR=0.9772) 3.2976 g of 97.72% 100Ru.
+            Sample size 2.6x2.8x0.085 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 ASSUMED    (ASSUM,44-RU-100(N,G),,WID)
 CORRECTION Corrected for scattered neutron sensitivity of
             detector.
 HISTORY    (20001211A) RESULT added.
-ENDBIB              12
+           (20120513A) SD: REACTION 2 was written in short form.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 9         88
 DATA      1DATA      2DATA-ERR  2DATA      3DATA-ERR  3DATA      4
@@ -229,18 +241,22 @@ MILLI-EV   MILLI-EV   NO-DIM
  11901.      47.3       3.9
             165.
 ENDDATA            180
-ENDSUBENT          197
-SUBENT        10875003   19791204   20050616   20050926       0000
-BIB                  4          6
-REACTION  1(44-RU-100(N,G),,STF)
-          2(44-RU-100(N,EL),,STF)
-SAMPLE     3.2976 g of 97.72% 100Ru. Sample size 2.6x2.8x0.085 cm.
+ENDSUBENT          199
+SUBENT        10875003   20120513   20120921   20120725       1381
+BIB                  6         10
+REACTION  1(44-RU-100(N,EL),,STF)
+          2(44-RU-100(N,G),,STF)
+SAMPLE     (44-RU-100,ENR=0.9772) 3.2976 g of 97.72% 100Ru.
+            Sample size 2.6x2.8x0.085 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
 CORRECTION Corrected for those values where the gamma width was
             assumed.
-ENDBIB               6
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
+HISTORY    (20120513A) SD: REACTION codes 1 and 2 were swapped.
+ENDBIB              10
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 EV         EV
  2679.7     11901.
 ENDCOMMON            3
@@ -251,16 +267,15 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
  1.         6.5   E-04 9.    E-05
  2.         1.2   E-04 3.    E-05
 ENDDATA              5
-ENDSUBENT           20
-SUBENT        10875004   20001211   20050616   20050926       0000
-BIB                 10         21
+ENDSUBENT           24
+SUBENT        10875004   20120513   20120921   20120725       1381
+BIB                  9         21
 REACTION  1(44-RU-101(N,0),,EN)
           2(44-RU-101(N,EL),,WID,,G)
           3(44-RU-101(N,G),,WID)
-          4(((44-RU-101(N,EL),,WID,,G)*(44-RU-101(N,G),,WID))/
-           (44-RU-101(N,TOT),,WID))
-RESULT    4(CAPTA)
-SAMPLE     4.9120 g of 97.98% 101Ru. Sample size 2.6x2.6x0.080 cm.
+          4(44-RU-101(N,G),,WID/STR)
+SAMPLE     (44-RU-101,ENR=0.9798) 4.9120 g of 97.98% 101Ru.
+            Sample size 2.6x2.6x0.080 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
 MONITOR    Aluminum resonance at 5903 eV used to match energy
             scale
@@ -271,10 +286,11 @@ CORRECTION Corrected for:
            . multiple scattering,
            . resolution broadening.
 ERR-ANALYS 0.7% error in capture area for spin J of 2 or 3.
-FLAG       (1.) Probable doublet or mutiplet.
+FLAG       (1.) Probable doublet or multiplet.
 HISTORY    (19800310A) BIB correction.
            (19810424A) REACTION corrected.
            (20001211A) RESULT added.
+           (20120513A) SD: REACTION 4 was written in short form.
 ENDBIB              21
 COMMON               2          3
 ASSUM      STAT-W G
@@ -536,21 +552,25 @@ MILLI-EV   NO-DIM
  1.3
 ENDDATA            252
 ENDSUBENT          282
-SUBENT        10875005   20001211   20050616   20050926       0000
-BIB                  6         10
-REACTION  1(44-RU-101(N,G),,STF)
-          2(44-RU-101(N,EL),,STF)
-SAMPLE     4.9120 g of 97.98% 101Ru. Sample size 2.6x2.6x0.080 cm.
+SUBENT        10875005   20120513   20120921   20120725       1381
+BIB                  7         14
+REACTION  1(44-RU-101(N,EL),,STF)
+          2(44-RU-101(N,G),,STF)
+SAMPLE     (44-RU-101,ENR=0.9798) 4.9120 g of 97.98% 101Ru.
+            Sample size 2.6x2.6x0.080 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 MONITOR    Aluminum resonance at 5903 eV used to match energy
             scale
 CORRECTION Corrected for those values where the gamma width was
             assumed.
 HISTORY    (19800310A) BIB,COMMON,DATA corrections.
            (19810424A) DATA correction.
-ENDBIB              10
+           (20120513A) SD: REACTION codes 1 and 2 were swapped.
+ENDBIB              14
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 EV         EV
  2661.       4484.
 ENDCOMMON            3
@@ -561,16 +581,15 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM
  1.         6.1   E-04 4.    E-05
  2.         2.1   E-04 5.    E-05
 ENDDATA              5
-ENDSUBENT           24
-SUBENT        10875006   20001211   20050616   20050926       0000
-BIB                  8         18
+ENDSUBENT           28
+SUBENT        10875006   20120513   20120921   20120725       1381
+BIB                  8         20
 REACTION  1(44-RU-102(N,0),,EN)
-          2((44-RU-102(N,EL),,WID,,G)*(44-RU-102(N,G),,WID)/
-           (44-RU-102(N,TOT),,WID))
+          2(44-RU-102(N,G),,WID/STR)
           3(44-RU-102(N,EL),,WID,,G)
           4(44-RU-102(N,G),,WID)
-RESULT    2(CAPTA)
-SAMPLE     9.7523 g of 99.53% 102Ru. Sample size 2.6x2.6x0.160 cm.
+SAMPLE     (44-RU-102,ENR=0.9953) 9.7523 g of 99.53% 102Ru.
+            Sample size 2.6x2.6x0.160 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
 ASSUMED    (ASSUM,44-RU-102(N,G),,WID)
 CORRECTION Corrected for:
@@ -579,10 +598,13 @@ CORRECTION Corrected for:
            . Doppler broadening,
            . multiple scattering,
            . resolution broadening.
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 FLAG       (1.) Probable doublet
 HISTORY    (19800310A) DATA correction.
            (20001211A) RESULT added.
-ENDBIB              18
+           (20120513A) SD: REACTION 2 was written in short form.
+ENDBIB              20
 NOCOMMON             0          0
 DATA                10        120
 DATA      1DATA      2DATA-ERR  2DATA      3DATA-ERR  3DATA      4
@@ -830,19 +852,23 @@ MILLI-EV   MILLI-EV   NO-DIM     NO-DIM
  13446.      89.3       3.1
             165.
 ENDDATA            244
-ENDSUBENT          267
-SUBENT        10875007   20001211   20050616   20050926       0000
-BIB                  5          7
-REACTION  1(44-RU-102(N,G),,STF)
-          2(44-RU-102(N,EL),,STF)
-SAMPLE     9.7523 g of 99.53% 102Ru. Sample size 2.6x2.6x0.160 cm.
+ENDSUBENT          269
+SUBENT        10875007   20120513   20120921   20120725       1381
+BIB                  6         11
+REACTION  1(44-RU-102(N,EL),,STF)
+          2(44-RU-102(N,G),,STF)
+SAMPLE     (44-RU-102,ENR=0.9953) 9.7523 g of 99.53% 102Ru.
+            Sample size 2.6x2.6x0.160 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 CORRECTION Corrected for those values where the gamma width was
             assumed.
 HISTORY    (19800310A) DATA correction.
-ENDBIB               7
+           (20120513A) SD: REACTION codes 1 and 2 were swapped.
+ENDBIB              11
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 EV         EV
  2760.      13347.
 ENDCOMMON            3
@@ -853,14 +879,12 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
  1.         5.0   E-04 7.    E-04
  2.         9.4   E-05 2.5   E-05
 ENDDATA              5
-ENDSUBENT           21
-SUBENT        10875008   20001211   20050616   20050926       0000
-BIB                  9         22
+ENDSUBENT           25
+SUBENT        10875008   20120513   20120921   20120725       1381
+BIB                  9         23
 REACTION  1(45-RH-103(N,0),,EN)
           2(45-RH-103(N,EL),,WID,,G)
-          3((45-RH-103(N,EL),,WID,,G)*(45-RH-103(N,G),,WID)/
-           (45-RH-103(N,TOT),,WID))
-RESULT    3(CAPTA)
+          3(45-RH-103(N,G),,WID/STR)
 SAMPLE     13.717 g of 103Rh. Sample size 2.6x2.7x0.165 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
            Gamma width assumed to be 171 millieV but larger
@@ -874,11 +898,14 @@ CORRECTION Corrected for:
            . resolution broadening.
 COMMENT    Resonance energies at 4251 and 4263 incorrect in
             article.
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 FLAG       (1.) Probable doublet or multiplet.
 HISTORY    (19800310A) BIB,DATA corrections.
            (20001211A) FLAG 2. removed, Spin added to data
              records. RESULT added.
-ENDBIB              22
+           (20120513A) SD: REACTION 3 was written in short form.
+ENDBIB              23
 COMMON               1          3
 SPIN J
 NO-DIM
@@ -1084,21 +1111,24 @@ NO-DIM
  4263.0       9.4       1.8                              1.
 
 ENDDATA            198
-ENDSUBENT          229
-SUBENT        10875009   20001211   20050616   20050926       0000
-BIB                  6          9
-REACTION  1(45-RH-103(N,G),,STF)
-          2(45-RH-103(N,EL),,STF)
+ENDSUBENT          230
+SUBENT        10875009   20120513   20120921   20120725       1381
+BIB                  7         12
+REACTION  1(45-RH-103(N,EL),,STF)
+          2(45-RH-103(N,G),,STF)
 SAMPLE     13.717 g of 103Rh. Sample size 2.6x2.7x0.165 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
 MONITOR    Aluminum resonance at 5903 eV used to match energy
             scale
 CORRECTION Corrected for those values where the gamma width was
             assumed.
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 HISTORY    (19800310A) DATA correction.
-ENDBIB               9
+           (20120513A) SD: REACTION codes 1 and 2 were swapped.
+ENDBIB              12
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 EV         EV
  2644.       4263.
 ENDCOMMON            3
@@ -1109,27 +1139,29 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
  1.         7.9   E-04 7.    E-05
  2.         2.3   E-04 7.    E-05
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        10875010   20001211   20050616   20050926       0000
-BIB                  8         17
+ENDSUBENT           26
+SUBENT        10875010   20120513   20120921   20120725       1381
+BIB                  8         19
 REACTION  1(44-RU-104(N,0),,EN)
           2(44-RU-104(N,EL),,WID,,G)
-          3((44-RU-104(N,EL),,WID,,G)*(44-RU-104(N,G),,WID)/
-           (44-RU-104(N,TOT),,WID))
+          3(44-RU-104(N,G),,WID/STR)
           4(44-RU-104(N,G),,WID)
-RESULT    3(CAPTA)
-SAMPLE     4.9417 g of 99.43% 104Ru. Sample size 2.6x2.6x0.080 cm.
+SAMPLE     (44-RU-104,ENR=0.9943) 4.9417 g of 99.43% 104Ru.
+                                   Sample size 2.6x2.6x0.080 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
 MONITOR    Aluminum resonance at 5903 eV used to match energy
             scale
 ASSUMED    (ASSUM,44-RU-104(N,G),,WID)
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 CORRECTION Corrected for:
            . resonance self protection,
            . Doppler broadening,
            . multiple scattering,
            . resolution broadening.
 HISTORY    (20001211A) RESULT added.
-ENDBIB              17
+           (20120513A) SD: REACTION 3 was written in short form.
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 8         86
 DATA      1DATA      2DATA-ERR  2DATA      3DATA-ERR  3DATA      4
@@ -1309,21 +1341,25 @@ MILLI-EV   MILLI-EV
  11864.                            76.3      2.7
             165.
 ENDDATA            176
-ENDSUBENT          198
-SUBENT        10875011   20001211   20050616   20050926       0000
-BIB                  6          9
-REACTION  1(44-RU-104(N,G),,STF)
-          2(44-RU-104(N,EL),,STF)
-SAMPLE     4.9417 g of 99.43% 104Ru. Sample size 2.6x2.6x0.080 cm.
+ENDSUBENT          200
+SUBENT        10875011   20120513   20120921   20120725       1381
+BIB                  7         13
+REACTION  1(44-RU-104(N,EL),,STF)
+          2(44-RU-104(N,G),,STF)
+SAMPLE     (44-RU-104,ENR=0.9943) 4.9417 g of 99.43% 104Ru.
+                                   Sample size 2.6x2.6x0.080 cm.
 ANALYSIS   (SLA) Single level Breit-Wigner analysis
 MONITOR    Aluminum resonance at 5903 eV used to match energy
             scale
 CORRECTION Corrected for those values where the gamma width was
             assumed.
+ERR-ANALYS (DATA-ERR) Standard deviations derived from the
+                  fluctuations in the data by the fitting code
 HISTORY    (19800310A)  DATA correction.
-ENDBIB               9
+           (20120513A) SD: REACTION codes 1 and 2 were swapped.
+ENDBIB              13
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 EV         EV
  2700.      11864.
 ENDCOMMON            3
@@ -1334,7 +1370,7 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
  1.         5.7   E-04 9.    E-05
  2.         9.7   E-05 2.    E-05
 ENDDATA              5
-ENDSUBENT           23
+ENDSUBENT           27
 SUBENT        10875012   20001211   20050616   20050926       0000
 BIB                  4          5
 REACTION   (44-RU-100(N,G)44-RU-101,,SIG,,AV)

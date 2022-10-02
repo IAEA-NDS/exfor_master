@@ -1,15 +1,11 @@
-ENTRY            O1729   20090209   20090724   20090723       O039
-SUBENT        O1729001   20090209   20090724   20090723       O039
-BIB                 12         25
+ENTRY            O1729   20120614   20120921   20120918       O048
+SUBENT        O1729001   20120614   20120921   20120918       O048
+BIB                 11         25
 TITLE      A study of levels in Nd-149 using the (d,p) and (d,t)
            reactions.
 AUTHOR     (M.Jaskola)
 INSTITUTE  (3POLIPJ)
 REFERENCE  (J,APP/B,39,695,2008)
-SAMPLE     Evaporated neodymium targets isotopically enriched in
-           Nd-148 and Nd-150 up to about 95% were used. The
-           targets were approximately 110 mug/cm**2 thick,
-           evaporated onto 10-20 mug/cm**2 thick carbon backing.
 ADD-RES    (COMP).Distorted-wave born approximation calculations
            Spectroscopic factors were deduced.
            (STRUC)
@@ -22,37 +18,47 @@ FACILITY   (VDGT,2DENNBI)
 METHOD     (BCINT) The total integrated deuteron beam current
            was approximately from 400 muC to 800 muC.
 EN-SEC     (E-LVL,60-ND-149)
-COMMENT    *By authors*.The absolute cross sections were
-           determined by normalisation to the cross section for
-           elastic deuteron scattering.
-HISTORY    (20090201C) SB
-ENDBIB              25
-COMMON               1          3
-EN
-MEV
-       12.1
-ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        O1729002   20090304   20090724   20090723       O039
-BIB                  6         17
-REACTION   (60-ND-150(D,T)60-ND-149,PAR,DA)
-INC-SOURCE *EN-RSL-FW*.The overall energy resolution was 12-15 keV
-            (FWHM) in detection of the outgoing tritons.
-PART-DET   (T)
-ERR-ANALYS The absolute cross section values are not known to
-           better than +-20% due to uncertainties in
-           normalisation procedure. The relative values of the
+ERR-ANALYS (ERR-S) The relative values of the
            cross sections for a state measured at different angles
            from the same target nucleus should have a better
            accuracy and are of statistical nature only about +-10%
-           (DATA-ERR).The uncertainty is reported by authors.
+HISTORY    (20090201C) SB
+           (20120614A) SD: Units in col. E-LVL in Subent 3 were
+           changed (MEV -> KEV). COMMENT renamed on MONITOR and
+           moved to Subents 2,3.
+ENDBIB              25
+COMMON               2          3
+EN         ERR-S
+MEV        PER-CENT
+       12.1   10.
+ENDCOMMON            3
+ENDSUBENT           32
+SUBENT        O1729002   20120614   20120921   20120918       O048
+BIB                  9         23
+REACTION   (60-ND-150(D,T)60-ND-149,PAR,DA)
+MONITOR    (60-ND-150(D,EL)60-ND-150,,DA,,RTH)
+           The absolute cross sections were determined by
+           normalisation to the cross section for elastic deuteron
+           scattering.
+SAMPLE     (60-ND-150,ENR=0.95) Evaporated neodymium target
+           isotopically enriched in Nd-150 up to about 95% were
+           used. The targets were approximately 110 mug/cm**2
+           thick, evaporated onto 10-20 mug/cm**2 thick carbon
+                                                        backing.
+INC-SOURCE *EN-RSL-FW*.The overall energy resolution was 12-15 keV
+            (FWHM) in detection of the outgoing tritons.
+PART-DET   (T)
+ERR-ANALYS (DATA-ERR) The absolute cross section values (including
+           statistical error) are not known to better than +-20%
+           due to uncertainties in normalisation procedure.
 COMMENT    *By authors*.
-            -For Gs for 125 degree in paper the value
+            -For ground state for 125 degree in paper the value
             22 is wrong, must be 2(1.5)
 STATUS     (TABLE) The data were received from M.Jaskola
            for Nd-150(d,t)Nd-149 reactions 04.02.2009
            (APRVD).By M.Jaskola
-ENDBIB              17
+HISTORY    (20120614A) SD: MONITOR was added.
+ENDBIB              23
 COMMON               1          3
 EN-RSL-FW
 KEV
@@ -497,25 +503,34 @@ ADEG       KEV        MU-B/SR    MU-B/SR
 125.       1287.      7.         2.8
 125.       1503.      10.        3.3
 ENDDATA            437
-ENDSUBENT          463
-SUBENT        O1729003   20090304   20090724   20090723       O039
-BIB                  5          7
+ENDSUBENT          469
+SUBENT        O1729003   20120614   20120921   20120918       O048
+BIB                  8         16
 REACTION   (60-ND-148(D,P)60-ND-149,PAR,DA)
+MONITOR    (60-ND-148(D,EL)60-ND-148,,DA,,RTH)
+           The absolute cross sections were determined by
+           normalisation to the cross section for elastic deuteron
+           scattering.
+ERR-ANALYS (DATA-ERR) The absolute cross section values (including
+           statistical error) are not known to better than +-20%
+           due to uncertainties in normalisation procedure.
 COMMENT    *By authors*.For 148Nd(d,p) reaction only the 60, 90
            and 125 degree were measured.
 INC-SOURCE *EN-RSL-FW*.The overall energy resolution was about
             2-3 keV (FWHM) in detection of the outgoing protons.
 PART-DET   (P)
-STATUS     (TABLE) Table 1 in paper
-ENDBIB               7
-COMMON               1          3
-EN-RSL-FW
-KEV
-3.
+STATUS     (TABLE) Table 1 from APP/B,39,695,2008
+HISTORY    (20120614A) SD: Units in col. E-LVL were changed
+            (MEV -> KEV). MONITOR was added.
+ENDBIB              16
+COMMON               2          3
+EN-RSL-FW  DATA-ERR
+KEV        PER-CENT
+3.            20.
 ENDCOMMON            3
 DATA                 3        138
 ANG-CM     E-LVL      DATA-CM
-ADEG       MEV        MU-B/SR
+ADEG       KEV        MU-B/SR
 60.        0.         26.
 60.        108.       1115.
 60.        138.       159.
@@ -655,5 +670,5 @@ ADEG       MEV        MU-B/SR
 125.       2094.      23.
 125.       2140.      75.
 ENDDATA            140
-ENDSUBENT          156
+ENDSUBENT          165
 ENDENTRY             3
