@@ -1,163 +1,183 @@
-ENTRY            21201     800213              20050926       0000
-SUBENT        21201001     800213              20050926       0000
-BIB                 10         15
+ENTRY            21201   20180123   20180124   20180123       2263
+SUBENT        21201001   20180123   20180124   20180123       2263
+BIB                 10         19
 INSTITUTE  (2UK HAR)
-REFERENCE  (J,JNE,6,113,58)
-           (R,NRDC-102,,5704) ABST.
-AUTHOR     (S.J.COCKING)
-TITLE      -THE NEUTRON CROSS-SECTION OF KRYPTON-
-FACILITY   (CHOPF) FAST CHOPPER.
-INC-SOURCE (REAC ) BEPO REACTOR AT AERE.
-SAMPLE     .GASEOUS SAMPLES WITH 0.286E+22 AND 1.75E+22 ATOMS/
-            CM-SQ.
-METHOD     .NO DETAILS.
-STATUS     (NDD  ) FROM NEUDADA.
-HISTORY    (791205T)
-           (800110E)
-           (800206A) DIFFERENTIAL TOTAL CROSS SECTION ADDED.
-           (800213E)
-ENDBIB              15
+REFERENCE  (J,JNE,6,113,1957)
+           (W,COCKING,1961)
+            The absorption cross section changed to 23.1 b (CINDA)
+           (R,NRDC-102,1957) abst.
+AUTHOR     (S.J.Cocking)
+TITLE       The neutron total cross-section of krypton
+FACILITY   (CHOPF,2UK HAR) Fast chopper.
+INC-SOURCE (REAC) BEPO reactor at AERE.
+SAMPLE      Gaseous samples with 0.286E+22 and 1.75E+22 atoms/cm2
+            in aluminum alloy cylinders
+METHOD     .No details.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+HISTORY    (19791205T)
+           (19800206A) Differential total cross section added.
+           (20170802A) SD:Updated to new date formats,lower case.
+           Meaningless zeros were deleted from the data. REACTION
+           code corrected in Subent 005. Year of ref. corrected.
+           (20180123U) On. W,COCKING,1961 added. STATUS deleted.
+ENDBIB              19
 NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        21201002     800110              20050926       0000
-BIB                  2          3
+ENDSUBENT           22
+SUBENT        21201002   20170802   20180124   20180123       2263
+BIB                  3          5
 REACTION  1(36-KR-0(N,TOT),,WID)
           2(36-KR-0(N,TOT),,SIG,,RES)
-STATUS     .DATA FROM TEXT OF PUBLICATION.
-ENDBIB               3
+STATUS     (TABLE) Data from text of JNE,6,113,1958.
+HISTORY    (20170802A) SD: error of data corrected at En=28.3 MeV
+            (100. -> 1000.)
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 6          2
 EN-RES     EN-RES-ERR DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 EV         EV         EV         EV         B          B
- 2.8300E+01 3.0000E-01 1.4000E-01 3.0000E-02 3.5000E+03 1.0000E+02
- 4.1100E+01 5.0000E-01 1.9000E-01 4.0000E-02 5.2000E+03 1.2000E+03
+       28.3        0.3       0.14       0.03      3500.      1000.
+       41.1        0.5       0.19       0.04      5200.      1200.
 ENDDATA              4
-ENDSUBENT           12
-SUBENT        21201003     800110              20050926       0000
-BIB                  2          2
-REACTION   (36-KR-0(N,TOT),,SIG) 2200 M/SEC CROSS-SECTION.
-STATUS     .DATA FROM TEXT OF PUBLICATION.
-ENDBIB               2
+ENDSUBENT           14
+SUBENT        21201003   20180123   20180124   20180123       2263
+BIB                  4         10
+REACTION   (36-KR-0(N,TOT),,SIG) 2200 m/sec cross-section.
+ANALYSIS   .Derived from energy dependent total cross section
+            with const+1/sqrt(E) fit.
+STATUS     (NDD) J.Nucl.Energy6(1958)113 gives (n,sct)=7.5 b and
+            (n,abs)=30.6 b and hence (n,tot)=38.1 b. However the
+            latter one was changed to 23.1 b by the author in
+            1961, which changes (n,tot) to 30.6 b.
+           (DEP,21201006) Energy dependent total cross section
+HISTORY    (20170802U) SD: STATUS update. ANALYSIS was added.
+           (20180123U) On. STATUS revised.
+ENDBIB              10
 COMMON               1          3
 EN
 EV
- 2.5300E-02
+   2.53E-02
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 3.0600E+01 1.8000E+00
+ 30.6       1.8
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        21201004     800110              20050926       0000
-BIB                  3          3
-REACTION   (36-KR-0(N,ABS),,SIG,,,DERIV) 2200 M/SEC VALUE.
-ANALYSIS   .CALCULATED FROM TOTAL.MINUS SCATTERING.
-STATUS     .TEXT.
-ENDBIB               3
+ENDSUBENT           22
+SUBENT        21201004   20170802   20180124   20180123       2263
+BIB                  3          5
+REACTION   (36-KR-0(N,ABS),,SIG,,,DERIV) 2200 m/sec value.
+ANALYSIS   .Calculated from total minus scattering.
+STATUS     (NDD) The absorption cross section is 30.6+/-1.8 b in
+            J.Nucl.Energy 6(1958)113, however it is corrected to
+            23.1 b in private communication with Cocking in 1961
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
- 2.5300E-02 2.3100E+01 1.8000E+00
+   2.53E-02   23.1      1.8
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        21201005     800110              20050926       0000
-BIB                  3          4
-REACTION   (36-KR-0(N,EL),,SIG,,,DERIV) 2200 M/SEC VALUE.
-ANALYSIS   .DERIVED FROM TOTAL CROSS SECTION WITH CONST+1/SRT(E)
-            FIT.
-STATUS     .TEXT.
-ENDBIB               4
+ENDSUBENT           13
+SUBENT        21201005   20170802   20180124   20180123       2263
+BIB                  4          7
+REACTION   (36-KR-0(N,EL)36-KR-0,,SIG,,,DERIV) 2200 m/sec value.
+ANALYSIS   .Derived from energy dependent total cross section
+            with const+1/sqrt(E) fit.
+STATUS     (TABLE) Data from text of JNE,6,113,1958.
+           (DEP,21201006) Energy dependent total cross section
+HISTORY    (20170802A) SD: SF4=Kr-0 was added to REACTION code.
+           STATUS, ANALYSIS update.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
- 2.5300E-02 7.5000E+00 6.0000E-01
+   2.53E-02   7.5       0.6
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        21201006     801103              20050926       0000
-BIB                  4          6
-REACTION   (36-KR-0(N,TOT),,SIG) TOTAL CROSS SECTION.
-STATUS     (NDD  )
-HISTORY    (800206T)
-ERR-ANALYS .ENERGY RESOLUTION FROM 0.01 EV AT 0.1 EV TO 300 EV
-            AT 1.2 KEV. NO CROSS SECTION ERROR GIVEN, HOWEVER THE
-            NORMALISATION UNCERTAINTY IS OF THE ORDER OF 7 PC.
-ENDBIB               6
+ENDSUBENT           15
+SUBENT        21201006   20170802   20180124   20180123       2263
+BIB                  4          7
+REACTION   (36-KR-0(N,TOT),,SIG) Total cross section.
+INC-SPECT  .Energy resolution from 0.01 eV at 0.1 eV to 300 eV
+            at 1.2 keV. No cross section error given, however the
+            normalization uncertainty is of the order of 7%.
+STATUS     (NDD) From NEUDADA.
+HISTORY    (19800206T)
+           (20170802U) SD: ERR-ANALYS -> INC-SPECT.
+ENDBIB               7
 COMMON               1          3
 DATA-ERR
 PER-CENT
- 7.0000E+00
+ 7.0
 ENDCOMMON            3
 DATA                 2         65
 EN         DATA
 MEV        B
- 1.2000E-08 4.1000E+01
- 1.4500E-08 3.8300E+01
- 1.7300E-08 3.5000E+01
- 2.0000E-08 3.3500E+01
- 2.5000E-08 3.0200E+01
- 2.9700E-08 2.8300E+01
- 3.4300E-08 2.6600E+01
- 4.0100E-08 2.4700E+01
- 5.0500E-08 2.3500E+01
- 6.0000E-08 2.2200E+01
- 7.0300E-08 2.1200E+01
- 8.0000E-08 2.0000E+01
- 1.0300E-07 1.9600E+01
- 1.1600E-07 1.7400E+01
- 1.2500E-07 1.7800E+01
- 1.6200E-07 1.6900E+01
- 1.9300E-07 1.6100E+01
- 3.1200E-07 1.4300E+01
- 5.0300E-07 1.2900E+01
- 7.0800E-07 1.2300E+01
- 1.0000E-06 1.1600E+01
- 1.5300E-06 1.0000E+01
- 2.3700E-06 9.6000E+00
- 4.5000E-06 8.7000E+00
- 7.3000E-06 8.4000E+00
- 1.0800E-05 7.6000E+00
- 1.5000E-05 7.4000E+00
- 1.9500E-05 8.2000E+00
- 2.6500E-05 2.5200E+01
- 2.7500E-05 1.8000E+02
- 2.8000E-05 5.4000E+02
- 2.9000E-05 2.3000E+02
- 3.0000E-05 8.0000E+01
- 3.1000E-05 1.7300E+01
- 3.2000E-05 9.1000E+00
- 3.4000E-05 8.0000E+00
- 3.8000E-05 1.3800E+01
- 3.9000E-05 4.2000E+01
- 4.0000E-05 1.4300E+02
- 4.1000E-05 6.0000E+02
- 4.2000E-05 1.1700E+02
- 4.3000E-05 1.8000E+01
- 4.4000E-05 9.0000E+00
- 5.2000E-05 8.3000E+00
- 6.2000E-05 7.3000E+00
- 8.0000E-05 7.8000E+00
- 9.8000E-05 8.5000E+00
- 1.0000E-04 1.3000E+01
- 1.0500E-04 2.6000E+01
- 1.1000E-04 4.6000E+01
- 1.1300E-04 3.0000E+01
- 1.5000E-04 7.2000E+00
- 2.1000E-04 8.1000E+00
- 3.0000E-04 7.4000E+00
- 4.0000E-04 6.4000E+00
- 5.0000E-04 7.1000E+00
- 7.0000E-04 6.0000E+00
- 9.0000E-04 5.6000E+00
- 1.2000E-03 8.4000E+00
- 2.4000E-03 8.9000E+00
- 4.3000E-03 9.2000E+00
- 7.5000E-03 7.3000E+00
- 1.9000E-02 7.3000E+00
- 4.4000E-02 7.2000E+00
- 1.1300E-01 6.2000E+00
+  1.200E-08       41.0
+  1.450E-08       38.3
+  1.730E-08       35.0
+  2.000E-08       33.5
+  2.500E-08       30.2
+  2.970E-08       28.3
+  3.430E-08       26.6
+  4.010E-08       24.7
+  5.050E-08       23.5
+  6.000E-08       22.2
+  7.030E-08       21.2
+  8.000E-08       20.0
+  1.030E-07       19.6
+  1.160E-07       17.4
+  1.250E-07       17.8
+  1.620E-07       16.9
+  1.930E-07       16.1
+  3.120E-07       14.3
+  5.030E-07       12.9
+  7.080E-07       12.3
+  1.000E-06       11.6
+  1.530E-06       10.0
+  2.370E-06        9.6
+  4.500E-06        8.7
+  7.300E-06        8.4
+  1.080E-05        7.6
+  1.500E-05        7.4
+  1.950E-05        8.2
+  2.650E-05       25.2
+  2.750E-05      180.0
+  2.800E-05      540.0
+  2.900E-05      230.0
+  3.000E-05       80.0
+  3.100E-05       17.3
+  3.200E-05        9.1
+  3.400E-05        8.0
+  3.800E-05       13.8
+  3.900E-05       42.0
+  4.000E-05      143.0
+  4.100E-05      600.0
+  4.200E-05      117.0
+  4.300E-05       18.0
+  4.400E-05        9.0
+  5.200E-05        8.3
+  6.200E-05        7.3
+  8.000E-05        7.8
+  9.800E-05        8.5
+  1.000E-04       13.0
+  1.050E-04       26.0
+  1.100E-04       46.0
+  1.130E-04       30.0
+  1.500E-04        7.2
+  2.100E-04        8.1
+  3.000E-04        7.4
+  4.000E-04        6.4
+  5.000E-04        7.1
+  7.000E-04        6.0
+  9.000E-04        5.6
+  1.200E-03        8.4
+  2.400E-03        8.9
+  4.300E-03        9.2
+  7.500E-03        7.3
+  1.900E-02        7.3
+  4.400E-02        7.2
+  1.130E-01        6.2
 ENDDATA             67
-ENDSUBENT           82
+ENDSUBENT           83
 ENDENTRY             6

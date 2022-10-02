@@ -1,26 +1,32 @@
-ENTRY            21665   20170122   20170403   20170325       2257
-SUBENT        21665001   20170122   20170403   20170325       2257
-BIB                  7         27
+ENTRY            21665   20170813   20180124   20180123       2263
+SUBENT        21665001   20170813   20180124   20180123       2263
+BIB                  8         35
 INSTITUTE  (2ZZZGEL)
-REFERENCE  (C,82ANTWER,,131,198209) Final results published.
-           (C,79KNOX,,163,197910)  Prelim.results
+REFERENCE  (C,82ANTWER,,131,1982) Final results published.
+           (C,91JUELIC,,44,1991) - data were revised by applying
+            to the raw data base the correct weighting function.
+           (S,INDC(NDS)-152,31,1984) - data were extended till and
+            350 keV  and revised.
+           (C,79KNOX,,163,1979)  Prelim.results
            (J,BAP,27,(7),867,1979) Abstract for 79KNOX.
-           (P,NEANDC(E)-212,(3),11,198006)
-           (C,77GEEL,,606,197712)
-           (P,NEANDC(E)-192,3,197803)
+           (P,NEANDC(E)-212,(3),11,1980)
+           (C,77GEEL,,606,1977)
+           (P,NEANDC(E)-192,3,1978)
+REL-REF    (O,22669001,F.Corvi+,J,NP/A,697,(3-4),581,2002) -
+            resonance parameters for Ni-60.
 AUTHOR     (F.Corvi,A.Brusegan,R.Buyl,G.Rohr,
            R.Shelley,T.van der Veen)
 TITLE       High resolution neutron capture cross section
-           measurements of Fe-56
+            measurements of Fe-56
 FACILITY   (LINAC,2ZZZGEL) Linear electron accelerator at Geel.
             The measurements were performed at the 150 MeV Geel
-            electron linac, at a flight distance of 58 m.
-            The linac was operated to provide 4.4 ns wide bursts
+            electron Linac, at a flight distance of 58 m.
+            The Linac was operated to provide 4.4 ns wide bursts
             of electrons of 100 MeV energy with a repetition
             frequency of 800 Hertz.
 INC-SOURCE (PHOTO)
 HISTORY    (19800910C) CN.
-           (19801127A) Monitor reaction in Subent 3 coorected
+           (19801127A) Monitor reaction in Subent 3 corrected
            (19821222A) A.P.T., Final results published
             superseding Subent 4. Subents 5 and 6 added.
            (20090315U) Last checking has been done.
@@ -28,9 +34,11 @@ HISTORY    (19800910C) CN.
            Refs corrected (commas or page were added). Ref. 79GEEL
            deleted (never published). Title corrected according to
            82ANTWER,,131.
-ENDBIB              27
+           (20170813U) SD: New results published in 91JUELIC,,44
+           supersede data in Subents 005,006.
+ENDBIB              35
 NOCOMMON             0          0
-ENDSUBENT           30
+ENDSUBENT           38
 SUBENT        21665002   20170122   20170403   20170325       2257
 BIB                  8         14
 REACTION  1(26-FE-56(N,EL),,WID)
@@ -197,17 +205,16 @@ EV
        0.12
 ENDDATA             58
 ENDSUBENT          107
-SUBENT        21665005   20170122   20170403   20170325       2257
-BIB                 13         65
+SUBENT        21665005   20170813   20180124   20180123       2263
+BIB                 13         78
 REACTION  1(26-FE-56(N,0),,EN)
           2(26-FE-56(N,G),,WID/STR)
-          3(26-FE-56(N,EL),,WID)
-          4(26-FE-56(N,G),,WID)
-SAMPLE     .An iron oxide sample enriched to 99.93%
-            Fe-56 and packed in an aluminium container of 8 cm
-            diameter and 0.3 mm thick wall. The sample thickness
-            was 0.015 atoms/barn.
-METHOD     (TOF) Time of flight using a 58 meter flight path.
+          3(26-FE-56(N,EL),,WID,,G)
+          4(26-FE-56(N,G),,WID,,G)
+SAMPLE     .An iron oxide sample enriched to 99.93% Fe-56 and
+            in an aluminum container of 8 cm diam. and 0.3 mm
+            thick wall. The sample thickness was 0.015 atoms/barn.
+METHOD     (TOF,TRN) Time of flight using a 58 meter flight path.
            .Repeated measurement of the data in Subent 004.
 DETECTOR   (SCIN) Two deuterated benzene liquid scintillators
             encapsulated in thin aluminum containers of 10.2 cm
@@ -219,27 +226,44 @@ DETECTOR   (SCIN) Two deuterated benzene liquid scintillators
 PART-DET   (G) Gamma rays.
 ANALYSIS   (SHAPE)
            (AREA)
-           .Data analysed both with the R-matrix shape fitting
+           .Data analyzed both with the R-matrix shape fitting
             code 'FANAC' and the area code 'TACASI'.
            .'FANAC' was used mainly for s-waves and groups of
             unresolved resonances.
+            * When a resonance was not seen in transmission, its
+            neutron width was obtained by fixing G(gamma)=0.54 eV
+            or G(gamma)==0.84 eV according to whether they were
+            assigned as p-waves or d-waves, respectively.
+            * All resonances for which the spin is not given in
+            Table 2, were analyzed assuming J = 1/2.
+            * The values of the neutron and gamma widths,
+            reaction 3 and 4, are calculated from the code
+            using the quantities listed under keyword 'ASSUMED'
+            as fixed input parameters.
 MONITOR    (26-FE-56(N,EL),,WID)
            .Normalization at the 1.15 keV resonance.
            .(Subent 002)
-ASSUMED    (ASSUM1,26-FE-56(N,EL),,WID)
-           (ASSUM2,26-FE-56(N,G),,WID)
-           (ASSUM3,26-FE-56(N,0),,J)
-           (ASSUM4,26-FE-56(N,0),,PTY)
+ASSUMED    (ASSUM1,26-FE-56(N,0),,J)
+           (ASSUM2,26-FE-56(N,0),,PTY)
            .Assumed data taken from the evaluation of
-            F.Perey+ 'Neutron data of structural materials
-            for fast reactors', Geel 1977, Pergamon press
-            page 530.
+            F.Perey+ 'Neutron data of structural materials for
+            fast reactors', Geel 1977, Pergamon press, page 530.
+REL-REF    (R,12733001,F.Perey+,C,77GEEL,,530,1977) - Assumed data
+                                       for widths
+           (R,13511001,C.M.Perey+,R,ORNL-TM-11742,1990) - spin and
+                                             parity values except
+           R,,C.Coceva+,C,87LEUVEN,679,1988) - spin and parity
+           values for 34.26, 46.09, 59.28, 73.04, 96.44, 122.92keV
+           (M,,F.H.Froehner,R,KFK-2145,1976) - code 'FANAC'
+           (M,,F.H.Froehner,R,GA-6906,1966) - code 'TACASI'
+           (M,,F.Corvi+,J,NIM/A,265,475,1988) - new weighting
+                                                function
 CORRECTION .The shape analysis code 'FANAC' and the area
             analysis code 'TACASI' included corrections
             for the following-
-             doppler broadening
-             resolution broadening
-             multiple scattering
+             * Doppler broadening
+             * resolution broadening
+             * multiple scattering
 ERR-ANALYS (DATA-ERR) The capture area errors include the
              ERR-1, ERR-2 and
              * statistical error
@@ -253,291 +277,244 @@ ERR-ANALYS (DATA-ERR) The capture area errors include the
             do not include:
            (MONIT-ERR) error in monitor reaction,
             neither do they include a contribution from the
-            difficulties experienced in analysing the shape
+            difficulties experienced in analyzing the shape
             of certain asymmetric non S-wave resonances.
-COMMENT    .The values of the neutron and gamma widths,
-            reaction 3 and 4, are calculated from the code
-            using the quantities listed under keyword 'ASSUMED'
-            as fixed input parameters. These widths are
-            particularly sensitive to the resonance spin J,
-            'ASSUM3', and should be treated with some caution.
-STATUS     (TABLE) Table II of the 82ANTWER,,131,1982
+STATUS     (TABLE) Table 2 of the 91JUELIC,44,1991
 HISTORY    (20160929A) SD: SF6=ARE -> WID/STR, SF8=FCT deleted
            from REACTION (2) code.
-ENDBIB              65
+           (20170813A) SD: Data were update according to new
+           publication. SF8=G was added to REACTION (3,4) codes.
+           COMMENT deleted (info move to ANALYSIS).
+ENDBIB              78
 COMMON               4          3
 MONIT      MONIT-ERR  ERR-1      ERR-2
 MILLI-EV   MILLI-EV   PER-CENT   PER-CENT
     58.       3.        5.          5.
 ENDCOMMON            3
-DATA                13         79
+DATA                 9         97
 DATA      1DATA      2DATA-ERR  2DATA      3DATA-ERR  3DATA      4
-DATA-ERR  4ASSUM1     ASSUM1-ERR ASSUM2     ASSUM2-ERR ASSUM3
-ASSUM4
-KEV        EV         EV         EV         EV         EV
-EV         EV         EV         EV         EV         NO-DIM
-NO-DIM
-      1.152      0.053      0.003      0.058      0.003
-                                        0.60       0.06        0.5
-         1.
-      2.353    0.00040     8.E-05    0.00020     5.E-05
-                                        0.84                   1.5
-         2.
-     12.463     0.0027     0.0007     0.0028     0.0007
-                                        0.54                   0.5
-         1.
-     17.771      0.014      0.002      0.014      0.002
-                                        0.54                   0.5
-         1.
-     20.194     0.0080     0.0017      0.004     0.0008
-                                        0.84                   1.5
-         2.
-     22.815       0.17       0.01       0.24       0.02
-                                        0.54                   0.5
-         1.
-      27.74       0.82       0.12                             0.82
-       0.12      1520.        30.                              0.5
-         0.
-      34.26       0.58       0.03                             0.46
-       0.01       0.79        0.3                              1.5
-         1.
-      36.75       0.26       0.01       0.96      0.006
-                                        0.84                   2.5
-         2.
-      38.45       0.35       0.02       0.25       0.02
-                                        0.54                   1.5
-         1.
-      46.09       0.52       0.03                             0.54
-       0.03        10.         3.                              0.5
-         1.
-      52.18       0.75       0.04                             0.39
-       0.02        12.         1.                              1.5
-         1.
-       53.6       0.37       0.02                             0.57
-       0.05         1.        0.4                              0.5
-         1.
-      53.73       0.03       0.01
+DATA-ERR  4ASSUM1     ASSUM2
+EV         EV         EV         EV         EV         EV
+EV         EV         EV
+       1.15     0.0557                0.0617                 0.574
+                    1.        0.5
+       2.35       0.44     0.0001    0.00044    0.00010       0.84
 
-         1.
-      59.28       0.79       0.04                             0.44
-       0.03         4.        0.5                              1.5
-         1.
-      63.52       0.63       0.04                             0.52
-       0.05        0.8       0.16                              1.5
-         1.
-      73.04       0.69       0.04                             0.72
-       0.05        20.         4.                              0.5
-         1.
-      74.06       0.52       0.07                             0.52
-       0.07       535.        10.                              0.5
-         0.
-      77.14       0.27       0.02                             0.29
-       0.03        3.6        0.5                              0.5
-         1.
-      80.91       1.98       0.11                             0.73
-       0.04         7.        0.7                              2.5
-         2.
-      83.64       0.45       0.09                             0.45
-       0.09      1250.        50.                              0.5
-         0.
-      90.42       0.78       0.05                              0.4
-       0.03        14.         1.                              1.5
-         1.
-      92.77       0.98       0.06                             0.71
-       0.06        1.6        0.3                              1.5
-         2.
-      92.99       0.52       0.04       0.51       0.07
-                                        0.54                   1.5
-         1.
-      96.27       0.49       0.08       0.21       0.04
-                                         1.1        0.9        2.5
-         2.
-      96.44       0.52       0.06                             0.86
-       0.17        1.3        1.1                              0.5
-         1.
-      96.69       1.18       0.11                             0.77
-       0.09        2.5        0.3                              1.5
-         1.
-     102.78       0.69       0.06                             0.35
-       0.03        21.         1.                              1.5
-         1.
-     103.16       0.73       0.06                              0.7
-       0.12       0.76       0.24                              1.5
-         2.
-     106.02       1.33       0.08                             0.87
-       0.07        2.8        0.3                              1.5
-         2.
-     112.81       1.04       0.07                             0.57
-       0.04        5.5        0.5                              1.5
-         2.
-     121.13       0.04       0.03       0.04       0.03
-                                        0.54                   0.5
-         1.
-     122.69       0.15       0.05       0.09       0.03
-                                        0.54                   1.5
-         1.
-     122.92       0.54       0.04                             0.27
-       0.03        46.         2.                              1.5
-         1.
-     124.29        0.6       0.05                             0.66
-       0.06        7.5         1.                              0.5
-         1.
-     125.28       1.16       0.08                             0.61
-       0.04        10.         1.                              1.5
-         2.
-     130.05       0.57       0.08                             0.57
-       0.08       500.        50.                              0.5
-         0.
-     130.37        0.7       0.06        0.6       0.09
-                                        0.84                   1.5
-         2.
-     140.56        1.4       0.26                              1.4
-       0.26      2700.       100.                              0.5
-         0.
-     141.38       0.67       0.07                             0.81
-       0.21       0.57       0.17                              1.5
-         2.
-     142.55       0.57       0.05                             0.57
-        0.1       0.56       0.17                              1.5
-         1.
-     150.03       0.25       0.04       0.16       0.03
-                                        0.54                   1.5
-         1.
-     154.08       0.59       0.06       0.45       0.07
-                                        0.84                   1.5
-         2.
-     161.91       1.14       0.09                             0.62
-       0.05        6.5         1.                              1.5
-         2.
-     169.24        1.1       0.16                              1.1
-       0.16      1000.       100.                              0.5
-         0.
-      169.3       1.58        0.2                             0.91
-       0.14         6.         3.                              1.5
-         2.
-      173.3       0.26       0.05       0.17       0.04
-                                        0.54                   1.5
-         1.
-     173.82       0.45       0.06                             0.23
-       0.03        42.         1.                              1.5
-         1.
-     175.94       0.06       0.03
+      12.46     0.0027     0.0007     0.0027     0.0007       0.54
 
+      17.77      0.014      0.002      0.014      0.002       0.54
 
-     179.92       0.48       0.07                              0.5
-       0.07        13.         3.                              0.5
-         1.
-     181.31       2.73       0.23                             0.96
-       0.08        17.         2.                              2.5
-         2.
-     187.28        0.5        0.1                             0.29
-       0.07        1.7         1.                              1.5
-         2.
-     188.02       0.72       0.31                             0.72
-       0.31      3600.       100.                              0.5
-         0.
-     188.36       0.08       0.04
+      20.19     0.0081     0.0016     0.0081     0.0016       0.84
 
+      22.81      0.174      0.008      0.257      0.017       0.54
 
-     190.14        0.8       0.09                             0.41
-       0.05        15.         7.                              1.5
-         2.
-     193.17       1.16        0.1                              0.6
-       0.05        20.        10.                              1.5
-         2.
-     195.95       0.59       0.08                              0.6
-       0.08        66.         8.                              0.5
-         1.
-     201.78       1.69       0.14                             0.88
-       0.08        24.         2.                              1.5
-         2.
-     203.91       0.08       0.03
+      27.74       1.00       0.13      1520.                  1.00
+       0.13         0.        0.5
+      34.26       0.54       0.03       1.58                  0.41
+       0.02         1.        0.5
+      36.75       0.26       0.02       0.39       0.02       0.84
 
+      38.45      0.336      0.018       0.49       0.04       0.54
 
-     206.14       1.11        0.1                             0.55
-       0.08       1.14       0.35                              2.5
-         2.
-      208.2       0.68       0.08                              0.7
-       0.09        22.         2.                              0.5
-         1.
-     209.08        0.2       0.05       0.12       0.04
-                                        0.54                   1.5
-         1.
-     210.14       0.12       0.04       0.06       0.03
-                                        0.84                   1.5
-         2.
-     210.91       1.08       0.11                             0.58
-       0.06         9.         1.                              1.5
-         2.
-     216.04       0.16       0.04       0.22       0.08
-                                        0.54                   0.5
-         1.
-      220.9       1.55        0.2                             1.55
-        0.2      1150.        50.                              0.5
-         0.
-     222.11       0.39       0.08                              0.2
-       0.04         8.         3.                              1.5
-         1.
-     223.89        1.1       0.11
+      46.09       0.55       0.03        10.                  0.58
+       0.03         1.        0.5
+      52.18       0.77       0.04        24.                  0.79
+       0.04         1.        1.5
+      53.60       0.39       0.02        1.0                  0.64
+       0.05
+      53.73      0.032      0.008      0.034      0.009       0.54
 
+      59.28       0.78       0.05        8.0                  0.86
+       0.06         1.        0.5
+      63.52       0.67       0.04        1.6                  1.15
+       0.10
+      73.04       0.67       0.04        20.                  0.69
+       0.05                   1.5
+      74.06       0.52       0.08       535.                  0.52
+       0.08         0.        0.5
+      77.14       0.27       0.02        3.6                  0.30
+       0.03         1.        0.5
+      80.91       2.05       0.11        21.                  2.28
+       0.12         2.        2.5
+      83.64       0.52       0.08      1250.                  0.52
+       0.08         0.        0.5
+      90.42       0.77       0.05        28.                  0.80
+       0.06         1.
+      92.77       1.01       0.06        3.2                  1.48
+       0.14         2.
+      92.99       0.53       0.05       1.06       0.18       0.54
 
-     226.07       0.92       0.11                             0.47
-       0.06        28.         2.                              1.5
-         1.
-     230.13       0.59       0.08                             0.31
-       0.05        7.5        0.5                              1.5
-         1.
-     232.76       2.29       0.19                             1.21
-       0.11        20.         1.                              1.5
-         2.
-     235.09       2.19       0.17                             0.76
-       0.06        20.         1.                              2.5
-         2.
-     241.86       3.47       0.26                             1.31
-       0.11        10.         1.                              2.5
-         2.
-     243.61       0.16        0.5        0.1       0.04
-                                        0.54                   1.5
-         1.
-     245.25       0.52       0.09                             0.52
-       0.09       600.        20.                              0.5
-         0.
-      246.6       0.09       0.05
+      96.27       0.40       0.08       0.48       0.12       0.84
 
+      96.44       0.55       0.06        1.3                  0.97
+       0.17         1.        0.5
+      96.69       1.26       0.12        5.0                  1.69
+       0.10         2.
+     102.78       0.63       0.06        42.                  0.64
+       0.06         1.        1.5
+     103.16       0.74       0.06       1.52                  1.44
+       0.18
+     106.02       1.26       0.09        5.6                  1.62
+       0.12         2.
+     112.81       1.00       0.07       11.0                  1.10
+       0.08         2.        1.5
+     121.13      0.050      0.016      0.055      0.018       0.54
 
-     252.59       0.17       0.09        0.1       0.05
-                                        0.54                   1.5
-         1.
-     253.83       1.62       0.17                             0.55
-       0.06        28.         2.                              2.5
-         2.
-     256.43       1.22       0.23                             0.68
-       0.14         6.         1.                              1.5
-         1.
-ENDDATA            243
-ENDSUBENT          317
-SUBENT        21665006   20170122   20170403   20170325       2257
-BIB                  5          8
+     122.69       0.13       0.04       0.15       0.05       0.54
+
+     122.92       0.59       0.07        92.                  0.59
+       0.07         1.        0.5
+     124.29       0.57       0.06        7.5                  0.61
+       0.06         1.        0.5
+     125.28       1.14       0.08        20.                  1.21
+       0.08         2.        1.5
+     130.05       0.62       0.09       500.                  0.62
+       0.09         0.        0.5
+     130.37       0.80       0.11       1.58                  0.81
+       0.11
+     140.26       1.61       0.28      2700.                  1.61
+       0.28         0.        0.5
+     141.38       0.69       0.17       1.18       0.27       0.84
+
+     142.55       0.63       0.11       1.50       0.22       0.54
+
+     150.03       0.23       0.03       0.39       0.06       0.54
+
+     154.08       0.59       0.05       0.90       0.10       0.84
+                    1.
+     161.91       1.09       0.09       13.0                  1.20
+       0.10         2.
+     169.28       1.59       0.23       12.0                  1.83
+       0.30         2.        1.5
+     169.30       0.94       0.14      1000.                  0.94
+       0.14         0.        0.5
+     173.30       0.23       0.05       0.29       0.06       0.54
+
+     173.82       0.49       0.06        84.                  0.49
+       0.06         1.        1.5
+     175.94       0.13       0.05       0.14       0.06       0.54
+
+     179.92       0.51       0.07       13.0                  0.53
+       0.07         1.        1.5
+     181.34       2.68       0.23
+
+     187.25       0.54       0.13        3.4                  0.64
+       0.16         2.
+     187.91       1.05       0.30      3600.                  1.05
+       0.30         0.        0.5
+     188.32       0.09       0.03       0.13       0.05       0.54
+
+     190.14       0.91       0.10
+
+     193.17       1.19       0.10        40.                  1.22
+       0.10         2.        2.5
+     195.95       0.55       0.08        66.                  0.55
+       0.08         1.        0.5
+     201.78       1.57       0.14        48.                  1.62
+       0.14         2.        1.5
+     203.91       0.08       0.04       0.08       0.04       0.84
+
+     206.14       1.05       0.10       3.42                  1.52
+       0.18         2.
+     208.20       0.71       0.08        22.                  0.73
+       0.09         1.        1.5
+     209.08       0.22       0.04       0.28       0.08       0.54
+
+     210.01       0.12       0.04       0.13       0.04       0.84
+
+     210.91       1.18       0.12       18.0                  1.27
+       0.14         2.        2.5
+     216.04       0.21       0.04       0.35       0.09       0.54
+
+     220.90       1.50       0.21      1150.                  1.50
+       0.21         0.        0.5
+     222.11       0.39       0.08       16.0                  0.40
+       0.08         1.
+     223.89       1.00       0.10       20.0                  1.05
+       0.12
+     226.07       0.81       0.11       56.0                  0.82
+       0.11         1.        1.5
+     230.13       0.54       0.08       15.0                  0.56
+       0.08
+     232.76       2.03       0.17       40.0                  2.14
+       0.20         2.        1.5
+     235.09       2.29       0.16       60.0                  2.38
+       0.17         2.        2.5
+     241.86       3.16       0.22       30.0                  3.48
+       0.25         2.        1.5
+     243.61       0.18       0.06       0.22       0.08       0.54
+
+     245.25       0.69       0.08       435.                  0.69
+       0.08         0.        0.5
+     246.60       0.12       0.07       0.16       0.10       0.54
+
+     252.79       0.12       0.06       0.13       0.07       0.54
+
+     253.83       1.62       0.18        84.                  1.66
+       0.18         2.        2.5
+     256.40       0.97       0.11       12.0                  1.05
+       0.13         2.        1.5
+     260.18       0.60       0.09       29.0                  0.61
+       0.09         1.        1.5
+     261.14       0.10       0.05       0.11       0.05       0.84
+
+     264.02       0.43       0.09       140.                  0.43
+       0.09         1.        0.5
+     264.71       0.31       0.12       0.34       0.13       0.54
+
+     267.31       0.90       0.18       165.                  0.91
+       0.18         2.        2.5
+     267.89       0.73       0.28       1.29       0.48       0.84
+                    1.
+     270.16       0.42       0.11       144.                  0.42
+       0.11         1.        0.5
+     275.06       0.26       0.14       0.51       0.26       0.54
+
+     276.52       0.54       0.12       170.                  0.54
+       0.12         1.        1.5
+     278.29       1.15       0.35      4000.                  1.15
+       0.35         0.        0.5
+     281.32       1.65       0.18        16.                  1.84
+       0.20         2.        1.5
+     283.62       0.53       0.27       1.04       0.50       0.54
+                    1.
+     284.37       1.31       0.18       24.0                  1.38
+       0.19         2.        2.5
+     285.83       1.92       0.19       30.0                  2.05
+       0.21         2.        2.5
+     289.00       1.20       0.15       24.0                  1.27
+       0.16         2.        1.5
+     290.86       1.41       0.16       26.0                  1.50
+       0.17         1.        1.5
+     293.54       0.56       0.09       130.                  0.56
+       0.09         1.        0.5
+     296.07       0.27       0.10       0.35       0.12       0.54
+
+ENDDATA            198
+ENDSUBENT          285
+SUBENT        21665006   20170813   20180124   20180123       2263
+BIB                  4          9
 REACTION   (26-FE-56(N,G),,WID,,AV)
-MISC-COL   (MISC) Effective number of degrees of freedom.
 ERR-ANALYS (DATA-ERR) No details given of the averaging
                       calculation.
-STATUS     (DEP,21665005) Averages calulated from individual
+STATUS     (TABLE) Table 2 of the 91JUELIC,44,1991
+           (DEP,21665005) Averages calculated from individual
                           resonance parameters.
-           (TABLE) From text on p.133 of the 82ANTWER,,131,1982
 HISTORY    (19830103C) A.P.T.
-ENDBIB               8
+           (20170813A) SD: Data were update according to new
+           publication.
+ENDBIB               9
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
- 1.152       256.43
+ 1.152       296.07
 ENDCOMMON            3
-DATA                 4          3
-MOMENTUM L DATA       DATA-ERR   MISC
-NO-DIM     EV         EV         NO-DIM
-         0.       0.85       0.41        9.6
-         1.       0.50       0.18       17.1
-         2.       0.73       0.25       18.5
+DATA                 3          3
+MOMENTUM L DATA       DATA-ERR
+NO-DIM     EV         EV
+         0.       0.96       0.39
+         1.       0.49       0.21
+         2.       0.72       0.33
 ENDDATA              5
-ENDSUBENT           22
+ENDSUBENT           23
 ENDENTRY             6
