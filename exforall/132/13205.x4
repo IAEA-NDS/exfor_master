@@ -1,51 +1,97 @@
-ENTRY            13205     881102              20050926       0000
-SUBENT        13205001     881102              20050926       0000
-BIB                 10         15
+ENTRY            13205   20161205   20170607   20170605       1425
+SUBENT        13205001   20161205   20170607   20170605       1425
+BIB                 11         26
+TITLE      Accurate nuclear fuel burnup analysis, sixteenth
+           quarterly progress report
+AUTHOR     (B.F.Rider,C.P.Ruiz,J.P.Peterson Jr,F.R.Smith)
+REFERENCE  (P,GEAP-5060,196512)
 INSTITUTE  (1USAGEV)
-REFERENCE  (P,GEAP-5060,6512)
-AUTHOR     (B.F.RIDER,C.P.RUIZ,J.P.PETERSON JR,F.R.SMITH)
-TITLE      ACCURATE NUCLEAR FUEL BURNUP ANALYSIS, SIXTEENTH
-           QUARTERLY PROGRESS REPORT
 FACILITY   (REAC,1USAMTR)
-           ND-148 FROM 3 CAPSULES, 6-6-1, GEV-1, GEV-2 AT NV =
-           6E13, 2E13, 1E13 AND NVT = 2.4E20, 1.0E20, 4.0E19,
-           RESPECTIVELY.
-SAMPLE     U(3)O(8) SAMPLE. ISOTOPIC COMPOSITION: 235U(99.1633%),
-             234U(0.4677%), 236U(0.0603), 238U(0.3087)
-METHOD     (ASEP)
-ERR-ANALYS DATA UNCERTAINTY IS STANDARD DEVIATION
-STATUS     (RIDER) REFERENCE 65RID1
-HISTORY    (890519C) VM
-ENDBIB              15
+SAMPLE     (92-U-234,ENR=0.004677) U(3)O(8) sample.
+           (92-U-235,ENR=0.991633)
+           (92-U-236,ENR=0.000603)
+           (92-U-238,ENR=0.003087)
+INC-SPECT  Materials Testing Reactor (MTR) at an unperturbed
+           flux of 6 x 10**13 neutrons/cm2-sec (nvt=2.4 x 10**20).
+METHOD     (ASEP) Am aluminum capsule (CPP-6-6-1) prepared at
+           Philips Petroleum Company which contain 85.2 mg of
+           U3O8 irradiated for three cycles in the MTR. The
+           cadmium ratio for cobalt for the position in which
+           the capsule was irradiated was 15. The capsule was
+           dissolved in the acid mixture of 6M HCl - 1.6M HNO3.
+           The number of fissions in the irradiated capsule was
+           determined from the difference in the weight of total
+           uranium before and after irradiation.
+ERR-ANALYS (DATA-ERR) Data uncertainty is standard deviation.
+STATUS     (RIDER) Reference 65RID1
+HISTORY    (19890519C) VM
+           (20161205A) BP: Updated to new date formats,lower case.
+               Corrected the entry. Added subentries 3,4.
+ENDBIB              26
+NOCOMMON             0          0
+ENDSUBENT           29
+SUBENT        13205002   20161205   20170607   20170605       1425
+BIB                  4          8
+REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA)
+HISTORY    (20161205A) BP: removed Cs data as not original.
+           Original MONITOR information was removed and REACTION
+           SF8 was changed.
+CORRECTION Small corrections were applied for neutron capture
+           effects and, and in the case of Nd-144, for Ce-144
+           holdup.
+STATUS     (TABLE) Table 5, page 7.
+ENDBIB               8
 COMMON               1          3
 EN-DUMMY
 EV
-0.0253
+     0.0253
 ENDCOMMON            3
-ENDSUBENT           22
-SUBENT        13205002     881102              20050926       0000
-BIB                  3          8
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-MONITOR    RELATIVE DATA OF GEAP-4716 AND GEAP-4893 NORMALIZED TO
-            TOTAL YIELD FOR CS AND ND = 33.37%
-           ASSUMING 300 BARN SPECTRUM AVERAGED NEUTRON CROSS
-            SECTION FOR ND-147, 0.982, 0.993, 0.993, OR AVERAGE OF
-            0.989 OF ND-148 IS FISSION CAUSED
-STATUS     (DEP,13204003)
-           (DEP,13206003)
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 4          8
+DATA                 4          6
 ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 55.       133.         6.75        .080
- 55.       137.         6.19        .075
- 60.       143.         5.98        .075
- 60.       144.         5.29        .066
- 60.       145.         3.91        .049
- 60.       146.         2.95        .037
- 60.       148.         1.67        .023
- 60.       150.         0.63        .007
-ENDDATA             10
-ENDSUBENT           23
-ENDENTRY             2
+        60.       143.       5.98    7.5E-02
+        60.       144.       5.29    6.6E-02
+        60.       145.       3.91    4.9E-02
+        60.       146.       2.95    3.7E-02
+        60.       148.       1.67    2.3E-02
+        60.       150.      0.633     7.E-03
+ENDDATA              8
+ENDSUBENT           25
+SUBENT        13205003   20161205   20170607   20170605       1425
+BIB                  3          3
+REACTION   (92-U-235(N,ABS),,ALF,,SPA)
+HISTORY    (20161205C)
+STATUS     (TABLE) Table 2, page 5.
+ENDBIB               3
+COMMON               1          3
+EN-DUMMY
+EV
+     0.0253
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+  0.176      0.002
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        13205004   20161205   20170607   20170605       1425
+BIB                  4          6
+REACTION   (92-U-235(N,ABS),,ALF)
+ANALYSIS   Spectrum average data corrected to 2200 m/sec flux
+           at 20 degC.
+HISTORY    (20161205C)
+STATUS     (TABLE) Table 2, page 5.
+           (DEP,13205003)
+ENDBIB               6
+COMMON               1          3
+EN
+EV
+     0.0253
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+  0.171      0.002
+ENDDATA              3
+ENDSUBENT           18
+ENDENTRY             4

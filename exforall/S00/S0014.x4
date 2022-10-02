@@ -1,13 +1,13 @@
-ENTRY            S0014   20080311   20080828   20080828       Y006
-SUBENT        S0014001   20080311   20080828   20080828       Y006
-BIB                 13         51
+ENTRY            S0014   20170404   20170607   20170404       S021
+SUBENT        S0014001   20170404   20170607   20170404       S021
+BIB                 13         55
 TITLE      Excitation functions for
            W-182-186 (d,2n) Re-182-186 and
            W-186(d,p)W-187 reactions
 AUTHOR     (Tao Zhenlan,Zhu Fuying,Qiu Huiyuan,Wang Gongqing)
 INSTITUTE  (3CPRNRS)
 EXP-YEAR   (1979)
-REFERENCE  (J,CNP,3,(3),242,198108) Chinese journal of Nuclear
+REFERENCE  (J,CNP,3,242,1981) Chinese journal of Nuclear
            Physics,in Chinese
 FACILITY   (CYCLO,3CPRNRS)
 METHOD     (ACTIV)
@@ -36,7 +36,8 @@ ERR-ANALYS (ERR-T) the following uncertainties have been taken
            (ERR-1) error of integration beam
            (ERR-2) error of the detector efficiencies
            (ERR-3) uniform of the targets
-SAMPLE     Tungsten tri-oxide targets were made by vacuum
+SAMPLE     Natural tungsten abundance.
+           Tungsten tri-oxide targets were made by vacuum
            evaporation
            Purity of tungsten was better than 99.%
            Each thickness of the targets was about 4.mg/cm-sq.
@@ -47,18 +48,21 @@ SAMPLE     Tungsten tri-oxide targets were made by vacuum
            absorbers Al foil purity 99.9%
            and their thickness 1.97 mg/cm2 and 4.39mg/cm2
            respectively
-STATUS     (APRVD)
+STATUS     (TABLE) Table 2 of Chinese J.Nucl.Phys.3(1981)242.
+           (APRVD)
 HISTORY    (19850606C)
            (19860115A)  DG.-Corrected by NDS.-
            (20080228A) NDS(SD):BIB section updated: upper to lower
            cases, 4-digits year, deleted EXP - from reaction code.
-ENDBIB              51
+           (20170404A) VS. REACTION corrected in subents 004, 005
+            006,007. DATA corrected in 005,006,007.
+ENDBIB              55
 COMMON               3          3
 ERR-1      ERR-2      ERR-3
 PER-CENT   PER-CENT   PER-CENT
   5.0        4.0        2.0
 ENDCOMMON            3
-ENDSUBENT           58
+ENDSUBENT           62
 SUBENT        S0014002   20080311   20080828   20080828       Y006
 BIB                  2          2
 REACTION   (74-W-186(D,P)74-W-187,,SIG)
@@ -105,11 +109,16 @@ MEV        MB         MB
   7.0         2.3       0.2
 ENDDATA             12
 ENDSUBENT           19
-SUBENT        S0014004   20080311   20080828   20080828       Y006
-BIB                  2          2
-REACTION   (74-W-184(D,2N)75-RE-184-M,,SIG)
+SUBENT        S0014004   20170404   20170607   20170404       S021
+BIB                  4          7
+REACTION   ((74-W-184(D,2N)75-RE-184-M,,SIG)+
+           (74-W-183(D,N)75-RE-184-M,,SIG,,RAB))
 DECAY-DATA (75-RE-184-M,165.D,DG,384.,0.0334)
-ENDBIB               2
+SAMPLE     (74-W-184,NAT=0.3064)
+           (74-W-183,NAT=0.1431)
+HISTORY    (20170404A) VS. REACTION: other target
+           nuclides contribution added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          8
 EN         DATA       ERR-T
@@ -123,18 +132,31 @@ MEV        MB         MB
  12.1       28.        12.
  11.5       13.         6.
 ENDDATA             10
-ENDSUBENT           17
-SUBENT        S0014005   20080311   20080828   20080828       Y006
-BIB                  3          4
-REACTION   (74-W-184(D,2N)75-RE-184,,SIG)
+ENDSUBENT           22
+SUBENT        S0014005   20170404   20170607   20170404       S021
+BIB                  5         17
+REACTION   ((74-W-184(D,2N)75-RE-184-G,,SIG)+
+           (74-W-183(D,N)75-RE-184-G,,SIG,,RAB))
 DECAY-DATA (75-RE-184-G,38.D,DG,792.,0.377)
-FLAG       (1.) estimated value by semi-empirical
-                approach method
-ENDBIB               4
+ANALYSIS   Contribution of 184mRe production to the measured
+           792 keV gammas was calculated by using the 184mRe
+           production cross section determined by the 384 keV
+           gammas. This showed that the 184gRe production
+           contributes to the measured 792 keV gammas a few
+           hundred times more than 184mRe production.
+           Therefore it was assumed that 792 keV gamma is
+           originated from 184gRe production.
+SAMPLE     (74-W-184,NAT=0.3064)
+           (74-W-183,NAT=0.1431)
+HISTORY    (20170404A) VS. REACTION: other target
+           nuclides contribution added. SF4: -G added.
+           Flagged data replaced with measured data.
+           ANALYSIS added.
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 4         11
-EN         DATA       ERR-T      FLAG
-MEV        MB         MB         NO-DIM
+DATA                 3         11
+EN         DATA       ERR-T
+MEV        MB         MB
  15.7       383.       23.
  14.3       474.       28.
  13.2       545.       31.
@@ -143,52 +165,62 @@ MEV        MB         MB         NO-DIM
  10.9       277.       21.
  10.3       247.       15.
   9.7       162.       10.
-  9.0        78.        5.4        1.
-  8.4        40.        3.2        1.
-  7.7         5.        1.6        1.
+  9.0        86.6       5.4
+  8.4        49.9       3.2
+  7.7         6.0       1.6
 ENDDATA             13
-ENDSUBENT           22
-SUBENT        S0014006   20080311   20080828   20080828       Y006
-BIB                  3          4
-REACTION   (74-W-183(D,2N)75-RE-183,,SIG)
+ENDSUBENT           35
+SUBENT        S0014006   20170404   20170607   20170404       S021
+BIB                  4         10
+REACTION   ((74-W-183(D,2N)75-RE-183,,SIG)+
+           (74-W-182(D,N)75-RE-183,,SIG,,RAB)+
+           (74-W-184(D,3N)75-RE-183,,SIG,,RAB))
 DECAY-DATA (75-RE-183,71.D,DG,291.7,0.032)
-FLAG       (1.) estimated value by semi-empirical
-                approach method.
-ENDBIB               4
+SAMPLE     (74-W-182,NAT=0.2650)
+           (74-W-183,NAT=0.1431)
+           (74-W-184,NAT=0.3064)
+HISTORY    (20170404A) VS. REACTION: other target
+           nuclides contribution added.
+           Flagged data replaced with measured data.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 4         12
-EN         DATA       ERR-T      FLAG
-MEV        MB         MB         NO-DIM
- 15.7       1050.       140.       1.
- 14.7        910.       120.       1.
- 14.3        662.        91.       1.
+DATA                 3         12
+EN         DATA       ERR-T
+MEV        MB         MB
+ 15.7       1190.       140.
+ 14.7       1060.       120.
+ 14.3        762.        91.
  13.7        761.      91.
  13.2        583.      70.
  12.7        543.      65.
  12.1        487.      58.
  11.5        373.      48.
- 10.3        200.      28.         1.
-  9.7        140.      17.         1.
-  9.0         81.      17.         1.
-  8.4          0.       9.         1.
+ 10.3        221.      28.
+  9.7        160.      17.
+  9.0        106.      17.
+  8.4         27.       9.
 ENDDATA             14
-ENDSUBENT           23
-SUBENT        S0014007   20080311   20080828   20080828       Y006
-BIB                  3          4
-REACTION   (74-W-182(D,2N)75-RE-182,,SIG)
+ENDSUBENT           29
+SUBENT        S0014007   20170404   20170607   20170404       S021
+BIB                  4          8
+REACTION   ((74-W-182(D,2N)75-RE-182-G,,SIG)+
+           (74-W-183(D,3N)75-RE-182-G,,SIG,,RAB))
 DECAY-DATA (75-RE-182-G,64.HR,DG,148.9,0.0358)
-FLAG       (1.) estimated value by semi-empirical
-                approach method.
-ENDBIB               4
+SAMPLE     (74-W-182,NAT=0.2650)
+           (74-W-183,NAT=0.1431)
+HISTORY    (20170404A) VS. REACTION: other target
+           nuclides contribution added. SF4: -G added.
+           Flagged data replaced with measured data.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 4          5
-EN         DATA       ERR-T      FLAG
-MEV        MB         MB         NO-DIM
- 15.7       100.       24.         1.
+DATA                 3          5
+EN         DATA       ERR-T
+MEV        MB         MB
+ 15.7       170.       24.
  14.3       119.       25.
  13.2       142.       17.
  12.1        89.       13.
  10.3        21.        8.
 ENDDATA              7
-ENDSUBENT           16
+ENDSUBENT           20
 ENDENTRY             7

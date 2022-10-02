@@ -1,53 +1,110 @@
-ENTRY            22272     950420              20050926       0000
-SUBENT        22272001     950420              20050926       0000
-BIB                  5         13
-INSTITUTE  (2JPNTIT) Y.N., M.I., N.M., T.O., F.U., K.T., T.A.,
-            H.K., AND EXPERIMENTAL SITE.
-           (2JPNTOK) S.K., T.F.
-REFERENCE  (J,AJ,381,444,91)
-AUTHOR     (Y.NAGAI,M.IGASHIRA,N.MUKAI,T.OHSAKI,F.UESAWA,K.TAKEDA,
-            T.ANDO,H.KITAZAWA,S.KUBONO,T.FUKUDA)
-TITLE      -CAPTURE RATE OF THE LI-7(N,G)LI-8 REACTION BY PROMPT
-            GAMMA-RAY DETECTION.
-HISTORY    (940115C) N.O.
-           (950420E)
-           (961022D)  ENTRY DELETED DUE TO THE DATA REPETITION
-                      IN ENTRY 22271, SAN 002 - 004
-                      CORRECTED BY S. MAEV
-ENDBIB              13
+ENTRY            22272   20170130   20170607   20170512       2258
+SUBENT        22272001   20170130   20170607   20170512       2258
+BIB                 12         34
+TITLE      Capture rate of the 7Li(n,g)8Li reaction by prompt
+            gamma-ray detection
+AUTHOR     (Y.Nagai, M.Igashira, N.Mukai, T.Ohsaki, F.Uesawa,
+            K.Takeda, T.Ando, H.Kitazawa, S.Kubono, T.Fukuda)
+INSTITUTE  (2JPNTIT,2JPNTOK)
+REFERENCE  (J,AJ,381,444,1991)
+           (J,NIM/B,56-57,492,1991) Preliminary data in table
+FACILITY   (VDG,2JPNTIT) 3.2 MV Pelletron
+INC-SOURCE (P-LI7) Protons (Ep=1.895 MeV, ~5 uA at a repetition
+            rate of 2 MHz, pulse width of 1.5 ns) on 7Li target
+INC-SPECT  Most probable energy of 30 keV. Thermal neutron
+            captures were discriminated by time-of-flight.
+SAMPLE     Standard Au sample (5.5 cm in diam., 0.17 cm in thick).
+           Li, Au and blank runs were done cyclically.
+           (3-LI-6,ENR=0.9248) Metallic Li (60 mm diam.x 26 mm)
+            packed in a thin vinyl film. The isotopic abundance
+            was investigated by mass spectrometry.
+METHOD     (TOF,PHD,PHWT)
+DETECTOR   (NAICR) 7.6 cm (diam.) and 15.2 cm thick NaI(Tl)
+            detector surrounded by 25.4 cm (diam.) and 28.0 cm
+            thick annular NaI(Tl) detector. Set at 125 deg with
+            respect to the proton beam direction.
+           (GLASD) 6Li glass time-of-flight detector set at
+            14 deg with respect to the proton beam.
+CORRECTION Corrected for
+            - gamma-ray absorption in the sample
+            - sample position dependence of gamma-ray detection
+              efficiency
+            - Neutron self-shielding and multiple scattering
+HISTORY    (19940115C) N.O.
+           (19950420E)
+           (19961022D) Entry deleted due to the data repetition
+            in ENTRY 22271, SAN 002 - 004. Corrected by S.Maev.
+           (20170130A) On. DATA section restored in 002-004.
+ENDBIB              34
+NOCOMMON             0          0
+ENDSUBENT           37
+SUBENT        22272002   20170130   20170607   20170512       2258
+BIB                  5          9
+REACTION   (3-LI-7(N,G)3-LI-8,,SPC,,SPA/REL)
+FLAG       (0.) capture state -> ground state
+           (1.) capture state -> 1st excited state
+           (2.) This supersedes the upper limited in Table 1 of
+            Nucl.Instrum.B56/57)1991 (Yasuki Nagai, 2017-01-18).
+ERR-ANALYS (DATA-ERR) No information on source of uncertainty
+STATUS     (TABLE) Table 1 of Astrophys.J.381(1991)444
+HISTORY    (19961022D)
+           (20170130S) On. DATA section restored.
+ENDBIB               9
 COMMON               1          3
-EN
+EN-MEAN
 KEV
- 3.0000E+01
+ 30.
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        22272002     950420              20050926       0000
-BIB                  2          3
-REACTION   (3-LI-7(N,G)3-LI-8,,SPC,,REL)
-HISTORY    (940115C) N.O.
-           (950420E)
-ENDBIB               3
+DATA                 6          2
+E          DATA       DATA-ERR   DATA-MAX   FLAG       FLAG
+MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS  NO-DIM     NO-DIM
+ 2.06       2.98       0.50                  0.
+ 1.08                             0.8        1.         2.
+ENDDATA              4
+ENDSUBENT           22
+SUBENT        22272003   20170130   20170607   20170512       2258
+BIB                  7         15
+REACTION   (3-LI-7(N,G)3-LI-8,PAR,SIG,,SPA)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+MONIT-REF  (,S.F.Mughabghab,3,ENDF/B-V,1379,1979)
+ERR-ANALYS (ERR-T) Total uncertainty propagated from
+           (ERR-S) statistical error of prompt gamma rays (14%)
+           (ERR-1) detector efficiency                     (3%)
+           (ERR-2) pulse-heigh weighting technique         (5%)
+           (ERR-3) neutron flux normalization              (5%)
+           (MONIT-ERR) Au standard cross section           (5%)
+FLAG       (2.) This supersedes the upper limited in Table 1 of
+            Nucl.Instrum.B56/57)1991 (Yasuki Nagai, 2017-01-18).
+STATUS     (TABLE) Table 1 of Astrophys.J.381(1991)444
+           (DEP,22272002) gamma-ray intensities
+HISTORY    (19961022D)
+           (20170130S) On. DATA section restored.
+ENDBIB              15
+COMMON               6          3
+EN-MEAN    ERR-S      ERR-1      ERR-2      ERR-3      MONIT-ERR
+KEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 30.        14.        3.         5.         5.         5.
+ENDCOMMON            3
+DATA                 6          2
+E-LVL      LVL-NUMB   DATA       ERR-T      DATA-MAX   FLAG
+MEV        NO-DIM     MICRO-B    MICRO-B    MICRO-B    NO-DIM
+ 0.                    35.4       6.0
+            1.                               9.         2.
+ENDDATA              4
+ENDSUBENT           28
+SUBENT        22272004   20170130   20170607   20170512       2258
+BIB                  3          5
+REACTION   (3-LI-7(N,G)3-LI-8,,SIG,,SPA)
+STATUS     (TABLE) Text (p447) of Astrophys.J.381(1991)444
+           (DEP,22272003) Partial cross sections
+HISTORY    (19961022D)
+           (20170130S) On. DATA section restored.
+ENDBIB               5
 NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            7
-SUBENT        22272003     950420              20050926       0000
-BIB                  2          4
-REACTION   (3-LI-7(N,G)3-LI-8,PAR,SIG)
-HISTORY    (940115C) N.O.
-           (950420E)
-           (961022D)
-ENDBIB               4
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            8
-SUBENT        22272004     950420              20050926       0000
-BIB                  2          4
-REACTION   (3-LI-7(N,G)3-LI-8,,SIG)
-HISTORY    (940115C) N.O.
-           (950420E)
-           (961022D)
-ENDBIB               4
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            8
+DATA                 2          1
+EN-MEAN    DATA-MAX
+KEV        MICRO-B
+ 30.        44.4
+ENDDATA              3
+ENDSUBENT           13
 ENDENTRY             4
