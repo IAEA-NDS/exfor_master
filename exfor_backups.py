@@ -276,12 +276,12 @@ def git_merge_to_main(date_str):
 
 
 ####################################################################
-# This is the process to run through all server files
-# Note that some of the zip file cannot be proecssed.
-# (e.g. EXFOR-2010-07-12.zip seems to be broken or not in zip format)
+# This is the process to run through all server files.
+# Some of the zip file cannot be proecssed. (e.g. 
+# EXFOR-2010-07-12.zip seems to be broken or not a zip format.)
 ####################################################################
 
-def run():
+def runall():
     x = get_server_files()
 
     for xx in x:
@@ -307,4 +307,4 @@ def run():
 
 if __name__ == "__main__":
     # latest = download_latest_master_from_bk()
-    run()
+    runall()
