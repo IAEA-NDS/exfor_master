@@ -1,36 +1,102 @@
-ENTRY            10134   20000321   20000427   20050926       0000
-SUBENT        10134001   20000321   20000427   20050926       0000
-BIB                  6         11
-INSTITUTE  (1USALRL)
-REFERENCE  (J,NSE,35,350,196903)
-AUTHOR     (R.L.BRAMLETT,J.B.CZIRR)
+ENTRY            10134   20140605   20141007   20141003       1400
+SUBENT        10134001   20140605   20141007   20141003       1400
+BIB                 10         18
+AUTHOR     (R.L.Bramlett,J.B.Czirr)
 TITLE      Energy-Dependent Shielding Factors for 235U Foils
-            from Transmission Measurements.
-STATUS     (UNOBT) Poor resolution data. Author does not want to
-            enter into data system
+           from Transmission Measurements
+REFERENCE  (J,NSE,35,350,1969)
+INSTITUTE  (1USALRL)
+FACILITY   (LINAC,1USALRL) 33 MeV electron linear accelerator.
+INC-SOURCE (PHOTO)
+SAMPLE     (92-U-235,ENR=0.932) The enriched uranium absorber
+           foils varied in Thickness from 0.14 to 19 g/cm2.
+           Other isotopes of interest: 238U - 5.6%, and 234U - 1%.
+PART-DET   (N)
+COMMENT    Poor resolution data. Author did not want to enter
+           into data system. Data was added.
 HISTORY    (19720524C)
-           (19760302A) Lower limit energy units corrected
-           (19820527A) Converted to REACTION formalism
-           (20000321A) Converted to new date format, lower case.
-ENDBIB              11
-COMMON               2          3
-EN-MIN     EN-MAX
-EV         KEV
- 0.46       2.1
+           (19760302A) lower limit energy units corrected
+           (19820527A) converted to reaction formalism
+           (20000321A) converted to new date format, lower case.
+           (20140605A) BP: Added experimental data.
+ENDBIB              18
+NOCOMMON             0          0
+ENDSUBENT           21
+SUBENT        10134002   20140605   20141007   20141003       1400
+BIB                  5          8
+REACTION   (92-U-235(N,F),,SIG,,AV)
+DETECTOR   (FISCH,BF3)
+METHOD     (TOF) Timing resolution was 27 nsec/m. Data taken
+           with the U fission chamber. The sigma fission values
+           are unaffected by the resolution.
+ERR-ANALYS (DATA-ERR) The estimated uncertainty in the resulting
+           absolute fission cross section is 4%.
+STATUS     (TABLE) Table III, page 355.
+ENDBIB               8
+COMMON               1          3
+DATA-ERR
+PER-CENT
+        4.0
 ENDCOMMON            3
-ENDSUBENT           18
-SUBENT        10134002   19820527   20000427   20050926       0000
-BIB                  1          1
-REACTION   (92-U-235(N,F),,SIG)
-ENDBIB               1
+DATA                 3          8
+EN-MIN     EN-MAX     DATA
+EV         EV         B
+       4.64       10.0       50.1
+       10.0       21.5       51.3
+       21.5       46.4       41.1
+       46.4      100.0       32.9
+      100.0      215.0       20.6
+      215.0      464.0       16.7
+      464.0     1000.0       12.0
+     1000.0     2150.0        7.7
+ENDDATA             10
+ENDSUBENT           27
+SUBENT        10134003   20140605   20141007   20141003       1400
+BIB                  4          7
+REACTION   (92-U-235(N,TOT),,SIG,,RAW)
+           The sigma total values have not been corrected for
+           resolution effects.
+DETECTOR   (FISCH,BF3)
+METHOD     (TOF) Timing resolution was 27 nsec/m. Data taken
+           with the U fission chamber.
+STATUS     (TABLE) Table III, page 355.
+ENDBIB               7
 NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            5
-SUBENT        10134003   19820527   20000427   20050926       0000
-BIB                  1          1
-REACTION   (92-U-235(N,TOT),,SIG)
-ENDBIB               1
+DATA                 3         11
+EN-MIN     EN-MAX     DATA
+EV         EV         B
+      0.464        1.0       80.0
+        1.0       2.15       57.0
+       2.15       4.64       36.0
+       4.64       10.0      103.0
+       10.0       21.5      106.0
+       21.5       46.4       84.0
+       46.4      100.0       87.0
+      100.0      215.0       50.0
+      215.0      464.0       39.0
+      464.0     1000.0       30.0
+     1000.0     2150.0       24.0
+ENDDATA             13
+ENDSUBENT           25
+SUBENT        10134004   20140605   20141007   20141003       1400
+BIB                  5          7
+REACTION   (92-U-235(N,TOT),,SIG,,AV)
+DETECTOR   (GLASD,SCIN) 6Li-loaded glass scintillator.
+METHOD     (TOF) Timing resolution was 18 nsec/m. Data taken
+           with the Li-glass scintillator. The sigma total values
+           have been corrected for resolution effects.
+STATUS     (TABLE) Table III, page 355.
+HISTORY    (20140605C) BP
+ENDBIB               7
 NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            5
-ENDENTRY             3
+DATA                 3          5
+EN-MIN     EN-MAX     DATA
+EV         EV         B
+        1.0       2.15       60.0
+       2.15       4.64       35.0
+       4.64       10.0      106.0
+       10.0       21.5      107.0
+       21.5       46.4       83.0
+ENDDATA              7
+ENDSUBENT           19
+ENDENTRY             4
