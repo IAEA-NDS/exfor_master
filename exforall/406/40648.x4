@@ -1,33 +1,41 @@
-ENTRY            40648     840320              20050926       0000
-SUBENT        40648001     840320              20050926       0000
-BIB                 10         11
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,AE,12,(6),514,62)
-           (J,SJA,12,545,62)
-AUTHOR     (JU.JA.STAVISSKIJ,A.V.SHAPAR')
-TITLE      FAST NEUTRON CAPTURE CROSS SECTION FOR CHROMIUM.
-FACILITY   (VDG)
+ENTRY            40648   20140702   20141103   20141016       4164
+SUBENT        40648001   20140702   20141103   20141016       4164
+BIB                 11         18
+INSTITUTE  (4RUSFEI)
+REFERENCE  (J,AE,12,(6),514,1962)
+           (J,SJA,12,545,1962)
+           #doi:10.1007/BF01481307
+AUTHOR     (Yu.Ya.Stavisskii,A.V.Shapar')
+TITLE      Fast neutron capture cross section for chromium.
+FACILITY   (VDG,4RUSFEI)
 INC-SOURCE (P-T)
-DETECTOR   (SCIN) CA-F(2) CRYSTAL
-MONITOR    (92-U-235(N,G)92-U-236,,SIG)
+DETECTOR   (SCIN) Ca-F(2) crystal
+SAMPLE     Natural Cr.
+MONITOR    (92-U-235(N,F),,SIG) For energy dependence.
 STATUS     (SCSRS)
-HISTORY    (831219T) CONVERTED FROM ENTRY 80055
-ENDBIB              11
-COMMON               3          3
-EN-RSL     EN-NRM     MONIT
-KEV        KEV        MB
- 2.0000E+01 4.0000E+02 4.0000E+00
+HISTORY    (19831219T) Converted from ENTRY 80055
+           (20140702A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           BIB information was updated.
+           Data of Subent 003 are restored as primarily measured.
+           Monitors information is corrected.
+ENDBIB              18
+COMMON               1          3
+EN-RSL-HW
+KEV
+ 20.
 ENDCOMMON            3
-ENDSUBENT           18
-SUBENT        40648002     840320              20050926       0000
-BIB                  4          6
+ENDSUBENT           25
+SUBENT        40648002   20140702   20141103   20141016       4164
+BIB                  5          7
 REACTION   (24-CR-0(N,G),,SIG)
-METHOD     (ACTIV)    ACTIVATION
+METHOD     (ACTIV)    Activation
 MONITOR    (92-U-235(N,F),,SIG)
-            RENORMALIZED BY NNCSC TO U235 FISSION OF
+            Renormalized by NNCSC to U235 fission of
             BNL-325(1965).
+MONIT-REF  (,,R,BNL-325,1965)
 STATUS     (RNORM,40648003)
-ENDBIB               6
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2         10
 EN         DATA
@@ -43,15 +51,37 @@ MEV        B
  7.0000E-01 3.9000E-03
  9.0000E-01 3.8000E-03
 ENDDATA             12
-ENDSUBENT           23
-SUBENT        40648003     840320              20050926       0000
-BIB                  4          4
+ENDSUBENT           24
+SUBENT        40648003   20140702   20141103   20141016       4164
+BIB                  6          9
 REACTION   (24-CR-0(N,G),,SIG)
-METHOD     (ACTIV)    ACTIVATION
-MONITOR    (92-U-235(N,F),,SIG)
+METHOD     (ACTIV)    Activation
+MONITOR    (92-U-235(N,F),,SIG)   For energy dependence
+            From Atlas of neutron cross-sections,
+            D.H'udzh (=? Huge), R.Shwarz, Moscow, Atomizdat, 1960.
+           ((MONIT2)24-CR-0(N,G),,SIG) at 400 keV.
+MONIT-REF  ((MONIT2)11616004,B.Diven+,J,PR,120,556,1960)
+ERR-ANALYS (DATA-ERR,,15.) Experimental uncertainty < 15.% .
 STATUS     (OUTDT,40648002)
-ENDBIB               4
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            8
+ENDBIB               9
+COMMON               2          3
+EN-NRM     MONIT2
+KEV        MB
+ 400.       4.
+ENDCOMMON            3
+DATA                 2         10
+EN         DATA
+KEV        MB
+ 35.        7.8
+ 52.        5.0
+ 95.        6.5
+140.        6.4
+180.        4.0
+290.        3.9
+350.        3.2
+530.        4.0
+700.        4.0
+900.        3.8
+ENDDATA             12
+ENDSUBENT           30
 ENDENTRY             3

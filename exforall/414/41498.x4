@@ -1,6 +1,6 @@
-ENTRY            41498   20130705   20140110   20131224       4161
-SUBENT        41498001   20130705   20140110   20131224       4161
-BIB                 10         45
+ENTRY            41498   20140627   20141103   20141016       4164
+SUBENT        41498001   20140627   20141103   20141016       4164
+BIB                 12         68
 TITLE       Cumulative yields of delayed neutrons precursors in
             neutron induced fission of 237-Np and 238-U in the
             energy range from 0.5 up to 5. MeV.
@@ -28,15 +28,33 @@ METHOD     (ACTIV) Radiation time 180.06 and 300.06 sec.
            Time dependence of delayed neutron activity after
            irradiation
            were measured.
-DETECTOR   (D4PI) Distributed in polyethilene moderator along
+DETECTOR   (D4PI) Distributed in polyethylene moderator along
                  three concentric circles with diameters of 53,
                  80 and 110 mm assemblage of 30 boron counters
-                 SNM-11 was used for neutron detection.
+                 SNM-11 were used for neutron detection.
                  Protection by boron carbide, cadmium and borated
-                 polyethelene.
+                 polyethylene.
            (LONGC) Long counter for neutron beam monitoring
            (FISCH) Fission chamber with Np-237 oxide layer  for
                     neutron beam monitoring during radiation.
+PART-DET   (DN)
+DECAY-DATA (35-BR-87,55.60SEC,DN,0.0252)
+           (35-BR-88,16.30SEC,DN,0.0658)
+           (35-BR-89,4.38SEC,DN,0.138)
+           (35-BR-91,0.542SEC,DN,0.200)
+           (53-I-137,24.50SEC,DN,0.0714)
+           (53-I-138,6.46SEC,DN,0.546)
+           (53-I-139,2.30SEC,DN,0.100)
+           (53-I-140,0.860SEC,DN,0.093)
+           (36-KR-93,1.289SEC,DN,0.0195)
+           (37-RB-94,2.76SEC,DN,0.1001)
+           (37-RB-95,0.384SEC,DN,0.0873)
+            Br-87 - 2.52+-0.07, Br-88 - 6.58+-0.18,
+            Br-89 - 13.8+-0.4,  Br-91 - 20.0+-3.0,
+            Kr-93 - 1.95+-0.11, Rb-94 - 10.01+-0.23,
+            Rb-95 - 8.73+-0.20, I-137 - 7.14+-0.23,
+            I-138 - 5.46+-0.18, I-139 - 10.0+-0.3,
+            I-140 - 9.3+-0.1 .
 REL-REF    (R,,G.Rudstam+,J,AND,53,(1),1,1993) Data for
             probability of delayed neutron emission.
            (M,,S.G.Isaev+,J,YK,2006,(1-2),35,2006) Method of
@@ -46,16 +64,44 @@ HISTORY    (20070817C)      Compiled at CJD. M.M.
            comment of M.Bossant:
             STATUS Shift (DEP,41500002) to the right position .
            (20130705A) Ref. R,INDC(CCP)-445,15,2007 was added.
-ENDBIB              45
+           (20140627A) REACTION DL/CUM, NU -> CUM, FY in
+            Subents 002,003.
+            BIB information was updated.
+           PART-DET (DN) were added, ERR-T -> DATA-ERR - according
+           to comment of N.Otsuka (NDS,IAEA).
+ENDBIB              68
 NOCOMMON             0          0
-ENDSUBENT           48
-SUBENT        41498002   20120214   20120702   20120621       4156
-BIB                  3         12
-REACTION   (93-NP-237(N,F)ELEM/MASS,DL/CUM,NU) Energy dependence
-            of cumulative yields of delayed neutrons from Np-237
-            fission.
-ERR-ANALYS (ERR-T)   Relative uncertainty of cumulative yields
-            was obtain as root of sum of squares of relative
+ENDSUBENT           71
+SUBENT        41498002   20140627   20141103   20141016       4164
+BIB                  6         35
+REACTION   (93-NP-237(N,F)ELEM/MASS,CUM,FY) Energy dependence
+            of cumulative yields from Np-237 fission.
+MONITOR    (93-NP-237(N,F),DL,NU) Delayed neutrons total yields:
+            EN,MeV    NUd, %/fis
+            0.370     1.141+-0.054
+            0.600     1.141+-0.054
+            0.800     1.141+-0.054
+            1.008     1.141+-0.054
+            3.231     1.006+-0.048
+            3.745     0.948+-0.045
+            4.196     0.926+-0.044
+            4.719     0.897+-0.042
+MONIT-REF  (41500002,V.M.Piksaykin+,J,YF,62,(8),1358,1999)
+ANALYSIS    Cumulative yields were defined by:
+            CYi(En)=ai(En)*NUd(En)/Pni,
+           where CYi - cumulative yield i-th precursor of delayed
+           neutrons,
+           ai(En) - relative yield of delayed neutrons for i-th
+           precursor,
+           NUd(En) - total yield of delayed neutrons,
+           Pni - delayed neutrons emission probability at
+           beta-decay of i-th precursor.
+           Relative yields ai were defined by iteration method of
+           least squares.
+           Delayed neutron emission probability - see DECAY-DATA
+            in Subent 001.
+ERR-ANALYS (DATA-ERR)Relative uncertainty of cumulative yields
+            was obtained as root of sum of squares of relative
              uncertainties for:
              fission yields,
              delayed neutron yields,
@@ -63,10 +109,10 @@ ERR-ANALYS (ERR-T)   Relative uncertainty of cumulative yields
 STATUS     (TABLE) From Tables 5, 6, 7 of J,YK,2006,(1-2),43,2006
            (DEP,41500002) Energy dependence of total delayed
              neutron yield from Np-237 fission.
-ENDBIB              12
+ENDBIB              35
 NOCOMMON             0          0
 DATA                 6         96
-EN         EN-ERR     ELEMENT    MASS       DATA       ERR-T
+EN         EN-ERR     ELEMENT    MASS       DATA       DATA-ERR
 MEV        MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS
 0.34       0.07       35.         87.        1.25       0.08
 0.34       0.07       35.         88.        1.17       0.08
@@ -165,25 +211,46 @@ MEV        MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS
 4.90       0.21       53.        139.        0.338      0.026
 4.90       0.21       53.        140.        0.065      0.008
 ENDDATA             98
-ENDSUBENT          115
-SUBENT        41498003   20070817   20071206   20071120       4141
-BIB                  3         12
-REACTION   (92-U-238(N,F)ELEM/MASS,DL/CUM,NU) Energy dependence of
-            cumulative yields of delayed neutrons from U-237
-            fission.
-ERR-ANALYS (ERR-T)   Relative unceirtainty of cumulative yields
-            was obtain as root of sum of squares of relative
+ENDSUBENT          138
+SUBENT        41498003   20140627   20141103   20141016       4164
+BIB                  6         33
+REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY) Energy dependence of
+            cumulative yields from U-238 fission.
+MONITOR    (92-U-238(N,F),DL,NU) Delayed neutrons total yields:
+            EN,MeV    NUd, %/fis
+            1.014     3.808+-0.182
+            3.236     4.622+-0.246
+            3.751     4.655+-0.122
+            4.205     4.622+-0.202
+            4.761     4.633+-0.124
+            4.935     4.666+-0.230
+MONIT-REF  (41416002,V.M.Piksaikin+,J,PNE,41,(1-4),135,2002)
+ANALYSIS    Cumulative yields were defined by:
+            CYi(En)=ai(En)*NUd(En)/Pni,
+           where CYi - cumulative yield i-th precursor of delayed
+           neutrons,
+           ai(En) - relative yield of delayed neutrons for i-th
+           precursor,
+           NUd(En) - total yield of delayed neutrons,
+           Pni - delayed neutrons emission probability at
+           beta-decay of i-th precursor.
+           Relative yields ai were defined by iteration method of
+           least squares.
+           Delayed neutron emission probability - see DECAY-DATA
+            in Subent 001.
+ERR-ANALYS (DATA-ERR)Relative uncertainty of cumulative yields
+            was obtained as root of sum of squares of relative
              uncertainties for:
              fission yields,
              delayed neutron yields,
              probability of delayed neutron emission.
-STATUS      From Tables 8, 9, 10 of Main Reference.
+STATUS     (TABLE) From Tables 8, 9, 10 of YK,2006,(1-2),43,
            (DEP,41416001) Energy dependence of total delayed
             neutron yield from U-238 fission.
-ENDBIB              12
+ENDBIB              33
 NOCOMMON             0          0
 DATA                 6         55
-EN         EN-ERR     ELEMENT    MASS       DATA       ERR-T
+EN         EN-ERR     ELEMENT    MASS       DATA       DATA-ERR
 MEV        MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS
 1.01       0.10       35.         87.        1.58        0.11
 1.01       0.10       35.         88.        1.127       0.072
@@ -241,21 +308,25 @@ MEV        MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS
 4.72       0.21       53.        139.        2.92        0.23
 4.72       0.21       53.        140.        0.85        0.11
 ENDDATA             57
-ENDSUBENT           74
-SUBENT        41498004   20070817   20071206   20071120       4141
-BIB                  3          8
+ENDSUBENT           95
+SUBENT        41498004   20140627   20141103   20141016       4164
+BIB                  4         12
 REACTION   (93-NP-237(N,F)MASS,,ZP) Energy dependence of most
             probable charge of fission products after prompt
             neutron emission.
-ERR-ANALYS (ERR-T) Unceitainty was determined takig into account
-            all used data.
+ANALYSIS    FF most probable charge was defined by equation
+            ( formula 2 in YK,2006,(1-2),58) on the base of
+            measured cumulative yields.
+ERR-ANALYS (DATA-ERR) Uncertainty was determined taking into
+           account all used data.
 STATUS     (APRVD) Data received from author V.Roshchenko.
+           (TABLE)
              Fig. 2 of 2nd Reference.
-           (DEP,41498002)
-ENDBIB               8
+           (DEP,41498002) Cumulative yields.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         88
-EN         MASS       DATA       ERR-T
+EN         MASS       DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM     NO-DIM
 0.5         87.        35.138    0.083
 0.5         88.        35.448    0.039
@@ -346,21 +417,25 @@ MEV        NO-DIM     NO-DIM     NO-DIM
 5.         139.        54.397    0.021
 5.         140.        54.79     0.028
 ENDDATA             90
-ENDSUBENT          103
-SUBENT        41498005   20070817   20071206   20071120       4141
-BIB                  3          8
+ENDSUBENT          107
+SUBENT        41498005   20140627   20141103   20141016       4164
+BIB                  4         12
 REACTION   (92-U-238(N,F)MASS,,ZP) Energy dependence of most
             probable charge of fission products after prompt
             neutron emission.
-ERR-ANALYS (ERR-T) Unceitainty was determined taking into account
-            all used data.
+ANALYSIS    FF most probable charge was defined by equation
+            ( formula 2 in YK,2006,(1-2),58) on the base of
+            measured cumulative yields.
+ERR-ANALYS (DATA-ERR) Uncertainty was determined taking into
+           account all used data.
 STATUS     (APRVD) Data received from author V.Roshchenko.
+           (TABLE)
             Fig. 3 of 2nd Reference.
-           (DEP,41498003)
-ENDBIB               8
+           (DEP,41498003) Cumulative yields.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         55
-EN         MASS       DATA       ERR-T
+EN         MASS       DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM     NO-DIM
 1.15        87.       34.101     2.975
 1.15        88.       35.334     0.058
@@ -418,5 +493,5 @@ MEV        NO-DIM     NO-DIM     NO-DIM
 4.95       139.       53.497     0.056
 4.95       140.       54.091     0.046
 ENDDATA             57
-ENDSUBENT           70
+ENDSUBENT           74
 ENDENTRY             5

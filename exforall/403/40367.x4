@@ -1,38 +1,58 @@
-ENTRY            40367     890425              20050926       0000
-SUBENT        40367001     890425              20050926       0000
-BIB                 11         19
-TITLE       ANGULAR DISTRIBUTION OF ELASTICALLY AND INELASTICALLY
-            SCATTERED  2.9 - MEV  NEUTRONS
-AUTHOR     (V.I.POPOV)
-INSTITUTE  (4CCPFEI)
-REFERENCE  (J,AE,3,(12),498,5712)
-MONITOR     ABSOLUTE MEASUREMENTS
-METHOD      RING GEOMETRY
-FACILITY   (VDG)  DEUTRON ENERGY 150 KEV
-INC-SOURCE (D-D)
-DETECTOR   (IOCH)
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-HISTORY    (820702C)
-           (861117A) IN MANY SUBENTS SF4-SUBFIELD WAS ADDED
-                     TO THE REACTION CODE FOR 'EL' IN SF3, STATUS
-                     CODE IN ALL SUBENTS CORRECTED, SOME DATA
-                     RENORMALIZED, DATA FOR INELASTIC SCATTERING
-                     IN SANS 007,010,013,017 DELETED, DATA OF SAN
-                     020 TRANSFERRED IN SAN 015
-                     AND INSTITUTE CODE CORRECTED FROM CCP TO FEI
-ENDBIB              19
+ENTRY            40367   20140709   20141103   20141016       4164
+SUBENT        40367001   20140709   20141103   20141016       4164
+BIB                 14         39
+TITLE       Angular distribution of elastically and inelastically
+            scattered  2.9 - MeV  neutrons
+AUTHOR     (V.I.Popov)
+INSTITUTE  (4RUSFEI)
+REFERENCE  (J,AE,3,(12),498,1957)
+           (J,SJA,3,(6),1379,1957) Engl.transl. of AE,3,(12),498
+           #doi:10.1007/BF01522503
+MONITOR     Absolute measurements
+METHOD      Ring geometry
+FACILITY   (VDG,4RUSFEI)  Deuteron energy 150 keV
+INC-SOURCE (D-D) Heavy ice bombarded by deuterons of 150keV energy
+DETECTOR   (IOCH)  Hydrogen spherical ionization chamber of
+           external electrode diameter of 13 cm,
+           filled with 5 atm. of hydrogen, 5 atm. of argon.
+           Registered recoil protons.
+CORRECTION For backgrounds.
+ADD-RES     Dif. angl. inl. par. c-s in arb.units
+           - for Cu for level 1.0 MeV at angles 90, 105, 135 deg,
+           - for Pb for 0.8 MeV level at angles 90, 135 deg
+            are presented on Fig.10 of J,SJA,3,(6),1379,1957 .
+            Total inl. c-s calculated as difference between
+           total c-s of Sal'nikov and measured elastic c-s
+           are given in Table 3 of J,SJA,3,(6),1379,1957 .
+REL-REF    (R,,O.A.Sal'nikov,J,AE,3,106,1957)
+ERR-ANALYS (DATA-ERR)  Not specified
+HISTORY    (19820702C)
+           (19861117A) In many Subents SF4-subfield was added
+                     to the reaction code for 'EL' in SF3, STATUS
+                     code in all Subents corrected, some data
+                     renormalized, data for inelastic scattering
+                     in SANS 007,010,013,017 deleted
+                     ( according to author's recommendation),
+                     data of SAN 020 transferred in SAN 015
+                     and INSTITUTE code corrected from CCP to FEI
+           (20140709A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           BIB information was updated.
+           Ref. of Engl. translation was added.
+           Subents 020-025 (initially published data) were added.
+ENDBIB              39
 COMMON               2          3
-EN         EN-RSL
+EN         EN-RSL-HW
 MEV        MEV
   2.9        0.1
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        40367002     811117              20050926       0000
+ENDSUBENT           46
+SUBENT        40367002   20140709   20141103   20141016       4164
 BIB                  2          4
 REACTION   (26-FE-0(N,EL)26-FE-0,,DA)
 STATUS     (NDD)            RUNID= E00212
-           (RNORM)  DATA WERE RENORMALIZED BY THE COMPILER OF
-                    NEUDADA DATA BANK
+           (RNORM,40376020) Data were renormalized by the compiler
+                    of NEUDADA Data Bank
 ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          6
@@ -46,13 +66,13 @@ NO-DIM     MB/SR      MB/SR
  8.6199E-01 8.1069E+02 2.3299E+01
 ENDDATA              8
 ENDSUBENT           17
-SUBENT        40367003     861117              20050926       0000
+SUBENT        40367003   20140709   20141103   20141016       4164
 BIB                  2          5
 REACTION   (26-FE-0(N,INL)26-FE-0,PAR,DA)
 STATUS     (NDD)            RUNID= E00213
-           (RNORM)  DATA RENORMALIZED BY COMPILER OF CJD AND
-                    E-LVL WAS CHANGED ACCORDING TO AUTHOR'S
-                    RECOMMENDATION
+           (RNORM,40367024)  Data renormalized by compiler of CJD
+                  and E-LVL was changed according to author's
+                    recommendation
 ENDBIB               5
 NOCOMMON             0          0
 DATA                 4          1
@@ -81,28 +101,34 @@ ENDBIB               3
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT            7
-SUBENT        40367006     861117              20050926       0000
-BIB                  2          2
+SUBENT        40367006   20140709   20141103   20141016       4164
+BIB                  4          8
 REACTION   (26-FE-0(N,EL)26-FE-0,,SIG)
+ANALYSIS   (INTAD)
 STATUS     (NDD)            RUNID= E00216
-ENDBIB               2
+           (TABLE) Table 3 of J,SJA,3,(6),1379,1957
+           (DEP,40367020) Differential c-s
+HISTORY    (20140711A) M.M. TABLE was added in STATUS.
+            DATA-ERR was corrected: 9.9999E-02 -> 0.1 according to
+           value given in Table 3.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 2.5000E+00 9.9999E-02
+ 2.5        0.1
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           16
 NOSUBENT      40367007     861117              20050926       0000
-SUBENT        40367008     861117              20050926       0000
+SUBENT        40367008   20140709   20141103   20141016       4164
 BIB                  2          7
 REACTION   (29-CU-0(N,EL)29-CU-0,,DA)
 STATUS     (NDD)            RUNID= E00218
-           (RNORM) DATA RENORMALIZED BY THE COMPILER OF NEUDADA
-                   DATA BANK. RENORMALIZED DATA-ERR ADDED BY
-                   COMPILER OF CJD. DATA-POINT FOR COS=4.8799E-01
-                   CHANGED FROM 63 MB/SR TO 144 MB/SR ACCORDING
-                   TO DATA TABLE GIVEN IN THE REFERENCE
+           (RNORM,40367021) Data renormalized by the compiler of
+            NEUDADA Data Bank. Renormalized DATA-ERR added by
+                   compiler of CJD. Data-point for COS=4.8799E-01
+                   changed from 63 MB/SR to 144 MB/SR according
+                   to data table given in the reference
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          7
@@ -117,25 +143,32 @@ NO-DIM     MB/SR      MB/SR
  8.6199E-01 5.9659E+02 1.6000E+01
 ENDDATA              9
 ENDSUBENT           21
-SUBENT        40367009     861117              20050926       0000
-BIB                  2          2
+SUBENT        40367009   20140709   20141103   20141016       4164
+BIB                  4          9
 REACTION   (29-CU-0(N,EL)29-CU-0,,SIG)
+ANALYSIS   (INTAD)
 STATUS     (NDD)            RUNID= E00219
-ENDBIB               2
+           (TABLE) Table 3 of J,SJA,3,(6),1379,1957
+           (DEP,40367021) Differential c-s
+HISTORY    (20140711A) M.M. TABLE was added in STATUS.
+            DATA was corrected: 1.8799 -> 1.88 ,
+            DATA-ERR was corrected: 9.9999E-02 -> 0.10
+           according to values given in Table 3.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 1.8799E+00 9.9999E-02
+ 1.88       0.10
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           17
 NOSUBENT      40367010     861117              20050926       0000
-SUBENT        40367011     861117              20050926       0000
+SUBENT        40367011   20140709   20141103   20141016       4164
 BIB                  2          4
 REACTION   (82-PB-0(N,EL)82-PB-0,,DA)
 STATUS     (NDD)            RUNID= E00221
-           (RNORM)  DATA RENORMALIZED BY THE COMPILER OF NEUDADA
-                    DATA BANK
+           (RNORM,40367022)  Data renormalized by the compiler of
+                   NEUDADA Data Bank
 ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          6
@@ -149,25 +182,31 @@ NO-DIM     MB/SR      MB/SR
  8.6479E-01 2.1640E+03 4.0000E+01
 ENDDATA              8
 ENDSUBENT           17
-SUBENT        40367012     861117              20050926       0000
-BIB                  2          2
+SUBENT        40367012   20140709   20141103   20141016       4164
+BIB                  3          8
 REACTION   (82-PB-0(N,EL)82-PB-0,,SIG)
 STATUS     (NDD)            RUNID= E00222
-ENDBIB               2
+           (TABLE) Table 3 of J,SJA,3,(6),1379,1957
+           (DEP,40367022) Differential c-s
+HISTORY    (20140711A) M.M. TABLE was added in STATUS.
+            DATA was corrected: 5.8999 -> 5.9 ,
+            DATA-ERR was corrected: 1.9999E-01 -> 0.2
+           according to values given in Table 3.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 5.8999E+00 1.9999E-01
+ 5.9        0.2
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           16
 NOSUBENT      40367013     861117              20050926       0000
-SUBENT        40367014     861117              20050926       0000
+SUBENT        40367014   20140709   20141103   20141016       4164
 BIB                  2          4
 REACTION   (83-BI-209(N,EL)83-BI-209,,DA)
 STATUS     (NDD)            RUNID= E00224
-           (RNORM)   DATA RENORMALIZED BY THE COMPILER OF
-                     NEUDADA DATA BANK
+           (RNORM,40367023)  Data renormalized by the compiler of
+                     NEUDADA Data Bank
 ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          6
@@ -181,14 +220,14 @@ NO-DIM     MB/SR      MB/SR
  8.6479E-01 1.7920E+03 4.0000E+01
 ENDDATA              8
 ENDSUBENT           17
-SUBENT        40367015     861117              20050926       0000
+SUBENT        40367015   20140709   20141103   20141016       4164
 BIB                  3          6
 REACTION   (83-BI-209(N,INL)83-BI-209,PAR,DA)
 STATUS     (NDD)            RUNID= E00225, E00230
-           (RNORM) DATA FOR E-LVL=1.62 MEV RENORMALIZED BY
-                   COMPILER OF NEUDADA DATA BANK. DATA FOR E-LVL=
-               0.9 MEV TRANSFERRED FROM SAN 020
-HISTORY    (861117A) ONE DATA POINT ADDED AND SAN 020 DELETED
+           (RNORM,40367025) Data for E-LVL=1.62 MeV renormalized
+               by compiler of NEUDADA Data Bank. Data for E-LVL=
+               0.9 MeV transferred from SAN 020
+HISTORY    (19861117A) One data point added and SAN 020 deleted
 ENDBIB               6
 COMMON               1          3
 ANG
@@ -202,24 +241,35 @@ MEV        MB/SR      MB/SR
  1.6199E+00 2.9000E+01 3.0000E+00
 ENDDATA              4
 ENDSUBENT           19
-SUBENT        40367016     861117              20050926       0000
-BIB                  2          2
+SUBENT        40367016   20140709   20141103   20141016       4164
+BIB                  3          8
 REACTION   (83-BI-209(N,EL)83-BI-209,,SIG)
 STATUS     (NDD)            RUNID= E00226
-ENDBIB               2
+           (TABLE) Table 3 of J,SJA,3,(6),1379,1957
+           (DEP,40367022) Differential c-s
+HISTORY    (20140711A) M.M. TABLE was added in STATUS.
+            DATA was corrected: 5.8999 -> 5.9 ,
+            DATA-ERR was corrected: 1.9999E-01 -> 0.2
+           according to values given in Table 3.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 5.8999E+00 1.9999E-01
+ 5.9        0.2
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           16
 NOSUBENT      40367017     861117              20050926       0000
-SUBENT        40367018     861117              20050926       0000
-BIB                  2          2
+SUBENT        40367018   20140709   20141103   20141016       4164
+BIB                  3          7
 REACTION   (26-FE-0(N,INL)26-FE-0,PAR,DA)
 STATUS     (NDD)            RUNID= E00228
-ENDBIB               2
+COMMENT    Of compiler M.M.
+            Source of data is not clear.
+            Relative dif. ang. inl. par. c-s in arb.units are
+           presented on Fig.9 of J,SJA,3,(6),1379,1957 for level
+           0.85 MeV at 60, 90, 120, 150 deg.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          4
 E-LVL      COS        DATA       DATA-ERR
@@ -229,12 +279,18 @@ MEV        NO-DIM     MB/SR      MB/SR
  8.4499E-01 0.0000E+00 7.4000E+01 4.5999E+00
  8.4499E-01 5.0000E-01 7.6299E+01 6.0999E+00
 ENDDATA              6
-ENDSUBENT           13
-SUBENT        40367019     861117              20050926       0000
-BIB                  2          2
+ENDSUBENT           18
+SUBENT        40367019   20140709   20141103   20141016       4164
+BIB                  3          8
 REACTION   (83-BI-209(N,INL)83-BI-209,PAR,DA)
 STATUS     (NDD)            RUNID= E00229
-ENDBIB               2
+COMMENT    Of compiler M.M.
+            Source of data is not clear.
+            Relative dif. ang. inl. par. c-s in arb.units are
+           presented on Fig.11 of J,SJA,3,(6),1379,1957 for levels
+           0.9 MeV at 90, 120, 135, 140, 150 deg;
+           1.6 meV at 90, 140, 150 deg.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4          6
 E-LVL      COS        DATA       DATA-ERR
@@ -246,6 +302,116 @@ MEV        NO-DIM     MB/SR      MB/SR
  1.6199E+00 -8.659E-01 3.3000E+01 4.0000E+00
  1.6199E+00 -7.659E-01 2.9000E+01 4.0000E+00
 ENDDATA              8
+ENDSUBENT           21
+SUBENT        40367020   20140709   20141103   20141016       4164
+BIB                  2          3
+REACTION   (26-FE-0(N,EL)26-FE-0,,DA,,4PI)
+            Angular differential c-s multiplied by 4PI .
+STATUS     (TABLE) Table 1 of J,SJA,3,(6),1379,1957.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          6
+ANG        DATA       DATA-ERR
+ADEG       B          B
+ 30.       10.5       0.3
+ 45.       3.8        0.1
+ 60.       1.47       0.04
+ 90.       0.79       0.03
+120.       1.15       0.04
+150.       1.38       0.11
+ENDDATA              8
+ENDSUBENT           16
+SUBENT        40367021   20140709   20141103   20141016       4164
+BIB                  2          4
+REACTION   (29-CU-0(N,EL)29-CU-0,,DA,,4PI)
+            Angular differential c-s multiplied by 4PI .
+STATUS     (TABLE) Table 1 of J,SJA,3,(6),1379,1957.
+           (OUTDT,40367008) In Subent 008 - re-normalized data.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          7
+ANG        DATA       DATA-ERR
+ADEG       B          B
+ 30.       7.7        0.2
+ 45.       2.8        0.1
+ 60.       0.81       0.03
+ 90.       0.94       0.03
+105.       1.15       0.02
+120.       0.89       0.03
+150.       0.43       0.06
+ENDDATA              9
+ENDSUBENT           18
+SUBENT        40367022   20140709   20141103   20141016       4164
+BIB                  2          4
+REACTION   (82-PB-0(N,EL)82-PB-0,,DA,,4PI)
+            Angular differential c-s multiplied by 4PI .
+STATUS     (TABLE) Table 1 of J,SJA,3,(6),1379,1957.
+           (OUTDT,40367011) In Subent 011 - re-normalized data.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          6
+ANG        DATA       DATA-ERR
+ADEG       B          B
+ 30.       27.4       0.5
+ 45.       5.8        0.2
+ 60.       2.28       0.06
+ 90.       2.71       0.06
+120.       1.70       0.05
+150.       3.3        0.1
+ENDDATA              8
+ENDSUBENT           17
+SUBENT        40367023   20140709   20141103   20141016       4164
+BIB                  2          4
+REACTION   (83-BI-209(N,EL)83-BI-209,,DA,,4PI)
+            Angular differential c-s multiplied by 4PI .
+STATUS     (TABLE) Table 1 of J,SJA,3,(6),1379,1957.
+           (OUTDT,40367014) In Subent 014 - re-normalized data.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          6
+ANG        DATA       DATA-ERR
+ADEG       B          B
+ 30.       22.7       0.5
+ 45.       6.1        0.2
+ 60.       2.70       0.06
+ 90.       3.34       0.07
+120.       2.01       0.06
+150.       3.3        0.1
+ENDDATA              8
+ENDSUBENT           17
+SUBENT        40367024   20140709   20141103   20141016       4164
+BIB                  3          7
+REACTION   (26-FE-0(N,INL)26-FE-0,PAR,DA,,4PI)
+STATUS     (TABLE) Table 2 of  J,SJA,3,(6),1379,1957.
+           (OUTDT,40367003) In Subent 003 - re-normalized data.
+COMMENT    Of compiler M.M.
+           For 1.54+-0.07 MeV level data of 0.12+-0.03 b are
+           not given in DATA block according to the comment in
+           Subent 004.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 5          1
+E-LVL      E-LVL-ERR  ANG        DATA       DATA-ERR
+MEV        MEV        ADEG       B          B
+ 0.85       0.07        90.       0.93       0.05
+ENDDATA              3
 ENDSUBENT           15
-NOSUBENT      40367020     861117              20050926       0000
-ENDENTRY            20
+SUBENT        40367025   20140709   20141103   20141016       4164
+BIB                  2          3
+REACTION   (83-BI-209(N,INL)83-BI-209,PAR,DA)
+STATUS     (TABLE) Table 2 of  J,SJA,3,(6),1379,1957.
+           (OUTDT,40367015) In Subent 015 - re-normalized data.
+ENDBIB               3
+COMMON               1          3
+ANG
+ADEG
+ 90.
+ENDCOMMON            3
+DATA                 4          2
+E-LVL      E-LVL-ERR  DATA       DATA-ERR
+MEV        MEV        MB/SR      MB/SR
+ 0.90       0.07       0.68       0.04
+ 1.56       0.07       0.37       0.04
+ENDDATA              4
+ENDSUBENT           16
+ENDENTRY            25

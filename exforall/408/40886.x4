@@ -1,34 +1,57 @@
-ENTRY            40886     870421              20050926       0000
-SUBENT        40886001     870421              20050926       0000
-BIB                 10         13
-TITLE       RADIATION CAPTURE CROSS-SECTION DETERMINATION
-            FOR U-238 NUCLEI AT THE NEUTRON ENERGIES 0.96 AND
-AUTHOR     (A.N.GUDKOV, A.N.DAVLETSHIN, V.M.ZHIVUN,
-           V.V.KOVALENKO, A.B.KOLDOBSKIJ, S.V.KRIVASHEEV,
-           N.S.PIVEN, A.O.TIPUNKOV,S.V.TIKHONOV,V.A.TOLSTIKOV)
-INSTITUTE  (4CCPMIF,4CCPFEI)
-REFERENCE  (J,AE,61,379,8611)
+ENTRY            40886   20140627   20141103   20141016       4164
+SUBENT        40886001   20140627   20141103   20141016       4164
+BIB                 14         29
+TITLE       Determination of the radiative capture cross section
+            of U-238 nuclei for the neutron energies 0.96 and
+            3.30 MeV
+AUTHOR     (A.N.Gudkov, A.N.Davletshin, V.M.Zhivun,
+           V.V.Kovalenko, A.B.Koldobskii, S.V.Krivasheev,
+           N.S.Piven', A.O.Tipunkov,S.V.Tikhonov,V.A.Tolstikov)
+INSTITUTE  (4RUSMIF,4RUSFEI)
+REFERENCE  (J,AE,61,(5),379,1986)
+           (J,SJA,61,956,1986) Engl.translation of J,AE,61,379.
+           #doi:10.1007/BF01122288
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-FACILITY   (VDG,4CCPFEI)
-METHOD     (ACTIV)
+           For neutron fluence at 0.960 MeV.
+DECAY-MON  (79-AU-198,6.75D,DG,411.8,0.9556)
+MONIT-REF  (40968001,A.N.Davletshin,J,AE,58,(3),183,1985)
+            Second ref. in Entry 40968 (prelim.data).
+FACILITY   (VDG,4RUSFEI)
+METHOD     (ACTIV)  19.167 hr for 0.96 MeV neutrons,
+                    14.617 hr for 3.30 MeV neutrons.
 DETECTOR   (GELI)
 INC-SOURCE (P-T,D-D)
-HISTORY    (870421C)  COMPILED  AT THE CJD
-ENDBIB              13
-NOCOMMON             0          0
-ENDSUBENT           16
-SUBENT        40886002     870421              20050926       0000
-BIB                  2          3
+CORRECTION For neutrons scattered by materials of facility, hall
+           walls and other- ratio of Au and U - 0.93 (+-5%).
+ERR-ANALYS (ERR-T) Total error.
+           (ERR-1) Error due corrections
+           (MONIT-ERR) Monitor cross section error.
+HISTORY    (19870421C)  Compiled  at the CJD
+           (20140627A) M.M. Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            BIB information was updated.
+ENDBIB              29
+COMMON               1          3
+ERR-1
+PER-CENT
+ 5.
+ENDCOMMON            3
+ENDSUBENT           36
+SUBENT        40886002   20140627   20141103   20141016       4164
+BIB                  4          6
 REACTION   (92-U-236(N,G)92-U-237,,SIG)
 DECAY-DATA (92-U-237,64.704HR,DG,208.0,0.217)
-           (79-AU-198,6.75D,DG,411.8,0.9556)
-ENDBIB               3
+STATUS     (TABLE) Text,page 379 of AE,61,(5),379,1986.
+HISTORY    (20140627A) MONIT value was corrected 87 b -> 87 mb
+           according to MONIT-REF (misprint in the article
+            AE,61,(5),379,1986).
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 6          2
 EN         EN-RSL     DATA       ERR-T      MONIT      MONIT-ERR
-MEV        MEV        B          B          B          PER-CENT
- 0.96        .034      0.137       0.014      87.        4.
+MEV        MEV        B          B          MB         PER-CENT
+ 0.960       .034      0.137       0.014      87.0       4.
  3.30        .20       0.016       0.003
 ENDDATA              4
-ENDSUBENT           12
+ENDSUBENT           15
 ENDENTRY             2

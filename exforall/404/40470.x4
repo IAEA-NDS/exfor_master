@@ -1,32 +1,87 @@
-ENTRY            40470     850329              20050926       0000
-SUBENT        40470001     850329              20050926       0000
-BIB                 12         15
-INSTITUTE  (4CCPJIA)
-REFERENCE  (C,75KIEV,6,61,7606)
-AUTHOR     (A.A.BERGMAN,A.N.MEDVEDEV,A.E.SAMSONOV,V.A.TOLSTIKOV)
-TITLE      RADIATION CAPTURE-TO-FISSION CROSS-SECTION RATIO
-           OF PU-239 IN THE ENERGY RANGE 0.2 - 30.0 KEV
-SAMPLE     PLUTONIUM SAMPLES WITH THICKNESSES 4.2E20 AND
-           4.9E21 ATOMS/CM2, PU-239 CONTENT NOT AVAILABLE
-METHOD     (SLODT) METHOD OF SLOWING-DOWN TIME IN LEAD
-DETECTOR   (PROPC) PROPORTIONAL GAMMA-COUNTER
-MONITOR    THERMAL NEUTRON ALPHA FOR PU-239
-PART-DET   (G) GAMMA
-STATUS     FROM  NEJTRONNAJA FIZIKA  PART 6 PAGE 61, MOSCOW-76
-HISTORY    (771130C) COMPILED AT THE CENTRE
-ERR-ANALYS (DATA-ERR1) STANDARD DEVIATION
-           (DATA-ERR2) NORMALIZATION ERROR
-ENDBIB              15
+ENTRY            40470   20140728   20141103   20141016       4164
+SUBENT        40470001   20140728   20141103   20141016       4164
+BIB                 11         27
+INSTITUTE  (4RUSJIA)
+REFERENCE  (J,AE,39,(4),291,1975)   Data and graphs are given
+           (J,SJA,39,916,1975) Engl.translation of AE,39,(4),291
+           #doi:10.1007/BF01261900
+           (C,75KIEV,6,61,1975)
+AUTHOR     (A.A.Bergman,A.N.Medvedev,A.E.Samsonov,V.A.Tolstikov)
+TITLE      Ratio of radiative capture and fission cross-sections
+           for Pu-239 at neutron energy of 0.2-30. keV .
+SAMPLE     Plutonium samples with thicknesses 4.2E20 and
+           4.9E21 atoms/cm2, Pu-239 content not available
+METHOD     (SLODT) Method of slowing-down time in lead
+DETECTOR   (PROPC) Proportional gamma-counter
+           (FISCH) Fission chamber
+PART-DET   (G,FF) Gamma and fission fragments.
+STATUS     (TABLE) From Neytronnaya Fizika,part 6,page 61,1976
+            = Table of J,AE,39,(4),291,1975
+           (COREL,40435001) Entry 40470 supersedes 40435 as full
+           duplication.
+HISTORY    (19771130C) Compiled at the centre
+           (20140728U) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           BIB information was updated.
+           Ref. od AE was added.
+           DATA-ERR1 -> ERR-S, DATA-ERR2 -> ERR-1 .
+           SDT was added in REACTION.
+ERR-ANALYS (ERR-S)     Standard deviation
+           (ERR-1)     Normalization error
+ENDBIB              27
 NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        40470002     850329              20050926       0000
-BIB                  2          2
-REACTION   (94-PU-239(N,ABS),,ALF,,AV)
-CORRECTION CORRECTION ON SPECTROMETER RESOLUTION IS 4.0 PER-CENT
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           30
+SUBENT        40470002   20140728   20141103   20141016       4164
+BIB                  6         41
+REACTION   (94-PU-239(N,ABS),,ALF,,SDT)
+SAMPLE     Au sample of 1.8E+21 at/cm**2 was used for
+           normalization - in measurement with carbon prism by
+           thermal neutrons and "thin" Pu sample.
+           Measurements with "thick" Pu samples were calibrated by
+           "thin" sample measurement in energy range 8 - 23 keV.
+ANALYSIS   ALF(E) value was defined by formula:
+            ALF(E) - ALF(T) =
+            ((IgammaPu(E)*IfPu(T))/(IfPu(E)*IgammaPu(T))-1.)*
+            ((IgammaPu(T)*SIGcapAu(T)*Pau*Apu*Bau)/
+            (IgammaAu(T)*SIGfPu(T)*Ppu*Aau*Bpu*delta)), where
+            IgammaPu, IgammaAu - gamma counts for Pu and Au,
+            IfPu - fission counts for Pu,
+           at
+            E - investigated incident neutron energy,
+            T - thermal neutron Maxwellian spectrum at 22 deg C
+                temperature;
+            SIGcapAu(T) - Au capture cross section (value not
+                          given),
+            SIGfPu(T) - Pu fission cross section (value not
+                      given),
+           Pau,Ppu,Aau,Apu,Bau,Bpu - sample weight, atomic weight,
+           binding energy for Au and Pu;
+           delta - coefficient depending from Au and Pu samples
+           radii;
+           ALF(T) - ALPHA value for thermal Maxwellian spectrum at
+           22 deg temperature, = 0.398+-0.004 (ASSUM).
+ASSUMED    (ASSUM,94-PU-239(N,ABS),,ALF,,MXW) at thermal spectrum
+CORRECTION Correction on spectrometer resolution < 4.0 % .
+STATUS     (COREL,40103002) In 40103 - previous measurement,
+           mentioned in C,75KIEV,6,61,1976 as preliminary result.
+           In this measurement -
+           electronics stability was increased,
+           slowing down time was measured better,
+           Neutron pulse duration was decreased twice to 0.5
+           microsec,
+           new data for fission decreased ALPHA value in energy
+           range En > 8 keV.
+           (COREL,40105015) Ref.s of 40105 are not mentioned in
+           C,75KIEV,6,61,1976.
+           Thick sample is different; method mainly the same.
+ENDBIB              41
+COMMON               3          3
+EN-NRM     ASSUM      ASSUM-ERR
+EV         NO-DIM     NO-DIM
+ 0.0253    0.398      0.004
+ENDCOMMON            3
 DATA                 5         21
-EN-MIN     EN-MAX     DATA       DATA-ERR1  DATA-ERR2
+EN-MIN     EN-MAX     DATA       ERR-S      ERR-1
 KEV        KEV        NO-DIM     NO-DIM     NO-DIM
  2.0000E-01 3.0000E-01 7.4000E-01 1.0000E-02 6.0000E-02
  3.0000E-01 4.0000E-01 9.5000E-01 3.0000E-02 8.0000E-02
@@ -50,14 +105,15 @@ KEV        KEV        NO-DIM     NO-DIM     NO-DIM
  2.0000E+01 2.5000E+01 5.1000E-01 3.0000E-02 5.0000E-02
  2.5000E+01 3.0000E+01 4.5000E-01 2.0000E-02 5.0000E-02
 ENDDATA             23
-ENDSUBENT           30
-SUBENT        40470003     850329              20050926       0000
-BIB                  1          1
-REACTION   (94-PU-239(N,F),,SIG,,AV)
-ENDBIB               1
+ENDSUBENT           73
+SUBENT        40470003   20140728   20141103   20141016       4164
+BIB                  2          2
+REACTION   (94-PU-239(N,F),,SIG,,SDT)
+ANALYSIS    Not explained in articles.
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 5         21
-EN-MIN     EN-MAX     DATA       DATA-ERR1  DATA-ERR2
+EN-MIN     EN-MAX     DATA       ERR-S      ERR-1
 KEV        KEV        B          B          B
  2.0000E-01 3.0000E-01 1.7000E+01 1.0000E-01 3.2000E-01
  3.0000E-01 4.0000E-01 1.2100E+01 1.1000E-01 2.4000E-01
@@ -81,5 +137,5 @@ KEV        KEV        B          B          B
  2.0000E+01 2.5000E+01 1.7900E+00 3.0000E-02 4.0000E-02
  2.5000E+01 3.0000E+01 1.7700E+00 3.0000E-02 3.0000E-02
 ENDDATA             23
-ENDSUBENT           29
+ENDSUBENT           30
 ENDENTRY             3

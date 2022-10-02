@@ -1,14 +1,22 @@
-ENTRY            41573   20131028   20140228   20140214       4162
-SUBENT        41573001   20131028   20140228   20140214       4162
-BIB                 16         57
-TITLE      Nuclei fission study at the lead slowing-down time
-           neutron spectrometer LSD-100 of INR RAS : Am241(n,f).
+ENTRY            41573   20140616   20141103   20141016       4164
+SUBENT        41573001   20140616   20141103   20141016       4164
+BIB                 16         68
+TITLE      Neutron fission cross section and resonance parameters
+           of 241Am.
 AUTHOR     (A.A.Alekseev, A.A.Bergman, A.I.Berlev, E.A.Koptelov,
            A.S.Egorov,B.F.Samylin, B.I.Fursov, V.S.Shorin)
 INSTITUTE  (4RUSJIA) A.Alekseev, A.Bergman, A.Berlev, E.Koptelov
            (4RUSFEI) A.S.Egorov,B.F.Samylin,B.I.Fursov,V.S.Shorin
-REFERENCE  (P,JIA-1358,2013)  Preprint of Institute for
+REFERENCE  (J,AE/T,116,(6),410,2014)
+           #doi:10.1007/s10512-014-9872-6
+            Engl.translation of :
+           (J,AE,116,(6),338,2014)
+            Main reference. Data tables.
+           (P,JIA-1358,2013)  Preprint of Institute for
                                Nuclear Research RAS.
+           (J,YF,77,(5),579,2014)  Fig.of Am-241 c-s.
+           (J,PAN,77,(5),545,2014) Engl.transl. of YF,77,(5),579
+           #doi:10.1134/S1063778814050056
 REL-REF    (I,,A.A.Alekseev+,J,YF,71,(8),300,2008)
            (I,,A.A.Alekssev+,J,AE,106,(2),106,2009)
            (I,,A.A.Alekssev+,J,AE,107,(2),86,2009)
@@ -28,7 +36,8 @@ METHOD     (SLODT)  Slowing-down-time in lead .
             dt,microsec  1 keV   10 keV
             1.            45%    78 %
             2.            49%    100%
-SAMPLE     Samples were prepared in Inst.for Exp.Physics, Sarov
+SAMPLE     Samples were prepared from high-purity material
+           manufactured at Inst.for Exp.Physics, Sarov
            by double electro-magnetic separation.
            Am-241 sample content at measurement time:
            Np-237 - 4.136 %, Am-241 - 95.864 %, Am-242 < 3.E-4 %,
@@ -54,24 +63,29 @@ ERR-ANALYS (ERR-S,1.4,12.) Statistical uncertainty .
            (ERR-1) Uncertainty of samples mass determination.
            (ERR-2) Uncertainty of normalization.
            (MONIT-ERR) Uncertainty of Pu-239 monitor c-s,about 3%.
-STATUS     (APRVD) Approved by author V.Shorin
+STATUS     (APRVD) Approved by author V.Shorin  01.10.2014
 HISTORY    (20131028R) Data and text of preprint were received
             from V.Shorin.
            (20131028C) M.M.
-ENDBIB              57
+           (20140616A) Ref.J,YF,77,(5),579,2014 and
+           its Engl.translation were added.
+ENDBIB              68
 COMMON               3          3
 ERR-1      ERR-2      MONIT-ERR
 PER-CENT   PER-CENT   PER-CENT
  3.         4.6        3.
 ENDCOMMON            3
-ENDSUBENT           64
-SUBENT        41573002   20131028   20140228   20140214       4162
-BIB                  3          4
+ENDSUBENT           75
+SUBENT        41573002   20140616   20141103   20141016       4164
+BIB                  3          7
 REACTION   (95-AM-241(N,F),,SIG,,RTE/SDT)
+             SIG*sqrt(En)
 DECAY-DATA (95-AM-241,432.6YR)
 STATUS     (TABLE) Data received from V.S.Shorin .
-             Data presented on Fig.7-9 of P,JIA-1358,2013.
-ENDBIB               4
+             Data presented on Fig.7-9 of P,JIA-1358,2013,
+                               Fig.1 of J,YF,77,(5),579,2014.
+                               Fig.3,4 of J,AE,116,(6),338,2014.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3        310
 EN         DATA       ERR-S
@@ -387,24 +401,29 @@ EV         B*RT-EV    B*RT-EV
  0.066      0.554      0.068
  0.065      0.405      0.045
 ENDDATA            312
-ENDSUBENT          321
-SUBENT        41573003   20131028   20140228   20140214       4162
-BIB                  5         14
+ENDSUBENT          324
+SUBENT        41573003   20140616   20141103   20141016       4164
+BIB                  6         19
 REACTION   (95-AM-241(N,F),,ARE)
             Areas of low s-neutron resonances.
 ANALYSIS   (LEAST) ENDF/B-VII.1 and S.Mughabghab data were used
            as initial parameters in analysis by the non-linear
            least squares method in region < 16 eV.
 ASSUMED    (ASSUM,95-AM-241(N,F),,ARE) Initial values for fitting.
+COMMENT     Of compiler. In Table 2 of AE,116,(6),338,2014
+            there misprints - units of relative errors have to be
+            NO-DIM, but not percents (in Table 2).
+            Confirmed by V.Shorin.
 ERR-ANALYS (DATA-ERR2) Uncertainty includes statistic and
            normalization uncertainties.
            (DATA-ERR1) Relative uncertainty, does not include
            error of normalization.
            For resonances 5.8, 7.65, 11.583, 12.137, 12.879,
            13.874, 14.36, 15.68  is > 50.% .
-STATUS     (TABLE) Table 3 of P,JIA-1358.
+STATUS     (TABLE) Table 2 of J,AE,116,(6),338,2014 .
+            Negative resonances from Table 3 of P,JIA-1358.
            (DEP,41573002)
-ENDBIB              14
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 6         30
 EN-RES     DATA       DATA-ERR2  DATA-ERR1  ASSUM      ASSUM-ERR
@@ -413,21 +432,21 @@ EV         B*EV       B*EV       PER-CENT   B*EV       PER-CENT
 -0.4       0.9593                           0.9593     25.
 -0.2       0.2404                           0.2404     25.
 -0.05      0.7244                           0.7244     25.
-0.305      2.517      0.13         2.5      2.689      25.
-0.572      1.085      0.060        3.       0.9254     25.
-1.272      4.574      0.24         2.5      4.5542     25.
-1.922      0.3007     0.044       14.       0.2646     25.
-2.363      0.3439     0.044       12.       0.2982     25.
-2.599      0.7006     0.053        6.       0.4415     25.
-3.973      0.7787     0.062        6.5      0.5388     25.
-4.968      0.2589     0.091       35.       0.8475     25.
-5.415      4.694      0.26         3.       4.7078     25.
+0.305      2.52       0.13         2.5      2.689      25.
+0.572      1.08       0.06         3.       0.9254     25.
+1.272      4.57       0.24         2.5      4.5542     25.
+1.922      0.301      0.044       14.       0.2646     25.
+2.363      0.344      0.044       12.       0.2982     25.
+2.599      0.701      0.053        6.       0.4415     25.
+3.973      0.779      0.062        6.5      0.5388     25.
+4.968      0.259      0.091       35.       0.8475     25.
+5.415      4.69       0.26         3.       4.7078     25.
 5.8        0.0285                           0.0266     50.
-6.117      0.7349     0.10        13.       0.4794     25.
+6.117      0.735      0.1         13.       0.4794     25.
 6.745      0.0727     0.021       28.       0.0669     25.
 7.659      0.034                            0.030      50.
-8.173      0.1571     0.041       26.       0.1450     25.
-9.113      0.3437     0.074       21.       0.3387     25.
+8.173      0.157      0.041       26.       0.1450     25.
+9.113      0.344      0.074       21.       0.3387     25.
 9.851      2.157      0.15         5.       1.8998     25.
 10.116     0.017      0.0055      32.       0.017      25.
 10.404     0.1235     0.036       29.       0.1214     25.
@@ -437,21 +456,22 @@ EV         B*EV       B*EV       PER-CENT   B*EV       PER-CENT
 12.879     0.0711                           0.0692     50.
 13.874     0.0093                           0.0093     50.
 14.36      0.0053                           0.0053     50.
-14.682     2.665      0.22         7.       2.54       25.
-15.68      0.1283                           0.1283     50.
+14.682     2.66       0.22         7.       2.54       25.
+15.68      0.128                            0.1283     50.
 ENDDATA             32
-ENDSUBENT           51
-SUBENT        41573004   20131028   20140228   20140214       4162
-BIB                  5          8
+ENDSUBENT           56
+SUBENT        41573004   20140616   20141103   20141016       4164
+BIB                  5          9
 REACTION   (95-AM-241(N,EL),,WID,,2G)
 ANALYSIS    Resonance widths were defined by areas of resonances
            using as initial parameters- see ASSUMED data :
 ASSUMED    (ASSUM1,95-AM-241(N,EL),,WID,,2G)
            (ASSUM2,95-AM-241(N,G),,WID)
 ERR-ANALYS (ERR-T) Total uncertainty.
-STATUS     (TABLE) Table 4 of P,JIA-1358.
+STATUS     (TABLE) Table 3 of J,AE,116,(6),338,2014 .
+            Table 4 of P,JIA-1358.
            (DEP,41573003) See ANALYSIS.
-ENDBIB               8
+ENDBIB               9
 COMMON               1          3
 MOMENTUM L
 NO-DIM
@@ -462,55 +482,56 @@ EN-RES     DATA       ERR-T      ASSUM1     ASSUM1-ERR ASSUM2
 ASSUM2-ERR
 EV         MILLI-EV   PER-CENT   MILLI-EV   PER-CENT   MILLI-EV
 PER-CENT
-0.305      0.1188     2.8        0.1192     2.8        44.4
+0.305      0.119      2.8        0.1192     2.8        44.4
 1.0
-0.572      0.1481     3.9        0.1476     4.         43.3
+0.572      0.148      3.9        0.1476     4.         43.3
 1.2
-1.272      0.3365     3.7        0.3362     4.2        45.3
+1.272      0.337      3.7        0.3362     4.2        45.3
 1.6
-1.922      0.08686    1.4        0.08686    1.4        41.
+1.922      0.0869     1.4        0.08686    1.4        41.
 1.0
-2.363      0.05229    2.0        0.05222    2.0        50.
+2.363      0.0523     2.0        0.05222    2.0        50.
 1.6
-2.599      0.09458    2.0        0.09386    2.1        48.
+2.599      0.0946     2.0        0.09386    2.1        48.
 1.0
-3.973      0.1078     1.9        0.1074     1.9        44.5
+3.973      0.108      1.9        0.1074     1.9        44.5
 1.0
-4.968      0.08168    1.5        0.08218    1.5        43.8
+4.968      0.0817     1.5        0.08218    1.5        43.8
 1.0
-5.415      0.3271     2.3        0.3272     2.4        44.2
+5.415      0.327      2.3        0.3272     2.4        44.2
 2.0
-6.117      0.05295    1.5        0.05283    1.5        43.8
+6.117      0.053      1.5        0.05283    1.5        43.8
 1.6
-6.745      0.01310    6.0        0.01308    6.1        44.2
+6.745      0.013      6.0        0.01308    6.1        44.2
 1.6
-8.173      0.03781    2.6        0.03779    2.6        42.7
+8.173      0.0378     2.6        0.03779    2.6        42.7
 2.8
-9.113      0.1241     2.4        0.1241     2.4        44.2
+9.113      0.124      2.4        0.1241     2.4        44.2
 1.4
-9.851      0.1313     1.24       0.1311     1.25       43.9
+9.851      0.131      1.24       0.1311     1.25       43.9
 1.4
-10.116     0.00870    11.1       0.00873    11.5       44.2
+10.116     0.0087     11.1       0.00873    11.5       44.2
 1.6
-10.404     0.1117     1.4        0.1117     1.4        45.
+10.404     0.112      1.4        0.1117     1.4        45.
 1.0
-10.997     0.1272     1.0        0.1272     1.0        46.5
+10.997     0.127      1.0        0.1272     1.0        46.5
 1.7
-14.682     0.5811     2.1        0.5807     2.1        45.
+14.682     0.581      2.1        0.5807     2.1        45.
 2.2
 ENDDATA             40
-ENDSUBENT           57
-SUBENT        41573005   20131028   20140228   20140214       4162
-BIB                  6          8
+ENDSUBENT           58
+SUBENT        41573005   20140616   20141103   20141016       4164
+BIB                  6          9
 REACTION   (95-AM-241(N,F),,WID)
 ANALYSIS    Resonance widths were defined by areas of resonances
            using as initial parameters- see ASSUMED data :
 ASSUMED    (ASSUM,95-AM-241(N,F),,WID)
 ERR-ANALYS (ERR-T) Total relative uncertainty.
 MISC-COL   (MISC)      Absolute uncertainty.
-STATUS     (TABLE) Table 5 of P,JIA-1358.
+STATUS     (TABLE) Table 4 of J,AE,116,(6),338,2014  .
+             Table 5 of P,JIA-1358.
            (DEP,41573003) See ANALYSIS.
-ENDBIB               8
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 6         18
 EN-RES     DATA       ERR-T      MISC       ASSUM      ASSUM-ERR
@@ -518,31 +539,32 @@ EV         MILLI-EV   PER-CENT   MILLI-EV   MILLI-EV   PER-CENT
 0.305      0.257      5.4        0.014      0.27       11.1
 0.572      0.116      6.6        0.0077     0.1        25.
 1.272      0.341      5.3        0.018      0.34       6.
-1.922      0.0922     13.        0.012      0.0843     24.
+1.922      0.092      13.        0.012      0.0843     24.
 2.363      0.23       10.        0.023      0.2138     15.
-2.599      0.246      7.3        0.018      0.1774     17.
-3.973      0.288      7.6        0.022      0.2179     19.
-4.968      0.337      11.        0.038      0.49452    10.
+2.599      0.25       7.3        0.018      0.1774     17.
+3.973      0.29       7.6        0.022      0.2179     19.
+4.968      0.34       11.        0.038      0.49452    10.
 5.415      0.739      5.0        0.037      0.7391     8.1
-6.117      0.538      8.7        0.047      0.4825     11.
-6.745      0.292      15.        0.045      0.2864     18.
-8.173      0.233      14.        0.032      0.2285     16.
+6.117      0.54       8.7        0.047      0.4825     11.
+6.745      0.29       15.        0.045      0.2864     18.
+8.173      0.23       14.        0.032      0.2285     16.
 9.113      0.18       13.        0.024      0.1789     14.
 9.851      1.06       5.         0.053      0.9995     7.
 10.116     0.133      19.        0.025      0.1329     23.
 10.404     0.078      23.        0.018      0.0771     39.
-10.997     0.155      17.        0.026      0.1437     21.
-14.682     0.403      7.2        0.029      0.39       13.
+10.997     0.16       17.        0.026      0.1437     21.
+14.682     0.40       7.2        0.029      0.39       13.
 ENDDATA             20
-ENDSUBENT           33
-SUBENT        41573006   20131028   20140228   20140214       4162
-BIB                  3          5
+ENDSUBENT           34
+SUBENT        41573006   20140616   20141103   20141016       4164
+BIB                  3          6
 REACTION   (95-AM-241(N,F),,RI,,LIM)
 ERR-ANALYS (ERR-T) Total uncertainty.
-STATUS     (TABLE) Table 6, text page 15 of P,JIA-1358.
+STATUS     (TABLE) Table 5,text page 344 of J,AE,116,(6),338,2014.
+            Table 6, text page 15 of P,JIA-1358.
            (DEP,41573002) Defined by integration of measured c-s
-            from 0.5 eV to 10 keV.
-ENDBIB               5
+            up to 10 keV.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          2
 EN-MIN     EN-MAX     DATA       ERR-T
@@ -550,5 +572,5 @@ EV         MEV        B          B
 0.822      0.01       7.105
 0.5        0.01       8.91       0.45
 ENDDATA              4
-ENDSUBENT           14
+ENDSUBENT           15
 ENDENTRY             6

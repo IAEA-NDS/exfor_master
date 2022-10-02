@@ -1,42 +1,57 @@
-ENTRY            40657     920611              20050926       0000
-SUBENT        40657001     920611              20050926       0000
-BIB                 14         23
-TITLE       PECULIARITIES IN DEVIATION FROM THE 1/V LAW
-            FOR  HE-3(N,P)T  REACTION CROSS-SECTION
-AUTHOR     (S.B.BORZAKOV,H.MALECKI,L.B.PIKEL'NER,
-           E.I.SHARAPOV,M.STEMPIN'SKI)
+ENTRY            40657   20140806   20141103   20141016       4164
+SUBENT        40657001   20140806   20141103   20141016       4164
+BIB                 11         29
+TITLE       Features of the departure from the 1/v law of the
+           cross section for the reaction He-3(N,P)T.Excited level
+           of the He-4 nucleus.
+AUTHOR     (S.B.Borzakov,H.Malecki,L.B.Pikel'ner,M.Stempinski,
+           E.I.Sharapov)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,YF,35,(3),532,82)  DATA ARE GIVEN
-           (P,JINR-P3-81-305,8105)
-MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
-MONIT-REF  (,J.H.GIBBONS+,J,PR,114,571,59)
-           (,R.L.MACKLIN+,C,65ANTWERP,,498,65)
-METHOD     (TOF) FLIGHT BASE TS 500 M, RESOLUTION  9 NSEC/M
+REFERENCE  (J,YF,35,(3),532,1982)  Data are given
+           (J,SNP,35,307,1982) Engl.translation of YF,35,(3),532
+           (P,JINR-P3-81-305,198105)
+METHOD     (TOF) Flight base is 500 m, resolution  9 nsec/m
 PART-DET   (P)
-FACILITY   (REAC) FAST PULSE REACTOR IBR-30
-DETECTOR   (IOCH) FOR PARTICLE DETECTION IN  LI-6(N,A) REACTION
-           (PROPC) HELIUM-FILLED COUNTERS FOR HE-3(N,P)REACTION
-ADD-RES    (STRUC) LEVEL STRUCTURE FOR HE-4
-ERR-ANALYS (ERR-T) INCLUDES STATISTICAL ERROR, CORRECTION ERROR
-                   AND  MONITOR ERROR
-STATUS     (APRVD) SHARAPOV 8311
-HISTORY    (840125C)
-           (841205U) SOME CORRECTIONS ARE INTRODUCED
-           (860702U) DUPLICATING ENTRY 40626 DELETED
-           (920611U) MODIFIER IN SF8 OF SAN 002 CHANGED
-ENDBIB              23
-COMMON               3          3
-EN-NRM-MIN EN-NRM-MAX MONIT-ERR
-EV         EV         PER-CENT
- 168.       259.       2.
+FACILITY   (REAC) Fast pulse reactor IBR-30
+DETECTOR   (IOCH) For particle detection in  Li-6(N,A) reaction .
+           Two sections ionization chamber contained 12 layers
+           6-Li(2)CO(3) of 5 mg/cm2 thickness.
+           Filled with Ar+ NH(4) at 1.3 atm.
+           (PROPC) 5 Helium-filled counters CHM-17 for He-3(N,P)
+            reaction.
+ADD-RES    (STRUC) Level structure for He-4
+STATUS     (APRVD) Sharapov 1983-11
+           (COREL,40626001) This Entry supersedes Entry 40626 .
+HISTORY    (19840125C)
+           (19841205U) Some corrections are introduced
+           (19860702U) Duplicating ENTRY 40626 deleted
+           (19920611U) Modifier in SF8 of SAN 002 changed
+           (20140806A) M.M. Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           BIB information was updated.
+           Subent 003 was added.
+ENDBIB              29
+NOCOMMON             0          0
+ENDSUBENT           32
+SUBENT        40657002   20140806   20141103   20141016       4164
+BIB                  6         11
+REACTION   (2-HE-3(N,P)1-H-3,,SIG,,AV)  Averaged over energy
+                                        interval
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
+MONIT-REF  (,D.B.Gayther,J,ANE,4,515,1977) For EN < 10.keV
+           (,G.P.Lamaze+,J,NSE,68,183,1978) For EN > 10.keV
+ANALYSIS    He3 cross section was derived from measured ratio
+           using Li6 data of D.Gayther and G.Lamaze.
+ERR-ANALYS (ERR-T) Includes statistical error, correction error
+                   and  monitor error .
+STATUS     (TABLE) Table 1 of J,YF,35,(3),532,1982.
+           (DEP,40657003)  Measured cross sections ratio
+ENDBIB              11
+COMMON               1          3
+MONIT-ERR
+PER-CENT
+ 2.
 ENDCOMMON            3
-ENDSUBENT           30
-SUBENT        40657002     920611              20050926       0000
-BIB                  1          2
-REACTION   (2-HE-3(N,P)1-H-3,,SIG,,AV)  AVERAGED OVER ENERGY
-                                        INTERVAL
-ENDBIB               2
-NOCOMMON
 DATA                 4         56
 EN-MIN     EN-MAX     DATA       ERR-T
 KEV        KEV        B          B
@@ -97,5 +112,97 @@ KEV        KEV        B          B
 117.       127.          1.46      .04
 132.       142.          1.30      .04
 ENDDATA             58
-ENDSUBENT           65
-ENDENTRY             2
+ENDSUBENT           78
+SUBENT        40657003   20140806   20141103   20141016       4164
+BIB                  6         23
+REACTION   ((2-HE-3(N,P)1-H-3,,SIG,,AV)/
+           (3-LI-6(N,T)2-HE-4,,SIG,,AV))
+           Averaged over energy interval
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
+MONIT-REF  (,J.H.Gibbons+,J,PR,114,571,1959)
+           (,R.L.Macklin+,C,65ANTWERP,,498,1965)
+ANALYSIS    Cross sections ratio He3/Li6 was defined as:
+            =(T/Tnorm)*(SIGhe/SIGli))*K, where
+           T=Nhe/Nli, Tnorm=(Nhe/Nli)norm - ratios of counting
+           numbers of two detectors ( background subtracted) at
+           investigated energy and normalization energy (index
+           norm);
+           K=(EPSli/EPShe)/(EPSli/EPShe)norm,
+           where EPS - detector efficiency for Li and He at
+           investigated energy and normalization energy.
+           Normalization point was in energy range 168-259 eV,
+           where Li6 and He3 cross sections are described by
+           formulas:
+           149.5/sqrt(E), 848.6/sqrt(E)*(1+1.5E-3*sqrt(E)),
+           respectively.
+STATUS     (TABLE) Table 1 of J,YF,35,(3),532,1982.
+           (DEP,40657003)
+HISTORY    (20140806C) M.M. Subent was added.
+ENDBIB              23
+COMMON               3          3
+EN-NRM-MIN EN-NRM-MAX MONIT-ERR
+EV         EV         PER-CENT
+ 168.       259.       2.
+ENDCOMMON            3
+DATA                 4         56
+EN-MIN     EN-MAX     DATA       ERR-S
+KEV        KEV        NO-DIM     NO-DIM
+   .26        .28     5.44       0.07
+   .38        .43     5.49       0.08
+   .43        .48     5.48       0.06
+   .48        .55     5.53       0.05
+   .55        .63     5.42       0.06
+   .63        .72     5.51       0.05
+   .72        .84     5.39       0.05
+   .84        .99     5.36       0.05
+   .99       1.05     5.35       0.06
+  1.12       1.18     5.29       0.07
+  1.18       1.33     5.32       0.05
+  1.33       1.50     5.40       0.06
+  1.50       1.72     5.32       0.05
+  1.72       2.02     5.35       0.07
+  2.13       2.67     5.29       0.08
+  2.99       3.34     5.34       0.07
+  3.47       3.68     5.27       0.07
+  3.97       4.23     5.13       0.08
+  4.95       5.34     5.11       0.09
+  5.34       5.80     5.01       0.07
+  6.08       6.29     4.98       0.08
+  6.76       6.88     4.97       0.09
+  8.10       8.26     5.02       0.09
+  8.43       8.61     4.95       0.09
+  8.97       9.50     4.91       0.07
+  9.50      10.2      4.81       0.06
+ 10.2       10.9      4.81       0.06
+ 11.1       11.7      4.84       0.05
+ 11.9       12.1      4.82       0.08
+ 12.3       12.6      4.80       0.07
+ 13.5       13.9      4.74       0.07
+ 13.9       14.4      4.75       0.07
+ 14.4       15.3      4.72       0.08
+ 15.3       15.7      4.89       0.07
+ 15.7       16.1      4.79       0.07
+ 16.4       17.4      4.74       0.07
+ 17.4       18.0      4.62       0.07
+ 18.0       19.0      4.61       0.06
+ 19.0       19.8      4.63       0.06
+ 19.8       20.8      4.65       0.07
+ 20.8       21.8      4.60       0.06
+ 22.4       23.2      4.44       0.05
+ 24.8       25.7      4.23       0.06
+ 27.6       28.6      4.58       0.07
+ 29.1       30.3      4.50       0.07
+ 37.9       39.6      4.06       0.07
+ 39.6       45.5      3.94       0.05
+ 48.8       53.9      3.90       0.05
+ 63.3       67.0      3.35       0.04
+ 72.0       75.4      3.20       0.05
+ 80.2       85.4      3.05       0.04
+ 85.4       91.3      2.91       0.04
+ 94.4      101.       2.58       0.03
+105.       113.       2.50       0.02
+117.       127.       2.21       0.02
+132.       142.       1.75       0.02
+ENDDATA             58
+ENDSUBENT           90
+ENDENTRY             3
