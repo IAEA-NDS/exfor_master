@@ -1,18 +1,19 @@
-ENTRY            21361   20051121   20060202   20051225       2174
-SUBENT        21361001   20051121   20060202   20051225       2174
-BIB                 14         30
+ENTRY            21361   20120818   20130226   20130207       2232
+SUBENT        21361001   20120818   20130226   20130207       2232
+BIB                 13         32
 INSTITUTE  (2FR TOU) Toulouse
-           (2FR SAC) Saclay (ambrosino).
+           (2FR SAC) Saclay (Ambrosino).
 REFERENCE  (J,NC,23,(6),1140,196203)
            (J,CR,254,1029,196202)
-           (R,NP-1411,1,196302)
-AUTHOR     (D.Blanc,F.Cambou,D.Devllers,H.Reme,G.Vedrenne,
+           (R,NP-14111,1963)
+AUTHOR     (D.Blanc,F.Cambou,D.Devillers,H.Reme,G.Vedrenne,
            G.Ambrosino)
-TITLE      -Reaction Si-28(N,alpha)mg-25 for 14.6 MeV neutrons.-
-FACILITY   .150 kv electrostatic accelerator.
+TITLE       Reaction Si-28(n,alpha)Mg-25 for 14.6 MeV neutrons
+FACILITY   (VDG,2FR SAC) .150 kV electrostatic accelerator.
 INC-SOURCE (D-T)   Deuteron-tritium reaction.
+              Total neutron flux of 3.15 x 10**9/cm2.
 SAMPLE     .The detector itself serves as sample.
-DETECTOR   (SOLST) Natural silicon N-P-junction, 20 mm*mm cross
+DETECTOR   (SOLST) Natural silicon (n-p)-junction, 20 mm*mm cross
             section, barrier depth 40 micron, bias 50 V.
 MONITOR    (14-SI-0(N,A),,SIG) For neutron flux determination.
             Calculated from pure isotope cross sections and their
@@ -21,28 +22,64 @@ PART-DET   (A)     Alphas, all with energy higher than 7.0 MeV,
             protons from (N,P) reactions not detected because
             the barrier depth is 40 micron and the energy
             discrimination is 7 MeV for the alpha particles.
-STATUS     (NDD)   Data taken from neudada.
-HISTORY    (19800125C) G.C.
-           (19800222E)
-           (20050916A) Date is corrected
-           (20051121U) Last checking has been done.
 CORRECTION .For counting losses near the boundaries of the
             detector. Calculated assuming an isotropic distribu-
             tion of the alpha particles and a 40 micron
             diffusion zone.
 ERR-ANALYS .Not given.
-ENDBIB              30
+HISTORY    (19800125C) G.C.
+           (19800222E)
+           (20050916A) Date is corrected
+           (20051121U) Last checking has been done.
+           (20120818A) SD: Subent 3 was added; STATUS moved to
+            Subents 2,3.
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        21361002   20051121   20060202   20051225       2174
-BIB                  1          1
+ENDSUBENT           35
+SUBENT        21361002   20120818   20130226   20130207       2232
+BIB                  2          2
 REACTION   (14-SI-28(N,A)12-MG-25,PAR,SIG,,AV)
-ENDBIB               1
+STATUS     (TABLE) Data from the text of NC,23,(6),1140,1962
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 4          1
 EN         E-LVL-MIN  E-LVL-MAX  DATA
 MEV        MEV        MEV        MB
    1.46E+01         0.       3.97  5.169E+01
 ENDDATA              3
-ENDSUBENT            9
-ENDENTRY             2
+ENDSUBENT           10
+SUBENT        21361003   20120818   20130226   20130207       2232
+BIB                  5         10
+REACTION   (14-SI-28(N,A)12-MG-25,PAR,SIG,,AV)
+ERR-ANALYS (ERR-DIG)    Digitizing error
+STATUS     (CURVE) Data were digitized from fig.2 of NC,23,1140
+            Energy levels were given in tabular form on fig.2
+COMMENT    From author: Cross-sections for the excited levels of
+           7.57 and 7.65 MeV have been arbitrarily chosen equal,
+           because the resolving power of the junction prevents
+           one from separating them. It is the same for the
+           8.74 MeV and 8.80 MeV levels.
+HISTORY    (20120818C) SD
+ENDBIB              10
+COMMON               2          3
+EN         ERR-DIG
+MEV        MB
+  14.6        0.0057
+ENDCOMMON            3
+DATA                 2         11
+E-LVL      DATA
+MEV        MB
+ 7.57       4.2759
+ 7.61       4.2987
+ 8.14       9.8875
+ 8.74       3.5213
+ 8.80       3.5093
+ 8.98       4.9207
+ 9.59       4.8236
+ 9.93       3.7008
+ 10.5       3.6501
+ 10.9       3.8227
+ 11.54      4.7530
+ENDDATA             13
+ENDSUBENT           32
+ENDENTRY             3
