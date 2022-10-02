@@ -1,13 +1,13 @@
-ENTRY            C0115   20030625   20030922   20050926       0000
-SUBENT        C0115001   20030625   20030922   20050926       0000
-BIB                 11         30
+ENTRY            C0115   20160709   20161017   20160920       C159
+SUBENT        C0115001   20160709   20161017   20160920       C159
+BIB                 11         32
 INSTITUTE  (1USACAL)
 REFERENCE  (J,PR/C,49,1205,199402)
 AUTHOR     (P.R.Wrean,C.R.Brune,R.W.Kavanagh)
 TITLE      Total cross sections and thermonuclear reaction rates
             for 9Be(alpha,n)12C
-FACILITY   3-MV Pelletron tandem accelerator, Kellogg Radiation
-            Laboratory
+FACILITY   (ACCEL,1USACAL) 3-MV Pelletron tandem accelerator,
+            Kellogg Radiation Laboratory
 INC-SOURCE Beam energy resolution <0.5 keV.
            Beam energy determined to 0.1% by 90 degree magnetic
             analyzer whose field was determined by NMR gaussmeter.
@@ -26,15 +26,17 @@ CORRECTION Neutron yields corrected for:
            .detector deadtime (<0.5% for all points),
            .background subtraction (<0.2% for E(cm)>0.29 MeV), and
            .target loss (<1% for E(cm)>0.32 MeV).
-STATUS     Data received by electronic mail, P.Wrean, 96/11/24
-            and 96/12/6.
+STATUS     (TABLE) Data received by electronic mail, P.Wrean,
+            96/11/24 and 96/12/6.
            (APRVD) Approved by P. Wrean, 97/1/23.
 HISTORY    (19961204C)
            (20030625A) Converted to new date formats.
-ENDBIB              30
+           (20160628A) OS. REACTION in sub.5 corrected,
+            ERR-ANALYS updated in all subs.
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        C0115002     970616              20050926       0000
+ENDSUBENT           35
+SUBENT        C0115002   20160709   20161017   20160920       C159
 BIB                  5         15
 REACTION   (4-BE-9(A,N)6-C-12,,SIG)
 SAMPLE     18.4 micro-g/cm2 of pure beryllium evaporated onto
@@ -44,21 +46,21 @@ MONITOR    (4-BE-9(P,EL)4-BE-9,,DA,,RTH) = 39.5+1.2 at E(p) =
             9Be target = (1.23+-0.04)10**18 nuclei/cm2 (18.4
             microg/cm2) adopted as average of values from 2
             measurements.
-ERR-ANALYS (DATA-ERR1) Statistical uncertainty,
-           (DATA-ERR2) Normalization uncertainty. Major
+ERR-ANALYS (ERR-S) Statistical uncertainty,
+           (ERR-1) Normalization uncertainty. Major
             contributions due to uncertainty in
             .neutron detector efficiency (8%),
             .target thickness (3%),
             .target thickness deconvolution procedure (3%).
-HISTORY    (970616A) MONITOR corrected.
+HISTORY    (19970616A) MONITOR corrected.
 ENDBIB              15
 COMMON               1          3
-DATA-ERR2
+ERR-1
 PER-CENT
  9.
 ENDCOMMON            3
 DATA                 3        163
-EN-CM      DATA       DATA-ERR1
+EN-CM      DATA       ERR-S
 MEV        MB         MB
  0.1543     2.7944E-06 9.0265E-07
  0.1610     1.3837E-05 8.9648E-07
@@ -225,7 +227,7 @@ MEV        MB         MB
  1.8625     1.2147E+02 4.6411E-01
 ENDDATA            165
 ENDSUBENT          189
-SUBENT        C0115003     970123              20050926       0000
+SUBENT        C0115003   20160709   20161017   20160920       C159
 BIB                  4         10
 REACTION   (4-BE-9(A,N)6-C-12,,SIG)
 SAMPLE     0.76 micro-g/cm2  of pure beryllium evaporated onto
@@ -233,18 +235,18 @@ SAMPLE     0.76 micro-g/cm2  of pure beryllium evaporated onto
 MONITOR    Areal density of target determined by comparison of
             non-resonant yield with yield of 18.4 microg/cm2
             target.
-ERR-ANALYS (DATA-ERR1) Statistical uncertainty,
-           (DATA-ERR2) Normalization uncertainty. Major
+ERR-ANALYS (ERR-S) Statistical uncertainty,
+           (ERR-1) Normalization uncertainty. Major
             contribution is from 8% uncertainty in neutron
             detector efficiency.
 ENDBIB              10
 COMMON               1          3
-DATA-ERR2
+ERR-1
 PER-CENT
  9.
 ENDCOMMON            3
 DATA                 3         29
-EN-CM      DATA       DATA-ERR1
+EN-CM      DATA       ERR-S
 MEV        MB         MB
  0.4081     1.2890E-01 1.5099E-03
  0.4115     1.2701E-01 1.4883E-03
@@ -277,23 +279,23 @@ MEV        MB         MB
  0.4565     1.2523E-01 1.4441E-03
 ENDDATA             31
 ENDSUBENT           50
-SUBENT        C0115004     970123              20050926       0000
+SUBENT        C0115004   20160709   20161017   20160920       C159
 BIB                  3          7
 REACTION   (4-BE-9(A,N)6-C-12,,SIG,,SFC)
-ERR-ANALYS (DATA-ERR1) Statistical uncertainty,
-           (DATA-ERR2) Normalization uncertainty. Major
+ERR-ANALYS (ERR-S) Statistical uncertainty,
+           (ERR-1) Normalization uncertainty. Major
             contribution is from 8% uncertainty in neutron
             detector efficiency.
 STATUS     (DEP,C0115002)
            (DEP,C0115003)
 ENDBIB               7
 COMMON               1          3
-DATA-ERR2
+ERR-1
 PER-CENT
  9.
 ENDCOMMON            3
 DATA                 3        163
-EN-CM      DATA       DATA-ERR1
+EN-CM      DATA       ERR-S
 MEV        B*MEV      B*MEV
  0.1543     1.5973E+05 5.1596E+04
  0.1610     4.0761E+05 2.6408E+04
@@ -460,22 +462,23 @@ MEV        B*MEV      B*MEV
  1.8625     3.5308E+03 1.3491E+01
 ENDDATA            165
 ENDSUBENT          181
-SUBENT        C0115005   20030625   20030922   20050926       0000
-BIB                  4          6
-REACTION   (4-BE-9(A,N)6-C-12,,MLT,N,TT)
+SUBENT        C0115005   20160709   20161017   20160920       C159
+BIB                  4          7
+REACTION   (4-BE-9(A,N)6-C-12,,MLT,,TT)
 SAMPLE     1.0-mm thick pure Be disks.
-ERR-ANALYS (DATA-ERR1) Statistical uncertainty,
-           (DATA-ERR2) Normalization uncertainty, due to 8%
+ERR-ANALYS (ERR-S) Statistical uncertainty,
+           (ERR-1) Normalization uncertainty, due to 8%
             uncertainty in neutron detector efficiency.
 HISTORY    (20030625A) Units updated.
-ENDBIB               6
+           (20160628A) Deleted N in SF7.
+ENDBIB               7
 COMMON               1          3
-DATA-ERR2
+ERR-1
 PER-CENT
  8.
 ENDCOMMON            3
 DATA                 3         44
-EN         DATA       DATA-ERR1
+EN         DATA       ERR-S
 MEV        PRT/INC    PRT/INC
  0.5000     7.2831E-11 1.0137E-12
  0.5000     7.5286E-11 7.2302E-13
@@ -522,39 +525,39 @@ MEV        PRT/INC    PRT/INC
  2.2000     4.8172E-06 2.0666E-07
  2.3000     5.7119E-06 3.8162E-07
 ENDDATA             46
-ENDSUBENT           61
-SUBENT        C0115006     970428              20050926       0000
+ENDSUBENT           62
+SUBENT        C0115006   20160711   20161017   20160920       C159
 BIB                  3         22
 REACTION  1(4-BE-9(A,N),,EN)
           2(4-BE-9(A,N),,WID)
-          3(4-BE-9(A,N),,SIG,,SFC/RES)
+          3(4-BE-9(A,N)6-C-12,,SIG,,SFC/RES)
 ANALYSIS   S-factor fit as sum of 8 Breit-Wigner peaks.
            Assumed values for first peak. Energy = 0.1062 MeV and
             width = 50.9 keV taken from Cierjacks, et al., Nuc.
             Instr.Meth.169, 185 (1990), peak S = 3.395x10**4 MeV b
             taken from Caughlan and Fowler, At.Data Nucl.Data
             Tables 40, 283 (1988).
-ERR-ANALYS1(DATA-ERR1) Uncertainty associated with fit and with
+ERR-ANALYS1(ERR-1) Uncertainty associated with fit and with
             counting statistics of the data.  Does not include
             uncertainty due to assumed form of S(E).
-           (DATA-ERR2) Due to energy calibration.
-          2(DATA-ERR)  Uncertainty associated with fit and with
+           (ERR-2) Due to energy calibration.
+          2(ERR-1) Uncertainty associated with fit and with
             counting statistics of the data.  Does not include
             uncertainty due to assumed form of S(E).
-          3(DATA-ERR1) Uncertainty associated with fit and with
+          3(ERR-1) Uncertainty associated with fit and with
             counting statistics of the data.  Does not include
             uncertainty due to assumed form of S(E).
-           (DATA-ERR2) Normalization uncertainty.  Major
+           (ERR-2) Normalization uncertainty.  Major
             contribution is from 8% uncertainty in neutron
             detector efficiency.
 ENDBIB              22
 COMMON               2          3
-DATA-ERR2 1DATA-ERR2 3
+ERR-2     1ERR-2     3
 PER-CENT   PER-CENT
  0.1        9.
 ENDCOMMON            3
 DATA                 6          7
-DATA-CM   1DATA-ERR1 1DATA-CM   2DATA-ERR  2DATA      3DATA-ERR1 3
+DATA-CM   1ERR-1     1DATA-CM   2ERR-1     2DATA      3ERR-1     3
 MEV        MEV        KEV        KEV        B*MEV      B*MEV
  0.1663     0.0003      18.7        0.4       5.63  +05  0.14  +05
  0.35403    0.00004     56.43       0.07      2.094 +05  0.004 +05
