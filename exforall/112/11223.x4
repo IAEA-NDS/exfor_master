@@ -1,46 +1,59 @@
-ENTRY            11223     860331              20050926       0000
-SUBENT        11223001     860331              20050926       0000
-BIB                  9         12
+ENTRY            11223   20100609   20100917   20100801       1365
+SUBENT        11223001   20100609   20100917   20100801       1365
+BIB                 10         16
 INSTITUTE  (1USALAS)
-REFERENCE  (J,PR,107,824,57)
-AUTHOR     (L.ROSEN,L.STEWART)
-TITLE      NEUTRON EMISSION PROBABILITIES FROM THE INTERACTION OF
-           14-MEV NEUTRONS WITH BE, TA AND BI.
-FACILITY   (CCW)
+REFERENCE  (J,PR,107,824,1957)
+AUTHOR     (L.Rosen,L.Stewart)
+TITLE      Neutron emission probabilities from the interaction of
+            14-MeV neutrons with Be, Ta and Bi.
+FACILITY   (CCW,1USALAS) 200-keV Cockcroft-Walton
 INC-SOURCE (D-T)
-DETECTOR   (TRD)
+DETECTOR   (TRD) Nuclear emulsions.
+MONITOR    (1-H-1(N,TOT),,SIG)
 STATUS     (SCSRS)
-HISTORY    (760629T) TRANSLATED FROM SCISRS
-           (800820A) CONVERTED TO REACTION FORMALISM
-           (860331U) BIB UPDATE.
-ENDBIB              12
+HISTORY    (19760629T) Translated from scisrs
+           (19800820A) converted to reaction formalism
+           (19860331U) bib update.
+           (20100609A) VM:Updated to new date formats,lower case.
+                       BIB updates. Correction to reactions in
+                       subentries 002, 007, 008.
+ENDBIB              16
 NOCOMMON             0          0
-ENDSUBENT           15
-SUBENT        11223002     861015              20050926       0000
-BIB                  2          3
-REACTION   (4-BE-9(N,2N)4-BE-8,,SIG)
-HISTORY    (851213A) REACTION CORRECTED.
-           (861015A) REACTION CORRECTED.
-ENDBIB               3
+ENDSUBENT           19
+SUBENT        11223002   20100609   20100917   20100801       1365
+BIB                  5          8
+REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG)
+ANALYSIS   Analysed proton recoils in nuclear emulsion.
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+HISTORY    (19851213A) Reaction corrected.
+           (19861015A) Reaction corrected.
+           (20100609A) Reaction corrected.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
  1.4    +01 4.20   -01 7.0    -02
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        11223003     860331              20050926       0000
-BIB                  2          2
-REACTION   ((73-TA-0(N,INL),PAR,DA)+(73-TA-0(N,2N),PAR,DA))
-HISTORY    (840202A) DATA SORTED
-ENDBIB               2
+ENDSUBENT           16
+SUBENT        11223003   20100609   20100917   20100801       1365
+BIB                  3          6
+REACTION   ((73-TA-181(N,INL)73-TA-181,PAR,DA)+
+           (73-TA-181(N,2N)73-TA-180,PAR,DA))
+ERR-ANALYS (DATA-ERR) Standard deviations.
+HISTORY    (19840202A) Data sorted
+           (20100609A) SF1 changed from Ta-0 to Ta-181, SF4 added,
+            DATA changed to DATA-CM
+ENDBIB               6
 COMMON               2          3
 EN         ANG-RSL
 MEV        ADEG
  1.4    +01 8.
 ENDCOMMON            3
 DATA                 5         18
-E-MIN      E-MAX      COS-CM     DATA       DATA-ERR
+E-MIN      E-MAX      COS-CM     DATA-CM    DATA-ERR
 MEV        MEV        NO-DIM     MB/SR      MB/SR
  0.5    +00 4.0    +00-0.9400     2.39   +02 1.00   +02
  0.5    +00 4.0    +00-0.8660     1.86   +02 5.5    +01
@@ -61,29 +74,36 @@ MEV        MEV        NO-DIM     MB/SR      MB/SR
  4.0    +00 12.    +00 0.86600    5.9    +01 1.5    +01
  4.0    +00 12.    +00 0.94000    9.7    +01 2.0    +01
 ENDDATA             20
-ENDSUBENT           31
-SUBENT        11223004     860331              20050926       0000
-BIB                  1          1
-REACTION   (73-TA-0(N,2N),,SIG)
-ENDBIB               1
+ENDSUBENT           35
+SUBENT        11223004   20100609   20100917   20100801       1365
+BIB                  4          5
+REACTION   (73-TA-181(N,2N)73-TA-180,,SIG)
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+HISTORY    (20100609A) SF1 changed from Ta-0 to Ta-181, SF4 added
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
- 1.4    +01 1.8    +00 3.     -01
+ 14.        1.8    +00 3.     -01
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        11223005     860331              20050926       0000
-BIB                  1          1
-REACTION   (73-TA-0(N,EL)73-TA-0,,DA)
-ENDBIB               1
+ENDSUBENT           13
+SUBENT        11223005   20100609   20100917   20100801       1365
+BIB                  3          4
+REACTION   (73-TA-181(N,EL)73-TA-181,,DA)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+HISTORY    (20100609A) SF1,SF4 changed from Ta-0 to Ta-181,
+            DATA changed to DATA-CM
+ENDBIB               4
 COMMON               2          3
 EN         ANG-RSL
 MEV        ADEG
  1.4    +01 8.
 ENDCOMMON            3
 DATA                 3          8
-COS-CM     DATA       DATA-ERR
+COS-CM     DATA-CM    DATA-ERR
 NO-DIM     MB/SR      MB/SR
  0.94000    1.580  +03 5.0    +01
  0.86600    2.95   +02 5.7    +01
@@ -94,68 +114,92 @@ NO-DIM     MB/SR      MB/SR
 -0.6430     6.2    +00 4.8    +00
 -0.8660     5.5    +00 3.5    +00
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        11223006     861015              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-0(N,INL)73-TA-0,,SIG)
-HISTORY    (861015A) REACTION UPDATE.
-ENDBIB               2
+ENDSUBENT           23
+SUBENT        11223006   20100609   20100917   20100801       1365
+BIB                  4          6
+REACTION   (73-TA-181(N,INL)73-TA-181,,SIG)
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+HISTORY    (19861015A) Reaction update.
+           (20100609A) SF1,SF4 changed from Ta-0 to Ta-181
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
  1.4    +01 1.70   -01 3.0    -02
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        11223007     860331              20050926       0000
-BIB                  1          1
-REACTION   (73-TA-0(N,NON),,SIG)
-ENDBIB               1
+ENDSUBENT           14
+SUBENT        11223007   20100609   20100917   20100801       1365
+BIB                  4          8
+REACTION   ((73-TA-181(N,INL)73-TA-181,,SIG)+
+           (73-TA-181(N,2N)73-TA-180,,SIG))
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+           (DEP,11223006) Sum of inelastic and (n,2n)
+           (DEP,11223004)
+HISTORY    (20100609A) Reaction corrected, DATA changed to DATA-CM
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA-CM    DATA-ERR
 MEV        B          B
  1.4    +01 2.0    +00 4.     -01
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        11223008     800820              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(N,NON),,SIG)
-STATUS     (DEP) SUM OF INELASTIC AND (N,2N)
-ENDBIB               2
+ENDSUBENT           16
+SUBENT        11223008   20100609   20100917   20100801       1365
+BIB                  4          8
+REACTION   ((83-BI-209(N,INL)83-BI-209,,SIG)+
+           (83-BI-209(N,2N)83-BI-208,,SIG))
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+           (DEP,11223009) Sum of inelastic and (n,2n)
+           (DEP,11223010)
+HISTORY    (20100609A) Reaction corrected.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
  14.        2.4        0.4
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        11223009     800820              20050926       0000
-BIB                  1          1
+ENDSUBENT           16
+SUBENT        11223009   20100609   20100917   20100801       1365
+BIB                  3          4
 REACTION   (83-BI-209(N,INL)83-BI-209,,SIG)
-ENDBIB               1
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
  14.        0.17       0.03
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        11223010     800820              20050926       0000
-BIB                  1          1
+ENDSUBENT           12
+SUBENT        11223010   20100609   20100917   20100801       1365
+BIB                  3          4
 REACTION   (83-BI-209(N,2N)83-BI-208,,SIG)
-ENDBIB               1
+ERR-ANALYS (DATA-ERR) Uncertainty includes only that arising from
+            neutron detection.
+STATUS     (TABLE) Data taken from Table I in reference.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
  14.        2.3        0.3
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        11223011     800820              20050926       0000
-BIB                  1          1
+ENDSUBENT           12
+SUBENT        11223011   20100609   20100917   20100801       1365
+BIB                  2          2
 REACTION   (83-BI-209(N,EL)83-BI-209,,DA)
-ENDBIB               1
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+ENDBIB               2
 COMMON               2          3
 EN         ANG-RSL
 MEV        ADEG
@@ -169,12 +213,13 @@ NO-DIM     MB/SR      MB/SR
  0.643      1.13   +02 4.0    +01
  0.342      3.1    +01 1.5    +01
 ENDDATA              6
-ENDSUBENT           16
-SUBENT        11223012     800820              20050926       0000
-BIB                  1          2
+ENDSUBENT           17
+SUBENT        11223012   20100609   20100917   20100801       1365
+BIB                  2          3
 REACTION   ((83-BI-209(N,INL)83-BI-209,PAR,DA)+
            (83-BI-209(N,2N)83-BI-208,PAR,DA))
-ENDBIB               2
+ERR-ANALYS (DATA-ERR) Standard deviations.
+ENDBIB               3
 COMMON               2          3
 EN         ANG-RSL
 MEV        ADEG
@@ -205,5 +250,5 @@ MEV        MEV        ADEG       MB/SR      MB/SR
  4.        12.         130.        23.       13.
  4.        12.         150.        18.        9.
 ENDDATA             23
-ENDSUBENT           34
+ENDSUBENT           35
 ENDENTRY            12
