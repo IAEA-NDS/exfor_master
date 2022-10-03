@@ -1,13 +1,14 @@
-ENTRY            41432   20071122   20080402   20080312       4142
-SUBENT        41432001   20071122   20080402   20080312       4142
-BIB                 11         33
+ENTRY            41432   20180801   20181231   20181229       4180
+SUBENT        41432001   20180801   20181231   20181229       4180
+BIB                 11         36
 TITLE       Angular anisotropy of fragments from U-233 fission
             induced by 0.02 - 6.38 MeV neutrons
 AUTHOR     (D.L.Shpak)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,YF,61,(8),1436,1998) Main reference,tables, graphs
-           (J,PAN,61,1333,1998) English translation of Main Ref.
-FACILITY   (VDG)  Electrostatic accelerators EG-1,EG-2.5,KG-2.5
+REFERENCE  (J,PAN,61,1333,1998) English translation of Main Ref.
+           (J,YF,61,(8),1436,1998) Main reference,tables, graphs
+FACILITY   (VDG,4RUSFEI) Electrostatic accelerators EG-1,EG-2.5,
+                         KG-2.5
 INC-SOURCE (P-T,D-D)
 DETECTOR   (GLASD)
 SAMPLE      Uranium oxide U-O2 of 0.8-1.0 mg/cm2 thickness and
@@ -34,17 +35,19 @@ HISTORY    (20040127C)   Compiled at the CJD
            (20061024U) 2nd Ref. was added.   M.M.
            (20071122A) Two misprints in data SUB .003 were
                         corrected. M.M.
-ENDBIB              33
+           (20180801A) M.M. Monitor information was added in
+           Subent 003 .
+ENDBIB              36
 COMMON               1          3
 ERR-1
 PER-CENT
    0.4
 ENDCOMMON            3
-ENDSUBENT           40
-SUBENT        41432002   20071122   20080402   20080312       4142
+ENDSUBENT           43
+SUBENT        41432002   20180801   20181231   20181229       4180
 BIB                  2          3
 REACTION   (92-U-233(N,F),PRE,DA,FF,RSD)
-STATUS     (TABLE) Data from the reference Table, col. 1,2,4,5
+STATUS     (TABLE) Table of J,PAN,61,1333,1998 , col. 1,2,4,5
            Data are those given in table plus 1. .
 ENDBIB               3
 COMMON               1          3
@@ -184,21 +187,30 @@ MEV        MEV        NO-DIM     NO-DIM
 6.38       0.05        1.230      0.023
 ENDDATA            129
 ENDSUBENT          141
-SUBENT        41432003   20071122   20080402   20080312       4142
-BIB                  5          8
+SUBENT        41432003   20180801   20181231   20181229       4180
+BIB                  6         17
 REACTION   ((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
-STATUS     (TABLE) Data from reference table, col. 1, 3
 MONITOR    ((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
+            0.9293 at 20 deg from MONIT-REF.
+             The CSs ratio absolutization was made in thermal
+           column of BOR-10 reactor spectrum (thermal to
+           epithermal ratio ~10**4). This spectrum temperature
+           was estimated by a Au filter transmission to be
+           ~27+-11 deg .
 MONIT-REF  (,H.Lemmel+,C,75WASH,1,286,1975)
 FLAG       (1.) There are two misprints of data values in table of
                 References for these energy points.
                 Corrected by compiler in according to values,
                 presented on Fig.2 of Reference.
-ENDBIB               8
-COMMON               1          3
-MONIT
-NO-DIM
-     0.9293
+STATUS     (TABLE) Table of J,PAN,61,1333,1998, col. 1, 3
+            This Subent supersedes Subent 40607.002 - data from
+            C,80KIEV,3,35,1980
+HISTORY    (20180801A) M.M. Monitor information was added.
+ENDBIB              17
+COMMON               2          3
+MONIT      KT-NRM
+NO-DIM     DEG-C
+     0.9293  27.
 ENDCOMMON            3
 DATA                 5        127
 EN         EN-ERR     DATA       ERR-T      FLAG
@@ -331,5 +343,5 @@ MEV        MEV        NO-DIM     NO-DIM     NO-DIM
 6.28       0.05         1.491     0.035
 6.38       0.05         1.498     0.031
 ENDDATA            129
-ENDSUBENT          146
+ENDSUBENT          155
 ENDENTRY             3
