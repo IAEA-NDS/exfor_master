@@ -1,9 +1,9 @@
-ENTRY            D4105   20081015   20081028   20081023       Y007
-SUBENT        D4105001   20081015   20081028   20081023       Y007
-BIB                  9         24
+ENTRY            D4105   20211202   20220112   20220112       D133
+SUBENT        D4105001   20211202   20220112   20220112       D133
+BIB                  9         25
 TITLE      Comparison between reactions of alpha particles with
            Scandium-45 and deuterons with Titanium-47.
-AUTHOR     (K.L.CHEN,J.M.MILLER)
+AUTHOR     (K.L.Chen,J.M.Miller)
 INSTITUTE  (1USACOL)Columbia University, New York, NY
            (1USABNL)Brookhaven National Laboratory, Upton, NY
 REFERENCE  (J,PR,134,B1269,1964)
@@ -18,16 +18,21 @@ ERR-ANALYS The uncertainty of the incident alpha energy was
            0.2 MeV. No error bars are given to cross section
            points. The main contributing error sources in
             cross sections are estimated to be:
-                      target thickness        1-5%
-                      beam current              5%
-                      detector efficiency    5-15%
+           (ERR-1,1.,5.) target thickness        1-5%
+           (ERR-2)       beam current              5%
+           (ERR-3,5.,15.) detector efficiency    5-15%
 HISTORY    (20020219C) S.T. + O.S.
            (20060727A) Ref. corrected.
            (20081015A) NDS: ref.was corrected.
                           PR,B134,1269 ==>PR,134,B1269
-ENDBIB              24
-NOCOMMON             0          0
-ENDSUBENT           27
+           (20211202A) VS. SF=3 in 003.1, 006.1-2 and 007.
+ENDBIB              25
+COMMON               1          3
+ERR-2
+PER-CENT
+   5.
+ENDCOMMON            3
+ENDSUBENT           32
 SUBENT        D4105002   20020219   20020220   20050926       0000
 BIB                  4         10
 REACTION  1(21-SC-45(A,N)23-V-48,,SIG)
@@ -91,14 +96,15 @@ NO-DIM
 
 ENDDATA             46
 ENDSUBENT           61
-SUBENT        D4105003   20020219   20020220   20050926       0000
-BIB                  3          5
-REACTION  1(21-SC-45(A,N+2P)21-SC-46,,SIG)
+SUBENT        D4105003   20211202   20220112   20220112       D133
+BIB                  4          6
+REACTION  1(21-SC-45(A,X)21-SC-46,,SIG)
           2(21-SC-45(A,2N)23-V-47,,SIG)
 SAMPLE     Scandium oxide 100 microgramm/cm2 (99.99%) on aluminium
            Targets were uniform to 1-2%.
-STATUS     Data were taken from Table 1. of the original paper
-ENDBIB               5
+STATUS     (TABLE) Table 1. of Phys.Rev.134(1964)B1269
+HISTORY    (20211202A) VS. SF=3 for 21-SC-45.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3         24
 EN         DATA      1DATA      2
@@ -128,7 +134,7 @@ MEV        MB         MB
        39.9       99.7       45.1
        40.1       95.1
 ENDDATA             26
-ENDSUBENT           36
+ENDSUBENT           37
 SUBENT        D4105004   20020219   20020220   20050926       0000
 BIB                  3         25
 REACTION  1((22-TI-46(D,2P)21-SC-46,,SIG,,FCT)+
@@ -212,10 +218,10 @@ MEV        MB         MB
        20.3                  258.
 ENDDATA             12
 ENDSUBENT           33
-SUBENT        D4105006   20020219   20020220   20050926       0000
-BIB                  3         22
-REACTION  1((22-TI-49(D,A)21-SC-47,,SIG,,FCT)+
-           (22-TI-48(D,N+2P)21-SC-47,,SIG,,FCT))
+SUBENT        D4105006   20211202   20220112   20220112       D133
+BIB                  4         23
+REACTION  1((22-TI-49(D,X)21-SC-47,,SIG,,FCT)+
+           (22-TI-48(D,X)21-SC-47,,SIG,,FCT))
            Sum weighted by isotopic abundances of enriched sample
            as given below. Compiler believes that contributions
            of other isotopes are negligible.
@@ -235,8 +241,9 @@ SAMPLE     Enriched Titanium dioxide deposited on aluminium
                              48Ti             14.5
                              49Ti             81.5
                              50Ti             1.4
-STATUS     Data were taken from Table 4. of the original paper
-ENDBIB              22
+STATUS     (TABLE) Table 4. Phys.Rev.134(1964)B1269
+HISTORY    (20211202A) VS. SF=3 for 22-TI-48.
+ENDBIB              23
 NOCOMMON             0          0
 DATA                 3          6
 EN         DATA      1DATA      2
@@ -248,11 +255,11 @@ MEV        MB         MB
        17.4       18.4       25.3
        20.1       11.6       26.1
 ENDDATA              8
-ENDSUBENT           35
-SUBENT        D4105007   20020219   20020220   20050926       0000
-BIB                  3         18
+ENDSUBENT           36
+SUBENT        D4105007   20211202   20220112   20220112       D133
+BIB                  4         19
 REACTION   ((22-TI-50(D,N+A)21-SC-47,,SIG,,FCT)+
-           (22-TI-48(D,N+2P)21-SC-47,,SIG,,FCT)+
+           (22-TI-48(D,X)21-SC-47,,SIG,,FCT)+
            (22-TI-49(D,A)21-SC-47,,SIG,,FCT))
            Sum weighted by isotopic abundances of enriched sample
            as given below. Compiler believes that contribution
@@ -268,8 +275,9 @@ SAMPLE     Enriched Titanium dioxide deposited on aluminium
                              48Ti             12.23
                              49Ti             3.33
                              50Ti             80.31
-STATUS     Data were taken from Table 4. of the original paper
-ENDBIB              18
+STATUS     (TABLE) Table 4. of Phys.Rev.134(1964)B1269
+HISTORY    (20211202A) VS. SF=3 for 22-TI-48.
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 2          4
 EN         DATA
@@ -279,7 +287,7 @@ MEV        MB
        14.6        36.
        17.4       65.2
 ENDDATA              6
-ENDSUBENT           29
+ENDSUBENT           30
 SUBENT        D4105008   20020219   20020220   20050926       0000
 BIB                  4         23
 REACTION  1(22-TI-47(D,N)23-V-48,,SIG)

@@ -1,22 +1,24 @@
-ENTRY            30093   20100308   20100610   20100603       3144
-SUBENT        30093001   20100308   20100610   20100603       3144
-BIB                 15         56
+ENTRY            30093   20211203   20220112   20220112       3204
+SUBENT        30093001   20211203   20220112   20220112       3204
+BIB                 15         60
 INSTITUTE  (3INDTRM)
-REFERENCE  (J,NP/A,112,241,196805)Angular anisot,bin to tern.ratio
+REFERENCE  (J,NP/A,112,241,1968)Angular anisot,bin to tern.ratio
            (R,BARC-318,1967) same as NP A112,but appendix added
-           (C,67KANPUR,318,196702) prelim results,superseded
-           (P,AEET-267,2,196608)brief,ternary fiss. cross section
+           (S,INDC(IND)-3,318,1967) prelim results,superseded
+           (P,AEET-267,2,1966)brief,ternary fiss. cross section
            (P,BARC-364,31,1968) short note,no data
-           (C,66BOMBAY,,38,196602) preliminary results
+           (C,66BOMBAY,,38,1966) preliminary results
+           (C,65SALZBURG,2,397,1965) binary/ternary FY
 AUTHOR     (D.M.Nadkarni)
 TITLE      Angular anisotropy of fission fragments in ternary
            fission of U-235 induced by 3 MeV neutrons
 EXP-YEAR   (1967)
 FACILITY   (VDG)      5.5 MeV Van de Graaff for 3 MeV neutrons
-           (REAC) Reactor for some thermal neutron measurement
-INC-SOURCE (P-T)      H3(p,n)He3 reaction. Neutron energy spread
-           about 200 keV,calculated from tritium target thickness
-SAMPLE     Metallic U-235 of about 1.5 cm2 area and 1 milli-g/cm2
+           (REAC,3INDTRM) Apsara reactor for some thermal neutron
+            measurement
+INC-SOURCE (P-T)   Neutron energy spread about 200 keV, calculated
+            from tritium target thickness.
+SAMPLE     Metallic U-235 of about 1.5 cm2 area and 1 mg/cm2
            thickness was coated on a 10 millig/cm2 Al backing
 METHOD     Two independent methods. In the first method a gridded
            ionisation chamber was used to measure the direction of
@@ -35,7 +37,7 @@ ANALYSIS   Angular anisotropies expressed by ratio of two measured
 MONITOR    (92-U-235(N,F),,DE,FF) calibration of collector pulse
            heights into fragment energies done using known
            energies of the light and heavy fragments peaks.
-PART-DET   (FF,A)     fission fragments and alphas
+PART-DET   (FF,A)
 ERR-ANALYS (DATA-ERR) No information
 HISTORY    (19821202A) ML. Revision of references, all subentries
              converted to reaction formalism. The following
@@ -57,9 +59,11 @@ HISTORY    (19821202A) ML. Revision of references, all subentries
            (20080305A) BIB section updated
            (20100303A) SD: REACTION code in Subent 007 was changed
                according to EXFOR rules.
-ENDBIB              56
+           (20211203A) VS. Reference 65SALZBURG,2,397,1965 added.
+            010 restored and updated. 011 REACTION corrected.
+ENDBIB              60
 NOCOMMON             0          0
-ENDSUBENT           59
+ENDSUBENT           63
 SUBENT        30093002   20080215   20080530   20080530       3125
 BIB                  5         16
 REACTION   (92-U-235(N,F),,DA,FF,REL)
@@ -239,25 +243,40 @@ EV         ARB-UNITS  ARB-UNITS
  2.5000E-02 1.2400E+00  0.08
 ENDDATA              3
 ENDSUBENT           21
-SUBENT        30093011   20080215   20080530   20080530       3125
-BIB                  4         11
-REACTION   (92-U-235(N,F),TER/BIN,SIG/RAT)
-COMMENT    A value of 1.96+-0.29 mb for the 3 MeV neutron ternary
-           fission cross-section,originally included as subent 10,
-           is given in the progress report AEET-267,2,Aug.1966,
-           without information how this value was obtained.
-           It can be assumed that it was deduced from the 3 MeV
+NOSUBENT      30093009   20211203   20220112   20220112       3204
+SUBENT        30093010   20211203   20220112   20220112       3204
+BIB                  4          8
+REACTION   (92-U-235(N,F)2-HE-4,TER,SIG)
+COMMENT    It can be assumed that it was deduced from the 3 MeV
            neutron fission cross-section ratio given  below, using
            a literature value for the binary fission cross-section
-STATUS     (TABLE) Data taken from AEET-228 4 (1965)
-HISTORY    (19710309C)  compiled into Exfor
-           (19821202A) ML.Converted to reaction. Comment added.
-ENDBIB              11
+STATUS     (TABLE) Data taken from AEET-267 2 (1966)
+HISTORY    (19710310C)  Compiled into EXFOR
+           (20211203S) VS. Dataset was restored and updated to the
+                       new EXFOR format. COMMENT moved from 011.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
+MEV        MB         MB
+3.         1.96       0.29
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30093011   20211203   20220112   20220112       3204
+BIB                  3          6
+REACTION   (92-U-235(N,F)2-HE-4,BIN/TER,FY/RAT)
+STATUS     (CURVE) Plotted on Fig 4. of 65SALZBURG,2,397,1965.
+HISTORY    (19710309C)  compiled into Exfor
+           (19821202A) ML.Converted to reaction. Comment added.
+           (20211203A) VS. SF5 TER/BIN -> BIN/TER; SF6: SIG->FY;
+                       Comment moved to 010. STATUS corrected.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          2
+EN         DATA       DATA-ERR
 EV         NO-DIM     NO-DIM
  2.5300E-02 6.5000E+02 1.0000E+01
-ENDDATA              3
-ENDSUBENT           19
-ENDENTRY             9
+     3.E+06   780.      15.
+ENDDATA              4
+ENDSUBENT           15
+ENDENTRY            11
