@@ -1,22 +1,18 @@
-ENTRY            O1375   20060503   20061115   20061027       O027
-SUBENT        O1375001   20060503   20061115   20061027       O027
-BIB                 12         25
+ENTRY            O1375   20201021   20210305   20210302       O081
+SUBENT        O1375001   20201021   20210305   20210302       O081
+BIB                 12         26
 TITLE      The sub-Coulomb Au-197(t,d)Au-198 reaction.
-AUTHOR     (M.N.Thoma, E.Huenges, H.Morinaga, M.Igarashi, K.Ogawa)
+AUTHOR     (M.H.Thoma, E.Huenges, H.Morinaga, M.Igarashi, K.Ogawa)
 INSTITUTE  (2GERMUN)
            (2JPNTOK)
 REFERENCE  (J,ZP/A,334,293,1989)
-HISTORY    (20060408C)
-           (20060503A) Correction.
-           (20060503U) Last checking has been done.
+FACILITY   (VDGT,2GERMUU) The MP-tandem.
 SAMPLE     The packed of gold foils, a thickness of about
             6-mg/cm**2, were used. The energy loss of the tritons
-           in each foil is about 300-KeV.
-ADD-RES    (COMP).DWBA calculation.
+           in each foil is about 300-keV.
 DETECTOR   (GELI)
-FACILITY   (VDGT,2GERMUU) The MP-tandem.
 METHOD     (STTA) See SAMPLE.
-           (EXTB)  The current was limited to about 1 muA in order
+           (EXTB)  The current was limited to about 1 uA in order
            to prevent the melting of the foils.
            (ACTIV) The radiations were continued over about 24
            hours.
@@ -24,33 +20,39 @@ METHOD     (STTA) See SAMPLE.
 COMMENT    -By authors. The different absolute value of the cross
            sections are caused by difficulties in measuring the
            exact value of the current on the target and by
-           different (n,g)-yields.
-STATUS     (CURVE).By CAJAD.
-ENDBIB              25
-NOCOMMON
-ENDSUBENT           28
-SUBENT        O1375002   20060503   20061115   20061027       O027
-BIB                  6         16
-REACTION   (79-AU-197(T,D)79-AU-198,,SIG) Figure 1
+           different (n,gamma)-yields.
+ADD-RES    (COMP) DWBA calculation.
+STATUS     (CURVE) Fig.1 from Zeitschr.Phys.,A334(1989)293
+HISTORY    (20060408C) .By CAJAD.
+           (20060503A) Correction.
+           (20060503U) Last checking has been done.
+           (20201021A) SD: Corrections in Subent 002.
+ENDBIB              26
+NOCOMMON             0          0
+ENDSUBENT           29
+SUBENT        O1375002   20201021   20210305   20210302       O081
+BIB                  6         17
+REACTION   (79-AU-197(T,X)79-AU-198,,SIG)
 FLAG       (1.) A copper beam stop was used.
            (2.) A golden beam stop was used to reduce neutron
            background.
-RAD-DET    (79-AU-198-G,DG)
 DECAY-DATA (79-AU-198-G,2.964D,DG,412.,0.997)
-COMMENT    -By  author.  The horizontal slope of the cross section
+COMMENT    -By author. The horizontal slope of the cross section
            at low energies is due to (n,gamma)-reaction induced by
            the neutron background during the irradiation.
-ERR-ANALYS (ERR-T) Cross section uncertainty arise from the
+ERR-ANALYS (DATA-ERR) Cross section uncertainty arise from the
            uncertainties in determining the intensity of the
            gamma-line, the efficiency of the gamma-detector and
            the current on the target.
            (EN-ERR) Beam energy uncertainty arise from the
            inaccuracies in the knowledge of the thickness of gold
            foils and of the triton energy.
-ENDBIB              16
-NOCOMMON
+HISTORY    (20201021A) SD: SF3=D -> X in REACTION code.
+           ERR-T -> DATA-ERR.
+ENDBIB              17
+NOCOMMON             0          0
 DATA                 5         18
-EN         EN-ERR     DATA       ERR-T      FLAG
+EN         EN-ERR     DATA       DATA-ERR   FLAG
 MEV        MEV        MICRO-B    PER-CENT   NO-DIM
        3.94       0.09       0.59        10.         2.
        4.27       0.09       0.61         8.         2.
@@ -71,5 +73,5 @@ MEV        MEV        MICRO-B    PER-CENT   NO-DIM
        7.03       0.09       256.        10.         2.
        7.12       0.07       510.        12.         1.
 ENDDATA             20
-ENDSUBENT           41
+ENDSUBENT           42
 ENDENTRY             2
