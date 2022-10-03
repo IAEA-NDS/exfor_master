@@ -1,88 +1,90 @@
-ENTRY            21811   20180829   20190222   20190220       2270
-SUBENT        21811001   20180829   20190222   20190220       2270
+ENTRY            21811   20190722   20191002   20191001       2281
+SUBENT        21811001   20190722   20191002   20191001       2281
 BIB                 10         25
+TITLE      The 241Pu(n,f) cross-section and its normalization
+AUTHOR     (C.Wagemans, A.J.Deruytter)
 INSTITUTE  (2ZZZGEL)
 REFERENCE  (C,82ANTWER,,69,1982)
-AUTHOR     (C.Wagemans,A.J.Deruytter)
-TITLE       The Pu-241(n,f) cross section and its normalization
-FACILITY   (LINAC,2ZZZGEL) 100 MeV Electron Linac at Geel.
-INC-SOURCE (PHOTO) Natural uranium target.
-SAMPLE     .Pu-241 and B-10 samples mounted back to back.
-             A 550 micro-g/cm**2 plutonium acetate layer
-              was electrosprayed onto an aluminum disc.
-              Isotopic composition in atom per cent-
-                Pu-241   91.02     Pu-238    0.03
-                Pu-239    1.17     Pu-240    4.48
-                Pu-242    3.30
-             a 184 micro-g/cm**2 elemental boron-10 layer
-              of isotopic enrichment 93 per cent was
-              prepared by evaporating boron in a vacuum.
-METHOD     (TOF) Measurements made at a flight path of 9.3 m
-                   with and without a Cd overlap filter, and at
-                   30.45 m with a B-10 overlap filter.
-DETECTOR   (SIBAR) Two collinear gold-silicon surface barrier
-                   detectors.
+FACILITY   (LINAC,2ZZZGEL) GELINA
+INC-SOURCE (PHOTO) 100 MeV electrons on natural uranium target
+SAMPLE     241Pu and 10B samples mounted back to back.
+           (94-PU-241,ENR=0.9102)
+            A Plutonium acetate layer (550 ug/cm2) electrosprayed
+             onto an Al disc. Isotopic compositions are
+            241Pu 91.02%, 238Pu 0.03%, 239Pu 1.17%,
+            240Pu  4.48%, 242pu 3.30%
+           (5-B-10,ENR=0.93)
+            Elemental 10B layer (184 ug/cm2 thick) prepared by
+             evaporating boron in a vacuum.
+METHOD     (TOF) Three measurements were performed:
+            Flight path of 9.3 m without Cd overlap filter,
+            Flight path of 9.3 m with Cd overlap filter,
+            Flight path of 30.45 m with 10B overlap filter.
+DETECTOR   (SIBAR) Two collinear Si-Au surface barrier detectors
 HISTORY    (19830114C) A.P.T.
            (20180829A) SD:Updated to new date formats,lower case.
-           MONITOR corrected in Subent 002. Ref. INDC(EUR)-15
-           deleted (not relevant).
+            MONITOR corrected in Subent 002. Ref. INDC(EUR)-15
+            deleted (not relevant).
+           (20190722A) On. Major revisions in 002.
 ENDBIB              25
 NOCOMMON             0          0
 ENDSUBENT           28
-SUBENT        21811002   20180829   20190222   20190220       2270
-BIB                  8         28
+SUBENT        21811002   20190722   20191002   20191001       2281
+BIB                  8         30
 REACTION   (94-PU-241(N,F),,SIG,,AV)
-MONITOR    (94-PU-241(N,F),,SIG) Value at 2200 m/s.
-           (5-B-10(N,A)3-LI-7,,SIG) Neutron flux monitor.
-            Cross section assumed to have a 1/V shape.
-MONIT-REF  (,H.Lemmel,C,75WASH,,286,1975)
-COMMENT    .The main reference contains a detailed
-            comparison of the data with the
-            measurements of other workers.
-CORRECTION .Background determination performed using Cd
-            Rh Au Co and Mn neutron filters, together
-            with a permanent Al neutron filter.
-ERR-ANALYS (DATA-ERR) The total error consists mainly of the
-                   following five components -
-             1) error on the normalization to the 2200 m/s
-                value of the Pu-241 cross section.
-             2) Background determination for both Pu-241(n,f)
-                and B-10(n,alpha) reactions.
-             3) Error on the correction for sample impurities.
-             4) The uncertainty in the shape of the
-                B-10(n,alpha) cross section. This is more
-                more important above 1 keV, since at lower
-                energies the shape has an almost perfect
-                1/V behavior.
-             5) Statistical error.
-STATUS     (TABLE) Table 1 from 82ANTWER,,69,1982.
+MONITOR    ((MONIT)94-PU-241(N,F),,INT)
+           Cross section intgral (0.02 eV - 0.10 eV)=60.11 b*eV,
+            which is corresponding to sigma0=1015 b.
+           (5-B-10(N,A)3-LI-7,,SIG)
+MONIT-REF  ((MONIT)20807001,C.Wagemans+,J,NSE,60,44,1976)
+CORRECTION Correced for
+            - background determined with Rh Au Co and Mn neutron
+              filters together with a permanent Al neutron filter
+              (0.8% at thermal fission, 5% at 25 keV fission,
+               0.4% at thermal 10B(n,a), 1.5% at 25 keV 10B(n,a))
+            - deviation of 10B(n,a)7Li cross section from 1/v by
+              using Sowerby's analytical expression
+            - fission of 239Pu imprity
+REL-REF    (R,,M.Sowerby+,C,70HELSINKI,1,161,1970)
+            10B(n,a) cross sectio analytical expression
+           (R,21704001,C.Wagemans+,J,ANE,7,495,1980)
+            239Pu(n,f) fission cross section for correction
+ERR-ANALYS (DATA-ERR) Overall accuracy from
+            - thermal constant (1015+/-7 b),
+            - 241Pu(n,f) and 10B(n,a) background,
+            - sample impurity,
+            - deviation of 10B(n,a) cross section from 1/v,
+              which is important above 1 keV,
+            - statistical error.
+STATUS     (TABLE) Table 1 of Nucl.Data for Sci. & Technol., p69
 HISTORY    (19830117C) A.P.T.
            (20180829A) SD: SF4=Li-7 added to MONITOR reaction.
             ERR-T -> DATA-ERR.
-ENDBIB              28
-COMMON               2          3
-MONIT1     MONIT1-ERR
-B          B
- 1015.       7.0
+           (20190722A) On. MONITOR corrected.
+ENDBIB              30
+COMMON               3          3
+EN-NRM-MIN EN-NRM-MAX MONIT
+EV         EV         B*EV
+ 0.02       0.10       60.11
 ENDCOMMON            3
 DATA                 4         15
 EN-MIN     EN-MAX     DATA       DATA-ERR
 EV         EV         B          PER-CENT
-       0.02        0.1      751.3         2.
-        0.1        0.5      681.6         2.
-        0.5         1.       42.4         2.
-         1.        10.      189.7         2.
-        10.        20.      151.7         2.
-        20.        30.       85.5         2.
-        30.        40.       49.6         3.
-        40.        50.       45.5         3.
-        50.       100.       39.6         3.
-       100.       500.       23.6         3.
-       500.      1000.       12.1         3.
-      1000.      5000.       7.21         4.
-      5000.     10000.        4.2         4.
-     10000.     20000.       3.09         4.
-     20000.     30000.       2.76         4.
+     0.02       0.1    751.3      2.
+     0.1        0.5    681.6      2.
+     0.5        1.      42.4      2.
+     1.        10.     189.7      2.
+    10.        20.     151.7      2.
+    20.        30.      85.5      2.
+    30.        40.      49.6      3.
+    40.        50.      45.5      3.
+    50.       100.      39.6      3.
+   100.       500.      23.6      3.
+   500.      1000.      12.1      3.
+  1000.      5000.       7.21     4.
+  5000.     10000.       4.2      4.
+ 10000.     20000.       3.09     4.
+ 20000.     30000.       2.76     4.
 ENDDATA             17
-ENDSUBENT           54
+ENDSUBENT           56
 ENDENTRY             2
