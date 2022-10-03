@@ -1,24 +1,24 @@
-ENTRY            40377   20180129   20180402   20180319       4177
-SUBENT        40377001   20180129   20180402   20180319       4177
-BIB                 11         26
+ENTRY            40377   20211201   20220113   20220113       4201
+SUBENT        40377001   20211201   20220113   20220113       4201
+BIB                 11         28
+TITLE       Total neutron cross-sections of Th-230 in the thermal
+            energy region and Ra-226 up to 1 keV
+AUTHOR     (R.N.Ivanov,S.M.Kalebin,V.S.Artamonov,G.V.Rukolaine,
+           N.G.Kocherygin,S.I.Babich,S.N.Nikol'skii,
+           T.S.Belanova,A.G.Kolesov)
+REFERENCE  (J,AE,42,505,1977) Issue 6. Resonance parameters Ra-226
+           (J,SJA,42,581,1977)  Engl. translation of J,AE.  is.6
 INSTITUTE  (4RUSNIR)
            (4RUSITE)
            (4RUSFEI)
-REFERENCE  (J,AE,42,(6),505,1977)  Resonance parameters Ra-226
-           (J,SJA,42,581,1977)  Engl. translation of J,AE.  is.6
-AUTHOR     (R.N.Ivanov,S.M.Kalebin,V.S.Artamonov,G.V.Rukolaine,
-           N.G.Kocherygin,S.I.Babich,S.N.Nikol'skij,
-           T.S.Belanova,A.G.Kolesov)
-TITLE       Total neutron cross-sections of Th-230 in the thermal
-            energy region and Ra-226 up to 1. keV
-FACILITY   (REAC,4RUSITE)  Reactors Of (4RUSITE) and (4RUSNIR)
+FACILITY   (REAC,4RUSITE)
            (REAC,4RUSNIR)
 INC-SOURCE (REAC)
 METHOD     (TOF)    Resolution is 35.nsec/m or less
-           (TRN) Transmission.
+           (TRN)
 DETECTOR   (PROPC)    He-3 counters
 PART-DET   (N)
-CORRECTION  Background is less than 4. percent
+CORRECTION  Background is less than 4. %.
 HISTORY    (19800222C)  Compiled at the centre
            (19831215U)  New records added and errors corrected
            (20111122A) M.M. Upper -> lower case correction.
@@ -27,12 +27,14 @@ HISTORY    (19800222C)  Compiled at the centre
             Subents 006-008 were added.
            (20180129A) M.M. Thickness was added in COMMON block
            in Subents 004,005 .
-ENDBIB              26
+           (20211201A) Subent 003 was corrected.
+           Minor correction of free text in all Subents.
+ENDBIB              28
 NOCOMMON             0          0
-ENDSUBENT           29
-SUBENT        40377002   20111122   20120210   20120207       4155
-BIB                  5         10
-REACTION  1(88-RA-226(N,0),,EN)     Resonance energy
+ENDSUBENT           31
+SUBENT        40377002   20211201   20220113   20220113       4201
+BIB                  5         11
+REACTION  1(88-RA-226(N,0),,EN)
           2(88-RA-226(N,EL),,WID)
           3(88-RA-226(N,G),,WID)
 SAMPLE      Ra-S-O4 powder, 1. % of Na2-S-O4, 4.75 % of Ba-S-O4.
@@ -40,9 +42,10 @@ SAMPLE      Ra-S-O4 powder, 1. % of Na2-S-O4, 4.75 % of Ba-S-O4.
              (8.12+-0.78)E+20 at/cm2
 ASSUMED    (ASSUM,88-RA-226(N,G),,WID) Gamma-width for
                       resonances where it was not measured
-ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (TABLE) Table of J,AE,42,(6),505,1977.
-ENDBIB              10
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table of Sov.At.Energy,v.42,p.581,1977
+ENDBIB              11
 COMMON               2          3
 ASSUM      ASSUM-ERR
 MILLI-EV   MILLI-EV
@@ -90,38 +93,39 @@ EV         EV         MILLI-EV   MILLI-EV   MILLI-EV   MILLI-EV
  1.3360E+03 1.3000E+01
  1.3850E+03 1.3000E+01
 ENDDATA             40
-ENDSUBENT           59
-SUBENT        40377003   20111122   20120210   20120207       4155
-BIB                  2          8
-REACTION  1(88-RA-226(N,ABS),,D)
-          2(88-RA-226(N,ABS),,STF)
-          3(88-RA-226(N,ABS),,RI)
-          4(88-RA-226(N,EL),,WID/RED,,AV)Averaged over resonances
+ENDSUBENT           60
+SUBENT        40377003   20211201   20220113   20220113       4201
+BIB                  4         12
+REACTION  1(88-RA-226(N,0),,D)
+          2(88-RA-226(N,EL),,STF)
+          3(88-RA-226(N,EL),,WID/RED,,AV)
 STATUS     (DEP,40377002) Res.parameters of this subentry obtained
                by averaging of data from SUBENT  40377002
                  up to 950. eV
-           (TABLE) Text, page 505, of J,AE,42,(6),505,1977.
-ENDBIB               8
+           (TABLE) Text pages 581-582 of
+           Sov.At.Energy,v.42,p.581,1977
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+HISTORY    (20211201A) Data of RI were moved in Subent 009.
+            EN-MIN/MAX -> EN-RES-MIN/MAX.
+ENDBIB              12
 COMMON               3          3
-EN-MIN     EN-MAX     MOMENTUM L2
+EN-RES-MIN EN-RES-MAX MOMENTUM L2
 EV         EV         NO-DIM
- 3.0000E+01 9.5000E+02 0.
+ 30.        950.       0.
 ENDCOMMON            3
-DATA                 8          1
+DATA                 6          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
-DATA      4DATA-ERR  4
-EV         EV         NO-DIM     NO-DIM     B          B
-MILLI-EV   MILLI-EV
- 3.2000E+01 3.0000E+00 1.0000E-04 3.0000E-05 2.3600E+02 1.6000E+01
- 3.2000E+00 8.0000E-01
-ENDDATA              6
-ENDSUBENT           23
-SUBENT        40377004   20180129   20180402   20180319       4177
+EV         EV         NO-DIM     NO-DIM     MILLI-EV   MILLI-EV
+ 32.        3.         1.0   E-04 3.    E-05 3.2        0.8
+ENDDATA              3
+ENDSUBENT           24
+SUBENT        40377004   20211201   20220113   20220113       4201
 BIB                  4          6
-REACTION   (88-RA-226(N,TOT),,TRN)       Transmission
+REACTION   (88-RA-226(N,TOT),,TRN)
 SAMPLE      Ra-226 content is 5.56e+21 atoms/cm2
-STATUS     (APRVD) Obtained from the authors  1978.
-           (TABLE)
+STATUS     (APRVD)
+           (TABLE) Obtained from the authors  1978.
 HISTORY    (20111125A) SIG,,RAW -> TRN .
            (20180129A) M.M. Thickness was added in COMMON block.
 ENDBIB               6
@@ -1837,9 +1841,9 @@ EV         NO-DIM
  1.2583E+01 9.1397E-01
 ENDDATA           1704
 ENDSUBENT         1719
-SUBENT        40377005   20180129   20180402   20180319       4177
+SUBENT        40377005   20211201   20220113   20220113       4201
 BIB                  5         12
-REACTION   (90-TH-230(N,TOT),,TRN)        Transmission
+REACTION   (90-TH-230(N,TOT),,TRN)
 SAMPLE     Ratio of Th-232 content to Th-230 1.463+-0.03.
            Th-230 thickness (4.23+-0.05)*10**21 atoms/cm**2 .
             Used for measurement in thermal region.
@@ -1847,8 +1851,8 @@ SAMPLE     Ratio of Th-232 content to Th-230 1.463+-0.03.
            Ce <1.E-5 %, Pr < 1.e-5 %, Sm < 1.E-5 %, Eu < 1.E-5 %,
            Gd < 2.E-4 %, Zr < 5.E-3 % .
 CORRECTION For oxygen in sample using c-s value of BNL-325,1973.
-STATUS     (APRVD)  Data obtained from authors 1978
-           (TABLE)
+STATUS     (APRVD)
+           (TABLE)  Data obtained from authors 1978
 HISTORY    (20111125A) SIG,,RAW -> TRN .
            (20180129A) M.M. Thickness was added in COMMON block.
 ENDBIB              12
@@ -2933,9 +2937,9 @@ EV         NO-DIM
  3.4400E-03 5.2090E-01
 ENDDATA           1073
 ENDSUBENT         1094
-SUBENT        40377006   20180129   20180402   20180319       4177
-BIB                  7         15
-REACTION   (90-TH-230(N,TOT),,SIG) Cross-section at thermal point
+SUBENT        40377006   20211201   20220113   20220113       4201
+BIB                  7         16
+REACTION   (90-TH-230(N,TOT),,SIG)
 SAMPLE     Ratio of Th-232 content to Th-230 1.463+-0.03.
            Th-230 thickness (4.23+-0.05)*10**21 atoms/cm**2 .
             Used for measurement in thermal region.
@@ -2946,20 +2950,21 @@ CORRECTION For oxygen in sample using c-s value of BNL-325,1973.
 REL-REF    (D,,S.M.Kalebin+,J,AE,26,507,1969) Issue 6
              71.8 b. Slow neutrons scattering at small angles was
            not taken into account in 1969.
-ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (TABLE) Text, page 505, of J,AE,42,(6),505,1977.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Text page 581 of Sov.At.Energy,v.42,p.581,1977
 HISTORY    (20111125C) M.M.
            (20180129U) Minor correction of free text.
-ENDBIB              15
+ENDBIB              16
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
 0.025       54.        3.
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        40377007   20180129   20180402   20180319       4177
-BIB                  6         16
+ENDSUBENT           24
+SUBENT        40377007   20211201   20220113   20220113       4201
+BIB                  6         17
 REACTION   (90-TH-230(N,EL)90-TH-230,POT,SIG)
 SAMPLE     Ratio of Th-232 content to Th-230 1.463+-0.03.
            Th-230 thickness (4.23+-0.05)*10**21 atoms/cm**2 .
@@ -2970,38 +2975,55 @@ SAMPLE     Ratio of Th-232 content to Th-230 1.463+-0.03.
 ANALYSIS   (SLA) Potential sct. c-s was defined at calculation of
            1.431 eV resonance by shape method using Breit-Wigner
            single-level formalism.
-ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (TABLE) Text, page 505, of J,AE,42,(6),505,1977.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Text page 581 of Sov.At.Energy,v.42,p.581,1977
 HISTORY    (20111125C) M.M.
            (20180129A) Minor correction of free text.
             DERIV was deleted according to the comment of
             N.Otsuka (NDS,IAEA) .
-ENDBIB              16
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
 0.025       16.        4.
 ENDDATA              3
-ENDSUBENT           24
-SUBENT        40377008   20180129   20180402   20180319       4177
-BIB                  6         10
+ENDSUBENT           25
+SUBENT        40377008   20211201   20220113   20220113       4201
+BIB                  6         11
 REACTION   (90-TH-230(N,ABS),,SIG,,,DERIV)
 REL-REF    (D,,,R,BNL-325,1969) 23.2+-0.6 b.
 ANALYSIS    Absorption c-s was derived from total c-s and
            potential scattering c-s.
-ERR-ANALYS (DATA-ERR)  Not specified
-STATUS     (TABLE) Text, page 505, of J,AE,42,(6),505,1977.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Text page 581 of Sov.At.Energy,v.42,p.581,1977
            (DEP,40377006) Total CS
            (DEP,40377007) Potential scattering CS
 HISTORY    (20111125C) M.M.
            (20180129U) Minor correction of free text.
-ENDBIB              10
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
 0.025       38.        5.
 ENDDATA              3
-ENDSUBENT           18
-ENDENTRY             8
+ENDSUBENT           19
+SUBENT        40377009   20211201   20220113   20220113       4201
+BIB                  4          5
+REACTION   (88-RA-226(N,ABS),,RI)
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Text page 582 of Sov.At.Energy,v.42,p.581,1977
+HISTORY    (20211201T) Data of RI were moved from Subent 003.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 4          1
+EN-MIN     EN-MAX     DATA       DATA-ERR
+EV         EV         B          B
+ 30.        950.       236.       16.
+ENDDATA              3
+ENDSUBENT           13
+ENDENTRY             9
