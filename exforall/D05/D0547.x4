@@ -1,6 +1,6 @@
-ENTRY            D0547   20120502   20120530   20120515       D082
-SUBENT        D0547001   20120502   20120530   20120515       D082
-BIB                 13         56
+ENTRY            D0547   20190821   20191010   20191003       D121
+SUBENT        D0547001   20190821   20191010   20191003       D121
+BIB                 13         59
 TITLE      Study of the excitation function for the deuteron
             induced reaction on 64Ni(d,2n) for the production of
             the medical radioisotope 64Cu
@@ -18,7 +18,7 @@ SAMPLE     Two stacks each containing 8 foils of enriched 64Ni
            (28-NI-58,ENR=0.0195)
            (28-NI-60,ENR=0.0131)
            (28-NI-61,ENR=0.0013)
-           (28-NI-62,ENR-0.0051)
+           (28-NI-62,ENR=0.0051)
 MONITOR    (22-TI-0(D,X)23-V-48,,SIG)
            Monitor foils (12 um thick natTi, 99% purity) were
             interleaved with the targets and one 100 um thick Al
@@ -54,16 +54,19 @@ ERR-ANALYS (ERR-T) The total uncertainty of the cross-section
            (ERR-4) incident particle intensity                (5%)
            (ERR-5,2.,8.) determination of the peak areas
             including statistical errors                    (2-8%)
-STATUS     (TABLE) tabulated data from the article
+STATUS     (TABLE) Data from the Tbl.1 and text on pp.508-509
+           of the Appl.Rad.Isot.,67(2009)506
 HISTORY    (20090102C) SD
            (20120502U) On. DECAY-MON deleted
-ENDBIB              56
+           (20190821A) SD: REACTION code updated according to new
+           EXFOR rules in Subent 004.
+ENDBIB              59
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      ERR-4
 PER-CENT   PER-CENT   PER-CENT   PER-CENT
  5.0        5.0        5.0        5.0
 ENDCOMMON            3
-ENDSUBENT           63
+ENDSUBENT           66
 SUBENT        D0547002   20081207   20090416   20090407       D065
 BIB                  2          2
 REACTION   (28-NI-64(D,P)28-NI-65,,SIG)
@@ -109,11 +112,16 @@ MEV        MEV        MB         MB
         6.2        0.8       145.       14.7
 ENDDATA             13
 ENDSUBENT           20
-SUBENT        D0547004   20081207   20090416   20090407       D065
-BIB                  2          2
-REACTION   (28-NI-64(D,2N)29-CU-64,,TTY,,DT)
-DECAY-DATA (29-CU-64,12.7HR,B+,,0.385,B+,,0.18,EC,,0.435)
-ENDBIB               2
+SUBENT        D0547004   20190821   20191010   20191003       D121
+BIB                  4          7
+REACTION   (28-NI-64(D,2N)29-CU-64,,TTY,,(PHY),DERIV)
+ANALYSIS   (INTEF) Calculated from a fit to author's new data
+                  points
+STATUS     (DEP,D0547003) Excitation function
+HISTORY    (20190821A) SD: SF8=DT -> (PHY); SF9=DERIV added to
+           REACTION code. ANALYSIS added.
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          2
 EN-MIN     EN-MAX     DATA
@@ -121,5 +129,5 @@ MEV        MEV        MBQ/MUAHR
   9.0         20.5      844.
  15.0         19.0      332.
 ENDDATA              4
-ENDSUBENT           11
+ENDSUBENT           16
 ENDENTRY             4

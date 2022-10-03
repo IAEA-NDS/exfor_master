@@ -1,24 +1,31 @@
-ENTRY            D4137   20060828   20061122   20061122       D049
-SUBENT        D4137001   20060828   20061122   20061122       D049
-BIB                  7         13
-TITLE      Production of Co55 via the Fe54(d,a)-process and
+ENTRY            D4137   20190824   20191010   20191003       D121
+SUBENT        D4137001   20190824   20191010   20191003       D121
+BIB                  7         17
+TITLE      Production of Co55 via the Fe54(d,alpha)-process and
            excitation functions of 54Fe(d,t)53Fe and
-           54Fe(d,a)52mMn reactions from threshold up to 13.8 MeV.
+           54Fe(d,alpha)52mMn reactions from threshold up
+           to 13.8 MeV.
 AUTHOR     (M.R.Zaman,S.Spellerberg,S.M.Qaim)
 INSTITUTE  (2GERJUL) Kernforschungsanlage Juelich, Germany
 REFERENCE  (J,RCA,91,105,2003)
 FACILITY   (CYCLO,2GERJUL) CV-28 cyclotron
-           (CYCLO,2GERJUL) Injector cyclotron of Cosy
-DETECTOR   (HPGE) HpGe  high puriy germanium gamma detector
+           (CYCLO,2GERJUL) Injector cyclotron of COSY
+DETECTOR   (HPGE) HpGe  high purity germanium gamma detector
 HISTORY    (20031006C) TS
-           (20060828A) KB Informations in subentry D4137001 under
-           keywords SAMPLE and METHOD were replaced into subentry
+           (20060828A) KB Information in Subent D4137001 under
+           keywords SAMPLE and METHOD were replaced into Subent
            D4137002.
-ENDBIB              13
+           (20190824A) SD: REACTION code updated according to new
+           EXFOR rules in Subents 006-007.  REL-REF updated. Small
+           corrections in all Subents.
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           16
-SUBENT        D4137002   20060828   20061122   20061122       D049
-BIB                  5         20
+ENDSUBENT           20
+SUBENT        D4137002   20190824   20191010   20191003       D121
+BIB                  6         24
+REACTION   (26-FE-54(D,N)27-CO-55,,TTY,,EOB)
+DECAY-DATA (27-CO-55,17.6HR,DG,477.,0.203,
+                            DG,932.,0.75)
 SAMPLE     Enriched 54Fe in oxide powder form mixed with Al powder
                 Isotopic composition:
                    Fe-54            91.6%
@@ -36,33 +43,35 @@ METHOD     (ACTIV,EXTB,GSPEC,CHSEP) The pressed samples were
            12.6-5.0 MeV. Irradiation time was 3 hr.
            After irradiation chemical separation was done to
            separate the 55Co and 52Mn.
-REACTION   (26-FE-54(D,N)27-CO-55,,TTY,,DT)
-DECAY-DATA (27-CO-55,17.6HR,DG,477.,0.203,DG,932.,0.75)
-STATUS     Data were taken from the text of the publication p106.
-ENDBIB              20
+STATUS     (TABLE) from the text on p.106 of
+                                    Radiochim.Acta,91(2003)105
+HISTORY    (20190824A) SD: SF9=DT -> EOB in REACTION code.
+           STATUS updated. TIME-IRRD added. MBQ/MUAHR -> MBQ/MUA.
+ENDBIB              24
 NOCOMMON             0          0
-DATA                 3          1
-EN-MAX     EN-MIN     DATA
-MEV        MEV        MBQ/MUAHR
-       12.6        5.0   13.0
+DATA                 4          1
+EN-MAX     EN-MIN     TIME-IRRD  DATA
+MEV        MEV        HR         MBQ/MUA
+       12.6        5.0   1.        13.0
 ENDDATA              3
-ENDSUBENT           28
-SUBENT        D4137003   20031006   20040319   20050926       0000
-BIB                  6         13
-SAMPLE     Samples were natural iron foils of 25 microns. Details
-METHOD     (ACTIV,EXTB,STTA) Deatils are given in an other paper
-           of Radiochimica Acta, 75,59,1996 EXFOR Entry no.: D4131
+ENDSUBENT           32
+SUBENT        D4137003   20190824   20191010   20191003       D121
+BIB                  8         14
 REACTION  1(26-FE-54(D,A)25-MN-52-M,,SIG)
           2(26-FE-54(D,T)26-FE-53,,SIG)
 DECAY-DATA1(25-MN-52-M,21.2MIN,DG,1434.1,0.982)
           2(26-FE-53-G,8.5MIN,DG,377.9,0.42)
+SAMPLE     Samples were natural iron foils of 25 microns.
+METHOD     (ACTIV,EXTB,STTA) Details are given in the D4131 Entry
+             (see REL-REF).
+REL-REF    (M,D4131001,M.R.Zaman+,J,RCA,75,59,1996)
 ERR-ANALYS (EN-ERR) No detail is given.
            (ERR-T)Total error was estimated to be 6-8%
-              statistical error                   <1%
-              peak area determination            0.5-2%
-STATUS     Numerical data were taken from Table 2. of the
-           publication.
-ENDBIB              13
+           (ERR-S,,1.) statistical error                   <1%
+           (ERR-1,0.5,2.) peak area determination        0.5-2%
+STATUS     (TABLE) Table 2. from Radiochim.Acta,91(2003)105
+HISTORY    (20190824U) SD:ERR-ANALYS,STATUS updated.REL-REF added.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 6         16
 EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
@@ -84,5 +93,5 @@ MEV        MEV        MB         MB         MB         MB
       13.6      0.3      22.0       3.0
       13.8      0.3      24.0       3.0        0.49      0.14
 ENDDATA             18
-ENDSUBENT           36
+ENDSUBENT           37
 ENDENTRY             3

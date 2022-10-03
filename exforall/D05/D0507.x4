@@ -1,6 +1,6 @@
-ENTRY            D0507   20090514   20090724   20090721       D067
-SUBENT        D0507001   20090514   20090724   20090721       D067
-BIB                 14         59
+ENTRY            D0507   20190820   20191010   20191003       D121
+SUBENT        D0507001   20190820   20191010   20191003       D121
+BIB                 15         66
 TITLE      Excitation functions of the proton induced nuclear
            reactions on natSn up to 40 MeV
 AUTHOR     (M.U.Khandaker,K.Kim,K.-S.Kim,M.Lee,Y.S.Lee,G.Kim,
@@ -32,11 +32,12 @@ MONITOR    (29-CU-0(P,X)30-ZN-62,,SIG)
            (13-AL-27(P,X)11-NA-22,,SIG) The monitor foils were
            considered to have been irradiated simultaneously and
            were measured with the same detector and in a
-           rcompaable geometry as the tin target.
-DECAY-MON  (30-ZN-62,9.186HR,DG,548.35,0.152,DG,596.7,0.257)
+           comparable geometry as the tin target.
+DECAY-MON  (30-ZN-62,9.186HR,DG,548.35,0.152,
+                             DG,596.7,0.257)
            (11-NA-24,14.96HR,DG,1368.59,1.)
            (11-NA-22,2.6YR,DG,1274.53,0.9994)
-MONIT-REF  (,F.TARKANYI+,R,IAEA-TECDOC-1211,2001) Chapter 4
+MONIT-REF  (,F.Tarkanyi+,R,IAEA-TECDOC-1211,2001) Chapter 4
 METHOD     (ACTIV,STTA,EXTB,GSPEC) Each sample was recounted
            5-6 times to avoid disturbances caused by overlapping
            gamma-lines from undesired sources and to more
@@ -46,27 +47,33 @@ DETECTOR   (HPGE) a high-purity germanium (HPGe) gamma-ray
            coupled to a 4096 multi-channel analyzer (MCA)
            with the associated electronics to determine
            the photo peak area of the gamma-ray spectrum.
-ERR-ANALYS (ERR-T) The main sources of total uncetainty are:
+ERR-ANALYS (ERR-T) The main sources of total uncertainty are:
            (ERR-1) uncertainty in the monitor cross-section ~ 7%;
            (ERR-2) Error due to the detection efficiency
                                                 estimation ~ 4%;
            (ERR-3) Error due to the sample thickness ~ 1.5%;
-             * Statistical error 0.5-10%.
+           (ERR-S,0.5,10.)Statistical error 0.5-10%.
            (EN-ERR) The possible uncertainty of a point in the
            excitation function ranged from +- 0.3 up to +-1.1 MeV
-STATUS     (TABLE) tbl. from ref.
+CORRECTION  The derived physical thick target yield was divided
+            by [1-exp(-lambda*tirr)] with tirr=45 min for the
+            short-lived product nuclides.
+STATUS     (TABLE) Data from authors and tables from
+                                Nucl.Instr.Meth.B267(2009)23
            (APRVD) Entry approved by Drs. G.Kim and M.U.Khandaker
 HISTORY    (20080823C)
            (20090205A) SD. Ref. on final publ. added, new subents
                        were added according to final publication.
            (20090514A) On. REFERENCE: 2008INTLAK added
-ENDBIB              59
+           (20190820A) SD: REACTION code updated according to new
+           EXFOR rules in Subents 004, 013-021. CORRECTION added.
+ENDBIB              66
 COMMON               3          3
 ERR-1      ERR-2      ERR-3
 PER-CENT   PER-CENT   PER-CENT
   7.0        4.0        1.5
 ENDCOMMON            3
-ENDSUBENT           66
+ENDSUBENT           73
 SUBENT        D0507002   20081209   20090416   20090407       D065
 BIB                  2          2
 REACTION   (50-SN-0(P,X)50-SN-117-M,,SIG)
@@ -123,11 +130,15 @@ MEV        MEV        MB         MB
       39.18        0.3      20.50       2.92
 ENDDATA             18
 ENDSUBENT           25
-SUBENT        D0507004   20081209   20090416   20090407       D065
-BIB                  2          2
-REACTION   (50-SN-0(P,X)50-SN-117-M,,TTY,,DT,DERIV)  fig.12
-DECAY-DATA (50-SN-117-M,14.D,DG,158.56,0.863)
-ENDBIB               2
+SUBENT        D0507004   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)50-SN-117-M,,TTY,,(PHY),DERIV)  fig.12
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507002) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         18
 EN         DATA
@@ -151,7 +162,7 @@ MEV        MBQ/MUAHR
       37.56       2.65
       39.18       3.14
 ENDDATA             20
-ENDSUBENT           27
+ENDSUBENT           31
 SUBENT        D0507005   20081209   20090416   20090407       D065
 BIB                  2          4
 REACTION   (50-SN-0(P,X)51-SB-124,,SIG)
@@ -357,15 +368,16 @@ MEV        MEV        MB         MB
       39.18        0.3      11.43       0.68
 ENDDATA             16
 ENDSUBENT           24
-SUBENT        D0507012   20081209   20090416   20090407       D065
-BIB                  2          6
-REACTION   (50-SN-0(P,X)49-IN-110,,SIG)
-DECAY-DATA (49-IN-110,4.9HR,DG,641.68,0.259,
-                            DG,657.75,0.978,
-                            DG,707.4,0.295,
-                            DG,884.667,0.929,
-                            DG,937.48,0.684)
-ENDBIB               6
+SUBENT        D0507012   20190820   20191010   20191003       D121
+BIB                  3          7
+REACTION   (50-SN-0(P,X)49-IN-110-G,,SIG)
+DECAY-DATA (49-IN-110-G,4.9HR,DG,641.68,0.259,
+                              DG,657.75,0.978,
+                              DG,707.4,0.295,
+                              DG,884.667,0.929,
+                              DG,937.48,0.684)
+HISTORY    (20190820A) On. REACTION(SF4), DECAY-DATA: -G added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4         10
 EN         EN-ERR     DATA       ERR-T
@@ -381,12 +393,16 @@ MEV        MEV        MB         MB
       37.56        0.3       5.13       0.52
       39.18        0.3       5.82       0.57
 ENDDATA             12
-ENDSUBENT           23
-SUBENT        D0507013   20081209   20090416   20090407       D065
-BIB                  2          2
-REACTION   (50-SN-0(P,X)51-SB-117,,TTY,,DT,DERIV) fig.11
-DECAY-DATA (51-SB-117,2.8HR,DG,158.6,0.859)
-ENDBIB               2
+ENDSUBENT           24
+SUBENT        D0507013   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)51-SB-117,,TTY,,(PHY),DERIV) fig.11
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507009) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         18
 EN         DATA
@@ -410,14 +426,16 @@ MEV        MBQ/MUAHR
       37.56 3.9679E+03
       39.18 4.4149E+03
 ENDDATA             20
-ENDSUBENT           27
-SUBENT        D0507014   20081209   20090416   20090407       D065
-BIB                  2          4
-REACTION   (50-SN-0(P,X)51-SB-118-M,,TTY,,DT,DERIV)  fig.11
-DECAY-DATA (51-SB-118-M,5.HR,DG,253.68,0.96,
-                            DG,1050.69,0.975,
-                            DG,1229.64,1.)
-ENDBIB               4
+ENDSUBENT           31
+SUBENT        D0507014   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)51-SB-118-M,,TTY,,(PHY),DERIV)  fig.11
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507008) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         18
 EN         DATA
@@ -441,13 +459,16 @@ MEV        MBQ/MUAHR
       37.56     574.46
       39.18     626.50
 ENDDATA             20
-ENDSUBENT           29
-SUBENT        D0507015   20081209   20090416   20090407       D065
-BIB                  2          3
-REACTION   (50-SN-0(P,X)49-IN-111,,TTY,,DT,DERIV)   fig.12
-DECAY-DATA (49-IN-111,2.71D,DG,171.29,0.91,
-                            DG,245.35,0.94)
-ENDBIB               3
+ENDSUBENT           31
+SUBENT        D0507015   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)49-IN-111,,TTY,,(PHY),DERIV)   fig.12
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507011) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         14
 EN         DATA
@@ -467,14 +488,16 @@ MEV        MBQ/MUAHR
       37.56       5.97
       39.18       6.73
 ENDDATA             16
-ENDSUBENT           24
-SUBENT        D0507016   20081209   20090416   20090407       D065
-BIB                  2          4
-REACTION   (50-SN-0(P,X)51-SB-120-M,,TTY,,DT,DERIV)  fig.12
-DECAY-DATA (51-SB-120-M,5.76D,DG,197.25,0.88,
-                            DG,1023.06,0.99,
-                            DG,1171.44,0.999)
-ENDBIB               4
+ENDSUBENT           27
+SUBENT        D0507016   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)51-SB-120-M,,TTY,,(PHY),DERIV)  fig.12
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507007) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         18
 EN         DATA
@@ -498,13 +521,16 @@ MEV        MBQ/MUAHR
       37.56       7.06
       39.18       7.53
 ENDDATA             20
-ENDSUBENT           29
-SUBENT        D0507017   20081209   20090416   20090407       D065
-BIB                  2          3
-REACTION   (50-SN-0(P,X)51-SB-122,,TTY,,DT,DERIV) fig.12
-DECAY-DATA (51-SB-122,2.72D,DG,564.2,0.7067,
-                            DG,692.6,0.0385)
-ENDBIB               3
+ENDSUBENT           31
+SUBENT        D0507017   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)51-SB-122,,TTY,,(PHY),DERIV) fig.12
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507006) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         18
 EN         DATA
@@ -528,16 +554,17 @@ MEV        MBQ/MUAHR
       37.56      25.97
       39.18      26.91
 ENDDATA             20
-ENDSUBENT           28
-SUBENT        D0507018   20081209   20090416   20090407       D065
-BIB                  2          6
-REACTION   (50-SN-0(P,X)49-IN-110,,TTY,,DT,DERIV)  fig.12
-DECAY-DATA (49-IN-110,4.9HR,DG,641.68,0.259,
-                            DG,657.75,0.978,
-                            DG,707.4,0.295,
-                            DG,884.667,0.929,
-                            DG,937.48,0.684)
-ENDBIB               6
+ENDSUBENT           31
+SUBENT        D0507018   20190820   20191010   20191003       D121
+BIB                  4          7
+REACTION   (50-SN-0(P,X)49-IN-110-G,,TTY,,(PHY),DERIV)  fig.12
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507012) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+                           REACTION(SF4): -G added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2         10
 EN         DATA
@@ -553,14 +580,16 @@ MEV        MBQ/MUAHR
       37.56      19.36
       39.18      24.49
 ENDDATA             12
-ENDSUBENT           23
-SUBENT        D0507019   20081209   20090416   20090407       D065
-BIB                  2          4
-REACTION   (50-SN-0(P,X)51-SB-124,,TTY,,DT,DERIV)  fig.13
-DECAY-DATA (51-SB-124,60.2D,DG,602.72,0.983,
-                            DG,645.86,0.0746,
-                            DG,722.78,0.1081)
-ENDBIB               4
+ENDSUBENT           24
+SUBENT        D0507019   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)51-SB-124,,TTY,,(PHY),DERIV)  fig.13
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507005) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         18
 EN         DATA
@@ -584,13 +613,16 @@ MEV        MBQ/MUAHR
       37.56       0.16
       39.18       0.17
 ENDDATA             20
-ENDSUBENT           29
-SUBENT        D0507020   20081209   20090416   20090407       D065
-BIB                  2          3
-REACTION   (50-SN-0(P,X)49-IN-114-M,,TTY,,DT,DERIV)   fig.13
-DECAY-DATA (49-IN-114-M,49.51D,DG,190.27,0.1556,
-                            DG,558.43,0.032)
-ENDBIB               3
+ENDSUBENT           31
+SUBENT        D0507020   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)49-IN-114-M,,TTY,,(PHY),DERIV)   fig.13
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507010) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         15
 EN         DATA
@@ -611,12 +643,16 @@ MEV        MBQ/MUAHR
       37.56       0.11
       39.18       0.13
 ENDDATA             17
-ENDSUBENT           25
-SUBENT        D0507021   20081209   20090416   20090407       D065
-BIB                  2          2
-REACTION   (50-SN-0(P,X)50-SN-113,,TTY,,DT,DERIV)   fig.13
-DECAY-DATA (50-SN-113,115.1D,DG,254.5,0.0207,DG,391.71,0.6417)
-ENDBIB               2
+ENDSUBENT           28
+SUBENT        D0507021   20190820   20191010   20191003       D121
+BIB                  4          6
+REACTION   (50-SN-0(P,X)50-SN-113,,TTY,,(PHY),DERIV)   fig.13
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (DEP,D0507003) Excitation function
+HISTORY    (20190820A) SD: SF8=DT -> (PHY) REACTION code. ANALYSIS
+           added. COMMENT moved to Subent 001 (see CORRECTION).
+                       On. DECAY-DATA deleted. STATUS=DEP added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2         16
 EN         DATA
@@ -638,5 +674,5 @@ MEV        MBQ/MUAHR
       37.56       0.10
       39.18       0.14
 ENDDATA             18
-ENDSUBENT           25
+ENDSUBENT           29
 ENDENTRY            21

@@ -1,13 +1,13 @@
-ENTRY            D4227   20091012   20100209   20100128       D071
-SUBENT        D4227001   20091012   20100209   20100128       D071
-BIB                 14         48
+ENTRY            D4227   20190823   20191010   20191003       D121
+SUBENT        D4227001   20190823   20191010   20191003       D121
+BIB                 14         51
 TITLE      Excitation functions for some W, Ta and Hf
-           radionuclidesobtained by deuteron irradiation of
+           radionuclides obtained by deuteron irradiation of
            181Ta up to 40 MeV
 AUTHOR     (A.Hermanne,L.Daraban,F.Tarkanyi,S.Takacs,F.Ditroi,
            A.Ignatyuk,R.Adam Rebeles,M.Baba)
 INSTITUTE  (2BLGVUB,3HUNDEB,4RUSFEI,2JPNTOH)
-REFERENCE  (J,NIM/B,267,(19),3293,2009)
+REFERENCE  (J,NIM/B,267,3293,2009)
            #doi:10.1016/j.nimb.2009.07.008
 SAMPLE     Natural high purity Ta foils (Goodfellow > 99.98%,
            thickness 25 microns)
@@ -25,8 +25,8 @@ METHOD     (STTA,ACTIV,EXTB,GSPEC,XSPEC)The stacks were
 MONITOR    (22-TI-0(D,X)23-V-48,,SIG)   at VUB
            (13-AL-27(D,X)11-NA-22,,SIG)  at CYRIC
            (13-AL-27(D,X)11-NA-24,,SIG)  at CYRIC
-MONIT-REF  (,F.TARKANYI+,R,IAEA-NDS-1211,2001)    Chapter 4
-DECAY-DATA Decay data were taken from NUDAT datbase
+MONIT-REF  (,F.Tarkanyi+,R,IAEA-NDS-1211,2001)    Chapter 4
+DECAY-DATA Decay data were taken from NUDAT database
 ERR-ANALYS (EN-ERR)Taking into account the cumulative effects of
            possible incident energy variation and thickness of
            the different targets, the uncertainty on the median
@@ -49,13 +49,16 @@ ADD-RES    (THEO) The experimental data were compared to the
            (TTY-C) Fitted excitation functions were used for
            determination of integral physical yields.
 HISTORY    (20091012C) TS.
-ENDBIB              48
+           (20190823A) SD: REACTION code updated according to new
+           EXFOR rules in Subents 008-011. Subents 012-016 deleted
+            (info moved to D4141.010-014).
+ENDBIB              51
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      ERR-4
 PER-CENT   PER-CENT   PER-CENT   PER-CENT
 5.         5.         10.        5.
 ENDCOMMON            3
-ENDSUBENT           55
+ENDSUBENT           58
 SUBENT        D4227002   20091012   20100209   20100128       D071
 BIB                  3          4
 REACTION   (73-TA-181(D,2N)74-W-181,,SIG)
@@ -244,31 +247,35 @@ MEV        MEV        MB         MB
       39.8      0.3      0.61      0.26
 ENDDATA             12
 ENDSUBENT           20
-SUBENT        D4227008   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(73-TA-181(D,4N+P)73-TA-178-G,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(73-TA-181(D,4N+P)73-TA-178-G,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
+SUBENT        D4227008   20190823   20191010   20191003       D121
+BIB                  4          8
+REACTION  1(73-TA-181(D,X)73-TA-178-G,,TTY,,PHY,DERIV)
+          2(73-TA-181(D,X)73-TA-178-G,,TTY,,SAT,DERIV)
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (TABLE) Table 3 from Nucl.Inst.Meth.,B267(2009)3293
+           (DEP,D4227005) excitation function
+HISTORY    (20190823A) SD: SF3=4N+P -> X, SF9=CALC -> DERIV in
+           both REACTION codes. SF8=SAT added to REACTION code (2)
+           STATUS updated. ANALYSIS added.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA      1DATA      2
 MEV        MBQ/MUAHR  MBQ/MUA
       40.0      15.0         47.8
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        D4227009   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(73-TA-181(D,2N+P)73-TA-180-G,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(73-TA-181(D,2N+P)73-TA-180-G,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
+ENDSUBENT           16
+SUBENT        D4227009   20190823   20191010   20191003       D121
+BIB                  4          8
+REACTION  1(73-TA-181(D,X)73-TA-180-G,,TTY,,PHY,DERIV)
+          2(73-TA-181(D,X)73-TA-180-G,,TTY,,SAT,DERIV)
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (TABLE) Table 3 from Nucl.Inst.Meth.,B267(2009)3293
+           (DEP,D4227004) excitation function
+HISTORY    (20190823A) SD: SF3=2N+P -> X, SF9=CALC -> DERIV in
+           both REACTION codes. SF8=SAT added to REACTION code (2)
+           STATUS updated. ANALYSIS added.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          2
 EN         DATA      1DATA      2
@@ -276,16 +283,18 @@ MEV        MBQ/MUAHR  MBQ/MUA
       20.0      16.0        187.0
       40.0     312.0       3672.0
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        D4227010   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(73-TA-181(D,P)73-TA-182-G,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(73-TA-181(D,P)73-TA-182-G,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
+ENDSUBENT           17
+SUBENT        D4227010   20190823   20191010   20191003       D121
+BIB                  4          8
+REACTION  1(73-TA-181(D,P)73-TA-182-G,,TTY,,PHY,DERIV)
+          2(73-TA-181(D,P)73-TA-182-G,,TTY,,SAT,DERIV)
+ANALYSIS   (INTEF) Derived from measured excitation function
+STATUS     (TABLE) Table 3 from Nucl.Inst.Meth.,B267(2009)3293
+           (DEP,D4227003) excitation function
+HISTORY    (20190823A) SD: SF9=CALC -> DERIV in both REACTION
+           codes.SF8=SAT added to REACTION code (2).STATUS updated
+           ANALYSIS added.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          2
 EN         DATA      1DATA      2
@@ -293,18 +302,21 @@ MEV        MBQ/MUAHR  MBQ/MUA
       20.0      0.41       1025.0
       40.0      0.85       3361.0
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        D4227011   20100127   20100209   20100128       D071
-BIB                  3          8
-REACTION  1(73-TA-181(D,2N)74-W-181,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(73-TA-181(D,2N)74-W-181,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
+ENDSUBENT           17
+SUBENT        D4227011   20190823   20191010   20191003       D121
+BIB                  6         11
+REACTION  1(73-TA-181(D,2N)74-W-181,,TTY,,PHY,DERIV)
+          2(73-TA-181(D,2N)74-W-181,,TTY,,SAT,DERIV)
+ANALYSIS   (INTEF) Derived from measured excitation function
 COMMENT    Data for 40 MeV are estimated since no experimental
            cross section data available above 20 MeV.
-ENDBIB               8
+REL-REF    (R,D4141002,F.Tarkanyi+,J,NIM/B,211,319,2003)
+STATUS     (TABLE) Table 3 from Nucl.Inst.Meth.,B267(2009)3293
+           (DEP,D4141002) excitation function
+HISTORY    (20190823A) SD: SF9=CALC -> DERIV in both REACTION
+           codes.SF8=SAT added to REACTION code (2).STATUS updated
+           ANALYSIS,REL-REF added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          2
 EN         DATA      1DATA      2
@@ -312,90 +324,10 @@ MEV        MBQ/MUAHR  MBQ/MUA
       20.0      0.87       3675.0
       40.0      1.0        4650.0
 ENDDATA              4
-ENDSUBENT           17
-SUBENT        D4227012   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(74-W-0(D,X)75-RE-182-M,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(74-W-0(D,X)75-RE-182-M,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          2
-EN         DATA      1DATA      2
-MEV        MBQ/MUAHR  MBQ/MUA
-      20.0      61.0        263.0
-      40.0    1114.0       4821.0
-ENDDATA              4
-ENDSUBENT           15
-SUBENT        D4227013   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(74-W-0(D,X)75-RE-182-G,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(74-W-0(D,X)75-RE-182-G,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          2
-EN         DATA      1DATA      2
-MEV        MBQ/MUAHR  MBQ/MUA
-      20.0       7.0        663.0
-      40.0      65.0       6007.0
-ENDDATA              4
-ENDSUBENT           15
-SUBENT        D4227014   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(74-W-0(D,X)75-RE-183,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(74-W-0(D,X)75-RE-183,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          2
-EN         DATA      1DATA      2
-MEV        MBQ/MUAHR  MBQ/MUA
-      20.0       1.0       2024.0
-      40.0       4.0      10247.0
-ENDDATA              4
-ENDSUBENT           15
-SUBENT        D4227015   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(74-W-0(D,X)75-RE-184-G,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(74-W-0(D,X)75-RE-184-G,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          2
-EN         DATA      1DATA      2
-MEV        MBQ/MUAHR  MBQ/MUA
-      20.0       1.0       1106.0
-      40.0       4.0       5774.0
-ENDDATA              4
-ENDSUBENT           15
-SUBENT        D4227016   20100127   20100209   20100128       D071
-BIB                  2          6
-REACTION  1(74-W-0(D,X)75-RE-186-G,,TTY,,PHY,CALC)
-            calculated physical thick target yield
-          2(74-W-0(D,X)75-RE-186-G,,TTY,,,CALC)
-            calculated saturated thick target yield
-STATUS     Numerical data were taken from Table 3. of the
-           publication.
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          2
-EN         DATA      1DATA      2
-MEV        MBQ/MUAHR  MBQ/MUA
-      20.0       5.0        667.0
-      40.0       9.0       1145.0
-ENDDATA              4
-ENDSUBENT           15
+ENDSUBENT           20
+NOSUBENT      D4227012   20190823   20191010   20191003       D121
+NOSUBENT      D4227013   20190823   20191010   20191003       D121
+NOSUBENT      D4227014   20190823   20191010   20191003       D121
+NOSUBENT      D4227015   20190823   20191010   20191003       D121
+NOSUBENT      D4227016   20190823   20191010   20191003       D121
 ENDENTRY            16

@@ -1,6 +1,6 @@
-ENTRY            D4078   20120201   20120328   20120314       D081
-SUBENT        D4078001   20120201   20120328   20120314       D081
-BIB                 13         54
+ENTRY            D4078   20190822   20191010   20191003       D121
+SUBENT        D4078001   20190822   20191010   20191003       D121
+BIB                 13         56
 TITLE      Excitation function of proton induced reactions on
             highly enriched Ni-58 with special relevance to the
             production of Co-55 and Co-57
@@ -13,7 +13,7 @@ REL-REF    (M,,S.M.Qaim+,J,ARI,28,947,1977)
             Stacked-foil technique at Juelich
            (I,,A.Mushtaq+,J,RCA,50,27,1990)
             Description about electrolytic cell
-           (R,,C.M.Lederer+,B,LEDERER-7,,1978)
+           (R,,C.M.Lederer+,B,LEDERER-7,,,1978)
             Nuclear data adopted in data reduction
 FACILITY   (CYCLO,2GERJUL)
 SAMPLE     Enriched Ni-58 powder thin samples (3.36 mg/cm2 thick)
@@ -53,11 +53,13 @@ MONIT-REF  (,S.J.Mills+,J,ARI,43,1019,1992) for 62Zn
 HISTORY    (19971012C)
            (20031220A) Main reference added, reaction codes
              modified, small text changes
-           (20060730A) BIB section upgrated
+           (20060730A) BIB section upgraded
            (20120201U) On. Some references moved to REL-REF
-ENDBIB              54
+           (20190822A) SD: REACTION code updated according to new
+           EXFOR rules in Subent 004.
+ENDBIB              56
 NOCOMMON             0          0
-ENDSUBENT           57
+ENDSUBENT           59
 SUBENT        D4078002   20120201   20120328   20120314       D081
 BIB                  6         37
 REACTION  1(28-NI-58(P,X)27-CO-55,,SIG)
@@ -361,22 +363,21 @@ NO-DIM
 
 ENDDATA            100
 ENDSUBENT          139
-SUBENT        D4078004   20120201   20120328   20120314       D081
-BIB                  5         13
-REACTION  1(28-NI-58(P,A)27-CO-55,,TTY,,PHY)
-          2(28-NI-58(P,2P)27-CO-57,,TTY,,PHY)
-DECAY-DATA1(27-CO-55,17.54HR,DG,477.2,0.202,
-                             DG,931.2,0.75,
-                             DG,1408.4,0.169)
-          2(27-CO-57,271.3D,DG,14.4,0.095,
-                            DG,122.1,0.855,
-                            DG,136.5,0.107)
+SUBENT        D4078004   20190822   20191010   20191003       D121
+BIB                  5         12
+REACTION  1(28-NI-58(P,A)27-CO-55,,TTY,,(PHY),DERIV)
+          2(28-NI-58(P,2P)27-CO-57,,TTY,,(PHY),DERIV)
+ANALYSIS   (INTEF) Derived from measured excitation function
 MISC-COL   (MISC1) Co-57 impurity in % calculated for EOB
            (MISC2) Co-56 impurity in % calculated for 100 hr
                    after EOB to allow for decay of Co-55
 STATUS     (TABLE) Table 4 of Radiochim.Acta 80(1998)113
+           (DEP,D4078002) Excitation function
 HISTORY    (20120201A) On. SF8: DT -> PHY, Unit: MUCI -> MBQ
-ENDBIB              13
+           (20190822A) SD: SF8=PHY -> (PHY); SF9=DERIV added to
+           both REACTION codes (remark from Prof. S.M.Qaim).
+           ANALYSIS added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 6          3
 EN-MAX     EN-MIN     DATA      1DATA      2MISC1      MISC2
@@ -385,5 +386,5 @@ MEV        MEV        MBQ/MUAHR  MBQ/MUAHR  PER-CENT   PER-CENT
  23.        13.                  1.4
  25.        15.                  1.8                    0.1
 ENDDATA              5
-ENDSUBENT           23
+ENDSUBENT           22
 ENDENTRY             4
