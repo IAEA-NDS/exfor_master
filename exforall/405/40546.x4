@@ -1,6 +1,6 @@
-ENTRY            40546   20180325   20180525   20180525       4178
-SUBENT        40546001   20180325   20180525   20180525       4178
-BIB                 11         25
+ENTRY            40546   20191213   20200217   20200217       4185
+SUBENT        40546001   20191213   20200217   20200217       4185
+BIB                  9         23
 INSTITUTE  (4RUSRI)
 REFERENCE  (J,AE,46,416,1979)  Issue 6
            (J,SJA,46,475,1979) Engl.transl.of J,AE,46,416,1979
@@ -10,71 +10,107 @@ AUTHOR     (B.M.Aleksandrov,Yu.A.Nemilov,Yu.A.Selitskii,
 TITLE      Absolute measurements of the cross-section for the
            fission of 241Am by 2.5-MeV neutrons
 FACILITY   (LINAC,4RUSRI)        Low-voltage accelerator
-INC-SOURCE (D-D)  70-80 keV deuterons
-DETECTOR   (SOLST)  Surface-barrier semiconductor detector
-           (SOLST)  Mica detector
-MONITOR      Absolute measurements
-STATUS     (NCHKD)
-CORRECTION   Those were made    on  spontaneous fission = 1.9 % ,
-             on detector un-sensitivity to small-angle fragments
-             = 4  % ,  on  He-3 = 1.5 % , on target non-spherical
-             shape = 1.5 % , on fission by scattered neutrons
-             = 3 % , on Pu-239 impurity = 0.5 % , on geometry
-             =0.5 % .
+INC-SOURCE (D-D) D(d,n)He-3, 70-80 keV deuteron beam
+DETECTOR   (SOLST)  Surface-barrier Si semiconductor detector
+                    for accompanying hellion detection
+           (SOLST)  Mica detector for fission fragments detection.
+             96 % efficiency.
+METHOD     (ASSOP)
 HISTORY    (19800405C)
            (20180325U) M.M. Upper -> lower case correction.
            Dates were corrected for 4-digits year.
            Ref. SJA,46,475,1979 was added.
            STATUS, BIB information was added
-ENDBIB              25
+           (20191213A) Code NCHKD was deleted.
+            Subent 002 was corrected.
+            BIB information was updated .
+ENDBIB              23
 COMMON               1          3
 EN
 MEV
  2.5
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        40546002   20180325   20180525   20180525       4178
-BIB                  5          7
+ENDSUBENT           30
+SUBENT        40546002   20191213   20200217   20200217       4185
+BIB                  9         32
 REACTION   (95-AM-241(N,F),,SIG)
 DECAY-DATA (95-AM-241,432.7YR) 432.7+-0.6 yr.
 SAMPLE      Thin film, Pu-239 content  0.5 % , mass = 2754+-25
-           microgram, thickness  300 microgram/cm2
+           microgram, thickness < 300 microgram/cm2
+MONITOR     U-238 and U-238 were monitors.
+CORRECTION - spontaneous fission of target - 1.9+-0.2 % ,
+           - on mica detector insensitivity to small-angle
+             fragments - 4+-1  % ,
+           - He-3 separation from complete spectrum = 1.5+-1.0 % ,
+           - target non-spherical shape = 1.5+-0.2 % ,
+           - fission by scattered neutrons - 3+-1 % ,
+           - Pu-239 impurity - 0.5+-0.1 % ,
+           - geometry and neutrons angular distribution -
+             0.3+-0.1 % .
+REL-REF    (A,40636008,M.L.Kazarinova+,J,AE,8,139,1960)
+             1.95+-0.2 b
+           (A,12572010,C.Bowman+,J,PR,166,1219,1968)
+             1.96+-0.2 b
+           (A,40012010,E.F.Fomushkin+,J,YF,10,917,1969)
+             2.05+-0.07 b
+           (A,40010002,D.L.Shpak+,R,YFI-8,4,1969)
+             1.9+-0.1 b
 ERR-ANALYS (ERR-S) Statistical error
+           (ERR-1) Error in determining of distance from neutron
+           source to sample.
            (ERR-T) Total error
-STATUS     (TABLE) Text, page 475 of SJA,46,475,1979
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 3          1
-DATA       ERR-T      ERR-S
-B          B          PER-CENT
- 1.98       0.07       2.2
+STATUS     (TABLE) Text, p.475 of J.Sov.At.Energy,v.46,p.475,1979
+           (DEP,40546003) U-235 CS
+           (DEP,40546003) U-238 CS
+HISTORY    (20191213A) CORRECTION lines were moved from Subent 001
+           and corrected.
+           ERR-1, REL-REFs were added.
+ENDBIB              32
+COMMON               1          3
+ERR-HL
+YR
+ 0.6
+ENDCOMMON            3
+DATA                 4          1
+DATA       ERR-T      ERR-S      ERR-1
+B          B          PER-CENT   PER-CENT
+ 1.98       0.07       2.2        1.7
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        40546003   20180325   20180525   20180525       4178
-BIB                  3          3
+ENDSUBENT           44
+SUBENT        40546003   20191213   20200217   20200217       4185
+BIB                  6          8
 REACTION   (92-U-235(N,F),,SIG)
+SAMPLE      Natural U and U-235 20 mm in diameter placed in
+           briquette with Am targets
+REL-REF    (A,40258002,I.M.Kuks+,C,73KIEV,4,18,1973)
+            And YFI-17,33,1974
 ERR-ANALYS (DATA-ERR) Total error
-STATUS     (TABLE) Text, page 475 of SJA,46,475,1979
-ENDBIB               3
+STATUS     (TABLE) Text, p.475 of J.Sov.At.Energy,v.46,p.475,1979
+HISTORY    (20191213U) Sample information was updated
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
  1.27       0.05
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        40546004   20180325   20180525   20180525       4178
-BIB                  4          4
+ENDSUBENT           16
+SUBENT        40546004   20191213   20200217   20200217       4185
+BIB                  7          8
 REACTION   (92-U-238(N,F),,SIG)
+SAMPLE      Natural U and U-235 20 mm in diameter placed in
+           briquette with Am targets
 COMMENT      In reference  erroneously  given U-239
+REL-REF    (A,40081002,I.M.Kuks+,J,SJA,30,64,1971)
 ERR-ANALYS (DATA-ERR) Total error
-STATUS     (TABLE) Text, page 475 of SJA,46,475,1979
-ENDBIB               4
+STATUS     (TABLE) Text, p.475 of J.Sov.At.Energy,v.46,p.475,1979
+HISTORY    (20191213U) Sample information was updated
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
  0.52       0.02
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           16
 ENDENTRY             4

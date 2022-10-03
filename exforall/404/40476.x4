@@ -1,21 +1,24 @@
-ENTRY            40476   20121003   20130207   20130114       4158
-SUBENT        40476001   20121003   20130207   20130114       4158
-BIB                 10         32
-TITLE      Cross-Sections for the Fission of U-235 and Pu-239
-           by 2-, 24-, 55-, and 144-keV energy neutrons
+ENTRY            40476   20191212   20200217   20200217       4185
+SUBENT        40476001   20191212   20200217   20200217       4185
+BIB                  9         39
+TITLE      The neutron fission cross-section of U-235 and Pu-239
+           at 2, 24, 55 and 144 keV
 AUTHOR     (K.D.Zhuravlev,N.I.Kroshkin,L.V.Karin)
 INSTITUTE  (4RUSNIR)
-REFERENCE  (R,YK-22,3,197612)
-           (C,75KIEV,6,67,197506)
+REFERENCE  ((R,YK-22,3,1976)=
+           (R,INDC(CCP)-105,3,1976))
+           ((C,75KIEV,6,67,1975)=
+           (R,INDC(CCP)-099,(6),67,1975))  Vol. VI
             Preliminary data for U-235 and Pu-239 at 2.,24.keV and
             thermal point.
-           (C,77KIEV,3,131,197704)  Data for U-233
-           (J,AE,42,(1),56,1977)
-           (J,SJA,42,62,1977) Engl.translation of AE,42,(1),56 .
+           ((C,77KIEV,3,131,1977)=
+           (R,INDC(CCP)-118,131,1977))
+            Data for U-233
+           (J,AE,42,56,1977) Issue 1.
+           (J,SJA,42,62,1977) Engl.translation of AE,42,56,1977 .
            #doi:10.1007/BF01119709
-FACILITY   (REAC)  Reactor SM-2
+FACILITY   (REAC,4RUSNIR)  Reactor SM-2
 INC-SOURCE (REAC)
-PART-DET   (FF)
 DETECTOR   (FISCH) For FF detection
            (IOCH)  For alpha-particles detection from B-10(N,
             ALPHA)Li-7 reaction used to determine ratio of neutron
@@ -33,9 +36,13 @@ HISTORY    (19780708C)  Compiled at the Centre
            were added. Monitors were moved in proper Subents.
            Duplications were deleted.
            Subent 010 was added.
-ENDBIB              32
+           (20191212U) Refs. INDC(CCP) were added.
+           Minor correction in Subent 004.
+           "PART-DET (FF)" was deleted according to a comment from
+           NDS,IAEA.
+ENDBIB              39
 NOCOMMON             0          0
-ENDSUBENT           35
+ENDSUBENT           42
 SUBENT        40476002   20121003   20130207   20130114       4158
 BIB                  8         38
 REACTION   (92-U-235(N,F),,SIG)
@@ -140,9 +147,11 @@ KEV        B          B
        144.       1.50        .03
 ENDDATA              6
 ENDSUBENT           47
-SUBENT        40476004   20121003   20130207   20130114       4158
-BIB                  8         30
-REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+SUBENT        40476004   20191212   20200217   20200217       4185
+BIB                  8         38
+REACTION  1((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
+          2((94-PU-239(N,F),,SIG,,,DERIV)/
+           (92-U-235(N,F),,SIG,,,DERIV))
 SAMPLE      Samples are described in Subents 002, 003.
 METHOD     (FNB) Method of scandium (900 mm, for 2.keV), iron
             (650mm, for 24 keV) and silicon ( 800 mm for 55 keV,
@@ -154,7 +163,7 @@ METHOD     (FNB) Method of scandium (900 mm, for 2.keV), iron
             Mn (30mm for 2 keV), Ti (10mm for 24keV, 40mm for
            55keV), S(250mm for 144keV) filters were used for
            background measurement.
-INC-SPECT  Monochromatic neutrons neutrons at 2, 24, 55, 144 keV,
+INC-SPECT  Monochromatic neutrons at 2, 24, 55, 144 keV,
            obtained by resonance filters.
             Energy    Neutron beam          Background
             keV       n/cm**2/s             %
@@ -162,31 +171,37 @@ INC-SPECT  Monochromatic neutrons neutrons at 2, 24, 55, 144 keV,
            24.        1.6E+5                10.
            55.        1.6E+6                15.
            144.       1.E+7                 5.
-ANALYSIS    This ratio was obtained by direct comparison of
+ANALYSIS  1 This ratio was obtained by direct comparison of
             fission event numbers in U-235 and Pu-239 samples and
-            nuclei numbers in samples.
+            nuclei numbers in samples .
+          2 Ratio derived from measured cross sections
 ERR-ANALYS (ERR-1) Error of number of nuclei in samples.
-STATUS     (TABLE) Table 2 of J,AE,42,(1),56,1977.
-            Table 2 of P,YK-22,3,1976.
-            Table 2 of C,75KIEV,6,67,1975 - preliminary data
-            for 2., 24. keV - the same values.
+STATUS     (TABLE) Table 2 of J.At.Energy,v.42,is.1,p.56,1977.
+            Table 2 (column 5) of rep.YK-22,p.3,1976.
+            Table 2 of Conf.Proc.75KIEV,v.6,p.67,1975 -
+            preliminary data for 2., 24. keV - the same values.
+          2(DEP,40476002) U-235 C-S
+           (DEP,40476003) Pu-239 C-S
 HISTORY    (20121003A) M.M. Data for thermal point were deleted
             ( they had been moved in Subent 009 in 1998 year).
-ENDBIB              30
+           DATA 2 were added.
+           (20191212A) Code DERIV was added in REACTION 2
+           accoreding to a comment of N.Otsuka (NDS,IAEA) .
+ENDBIB              38
 COMMON               1          3
 ERR-1
 PER-CENT
  1.
 ENDCOMMON            3
-DATA                 3          4
-EN         DATA       DATA-ERR
-KEV        NO-DIM     NO-DIM
-         2.       .603       .022
-        24.       .785       .035
-        55.       .847       .028
-       144.      1.034        .03
+DATA                 5          4
+EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+KEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM
+         2.       .603       .022    0.593   0.018
+        24.       .785       .035    0.765   0.023
+        55.       .847       .028    0.823   0.026
+       144.      1.034        .03    1.010   0.030
 ENDDATA              6
-ENDSUBENT           45
+ENDSUBENT           53
 SUBENT        40476005   20121003   20130207   20130114       4158
 BIB                 10         37
 REACTION  1((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))

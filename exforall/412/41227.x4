@@ -1,91 +1,114 @@
-ENTRY            41227   20070419   20070911   20070815       4140
-SUBENT        41227001   20070419   20070911   20070815       4140
-BIB                 11         18
+ENTRY            41227   20191218   20200217   20200217       4185
+SUBENT        41227001   20191218   20200217   20200217       4185
+BIB                  9         18
 INSTITUTE  (4RUSKUR)
-REFERENCE  (B,NEJTRONFIZ,,298,196104)
-           (B,SPN,,219,1961) English Translation of NEJTRONFIZ,298
-AUTHOR     (YU.G.ZUBOV,N.S.LEBEDEVA,V.M.MOROZOV)
-TITLE      .Inelastic Scattering Of Neutrons With Energies
-            From 3.2 To 4.5 MeV On Beryllium.
-FACILITY   (VDG)   Electrostatic Accelerator
-DETECTOR   (BF3,LONGC) Three Rings of 9, 18 , 27 BF3-counters.
+REFERENCE  (B,NEJTRONFIZ,,298,1961)
+           (B,SPN,,219,1963) English translation of NEJTRONFIZ,298
+AUTHOR     (Yu.G.Zubov,N.S.Lebedeva,V.M.Morozov)
+TITLE       Inelastic scattering of neutrons with energies
+            from 3.2 to 4.5 MeV on beryllium
+FACILITY   (VDG)   Electrostatic accelerator
+DETECTOR   (BF3,LONGC) Three rings of 9, 18 , 27 BF3-counters.
 MONITOR    (6-C-12(N,EL)6-C-12,,SIG)
 INC-SOURCE (D-D)  Gas deuterium target.
-ERR-ANALYS (DATA-ERR)  Errors Are Not Specified
-STATUS     (SCSRS)
-HISTORY    (19961007C)  *  *  COMPILED AND CONVERTED IN THE
-                            CJD-CENTRE  *  *
-           (20070418A)  M.M. Reaction code (Sub.002)was changed:
-                 Be-9(n,2n)Be-8  -> Be-9(n,2n+a)He-4
-              in according to comment of V.McLane.
+HISTORY    (19961007C)  *  *  Compiled and converted in the
+                            CJD-Centre  *  *
+           (20070418A)  M.M. Subent 002 was corrected.
              Dates were changed for 4-digit year.
+           (20191218A) Year of SPN ref.was corrected 1961 -> 1963.
+            STATUS lines were updated.
+            EN-RSL was corrected in Subents 003,004.
+            3 HISTORY lines were moved in Subent 002.
 ENDBIB              18
 NOCOMMON             0          0
 ENDSUBENT           21
-SUBENT        41227002   20070419   20070911   20070815       4140
-BIB                  6          9
-REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG)     sig(n,2n)
-METHOD     (COINC)    Coincidence Of Particles
+SUBENT        41227002   20191218   20200217   20200217       4185
+BIB                  7         17
+REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG,,,DERIV)     sig(n,2n)
+METHOD     (COINC)    Coincidence of particles
              Time resolution - 200 microsec.
-ANALYSIS   I's supposed:  tot= el + n,2n + n,a .
-REL-REF    (E,,P.H.STELSON+,J,PR,106,1252,1957) for (n,a) c-s
+ANALYSIS   I's supposed: SIG(tot)=SIG(el) + SIG(n,2n) + SIG(n,a),
+           Where SIG(n,a) from REL-REF of P.Stelson+
+REL-REF    (E,,P.H.Stelson+,J,PR,106,1252,1957) for (n,a) c-s
+ERR-ANALYS (DATA-ERR) Total, mainly due to registration efficiency
+           uncertainty. Other uncertainties 1-3%.
 HISTORY    (19961007T)  *  *  Converted From SUBENT 80436003  *  *
-           (20070419A) Data values corrected in according to data
-            values from text of 1st reference, p.302.
-STATUS     (DEP,41227005)
-ENDBIB               9
+           (20070419A) Data values corrected according to data
+             from text of 1st reference, p.302.
+                 Reaction code was changed:
+                 Be-9(n,2n)Be-8  -> Be-9(n,2n+a)He-4
+                 according to a comment of V.McLane.
+           (20191218A) Code DERIV was added in SF9.
+STATUS     (TABLE) Text page 302 of Book NEJTRONFIZ,p.298,1961
+           (DEP,41227005) Total c-s
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 3          4
 EN         DATA       DATA-ERR
 MEV        B          B
- 3.2        8.0000E-01 1.0000E-01
- 3.7        7.3000E-01 9.0000E-02
- 4.1        5.3000E-01 7.0000E-02
- 4.5        4.5000E-01 5.0000E-02
+ 3.2        0.8        0.1
+ 3.7        0.73       0.09
+ 4.1        0.53       0.07
+ 4.5        0.45       0.05
+ENDDATA              6
+ENDSUBENT           28
+SUBENT        41227003   20191218   20200217   20200217       4185
+BIB                  5          7
+REACTION   (3-LI-0(N,TOT),,SIG)
+CORRECTION  For self-absorption < 3%.
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+STATUS     (TABLE) Text of footnote on page 301 of
+           Book NEJTRONFIZ,p.298,1961
+HISTORY    (19961007T)  *  *  Converted From SUBENT 80436004  *  *
+           (20191218A)EN-RSL was corrected as given in the article
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 5          4
+EN         -EN-RSL    +EN-RSL    DATA       DATA-ERR
+MEV        MEV        MEV        B          B
+ 3.25       0.3        0.17       2.44       0.09
+ 3.7        0.1        0.1        2.46       0.065
+ 4.12       0.07       0.07       2.70       0.06
+ 4.52       0.05       0.05       2.74       0.08
+ENDDATA              6
+ENDSUBENT           18
+SUBENT        41227004   20191218   20200217   20200217       4185
+BIB                  6          9
+REACTION   (5-B-0(N,TOT),,SIG)
+CORRECTION  For self-absorption < 3%.
+ERR-ANALYS (DATA-ERR)  Errors are not specified
+STATUS     (TABLE) Text of footnote on page 301 of
+           Book NEJTRONFIZ,p.298,1961
+COMMENT    Of compiler M.M. DATA-ERR 0.65 b at 3.7 MeV probably
+           have a misprint - 0.65 -> 0.065.
+HISTORY    (19961007T)  *  *  Converted From SUBENT 80436005  *  *
+           (20191218A)EN-RSL was corrected as given in the article
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 5          4
+EN         -EN-RSL    +EN-RSL    DATA       DATA-ERR
+MEV        MEV        MEV        B          B
+ 3.25       0.3        0.17       2.02       0.08
+ 3.7        0.1        0.1        2.01       0.65
+ 4.12       0.07       0.07       1.71       0.03
+ 4.52       0.05       0.05       1.76       0.04
 ENDDATA              6
 ENDSUBENT           20
-SUBENT        41227003   20070419   20070911   20070815       4140
-BIB                  2          2
-REACTION   (3-LI-0(N,TOT),,SIG)
-HISTORY    (19961007T)  *  *  Converted From SUBENT 80436004  *  *
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4          4
-EN         EN-RSL     DATA       DATA-ERR
-MEV        MEV        B          B
- 3.2500E+00 1.7000E-01 2.4400E+00 9.0000E-02
- 3.7000E+00 1.0000E-01 2.4600E+00 6.5000E-02
- 4.1200E+00 7.0000E-02 2.7000E+00 6.0000E-02
- 4.5200E+00 5.0000E-02 2.7400E+00 8.0000E-02
-ENDDATA              6
-ENDSUBENT           13
-SUBENT        41227004   20070419   20070911   20070815       4140
-BIB                  2          2
-REACTION   (5-B-0(N,TOT),,SIG)
-HISTORY    (19961007T)  *  *  Converted From SUBENT 80436005  *  *
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4          4
-EN         EN-RSL     DATA       DATA-ERR
-MEV        MEV        B          B
- 3.2500E+00 1.7000E-01 2.0200E+00 8.0000E-02
- 3.7000E+00 1.0000E-01 2.0100E+00 6.5000E-02
- 4.1200E+00 7.0000E-02 1.7100E+00 3.0000E-02
- 4.5200E+00 5.0000E-02 1.7600E+00 4.0000E-02
-ENDDATA              6
-ENDSUBENT           13
-SUBENT        41227005   20070419   20070911   20070815       4140
-BIB                  4          5
+SUBENT        41227005   20191218   20200217   20200217       4185
+BIB                  5          8
 REACTION   (4-BE-9(N,TOT),,SIG)
-ERR-ANALYS (EN-ERR-DIG) Digitizing error of energy EN
-           (ERR-DIG)    Digitizing error of DATA
-STATUS     (CURVE) Fig.2 of 1-st Reference.
-HISTORY    (20070419C) Subent for digitized (n,tot) c-s was added.
-ENDBIB               5
-COMMON               2          3
-EN-ERR-DIG ERR-DIG
-MEV        B
-   0.17E-02   0.63E-02
+REL-REF    (A,11221002,R.O.Bondelid+,J,PR,105,193,1957)
+ERR-ANALYS (ERR-DIG)    Digitizing error of DATA
+            Error bars are not given on Fig.2.
+STATUS     (CURVE) Fig.2 of Book NEJTRONFIZ,p.298,1961
+HISTORY    (20070419C) Subent was added.
+           (20191218U) ERR-DIG value was corrected
+           0.63E-02 -> 0.01 b
+ENDBIB               8
+COMMON               1          3
+ERR-DIG
+B
+   0.01
 ENDCOMMON            3
 DATA                 2          4
 EN         DATA
@@ -95,5 +118,5 @@ MEV        B
  4.1        1.87
  4.5        1.94
 ENDDATA              6
-ENDSUBENT           20
+ENDSUBENT           23
 ENDENTRY             5

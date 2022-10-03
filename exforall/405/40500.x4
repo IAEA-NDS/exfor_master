@@ -1,13 +1,14 @@
-ENTRY            40500   20170320   20170703   20170630       4175
-SUBENT        40500001   20170320   20170703   20170630       4175
-BIB                 17         44
+ENTRY            40500   20191212   20200217   20200217       4185
+SUBENT        40500001   20191212   20200217   20200217       4185
+BIB                 15         45
 INSTITUTE  (4RUSNIR)
 REFERENCE  (J,SJA,42,23,1977)  Eng.trans.of AE,42,23,1977
-           (J,AE,42,(1),23,197701)
-           (C,75KIEV,5,120,197506)
+           (J,AE,42,23,1977)  Issue 1
+           ((C,75KIEV,5,120,1975)=
+           (R,INDC(CCP)-99,(5),120,1975)) Vol. V.
              Prelim.data for Subents 3,5,7.
-AUTHOR     (L.M.Andreichuk,B.G.Basova,V.A.Korostylev,
-           V.N.Nefedov,D.K.Ryazanov,B.I.Starostov,A.F.Semyonov)
+AUTHOR     (L.M.Andreichuk, B.G.Basova, V.A.Korostylev,
+           V.N.Nefedov, D.K.Ryazanov, B.I.Starostov, A.F.Semyonov)
 TITLE       Measurement of average energies of  U-233, U-235,
             Pu-239 fission neutron spectra by a relative method.
 FACILITY   (REAC,4RUSNIR)  Reactor SM-2
@@ -21,17 +22,13 @@ METHOD      Comparative study of two spectra
 DETECTOR  A(SCIN) Plastic scint.counter 170 mm diameter
                   and 50 mm height
           B(SCIN) Gas scint.counter Ar +5% N2
-MONITOR    (98-CF-252(0,F)0-NN-1,,NU/DE)
-                      Neutron Maxwellian spectrum
-MONIT-REF  (10614001,L.Green+,J,NSE,50,257,1973)
+ASSUMED    (ASSUM,98-CF-252(0,F)0-NN-1,PR,KEM)
+REL-REF    (R,10614001,L.Green+,J,NSE,50,257,1973) Assumed data
 PART-DET  A(N)
           B(FF)
-MISC-COL   (MISC)  K=(T1-T2)/T1/T2, T1=1.406 MeV, T2 is found
 COMMENT     In COMMON and DATA sections temperatures of
             neutron Maxwellian spectra are given
-ERR-ANALYS (DATA-ERR) Statistical plus error of the MONITOR
-           (ERR-1) Error of KT-NRM Cf-252 spectrum temperature
-STATUS     (NCHKD) Data not checked By NNDC
+ERR-ANALYS (DATA-ERR) Statistical plus error of the ASSUM
 HISTORY    (19800117C)
            (20060407U) Correction according to Memo CP-E/089.
            Dates were corrected for 4-digits year.
@@ -45,27 +42,31 @@ HISTORY    (19800117C)
            (20170320U) M.M. Articles were checked, information
            was updated in TITLE,AUTHOR,REFERENCE,INC-SPECT,STATUS
            MONITOR was corrected "),,DE,N)" -> ")0-NN-1,,NU/DE)"
-ENDBIB              44
+           (20191212A) Code NCHKD was deleted .
+           Minor correction of AE refs.
+           Ref. INDC(CCP)-99 was added.
+           MONITOR -> ASSUMED, KT-NRM -> ASSUM, ERR-1 -> ASSUM-ERR
+ENDBIB              45
 COMMON               3          3
-KT-NRM     ERR-1      EN-DUMMY
+ASSUM      ASSUM-ERR  EN-DUMMY
 MEV        MEV        EV
  1.406      0.015      2.5300E-02
 ENDCOMMON            3
-ENDSUBENT           51
-SUBENT        40500002   20170320   20170703   20170630       4175
-BIB                  5         17
-REACTION   (92-U-233(N,F)0-NN-1,PR,KEM)  Temperature
+ENDSUBENT           52
+SUBENT        40500002   20191212   20200217   20200217       4185
+BIB                  6         17
+REACTION   (92-U-233(N,F)0-NN-1,PR,KEM)
 ANALYSIS    Spectrum temperature KEM was defined using data at
             energy range from E-MIN to E-MAX.
-                 E-MIN      E-MAX
-                 MEV        MEV
-FLAG       (1.)  6.0000E-01 1.0000E+01
+FLAG             E-MIN,MeV  E-MAX,MeV
+           (1.)  6.0000E-01 1.0000E+01
            (2.)  6.0000E-01 8.5000E+00
            (3.)  6.0000E-01 8.0000E+00
            (4.)  6.0000E-01 7.5000E+00
            (5.)  6.0000E-01 6.1500E+00
            (6.)  6.0000E-01 5.4800E+00
-STATUS     (TABLE) Table 1 of AE,42,(1),23,1977 .
+MISC-COL   (MISC)  K=(T1-T2)/T1/T2, T1=1.406 MeV, T2 is found
+STATUS     (TABLE) Table 1 of J.At.Energy,v.42,p.23,1977 .
 HISTORY    (20150311A) SD: SF4=0-NN-1 added, SF7=N deleted
             SF5=PR -> PR/PAR in REACTION code according to
             new EXFOR rules.
@@ -84,13 +85,13 @@ MEV        MEV        1/MEV      1/MEV      NO-DIM
  1.3290E+00 3.6000E-02 6.4200E-02 3.3000E-03  6.
 ENDDATA              8
 ENDSUBENT           30
-SUBENT        40500003   20170320   20170703   20170630       4175
+SUBENT        40500003   20191212   20200217   20200217       4185
 BIB                  4          8
 REACTION   (92-U-233(N,F)0-NN-1,PR/PAR,KE)
 EN-SEC     (E-MIN,N) Min.energy of outgoing neutron spectrum
            (E-MAX,N) Max.energy of outgoing neutron spectrum
-STATUS     (DEP,40500002)
-           (TABLE)  From Text of AE,42,(1),23,1977 .
+STATUS     (DEP,40500002) Spectrum temperature
+           (TABLE)  From Text of J.At.Energy,v.42,p.23,1977 .
 HISTORY    (20150311A) SD: SF4=0-NN-1 added, SF7=N deleted
             SF5=PR -> PR/PAR in REACTION code according to
             new EXFOR rules.
@@ -102,9 +103,9 @@ MEV        MEV        MEV        MEV
 0.6        8.0         1.996      0.040
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        40500004   20170320   20170703   20170630       4175
+SUBENT        40500004   20191212   20200217   20200217       4185
 BIB                  5         17
-REACTION   (92-U-235(N,F)0-NN-1,PR,KEM)  Temperature
+REACTION   (92-U-235(N,F)0-NN-1,PR,KEM)
 ANALYSIS    Spectrum temperature KEM was defined using data at
             energy range from E-MIN to E-MAX.
                  E-MIN      E-MAX
@@ -115,7 +116,7 @@ FLAG       (1.)  6.0000E-01 1.0000E+01
            (4.)  6.0000E-01 7.5000E+00
            (5.)  6.0000E-01 6.1500E+00
            (6.)  6.0000E-01 5.4800E+00
-STATUS     (TABLE)  Table 1 of AE,42,(1),23,1977
+STATUS     (TABLE)  Table 1 of J.At.Energy,v.42,p.23,1977 .
 HISTORY    (20150311A) SD: SF4=0-NN-1 added, SF7=N deleted
             SF5=PR -> PR/PAR in REACTION code according to
             new EXFOR rules.
@@ -134,13 +135,13 @@ MEV        MEV        NO-DIM
  1.2890E+00 2.0000E-02  6.
 ENDDATA              8
 ENDSUBENT           30
-SUBENT        40500005   20170320   20170703   20170630       4175
+SUBENT        40500005   20191212   20200217   20200217       4185
 BIB                  4          8
 REACTION   (92-U-235(N,F)0-NN-1,PR/PAR,KE)
 EN-SEC     (E-MIN,N) Min.energy of outgoing neutron spectrum
            (E-MAX,N) Max.energy of outgoing neutron spectrum
-STATUS     (DEP,40500004)
-           (TABLE)  From Text of AE,42,(1),23,1977 .
+STATUS     (DEP,40500004) Spectrum temperature
+           (TABLE)  From Text of J.At.Energy,v.42,p.23,1977 .
 HISTORY    (20150311A) SD: SF4=0-NN-1 added, SF7=N deleted
             SF5=PR -> PR/PAR in REACTION code according to
             new EXFOR rules.
@@ -152,9 +153,9 @@ MEV        MEV        MEV        MEV
 0.6        8.0         1.926      0.030
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        40500006   20170320   20170703   20170630       4175
-BIB                  5         17
-REACTION   (94-PU-239(N,F)0-NN-1,PR,KEM)  Temperature
+SUBENT        40500006   20191212   20200217   20200217       4185
+BIB                  6         18
+REACTION   (94-PU-239(N,F)0-NN-1,PR,KEM)
 ANALYSIS    Spectrum temperature KEM was defined using data at
             energy range from E-MIN to E-MAX.
                  E-MIN      E-MAX
@@ -165,13 +166,14 @@ FLAG       (1.)  6.0000E-01 1.0000E+01
            (4.)  6.0000E-01 7.5000E+00
            (5.)  6.0000E-01 6.1500E+00
            (6.)  6.0000E-01 5.4800E+00
-STATUS     (TABLE)  Table 1 of AE,42,(1),23,1977
+MISC-COL   (MISC)  K=(T1-T2)/T1/T2, T1=1.406 MeV, T2 is found
+STATUS     (TABLE)  Table 1 of J.At.Energy,v.42,p.23,1977 .
 HISTORY    (20150311A) SD: SF4=0-NN-1 added, SF7=N deleted
             SF5=PR -> PR/PAR in REACTION code according to
             new EXFOR rules.
            (20170320A) M.M. PAR was deleted, FLAG was introduced,
            E-MIN, E-MAX were moved in free text of FLAG .
-ENDBIB              17
+ENDBIB              18
 NOCOMMON             0          0
 DATA                 5          6
 DATA       DATA-ERR   MISC       MISC-ERR   FLAG
@@ -183,14 +185,14 @@ MEV        MEV        1/MEV      1/MEV      NO-DIM
  1.3750E+00 2.7000E-02 1.5900E-02 6.2000E-03  5.
  1.3650E+00 2.9000E-02 2.1000E-02 7.4000E-03  6.
 ENDDATA              8
-ENDSUBENT           30
-SUBENT        40500007   20170320   20170703   20170630       4175
+ENDSUBENT           31
+SUBENT        40500007   20191212   20200217   20200217       4185
 BIB                  4          8
 REACTION   (94-PU-239(N,F)0-NN-1,PR/PAR,KE)
 EN-SEC     (E-MIN,N) Min.energy of outgoing neutron spectrum
            (E-MAX,N) Max.energy of outgoing neutron spectrum
-STATUS     (DEP,40500006)
-           (TABLE)  From Text of AE,42,(1),23,1977 .
+STATUS     (DEP,40500006) Spectrum temperature
+           (TABLE)  From Text of J.At.Energy,v.42,p.23,1977 .
 HISTORY    (20150311A) SD: SF4=0-NN-1 added, SF7=N deleted
             SF5=PR -> PR/PAR in REACTION code according to
             new EXFOR rules.

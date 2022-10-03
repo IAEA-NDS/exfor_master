@@ -1,42 +1,55 @@
-ENTRY            40629     850222              20050926       0000
-SUBENT        40629001     850222              20050926       0000
-BIB                 13         22
-INSTITUTE  (4CCPFEI)
-REFERENCE  (C,83KIEV,2,153,8310)
-AUTHOR     (KH.D.ANDROSENKO,G.G.KOROLEV,D.L.SHPAK)
-TITLE       U-238 TO U-235 FISSION CROSS-SECTION RATIO MEASUREMENT
-            IN THE ENERGY RANGE 0.85 - 3.70 MEV
-FACILITY   (VDG)
-INC-SOURCE (D-T) SCANDIUM-HYDRID TARGET
-DETECTOR   (GLASD)
+ENTRY            40629   20191214   20200217   20200217       4185
+SUBENT        40629001   20191214   20200217   20200217       4185
+BIB                 14         36
+INSTITUTE  (4RUSFEI)
+REFERENCE  ((C,83KIEV,2,153,1983)=
+           (R,INDC(CCP)-235,(2),153,1983)) Vol.II
+AUTHOR     (Kh.D.Androsenko,G.G.Korolev,D.L.Shpak)
+TITLE       U-238 to U-235 fission cross-section ratio measurement
+            in the energy range 0.85 - 3.70 MeV
+FACILITY   (VDG,4RUSFEI) EG-1 and KG-2.5
+INC-SOURCE (P-T) Scandium-hydride target.
+            Neutrons at 15 deg angle relative to proton beam.
+SAMPLE     Layer of U-238 ( content 40 times less natural),
+           U-235 - 99.97% enrichment.
+DETECTOR   (GLASD) Track detectors in 4PI geometry
 ANALYSIS   (INTAD)
 MONITOR    ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
-MONIT-REF  (,B.I.FURSOV+,J,AE,43,181,77)
-HISTORY    (850222C)
-CORRECTION  NEUTRON BACKGROUND FROM ACCOMPANIING REACTIONS COR-
-            RECTION IS 4.6 PC,EXPERIMENTAL ROOM NEUTRON BACKGROUND
-            IS 0.14 PC, NEUTRON BACKGROUND FROM SAMPLE HOLDERS
-            IS 0.06 PERCENT
-ERR-ANALYS (ERR-1) GLASS DETECTOR SCANNING ERROR AT 3.4 MEV
-           (ERR-2) SAMPLE HOLDERS SCATTERING ERROR AT 3.4 MEV
-           (ERR-3) EXPERIMENTALL ROOM BACKROUND ERROR AT 3.4 MEV
-           (ERR-4) ACCOMPANIING REACTIONS ERROR AT 3.4 MEV
-           (ERR-5) FISSIONING LAYERS NONUNIFORMITY ERROR
-                   AT 3.4 MEV
-ENDBIB              22
-COMMON               6          3
-ERR-S      ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
- 7.6000E-01 4.2000E-01 1.2000E-01 2.6000E-01 5.4000E-01 3.0000E-01
-ENDCOMMON            3
-ENDSUBENT           29
-SUBENT        40629002     850222              20050926       0000
-BIB                  1          1
+MONIT-REF  (40506002,B.I.Fursov+,J,AE,43,181,1977)
+            Normalization to results of 40506,
+           energy range is not mentioned.
+CORRECTION  Neutron background from accompanying reactions
+            correction - 4.6 %,
+            Experimental room neutron background - 0.14 %,
+            Neutron background from sample holders - 0.06 %.
+ERR-ANALYS   Errors at 3.4 MeV:
+            Statistical error                        0.76%
+            Glass detector scanning error            0.42%
+            Sample holders scattering error          0.12%
+            Experimental room background error       0.26%
+            Accompanying reactions error             0.54%
+            Fissioning layers non-uniformity error   0.30%
+           (DATA-ERR) Total error
+HISTORY    (19850222C)
+           (20191214A) Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           Ref. INDC(CCP) was added.
+           BIB information was updated.
+           Errors were moved in free text - given at one energy
+           point 3.4 MeV.
+ENDBIB              36
+NOCOMMON             0          0
+ENDSUBENT           39
+SUBENT        40629002   20191214   20200217   20200217       4185
+BIB                  2          4
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
-ENDBIB               1
+STATUS     (TABLE) Table 1 of Conf.Proc.83KIEV,v.2,p.153,1983.
+            Final results are in 41041.003 (data digitized from
+            figure in article).
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 4         52
-EN         EN-RSL-FW  DATA       ERR-T
+EN         EN-RSL-FW  DATA       DATA-ERR
 MEV        KEV        NO-DIM     PER-CENT
  8.5000E-01 2.0000E+01 2.9000E-03 6.3400E+00
  9.0000E-01 2.0000E+01 4.5000E-03 6.0700E+00
@@ -91,5 +104,5 @@ MEV        KEV        NO-DIM     PER-CENT
  3.6200E+00 2.5000E+01 4.5200E-01 1.1600E+00
  3.7200E+00 2.5000E+01 4.5500E-01 1.2600E+00
 ENDDATA             54
-ENDSUBENT           60
+ENDSUBENT           63
 ENDENTRY             2
