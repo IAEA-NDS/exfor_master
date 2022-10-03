@@ -1,46 +1,149 @@
-ENTRY            22571   20010202   20030919   20050926       0000
-SUBENT        22571001   20010202   20030919   20050926       0000
-BIB                  9         11
+ENTRY            22571   20210305   20210625   20210603       2299
+SUBENT        22571001   20210305   20210625   20210603       2299
+BIB                  7         19
 INSTITUTE  (2GERMNZ)
-REFERENCE  (C,67VIENNA,,147,196703)
-AUTHOR     (G.HERRMANN)
-FACILITY   (ACCEL)
-TITLE      .Delayed Neutron Yield Measurements
-MONITOR    .No Information
-ERR-ANALYS (DATA-ERR)  Errors not Specified
+REFERENCE  (J,RCA,17,61,1972) Final results.
+           (C,67VIENNA,,147,1967) First author G.Herrmann.
+            Preliminary results
+           (C,65SALZBURG,2,197,1965) =STI/PUB-101,(2),197,1965.
+            First author G.Herrmann.
+            Preliminary results and exp.details.
+AUTHOR     (G.Benedict,G.Luthardt,G.Herrmann)
+FACILITY   (CCW,2GERMNZ)
+TITLE       Delayed-neutron yields from fission of 238U and 232Th
+           by 14.8-MeV neutrons
 STATUS     (SCSRS)
 HISTORY    (19780331C)  NNDC
            (19991217T)  Converted by S.M.
            (20010202U) Last checking has been done.
-ENDBIB              11
-NOCOMMON
-ENDSUBENT           14
-SUBENT        22571002   20010202   20030919   20050926       0000
-BIB                  3          4
+           (20210305A) M.M. Two refs. J,RCA,17,61,1972 and
+           65SALZBURG,2,197,1965 were added.
+           BIB information was updated.
+           Subents 004-005 were added.
+ENDBIB              19
+NOCOMMON             0          0
+ENDSUBENT           22
+SUBENT        22571002   20210305   20210625   20210603       2299
+BIB                  6         12
 REACTION   (90-TH-232(N,F),DL,NU)
+SAMPLE      232Th metal
 MONITOR    (92-U-235(N,F),DL,NU)
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table 1 of Radiochimica Acta,v.17,p.61,1972
+           Table VI of Conf.Proc. 67VIENNA,p.147,1967- prelim.res.
+           (DEP,22571004) Group yields used for summation.
 HISTORY    (19991217T)  Converted from Subent 62440002
            (20010202U) Last checking has been done.
-ENDBIB               4
-NOCOMMON
+           (20210305A) M.M. Prelim.results were replaced by final:
+            14.MeV 1.9+-0.5 -> 14.8 MeV 1.9+-0.6
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
-MEV        PRT/FIS    PRT/FIS
-    1.4E+01    1.9E-02     5.E-03
+MEV        PC/FIS     PC/FIS
+    14.8       1.9        0.6
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        22571003   20010202   20030919   20050926       0000
-BIB                  3          4
+ENDSUBENT           20
+SUBENT        22571003   20210305   20210625   20210603       2299
+BIB                  6         13
 REACTION   (92-U-238(N,F),DL,NU)
+SAMPLE      Several grams of 238U ( 99.7%)
 MONITOR    (92-U-235(N,F),DL,NU)
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table 1 of Radiochimica Acta,v.17,p.61,1972
+           Table VI of Conf.Proc. 67VIENNA,p.147,1967-prelim.res.
+           (DEP,22571005) Group yields used for summation.
 HISTORY    (19991217T)  Converted from Subent 62440003
            (20010202U) Last checking has been done.
-ENDBIB               4
-NOCOMMON
+           (20210305A) EN-NRM was added.
+           (20210305A) M.M. Prelim.results were replaced by final:
+            14.MeV 2.2+-0.6 -> 14.8 MeV 2.3+-0.8
+ENDBIB              13
+COMMON               1          3
+EN-NRM
+EV
+ 0.0253
+ENDCOMMON            3
 DATA                 3          1
 EN         DATA       DATA-ERR
-MEV        PRT/FIS    PRT/FIS
-    1.4E+01    2.2E-02     6.E-03
+MEV        PC/FIS     PC/FIS
+    14.8       2.3         0.8
 ENDDATA              3
-ENDSUBENT           12
-ENDENTRY             3
+ENDSUBENT           25
+SUBENT        22571004   20210305   20210625   20210603       2299
+BIB                  8         15
+REACTION   (90-TH-232(N,F),DL/GRP,NU)
+SAMPLE      232Th metal
+MONITOR    ((MONIT1)92-U-235(N,F),DL/GRP,NU)  For thermal neutrons
+           ((MONIT2)92-U-235(N,F)42-MO-99,CUM,FY)
+                                            For thermal neutrons
+MONIT-REF  ((MONIT1),G.R.Keepin+,J,JNE,6,1,1957)
+ASSUMED    (ASSUM,90-TH-232(N,F)42-MO-99,CUM,FY)
+ANALYSIS    Absolute yield of k-th delayed neutron group Yk was
+           determined :
+           Yk=Y2*((Ik*Imoth*Ymo)/(I2*Imo*Ymoth)), where
+           Ymo - Mo-99 yield,
+           Imo - Mo-99 counting rate,
+           th - thermal neutron induced fission of U-235.
+STATUS     (TABLE) Table 2 of Radiochimica Acta,v.17,p.61,1972
+HISTORY    (20210305C) M.M. Subent was added.
+ENDBIB              15
+COMMON               9          6
+EN         EN-NRM     HL-NRM     MONIT1     MONIT1-ERR MONIT2
+MONIT2-ERR ASSUM      ASSUM-ERR
+MEV        EV         SEC        PC/FIS     PC/FIS     PC/FIS
+PC/FIS     PC/FIS     PC/FIS
+    14.8    0.0253     23.        0.346      0.018      6.12
+ 0.12       1.93       0.05
+ENDCOMMON            6
+DATA                 2          6
+HL         DATA
+SEC        PC/FIS
+ 56.        0.13
+ 18.8       0.35
+  5.1       0.40
+  2.14      0.55
+  0.60      0.28
+  0.15      0.20
+ENDDATA              8
+ENDSUBENT           35
+SUBENT        22571005   20210305   20210625   20210603       2299
+BIB                  8         15
+REACTION   (92-U-238(N,F),DL/GRP,NU)
+SAMPLE      Several grams of 238U ( 99.7%)
+MONITOR    ((MONIT1)92-U-235(N,F),DL/GRP,NU)  For thermal neutrons
+           ((MONIT2)92-U-235(N,F)42-MO-99,CUM,FY)
+                                            For thermal neutrons
+MONIT-REF  ((MONIT1),G.R.Keepin+,J,JNE,6,1,1957)
+ASSUMED    (ASSUM,92-U-238(N,F)42-MO-99,CUM,FY)
+ANALYSIS    Absolute yield of k-th delayed neutron group Yk was
+           determined :
+           Yk=Y2*((Ik*Imoth*Ymo)/(I2*Imo*Ymoth)), where
+           Ymo - Mo-99 yield,
+           Imo - Mo-99 counting rate,
+           th - thermal neutron induced fission of U-235.
+STATUS     (TABLE) Table 2 of Radiochimica Acta,v.17,p.61,1972
+HISTORY    (20210305C) M.M. Subent was added.
+ENDBIB              15
+COMMON               9          6
+EN         EN-NRM     HL-NRM     MONIT1     MONIT1-ERR MONIT2
+MONIT2-ERR ASSUM      ASSUM-ERR
+MEV        EV         SEC        PC/FIS     PC/FIS     PC/FIS
+PC/FIS     PC/FIS     PC/FIS
+    14.8    0.0253     23.        0.346      0.018      6.12
+ 0.12       6.00       0.30
+ENDCOMMON            6
+DATA                 2          6
+HL         DATA
+SEC        PC/FIS
+ 58.        0.068
+ 20.4       0.36
+  5.0       0.50
+  2.00      0.77
+  0.50      0.40
+  0.16      0.18
+ENDDATA              8
+ENDSUBENT           35
+ENDENTRY             5
