@@ -1,27 +1,40 @@
-ENTRY            22546   19991214   20030919   20050926       0000
-SUBENT        22546001   19991214   20030919   20050926       0000
-BIB                  7          9
+ENTRY            22546   20181122   20190405   20190405       2272
+SUBENT        22546001   20181122   20190405   20190405       2272
+BIB                 10         17
 INSTITUTE  (2GERMUN)
-REFERENCE  (J,ZN/A,15,828,196007)
-AUTHOR     (T.SPRINGER,W.WIEDEMANN)
-TITLE      THE MEASUREMENT OF THE TOTAL CROSS SECTION OF SOLID
-           NEON AND ARGON WITH VERY SLOW NEUTRONS.
-METHOD     (TOF)      TIME-OF-FLIGHT
-STATUS     (SCSRS)
-HISTORY    (19820331C)  COMPILED BY NNDC
+REFERENCE  (J,ZN/A,15,828,1960)
+AUTHOR     (T.Springer,W.Wiedemann)
+TITLE      The measurement of the total cross section of solid
+           neon and argon with very slow neutrons.
+METHOD     (TOF,TRN)      Time-of-flight
+FACILITY   (REAC,2GERMUN) FRM-reactor
+INC-SOURCE  Mechanic selector as monochromator
+MONITOR      Effective neutron energies were determined from
+           transmission measurement for Au .
+SAMPLE      Ne - 1.10+-0.04 g/cm3
+            Ar - 1.48 - 1.54 g/cm3
+HISTORY    (19820331C)  Compiled by NNDC
            (19991214T)  Converted by S.M.
-ENDBIB               9
+           (20181122A) M.M. Subents 004,005 were added.
+           Upper ->lower case correction.
+           BIB information was added .
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           12
-SUBENT        22546002   19991214   20030919   20050926       0000
-BIB                  2          2
-REACTION   (10-NE-0(N,TOT),,SIG/TMP)
+ENDSUBENT           20
+SUBENT        22546002   20181122   20190405   20190405       2272
+BIB                  4          7
+REACTION   (10-NE-0(N,TOT),,SIG,,TMP)
+STATUS     Data are on Fig.3 of J.Zeitschrift fuer Naturforschung,
+           Section A,15,828,1960
+           (SCSRS)
+COMMENT    Of compiler M.M. Source of data is not clear -
+           from authors or digitized.
 HISTORY    (19991214T)  Converted from SUBENT 60899004
-ENDBIB               2
+ENDBIB               7
 COMMON               1          3
 TEMP
 K
- 2.0000E+01
+ 20.
 ENDCOMMON            3
 DATA                 2         13
 EN         DATA
@@ -40,12 +53,17 @@ MEV        B
  2.3000E-09 2.8000E-01
  2.9000E-09 6.2000E-01
 ENDDATA             15
-ENDSUBENT           26
-SUBENT        22546003   19991214   20030919   20050926       0000
-BIB                  2          2
-REACTION   (18-AR-0(N,TOT),,SIG/TMP)
+ENDSUBENT           31
+SUBENT        22546003   20181122   20190405   20190405       2272
+BIB                  4          7
+REACTION   (18-AR-0(N,TOT),,SIG,,TMP)
+STATUS     Data are on Fig.4 of J.Zeitschrift fuer Naturforschung,
+           Section A,15,828,1960
+           (SCSRS)
+COMMENT    Of compiler M.M. Source of data is not clear -
+           from authors or digitized.
 HISTORY    (19991214T)  Converted from SUBENT 60899006
-ENDBIB               2
+ENDBIB               7
 COMMON               1          3
 TEMP
 K
@@ -66,5 +84,84 @@ MEV        B
  1.8000E-09 2.3200E+00
  2.3000E-09 2.0200E+00
 ENDDATA             13
-ENDSUBENT           24
-ENDENTRY             3
+ENDSUBENT           29
+SUBENT        22546004   20181122   20190405   20190405       2272
+BIB                  5          9
+REACTION   (10-NE-0(N,TOT),,SIG,,TMP,DERIV)
+ANALYSIS    Derived as average of three measurement:
+            0.35 b, 0.45 b ( 61-mm container), 0.45 b (100-mm
+           container)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+                      artice
+STATUS     (TABLE) Text,page 829 of J.Zeitschrift fuer
+           Naturforschung, Section A,15,828,1960
+HISTORY    (20181122C) M.M.
+ENDBIB               9
+COMMON               1          3
+TEMP
+K
+ 20.
+ENDCOMMON            3
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         B          B
+    3. E-04    0.042     0.06
+ENDDATA              3
+ENDSUBENT           21
+SUBENT        22546005   20181122   20190405   20190405       2272
+BIB                  7         13
+REACTION   (10-NE-0(N,ABS),,SIG,,TMP,DERIV)
+ANALYSIS    Derived by extrapolation by 1/v low
+ASSUMED    (ASSUM,10-NE-0(N,NON),,SIG)
+REL-REF    (N,,T.Springer,J,NUK,6,87,1964) Review of experiments.
+           Neon absorption CS at 0.0253 eV (2200 m/s) 0.038+-0.007
+           from this work is mentioned .
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+                      artice
+STATUS     (TABLE) Text,page 829 of J.Zeitschrift fuer
+           Naturforschung, Section A,15,828,1960
+           (DEP,22546002) CS dependence from neutron energy
+           (DEP,22546004) Value used for extrapolation
+HISTORY    (20181122C) M.M.
+ENDBIB              13
+COMMON               1          3
+TEMP
+K
+ 20.
+ENDCOMMON            3
+DATA                 4          1
+EN         DATA       DATA-ERR   ASSUM
+EV         B          B          B
+ 0.0253     0.038      0.007      0.07
+ENDDATA              3
+ENDSUBENT           25
+SUBENT        22546006   20181122   20190405   20190405       2272
+BIB                  6         14
+REACTION   (18-AR-0(N,ABS),,SIG,,TMP,DERIV)
+REL-REF    (A,,F.C.W.Colmer+,J,PPS/A,63,1175,1950) 0.62+-0.04 b
+           (A,,E.Melkonian+,J,PR,73,1399,1948) 0.60+-0.10 b
+           (A,,D.J.Highes+,R,BNL-325,1958)     0.66+-0.04 b
+           (A,,S.Katcoff,J,PR,87,886,1952)     0.53+-0.03
+ANALYSIS    Derived by extrapolation by 1/v low
+ERR-ANALYS (ERR-T) total error
+           (ERR-S) statistical error of measured data (Subent 003)
+           (ERR-1) from error of effective energy,
+           (ERR-2) from sample density
+STATUS     (TABLE) Table 2 of J.Zeitschrift fuer Naturforschung,
+           Section A,15,828,1960
+           (DEP,22546003) CS dependence from neutron energy
+HISTORY    (19991214T)  Converted from SUBENT 60899006
+ENDBIB              14
+COMMON               1          3
+EN
+EV
+ 0.0253
+ENDCOMMON            3
+DATA                 6          2
+TEMP       DATA       ERR-T      ERR-S      ERR-1      ERR-2
+K          B          B          B          B          B
+ 77.        0.61       0.03       0.2        0.2        0.12
+ 20.        0.60       0.04
+ENDDATA              4
+ENDSUBENT           27
+ENDENTRY             6
