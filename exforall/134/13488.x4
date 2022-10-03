@@ -1,51 +1,54 @@
-ENTRY            13488     920810              20050926       0000
-SUBENT        13488001     920810              20050926       0000
-BIB                 13         24
+ENTRY            13488   20180724   20181012   20181012       1442
+SUBENT        13488001   20180724   20181012   20181012       1442
+BIB                 12         24
+TITLE      High-resolution fission cross-section measurements
+            of 235U and 239PU
+REFERENCE  (J,NSE,111,415,1992)
+AUTHOR     (L.W.Weston, J.H.Todd)
 INSTITUTE  (1USAORL)
-REFERENCE  (J,NSE,111,415,9208)
-AUTHOR     (L.W.WESTON,J.H.TODD)
-TITLE      HIGH RESOLUTION FISSION CROSS SECTION MEASUREMENTS
-            OF 235U AND 239PU
-FACILITY   (LINAC) ORELA
+FACILITY   (LINAC,1USAORL) ORELA
 INC-SOURCE (PHOTO)
-SAMPLE     PARALLEL PLATE FISSION CHAMBERS CONTAINING 80 MG OF
-           OF U-235 AND PU-239.
-METHOD     (TOF) TIME-OF-FLIGHT, 86-M FLIGHT PATH
-DETECTOR   (IOCH) PARALLEL PLATE  FISSION  CHAMBER.
-                  FLUX MONITORED WITH A PARALLEL-PLATE B10
-                  IONIZATION CHAMBER.
-MONITOR    (5-B-10(N,A)3-LI-7,,SIG)
-           SHAPE OF B-10(N,ALPHA) CROSS SECTION.
-CORRECTION CONSTANT-IN-TIME BACKGROUND WAS SMALL FOR FLUX MONITOR
-            BUT APPRECIABLE FOR FISSION CHAMBERS, WHICH WAS
-            DETERMINED ACCURATELY.
-           NO CORRECTION WAS MADE FOR THE TIME DEPENDENT
-             BACKGROUND (LESS THAN 0.5%).
-STATUS     DATA OBTAINED FROM WESTON 91/4/1
-           (APRVD) L.W.WESTON, 91/6/6
-HISTORY    (910322C)
-           (920810A) REF UPDATE
+SAMPLE     80 mg of high isotopic purity - 20 deposits
+METHOD     (TOF) 86 m flight path
+DETECTOR   (FISCH) Parallel plate fission chamber where 20 Al
+            plates (0.0125 mm thick each) coated with fissile
+            deposit
+           (IOCH) Parallel plate 10B ionization chamber for flux
+            measurement
+CORRECTION Corrected for
+            - time independent background.
+           Not corrected for
+            - time dependent background (<0.5%),
+            - neutron scattering and transmission through the
+              fission chamber or flux detector.
+STATUS     (APRVD) L.W.Weston, 91/6/6
+HISTORY    (19910322C)
+           (19920810A) Ref update
+           (20180724A) On. Major revision in 002. 004+005 added.
 ENDBIB              24
 NOCOMMON             0          0
 ENDSUBENT           27
-SUBENT        13488002     910522              20050926       0000
-BIB                  4         11
+SUBENT        13488002   20180724   20181012   20181012       1442
+BIB                  6         14
 REACTION   (92-U-235(N,F),,SIG)
-MONITOR    ((MONIT2)92-U-235(N,F),,SIG)
-           NORMALIZATION WAS TO ENDF/B-VI AVERAGE VALUE OF 13.31
-            BARNS BETWEEN 100 AND 1000 EV.
-SAMPLE     80 MG OF HIGH ISOTOPIC PURITY - 20 DEPOSITS
-ERR-ANALYS (ERR-S) STATISTICAL UNCERTAINTY WAS COMPUTED DURING
-             DATA ANALYSIS.
-           (ERR-1) SYSTEMATIC UNCERTAINTY COMPUTED FROM FORMULA
-            INVOLVING DETECTOR EFFICIENCES AND CONSTANT BACKGROUND
-            COUNT RATES.  NO NORMALIZATION UNCERTAINTY SINCE NO
-            ABSOLUTE NORMALIZATION.
-ENDBIB              11
+MONITOR    (5-B-10(N,A)3-LI-7,,SIG)
+            Shape normalization
+           ((MONIT)92-U-235(N,F),,SIG,,AV)
+MONIT-REF  ((MONIT),,3,ENDF/B-VI,,1990)
+ERR-ANALYS No normalization uncertainty since no absolute
+            normalization.
+           (ERR-S) Statistical uncertainty computed during
+            data analysis
+           (ERR-1) Systematic uncertainty computed from formula
+            involving detector efficiences and constant background
+            count rates.
+STATUS     (TABLE) Data obtained from Weston 91/4/1
+HISTORY    (20180724A) On. MONIT2 -> MONIT and value corrected.
+ENDBIB              14
 COMMON               3          3
-EN-NRM-MIN EN-NRM-MAX MONIT2
+EN-NRM-MIN EN-NRM-MAX MONIT
 EV         EV         B
-100.       1000.      13.13
+ 100.       1000.      13.31
 ENDCOMMON            3
 DATA                 4      10187
 EN         DATA       ERR-S      ERR-1
@@ -10238,25 +10241,28 @@ EV         B          B          B
  0.200022+4 0.712191+1 0.673528+0 0.100000+0
  0.200045+4 0.654366+1 0.648123+0 0.100000+0
 ENDDATA          10189
-ENDSUBENT        10209
-SUBENT        13488003     910522              20050926       0000
-BIB                  4         11
+ENDSUBENT        10212
+SUBENT        13488003   20180724   20181012   20181012       1442
+BIB                  6         14
 REACTION   (94-PU-239(N,F),,SIG)
-MONITOR    ((MONIT2)94-PU-239(N,F),,SIG)
-           NORMALIZED TO AVERAGE VALUE OF 10.02 BARNS BETWEEN 100
-            AND 1000 EV.
-SAMPLE     80 MG OF HIGH ISOTOPIC PURITY - 20 DEPOSITS
-ERR-ANALYS (ERR-S) STATISTICAL UNCERTAINTY WAS COMPUTED DURING
-            DATA ANALYSIS.
-           (ERR-1) SYSTEMATIC UNCERTAINTY COMPUTED FROM FORMULA
-            INVOLVING DETECTOR EFFICIENCES AND CONSTANT BACKGROUND
-            COUNT RATES.  NO NORMALIZATION UNCERTAINTY SINCE NO
-            ABSOLUTE NORMALIZATION.
-ENDBIB              11
+MONITOR    (5-B-10(N,A)3-LI-7,,SIG)
+            Shape normalization
+           ((MONIT)94-PU-239(N,F),,SIG,,AV)
+MONIT-REF  ((MONIT),,3,ENDF/B-VI,,1990)
+ERR-ANALYS No normalization uncertainty since no absolute
+            normalization.
+           (ERR-S) Statistical uncertainty computed during
+            data analysis
+           (ERR-1) Systematic uncertainty computed from formula
+            involving detector efficiences and constant background
+            count rates.
+STATUS     (TABLE) Data obtained from Weston 91/4/1
+HISTORY    (20180724U) On. MONIT2 -> MONIT
+ENDBIB              14
 COMMON               3          3
-EN-NRM-MIN EN-NRM-MAX MONIT2
+EN-NRM-MIN EN-NRM-MAX MONIT
 EV         EV         B
-100.       1000.      10.02
+ 100.       1000.      10.02
 ENDCOMMON            3
 DATA                 4      22139
 EN         DATA       ERR-S      ERR-1
@@ -32401,5 +32407,66 @@ EV         B          B          B
  0.199977+5 0.127700+1 0.126261+0 0.395871-1
  0.200049+5 0.107248+1 0.116829+0 0.332470-1
 ENDDATA          22141
-ENDSUBENT        22161
-ENDENTRY             3
+ENDSUBENT        22164
+SUBENT        13488004   20180724   20181012   20181012       1442
+BIB                  4          7
+REACTION   (92-U-235(N,F),,SIG,,AV)
+ERR-ANALYS (ERR-S)       Statistical uncertainty
+           (ERR-SYS)     Systematic uncertainty
+           (ERR-1,,,F)   Neutron flux shape
+STATUS     (TABLE) Table II of Nucl.Sci.Eng.111(1992)415
+           (DEP,13488002) Point-wise cross section
+HISTORY    (20180724C) On
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 6         10
+EN-MIN     EN-MAX     DATA       ERR-S      ERR-SYS    ERR-1
+EV         EV         B          B          B          PER-CENT
+  100.       200.      20.97      0.05       0.17       0.5
+  200.       300.      20.43      0.04       0.14       0.5
+  300.       400.      12.99      0.03       0.09       0.5
+  400.       500.      13.64      0.03       0.08       0.5
+  500.       600.      14.87      0.04       0.15       0.5
+  600.       700.      11.34      0.03       0.11       0.5
+  700.       800.      10.86      0.03       0.11       0.5
+  800.       900.       8.00      0.03       0.08       0.5
+  900.      1000.       7.34      0.03       0.07       0.5
+ 1000.      2000.       7.08      0.01       0.08       1.0
+ENDDATA             12
+ENDSUBENT           24
+SUBENT        13488005   20180724   20181012   20181012       1442
+BIB                  4          7
+REACTION   (94-PU-239(N,F),,SIG,,AV)
+ERR-ANALYS (ERR-S)   Statistical uncertainty
+           (ERR-SYS) Systematic uncertainty
+           (ERR-1,,,F)   Neutron flux shape
+STATUS     (TABLE) Table III of Nucl.Sci.Eng.111(1992)415
+           (DEP,13488003) Point-wise cross section
+HISTORY    (20180724C) On
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 6         19
+EN-MIN     EN-MAX     DATA       ERR-S      ERR-SYS    ERR-1
+EV         EV         B          B          B          PER-CENT
+   100.       200.     18.15      0.07       0.16       0.5
+   200.       300.     16.89      0.05       0.12       0.5
+   300.       400.      8.34      0.04       0.06       0.5
+   400.       500.      9.29      0.04       0.06       0.5
+   500.       600.     14.39      0.05       0.14       0.5
+   600.       700.      4.45      0.03       0.04       0.5
+   700.       800.      5.65      0.03       0.06       0.5
+   800.       900.      4.83      0.03       0.05       0.5
+   900.      1000.      7.99      0.04       0.08       0.5
+  1000.      2000.      4.30      0.01       0.05       1.0
+  2000.      3000.      3.13      0.01       0.04       1.0
+  3000.      4000.      2.88      0.01       0.03       1.0
+  4000.      5000.      2.27      0.01       0.03       1.0
+  5000.      6000.      2.21      0.01       0.03       1.0
+  6000.      7000.      1.96      0.01       0.03       2.0
+  7000.      8000.      2.04      0.01       0.03       2.0
+  8000.      9000.      2.11      0.01       0.03       2.0
+  9000.     10000.      1.77      0.01       0.03       2.0
+ 10000.     20000.      1.62      0.01       0.05       2.0
+ENDDATA             21
+ENDSUBENT           33
+ENDENTRY             5

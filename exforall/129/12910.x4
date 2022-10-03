@@ -1,73 +1,75 @@
-ENTRY            12910   20050926   20060111   20060111       1337
-SUBENT        12910001   20050926   20060111   20060111       1337
-BIB                 14         38
-INSTITUTE  (1USAMHG)
-REFERENCE  (J,ANS,47,425,1984)
-           (P,DOE-NDC-36,113,1985)
-AUTHOR     (K.R.Zasadny,H.M.Agrawal,M.Mahdavi,G.F.Knoll)
+ENTRY            12910   20180724   20181012   20181012       1442
+SUBENT        12910001   20180724   20181012   20181012       1442
+BIB                 14         40
 TITLE      Measurement of the 14-MeV fission cross sections
-           for U-233 and Np-237
-FACILITY   University of Michigan experimental bay area facility
+            for 233U and and 237Np
+REFERENCE  (J,ANS,47,425,1984)
+           ((P,BNL-NCS-36272,113,1985)=(P,INDC(USA)-96,113,1985))
+            Detailed description, same data given
+AUTHOR     (K.R.Zasadny, H.M.Agrawal, M.Mahdavi, G.F.Knoll)
+INSTITUTE  (1USAMHG)
+FACILITY   (CCW,1USAMHG) 150 kV CCW 14 MeV neutron generator
 METHOD     (ACTIV)
 INC-SOURCE (D-T)
-MONITOR    (26-FE-56(N,P)25-MN-56,,SIG)
-DETECTOR   (TRD) Fission fragments detected in a limited solid
-             angle by a polyester track-etch detector film.
-SAMPLE     The fission deposits are 2.75-cm-diam X 1mg/cm2
-             evaporation (made at ORNL) on a 0.0508-cm-thick
-             platinum backing
-ERR-ANALYS (DATA-ERR) Major sources of uncertainties are-
-             Flux calculation from iron foil activation
-                                    = 1.2 tp 1.5 percent
-             Fission track counting statistics
-                                    = 0.65 to 0.76 percent
-             Anisotropy uncertainty = 0.40 to 0.81 percent
-             Scattering correction  = 0.4 percent
-             Geometric uncertainty  = 0.24 percent
-CORRECTION Major corrections to the fission cross sections-
-           . anisotropy of fission fragments from CM to LAB
-                = -1.93+-0.48 percent for U-233
-                = -1.91+-0.48 percent for Np-237
-           . Neutrons scattered and from (n,2n) reaction
-                = -3.1+-0.4 percent
-           . U-233 foil impuruty warrants
-                = -0.15+-0.04 percent
-             No such a correction for Np-237
-           . Room-scattered-neutron estimation made
+MONITOR    (26-FE-56(N,P)25-MN-56,,SIG) by 4pi beta-gamma
+            T.B.Ryves et al., Nucl.Instrum.Meth.167(1979)449 is
+            cited by the authors, but the cross section is not
+            discussed in the article.
+DETECTOR   (TRD) Detected in a limited solid angle by a polyester
+            track-etch detector film.
+SAMPLE     Fission deposits (2.75 cm diam., 1 mg/cm2, fabricated
+            by ORNL) evaporated on Pt backing (0.0508 cm thick).
+           The mass was measured within accuracy of +/-0.05%.
+CORRECTION Corrected for
+            - CMS to Lab conversion of fragment anisotropy
+                                           (233U:  -1.93+/-0.48%,
+                                            237Np: -1.91+/-0.48%)
+            - Scattered and (n,2n) neutrons         (-3.1+/-0.4%)
+            - Foil impuruty warrants
+                                           (233U:  -0.15+/-0.04%,
+                                            237Np:  no correction)
+            - Room-scattered-neutron
+ERR-ANALYS (ERR-T) Major sources of uncertainties are:
+           (ERR-1,1.2,1.5)   Flux determination       (1.2-1.5%)
+           (ERR-S,0.65,0.76) Fission track counting (0.65-0.76%)
+           (ERR-2,0.40,0.81) Anisotropy uncertainty (0.40-0.81%)
+           (ERR-3)           Scattering correction        (0.4%)
+           (ERR-4)           Geometry                    (0.24%)
 STATUS     (PRELM)
            (APRVD) K.R.Zasadny, 85/1/14.
+           (TABLE) Text (p426) of Trans.Am.Nucl.Soc.47(1984)425
 HISTORY    (19841120C)
-           (20050926C) DR Format updated and second reference
-            added
-ENDBIB              38
+           (20050926U) DR Format updated and second ref. added
+           (20180724A) On. ERR-S, ERR-1 to ERR-4 added.
+ENDBIB              40
 COMMON               4          3
-EN         EN-ERR     MONIT      MONIT-ERR
-MEV        MEV        MB         MB
- 14.62      0.02       110.8      1.
+MONIT      MONIT-ERR  ERR-3      ERR-4
+MB         MB         PER-CENT   PER-CENT
+ 110.8      1.         0.4        0.24
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        12910002     850124              20050926       0000
+ENDSUBENT           47
+SUBENT        12910002   20180724   20181012   20181012       1442
 BIB                  2          2
 REACTION   (92-U-233(N,F),,SIG)
-ASSUMED    ANISOTROPY ASSUMED-1.32+-0.13
+ASSUMED    Anisotropy of -1.32+/-0.13 assumed
 ENDBIB               2
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.43       0.080
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        B          B
+ 14.62      0.02       2.43       0.080
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        12910003     850124              20050926       0000
+SUBENT        12910003   20180724   20181012   20181012       1442
 BIB                  2          2
 REACTION   (93-NP-237(N,F),,SIG)
-ASSUMED    ANISOTROPY ASSUMED-1.14+-0.11
+ASSUMED    Anisotropy of -1.14+/-0.11 assumed
 ENDBIB               2
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-B          B
- 2.24       0.065
+DATA                 4          1
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        B          B
+ 14.62      0.02       2.24       0.065
 ENDDATA              3
 ENDSUBENT           10
 ENDENTRY             3
