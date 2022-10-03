@@ -1,44 +1,96 @@
-ENTRY            F0346   19990409   19990428   20050926       0000
-SUBENT        F0346001   19990409   19990428   20050926       0000
-BIB                  7         10
+ENTRY            F0346   20210725   20211005   20210930       F086
+SUBENT        F0346001   20210725   20211005   20210930       F086
+BIB                  9         18
 TITLE      The emission of short-range alpha particles from light
            elements under proton bombardment. I. Experimental
            method and the reaction 10B(p,alpha)7Be
-AUTHOR     (W.E.BURCHAM,J.M.FREEMAN)
-INSTITUTE  (2UK UK )
-REFERENCE  (J,PM,40,807,194908)
+AUTHOR     (W.E.Burcham,J.M.Freeman)
+INSTITUTE  (2UK UK) Selwyn College, Cambridge; Newnham College,
+           Cambridge
+REFERENCE  (J,PM,40,807,1949)
+REL-REF    (I,,W.E.Burcham+,J,PRS/A,173,555,1939) - The analyser
+           characteristics were investigated by using the
+           short-range alpha particles from the reaction
+           19F(p+alpha,gamma) 16O*
+FACILITY   (CCW,2UK HAR)
 SAMPLE     A target of separated 10B isotope was used
 DETECTOR   (MAGSP)
 HISTORY    (19851125C)
-           (19990409A) CNPD: corrected 4-dig. year
-ENDBIB              10
-NOCOMMON
-ENDSUBENT           13
-SUBENT        F0346002   19990409   19990428   20050926       0000
-BIB                  3          6
-REACTION   (5-B-10(P,A)4-BE-7,,SIG,,,EXP)
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) Digitizing error
-           (ERR-1) Uncertainty in the solid angle of the analyser
+           (19990409U) CNPD: corrected 4-dig. year, lower case
+           (20210725A) SD: Corrections in all Subents.
+           Subent 003 added.
+ENDBIB              18
+NOCOMMON             0          0
+ENDSUBENT           21
+SUBENT        F0346002   20210725   20211005   20210930       F086
+BIB                  5         15
+REACTION   (5-B-10(P,X)2-HE-4,,PY/DA,,TT/CH)
+COMMENT    The solid angle of the analyser and the target
+           current are thought to be known to about +-10%, and
+           the angular distribution was found to be consistent
+           with spherical symmetry to +-10%, over the angular
+           range 48. - 134. degr.
+ERR-ANALYS (ERR-1) Uncertainty in the solid angle of the analyser
            and the target current.
-STATUS     (CURVE) Fig 11
-ENDBIB               6
-COMMON               3          3
-EN-ERR     ERR-1      DATA-ERR
-MEV        PER-CENT   MB
- 0.005       10.       0.4
+STATUS     (CURVE) Fig 11 from Philosoph.Mag.,40(1949)807
+HISTORY    (20210725A) SD: SF3=A -> X; SF4=Be-7 -> He-4;
+           SF6=SIG -> PY/DA; SF8=TT/CH added; SF9=EXP deleted from
+           REACTION code. REACTION code corrected according to
+           data presentation at the fig.11. Data re-digitized.
+           STATUS, ERR-ANALYS updated. EN-ERR -> EN-ERR-DIG;
+           DATA-ERR -> ERR-DIG; PRT/MUC/SR -> PRD/MUC/SR.
+ENDBIB              15
+COMMON               5          3
+ANG-MIN    ANG-MAX    EN-ERR-DIG ERR-1      ERR-DIG
+ADEG       ADEG       KEV        PER-CENT   PRT/MUC/SR
+        48.       134.        1.4        10.      0.032
 ENDCOMMON            3
 DATA                 2          8
 EN         DATA
-MEV        MB
-     0.4212     8.278
-     0.4695    13.09
-     0.5219    19.13
-     0.5745    26.42
-     0.6276    36.84
-     0.6776    52.29
-     0.7323    72.1
-     0.7807   101.3
+KEV        PRD/MUC/SR
+      424.0      1.303
+      473.3      2.115
+      525.5      3.105
+      573.9      4.326
+      626.3      6.032
+      675.9      8.530
+      726.6     11.847
+      777.7     16.697
 ENDDATA             10
-ENDSUBENT           25
-ENDENTRY             2
+ENDSUBENT           34
+SUBENT        F0346003   20210725   20211005   20210930       F086
+BIB                  4         25
+REACTION   (5-B-10(P,A)4-BE-7,,SIG,,,DERIV)
+ANALYSIS   The cross-section for the reaction was calculated
+           from the observed excitation function and estimated
+           target thickness, with the assumption of an isotropic
+           angular distribution of the emitted alpha particles.
+           At a bombarding energy of 530 keV, at which the alpha
+           particles are well resolved from the scattered
+           protons, the thin target yield for a solid angle of
+           4Pi is
+                 Y(E)=4.3 x 10**(-8) alpha particles per proton.
+           In calculating the cross- section for the reaction
+           from this yield, allowance must be made for the
+           formation of He+ ions (which would not have been
+           detected) as the alpha particles leave the target.
+           From the work of Briggs (1927) it is estimated that
+           the ratio of He+ to He++ ions under the conditions of
+           the experiment was 0.5 and the cross-section is
+           therefore
+               sig(E)= 1.5 x Y(E)/N = 1.2 x 10**(-26) cm2,
+                                                for Ep=530 keV
+           where N, the number of 10B nuclei/cm2 of the target,
+           has been taken to be 5.4 x 10**(-18).
+STATUS     (TABLE) Text on p.829 of Philosoph.Mag.,40(1949)807
+           (DEP,F0346002) see ANALYSIS
+HISTORY    (20210725C) SD
+ENDBIB              25
+NOCOMMON             0          0
+DATA                 2          1
+EN         DATA
+KEV        MB
+      530.      12.
+ENDDATA              3
+ENDSUBENT           33
+ENDENTRY             3
