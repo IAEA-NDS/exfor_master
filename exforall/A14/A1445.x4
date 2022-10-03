@@ -1,8 +1,8 @@
-ENTRY            A1445   20190625   20191007   20191003       A092
-SUBENT        A1445001   20190625   20191007   20191003       A092
-BIB                 11         26
+ENTRY            A1445   20210625   20210921   20210917       A098
+SUBENT        A1445001   20210625   20210921   20210917       A098
+BIB                 11         29
 TITLE      Low-energy cross sections for 7Li(p,alpha)4He and
-           6Li(p,alpha)3He.
+           6Li(p,alpha)3He
 AUTHOR     (H.Spinka,T.Tombrello,H.Winkler)
 REFERENCE  (J,NP/A,164,1,1971)
 INSTITUTE  (1USACAL)
@@ -27,16 +27,20 @@ ERR-ANALYS (ERR-1) The error in the normalization data to the
 HISTORY    (19800902C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990220U)CNPD: corrected 4-dig. year and lower cases.
            (20190625A) SD: Major updated in BIB section.
-ENDBIB              26
+           (20210625A) SD: Energy units modified according to
+           inverse kinematics. Accuracy of digitized
+           data presentation revised.
+ENDBIB              29
 COMMON               1          3
 ERR-1
 PER-CENT
   8.0
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        A1445002   20190625   20191007   20191003       A092
-BIB                  6         21
-REACTION   (3-LI-6(P,HE3)2-HE-4,,DA,A)
+ENDSUBENT           36
+SUBENT        A1445002   20210625   20210921   20210917       A098
+BIB                  7         28
+REACTION   ((1-H-1(3-LI-6,HE3)2-HE-4,,DA)=
+           (3-LI-6(P,HE3)2-HE-4,,DA,A))
 COMMENT     After comparison with the A1513.005 data set
             (Ep=300 keV) and F0012.002 data sets (Ep=324 keV),
             the compiler believe '6Li(p,a)3He' in the Fig.4
@@ -45,6 +49,11 @@ COMMENT     After comparison with the A1513.005 data set
             angle of the alpha in the c.m. angle' in the same
             caption.
 MONITOR    (3-LI-6(6-C-12,EL)3-LI-6,,DA,,RTH)
+MISC-COL   (MISC) 6Li energy
+           Both energies (for H and Li) are given in the article.
+           Equivalent proton bombarding energy as calculated from
+           the lithium bombarding energy, the beam energy losses
+           and the masses of Li and H.
 ERR-ANALYS (DATA-ERR) Uncertainty from graphic bars includes:
              * Changes in the stoichiometric ratio of carbon to
                hydrogen in the target gas due to dissociation
@@ -53,57 +62,63 @@ ERR-ANALYS (DATA-ERR) Uncertainty from graphic bars includes:
                counter;
              * uncertainty in energy of the beam in the target
                region; etc.
+            (not included ERR-1)
 STATUS     (CURVE) Fig 4 from Nucl.Phys.,A164(1971)1
-HISTORY    (20190625A) SD: PART-DET deleted. SF7=A added; SF9=EXP
-           deleted from REACTION code. ANG-ERR -> ANG-ERR-D.
-           MONITOR, COMMENT added.
-ENDBIB              21
+HISTORY    (20190625A) SD: PART-DET deleted. SF9=EXP deleted from
+           REACTION code. ANG-ERR -> ANG-ERR-D. MONITOR, COMMENT
+           added. MEV -> MEV/A at E col.
+ENDBIB              28
 COMMON               1          3
 ANG-ERR-D
 ADEG
   0.6
 ENDCOMMON            3
-DATA                 4         32
-EN         ANG-CM     DATA-CM    DATA-ERR
-MEV        ADEG       MB/SR      MB/SR
-      0.151       24.7      0.680      0.046
-      0.151       27.7      0.629      0.005
-      0.151       28.7      0.650      0.046
-      0.151       34.1      0.728      0.036
-      0.151       34.7      0.661      0.031
-      0.151       40.6      0.652      0.051
-      0.151       53.4      0.715      0.036
-      0.151       65.3      0.758      0.047
-      0.151       78.6      0.791      0.052
-      0.151       93.1      0.768      0.036
-      0.151      107.9      0.806      0.051
-      0.151      121.3      0.788      0.052
-      0.151      135.7      0.832      0.021
-      0.151      138.8      0.770      0.041
-      0.151      142.7      0.771      0.041
-      0.151      146.7      0.782      0.026
-      0.151      149.7      0.772      0.031
-      0.151      150.6      0.813      0.005
-      0.151      153.7      0.757      0.041
-      0.151      158.6      0.753      0.041
-      0.317       44.7      2.809      0.115
-      0.317       58.4      3.171      0.115
-      0.317       73.0      3.635      0.128
-      0.317       81.8      3.843      0.102
-      0.317       86.2      3.946      0.102
-      0.317       96.0      4.205      0.128
-      0.317      112.2      4.416      0.102
-      0.317      128.2      4.269      0.153
-      0.317      146.8      4.723      0.102
-      0.317      153.8      4.713      0.076
-      0.317      159.7      4.741      0.102
-      0.317      164.8      4.577      0.115
+DATA                 5         32
+EN         ANG-CM     DATA-CM    DATA-ERR   MISC
+MEV/A      ADEG       MB/SR      MB/SR      MEV
+      0.151       24.7      0.680      0.046  0.907
+      0.151       27.7      0.629      0.005  0.907
+      0.151       28.7      0.650      0.046  0.907
+      0.151       34.1      0.728      0.036  0.907
+      0.151       34.7      0.661      0.031  0.907
+      0.151       40.6      0.652      0.051  0.907
+      0.151       53.4      0.715      0.036  0.907
+      0.151       65.3      0.758      0.047  0.907
+      0.151       78.6      0.791      0.052  0.907
+      0.151       93.1      0.768      0.036  0.907
+      0.151      107.9      0.806      0.051  0.907
+      0.151      121.3      0.788      0.052  0.907
+      0.151      135.7      0.832      0.021  0.907
+      0.151      138.8      0.770      0.041  0.907
+      0.151      142.7      0.771      0.041  0.907
+      0.151      146.7      0.782      0.026  0.907
+      0.151      149.7      0.772      0.031  0.907
+      0.151      150.6      0.813      0.005  0.907
+      0.151      153.7      0.757      0.041  0.907
+      0.151      158.6      0.753      0.041  0.907
+      0.317       44.7      2.809      0.115  0.907
+      0.317       58.4      3.171      0.115  1.903
+      0.317       73.0      3.635      0.128  1.903
+      0.317       81.8      3.843      0.102  1.903
+      0.317       86.2      3.946      0.102  1.903
+      0.317       96.0      4.205      0.128  1.903
+      0.317      112.2      4.416      0.102  1.903
+      0.317      128.2      4.269      0.153  1.903
+      0.317      146.8      4.723      0.102  1.903
+      0.317      153.8      4.713      0.076  1.903
+      0.317      159.7      4.741      0.102  1.903
+      0.317      164.8      4.577      0.115  1.903
 ENDDATA             34
-ENDSUBENT           64
-SUBENT        A1445003   20190625   20191007   20191003       A092
-BIB                  5         13
-REACTION   (3-LI-7(P,A)2-HE-4,,DA)
+ENDSUBENT           71
+SUBENT        A1445003   20210625   20210921   20210917       A098
+BIB                  7         19
+REACTION   ((1-H-1(3-LI-7,A)2-HE-4,,DA)=(3-LI-7(P,A)2-HE-4,,DA))
 MONITOR    (3-LI-7(6-C-12,EL)3-LI-7,,DA,,RTH)
+MISC-COL   (MISC) 7Li energy
+COMMENT    Both energies (for H and Li) are given in the article.
+           Equivalent proton bombarding energy as calculated from
+           the lithium bombarding energy, the beam energy losses
+           and the masses of Li and H.
 ERR-ANALYS (DATA-ERR) Uncertainty from graphic bars includes:
              * Changes in the stoichiometric ratio of carbon to
                hydrogen in the target gas due to dissociation
@@ -115,46 +130,53 @@ ERR-ANALYS (DATA-ERR) Uncertainty from graphic bars includes:
 STATUS     (CURVE) Fig 5 from Nucl.Phys.,A164(1971)1
 HISTORY    (20190625A) SD: PART-DET deleted. SF9=EXP deleted from
            REACTION code. ANG-ERR -> ANG-ERR-D. MONITOR added.
-ENDBIB              13
+           MEV -> MEV/A at E col. MISC col. added.
+ENDBIB              19
 COMMON               1          3
 ANG-ERR-D
 ADEG
   0.5
 ENDCOMMON            3
-DATA                 4         22
-EN         ANG-CM     DATA-CM    DATA-ERR
-MEV        ADEG       MB/SR      MB/SR
-     0.131     26.04       0.0258     0.0009
-     0.131     36.52       0.0254     0.001
-     0.131     53.45       0.024      0.0014
-     0.131     77.58       0.0269     0.0034
-     0.131     78.49       0.0249     0.0011
-     0.272     23.21       0.2497     0.0058
-     0.272     32.76       0.2231     0.0063
-     0.272     46.07       0.2046     0.0053
-     0.272     51.77       0.2018     0.0097
-     0.272     72.64       0.194      0.0116
-     0.272     80.75       0.1698     0.0058
-     0.416     20.68       0.5882     0.0176
-     0.416     29.24       0.5103     0.0176
-     0.416     47.19       0.425      0.0215
-     0.416     68.04       0.3729     0.0215
-     0.416     86.04       0.2661     0.0117
-     0.561     18.13       0.8489     0.0245
-     0.561     26.36       0.7656     0.0319
-     0.561     38.38       0.7707     0.0246
-     0.561     49.02       0.6777     0.0294
-     0.561     63.54       0.5405     0.0294
-     0.561     88.65       0.374      0.0147
+DATA                 5         22
+EN         ANG-CM     DATA-CM    DATA-ERR   MISC
+MEV/A      ADEG       MB/SR      MB/SR      MEV
+      0.131       26.0     0.0258     0.0009      0.913
+      0.131       36.5     0.0254     0.0010      0.913
+      0.131       53.5     0.0240     0.0014      0.913
+      0.131       77.6     0.0269     0.0034      0.913
+      0.131       78.5     0.0249     0.0011      0.913
+      0.272       23.2     0.2497     0.0058      1.899
+      0.272       32.8     0.2231     0.0063      1.899
+      0.272       46.1     0.2046     0.0053      1.899
+      0.272       51.8     0.2018     0.0097      1.899
+      0.272       72.6     0.1940     0.0116      1.899
+      0.272       80.8     0.1698     0.0058      1.899
+      0.416       20.7     0.5882     0.0176      2.913
+      0.416       29.2     0.5103     0.0176      2.913
+      0.416       47.2     0.4250     0.0215      2.913
+      0.416       68.0     0.3729     0.0215      2.913
+      0.416       86.0     0.2661     0.0117      2.913
+      0.561       18.1     0.8489     0.0245      3.925
+      0.561       26.4     0.7656     0.0319      3.925
+      0.561       38.4     0.7707     0.0246      3.925
+      0.561       49.0     0.6777     0.0294      3.925
+      0.561       63.5     0.5405     0.0294      3.925
+      0.561       88.7     0.3740     0.0147      3.925
 ENDDATA             24
-ENDSUBENT           46
-SUBENT        A1445004   20190625   20191007   20191003       A092
-BIB                  5         14
-REACTION   (3-LI-6(P,HE3)2-HE-4,,SIG)
+ENDSUBENT           52
+SUBENT        A1445004   20210625   20210921   20210917       A098
+BIB                  7         21
+REACTION   ((1-H-1(3-LI-6,HE3)2-HE-4,,SIG)=
+           (3-LI-6(P,HE3)2-HE-4,,SIG))
 ANALYSIS   (INTAD) For 6Li+p the total cross sections were
            obtained by multiplying the measured points with
            2Pi*sin(theta). A smooth curve through these values
            was then numerically integrated.
+MISC-COL   (MISC) 6Li energy
+COMMENT    Both energies (for H and Li) are given in the article.
+           Equivalent proton bombarding energy as calculated from
+           the lithium bombarding energy, the beam energy losses
+           and the masses of Li and H.
 ERR-ANALYS (ERR-T) The error contains effects from the error of
            individual points in the angular distribution, as well
            as from the quality of the fits and the uncertainties
@@ -163,22 +185,28 @@ ERR-ANALYS (ERR-T) The error contains effects from the error of
 STATUS     (TABLE) Table 1 Nucl.Phys.,A164(1971)1
            (DEP,A1445002) Ang.distrib.
 HISTORY    (20190625A) SD: SF9=EXP deleted from REACTION code.
-           ANALYSIS added. BIB updated.
-ENDBIB              14
+           ANALYSIS added. BIB updated. MEV -> MEV/A at E col.
+           MISC col. added.
+ENDBIB              21
 NOCOMMON             0          0
-DATA                 4          2
-EN         EN-ERR     DATA       ERR-T
-MEV        MEV        MB         MB
-     0.151      0.0035     9.8        1.
-     0.317      0.004     47.         5.
+DATA                 5          2
+EN         EN-ERR     DATA       ERR-T      MISC
+MEV/A      MEV        MB         MB         MEV
+     0.151      0.0035     9.8        1.0      0.907
+     0.317      0.004     47.         5.       1.903
 ENDDATA              4
-ENDSUBENT           23
-SUBENT        A1445005   20190625   20191007   20191003       A092
-BIB                  5         13
-REACTION   (3-LI-7(P,A)2-HE-4,,SIG)
+ENDSUBENT           30
+SUBENT        A1445005   20210625   20210921   20210917       A098
+BIB                  7         19
+REACTION   ((1-H-1(3-LI-7,A)2-HE-4,,SIG)=(3-LI-7(P,A)2-HE-4,,SIG))
 ANALYSIS   (INTAD) The 7Li+p total cross sections were obtained
            by fitting the data with either 2 or 3 even order
            Legendre polynomials.
+MISC-COL   (MISC) 7Li energy
+COMMENT    Both energies (for H and Li) are given in the article.
+           Equivalent proton bombarding energy as calculated from
+           the lithium bombarding energy, the beam energy losses
+           and the masses of Li and H.
 ERR-ANALYS (ERR-T) The error contains effects from the error of
            individual points in the angular distribution, as well
            as from the quality of the fits and the uncertainties
@@ -187,16 +215,17 @@ ERR-ANALYS (ERR-T) The error contains effects from the error of
 STATUS     (TABLE) Table 1 Nucl.Phys.,A164(1971)1
            (DEP,A1445002) Ang.distrib.
 HISTORY    (20190625A) SD: SF9=EXP deleted from REACTION code.
-           ANALYSIS added. BIB updated.
-ENDBIB              13
+           ANALYSIS added. BIB updated. MEV -> MEV/A at E col.
+           MISC col. added.
+ENDBIB              19
 NOCOMMON             0          0
-DATA                 4          4
-EN         EN-ERR     DATA       ERR-T
-MEV        MEV        MB         MB
-     0.1305     0.0035     0.32       0.04
-     0.2715     0.004      2.46       0.25
-     0.416      0.0035     4.9        0.5
-     0.561      0.003      7.4        0.8
+DATA                 5          4
+EN         EN-ERR     DATA       ERR-T      MISC
+MEV/A      MEV        MB         MB         MEV
+     0.1305     0.0035     0.32       0.04     0.913
+     0.2715     0.0040     2.46       0.25     1.899
+     0.416      0.0035     4.9        0.5      2.913
+     0.561      0.0030     7.4        0.8      3.925
 ENDDATA              6
-ENDSUBENT           24
+ENDSUBENT           30
 ENDENTRY             5

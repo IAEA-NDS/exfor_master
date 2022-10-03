@@ -1,55 +1,76 @@
-ENTRY            A0610   20030526   20040322   20050926       0000
-SUBENT        A0610001   20030526   20040322   20050926       0000
-BIB                  9         17
-TITLE      Energy spectra for newtrons in 6-Li(D,N+ALPHA)3-He
-           and 9-Be(D,N)10-B reactions at deutron energy up to 2
-           MeV.
+ENTRY            A0610   20210623   20210921   20210917       A098
+SUBENT        A0610001   20210623   20210921   20210917       A098
+BIB                  7         14
+TITLE      Spectra of neutrons from the reactions
+           6Li(d,n+alpha)3He and 9Be(d,n)10B at deuteron
+           energies up to 2.0 MeV
 AUTHOR     (V.A.Vukolov, E.A.Koltypin, Yu.D.Molchanov, G.B.Yankov)
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,YF,58,1539,199509) In russian
+REFERENCE  (J,YF,58,1539,1995) In Russian
            (J,PAN,58,1453,1995)  In English
-           (C,77KIEV,4,238,197704) Neutron spectrometer.
+           (C,77KIEV,4,238,1977) Neutron spectrometer.
 FACILITY   (VDG,4RUSKUR)
-METHOD     (SITA)
-           (TOF)
-PART-DET   (N)
-ERR-ANALYS (ERR-T) Authors gave total errors without any
-           analysis.
+METHOD     (SITA,TOF)
 HISTORY    (19980702C) By F.C.
            (20030526A) Reference is added. The date are corrected
            (20030526U) Last checking has been done.
-ENDBIB              17
-NOCOMMON
-ENDSUBENT           20
-SUBENT        A0610002   20030526   20040322   20050926       0000
-BIB                  4          7
+           (20210623A) SD: Corrections in all Subents.
+ENDBIB              14
+NOCOMMON             0          0
+ENDSUBENT           17
+SUBENT        A0610002   20210623   20210921   20210917       A098
+BIB                  7         12
 REACTION   (3-LI-6(D,X)0-NN-1,,SIG)
-           Continious neutron spectra were measured.
-DETECTOR   (SCIN) The mixture He-3 and xenon (9:1).
-STATUS     (TABLE) From text
+           Continuous neutron spectra were measured.
+SAMPLE     (3-LI-6,ENR=0.9) Metallic lithium on tantalum. Target
+           thickness was in region 20-40 keV.
+DETECTOR   (SCIN) The detector (a gaseous mixture of 3He at 9 atm
+           and xenon at 1 atm.) was arranged inside neutron
+           shielding 15 - 20 cm thick.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE) Text on p.1455 of Phys.At.Nucl.,58(1995)1453
            (DEP,A0610003)
-ANALYSIS   (INTED)
-           (INTAD)
-ENDBIB               7
-NOCOMMON
+ANALYSIS   (INTED,INTAD)
+HISTORY    (20210623U) SD: BIB updated. ERR-T -> DATA-ERR.
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 3          2
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
         1.1      123.7        9.8
-         2.      161.5       14.5
+        2.0      161.5       14.5
 ENDDATA              4
-ENDSUBENT           16
-SUBENT        A0610003   20030526   20040322   20050926       0000
-BIB                  5          7
+ENDSUBENT           21
+SUBENT        A0610003   20210623   20210921   20210917       A098
+BIB                  8         26
 REACTION   (3-LI-6(D,X)0-NN-1,,DA/DE)
-SAMPLE     Metallic lithium on tantalum. Target thickness was
-           in region 20-40 KeV.
-DETECTOR   (SCIN) The mixture He-3 and xenon (9:1).
-EN-SEC     (E-MIN,N)
-           (E-MAX,N)
-STATUS     (TABLE) Tables 1 and 2.
-ENDBIB               7
-NOCOMMON
+SAMPLE     (3-LI-6,ENR=0.9) Metallic lithium on tantalum. Target
+           thickness was in region 20-40 keV.
+MONITOR    (3-LI-6(D,X)0-NN-1,,DA/DE) The number of neutrons
+           detected by the helium chamber in the neutron-energy
+           range 0.2 - 1.5 MeV with allowance for the efficiency
+           was normalized at several points to the absolute
+           values of differential cross sections from the energy
+           range 1.1 - 1.5 MeV, which were measured using the
+           stilbene detector.
+DETECTOR   (SCIN) The detector (a gaseous mixture of 3He at 9 atm
+           and xenon at 1 atm.) was arranged inside neutron
+           shielding 15 - 20 cm thick.
+CORRECTION The results were corrected for the fraction (about 5%)
+           of neutrons from reactions with the 7Li nuclei
+STATUS     (TABLE) Tables 1 and 2 from Phys.At.Nucl.,58(1995)1453
+ERR-ANALYS (ERR-T) The total error in the cross-section
+           measurements involved:
+            * the statistical error,
+           (ERR-1,6.,7.) the error in the reference cross
+           section in the range 1.1-1.5 MeV (6 -7%) , and
+           (ERR-2,3.,6.) the error in the relative variation of
+           the efficiency (3 - 6%) . In the low-energy range 0.2
+           - 0.3 MeV, the statistical errors prevail because of
+           the high background level.
+HISTORY    (20210623U) SD: BIB updated.
+ENDBIB              26
+NOCOMMON             0          0
 DATA                 6         90
 EN         ANG        E-MIN      E-MAX      DATA       ERR-T
 MEV        ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
@@ -144,18 +165,33 @@ MEV        ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
          2.       130.        1.3        1.5       2.81       0.26
          2.       130.        1.5         2.       1.18       0.08
 ENDDATA             92
-ENDSUBENT          104
-SUBENT        A0610004   20030526   20040322   20050926       0000
-BIB                  6          7
-REACTION   (4-BE-9(D,N)5-B-10,PAR,SIG,,,EXP)
+ENDSUBENT          123
+SUBENT        A0610004   20210623   20210921   20210917       A098
+BIB                  7         18
+REACTION   (4-BE-9(D,N)5-B-10,PAR,SIG)
 METHOD     (PSD)
-SAMPLE     Metallic beryllium. Thickness was from 6 upto 51 KeV at
+SAMPLE     Metallic beryllium. Thickness was from 6 upto 51 keV at
            1.0 MeV
-DETECTOR   (SCIN) Stilben
-EN-SEC     (E-LVL,5-B-10)
-STATUS     (TABLE) Table 3
-ENDBIB               7
-NOCOMMON
+DETECTOR   (SCIN) A stilbene crystal (5 x 5 cm2)
+ERR-ANALYS (ERR-T) The total errors. The contribution of the
+           statistical error and the error in determining the
+           beam flux at the target to the total error of the
+           absolute values was negligibly small.
+           Energy losses in the target were not taken into
+           account.
+           (ERR-1) the uncertainty in determining the target
+           thickness and
+           (ERR-2,5.,17.) error in the detector efficiency (5 -
+           17%) for neutrons with an energy of 1 - 6 MeV.
+STATUS     (TABLE) Table 3 from Phys.At.Nucl.,58(1995)1453
+HISTORY    (20210623A) SD: SF9=EXP deleted from REACTION code.
+           BIB updated.
+ENDBIB              18
+COMMON               1          3
+ERR-1
+PER-CENT
+  10.
+ENDCOMMON            3
 DATA                 4         23
 EN         E-LVL      DATA       ERR-T
 MEV        MEV        MB         MB
@@ -183,26 +219,26 @@ MEV        MEV        MB         MB
          2.       4.77       35.3        4.1
          2.       5.11       60.7        8.7
 ENDDATA             25
-ENDSUBENT           37
-SUBENT        A0610005   20030526   20040322   20050926       0000
+ENDSUBENT           52
+SUBENT        A0610005   20210623   20210921   20210917       A098
 BIB                  7          9
-REACTION   (4-BE-9(D,N)5-B-10,PAR,DA,,,EXP)
+REACTION   (4-BE-9(D,N)5-B-10,PAR,DA)
 METHOD     (PSD)
-SAMPLE     Metallic beryllium. Thickness was from 6 upto 51 KeV at
-           1.0 MeV.
-DETECTOR   (SCIN) Stilben
-EN-SEC     (E-LVL,5-B-10)
-STATUS     (CURVE) By CAJAD from figure 5.
-ERR-ANALYS (ANG-ERR) Data point reader uncertainty.
-           (DATA-ERR) Data point reader uncertainty.
+SAMPLE     Metallic beryllium. Thickness was from 6 up to 51 keV
+           at 1.0 MeV
+DETECTOR   (SCIN) A stilbene crystal (5 x 5 cm2)
+STATUS     (CURVE) Fig. 5 from Phys.At.Nucl.,58(1995)1453
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+HISTORY    (20210623A) SD: SF9=EXP deleted from REACTION code.
+           BIB updated. ERR-T -> DATA-ERR.
 ENDBIB               9
 COMMON               2          3
-ANG-ERR    DATA-ERR
+ANG-ERR-D  ERR-DIG
 ADEG       MB/SR
          1.       0.05
 ENDCOMMON            3
 DATA                 5        179
-EN         ANG-CM     E-LVL      DATA-CM    ERR-T
+EN         ANG-CM     E-LVL      DATA-CM    DATA-ERR
 MEV        ADEG       MEV        MB/SR      MB/SR
         0.5        9.5       1.74       0.23       0.07
         0.5       11.2       0.72       1.17       0.22

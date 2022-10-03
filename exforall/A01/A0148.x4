@@ -1,61 +1,80 @@
-ENTRY            A0148   20200531   20200717   20200629       A095
-SUBENT        A0148001   20200531   20200717   20200629       A095
-BIB                 12         41
+ENTRY            A0148   20210406   20210921   20210917       A098
+SUBENT        A0148001   20210406   20210921   20210917       A098
+BIB                 12         52
 TITLE      Integral excitation functions of alpha-induced
-           reactions on titanium,iron and nickel
-AUTHOR     (R.Michel,G.Brinkmann,R.Stock)
+           reactions on titanium, iron and nickel
+AUTHOR     (R.Michel,G.Brinkmann,R.Stuck)
 INSTITUTE  (2GERKLN)
-REFERENCE  (J,RCA,32,173,1983)
-FACILITY   (ISOCY,2GERJUL)
+REFERENCE  (J,RCA,32,173,1983)  final publ.
+           (T,BRINKMANN,1979) Error analysis, same data
+FACILITY   (ISOCY,2GERJUL) Isochronous cyclotron 'Julie'
+           (CYCLO,2GERJUL) CV28 Compact Cyclotron
 MONITOR   1(13-AL-27(A,X)11-NA-22,,SIG)
           2(13-AL-27(A,X)11-NA-24,,SIG)
-             thin (100 mu-m) Al-foil was used
+             thin (100 um) Al-foil was used
 MONIT-REF 1(A0153003,R.Michel+,R,INDC(GER)-22,45,1980)
           2(A0153002,R.Michel+,R,INDC(GER)-22,45,1980)
-DETECTOR   (GELI)
-           (GE-IN)
-METHOD     (STTA,ACTIV,BCINT) For the 3 target elements
+METHOD     (STTA,ACTIV,BCINT) For the three target elements
            individual irradiation experiments were performed.
-            For each of them two types of stacks were used in
-           order to avoid to large errors in the particle
-           energies due to the effect of range straggling.
-             Each stack consisted of a number of
-           high purity target foils, alternately
-           followed by a high purity 25 mu-m Al catcher foil
-           and by commercial grade Al degrader foils. In front
-           of each stack, additionally 100 mu-m Al-foil was
-           placed for flux monitor.
-REL-REF    (M,B0083001,R.Michel+,J,ZP/A,286,393,1978) - detailed
-           description of the experimental procedure, and an
-           outline of the error analysis is given
-ERR-ANALYS (DATA-ERR) The errors quoted for the cross sections
-           include uncertainties in:
-             * current integration,
-             * counting statistics and reproducibility of
-               photopeak integration,
-             * absolute detector efficiency,
-             * target thickness, and half-life.
-            Not included are the errors in absolute
-            branching ratios.
-HISTORY    (19950221C) by FEC.
-           (19950310U)
+SAMPLE     Two types of stacks were applied in order to avoid
+           too large errors in the particle energy due to the
+           effect of energy straggling. The first one had to
+           degrade the alpha-energy from 172.5 MeV to 80 MeV
+           approximately and the second one from 90 MeV to
+           20 MeV approximately. Each stack consisted of a
+           number of 50 um Co foils alternately followed by
+           25 um Al catcher foils and by several commercial
+           grade Al degrader foils. In front of each stack
+           additionally a 100 um Al foil was placed for flux
+           monitor.
+REL-REF    (M,A0153001,G.Brinkmann,T,BRINKMANN,1979) Experimental
+                                       details and error analysis
+           (M,A0145001,R.Michel+,J,JRC,59,467,1980) - Detector
+                                                    descript.
+           (M,B0083001,R.Michel+,J,ZP/A,286,393,1978) Method of
+           flux measurement
+           (R,,G.Erdtmann+,R,JUEL-SPEZ-34,1979) - the energies of
+           gamma-ray
+            * Half-lives were used from: W.Seelmann-Eggebert+,
+           Nuclide map, 4th edition,Gersbach-Verlag,Munchen (1974)
+ERR-ANALYS   The errors in absolute branching ratios are not
+            included. However, inconsistencies in the
+            gamma-branching ratios have been considered in the
+            errors in those cases in which a sufficient number
+            of undisturbed gamma-lines could be used.
+           (ERR-T) Total uncertainties include:
+           (ERR-1) Uncertainty of the target thickness
+           (ERR-2,,5.) Uncertainty of detector efficiency
+           including uncertainties of calibrated gamma-sources
+           (ERR-3) Uncertainty of current integration
+HISTORY    (19950221C) by FC.
            (20200531A) SD: Updated to new date formats,lower case.
            Corrections in all Subents. BIB updated. The accuracy
-           of data presentation  has been revised.
-ENDBIB              41
-NOCOMMON             0          0
-ENDSUBENT           44
-SUBENT        A0148002   20200531   20200717   20200629       A095
-BIB                  4          5
+           of data presentation has been revised.
+           (20210406U) SD: ERR-ANALYS updated. DETECTOR moved to
+           Subents 002-051.
+ENDBIB              52
+COMMON               2          3
+ERR-1      ERR-3
+PER-CENT   PER-CENT
+    2.       1.
+ENDCOMMON            3
+ENDSUBENT           59
+SUBENT        A0148002   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)24-CR-51,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      162.18       0.51       0.30       0.18
      152.82       0.62       0.68       0.22
@@ -78,18 +97,22 @@ MEV        MEV        MB         MB
       29.97       1.31       95.4       11.4
       21.42       1.58      401.0       36.0
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148003   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148003   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)24-CR-48,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         21
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34      0.171      0.032
      162.18       0.51      0.191      0.027
@@ -113,18 +136,22 @@ MEV        MEV        MB         MB
       29.97       1.31       3.06       0.33
       21.42       1.58      0.648      0.084
 ENDDATA             23
-ENDSUBENT           33
-SUBENT        A0148004   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           37
+SUBENT        A0148004   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)23-V-48,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         21
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       36.8        2.9
      162.18       0.51       40.1        2.8
@@ -148,18 +175,23 @@ MEV        MEV        MB         MB
       29.97       1.31       81.4        6.5
       21.42       1.58       34.0        3.4
 ENDDATA             23
-ENDSUBENT           33
-SUBENT        A0148005   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           37
+SUBENT        A0148005   20210406   20210921   20210917       A098
+BIB                  6         10
 REACTION   (22-TI-0(A,X)22-TI-44,(CUM),SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DECAY-DATA (22-TI-44,47.3YR,DG,67.8,,DG,78.4)
+DETECTOR   (GE-IN) Intrinsic Ge(Li) detector with an active area
+           of 200 mm2 and a thickness of 7 mm. Detector had a
+           resolution of 250 eV at 5.9 keV and 507 eV at 122 keV.
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         18
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       3.29       0.36
      162.18       0.51       3.09       0.37
@@ -180,18 +212,22 @@ MEV        MEV        MB         MB
       51.26       0.96       1.21       0.15
       43.07       1.07       0.42       0.05
 ENDDATA             20
-ENDSUBENT           30
-SUBENT        A0148006   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148006   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)21-SC-48,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         21
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       5.57       0.50
      162.18       0.51       5.41       0.49
@@ -215,18 +251,22 @@ MEV        MEV        MB         MB
       29.97       1.31      0.271      0.038
       21.42       1.58      0.143      0.016
 ENDDATA             23
-ENDSUBENT           33
-SUBENT        A0148007   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           37
+SUBENT        A0148007   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)21-SC-47,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         21
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       36.4        3.2
      162.18       0.51       35.0        2.8
@@ -250,19 +290,23 @@ MEV        MEV        MB         MB
       29.97       1.31       3.95       0.36
       21.42       1.58      0.295      0.033
 ENDDATA             23
-ENDSUBENT           33
-SUBENT        A0148008   20200531   20200717   20200629       A095
-BIB                  4          6
+ENDSUBENT           37
+SUBENT        A0148008   20210406   20210921   20210917       A098
+BIB                  5         10
 REACTION   (22-TI-0(A,X)21-SC-46,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF4=Sc-46g -> Sc-46; SF5=IND/M+ and
            SF9=EXP deleted from REACTION code. SAMPLE, STATUS
            added.
-ENDBIB               6
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         21
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       84.7        8.0
      162.18       0.51       90.3        8.1
@@ -286,18 +330,22 @@ MEV        MEV        MB         MB
       29.97       1.31       3.73       0.37
       21.42       1.58      0.413      0.042
 ENDDATA             23
-ENDSUBENT           34
-SUBENT        A0148009   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           38
+SUBENT        A0148009   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)21-SC-44-M,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       51.0        4.5
      162.18       0.51       51.0        4.0
@@ -320,18 +368,22 @@ MEV        MEV        MB         MB
       36.97       1.17      0.751      0.060
       29.97       1.31      0.007     0.0025
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148010   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148010   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)21-SC-44-G,,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         19
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       39.9        4.4
      162.18       0.51       41.0        3.3
@@ -353,18 +405,22 @@ MEV        MEV        MB         MB
       43.07       1.07       4.08       0.61
       36.97       1.17      0.385      0.064
 ENDDATA             21
-ENDSUBENT           31
-SUBENT        A0148011   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148011   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)21-SC-43,CUM,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         17
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       18.6        1.8
      162.18       0.51       20.3        2.6
@@ -384,18 +440,22 @@ MEV        MEV        MB         MB
       58.52       0.88       2.93       0.37
       51.26       0.96       0.49       0.09
 ENDDATA             19
-ENDSUBENT           29
-SUBENT        A0148012   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           33
+SUBENT        A0148012   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)20-CA-47,CUM,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         10
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34      0.337      0.034
      162.18       0.51      0.313      0.040
@@ -408,18 +468,22 @@ MEV        MEV        MB         MB
       99.88       1.01      0.168      0.030
       89.66       1.08      0.065      0.014
 ENDDATA             12
-ENDSUBENT           22
-SUBENT        A0148013   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           26
+SUBENT        A0148013   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)19-K-43,CUM,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         17
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       8.36       0.59
      162.18       0.51       7.97       0.80
@@ -439,18 +503,22 @@ MEV        MEV        MB         MB
       58.52       0.88       1.35       0.14
       51.26       0.96      0.248      0.040
 ENDDATA             19
-ENDSUBENT           29
-SUBENT        A0148014   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           33
+SUBENT        A0148014   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (22-TI-0(A,X)19-K-42,CUM,SIG)
-SAMPLE     natural Ti, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 1 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ti, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 1 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         17
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.07       0.34       20.4        2.0
      162.18       0.51       19.8        2.1
@@ -470,18 +538,22 @@ MEV        MEV        MB         MB
       58.52       0.88       0.99       0.10
       51.26       0.96      0.238      0.040
 ENDDATA             19
-ENDSUBENT           29
-SUBENT        A0148015   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           33
+SUBENT        A0148015   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)28-NI-57,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50      0.172      0.031
      161.70       0.68      0.228      0.043
@@ -504,18 +576,22 @@ MEV        MEV        MB         MB
       35.15       1.68       4.18       0.42
       26.10       1.99       1.71       0.17
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148016   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148016   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)28-NI-56,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         11
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
       87.55       0.75      0.359      0.043
       83.58       1.37      0.401      0.048
@@ -529,18 +605,22 @@ MEV        MEV        MB         MB
       35.15       1.68      0.540      0.059
       26.10       1.99      0.335      0.037
 ENDDATA             13
-ENDSUBENT           23
-SUBENT        A0148017   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           27
+SUBENT        A0148017   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)27-CO-58,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND/M+ and SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       2.36       0.17
      161.70       0.68       3.34       0.23
@@ -563,18 +643,22 @@ MEV        MEV        MB         MB
       35.15       1.68      729.0       58.0
       26.10       1.99      853.0       68.0
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148018   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148018   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)27-CO-57,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       20.4        1.8
      161.70       0.68       24.3        1.9
@@ -597,18 +681,22 @@ MEV        MEV        MB         MB
       35.15       1.68      272.0       27.0
       26.10       1.99       10.3        0.8
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148019   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148019   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)27-CO-56,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       24.6        2.0
      161.70       0.68       28.7        2.9
@@ -631,18 +719,22 @@ MEV        MEV        MB         MB
       35.15       1.68       35.2        3.5
       26.10       1.99       42.2        3.8
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148020   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148020   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)27-CO-55,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       5.57       0.67
      161.70       0.68       5.95       0.48
@@ -665,18 +757,22 @@ MEV        MEV        MB         MB
       35.15       1.68       1.84       0.18
       26.10       1.99      0.077      0.018
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148021   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148021   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)26-FE-52-G,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF4=Fe-52 -> Fe-52g; SF5=IND, SF9=EXP
            deleted from REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         18
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       1.05       0.07
      161.70       0.68       1.05       0.07
@@ -697,18 +793,22 @@ MEV        MEV        MB         MB
       49.31       1.35      0.203      0.031
       42.67       1.52     0.0296     0.0071
 ENDDATA             20
-ENDSUBENT           30
-SUBENT        A0148022   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           34
+SUBENT        A0148022   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)25-MN-56,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         16
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       3.93       0.30
      161.70       0.68       4.41       0.34
@@ -727,18 +827,22 @@ MEV        MEV        MB         MB
       60.75       1.16       4.92       0.47
       55.26       1.25       2.19       0.26
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        A0148023   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           32
+SUBENT        A0148023   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)25-MN-54,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         19
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50      125.0        9.0
      161.70       0.68      132.0        9.0
@@ -760,18 +864,22 @@ MEV        MEV        MB         MB
       42.67       1.52      133.0       11.0
       35.15       1.68       7.38       0.74
 ENDDATA             21
-ENDSUBENT           31
-SUBENT        A0148024   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148024   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)25-MN-52,M+,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND/M+, SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       58.9        6.5
      161.70       0.68       61.3        6.7
@@ -794,18 +902,22 @@ MEV        MEV        MB         MB
       35.15       1.68      0.396      0.051
       26.10       1.99     0.0359     0.0051
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148025   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148025   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)24-CR-51,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         18
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50      164.0       11.0
      161.70       0.68      170.0       12.0
@@ -826,18 +938,22 @@ MEV        MEV        MB         MB
       49.31       1.35       27.7        2.2
       42.67       1.52       4.88       0.59
 ENDDATA             20
-ENDSUBENT           30
-SUBENT        A0148026   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           34
+SUBENT        A0148026   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)24-CR-48,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         15
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       1.11       0.09
      161.70       0.68       1.05       0.08
@@ -855,18 +971,22 @@ MEV        MEV        MB         MB
       68.21       1.07     0.0506     0.0091
       60.75       1.16     0.0116     0.0072
 ENDDATA             17
-ENDSUBENT           27
-SUBENT        A0148027   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           31
+SUBENT        A0148027   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)23-V-48,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         16
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       47.8        4.3
      161.70       0.68       47.2        4.2
@@ -885,18 +1005,22 @@ MEV        MEV        MB         MB
       60.75       1.16      0.789      0.095
       55.26       1.25     0.0616     0.0099
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        A0148028   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           32
+SUBENT        A0148028   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)21-SC-46,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND/M+, SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         13
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       12.7        1.1
      161.70       0.68       12.0        0.8
@@ -912,18 +1036,22 @@ MEV        MEV        MB         MB
       81.52       0.87      0.638      0.057
       75.10       0.97      0.134      0.013
 ENDDATA             15
-ENDSUBENT           25
-SUBENT        A0148029   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           29
+SUBENT        A0148029   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)21-SC-44-M,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         11
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       7.70       0.62
      161.70       0.68       6.74       0.54
@@ -937,18 +1065,22 @@ MEV        MEV        MB         MB
       87.55       0.75      0.356      0.068
       83.58       1.37      0.246      0.047
 ENDDATA             13
-ENDSUBENT           23
-SUBENT        A0148030   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           27
+SUBENT        A0148030   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)21-SC-44-G,,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          9
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       4.99       0.85
      161.70       0.68       4.19       0.63
@@ -960,18 +1092,22 @@ MEV        MEV        MB         MB
      105.17       1.19      0.288      0.066
       94.86       1.28     0.0695     0.0183
 ENDDATA             11
-ENDSUBENT           21
-SUBENT        A0148031   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           25
+SUBENT        A0148031   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)21-SC-43,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          7
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       2.20       0.18
      161.70       0.68       2.00       0.16
@@ -981,18 +1117,22 @@ MEV        MEV        MB         MB
      123.75       1.05      0.460      0.083
      114.74       1.12      0.275       0.07
 ENDDATA              9
-ENDSUBENT           19
-SUBENT        A0148032   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           23
+SUBENT        A0148032   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)19-K-43,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          7
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50      0.393      0.039
      161.70       0.68      0.311       0.04
@@ -1002,18 +1142,22 @@ MEV        MEV        MB         MB
      123.75       1.05     0.0972     0.0204
      114.74       1.12     0.0390     0.0094
 ENDDATA              9
-ENDSUBENT           19
-SUBENT        A0148033   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           23
+SUBENT        A0148033   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (26-FE-0(A,X)19-K-42,CUM,SIG)
-SAMPLE     natural Fe, thickness 25 mu-m
-STATUS     (TABLE) Tbl. 2 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Fe, thickness 25 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 2 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          8
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      171.03       0.50       1.06       0.11
      161.70       0.68      0.856      0.131
@@ -1024,18 +1168,22 @@ MEV        MEV        MB         MB
      114.74       1.12      0.169      0.025
      105.17       1.19     0.0939     0.0301
 ENDDATA             10
-ENDSUBENT           20
-SUBENT        A0148034   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           24
+SUBENT        A0148034   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)30-ZN-65,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         11
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
       87.38       0.92      0.306      0.046
       80.93       1.02      0.429      0.064
@@ -1049,18 +1197,22 @@ MEV        MEV        MB         MB
       29.02       2.23       5.31       0.48
       16.96       3.11       33.8        3.4
 ENDDATA             13
-ENDSUBENT           23
-SUBENT        A0148035   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           27
+SUBENT        A0148035   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)30-ZN-62,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         15
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      121.76       1.16      0.559      0.106
      112.20       1.27      0.780      0.148
@@ -1078,18 +1230,22 @@ MEV        MEV        MB         MB
       29.02       2.23       36.6        3.7
       16.96       3.11       3.11       0.31
 ENDDATA             17
-ENDSUBENT           27
-SUBENT        A0148036   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           31
+SUBENT        A0148036   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)29-CU-61,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       6.35       0.70
      161.34       0.79       7.15       0.86
@@ -1112,18 +1268,22 @@ MEV        MEV        MB         MB
       29.02       2.23       47.2        4.7
       16.96       3.11      425.0       38.0
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148037   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148037   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)28-NI-57,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       41.3        4.1
      161.34       0.79       41.8        4.2
@@ -1146,18 +1306,22 @@ MEV        MEV        MB         MB
       29.02       2.23       22.7        2.3
       16.96       3.11       1.07       0.11
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148038   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148038   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)28-NI-56,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         19
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       3.71       0.33
      161.34       0.79       3.64       0.33
@@ -1179,18 +1343,22 @@ MEV        MEV        MB         MB
       38.07       1.91      0.423      0.042
       29.02       2.23     0.0069     0.0020
 ENDDATA             21
-ENDSUBENT           31
-SUBENT        A0148039   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148039   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)27-CO-60,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND/M+, SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         19
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       5.31       0.74
      161.34       0.79       5.51       0.72
@@ -1212,18 +1380,22 @@ MEV        MEV        MB         MB
       38.07       1.91      0.947      0.152
       29.02       2.23      0.188      0.068
 ENDDATA             21
-ENDSUBENT           31
-SUBENT        A0148040   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148040   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)27-CO-58,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND/M+, SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         19
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       84.4        5.9
      161.34       0.79       92.5        6.5
@@ -1245,18 +1417,22 @@ MEV        MEV        MB         MB
       38.07       1.91       45.9        3.2
       29.02       2.23       0.84       0.09
 ENDDATA             21
-ENDSUBENT           31
-SUBENT        A0148041   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148041   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)27-CO-57,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         20
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61      163.0       16.0
      161.34       0.79      171.0       17.0
@@ -1279,18 +1455,22 @@ MEV        MEV        MB         MB
       29.02       2.23      185.0       17.0
       16.96       3.11       27.0        2.8
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        A0148042   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           36
+SUBENT        A0148042   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)27-CO-56,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         19
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61      107.0       10.0
      161.34       0.79      109.0        9.0
@@ -1312,18 +1492,22 @@ MEV        MEV        MB         MB
       38.07       1.91       67.3        5.4
       29.02       2.23      0.665      0.073
 ENDDATA             21
-ENDSUBENT           31
-SUBENT        A0148043   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        A0148043   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)27-CO-55,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         18
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       20.8        2.5
      161.34       0.79       21.6        2.4
@@ -1344,18 +1528,22 @@ MEV        MEV        MB         MB
       45.72       1.69      0.800      0.098
       38.07       1.91     0.0399     0.0211
 ENDDATA             20
-ENDSUBENT           30
-SUBENT        A0148044   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           34
+SUBENT        A0148044   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)26-FE-52-G,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF4=Fe-52 -> Fe-52g, SF5=IND, SF9=EXP
            deleted from REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         14
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       1.93       0.21
      161.34       0.79       1.93       0.15
@@ -1372,18 +1560,22 @@ MEV        MEV        MB         MB
       74.07       1.16      0.420      0.109
       66.68       1.29      0.209      0.050
 ENDDATA             16
-ENDSUBENT           26
-SUBENT        A0148045   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           30
+SUBENT        A0148045   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)25-MN-56,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         14
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       1.74       0.19
      161.34       0.79       1.79       0.20
@@ -1400,18 +1592,22 @@ MEV        MEV        MB         MB
       74.07       1.16      0.343      0.051
       66.68       1.29      0.135      0.032
 ENDDATA             16
-ENDSUBENT           26
-SUBENT        A0148046   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           30
+SUBENT        A0148046   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)25-MN-54,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         16
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       70.5        5.6
      161.34       0.79       71.7        5.0
@@ -1430,18 +1626,22 @@ MEV        MEV        MB         MB
       58.58       1.42       6.09       0.43
       52.46       1.52      0.789      0.103
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        A0148047   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           32
+SUBENT        A0148047   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)25-MN-52,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND/M+, SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         16
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       57.4        4.8
      161.34       0.79       57.8        4.8
@@ -1460,18 +1660,22 @@ MEV        MEV        MB         MB
       58.58       1.42       12.5        0.9
       52.46       1.52       1.60       0.13
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        A0148048   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           32
+SUBENT        A0148048   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)24-CR-51,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         14
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61      111.0       11.0
      161.34       0.79      111.0       10.0
@@ -1488,18 +1692,22 @@ MEV        MEV        MB         MB
       74.07       1.16       20.2        1.6
       66.68       1.29       3.14       0.72
 ENDDATA             16
-ENDSUBENT           26
-SUBENT        A0148049   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           30
+SUBENT        A0148049   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)24-CR-48,CUM,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         11
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       1.10       0.09
      161.34       0.79       1.01       0.10
@@ -1513,18 +1721,22 @@ MEV        MEV        MB         MB
       87.38       0.92     0.0864     0.0130
       80.93       1.02     0.0448     0.0108
 ENDDATA             13
-ENDSUBENT           23
-SUBENT        A0148050   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           27
+SUBENT        A0148050   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)23-V-48,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
 HISTORY    (20200531A) SD: SF5=IND, SF9=EXP deleted from REACTION
            code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         13
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       24.4        2.3
      161.34       0.79       24.5        2.3
@@ -1540,18 +1752,22 @@ MEV        MEV        MB         MB
       78.65       1.59      0.669      0.127
       74.07       1.16     0.0932     0.0401
 ENDDATA             15
-ENDSUBENT           25
-SUBENT        A0148051   20200531   20200717   20200629       A095
-BIB                  4          5
+ENDSUBENT           29
+SUBENT        A0148051   20210406   20210921   20210917       A098
+BIB                  5          9
 REACTION   (28-NI-0(A,X)21-SC-46,,SIG)
-SAMPLE     natural Ni, thickness 50 mu-m
-STATUS     (TABLE) Tbl. 3 from  Radiochim. Acta,32(1983)173
-HISTORY    (20200531A) SD: SF5=IND/M+, SF9=EXP deleted from
+SAMPLE     natural Ni, thickness 50 um
+DETECTOR   (GELI)  80 cm3 Ge(Li) detector (resolution 2.1 keV at
+           1332 keV, efficiency 16.5% relative to a 3" x 3"
+           NaI crystal at a distance of 25 cm).
+STATUS     (TABLE) Tbl. 3 from Radiochim. Acta,32(1983)173
+HISTORY    (20200531A) SD: SF5=IND/M+ and SF9=EXP deleted from
            REACTION code. SAMPLE, STATUS added.
-ENDBIB               5
+           (20210406U) SD: DATA-ERR -> ERR-T. DETECTOR added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          7
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
      170.92       0.61       3.04       0.30
      161.34       0.79       2.61       0.29
@@ -1561,5 +1777,5 @@ MEV        MEV        MB         MB
      121.76       1.16      0.801      0.150
      112.20       1.27      0.283      0.091
 ENDDATA              9
-ENDSUBENT           19
+ENDSUBENT           23
 ENDENTRY            51
