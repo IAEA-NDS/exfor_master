@@ -1,7 +1,7 @@
-ENTRY            22896   20130111   20130812   20130718       2234
-SUBENT        22896001   20130111   20130812   20130718       2234
-BIB                 10         49
-TITLE      .Energy distribution of the ternary alpha's emitted
+ENTRY            22896   20190127   20190424   20190420       2274
+SUBENT        22896001   20190127   20190424   20190420       2274
+BIB                 10         53
+TITLE       Energy distribution of the ternary alpha's emitted
             in 235-U(n-th,f) and 252-Cf(sf)
 AUTHOR     (C.Wagemans,J.Heyse,P.Janssens,O.Serot,P.Geltenbort)
 INSTITUTE  (2BLGGHT) C.Wagemans, P.Janssens, Dept. of Subatomic
@@ -11,7 +11,7 @@ INSTITUTE  (2BLGGHT) C.Wagemans, P.Janssens, Dept. of Subatomic
            (2FR ILL) P.Geltenbort and experimental site
 REFERENCE  (J,NP/A,742,291,2004) Main reference. Mean energy and
             ternary/binary ratio alpha emission yield data
-           (B,WAGEMANS,,1991) Data for Th229, U233, U235, Am241,
+           (B,WAGEMANS,,,1991) Data for Th229, U233, U235, Am241,
                           Am243(n-th,f) TER/BIN yield ratio data
            (J,NP/A,285,32,1977) Data for Pa231 and Np237(n-th,f)
                       TER/BIN ratio yield data
@@ -46,16 +46,20 @@ DETECTOR   (TELES,SIBAR) The measurement were performed using
             the U-234, U-235 and Cf-252 radioactive decay alphas
 METHOD     (EDE,COINC)
 ADD-RES    (COMP)
-ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
 HISTORY    (20060302C)   SM
            (20130111A) SD: EN-DUMMY was correct to 0.0253 eV in
             Subents 8-18. REACTION code was changed in 008 - 018.
-ENDBIB              49
+           (20190127A) SD: REACTION code in Subents 019 - 029
+           corrected according to MEMO CP-D/969. REACTION code
+           in Subent 002-007 according to last EXFOR rules.
+           Subent 030 added.
+ENDBIB              53
 NOCOMMON             0          0
-ENDSUBENT           52
-SUBENT        22896002   20060303   20060525   20060430       2176
-BIB                  7         15
-REACTION   (92-U-235(N,F),TER,AKE,A) All alpha particles
+ENDSUBENT           56
+SUBENT        22896002   20190127   20190424   20190420       2274
+BIB                  8         18
+REACTION   (92-U-235(N,F)2-HE-4,TER,KE) All alpha particles
 FACILITY   (REAC,2FR ILL)
 INC-SOURCE (REAC)
 ANALYSIS   .Energy distribution fit by Gauss curve to the data
@@ -67,22 +71,25 @@ SAMPLE     .The sample was a 10-milligram/cm**2 of U-F4 layer
             U-234 0.0053%, U-235 99.9724%, U-236 0.0173%,
             U-238 0.005%.
 MISC-COL   (MISC)  Full width of the alpha energy spectrum - FWHM
-STATUS     .From text of main reference, p.295, and table 3
+STATUS     (TABLE) From text on p.295 and table 3 from
+                                        Nucl.Phys.A742(2004)291
            (DEP,22896003)
            (DEP,22896004)
-ENDBIB              15
+HISTORY    (20190127A) SD: SF4=He-4 added, SF6=AKE -> KE, SF7=A
+           deleted from REACTION code. STATUS updated.
+ENDBIB              18
 NOCOMMON             0          0
 DATA                 5          1
 EN-DUMMY   DATA       DATA-ERR   MISC       MISC-ERR
 EV         MEV        MEV        MEV        MEV
     2.5E-02    16.0       0.1        9.4        0.2
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        22896003   20060304   20060525   20060430       2176
-BIB                  7         17
-REACTION  1(92-U-235(N,F),TER,AKE,A)       "True" alpha-part.
-          2(92-U-235(N,F),TER,AKE,A) Residual alphas via He-5
-          3(92-U-235(N,F),TER,AKE,A) Residual alphas via He-6
+ENDSUBENT           26
+SUBENT        22896003   20190127   20190424   20190420       2274
+BIB                  8         19
+REACTION  1(92-U-235(N,F)2-HE-4,TER,KE)       "True" alpha-part.
+          2(92-U-235(N,F)2-HE-4,TER,KE) Residual alphas via He-5
+          3(92-U-235(N,F)2-HE-4,TER,KE) Residual alphas via He-6
 FACILITY   (REAC,2FR ILL)
 INC-SOURCE (REAC)
 ANALYSIS   .Three-component fit -
@@ -96,8 +103,10 @@ SAMPLE     .The sample was a 10-milligram/cm**2 of U-F4 layer
             U-234 0.0053%, U-235 99.9724%, U-236 0.0173%,
             U-238 0.005%.
 MISC-COL   (MISC)  Full width of the alpha energy spectrum - FWHM
-STATUS     .Table 3 of main ref.
-ENDBIB              17
+STATUS     (TABLE) table 3 from Nucl.Phys.A742(2004)291
+HISTORY    (20190127A) SD: SF4=He-4 added, SF6=AKE -> KE, SF7=A
+           deleted from all REACTION codes. STATUS updated.
+ENDBIB              19
 COMMON               1          3
 EN-DUMMY
 EV
@@ -111,11 +120,11 @@ MEV        MEV        MEV        MEV        MEV        MEV
    16.6       0.4            9.0       0.4     12.4       0.4
        8.1       0.6     6.1         1.1          6.8         1.3
 ENDDATA              6
-ENDSUBENT           32
-SUBENT        22896004   20060303   20060525   20060430       2176
-BIB                  7         16
-REACTION  1(92-U-235(N,F),TER,AKE,A)       "True" alpha-part.
-          2(92-U-235(N,F),TER,AKE,A) Residual alphas via He-5
+ENDSUBENT           34
+SUBENT        22896004   20190127   20190424   20190420       2274
+BIB                  8         18
+REACTION  1(92-U-235(N,F)2-HE-4,TER,KE)       "True" alpha-part.
+          2(92-U-235(N,F)2-HE-4,TER,KE) Residual alphas via He-5
                                          and He-6
 FACILITY   (REAC,2FR ILL)
 INC-SOURCE (REAC)
@@ -129,8 +138,10 @@ SAMPLE     .The sample was a 10-milligram/cm**2 of U-F4 layer
             U-234 0.0053%, U-235 99.9724%, U-236 0.0173%,
             U-238 0.005%.
 MISC-COL   (MISC)  Full width of the alpha energy spectrum - FWHM
-STATUS     .Table 3 of main ref.
-ENDBIB              16
+STATUS     (TABLE) table 3 from Nucl.Phys.A742(2004)291
+HISTORY    (20190127A) SD: SF4=He-4 added, SF6=AKE -> KE, SF7=A
+           deleted from all REACTION codes. STATUS updated.
+ENDBIB              18
 COMMON               1          3
 EN-DUMMY
 EV
@@ -144,32 +155,35 @@ MEV        MEV
    16.6       0.4        9.0         0.4        9.9       0.5
        9.8       0.6
 ENDDATA              6
-ENDSUBENT           31
-SUBENT        22896005   20060303   20060525   20060430       2176
-BIB                  5         10
-REACTION   (98-CF-252(0,F),TER,AKE,A)   All alphas
+ENDSUBENT           33
+SUBENT        22896005   20190127   20190424   20190420       2274
+BIB                  6         13
+REACTION   (98-CF-252(0,F)2-HE-4,TER,KE)   All alphas
 ANALYSIS   .Energy distribution fit by Gauss curve to the data
             point above 12.5 MeV
 SAMPLE     .The source with activity 70 kBq. A 30 micron thick
             AL foil was placed in between the source and the
             telescope in order to stop radioactive decay alphas
 MISC-COL   (MISC)  Full width of the alpha energy spectrum - FWHM
-STATUS     .From Table 2 and text of main ref.
+STATUS     (TABLE) From the text and table 2 of
+                                          Nucl.Phys.A742(2004)291
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              10
+HISTORY    (20190127A) SD: SF4=He-4 added, SF6=AKE -> KE, SF7=A
+           deleted from REACTION code. STATUS updated.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4          1
 DATA       DATA-ERR   MISC       MISC-ERR
 MEV        MEV        MEV        MEV
    15.7      0.2         10.4      0.2
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        22896006   20060303   20060525   20060430       2176
-BIB                  5         12
-REACTION  1(98-CF-252(0,F),TER,AKE,A)       "True" alpha-part.
-          2(98-CF-252(0,F),TER,AKE,A) Residual alphas via He-5
-          3(98-CF-252(0,F),TER,AKE,A) Residual alphas via He-6
+ENDSUBENT           21
+SUBENT        22896006   20190127   20190424   20190420       2274
+BIB                  6         14
+REACTION  1(98-CF-252(0,F)2-HE-4,TER,KE)       "True" alpha-part.
+          2(98-CF-252(0,F)2-HE-4,TER,KE) Residual alphas via He-5
+          3(98-CF-252(0,F)2-HE-4,TER,KE) Residual alphas via He-6
 ANALYSIS   .Three-component fit -
           1.Direct alpha-emission - "true" He-4 spectrum
           2.He-4 spectrum through He-5 decay
@@ -178,8 +192,10 @@ SAMPLE     .The source with activity 70 kBq. A 30 micron thick
             AL foil was placed in between the source and the
             telescope in order to stop radioactive decay alphas
 MISC-COL   (MISC)  Full width of the alpha energy spectrum - FWHM
-STATUS     .From Table 2 of main ref.
-ENDBIB              12
+STATUS     (TABLE) table 2 from Nucl.Phys.A742(2004)291
+HISTORY    (20190127A) SD: SF4=He-4 added, SF6=AKE -> KE, SF7=A
+           deleted from all REACTION codes. STATUS updated.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                12          1
 DATA      1DATA-ERR  1MISC      1MISC-ERR  1DATA      2DATA-ERR  2
@@ -189,11 +205,11 @@ MEV        MEV        MEV        MEV        MEV        MEV
    16.4       0.3            9.9       0.3     12.4       0.3
        8.9       0.5     6.7         0.6          4.8         0.8
 ENDDATA              6
-ENDSUBENT           23
-SUBENT        22896007   20060303   20060525   20060430       2176
-BIB                  5         11
-REACTION  1(98-CF-252(0,F),TER,AKE,A)       "True" alpha-part.
-          2(98-CF-252(0,F),TER,AKE,A) Residual alphas via He-5
+ENDSUBENT           25
+SUBENT        22896007   20190127   20190424   20190420       2274
+BIB                  6         13
+REACTION  1(98-CF-252(0,F)2-HE-4,TER,KE)       "True" alpha-part.
+          2(98-CF-252(0,F)2-HE-4,TER,KE) Residual alphas via He-5
                                           and He-6
 ANALYSIS   .Two-component fit -
           1.Direct alpha-emission - "true" He-4 spectrum
@@ -202,8 +218,10 @@ SAMPLE     .The source with activity 70 kBq. A 30 micron thick
             AL foil was placed in between the source and the
             telescope in order to stop radioactive decay alphas
 MISC-COL   (MISC)  Full width of the alpha energy spectrum - FWHM
-STATUS     .From Table 2 of main ref.
-ENDBIB              11
+STATUS     (TABLE) table 2 from Nucl.Phys.A742(2004)291
+HISTORY    (20190127A) SD: SF4=He-4 added, SF6=AKE -> KE, SF7=A
+           deleted from all REACTION codes. STATUS updated.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 8          1
 DATA      1DATA-ERR  1MISC      1MISC-ERR  1DATA      2DATA-ERR  2
@@ -213,7 +231,7 @@ MEV        MEV
    16.4       0.3        9.9         0.3        9.3       0.5
        9.1       0.5
 ENDDATA              6
-ENDSUBENT           22
+ENDSUBENT           24
 SUBENT        22896008   20130111   20130812   20130718       2234
 BIB                  5         17
 REACTION  1(90-TH-229(N,F)2-HE-4,TER,FY,,MXW,DERIV)
@@ -555,246 +573,303 @@ PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    1.85E-03   0.10E-03   1.96E-03   0.11E-03
 ENDDATA              3
 ENDSUBENT           29
-SUBENT        22896019   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(94-PU-238(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(94-PU-238(0,F),TER/BIN,FY/RAT,A,,DERIV)
+SUBENT        22896019   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(94-PU-238(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(94-PU-238(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 14 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    2.76E-03   0.13E-03   2.93E-03   0.14E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896020   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(94-PU-240(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(94-PU-240(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896020   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(94-PU-240(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(94-PU-240(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    2.51E-03   0.14E-03   2.66E-03   0.15E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896021   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(94-PU-242(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(94-PU-242(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896021   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(94-PU-242(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(94-PU-242(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    2.17E-03   0.07E-03   2.30E-03   0.08E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896022   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(94-PU-244(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(94-PU-244(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896022   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(94-PU-244(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(94-PU-244(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    1.71E-03   0.09E-03   1.81E-03   0.10E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896023   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(96-CM-242(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(96-CM-242(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896023   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(96-CM-242(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(96-CM-242(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    3.34E-03   0.26E-03   3.54E-03   0.28E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896024   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(96-CM-244(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(96-CM-244(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896024   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(96-CM-244(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(96-CM-244(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    2.73E-03   0.20E-03   2.89E-03   0.21E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896025   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(96-CM-246(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(96-CM-246(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896025   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(96-CM-246(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(96-CM-246(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    2.49E-03   0.12E-03   2.64E-03   0.13E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896026   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(96-CM-248(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(96-CM-248(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896026   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(96-CM-248(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(96-CM-248(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    2.30E-03   0.10E-03   2.44E-03   0.11E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896027   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(98-CF-250(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(98-CF-250(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896027   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(98-CF-250(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(98-CF-250(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    3.65E-03   0.28E-03   3.87E-03   0.30E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896028   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(98-CF-252(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(98-CF-252(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896028   20190127   20190424   20190420       2274
+BIB                  4         15
+REACTION  1(98-CF-252(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(98-CF-252(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF4=He-4 added; SF5=TER/BIN -> TER;
+            SF6=FY/RAT -> FY; SF7=A deleted from REACTION codes.
+            Units in DATA and DATA-ERR changed (NO-DIM -> PRD/FIS)
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    3.06E-03   0.11E-03   3.24E-03   0.12E-03
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        22896029   20060303   20060525   20060430       2176
-BIB                  3         12
-REACTION  1(100-FM-257(0,F),TER/BIN,FY/RAT,A,,DERIV)
-          2(100-FM-257(0,F),TER/BIN,FY/RAT,A,,DERIV)
+ENDSUBENT           23
+SUBENT        22896029   20190127   20190424   20190420       2274
+BIB                  4         16
+REACTION  1(100-FM-256(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(100-FM-256(0,F)2-HE-4,TER,FY,,,DERIV)
 ANALYSIS   .Fission yields obtained on the basis of the energy
             distribution. Ternary alpha emission yield data have
             been re-evaluated. Fit to data points > 12 MeV
           1.Data obtained according to Gauss fit analysis - "true"
             alphas
           2.Data obtained on the basis of total alpha emission
-STATUS     .Table 4 of main reference
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
            (DEP,22896005)
            (DEP,22896006)
            (DEP,22896007)
-ENDBIB              12
+HISTORY    (20190127A) SD: SF1=Fm-257 -> Fm-256; SF4=He-4 added;
+            SF5=TER/BIN -> TER; SF6=FY/RAT -> FY; SF7=A deleted
+            from REACTION codes. Units in DATA and DATA-ERR
+            changed (NO-DIM -> PRD/FIS)
+ENDBIB              16
 NOCOMMON             0          0
 DATA                 4          1
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
    4.24E-03   0.59E-03   4.49E-03   0.63E-03
 ENDDATA              3
-ENDSUBENT           20
-ENDENTRY            29
+ENDSUBENT           24
+SUBENT        22896030   20190127   20190424   20190420       2274
+BIB                  4         13
+REACTION  1(100-FM-257(0,F)2-HE-4,TER,FY,,,DERIV)
+          2(100-FM-257(0,F)2-HE-4,TER,FY,,,DERIV)
+ANALYSIS   .Fission yields obtained on the basis of the energy
+            distribution. Ternary alpha emission yield data have
+            been re-evaluated. Fit to data points > 12 MeV
+          1.Data obtained according to Gauss fit analysis - "true"
+            alphas
+          2.Data obtained on the basis of total alpha emission
+STATUS     (TABLE) table 4 from Nucl.Phys.A742(2004)291
+           (DEP,22896005)
+           (DEP,22896006)
+           (DEP,22896007)
+HISTORY    (20190127C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+PRD/FIS    PRD/FIS    PRD/FIS    PRD/FIS
+   3.45E-03   0.30E-03   3.66E-03   0.32E-03
+ENDDATA              3
+ENDSUBENT           21
+ENDENTRY            30

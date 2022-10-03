@@ -1,6 +1,6 @@
-ENTRY            22662   20151008   20160603   20160523       2245
-SUBENT        22662001   20151008   20160603   20160523       2245
-BIB                 17         90
+ENTRY            22662   20190101   20190424   20190420       2273
+SUBENT        22662001   20190101   20190424   20190420       2273
+BIB                 17         87
 TITLE       Measurement of activation cross-sections for (n,2n)
             reactions producing short-lived nuclei in the energy
             range between 13.4 and 14.9 MeV
@@ -55,34 +55,30 @@ CORRECTION  Corrections were made for time fluctuation of neutron
             flux, for contribution of low-energy neutrons below
             10 MeV, for thickness of samples, for self-absorption
             and sum-peak effect of gamma-rays.
-STATUS     (TABLE) Data from Table 4 of the ANE,28,1175. Reaction
-           and decay data parameters from Tbl. 3 of ANE,28,1175.
-ERR-ANALYS (ERR-T) Total error equal to quadratic sum of
-                   experimental (delta-E) and nuclear data
-                   (delta-R) errors
-           (ERR-S,1.,10.) Range of counting statistics error
-           (ERR-1) Total experimental error (=delta-E)
-           (ERR-2) Total nuclear data error (=delta-R)
-           (ERR-3,,0.1) Max Low-Energy neutrons error
-           (ERR-4,,0.4) Max neutron fluence Rate fluctuation error
-           (ERR-5,1.5,5.) Detector efficiency calibration error:
-               5% at gamma energy < 80 keV
-               3% for gamma energy between 80-300 keV
-               1.5% at gamma energy > 300 keV
-           (ERR-8) Efficiency conversion error between close and
-                   standard positions
-           (ERR-9,,0.5)  Max true coincidence summing error
-           (ERR-10,,0.1) Max random coincidence summing error
-           (ERR-11,,0.1) Max sample mass (including inpurity)error
-           (ERR-12,0.2,6.) Range of gamma-ray self-absorpt. error
-           (ERR-13,,0.5) Max gamma-ray peak evaluation error
-           (MONIT1-ERR) Al-27(N,A)Na-24 Sigma error
-           (ERR-14,0.01,19.) Range of absolute gamma-ray
-                             intensity error
-           (ERR-15,0.,2.7) Range of half-life error
-           Delta-E is Quadratic Sum of Errors ERR-S Through ERR-12
-           Delta-R is Quadratic Sum of MONIT1, ERR-13, ERR-14
-                   (MONIT2-ERR is not included!)
+ERR-ANALYS (ERR-T)  The square root of the sum of squared
+            of the experimental error (ERR-1) and
+            error in nuclear data (ERR-2)
+           (ERR-1) Experimental error includes:
+            - low-energy neutron contribution error         <1.%
+            - neutron flux fluctuation                     <0.4%
+            - detector efficiency:      Eg <80 keV            5%
+                                        Eg 80-300 keV         3%
+                                        Eg >300 keV         1.5%
+            - error in efficiency conversion ratio between
+                   close and standard positions              1.%
+            - error in  true coincidence sum               <0.5%
+            - error in  random coincidence sum             <0.1%
+            - error in sample weight                       <0.1%
+            - error in  self-absorption of gammas         0.2-6%
+            - counting statistics                          1-10%
+            - error in gamma-peak evaluation               <0.5%
+           (ERR-2) Nuclear data error includes:
+            - error in ENDF/B-V 27Al(n,a)24Na cross section  3.0%
+            - error in absolute gamma intensity          0.01-19%
+            - error in half-life                           0-2.7%
+           (EN-ERR) Energy error
+STATUS     (TABLE) Data from Table 4, Reaction and decay data
+           parameters from Tbl. 3 of Ann.Nucl.Energ.28(2001)1175.
 HISTORY    (20020312C)  + +  Compiled by S.M.          + +
            (20051216U) Subents 002,003,004,008,010 were corrected.
            (20100713A) Data corrected in subentry 014 and
@@ -91,13 +87,14 @@ HISTORY    (20020312C)  + +  Compiled by S.M.          + +
            remark in Subent 2. ERR-5 - ERR-7 deleted - parts of
            one source of error. MONIT2-ERR deleted, MONITOR
            cr.sect. values not used. Second ref. moved to REL-REF.
-ENDBIB              90
-COMMON               3          3
-EN-ERR     ERR-8      MONIT1-ERR
-KEV        PER-CENT   PER-CENT
-        50.         1.         3.
+           (20190101A) SD: ERR-ANALYS updated.
+ENDBIB              87
+COMMON               1          3
+EN-ERR
+KEV
+        50.
 ENDCOMMON            3
-ENDSUBENT           97
+ENDSUBENT           94
 SUBENT        22662002   20151008   20160603   20160523       2245
 BIB                  4          9
 REACTION   (7-N-14(N,2N)7-N-13,,SIG)

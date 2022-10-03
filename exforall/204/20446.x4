@@ -1,63 +1,60 @@
-ENTRY            20446   20060714   20061123   20061121       2179
-SUBENT        20446001   20060714   20061123   20061121       2179
-BIB                 13         41
+ENTRY            20446   20180724   20190424   20190423       2275
+SUBENT        20446001   20180724   20190424   20190423       2275
+BIB                 11         27
+TITLE      Measurement and analysis of the fission cross sections
+            of 233U and 235U for neutron energies below 30 keV
+AUTHOR     (J.Blons, H.Derrien, A.Michaudon)
 INSTITUTE  (2FR SAC)
-REFERENCE  (J,NSE,54,116,197406) Resonance parameters tabulated.
-            Fission cross-sections plotted from 5.5 to 125 eV.
-           (J,NSE,51,130,197306) Review article on fission
-            X-sect. Measurements performed at saclay.
-           (C,71KNOX,2,829,197103) U-235 and U-233 fission X-sect.
-            Treated.
-AUTHOR     (S.Nizamuddin, J.Blons)
-TITLE      -Single-level analysis of the uranium-233 fission
-            cross-section for neutron energies between 6 and
-            124 eV -
-FACILITY   (LINAC)    60-MeV Saclay electron linear accelerator.
-INC-SOURCE (PHOTO)    Neutrons from (gamma,N) and (gamma,fiss)
-            bombarding uranium with electrons.
-SAMPLE     .1.128 gram, 1.6 millig/cm*cm, 99.57 perc. U-233,
-            less than 0.01 perc. U-235, 0.4 perc. U-234, 0.02
-            perc. U-238, U(3)-O(8) used.
-METHOD     (TOF)      Time-of-flight, flight path = 50.07 m,
-            natural boron as neutron overlap filter,- Al as
-            permanent background sample,- Mn, Co, Bi, Au for
-            background determination.
-DETECTOR   (SCIN)     Fission events detected by gas scintillator
-            operating at liquid nitrogen temperature (77 kelvin)
-            in order to reduce doppler broading predominant
-            below about 700 eV.
-PART-DET   (FF)       Fission fragments.
-MONITOR    (92-U-233(N,F),,RI,,LIM)
-            = 168.31 barn, value obtained by
-            integration over  8.32 eV to 101.2 eV, see proc.
-            Of conf. On nuclear data for reactors,
-            vol. 1,267(1970).
-           (5-B-10(N,A)3-LI-7,,SIG)
-           .Neutron flux measured by B-F(3) counter using
-            B-10(N,alpha) X-sect. As described by formula given
-            in (NSE,51,130,1973).
-ERR-ANALYS  ERR-S   Errors, if present are statistical
+REFERENCE  (C,71KNOX,2,829,1971)
+           (J,NSE,51,130,1973) Summary of 233,235U,239,241Pu(n,f)
+           (J,NSE,54,116,1974) Resonance analysis
+REL-REF    (O,20001001,J.Blons+,C,70HELSINKI,1,513,1970)239Pu(n,f)
+           (O,20001001,H.Derrien+,C,66PARIS,2,195,1966) 239Pu(n,f)
+           (O,20483001,J.Blons+,C,71KNOX,2,829,1971)   235U(n,f)
+           (O,20484001,J.Blons+,C,71KNOX,2,836,1971)   241Pu(n,f)
+           (N,,J.Blons,C,73KIEV,2,239,1973)
+            Fission width and neutron mulitplicity averaged
+            up to 124 eV in table
+FACILITY   (LINAC,2FR SAC) 60 MeV Saclay electron linac
+INC-SOURCE (PHOTO)
+SAMPLE     1.128 g U3O8 (1.6 mg/cm2 thick)
+           (92-U-233,ENR=0.9957)
+           (92-U-234,ENR=0.004)
+           (92-U-238,ENR=0.0002)
+           235U: <0.01%
+METHOD     (TOF) 50-m flight path, 3.5 eV to 30 keV
+DETECTOR   (SCIN) Gas scintillator at liquid nitrogen temperature
 HISTORY    (19751027C)
            (19751231E)
-           (20060708A) Date is corrected. DATA-ERR to ERR-S
-                       changed
-           (20060714U) Last corrections have been done.
-ENDBIB              41
+           (20060708A) Date is corrected. DATA-ERR -> ERR-S
+           (20180724A) On. Major revision in 002 and 004.
+ENDBIB              27
+NOCOMMON             0          0
+ENDSUBENT           30
+SUBENT        20446002   20180724   20190424   20190423       2275
+BIB                  7         16
+REACTION   (92-U-233(N,F),,SIG)
+MONITOR    ((MONIT)92-U-233(N,F),,RI,,LIM)
+            Values determined by James from several experiments
+           (5-B-10(N,A)3-LI-7,,SIG)
+             <0.717-1.616E-02*sqrt(E)-5.254E-04*sqrt(E)
+             +1.455E+04/[(170.3-E)**2+2.243E+04]> (barn)
+             at E (eV) parametrized by Sowerby (1970)
+MONIT-REF  ((MONIT)22593001,G.D.James,C,70HELSINKI,1,267,1970)
+           (,M.G.Sowerby+,R,AERE-R-6316,1970)
+ERR-ANALYS (ERR-S) Statistical
+COMMENT    By compiler (2018-07-24):
+            The error in the resonance integral (168.31 b) is
+            1.4% if we propagate the resonance integral error
+            in each energy range in Table I of James, 1970.
+STATUS     (TABLE) Cross-sections from NDCC file
+HISTORY    (20180724A) On. MONITOR and ERR-ANALYS moved from 001.
+ENDBIB              16
 COMMON               3          3
 EN-NRM-MIN EN-NRM-MAX MONIT
 EV         EV         B
-  8.32        101.2     168.31
+ 8.32       101.2      168.31
 ENDCOMMON            3
-ENDSUBENT           48
-SUBENT        20446002   20060708   20061123   20061121       2179
-BIB                  3          5
-REACTION   (92-U-233(N,F),,SIG)
-STATUS     .Cross-sections from NDCC file verified by plots.
-HISTORY    (19751027C)
-           (19751231E)
-           (20060708U) Last checking has been done.
-ENDBIB               5
-NOCOMMON             0          0
 DATA                 3       7534
 EN         DATA       ERR-S
 MEV        B          B
@@ -7596,46 +7593,45 @@ MEV        B          B
  2.9747E-02 2.4253E+00 3.6751E-02
  3.0033E-02 2.1773E+00 3.4786E-02
 ENDDATA           7536
-ENDSUBENT         7546
-SUBENT        20446003   20060708   20061123   20061121       2179
-BIB                  3          5
+ENDSUBENT         7561
+SUBENT        20446003   20180724   20190424   20190423       2275
+BIB                  4          4
 REACTION   (92-U-233(N,F),,WID,,AV)
-ANALYSIS   (SHAPE)    Shape analysis, one level breit-wigner.
-HISTORY    (19751027C)
-           (19751231E)
-           (20060708U) Last checking has been done.
-ENDBIB               5
+ANALYSIS   (SHAPE) One level Breit-Wigner
+STATUS     (TABLE) Text (p126) of Nucl.Sci.Eng.54(1974)116
+HISTORY    (20180724U) On. STATUS added.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          1
-EN-MIN     EN-MAX     DATA
+EN-RES-MIN EN-RES-MAX DATA
 EV         EV         MILLI-EV
-        5.9   1.24E+02   3.72E+02
+ 5.9        124.       372.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        20446004   20060708   20061123   20061121       2179
-BIB                  5         17
+ENDSUBENT           12
+SUBENT        20446004   20180724   20190424   20190423       2275
+BIB                  7         17
 REACTION  1(92-U-233(N,0),,EN)
           2(92-U-233(N,TOT),,WID)
           3(92-U-233(N,F),,WID,,S0)
           4(92-U-233(N,F),,WID)
-ANALYSIS   (SHAPE)    Shape analysis, one level breit-wigner, use
-            of fictitious parameters for describing asymmetric
-            resonances. Total- and fission widths derived using
-            average capture width = 39 milli-eV calculated from
-            formula by cameron and considering neutron-width
-            negligable compared to other widths.
-FLAG       (1.)    Fictitious parameters.
-           (2.)    Fission-width calculated combining author S
-                   data with those by kolar conf.Hels.I,387(70).
-STATUS     .Parameters from table 1 of nse,54,page 119.
-HISTORY    (19751027C)
-           (19751231E)
-           (20060708U) Last checking has been done.
+ANALYSIS   (SHAPE) One level Breit-Wigner with fictitious
+            parameters for describing asymmetric resonances.
+           Total- and fission widths derived using average
+            capture width = 39 meV calculated from formula by
+            Cameron and considering neutron-width negligable
+            compared to other widths.
+FLAG       (1.) Fictitious parameters
+           (2.) Fission-width calculated combining author's data
+            with those by Kolar (1970).
+REL-REF    (R,20114001,W.Kolar+,C,70HELSINKI,1,387,1970)
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table 1 of Nucl.Sci.Eng.54(1974)116
+HISTORY    (20180724A) On. ERR-S -> DATA-ERR
 ENDBIB              17
 NOCOMMON             0          0
 DATA                 8        169
-DATA      1DATA      2ERR-S     2DATA      3ERR-S     3DATA      4
-ERR-S     4FLAG
+DATA      1DATA      2DATA-ERR  2DATA      3DATA-ERR  3DATA      4
+DATA-ERR  4FLAG
 EV         MILLI-EV   MILLI-EV   B*EV       B*EV       MILLI-EV
 MILLI-EV   NO-DIM
  5.8900E+00 3.2000E+02            2.6000E+01            2.8100E+02
@@ -7978,21 +7974,21 @@ MILLI-EV   NO-DIM
 
 ENDDATA            342
 ENDSUBENT          364
-SUBENT        20446005   20060708   20061123   20061121       2179
-BIB                  4          6
+SUBENT        20446005   20180724   20190424   20190423       2275
+BIB                  5          6
 REACTION   (92-U-233(N,0),,D)
-ANALYSIS   (SHAPE)    Shape analysis, one level breit-wigner.
-FLAG       (1.)    Fictitious resonances not included.
-           (2.)    Fictitious resonances included.
-HISTORY    (19751027C)
-           (19751231E)
+ANALYSIS   (SHAPE) One level Breit-Wigner
+FLAG       (1.) Fictitious resonances not included.
+           (2.) Fictitious resonances included.
+STATUS     (TABLE) Text (p124) of Nucl.Sci.Eng.54(1974)116
+HISTORY    (20180724U) On. STATUS added.
 ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          2
-EN-MIN     EN-MAX     DATA       FLAG
+EN-RES-MIN EN-RES-MAX DATA       FLAG
 EV         EV         EV         NO-DIM
-        5.9   1.24E+02    8.8E-01         1.
-        5.9   1.24E+02    7.1E-01         2.
+ 5.9       124.        0.88       1.
+ 5.9       124.        0.71       2.
 ENDDATA              4
 ENDSUBENT           15
 ENDENTRY             5
