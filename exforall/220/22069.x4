@@ -1,10 +1,12 @@
-ENTRY            22069   20160725   20170201   20170124       2252
-SUBENT        22069001   20160725   20170201   20170124       2252
-BIB                 16         37
-REFERENCE  (J,JIN,35,(2),353,197302)
+ENTRY            22069   20220215   20220822   20220720       2309
+SUBENT        22069001   20220215   20220822   20220720       2309
+BIB                 13         34
 TITLE       Independent isomeric yield ratio of Pm-148 in the
             thermal-neutron induced fission of U-233
 AUTHOR     (H.Umezawa)
+REFERENCE  (J,JIN,35,353,1973)
+           (R,JAERI-1103,1966) - method, U-235,
+                                   U233(prelim.) results.
 INSTITUTE  (2JPNJAE)
 FACILITY   (REAC,2JPNJAE) JRR-3 reactor.
 INC-SOURCE (REAC) Graphite reflector region used.
@@ -18,7 +20,6 @@ DETECTOR   (GELI) 50 cm3 GeLi detector. Resolution 2.4 keV at
             The photopeak efficiency was determined with cali-
             brated sources of Co-57, Co-60, Cs-134, Eu-155 and
             Au-198.
-PART-DET   (DG)
 SAMPLE      20 milli-g of U-233 as uranium-oxide, wrapped in a
             piece of copper foil.
             100 milli-g of neodymium-oxide (96.16% Nd-146),
@@ -27,33 +28,35 @@ SAMPLE      20 milli-g of U-233 as uranium-oxide, wrapped in a
             were irradiated for 50 hours.
 CORRECTION  Corrections were applied for the sizable neutron
             capture cross section of Pm-147.
-ERR-ANALYS (DATA-ERR) The quoted errors include statistical
-            counting errors, scattering among the repeated
-            counting data, discrepancy between duplicate runs
-            and an uncertainty of 20% in the amount of
-            formation via neutron capture.
 COMMENT     The thermal neutron flux was measured with a cobalt
             monitor.
-STATUS     (TABLE) Tbl. 1 from JIN,35,(2),353,1973
 HISTORY    (19871109C) N.O.
            (20160725A) SD:Updated to new date formats,lower case.
-                corrected according to last EXFOR rules and Dict.
-ENDBIB              37
+           Corrections in all Subents.
+           (20220215A) SD: Ref. JAERI-1103 added. Corrections in
+           all Subents. Subent 004 added.
+ENDBIB              34
 COMMON               1          3
 EN-DUMMY
 EV
  2.5300E-02
 ENDCOMMON            3
-ENDSUBENT           44
-SUBENT        22069002   20160725   20170201   20170124       2252
-BIB                  4          6
-REACTION   ((92-U-233(N,F)ELEM/MASS,IND,FY,,SPA)/
-           (92-U-233(N,F)MASS,CHN,FY,,SPA))
+ENDSUBENT           41
+SUBENT        22069002   20220215   20220822   20220720       2309
+BIB                  5         12
+REACTION   (92-U-233(N,F)ELEM/MASS,IND,FY,,FRC/SPA)
 DECAY-DATA (61-PM-148-G,5.37D,DG,1465.)
            (61-PM-148-M,41.3D,DG,551.,,DG,630.)
-RESULT     (FRIND)
+ERR-ANALYS (DATA-ERR) The quoted errors include statistical
+            counting errors, scattering among the repeated
+            counting data, discrepancy between duplicate runs
+            and an uncertainty of 20% in the amount of
+            formation via neutron capture.
+STATUS     (TABLE) Tbl. 1 from  J.Inorg.Nucl.Chem.,35(1973)353
 HISTORY    (20160725U) SD: RESULT was added.
-ENDBIB               6
+           (20220215A) SD: REACTION code updated. RESULT deleted.
+           STATUS added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 5          2
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR
@@ -61,20 +64,42 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
         61.       148.         0.    1.8E-07     5.E-08
         61.       148.         1.    7.5E-07     3.E-08
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        22069003   20160725   20170201   20170124       2252
-BIB                  3          5
+ENDSUBENT           21
+SUBENT        22069003   20220215   20220822   20220720       2309
+BIB                  5         12
 REACTION   (92-U-233(N,F)61-PM-148-M/T,IND,FY/RAT,,SPA)
 DECAY-DATA (61-PM-148-G,5.37D,DG,1465.)
            (61-PM-148-M,41.3D,DG,551.,,DG,630.)
+ERR-ANALYS (DATA-ERR) The quoted errors include statistical
+            counting errors, scattering among the repeated
+            counting data, discrepancy between duplicate runs
+            and an uncertainty of 20% in the amount of
+            formation via neutron capture.
+STATUS     (TABLE) Tbl. 1 from  J.Inorg.Nucl.Chem.,35(1973)353
 HISTORY    (20160725A) SD: SF4=Pm-148m/m+g -> Pm-148m/t in
            REACTION code.
-ENDBIB               5
+           (20220215U) SD: STATUS added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 NO-DIM     NO-DIM
  0.80        0.06
 ENDDATA              3
+ENDSUBENT           20
+SUBENT        22069004   20220215   20220822   20220720       2309
+BIB                  4          5
+REACTION   (92-U-235(N,F)61-PM-148,IND,FY,,FRC/SPA)
+DECAY-DATA (61-PM-148-G,5.37D,DG,1465.)
+           (61-PM-148-M,41.3D,DG,551.,,DG,630.)
+STATUS     (TABLE) Tbl. 3 from JAERI-1103.
+HISTORY    (20220215C) SD
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 1          1
+DATA-MAX
+NO-DIM
+    3.5E-06
+ENDDATA              3
 ENDSUBENT           13
-ENDENTRY             3
+ENDENTRY             4

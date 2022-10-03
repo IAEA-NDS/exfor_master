@@ -1,5 +1,5 @@
-ENTRY            23294   20160805   20170403   20170320       2256
-SUBENT        23294001   20160805   20170403   20170320       2256
+ENTRY            23294   20211216   20220822   20220723       2311
+SUBENT        23294001   20211216   20220822   20220723       2311
 BIB                 15         91
 TITLE      High accuracy 235U(n,f) data in the resonance energy
             region
@@ -27,7 +27,7 @@ AUTHOR     (C.Paradela, I.Duran, L.Tassan-Got, L.Audouin,
             R.Reifarth, C.Rubbia, G.Rudolf, P.Rullhusen,
             J.Salgado, C.Santos, L.Sarchiapone, I.Savvidis,
             G.Tagliente, J.L.Tain, L.Tavora, R.Terlizzi, P.Vaz,
-            A.Ventura, D.Villamarin, M.C.Vicente, V.Vlachoudis,
+            A.Ventura, D.Villamarin, M.C.Vincente, V.Vlachoudis,
             R.Vlastou, F.Voss, S.Walter, C.Weiss, M.Wiesher,
             K.Wisshak)
 INSTITUTE  (2ZZZGEL,2SPNSAU,2FR PAR,2ITYBAU,2FR SAC,2SPNPCM,
@@ -35,7 +35,8 @@ INSTITUTE  (2ZZZGEL,2SPNSAU,2FR PAR,2ITYBAU,2FR SAC,2SPNPCM,
             2SPNSEU,2PRTLFE,2PRTCMB,2SWDUPP,2GERKFK,2SPNVAL,
             2GRCARU,2ITYTRI,4ZZZDUB,4RUSFEI,2ITYPAD,1USALAS,
             2JPNTIT,2GRCTUA,2ITYUBO,2ITYBOL,2SWTBAS)
-REFERENCE  (J,EPJ/CS,111,02003,2016)
+REFERENCE  (J,EPJ/CS,111,02003,2016) 1 eV - 10 keV
+           (J,EPJ/CS,211,02003,2019) 3 keV - 30 keV
            (C,2004SANTA,,1529,2004) 8-20 eV c.s. (curve) in fig.
 EXP-YEAR   (2003) Three different measurements during the 2003
             fission campaign
@@ -86,31 +87,34 @@ MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
             capture to fission collimator, and it confirmed the
             flux shape is the same within 1% uncertainty
             (included in K(phi) factor).
-           (92-U-235(N,F),,INT)
-            246.4 b*eV in 7.8-11 eV for absolute normalization
 CORRECTION Dead time is negligible (digital DAQ).
 STATUS     (APRVD) Proof-read by Carlos Paradela (2016-08-17)
 HISTORY    (20160421C) M.M.
            (20160805A) On. Revised with submitted template+data
+           (20211216A) On. Major rev. in 002-003. 004 added.
 ENDBIB              91
+NOCOMMON             0          0
+ENDSUBENT           94
+SUBENT        23294002   20211216   20220822   20220723       2311
+BIB                  6         12
+REACTION   (92-U-235(N,F),,SIG,,AV)
+MONITOR    ((MONIT)92-U-235(N,F),,INT)
+            246.4 b*eV in 7.8-11 eV for absolute normalization
+COMMENT    By author:
+            Data are very preliminary (not accurate enough) and
+            should not be uesd.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+           (MONIT-ERR) 235U(n,f) 7.8-11 eV integral
+STATUS     (TABLE) Table 1 of EPJ Web.Conf.111(2016)02003
+           (SPSDD) Superseded by the authors
+HISTORY    (20160805U) On
+           (20211216A) On. EN-NRM-MIN/MAX and MONIT(-ERR) added.
+ENDBIB              12
 COMMON               4          3
 EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
 EV         EV         B*EV       B*EV
  7.8        11.0       246.4      1.2
 ENDCOMMON            3
-ENDSUBENT           98
-SUBENT        23294002   20160805   20170403   20170320       2256
-BIB                  5          8
-REACTION   (92-U-235(N,F),,SIG,,AV)
-COMMENT    By author:
-            Data are very preliminary (not accurate enough) and
-            should not be uesd.
-ERR-ANALYS (ERR-S) Statistical uncertainty
-STATUS     (TABLE) Table 1 of EPJ Web.Conf.111(2016)02003
-           (SPSDD) Superseded by the authors
-HISTORY    (20160805U) On
-ENDBIB               8
-NOCOMMON             0          0
 DATA                 4         18
 EN-MIN     EN-MAX     DATA       ERR-S
 EV         EV         B          B
@@ -133,10 +137,12 @@ EV         EV         B          B
  8000.       9000.      2.906     0.018
  9000.      10000.      3.058     0.029
 ENDDATA             20
-ENDSUBENT           33
-SUBENT        23294003   20160805   20170403   20170320       2256
-BIB                  5         22
+ENDSUBENT           41
+SUBENT        23294003   20211216   20220822   20220723       2311
+BIB                  6         26
 REACTION   (92-U-235(N,F),,SIG)
+MONITOR    ((MONIT)92-U-235(N,F),,INT)
+            246.4 b*eV in 7.8-11 eV for absolute normalization
 ANALYSIS   2000 bins/decade in logarithmic scale.
            The neutron energy was converted from time-of-flight
             by the relativistic relation using a fixed flight
@@ -155,11 +161,17 @@ ERR-ANALYS AGS vectors for sig(exp)=N*C(fis)/K(phi)/C(phi), where
             determination                                (uK/K=1%)
            (ERR-3,,,F) Fully correlated uncertainty due to
             normalization to standard                  (uN/N=0.5%)
+           (MONIT-ERR) 235U(n,f) 7.8-11 eV integral
 STATUS     (TABLE) Data received from C.Paradela
 HISTORY    (20160804R) On. Data received from C.Paradela
            (20160805C) On
-ENDBIB              22
-NOCOMMON             0          0
+           (20211216A) On. EN-NRM-MIN/MAX and MONIT(-ERR) added.
+ENDBIB              26
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
+EV         EV         B*EV       B*EV
+ 7.8        11.0       246.4      1.2
+ENDCOMMON            3
 DATA                 6       8360
 EN         DATA       ERR-T      ERR-1      ERR-2      ERR-3
 EV         B          B          B          B          B
@@ -8524,5 +8536,58 @@ EV         B          B          B          B          B
  9.98275E+3 2.76883E+0 1.81423E-1 1.78790E-1-2.76883E-2 1.34909E-2
  9.99425E+3 2.76381E+0 1.81093E-1 1.78465E-1-2.76381E-2 1.34665E-2
 ENDDATA           8362
-ENDSUBENT         8389
-ENDENTRY             3
+ENDSUBENT         8397
+SUBENT        23294004   20211216   20220822   20220723       2311
+BIB                  7         25
+REACTION   (92-U-235(N,F),,SIG,,AV)
+MONITOR    (92-U-235(N,F),,INT)
+            247.5 b*eV in 7.8-11 eV for absolute normalization
+ANALYSIS   Fission yield was converted to cross section knowing
+            the neutron flux shape, and normalising the 7.8-11 eV
+            integral value to 247.5(3.0) b*eV.
+           Neutron energy was obtained from ToF by the nTOF DAQ
+            system with a resolution below 0.1% and calibrated
+            with reference to the 8.773 eV resonance and to the
+            sharp Al(n,g) capture dip at 5.904 keV.
+           The original energy resolution of 2000 bin/decade in
+            log scale was rebinned getting a final resolution of
+            20 bin/decade in log scale.
+CORRECTION - Alpha background deduced by amplitude threshold.
+           - No pileup detected.
+           - No self-shielding correction because of the tiny
+              samples thickness.
+ERR-ANALYS (ERR-S) Statistical uncertainty of 20 bin/decade
+            (0.4-0.7%)
+           (ERR-1) Flux shape measured by a B-10 Micromegas
+            detector separately                       (1%)
+           (MONIT-ERR) 235U(n,f) 7.8-11 eV integral (1.2%)
+STATUS     (TABLE) Received from Ignacio Duran
+HISTORY    (20211216R) On. Data received from Ignacio Duran.
+           (20211216C) On
+ENDBIB              25
+COMMON               5          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR  ERR-1
+EV         EV         B*EV       PER-CENT   PER-CENT
+ 7.8        11.        247.5      1.2        1.
+ENDCOMMON            3
+DATA                 4         15
+EN-MIN     EN-MAX     DATA       ERR-S
+EV         EV         B          PER-CENT
+    3.16E+3    3.55E+3 4.716      0.4
+    3.55E+3    3.98E+3 4.599      0.4
+    3.98E+3    4.47E+3 4.579      0.4
+    4.47E+3    5.01E+3 3.949      0.5
+    5.01E+3    5.62E+3 3.948      0.5
+    5.62E+3    6.31E+3 3.595      0.5
+    6.31E+3    7.08E+3 3.362      0.6
+    7.08E+3    7.94E+3 3.272      0.6
+    7.94E+3    8.91E+3 2.993      0.6
+    8.91E+3    10.0E+3 2.974      0.6
+    10.0E+3    11.2E+3 2.676      0.6
+    11.2E+3    12.6E+3 2.558      0.6
+    14.1E+3    15.8E+3 2.469      0.6
+    22.4E+3    25.1E+3 1.998      0.7
+    25.1E+3    28.2E+3 2.081      0.7
+ENDDATA             17
+ENDSUBENT           51
+ENDENTRY             4

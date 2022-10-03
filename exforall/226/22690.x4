@@ -1,18 +1,18 @@
-ENTRY            22690   20111103   20120705   20120704       2228
-SUBENT        22690001   20111103   20120705   20120704       2228
-BIB                 12         51
+ENTRY            22690   20220126   20220822   20220713       2310
+SUBENT        22690001   20220126   20220822   20220713       2310
+BIB                 12         53
 TITLE       Fission of Pu-239 with resonance neutrons
 AUTHOR     (F.-J.Hambsch, L.Dematte, H.Bax, I.Ruskov)
 INSTITUTE  (2ZZZGEL)  Hambsch, Bax, Ruskov
            (2ITYITY)  Dematte (Cineca, Casalecchio Di Reno)
            (3BULBLA)  Ruskov
-REFERENCE  (J,NSTS,2,(1),307,200208)
+REFERENCE  (J,NSTS,2,307,2002)
                               Average values are given
-           (J,NIM/A,480,706,2002) First author L.Dematte .
+           (J,NIM/A,480,706,2002) First author L.Dematte
             Details of pile-up rejection scheme. Data Table.
            (S,ISINN-18,92,2011)
-           (C,99HABAY,135,1999) First author L.Dematte .
-           As mentioned in S,ISINN-18,92,2011 , some preliminary
+           (C,99HABAY,,135,1999) First author L.Dematte.
+           As mentioned in S,ISINN-18,92,2011, some preliminary
            results; S,99HABAY,135,1999 was not available for
            checking.
 FACILITY   (LINAC,2ZZZGEL) Pulsed Geel Linear Accelerator - GELINA
@@ -34,27 +34,29 @@ DETECTOR   (FISCH)  Frisch-gridded ionization chamber with pure
 SAMPLE        PuF3 layer of about 514 microgram mass of plutonium,
             about 45 mm diameter, about 32 microf/cm**2 thickness,
             Pu-239 enrichment is (99.9774+-0.0027)% evaporated on
-            a thin(aprx 36 microgram/cm2) polyimide backing
-            ( 79 microg/cm**2 gold coated) .
+            a thin(aprx 36 ug/cm2) polyimide backing
+            (79 ug/cm**2 gold coated).
             Specific alpha-activity about 1 MBq.
-CORRECTION .Corrections were made for drifts and differences of
+CORRECTION  Corrections were made for drifts and differences of
             the two electronic chains, for detector grids
             inefficiencies for energy losses in a sample and
-            backing and mass-dependent calibration  .
+            backing and mass-dependent calibration.
 ADD-RES    Thermal mass distribution peak-to-valley P/V-th was
            determined to be 76+-4 - less than 114+-2 of REL-REF
            of L.Dematte.
-             (P/V-0.3)/(P/V-th) = 1.74+-0.11 .
+             (P/V-0.3)/(P/V-th) = 1.74+-0.11
 HISTORY    (20030205C)   J.O.S.
            (20030205U) Last checking has been done.
            (20111103A) M.M. Author's name was corrected.
-            BIB information was added.
-            References J,NIM/A,480,706,2002 , S,ISINN-18,92,2011
-            were added.
-            Subents 002-005: EN-MAX value was corrected 200. -> 1.
-ENDBIB              51
+            BIB information was added. Refs NIM/A,480,706,2002,
+           ISINN-18,92,2011 were added. Subents 002-005:
+            EN-MAX value was corrected 200. -> 1 eV.
+           (20220126A) SD: Digitized data were added to
+           Subents 006-009. Subents 010, 011 deleted (not usual
+           quantity).
+ENDBIB              53
 NOCOMMON             0          0
-ENDSUBENT           54
+ENDSUBENT           56
 SUBENT        22690002   20111103   20120705   20120704       2228
 BIB                  5         11
 REACTION  1(94-PU-239(N,F),PRE,AKE,LF+HF)  Total kinetic energy.
@@ -149,101 +151,400 @@ MEV        MEV        NO-DIM
    74.71    8.68         2.
 ENDDATA              4
 ENDSUBENT           22
-SUBENT        22690006   20111103   20120705   20120704       2228
-BIB                  3          9
-REACTION   (94-PU-239(N,F)MASS,PRE,KE) Fragment kinetic energy
-           as dependence from fragment mass.
-           Systematic error due to calibration procedure < 10 keV.
+SUBENT        22690006   20220126   20220822   20220713       2310
+BIB                  5         11
+REACTION   (94-PU-239(N,F)MASS,PRE,KE)
 REL-REF    (A,,G.Simon+,J,NIM/A,286,220,1990)
            (A,,L.Dematte+,J,NP/A,617,331,1997)
-STATUS     (UNOBT)  Request for the data was sent to F.J.Hambsch
-            18.11.2011 .
-            Data are on Fig.2 upper of J,NSTS,2,(1),307,2002 ;
-            Fig.7 left of J,NIM/A,480,706,2002
-ENDBIB               9
-COMMON               2          3
-EN-MIN     EN-MAX
-EV         EV
-       0.01       1.
+ERR-ANALYS Systematic error due to calibration procedure < 10 keV.
+           (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE) Fig.2 upper of Jour.Nucl.Sci.Techn.,
+            Suppl.,2(2002)307; same data presented on
+            Fig.7 left of Nucl.Instr.Meth.,A480(2002)706
+HISTORY    (20220126A) SD: Digitized data were added (no answer
+           from the author. Request was sent to F.J.Hambsch
+           18.11.2011).
+ENDBIB              11
+COMMON               4          3
+EN-MIN     EN-MAX     MASS-ERR-D ERR-DIG
+EV         EV         NO-DIM     MEV
+       0.01       1.      0.1      0.15
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           17
-SUBENT        22690007   20111103   20120705   20120704       2228
-BIB                  3          6
-REACTION   (94-PU-239(N,F)MASS,PRE,FY) Fragment relative yield
+DATA                 3         99
+MASS       DATA       DATA-ERR
+NO-DIM     MEV        MEV
+        71.     113.07       4.67
+        72.     103.91       3.28
+        73.     111.34       2.42
+        74.     108.92       1.56
+        75.     108.06       1.38
+        76.     105.81       1.21
+        77.     106.15       0.69
+        78.     105.98
+        79.     105.29
+        80.     106.85
+        81.     105.64
+        82.     105.81
+        83.     104.94
+        84.     105.29
+        85.     104.94
+        86.     104.43
+        87.     104.60
+        88.     104.25
+        89.     104.25
+        90.     104.25
+        91.     103.91
+        92.     103.91
+        93.     103.91
+        94.     103.91
+        95.     103.73
+        96.     103.73
+        97.     103.73
+        98.     103.56
+        99.     103.56
+       100.     103.56
+       101.     103.39
+       102.     103.39
+       103.     103.22
+       104.     103.04
+       105.     102.87
+       106.     102.70
+       107.     102.18
+       108.     101.49
+       109.     100.97
+       110.     100.10
+       111.      99.59
+       112.      98.72
+       113.      97.69
+       114.      96.30
+       115.      95.61
+       116.      93.19
+       117.      91.81
+       118.      90.60
+       119.      88.36
+       120.      87.14
+       121.      86.80
+       122.      87.49
+       123.      87.14
+       124.      87.14
+       125.      87.84
+       126.      86.97
+       127.      86.97
+       128.      86.28
+       129.      85.59
+       130.      84.72
+       131.      83.86
+       132.      83.00
+       133.      82.31
+       134.      81.27
+       135.      79.89
+       136.      78.68
+       137.      77.47
+       138.      76.43
+       139.      75.05
+       140.      73.84
+       141.      72.63
+       142.      71.42
+       143.      70.21
+       144.      69.00
+       145.      67.96
+       146.      66.93
+       147.      65.72
+       148.      64.51
+       149.      63.30
+       150.      62.43
+       151.      61.23
+       152.      60.36
+       153.      59.32
+       154.      58.11
+       155.      57.42
+       156.      56.56
+       157.      55.35
+       158.      54.83
+       159.      53.62
+       160.      53.10
+       161.      51.38
+       162.      50.86
+       163.      49.82
+       164.      48.96
+       165.      48.78
+       166.      48.61       0.86
+       167.      48.61       1.04
+       168.      44.29       1.38
+       169.      47.57       1.73
+ENDDATA            101
+ENDSUBENT          121
+SUBENT        22690007   20220126   20220822   20220713       2310
+BIB                  5          7
+REACTION   (94-PU-239(N,F)MASS,PRE,FY)
 REL-REF    (A,,L.Dematte+,J,NP/A,617,331,1997)
-STATUS     (UNOBT)  Request for the data was sent to F.J.Hambsch
-            18.11.2011 .
-            Data are on Fig.2 upper of J,NSTS,2,(1),307,2002 .
-            Fig.7 right of J,NIM/A,480,706,2002 (log y-scale).
-ENDBIB               6
-COMMON               2          3
-EN-MIN     EN-MAX
-EV         EV
-       0.01       1.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE) Fig.7 right of Nucl.Instr.Meth.,A480(2002)706
+HISTORY    (20220126A) SD: Digitized data were added (no answer
+           from the author. Request was sent to F.J.Hambsch
+           18.11.2011).
+ENDBIB               7
+COMMON               4          3
+EN-MIN     EN-MAX     MASS-ERR-D ERR-DIG
+EV         EV         NO-DIM     PER-CENT
+       0.01       1.         0.1       1.
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           14
-SUBENT        22690008   20111103   20120705   20120704       2228
-BIB                  3          6
-REACTION   (94-PU-239(N,F)MASS,SEC,FY)   Relative yield dependence
-            from post neutron mass .
-REL-REF    (A,,A.C.Wahl+,J,NDS,39,1,1988)
-STATUS     (UNOBT)  Request for the data was sent to F.J.Hambsch
-            18.11.2011 .
-            Data are on Fig.2 lower of J,NSTS,2,(1),307,2002 .
-ENDBIB               6
-COMMON               2          3
-EN-MIN     EN-MAX
-EV         EV
-       0.01       1.
+DATA                 3         99
+MASS       DATA       DATA-ERR
+NO-DIM     PC/FIS     PC/FIS
+        71.  7.548E-04  5.190E-04
+        72.  1.132E-03  6.342E-04
+        73.  2.581E-03  9.694E-04
+        74.  4.079E-03  1.251E-03
+        75.  6.974E-03  1.512E-03
+        76.  1.224E-02  2.080E-03
+        77.  2.323E-02  3.595E-03
+        78.  3.720E-02
+        79.  5.507E-02
+        80.  8.368E-02
+        81.  1.255E-01
+        82.  1.696E-01
+        83.  2.414E-01
+        84.  3.303E-01
+        85.  4.462E-01
+        86.  5.573E-01
+        87.  7.239E-01
+        88.  9.041E-01
+        89.  1.129E+00
+        90.  1.410E+00
+        91.  1.761E+00
+        92.  2.115E+00
+        93.  2.607E+00
+        94.  3.050E+00
+        95.  3.614E+00
+        96.  4.013E+00
+        97.  4.340E+00
+        98.  4.632E+00
+        99.  4.880E+00
+       100.  5.142E+00
+       101.  5.278E+00
+       102.  5.488E+00
+       103.  5.487E+00
+       104.  5.345E+00
+       105.  5.139E+00
+       106.  4.750E+00
+       107.  4.222E+00
+       108.  3.469E+00
+       109.  2.777E+00
+       110.  2.082E+00
+       111.  1.462E+00
+       112.  1.001E+00
+       113.  6.413E-01
+       114.  4.056E-01
+       115.  2.668E-01
+       116.  1.688E-01
+       117.  1.170E-01
+       118.  7.117E-02
+       119.  7.023E-02
+       120.  7.115E-02
+       121.  7.021E-02
+       122.  7.113E-02
+       123.  1.169E-01
+       124.  1.686E-01
+       125.  2.665E-01
+       126.  4.050E-01
+       127.  6.318E-01
+       128.  9.985E-01
+       129.  1.440E+00
+       130.  2.077E+00
+       131.  2.769E+00
+       132.  3.458E+00
+       133.  4.153E+00
+       134.  4.671E+00
+       135.  5.052E+00
+       136.  5.322E+00
+       137.  5.463E+00
+       138.  5.462E+00
+       139.  5.183E+00
+       140.  5.115E+00
+       141.  4.853E+00
+       142.  4.545E+00
+       143.  4.313E+00
+       144.  3.987E+00
+       145.  3.544E+00
+       146.  3.028E+00
+       147.  2.588E+00
+       148.  2.099E+00
+       149.  1.748E+00
+       150.  1.399E+00
+       151.  1.120E+00
+       152.  8.964E-01
+       153.  7.176E-01
+       154.  5.451E-01
+       155.  4.421E-01
+       156.  3.229E-01
+       157.  2.390E-01
+       158.  1.701E-01
+       159.  1.242E-01
+       160.  8.280E-02
+       161.  5.447E-02
+       162.  3.678E-02
+       163.  2.296E-02
+       164.  1.225E-02
+       165.  6.801E-03  1.694E-03
+       166.  3.977E-03  1.189E-03
+       167.  2.549E-03  9.861E-04
+       168.  1.118E-03  6.035E-04
+       169.  7.450E-04  5.288E-04
+ENDDATA            101
+ENDSUBENT          117
+SUBENT        22690008   20220126   20220822   20220713       2310
+BIB                  4          7
+REACTION   (94-PU-239(N,F)MASS,SEC,FY)
+REL-REF    (A,,A.C.Wahl+,J,AND,39,1,1988)
+STATUS     (CURVE) Fig.2 lower of Jour.Nucl.Sci.Techn.,
+            Suppl.,2(2002)307
+HISTORY    (20220126A) SD: Digitized data were added (no answer
+           from the author. Request was sent to F.J.Hambsch
+           18.11.2011). Journsl title corrected in REL-REF.
+ENDBIB               7
+COMMON               4          3
+EN-MIN     EN-MAX     MASS-ERR-D ERR-DIG
+EV         EV         NO-DIM     PC/FIS
+       0.01         1.        0.1      0.004
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           14
-SUBENT        22690009   20111103   20120705   20120704       2228
-BIB                  3          9
-REACTION   (94-PU-239(N,F),PRE,AKE,LF+HF) Mean total kinetic
-           energy dependence from incident neutron energy .
+DATA                 2         82
+MASS       DATA
+NO-DIM     PC/FIS
+        79.      0.093
+        80.      0.127
+        81.      0.179
+        82.      0.265
+        83.      0.352
+        84.      0.507
+        85.      0.645
+        86.      0.853
+        87.      1.077
+        88.      1.354
+        89.      1.717
+        90.      2.149
+        91.      2.633
+        92.      3.203
+        93.      3.773
+        94.      4.326
+        95.      4.741
+        96.      5.087
+        97.      5.398
+        98.      5.640
+        99.      5.934
+       100.      6.141
+       101.      6.227
+       102.      6.123
+       103.      5.864
+       104.      5.380
+       105.      4.809
+       106.      4.101
+       107.      3.375
+       108.      2.510
+       109.      1.871
+       110.      1.283
+       111.      0.764
+       112.      0.470
+       113.      0.297
+       114.      0.159
+       115.      0.124
+       115.      0.090
+       116.      0.107
+       117.      0.072
+       118.      0.055
+       119.      0.072
+       120.      0.055
+       121.      0.072
+       122.      0.106
+       123.      0.141
+       124.      0.210
+       125.      0.314
+       126.      0.469
+       127.      0.780
+       128.      1.212
+       129.      1.817
+       130.      2.785
+       131.      3.891
+       132.      5.015
+       133.      6.086
+       134.      6.812
+       135.      7.141
+       136.      6.881
+       137.      6.311
+       138.      5.878
+       139.      5.619
+       140.      5.394
+       141.      5.100
+       142.      4.806
+       143.      4.357
+       144.      3.769
+       145.      3.164
+       146.      2.542
+       147.      2.092
+       148.      1.677
+       149.      1.262
+       150.      0.968
+       151.      0.778
+       152.      0.588
+       153.      0.449
+       154.      0.328
+       155.      0.242
+       156.      0.190
+       157.      0.103
+       158.      0.086
+       159.      0.034
+ENDDATA             84
+ENDSUBENT          100
+SUBENT        22690009   20220126   20220822   20220713       2310
+BIB                  5          9
+REACTION   (94-PU-239(N,F),PRE,AKE,LF+HF)
 REL-REF    (A,,A.C.Walsh+,C,79JUELICH,2,129,1979)
             IAEA Symp. on Physics and Chemistry of Fission Proc.
-STATUS     (UNOBT)  Request for the data was sent to F.J.Hambsch
-            18.11.2011 .
-            Data are on Fig.3 upper of J,NSTS,2,(1),307,2002
-            for 26 energy points in 0.01 - 0.7 eV ;
-            Fig.8 of J,NIM/A,480,706,2002
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE) Fig.3 upper of J.Nucl.Sci.Techn.,
+            Suppl.,2(2002)307
+HISTORY    (20220126A) SD: Digitized data were added (no answer
+           from the author. Request was sent to F.J.Hambsch
+           18.11.2011).
 ENDBIB               9
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT           13
-SUBENT        22690010   20111103   20120705   20120704       2228
-BIB                  2          6
-REACTION   (94-PU-239(N,F),PRE,AKE,LF+HF,RES)  Mean total kinetic
-           energy dependence from resonance energy .
-STATUS     (UNOBT)  Request for the data was sent to F.J.Hambsch
-            18.11.2011 .
-            Data are on Fig.4 upper of J,NSTS,2,(1),307,2002
-            for 30 resonance energy points in 0.3 - 200. eV .
-ENDBIB               6
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        22690011   20111103   20120705   20120704       2228
-BIB                  2          7
-REACTION   ((94-PU-239(N,F)MASS,PRE,FY)//
-           (94-PU-239(N,F)MASS,PRE,FY))
-           Ratio of yield at 0.296 eV energy to thermal yield .
-STATUS     (UNOBT)  Request for the data was sent to F.J.Hambsch
-            18.11.2011 .
-            Data are on Fig.1a top of S,ISINN-18,92,2011, right
-            scale.
-ENDBIB               7
-COMMON               2          3
-EN-NM      EN-DUM-DN
-EV         EV
-  0.296     0.0253
+COMMON               3          3
+EN-ERR-DIG ERR-DIG    DATA-ERR
+PER-CENT   MEV        MEV
+    0.6       0.0016        0.7
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           15
+DATA                 3         26
+EN         EN-ERR     DATA
+EV         EV         MEV
+  1.348E-02  1.916E-03     177.89
+  1.744E-02  1.912E-03     177.75
+  2.161E-02  2.092E-03     177.79
+  2.577E-02  2.010E-03     177.95
+  3.043E-02  2.374E-03     177.88
+  3.502E-02  2.297E-03     177.97
+  4.018E-02  2.636E-03     177.91
+  4.567E-02  2.717E-03     177.96
+  5.209E-02  3.417E-03     177.88
+  5.884E-02  3.859E-03     177.91
+  6.671E-02  4.376E-03     177.82
+  7.600E-02  4.518E-03     178.01
+  8.731E-02  5.730E-03     178.01
+  1.026E-01  7.999E-03     177.98
+  1.226E-01  1.187E-02     177.91
+  1.508E-01  1.461E-02     177.87
+  1.834E-01  1.661E-02     177.83
+  2.149E-01  1.543E-02     177.97
+  2.400E-01  9.912E-03     178.01
+  2.618E-01  9.235E-03     178.02
+  2.779E-01  9.805E-03     178.15
+  2.939E-01  1.213E-02     178.03
+  3.077E-01  1.269E-02     178.01
+  3.275E-01  1.352E-02     177.94
+  3.617E-01  2.151E-02     178.01
+  5.486E-01  1.588E-01     178.04
+ENDDATA             28
+ENDSUBENT           46
+NOSUBENT      22690010   20220126   20220822   20220713       2310
+NOSUBENT      22690011   20220126   20220822   20220713       2310
 SUBENT        22690012   20111103   20120705   20120704       2228
 BIB                  5         15
 REACTION   (((94-PU-239(N,F)42-MO-99,PRE,FY)/
