@@ -1,6 +1,6 @@
-ENTRY            M0500   20130627   20130823   20130819       M067
-SUBENT        M0500001   20130627   20130823   20130819       M067
-BIB                 16         72
+ENTRY            M0500   20220130   20220817   20220816       M119
+SUBENT        M0500001   20220130   20220817   20220816       M119
+BIB                 14         73
 TITLE      Photoneutron cross sections in N-14.
 AUTHOR     (R.W.Gellie,K.H.Lokan,N.K.Sherman,R.G.Johnson,
            J.I.Lodge)
@@ -20,7 +20,6 @@ METHOD     (TOF) Photoneutron    energy    distributions    were
             steps of 2 MeV from 15.5 to 29.5 MeV.
 DETECTOR   (SCIN) 10 in. diameter, 1 in. thick cylinder of
             NE102 plastic scintillator.
-PART-DET   (N)
 ANALYSIS   (UNFLD) The  bremsstrahlung  end-point   energy   was
             increased  in 2 MeV steps from 15.5 to 29.5 MeV.  At
             each energy, photoneutron t-o-f spectra were measured
@@ -48,7 +47,6 @@ ANALYSIS   (UNFLD) The  bremsstrahlung  end-point   energy   was
             differential cross  section  (Weissman  and  Schultz
             1971).
 MONITOR    (1-H-2(G,N)1-H-1,,DA)
-MONIT-REF  (,B.Weissman,J,NP/A,174,129,1971)
 CORRECTION Corrections were used for detector dead  time  (below
             1%) and detector efficiency.
 COMMENT    Photoneutron distributions   from   N-14   have  been
@@ -73,18 +71,24 @@ COMMENT    Photoneutron distributions   from   N-14   have  been
 HISTORY    (19910218C)
            (20130627A) Corrected   by   V.Varlamov:  ERR-ANALYS,
             REACTION, STATUS, dates, lowercase.
-ENDBIB              72
+           (20220130A) Corrected by V.Varlamov: MONITOR, PART-DET,
+            EN-SEC, STATUS, INT,,BRA -> INT,,BRS in REACTION of
+            SUBENTs 003 and 004, SUBENTs 005-007 added.
+ENDBIB              73
 NOCOMMON             0          0
-ENDSUBENT           75
-SUBENT        M0500002   20130627   20130823   20130819       M067
-BIB                  5          6
+ENDSUBENT           76
+SUBENT        M0500002   20220130   20220817   20220816       M119
+BIB                  4          9
 REACTION   (7-N-14(G,N)7-N-13,PAR,DA,,BRS)
-EN-SEC     (E-LVL,7-N-13)
 ERR-ANALYS No information.
-STATUS     (CURVE) the USA NIST digitizing.
+STATUS     (CURVE) Data presented on Fig. 4
+            of Can.J.Phys.,50(1972)1689.
+            The USA NIST digitizing.
 HISTORY    (20130627A) Corrected  by  V.Varlamov:  BRA -> BRS,
             ERR-ANALYS.
-ENDBIB               6
+           (20220130A) Corrected by V.Varlamov: EN-SEC, REACTION,
+            STATUS.
+ENDBIB               9
 COMMON               2          3
 E-LVL      ANG
 MEV        ADEG
@@ -234,44 +238,48 @@ MEV        MU-B/SR
   28.58      45.33
   28.69      65.92
 ENDDATA            142
-ENDSUBENT          157
-SUBENT        M0500003   20130627   20130823   20130819       M067
-BIB                  6         10
-REACTION   (7-N-14(G,N)7-N-13,PAR,INT,,BRA)
-EN-SEC     (E-LVL,7-N-13)
+ENDSUBENT          160
+SUBENT        M0500003   20220130   20220817   20220816       M119
+BIB                  5         11
+REACTION   (7-N-14(G,N)7-N-13,PAR,INT/DA,,4PI/BRS)
 ANALYSIS   Total integrated cross section was obtained from  the
-            90-degrees  differential  cross sections by assuming
-            an isotropic angular distribution.
+            90-degrees differential cross section.
 ERR-ANALYS No information.
 STATUS     (DEP,M0500002)
-           (TABLE) Data from the text.
+           (TABLE) Data from the text
+            of Can.J.Phys.,50(1972)1689.
 HISTORY    (20130627A) Corrected  by   V.Varlamov:   ERR-ANALYS,
             STATUS.
-ENDBIB              10
-COMMON               1          3
-E-LVL
-MEV
-  0.0
+           (20220130A) Corrected by V.Varlamov: EN-SEC, REACTION,
+            INT,,BRA -> INT,,BRS,  STATUS.
+ENDBIB              11
+COMMON               2          3
+E-LVL      ANG
+MEV        ADEG
+  0.0        90.
 ENDCOMMON            3
 DATA                 3          1
 EN-MIN     EN-MAX     DATA
 MEV        MEV        MB*MEV
   10.6       29.         20.
 ENDDATA              3
-ENDSUBENT           22
-SUBENT        M0500004   20130627   20130823   20130819       M067
-BIB                  4          5
-REACTION   (7-N-14(G,X)0-NN-1,,INT,,BRA)
-ERR-ANALYS (DATA-ERR) No information.
-STATUS     (TABLE) Data from the text.
+ENDSUBENT           23
+SUBENT        M0500004   20220130   20220817   20220816       M119
+BIB                  4          8
+REACTION   (7-N-14(G,X)0-NN-1,,INT,,BRS)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+STATUS     (TABLE) Data from the text
+            of Can.J.Phys.,50(1972)1689.
 HISTORY    (20130627A) Corrected   by   V.Varlamov:  ERR-ANALYS,
             STATUS.
-ENDBIB               5
+           (20220130A) Corrected by V.Varlamov: STATUS,
+            INT,,BRA -> INT,,BRS.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        MB*MEV     MB*MEV
   10.6       29.         80.         5.
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           16
 ENDENTRY             4

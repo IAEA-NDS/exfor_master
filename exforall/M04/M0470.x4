@@ -1,13 +1,13 @@
-ENTRY            M0470   20130624   20130823   20130819       M067
-SUBENT        M0470001   20130624   20130823   20130819       M067
-BIB                 16         64
+ENTRY            M0470   20220130   20220817   20220816       M119
+SUBENT        M0470001   20220130   20220817   20220816       M119
+BIB                 14         63
 TITLE      Photodisintegration of He-3.
 AUTHOR     (J.R.Stewart,R.C.Morrison,J.S.O'Connell)
 REFERENCE  (J,PR,138,B372,1965)
            #doi:10.1103/PhysRev.138.B372
 INSTITUTE  (1USAYAL)
 FACILITY   (LINAC,1USAYAL)
-INC-SOURCE (BRST)
+INC-SOURCE (BRST,KINDT)
 METHOD     (EXTB,PHD) The  energy  separation of the protons and
             deuterons  from  He-3  was  achieved  by  pulseshape
             discrimination.   Number  of  silicon detectors with
@@ -24,8 +24,6 @@ SAMPLE     The target  consisted  of  two  similar gas cells 1.5
             of  either 0.00014 or 0.00050 inches filled with 0.5
             and 1.33 atm,  respectively,  of He-3. Both the He-2
             and He-3 gases were to be better than 99.5% pure.
-PART-DET   (P)
-           (D)
 DETECTOR   (MAGSP,SOLST) A  number  of  silicon  detectors  with
             depletion depths ranging from 0.045 to 3.0 mm placed
             in focal plane of a quadrupole-triplet magnet.
@@ -59,29 +57,30 @@ ERR-ANALYS (ERR-T) The quoted errors include statistical as well
             of  the  error  in  the  Deswart  and  Marshak cross
             section.
            (ERR-1) The  estimate systematic  error is about 10%.
-STATUS     (TABLE)
 HISTORY    (19910218C)
            (20071005A) Corrected by V.Varlamov: REFERENCE, dates,
             lowercase, REACTIONs, COMMENTs, ANALYSIS, REL-REF.
            (20130624A) Corrected   by   V.Varlamov:    REACTION,
             COMMON, ERR-ANALYS.
-ENDBIB              64
-COMMON               1          3
-ERR-1
-PER-CENT
-  10.
+           (20220130A) Corrected by V.Varlamov: INC-SOURCE,
+            PART-DET, STATUS, REACTION, COMMON REACTION.
+ENDBIB              63
+COMMON               2          3
+ANG        ERR-1
+ADEG       PER-CENT
+  90.          10.
 ENDCOMMON            3
-ENDSUBENT           71
-SUBENT        M0470002   20130624   20130823   20130819       M067
-BIB                  2          2
-REACTION   (2-HE-3(G,P)1-H-2,,DA,,BRS)
+ENDSUBENT           70
+SUBENT        M0470002   20220130   20220817   20220816       M119
+BIB                  3          6
+REACTION   (2-HE-3(G,P)1-H-2,,DA)
+STATUS     (TABLE) Data from table
+            of Phys.Rev.,138(1965)B372.
 HISTORY    (20130624A) Corrected  by  V.Varlamov:  BRA -> BRS.
-ENDBIB               2
-COMMON               1          3
-ANG
-ADEG
-   90.
-ENDCOMMON            3
+           (20220130A) Corrected by V.Varlamov: BRS deleted,
+            NOCOMMON, STATUS.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4         14
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MU-B/SR    MU-B/SR
@@ -101,20 +100,22 @@ MEV        MEV        MU-B/SR    MU-B/SR
  46.1       6.1         10.         7.
 ENDDATA             16
 ENDSUBENT           27
-SUBENT        M0470003   20130624   20130823   20130819       M067
-BIB                  4          6
-REACTION   (2-HE-3(G,P)1-H-2,,INT,,BRA)
+SUBENT        M0470003   20220130   20220817   20220816       M119
+BIB                  4          8
+REACTION   (2-HE-3(G,P)1-H-2,,INT/DA,,4PI)
 ANALYSIS   Total integrated  cross  section  was  obtained  from
-            90-degrees differential cross section by assuming an
-            isotropic angular distribution.
+            90-degrees differential cross section.
 STATUS     (DEP,M0470002) Reaction cross section.
+           (TABLE) Data from text
+            of Phys.Rev.,138(1965)B372.
 HISTORY    (20130624A) Corrected  by V.Varlamov: STATUS.
-ENDBIB               6
+           (20220130A) Corrected by V.Varlamov: REACTION, STATUS.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       ERR-T
 MEV        MEV        MB*MEV     PER-CENT
   0.         46.        16.5        10.
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           16
 ENDENTRY             3

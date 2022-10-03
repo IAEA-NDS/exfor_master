@@ -1,6 +1,6 @@
-ENTRY            M0471   20130624   20130823   20130819       M067
-SUBENT        M0471001   20130624   20130823   20130819       M067
-BIB                 13         36
+ENTRY            M0471   20220130   20220817   20220816       M119
+SUBENT        M0471001   20220130   20220817   20220816       M119
+BIB                 11         36
 TITLE      Three-body photodisintegration of He-3.
 AUTHOR     (H.M.Gerstenberg,J.S.O'Connell)
 REFERENCE  (J,PR,144,834,1966)
@@ -18,7 +18,6 @@ SAMPLE     The liquid  He-3  target  has   been contained in the
             bath  space  and He-3 target space were 110 torr and
             2.69  degrees  K,  450  torr  and  2.70  degrees  K,
             respectively.
-PART-DET   (N)
 DETECTOR   (BF3) The neutron detection  system  was  a  modified
             'Halpern-type  detector'  consisting of BF3 counters
             immersed  in   a   mineral-oil   moderator.   Eleven
@@ -33,27 +32,32 @@ COMMENT    The He-3(g,n)2p cross section has been measured in  1
             between  14  and 20 MeV with a maximum cross section
             at about  0.90  mb.  The  integrated  cross  section
             values were obtained also.
-STATUS     (CURVE)
 HISTORY    (19910218C)
            (20130624A) Corrected   by   V.Varlamov:    REACTION,
             COMMON, ERR-ANALYS.
+           (20220130A) Corrected by V.Varlamov: PART-DET, STATUS,
+            INT,,BRA -> INT,,BRS in REACTION of SUBENT 004.
 ENDBIB              36
 NOCOMMON             0          0
 ENDSUBENT           39
-SUBENT        M0471002   20130624   20130823   20130819       M067
-BIB                  5         11
+SUBENT        M0471002   20220130   20220817   20220816       M119
+BIB                  5         15
 REACTION   (2-HE-3(G,N+P)1-H-1,,SIG,,BRS)
-ANALYSIS   (UNFLD,PLA) The  reaction  yield  'Y' is defined as a
+ANALYSIS   (PLA) The  reaction  yield  "Y" is defined as a
             number of  neutrons  detected  per  unit  of  charge
             registered   in   the  standard  ion  chamber  (beam
             monitor).  The cross section was unfolded  from  the
             measured    yield    curve   Y(Eg-max)   using   the
-            penfoldleiss method.
+            Penfold-Leiss method.
 ERR-ANALYS No information.
-STATUS     Data from Fig. 3.
+STATUS     (CURVE) Data from Fig. 3
+            of Phys.Rev.,144(1966)834.
+           (COREL,M0471003)
+            Data derived with the least structure method
 HISTORY    (20130624A) Corrected  by  V.Varlamov:  BRA -> BRS,
             STATUS.
-ENDBIB              11
+           (20220130U) Corrected by V.Varlamov: ANALYSIS, STATUS.
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 2         21
 EN         DATA
@@ -80,63 +84,72 @@ MEV        MB
  28.        .39
  29.        .29
 ENDDATA             23
-ENDSUBENT           39
-SUBENT        M0471003   20130624   20130823   20130819       M067
-BIB                  5         12
+ENDSUBENT           43
+SUBENT        M0471003   20220130   20220817   20220816       M119
+BIB                  5         17
 REACTION   (2-HE-3(G,N+P)1-H-1,,SIG,,BRS)
-ANALYSIS   (UNFLD,LEAST) The reaction yield 'Y' is defined as  a
+ANALYSIS   (LEAST) The reaction yield "Y" is defined as  a
             number  of  neutrons  detected  per  unit  of charge
             registered  in  the  standard  ion   chamber   (beam
             monitor).  The  cross  section was unfolded from the
             measured   yield   curve   Y(Eg-max)    using    the
-            'least structure' Cook's method.
-ERR-ANALYS (ERR-T) Quoted    errors    include   estimates    of
+            "least structure" Cook's method.
+ERR-ANALYS (DATA-ERR) Quoted   errors   include  estimates    of
             systematic and random statistical errors.
-STATUS     Data from Fig. 3.
+STATUS     (CURVE) Data from Fig. 3
+            of Phys.Rev.,144(1966)834.
+           (COREL,M0471002)
+            Data derived with the Penfold-Leiss method.
 HISTORY    (20130624A) Corrected  by  V.Varlamov:  BRA -> BRS,
             STATUS.
-ENDBIB              12
+           (20220130A) Corrected by V.Varlamov: ANALYSIS, STATUS,
+            ERR-T -> DATA-ERR.
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 3         22
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 MEV        MB         MB
   8.5        .125       .025
-  9.5        .19        .025
+  9.5        .190       .025
  10.5        .205       .025
  11.5        .295       .025
- 12.5        .43        .025
+ 12.5        .430       .025
  13.5        .63        .03
  14.5        .8         .4
- 15.5        .86        .4
+ 15.5        .86        .40
  16.5        .85        .45
  17.5        .78
- 18.5        .79        .5
+ 18.5        .79        .50
  19.5        .8
  20.5        .79
  21.5        .79
- 22.5        .76        .7
+ 22.5        .76        .70
  23.5        .72
  24.5        .715
  25.5        .725
  26.5        .7
  27.5        .56
- 28.5        .22       1.2
+ 28.5        .22       1.20
  29.5      -0.25
 ENDDATA             24
-ENDSUBENT           41
-SUBENT        M0471004   20130624   20130823   20130819       M067
-BIB                  4          5
-REACTION   (2-HE-3(G,N+P)1-H-1,,INT,,BRA)
-ERR-ANALYS (ERR-T) Total uncertainties.
+ENDSUBENT           46
+SUBENT        M0471004   20220130   20220817   20220816       M119
+BIB                  4          9
+REACTION   (2-HE-3(G,N+P)1-H-1,,INT,,BRS)
+ERR-ANALYS (DATA-ERR) Total uncertainties.
 STATUS     (DEP,M0471003) Reaction cross section.
+           (TABLE) Data from text
+            of Phys.Rev.,144(1966)834.
 HISTORY    (20130624A) Corrected  by   V.Varlamov:   ERR-ANALYS,
             STATUS,
-ENDBIB               5
+           (20220130A) Corrected by V.Varlamov: ERR-T ->
+            DATA-ERR, INT,,BRA -> INT,,BRS, STATUS.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          1
-EN-MIN     EN-MAX     DATA       ERR-T
+EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        MB*MEV     PER-CENT
-  0.         28.        12.1        10.
+  0.         28.        12.1        10.0
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           17
 ENDENTRY             4

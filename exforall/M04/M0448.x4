@@ -1,13 +1,13 @@
-ENTRY            M0448   20181023   20181207   20181207       M098
-SUBENT        M0448001   20181023   20181207   20181207       M098
-BIB                  9         26
-TITLE      The absolute n-14(g,n) reaction cross section.
+ENTRY            M0448   20220211   20220817   20220816       M119
+SUBENT        M0448001   20220211   20220817   20220816       M119
+BIB                  9         28
+TITLE      The absolute N-14(g,n) reaction cross section.
 AUTHOR     (M.J.Facci,M.N.Thompson)
 REFERENCE  (J,NP/A,465,77,1987)
 INSTITUTE  (3AULAML)
 FACILITY   (BETAT,3AULAML)
 INC-SOURCE (BRST)
-ERR-ANALYS (DATA-ERR) The mean-root-squared  errors are given.
+ERR-ANALYS (DATA-ERR) The mean-root-squared errors are given.
 COMMENT    There exists    significant   disagreement   in   the
             magnitude of  low-energy  region  of  the  N-14(g,n)
             cross  section as measured by three methods:  direct
@@ -27,11 +27,13 @@ HISTORY    (19910218C)
            (20181023A) Corrected  by   V.Varlamov:   ERR-ANALYS,
             STATUS,  ANALYSIS,  PART-DET,  DECAY-DATA,  DATA  in
             SUBENTS 002 and 003 substituted.
-ENDBIB              26
+           (20220211A) Corrected by V.Varlamov: STATUS, PART-DET,
+            REACTION.
+ENDBIB              28
 NOCOMMON             0          0
-ENDSUBENT           29
-SUBENT        M0448002   20181023   20181207   20181207       M098
-BIB                  9         20
+ENDSUBENT           31
+SUBENT        M0448002   20220211   20220817   20220816       M119
+BIB                  8         22
 REACTION   ((7-N-14(G,N)7-N-13,,SIG,,BRS)+
            (7-N-14(G,N+P)6-C-12,,SIG,,BRS))
 COMMENT    The threshold  of (g,n+p) reaction is 12.5 MeV so the
@@ -41,7 +43,6 @@ SAMPLE     The sample consisted of 142.41 g of  chemically  pure
             glycine  ((C-2)(H-5)(NO-2)),  placed  in  a  perspex
             container 109 mm in diameter and 104 mm long.
 METHOD     (EXTB)
-PART-DET   (N)
 DETECTOR   (BF3) 4PI Halpern-type detector.
 ANALYSIS   (PLA)  The  yields  of  neutrons  was  determined  at
             bremsstrahlung  energies  ranging  from 10.0 to 16.0
@@ -49,10 +50,13 @@ ANALYSIS   (PLA)  The  yields  of  neutrons  was  determined  at
             yield  curves  were  mesured.  the cross section was
             unfolded from the measured yield  curves  using  the
             variable bin Penfold-Leiss (VBPL) method.
-STATUS     (CURVE) Data from Fig. 3.
+STATUS     (CURVE) Data from Fig. 3 of
+            Nucl.Phys.A.465(1987)77.
 HISTORY    (20181023A) Corrected by V.Varlamov: STATUS, ANALYSIS,
             DATA substituted (multiplyed by 10).
-ENDBIB              20
+           (20220211A) Corrected by V.Varlamov: PART-DET, EN-SEC,
+            COMMENT, STATUS.
+ENDBIB              22
 COMMON               1          3
 ANAL-STEP
 KEV
@@ -122,9 +126,9 @@ MEV        MB         MB
   15.5        0.55      0.12
   15.6        0.415     0.120
 ENDDATA             62
-ENDSUBENT           91
-SUBENT        M0448003   20181023   20181207   20181207       M098
-BIB                  8         18
+ENDSUBENT           93
+SUBENT        M0448003   20220211   20220817   20220816       M119
+BIB                  8         20
 REACTION   (7-N-14(G,N)7-N-13,,SIG,,BRS)
 SAMPLE     A total    of    15    samples    of    dicyandiamide
             ((C-2)(H-4)(H-4)) were pressed into discs 30.4 nn in
@@ -139,11 +143,13 @@ ANALYSIS   (PLA)   Three  independent  activity   yield   curves
             cross  section  was  unfolded from the average yield
             curve using the variable  bin  Penfold-Leiss  (VBPL)
             method.
-STATUS     (CURVE) Data from Fig. 3.
+STATUS     (CURVE) Data from Fig. 3 of
+                        Nucl.Phys.A.465(1987)77.
 HISTORY    (20181023A) Corrected  by  V.Varlamov:  STATUS,
-            ANALYSIS, PART-DET delayd, DECAY-DATA, DATA
+            ANALYSIS, PART-DET delayed, DECAY-DATA, DATA
             substituted (multiplyed by 10).
-ENDBIB              18
+           (20220211U) Corrected by V.Varlamov: STATUS.
+ENDBIB              20
 NOCOMMON             0          0
 DATA                 3          6
 EN         DATA       DATA-ERR
@@ -155,18 +161,24 @@ MEV        MB         MB
   14.5         .400      .045
   15.5         .40       .05
 ENDDATA              8
-ENDSUBENT           31
-SUBENT        M0448004   20181023   20181207   20181207       M098
-BIB                  5          8
-REACTION   (7-N-14(G,N)7-N-13,PAR,INT,,BRS)
+ENDSUBENT           33
+SUBENT        M0448004   20220211   20220817   20220816       M119
+BIB                  6         14
+REACTION   ((7-N-14(G,N)7-N-13,PAR,INT,,BRS)+
+           (7-N-14(G,N+P)6-C-12,,INT,,BRS))
 EN-SEC     (E-LVL,7-N-13)
-COMMENT    Data obtained from direct neutron detection
+METHOD     Data obtained from direct neutron detection
            experiment.
-STATUS     (TABLE) Data fron table 1.
-           (DEP,M0448002)
+PART-DET   (N)
+STATUS     (DEP,M0448002)
+            Reaction cross section.
+           (TABLE) Data from table 1 of
+            Nucl.Phys.A.465(1987)77.
            (COREL,M0448005) Activation data.
 HISTORY    (20181023U) Corrected by V.Varlamov: STATUS.
-ENDBIB               8
+           (20220211A) Corrected by V.Varlamov: REACTION,
+            COMMENT -> METHOD, PART-DET, STATUS.
+ENDBIB              14
 COMMON               1          3
 E-LVL
 MEV
@@ -177,26 +189,27 @@ EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        MB*MEV     MB*MEV
   10.5       14.5       .72        .10
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        M0448005   20181023   20181207   20181207       M098
-BIB                  5          7
-REACTION   (7-N-14(G,N)7-N-13,PAR,INT,,BRS)
-EN-SEC     (E-LVL,7-N-13)
-COMMENT    Data from activity measuring experiment.
-STATUS     (TABLE) Data fron table 1.
-           (DEP,M0448003)
+ENDSUBENT           26
+SUBENT        M0448005   20220211   20220817   20220816       M119
+BIB                  5         12
+REACTION   (7-N-14(G,N)7-N-13,,INT,,BRS)
+METHOD     (ACTIV)
+ANALYSIS   14N ground state data from activity measuring
+            experiment at energy not enough for first excited
+            state contribution.
+STATUS     (DEP,M0448003)
+            Reaction cross section.
+           (TABLE) Data from table 1.
            (COREL,M0448004) Neutron detection data.
 HISTORY    (20181023U) Corrected by V.Varlamov: STATUS.
-ENDBIB               7
-COMMON               1          3
-E-LVL
-MEV
-  0.0
-ENDCOMMON            3
+           (20220211U) Corrected by V.Varlamov: REACTION, METHOD,
+            COMMENT -> ANALYSIS, STATUS.
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        MB*MEV     MB*MEV
   10.5       14.5       .95        .14
 ENDDATA              3
-ENDSUBENT           19
+ENDSUBENT           20
 ENDENTRY             5
