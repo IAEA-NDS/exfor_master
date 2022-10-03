@@ -1,12 +1,12 @@
-ENTRY            40268   20151214   20160302   20160210       4173
-SUBENT        40268001   20151214   20160302   20160210       4173
-BIB                 16         47
+ENTRY            40268   20210831   20220200   20220131       4202
+SUBENT        40268001   20210831   20220200   20220131       4202
+BIB                 15         50
 INSTITUTE  (4UKRIJD)
 REFERENCE  (R,YFI-18,22,1974) Tabulated data
            (R,INDC(CCP)-049,24,1975)
            Engl.translation of YFI-18,22,1974
-           (J,BAS,38,(1),60,1974) Eng.transl.of IZV,38,(1),70,1974
-           (J,IZV,38,(1),70,1974) Data are given
+           (J,BAS,38,(1),60,1974) Eng.transl.of IZV,38,70,1974
+           (J,IZV,38,70,1974) Issue 1. Data are given
            (C,73TBILISI,,149,1973) First publication.
            Preliminary data for Ru-100,102,104 in table.
 AUTHOR     (I.F.Barchuk,G.V.Belykh,V.I.Golyshkin,A.F.Ogorodnik,
@@ -26,7 +26,6 @@ DETECTOR   (GELI) Germanium lithium detector. Detector had a
             sensitive volume of about 6 cm3 .
            Spectrometer resolution ~10 keV for 1 MeV gamma energy.
 MONITOR    No information
-PART-DET   (G)        Gammas
 ASSUMED    (ASSUM,44-RU-96(N,G)44-RU-97,,SIG)
            (ASSUM1,44-RU-99(N,G)44-RU-100,,SIG)
            (ASSUM2,44-RU-100(N,G)44-RU-101,,SIG)
@@ -36,8 +35,8 @@ ASSUMED    (ASSUM,44-RU-96(N,G)44-RU-97,,SIG)
 COMMENT    Capture gamma-rays of the isotopes Ru-97 and Ru-99 were
            not discovered. As for Ru-99,it is a result of the
            insufficient enrichment of the sample
-ERR-ANALYS (E-ERR)  No information available
-           (DATA-ERR) No information available
+ERR-ANALYS (DATA-ERR) No information about type of uncertainty in
+           the articles.
 HISTORY    (19750107C)  Compiled at the centre
            (20150206A) SD: Updated to new date formats,lower case.
              Ref. on Engl.transl. of YF added. DATA units were
@@ -48,7 +47,11 @@ HISTORY    (19750107C)  Compiled at the centre
            were added. STATUS,ASSUMED were added.
            PC/INC -> ARB-UNITS ( units mentioned as "relative"),
            REL is added in REACTION. ANALYSIS, ASSUMED were added.
-ENDBIB              47
+           (20210831A) M.M. REACTION was corrected as ratio,
+            ARB-UNITS -> NO-DIM, E -> E-NM.
+            DATA and DATA-ERR were divided by 100 to obtain
+            NO-DIM units.
+ENDBIB              50
 COMMON               8          6
 EN         ASSUM      ASSUM1     ASSUM1-ERR ASSUM2     ASSUM3
 ASSUM4     ASSUM5
@@ -57,10 +60,11 @@ B          B
  2.5000E-02  0.21      10.6       0.6        10.4       3.1
  1.44       0.7
 ENDCOMMON            6
-ENDSUBENT           57
-SUBENT        40268002   20151214   20160302   20160210       4173
-BIB                  4          8
-REACTION   (44-RU-100(N,G)44-RU-101,,SPC,,REL)
+ENDSUBENT           60
+SUBENT        40268002   20210831   20220200   20220131       4202
+BIB                  4          9
+REACTION   ((44-RU-100(N,G)44-RU-101,,SPC)//
+           (44-RU-100(N,G)44-RU-101,,SPC))
 SAMPLE     (44-RU-100,ENR=0.930)
             Isotopic composition of the sample(percent)
              Ru-96  Ru-98   Ru-99  Ru-100   Ru-101  Ru-102  Ru-104
@@ -68,93 +72,107 @@ SAMPLE     (44-RU-100,ENR=0.930)
 FLAG       (1.) This gamma could be from Ru-103.
 STATUS     (TABLE) Table 2 of YFI-18,22,1974
                   = Table 2 of IZV,38,(1),70,1974
-ENDBIB               8
-NOCOMMON             0          0
+ENDBIB               9
+COMMON               2          3
+E-DN       E-DN-ERR
+MEV        MEV
+ 6.2714     0.015
+ENDCOMMON            3
 DATA                 5         14
-E          E-ERR      DATA       DATA-ERR   FLAG
-MEV        MEV        ARB-UNITS  ARB-UNITS  NO-DIM
- 4.1439     1.5000E-03 3.2000E+01 5.
- 4.2445     3.3000E-03 4.0000E+01 20.
- 4.4831     1.2000E-03 5.9000E+01 6.
- 4.6203     1.3000E-03 2.4000E+01 4.         1.
- 4.7176     1.3000E-03 4.4000E+01 8.
- 4.8082     1.8000E-03 1.8000E+01 3.
- 4.8392     2.3000E-03 1.3000E+01 3.
- 5.2799     2.1000E-03 2.0000E+01 3.
- 5.3063     1.1000E-03 6.3000E+01 4.
- 6.0927     4.1000E-03 1.3000E+01 3.
- 6.2482     2.7000E-03 2.2000E+01 3.
- 6.2714     1.5000E-03 1.0000E+02 5.
- 6.6083     3.4000E-03 1.6000E+01 4.
- 6.6821     2.8000E-03 1.0000E+01 2.
+E-NM       E-NM-ERR   DATA       DATA-ERR   FLAG
+MEV        MEV        NO-DIM     NO-DIM     NO-DIM
+  4.1439       1.5E-03   0.32        0.05
+  4.2445       3.3E-03   0.40        0.20
+  4.4831       1.2E-03   0.59        0.06
+  4.6203       1.3E-03   0.24        0.04    1.
+  4.7176       1.3E-03   0.44        0.08
+  4.8082       1.8E-03   0.18        0.03
+  4.8392       2.3E-03   0.13        0.03
+  5.2799       2.1E-03   0.20        0.03
+  5.3063       1.1E-03   0.63        0.04
+  6.0927       4.1E-03   0.13        0.03
+  6.2482       2.7E-03   0.22        0.03
+  6.2714       1.5E-03   1.00        0.05
+  6.6083       3.4E-03   0.16        0.04
+  6.6821       2.8E-03   0.10        0.02
 ENDDATA             16
-ENDSUBENT           29
-SUBENT        40268003   20151214   20160302   20160210       4173
-BIB                  3          7
-REACTION   (44-RU-102(N,G)44-RU-103,,SPC,,REL)
+ENDSUBENT           34
+SUBENT        40268003   20210831   20220200   20220131       4202
+BIB                  3          8
+REACTION   ((44-RU-102(N,G)44-RU-103,,SPC)//
+           (44-RU-102(N,G)44-RU-103,,SPC))
 SAMPLE     (44-RU-102,ENR=0.992)
            Isotopic composition of the sample(percent)
              Ru-96  Ru-98  Ru-99  Ru-100  Ru-101  Ru-102  Ru-104
               0.1    0.1    0.1    0.1     0.4    99.2     0.4
 STATUS     (TABLE) Table 3 of YFI-18,22,1974
                  = Table 3 of IZV,38,(1),70,1974
-ENDBIB               7
-NOCOMMON             0          0
+ENDBIB               8
+COMMON               2          3
+E-DN       E-DN-ERR
+MEV        MEV
+ 4.2665     0.0010
+ENDCOMMON            3
 DATA                 4         21
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        ARB-UNITS  ARB-UNITS
- 3.6528     2.0000E-03 6.4000E+01 12.
- 3.6777     6.8000E-03 2.4000E+01 7.
- 3.9473     7.0000E-04 2.8000E+01 3.
- 4.0021     2.3000E-03 4.3000E+01 9.
- 4.0210     1.5000E-03 7.3000E+01 9.
- 4.0640     1.6000E-03 2.0000E+01 4.
- 4.1617     1.3000E-03 1.2000E+01 2.
- 4.2215     2.2000E-03 3.2000E+01 7.
- 4.2665     1.0000E-03 1.0000E+02 10.
- 4.3285     1.2000E-03 4.0000E+01 4.
- 4.3513     8.0000E-04 6.3000E+01 4.
- 4.3966     1.2000E-03 2.6000E+01 3.
- 4.4863     5.8000E-03 1.6000E+01 6.
- 4.5082     2.0000E-03 5.1000E+01 7.
- 4.6258     1.1000E-03 9.6000E+01 10.
- 4.7414     2.1000E-03 2.0000E+01 4.
- 4.7932     3.4000E-03 1.5000E+01 5.
- 4.8293     2.9000E-03 2.0000E+01 6.
- 4.8897     2.0000E-03 1.7000E+01 3.
- 5.0310     3.9000E-03 7.0000E+00 2.
- 5.6673     1.9000E-03 3.0000E+01 3.
+E-NM       E-NM-ERR   DATA       DATA-ERR
+MEV        MEV        NO-DIM     NO-DIM
+ 3.6528        2.0E-03   0.64     0.12
+ 3.6777        6.8E-03   0.24     0.07
+ 3.9473        7.0E-04   0.28     0.03
+ 4.0021        2.3E-03   0.43     0.09
+ 4.0210        1.5E-03   0.73     0.09
+ 4.0640        1.6E-03   0.20     0.04
+ 4.1617        1.3E-03   0.12     0.02
+ 4.2215        2.2E-03   0.32     0.07
+ 4.2665        1.0E-03   1.00     0.10
+ 4.3285        1.2E-03   0.40     0.04
+ 4.3513        8.0E-04   0.63     0.04
+ 4.3966        1.2E-03   0.26     0.03
+ 4.4863        5.8E-03   0.16     0.06
+ 4.5082        2.0E-03   0.51     0.07
+ 4.6258        1.1E-03   0.96     0.10
+ 4.7414        2.1E-03   0.20     0.04
+ 4.7932        3.4E-03   0.15     0.05
+ 4.8293        2.9E-03   0.20     0.06
+ 4.8897        2.0E-03   0.17     0.03
+ 5.0310        3.9E-03   0.07     0.02
+ 5.6673        1.9E-03   0.30     0.03
 ENDDATA             23
-ENDSUBENT           35
-SUBENT        40268004   20151214   20160302   20160210       4173
-BIB                  3          7
-REACTION   (44-RU-104(N,G)44-RU-105,,SPC,,REL)
+ENDSUBENT           40
+SUBENT        40268004   20210831   20220200   20220131       4202
+BIB                  3          8
+REACTION   ((44-RU-104(N,G)44-RU-105,,SPC)//
+           (44-RU-104(N,G)44-RU-105,,SPC))
 SAMPLE     (44-RU-104,ENR=0.985)
             Isotopic composition of the sample(percents)
              Ru-96  Ru-98  Ru-99  Ru-100  Ru-101  Ru-102  Ru-104
               0.1    0.1    0.1    0.1     0.2     1.2     98.5
 STATUS     (TABLE) Table 4 of YFI-18,22,1974
                  = Table 4 of IZV,38,(1),70,1974
-ENDBIB               7
-NOCOMMON             0          0
+ENDBIB               8
+COMMON               2          3
+E-DN       E-DN-ERR
+MEV        MEV
+ 5.0226     0.0010
+ENDCOMMON            3
 DATA                 4         15
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        ARB-UNITS  ARB-UNITS
- 3.4719     1.1000E-03 5.4000E+01 5.
- 3.5052     1.7000E-03 3.2000E+01 4.
- 3.7604     1.5000E-03 1.4000E+01 3.
- 4.5851     1.0000E-03 1.0000E+01 2.
- 5.0226     1.0000E-03 1.0000E+02 6.
- 5.1079     2.0000E-03 9.0000E+00 1.
- 5.1271     1.1000E-03 2.3000E+01 2.
- 5.4147     3.7000E-03 3.0000E+00 1.
- 5.4436     1.3000E-03 1.5000E+01 1.
- 5.5281     3.8000E-03 4.0000E+00 2.
- 5.5864     1.4000E-03 3.4000E+01 3.
- 5.7514     1.4000E-03 1.7000E+01 1.
- 5.7873     3.5000E-03 3.0000E+00 1.
- 5.8839     4.2000E-03 9.0000E+00 3.
- 5.9105     1.9000E-03 2.8000E+01 2.
+E-NM       E-NM-ERR   DATA       DATA-ERR
+MEV        MEV        NO-DIM     NO-DIM
+ 3.4719        1.1E-03  0.54      0.05
+ 3.5052        1.7E-03  0.32      0.04
+ 3.7604        1.5E-03  0.14      0.03
+ 4.5851        1.0E-03  0.10      0.02
+ 5.0226        1.0E-03  1.00      0.06
+ 5.1079        2.0E-03  0.09      0.01
+ 5.1271        1.1E-03  0.23      0.02
+ 5.4147        3.7E-03  0.03      0.01
+ 5.4436        1.3E-03  0.15      0.01
+ 5.5281        3.8E-03  0.04      0.02
+ 5.5864        1.4E-03  0.34      0.03
+ 5.7514        1.4E-03  0.17      0.01
+ 5.7873        3.5E-03  0.03      0.01
+ 5.8839        4.2E-03  0.09      0.03
+ 5.9105        1.9E-03  0.28      0.02
 ENDDATA             17
-ENDSUBENT           29
+ENDSUBENT           34
 ENDENTRY             4

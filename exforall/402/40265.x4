@@ -1,52 +1,72 @@
-ENTRY            40265     850329              20050926       0000
-SUBENT        40265001     850329              20050926       0000
-BIB                 13         30
-INSTITUTE  (4CCPKUR)
-REFERENCE  (C,73KIEV,4,70,7305)  DATA ARE GIVEN
-AUTHOR     (V.P.ZOLOTSKIJ,K.G.IGNAT EV,S.P.BOROVLEV,
-           M.V.POLOZOV,S.I.SUKHORUCHKIN)
-TITLE      MEASUREMENT OF AVERAGE PROMPT NEUTRON NUMBER
-           FOR PU-239 IN ENERGY RANGE 0.01-40 EV
-INC-SOURCE (REAC)     REACTOR
-METHOD     (COINC)    COINCIDENCE METHOD BETWEEN FISSION NEUTRONS
-                      AND FISSION FRAGMENTS
-           (TOF)      TIME-OF-FLIGHT METHOD FOR DETERMINATION
-                      OF NEUTRON ENERGY. FLIGHT BASE = 9.2 METERS
-DETECTOR   (SCIN)     FOUR DETECTORS ON THE BASE OF STILBENE
-                      CRYSTALS WERE USED FOR COUNTING
-                      OF FISSION NEUTRONS. NO INFORMATION
-                      ABOUT DETECTOR FOR MEASUREMENT
-                      OF FISSION FRAGMENTS.
-ANALYSIS   VALUE OF NU FOR PU-239 WAS MEASURED AS REGARDS
-           NU FOR PU-239 AT THERMAL NEUTRONS.
-MONITOR    NORMALIZED TO NU FOR PU-239 IN ENERGY RANGE 0.02-0.04EV
-PART-DET   (FF)       FISSION FRAGMENTS
-           (PN)       FISSION PROMPT NEUTRONS
-           (DG)       DECAY GAMMA
-HISTORY    (750228C)
-CORRECTION FOR DETERMINATION OF RELATIVE VALUE OF NU
-           FOLLOWING CORRECTIONS WERE TAKEN INTO ACCOUNT
-           1. CORRECTION ON ACCIDENTAL COINCIDENCE AND
-              DEAD TIME OF EXPERIMENTAL PLANT
-           2. DEPENDENCE OF EFFICIENCY OF REGISTRATION
-              FOR NEUTRON DETECTOR FROM NEUTRON ENERGY
-ERR-ANALYS NO INFORMATION
-ENDBIB              30
+ENTRY            40265   20210830   20220200   20220131       4202
+SUBENT        40265001   20210830   20220200   20220131       4202
+BIB                 13         33
+TITLE      Measurement of average prompt neutron number
+           for Pu-239 in energy range 0.01-40 eV
+AUTHOR     (V.P.Bolotskiy,K.G.Ignat'ev,S.P.Borovlev,
+           M.V.Polozov,S.I.Sukhoruchkin)
+REFERENCE  (C,73KIEV,4,70,1973)  Data are given
+INSTITUTE  (4RUSKUR)
+FACILITY   (CYCLO,4RUSITE)
+SAMPLE      Metal, 10 x 10 cm size, 2.2E-3 at/b thickness.
+METHOD     (COINC)    Coincidence method between fission neutrons
+                   and prompt gamma rays and capture gamma rays.
+           (TOF)      Time-of-flight method for determination
+                      of neutron energy. Flight base = 9.2 m.
+           (PSD) Neutron and gamma rays pulses were separated by
+                 shape.
+DETECTOR   (SCIN)     Four detectors on the base of stilbene
+                      crystals (67 x 7 cm) were used for counting
+                      of fission neutrons. No information
+                      about detector for measurement
+                      of fission fragments.
+ANALYSIS   Value of nu for Pu-239 was measured as regards
+           nu for pu-239 at thermal neutrons.
+MONITOR    Normalized to NU for PU-239 in energy range 0.02-0.04eV
+PART-DET   (PN,G)
+CORRECTION For determination of relative value of NU
+           following corrections were taken into account
+           1. correction on accidental coincidence and
+              dead time of experimental setup,
+           2. dependence of efficiency of registration
+              for neutron detector from neutron energy
+HISTORY    (19750228C)
+           (20210831A) M.M. correction for current rules and
+            dictionaries. REAC -> CYCLO. PSD was added.
+            PART-DET (FF) was deleted.
+ENDBIB              33
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        40265002     850329              20050926       0000
-BIB                  1          1
-REACTION   (94-PU-239(N,F),PR,NU,,REL)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          5
-EN-MIN     EN-MAX     DATA       DATA-ERR
-EV         EV         ARB-UNITS  ARB-UNITS
- 1.0000E-02 2.0000E-02 1.0180E+00 1.3000E-02
- 4.0000E-02 5.0000E-02 9.9000E-01 1.0000E-02
- 3.0000E-01 3.0000E-01 9.9000E-01 1.1000E-02
- 1.0000E+00 7.0000E+00 1.0110E+00 3.0000E-02
- 7.0000E+00 4.0000E+01 9.9200E-01 2.1000E-02
-ENDDATA              7
-ENDSUBENT           13
+ENDSUBENT           36
+SUBENT        40265002   20210830   20220200   20220131       4202
+BIB                  5         13
+REACTION   ((94-PU-239(N,F),PR,NU)//(94-PU-239(N,F),PR,NU))
+COMMENT     Of authors. Nu in the thermal energy range and at
+            0.3 eV resonance ( and also probaly at resonances of
+            energy up to 40 eV) is constant in average with
+            accuracy 1.%.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table on page 74 of
+                 Conf.Proc.73KIEV,v.4,p.70,1973
+HISTORY    (20210830A) Reaction was corrected: REL -> ratio,
+            EN-MIN/MAX -> EN-MIN/MAX-NM, EN-MIN/MAX-DN were added.
+            DATA and DATA-ERR were corrected as given in Table of
+            the article. ARB-UNITS -> NO-DIM
+ENDBIB              13
+COMMON               2          3
+EN-MIN-DN  EN-MAX-DN
+EV         EV
+  0.02      0.04
+ENDCOMMON            3
+DATA                 4          6
+EN-MIN-NM  EN-MAX-NM  DATA       DATA-ERR
+EV         EV         NO-DIM     NO-DIM
+ 0.01       0.02       1.018      0.013
+ 0.04       0.05       0.990      0.010
+ 0.13       0.21       0.990      0.011
+ 0.3        0.3        0.990      0.011
+ 1.         7.         1.011      0.030
+ 7.         40.        0.992      0.021
+ENDDATA              8
+ENDSUBENT           30
 ENDENTRY             2

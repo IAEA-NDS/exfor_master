@@ -1,6 +1,6 @@
-ENTRY            B0156   20190125   20190507   20190507       B029
-SUBENT        B0156001   20190125   20190507   20190507       B029
-BIB                 15         40
+ENTRY            B0156   20211221   20220200   20211224       B032
+SUBENT        B0156001   20211221   20220200   20211224       B032
+BIB                 15         42
 TITLE      Reactions of Cu-63 and Cu-65 with alpha particles.
 AUTHOR     (N.T.Porile, D.L.Morrison)
 INSTITUTE  (1USABNL).Chemistry department
@@ -21,34 +21,39 @@ DETECTOR   (NAICR)
 ANALYSIS   (DECAY)
 CORRECTION The target foils were generally thick enough to make
            the loss of recoils negligible.
-ERR-ANALYS The errors in the cross sections are estimated As
-           12 %.  In many cases cross sections were measured in
+ERR-ANALYS (DATA-ERR) The errors in the cross sections are
+           estimated As 12 %.
+           In many cases cross sections were measured in
            duplicate.  The results usually agreed within 5%.
            Regarding a given excitation function the cross
            sections have a relative error of 5% with respect to
            each other. The energy values below 16 MeV can have an
            error of about 1 MeV.
-ADD-RES    A method for monitoring the energy of the incident
+ADD-RES    a method for monitoring the energy of the incident
            beam is described, based on the variation with energy
            of the cross section ratios.
-STATUS     (TABLE) Table II, Phys. Rev.,116,1193,1959
-HISTORY    (19801007C)Lane
+STATUS     (TABLE) Table ii, Phys.Rev.,116,1193,1959
+HISTORY    (19801007C)LANE
            (19940727A) Some corrections have been included by
             CAJAD
            (19981110A) Converted to lower case. Reaction lines are
            corrected.
            (20011010U) Last checking has been done.
            (20190121A) So NDS. Corrected SF3 to X for 006 and 010.
-                               Delete SF9=EXP from all subentries.
+                               delete SF9=EXP from all subentries.
            (20190507A) So NDS. Delete SF5=IND from all subentries.
-ENDBIB              40
-NOCOMMON             0          0
-ENDSUBENT           43
-SUBENT        B0156002   20190125   20190507   20190507       B029
-BIB                  3         10
-REACTION   (29-CU-63(A,N)31-GA-66,,SIG)
-           For energies above 27 MeV the Ga-66 yield includes a
-           contribution of the Cu-65(A,3N) reaction.
+           (20211221A) VS. Reaction corrected in 002.
+ENDBIB              42
+COMMON               1          3
+DATA-ERR
+PER-CENT
+  12.
+ENDCOMMON            3
+ENDSUBENT           49
+SUBENT        B0156002   20211221   20220200   20211224       B032
+BIB                  4         11
+REACTION   ((29-CU-63(A,N)31-GA-66,,SIG)+
+           (29-CU-65(A,3N)31-GA-66,,SIG,,RAB))
 METHOD     (CHSEP)
 SAMPLE     Stack consisting of high-purity foils of natural copper
            0.00025 inch thick used for bombarding energies higher
@@ -56,7 +61,9 @@ SAMPLE     Stack consisting of high-purity foils of natural copper
            2 mg/cm**2 were used which were prepared by vacuum
            evaporation onto Al and subsequent peeling off the
            Cu-foil of the backing.
-ENDBIB              10
+HISTORY    (20211221A) VS. +(29-Cu-65(A,3N)31-Ga-66,SIG,,RAB)
+                       added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 2         13
 EN         DATA
@@ -75,7 +82,7 @@ MEV        MB
        37.2       231.
        40.1       418.
 ENDDATA             15
-ENDSUBENT           30
+ENDSUBENT           31
 SUBENT        B0156003   20190125   20190507   20190507       B029
 BIB                  3          8
 REACTION   (29-CU-65(A,N)31-GA-68,,SIG)
