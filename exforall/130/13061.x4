@@ -1,49 +1,65 @@
-ENTRY            13061     890518              20050926       0000
-SUBENT        13061001     890518              20050926       0000
-BIB                 11         12
+ENTRY            13061   20200903   20210224   20210219       1473
+SUBENT        13061001   20200903   20210224   20210219       1473
+BIB                 11         18
+TITLE      14.7 MeV neutron-induced fission of U-238
+AUTHOR     (K.M.Broom)
 INSTITUTE  (1USAARK)
-REFERENCE  (J,PR,126,627,6204)
-AUTHOR     (K.M.BROOM)
-TITLE      14.7 MEV NEUTRON-INDUCED FISSION OF U-238
-FACILITY   (CCW)
+REFERENCE  (J,PR,126,627,1962)
+FACILITY   (CCW,1USAARK)
 INC-SOURCE (D-T)
-SAMPLE     URANIUM OXIDE 84.75% URANIUM
-           ISOTOPIC COMPOSITION 99.989% 238U, 0.011% 235U
-METHOD     (RCHEM)
-ERR-ANALYS DATA UNCERTAINTIES GIVEN ARE MOST PROBABLE ERRORS
-STATUS     (RIDER) REFERENCE 62BRO1
-HISTORY    (890511C) VM
-ENDBIB              12
+DETECTOR   (PROPC) A 2pi end-window methane-flow proportional
+           counter.
+SAMPLE     The uranium oxide contained 84.75% uranium
+           (92-U-238,ENR=0.99989)
+           (92-U-235,ENR=0.00011)
+METHOD     (CHSEP)
+ERR-ANALYS (DATA-ERR) Most probable errors propagated in the
+            usual way
+HISTORY    (19890511C) VM
+           (20200903A) OG. Converted to lower case and 4-digit
+           year. STATUS, METHOD updated. MONIT1-ERR in Sub002,
+           MONIT-REF added.
+ENDBIB              18
 COMMON               2          3
-EN         EN-RSL
+EN         EN-RSL-HW
 MEV        MEV
  14.7       0.4
 ENDCOMMON            3
-ENDSUBENT           19
-SUBENT        13061002     890518              20050926       0000
-BIB                  2          3
+ENDSUBENT           25
+SUBENT        13061002   20200903   20210224   20210219       1473
+BIB                  7          8
 REACTION   (92-U-238(N,F)56-BA-140,CUM,FY)
-MONITOR    ((MONIT1)13-AL-27(N,A)11-NA-24,,SIG)
-           ((MONIT2)92-U-238(N,F),,SIG)
-ENDBIB               3
+MONITOR    ((MONIT)13-AL-27(N,A)11-NA-24,,SIG)
+MONIT-REF  ((MONIT)11484002,A.Poularikas+,J,PR,115,989,1959)
+ASSUMED    (ASSUM,92-U-238(N,F),,SIG)
+REL-REF    (R,40424002,N.N.Flerov+,J,JNE/A,11,173,1960)
+             U-238 cross section (ASSUMED)
+STATUS     (TABLE) Text on p.629 in Phys.Rev.,126,627,1962
+HISTORY    (20200903A) OG. STATUS, MONIT-REF, MONIT1-ERR added.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          1
-DATA       DATA-ERR   MONIT1     MONIT2     MONIT2-ERR
+DATA       DATA-ERR   MONIT      ASSUM      ASSUM-ERR
 PC/FIS     PC/FIS     MB         B          B
  4.3        0.4        115.       1.13       0.05
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13061003     890518              20050926       0000
-BIB                  2          2
+ENDSUBENT           16
+SUBENT        13061003   20200903   20210224   20210219       1473
+BIB                  6          7
 REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY)
 MONITOR    (92-U-238(N,F)56-BA-140,CUM,FY)
-ENDBIB               2
+MONIT-REF  (13061002,K.M.Broom,J,PR,126,627,1962)
+DECAY-DATA (38-SR-89,50.4D)
+           (38-SR-91,9.7HR)
+STATUS     (TABLE) Tab. I (p.629) in Phys.Rev.,126,627,1962
+HISTORY    (20200903U) OG. STATUS, MONIT-REF added.
+ENDBIB               7
 COMMON               2          3
 MONIT      MONIT-ERR
 PC/FIS     PC/FIS
  4.3        0.4
 ENDCOMMON            3
-DATA                 4         11
+DATA                 4         12
 ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
  38.        89.        2.0        0.2
@@ -57,6 +73,7 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
  53.       134.        4.7        0.5
  53.       135.        5.0        0.5
  56.       139.        4.4        0.5
-ENDDATA             13
-ENDSUBENT           24
+ 56.       140.        4.3        0.4
+ENDDATA             14
+ENDSUBENT           30
 ENDENTRY             3

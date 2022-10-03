@@ -1,96 +1,125 @@
-ENTRY            13169     891122              20050926       0000
-SUBENT        13169001     891122              20050926       0000
-BIB                  9         14
+ENTRY            13169   20200928   20210224   20210219       1473
+SUBENT        13169001   20200928   20210224   20210219       1473
+BIB                  9         17
+TITLE      A search for possible structure in the 238U(n,f)
+            cross section near 2.3 MeV
+AUTHOR     (J.W.Meadows, D.L.Smith, L.P.Geraldo)
 INSTITUTE  (1USAANL)
-REFERENCE  (J,ANE,16,471,8909)
-AUTHOR     (J.W.MEADOWS,D.L.SMITH,L.P.GERALDO)
-TITLE      A SEARCH FOR POSSIBLE STRUCTURE IN THE 238U(N,F)
-            CROSS SECTION NEAR 2.3 MEV.
-FACILITY   (DYNAM) TANDEM DYNAMITRON
-INC-SOURCE (P-LI7)
-SAMPLE     ISOTOPIC COMPOSITION OF SAMPLES:
-              HYDRATED OXIDE SAMPLE: 238U (100.0%),
-                235U (<0.6 PPM)
-              U(3)O(8) SAMPLES: 234U (1.012%), 235U (2.369%),
-                236U (0.0001%), 238U (96.49%)
-STATUS     (APRVD) J.W.MEADOWS, 89/11/20.
-HISTORY    (891031C)
-ENDBIB              14
+REFERENCE  (J,ANE,16,471,1989)
+FACILITY   (DYNAM,1USAANL) Argonne 8-MeV Tandem Dynamitron
+INC-SOURCE (P-LI7) Li metal evaporated onto a 0.25-mm thick
+            Ta plate irradiated by protons
+SAMPLE     - One Hydrated oxide sample (1.946 g),
+              238U (100.0%), 235U (<0.6 ppm)
+           - Three U3O8 samples (1.180 g, 1.699 g, 0.439 g),
+              238U (96.49%), 234U (1.012%), 235U (2.369%),
+              236U (0.0001%).
+           - Two Np2O3 samples (1.775g, 0.656 g)
+STATUS     (APRVD) J.W.Meadows, 1989/11/20
+HISTORY    (19891031C)
+           (20200928A) On. Major rev.in 002, correction in 003.
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        13169002     891122              20050926       0000
-BIB                  3          7
+ENDSUBENT           20
+SUBENT        13169002   20200928   20210224   20210219       1473
+BIB                  7         25
 REACTION  1((92-U-238(N,F),,SIG)/(93-NP-237(N,F),,SIG))
           2(92-U-238(N,F),,SIG)
-MONITOR   1ABSOLUTE RATIO MEASUREMENT
-          2(93-NP-237(N,F),,SIG) TAKEN FROM ENDF.B-V (1979,1981)
-ERR-ANALYS1(ERR-T) TOTAL UNCERTAINTY GIVEN. A COMPLETE LIST OF
-            CONTRIBUTIONS TO THE UNCERTAINTY ARE LISTED IN TABLE
-            2 OF THE ARTICLE.
-ENDBIB               7
-NOCOMMON             0          0
+ANALYSIS   Average of three measurements
+MONITOR   1Absolute ratio measurement
+          2(93-NP-237(N,F),,SIG)
+            Taken from ENDF/B-V (1979,1981)
+COVARIANCE  (XY,2,EN,MEV)
+             2.15 2.453
+            (Z,3,COR,PER-CENT)
+             100
+              70 100
+ERR-ANALYS (ERR-T) Total uncertainty propagated from
+                 - uncorrelated error
+                 - thickness correction - sample
+                 - extrapolation correction - sample
+                 - 234U and 238U half-life
+                 - 238U isotopic analysis
+                 - alpha-count
+           (ERR-1,,,F) Thickness correction - method     (0.3%)
+           (ERR-2,,,F) Extrapolation correction - method (0.3%)
+           (ERR-3,,,F) Scattering correction             (0.3%)
+           (ERR-4,,,F) Half-life of 237Np               (0.47%)
+STATUS     (TABLE) Table 3 of Ann.Nucl.Energy 16(1989)471
+HISTORY    (20200928A) On. COVARIANCE added. ERR-ANALYS revised.
+                           EN-RSL-HW -> EN-RSL-FW.
+ENDBIB              25
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.3        0.3        0.3        0.47
+ENDCOMMON            3
 DATA                 5          2
-EN         EN-RSL-HW  DATA      1ERR-T     1DATA      2
-MEV        MEV        NO-DIM     PER-CENT   B
- 2.15       0.112      0.3190     1.36       0.5390
- 2.453      0.106      0.3256     1.00       0.5529
+EN         EN-RSL-FW  DATA      1DATA      2ERR-T
+MEV        MEV        NO-DIM     B          PER-CENT
+ 2.15       0.112      0.3190     0.5390     1.36
+ 2.453      0.106      0.3256     0.5529     1.00
 ENDDATA              4
-ENDSUBENT           16
-SUBENT        13169003     891122              20050926       0000
-BIB                  3          6
+ENDSUBENT           38
+SUBENT        13169003   20200928   20210224   20210219       1473
+BIB                  5         10
 REACTION  1((92-U-238(N,F),,SIG)/(93-NP-237(N,F),,SIG))
           2(92-U-238(N,F),,SIG)
-MONITOR   1SHAPE MEASUREMENT NORMALIZED TO ABSOLUTE RATIO
-           MEASUREMENTS AT 2.15 AND 2.453 MEV
-          2(93-NP-237(N,F),,SIG) TAKEN FROM ENDF.B-V (1979,1981)
-ERR-ANALYS1(ERR-S) STATISTICAL UNCERTAINTY
-ENDBIB               6
+MONITOR   1Shape measurement normalized to absolute ratio
+            measurements at 2.15 and 2.453 MeV
+          2(93-NP-237(N,F),,SIG)
+            Taken from ENDF/B-V (1979,1981)
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table 4 of Ann.Nucl.Energy 16(1989)471
+HISTORY    (20200928A) On. The pointer of ERR-S removed.
+                           EN-RSL-HW -> EN-RSL-FW.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 5         42
-EN         EN-RSL-HW  DATA      1ERR-S     1DATA      2
-MEV        MEV        NO-DIM     PER-CENT   B
- 1.920      0.023      0.3121     0.77       0.5181
- 1.938      0.024      0.3131     0.81       0.5204
- 1.957      0.027      0.3184     0.73       0.5298
- 1.976      0.030      0.3112     0.74       0.5195
- 1.995      0.031      0.3104     1.11       0.5178
- 1.999      0.022      0.3106     0.92       0.5187
- 2.019      0.022      0.3155     0.74       0.5274
- 2.038      0.023      0.3109     0.74       0.5202
- 2.058      0.023      0.3152     0.74       0.5327
- 2.077      0.026      0.3152     0.73       0.5286
- 2.096      0.027      0.3216     0.74       0.5399
- 2.116      0.028      0.3202     0.81       0.5383
- 2.139      0.022      0.3183     0.77       0.5360
- 2.158      0.025      0.3240     0.76       0.5466
- 2.177      0.024      0.3241     0.76       0.5471
- 2.196      0.027      0.3205     0.76       0.5417
- 2.216      0.028      0.3281     0.76       0.5546
- 2.218      0.023      0.3206     0.76       0.5418
- 2.235      0.029      0.3272     0.77       0.5533
- 2.239      0.023      0.3227     0.76       0.5459
- 2.260      0.018      0.3250     0.74       0.5499
- 2.278      0.024      0.3222     0.77       0.5451
- 2.280      0.020      0.3218     0.73       0.5444
- 2.290      0.021      0.3141     0.74       0.5312
- 2.297      0.025      0.3230     0.75       0.5465
- 2.307      0.024      0.3241     0.76       0.5486
- 2.319      0.022      0.3228     0.76       0.5464
- 2.319      0.022      0.3235     0.77       0.5476
- 2.336      0.026      0.3237     0.74       0.5481
- 2.337      0.023      0.3224     0.76       0.5458
- 2.356      0.026      0.3256     0.89       0.5507
- 2.359      0.020      0.3215     1.30       0.5446
- 2.380      0.020      0.3216     0.76       0.5448
- 2.398      0.022      0.3256     0.77       0.5519
- 2.420      0.018      0.3247     0.74       0.5523
- 2.438      0.021      0.3206     0.76       0.5435
- 2.458      0.023      0.3222     0.82       0.5465
- 2.479      0.019      0.3245     0.75       0.5503
- 2.499      0.020      0.3238     0.75       0.5495
- 2.518      0.019      0.3232     0.75       0.5489
- 2.538      0.023      0.3225     0.75       0.5476
- 2.558      0.021      0.3248     0.91       0.5514
+EN         EN-RSL-FW  DATA      1DATA      2ERR-S
+MEV        MEV        NO-DIM     B          PER-CENT
+ 1.920      0.023      0.3121     0.5181     0.77
+ 1.938      0.024      0.3131     0.5204     0.81
+ 1.957      0.027      0.3184     0.5298     0.73
+ 1.976      0.030      0.3112     0.5195     0.74
+ 1.995      0.031      0.3104     0.5178     1.11
+ 1.999      0.022      0.3106     0.5187     0.92
+ 2.019      0.022      0.3155     0.5274     0.74
+ 2.038      0.023      0.3109     0.5202     0.74
+ 2.058      0.023      0.3152     0.5327     0.74
+ 2.077      0.026      0.3152     0.5286     0.73
+ 2.096      0.027      0.3216     0.5399     0.74
+ 2.116      0.028      0.3202     0.5383     0.81
+ 2.139      0.022      0.3183     0.5360     0.77
+ 2.158      0.025      0.3240     0.5466     0.76
+ 2.177      0.024      0.3241     0.5471     0.76
+ 2.196      0.027      0.3205     0.5417     0.76
+ 2.216      0.028      0.3281     0.5546     0.76
+ 2.218      0.023      0.3206     0.5418     0.76
+ 2.235      0.029      0.3272     0.5533     0.77
+ 2.239      0.023      0.3227     0.5459     0.76
+ 2.260      0.018      0.3250     0.5499     0.74
+ 2.278      0.024      0.3222     0.5451     0.77
+ 2.280      0.020      0.3218     0.5444     0.73
+ 2.290      0.021      0.3141     0.5312     0.74
+ 2.297      0.025      0.3230     0.5465     0.75
+ 2.307      0.024      0.3241     0.5486     0.76
+ 2.319      0.022      0.3228     0.5464     0.76
+ 2.319      0.022      0.3235     0.5476     0.77
+ 2.336      0.026      0.3237     0.5481     0.74
+ 2.337      0.023      0.3224     0.5458     0.76
+ 2.356      0.026      0.3256     0.5507     0.89
+ 2.359      0.020      0.3215     0.5446     1.30
+ 2.380      0.020      0.3216     0.5448     0.76
+ 2.398      0.022      0.3256     0.5519     0.77
+ 2.420      0.018      0.3247     0.5523     0.74
+ 2.438      0.021      0.3206     0.5435     0.76
+ 2.458      0.023      0.3222     0.5465     0.82
+ 2.479      0.019      0.3245     0.5503     0.75
+ 2.499      0.020      0.3238     0.5495     0.75
+ 2.518      0.019      0.3232     0.5489     0.75
+ 2.538      0.023      0.3225     0.5476     0.75
+ 2.558      0.021      0.3248     0.5514     0.91
 ENDDATA             44
-ENDSUBENT           55
+ENDSUBENT           59
 ENDENTRY             3
