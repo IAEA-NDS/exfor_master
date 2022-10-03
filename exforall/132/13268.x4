@@ -1,42 +1,57 @@
-ENTRY            13268     890817              20050926       0000
-SUBENT        13268001     890817              20050926       0000
-BIB                 11         14
-INSTITUTE  (1CANTOR) + UNIV. OF WATERLOO
-REFERENCE  (J,CJC,48,641,70)
-           (J,DA/B,32,3838,7201)
-AUTHOR     (L.H.GEVAERT,R.E.JERVIS,H.D.SHARMA)
-TITLE      CUMULATIVE YIELDS IN THE 14 MEV NEUTRON FISSION OF
-            232TH AND 238U IN THE SYMMETRIC REGION
-FACILITY   (CCW)
+ENTRY            13268   20210409   20211108   20211106       1482
+SUBENT        13268001   20210409   20211108   20211106       1482
+BIB                  9         19
+TITLE      Cumulative yields in the 14 MeV neutron fission of
+           232Th and 238U in the symmetric region
+AUTHOR     (L.H.Gevaert,R.E.Jervis,H.D.Sharma)
+INSTITUTE  (1CANTOR)
+           (1CANCAN)  University of Waterloo, Waterloo, Ontario
+REFERENCE  (J,CJC,48,641,1970)
+           #doi:10.1139/v70-104
+           #NSR: 1970GE15
+           (J,DA/B,32,3838,1972) Dissertation abstract
+METHOD     (CHSEP)
+DETECTOR   (GEMUC)  A 4pi beta proportional counter
+           (NAICR,GELI) Gamma detectors
+SAMPLE     Uranyl nitrate and thorium nitrate
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
+HISTORY    (19890717C) VM
+           (20210409A) OG. #NSR and #doi added. Converted to lower
+           case and 4-digit year. STATUS, ERR-ANALYS updated.
+           SAMPLE added. FACILITY, INC-SOURCE moved to Sub002 -
+           Sub004, Sub006 - Sub008.
+ENDBIB              19
+NOCOMMON             0          0
+ENDSUBENT           22
+SUBENT        13268002   20210409   20211108   20211106       1482
+BIB                  7         10
+REACTION   (90-TH-232(N,F)42-MO-99,CUM,FY)
+FACILITY   (CCW,1CANTOR)
 INC-SOURCE (D-T)
-METHOD     (RCHEM)
-DETECTOR   (GEMUC). BETA DETECTOR
-           (NAICR,GELI). GAMMA DETECTORS
-ERR-ANALYS NO INFORMATION
-STATUS     (RIDER) REFERENCE 70GEV1
-HISTORY    (890717C) VM
-ENDBIB              14
-NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        13268002     890817              20050926       0000
-BIB                  3          4
-REACTION   (90-TH-232(N,F)ELEM/MASS,CUM,FY)
-MONITOR    ((MONIT)29-CU-65(N,2N)29-CU-64,,SIG)
+MONITOR    ((MONIT1)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT2)90-TH-232(N,F),,SIG)
 DECAY-DATA (42-MO-99,67.HR,DG,740.,0.12,DG,780.,0.044,
-                           B-,1180.,0.83,B-,80.,0.03,B-,41.,0.14)
-ENDBIB               4
+                         B-,1180.,0.83,B-,800.,0.03,B-,410.,0.14)
+STATUS     (TABLE) Tab.5 (p.644) in Can.J.Chem.48,641,1970.
+HISTORY    (20210409A) OG. REACTION updated. FACILITY, INC-SOURCE
+           moved from Sub001. MONITOR updated: MONIT2 added.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 6          1
-EN         ELEMENT    MASS       DATA       DATA-ERR   MONIT
-MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS     B
- 14.7       42.        99.        2.00       0.08       0.970
+DATA                 5          1
+EN         DATA       DATA-ERR   MONIT1     MONIT2
+MEV        PC/FIS     PC/FIS     B          B
+ 14.7       2.00       0.085      0.970      0.37
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        13268003     900326              20050926       0000
-BIB                  4         14
+ENDSUBENT           18
+SUBENT        13268003   20210409   20211108   20211106       1482
+BIB                  8         21
 REACTION   (90-TH-232(N,F)ELEM/MASS,CUM,FY)
+FACILITY   (CCW,1CANTOR)
+INC-SOURCE (D-T)
 MONITOR    ((MONIT1)29-CU-65(N,2N)29-CU-64,,SIG)
            ((MONIT2)90-TH-232(N,F)42-MO-99,CUM,FY)
+           ((MONIT3)90-TH-232(N,F),,SIG)
+MONIT-REF  ((MONIT2)13268002,L.H.Gevaert+,J,CJC,48,641,1970)
 DECAY-DATA ((1.)44-RU-103,39.6D,DG,497.,0.88,B-,217.,0.99)
            ((2.)44-RU-105,4.44HR,DG,670.,0.18,DG,726.,0.48,B-)
            ((3.)46-PD-109-G,13.47HR,B-,1028.,1.00)
@@ -47,12 +62,15 @@ DECAY-DATA ((1.)44-RU-103,39.6D,DG,497.,0.88,B-,217.,0.99)
            ((7.)48-CD-115-G,53.5HR,DG,336.,0.95)
            ((8.)50-SN-121-G,27.HR,B-,383.,1.00)
            ((9.)50-SN-125-G,9.7D,B-,2350.)
-HISTORY    (900326A) BIB CORRECTION
-ENDBIB              14
-COMMON               4          3
-EN         MONIT1     MONIT2     MONIT2-ERR
-MEV        B          PC/FIS     PC/FIS
- 14.7       0.970      2.00       0.08
+STATUS     (TABLE) Tab.3 (p.643) in Can.J.Chem.48,641,1970.
+HISTORY    (19900326A) BIB correction
+           (20210409A) OG. MONIT-REF added. FACILITY, INC-SOURCE
+           moved from Sub001. MONITOR updated: MONIT3 added.
+ENDBIB              21
+COMMON               5          3
+EN         MONIT1     MONIT2     MONIT2-ERR MONIT3
+MEV        B          PC/FIS     PC/FIS     B
+ 14.7       0.970      2.00       0.085     0.37
 ENDCOMMON            3
 DATA                 6          9
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
@@ -67,40 +85,60 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
  50.       121.         0.         0.93       0.10      8.
  50.       125.         0.         0.52       0.04      9.
 ENDDATA             11
-ENDSUBENT           34
-SUBENT        13268004     890817              20050926       0000
-BIB                  3          4
+ENDSUBENT           41
+SUBENT        13268004   20210409   20211108   20211106       1482
+BIB                  7         13
 REACTION   (90-TH-232(N,F)MASS,CHN,FY)
+FACILITY   (CCW,1CANTOR)
+INC-SOURCE (D-T)
 MONITOR    ((MONIT1)29-CU-65(N,2N)29-CU-64,,SIG)
            ((MONIT2)90-TH-232(N,F)42-MO-99,CUM,FY)
+           ((MONIT3)90-TH-232(N,F),,SIG)
+MONIT-REF  ((MONIT2)13268002,L.H.Gevaert+,J,CJC,48,641,1970)
 STATUS     (DEP,13268003)
-ENDBIB               4
-COMMON               4          3
-EN         MONIT1     MONIT2     MONIT2-ERR
-MEV        B          PC/FIS     PC/FIS
- 14.7       0.970      2.00       0.08
+           (TABLE) Tab.5 (p.644) in Can.J.Chem.48,641,1970.
+HISTORY    (20210409A) OG. MONIT-REF added. STATUS updated.
+           DATA corrected: fission mass yields for A = 103, 105,
+           109, 111, 113 added. FACILITY, INC-SOURCE moved from
+           Sub001. MONITOR updated: MONIT3 added.
+ENDBIB              13
+COMMON               5          3
+EN         MONIT1     MONIT2     MONIT2-ERR MONIT3
+MEV        B          PC/FIS     PC/FIS     B
+ 14.7       0.970      2.00       0.085     0.37
 ENDCOMMON            3
-DATA                 3          4
+DATA                 3          9
 MASS       DATA       DATA-ERR
 NO-DIM     PC/FIS     PC/FIS
+103.         0.83       0.05
+105.         1.00       0.08
+109.         1.28       0.15
+111.         1.21       0.08
 112.         1.33       0.09
+113.         1.26       0.085
 115.         1.31       0.14
 121.         0.98       0.13
 125.         1.0        0.4
-ENDDATA              6
-ENDSUBENT           19
-SUBENT        13268005     900326              20050926       0000
-BIB                  4          9
+ENDDATA             11
+ENDSUBENT           33
+SUBENT        13268005   20210409   20211108   20211106       1482
+BIB                  7         15
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-MONITOR    (92-U-235(N,F)42-MO-99,CUM,FY,,MXW) VALUE NOT GIVEN
+MONITOR    (92-U-235(N,F)42-MO-99,CUM,FY,,MXW) Value not given
+FACILITY   No information about the used facility
 DECAY-DATA ((1.)44-RU-103,39.6D,DG,497.,0.88,B-,217.,0.99)
            ((2.)44-RU-105,4.44HR,DG,670.,0.18,DG,726.,0.48,B-)
            ((3.)46-PD-112,21.HR,DG,617.,0.41,B-)
            ((4.)48-CD-115-G,53.5HR,DG,336.,0.95)
            ((5.)50-SN-121-G,27.HR,B-,383.,1.00)
            ((6.)50-SN-125-G,9.7D,B-,2350.)
-HISTORY    (900326A) BIB CORRECTION
-ENDBIB               9
+COMMENT    DATA-ERR value for 44-Ru-105 in Can.J.Chem.48,641,1970
+           is slightly different from value recommended in
+           LA-UR-94-3106 (Ref. 70GEV1)
+STATUS     (TABLE) Tab.2 (p.643) in Can.J.Chem.48,641,1970.
+HISTORY    (19900326A) BIB correction
+           (20210531U) OG. DATA-ERR value for Ru-105 updated.
+ENDBIB              15
 COMMON               1          3
 EN-DUMMY
 EV
@@ -110,32 +148,42 @@ DATA                 6          6
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
 NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
  44.       103.                    3.1        0.13      1.
- 44.       105.                    0.95       0.19      2.
+ 44.       105.                    0.95       0.04      2.
  46.       112.                    0.012      0.0006    3.
  48.       115.         0.         0.01       0.0006    4.
  50.       121.         0.         0.012      0.001     5.
  50.       125.         0.         0.012      0.0012    6.
 ENDDATA              8
-ENDSUBENT           26
-SUBENT        13268006     890817              20050926       0000
-BIB                  3          4
-REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY)
-MONITOR    ((MONIT)29-CU-65(N,2N)29-CU-64,,SIG)
+ENDSUBENT           32
+SUBENT        13268006   20210409   20211108   20211106       1482
+BIB                  7         10
+REACTION   (92-U-238(N,F)42-MO-99,CUM,FY)
+FACILITY   (CCW,1CANTOR)
+INC-SOURCE (D-T)
+MONITOR    ((MONIT1)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT2)92-U-238(N,F),,SIG)
 DECAY-DATA (42-MO-99,67.HR,DG,740.,0.12,DG,780.,0.044,
                            B-,1180.,0.83,B-,80.,0.03,B-,41.,0.14)
-ENDBIB               4
+STATUS     (TABLE) Text on p.644 in Can.J.Chem.48,641,1970.
+HISTORY    (20210409A) OG. REACTION updated. FACILITY, INC-SOURCE
+           moved from Sub001. MONITOR updated: MONIT2 added.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 6          1
-EN         ELEMENT    MASS       DATA       DATA-ERR   MONIT
-MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS     B
- 14.7       42.        99.        5.60       0.14       0.970
+DATA                 5          1
+EN         DATA       DATA-ERR   MONIT1     MONIT2
+MEV        PC/FIS     PC/FIS     B          B
+ 14.7       5.60       0.14       0.970      1.17
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        13268007     900326              20050926       0000
-BIB                  4         14
+ENDSUBENT           18
+SUBENT        13268007   20210409   20211108   20211106       1482
+BIB                  8         22
 REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY)
+FACILITY   (CCW,1CANTOR)
+INC-SOURCE (D-T)
 MONITOR    ((MONIT1)29-CU-65(N,2N)29-CU-64,,SIG)
            ((MONIT2)92-U-238(N,F)42-MO-99,CUM,FY)
+           ((MONIT3)92-U-238(N,F),,SIG)
+MONIT-REF  ((MONIT2)13268006,L.H.Gevaert+,J,CJC,48,641,1970)
 DECAY-DATA ((1.)44-RU-103,39.6D,DG,497.,0.88,B-,217.,0.99)
            ((2.)44-RU-105,4.44HR,DG,670.,0.18,DG,726.,0.48,B-)
            ((3.)46-PD-109-G,13.47HR,B-,1028.,1.00)
@@ -146,12 +194,16 @@ DECAY-DATA ((1.)44-RU-103,39.6D,DG,497.,0.88,B-,217.,0.99)
            ((7.)48-CD-115-G,53.5HR,DG,336.,0.95)
            ((8.)50-SN-121-G,27.HR,B-,383.,1.00)
            ((9.)50-SN-125-G,9.7D,B-,2350.)
-HISTORY    (900326A) BIB CORRECTION
-ENDBIB              14
-COMMON               4          3
-EN         MONIT1     MONIT2     MONIT2-ERR
-MEV        B          PC/FIS     PC/FIS
- 14.7       0.970      5.60       0.14
+STATUS     (TABLE) Tab.4 (p.644) in Can.J.Chem.48,641,1970.
+HISTORY    (19900326A) BIB correction
+           (20210409A) OG. MONITOR updated: MONIT3 added.
+           MONIT-REF added. FACILITY, INC-SOURCE moved from
+           Sub001.
+ENDBIB              22
+COMMON               5          3
+EN         MONIT1     MONIT2     MONIT2-ERR MONIT3
+MEV        B          PC/FIS     PC/FIS     B
+ 14.7       0.970      5.60       0.14      1.17
 ENDCOMMON            3
 DATA                 6          9
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
@@ -166,25 +218,40 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
  50.       121.         0.         1.14       0.11      8.
  50.       125.         0.         0.85       0.085     9.
 ENDDATA             11
-ENDSUBENT           34
-SUBENT        13268008     890817              20050926       0000
-BIB                  3          3
+ENDSUBENT           42
+SUBENT        13268008   20210409   20211108   20211106       1482
+BIB                  7         13
 REACTION   (92-U-238(N,F)MASS,CHN,FY)
-MONITOR    (29-CU-65(N,2N)29-CU-64,,SIG)
+FACILITY   (CCW,1CANTOR)
+INC-SOURCE (D-T)
+MONITOR    ((MONIT1)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT2)92-U-238(N,F)42-MO-99,CUM,FY)
+           ((MONIT3)92-U-238(N,F),,SIG)
+MONIT-REF  ((MONIT2)13268006,L.H.Gevaert+,J,CJC,48,641,1970)
 STATUS     (DEP,13268007)
-ENDBIB               3
-COMMON               2          3
-EN         MONIT
-MEV        B
- 14.7       0.970
+           (TABLE) Tab.5 (p.644) in Can.J.Chem.48,641,1970.
+HISTORY    (20210409A) OG. MONITOR updated: MONIT3 added.
+           DATA corrected: fission mass yields for A = 103, 105,
+           109, 111, 113 added. MONIT-REF added. FACILITY,
+           INC-SOURCE moved from Sub001.
+ENDBIB              13
+COMMON               5          3
+EN         MONIT1     MONIT2     MONIT2-ERR MONIT3
+MEV        B          PC/FIS     PC/FIS     B
+ 14.7       0.970      5.60       0.14      1.17
 ENDCOMMON            3
-DATA                 3          4
+DATA                 3          9
 MASS       DATA       DATA-ERR
 NO-DIM     PC/FIS     PC/FIS
+103.         4.4        0.15
+105.         3.0        0.1
+109.         1.54       0.15
+111.         1.11       0.06
 112.         1.25       0.06
+113.         0.88       0.06
 115.         0.93       0.12
 121.         1.2        0.14
 125.         1.5        0.4
-ENDDATA              6
-ENDSUBENT           18
+ENDDATA             11
+ENDSUBENT           33
 ENDENTRY             8

@@ -1,46 +1,61 @@
-ENTRY            13264     890817              20050926       0000
-SUBENT        13264001     890817              20050926       0000
-BIB                 10         12
+ENTRY            13264   20210409   20211108   20211106       1482
+SUBENT        13264001   20210409   20211108   20211106       1482
+BIB                 10         18
+TITLE      Nuclear charge distribution in symmetric fission of
+           235U with thermal neutrons: yields of 117Ag, 118Ag,
+           and 118Pd
+AUTHOR     (H.V.Weiss,N.E.Ballou,J.L.Elzie,J.M.Fresco)
 INSTITUTE  (1USANRD)
-REFERENCE  (J,PR,188,1893,6912)
-AUTHOR     (H.V.WEISS,N.E.BALLOU,J.L.ELZIE,J.M.FRESCO)
-TITLE      NUCLEAR CHARGE DISTRIBUTION IN SYMMETRIC FISSION OF
-            235U WITH THERMAL NEUTRONS: YIELDS OF 117AG, 118AG AND
-            118PD
-FACILITY   (REAC,1USAGEV) VALLECITOS NUCLEAR TEST REACTOR
-SAMPLE     SAMPLE ENRICHED TO 93.22% 235U
-METHOD     (RCHEM)
-ERR-ANALYS NO INFORMATION
-STATUS     (RIDER) REFERENCE 69WEI1
-HISTORY    (890720C) VM
-ENDBIB              12
+REFERENCE  (J,PR,188,1893,1969)
+           #doi:10.1103/PhysRev.188.1893
+           #NSR: 1969WE11
+REL-REF    (O,13240002,H.V.Weiss+,J,PR,172,1269,1968) Data for
+           cumulative fractional chain yield of Pd-117
+FACILITY   (REAC,1USAGEV) Vallecitos nuclear test reactor
+SAMPLE     (92-U-235,ENR=0.9322) Enriched uranium (4g) in the
+           form of uranyl nitrate
+METHOD     (CHSEP)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
+HISTORY    (19890720C) VM
+           (20210409A) OG. #NSR and #doi added. Converted to lower
+           case and 4-digit year. SAMPLE, REACTION updated.
+ENDBIB              18
 COMMON               1          3
 EN-DUMMY
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           19
-SUBENT        13264002     890817              20050926       0000
-BIB                  2          3
-REACTION   ((92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA)/
-           (92-U-235(N,F)MASS,CHN,FY,,SPA))
-RESULT     (FRCUM)
-ENDBIB               3
+ENDSUBENT           25
+SUBENT        13264002   20210409   20211108   20211106       1482
+BIB                  5          7
+REACTION   (92-U-235(N,F)46-PD-118,CUM,FY,,FRC/SPA)
+DECAY-DATA (46-PD-118,3.1SEC) +- 0.3 sec, measured by authors
+CORRECTION Correction for the loss of 118Ag daughter product, for
+           the decay of 118Pd during the 3-sec irradiation period.
+STATUS     (TABLE) Tab.I (p.188) in Phys.Rev.188,1893,1969.
+HISTORY    (20210409A) OG. REACTION and DECAY-DATA updated.
+           STATUS and CORRECTION  added.
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 4          1
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
- 46.       118.         0.29       0.03
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+  0.29       0.03
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        13264003     890817              20050926       0000
-BIB                  3          5
-REACTION   ((92-U-235(N,F)ELEM/MASS,IND,FY,,SPA)/
-           (92-U-235(N,F)MASS,CHN,FY,,SPA))
-RESULT     (FRIND)
-DECAY-DATA ((1.)47-AG-117-G,65.0SEC)
-           ((2.)47-AG-118-G,5.6SEC)
-ENDBIB               5
+ENDSUBENT           15
+SUBENT        13264003   20210409   20211108   20211106       1482
+BIB                  5         10
+REACTION   (92-U-235(N,F)ELEM/MASS,IND,FY,,FRC/SPA)
+DECAY-DATA ((1.)47-AG-117-G,65.0SEC) (+5.0, -3.1) sec, measured by
+                                     authors
+           ((2.)47-AG-118-G,5.6SEC)  +- 0.2 sec, measured by
+                                     authors
+CORRECTION Corrected for decay from the end of the irradiation,
+           and for growth from 118Pd during this interval.
+STATUS     (TABLE) Tab.I (p.188) in Phys.Rev.188,1893,1969.
+HISTORY    (20210409A) OG. REACTION and DECAY-DATA updated.
+           STATUS and CORRECTION  added.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 6          2
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
@@ -48,5 +63,5 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
  47.       117.         0.         0.35       0.05      1.
  47.       118.         0.         0.55       0.10      2.
 ENDDATA              4
-ENDSUBENT           14
+ENDSUBENT           19
 ENDENTRY             3
