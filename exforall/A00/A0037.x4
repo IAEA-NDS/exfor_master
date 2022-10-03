@@ -1,6 +1,6 @@
-ENTRY            A0037   20080617   20080908   20080901       A063
-SUBENT        A0037001   20080617   20080908   20080901       A063
-BIB                 14         21
+ENTRY            A0037   20200528   20200717   20200629       A095
+SUBENT        A0037001   20200528   20200717   20200629       A095
+BIB                 14         23
 TITLE      Excitation functions of Mo-98+d reactions
 AUTHOR     (P.P.Zarubin,V.Ju.Padalko,Ju.V.Khrisanfov,
            P.P.Lebedev,Ju.N.Podkopaev)
@@ -9,39 +9,42 @@ REFERENCE  (J,IZV,42,2386,1978)
            (J,BAS,42,(11),145,1978)  English translation.
 FACILITY   (CYCLO,4RUSSUL)
 METHOD     (EDEG,EXTB,SITA,ACTIV)
+DETECTOR   (GELI)
+MONITOR    (13-AL-27(D,X)11-NA-24,,SIG)
+MONIT-REF  (B0099004,H.F.Roehm+,J,JIN,31,3345,1969)
+DECAY-MON  (11-NA-24,14.96HR,DG,2754.,1.0,DG,1368.,0.99)
+COMMENT    *By compiler*.The decay-data were received from the
+           authors.
+ERR-ANALYS (ERR-1) Relative error
+           (ERR-T) Total error
+STATUS     (TABLE) The data in form of the tables were received
+           from the authors.
+           (APRVD).By Ju.V.Khrisanfov
 HISTORY    (19781213C)
            (20080609A) BIB section updated
             Corrections were made according new exfor rules.
-DETECTOR   (GELI)
-ANALYSIS   (AREA)
-MONITOR    (13-AL-27(D,P+A)11-NA-24,M+,SIG)
-MONIT-REF  (B0099004,H.F.ROEHM+,J,JIN,31,3345,1969)
-DECAY-MON  (11-NA-24-G,14.96HR,DG,2754.,1.0,DG,1368.,0.99)
-COMMENT    *By compiler*.The decay-data were received from the
-           authors.
-STATUS     (APRVD).By Ju.V.Khrisanfov.
-           The data in form of the tables were received from the
-           authors.
-ENDBIB              21
-NOCOMMON             0          0
-ENDSUBENT           24
-SUBENT        A0037002   20080617   20080908   20080901       A063
-BIB                  6         11
+           (20200528A) SD: Corrections in all Subents.
+ENDBIB              23
+COMMON               1          3
+ERR-1
+PER-CENT
+  5.
+ENDCOMMON            3
+ENDSUBENT           30
+SUBENT        A0037002   20200528   20200717   20200629       A095
+BIB                  5          8
 REACTION   (42-MO-98(D,P)42-MO-99,,SIG)
-RAD-DET    (42-MO-99,DG)
 DECAY-DATA (42-MO-99,66.4HR,DG,739.,1.0,DG,181.,0.499)
-SAMPLE     Enriched target Mo-98,enrichment 94.1%, thickness
-            0.23E-3 g/cm**2.
-ERR-ANALYS (+DATA-ERR).The error given amounts to 15%
-           approximately, no further details are given.
-           (-DATA-ERR).The error given amounts to 15%
-           approximately, no further details are given.
+SAMPLE     (42-MO-98,ENR=0.941) Enriched target Mo-98,enrichment
+           94.1%, thickness 0.23E-3 g/cm**2.
 ADD-RES    (COMP). Energies of experimentally found resonances are
            compared with  calculated values.
-ENDBIB              11
+HISTORY    (20200528U) SD: RAD-DET deleted. SAMPLE updated.
+           ERR-ANALYS moved to Subent 001. DATA-ERR -> ERR-T.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         21
-EN         DATA       +DATA-ERR  -DATA-ERR
+EN         DATA       +ERR-T     -ERR-T
 MEV        MB         MB         MB
     5.57      68.        12.0       12.0
     6.06     147.         9.0       24.0
@@ -65,30 +68,30 @@ MEV        MB         MB         MB
    11.62     178.        14.        10.
    11.78     214.5       14.        14.
 ENDDATA             23
-ENDSUBENT           39
-SUBENT        A0037003   20080617   20080908   20080901       A063
-BIB                  7         17
-SAMPLE     Enriched taget Mo-98,enrichment 94.1%,thickness
-            1.02E-3 g/cm**2.
-ERR-ANALYS (DATA-ERR).The error given amounts to 15%
-           approximately, no further details are given.
-REL-REF    (A,B0109003,Z.RANDA+,J,JIN,38,2289,1976).The
+ENDSUBENT           36
+SUBENT        A0037003   20200528   20200717   20200629       A095
+BIB                  6         17
+REACTION   (42-MO-98(D,N)43-TC-99-M,,SIG)
+SAMPLE     (42-MO-98,ENR=0.941) Enriched target Mo-98,enrichment
+           94.1%,thickness 1.02E-3 g/cm2.
+REL-REF    (A,B0109003,Z.Randa+,J,JIN,38,2289,1976) The
            experimental  data of this paper agree with the data of
-           the present paper at an energy above 9 MeV.Randa et.al
+           the present paper at an energy above 9 MeV. Randa et.al
            irradiated  thicker targets and they did not discover
            the resonance structure of the (d,n) reaction
-           excitation  function.The  resonance structure of the
+           excitation  function. The  resonance structure of the
             (d,n) reaction excitation function was discovered  by
            the authors of the present paper.
-REACTION   (42-MO-98(D,N)43-TC-99-M,,SIG,,,EXP)
-RAD-DET    (43-TC-99-M,DG)
 DECAY-DATA (43-TC-99-M,6.HR,DG,140.,1.0)
 ADD-RES    (COMP). Energies of the experimentally found resonances
            are compared with  calculated values.
+HISTORY    (20200528A) SD: SF9=EXP deleted from REACTION code.
+           RAD-DET deleted. SAMPLE updated. DATA-ERR -> ERR-T.
+           ERR-ANALYS moved to Subent 001.
 ENDBIB              17
 NOCOMMON             0          0
 DATA                 3         20
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        MB         MB
     6.05      82.         6.0
     6.56      83.         8.25
@@ -112,25 +115,22 @@ MEV        MB         MB
    11.75      81.5        4.0
 ENDDATA             22
 ENDSUBENT           44
-SUBENT        A0037004   20080617   20080908   20080901       A063
-BIB                  5         13
+SUBENT        A0037004   20200528   20200717   20200629       A095
+BIB                  4         10
 REACTION   (42-MO-98(D,A)41-NB-96,,SIG)
-SAMPLE     Enriched target Mo-98,enrichment 94.1%, thickness
-            0.14E-3g/cm**2.
-ERR-ANALYS (+DATA-ERR). The error given amounts to 15%
-           approximately, no further details are given.
-           (-DATA-ERR). The error given amounts to 15%
-           approximately, no further details are given.
-RAD-DET    (41-NB-96,DG)
+SAMPLE     (42-MO-98,ENR=0.941) Enriched target Mo-98,enrichment
+           94.1%, thickness 0.14E-3g/cm2.
 DECAY-DATA (41-NB-96,23.35HR,DG,460.,0.291,
                              DG,568.,0.575,
                              DG,1091.,0.51,
                              DG,1200.,0.207,
                              DG,1492.,0.31)
-ENDBIB              13
+HISTORY    (20200528U) SD: RAD-DET deleted. SAMPLE updated.
+           ERR-ANALYS moved to Subent 001. DATA-ERR -> ERR-T.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         19
-EN         DATA       +DATA-ERR  -DATA-ERR
+EN         DATA       +ERR-T     -ERR-T
 MEV        MB         MB         MB
     5.55       0.4        0.3        0.3
     6.05       1.0        0.45       0.35
@@ -152,23 +152,22 @@ MEV        MB         MB         MB
    11.6        7.17       0.2        0.2
    11.75       7.4        0.25       0.25
 ENDDATA             21
-ENDSUBENT           39
-SUBENT        A0037005   20080617   20080908   20080901       A063
-BIB                  5         10
+ENDSUBENT           36
+SUBENT        A0037005   20200528   20200717   20200629       A095
+BIB                  4          9
 REACTION   ((42-MO-98(D,N)43-TC-99-M,,SIG)/
            (42-MO-98(D,P)42-MO-99,,SIG))
-ERR-ANALYS (DATA-ERR).The error given amounts to 5% approximately,
-           no further details are given.
-SAMPLE     Enriched target Mo-98,enrichment 91.4%.
-RAD-DET    (43-TC-99-M,DG)
-           (42-MO-99,DG)
+SAMPLE     (42-MO-98,ENR=0.941) Enriched target Mo-98,
+            enrichment 94.1%.
 DECAY-DATA (43-TC-99-M,6.HR,DG,140.,1.0)
            (42-MO-99,66.4HR,DG,739.,1.0,
                             DG,181.,0.499)
-ENDBIB              10
+HISTORY    (20200528U) SD: RAD-DET deleted. DATA-ERR -> ERR-T.
+           ERR-ANALYS moved to Subent 001.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3         20
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        NO-DIM     NO-DIM
     6.0        0.53       0.06
     6.6        0.48       0.05
@@ -191,5 +190,5 @@ MEV        NO-DIM     NO-DIM
    11.6        0.29       0.01
    11.7        0.29       0.02
 ENDDATA             22
-ENDSUBENT           37
+ENDSUBENT           36
 ENDENTRY             5
