@@ -1,16 +1,16 @@
-ENTRY            40960   20120217   20120702   20120621       4156
-SUBENT        40960001   20120217   20120702   20120621       4156
-BIB                 13         43
+ENTRY            40960   20190227   20190401   20190326       4181
+SUBENT        40960001   20190227   20190401   20190326       4181
+BIB                 14         65
 TITLE       Average cross-sections for neutron radiation capture,
             transmission and average resonance parameters for
-            tin isotopes .
+            tin isotopes
 AUTHOR     (V.M.Timokhov,M.V.Bokhovko,M.V.Isakov,L.E.Kazakov,
            V.N.Kononov,G.N.Manturov,E.D.Poletaev,V.G.Pronyaev)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (R,FEI-1921,198806)  Data tables are given
-           (J,YF,50,(3),609,198909) Table of res.parameters.
-           (J,SNP,50,375,1989) Engl.translation of J,YF,50,609 .
-FACILITY   (VDG)  Accelerator EG-1 in pulse operating mode.
+REFERENCE  (R,FEI-1921,1988)  Data tables are given
+           (J,YF,50,609,1989) Issue 3. Table of res.parameters.
+           (J,SNP,50,375,1989) Engl.transl. of J,Yad.Fiz.,50,609
+FACILITY   (VDG,4RUSFEI) Accelerator EG-1 in pulse operating mode.
                 Proton pulse duration 3-4 nanosec, repetition
                 frequency 500 kHz and average current 2 microAmp .
 INC-SOURCE (P-LI7)
@@ -29,6 +29,30 @@ DETECTOR   (STANK) Toluol fluid scintillation detector for
            transmissions measurement at base 2.1 m .
 STATUS     (APRVD)   Bokhovko, 1988-08-20
 MONITOR     Several elements given in the proper subents
+ERR-ANALYS (ERR-1)  Error caused by the neutron multiple
+                    scattering
+           (ERR-2)  Systematic error due to neutron beam
+           fluctuations.
+COVARIANCE   Correlation matrix of uncertainties of Sn-116
+             parameters:
+            (XY,4,N,Sn-116 parameters errors ERR-T,Subent,
+           Add-headings)
+           N SUBENT     Add-headings   Sn-116 parameters errors
+           1 40960.046, MOMENTUM L=0., R0 - pot.scattering radius
+                                            for momentum 0.
+           2 40960.046, MOMENTUM L=1., R1 - pot.scattering radius
+                                            for momentum 1.
+           3 40960.036, MOMENTUM L=1., S1 - neutron strength
+                                            function for momentum
+           4 40960.056, POINTER=1    , Sg - radiative strength
+                                            function.
+            (Z,16,NO-DIM,COR)
+                1.         0.52       -0.74      0.17
+                0.52       1.         0.1        -0.02
+                -0.74      0.1        1.         -0.03
+                0.17       -0.02      -0.23      1.
+           Comment of compiler: probably, misprint in
+           Sgamma,S1 correlation coeff. - -0.23 or -0.03.
 HISTORY    (19880907C)  Compiled at the CJD
            (19910306U)  One  reference and two authors added
            (19920729U)  MONIT-REF and REACTION codes in many
@@ -40,17 +64,15 @@ HISTORY    (19880907C)  Compiled at the CJD
             EN-MEAN-45 keV -> KT=30.keV.
             Misprints in Subents 074, 081 were corrected.
             Subents 063-072: (N,TOT) -> (0,0).
-ERR-ANALYS (ERR-1)  Error caused by the neutron multiple
-                    scattering
-           (ERR-2)  Systematic error due to neutron beam
-           fluctuations.
-ENDBIB              43
+           (20190225A) COVARIANCE was moved from Subents
+           036, 046, 056 into 001.
+ENDBIB              65
 COMMON               2          3
 ERR-1      ERR-2
 PER-CENT   PER-CENT
   .6         .3
 ENDCOMMON            3
-ENDSUBENT           50
+ENDSUBENT           72
 SUBENT        40960002   20120217   20120702   20120621       4156
 BIB                  6         14
 REACTION   (50-SN-112(N,G)50-SN-113,,SIG,,AV)   Averaged over
@@ -2447,38 +2469,19 @@ NO-DIM     NO-DIM     NO-DIM
    2.          0.3 -04   0.2  -04
 ENDDATA              4
 ENDSUBENT           22
-SUBENT        40960036   20120217   20120702   20120621       4156
-BIB                  6         29
+SUBENT        40960036   20190227   20190401   20190326       4181
+BIB                  6         10
 REACTION   (50-SN-116(N,EL),,STF)            Strength
               function for particular angular momentum
 ASSUMED    (ASSUM,50-SN-116(N,EL),,STF) Strength function
                                 for momentum L=0
-REL-REF    (R,,V.G.Nikolenko+,C,82ANTWER,781,1982) For ASSUM .
-COVARIANCE   Correlation matrix of uncertainties of Sn-116
-             parameters:
-            (XY,4,Sn-116 parameters errors ERR-T,N,Subent,
-           Add-headings)
-           N SUBENT     Add-headings   Sn-116 parameters errors
-           1 40960.046, MOMENTUM L=0., R0 - pot.scattering radius
-                                            for momentum 0.
-           2 40960.046, MOMENTUM L=1., R1 - pot.scattering radius
-                                            for momentum 1.
-           3 40960.036, MOMENTUM L=1., S1 - neutron strength
-                                            function for momentum
-           4 40960.056, POINTER=1    , Sg - radiative strength
-                                            function.
-            (Z,16,COR,NO-DIM)
-                1.         0.52       -0.74      0.17
-                0.52       1.         0.1        -0.02
-                -0.74      0.1        1.         -0.03
-                0.17       -0.02      -0.23      1.
-           Comment of compiler: probably, misprint in
-           Sgamma,S1 correlation coeff. - -0.23 or -0.03.
+REL-REF    (R,,V.G.Nikolenko+,C,82ANTWER,,781,1982) For ASSUM .
+ERR-ANALYS (ERR-T) Total error
 STATUS     (DEP,40960005)
            (DEP,40960026)
-           (TABLE) Table 8 of R,FEI-1921,1986.
-HISTORY    (19920729U) REACTION codes 'PAR' and 'AV' deleted
-ENDBIB              29
+           (TABLE) Table 8 of Rep.FEI-1921,1986.
+HISTORY    (19920729A) REACTION codes 'PAR' and 'AV' deleted
+ENDBIB              10
 COMMON               3          3
 EN-RES-MIN EN-RES-MAX ASSUM
 KEV        KEV        NO-DIM
@@ -2490,7 +2493,7 @@ NO-DIM     NO-DIM     NO-DIM
    1.       2.3    -04    .2  -04
    2.       0.2    -04    .04 -04
 ENDDATA              4
-ENDSUBENT           42
+ENDSUBENT           23
 SUBENT        40960037   20120217   20120702   20120621       4156
 BIB                  5          9
 REACTION   (50-SN-117(N,EL),,STF)            Strength
@@ -2698,37 +2701,18 @@ NO-DIM     FERMI      FERMI
  1.          7.9        0.3
 ENDDATA              4
 ENDSUBENT           20
-SUBENT        40960046   20120217   20120702   20120621       4156
-BIB                  4         28
-REACTION   (50-SN-116(N,EL)50-SN-116,POT,RAD) Radius of potential
+SUBENT        40960046   20190227   20190401   20190326       4181
+BIB                  4          9
+REACTION   (50-SN-116(N,EL)50-SN-116,,RAD) Radius of potential
                   scattering for particular angular momentum
-COVARIANCE   Correlation matrix of uncertainties of Sn-116
-             parameters:
-            (XY,4,Sn-116 parameters errors ERR-T,N,Subent,
-           Add-headings)
-           N SUBENT     Add-headings   Sn-116 parameters errors
-           1 40960.046, MOMENTUM L=0., R0 - pot.scattering radius
-                                            for momentum 0.
-           2 40960.046, MOMENTUM L=1., R1 - pot.scattering radius
-                                            for momentum 1.
-           3 40960.036, MOMENTUM L=1., S1 - neutron strength
-                                            function for momentum
-           4 40960.056, POINTER=1    , Sg - radiative strength
-                                            function.
-            (Z,16,COR,NO-DIM)
-                1.         0.52       -0.74      0.17
-                0.52       1.         0.1        -0.02
-                -0.74      0.1        1.         -0.03
-                0.17       -0.02      -0.23      1.
-           Comment of compiler: probably, misprint in
-           Sgamma,S1 correlation coeff. - -0.23 or -0.03.
+ERR-ANALYS (ERR-T) Total error
 STATUS     (DEP,40960005)
            (DEP,40960026)
-           (TABLE) Table 8 of R,FEI-1921,1986.
-HISTORY    (19920729U) 'PAR' in REACTION SF5 deleted
+           (TABLE) Table 8 of Rep.FEI-1921,1986.
+HISTORY    (19920729A) 'PAR' in REACTION SF5 deleted
            (20120217A) MOMENTUM L values were corrected as
             given in Table 8.
-ENDBIB              28
+ENDBIB               9
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
@@ -2740,7 +2724,7 @@ NO-DIM     FERMI      FERMI
    0.        5.8        .2
    1.        8.2        .3
 ENDDATA              4
-ENDSUBENT           41
+ENDSUBENT           22
 SUBENT        40960047   20120217   20120702   20120621       4156
 BIB                  3          8
 REACTION   (50-SN-117(N,EL)50-SN-117,POT,RAD) Radius of potential
@@ -2937,35 +2921,16 @@ NO-DIM     NO-DIM     EV         EV
   22.0  -04    2.2 -04     46.       14.
 ENDDATA              3
 ENDSUBENT           18
-SUBENT        40960056   20120217   20120702   20120621       4156
-BIB                  4         26
+SUBENT        40960056   20190227   20190401   20190326       4181
+BIB                  4          7
 REACTION  1(50-SN-116(N,G),,STF)  Radiation strength function
           2(50-SN-116(N,0),,D)    Level spacing
-COVARIANCE   Correlation matrix of uncertainties of Sn-116
-             parameters:
-            (XY,4,Sn-116 parameters errors ERR-T,N,Subent,
-           Add-headings)
-           N SUBENT     Add-headings   Sn-116 parameters errors
-           1 40960.046, MOMENTUM L=0., R0 - pot.scattering radius
-                                            for momentum 0.
-           2 40960.046, MOMENTUM L=1., R1 - pot.scattering radius
-                                            for momentum 1.
-           3 40960.036, MOMENTUM L=1., S1 - neutron strength
-                                            function for momentum
-           4 40960.056, POINTER=1    , Sg - radiative strength
-                                            function.
-            (Z,16,COR,NO-DIM)
-                1.         0.52       -0.74      0.17
-                0.52       1.         0.1        -0.02
-                -0.74      0.1        1.         -0.03
-                0.17       -0.02      -0.23      1.
-           Comment of compiler: probably, misprint in
-           Sgamma,S1 correlation coeff. - -0.23 or -0.03.
+ERR-ANALYS (ERR-T) Total error
 STATUS     (DEP,40960005)
            (DEP,40960026)
-           (TABLE) Table 8 of R,FEI-1921,1986.
-HISTORY    (19920729U)  'AV' in REACTION SF8 deleted
-ENDBIB              26
+           (TABLE) Table 8 of Rep.FEI-1921,1986.
+HISTORY    (19920729A)  'AV' in REACTION SF8 deleted
+ENDBIB               7
 COMMON               2          3
 EN-RES-MIN EN-RES-MAX
 KEV        KEV
@@ -2976,7 +2941,7 @@ DATA      1ERR-T     1DATA      2ERR-T     2
 NO-DIM     NO-DIM     EV         EV
   1.9   -04  .2    -04   540.       180.
 ENDDATA              3
-ENDSUBENT           38
+ENDSUBENT           19
 SUBENT        40960057   20120217   20120702   20120621       4156
 BIB                  3          6
 REACTION  1(50-SN-117(N,G),,STF)  Radiation strength function

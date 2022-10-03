@@ -1,6 +1,6 @@
-ENTRY            10562   20170724   20171110   20171103       1432
-SUBENT        10562001   20170724   20171110   20171103       1432
-BIB                 10         33
+ENTRY            10562   20180507   20190401   20190318       1446
+SUBENT        10562001   20180507   20190401   20190318       1446
+BIB                 11         52
 TITLE      Measurement of the fission cross sections of
             uranium-233 and plutonium-239 relative to uranium-235
             from 1 keV to 30 keV
@@ -9,7 +9,25 @@ INSTITUTE  (1USALRL)
 REFERENCE  (J,NSE,66,205,1978)
            (R,UCID-16981,1975) Preliminary data
 FACILITY   (LINAC,1USALRL) LLL 100 MeV electron linac
-METHOD     (TOF) Flight path of 17 m and 34.3 m
+SAMPLE     233U sample:
+            233U (>99.99%), 236U (0.001%)
+           235U sample:
+            234U (0.03%), 235U (99.91%), 236U (0.02%), 238U (0.04%
+           238U sample:
+            235U (0.0006%), 238U (>99.99%)
+           239Pu sample:
+            239Pu (99.98%), 240Pu (0.02%)
+           238U+233U sample
+            233U (12.69%), 238U (87.31%)
+           238U+239Pu sample:
+            238U (85.57%), 239Pu (14.43%)
+METHOD     (TOF) Flight path of 34.3 m (1440 Hz and 10 ns pulse
+            width except for 239Pu-to-235U ratio for which 720 Hz
+            and 20 ns pulse width).
+           A 17 m was also used for normalization to the thermal
+            ratio.
+           The effect of neutron target and detector thickness on
+            flight path resolution was an uncertainty of +/-4 cm.
 DETECTOR   (FISCH) Ionization fission chambers
 ERR-ANALYS The following effects are taken into account:
             - electronmic deadtime
@@ -34,25 +52,27 @@ HISTORY    (19760112C)
            (19830914A) MONITOR, COMMON updated in all subentries.
            (20040602A) Converted to new date formats, lower case.
            (20170724A) On. ERR-ANALYS update. Major rev.in 002+003
-ENDBIB              33
+           (20180507U) On. FACILITY and METHOD revised.
+ENDBIB              52
 NOCOMMON             0          0
-ENDSUBENT           36
-SUBENT        10562002   20170724   20171110   20171103       1432
-BIB                  5         13
+ENDSUBENT           55
+SUBENT        10562002   20180507   20190401   20190318       1446
+BIB                  5         14
 REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
 MONITOR    ((94-PU-239(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
-            Determined from fission ratios of 238U/235U and
-            238U/239Pu and from measurements in thermal range.
+           Weighted average of the (1) 238U/235U and 238U/239Pu
+            ratio, and (2) thermal ratio.
 FLAG       (1.) The upper boundary energy (EN-MAX) of the highest
             bin is not given in the article. The compiler
             obtained it from the lower boundary energy and centre
             energy in the article. There might be minor
             difference of +/-0.001 MeV.
-STATUS     (TABLE) Table IX of Nucl.Sci.ENg.666(1978)205
+STATUS     (TABLE) Table IX of Nucl.Sci.Eng.666(1978)205
 HISTORY    (19771209A) Preliminary data replaced.
            (20170724A) On. DATA-ERR -> ERR-T. EN -> EN-MIN/MAX,
             MONIT-ERR added.
-ENDBIB              13
+           (20180507U) On. Free text under MONITOR revised.
+ENDBIB              14
 COMMON               4          3
 EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
 MEV        MEV        NO-DIM     PER-CENT
@@ -169,13 +189,13 @@ MEV        MEV        NO-DIM     PER-CENT   PER-CENT   NO-DIM
  26.625     28.532     1.025      3.3        3.5
  28.532     28.654     1.014      3.6        3.8        1.
 ENDDATA            109
-ENDSUBENT          131
-SUBENT        10562003   20170724   20171110   20171103       1432
-BIB                  5         13
+ENDSUBENT          132
+SUBENT        10562003   20180507   20190401   20190318       1446
+BIB                  5         14
 REACTION   ((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
 MONITOR    ((92-U-233(N,F),,SIG,,AV)/(92-U-235(N,F),,SIG,,AV))
-            Determined from fission ratios of 238U/235U and
-            238U/233U and from measurements in thermal range.
+           Weighted average of the (1) 238U/235U and 238U/233U
+            ratio, and (2) thermal ratio.
 FLAG       (1.) The upper boundary energy (EN-MAX) of the highest
             bin is not given in the article. The compiler
             obtained it from the lower boundary energy and centre
@@ -185,7 +205,8 @@ STATUS     (TABLE) Table VIII of Nucl.Sci.Eng.666(1978)205
 HISTORY    (19771209C)
            (20170724A) On. DATA-ERR -> ERR-T. EN -> EN-MIN/MAX,
             MONIT-ERR added.
-ENDBIB              13
+           (20180507U) On. Free text under MONITOR revised.
+ENDBIB              14
 COMMON               4          3
 EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
 MEV        MEV        NO-DIM     PER-CENT
@@ -302,5 +323,5 @@ MEV        MEV        NO-DIM     PER-CENT   PER-CENT   NO-DIM
  25.812    27.631      0.965      3.4        3.9
  27.631    29.651      0.987      3.6        4.1        1.
 ENDDATA            109
-ENDSUBENT          131
+ENDSUBENT          132
 ENDENTRY             3

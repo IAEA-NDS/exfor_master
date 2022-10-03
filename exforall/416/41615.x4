@@ -1,6 +1,6 @@
-ENTRY            41615   20161020   20170703   20170630       4175
-SUBENT        41615001   20161020   20170703   20170630       4175
-BIB                 12         38
+ENTRY            41615   20190121   20190401   20190326       4181
+SUBENT        41615001   20190121   20190401   20190326       4181
+BIB                 11         39
 TITLE      Angular Distribution of 4.43-MeV gamma-Rays Produced
            in Inelastic Scattering of 14.1-MeV Neutrons by 12C
            Nuclei
@@ -13,7 +13,7 @@ INSTITUTE  (4ZZZDUB) V.M.Bystritsky,D.N.Grozdanov,A.O.Zontikov,
            (4RUSRUS) N.L.Dukhov All-Russian Research Institute of
             Automatics (VNIIA), Moscow, 101000 Russia.
             Yu.N.Barmakov,E.P.Bogolyubov,V.I.Ryzhkov,D.I.Yurkov
-REFERENCE  (J,PPN/L,13,(4),504,2016)
+REFERENCE  (J,PPN/L,13,504,2016) Issue 4 .
            #doi:10.1134/S154747711604004X
            Engl.translation of:
            (J,FCY/L,13,(4),793,2016)
@@ -23,7 +23,6 @@ INC-SOURCE (D-T)
 SAMPLE      Pure carbon of 10 x 10 x 5 cm3
 METHOD     (COINC) Inc.neutron-alpha, scat.neutron-gamma
            coincidences.
-PART-DET   (N,A,G)
 DETECTOR   (SI) Built-in-generator 64-pixel silicon alpha detector
            (NAICR) 22 NaI(Tl) detectors system for gamma detection
            calibrated by Cs137, Co60, Pu-Be standard gamma-sources
@@ -39,25 +38,34 @@ ANALYSIS    Exp.gamma distributions were fitted as:
             Compton(E) -  Compton scattering contribution,
             Background(E) - background of random events.
 HISTORY    (20161020C) M.M.
-ENDBIB              38
+           (20190121A) Subent 004 was added.
+            Data were added in Subents 002, 003 .
+ENDBIB              39
 NOCOMMON             0          0
-ENDSUBENT           41
-SUBENT        41615002   20161020   20170703   20170630       4175
-BIB                  6         13
-REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,,COS/RSD)
-REL-REF    (A,11229001,J.D.Anderson+,J,PR,111,(2),572,1958)
+ENDSUBENT           42
+SUBENT        41615002   20190121   20190401   20190326       4181
+BIB                  8         20
+REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,G,COS/RSD)
+REL-REF    (A,11229001,J.D.Anderson+,J,PR,111,572,1958) Issue 2
             1.75+-0.18 ; 1.20+-0.31
            (A,11283001,J.Benveniste+,J,NP,19,448,1960)
             3.01+-0.35 ; 2.56+-0.38
            Agree in the frames of uncertainties.
 EN-SEC     (E,G)
 ANALYSIS    Anisotropy ( Number(Theta)/Number(90deg) ) was fitted
-           W(THETA)=1+a*cos(Theta)**2 - b*cos(THETA)**4
+            W(THETA)=1+a*cos(Theta)**2 - b*cos(THETA)**4
+CORRECTION2 For self-absorption in sample,
+            for angular resolution of exp.setup .
 ERR-ANALYS (ERR-S) Statistical uncertainty
            Systematical uncertainties are under study.
-STATUS     (TABLE) Text, page 511, of PPN/L,13,(4),504,2016
+STATUS     (TABLE) Text, page 511, of Physics of Particles and
+                Nuclei Letters,13,(4),504,2016
+             Received 2019-01-28 from author A.O.Zontikov:
+             2. - 3.07 , 4. - -2.74
            (DEP,41615003) Angular anisotropy.
-ENDBIB              13
+HISTORY    (20190128R) Data 2( received from author A.O.Zontikov )
+           were added in free text
+ENDBIB              20
 COMMON               2          3
 EN         E
 MEV        MEV
@@ -69,25 +77,78 @@ NO-DIM     NO-DIM     NO-DIM
  2.         2.47       0.10
  4.        -2.04       0.12
 ENDDATA              4
-ENDSUBENT           26
-SUBENT        41615003   20161020   20170703   20170630       4175
-BIB                  4         10
+ENDSUBENT           33
+SUBENT        41615003   20190121   20190401   20190326       4181
+BIB                  6         12
 REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,G,RSD)
-            Anisotropy  Number(Theta)/Number(90deg)
-REL-REF    (A,11229001,J.D.Anderson+,J,PR,111,(2),572,1958)
+            Anisotropy = Number(Theta)/Number(90deg)
+REL-REF    (A,11229001,J.D.Anderson+,J,PR,111,572,1958) Issue 2
            (A,11283001,J.Benveniste+,J,NP,19,448,1960)
            Agree in the frames of uncertainties.
 EN-SEC     (E,G)
-STATUS     (UNOBT)
-           Request of data was sent 18.11.2016 to corresponding
-           author V.Skoy .
-           Fig.9 of PPN/L,13,(4),504,2016
-ENDBIB              10
+ERR-ANALYS (ERR-S) Statistical error
+STATUS     (TABLE) Data from the authors 28-01-2019
+           Data are on Fig.9 of Physics of Particles and Nuclei
+                Letters,13,(4),504,2016
+HISTORY    (20190128R) Data ( received from author A.O.Zontikov )
+           were added
+ENDBIB              12
 COMMON               2          3
 EN         E
 MEV        MEV
  14.1       4.43
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           18
-ENDENTRY             3
+DATA                 3         11
+COS        DATA       ERR-S
+NO-DIM     NO-DIM     NO-DIM
+  0.966     1.471      0.046
+  0.866     1.662      0.051
+  0.707     1.693      0.052
+  0.500     1.479      0.046
+  0.259     1.158      0.038
+  0.000     1.007      0.034
+  -0.259    1.140      0.037
+  -0.500    1.515      0.047
+  -0.707    1.761      0.053
+  -0.866    1.747      0.053
+  -0.966    1.602      0.049
+ENDDATA             13
+ENDSUBENT           34
+SUBENT        41615004   20190121   20190401   20190326       4181
+BIB                  8         22
+REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,G,LEG/RSD)
+REL-REF    (O,41660001,D.N.Grozdanov+,J,PAN,81,588,2018)
+           #doi:10.1134/S106377881805006X
+           Engl.translation of:
+           (O,41660001,D.N.Grozdanov+,J,YF,81,548,2018) Issue 5.
+           #doi:10.1134/S0044002718050069
+EN-SEC     (E,G)
+ANALYSIS   .Anisotropy ( Number(Theta)/Number(90deg) ) was fitted
+           W(THETA)=1+a2*P2(cos(Theta))+ a4*P4(cos(THETA))
+           .Legendre coefficients were obtained using formula 14.2
+             of ENDF-6 Formats Manual
+             https://www.bnl.gov/isd/documents/70393.pdf
+            2. - 6.495E-02, 4. - -4.722E-02 (received form author)
+CORRECTION2 For self-absorption in sample,
+            for angular resolution of exp.setup .
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (DEP,41615003) Angular anisotropy.
+           (TABLE) Table 1 of REL-REF .
+                   From author
+HISTORY    (20190121C)
+           (20190128R) Data 2 (received from author A.O.Zontikov)
+           were added in free text
+ENDBIB              22
+COMMON               2          3
+EN         E
+MEV        MEV
+ 14.1       4.43
+ENDCOMMON            3
+DATA                 3          2
+NUMBER     DATA       ERR-S
+NO-DIM     NO-DIM     NO-DIM
+ 2.          0.34      0.03
+ 4.         -0.33      0.03
+ENDDATA              4
+ENDSUBENT           35
+ENDENTRY             4
