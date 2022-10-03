@@ -1,90 +1,102 @@
-ENTRY            F0043   19990407   19990427   20050926       0000
-SUBENT        F0043001   19990407   19990427   20050926       0000
-BIB                 11         19
+ENTRY            F0043   20200129   20200330   20200326       F074
+SUBENT        F0043001   20200129   20200330   20200326       F074
+BIB                 13         26
 TITLE      Cross section measurements for charged particle induced
-           reactions on Li-6*
-AUTHOR     (C.R.GOULD,J.M.JOYCE,J.R.BOYCE)
-INSTITUTE  (1USATNL)
-REFERENCE  (C,75WASH,2,697,1975) conf. on nucl. cross sect. and
-            technology, Washington 1975
+           reactions on Li-6*.
+AUTHOR     (C.R.Gould,J.M.Joyce,J.R.Boyce)
+INSTITUTE  (1USATNL,1USANCS,1USADKE)
+REFERENCE  (C,75WASH,2,697,1975) - only data for 6Li+d compiled
+            in this Entry,
+            data for 6Li+p compiled in A1414 (see REL-REF)
+            data for 6Li+3He compiled in F0001 (see REL-REF)
 MONITOR    (3-LI-6(D,EL)3-LI-6,,DA)
-REL-REF    (A,,MCCLENAHAN+,J,PR/C,11,(2),370,197502)
-           (A,,GOULD+,J,NSE,55,(3),267,197411)
-FACILITY   (VDGT)
-ANALYSIS   (INTAD) particles detected at laboratory angles from 20
-           160 degries
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) digitizing error
-           (DATA-ERR1) Absolute error
-STATUS     (CURVE) Fig 5
+MONIT-REF  (A1431007,H.G.Bingham+,J,NP/A,173,265,1971)
+REL-REF    (O,A1414001,C.R.Gould+,J,NSE,55,267,1974) react.6Li+p
+           (O,F0001001,C.R.Gould+,J,NSE,55,267,1974) react.6Li+3He
+FACILITY   (VDGT,1USATNL)
+ANALYSIS   (INTAD) based on Legendre polinomial fit of diff.cross
+           sections. Particles detected at laboratory angles from
+           20 to 160 degr.
+DETECTOR   (SIBAR) Information from REL-REF
+ERR-ANALYS (DATA-ERR) Absolute error mainly from monitor reaction
+STATUS     (CURVE) Fig. 5 from 75WASH,2,697,1975
 HISTORY    (19840215C)
            (19971212U) SAN2 and SAN1 corrected.
            (19990407A) CNPD: corrected 4-dig. year
-ENDBIB              19
+           (20200129A) SD: Corrections in all Subents according to
+           new EXFOR rules. BIB updated. EN-ERR -> EN-ERR-DIG;
+           DATA-ERR -> ERR-DIG; DATA-ERR1 -> DATA-ERR.
+            ERR-ANALYS, STATUS updated. MONITOR/REF added.
+ENDBIB              26
 COMMON               5          3
-EN-NRM     ANG-NRM    EN-ERR     DATA-ERR   DATA-ERR1
+EN-NRM     ANG-NRM    EN-ERR-DIG ERR-DIG    DATA-ERR
 MEV        ADEG       MEV        MB         PER-CENT
-  8.0        70.0       0.03       0.3         15.
+  8.0        70.0       0.030      0.3         15.
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        F0043002   19990407   19990427   20050926       0000
-BIB                  1          1
-REACTION   (3-LI-6(D,A)2-HE-4,,SIG,,,EXP)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           33
+SUBENT        F0043002   20200129   20200330   20200326       F074
+BIB                  3          4
+REACTION   (3-LI-6(D,A)2-HE-4,,SIG)
+REL-REF    (A,A1414007,C.R.McClenahan+,J,PR/C,11,370,1975)
+HISTORY    (20200129A) SD: SF9=EXP deleted from REACTION code.
+            REL-REF added.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 2         14
 EN         DATA
 MEV        MB
-     2.163     18.32
-     2.418     17.05
-     2.675     19.54
-     2.933     22.44
-     3.191     27.43
-     3.449     32.42
-     3.705     32.4
-     3.96      31.14
-     4.214     26.55
-     4.425     23.21
-     4.679     19.45
-     4.891     16.52
-     5.402     13.59
-     5.869     10.65
+      2.163       18.3
+      2.418       17.1
+      2.675       19.5
+      2.933       22.4
+      3.191       27.4
+      3.449       32.4
+      3.705       32.4
+      3.960       31.1
+      4.214       26.6
+      4.425       23.2
+      4.679       19.4
+      4.891       16.5
+      5.402       13.6
+      5.869       10.7
 ENDDATA             16
-ENDSUBENT           22
-SUBENT        F0043003   19990407   19990427   20050926       0000
-BIB                  2          2
-REACTION   (3-LI-6(D,P)3-LI-7,PAR,SIG,,,EXP)
-EN-SEC     (E-LVL,3-LI-7)
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           25
+SUBENT        F0043003   20200129   20200330   20200326       F074
+BIB                  3          4
+REACTION   (3-LI-6(D,P)3-LI-7,PAR,SIG)
+REL-REF    (A,A1414010,C.R.McClenahan+,J,PR/C,11,370,1975)
+HISTORY    (20200129A) SD: SF9=EXP deleted from REACTION code.
+           EN-SEC deleted. REL-REF added. E-LVL=0.43 -> 0.478MeV
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 3         25
 E-LVL      EN         DATA
 MEV        MEV        MB
-     0.         2.267     56.69
-     0.         2.517     49.05
-     0.         2.817     52.42
-     0.         3.029     51.13
-     0.         3.283     49.
-     0.         3.538     48.98
-     0.         3.791     45.57
-     0.         4.045     43.86
-     0.         4.512     42.56
-     0.         5.022     41.67
-     0.         5.447     41.22
-     0.         5.998     38.21
-     0.         6.974     34.75
-     0.43       2.23      43.11
-     0.43       2.484     40.95
-     0.43       2.74      43.08
-     0.43       2.995     42.64
-     0.43       3.25      41.76
-     0.43       3.547     40.89
-     0.43       3.716     37.44
-     0.43       4.012     34.85
-     0.43       4.479     32.67
-     0.43       4.946     30.93
-     0.43       5.456     30.47
-     0.43       6.008     27.86
+         0.      2.267       56.7
+         0.      2.517       49.0
+         0.      2.817       52.4
+         0.      3.029       51.1
+         0.      3.283       49.0
+         0.      3.538       49.0
+         0.      3.791       45.6
+         0.      4.045       43.9
+         0.      4.512       42.6
+         0.      5.022       41.7
+         0.      5.447       41.2
+         0.      5.998       38.2
+         0.      6.974       34.8
+      0.478      2.230       43.1
+      0.478      2.484       41.0
+      0.478      2.740       43.1
+      0.478      2.995       42.6
+      0.478      3.250       41.8
+      0.478      3.547       40.9
+      0.478      3.716       37.4
+      0.478      4.012       34.9
+      0.478      4.479       32.7
+      0.478      4.946       30.9
+      0.478      5.456       30.5
+      0.478      6.008       27.9
 ENDDATA             27
-ENDSUBENT           34
+ENDSUBENT           36
 ENDENTRY             3
