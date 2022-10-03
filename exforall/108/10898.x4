@@ -1,53 +1,54 @@
-ENTRY            10898   20180411   20180903   20180727       1440
-SUBENT        10898001   20180411   20180903   20180727       1440
-BIB                 14         40
+ENTRY            10898   20201028   20210421   20210421       1474
+SUBENT        10898001   20201028   20210421   20210421       1474
+BIB                 14         41
 TITLE      Absolute thermal fission yields for Pu-239
 AUTHOR     (W.J.Maeck,F.A.Duce,R.L.Eggleston,R.L.Tromp,
            J.W.Meteer, W.A.Emel)
 REFERENCE  (R,ENICO-1001,1979)
 INSTITUTE  (1USAINL)
-FACILITY   (REAC,1USAINL) Engineering Test Reactor (ETR),
+FACILITY   (REAC,1USAINL) Engineering test reactor (etr),
            reflector region.
 SAMPLE     (94-PU-239,ENR=0.991225) Samples of PuO(2) contained
-           in high purity aluminum capsules. Capsules filled to
+           in high-purity aluminum capsules. Capsules filled to
            full depth by addition of aluminum powder. Average
-           isotopic abundance of capsules is 99.1225-percent
-           Pu-239.
+           isotopic abundance of capsules is 99.1225% Pu-239.
 DETECTOR   Mass spectrometer
-MONITOR    Sum of heavy mass peak normalized to 100 percent.
+MONITOR    Sum of heavy mass peak normalized to 100%.
 ASSUMED    ENDF/B values for fission yields used in mass regions
            119-124 and 125-130.
 INC-SPECT  Thermal reactor spectrum
 METHOD     (CHSEP) Two sets of four samples used- low burnup of
-           650-Mg samples and high burnup irradiation of 40-Mg
-           samples. Samples chemically analyzed and gamma ray
+           650 mg samples and high burnup irradiation of 40 mg
+           samples. Samples chemically analyzed and gamma-ray
            spectrometery used to determine completeness of
            sample dissolution. Non-gaseous fission products
            determined by isotope dilution mass spectrometry.
            Absolute number of fissions determined by summation
            techniques.
-ERR-ANALYS (DATA-ERR) Six step error analysis done. Procedure
-           included errors due to-
+ERR-ANALYS (DATA-ERR) Six-steps error analysis done. Procedure
+           included errors due to:
             -uncertainty in spike concentrations
             -random spectrometer errors
             -Kr and Xe spike volume uncertainties
             -uncertainty due to extraneous fissions and elemental
-             fission yields due to Pu-241 contamination
+             fission yields caused by Pu-241 contamination
             -systematic uncertainty of spectrometer in isotopic
              abundance measurements
 STATUS     (TABLE) Data were taken from the report.
 HISTORY    (19800421C)
            (19801030U) BIB corrections.
            (19840917A) BIB correction.
-           (20180411A) BP: Updated to new date formats,lower case.
-                corrections according last EXFOR rules and Dict.
-ENDBIB              40
+           (20180411A) BP: updated to new date formats,lower
+           case. corrections according last EXFOR rules and dict.
+           (20201028A) BP: Corrected 135,136Xe yields in Sub. 3.
+                      Added subentry 4.
+ENDBIB              41
 COMMON               1          3
 EN-DUMMY
 EV
- 0.0253
+     0.0253
 ENDCOMMON            3
-ENDSUBENT           47
+ENDSUBENT           48
 SUBENT        10898002   20180411   20180903   20180727       1440
 BIB                  2          3
 REACTION   (94-PU-239(N,F)ELEM,CUM,FY,,SPA)
@@ -70,8 +71,8 @@ NO-DIM     PC/FIS     PC/FIS
         62.      4.783      0.057
 ENDDATA             12
 ENDSUBENT           20
-SUBENT        10898003   20180411   20180903   20180727       1440
-BIB                  4          9
+SUBENT        10898003   20201028   20210421   20210421       1474
+BIB                  4         12
 REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,SPA)
 METHOD     Data obtained by
             -determining the isotopic composition of
@@ -81,9 +82,12 @@ METHOD     Data obtained by
 STATUS     (DEP,10898002) Fission element yields used to obtain
            isotopic yields
 HISTORY    (19801030A) Data corrections.
-ENDBIB               9
+           (20201028A) BP: Removed 135,136Xe yields because they
+           were not separated and published as a sum; originally
+           compiled in subentry 10898003 as individual yields.
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 4         33
+DATA                 4         31
 ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
         36.        83.      0.296      0.003
@@ -101,8 +105,6 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
         54.       131.      3.938      0.044
         54.       132.      5.447      0.053
         54.       134.      7.703      0.070
-        54.       135.     14.954      0.143
-        54.       136.     14.954      0.143
         55.       133.      7.059      0.077
         55.       134.      6.629      0.072
         56.       138.      6.124      0.096
@@ -119,6 +121,28 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
         62.       151.      0.729      0.015
         62.       152.      0.594      0.015
         62.       154.      0.250      0.004
-ENDDATA             35
-ENDSUBENT           49
-ENDENTRY             3
+ENDDATA             33
+ENDSUBENT           50
+SUBENT        10898004   20201028   20210421   20210421       1474
+BIB                  5         12
+REACTION   ((94-PU-239(N,F)54-XE-135,CUM,FY,,SPA)+
+           (94-PU-239(N,F)54-XE-136,CUM,FY,,SPA))
+METHOD     Data obtained by
+            -determining the isotopic composition of
+             each fission product element
+            -using isotopic composition measurements to apportion
+             the mean fission element yields
+STATUS     (DEP,10898002) Fission element yields used to obtain
+           isotopic yields
+COMMENT    Compiler's comment: In the experiment 135Xe and 136Xe
+           yields were not separated and published as a sum.
+HISTORY    (20201028A) BP
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+PC/FIS     PC/FIS
+     14.954      0.143
+ENDDATA              3
+ENDSUBENT           20
+ENDENTRY             4

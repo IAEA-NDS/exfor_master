@@ -1,15 +1,15 @@
-ENTRY            10865   20180411   20180903   20180727       1440
-SUBENT        10865001   20180411   20180903   20180727       1440
-BIB                 12         30
+ENTRY            10865   20201028   20210421   20210421       1474
+SUBENT        10865001   20201028   20210421   20210421       1474
+BIB                 12         33
 TITLE      Absolute thermal fission yields for U-235
 AUTHOR     (W.J.Maeck,W.A.Emel,F.A.Duce,R.L.Tromp,J.W.Meteer)
 REFERENCE  (R,ICP-1142,1978)
 INSTITUTE  (1USAINL)
-FACILITY   (REAC,1USAINL)  Engineering Test Reactor (ETR).
+FACILITY   (REAC,1USAINL)  Engineering test reactor (ETR).
 INC-SPECT  Thermal reactor spectrum.
-SAMPLE     (932-U-235,ENR=0.99735) U-235 in form of U(3)O(8):
-           mean abundance U-235 is 99.735-percent. Samples
-           enclosed in high purity aluminum.
+SAMPLE     (92-U-235,ENR=0.99735) U-235 in form of U(3)O(8):
+           mean abundance U-235 is 99.735%. Samples
+           enclosed in high-purity aluminum.
 METHOD     (ASEP) Amounts of non-gaseous fission products
            determined using isotope dilution mass spectrometry.
 MONITOR    Number of fissions determined by summation method for
@@ -19,36 +19,43 @@ ERR-ANALYS (DATA-ERR) Standard deviation obtained by
            approximating functions used to calculate yields,
            approximating linear terms of Taylor expansion, and
            applying standard methods for calculating errors
-           for a linear sum of random variables. Uncertainty in
-           net sample content approx 0.2% relative. Uncertainty
-           in absolute fission yields caused by relative error
-           of 0.5% in determination of the number of fissions.
+           for a linear sum of random variables. Relative
+           uncertainty in net sample content approx. 0.2%.
+           Uncertainty in absolute fission yields caused by
+           relative error of 0.5% in determination of the number
+           of fissions.
 STATUS     (APRVD) Approved by W.J.Maeck, 1980/2/28.
 HISTORY    (19791116C)
            (19800820U) BIB correction.
            (19801029U) BIB correction.
            (19840917A) BIB correction.
            (19891212A) BIB corrections.
-           (20180411A) BP: Updated to new date formats,lower case.
-                  corrections according last EXFOR rules and Dict.
-ENDBIB              30
+           (20180411A) BP: updated to new date formats,lower
+           case. corrections according last EXFOR rules and dict.
+           (20201028A) BP: Corrected 135,136 mass yields in
+                      Sub.2. Added subentry 3.
+ENDBIB              33
 COMMON               1          3
 EN-DUMMY
 EV
- 0.0253
+     0.0253
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        10865002   20180411   20180903   20180727       1440
-BIB                  4          6
+ENDSUBENT           40
+SUBENT        10865002   20201028   20210421   20210421       1474
+BIB                  4         10
 REACTION   (92-U-235(N,F)MASS,CHN,FY,,SPA)
 ANALYSIS   Data averaged over three similarly prepared samples.
-STATUS     (TABLE) Table XII of ICP-1142
+STATUS     (TABLE) Table XII of ICP-1142.
 HISTORY    (19801029A) Reaction, data corrections.
-           (20180411A) BP: Changed METHOD to ANALYSIS, STATUS
+           (20180411A) BP: Changed method to analysis, status
             added.
-ENDBIB               6
+           (20201028A) BP: Removed mass 135,136 yields that were
+                      not separated and published as a sum;
+                      compiled in subentry 10898002 as individual
+                      yields.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 3         41
+DATA                 3         39
 MASS       DATA       DATA-ERR
 NO-DIM     PC/FIS     PC/FIS
         83.      0.543      0.004
@@ -75,8 +82,6 @@ NO-DIM     PC/FIS     PC/FIS
        132.      4.344      0.024
        133.      6.685      0.036
        134.      7.918      0.037
-       135.     12.847      0.065
-       136.     12.847      0.065
        137.      6.234      0.037
        138.      6.756      0.039
        140.      6.102      0.056
@@ -92,6 +97,22 @@ NO-DIM     PC/FIS     PC/FIS
        151.      0.399      0.017
        152.      0.251      0.008
        154.      0.076      0.003
-ENDDATA             43
-ENDSUBENT           54
-ENDENTRY             2
+ENDDATA             41
+ENDSUBENT           56
+SUBENT        10865003   20201028   20210421   20210421       1474
+BIB                  5          6
+REACTION   (92-U-235(N,F)MASS,CHN,FY,,SPA)
+ANALYSIS   Data averaged over three similarly prepared samples.
+STATUS     (TABLE) Table XII of ICP-1142.
+COMMENT    Compiler's comment: In the experiment masses 135 and
+           136 yields were not separated and published as a sum.
+HISTORY    (20201028A) BP
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+MASS-MIN   MASS-MAX   DATA       DATA-ERR
+NO-DIM     NO-DIM     PC/FIS     PC/FIS
+      135.0      136.0     12.847      0.065
+ENDDATA              3
+ENDSUBENT           14
+ENDENTRY             3
