@@ -1,74 +1,94 @@
-ENTRY            14237   20160804   20170504   20161113       1421
-SUBENT        14237001   20160804   20170504   20161113       1421
-BIB                 15         31
+ENTRY            14237   20210913   20220126   20220125       1486
+SUBENT        14237001   20210913   20220126   20220125       1486
+BIB                 16         44
 TITLE      Neutron capture cross sections of 74Ge, 76Ge, and
            75As at 25 keV
 AUTHOR     (J.Marganiec,I.Dillmann,C.Domingo Pardo,F.Kaeppeler,
            R.Reifarth,R.Gallino,M.Pignatari,P.Grabmayr)
+REFERENCE  (J,PR/C,79,065802,2009) Original reference.
+           #doi:10.1103/PhysRevC.79.065802
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
 INSTITUTE  (2GERKFK,2GERGSI,2ITYTUR,1USANOT,2GERTUE)
-REFERENCE  (J,PR/C,79,065802,2009)
-FACILITY   (VDGT,2GERKFK)
-DETECTOR   (HPGE)Samples as well as in the gold foils was
+FACILITY   (VDG,2GERKFK)
+DETECTOR   (HPGE) Samples as well as in the gold foils was
            measured in far geometry by means of a shielded high
-           purity Ge detector with 1.7 keV resolution at
-           1.33 MeV gamma ray energy and a relative efficiency
-           of 30%.
+           purity Ge detector with 1.7 keV resolution at 1.33
+           MeV gamma ray energy and a relative efficiency of 30%.
 METHOD     (ACTIV)
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
 DECAY-MON  (79-AU-198-G,2.69517D,DG,411.8,0.9558)
-MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018) Complete
+           description of Karlsruhe cross sections deficiencies.
 INC-SOURCE (P-LI7)
 INC-SPECT  The angle-integrated spectrum corresponds almost
            perfectly to a Maxwell-Boltzmann distribution for
            a thermal energy of kT = 25 keV.
-ERR-ANALYS (ERR-1) Uncertainty in reference cross section
-           (ERR-2) Uncertainty in detection efficiency
-           (ERR-3,,0.1) Uncertainty in g-ray selfabsorption
-ANALYSIS   Maxwelian averaged cross sections were calculated
+ERR-ANALYS (MONIT-ERR) Uncertainty in reference cross section
+           (ERR-1) Uncertainty in detection efficiency
+           (ERR-2,,0.1) Uncertainty in g-ray selfabsorption
+ANALYSIS   Maxwellian averaged cross sections were calculated
            from experimental values measured at 25 keV using
            energy dependency of evaluated cross sections.
            Small correction for deviation from true Maxwellian
            spectrum in experiment was applied.
+COMMENT    Compiler's comment: The Karlsruhe group original
+           result was based on its own 197Au(n,gamma) cross
+           section by Ratynski and Kaeppeler, Phys.Rev. C37, 595
+            (1988), EXFOR entry #22099 for neutron beam monitor
+           that later was proven as deficient.
+           Kaeppeler and Reifarth comment: Cross section value in
+           entry 14237 is renormalized for new gold cross section.
 HISTORY    (20090629C) Compiled by S.H.
            (20120816U) SD: N1 in BIB line was corrected in Sub.8.
            (20160731A) OS. DECAY-DATA in sub.3 corrected
-ENDBIB              31
-COMMON               2          3
-ERR-1      ERR-2
-PER-CENT   PER-CENT
-2.0        2.0
+           (20210611A) BP: Added doi, COMMENT, updated REFERENCE,
+                       ERR-1, replaced original cross sections
+                       in Sub. 2-8 with the revised values.
+ENDBIB              44
+COMMON               3          3
+ERR-1      MONIT      MONIT-ERR
+PER-CENT   B          PER-CENT
+        2.0      622.7        1.0
 ENDCOMMON            3
-ENDSUBENT           38
-SUBENT        14237002   20090629   20091224   20091222       1357
-BIB                  5         13
-REACTION   (32-GE-74(N,G)32-GE-75,,SIG,,MXW)
-DECAY-DATA (32-GE-75,82.78MIN,DG,198.6,0.0119,
-                              DG,264.6,0.114)
+ENDSUBENT           51
+SUBENT        14237002   20210913   20220126   20220125       1486
+BIB                  8         20
+REACTION   (32-GE-74(N,G)32-GE-75,,SIG,,SPA)
+DECAY-DATA (32-GE-75-G,82.78MIN,DG,198.6,0.0119,
+                                DG,264.6,0.114)
 SAMPLE     GeO2 powder oxide sample, containing 36.74% of
            74Ge,pressed to pellets of 6 and 10 mm in diameter,
            sandwiched between two gold foils. Several samples
            were used.
+METHOD     Revised data: Measured quantity: cross section ratio
+           74Ge/197Au = 0.0659+-0.0067
 ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-S,1.3,2.0) Statistical uncertainty
            (ERR-4,9.7,10.1) Uncertainty in gamma ray intensity
            (ERR-5,0.08,0.09) Uncertainty in irradiation history
            (ERR-6) Uncertainty in half-life
-STATUS     (TABLE)Data taken from tab.3 of the reference
-ENDBIB              13
+CORRECTION Correction for revised gold standard 622.7/586 = 1.0626
+STATUS     (TABLE) Revised cross sections: Text on page 12 of
+                   R,INDC(GER)-0053,2021.
+HISTORY    (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              20
 COMMON               2          3
-KT         ERR-6
+KT-DUMMY   ERR-6
 KEV        PER-CENT
-25.0       0.05
+       25.0       0.05
 ENDCOMMON            3
 DATA                 2          1
 DATA       ERR-T
 MB         MB
-38.6       4.0
+39.8       4.1
 ENDDATA              3
-ENDSUBENT           25
-SUBENT        14237003   20160804   20170504   20161113       1421
-BIB                  6         15
-REACTION   (32-GE-76(N,G)32-GE-77-G,,SIG,,MXW)
+ENDSUBENT           32
+SUBENT        14237003   20210913   20220126   20220125       1486
+BIB                  8         22
+REACTION   (32-GE-76(N,G)32-GE-77-G,,SIG,,SPA)
 DECAY-DATA (32-GE-77-G,11.30HR,DG,211.03,0.308,
                                DG,215.50,0.286,
                                DG,264.44,0.539)
@@ -76,178 +96,213 @@ SAMPLE     GeO2 powder oxide sample, containing 7.83% of
            76Ge,pressed to pellets of 6 and 10 mm in diameter,
            sandwiched between two gold foils. Several samples
            were used.
+METHOD     Revised data: Measured quantity: cross section ratio
+           76Ge-G/197Au = 0.02031+-0.00055
 ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-S,1.0,3.7) Statistical uncertainty
-           (ERR-4,0.9,3.2) Uncertainty in gamma ray intnsity
+           (ERR-4,0.9,3.2) Uncertainty in gamma ray intensity
            (ERR-5,0.05,0.13) Uncertainty in irradiation history
            (ERR-6) Uncertainty in half-life
-STATUS     (TABLE) Data taken from tab.3 of the reference
+CORRECTION Correction for revised gold standard 622.7/586 = 1.0626
+STATUS     (TABLE) Revised cross sections: Text on page 13 of
+                   R,INDC(GER)-0053,2021.
 HISTORY    (20160731A) DECAY-DATA replaced according to article
-ENDBIB              15
+           (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              22
 COMMON               2          3
-KT         ERR-6
+KT-DUMMY   ERR-6
 KEV        PER-CENT
-25.0       0.09
+       25.0       0.09
 ENDCOMMON            3
 DATA                 2          1
 DATA       ERR-T
 MB         MB
-11.9       0.4
+12.6       0.4
 ENDDATA              3
-ENDSUBENT           27
-SUBENT        14237004   20090629   20091224   20091222       1357
-BIB                  5         13
-REACTION   (32-GE-76(N,G)32-GE-77-M,,SIG,,MXW)
+ENDSUBENT           34
+SUBENT        14237004   20210913   20220126   20220125       1486
+BIB                  8         20
+REACTION   (32-GE-76(N,G)32-GE-77-M,,SIG,,SPA)
 DECAY-DATA (32-GE-77-M,52.9SEC,DG,159.7,0.19,
-                              B-,215.5,0.216)
+                               DG,215.5,0.216)
 SAMPLE     GeO2 powder oxide sample, containing 7.83% of
            76Ge,pressed to pellets of 6 and 10 mm in diameter,
            sandwiched between two gold foils. Several samples
            were used.
+METHOD     Revised data: Measured quantity: cross section ratio
+           76Ge-M/197Au = 0.0218+-0.0030
 ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-S,2.0,2.3) Statistical uncertainty
-           (ERR-4,10.5,15.2) Uncertainty in gamma ray intnsity
+           (ERR-4,10.5,15.2) Uncertainty in gamma ray intensity
            (ERR-5,5.0,5.2) Uncertainty in irradiation history
            (ERR-6) Uncertainty in half-life
-STATUS     (TABLE)Data taken from tab.3 of the reference
-ENDBIB              13
+CORRECTION Correction for revised gold standard 622.7/586 = 1.0626
+STATUS     (TABLE) Revised cross sections: Text on page 14 of
+                   R,INDC(GER)-0053,2021.
+HISTORY    (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              20
 COMMON               2          3
-KT         ERR-6
+KT-DUMMY   ERR-6
 KEV        PER-CENT
 25.0       1.1
 ENDCOMMON            3
 DATA                 2          1
 DATA       ERR-T
 MB         MB
-12.8       1.8
+13.6       1.9
 ENDDATA              3
-ENDSUBENT           25
-SUBENT        14237005   20090629   20091224   20091222       1357
-BIB                  5         12
-REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,MXW)
+ENDSUBENT           32
+SUBENT        14237005   20210913   20220126   20220125       1486
+BIB                  8         19
+REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,SPA)
 DECAY-DATA (33-AS-76,25.87HR,DG,559.1,0.45)
 SAMPLE     As2O3 powder oxide sample, containing 75.74% of
            75As,pressed to pellets of 6 and 10 mm in diameter,
            sandwiched between two gold foils. Several samples
            were used.
+METHOD     Revised data: Measured quantity: cross section ratio
+           75As/197Au = 0.633+-0.032
 ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-S,0.5,1.0) Statistical uncertainty
            (ERR-4) Uncertainty in gamma ray intensity
            (ERR-5,0.03,0.19) Uncertainty in irradiation history
            (ERR-6) Uncertainty in half-life
-STATUS     (TABLE)Data taken from tab.3 of the reference
-ENDBIB              12
+CORRECTION Correction for revised gold standard 622.7/586 = 1.0626
+STATUS     (TABLE) Revised cross sections: Text on page 15 of
+                   R,INDC(GER)-0053,2021.
+HISTORY    (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              19
 COMMON               3          3
-KT         ERR-6      ERR-4
+KT-DUMMY   ERR-6      ERR-4
 KEV        PER-CENT   PER-CENT
 25.0       0.34       4.4
 ENDCOMMON            3
 DATA                 2          1
 DATA       ERR-T
 MB         MB
-371.0      20.0
+394.2      20.0
 ENDDATA              3
-ENDSUBENT           24
-SUBENT        14237006   20090629   20091224   20091222       1357
-BIB                  4         12
-REACTION   (32-GE-74(N,G)32-GE-75,,SIG,,MXW,DERIV)
-STATUS     (TABLE) Data taken from tab. 7 of the reference
-           (DEP,14237002)
-ANALYSIS   Maxwellian averaged cross sections obtained by
-           normalization of the NON-SMOKER values to the
-           measured cross section at kT=25keV.
-ERR-ANALYS (ERR-T) Uncertainties of extrapolated values
-           were estimated from the differences between
-           results results obtained with normalized
-           evaluated cross sections from data libraries
-           and previously recommended Maxwellian cross
-           sections
-ENDBIB              12
-NOCOMMON             0          0
-DATA                 3         11
-KT         DATA       ERR-T
-KEV        MB         MB
-   5.0       106.0      12.0
-  10.0        70.2       7.3
-  15.0        55.0       5.8
-  20.0        46.9       5.0
-  25.0        41.1       4.6
-  30.0        37.6       3.9
-  40.0        32.6       3.4
-  50.0        29.0       3.1
-  60.0         6.3       2.8
-  80.0        23.4       2.8
- 100.0        22.0       3.0
-ENDDATA             13
-ENDSUBENT           30
-SUBENT        14237007   20090629   20091224   20091222       1357
-BIB                  4         13
-REACTION   (32-GE-76(N,G)32-GE-77,,SIG,,MXW,DERIV)
-STATUS     (TABLE) Data taken from tab. 7 of the reference
-           (DEP,14237003)
-           (DEP,14237004)
-ANALYSIS   Maxwellian averaged cross sections obtained by
-           normalization of the NON-SMOKER values to the
-           measured cross section at kT=25keV.
-ERR-ANALYS (ERR-T) Uncertainties of extrapolated values
-           were estimated from the differences between
-           results results obtained with normalized
-           evaluated cross sections from data libraries
-           and previously recommended Maxwellian cross
-           sections
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 3         11
-KT         DATA       ERR-T
-KEV        MB         MB
-   5.0      58.0        5.8
-  10.0      39.8        3.4
-  15.0      31.3        2.7
-  20.0      26.7        2.3
-  25.0      23.5        2.0
-  30.0      21.5        1.8
-  40.0      18.2        1.5
-  50.0      16.3        1.4
-  60.0      15.0        1.3
-  80.0      13.0        1.1
- 100.0      12.3        1.1
-ENDDATA             13
 ENDSUBENT           31
-SUBENT        14237008   20120816   20121203   20121127       1385
-BIB                  5         13
-REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,MXW,CALC)
-STATUS     (TABLE) Data taken from tab. 7 of the reference
-           (DEP,14238005)
+SUBENT        14237006   20210913   20220126   20220125       1486
+BIB                  6         18
+REACTION   (32-GE-74(N,G)32-GE-75,,SIG,,MXW,DERIV)
 ANALYSIS   Maxwellian averaged cross sections obtained by
            normalization of the NON-SMOKER values to the
            measured cross section at kT=25keV.
-ERR-ANALYS (ERR-T) Uncertainties of extrapolated values
+ERR-ANALYS (DATA-ERR) Uncertainties of extrapolated values
+           were estimated from the differences between
+           results results obtained with normalized
+           evaluated cross sections from data libraries
+           and previously recommended Maxwellian cross
+           sections
+CORRECTION Revised data: Correction for revised gold standard
+           622.7/586 = 1.0626
+STATUS     (DEP,14237002)
+           (TABLE) Revised cross sections: Text on page 16 of
+                   R,INDC(GER)-0053,2021.
+HISTORY    (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              18
+NOCOMMON             0          0
+DATA                 3         11
+KT         DATA       DATA-ERR
+KEV        MB         MB
+        5.0      112.6       12.0
+       10.0       74.5        7.9
+       15.0       58.4        6.4
+       20.0       49.8        5.4
+       25.0       43.7        5.0
+       30.0       40.0        4.1
+       40.0       34.6        3.5
+       50.0       30.8        3.2
+       60.0       27.9        2.9
+       80.0       24.9        2.8
+      100.0       23.4        2.9
+ENDDATA             13
+ENDSUBENT           36
+SUBENT        14237007   20210913   20220126   20220125       1486
+BIB                  6         19
+REACTION   (32-GE-76(N,G)32-GE-77,,SIG,,MXW,DERIV)
+ANALYSIS   Maxwellian averaged cross sections obtained by
+           normalization of the NON-SMOKER values to the
+           measured cross section at kT=25keV.
+ERR-ANALYS (DATA-ERR) Uncertainties of extrapolated values
+           were estimated from the differences between
+           results results obtained with normalized
+           evaluated cross sections from data libraries
+           and previously recommended Maxwellian cross
+           sections
+CORRECTION Revised data: Correction for revised gold standard
+           622.7/586 = 1.0626
+STATUS     (DEP,14237003)
+           (DEP,14237004)
+           (TABLE) Revised cross sections: Text on page 17 of
+                   R,INDC(GER)-0053,2021.
+HISTORY    (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              19
+NOCOMMON             0          0
+DATA                 3         11
+KT         DATA       DATA-ERR
+KEV        MB         MB
+        5.0       61.6       12.0
+       10.0       42.3        7.9
+       15.0       33.3        6.4
+       20.0       28.4        5.4
+       25.0       25.0        5.0
+       30.0       22.8        4.1
+       40.0       19.3        3.5
+       50.0       17.3        3.2
+       60.0       15.9        2.9
+       80.0       13.8        2.8
+      100.0       13.1        2.9
+ENDDATA             13
+ENDSUBENT           37
+SUBENT        14237008   20210913   20220126   20220125       1486
+BIB                  6         19
+REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,MXW,DERIV)
+ANALYSIS   Maxwellian averaged cross sections obtained by
+           normalization of the NON-SMOKER values to the
+           measured cross section at kT=25keV.
+ERR-ANALYS (DATA-ERR) Uncertainties of extrapolated values
            were estimated from the differences between
            results obtained with normalized
            evaluated cross sections from data libraries
            and previously recommended Maxwellian cross
            sections
+CORRECTION Revised data: Correction for revised gold standard
+           622.7/586 = 1.0626
+STATUS     (DEP,14237005)
+           (TABLE) Revised cross sections: Text on page 18 of
+                   R,INDC(GER)-0053,2021.
 HISTORY    (20120816U) SD: N1 in BIB line was corrected in Sub.8.
-ENDBIB              13
-COMMON               1          3
-KT-NRM
-KEV
-  25.
-ENDCOMMON            3
+           (20210611A) BP: Replaced original Karlsruhe cross
+                      sections with the revised values, added
+                      CORRECTION information.
+ENDBIB              19
+NOCOMMON             0          0
 DATA                 4         11
-KT         DATA       +ERR-T     -ERR-T
+KT         DATA       +DATA-ERR  -DATA-ERR
 KEV        MB         MB         MB
-   5.0      1124.0     60.0        65.0
-  10.0       725.0     38.0        52.0
-  15.0       559.0     29.0        36.0
-  20.0       466.0     24.0        27.0
-  25.0       404.0     21.0        21.0
-  30.0       362.0     19.0        19.0
-  40.0       304.0     17.0        16.0
-  50.0       266.0     16.0        14.0
-  60.0       247.0     13.0        17.0
-  80.0       211.0     11.0        18.0
- 100.0       174.0     14.0        11.0
+        5.0     1194.0       60.0       65.0
+       10.0      770.0       38.0       52.0
+       15.0      594.0       29.0       36.0
+       20.0      495.0       24.0       27.0
+       25.0      429.0       21.0       21.0
+       30.0      385.0       19.0       19.0
+       40.0      323.0       17.0       16.0
+       50.0      283.0       16.0       14.0
+       60.0      262.0       13.0       17.0
+       80.0      224.0       11.0       18.0
+      100.0      185.0       14.0       11.0
 ENDDATA             13
-ENDSUBENT           35
+ENDSUBENT           37
 ENDENTRY             8

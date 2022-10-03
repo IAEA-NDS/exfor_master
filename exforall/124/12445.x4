@@ -1,30 +1,91 @@
-ENTRY            12445     830809              20050926       0000
-SUBENT        12445001     830809              20050926       0000
-BIB                  6          8
+ENTRY            12445   20210610   20220126   20220125       1486
+SUBENT        12445001   20210610   20220126   20220125       1486
+BIB                 12         37
+TITLE      Thermal Neutron Absorption by 28
+AUTHOR     (H.L.Anderson,J.Bistline,J.Dabbs,H.Heskett,W.Sturm,
+           J.Tabin)
+REFERENCE  (R,CP-2079,1944)
 INSTITUTE  (1USAANL)
-REFERENCE  (R,CP-2079,4408)
-AUTHOR     (H.L.ANDERSON,J.BISTLINE,J.DABBS,H.HESKETT,W.STURM,
-           J.TABIN)
-TITLE      THERMAL NEUTRON ABSORPTION BY 28.
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (830809A) CONVERTED TO REACTION FORMALISM
-ENDBIB               8
+FACILITY   (REAC,1USAANL)
+SAMPLE     2500 grams of depleted U3O8 oxide in which the
+           ratio of isotopes 238U/235U was 3800. 92 uranium
+           pellets were produced. Each pellet was 2.57 cm in
+           diameter, 0.70 cm in height,and weighted 20 grams.
+           These were held in little Al dishes, each of which
+           weighed slightly less than 2 grams. The 92 pellets
+           were arranged inside a graphite brick 10 x 10 x 120
+           cm long in a cubic lattice of spacing 5.21 cm, 23
+           periods long.
+DETECTOR   (PROPC) Low geometry thin mica window counter.
+METHOD     (REAC,CHSEP) Reactivity coefficient measurement. The
+           absorption cross section of 238U was measured by
+           comparing the change in reactivity of a pile produced
+           by a sample of oxide in which the isotopic ratio was
+           3800, with that produced by a standard boron
+           absorber. The temperature of the pile neutrons with
+           which the measurement was made was found to be 381 K.
+           Cd wires were used to determine neutron temperature.
+           After the irradiation the pellets were dissolved in
+           nitric acid. Five grams of purified material was
+           pressed into a pellet and the beta-ray activity of
+           the 23.5 minute half life of 239U was measured.
+ERR-ANALYS (DATA-ERR) Data reproducibility error.
+STATUS     (TABLE) page 12.
+DECAY-DATA (92-U-239,23.5MIN,B-)
+HISTORY    (19760804T) Translated from SCISRS.
+           (19830809A) Converted to reaction formalism.
+           (20210610A) BP: Updated to new date formats, lower
+           case. corrections according last EXFOR rules and
+           Dict. Added FACILITY, DETECTOR, SAMPLE, ERROR-ANALYSIS,
+            CORRECTION, DECAY-DATA and Sub.3.
+ENDBIB              37
 NOCOMMON             0          0
-ENDSUBENT           11
-SUBENT        12445002     830809              20050926       0000
-BIB                  4          5
-REACTION   (92-U-238(N,G)92-U-239,,SIG,,MXW)
-METHOD     (REAC) REACTIVITY COEFFICIENT MEASUREMENT.
-MONITOR    (5-B-0(N,ABS),,SIG)
-            RELATIVE TO BORON THERMAL ABSORPTION=703B.
-INC-SPECT  SUB-CD SPECTRUM.
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-EN-DUMMY   DATA       DATA-ERR   MONIT
-MEV        B          PER-CENT   B
- 2.53   -08 2.58   +00    3.      703.
+ENDSUBENT           40
+SUBENT        12445002   20210610   20220126   20220125       1486
+BIB                  4         10
+REACTION   (92-U-238(N,G)92-U-239,,SIG)
+INC-SPECT  Sub-Cd spectrum.
+ANALYSIS   From the (thermal+resonance)/resonance ratio of 2.649.
+           0.6225 fraction below the Cd limit: 0.6625 x 4.158 =
+           2.59 b. From this effect of B and Cd impurities found
+           in spectrographic analysis had to be subtracted. This
+           amounted to 0.006 b. The final number of 2.58 b may
+           have to be reduced slightly if other dangerous
+           impurities are found.
+STATUS     (DEP,12445003)
+ENDBIB              10
+COMMON               1          3
+EN
+EV
+     0.0253
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+B          PER-CENT
+       2.58         3.
 ENDDATA              3
-ENDSUBENT           13
-ENDENTRY             2
+ENDSUBENT           22
+SUBENT        12445003   20210610   20220126   20220125       1486
+BIB                  4          9
+REACTION   (92-U-238(N,G)92-U-239,,SIG,,MXW) The total
+           absorption by 238U after corrections.
+MONITOR    (5-B-0(N,ABS),,SIG) Relative to boron thermal
+           absorption of 703 b at 2200 m/sec.
+CORRECTION Correction of 0.143 b due to the effect of 235U in
+           the sample was added. In addition, 0.022 b had to be
+           added to correct for the effect of fast fission in
+           238U.
+HISTORY    (20210610C) BP
+ENDBIB               9
+COMMON               2          3
+EN-DUMMY   MONIT
+EV         B
+     0.0253      703.0
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+B          PER-CENT
+      4.158         3.
+ENDDATA              3
+ENDSUBENT           21
+ENDENTRY             3
