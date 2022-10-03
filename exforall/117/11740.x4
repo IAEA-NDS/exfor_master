@@ -1,22 +1,22 @@
-ENTRY            11740   20120415   20120921   20120721       1380
-SUBENT        11740001   20120415   20120921   20120721       1380
-BIB                 13         24
+ENTRY            11740   20210731   20220009   20211207       1485
+SUBENT        11740001   20210731   20220009   20211207       1485
+BIB                 13         26
 INSTITUTE  (1USAARK)
-REFERENCE  (J,NP,15,326,196002)
+REFERENCE  (J,NP,15,326,1960)
 AUTHOR     (I.L.Preiss,R.W.Fink)
-TITLE      New isotopes of cobalt, activation cross sections of
-           nickel, cobalt and zinc for 14.8 MeV neutrons
+TITLE      New isotopes of cobalt; activation cross-sections of
+           nickel, cobalt, and zinc for 14.8 MeV neutrons
 FACILITY   (CCW,1USAARK)
-INC-SOURCE (D-T) T(d,n) source
-METHOD     (ACTIV) Activation
+INC-SOURCE (D-T)
+METHOD     (ACTIV)
 DETECTOR   (PROPC)
 ANALYSIS    Average of data from 3 or more runs.
 CORRECTION Corrected for air absorption and scattering, window
             absorption, scattering from housing, counting
             efficiency.
 ERR-ANALYS (DATA-ERR) Maximum deviation from average.
-STATUS     (SCSRS)
-           (TABLE) Data taken from table of NP,15,326,1960
+STATUS     (TABLE) Data taken from table on p.327 of
+             Nucl.Phys.15,326,1960
 HISTORY    (19760730T) Translated from SCISRS
            (19831011A) Converted to REACTION formalism
            (19860421A) BIB updates.
@@ -25,9 +25,11 @@ HISTORY    (19760730T) Translated from SCISRS
            (20120415U) SD: Critique from evaluator added to Sub 4.
                 All data checked and found that all of them are
                 given according to the Table from NP,15,326
-ENDBIB              24
+           (20210622A) OS. REACTION modified in subs. 11, 13, 16,
+             monitor coding rearranged, minor BIB changes
+ENDBIB              26
 NOCOMMON             0          0
-ENDSUBENT           27
+ENDSUBENT           29
 SUBENT        11740002   20080623   20080909   20080909       1349
 BIB                  4          4
 REACTION   (27-CO-59(N,P)26-FE-59,,SIG)
@@ -42,45 +44,53 @@ MEV        MEV        B          B          MB
  14.8        0.9       8.2    -02 8.     -03 52.
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        11740003   20080623   20080909   20080909       1349
+SUBENT        11740003   20210731   20220009   20211207       1485
 BIB                  4          7
 REACTION   (27-CO-59(N,A)25-MN-56,,SIG)
 SAMPLE      40 mg 59Co foil, 35 mg/cm**2.
 DECAY-DATA (25-MN-56,2.57HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
 ENDBIB               7
-NOCOMMON             0          0
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       3.0    -02 3.     -03
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11740004   20120415   20120921   20120721       1380
+ENDSUBENT           19
+SUBENT        11740004   20210731   20220009   20211207       1485
 BIB                  7         12
 REACTION   (27-CO-59(N,2N)27-CO-58-M,,SIG)
 SAMPLE      40 mg 59Co foil, 35 mg/cm**2.
 DECAY-DATA (27-CO-58-M,9.0HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
 CRITIQUE   From E.Dupont (2009-08-31): data are 100 times too low
            comparing to later measurements.
 COMMENT     From compiler: Data value given in text (150+-5mb)
             disagrees with value given in table.
 HISTORY    (20120415U) SD: Critique from evaluator added.
 ENDBIB              12
-NOCOMMON             0          0
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
        14.8        0.9     4.E-03     2.E-03
 ENDDATA              3
-ENDSUBENT           20
+ENDSUBENT           24
 SUBENT        11740005   20080623   20080909   20080909       1349
 BIB                  5          5
 REACTION   (27-CO-59(N,2N)27-CO-58-G,,SIG)
@@ -96,198 +106,253 @@ MEV        MEV        B          B          MB
  14.8        0.9       1.45   -01 5.     -03 52.
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        11740006   20080623   20080909   20080909       1349
-BIB                  4          7
+SUBENT        11740006   20210731   20220009   20211207       1485
+BIB                  4          8
 REACTION   (28-NI-58(N,P)27-CO-58-M,,SIG)
 SAMPLE     Ni metal foil, enriched to 99.6% 58Ni.
+           (28-NI-58,ENR=0.996)
 DECAY-DATA (27-CO-58-M,9.0HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
-ENDBIB               7
-NOCOMMON             0          0
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
+ENDBIB               8
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       4.0    -02 1.5    -02
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11740007   20080623   20080909   20080909       1349
-BIB                  4          7
+ENDSUBENT           20
+SUBENT        11740007   20210731   20220009   20211207       1485
+BIB                  4          8
 REACTION   (28-NI-58(N,2N)28-NI-57,,SIG)
 SAMPLE     Ni metal foil, enriched to 99.6% 58Ni.
+           (28-NI-58,ENR=0.996)
 DECAY-DATA (28-NI-57,37.HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
-ENDBIB               7
-NOCOMMON             0          0
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
+ENDBIB               8
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       5.2    -02 5.     -03
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11740008   20080623   20080909   20080909       1349
-BIB                  5          5
+ENDSUBENT           20
+SUBENT        11740008   20210731   20220009   20211207       1485
+BIB                  5          6
 REACTION   (28-NI-58(N,P)27-CO-58-G,,SIG)
 SAMPLE     Ni metal foil, enriched to 99.6% 58Ni.
+           (28-NI-58,ENR=0.996)
 DECAY-DATA (27-CO-58-G,72.D)
 MONITOR    (28-NI-58(N,2N)28-NI-57,,SIG)
 HISTORY    (20080623A) MONITOR corrected, value added to data.
-ENDBIB               5
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 5          1
 EN         EN-RSL     DATA       DATA-ERR   MONIT
 MEV        MEV        B          B          MB
  14.8        0.9       2.37   -01 2.0    -02 52.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        11740009   20080623   20080909   20080909       1349
-BIB                  4          7
+ENDSUBENT           14
+SUBENT        11740009   20210731   20220009   20211207       1485
+BIB                  4          8
 REACTION   (28-NI-60(N,P)27-CO-60-M,,SIG)
 SAMPLE     Ni metal powder, enriched to 99.1% 60Ni.
+           (28-NI-60,ENR=0.991)
 DECAY-DATA (27-CO-60-M,10.5MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
-ENDBIB               7
-NOCOMMON             0          0
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
+ENDBIB               8
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       9.     -03 2.     -03
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11740010   20080623   20080909   20080909       1349
-BIB                  4          7
+ENDSUBENT           20
+SUBENT        11740010   20210731   20220009   20211207       1485
+BIB                  4          8
 REACTION   (28-NI-61(N,P)27-CO-61,,SIG)
 SAMPLE     NiO powder, enriched to 83.1% 61Ni.
+           (28-NI-61,ENR=0.831)
 DECAY-DATA (27-CO-61,1.7HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
-ENDBIB               7
-NOCOMMON             0          0
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
+ENDBIB               8
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       2.2    -02 2.     -03
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11740011   20080623   20080909   20080909       1349
-BIB                  4          7
-REACTION   (28-NI-61(N,N+P)27-CO-60-M,,SIG)
+ENDSUBENT           20
+SUBENT        11740011   20210731   20220009   20211207       1485
+BIB                  5          9
+REACTION   (28-NI-61(N,X)27-CO-60-M,,SIG)
 SAMPLE     NiO powder, enriched to 83.1% 61Ni.
+           (28-NI-61,ENR=0.831)
 DECAY-DATA (27-CO-60-M,10.5MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
-ENDBIB               7
-NOCOMMON             0          0
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
+HISTORY    (20210622A) REACTION SF3 changed to X
+ENDBIB               9
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       3.8    -03 1.     -04
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        11740012   20080623   20080909   20080909       1349
-BIB                  5          8
+ENDSUBENT           21
+SUBENT        11740012   20210731   20220009   20211207       1485
+BIB                  5          9
 REACTION   (28-NI-62(N,P)27-CO-62-M,,SIG)
 SAMPLE     NiO powder, enriched to 97.8% 62Ni.
+           (28-NI-62,ENR=0.978)
 DECAY-DATA (27-CO-62-M,13.8MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
 HISTORY    (19870120A) REACTION corrected, BIB update.
-ENDBIB               8
-NOCOMMON             0          0
+ENDBIB               9
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA-MAX   DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       3.3    -03 2.     -05
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        11740013   20080623   20080909   20080909       1349
-BIB                  5          8
-REACTION   (28-NI-62(N,N+P)27-CO-61,,SIG)
+ENDSUBENT           21
+SUBENT        11740013   20210731   20220009   20211207       1485
+BIB                  5         10
+REACTION   (28-NI-62(N,X)27-CO-61,,SIG)
 SAMPLE     NiO powder, enriched to 97.8% 62Ni.
+           (28-NI-62,ENR=0.978)
 DECAY-DATA (27-CO-61,1.70HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
 HISTORY    (19870120A) BIB update.
-ENDBIB               8
-NOCOMMON             0          0
+           (20210622A) REACTION SF3 changed to X
+ENDBIB              10
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       6.5    -04 1.5    -04
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        11740014   20080623   20080909   20080909       1349
-BIB                  6          9
+ENDSUBENT           22
+SUBENT        11740014   20210731   20220009   20211207       1485
+BIB                  6         11
 REACTION   (28-NI-62(N,P)27-CO-62-G,,SIG)
 SAMPLE     NiO powder, enriched to 97.8% 62Ni.
+           (28-NI-62,ENR=0.978)
 DECAY-DATA (27-CO-62-G,1.9MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) =556 MB.
-           (29-CU-65(N,2N)29-CU-64,,SIG) =1000 MB.
-           (13-AL-27(N,A)11-NA-24,,SIG) = 115 MB.
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
 STATUS     (OUTDT) Authors assigned to 62Co metastable state and
                    based maximum value on this assignment.
 HISTORY    (19870120A) REACTION corrected, BIB update.
-ENDBIB               9
-NOCOMMON             0          0
+ENDBIB              11
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA-MIN   DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       2.     -03 5.     -04
 ENDDATA              3
-ENDSUBENT           17
-SUBENT        11740015   20080623   20080909   20080909       1349
-BIB                  5          8
+ENDSUBENT           23
+SUBENT        11740015   20210731   20220009   20211207       1485
+BIB                  5          9
 REACTION   (28-NI-64(N,P)27-CO-64,,SIG)
 SAMPLE     NiO powder, enriched to 95.9% 64Ni.
+           (28-NI-64,ENR=0.959)
 DECAY-DATA (27-CO-64,7.8MIN)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
-STATUS     (OUTDT) Existance of isomer not confirmed (NNDC)
-ENDBIB               8
-NOCOMMON             0          0
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
+STATUS     (OUTDT) Existence of isomer not confirmed (NNDC)
+ENDBIB               9
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA-MAX   DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       4.1    -03 5.     -05
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        11740016   20080623   20080909   20080909       1349
-BIB                  6          9
-REACTION   (28-NI-64(N,N+P)27-CO-63,,SIG)
+ENDSUBENT           21
+SUBENT        11740016   20210731   20220009   20211207       1485
+BIB                  6         11
+REACTION   (28-NI-64(N,X)27-CO-63,,SIG)
 SAMPLE     NiO powder, enriched to 95.9% 64Ni.
+           (28-NI-64,ENR=0.959)
 DECAY-DATA (27-CO-63,1.40HR)
-MONITOR    (29-CU-63(N,2N)29-CU-62,,SIG) 63Cu(n,2n)= 556 mb.
-           (29-CU-65(N,2N)29-CU-64,,SIG) 65Cu(n,2n) = 1000 mb.
-           (13-AL-27(N,A)11-NA-24,,SIG)  27Al(n,alpha) = 115 mb.
-             Flux monitors.
+MONITOR    Flux monitors.
+           ((MONIT1)29-CU-63(N,2N)29-CU-62,,SIG)
+           ((MONIT2)29-CU-65(N,2N)29-CU-64,,SIG)
+           ((MONIT3)13-AL-27(N,A)11-NA-24,,SIG)
 STATUS     (OUTDT) Half-life not confirmed.
 HISTORY    (19870120A) BIB update.
-ENDBIB               9
-NOCOMMON             0          0
+           (20210622A) REACTION SF3 changed to X
+ENDBIB              11
+COMMON               3          3
+MONIT1     MONIT2     MONIT3
+MB         MB         MB
+  556.      1000.      115.
+ENDCOMMON            3
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  14.8        0.9       9.3    -04 4.     -05
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           23
 SUBENT        11740017   20080623   20080909   20080909       1349
 BIB                  5          8
 REACTION   (28-NI-64(N,P)27-CO-64-M,,SIG)
