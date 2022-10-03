@@ -1,8 +1,18 @@
-ENTRY            21808   20161111   20170302   20170214       2255
-SUBENT        21808001   20161111   20170302   20170214       2255
-BIB                 13         85
-INSTITUTE  (2GERKFK)
+ENTRY            21808   20190923   20191216   20191119       2282
+SUBENT        21808001   20190923   20191216   20191119       2282
+BIB                 13         91
+TITLE       Isotopic neon cross sections for a study of neutron
+            balance and temperature during s-process
+            nucleosynthesis
+AUTHOR     (J.Almeida, F.Kaeppeler)
 REFERENCE  (J,AJ,265,417,1983)
+           (J,PR/C,90,045804,2014) - new nalysis of
+            resonance parameters.
+           Authors: M.Heil, R.Plag, E.Uberseder, R.Gallino,
+           S.Bisterzo, A.Juseviciute, F.Kaeppeler, C.Lederer,
+           A.Mengoni, M.Pignatari
+           #doi:10.1103/PhysRevC.90.045804
+           (J,PR/C,92,019902,2015) - erratum of PR/C,90,045804
            ((R,KFK-3347,198205)=(T,ALMEIDA,1982))
             Thesis J.Almeida,Univ.of Heidelberg
            (C,82ANTWER,,948,1982)
@@ -11,11 +21,8 @@ REFERENCE  (J,AJ,265,417,1983)
            ((P,NEANDC(E)-222,(5),1,198107)=
            (P,INDC(GER)-23,1,1981))
             Point-wise tot.CS in 7-800 keV interval on Figures
-AUTHOR     (J.Almeida, F.Kaeppeler)
-TITLE       Isotopic neon cross sections for a study of neutron
-            balance and temperature during s-process
-            nucleosynthesis .
 FACILITY   (VDG,2GERKFK)   Karlsruhe 3 MV pulsed VDG accelerator.
+INSTITUTE  (2GERKFK)
 INC-SOURCE (P-LI7)
 SAMPLE      .Neon gas, contained in stainless steel containers,
              mounted on an automatic sample changer.
@@ -50,7 +57,7 @@ METHOD     (TOF)
              weighting method.
 DETECTOR   (GLASD) Li-6 glass detector to monitor neutron flux
                    in the total C.S. measurements.
-           (SCIN)  C(6)d(6) liquid scin.detectors coupled to fast
+           (SCIN)  C(6)D(6) liquid scin.detectors coupled to fast
                    PM for gamma-rays detecting.
             .Transmitted neutrons were detected by a 10 X 10 cm
              B-10 slab, through the 478 keV gamma-rays of the
@@ -66,7 +73,7 @@ ANALYSIS    .The total C.S. measurements were needed to correct
 ADD-RES     .From the discussion of the S-process neutron balance
              it was found that neutron capture in the neon
              isotopes is a minor effect thus not effecting the
-             main (a,n)- reaction on Ne-22.
+             main (alpha,n)- reaction on Ne-22.
             .Lower limit for S-process temperature is given.
 CORRECTION  .Various corrections were made to the capture data.
              In the  ERR-ANALYSIS  the applied corrections are
@@ -76,19 +83,18 @@ CORRECTION  .Various corrections were made to the capture data.
              Details of this correction are described in the main
              reference, KFK-3347.
 HISTORY    (19820130C) BN.
-           (19830210E)
-           (19830429E)
            (19830725A) BN. Monitor moved from SAN001 to SAN008-016
                            SAN015,016 added.
-           (19831004E)
            (20080529A) Date is corrected
            (20080529U) Last checking has been done.
            (20161111A) M.M. Ref. J,AJ,265,417,1983 was added.
            BIB information was updated.
            Subents 017, 018 were added.
-ENDBIB              85
+           (20190923A) SD: Data from 23265 Entry added (confirmed
+           by Franz Kaeppeler). Subents 019-022 added.
+ENDBIB              91
 NOCOMMON             0          0
-ENDSUBENT           88
+ENDSUBENT           94
 SUBENT        21808002   20161111   20170302   20170214       2255
 BIB                  4         11
 REACTION   (10-NE-20(N,TOT),,SIG)
@@ -2950,36 +2956,342 @@ KEV        KEV        MB
      200.     400.             1.
 ENDDATA              3
 ENDSUBENT           16
-SUBENT        21808017   20161111   20170302   20170214       2255
-BIB                  3          6
-REACTION   (10-NE-21(N,0),,EN)
-FLAG       (1.) Resonance observed in transmission measurement and
-                capture measurement .
-           (2.) Resonance observed at capture measurement, but was
-            not detected in the total cross section.
-STATUS     (TABLE)  Text,page 422 of J,AJ,265,417,1983
-ENDBIB               6
+SUBENT        21808017   20190923   20191216   20191119       2282
+BIB                  8         36
+REACTION  1(10-NE-21(N,0),,EN)
+          2(10-NE-21(N,0),,J)
+          3(10-NE-21(N,G),,L)
+          4(10-NE-21(N,G),,WID)
+          5(10-NE-21(N,EL),,WID)
+          6(10-NE-20(N,EL),,WID/STR) Capture kernel.
+REL-REF    (R,21808001,J.Almeida+,R,KFK-3347,1982)
+             TOF data of total and capture cross-sections used
+            to define resonance parameters.
+MISC-COL   (MISC) Statistical spin factor.
+ANALYSIS   Resonances in capture cross-sections are identified
+           using the multilevel R-matrix code SAMMY.
+            Capture width could be determined only for those
+           resonances, which were observed in the total cross
+           section.
+           A possible subthreshold resonance at -7.6 keV was
+           omitted in the SAMMY analysis.
+ERR-ANALYS (ERR-S) Statistical uncertainty.
+           (DATA-ERR) Uncertainty of resonance energy corresponds
+           to the accuracy in the experimental definition of the
+           flight  path in the transmission measurements;
+            excepting two resonances 52.1 and 98.2 keV, which do
+            not appear in the total cross section, their energy
+            uncertainties are due to the 60-cm flight path in the
+           capture measurements.
+COMMENT    Of authors.
+           Sys.8.5 % uncertainty in capture c-s is causing a
+           visible effect on the uncertainty of the capture area
+           of the 52keV resonance which increases to 0.26 +- 0.04.
+STATUS     (TABLE) Table II of Phys.Rev.,C90(2014)045804
+           (DEP,21808003) total cr.sec.
+           (DEP,21808006) total cr.sec.
+           (DEP,21808009) (n,gamma) cr.sec.
+HISTORY    (20190923A) SD: Subent updated according to 23265.003.
+           Values updated according to last publ. in
+           Phys.Rev.,C90(2015)019902
+ENDBIB              36
 NOCOMMON             0          0
-DATA                 2          3
-DATA       FLAG
-KEV        NO-DIM
- 137.       1.
-  98.       2.
-  52.       2.
-ENDDATA              5
-ENDSUBENT           16
-SUBENT        21808018   20161111   20170302   20170214       2255
-BIB                  2          4
-REACTION   (10-NE-20(N,0),,EN)
-            Resonance observed in transmission measurement and
-                capture measurement .
-STATUS     (TABLE)  Text,page 423 of J,AJ,265,417,1983
-ENDBIB               4
+DATA                12          4
+DATA      1DATA-ERR  1DATA      2DATA      3DATA      4ERR-S     4
+DATA-MAX  4DATA      5ERR-S     5DATA      6ERR-S     6MISC
+KEV        KEV        NO-DIM     NO-DIM     EV         EV
+EV         EV         EV         EV         EV         NO-DIM
+       52.1        0.3         4.         2.
+                                        0.35       0.04      1.125
+       98.2        0.5         4.         2.
+                                        0.90       0.11      1.125
+      137.3        0.2         4.         2.       1.56       0.21
+                 3157.       240.                            1.125
+      180.6        0.4         2.         0.
+       0.24      2236.       568.                            0.625
+ENDDATA             12
+ENDSUBENT           53
+SUBENT        21808018   20190923   20191216   20191119       2282
+BIB                  6         27
+REACTION  1(10-NE-20(N,0),,EN)
+          2(10-NE-20(N,0),,J)
+          3(10-NE-20(N,G),,L)
+          4(10-NE-20(N,G),,WID)
+          5(10-NE-20(N,EL),,WID)
+MISC-COL   (MISC) Statistical spin factor.
+ANALYSIS   Resonances in capture cross-sections are identified
+           using the multilevel R-matrix code SAMMY.
+            Capture width could be determined only for those
+           resonances, which were observed in the total cross
+           section.
+           A possible subthreshold resonance at -7.6 keV was
+           omitted in the SAMMY analysis.
+ERR-ANALYS (ERR-S) Statistical uncertainty.
+          4(ERR-T) Total uncertainty including sys.uncertainty
+           causing by 8.5 % uncertainty in capture c-s.
+           (DATA-ERR) resonance energies uncertainties of +-1%
+           corresponding to the accuracy in the experimental
+           definition of the flight path in the transmission
+           measurements.
+STATUS     (TABLE) Table II of Phys.Rev.,C90(2014)045804
+           (DEP,21808002) total cr.sec.
+           (DEP,21808005) total cr.sec.
+           (DEP,21808008) (n,gamma) cr.sec.
+HISTORY    (20190923A) SD: Subent updated according to 23265.002.
+           Values updated according to last publ. in
+           Phys.Rev. C90(2015)019902
+ENDBIB              27
 NOCOMMON             0          0
-DATA                 1          1
-DATA
-KEV
- 147.
-ENDDATA              3
-ENDSUBENT           12
-ENDENTRY            18
+DATA                10          2
+DATA      1DATA-ERR  1DATA      2DATA      3DATA      4ERR-S     4
+ERR-T     4DATA      5ERR-S     5MISC
+KEV        KEV        NO-DIM     NO-DIM     EV         EV
+EV         EV         EV         NO-DIM
+     147.40       0.15        0.5         1.        3.7        0.2
+        0.4       861.        29.         1.
+      472.6        0.5        0.5         0.
+               107795.      1113.         1.
+ENDDATA              8
+ENDSUBENT           40
+SUBENT        21808019   20190923   20191216   20191119       2282
+BIB                  7         24
+REACTION  1(10-NE-22(N,0),,EN)
+          2(10-NE-22(N,0),,J)
+          3(10-NE-22(N,G),,L)
+          4(10-NE-22(N,EL),,WID)
+MISC-COL   (MISC) Statistical spin factor.
+ASSUMED    (ASSUM,10-NE-22(N,G),,WID)
+ANALYSIS   Resonances in capture cross-sections are identified
+           using the multilevel R-matrix code SAMMY.
+            Capture width could be determined only for those
+           resonances, which were observed in the total cross
+           section.
+           A possible subthreshold resonance at -7.6 keV was
+           omitted in the SAMMY analysis.
+ERR-ANALYS (ERR-S) Statistical uncertainty.
+           (DATA-ERR) Uncertainty of resonance energy corresponds
+           to the  accuracy in the experimental definition of the
+           flight path in the transmission measurements.
+STATUS     (TABLE) Table II of Phys.Rev.,C90(2014)045804
+           (DEP,21808004) total cr.sec.
+           (DEP,21808007) total cr.sec.
+           (DEP,21808010) (n,gamma) cr.sec.
+HISTORY    (20190923A) SD: Subent updated according to 23265.002.
+           Values updated according to last publ. in
+           Phys.Rev. C92(2015)019902
+ENDBIB              24
+COMMON               1          3
+ASSUM
+EV
+ 200.
+ENDCOMMON            3
+DATA                 7          7
+DATA      1DATA-ERR  1DATA      2DATA      3DATA      4ERR-S     4
+MISC
+KEV        KEV        NO-DIM     NO-DIM     EV         EV
+NO-DIM
+      272.0        0.3        0.5         1.      8226.       190.
+         1.
+      290.7        0.3        0.5         0.     28609.       471.
+         1.
+      427.1        0.5        0.5         1.      8204.       311.
+         1.
+      493.1        0.5        0.5         0.    118795.      2147.
+         1.
+      564.1        0.6        1.5         2.      5100.       180.
+         2.
+      690.4        0.7        1.5         1.     37457.      1122.
+         2.
+       802.         5.        0.5         0.     27184.      5139.
+         1.
+ENDDATA             18
+ENDSUBENT           51
+SUBENT        21808020   20190923   20191216   20191119       2282
+BIB                  6         25
+REACTION   (10-NE-20(N,G)10-NE-21,,SIG,,MXW,DERIV)  MACS
+ANALYSIS   The s-wave part was described by a 1/v extrapolation of
+           the thermal cross sections, corrected for the small
+           contribution from the tails of the few resonances in
+           the keV energy range.
+           The p-wave components have been calculated using the
+           potential two-body model with bound-state wave
+           functions determined by Woods-Saxon mean-field
+           potential with fixed well depth parameters to reproduce
+           the experimental binding energy Bn.
+MISC-COL   (MISC1) Resonances contribution,
+           (MISC2) DFC contribution: s wave,
+           (MISC3) DFC contribution: p wave.
+ERR-ANALYS (DATA-ERR) MACS uncertainties are composed of the
+           contributions from the DRC ( direct radiative capture)
+           components and from the resonances;
+           including 8.5% sys.uncertainty of capture experiment.
+           (MISC1-ERR) Uncertainty from normalization to thermal
+           cross-section.
+           (MISC2-ERR) Uncertainties determined by the
+           spectroscopic factors (15-20%) and by the model
+           parameters ( 20%) .
+STATUS     (TABLE) Table IV of Phys.Rev.,C90(2014)045804
+           (DEP,21808018) Radiative widths used.
+HISTORY    (20190923T) SD: Data from 23265.005.
+ENDBIB              25
+COMMON               2          3
+MISC1-ERR  MISC2-ERR
+PER-CENT   PER-CENT
+ 11.        30.
+ENDCOMMON            3
+DATA                 7         14
+KT         DATA       DATA-ERR   MISC1      MISC1-ERR  MISC2
+MISC3
+KEV        MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B
+MICRO-B
+  5.         85.       12.        0.3       0.02        70.9
+   14.2
+ 8.         74.        12.        0.4       0.03        56.0
+ 18.0
+ 10.         71.       12.        0.7       0.04        50.1
+ 20.1
+ 15.         73.       13.        7.4       0.4         40.9
+ 24.7
+ 20.        103.       17.       39.        3.          35.4
+ 28.6
+ 23.        137.       20.       73.        4.          33.0
+ 30.7
+ 25.        164.       24.       100.       6.          31.7
+ 32.0
+ 30.        240.       32.       176.       11.         28.9
+ 35.1
+ 40.        384.       48.       318.       19.         25.1
+ 40.7
+ 50.        479.       59.       411.       25.         22.4
+ 45.6
+ 60.        527.       65.       456.       27.         20.5
+ 50.1
+ 80.        536.       67.       460.       28.         17.7
+ 58.1
+ 90.        521.       67.       442.       27.         16.7
+ 61.8
+100.        500.       65.       419.       25.         15.8
+65.2
+ENDDATA             32
+ENDSUBENT           66
+SUBENT        21808021   20190923   20191216   20191119       2282
+BIB                  6         25
+REACTION   (10-NE-21(N,G)10-NE-22,,SIG,,MXW,DERIV)  MACS
+ANALYSIS   The s-wave part was described by a 1/v extrapolation of
+           the thermal cross sections, corrected for the small
+           contribution from the tails of the few resonances in
+           the keV energy range.
+           The p-wave components have been calculated using the
+           potential two-body model with bound-state wave
+           functions determined by Woods-Saxon mean-field
+           potential with fixed well depth parameters to reproduce
+           the experimental binding energy Bn.
+MISC-COL   (MISC1) Resonances contribution,
+           (MISC2) DFC contribution: s wave,
+           (MISC3) DFC contribution: p wave.
+ERR-ANALYS (DATA-ERR) MACS uncertainties are composed of the
+           contributions from the DRC ( direct radiative capture)
+           components and from the resonances;
+           including 8.5% sys.uncertainty of capture experiment.
+           (MISC1-ERR) Uncertainty from normalization to thermal
+           cross-section.
+           (MISC2-ERR) Uncertainties determined by the
+           spectroscopic factors (15-20%) and by the model
+           parameters ( 20%) .
+STATUS     (TABLE) Table V of Phys.Rev.,C90(2014)045804
+           (DEP,21808017) Radiative widths used.
+HISTORY    (20190923T) SD: Data from 23265.005.
+ENDBIB              25
+COMMON               2          3
+MISC1-ERR  MISC2-ERR
+PER-CENT   PER-CENT
+ 17.        30.
+ENDCOMMON            3
+DATA                 7         14
+KT         DATA       DATA-ERR   MISC1      MISC1-ERR  MISC2
+MISC3
+KEV        MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B
+MICRO-B
+   5.        3.2        0.4       1428.       9.        1440.
+   103.
+   8.       51.         7.        1129.      12.        1192.
+    91.
+  10.      115.        13.        1010.      13.        1138.
+    91.
+  15.      301.        31.         825.      16.        1142.
+   103.
+  20.      458.        42.         714.      19.        1191.
+   113.
+  23.      534.        49.         666.      21.        1221.
+   120.
+  25.      576.        53.         639.      21.        1237.
+   124.
+  30.      656.        50.         583.      24.        1263.
+   123.
+  40.      727.        52.         505.      28.        1260.
+   125.
+  50.      725.        52.         452.      31.        1208.
+   122.
+  60.      687.        50.         412.      34.        1133.
+   116.
+  80.      578.        44.         357.      40.         975.
+   103.
+  90.      526.        40.         337.      43.         906.
+    97.
+ 100.      477.        37.         319.      46.         842.
+   91.
+ENDDATA             32
+ENDSUBENT           66
+SUBENT        21808022   20190923   20191216   20191119       2282
+BIB                  6         24
+REACTION   (10-NE-22(N,G)10-NE-23,,SIG,,MXW,DERIV)  MACS
+ANALYSIS   The s-wave part was described by a 1/v extrapolation of
+           the thermal cross sections, corrected for the small
+           contribution from the tails of the few resonances in
+           the keV energy range.
+           The p-wave components have been calculated using the
+           potential two-body model with bound-state wave
+           functions determined by Woods-Saxon mean-field
+           potential with fixed well depth parameters to reproduce
+           the experimental binding energy Bn.
+MISC-COL   (MISC1) Resonances contribution, using radiative widths
+           of Table II of J,PR/C,90,045804,2014 ( Subent 004).
+           (MISC2) DFC contribution: s wave,
+           (MISC3) DFC contribution: p wave,
+           normalized at kT=52 keV by factor 0.366+-0.037.
+ERR-ANALYS (DATA-ERR) MACS uncertainties are composed of the
+           contributions from the DRC ( direct radiative capture)
+           components and from the resonances;
+           including 8.5% sys.uncertainty of capture experiment.
+           (MISC1-ERR) Uncertainty from normalization to thermal
+           cross-section.
+STATUS     (TABLE) Table VI of Phys.Rev.,C90(2014)045804
+           (DEP,21808019) Radiative widths used.
+HISTORY    (20190923T) SD: Data from 23265.007.
+ENDBIB              24
+COMMON               1          3
+MISC1-ERR
+PER-CENT
+  3.
+ENDCOMMON            3
+DATA                 6         15
+KT         DATA       DATA-ERR   MISC1      MISC2      MISC3
+KEV        MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B
+   5.      109.1       4.1        2.8       105.4       0.9
+   8.       88.8       3.6        2.3        83.3       4.0
+  10.       81.1       3.3        2.1        74.5       4.5
+  15.       68.4       3.0        1.9        60.9       5.6
+  20.       60.9       2.8        1.7        52.7       6.5
+  23.       57.9       2.7        1.7        49.1       7.1
+  25.       56.3       2.6        1.8        47.1       7.4
+  30.       53.2       2.7        2.0        43.0       8.2
+  40.       50.2       3.1        3.2        37.3       9.7
+  50.       49.8       3.8        5.5        33.3      11.0
+  52.       49.9       3.8        6.0        32.7      11.2
+  60.       50.8       4.5        8.1        30.4      12.3
+  80.       54.5       6.3       13.3        26.4      14.8
+  90.       56.2       7.0       15.5        24.8      15.9
+ 100.       57.9       7.6       17.3        23.6      17.0
+ENDDATA             17
+ENDSUBENT           50
+ENDENTRY            22

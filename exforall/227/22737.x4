@@ -1,9 +1,9 @@
-ENTRY            22737   20180429   20190222   20190220       2270
-SUBENT        22737001   20180429   20190222   20190220       2270
-BIB                 16         57
-TITLE       Measurement of Thermal Neutron Cross section and
-            resonance Integral of the reaction 137-Cs(n,gamma)
-            138-Cs
+ENTRY            22737   20190830   20191216   20191119       2282
+SUBENT        22737001   20190830   20191216   20191119       2282
+BIB                 15         57
+TITLE       Measurement of thermal neutron cross section and
+            resonance integral of the reaction
+            137-Cs(n,gamma)138-Cs
 AUTHOR     (T.Sekine,Y.Hatsukawa,Katsutoshi Kobayashi,H.Harada,
            H.Watanabe,T.Katoh)
 INSTITUTE  (2JPNJAE)  T.Sekine, Y.Hatsukawa, K.Kobayashi - Dept.
@@ -13,6 +13,7 @@ INSTITUTE  (2JPNJAE)  T.Sekine, Y.Hatsukawa, K.Kobayashi - Dept.
            (2JPNNAG)  T.Katoh - Dept. of Nucl. Engineering
 REFERENCE  (J,NST,30,1099,1993)  Main reference, data and
                           experimental details
+           (J,NST,37,827,2000) Revised value given
            ((S,JAERI-M-91-032,199,1991)=
            (S,NEANDC(J)-160,199,1991)=
            (S,INDC(JPN)-148,199,1991)) - first present. on Conf.
@@ -20,17 +21,14 @@ FACILITY   (REAC,2JPNJAE)  JRR-4 swimming pool reactor
 INC-SOURCE (REAC)
 INC-SPECT  .Epithermal neutron spectrum variates according to
             1/E law
-DETECTOR   (HPGE)  90% efficiency relative to 3" times 3" Na(J)
+DETECTOR   (HPGE)  90% efficiency relative to 3" times 3" NaI(Tl)
             detector, 2.3 keV resolution at 1.3 MeV gamma energy
             - for Cs-137/Cs-138 measurement.
-           .Monitor samples Co-60 and Au-198 were measured with
+            Monitor samples Co-60 and Au-198 were measured with
             another HPGE detector, 24% efficiency and 2.0 keV
             resolution at 1.3 MeV
-MONITOR    ((MONIT1)27-CO-59(N,G)27-CO-60,,SIG)
-           ((MONIT2)79-AU-197(N,G)79-AU-198,,SIG)
-DECAY-MON  (27-CO-60-G,5.271YR,DG,1173.,1.0,
-                               DG,1332.,1.0)
-           (79-AU-198-G,2.696D,DG,412.,0.995)
+ASSUMED    (ASSUM1,27-CO-59(N,G)27-CO-60,,SIG)
+           (ASSUM2,79-AU-197(N,G)79-AU-198,,SIG)
 METHOD     (ACTIV)
            (CADMB)  Modified cadmium ratio method. Irradiation
              produced with (10 min) and without (2 min for Run 1,
@@ -45,12 +43,12 @@ SAMPLE     .0.4 MBq of Cs-137 was used as a sample contained in
             0.5 mm thick. Accurate number of Cs-137 atoms was
             determined relative to Cs-138 product atoms about
             30 min after irradiation
-           .Monitor samples were 0.475% Co/AL and 0.061% Au/AL
+           .Monitor samples were 0.475% Co/Al and 0.061% Au/Al
             alloys wires 0.76 and 0.51 mm diameter, 3 mm long
             sticked on the outside of the sample bottle.
 DECAY-DATA (55-CS-137,30.17YR,DG,662.,0.85)
            (55-CS-138-G,33.4MIN,DG,1436.,0.750)
-CORRECTION  .Corrections for self-absorption of gammas in sample
+CORRECTION   Corrections for self-absorption of gammas in sample
 ERR-ANALYS (DATA-ERR)  Sum error of counting efficiency, error of
             the neutron flux determination and statistical error
            (ERR-1)     Error of the counting efficiency at the
@@ -58,9 +56,11 @@ ERR-ANALYS (DATA-ERR)  Sum error of counting efficiency, error of
 HISTORY    (20060203C)  + + SM
            (20180429A) Ref. on JAERI-M-91-032 was added.
             Subent 004 added.
+           (20190830A) SD:ref. added. Small corrections in Subents
+           MONITOR -> ASSUMED.
 ENDBIB              57
 COMMON               3          3
-MONIT1     MONIT2     ERR-1
+ASSUM1     ASSUM2     ERR-1
 B          B          PER-CENT
   37.2        98.8        3.0
 ENDCOMMON            3
@@ -84,34 +84,36 @@ EV         B          B
    2.53E-02   0.253      0.022
 ENDDATA              3
 ENDSUBENT           17
-SUBENT        22737003   20060203   20060525   20060430       2176
-BIB                  2          2
+SUBENT        22737003   20190830   20191216   20191119       2282
+BIB                  3          3
 REACTION   (55-CS-137(N,G)55-CS-138,,RI)
-STATUS     .From table 6 of main reference
-ENDBIB               2
+STATUS     (TABLE) From table 6 of Nucl.Sci.Tech.,30(1993)1099
+HISTORY    (20190830U) SD: STATUS updated.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          1
 EN-MIN     DATA       DATA-ERR
 EV         B          B
   0.5         0.36       0.07
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        22737004   20180429   20190222   20190220       2270
-BIB                  4          8
+ENDSUBENT           11
+SUBENT        22737004   20190830   20191216   20191119       2282
+BIB                  4          9
 REACTION   (55-CS-137(N,G)55-CS-138,,SIG,,SPA)
                   revised effective cross section
 COMMENT     Revised data taking into account the 138Cs metastable
             production properly
 STATUS     (TABLE) text on p.830 of Nucl.Sci.Tech.,37(200)827
-           (COREL,22174004)
-           (COREL,22649003)
+           (COREL,22174004) 0.1 MBq sample irradiated at JRR-4
+           (COREL,22649003) 0.37 MBq sample irradiated at KUR
 HISTORY    (20180429C)  SD
-ENDBIB               8
+           (20190830U) SD: STATUS updated.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 EV         B          B
    2.53E-02    0.29       0.02
 ENDDATA              3
-ENDSUBENT           16
+ENDSUBENT           17
 ENDENTRY             4
