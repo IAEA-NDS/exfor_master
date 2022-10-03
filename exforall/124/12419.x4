@@ -1,41 +1,60 @@
-ENTRY            12419     820519              20050926       0000
-SUBENT        12419001     820519              20050926       0000
-BIB                  6          8
+ENTRY            12419   20180521   20180918   20180917       1441
+SUBENT        12419001   20180521   20180918   20180917       1441
+BIB                  8         27
+TITLE      Energy Dependence of Prompt nu bar for
+           Neutron-Induced Fission of U235
+AUTHOR     (J.W.Meadows,J.F.Whalen)
+REFERENCE  (J,PR,126,197,1962)
+           #doi:10.1103/PhysRev.126.197
 INSTITUTE  (1USAANL)
-REFERENCE  (J,PR,126,197,62)
-AUTHOR     (J.W.MEADOWS,J.F.WHALEN)
-TITLE      ENERGY DEPENDENCE OF PROMPT NU BAR FOR NEUTRON-INDUCED
-           FISSION OF U235.
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (820519A) CONVERTED TO REACTION FORMALISM
-ENDBIB               8
+FACILITY   (VDG,1USAANL) electrostatic accelerator.
+INC-SOURCE (P-LI7) Beam of neutrons from a Li7(p,n)Be7 source.
+METHOD     (FISCT,COINC) The method used involved the
+           measurement of coincidences between a fission counter
+           and a neutron detector. In order to avoid the
+           possibility of a change in the accidental rate or in
+           the efficiency of the neutron detector, measurements
+           of U235, Cf252 and the accidentals were made
+           simultaneously. Two fission pulse ionization chambers
+           were placed in a common container. In each of the
+           chambers the fissionable material was spread over
+           nine foils having a diameter of 6.5 cm. The U235
+           chamber contained ~80 mg of material while the Cf252
+           chamber contained enough material to give ~300
+           fissions per minute. The two chambers were separated
+           by a bare foil and 2 cm of the counter gas.
+HISTORY    (19760804T) Translated from SCISRS.
+           (19820519A) Converted to reaction formalism
+           (20180521A) BP: Updated to new date formats, lower
+           case, doi, experiment description, separated 252Cf
+           into a separate measurement. Sub.5 added.
+ENDBIB              27
 NOCOMMON             0          0
-ENDSUBENT           11
-SUBENT        12419002     820519              20050926       0000
-BIB                  3          7
+ENDSUBENT           30
+SUBENT        12419002   20180521   20180918   20180917       1441
+BIB                  4         11
 REACTION  1((92-U-235(N,F),PR,NU)/
            (98-CF-252(0,F),PR,NU))
           2(92-U-235(N,F),PR,NU)
-MONITOR   2(98-CF-252(0,F),,NU)
-          2(92-U-235(N,F),PR,NU)
-ERR-ANALYS (DATA-ERR1) RELATIVE ERROR
-           (DATA-ERR2) TOTAL ERROR
-ENDBIB               7
-COMMON               2          3
-MONIT1    2MONIT2    2
-NO-DIM     NO-DIM
- 3.754      2.414
-ENDCOMMON            3
+ERR-ANALYS2(ERR-1) Relative error, no details on sources.
+           (ERR-T) Total error, no details on sources.
+CORRECTION A series of six corrections for the U235/Cf252 ratio:
+           second neutron group, thermal neutron induced fission,
+           analyzer dead time, asymmetry of the neutron detector,
+           energy dependence of the neutron detector, fission
+           fragment angular distributions.
+STATUS     (TABLE) Table I, page 199.
+ENDBIB              11
+NOCOMMON             0          0
 DATA                 5          6
-EN         DATA      1DATA      2DATA-ERR1 2DATA-ERR2 2
-MEV        NO-DIM     NO-DIM     PER-CENT   PER-CENT
- 0.03       0.6449     2.421      1.04       1.61
- 0.20       0.6491     2.436      0.66       1.40
- 0.62       0.6580     2.470      0.78       1.46
- 1.11       0.6713     2.520      0.72       1.42
- 1.58       0.6870     2.580      0.76       1.45
- 1.76       0.6860     2.575      0.80       1.47
+EN         DATA      1DATA      2ERR-1     2ERR-T     2
+MEV        NO-DIM     PRT/FIS    PER-CENT   PER-CENT
+       0.03     0.6449      2.421       1.04       1.61
+       0.20     0.6491      2.436       0.66       1.40
+       0.62     0.6580      2.470       0.78       1.46
+       1.11     0.6713      2.520       0.72       1.42
+       1.58     0.6870      2.580       0.76       1.45
+       1.76     0.6860      2.575       0.80       1.47
 ENDDATA              8
 ENDSUBENT           24
 SUBENT        12419003     820519              20050926       0000
@@ -60,4 +79,18 @@ ENDBIB               7
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT           11
-ENDENTRY             4
+SUBENT        12419005   20180521   20180918   20180917       1441
+BIB                  4          4
+REACTION   (98-CF-252(0,F),PR,NU)
+ERR-ANALYS (DATA-ERR) No details on sources.
+STATUS     (TABLE) Table I, page 199.
+HISTORY    (20180521C) BP
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+PRT/FIS    PER-CENT
+      3.754       1.27
+ENDDATA              3
+ENDSUBENT           12
+ENDENTRY             5
