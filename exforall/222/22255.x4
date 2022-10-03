@@ -1,10 +1,12 @@
-ENTRY            22255   20201016   20210106   20210105       2294
-SUBENT        22255001   20201016   20210106   20210105       2294
-BIB                 16         75
+ENTRY            22255   20210903   20220117   20220117       2303
+SUBENT        22255001   20210903   20220117   20220117       2303
+BIB                 16         79
 TITLE       A measurement of the 22-Ne(n,gamma)23-Ne capture cross
-            section at a stellar temperature of KT = 25 keV.
-REFERENCE  (J,AJ,379,420,1991)    Main reference, data are given
+            section at a stellar temperature of KT = 25 keV
 AUTHOR     (H.Beer, G.Rupp, F.Voss, F.Kaeppeler)
+REFERENCE  (J,AJ,379,420,1991)    Main reference, data are given
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
 INSTITUTE  (2GERKFK)
 FACILITY   (VDG,2GERKFK) Pulsed 3.75 MV Van de Graaff
 INC-SOURCE (P-LI7) Neutrons were produced near the threshold.
@@ -30,9 +32,8 @@ DETECTOR   (GELI)  The activity was counted with a GeLi-detector,
             beam line.
            (GLASD) The neutron flux was monitored by a Li-6 glass
             scintillation counter.
-MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW)
+MONITOR    ((MONIT)79-AU-197(N,G)79-AU-198-G,,SIG,,MXW)
 DECAY-MON  (79-AU-198-G,2.694D,DG,411.8,.9552)
-MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
 SAMPLE      In the first step, four pressurized gas samples with
             different mixtures and weights of neon gas, enriched
             to 99.9% in Ne-22, and natural krypton gas were
@@ -68,43 +69,51 @@ ERR-ANALYS (ERR-T)    The error includes contributions from
            (ERR-7)  Gamma-ray intensity attenuation in sample
                     error
            (ERR-8,,1.)  Max neutron multiple scattering error
-           (MONIT-ERR) 197-Au standard error
+COMMENT     The quoted neutron energies refer to the lab system;
+            effective energies in the  c.m. system have to be
+            reduced by 23/24
 HISTORY    (19940109C) N.O.
-           (19950420E)
            (20080529A) Date is corrected. Two new SUBENTS added
                        Last corrections have been done.
            (20200803A) SD: DATA corrected in Subent 004.
            PART-DET deleted.
            (20201016A) SD: KT-NRM added to COMMON section.
-ENDBIB              75
-COMMON              12          6
+           (20210903A) SD: Corrections in all Subents.
+           Subents 005-008 added.
+ENDBIB              79
+COMMON               9          6
 KT-NRM     ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
-ERR-5      ERR-6      ERR-7      MONIT      MONIT-ERR  MONIT-ERR
+ERR-5      ERR-6      ERR-7
 KEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT   MB         MB         PER-CENT
+PER-CENT   PER-CENT   PER-CENT
         25.        3.6        0.5         2.         5.        2.5
-       3.04      0.105        1.5       648.        10.        1.5
+       3.04      0.105        1.5
 ENDCOMMON            6
-ENDSUBENT           85
-SUBENT        22255002   20080529   20080828   20080828       2199
-BIB                  5          7
-REACTION   (10-NE-22(N,G)10-NE-23,,SIG,,MXW,DERIV)
+ENDSUBENT           89
+SUBENT        22255002   20210903   20220117   20220117       2303
+BIB                  7         12
+REACTION   (10-NE-22(N,G)10-NE-23,,SIG,,MXW/FCT)
 DECAY-DATA (10-NE-23,38.SEC,DG,439.,.329)
-ANALYSIS   .The datum given is the weighted average from the
+ANALYSIS    The datum given is the weighted average from the
             comparisons with the different Kr-reactions.
-STATUS     (TABLE)  Data taken from table 2 of main ref.
+MONIT-REF  (22099003,W.Ratynski+,J,PR/C,37,595,1988)
+ERR-ANALYS (MONIT-ERR) 197-Au standard error
+STATUS     (TABLE) Table 2 from Astroph.J.,379(1991)420
            (DEP,22255003)
+           (SPSDD,22255005) Renormalized.
 HISTORY    (20080529A) BIB information added. Data units corrected
-ENDBIB               7
+           (20210903A) SD: SF8=MXW -> MXW/FCT; SF9=DERIV deleted
+           from REACTION code. Superseded.
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       ERR-T
-KEV        MICRO-B    MICRO-B
-    2.5E+01    6.6E+01         5.
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MICRO-B    MICRO-B    MB         MB
+        25.        66.         5.       648.        10.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        22255003   20080529   20080828   20080828       2199
-BIB                  6         22
+ENDSUBENT           20
+SUBENT        22255003   20210903   20220117   20220117       2303
+BIB                  7         21
 REACTION  1(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
           2(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
           3(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
@@ -116,51 +125,173 @@ MONITOR   1(36-KR-78(N,G)36-KR-79-M,,SIG,,MXW)
           4(36-KR-84(N,G)36-KR-85-M,,SIG,,MXW)
           5(36-KR-86(N,G)36-KR-87,,SIG,,MXW)
 DECAY-MON 1(36-KR-79-M,50.SEC,DG,129.9,0.27)
-          2(36-KR-79,34.9HR,DG,397.5,0.093)
+          2(36-KR-79-G,34.9HR,DG,397.5,0.093)
           3(36-KR-81-M,13.3SEC,DG,190.4,0.67,DG,151.)
           4(36-KR-85-M,4.48HR,DG,304.9,0.14)
           5(36-KR-87,1.272HR,DG,406.6,0.329)
-ERR-ANALYS1(ERR-IDD)     Error of Kr-79-M decay gamma intensity
-          2(ERR-IDD)     Error of Kr-79-G decay gamma intensity
-          3(ERR-IDD)     Error of Kr-81-M decay gamma intensity
-          4(ERR-IDD)     Error of Kr-85-M decay gamma intensity
-          5(ERR-IDD)     Error of Kr-87 decay gamma intensity
-STATUS     (TABLE)  From Table 2 of main reference
+MONIT-REF  (22099003,W.Ratynski+,J,PR/C,37,595,1988)
+ERR-ANALYS (MONIT-ERR) 197-Au standard error
+STATUS     (TABLE) Table 2 from Astroph.J.,379(1991)420
+           (SPSDD,22255006) Renormalized.
 HISTORY    (20080529C)  SM
-ENDBIB              22
-COMMON               5          3
-ERR-IDD   1ERR-IDD   2ERR-IDD   3ERR-IDD   4ERR-IDD   5
-NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
-   0.006      0.003      0.01       0.004      0.20
-ENDCOMMON            3
-DATA                11          1
+           (20210903A) SD: BIB update. Subent superseded.
+ENDBIB              21
+NOCOMMON             0          0
+DATA                13          1
 KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
-ERR-T     3DATA      4ERR-T     4DATA      5ERR-T     5
+ERR-T     3DATA      4ERR-T     4DATA      5ERR-T     5MONIT
+MONIT-ERR
 KEV        MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B
-MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B
-    25.        65.2        6.2       75.2        6.9       63.6
-     4.0       68.3        4.5       68.0        4.3
-ENDDATA              6
-ENDSUBENT           37
-SUBENT        22255004   20200803   20201008   20201008       2290
-BIB                  6         11
+MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B    MB
+PER-CENT
+        25.       65.2        6.2       75.2        6.9       63.6
+        4.0       68.3        4.5       68.0        4.3       648.
+        1.5
+ENDDATA              9
+ENDSUBENT           35
+SUBENT        22255004   20210903   20220117   20220117       2303
+BIB                  8         15
 REACTION   (10-NE-22(N,G)10-NE-23,,SIG,,MXW,DERIV)
 DECAY-DATA (10-NE-23,38.SEC,DG,439.,.329)
 ANALYSIS    The data are obtained by extrapolation from the
             data given for other energies
+MONIT-REF  (22099003,W.Ratynski+,J,PR/C,37,595,1988)
+ERR-ANALYS (MONIT-ERR) 197-Au standard error
 COMMENT    Dr.F.Kaeppeler:'The thermal cross section is not an
            experimental result and should be omitted.'
 STATUS     (TABLE) Text on p.422 of Astroph.J.,379(1991)420
            (DEP,22255002)
+           (SPSDD,22255007) Renormalized.
 HISTORY    (20080529C) SM
            (20200803A) SD: Value at En=2.5E-02 deleted according
            to COMMENT.
-ENDBIB              11
+           (20210903A) SD: Superseded.
+ENDBIB              15
 NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       ERR-T
-EV         MB         MB
-     3.0E+4    0.053       0.0044
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+     30.      0.053       0.0044    648.      1.5
 ENDDATA              3
-ENDSUBENT           19
-ENDENTRY             4
+ENDSUBENT           23
+SUBENT        22255005   20210903   20220117   20220117       2303
+BIB                 10         12
+REACTION   (10-NE-22(N,G)10-NE-23,,SIG,,MXW,DERIV)
+DECAY-DATA (10-NE-23,38.SEC,DG,439.,.329)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Cross section value in subentry 22182.002 is
+           renormalized for new gold cross section
+CORRECTION  Correction for revised gold standard 681/648 =1.051
+ERR-ANALYS (MONIT-ERR) 197-Au standard error
+COMMENT    Not directly measured 22Ne/197Au ratio
+STATUS     (TABLE) p.62 of INDC(GER)-0053
+           (DEP,22255006)
+HISTORY    (20210903C) SD
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MICRO-B    MICRO-B    MB         PER-CENT
+    25.       69.           5.       681.        1.
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        22255006   20210903   20220117   20220117       2303
+BIB                  9         27
+REACTION  1(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
+          2(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
+          3(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
+          4(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
+          5(10-NE-22(N,G)10-NE-23,,SIG,,MXW)
+MONITOR   1(36-KR-78(N,G)36-KR-79-M,,SIG,,MXW)
+          2(36-KR-78(N,G)36-KR-79-G,,SIG,,MXW)
+          3(36-KR-80(N,G)36-KR-81-M,,SIG,,MXW)
+          4(36-KR-84(N,G)36-KR-85-M,,SIG,,MXW)
+          5(36-KR-86(N,G)36-KR-87,,SIG,,MXW)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+          1(36-KR-79-M,50.SEC,DG,129.9,0.27)
+          2(36-KR-79-G,34.9HR,DG,397.5,0.093)
+          3(36-KR-81-M,13.3SEC,DG,190.4,0.67,DG,151.)
+          4(36-KR-85-M,4.48HR,DG,304.9,0.14)
+          5(36-KR-87,1.272HR,DG,406.6,0.329)
+ANALYSIS   Cross section values in subentry 22182.003 is
+           renormalized for new gold cross section
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (MONIT-ERR) 197-Au standard error
+CORRECTION  Correction for revised gold standard 681/648 =1.051
+STATUS     (TABLE) p.63-67 of INDC(GER)-0053
+           (DEP,22255007) Ratio to gold. (note:
+           006.1 depend on 007.1; 006.2 depend on 007.2;
+           006.3 depend on 007.3; 006.4 depend on 007.4;
+           006.5 depend on 007.5)
+HISTORY    (20210903C) SD
+ENDBIB              27
+NOCOMMON             0          0
+DATA                13          1
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3DATA      4ERR-T     4DATA      5ERR-T     5MONIT
+MONIT-ERR
+KEV        MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B
+MICRO-B    MICRO-B    MICRO-B    MICRO-B    MICRO-B    MB
+PER-CENT
+        25.       68.3        6.3       68.5        6.5       66.8
+        4.1       71.8        4.7       71.5        4.5       681.
+        1.0
+ENDDATA              9
+ENDSUBENT           41
+SUBENT        22255007   20210903   20220117   20220117       2303
+BIB                  6         23
+REACTION  1((10-NE-22(N,G)10-NE-23,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW))
+          2((10-NE-22(N,G)10-NE-23,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW))
+          3((10-NE-22(N,G)10-NE-23,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW))
+          4((10-NE-22(N,G)10-NE-23,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW))
+          5((10-NE-22(N,G)10-NE-23,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW))
+MONITOR   1(36-KR-78(N,G)36-KR-79-M,,SIG,,MXW)
+          2(36-KR-78(N,G)36-KR-79-G,,SIG,,MXW)
+          3(36-KR-80(N,G)36-KR-81-M,,SIG,,MXW)
+          4(36-KR-84(N,G)36-KR-85-M,,SIG,,MXW)
+          5(36-KR-86(N,G)36-KR-87,,SIG,,MXW)
+DECAY-DATA (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+DECAY-MON 1(36-KR-79-M,50.SEC,DG,129.9,0.27)
+          2(36-KR-79-G,34.9HR,DG,397.5,0.093)
+          3(36-KR-81-M,13.3SEC,DG,190.4,0.67,DG,151.)
+          4(36-KR-85-M,4.48HR,DG,304.9,0.14)
+          5(36-KR-87,1.272HR,DG,406.6,0.329)
+STATUS     (TABLE) p.63-67 of INDC(GER)-0053
+HISTORY    (20210903C) SD
+ENDBIB              23
+NOCOMMON             0          0
+DATA                11          1
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3DATA      4ERR-T     4DATA      5ERR-T     5
+KEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+        25.  1.006E-04  0.096E-04  1.006E-04  0.096E-04 0.9815E-04
+  0.062E-04  1.054E-04  0.069E-04  1.049E-04  0.066E-04
+ENDDATA              6
+ENDSUBENT           34
+SUBENT        22255008   20210903   20220117   20220117       2303
+BIB                  7          9
+REACTION   (10-NE-22(N,G)10-NE-23,,SIG,,MXW,DERIV)
+DECAY-DATA (10-NE-23,38.SEC,DG,439.,.329)
+ANALYSIS    The data are obtained by extrapolation from the
+            data given for other energies
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (MONIT-ERR) 197-Au standard error
+STATUS     (TABLE) p.68 of INDC(GER)-0053
+           (DEP,22255006)
+HISTORY    (20210903C) SD
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+        30.     0.056      0.0046    612.      1.0
+ENDDATA              3
+ENDSUBENT           17
+ENDENTRY             8

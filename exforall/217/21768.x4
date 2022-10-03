@@ -1,13 +1,15 @@
-ENTRY            21768   20170128   20170403   20170325       2257
-SUBENT        21768001   20170128   20170403   20170325       2257
-BIB                  6         15
-INSTITUTE  (2GERKFK)
-REFERENCE  (J,AAA,105,270,198209) Main reference.
-           (C,79KNOX,,340,197910) W-184 results.
-           (P,NEANDC(E)-212,(5),5,198006) Graph for W-184.
-AUTHOR     (H.Beer,F.Kaeppeler,K.Wisshak)
+ENTRY            21768   20210802   20220117   20220117       2303
+SUBENT        21768001   20210802   20220117   20220117       2303
+BIB                  6         19
 TITLE       Fast neutron capture on Hf-180 and W-184
             and the solar hafnium and tungsten abundance
+AUTHOR     (H.Beer,F.Kaeppeler,K.Wisshak)
+REFERENCE  (J,AAA,105,270,198209) Main reference.
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
+           (C,79KNOX,,340,197910) W-184 results.
+           (P,NEANDC(E)-212,(5),5,198006) Graph for W-184.
+INSTITUTE  (2GERKFK)
 FACILITY   (VDG,2GERKFK) The 3 MV pulsed Van de Graaff.
 HISTORY    (19820413C)BN.
                     Subent 002/003 taken from EXFOR Entry 21737.
@@ -16,9 +18,11 @@ HISTORY    (19820413C)BN.
            year of ref. was changed (1981 -> 1982). SAMPLE moved
            to Subents 002-005. Subents 002 and 003 were merged.
            Subent 005 was added.
-ENDBIB              15
+           (20210802A) SD: Correction in Subent 004.
+           Subent 006 added.
+ENDBIB              19
 NOCOMMON             0          0
-ENDSUBENT           18
+ENDSUBENT           22
 SUBENT        21768002   20170128   20170403   20170325       2257
 BIB                 14         51
 REACTION   (74-W-184(N,G)74-W-185,,SIG)
@@ -144,12 +148,9 @@ NO-DIM
 ENDDATA             66
 ENDSUBENT          122
 NOSUBENT      21768003   20170129   20170403   20170325       2257
-SUBENT        21768004   20170128   20170403   20170325       2257
-BIB                 15         41
+SUBENT        21768004   20210802   20220117   20220117       2303
+BIB                 15         40
 REACTION   (72-HF-180(N,G)72-HF-181,,SIG,,SPA)
-            Due to the special experimental arrangement the
-            measured quantity represents directly the true
-            Maxwellian averaged cross section.
 SAMPLE      Natural metal foil with thickness 2.05 x 10**4 atoms/b
             Au-197 (monitor metal sample with thickness
             2.00 x 10**4 atoms/b)
@@ -158,7 +159,7 @@ SAMPLE      Natural metal foil with thickness 2.05 x 10**4 atoms/b
 INC-SOURCE (P-LI7) The Li-7(p,n) reaction using proton energies
            25 keV above the reaction threshold to obtain a
            kinematically collimated neutron beam.
-INC-SPECT  .The neutron spectrum is similar to a Maxwellian
+INC-SPECT   The neutron spectrum is similar to a Maxwellian
             distribution at 25 keV thermal energy.
 METHOD     (ACTIV,MOSEP,EXTB) A natural Hf-foil in back-to-back
             geometry with a gold foil was exposed for about
@@ -166,13 +167,13 @@ METHOD     (ACTIV,MOSEP,EXTB) A natural Hf-foil in back-to-back
 DETECTOR   (GELI) Ge (Li)-detector (42 cm3, 2 keV energy
                             resolution at 1.33 MeV).
 DECAY-DATA (72-HF-181,42.4D,DG,482.,0.81)
-MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
             The Maxwellian average Au cross section was
             calculated from ENDF/B-IV.
 MONIT-REF  (,,3,ENDF/B-IV,,1974)
-DECAY-MON  (79-AU-198-G,2.69D,DG,0.9552)
+DECAY-MON  (79-AU-198-G,2.69D,DG,412.,0.9552)
 REL-REF    (M,,H.Beer+,J,PR/C,21,534,1980) - method details.
-COMMENT    .The authors calculated a cross section at 30 keV by
+COMMENT     The authors calculated a cross section at 30 keV by
             extrapolating the measured Hf cross section using a
             statistical model calculation of Drake et al.
             The quoted value is ( 180 +- 9 )mb.
@@ -181,24 +182,26 @@ ERR-ANALYS (ERR-T) Total error.
            (MONIT-ERR) Uncertainty in Au standard,
            (ERR-1) Uncertainty in decay scheme(2.5%),
            (ERR-2) Uncertainty in detector efficiency,
-           (ERR-3) Uncertainty in  diverg. of neutron beam,
+           (ERR-3) Uncertainty in diverg. of neutron beam,
            (ERR-4) Other uncertainties
            (ERR-S)  Statistical error
-STATUS     (TABLE) Tbl. 3 from AAA,105,270,1982
+STATUS     (TABLE) Tbl. 3 from Astronom.Astroph.,105(1982)270
+           (SPSDD,21768006) Renormalized.
 HISTORY    (19830831U) DECAY-DATA, DECAY-MON corrected
            (20170128U) SD: ERR-ANALYS update. REL-REF added.
-ENDBIB              41
+           (20210802A) SD: Superseded. KT -> KT-DUMMY.
+ENDBIB              40
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-S
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
    2.5        1.5        1.         3.         1.
 ENDCOMMON            3
 DATA                 5          1
-KT         DATA       ERR-T      MONIT      MONIT-ERR
+KT-DUMMY   DATA       ERR-T      MONIT      MONIT-ERR
 KEV        MB         MB         MB         MB
   25.        193.        10.        672.4     16.8
 ENDDATA              3
-ENDSUBENT           53
+ENDSUBENT           52
 SUBENT        21768005   20170128   20170403   20170325       2257
 BIB                  4          9
 REACTION   (74-W-180(N,G)74-W-181,,SIG,,MXW,DERIV)
@@ -231,4 +234,55 @@ KEV        MB
  100.        159.
 ENDDATA             12
 ENDSUBENT           30
-ENDENTRY             5
+SUBENT        21768006   20210802   20220117   20220117       2303
+BIB                 14         37
+REACTION   (72-HF-180(N,G)72-HF-181,,SIG,,SPA)
+ANALYSIS   Cross section value in subentry 21768.004
+           renormalized:
+             a) for new gold cross section
+             b) by an additional factor 81/80.5 = 1.006, which
+                accounts for the revised gamma-intensity for the
+                482.18 keV transition in the
+                181Hf-decay (NDS/ENSDF 2020)
+SAMPLE      Natural metal foil with thickness 2.05 x 10**4 atoms/b
+            Au-197 (monitor metal sample with thickness
+            2.00 x 10**4 atoms/b)
+             graphite (this sample served as a pure scatterer)
+             an empty sample container (background corr.)
+INC-SOURCE (P-LI7) The Li-7(p,n) reaction using proton energies
+           25 keV above the reaction threshold to obtain a
+           kinematically collimated neutron beam.
+INC-SPECT   The neutron spectrum is similar to a Maxwellian
+            distribution at 25 keV thermal energy.
+METHOD     (ACTIV,MOSEP,EXTB) A natural Hf-foil in back-to-back
+            geometry with a gold foil was exposed for about
+            20 h to the neutron beam.
+DETECTOR   (GELI) Ge (Li)-detector (42 cm3, 2 keV energy
+                            resolution at 1.33 MeV).
+DECAY-DATA (72-HF-181,42.4D,DG,482.,0.805)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+DECAY-MON  (79-AU-198-G,2.69D,DG,412.,0.9552)
+ERR-ANALYS (ERR-T) Total error.
+            The total error is composed as follows:
+           (MONIT-ERR) Uncertainty in Au standard,
+           (ERR-1) Uncertainty in decay scheme,
+           (ERR-2) Uncertainty in detector efficiency,
+           (ERR-3) Uncertainty in diverg. of neutron beam,
+           (ERR-4) Other uncertainties
+           (ERR-S)  Statistical error
+STATUS     (TABLE) Tbl. 3 from p.35 of INDC(GER)-0053
+HISTORY    (19830831C) SD
+ENDBIB              37
+COMMON               5          3
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-S
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+   0.5        1.5        1.         3.         1.
+ENDCOMMON            3
+DATA                 5          1
+KT-DUMMY   DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         MB
+  25.        193.        5.         681.      7.
+ENDDATA              3
+ENDSUBENT           49
+ENDENTRY             6

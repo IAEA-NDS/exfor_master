@@ -1,43 +1,42 @@
-ENTRY            22037   20161018   20170302   20170214       2255
-SUBENT        22037001   20161018   20170302   20170214       2255
-BIB                  7         34
-REFERENCE  (R,KFK-3706,198404)=(T,WALTER,198404)
+ENTRY            22037   20210803   20220117   20220117       2303
+SUBENT        22037001   20210803   20220117   20220117       2303
+BIB                  7         33
+TITLE       Neutron density and temperature of the weak s-process
+            component
+AUTHOR     (G.Walter,B.Leugers,F.Kaeppeler,Z.Y.Bao,G.Reffo,
+           F.Fabbri,H.Beer)
+REFERENCE  (R,KFK-3706,1984)=(T,WALTER,198404) on German
              Main Ref. In German.
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
            (J,AAA,167,186,1986)
             Br-79,-81, Ga-71, As-75, Ge-74 in Table 4
-            Se-80,Ga-nat MACS in Table 8 .
-           (J,NSE,93,(4),357,198608)
+            Se-80,Ga-nat MACS in Table 8 (Ge-detector was used)
+           (J,NSE,93,357,1986)
             Data for Kr isotopes measured by C6D6 detector.
            Authors: G.Walter,B.Leugers,F.Kaeppeler,Z.Y.Bao,
-           G.Reffo, F.Fabbri . See also Entry 21913 .
+           G.Reffo, F.Fabbri. See also Entry 21913
            (J,AAA,155,247,1986)
             Kr-86,Rb-85,-87 MACS at kT=25 and 30 keV in Table 4
             Authors: G.Walter,H.Beer,F.Kaeppeler,R.-D.Pebzhorn.
            (J,AAA,142,268,1985)
-TITLE      -Neutron density and temperature of the weak s-process
-            component-
-           - Temperatur und neutronendichte der schwachen
-            komponente des s-prozesses-
-              ( original title in German)
-AUTHOR     (G.Walter,B.Leugers,F.Kaeppeler,Z.Y.Bao,G.Reffo,
-           F.Fabbri,H.Beer)
-REL-REF    (O,21913001,G.Walter+,J,NSE,93,(4),357,1986)
+REL-REF    (O,21913001,G.Walter+,J,NSE,93,357,1986)
             Data of NSE article for Kr isotopes - measurement
             by C6D6
 INSTITUTE  (2GERKFK)
 FACILITY   (VDG,2GERKFK) Karlsruhe 3.75 MV Van De Graaff
             accelerator.
-HISTORY    (19861127C)  NO.
-           (19870827E)
+HISTORY    (19861127C) NO.
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Refs. J,AAA,155,247,1986,
             J,AAA,167,186,1986 were added.
             Upper -> lower correction, dates were corrected for
             4-digits year. BIB information was updated.
-ENDBIB              34
+           (20210701A) SD: Subents 016-025 updated. Subents
+           026-035 added.
+ENDBIB              33
 NOCOMMON             0          0
-ENDSUBENT           37
+ENDSUBENT           36
 SUBENT        22037002   20161018   20170302   20170214       2255
 BIB                 12         56
 REACTION   (32-GE-70(N,G)32-GE-71,,SIG) Capture cross section.
@@ -3759,21 +3758,81 @@ KEV        MB         MB
  50.        71.         5.
 ENDDATA              6
 ENDSUBENT           73
-SUBENT        22037016   20161018   20170302   20170214       2255
-BIB                 13         43
-REACTION   (32-GE-74(N,G)32-GE-75,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation techniques.
+SUBENT        22037016   20210803   20220117   20220117       2303
+BIB                 12         42
+REACTION  1(32-GE-74(N,G)32-GE-75,,SIG,,MXW)
+          2(32-GE-74(N,G)32-GE-75,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6 mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and
+            compositions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                 Ge    124.70    nat. Ge       Ge-74, Ge-76
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
+MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
+ANALYSIS  2 30 keV values were extrapolated from the measured data
+            at kT=25 keV assuming 1/v dependence of the cross
+            sections.
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) Table 7 of KFK-3706,1984;
+            Table 4 of Astronom.Astroph.,167(1986)186
+           (SPSDD,22037026) Renormalized.
+HISTORY    (19861127C)  NO.
+           (19880129U) IF.
+           (20161018A) M.M. Monitor value was added.
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              42
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+        25.        59.         7.                             657.
+        20.
+        30.                              54.         7.
+                    3.
+ENDDATA              8
+ENDSUBENT           59
+SUBENT        22037017   20210803   20220117   20220117       2303
+BIB                 13         41
+REACTION  1(32-GE-76(N,G)32-GE-77,,SIG,,MXW)
+          2(32-GE-76(N,G)32-GE-77,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR                      A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  A gamma crystal detector with a volume of 45 cm3
+            and a resolution of 1.6 keV at 1.33 MeV was used
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -3782,8 +3841,8 @@ SAMPLE     .The samples were placed close to the target. They
                  Ge    124.70    nat. Ge       Ge-74, Ge-76
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
+CORRECTION  There were only small corrections.
+ANALYSIS  2 30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
 ERR-ANALYS (ERR-T) Total errors, composed of
@@ -3798,97 +3857,43 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-S,1.,7.) Statistics
 STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-            Table 4 of J,AAA,167,186,1986
+           (SPSDD,22037027) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
-ENDBIB              43
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              41
 COMMON               2          3
 ERR-3      ERR-8
 PER-CENT   PER-CENT
   1.5        3.
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        59.        7.         657.       20.
- 30.        54.        7.                                3.
-ENDDATA              4
-ENDSUBENT           56
-SUBENT        22037017   20161018   20170302   20170214       2255
-BIB                 13         42
-REACTION   (32-GE-76(N,G)32-GE-77,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation technique .
-INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
-            on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
-            used.
-DETECTOR                       A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
-            placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
-            were canned in 9 micro-m Al foil, and sandwiched
-            between two gold discs for normalization purposes.
-            The samples had the following masses and compo-
-            sitions, nat. = natural composition,
-               Sample  Mass(mg)  Composition  Measured nuclides
-                 Ge    124.70    nat. Ge       Ge-74, Ge-76
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
-MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
-            at kT=25 keV assuming 1/v dependence of the cross
-            sections.
-ERR-ANALYS (ERR-T) Total errors, composed of
-           (ERR-1,3.,4.)  Error in Au standard
-           (ERR-2,1.,10.)  Decay scheme
-           (ERR-3)  Detector efficiency
-           (ERR-4,1.,12.)  Self-absorption correction
-           (ERR-5,,0.2)  Activation by scattered neutrons
-           (ERR-6,,1.)  Multiple scattering and self-shielding
-           (ERR-7,,3.)  Neutron flux variations
-           (ERR-8) Deviation of neutron-spectrum from Maxwellian
-           (ERR-9) Extrapolation from 25 to 30 keV
-           (ERR-S,1.,7.) Statistics
-STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-HISTORY    (19861127C)  NO.
-           (19870827E)
-           (19880129U) IF.
-           (19880129E)
-           (20161018A) M.M. Monitor value was added.
-ENDBIB              42
-COMMON               2          3
-ERR-3      ERR-8
-PER-CENT   PER-CENT
-  1.5        3.
-ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        18.        1.3        657.       20.
- 30.        16.        1.3                               3.
-ENDDATA              4
-ENDSUBENT           55
-SUBENT        22037018   20161018   20170302   20170214       2255
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        18.        1.3                                657.
+      20.
+ 30.                                 16.        1.3
+                3.
+ENDDATA              8
+ENDSUBENT           58
+SUBENT        22037018   20210803   20220117   20220117       2303
 BIB                 13         43
-REACTION   (31-GA-71(N,G)31-GA-72,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation technique .
+REACTION  1(31-GA-71(N,G)31-GA-72,,SIG,,MXW)
+          2(31-GA-71(N,G)31-GA-72,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR                       A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -3897,8 +3902,8 @@ SAMPLE     .The samples were placed close to the target. They
                 GaAs    58.51    nat. GaAs     Ga-71, As-75
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
+CORRECTION  There were only small corrections.
+ANALYSIS  2 30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
 ERR-ANALYS (ERR-T) Total errors, composed of
@@ -3913,39 +3918,44 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-S,1.,7.) Statistics
 STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-            Table 4 of J,AAA,167,186,1986
+            Table 4 of Astronom.Astroph.,167(1986)186
+           (SPSDD,22037028) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
+           (20210701A) SD: Reaction (2) added. Data superseded.
 ENDBIB              43
 COMMON               2          3
 ERR-3      ERR-8
 PER-CENT   PER-CENT
   1.5        3.
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        137.       8.         657.       20.
- 30.        125.       8.                                3.
-ENDDATA              4
-ENDSUBENT           56
-SUBENT        22037019   20161018   20170302   20170214       2255
-BIB                 13         42
-REACTION   (33-AS-75(N,G)33-AS-76,,SIG,,MXW)
-METHOD     (ACTIV) Activation technique .
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        137.       8.                                   657.
+     20.
+ 30.                                 125.       8.
+                3.
+ENDDATA              8
+ENDSUBENT           60
+SUBENT        22037019   20210803   20220117   20220117       2303
+BIB                 12         42
+REACTION  1(33-AS-75(N,G)33-AS-76,,SIG,,MXW)
+          2(33-AS-75(N,G)33-AS-76,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR                       A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the targeT. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -3954,8 +3964,7 @@ SAMPLE     .The samples were placed close to the targeT. They
                 GaAs    58.51    nat. GaAs     Ga-71, As-75
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
+ANALYSIS  2 30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
 ERR-ANALYS (ERR-T) Total errors, composed of
@@ -3970,40 +3979,44 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-S,1.,7.) Statistics
 STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-            Table 4 of J,AAA,167,186,1986
+            Table 4 of Astronom.Astroph.,167(1986)186
+           (SPSDD,22037029) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
+           (20210701A) SD: Reaction (2) added. Data superseded.
 ENDBIB              42
 COMMON               2          3
 ERR-3      ERR-8
 PER-CENT   PER-CENT
   1.5        3.
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        631.       33.        657.       20.
- 30.        576.       35.                               3.
-ENDDATA              4
-ENDSUBENT           55
-SUBENT        22037020   20161018   20170302   20170214       2255
-BIB                 13         42
-REACTION   (35-BR-79(N,G)35-BR-80-M,,SIG,,MXW) Maxwellian
-            average  capture cross section.
-METHOD     (ACTIV) Activation technique .
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        631.       33.                                  657.
+     20.
+ 30.                                    576.       35.
+                  3.
+ENDDATA              8
+ENDSUBENT           59
+SUBENT        22037020   20210803   20220117   20220117       2303
+BIB                 12         41
+REACTION  1(35-BR-79(N,G)35-BR-80-M,,SIG,,MXW)
+          2(35-BR-79(N,G)35-BR-80-M,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR                       A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -4012,8 +4025,7 @@ SAMPLE     .The samples were placed close to the target. They
                 RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
+ANALYSIS  2 30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
 ERR-ANALYS (ERR-T) Total errors, composed of
@@ -4028,39 +4040,104 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-S,1.,7.) Statistics
 STATUS     (TABLE) Table 7 of R,KFK-3706,1984
+           (SPSDD,22037030) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              41
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        87.        8.                                  657.
+    20.
+ 30.                                  79.        8.
+                 3.
+ENDDATA              8
+ENDSUBENT           58
+SUBENT        22037021   20210803   20220117   20220117       2303
+BIB                 12         42
+REACTION  1(35-BR-79(N,G)35-BR-80,,SIG,,MXW)
+          2(35-BR-79(N,G)35-BR-80,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
+MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
+ANALYSIS  2 30keV values were extrapolated from the measured data
+            at kT=25 keV assuming 1/v dependence of the cross
+            sections.
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) Table 7 of R,KFK-3706,1984
+            Table 4 of Astronom.Astroph.,167(1986)186
+           (SPSDD,22037031) Renormalized.
+HISTORY    (19861127C)  NO.
+           (19880129U) IF.
+           (20161018A) M.M. Monitor value was added.
+           (20210701A) SD: Reaction (2) added. Data superseded.
 ENDBIB              42
 COMMON               2          3
 ERR-3      ERR-8
 PER-CENT   PER-CENT
   1.5        3.
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        87.        8.         657.       20.
- 30.        79.        8.                                3.
-ENDDATA              4
-ENDSUBENT           55
-SUBENT        22037021   20161018   20170302   20170214       2255
-BIB                 13         43
-REACTION   (35-BR-79(N,G)35-BR-80,,SIG,,MXW) Maxwellian
-            average  capture cross section.
-METHOD     (ACTIV) Activation technique .
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        697.       42.                                   657.
+      20.
+ 30.                                  636.      42.
+                  3.
+ENDDATA              8
+ENDSUBENT           59
+SUBENT        22037022   20210803   20220117   20220117       2303
+BIB                 12         42
+REACTION  1(35-BR-81(N,G)35-BR-82,,SIG,,MXW)
+          2(35-BR-81(N,G)35-BR-82,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR                       A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -4069,7 +4146,6 @@ SAMPLE     .The samples were placed close to the target. They
                 RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
 ANALYSIS    30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
@@ -4085,98 +4161,44 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-S,1.,7.) Statistics
 STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-            Table 4 of J,AAA,167,186,1986
+            Table 4 of Astronom.Astroph.,167(1986)186
+           (SPSDD,22037032) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
-ENDBIB              43
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              42
 COMMON               2          3
 ERR-3      ERR-8
 PER-CENT   PER-CENT
   1.5        3.
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        697.      42.         657.       20.
- 30.        636.      42.                                3.
-ENDDATA              4
-ENDSUBENT           56
-SUBENT        22037022   20161018   20170302   20170214       2255
-BIB                 13         43
-REACTION   (35-BR-81(N,G)35-BR-82,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation technique .
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        347.      14.                                   657.
+     20.
+ 30.                                   317.      16.
+                  3.
+ENDDATA              8
+ENDSUBENT           59
+SUBENT        22037023   20210803   20220117   20220117       2303
+BIB                 14         54
+REACTION  1(36-KR-86(N,G)36-KR-87,,SIG,,MXW)
+          2(36-KR-86(N,G)36-KR-87,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR                       A gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
-            were canned in 9 micro-m Al foil, and sandwiched
-            between two gold discs for normalization purposes.
-            The samples had the following masses and compo-
-            sitions, nat. = natural composition,
-               Sample  Mass(mg)  Composition  Measured nuclides
-                RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
-MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
-            at kT=25 keV assuming 1/v dependence of the cross
-            sections.
-ERR-ANALYS (ERR-T) Total errors, composed of
-           (ERR-1,3.,4.)  Error in Au standard
-           (ERR-2,1.,10.)  Decay scheme
-           (ERR-3)  Detector efficiency
-           (ERR-4,1.,12.)  Self-absorption correction
-           (ERR-5,,0.2)  Activation by scattered neutrons
-           (ERR-6,,1.)  Multiple scattering and self-shielding
-           (ERR-7,,3.)  Neutron flux variations
-           (ERR-8) Deviation of neutron-spectrum from Maxwellian
-           (ERR-9) Extrapolation from 25 to 30 keV
-           (ERR-S,1.,7.) Statistics
-STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-            Table 4 of J,AAA,167,186,1986
-HISTORY    (19861127C)  NO.
-           (19870827E)
-           (19880129U) IF.
-           (19880129E)
-           (20161018A) M.M. Monitor value was added.
-ENDBIB              43
-COMMON               2          3
-ERR-3      ERR-8
-PER-CENT   PER-CENT
-  1.5        3.
-ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        347.      14.         657.       20.
- 30.        317.      16.                                3.
-ENDDATA              4
-ENDSUBENT           56
-SUBENT        22037023   20161018   20170302   20170214       2255
-BIB                 15         55
-REACTION   (36-KR-86(N,G)36-KR-87,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation technique .
-INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
-            on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
-            used.
-DETECTOR   (GE)               Ge gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
-            placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -4191,9 +4213,8 @@ SAMPLE     .The samples were placed close to the target. They
             thickness 0.009mm, 2.001E-4 nucl/b, 18.51mg mass.
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
-DECAY-MON  (79-AU-198-G,2.696D,DG,412.,0.955) 95.5+-0.1 %
-DECAY-DATA (36-KR-87,76.3MIN,DG,403.,0.500)  50.0+-3.0 %
-CORRECTION .There were only small corrections.
+DECAY-MON  (79-AU-198-G,2.696D,DG,412.,0.955) 95.5+-0.1%
+DECAY-DATA (36-KR-87,76.3MIN,DG,403.,0.500)  50.0+-3.0%
 ANALYSIS    30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
@@ -4210,43 +4231,47 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-10,,2.) Irradiation history
            (ERR-S,1.,7.) Statistics
 STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-              Table 4 of J,AAA,155,247,1986 :
+              Table 4 of Astronom.Astroph.,167(1986)186 :
                 4.2+-0.8 at 25keV, 3.8+-0.7 at 30 keV .
               Table VII of J,NSE,93,(4),357,1986 :
                 5.6+-0.7 at kT=30keV .
+           (SPSDD,22037033) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
-ENDBIB              55
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              54
 COMMON               4          3
 ERR-1      ERR-3      ERR-5      ERR-IDD
 PER-CENT   PER-CENT   PER-CENT   NO-DIM
   3.        1.5        3.         0.030
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        5.0        0.7        657.       20.
- 30.        4.6        0.7                               3.
-ENDDATA              4
-ENDSUBENT           68
-SUBENT        22037024   20161018   20170302   20170214       2255
-BIB                 15         50
-REACTION   (37-RB-85(N,G)37-RB-86,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation technique .
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        5.0        0.7                                  657.
+     20.
+ 30.                                  4.6        0.7
+                 3.
+ENDDATA              8
+ENDSUBENT           71
+SUBENT        22037024   20210803   20220117   20220117       2303
+BIB                 14         49
+REACTION  1(37-RB-85(N,G)37-RB-86,,SIG,,MXW)
+          2(37-RB-85(N,G)37-RB-86,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR   (GE)               Ge gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -4261,8 +4286,7 @@ MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
 DECAY-MON  (79-AU-198-G,2.696D,DG,412.,0.955) 95.5+-0.1 %
 DECAY-DATA (37-RB-86-G,18.8D,DG,1077.,0.088) 8.8+-0.8 %
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
+ANALYSIS  2 30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
 ERR-ANALYS (ERR-T) Total errors, composed of
@@ -4277,41 +4301,45 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-10,,2.) Irradiation history
            (ERR-S,1.,7.) Statistics
-STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-              Table 4 of J,AAA,155,247,1986 - the same data.
+STATUS     (TABLE) Table 7 of R,KFK-3706,1984; Table 4 of
+            Astron.Astrophys.,155,247,1986 - the same data.
+           (SPSDD,22037034) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
-ENDBIB              50
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              49
 COMMON               4          3
 ERR-1      ERR-3      ERR-5      ERR-IDD
 PER-CENT   PER-CENT   PER-CENT   NO-DIM
   3.        1.5        3.         0.008
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        394.       18.        657.       20.
- 30.        360.       20.                               3.
-ENDDATA              4
-ENDSUBENT           63
-SUBENT        22037025   20161018   20170302   20170214       2255
-BIB                 15         50
-REACTION   (37-RB-87(N,G)37-RB-88,,SIG,,MXW) Maxwellian average
-            capture cross section.
-METHOD     (ACTIV) Activation technique .
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        394.       18.                                  657.
+     20.
+ 30.                                   360.       20.
+                  3.
+ENDDATA              8
+ENDSUBENT           66
+SUBENT        22037025   20210803   20220117   20220117       2303
+BIB                 14         49
+REACTION  1(37-RB-87(N,G)37-RB-88,,SIG,,MXW)
+          2(37-RB-87(N,G)37-RB-88,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
 INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
             on a 1 mm thick water-cooled Cu-backing was used.
-INC-SPECT  .A Maxwellian neutron spectrum with kT = 25 keV was
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
             used.
-DETECTOR   (GE)               Ge gamma crystal  detector with a
-            volume of 45 cm3 and a resolution of 1.6 keV at
-            1.33 MeV was used.
-           (GLASD) Li-6 glass detector to measure the neutron flux
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
             placed at 70 cm from neutron source.
-SAMPLE     .The samples were placed close to the target. They
+SAMPLE      The samples were placed close to the target. They
             were canned in 9 micro-m Al foil, and sandwiched
             between two gold discs for normalization purposes.
             The samples had the following masses and compo-
@@ -4326,8 +4354,7 @@ MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW) From ENDF/B-V.
 MONIT-REF  (,R.Kinsey,3,ENDF/B-V,,1979)
 DECAY-MON  (79-AU-198-G,2.696D,DG,412.,0.955) 95.5+-0.1 %
 DECAY-DATA (37-RB-88,17.8MIN,DG,898.,0.140) 14.0+-1.7 %
-CORRECTION .There were only small corrections.
-ANALYSIS    30keV values were extrapolated from the measured data
+ANALYSIS  2 30keV values were extrapolated from the measured data
             at kT=25 keV assuming 1/v dependence of the cross
             sections.
 ERR-ANALYS (ERR-T) Total errors, composed of
@@ -4342,24 +4369,696 @@ ERR-ANALYS (ERR-T) Total errors, composed of
            (ERR-9) Extrapolation from 25 to 30 keV
            (ERR-10,,2.) Irradiation history
            (ERR-S,1.,7.) Statistics
-STATUS     (TABLE) Table 7 of R,KFK-3706,1984
-              Table 4 of J,AAA,155,247,1986 - the same data.
+STATUS     (TABLE) Table 7 of R,KFK-3706,1984; Table 4 of
+            Astron.Astrophys.,155,247,1986 - the same data.
+           (SPSDD,22037035) Renormalized.
 HISTORY    (19861127C)  NO.
-           (19870827E)
            (19880129U) IF.
-           (19880129E)
            (20161018A) M.M. Monitor value was added.
-ENDBIB              50
+           (20210701A) SD: Reaction (2) added. Data superseded.
+ENDBIB              49
 COMMON               4          3
 ERR-1      ERR-3      ERR-5      ERR-IDD
 PER-CENT   PER-CENT   PER-CENT   NO-DIM
   3.        1.5        3.        0.017
 ENDCOMMON            3
-DATA                 6          2
-KT         DATA       ERR-T      MONIT      MONIT-ERR  ERR-9
-KEV        MB         MB         MB         MB         PER-CENT
- 25.        12.        2.         657.       20.
- 30.        11.        2.                                3.
-ENDDATA              4
-ENDSUBENT           63
-ENDENTRY            25
+DATA                 8          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR  ERR-9
+KEV        MB         MB         MB         MB         MB
+MB         PER-CENT
+ 25.        12.        2.                                   657.
+      20.
+ 30.                                 11.        2.
+                3.
+ENDDATA              8
+ENDSUBENT           66
+SUBENT        22037026   20210803   20220117   20220117       2303
+BIB                 14         49
+REACTION  1((32-GE-74(N,G)32-GE-75,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(32-GE-74(N,G)32-GE-75,,SIG,,MXW)
+          3(32-GE-74(N,G)32-GE-75,,SIG,,MXW,DERIV)
+DECAY-DATA (32-GE-75,,DG,264.6,0.114)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron
+           flux placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                 Ge    124.70    nat. Ge       Ge-74, Ge-76
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Cross section value in subentry 22037.016 renormalized:
+            a) for new gold cross section
+            b) by an additional factor 11.1/11.4 = 0.974, which
+               accounts for the revised gamma-intensity for the
+               264.6 keV transition in the 75Ge-decay (given
+               without uncertainty in NDS/ENSDF 2020)
+            The half-life of 75Ge adopted in the cross section
+           determination is unknown.
+             Revised data:
+            Measured quantity at KT=25 keV:
+                   cross section ratio 74Ge/197Au = 0.0898+-0.011
+CORRECTION  Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.36 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              49
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.        0.0898        0.011       59.        7.
+                681.        7.
+ 30.                                                         55.
+      7.                                3.
+ENDDATA              8
+ENDSUBENT           66
+SUBENT        22037027   20210803   20220117   20220117       2303
+BIB                 14         49
+REACTION  1((32-GE-76(N,G)32-GE-77,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(32-GE-76(N,G)32-GE-77,,SIG,,MXW)
+          3(32-GE-76(N,G)32-GE-77,,SIG,,MXW,DERIV)
+DECAY-DATA (32-GE-77,,DG,215.53,0.279)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                 Ge    124.70    nat. Ge       Ge-74, Ge-76
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS     Cross section value in subentry 22037.017 is
+           renormalized
+             a) for new gold cross section
+             b) by an additional factor 28.6/27.9 = 1.03, which
+                accounts for the revised gamma-intensity for
+           the 215.53 keV transition in the 77Ge-decay
+             The half-life of 77Ge adopted in the cross section
+           determination is unknown.
+             Revised data:
+             Measured quantity at KT=25 keV:
+                 cross section ratio 76Ge/197Au = 0.0274+-0.0020
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.37 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              49
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.          0.0274      0.0020      19.2       1.2
+                 681.     7.
+ 30.                                                       17.1
+    1.1                               3.
+ENDDATA              8
+ENDSUBENT           66
+SUBENT        22037028   20210803   20220117   20220117       2303
+BIB                 13         45
+REACTION  1((31-GA-71(N,G)31-GA-72,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(31-GA-71(N,G)31-GA-72,,SIG,,MXW)
+          3(31-GA-71(N,G)31-GA-72,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                GaAs    58.51    nat. GaAs     Ga-71, As-75
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS    Cross section value in subentry 22037.018 is
+           renormalized
+             a) for new gold cross section
+            The half-life and gamma lines of 72Ga adopted in the
+            cross section determination are unknown.
+             Revised data:
+             Measured quantity at KT=25 keV:
+                 cross section ratio 71Ga/197Au = 0.2085+-0.0122
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.38 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              45
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.          0.2085      0.0122       142.       6.7
+                 681.       7.
+ 30.                                                      130.
+    6.1                               3.
+ENDDATA              8
+ENDSUBENT           62
+SUBENT        22037029   20210803   20220117   20220117       2303
+BIB                 14         44
+REACTION  1((33-AS-75(N,G)33-AS-76,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(33-AS-75(N,G)33-AS-76,,SIG,,MXW)
+          3(33-AS-75(N,G)33-AS-76,,SIG,,MXW,DERIV)
+DECAY-DATA (33-AS-76,26.4HR,DG,559.,0.450)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                GaAs    58.51    nat. GaAs     Ga-71, As-75
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS      Revised data:
+               cross section value in subentry 22037.019 is
+           renormalized
+                 a) for new gold cross section
+             Measured quantity at KT=25 keV:
+            cross section ratio 75As/197Au = 0.9604+-0.0502
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.39 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              44
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.         0.9604       0.0502     654.       28.
+               681.         7.
+ 30.                                                      597.
+   30.                               3.
+ENDDATA              8
+ENDSUBENT           61
+SUBENT        22037030   20210803   20220117   20220117       2303
+BIB                 14         47
+REACTION  1((35-BR-79(N,G)35-BR-80-M,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(35-BR-79(N,G)35-BR-80-M,,SIG,,MXW)
+          3(35-BR-79(N,G)35-BR-80-M,,SIG,,MXW,DERIV)
+DECAY-DATA (35-BR-80-M,4.42HR,DG,37.,0.391)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS     Cross section value in subentry 22037.020 is
+           renormalized
+              a) for new gold cross section
+              b) gamma-intensity for the 37 keV transition in the
+             80Br-m-decay unchanged but improved accuracy
+             considered (NDS/ENSDF 2020)
+            Revised data:
+             Measured quantity at KT=25 keV:
+              cross section ratio 79Br-m/197Au = 0.1324+-0.0122
+CORRECTION  Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.40 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              47
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.        0.1324       0.0122       90.        8.
+                681.         7.
+ 30.                                                         82.
+      8.                                3.
+ENDDATA              8
+ENDSUBENT           64
+SUBENT        22037031   20210803   20220117   20220117       2303
+BIB                 14         44
+REACTION  1((35-BR-79(N,G)35-BR-80,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(35-BR-79(N,G)35-BR-80,,SIG,,MXW)
+          3(35-BR-79(N,G)35-BR-80,,SIG,,MXW,DERIV)
+DECAY-DATA (35-BR-80-M,4.42HR,DG,37.,0.391)
+           (35-BR-80-G,17.6MIN,DG,616.,0.067)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS     Cross section value in subentry 22037.021 is
+           renormalized for new gold cross section
+             Revised data:
+                Measured quantity at KT=25 keV:
+                 cross section ratio 79Br/197Au = 1.061+-0.064
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.41 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              44
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.          1.061       0.064       722.      42.
+                 681.        7.
+ 30.                                                        659.
+    42.                                3.
+ENDDATA              8
+ENDSUBENT           61
+SUBENT        22037032   20210803   20220117   20220117       2303
+BIB                 14         43
+REACTION  1((35-BR-81(N,G)35-BR-82,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(35-BR-81(N,G)35-BR-82,,SIG,,MXW)
+          3(35-BR-81(N,G)35-BR-82,,SIG,,MXW,DERIV)
+DECAY-DATA (35-BR-82-G,35.34HR,DG,776.,0.834)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a  volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV
+            was used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                RbBr    75.68    nat. RbBr   Br-79, Br-81, Rb-85
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS     Cross section value in subentry 22037.022 is
+             renormalized for new gold cross section
+             Revised data:
+               Measured quantity at KT=25 keV:
+               cross section ratio 81Br/197Au = 0.528+-0.021
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1,3.,4.)  Error in Au standard
+           (ERR-2,1.,10.)  Decay scheme
+           (ERR-3)  Detector efficiency
+           (ERR-4,1.,12.)  Self-absorption correction
+           (ERR-5,,0.2)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,3.)  Neutron flux variations
+           (ERR-8) Deviation of neutron-spectrum from Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.42 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              43
+COMMON               2          3
+ERR-3      ERR-8
+PER-CENT   PER-CENT
+  1.5        3.
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.          0.528       0.021      359.      10.
+                 681.      7.
+ 30.                                                        328.
+    14.                                3.
+ENDDATA              8
+ENDSUBENT           60
+SUBENT        22037033   20210803   20220117   20220117       2303
+BIB                 15         52
+REACTION  1((36-KR-86(N,G)36-KR-87,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(36-KR-86(N,G)36-KR-87,,SIG,,MXW)
+          3(36-KR-86(N,G)36-KR-87,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE)  Ge gamma crystal detector with a volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV was
+            used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                 Kr     72.12       *               Kr-86
+               *=enriched /99.5 per cent/ Kr-86 in Zeolite 5A.
+           (36-KR-86,ENR=0.995)  Kr-84- 0.5% .
+            Kr-86 sample - 1.27 mm thickness, 1.296E-4 nucl/b .
+            Au samples (metal):
+            thickness 0.009mm, 1.989E-4 nucl/b, 18.40mg mass;
+            thickness 0.009mm, 2.001E-4 nucl/b, 18.51mg mass.
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+DECAY-DATA (36-KR-87,76.3MIN,DG,403.,0.500)  50.0+-3.0 %
+ANALYSIS     Cross section value in subentry 22037.023 is
+             renormalized for new gold cross section
+             Revised data:
+               Measured quantity at KT=25 keV:
+               cross section ratio 86Kr/197Au = 0.00761+-0.00107
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1) Error in Au standard - 3.%
+           (ERR-2,1.,11.) Absolute intensity per decay
+           (ERR-3)  Detector efficiency
+           (ERR-4,2.,5.)  Self-absorption correction
+           (ERR-5)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,2.)  Neutron flux variations
+           (ERR-8,,3.) Deviation of neutron-spectrum from
+                       Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-10,,2.) Irradiation history
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.43 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              52
+COMMON               4          3
+ERR-1      ERR-3      ERR-5      ERR-IDD
+PER-CENT   PER-CENT   PER-CENT   NO-DIM
+  3.        1.5        3.         0.030
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.        0.00761       0.00107    5.2        0.7
+                681.        7.
+ 30.                                                        4.8
+     0.7                               3.
+ENDDATA              8
+ENDSUBENT           69
+SUBENT        22037034   20210803   20220117   20220117       2303
+BIB                 15         54
+REACTION  1((37-RB-85(N,G)37-RB-86,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(37-RB-85(N,G)37-RB-86,,SIG,,MXW)
+          3(37-RB-85(N,G)37-RB-86,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE) Ge gamma crystal detector with a volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV was
+            used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                RbBr    75.68    Nat. RbBr   Br-79, Br-81, Rb-85
+            Rb-85 sample of thickness 0.88mm, 7.035E-4 nucl/b.
+            Au samples (metal):
+            thickness 0.009mm, 1.857E-4 nucl/b, 17.18mg mass;
+            thickness 0.009mm, 1.960E-4 nucl/b, 18.13mg mass.
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+DECAY-DATA (37-RB-86-G,18.8D,DG,1077.,0.0864)
+ANALYSIS     Cross section value in subentry 22037.024 is
+             renormalized
+               a) for new gold cross section
+               b) by an additional factor 0.088/0.0864=1.019,
+            which accounts for the gamma-intensity for the
+            1077 keV transition in the 86Rb-decay (NDS/ENSDF 2020)
+             Revised data:
+               Measured quantity at KT=25 keV:
+               cross section ratio 85Rb/197Au = 0.5997+-0.00274
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1) Error in Au standard - 3.%
+           (ERR-2,1.,11.) Absolute intensity per decay
+           (ERR-3)  Detector efficiency
+           (ERR-4,2.,5.)  Self-absorption correction
+           (ERR-5)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,2.)  Neutron flux variations
+           (ERR-8,,3.) Deviation of neutron-spectrum from
+                       Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-10,,2.) Irradiation history
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.44 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              54
+COMMON               4          3
+ERR-1      ERR-3      ERR-5      ERR-IDD
+PER-CENT   PER-CENT   PER-CENT   NO-DIM
+  3.        1.5        3.         0.008
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.        0.5997       0.00274      416.       15.
+               681.        7.
+ 30.                                                        380.
+     18.                               3.
+ENDDATA              8
+ENDSUBENT           71
+SUBENT        22037035   20210803   20220117   20220117       2303
+BIB                 15         51
+REACTION  1((37-RB-87(N,G)37-RB-88,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(37-RB-87(N,G)37-RB-88,,SIG,,MXW)
+          3(37-RB-87(N,G)37-RB-88,,SIG,,MXW,DERIV)
+METHOD     (ACTIV)
+INC-SOURCE (P-LI7) A metallic Li target with a diameter of 6mm
+            on a 1 mm thick water-cooled Cu-backing was used.
+INC-SPECT   A Maxwellian neutron spectrum with kT = 25 keV was
+            used.
+DETECTOR   (GE) Ge gamma crystal detector with a volume of
+            45 cm3 and a resolution of 1.6 keV at 1.33 MeV was
+            used.
+           (GLASD) Li-6 glass detector to monitor the neutron flux
+            placed at 70 cm from neutron source.
+SAMPLE      The samples were placed close to the target. They
+            were canned in 9 micro-m Al foil, and sandwiched
+            between two gold discs for normalization purposes.
+            The samples had the following masses and compo-
+            sitions, nat. = natural composition,
+               Sample  Mass(mg)  Composition  Measured nuclides
+                RbBr   148.48    nat. RbBr          Rb-87
+            Rb-87 sample of thickness 1.66mm, 5.340E-4 nucl/b.
+            Au samples (metal):
+            thickness 0.009mm, 2.001E-4 nucl/b, 18.51mg mass;
+            thickness 0.009mm, 2.011E-4 nucl/b, 18.60mg mass.
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+DECAY-DATA (37-RB-88,17.8MIN,DG,898.,0.140) 14.0+-1.7 %
+ANALYSIS     Cross section value in subentry 22037.025 is
+             renormalized
+               a) for new gold cross section
+             Revised data:
+               Measured quantity at KT=25 keV:
+               cross section ratio 87Rb/197Au = 0.0183+-0.0031
+CORRECTION   Correction for revised gold standard 681/657 =1.036
+ERR-ANALYS (ERR-T) Total errors, composed of
+           (ERR-1) Error in Au standard - 3.%
+           (ERR-2,1.,11.) Absolute intensity per decay
+           (ERR-3)  Detector efficiency
+           (ERR-4,2.,5.)  Self-absorption correction
+           (ERR-5)  Activation by scattered neutrons
+           (ERR-6,,1.)  Multiple scattering and self-shielding
+           (ERR-7,,2.)  Neutron flux variations
+           (ERR-8,,3.) Deviation of neutron-spectrum from
+                       Maxwellian
+           (ERR-9) Extrapolation from 25 to 30 keV
+           (ERR-10,,2.) Irradiation history
+           (ERR-S,1.,7.) Statistics
+STATUS     (TABLE) p.45 of INDC(GER)-0053
+HISTORY    (20210803C) SD
+ENDBIB              51
+COMMON               4          3
+ERR-1      ERR-3      ERR-5      ERR-IDD
+PER-CENT   PER-CENT   PER-CENT   NO-DIM
+  3.        1.5        3.        0.017
+ENDCOMMON            3
+DATA                10          2
+KT         DATA      1ERR-T     1DATA      2ERR-T     2DATA      3
+ERR-T     3MONIT      MONIT-ERR  ERR-9
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB         MB         MB         PER-CENT
+ 25.          0.0183       0.0031    12.4        2.
+                681.         7.
+ 30.                                                       11.4
+     2.                                3.
+ENDDATA              8
+ENDSUBENT           68
+ENDENTRY            35

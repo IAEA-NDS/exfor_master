@@ -1,10 +1,12 @@
-ENTRY            22171   20201212   20210303   20210303       2296
-SUBENT        22171001   20201212   20210303   20210303       2296
-BIB                 12         51
+ENTRY            22171   20210829   20220117   20220117       2303
+SUBENT        22171001   20210829   20220117   20220117       2303
+BIB                 13         56
 TITLE        7Li(n,gamma)8Li - trigger reaction to a primordial
             r-process?
 AUTHOR     (M.Wiescher,R.Steininger,F.Kaeppeler)
 REFERENCE  (J,AJ,344,464,1989)
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
 REL-REF    (C,22401001,M.Heil+,J,AJ,507,997,1998) There is a
            miscalculation of the total efficiency of the
            ionization chamber.
@@ -16,6 +18,7 @@ FACILITY   (VDG,2GERKFK) 3.75MV Van de Graaff accelerator. A 1 mm2
             target to achieve homogeneous illumination. Beam
             currents of up to 90 uA were used. The target
             was bombarded for 5 sec intervals every 10 sec.
+METHOD     (ACTIV)
 SAMPLE      To derive the 7-Li(n,gamma) cross section from the
             activation analysis the number of 7-Li atoms in the
             samples had to be determined. This was done by
@@ -40,7 +43,7 @@ DETECTOR   (GLASD) 6-Li glass detector to monitor neutron yield,
             foil activity.
 CORRECTION  Background, detector efficiency.
 ERR-ANALYS (ERR-T) Total error including
-               * statistical uncertainty,
+               * statistical uncertainty and:
            (ERR-2) Uncertainty due to neutron flux determination
            (ERR-3) Uncertainty due to instability in neutron flux
            (ERR-4,4.,5.) Uncertainty in number of Li atoms
@@ -52,15 +55,17 @@ HISTORY    (19910220C) S.W.
            Corrections in all Subents. Part of ERR-ANALYS moved
            to Subent 001.
            (20201212U) SD: REL-REF added.
-ENDBIB              51
+           (20210829A) SD: Corrections in two Subents. Subents
+           007, 008 added.
+ENDBIB              56
 COMMON               3          3
 ERR-2      ERR-3      ERR-5
 PER-CENT   PER-CENT   PER-CENT
         2.5         1.         1.
 ENDCOMMON            3
-ENDSUBENT           58
-SUBENT        22171002   20200906   20210105   20210104       2291
-BIB                 14         40
+ENDSUBENT           63
+SUBENT        22171002   20210829   20220117   20220117       2303
+BIB                 13         43
 REACTION   (3-LI-7(N,G)3-LI-8,,SIG,,MXW)
 INC-SOURCE (P-LI7) Metallic layers of natural Li, 2 mg/cm2 thick
             and 5 mm in diam, evaporated on a 1.0 mm thick water-
@@ -75,50 +80,55 @@ INC-SPECT   The neutron spectrum is closely approximated to a
 SAMPLE      Thin layer of LiF evaporated on the cathode of a 2-pi
             hemispherical ionization chamber, with a maximum
             thickness 260 ug/cm2 and in diam 25 mm.
-METHOD     (ACTIV)
-DETECTOR   (IOCH ) 2-pi hemispherical ionization chamber, filled
+DETECTOR   (IOCH) 2-pi hemispherical ionization chamber, filled
             with CF4 gas at 320 milli-bar and operated at
             1500 volt. Efficiency determined by calculation using
             sample parameters, tabulated alpha ranges and Monte
             Carlo simulation.
 RAD-DET    (4-BE-8,A) 8-Be breakup
 DECAY-DATA (4-BE-8,,A,1570.) 8-Be breakup producing 2 alphas.
+           (3-LI-8,0.840SEC,B-,12964.)
 MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG,,MXW)
-MONIT-REF  ((MONIT1)22099002,W.Ratynski+,J,PR/C,37,595,1988) The
+MONIT-REF  ((MONIT1)22099003,W.Ratynski+,J,PR/C,37,595,1988) The
             value in work 22099 has been corrected and multiplied
             by a factor 2/(pi**0.5).
-FLAG       (1.) Thickness was 1.84E-06 atoms/barn.
-           (2.) Thickness was 2.91E-06 atoms/barn.
-           (3.) Thickness was 4.42E-06 atoms/barn.
-           (4.) Thickness was 4.42E-06 atoms/barn +
-                activation with different neutron rate
-ERR-ANALYS (ERR-6,8.,15.) LiF activity (kT=25keV)
+FLAG       (1.) LiF thickness was 1.84E-06 atoms/barn
+           (2.) LiF thickness was 2.91E-06 atoms/barn
+           (3.) LiF thickness was 4.42E-06 atoms/barn.
+           (4.) LiF thickness was 4.42E-06 atoms/barn
+           (5.) Li glass (NE907), 1.87E-3 atoms/barn
+ERR-ANALYS (ERR-6,8.,15.) LiF activity (kT=25 keV)
            (ERR-1,2.,10.) Uncertainty due to detector efficiency
 STATUS     (TABLE) Table 2 from Astrophys.J.,344(1989)464
+           (SPSDD,22171007) Re-normalized.
 HISTORY    (19910716A) S.W. Decay-data + data mods, critique added
            (20200906A) SD: ERR-ANALYS, STATUS updated.  First
            data value moved to DATA-MAX. CRITIQUE deleted (now
            inclusion of 2/sqrt(pi) is the standard definition of
            MACS in EXFOR). THICKNESS moved to the FLAG (not
            independent variable).
-ENDBIB              40
+           (20210829A) SD: Value 20.1 mu-b (from Subent 003) added
+           to the DATA col. Subent superseded.
+ENDBIB              43
 COMMON               3          3
 KT         MONIT1     MONIT1-ERR
 KEV        MB         PER-CENT
         25.       648.        1.5
 ENDCOMMON            3
-DATA                 4          4
+DATA                 4          5
 DATA       ERR-T      DATA-MAX   FLAG
 MICRO-B    PER-CENT   MICRO-B    NO-DIM
                              21.4         1.
-       25.2        17.                    2.
+       25.2       17.0                    2.
        26.3       15.5                    3.
        28.5       15.5                    4.
-ENDDATA              6
-ENDSUBENT           55
-SUBENT        22171003   20200906   20210105   20210104       2291
-BIB                 13         37
-REACTION   (3-LI-7(N,G)3-LI-8,,SIG,,MXW)
+       20.1        9.0                    5.
+ENDDATA              7
+ENDSUBENT           59
+SUBENT        22171003   20210829   20220117   20220117       2303
+BIB                 13         42
+REACTION   (3-LI-7(N,G)3-LI-8,,SIG,,SPA/AV)
+ANALYSIS    Average of results from several irradiations
 INC-SOURCE (P-LI7) Metallic layers of natural Li, 2 mg/cm2 thick
             and 5 mm in diam., evaporated on a 1.0 mm thick water-
             cooled Cu backing. Using 1912 keV protons the 120 deg
@@ -131,8 +141,7 @@ INC-SPECT   The neutron spectrum is closely approximated to a
             Maxwellian shape with temperature of 25 keV.
 SAMPLE      A 1 mm thick NE907 Li-glass scintillator, 8.1% natural
             Li, 28 mm in diam. Thickness was 1.87E-03 atoms/barn.
-METHOD     (ACTIV)
-DETECTOR   (SCIN ) A 1 mm thick NE907 Li-glass scintillator, 8.1%
+DETECTOR   (SCIN) A 1 mm thick NE907 Li-glass scintillator, 8.1%
             natural Li, 28 mm in diam, contained in a 0.5 mm thick
             Al housing, with a 2.54 cm front opening and connected
             to a 5.08 cm photomultiplier. The detector was beta
@@ -144,29 +153,30 @@ RAD-DET    (3-LI-8,B-)
 DECAY-DATA (3-LI-8,0.840SEC,B-,12964.)
            (4-BE-8,,A,1570.) 8-Be breakup producing 2 alphas.
 MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG,,MXW)
-MONIT-REF  ((MONIT1)22099002,W.Ratynski+,J,PR/C,37,595,1988) The
+MONIT-REF  ((MONIT1)22099003,W.Ratynski+,J,PR/C,37,595,1988) The
             value in the Entry 22099 has been corrected and
             multiplied by a factor 2/(pi**0.5).
 ERR-ANALYS (ERR-6,8.,15.) LiF activity (kT=25keV)
            (ERR-1,2.,10.) Uncertainty due to detector efficiency
 STATUS     (TABLE) Table 2 from Astrophys.J.,344(1989)464
+           (DEP,22171002) Results of individual irradiations
+           (SPSDD,22171008) Re-normalized
 HISTORY    (19910716A) S.W. Decay-data + data mods, critique added
            (20200906U) SD: ERR-ANALYS, STATUS updated. CRITIQUE
            deleted (now inclusion of 2/sqrt(pi) is the standard
            definition of MACS in EXFOR). THICKNESS moved to the
            SAMPLE (not independent variable).
-ENDBIB              37
-COMMON               3          3
-KT         MONIT1     MONIT1-ERR
-KEV        MB         PER-CENT
-        25.       648.        1.5
-ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MICRO-B    PER-CENT
-       20.1         9.
+           (20210829A) SD: SF8=MXW -> SPA/AV in REACTION code.
+           Value at ERR-T corrected. Subent superseded.
+           Data corrected (20.1 -> 21.0 ub) according to report.
+ENDBIB              42
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      MONIT1     MONIT1-ERR
+KEV        MICRO-B    MICRO-B    MB         PER-CENT
+        25.       21.0        1.9       648.        1.5
 ENDDATA              3
-ENDSUBENT           49
+ENDSUBENT           50
 SUBENT        22171004   20200906   20210105   20210104       2291
 BIB                  4         11
 REACTION   (3-LI-7(N,G)3-LI-8,,SIG,,,DERIV)
@@ -262,4 +272,124 @@ KEV        MICRO-B    MICRO-B
   25.        57.        9.
 ENDDATA              3
 ENDSUBENT           19
-ENDENTRY             6
+SUBENT        22171007   20210829   20220117   20220117       2303
+BIB                 16         48
+REACTION   (3-LI-7(N,G)3-LI-8,,SIG,,MXW)
+INC-SOURCE (P-LI7) Metallic layers of natural Li, 2 mg/cm2 thick
+            and 5 mm in diam, evaporated on a 1.0 mm thick water-
+            cooled Cu backing. Using 1912 keV protons the 120 deg
+            forward cone of emitted neutrons closely approximates
+            to a Maxwellian kT = 25 keV shape. Total neutron rate
+            varied between 2.0E+8 and 7.0E+8 n/s
+            Monitor gold foils of 12.0 mm in diam. and 0.03 mm
+            thickness were attached to the copper backing.
+INC-SPECT   The neutron spectrum is closely approximated to a
+            Maxwellian shape with temperature of 25 keV.
+SAMPLE      Thin layer of LiF evaporated on the cathode of a 2-pi
+            hemispherical ionization chamber, with a maximum
+            thickness 260 ug/cm2 and in diam 25 mm.
+DETECTOR   (IOCH) 2-pi hemispherical ionization chamber, filled
+            with CF4 gas at 320 milli-bar and operated at
+            1500 volt. Efficiency determined by calculation using
+            sample parameters, tabulated alpha ranges and Monte
+            Carlo simulation.
+RAD-DET    (4-BE-8,A) 8-Be breakup
+DECAY-DATA (4-BE-8,,A,1570.) 8-Be breakup producing 2 alphas.
+           (3-LI-8,0.840SEC,B-,12964.)
+MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  ((MONIT1),R.Reifarth+,J,EPJ/P,133,424,2018)
+FLAG       (1.) LiF thickness was 1.84E-06 atoms/barn
+           (2.) LiF thickness was 2.91E-06 atoms/barn
+           (3.) LiF thickness was 4.42E-06 atoms/barn.
+           (4.) LiF thickness was 4.42E-06 atoms/barn
+           (5.) Li glass (NE907), 1.87E-3 atoms/barn
+ANALYSIS   Cross section value in subentry 22171.002 is
+            renormalized:
+            a) for new gold cross section
+            b) corrected for missing line in previous data set
+            c) note that the quoted neutron energies refer to
+               the lab system; effective energies in the
+               c.m. system have to be reduced by 7/8
+            Measured quantity: cross section ratio
+                                  7Li/197Au = (3.24+-0.29)E-05
+          2 Weighted average of the different results obtained
+                with kT = 25 keV.
+CORRECTION  Correction for revised gold standard 681/648 =1.051
+COMMENT    'MXW cross section must be obtained from adopted SPA
+           cross section of 21.9 mb by multiplication with
+           2/sqrt(pi)' from INDC(GER)-0053 report, p.56
+ERR-ANALYS (ERR-6,8.,15.) LiF activity (kT=25 keV)
+           (ERR-1,2.,10.) Uncertainty due to detector efficiency
+STATUS     (TABLE) p.55 of INDC(GER)-0053
+HISTORY    (19910716C) SD
+ENDBIB              48
+COMMON               3          3
+KT         MONIT1     MONIT1-ERR
+KEV        MB         PER-CENT
+        25.       681.        1.
+ENDCOMMON            3
+DATA                 4          5
+DATA       ERR-T      DATA-MAX   FLAG
+MICRO-B    PER-CENT   MICRO-B    NO-DIM
+                             22.5         1.
+       26.5       17.0                    2.
+       27.6       15.5                    3.
+       30.0       15.5                    4.
+       21.1       15.5                    5.
+ENDDATA              7
+ENDSUBENT           64
+SUBENT        22171008   20210829   20220117   20220117       2303
+BIB                 14         40
+REACTION  1((3-LI-7(N,G)3-LI-8,,SIG,,SPA/AV)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(3-LI-7(N,G)3-LI-8,,SIG,,SPA/AV)
+INC-SOURCE (P-LI7) Metallic layers of natural Li, 2 mg/cm2 thick
+            and 5 mm in diam., evaporated on a 1.0 mm thick water-
+            cooled Cu backing. Using 1912 keV protons the 120 deg
+            forward cone of emitted neutrons closely approximates
+            to a Maxwellian kT = 25 keV shape. Total neutron rate
+            varied between 2.0E+8 and 7.0E+8 n/s
+            Monitor gold foils of 12.0 mm in diam. and 0.03 mm
+            thick were attached to the copper backing.
+INC-SPECT   The neutron spectrum is closely approximated to a
+            Maxwellian shape with temperature of 25 keV.
+SAMPLE      A 1 mm thick NE907 Li-glass scintillator, 8.1% natural
+            Li, 28 mm in diam. Thickness was 1.87E-03 atoms/barn.
+ANALYSIS    Cross section value in subentry 22171.003 is
+            renormalized:
+            a) for new gold cross section
+            b) note that the quoted neutron energies refer to
+               the lab system; effective energies in the
+               c.m. system have to be reduced by 7/8
+           2Average of results from several irradiations
+CORRECTION  Correction for revised gold standard 681/648 =1.051
+DETECTOR   (SCIN) A 1 mm thick NE907 Li-glass scintillator, 8.1%
+            natural Li, 28 mm in diam, contained in a 0.5 mm thick
+            Al housing, with a 2.54 cm front opening and connected
+            to a 5.08 cm photomultiplier. The detector was beta
+            shielded by 0.6 mm antimony-free lead. The Li in the
+            glass scintillator also constituted the activation
+            sample in this case.
+RAD-DET    (3-LI-8,B-)
+           (4-BE-8,A)
+DECAY-DATA (3-LI-8,0.840SEC,B-,12964.)
+           (4-BE-8,,A,1570.) 8-Be breakup producing 2 alphas.
+MONITOR    ((MONIT1)79-AU-197(N,G)79-AU-198,,SIG,,MXW)
+MONIT-REF  ((MONIT1),R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (ERR-6,8.,15.) LiF activity (kT=25keV)
+           (ERR-1,2.,10.) Uncertainty due to detector efficiency
+STATUS     (TABLE) p.56 of INDC(GER)-0053
+HISTORY    (19910716C) SD
+ENDBIB              40
+COMMON               3          3
+KT         MONIT1     MONIT1-ERR
+KEV        MB         PER-CENT
+        25.       681.        1.0
+ENDCOMMON            3
+DATA                 4          1
+DATA      1ERR-T     1DATA      2ERR-T     2
+NO-DIM     NO-DIM     MICRO-B    MICRO-B
+   3.10E-05   0.14E-05   22.1        2.0
+ENDDATA              3
+ENDSUBENT           52
+ENDENTRY             8

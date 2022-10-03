@@ -1,22 +1,22 @@
-ENTRY            21690   20201012   20210106   20210105       2294
-SUBENT        21690001   20201012   20210106   20210105       2294
-BIB                 13         59
+ENTRY            21690   20210802   20220117   20220117       2303
+SUBENT        21690001   20210802   20220117   20220117       2303
+BIB                 13         61
 TITLE       The isomeric ratio in thermal and fast neutron
             capture of americium-241
 AUTHOR     (K.Wisshak,J.Wickenhauser,F.Kaeppeler,
             G.Reffo,F.Fabbri)
 REFERENCE  (J,NSE,81,396,1982)
-           (P,KFK-3068,21,1980)
-           ((P,INDC(GER)-22,15,1980)=
-           (P,NEANDC(E)-212,(5),15,1980)) - Same as KFK-3068,21.
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
+           ((P,INDC(GER)-22,15,1980)=(P,KFK-3068,21,1980)=
+           (P,NEANDC(E)-212,(5),15,1980))
            (C,79KNOX,,867,1979)
-           (P,KFK-2868,24,1979) Exp.descript., no data given.
 INSTITUTE  (2GERKFK) K.W., J.W., F.K.
            (2ITYUBO) G.R, F.F.
 FACILITY   (REAC,2GERKFK) The Karlsruhe FR2 reactor.
            (VDG,2GERKFK) 3 MV Van de Graaff accelerator.
 INC-SOURCE (REAC ) Thermal monoenergetic neutrons at 14.75 meV
-                   from the exit collimator of the  graphite
+                   from the exit collimator of the graphite
                    monochromator at the Karlsruhe FR2 reactor.
                    The second order of the spectrum was suppressed
                    by a pyrolytic graphite filter.
@@ -27,7 +27,7 @@ INC-SOURCE (REAC ) Thermal monoenergetic neutrons at 14.75 meV
                    Graaff accelerator.
 SAMPLE      Four samples were made, consisting of 7 mm
             diameter, 0.7 mg/cm2 thick Am-241 and gold
-            layers fixed on either side of a 10 um  thick
+            layers fixed on either side of a 10 um thick
             aluminium foil. The masses of each sample are given
             below in ug.
               Sample        Am-241 mass        gold mass
@@ -40,7 +40,7 @@ METHOD     (ACTIV) Activation of the sample for about 11-22 H
 DETECTOR   (MAGSP) A mini orange spectrometer consisting of a
             filter of permanent magnets and a Si(Li)-detector
             for energy analysis.
-RAD-DET    (95-AM-242-G,B-)
+DECAY-DATA (95-AM-242-G,16.HR,B-)
 STATUS     (TABLE)  Subentries 2 3 and 4 contain superseded data
             from the KFK report. Subentries 5 and 6 contain data
             taken from tables 3 and 4 in the Nucl.Sci.&Eng.81,396
@@ -60,9 +60,11 @@ HISTORY    (19801205C) CN.
            (20121108A) SD: DECAY-DATA was added in Subents 5,6
            (20201012A) SD: Correction in Subent 006.
            PART-DET -> RAD-DET.
-ENDBIB              59
+           (20210802A) SD: Corrections according to MEMO CP-C/472.
+           Subent 007 added.
+ENDBIB              61
 NOCOMMON             0          0
-ENDSUBENT           62
+ENDSUBENT           64
 SUBENT        21690002   20101117   20110803   20110721       2225
 BIB                  4          9
 REACTION   ((95-AM-241(N,G)95-AM-242-G,,SIG)/
@@ -172,12 +174,11 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT   NO-DIM
  9.0000E-01 3.6000E+00 1.5000E+00 5.0000E-01 1.0
 ENDDATA             18
 ENDSUBENT           51
-SUBENT        21690006   20201012   20210106   20210105       2294
-BIB                 11         55
+SUBENT        21690006   20210802   20220117   20220117       2303
+BIB                 10         57
 REACTION   (95-AM-241(N,G)95-AM-242-G/T,,SIG/RAT,,,DERIV)
 MONITOR    ((79-AU-197(N,G)79-AU-198,,SIG)/
            (95-AM-241(N,G)95-AM-242,,SIG))
-DECAY-DATA (95-AM-242-G,16.HR)
 ANALYSIS    Measured 241Am(n,gamma)242gAm/197Au(n,gamma)198Au
             ratio multiplied by evaluated
                     197Au(n,gamma)198Au/241Am(n,gamma)242Am"
@@ -203,7 +204,8 @@ ASSUMED    (ASSUM1,95-AM-241(N,G)95-AM-242,,SIG)
             The value at 14.75meV was taken from ENDF/B-V,
             the values in the keV range are averages of
             ENDF/B-V data.
-ERR-ANALYS (DATA-ERR) total error. no details
+ERR-ANALYS (DATA-ERR) Total error. No details
+           (MONIT-ERR) Uncertainty of Au standard
 REL-REF    (R,,B.Goel+,R,BNL-50991,177,1978)
            (R,,K.Wisshak+,J,NSE,76,148,1980)
            (R,,L.W.Weston+,J,NSE,61,356,1976)
@@ -218,6 +220,7 @@ ADD-RES    The resonance scheme in ref.(see S.F.Mughabghab et.al.
            three resonances of unknown spin and parity.
 STATUS     (TABLE) Tbl.III, IV from Nucl.Sci.Eng.81,396,1982.
            (DEP,21690005) 241Am(n,g)242gAm/197Au(n,g)198Au ratio
+           (SPSDD,21690007) Renormalized.
 HISTORY    (19820914C) A.P.T.
            (19830418U) A.P.T. Keyword 'ASSUMED' corrected
                             keyword 'MISC-COL' added.
@@ -229,7 +232,8 @@ HISTORY    (19820914C) A.P.T.
            (20201012A) SD: SF9=DERIV added to REACTION code.
            STATUS updated. REACTION code (2) moved to
            MONITOR (=ASSUM1/ASSUM2).
-ENDBIB              55
+           (20210802A) SD: Subent superseded.
+ENDBIB              57
 NOCOMMON             0          0
 DATA                10          3
 EN         EN-RSL     +EN-RSL    -EN-RSL    DATA       DATA-ERR
@@ -243,5 +247,50 @@ B          B          NO-DIM     PER-CENT
    2.90E+04               8.0E+03    1.0E+04       0.65       0.05
       0.555       2.32      0.239        5.6
 ENDDATA             10
-ENDSUBENT           70
-ENDENTRY             6
+ENDSUBENT           72
+SUBENT        21690007   20210802   20220117   20220117       2303
+BIB                  9         28
+REACTION   (95-AM-241(N,G)95-AM-242-G/T,,SIG/RAT,,,DERIV)
+MONITOR    ((79-AU-197(N,G)79-AU-198,,SIG)/
+           (95-AM-241(N,G)95-AM-242,,SIG))
+            These are not measured but evaluated ratios to derive
+           the 241Am neutron capture isomeric ratio.
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS    Measured 241Am(n,gamma)242gAm/197Au(n,gamma)198Au
+            ratio multiplied by evaluated
+                    197Au(n,gamma)198Au/241Am(n,gamma)242Am"
+            a) cross section value in subentry 21690.006 is
+           renormalized for new gold cross section folded with
+           neutron spectrum given in the original reference
+            (entry ASSUM1)
+            b) Isomeric Ratio (IR) for En=27 keV unchanged because
+           correction below 1%
+            Revised data:
+             Measured quantity: cross section ratio
+            (241Am->242gAm) /197Au via electron spectra,
+            normalized by capture cross section ratio 197Au/241Am
+CORRECTION   Correction for revised gold standard at
+                                         En=29 keV: 561/555=1.011
+             Correction for revised gold standard at
+                                         En=27 keV: 620/618 =1.003
+ASSUMED    (ASSUM1,95-AM-241(N,G)95-AM-242,,SIG)
+           (ASSUM2,79-AU-197(N,G)79-AU-198,,SIG)
+ERR-ANALYS (DATA-ERR) total error. no details
+STATUS     (TABLE)  p.33 of INDC(GER)-0053
+HISTORY    (20210701C) SD
+ENDBIB              28
+NOCOMMON             0          0
+DATA                10          3
+EN         EN-RSL     +EN-RSL    -EN-RSL    DATA       DATA-ERR
+ASSUM1     ASSUM2     MONIT      MONIT-ERR
+EV         PER-CENT   EV         EV         NO-DIM     NO-DIM
+B          B          NO-DIM     PER-CENT
+ 1.4750E-02         4.                             0.92       0.06
+                 129.9      0.159        3.2
+   2.70E+04              1.20E+04    1.0E+04       0.68       0.07
+      0.618       2.51      0.246        5.6
+   2.90E+04               8.0E+03    1.0E+04       0.65       0.05
+      0.555       2.32      0.239        5.6
+ENDDATA             10
+ENDSUBENT           43
+ENDENTRY             7
