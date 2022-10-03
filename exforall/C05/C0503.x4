@@ -1,8 +1,8 @@
-ENTRY            C0503   20090903   20100610   20100528       C097
-SUBENT        C0503001   20090903   20100610   20100528       C097
-BIB                 11         34
+ENTRY            C0503   20181008   20190121   20190118       C179
+SUBENT        C0503001   20181008   20190121   20190118       C179
+BIB                 11         39
 INSTITUTE  (1USAMSU,1USAMHG,1USAINU,1USAOBR)
-REFERENCE  (J,PR/C,47,674,199302)
+REFERENCE  (J,PR/C,47,674,1993)
 AUTHOR     (A.Nadasen,T.Stevens,J.Farhat,J.Brusoe,P.Schwandt,
            J.S.Winfield,G.Yoo,N.Anantaraman,F.D.Becchetti,J.Brown,
            B.Hotz,J.W.Jaenecke,D.Roberts,R.E.Warner)
@@ -15,41 +15,47 @@ DETECTOR   (MAGSP) S-320 magnetic spectrometer.
             beam downstream from target.
 CORRECTION Corrected for dead-time.
 ERR-ANALYS (EN-ERR) Estimated from cyclotron parameters.
-           (DATA-ERR) Contributions to relative uncertainty summed
+           (ERR-T) Contributions to relative uncertainty summed
             in quadrature, but assigning 3% as a minimum
             uncertainty.
            Relative uncertainty includes:
-            . statistical uncertainty (generally, 1-3%),
-            . errors due to charge integration efficiency
-              (estimated 1-2%),
-            . error due to variation of beam position on target
-              (about 05-3%),
-            . uncertainty in dead-time correction (<1%),
-            . uncertainty in scattering angle (about 0.04
-              degrees),
-           (MONIT-ERR) Total normaliztion uncertainty due mainly t
-            target-thickness uncertainty.  Uncertainty from other
-            sources estimated to Be about 1%.
+           (ERR-S,1.,10.) Statistical uncertainty: generally
+            1-3%, but ~10% in the micro-b region
+           (ERR-1,1.,2.) Errors due to charge integration
+            efficiency (estimated 1-2%),
+           (ERR-3,0.5,3.) Error due to variation of beam position
+            on target (about 0.5-3%),
+           (ERR-4,,1.) Uncertainty in dead-time correction (<1%),
+           (ERR-5,,8.) The uncertainty in scattering angle (about
+            0.04 degrees) corresponds to cross section errors from
+            nearly zero to 8%, depending on the slope of the
+            angular distribution
+           (MONIT-ERR) Total normaliztion uncertainty due mainly
+            to target-thickness uncertainty.  Uncertainty from
+            other sources estimated to be about 1%.
 STATUS     (TABLE) Data received by email from A.Nadasen, 1998/8/1
            No reply to author proof sent to A.Nadasen.
 HISTORY    (19980817C)
            (20090903A) VM:Updated to new date formats,lower case.
                        BIB updates.
-ENDBIB              34
+           (20181001A) OS. REACTION code corrected in subs.2,3,
+            ERR-ANALYS corrected, value of ANG-ERR corrected
+ENDBIB              39
 COMMON               5          3
 EN         EN-ERR     EN-RSL     ANG-ERR    MONIT-ERR
 MEV        PER-CENT   PER-CENT   ADEG       PER-CENT
-318.        1.         0.1        0.02        5.
+318.        1.         0.1        0.04        5.
 ENDCOMMON            3
-ENDSUBENT           41
-SUBENT        C0503002   19980817   19990304   20050926       0000
-BIB                  2          2
-REACTION   (6-C-12(3-LI-6,3-LI-6)6-C-12,,DA)
+ENDSUBENT           46
+SUBENT        C0503002   20181008   20190121   20190118       C179
+BIB                  3          3
+REACTION   (6-C-12(3-LI-6,EL)6-C-12,,DA)
 SAMPLE     0.482 and 31.0 mg/cm2 natural carbon.
-ENDBIB               2
+HISTORY    (20181001A) REACTION SF3 changed to EL
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3         41
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA-CM    ERR-T
 ADEG       MB/SR      MB/SR
    4.45      7.423E+03   3.07E+02
    5.19      2.166E+03   9.07E+01
@@ -93,15 +99,16 @@ ADEG       MB/SR      MB/SR
   40.59      3.354E-03   2.26E-04
   46.45      2.014E-04   2.95E-05
 ENDDATA             43
-ENDSUBENT           50
-SUBENT        C0503003   19980817   19990304   20050926       0000
-BIB                  2          2
-REACTION   (14-SI-28(3-LI-6,3-LI-6)14-SI-28,,DA)
+ENDSUBENT           51
+SUBENT        C0503003   20181008   20190121   20190118       C179
+BIB                  3          3
+REACTION   (14-SI-28(3-LI-6,EL)14-SI-28,,DA)
 SAMPLE     5.8 and 32 mg/cm2 natural silicon.
-ENDBIB               2
+HISTORY    (20181001A) REACTION SF3 changed to EL
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3         39
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA-CM    ERR-T
 ADEG       MB/SR      MB/SR
    3.65      1.513E+04   6.14E+02
    4.26      2.211E+03   9.19E+01
@@ -143,5 +150,5 @@ ADEG       MB/SR      MB/SR
   36.45      1.517E-03   1.68E-04
   38.84      3.914E-04   7.32E-05
 ENDDATA             41
-ENDSUBENT           48
+ENDSUBENT           49
 ENDENTRY             3

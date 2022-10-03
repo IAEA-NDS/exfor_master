@@ -1,11 +1,12 @@
-ENTRY            C0504   19980921   19990304   20050926       0000
-SUBENT        C0504001   19980921   19990304   20050926       0000
-BIB                 11         25
+ENTRY            C0504   20181008   20190121   20190118       C179
+SUBENT        C0504001   20181008   20190121   20190118       C179
+BIB                 11         35
 INSTITUTE  (1USAMSU,1USAMHG,1USAOBR,3SAFDWU)
-REFERENCE  (J,PR/C,52,1894,199510)
-AUTHOR     (A.NADASEN,J.BRUSOE,J.FARHAT,T.STEVENS,J.WILLIAMS,
-           L.NIEMAN,J.S.WINFIELD,R.E.WARNER,J.W.JAENECKE,
-           T.ANNAKKAGE,J.BAJEMA,D.ROBERTS,H.S.GOVINDEN)
+REFERENCE  (J,PR/C,52,1894,1995)
+AUTHOR     (A.Nadasen,J.Brusoe,J.Farhat,T.Stevens,J.Williams,
+           L.Nieman,J.S.Winfield,R.E.Warner,F.D.Becchetti,
+           J.W.Jaenecke,T.Annakkage,J.Bajema,D.Roberts,
+           H.S.Govinden)
 TITLE      Unique potentials  for the elastic scattering of 350
             MeV 7Li from 12C and 28Si
 FACILITY   (CYCLO,1USAMSU)
@@ -13,35 +14,46 @@ METHOD     (EDE)
 DETECTOR   (MAGSP) QQDM magnetic spectrometer
 CORRECTION Corrected for dead-time
 ERR-ANALYS (EN-ERR) Estimated from cyclotron parameters.
-           (DATA-ERR) Contributions to relative uncertainty
-            summed in quadrature with uncertainty in effective
-            scattering angle (up to 8%).
-           Relative uncertainty includes:
-            . statistical uncertainty (generally, <2%),
-            . uncertainty (about 3%) due to
+           (DATA-ERR1) Relative uncertainty includes:
+           (ERR-S,,10.) statistical uncertainty: generally, <2%,
+            for small cs below 1 mb/sr up to 10%
+           (ERR-1) uncertainty (about 3%) due to
               .dead-time correction,
               .charge integration efficiency,
               .target nonuniformity,
               .beam spot variation on target.
-STATUS     Data received by email from A. Nadasen, 15 Aug. 1998.
+           (ERR-2,,8.) The uncertainty in scattering angle (about
+            0.02 degrees) corresponds to cross section errors from
+            nearly zero to 8%, depending on the slope of the
+            angular distribution
+           (DATA-ERR2) Total normalization error due to
+            uncertainties in target thickness, spectrometer solid
+            angle, target angle, charge integration efficiency,
+            estimated to be about 10%
+STATUS     (TABLE) Data received by email from A. Nadasen,
+           15 Aug. 1998.
            No reply to author proof sent to A. Nadasen.
 HISTORY    (19980817C)
-ENDBIB              25
-COMMON               3          3
-EN         EN-ERR     ANG-ERR
-MEV        PER-CENT   ADEG
-350.        1.         0.02
+           (20181003A) OS. REACTION in subs.2,3 corrected,
+            one author added, ERR-ANALYS revised
+ENDBIB              35
+COMMON               5          3
+EN         EN-ERR     ANG-ERR    ERR-1      DATA-ERR2
+MEV        PER-CENT   ADEG       PER-CENT   PER-CENT
+350.        1.         0.02         3.         10.
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        C0504002   19980817   19990304   20050926       0000
-BIB                  2          3
-REACTION   (6-C-12(3-LI-6,3-LI-6)6-C-12,,DA)
+ENDSUBENT           42
+SUBENT        C0504002   20181008   20190121   20190118       C179
+BIB                  3          5
+REACTION   (6-C-12(3-LI-7,EL)6-C-12,,DA)
 SAMPLE     Self-supporting targets of 0.494 and 31 mg/cm2 natural
             carbon.
-ENDBIB               3
+HISTORY    (20181003A) REACTION SF2 changed to 3-LI-7,
+            SF3 changed to EL
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3         71
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA-CM    DATA-ERR1
 ADEG       MB/SR      MB/SR
  3.000      3.9103E+04 1.1751E+03
  3.400      2.9214E+04 8.8071E+02
@@ -115,16 +127,18 @@ ADEG       MB/SR      MB/SR
 41.350      2.7992E-03 1.5357E-04
 42.970      1.3717E-03 8.5163E-05
 ENDDATA             73
-ENDSUBENT           81
-SUBENT        C0504003   19980817   19990304   20050926       0000
-BIB                  2          3
-REACTION   (14-SI-28(3-LI-6,3-LI-6)14-SI-28,,DA)
+ENDSUBENT           83
+SUBENT        C0504003   20181008   20190121   20190118       C179
+BIB                  3          5
+REACTION   (14-SI-28(3-LI-7,EL)14-SI-28,,DA)
 SAMPLE     Self-supporting targets of 0.233 and 5.8 mg/cm2
             natural silicon.
-ENDBIB               3
+HISTORY    (20181003A) REACTION SF2 changed to 3-LI-7,
+            SF3 changed to EL
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3         79
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA-CM    DATA-ERR1
 ADEG       MB/SR      MB/SR
  2.690      6.6822E+04 1.6076E+03
  3.000      3.3272E+04 1.0016E+03
@@ -206,5 +220,5 @@ ADEG       MB/SR      MB/SR
 32.520      9.3932E-03 7.3227E-04
 33.760      5.7353E-03 5.3531E-04
 ENDDATA             81
-ENDSUBENT           89
+ENDSUBENT           91
 ENDENTRY             3

@@ -1,58 +1,96 @@
-ENTRY            P0094   20000814   20010330   20050926       0000
-SUBENT        P0094001   20000814   20010330   20050926       0000
-BIB                  9         12
-INSTITUTE  (1USAPUR)
+ENTRY            P0094   20180711   20190121   20190118       C178
+SUBENT        P0094001   20180711   20190121   20190118       C178
+BIB                  9         16
+TITLE      The (alpha,n) and (alpha,2n) cross sections of Ag109
+AUTHOR     (E.Bleuler,A.K.Stebbins,D.J.Tendam)
 REFERENCE  (J,PR,90,460,195305)
-AUTHOR     (E.BLEULER,A.K.STEBBINS,D.J.TENDAM)
-TITLE      The (alpha,n) and (alpha,2n) Cross Sections of Ag109
-FACILITY   (CYCLO)
-SAMPLE     Silver foil enriched to 92.16% 109Ag. Areal density
-            2.5 mg/cm2.
-METHOD     (ACTIV)
-STATUS     (CPX) Data from CPX file compiled in 1964/67 by
-           F.K.McGowan et al.
-HISTORY    (19830620T) Converted to EXFOR format by IAEA-NDS
+           #doi:10.1103/PhysRev.90.460
+REL-REF    (N,,D.J.Tendam+,J,PR,72,1118,1947) Previous,
+           superseded measurement that used incorrect decay data
+           and, therefore, unreliable.
+INSTITUTE  (1USAPUR)
+FACILITY   (CYCLO,1USAPUR)
+SAMPLE     (47-AG-109,ENR=0.9216) Silver foil enriched to 92.16%
+           109Ag. Areal density 2.5 mg/cm2.
+METHOD     (ACTIV,STTA)
+HISTORY    (19830620T) Converted to EXFOR format by IAEA-NDS.
            (20000814A) Converted to new date formats; BIB updated.
-ENDBIB              12
+           (20180711A) BP: Added doi, reference to the previous
+                      measurement, cross section ratio data.
+ENDBIB              16
 NOCOMMON             0          0
-ENDSUBENT           15
-SUBENT        P0094002   20000814   20010330   20050926       0000
-BIB                  2          2
+ENDSUBENT           19
+SUBENT        P0094002   20180711   20190121   20190118       C178
+BIB                  3          4
 REACTION   (47-AG-109(A,2N)49-IN-111,,SIG)
 DECAY-DATA (49-IN-111-G,2.84D,EC)
-ENDBIB               2
+STATUS     (CPX) Data from CPX file compiled in 1964/1967 by
+           F.K.McGowan et al.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          8
 EN         DATA
 MEV        MB
-   14.5        5.13
-   14.9       26.2
-   15.8      134.
-   16.3      219.
-   16.9      296.
-   17.8      520.
-   18.2      535.
-   18.4      570.
+       14.5       5.13
+       14.9       26.2
+       15.8       134.
+       16.3       219.
+       16.9       296.
+       17.8       520.
+       18.2       535.
+       18.4       570.
 ENDDATA             10
-ENDSUBENT           17
-SUBENT        P0094003   20000814   20010330   20050926       0000
-BIB                  2          2
+ENDSUBENT           19
+SUBENT        P0094003   20180711   20190121   20190118       C178
+BIB                  3          4
 REACTION   (47-AG-109(A,N)49-IN-112,,SIG)
 DECAY-DATA (49-IN-112-G,14.5MIN,B-,656.)
-ENDBIB               2
+STATUS     (CPX) Data from CPX file compiled in 1964/1967 by
+           F.K.McGowan et al.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 2          9
 EN         DATA
 MEV        MB
-   14.1      212.
-   14.2      225.
-   14.9      302.
-   15.8      361.
-   16.3      370.
-   16.9      353.
-   17.8      267.
-   18.2      262.
-   18.4      209.
+       14.1       212.
+       14.2       225.
+       14.9       302.
+       15.8       361.
+       16.3       370.
+       16.9       353.
+       17.8       267.
+       18.2       262.
+       18.4       209.
 ENDDATA             11
-ENDSUBENT           18
-ENDENTRY             3
+ENDSUBENT           20
+SUBENT        P0094004   20180719   20190121   20190118       C178
+BIB                  5          9
+REACTION   ((47-AG-109(A,2N)49-IN-111,,SIG)/
+           (47-AG-109(A,N)49-IN-112,,SIG))
+ERR-ANALYS (DATA-ERR) The probable error in the cross-section
+           ratio is estimated to be about 10 percent.
+CORRECTION Corrected for the finite beam width.
+STATUS     (DEP,P0094002)
+           (DEP,P0094003)
+           (CURVE) Fig. 4, page 463.
+HISTORY    (20180711C) BP
+ENDBIB               9
+COMMON               1          3
+DATA-ERR
+PER-CENT
+       10.0
+ENDCOMMON            3
+DATA                 2          8
+EN-CM      DATA
+MEV        NO-DIM
+     14.498  1.094E-02
+     14.847  7.927E-02
+     15.771  3.723E-01
+     16.275  5.887E-01
+     16.898  8.454E-01
+     17.838  1.900E+00
+     18.184  2.056E+00
+     18.439  2.598E+00
+ENDDATA             10
+ENDSUBENT           28
+ENDENTRY             4
