@@ -1,6 +1,6 @@
-ENTRY            D0971   20200121   20200416   20200416       D125
-SUBENT        D0971001   20200121   20200416   20200416       D125
-BIB                 15         36
+ENTRY            D0971   20211015   20220321   20220321       D135
+SUBENT        D0971001   20211015   20220321   20220321       D135
+BIB                 15         37
 TITLE      Reexamination of proton-induced reactions on  natMo at
             19-26 MeV and study of target yield of resultant
             radionuclides
@@ -37,13 +37,14 @@ ERR-ANALYS (ERR-T)     Total uncertainty
 STATUS     (TABLE) Table II of Acta Phys.Pol.B50(2019)1583
            (APRVD) Approved by Arshiya Anees Ahmed (2020-01-21)
 HISTORY    (20200121C) On
-ENDBIB              36
+           (20211015A) On. Major revisions in 006 and 007.
+ENDBIB              37
 COMMON               1          3
 ERR-5
 PER-CENT
  5.
 ENDCOMMON            3
-ENDSUBENT           43
+ENDSUBENT           44
 SUBENT        D0971002   20200107   20200416   20200416       D125
 BIB                  2          3
 REACTION   (42-MO-0(P,X)43-TC-94-G,,SIG)
@@ -95,32 +96,59 @@ MEV        MEV        MB         MB
  19.        26.        120.       10.
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        D0971006   20200107   20200416   20200416       D125
-BIB                  4          4
-REACTION   (42-MO-0(P,X)43-TC-99-M,,SIG)
+SUBENT        D0971006   20211015   20220321   20220321       D135
+BIB                  8         22
+REACTION   (42-MO-100(P,2N)43-TC-99-M,,SIG,,FCT)
+            100Mo(p,2n)99mTc cross section multiplied by 0.974
+SAMPLE     (42-MO-100,NAT=0.0974)
+           Arshiya Anees Ahmed (2021-10-15):
+            Table 3 of Rad.Phys.Chem.190(2022)109774 gives
+            Mo(p,x)99mTc cross sections divided by 0.0974
+            (natural isotopic abundance of 100Mo) and then
+            multiplied by 0.974.
 DECAY-DATA (43-TC-99-M,6.01HR,DG,140.511,0.89)
-ANALYSIS   99Mo decay contribution to the gamma line subtracted
+ANALYSIS   Contribution of 140 keV gamma originated from
+            99Mo decay via 99mTc is subtracted.
+REL-REF    (M,,S.M.Qaim+,J,ARI,85,101,2014)
+            Modified activation formula
+COMMENT    By compiler (2021-10-15):
+            Most probably the contribution of 140 keV gammas
+           originated from decay of 99Mo without going through
+           99mTc is not subtracted, namely the reported cross
+           section overestimates the actual 99mTc production
+           independent cross section.
 STATUS     (DEP,D0971007) 99Mo production cross section
-ENDBIB               4
+           (APRVD) Approved by Arshiya Anees Ahmed (2021-10-15)
+HISTORY    (20211015A) On. REACTION corrected.
+ENDBIB              22
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       ERR-T
 MEV        MEV        MB         MB
  19.        26.        110.       10.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        D0971007   20200107   20200416   20200416       D125
-BIB                  3          4
-REACTION   (42-MO-0(P,X)42-MO-99,,SIG)
+ENDSUBENT           30
+SUBENT        D0971007   20211015   20220321   20220321       D135
+BIB                  6         13
+REACTION   (42-MO-100(P,X)42-MO-99,,SIG,,FCT)
+            100Mo(p,x)99Mo cross section multiplied by 0.974
+SAMPLE     (42-MO-100,NAT=0.0974)
+           Arshiya Anees Ahmed (2021-10-15):
+            Table 3 of Rad.Phys.Chem.190(2022)109774 gives
+            Mo(p,x)99mTc cross sections divided by 0.0974
+            (natural isotopic abundance of 100Mo) and then
+            multiplied by 0.974.
 DECAY-DATA (42-MO-99,65.94HR,DG,140.511,0.8943)
 ANALYSIS   Assumed that 99mTc contribution to the gamma line
             is negligible after 77 hours cooling
-ENDBIB               4
+STATUS     (APRVD) Approved by Arshiya Anees Ahmed (2021-10-15)
+HISTORY    (20211015A) On. REACTION corrected.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       ERR-T
 MEV        MEV        MB         MB
  19.        26.        110.       10.
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           21
 ENDENTRY             7
