@@ -1,29 +1,37 @@
-ENTRY            11571     830412              20050926       0000
-SUBENT        11571001     830412              20050926       0000
-BIB                  8         10
+ENTRY            11571   20200419   20200708   20200707       1466
+SUBENT        11571001   20200419   20200708   20200707       1466
+BIB                 10         15
 INSTITUTE  (1USALAS)
-REFERENCE  (J,PR,107,1363,5709)
-AUTHOR     (L.ALLEN JR,W.A.BIGGERS,R.J.PRESTWOOD,R.K.SMITH)
-TITLE      CROSS SECTIONS FOR THE S32(N,P)P32 AND THE S34(N,ALPHA)
-           SI31 REACTIONS.
-METHOD     (ACTIV) ACTIVATION
-ERR-ANALYS DATA ERROR GIVEN IS ABSOLUTE ERROR
-STATUS     (SCSRS)
-HISTORY    (760715T) TRANSLATED FROM SCISRS
-           (830412A) CONVERTED TO REACTION FORMALISM
-ENDBIB              10
+REFERENCE  (J,PR,107,1363,1957)
+AUTHOR     (L.Allen Jr,W.A.Biggers,R.J.Prestwood,R.K.Smith)
+TITLE      Cross sections for the S32(n,p)P32 and the S34(n,alpha)
+           Si31 reactions.
+FACILITY   (VDG,1USALAS)
+METHOD     (ACTIV)
+SAMPLE     Sublimed elemental S in disk of 1 in. diameter and
+            3/32 in. thick
+DETECTOR   (PROPC) Methane-flow proportional counter
+ERR-ANALYS (DATA-ERR) Data error given is absolute error
+HISTORY    (19760715T) Translated from SCISRS
+           (19830412A) Converted to reaction formalism
+           (20200417U) OS. Added FACILITY, SAMPLE, DETECTOR,
+            MONIT-REF, converted to lower case, minor BIB changes
+ENDBIB              15
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        11571002     830412              20050926       0000
-BIB                  3          4
+ENDSUBENT           18
+SUBENT        11571002   20200419   20200708   20200707       1466
+BIB                  6          7
 REACTION   (16-S-32(N,P)15-P-32,,SIG)
-N-SOURCE   (P-T) T(P,N) SOURCE
+INC-SOURCE (P-T)
+DECAY-DATA (15-P-32,14.3D)
 MONITOR    (16-S-32(N,P)15-P-32,,SIG)
-            NORMALIZED TO MEASURED ABSOLUTE VALUES.
-ENDBIB               4
+            Normalized to measured absolute values.
+MONIT-REF  (11571005,L.Allen Jr+,J,PR,107,1363,1957)
+STATUS     (TABLE) Table I, Phys.Rev.107,1363,1957
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4         12
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL-HW  DATA       DATA-ERR
 MEV        MEV        B          B
  1.59   +00 1.1    -01 0.     +00 1.0    -03
  1.98   +00 1.0    -01 5.2    -03 5.     -04
@@ -38,17 +46,20 @@ MEV        MEV        B          B
  5.33   +00 5.     -02 2.48   -01 1.7    -02
  5.69   +00 5.     -02 3.04   -01 2.0    -02
 ENDDATA             14
-ENDSUBENT           23
-SUBENT        11571003     830412              20050926       0000
-BIB                  3          4
+ENDSUBENT           26
+SUBENT        11571003   20200419   20200708   20200707       1466
+BIB                  6          7
 REACTION   (16-S-32(N,P)15-P-32,,SIG)
-N-SOURCE   (D-D) D(D,N) SOURCE
+INC-SOURCE (D-D)
+DECAY-DATA (15-P-32,14.3D)
 MONITOR    (16-S-32(N,P)15-P-32,,SIG)
-            NORMALIZED TO ABSOLUTE MEASUREMENTS
-ENDBIB               4
+            Normalized to absolute measurements
+MONIT-REF  (11571005,L.Allen Jr+,J,PR,107,1363,1957)
+STATUS     (TABLE) Table I, Phys.Rev.107,1363,1957
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          8
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL-HW  DATA       DATA-ERR
 MEV        MEV        B          B
  6.11   +00 1.6    -01 3.31   -01 2.1    -02
  6.61   +00 1.5    -01 3.36   -01 2.1    -02
@@ -59,17 +70,24 @@ MEV        MEV        B          B
  9.07   +00 9.     -02 3.51   -01 2.5    -02
  9.56   +00 9.     -02 3.76   -01 4.0    -02
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        11571004     830412              20050926       0000
-BIB                  3          4
+ENDSUBENT           22
+SUBENT        11571004   20200419   20200708   20200707       1466
+BIB                  6          7
 REACTION   (16-S-32(N,P)15-P-32,,SIG)
-N-SOURCE   (D-T) T(D,N) SOURCE
+INC-SOURCE (D-T)
+DECAY-DATA (15-P-32,14.3D)
 MONITOR    (16-S-32(N,P)15-P-32,,SIG)
-            NORMALIZED TO ABSOLUTE MEASUREMENTS.
-ENDBIB               4
-NOCOMMON             0          0
+            Normalized to absolute measurement at 14.1 MeV
+MONIT-REF  (11571006,L.Allen Jr+,J,PR,107,1363,1957)
+STATUS     (TABLE) Table I, Phys.Rev.107,1363,1957
+ENDBIB               7
+COMMON               3          3
+EN-NRM     MONIT      MONIT-ERR
+MEV        MB         MB
+  14.10      254.        10.
+ENDCOMMON            3
 DATA                 4         12
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL-HW  DATA       DATA-ERR
 MEV        MEV        B          B
  1.338  +01 2.8    -01 2.85   -01 1.5    -02
  1.341  +01 2.5    -01 2.91   -01 1.5    -02
@@ -84,50 +102,57 @@ MEV        MEV        B          B
  1.493  +01 4.5    -01 2.13   -01 1.1    -02
  1.495  +01 4.7    -01 2.14   -01 1.1    -02
 ENDDATA             14
-ENDSUBENT           23
-SUBENT        11571005     830412              20050926       0000
-BIB                  3          6
+ENDSUBENT           30
+SUBENT        11571005   20200419   20200708   20200707       1466
+BIB                  6          7
 REACTION   (16-S-32(N,P)15-P-32,,SIG)
-N-SOURCE   (P-T) T(P,N) SOURCE BELOW 6 MEV.
-           (D-D) D(D,N) SOURCE ABOVE 6 MEV.
+INC-SOURCE (P-T) T(p,n) source below 6 MeV.
+           (D-D) D(d,n) source above 6 MeV.
+DECAY-DATA (15-P-32,14.3D)
 MONITOR    (92-U-238(N,F),,SIG)
-            RELATIVE TO U-238 FISSION OF SMITH,
-            B.AM.PHY.SOC. 2, 196 (1957).
-ENDBIB               6
+MONIT-REF  (12316011,R.K.Smith+,J,BAP,2,196(K4),1957)
+STATUS     (TABLE) Table I, Phys.Rev.107,1363,1957
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          4
-EN         EN-RSL     DATA
+EN         EN-RSL-HW  DATA
 MEV        MEV        B
  2.92   +00 8.     -02 1.15   -01
  4.04   +00 6.     -02 3.04   -01
  6.11   +00 1.6    -01 3.30   -01
  8.09   +00 1.1    -01 3.11   -01
 ENDDATA              6
-ENDSUBENT           17
-SUBENT        11571006     830412              20050926       0000
-BIB                  3          3
+ENDSUBENT           18
+SUBENT        11571006   20200419   20200708   20200707       1466
+BIB                  5          6
 REACTION   (16-S-32(N,P)15-P-32,,SIG)
-N-SOURCE   (D-T) T(D,N)
-MONITOR    FLUX DETERMINED BY COUNTING ALPHAS FROM T(D,N) SOURCE
-ENDBIB               3
+INC-SOURCE (D-T)
+DECAY-DATA (15-P-32,14.3D)
+METHOD     (ASSOP) Flux determined by counting alphas from
+            T(d,n) source
+STATUS     (TABLE) Table I, Phys.Rev.107,1363,1957
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          1
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL-HW  DATA       DATA-ERR
 MEV        MEV        B          B
  1.410  +01 4.     -02 2.54   -01 1.0    -02
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        11571007     830412              20050926       0000
-BIB                  3          5
+ENDSUBENT           14
+SUBENT        11571007   20200419   20200708   20200707       1466
+BIB                  6          8
 REACTION   (16-S-34(N,A)14-SI-31,,SIG)
-N-SOURCE   (P-T) T(P,N) SOURCE BELOW 6 MEV
-           (D-D) D(D,N) SOURCE FROM 6 - 10 MEV
-           (D-T) T(D,N) SOURCE 14 MEV
+INC-SOURCE (P-T) T(p,n) source below 6 MeV
+           (D-D) D(d,n) source from 6 - 10 MeV
+           (D-T) T(d,n) source 14 MeV
+DECAY-DATA (14-SI-31,2.5HR)
 MONITOR    (16-S-32(N,P)15-P-32,,SIG)
-ENDBIB               5
+MONIT-REF  (11571001,L.Allen Jr+,J,PR,107,1363,1957)
+STATUS     (TABLE) Table II, Phys.Rev.107,1363,1957
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         12
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL-HW  DATA       DATA-ERR
 MEV        MEV        B          B
  4.82   +00 6.     -02 0.     +00 1.5    -02
  5.33   +00 5.     -02 2.1    -02 4.     -03
@@ -142,5 +167,5 @@ MEV        MEV        B          B
  9.56   +00 9.     -02 8.2    -02 9.     -03
  1.410  +01 4.     -02 1.26   -01 7.     -03
 ENDDATA             14
-ENDSUBENT           24
+ENDSUBENT           27
 ENDENTRY             7

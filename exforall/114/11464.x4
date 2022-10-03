@@ -1,38 +1,58 @@
-ENTRY            11464     820813              20050926       0000
-SUBENT        11464001     820813              20050926       0000
-BIB                  9         11
+ENTRY            11464   20200419   20200708   20200707       1466
+SUBENT        11464001   20200419   20200708   20200707       1466
+BIB                 11         23
 INSTITUTE  (1USANRD)
-REFERENCE  (J,NP,10,226,5905)
-           (R,USNRDL-TR-269,5810) TABULATED DATA
-AUTHOR     (B.D.KERN,W.E.THOMPSON,J.M.FERGUSON)
-TITLE      CROSS SECTIONS FOR SOME (N,P) AND (N,ALPHA) REACTIONS.
-N-SOURCE   (D-T) D(T,N) SOURCE
+REFERENCE  (J,NP,10,226,1959)
+           (R,USNRDL-TR-269,1958) Tabulated data
+AUTHOR     (B.D.Kern,W.E.Thompson,J.M.Ferguson)
+TITLE      Cross sections for some (n,p) and (n,alpha) reactions.
+FACILITY   (VDG,1USANRD)
+INC-SOURCE (D-T)
 METHOD     (ACTIV)
+DETECTOR   (SCIN) Li6I(Eu) scintillation detector for flux
+            monitoring
+           (NAICR) NaI(Tl) for activation gammas
 MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
-STATUS     (SCSRS)
-HISTORY    (761016T) TRANSLATED FROM SCISRS
-           (820813A) CONVERTED TO REACTION FORMALISM
-ENDBIB              11
-NOCOMMON             0          0
-ENDSUBENT           14
-SUBENT        11464002     820813              20050926       0000
-BIB                  1          1
+ERR-ANALYS (ERR-T) Total uncertainty, including errors due to:
+           (ERR-S,3.,5.) counting statistics, 3-5%
+           (ERR-1) flux, 7%
+           (ERR-2) sample position, 3%
+           (ERR-3) survival factor, 1%
+           (ERR-4,6.,9.) well counter efficiency, 6-9%
+HISTORY    (19761016T) Translated from SCISRS
+           (19820813A) Converted to reaction formalism
+           (20200407U) OS. Added FACILITY, DETECTOR, ERR-ANALYS,
+            updated STATUS, converted to lower case, minor BIB
+            changes
+ENDBIB              23
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+  7.          3.        1.
+ENDCOMMON            3
+ENDSUBENT           30
+SUBENT        11464002   20200419   20200708   20200707       1466
+BIB                  3          3
 REACTION   (12-MG-24(N,P)11-NA-24,,SIG)
-ENDBIB               1
+DECAY-DATA (11-NA-24,14.96HR)
+STATUS     (TABLE) Text on p.234, Nucl.Phys.10,226,1959
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          1
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL     DATA       ERR-T
 MEV        MEV        B          B
  1.303  +01 2.0    -01 2.19   -01 2.6    -02
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        11464003     820813              20050926       0000
-BIB                  1          1
+ENDSUBENT           11
+SUBENT        11464003   20200419   20200708   20200707       1466
+BIB                  3          3
 REACTION   (13-AL-27(N,A)11-NA-24,,SIG)
-ENDBIB               1
+DECAY-DATA (11-NA-24,14.96HR)
+STATUS     (SCSRS) Data correspond to fig.6, Nucl.Phys.10,226,1959
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4         12
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL     DATA       ERR-T
 MEV        MEV        B          B
  1.303  +01 2.0    -01 1.414  -01 1.7    -02
  1.338  +01            1.355  -01 1.6    -02
@@ -47,14 +67,15 @@ MEV        MEV        B          B
  1.551  +01            9.829  -02 1.3    -02
  1.566  +01 4.0    -01 1.068  -01 1.3    -02
 ENDDATA             14
-ENDSUBENT           20
-SUBENT        11464004     820813              20050926       0000
-BIB                  1          1
+ENDSUBENT           22
+SUBENT        11464004   20200419   20200708   20200707       1466
+BIB                  2          2
 REACTION   (14-SI-28(N,P)13-AL-28,,SIG)
-ENDBIB               1
+STATUS     (SCSRS) Data correspond to fig.4, Nucl.Phys.10,226,1959
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 3         33
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
  1.233  +01 3.77   -01 4.52   -02
  1.299  +01 3.577  -01 4.3    -02
@@ -90,14 +111,15 @@ MEV        B          B
  1.752  +01 2.098  -01 2.4    -02
  1.824  +01 1.584  -01 2.5    -02
 ENDDATA             35
-ENDSUBENT           41
-SUBENT        11464005     820813              20050926       0000
-BIB                  1          1
+ENDSUBENT           42
+SUBENT        11464005   20200419   20200708   20200707       1466
+BIB                  2          2
 REACTION   (24-CR-52(N,P)23-V-52,,SIG)
-ENDBIB               1
+STATUS     (SCSRS) Data correspond to fig.5, Nucl.Phys.10,226,1959
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 3         28
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        B          B
  1.233  +01 1.226  -01 1.30   -02
  1.299  +01 1.155  -01 1.30   -02
@@ -128,16 +150,18 @@ MEV        B          B
  1.824  +01 7.21   -02 1.00   -02
  1.824  +01 7.24   -02 1.00   -02
 ENDDATA             30
-ENDSUBENT           36
-SUBENT        11464006     820813              20050926       0000
-BIB                  1          1
+ENDSUBENT           37
+SUBENT        11464006   20200419   20200708   20200707       1466
+BIB                  3          3
 REACTION   (26-FE-56(N,P)25-MN-56,,SIG)
-ENDBIB               1
+DECAY-DATA (25-MN-56,2.58HR)
+STATUS     (TABLE) Text on p.234, Nucl.Phys.10,226,1959
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          1
-EN         EN-RSL     DATA       DATA-ERR
+EN         EN-RSL     DATA       ERR-T
 MEV        MEV        B          B
  1.527  +01 3.3    -01 1.31   -01 1.5    -02
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           11
 ENDENTRY             6
