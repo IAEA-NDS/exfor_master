@@ -1,6 +1,6 @@
-ENTRY            A0655   20160310   20160701   20160621       A084
-SUBENT        A0655001   20160310   20160701   20160621       A084
-BIB                 13         31
+ENTRY            A0655   20210320   20210601   20210531       A097
+SUBENT        A0655001   20210320   20210601   20210531       A097
+BIB                 13         29
 TITLE      Excitation functions of (p,n) reactions on 99-Ru,
            100-Ru, 101-Ru and 102-Ru.  101-m-Rh production.
 AUTHOR     (E.A.Skakun,A.I.Stojanov,V.G.Batij)
@@ -14,12 +14,9 @@ MONITOR    (29-CU-65(P,N)30-ZN-65,,SIG,,,EVAL) The Monitor was
            used at the long time irradiations.
 MONIT-REF  (B0057003,R.Colle+,J,PR/C,9,1819,1974)
 FACILITY   (LINAC,4UKRKFT)
-METHOD     (STTA)
-           (BCINT) See Monitor also.
-           (ACTIV)
-           (GSPEC)
-DETECTOR   Standard high resolution gamma-ray spectrometry without
-           chemical separation
+METHOD     (STTA,BCINT,ACTIV,GSPEC)
+DETECTOR   (SPEC) Standard high resolution gamma-ray
+           spectrometry without chemical separation
 ERR-ANALYS (DATA-ERR,,15.) The overall uncertainties were obtained
            from the sums of the individual errors and estimated to
            be less than 15%.
@@ -29,12 +26,13 @@ HISTORY    (20000213C) CAJAD
            (20000504U) Last checking has been done.
            (20000717A) DATE is corrected
            (20160310A) SD: DECAY-DATA corrected in Subents 006,
-           007,010. ERR-DIG -> ERR-DIG; EN-ERR -> EN-ERR-DIG in
+           007,010. DATA-ERR -> ERR-DIG; EN-ERR -> EN-ERR-DIG in
            Subents 002-011. BIB update. ERR-T ->DATA-ERR in
            ERR-ANALYS. STATUS moved to Subents 002-011.
-ENDBIB              31
+           (20210320A) SD: Corrections in Subent 007.
+ENDBIB              29
 NOCOMMON             0          0
-ENDSUBENT           34
+ENDSUBENT           32
 SUBENT        A0655002   20160310   20160701   20160621       A084
 BIB                  4          8
 REACTION   (44-RU-99(P,N)45-RH-99,,SIG)
@@ -162,19 +160,24 @@ MEV        B
        9.04      0.526
 ENDDATA             10
 ENDSUBENT           28
-SUBENT        A0655007   20160310   20160701   20160621       A084
-BIB                  5          6
-REACTION   (44-RU-102(P,N)45-RH-102-G,,SIG)
+SUBENT        A0655007   20210320   20210601   20210531       A097
+BIB                  5         11
+REACTION   (44-RU-102(P,N)45-RH-102-M,,SIG)
 DECAY-DATA (45-RH-102-G,206.D,DG,475.,0.46)
+           (45-RH-102-M,2.9YR,DG,475.,0.93,
+                              DG,631.,0.36,
+                              DG,697.,0.457)
 SAMPLE     (44-RU-102,ENR=0.990) Enriched Ru-102 (99.0%)
 STATUS     (CURVE) Fig.3a from 97TRIEST,2,1649,1997
 HISTORY    (20160310A) SD: Rh-102m -> Rh-102g in DECAY-DATA and
            REACTION code according to decay param. (MEMO CP/D-888)
-ENDBIB               6
+           (20210320A) SD: Rh-102g -> Rh-102m in REACTION code.
+           Rh-102m was added to DECAY-DATA.
+ENDBIB              11
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
-     5.E-02         4.
+     0.05           4.
 ENDCOMMON            3
 DATA                 2          8
 EN         DATA
@@ -182,13 +185,13 @@ MEV        B
        5.45   2.01E-03
        6.05   6.17E-03
        6.52   1.46E-02
-       6.96    2.2E-02
-        7.5   4.17E-02
+       6.96   2.20E-02
+       7.50   4.17E-02
        8.03   4.23E-02
-       8.53    7.8E-02
-       8.99    9.1E-02
+       8.53   7.80E-02
+       8.99   9.10E-02
 ENDDATA             10
-ENDSUBENT           25
+ENDSUBENT           30
 SUBENT        A0655008   20160310   20160701   20160621       A084
 BIB                  5         10
 REACTION   (44-RU-99(P,N)45-RH-99-M/T,,SIG/RAT)
