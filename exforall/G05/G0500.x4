@@ -1,15 +1,16 @@
-ENTRY            G0500   20160402   20160701   20160628       G035
-SUBENT        G0500001   20160402   20160701   20160628       G035
-BIB                 14         60
+ENTRY            G0500   20210701   20210929   20210929       G047
+SUBENT        G0500001   20210701   20210929   20210929       G047
+BIB                 13         60
 TITLE      Fission yields in 7.64 MeV gamma induced fission of
-            Th-232
+            232Th
 AUTHOR     (Jing Kexing, Li Ze, Liu Conggui, Liu Yonghui,
             Su Shuxin, Huang Shengnian)
 INSTITUTE  (3CPRAEP)
-REFERENCE  (J,CNP,10,(3),244,1988)
+REFERENCE  (J,CNP,10,244,1988)
            (C,88MITO,,1151,1988)
+            Same yields except for A=87 and 92 chain yields
 SAMPLE     Natural Th (Th-232 more than 99.9%).
-           Round metalic foil 22 mm in diameter.
+           Round metallic foil 22 mm in diameter.
            Two kinds of targets with different thickness were
             used: Thin one for fission rate measurement, and
             thick one for fission product measurement.
@@ -33,7 +34,7 @@ DECAY-DATA ((1.)35-BR-87,0.927MIN)
            ((6.)42-MO-99,66.02HR,DG,140.5,0.899)
            ((7.)42-MO-99,66.02HR)
            ((7.)43-TC-99-M,6.02HR,DG,140.5,0.885)
-           ((8.)51-SB-132-G,4.2MIN)
+           ((8.)51-SB-132-M,4.2MIN)
            ((8.)52-TE-132,78.2HR,DG,228.2,0.885)
            ((9.)52-TE-132,78.2HR)
            ((9.)53-I-132-G,2.30HR,DG,667.7,0.987)
@@ -45,8 +46,6 @@ DECAY-DATA ((1.)35-BR-87,0.927MIN)
            ((12.)57-LA-142,93.MIN,DG,641.2,0.525)
            ((13.)57-LA-143,14.0MIN)
            ((13.)58-CE-143,33.0HR,DG,293.3,0.42)
-FLAG       (1.) sum yields for both 99gNb and 99mNb
-           (2.) sum yields for both 133gTe and 133mTe
 ERR-ANALYS (DATA-ERR) Total error including the contribution from
            1. fission rate measurement:
               - absolute fission rate measurement error
@@ -57,53 +56,65 @@ ERR-ANALYS (DATA-ERR) Total error including the contribution from
               - gamma-cascade coincidence correction error
               - pulse pile-up correction error by measuring
                  instrument for every contribution
-STATUS     (TABLE) Tables 1+3 of Chin.J.Nucl.Phys.10(3),244(1988)
+STATUS     (TABLE) Tables 1+3 of Chin.J.Nucl.Phys.10(1988)244
 HISTORY    (19891020C) DW. Corrections by VOF.
            (20060729A) BIB section updated
            (20160402A) On. DECAY-DATA: -G -> -M for 99Nb and 133Te
+           (20210701A) On. Major revision in 002. 003 added.
 ENDBIB              60
 NOCOMMON             0          0
 ENDSUBENT           63
-SUBENT        G0500002   20060729   20061121   20061120       G014
-BIB                  1          1
+SUBENT        G0500002   20210701   20210929   20210929       G047
+BIB                  2          2
 REACTION   (90-TH-232(G,F)ELEM/MASS,CUM,FY)
-ENDBIB               1
+HISTORY    (20210701A) On. ISOMER=0 ->1 for 51-SB-132
+ENDBIB               2
 COMMON               1          3
 EN
 MEV
-7.64
+ 7.64
 ENDCOMMON            3
-DATA                 7         13
-ELEMENT    MASS       ISOMER     FLAG       DATA       DATA-ERR
-DECAY-FLAG
-NO-DIM     NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
-NO-DIM
-35.        87.                              6.54       0.57
-1.
-37.        92.                              6.54       0.41
-3.
-38.        91.                              7.95       0.44
-2.
-39.        97.        0.                    2.93       0.17
-4.
-40.        97.                              3.15       0.20
-5.
-41.        99.                   1.         1.91       0.11
-6.
-42.        99.                              2.08       0.11
-7.
-51.        132.       0.                    1.59       0.16
-8.
-52.        132.                             2.12       0.10
-9.
-52.        133.                  2.         3.76       0.22
-10.
-52.        134.                             4.41       0.30
-11.
-56.        142.                             8.26       0.43
-12.
-57.        143.                             7.60       0.32
-13.
-ENDDATA             30
-ENDSUBENT           40
-ENDENTRY             2
+DATA                 6         13
+ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
+NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
+ 35.         87.                  6.54       0.57        1.
+ 37.         92.                  6.54       0.41        3.
+ 38.         91.                  7.95       0.44        2.
+ 39.         97.       0.         2.93       0.17        4.
+ 40.         97.                  3.15       0.20        5.
+ 41.         99.                  1.91       0.11        6.
+ 42.         99.                  2.08       0.11        7.
+ 51.        132.       1.         1.59       0.16        8.
+ 52.        132.                  2.12       0.10        9.
+ 52.        133.                  3.76       0.22       10.
+ 52.        134.                  4.41       0.30       11.
+ 56.        142.                  8.26       0.43       12.
+ 57.        143.                  7.60       0.32       13.
+ENDDATA             15
+ENDSUBENT           26
+SUBENT        G0500003   20210701   20210929   20210929       G047
+BIB                  2          2
+REACTION   (90-TH-232(G,F)MASS,CHN,FY)
+HISTORY    (20210701C) On
+ENDBIB               2
+COMMON               1          3
+EN
+MEV
+ 7.64
+ENDCOMMON            3
+DATA                 3         10
+MASS       DATA       DATA-ERR
+NO-DIM     PC/FIS     PC/FIS
+  87.       6.88       0.60
+  91.       7.95       0.44
+  92.       7.23       0.46
+  97.       3.15       0.20
+  99.       1.91       0.11
+ 132.       2.13       0.10
+ 133.       3.84       0.22
+ 134.       4.99       0.37
+ 142.       8.31       0.43
+ 143.       7.67       0.32
+ENDDATA             12
+ENDSUBENT           23
+ENDENTRY             3
