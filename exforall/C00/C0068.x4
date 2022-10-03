@@ -1,6 +1,6 @@
-ENTRY            C0068   20171004   20171208   20171206       C168
-SUBENT        C0068001   20171004   20171208   20171206       C168
-BIB                 15         41
+ENTRY            C0068   20200508   20200917   20200916       C193
+SUBENT        C0068001   20200508   20200917   20200916       C193
+BIB                 15         42
 TITLE      Cyclotron production of NCA 99mTc and 99Mo.  An
             alternative non-reactor supply source of instant
             99mTc and 99Mo-99mTc generators
@@ -9,7 +9,7 @@ AUTHOR     (M.C.Lagunas-Solar,P.M.Kiefer,O.F.Carvacho,C.A.Lagunas,
 INSTITUTE  (1USADAV)
 REFERENCE  (J,ARI,42,643,1991)
            (J,RCA,60,57,1993) Data compared to ALICE calculations.
-FACILITY   (ISOCY,1USADAV) 1.92m isochonous cyclotron.
+FACILITY   (ISOCY,1USADAV) 1.92m isochronous cyclotron.
 INC-SPECT  Primary proton energies are 67.5 and 45 MeV.
 SAMPLE     Natural Mo foils, density 10.22 g/cm3,
             thickness 0.127 mm, purity 99.95%, isotopic
@@ -31,20 +31,25 @@ DECAY-DATA Taken from Table of Isotopes, 7th ed. (1978).
 CORRECTION Corrected for dead time, pile-up and cascade losses.
            Recoil losses and photo peak summation were assumed
             to be  negligible.
-ERR-ANALYS Total uncertainties in proton energy are 3-5%.
-            Individual uncertainties included are:
-              incident beam energy    1%
-              proton beam scattering  1%
-              range-energy value      2%-5%
-              thickness of Mo foils   0.1%
+ERR-ANALYS (EN-ERR,3.,5.) Total uncertainties in proton energy are
+            3-5%. The thickness of Mo foils contributes 0.1%.
+            Other individual uncertainties included are:
+           (EN-ERR1) Incident beam energy    1%
+           (EN-ERR2) Proton beam scattering  1%
+           (EN-ERR3,2.,5.) Range-energy value  2%-5%
 HISTORY    (19980929C) TS
            (20010207A) Reference added.
            (20170919A) TS+On+OS. Major revisions in 004-005,007,
             09,011,013-018. Subs.001-003 updated.
             See also Memo CP-D/933.
-ENDBIB              41
-NOCOMMON             0          0
-ENDSUBENT           44
+           (20200506A) OS. REACTION in sub.10 corrected
+ENDBIB              42
+COMMON               2          3
+EN-ERR1    EN-ERR2
+PER-CENT   PER-CENT
+   1.         1.
+ENDCOMMON            3
+ENDSUBENT           49
 SUBENT        C0068002   20171004   20171208   20171206       C168
 BIB                  5          6
 REACTION   (42-MO-0(P,X)43-TC-99-M,,SIG)
@@ -325,16 +330,17 @@ MEV        MEV        MBQ/MUAHR  MBQ/MUAHR  MBQ/MUAHR  MBQ/MUAHR
        68.0        8.0       75.5        6.8        2.7        0.2
 ENDDATA              3
 ENDSUBENT           30
-SUBENT        C0068010   19980928   19990304   20050926       0000
-BIB                  3          4
-REACTION   (42-MO-0(P,X)43-TC-96,CUM,SIG)
+SUBENT        C0068010   20200508   20200917   20200916       C193
+BIB                  4          5
+REACTION   (42-MO-0(P,X)43-TC-96,,SIG)
                        Includes the contribution of 96mTc
 DECAY-DATA (43-TC-96-G,4.35D,DG,778.0,0.991,DG,849.0,0.969)
 STATUS     Data given in Fig.8.
-ENDBIB               4
+HISTORY    (20200506A) REACTION SF5 deleted
+ENDBIB               5
 NOCOMMON             0          0
 NODATA               0          0
-ENDSUBENT            8
+ENDSUBENT            9
 SUBENT        C0068011   20171004   20171208   20171206       C168
 BIB                  5         17
 REACTION   (42-MO-0(P,X)43-TC-96,,TTY,,(PHY))
