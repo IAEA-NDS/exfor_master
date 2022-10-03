@@ -1,57 +1,59 @@
-ENTRY            21052     800311              20050926       0000
-SUBENT        21052001     800311              20050926       0000
-BIB                 14         30
-INSTITUTE  (2BLGGHT)
-           (2BLGMOL) IRRADIATIONS ALSO PERFORMED AT MOL.
-REFERENCE  (J,RRL,18,87,7407)
-AUTHOR     (A.BRUGGEMAN,W.MAENHAUT,J.HOSTE)
-TITLE      -THE TOTAL AVERAGE CROSS SECTION FOR THE REACTIONS
-            NI-58(N,NP)CO-57, NI-58(N,PN)CO-57 AND NI-58(N,D)
-            CO-57 IN A FISSION TYPE REACTOR SPECTRUM-.
-FACILITY   (REAC ) THE THETIS REACTOR AT GENT AND THE BR-2 REAC-
-            TOR AT MOL.
-INC-SOURCE (REAC ) FISSION REACTOR SPECTRUM.
-SAMPLE     .ANALYTICAL GRADE NICKEL FOILS, 12.7 MM IN DIAMETER
-            AND 0.5 MM THICK, FOR THE GENT IRRADIATIONS AND
-            NICKEL WIRES OF 10 MG FOR THE MOL IRRADIATIONS.
-           .SODIUM FREE ALUMINUM WIRES AS MONITORS.
-METHOD     (ACTIV) ACTIVATION.
-DETECTOR   (GELI ) ONE CALIBRATED GE(LI) DETECTOR FOR THE MONITOR
-            REACTIONS AND ONE GE(LI) DETECTOR, 78 CM3 VOLUME AND
-            14.2 PERCENT EFFICIENCY, FOR THE CO-57 ACTIVITY.
-MONITOR    (13-AL-27(N,A)11-NA-24-G,,SIG,,FIS) USING A CROSS
-            SECTION VALUE OF 0.64 MB.
-           (28-NI-58(N,P)27-CO-58-G,,SIG,,FIS) USING A CROSS
-            SECTION VALUE OF 104 MB.
-STATUS     .DATA TAKEN FROM REFERENCE.
-HISTORY    (790824C) CN.
-           (790918E)
-CORRECTION .FOR GAMMA RAY ATTENUATION IN THE SAMPLE AND FOR
-            CONTRIBUTION TO THE CROSS SECTION FROM THE NI-58(N,
-            2N)NI-57(B+)CO-57 REACTION.
-ERR-ANALYS .THE QUOTED ERROR IS THE STATISTICAL ERROR ON THE
-            MEAN AT A 95 PERCENT CONFIDENCE LEVEL.
-ENDBIB              30
-NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        21052002     800311              20050926       0000
-BIB                  5          6
-REACTION   ((28-NI-58(N,N+P)27-CO-57,,SIG,,FIS)+
-           (28-NI-58(N,D)27-CO-57,,SIG,,FIS))
-INC-SPECT  THE U-235 THERMAL FISSION NEUTRON SPECTRUM.
-DECAY-DATA (27-CO-57,271.D,DG,122.1,0.85)
-STATUS     .TABLE 3.
-HISTORY    (790824C)
-ENDBIB               6
-COMMON               1          3
-EN-DUMMY
-MEV
- 1.5000E+00
-ENDCOMMON            3
-DATA                 2          1
-DATA       DATA-ERR
+ENTRY            21052   20200930   20210105   20210104       2291
+SUBENT        21052001   20200930   20210105   20210104       2291
+BIB                 11         24
+TITLE       The total average cross section for the reactions
+            Ni-58(n,Np)Co-57, Ni-58(n,pn)Co-57 and Ni-58(n,d)Co-57
+             in a fission type reactor spectrum
+AUTHOR     (A.Bruggeman,W.Maenhaut,J.Hoste)
+REFERENCE  (J,RRL,18,87,1974)
+INSTITUTE  (2BLGGHT,2BLGMOL)
+FACILITY   (REAC,2BLGGHT)
+           (REAC,2BLGMOL)
+SAMPLE      Analytical grade nickel foils, 12.7 mm in diameter
+            and 0.5 mm thick, for the Gent irradiations and
+            nickel wires of 10 mg for the Mol irradiations.
+            Sodium free aluminum wires as monitors.
+METHOD     (ACTIV)
+DETECTOR   (GELI) One calibrated Ge(Li) detector for the monitor
+            reactions and one Ge(Li) detector, 78 cm3 volume and
+            14.2% efficiency, for the Co-57 activity.
+MONITOR    ((MONIT1)13-AL-27(N,A)11-NA-24,,SIG,,FIS)
+           ((MONIT2)28-NI-58(N,P)27-CO-58-G,,SIG,,FIS)
+CORRECTION  For gamma ray attenuation in the sample and for
+            contribution to the cross section from the
+            Ni-58(n,2n)Ni-57(B+)Co-57 reaction.
+HISTORY    (19790824C) CN.
+           (20200930A) SD: Updated to new date formats,lower case.
+           Corrections in all Subents.
+ENDBIB              24
+COMMON               2          3
+MONIT1     MONIT2
 MB         MB
- 2.1600E-01 5.0000E-03
+   0.64       104.
+ENDCOMMON            3
+ENDSUBENT           31
+SUBENT        21052002   20200930   20210105   20210104       2291
+BIB                  7         10
+REACTION   (28-NI-58(N,X)27-CO-57,,SIG,,FIS)
+INC-SPECT  The U-235 thermal fission neutron spectrum.
+DECAY-DATA (27-CO-57,271.D,DG,122.1,0.85)
+MISC-COL   (MISC) The quoted error is the statistical error
+            on the mean at a 95% confidence level.
+ERR-ANALYS (ERR-S) Statistical error (derived from the value
+           given in MISC col.)
+STATUS     (TABLE) Tbl. 3 from Radioch.Radioanal.Lett.,18(1974)87
+HISTORY    (20200930A) SD: SF3=N+P and D -> X in REACTION code.
+           STATUS updated. EN-DUMMY=1.5 MeV -> KT-DUMMY=1.32 MeV
+ENDBIB              10
+COMMON               1          3
+KT-DUMMY
+MEV
+ 1.32
+ENDCOMMON            3
+DATA                 3          1
+DATA       ERR-S      MISC
+MB         MB         MB
+  0.216      0.0025       0.005
 ENDDATA              3
-ENDSUBENT           18
+ENDSUBENT           22
 ENDENTRY             2

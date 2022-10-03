@@ -1,32 +1,32 @@
-ENTRY            O0040     941025              20050926       0000
-SUBENT        O0040001     941025              20050926       0000
+ENTRY            O0040   20200815   20210105   20210104       O079
+SUBENT        O0040001   20200815   20210105   20210104       O079
 BIB                 13         26
-TITLE      TARGET FRAGMENTATION OF AU AND TH BY 2.6 GEV PROTONS.
-AUTHOR     (K.SUMMERER,W.BRUCHLE,D.J.MORRISSEY,M.SCHADEL,
-           B.SZWERYN,Y.WEIFAN)
+TITLE      Target fragmentation of Au and Th by 2.6 GeV protons
+AUTHOR     (K.Summerer,W.Bruchle,D.J.Morrissey,M.Schadel,
+           B.Szweryn,Y.Weifan)
+REFERENCE  (J,PR/C,42,2546,1990)
 INSTITUTE  (2GERGSI)
-HISTORY    (941026C)
-           (941213U)
-           (941210A).ANALYSIS HAVE BEEN CORRECTED.
-REFERENCE  (J,PR/C,42,2546,90)
-MONITOR    ((MONIT1)13-AL-27(P,X)11-NA-22,,SIG,,,EXP)
-           ((MONIT2)13-AL-27(P,X)11-NA-24,,SIG,,,EXP)
-           ((MONIT3)13-AL-27(P,X)4-BE-7,,SIG,,,EXP)
-MONIT-REF  (,J.TOBAILEM+,R,CEA-N-1466,1,71)
-FACILITY   (SYNCY,2FR SAC).THE SATURNE SYNCHROTRON AT SACLAY.
-DETECTOR   (GELI).THE SAMPLES WERE ASSAYED AT SACLAY WITH TWO
-           UNSHIELDED GE(LI) DETECTORS FOR SHORT-LIVED ACTIVITIES.
-           ABOUT 12 HOURS AFTER THE END OF THE LAST IRRADIATION,
-           THE SAMPLES WERE TRANSFERRED TO GSI,WHERE MEASUREMENT
-           WITH EIGHT SHIELDED GE(LI) DETECTORS CONTINUED FOR
-           SEVERAL MONTS.
+FACILITY   (SYNCY,2FR SAC) The SATURNE synchrotron at Saclay.
+MONITOR    ((MONIT1)13-AL-27(P,X)11-NA-22,,SIG)
+           ((MONIT2)13-AL-27(P,X)11-NA-24,,SIG)
+           ((MONIT3)13-AL-27(P,X)4-BE-7,,SIG)
+            For neutron flux monitoring
+MONIT-REF  (,J.Tobailem+,R,CEA-N-1466,(1),1971)
+DETECTOR   (GELI) The samples were assayed at Saclay with two
+           unshielded Ge(Li) detectors for short-lived activities.
+           About 12 hours after the end of the last irradiation,
+           the samples were transferred to GSI, where measurement
+           with eight shielded Ge(Li) detectors continued for
+           several months.
 ANALYSIS   (DECAY)
-METHOD     (BCINT,EXTB,CHSEP)
-ADD-RES    (COMP).A COMPREHENSIVE ANALYSIS.
-REL-REF    (R,,S.B.KAUFMAN+,J,PR/C,22,167,80).THESE DATA HAVE
-           BEEN USED FOR THE NORMALIZATION CROSS-SECTIONS.
-           (R,,U.REUS+,R,GSI-79-2,79).DECAY-DATA FROM THIS PAPER
-           HAVE BEEN USED.
+METHOD     (BCINT,EXTB,CHSEP,STTA)
+REL-REF    (R,,U.Reus+,R,GSI-79-2,1979) Decay-data
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+HISTORY    (19941026C)
+           (19941213U)
+           (19941210A) Analysis have been corrected.
+           (20200815A) SD:Updated to new date formats,lower case.
+           Corrections in all Subents.
 ENDBIB              26
 COMMON               4          3
 EN         MONIT1     MONIT2     MONIT3
@@ -34,19 +34,28 @@ GEV        MB         MB         MB
         2.6       11.6        9.4        8.7
 ENDCOMMON            3
 ENDSUBENT           33
-SUBENT        O0040002     941025              20050926       0000
-BIB                  4          9
-REACTION   (79-AU-197(P,X)ELEM/MASS,IND,SIG,,,EXP)
-SAMPLE     TARGETS OF AU,APPROXIMATE 80 MG/CM**2 THICKNESS,WERE
-           IRRADIATED TOGETHER WITH ALUMINUM FOILS OF 5 MG/CM**2.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ANALYSIS   ABSOLUTE VALUES HAVE BEEN DETERMINED BY NORMALIZING
-           THE RESULTS FOR SEVERAL LONG-LIVED ISOTOPES OBSERVED
-           IN RUN 3,WHERE NO CHEMICAL SEPARATIONS HAVE BEEN
-           PERFORMED,TO THOSE FROM KAUFMAN (SEE REL-REF) AT A
-           PROTON ENERGY OF 3 GEV.
-ENDBIB               9
-NOCOMMON
+SUBENT        O0040002   20200815   20210105   20210104       O079
+BIB                  6         18
+REACTION   (79-AU-197(P,X)ELEM/MASS,,SIG)
+SAMPLE     Targets of Au were irradiated together with aluminum
+           foils of 5 mg/cm2.
+           Run     thickness   irradiat. time     Proton flux
+            No.       (mg/cm2)     (min)           (particles)
+            1            79.2        116           6.62 x 10**14
+            2            79.4        636           3.66 x 10**15
+            3            79.5        446           2.64 x 10**15
+ANALYSIS   Absolute values have been determined by normalizing
+           the results for several long-lived isotopes observed
+           in run 3, where no chemical separations have been
+           performed, to those from Kaufman (see REL-REF) at a
+           proton energy of 3 GeV.
+REL-REF    (R,C0480001,S.B.Kaufman+,J,PR/C,22,167,1980) Data have
+           been used for the normalization cross-sections.
+STATUS     (TABLE) Tbl. II from Phys.Rev.,C42(1990)2546
+HISTORY    (20200815A) SD: SF5=IND and SF9=EXP deleted from
+           REACTION code. SAMPLE updated. ANALYSIS, STATUS added.
+ENDBIB              18
+NOCOMMON             0          0
 DATA                 5         24
 ELEMENT    MASS       DATA       DATA-ERR   ISOMER
 NO-DIM     NO-DIM     MB         MB         NO-DIM
@@ -75,20 +84,30 @@ NO-DIM     NO-DIM     MB         MB         NO-DIM
         64.       148.      0.475      0.025
         63.       146.       2.61       0.19
 ENDDATA             26
-ENDSUBENT           40
-SUBENT        O0040003     941025              20050926       0000
-BIB                  4          9
-REACTION   (79-AU-197(P,X)ELEM/MASS,CUM,SIG,,,EXP)
-SAMPLE     TARGETS OF AU,APPROXIMATE 80 MG/CM**2 THICKNESS,WERE
-           IRRADIATED TOGETHER WITH ALUMINUM FOILS OF 5 MG/CM**2.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ANALYSIS   ABSOLUTE VALUES HAVE BEEN DETERMINED BY NORMALIZING
-           THE RESULTS FOR SEVERAL LONG-LIVED ISOTOPES OBSERVED
-           IN RUN 3,WHERE NO CHEMICAL SEPARATIONS HAVE BEEN
-           PERFORMED,TO THOSE FROM KAUFMAN (SEE REL-REF) AT A
-           PROTON ENERGY OF 3 GEV.
-ENDBIB               9
-NOCOMMON
+ENDSUBENT           49
+SUBENT        O0040003   20200815   20210105   20210104       O079
+BIB                  7         19
+REACTION   (79-AU-197(P,X)ELEM/MASS,CUM,SIG)
+SAMPLE     Targets of Au were irradiated together with aluminum
+           foils of 5 mg/cm2.
+           Run     thickness   irradiat. time     Proton flux
+            No.       (mg/cm2)     (min)           (particles)
+            1            79.2        116           6.62 x 10**14
+            2            79.4        636           3.66 x 10**15
+            3            79.5        446           2.64 x 10**15
+CORRECTION  Corrected to represent fully cumulative yield.
+ANALYSIS   Absolute values have been determined by normalizing
+           the results for several long-lived isotopes observed
+           in run 3, where no chemical separations have been
+           performed, to those from Kaufman (see REL-REF) at a
+           proton energy of 3 GeV.
+REL-REF    (R,C0480001,S.B.Kaufman+,J,PR/C,22,167,1980) Data have
+           been used for the normalization cross-sections.
+STATUS     (TABLE) Tbl. II from Phys.Rev.,C42(1990)2546
+HISTORY    (20200815A) SD: SF9=EXP deleted from REACTION code.
+           SAMPLE updated. ANALYSIS, STATUS added.
+ENDBIB              19
+NOCOMMON             0          0
 DATA                 5         28
 ELEMENT    MASS       DATA       DATA-ERR   ISOMER
 NO-DIM     NO-DIM     MB         MB         NO-DIM
@@ -121,21 +140,30 @@ NO-DIM     NO-DIM     MB         MB         NO-DIM
         64.       146.       15.5        0.9
         63.       145.       13.1        0.9
 ENDDATA             30
-ENDSUBENT           44
-SUBENT        O0040004     941025              20050926       0000
-BIB                  4         10
-REACTION   (79-AU-197(P,X)ELEM/MASS,CUM,SIG,,,EXP)
-           CORRECTED TO REPRESENT FULLY CUMULATIVE YIELD.
-SAMPLE     TARGETS OF AU,APPROXIMATE 80 MG/CM**2 THICKNESS,WERE
-           IRRADIATED TOGETHER WITH ALUMINUM FOILS OF 5 MG/CM**2.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ANALYSIS   ABSOLUTE VALUES HAVE BEEN DETERMINED BY NORMALIZING
-           THE RESULTS FOR SEVERAL LONG-LIVED ISOTOPES OBSERVED
-           IN RUN 3,WHERE NO CHEMICAL SEPARATIONS HAVE BEEN
-           PERFORMED,TO THOSE FROM KAUFMAN (SEE REL-REF) AT A
-           PROTON ENERGY OF 3 GEV.
-ENDBIB              10
-NOCOMMON
+ENDSUBENT           54
+SUBENT        O0040004   20200815   20210105   20210104       O079
+BIB                  7         19
+REACTION   (79-AU-197(P,X)ELEM/MASS,CUM,SIG)
+CORRECTION  Corrected to represent fully cumulative yield.
+SAMPLE     Targets of Au were irradiated together with aluminum
+           foils of 5 mg/cm2.
+           Run     thickness   irradiat. time     Proton flux
+            No.       (mg/cm2)     (min)           (particles)
+            1            79.2        116           6.62 x 10**14
+            2            79.4        636           3.66 x 10**15
+            3            79.5        446           2.64 x 10**15
+ANALYSIS   Absolute values have been determined by normalizing
+           the results for several long-lived isotopes observed
+           in run 3, where no chemical separations have been
+           performed, to those from Kaufman (see REL-REF) at a
+           proton energy of 3 GeV.
+REL-REF    (R,C0480001,S.B.Kaufman+,J,PR/C,22,167,1980) Data have
+           been used for the normalization cross-sections.
+STATUS     (TABLE) Tbl. II from Phys.Rev.,C42(1990)2546
+HISTORY    (20200815A) SD: SF9=EXP deleted from REACTION code.
+           SAMPLE updated. ANALYSIS, STATUS added.
+ENDBIB              19
+NOCOMMON             0          0
 DATA                 5          7
 ELEMENT    MASS       DATA       DATA-ERR   ISOMER
 NO-DIM     NO-DIM     MB         MB         NO-DIM
@@ -147,20 +175,28 @@ NO-DIM     NO-DIM     MB         MB         NO-DIM
         70.       169.       46.0        2.1         0.
         69.       166.       24.4        0.7
 ENDDATA              9
-ENDSUBENT           24
-SUBENT        O0040005     941025              20050926       0000
-BIB                  4          9
-REACTION   (90-TH-232(P,X)ELEM/MASS,IND,SIG,,,EXP)
-SAMPLE     TARGETS OF TH,APPROXIMATE 50 MG/CM**2 THICKNESS,WERE
-           IRRADIATED TOGETHER WITH ALUMINUM FOILS OF 5 MG/CM**2.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ANALYSIS   IN THE PRESENT CASE,APPROX.10 MG OF TL AND AU CARRIERS
-           WERE ADDED BEFORE THE CHEMICAL SEPARATIONS AND THE
-           CHEMICAL YIELD COULD BE DETERMINED SIMPLY BY WEIGHING.
-           THE RESULTING EFFICIENCIES WERE 73+-3 PER CENT AND
-            76+-3 PER CENT FOR TL AND AU,RESPECTIVELY.
-ENDBIB               9
-NOCOMMON
+ENDSUBENT           33
+SUBENT        O0040005   20200815   20210105   20210104       O079
+BIB                  5         17
+REACTION   (90-TH-232(P,X)ELEM/MASS,,SIG)
+SAMPLE     Targets of Th were irradiated together with aluminum
+           foils of 5 mg/cm2.
+           Run     thickness   irradiat. time     Proton flux
+            No.       (mg/cm2)     (min)           (particles)
+            4            51.4         61           3.34 x 10**14
+ANALYSIS   Absolute cross sections from this experiment were
+           calculated in the same manner as those for gold targets
+           except for the determination of chemical yields. In the
+           present case, 10 mg of Tl and Au carriers were added
+           before the chemical separations and the chemical yield
+           could be determined simply by weighing. The resulting
+           efficiencies were 73 +- 3% and 76 +- 3% up for Tl and
+           Au, respectively.
+STATUS     (TABLE) Tbl. III from Phys.Rev.,C42(1990)2546
+HISTORY    (20200815A) SD: SF5=IND and SF9=EXP deleted from
+           REACTION code. SAMPLE updated. ANALYSIS, STATUS added.
+ENDBIB              17
+NOCOMMON             0          0
 DATA                 5          6
 ELEMENT    MASS       DATA       DATA-ERR   ISOMER
 NO-DIM     NO-DIM     MB         MB         NO-DIM
@@ -171,25 +207,34 @@ NO-DIM     NO-DIM     MB         MB         NO-DIM
         79.       195.       0.52       0.07         0.
         79.       194.       0.10      0.004
 ENDDATA              8
-ENDSUBENT           22
-SUBENT        O0040006     941025              20050926       0000
-BIB                  5         14
-REACTION   (90-TH-232(P,X)ELEM/MASS,CUM,SIG,,,EXP)
-COMMENT    /BY AUTHORS/.THE EXPERIMENTAL CROSS SECTIONS OF
-           THE ISOTOPES INCLUDE VARYING PRECURSOR CONTRIBUTIONS
-           ARE GIVEN IN DATA-SECTION.SINCE WE HAVE NOT MEASURED
-           THE RESPECTIVE PRECURSOR CROSS SECTIONS,THE PRECURSOR
-           CONTRIBUTIONS CANNOT BE SUBTRACTED.
-SAMPLE     TARGETS OF TH,APPROXIMATE 50 MG/CM**2 THICKNESS,WERE
-           IRRADIATED TOGETHER WITH ALUMINUM FOILS OF 5 MG/CM**2.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ANALYSIS   ABSOLUTE VALUES HAVE BEEN DETERMINED BY NORMALIZING
-           THE RESULTS FOR SEVERAL LONG-LIVED ISOTOPES OBSERVED
-           IN RUN 3,WHERE NO CHEMICAL SEPARATIONS HAVE BEEN
-           PERFORMED,TO THOSE FROM KAUFMAN (SEE REL-REF) AT A
-           PROTON ENERGY OF 3 GEV.
-ENDBIB              14
-NOCOMMON
+ENDSUBENT           30
+SUBENT        O0040006   20200815   20210105   20210104       O079
+BIB                  5         23
+REACTION   (90-TH-232(P,X)ELEM/MASS,CUM,SIG)
+           The experimental cross sections of the isotopes include
+           varying precursor contributions are given in
+           DATA-section.
+           Since the respective precursor cross sections were not
+           measured, the precursor contributions cannot be
+           subtracted.
+SAMPLE     Targets of Th were irradiated together with aluminum
+           foils of 5 mg/cm2.
+           Run     thickness   irradiat. time     Proton flux
+            No.       (mg/cm2)     (min)           (particles)
+            4            51.4         61           3.34 x 10**14
+ANALYSIS   Absolute cross sections from this experiment were
+           calculated in the same manner as those for gold targets
+           except for the determination of chemical yields. In the
+           present case, 10 mg of Tl and Au carriers were added
+           before the chemical separations and the chemical yield
+           could be determined simply by weighing. The resulting
+           efficiencies were 73 +- 3% and 76 +- 3% up for Tl and
+           Au, respectively.
+STATUS     (TABLE) Tbl. III from Phys.Rev.,C42(1990)2546
+HISTORY    (20200815A) SD: SF9=EXP deleted from REACTION code.
+           SAMPLE updated. ANALYSIS, STATUS added.
+ENDBIB              23
+NOCOMMON             0          0
 DATA                 5         11
 ELEMENT    MASS       DATA       DATA-ERR   ISOMER
 NO-DIM     NO-DIM     MB         MB         NO-DIM
@@ -205,5 +250,5 @@ NO-DIM     NO-DIM     MB         MB         NO-DIM
         79.       192.       1.06       0.10
         79.       191.       3.99       0.17         0.
 ENDDATA             13
-ENDSUBENT           32
+ENDSUBENT           41
 ENDENTRY             6

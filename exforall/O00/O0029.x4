@@ -1,43 +1,46 @@
-ENTRY            O0029     941020              20050926       0000
-SUBENT        O0029001     941020              20050926       0000
-BIB                 12         15
-TITLE      EXCITATION FUNCTIONS FOR SOME PROTON-INDUCED REACTIONS
-           OF THORIUM.
-AUTHOR     (H.A.TEWES)
-HISTORY    (941019C)
-           (941206U)
+ENTRY            O0029   20200815   20210105   20210104       O079
+SUBENT        O0029001   20200815   20210105   20210104       O079
+BIB                 13         19
+TITLE      Excitation functions for some proton-induced reactions
+           of thorium
+AUTHOR     (H.A.Tewes)
 INSTITUTE  (1USACRD)
-REFERENCE  (J,PR,98,25,55)
-SAMPLE     A STACK OF 2-MIL THORIUM FOILS WERE USED.
-ADD-RES    (COMP).CHARGED-PARTICLE EMISSION.
-FACILITY   (LINAC,1USACRD).LINEAR ACCELERATOR.
+REFERENCE  (J,PR,98,25,1955)
+FACILITY   (LINAC,1USACRD)
+SAMPLE     A stack of 2-mil thorium foils were used.
+ADD-RES    (COMP).Charged-particle emission.
 DETECTOR   (GEMUC)
 METHOD     (BCINT,STTA,CHSEP)
-REL-REF    (R,,H.A.TEWES+,J,PR,88,860,52).EXPERIMENTAL METHOD.
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-           (EN-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB              15
-NOCOMMON
-ENDSUBENT           18
-SUBENT        O0029002     941020              20050926       0000
-BIB                  4         12
-REACTION   (90-TH-232(P,F),,SIG,,,EXP)
-COMMENT    /BY AUTHORS/.THE PROTON-INDUCED FISSION CROSS SECTIONS
-           WERE CALCULATED FROM THE YIELDS OF ZR-97,SINCE THE
-           FISSION YIELDS OF ZR-97 HAVE PREVIOSLY BEEN DETERMINED
-           FOR THORIUM WHICH HAS BEEN IRRADIATED WITH PROTONS UP
-           TO 20 MEV ENERGY.SEE REL-REF.SUBENT 001.
-REL-REF    (D,O0020024,H.KUDO+,J,PR/C,25,3011,82)
-MISC-COL   (MISC).FISSION YIELD OF ZR-97.
-           ZR-97 FISSION YIELD FOR PROTON ENERGY BELOW 21 MEV ARE
-           GIVEN IN REL-REF OF SUBENT 001.THOSE YIELDS ABOVE
-            21 MEV ARE ESTIMATED.
-           (MISC-ERR).THE 'MISC' UNCERTAINTY.
-ENDBIB              12
-NOCOMMON
+REL-REF    (M,O0661001,H.A.Tewes+,J,PR,88,860,1952) Experim.method
+           and values used in ASSUMED (see Subent 002).
+ERR-ANALYS (DATA-ERR) No information on the source of
+                                                the uncertainty
+STATUS     (TABLE) Tbl.I from Phys.Rev.,98(1955)25
+HISTORY    (19941019C)
+           (19941206U)
+           (20200815A) SD:Updated to new date formats,lower case.
+           Corrections in all Subents. BIB updated.
+ENDBIB              19
+NOCOMMON             0          0
+ENDSUBENT           22
+SUBENT        O0029002   20200815   20210105   20210104       O079
+BIB                  5         11
+REACTION   (90-TH-232(P,F),,SIG,,,DERIV)
+ANALYSIS   Measured 232Th(p,f)97Zr cross section divided by the
+           232Th(p,f)97Zr fission yield taken from Kudo et
+           al. (1982) or estimated by the author
+REL-REF    (D,O0020024,H.Kudo+,J,PR/C,25,3011,1982)
+ASSUMED    (ASSUM,90-TH-232(P,F)40-ZR-97,CUM,FY)
+           Zr-97 fission yield for proton energy below 21 MeV are
+           given in REL-REF of Subent 001. Those yields above
+            21 MeV are estimated.
+HISTORY    (20200815A) SD: SF9=EXP -> DERIV from REACTION code.
+           MISC-COL -> ASSUMED; MISC -> ASSUM; PER-CENT -> PRD/FIS
+ENDBIB              11
+NOCOMMON             0          0
 DATA                 6          7
-EN         EN-ERR     DATA       DATA-ERR   MISC       MISC-ERR
-MEV        MEV        MB         MB         PER-CENT   PER-CENT
+EN         EN-ERR     DATA       DATA-ERR   ASSUM      ASSUM-ERR
+MEV        MEV        MB         MB         PC/FIS     PC/FIS
        31.3        0.4      1080.        70.        3.5        0.2
        26.1        0.4       910.        60.        3.5        0.2
        20.8        0.5       680.        40.        3.6        0.1
@@ -46,13 +49,14 @@ MEV        MEV        MB         MB         PER-CENT   PER-CENT
        12.1        0.7        26.         2.        4.3        0.2
         9.6        0.9        9.2        0.5        4.1        0.2
 ENDDATA              9
-ENDSUBENT           26
-SUBENT        O0029003     941020              20050926       0000
-BIB                  2          2
-REACTION   (90-TH-232(P,N)91-PA-232,,SIG,,,EXP)
-REL-REF    (A,O0020027,H.KUDO+,J,PR/C,25,3011,82)
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           25
+SUBENT        O0029003   20200815   20210105   20210104       O079
+BIB                  3          3
+REACTION   (90-TH-232(P,N)91-PA-232,,SIG)
+REL-REF    (A,O0020027,H.Kudo+,J,PR/C,25,3011,1982)
+HISTORY    (20200815A) SD: SF9=EXP deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          9
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
@@ -66,13 +70,14 @@ MEV        MEV        MB         MB
         7.7        1.0       0.30       0.04
         5.3        1.2       0.39       0.05
 ENDDATA             11
-ENDSUBENT           18
-SUBENT        O0029004     941020              20050926       0000
-BIB                  2          2
-REACTION   (90-TH-232(P,3N)91-PA-230,,SIG,,,EXP)
-REL-REF    (D,O0020025,H.KUDO+,J,PR/C,25,3011,82)
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           19
+SUBENT        O0029004   20200815   20210105   20210104       O079
+BIB                  3          3
+REACTION   (90-TH-232(P,3N)91-PA-230,,SIG)
+REL-REF    (D,O0020025,H.Kudo+,J,PR/C,25,3011,1982)
+HISTORY    (20200815A) SD: SF9=EXP deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          5
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
@@ -82,5 +87,5 @@ MEV        MEV        MB         MB
        18.0        0.5        47.         5.
        14.9        0.6         5.         1.
 ENDDATA              7
-ENDSUBENT           14
+ENDSUBENT           15
 ENDENTRY             4

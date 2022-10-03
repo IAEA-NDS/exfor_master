@@ -1,27 +1,30 @@
-ENTRY            O2210   20140703   20150311   20150202       O053
-SUBENT        O2210001   20140703   20150311   20150202       O053
-BIB                  7         11
-TITLE      Determination of the Na-23(p,pg)Na-23, Na-23(p,ag)Ne-20
-           and Na-23(p,a0)Ne-20 excitation functions from 500
-           to 1700 keV
+ENTRY            O2210   20200831   20210105   20210104       O079
+SUBENT        O2210001   20200831   20210105   20210104       O079
+BIB                  7         13
+TITLE      Determination of the Na-23(p,p+gamma)Na-23,
+           Na-23(p,alpha+gamma)Ne-20 and Na-23(p,alpha0)Ne-20
+           excitation functions from 500 to 1700 keV
 AUTHOR     (P.Trocellier, Ch.Engelmann)
 INSTITUTE  (2FR SAC)
 REFERENCE  (J,JRC,67,135,1981)
 FACILITY   (VDG,2FR SAC) 2MV Van de Graaff
 SAMPLE     Target  consist of silicon discs, diameter 15 mm and
            thickness 1 mm, coated with an oxide layer in which
-           sodium ions (20 keV) were implanted( 10E16 at/cm-2).
-HISTORY    (20140703C) Sb
-ENDBIB              11
+           sodium ions (20 keV) were implanted( 10E16 at/cm2).
+HISTORY    (20140703C) SB
+           (20200831A) SD: Corrections in all Subents. Subents
+           007, 008 added. Subents 005 and 006 were merged.
+ENDBIB              13
 NOCOMMON             0          0
-ENDSUBENT           14
-SUBENT        O2210002   20140703   20150311   20150202       O053
-BIB                  4          4
+ENDSUBENT           16
+SUBENT        O2210002   20200831   20210105   20210104       O079
+BIB                  4          5
 REACTION   (11-NA-23(P,INL)11-NA-23,PAR,MLT,G,TT/CH)
-DETECTOR   (NAICR) NaI(Tl)  for gamma-ray
-EN-SEC     (E,G)
-STATUS     (CURVE).Fig 1 of J,JRC,67,135,1981
-ENDBIB               4
+DETECTOR   (NAICR) NaI(Tl)  for gamma-ray, diam. and height 102 mm
+STATUS     (CURVE) Fig 1 of  J.Radioanalyt.Chem.,67(1981)135
+HISTORY    (20200831U) SD: EN-SEC deleted. DETECTOR, STATUS
+           updated.
+ENDBIB               5
 COMMON               1          3
 E
 KEV
@@ -88,14 +91,15 @@ KEV        PRT/MUCOUL
    1745.926  6.808E+04
    1772.170  7.993E+04
 ENDDATA             59
-ENDSUBENT           72
-SUBENT        O2210003   20140703   20150311   20150202       O053
-BIB                  4          4
+ENDSUBENT           73
+SUBENT        O2210003   20200831   20210105   20210104       O079
+BIB                  4          5
 REACTION   (11-NA-23(P,A)10-NE-20,PAR,MLT,G,TT/CH)
-EN-SEC     (E,G)
-DETECTOR   (NAICR) NaI(Tl)  for gamma-ray
-STATUS     (CURVE).Fig 2 of J,JRC,67,135,1981
-ENDBIB               4
+DETECTOR   (NAICR) NaI(Tl)  for gamma-ray, diam. and height 102 mm
+STATUS     (CURVE) Fig 2 of  J.Radioanalyt.Chem.,67(1981)135
+HISTORY    (20200831U) SD: EN-SEC deleted. DETECTOR, STATUS
+           updated.
+ENDBIB               5
 COMMON               1          3
 E
 KEV
@@ -157,80 +161,267 @@ KEV        PRT/MUCOUL
    1768.479  3.840E+03
    1804.319  4.119E+03
 ENDDATA             54
-ENDSUBENT           67
-SUBENT        O2210004   20140703   20150311   20150202       O053
-BIB                  5          6
-REACTION   (11-NA-23(P,INL)11-NA-23,PAR,SIG,G,,DERIV)
+ENDSUBENT           68
+SUBENT        O2210004   20200831   20210105   20210104       O079
+BIB                  7         18
+REACTION   (11-NA-23(P,INL)11-NA-23,PAR,SIG,,RES)
 ANALYSIS   The excitation functions of the this reaction  was
            derived from the thick target yield.
-DETECTOR   (NAICR) NaI(Tl)  for gamma-ray
-EN-SEC     (E,G)
-STATUS     (TABLE).Table 1 of  J,JRC,67,135,1981
-ENDBIB               6
-COMMON               1          3
-E
-KEV
-439.
+ADD-RES    Resonance widths are given, but they are the raw
+           experimental values; in particular, the width of the
+           incident proton spectrum and the thickness of the
+           targets have not been taken into account.
+ERR-ANALYS (DATA-ERR) This relatively large uncertainty has two
+           components essentially related to the imprecision
+           with which one can determine on the one hand the
+           concentration of sodium in the implanted area on the
+           other hand the true intensity of the incident beam.
+DETECTOR   (NAICR) NaI(Tl)  for gamma-ray, diam. and height 102 mm
+STATUS     (TABLE) Table 1 of  J.Radioanalyt.Chem.,67(1981)135
+HISTORY    (20200831A) SD: SF8=RES added; SF9=DERIV deleted from
+           REACTION code. EN-SEC deleted. DETECTOR, STATUS updated
+           updated. ADD-RES, ERR-ANALYS added. EN -> EN-RES,
+           DATA-MAX -> DATA.
+ENDBIB              18
+COMMON               2          3
+E-LVL      DATA-ERR
+KEV        PER-CENT
+  439.         20.
 ENDCOMMON            3
 DATA                 2          7
-EN         DATA-MAX
+EN-RES     DATA
 KEV        MB
-1283.      950.
-1330.      850.
-1364.      600.
-1412.      825.
-1460.      1025.
-1560.      400.
-1640.      1150.
+      1283.       950.
+      1330.       850.
+      1364.       600.
+      1412.       825.
+      1460.      1025.
+      1560.       400.
+      1640.      1150.
 ENDDATA              9
-ENDSUBENT           24
-SUBENT        O2210005   20140703   20150311   20150202       O053
-BIB                  5          6
-REACTION   (11-NA-23(P,A)10-NE-20,PAR,SIG,G,,DERIV)
-EN-SEC     (E,G)
-DETECTOR   (NAICR) NaI(Tl)  for gamma-ray
+ENDSUBENT           36
+SUBENT        O2210005   20200831   20210105   20210104       O079
+BIB                  7         18
+REACTION   (11-NA-23(P,A)10-NE-20,PAR,SIG,,RES)
 ANALYSIS   The excitation functions of the this reaction  was
            derived from the thick target yield.
-STATUS     (TABLE).Table 1 of  J,JRC,67,135,1981
-ENDBIB               6
+ADD-RES    Resonance widths are given, but they are the raw
+           experimental values; in particular, the width of the
+           incident proton spectrum and the thickness of the
+           targets have not been taken into account.
+DETECTOR   (NAICR) NaI(Tl)  for gamma-ray, diam. and height 102 mm
+ERR-ANALYS (DATA-ERR) This relatively large uncertainty has two
+           components essentially related to the imprecision
+           with which one can determine on the one hand the
+           concentration of sodium in the implanted area on the
+           other hand the true intensity of the incident beam.
+STATUS     (TABLE) Table 1 of  J.Radioanalyt.Chem.,67(1981)135
+HISTORY    (20200831A) SD: SF8=RES added; SF9=DERIV deleted from
+           REACTION code. EN-SEC deleted. DETECTOR, STATUS
+           updated. ADD-RES, ERR-ANALYS added. Data from
+           Subent 006 were added. EN -> EN-RES, DATA-MAX -> DATA.
+ENDBIB              18
 COMMON               1          3
-E
-KEV
-1634.
+DATA-ERR
+PER-CENT
+        20.
 ENDCOMMON            3
-DATA                 2         11
-EN         DATA-MAX
-KEV        MB
-1012.      45.
-1095.      5.
-1165.      180.
-1210.      100.
-1255.      60.
-1282.      75.
-1330.      270.
-1410.      230.
-1460.      50.
-1560.      45.
-1640.      260.
-ENDDATA             13
-ENDSUBENT           28
-SUBENT        O2210006   20140703   20150311   20150202       O053
-BIB                  4          4
-REACTION   (11-NA-23(P,A)10-NE-20,PAR,SIG,,,DERIV)
-EN-SEC     (E-LVL,10-NE-20)
-DETECTOR   (SIBAR)
-STATUS     (TABLE).Table 1 of  J,JRC,67,135,1981
-ENDBIB               4
-COMMON               1          3
-E-LVL
-KEV
-0.
+DATA                 3         13
+EN-RES     E-LVL      DATA
+KEV        KEV        MB
+       592.         0.       300.
+       919.         0.       500.
+      1012.      1634.        45.
+      1095.      1634.         5.
+      1165.      1634.       180.
+      1210.      1634.       100.
+      1255.      1634.        60.
+      1282.      1634.        75.
+      1330.      1634.       270.
+      1410.      1634.       230.
+      1460.      1634.        50.
+      1560.      1634.        45.
+      1640.      1634.       260.
+ENDDATA             15
+ENDSUBENT           42
+NOSUBENT      O2210006   20200831   20210105   20210104       O079
+SUBENT        O2210007   20200831   20210105   20210104       O079
+BIB                  6         13
+REACTION   (11-NA-23(P,A)10-NE-20,PAR,SIG)
+ANALYSIS   The excitation functions of the this reaction  was
+           derived from the thick target yield.
+DETECTOR   (NAICR) NaI(Tl)  for gamma-ray, diam. and height 102 mm
+ERR-ANALYS (DATA-ERR) This relatively large uncertainty has two
+           components essentially related to the imprecision
+           with which one can determine on the one hand the
+           concentration of sodium in the implanted area on the
+           other hand the true intensity of the incident beam.
+STATUS     (CURVE) fig.3 of  J.Radioanalyt.Chem.,67(1981)135
+           Data were taken from IBANDL:
+                     https://www-nds.iaea.org/exfor/ibandl.htm
+HISTORY    (20200831C) SD
+ENDBIB              13
+COMMON               2          3
+E-LVL      DATA-ERR
+KEV        PER-CENT
+  1634.        20.
 ENDCOMMON            3
-DATA                 2          2
-EN         DATA-MAX
+DATA                 2         54
+EN         DATA
 KEV        MB
-592.       300.
-919.       500.
-ENDDATA              4
-ENDSUBENT           17
-ENDENTRY             6
+      1016.        2.9
+      1036.        2.9
+      1055.        5.7
+      1078.        5.7
+      1096.       11.4
+      1117.       11.4
+      1136.       14.3
+      1156.       25.7
+      1178.       65.6
+      1198.       68.4
+      1218.       57.0
+      1238.       51.3
+      1271.       57.0
+      1284.      524.5
+      1286.      929.2
+      1291.      749.6
+      1297.      476.0
+      1300.      305.0
+      1318.      342.0
+      1325.      598.6
+      1330.      718.3
+      1330.      846.6
+      1335.      749.6
+      1340.      601.4
+      1351.      501.7
+      1362.      601.4
+      1370.      524.5
+      1380.      305.0
+      1384.      225.2
+      1396.      381.9
+      1403.      647.0
+      1410.      829.5
+      1420.      746.8
+      1441.      561.5
+      1452.      704.0
+      1463.     1029.0
+      1471.      758.2
+      1472.      498.8
+      1482.      427.6
+      1494.      424.7
+      1502.      396.2
+      1523.      347.7
+      1542.      279.3
+      1549.      356.3
+      1561.      404.8
+      1578.      305.0
+      1593.      327.8
+      1623.      450.4
+      1638.      647.0
+      1642.      895.0
+      1646.     1154.4
+      1654.      795.2
+      1661.      724.0
+      1663.      752.5
+ENDDATA             56
+ENDSUBENT           78
+SUBENT        O2210008   20200831   20210105   20210104       O079
+BIB                  5         11
+REACTION   (11-NA-23(P,A)10-NE-20,PAR,SIG)
+DETECTOR   (SIBAR) Surface barrier detector ( 120 mm2; thickness:
+           500 mu-m) positioned at 130 degr. relative to the
+           incident beam.
+ERR-ANALYS (DATA-ERR) This relatively large uncertainty has two
+           components essentially due to sodium concentration in
+           the implanted area and beam intensity.
+STATUS     (CURVE) fig.4 of  J.Radioanalyt.Chem.,67(1981)135
+           Data were taken from IBANDL:
+                     https://www-nds.iaea.org/exfor/ibandl.htm
+HISTORY    (20200831C) SD
+ENDBIB              11
+COMMON               2          3
+E-LVL      DATA-ERR
+KEV        PER-CENT
+ 1634.       20.
+ENDCOMMON            3
+DATA                 2         75
+EN         DATA
+KEV        MB
+      1010.       10.2
+      1013.       27.5
+      1015.       47.5
+      1019.        1.6
+      1027.        0.2
+      1037.        0.2
+      1047.        0.2
+      1056.        0.2
+      1067.        0.0
+      1077.        0.3
+      1083.        1.1
+      1094.        5.1
+      1101.        1.4
+      1108.        0.6
+      1118.        0.0
+      1128.        0.2
+      1137.        0.8
+      1147.        2.4
+      1159.       24.5
+      1163.      113.0
+      1167.      182.6
+      1169.      101.2
+      1171.       53.0
+      1177.       26.9
+      1185.       23.7
+      1194.       22.9
+      1203.       22.1
+      1215.       89.3
+      1224.       34.8
+      1228.       22.9
+      1236.       22.9
+      1246.       26.1
+      1254.       60.1
+      1258.       52.2
+      1263.       40.3
+      1273.       31.6
+      1282.       78.3
+      1285.       61.7
+      1288.       37.2
+      1296.       28.5
+      1304.       28.5
+      1319.       32.4
+      1324.      161.3
+      1333.      269.6
+      1342.      241.1
+      1346.      222.9
+      1358.      161.3
+      1360.      141.5
+      1371.      110.7
+      1382.      104.3
+      1390.      105.9
+      1399.      184.2
+      1410.      221.3
+      1421.      162.1
+      1426.      112.3
+      1429.       75.1
+      1433.       44.3
+      1437.       31.6
+      1450.       19.8
+      1462.       51.4
+      1465.       44.3
+      1471.       33.2
+      1481.       25.3
+      1497.       22.1
+      1518.       25.3
+      1533.       18.2
+      1551.       19.0
+      1565.       24.5
+      1579.       27.7
+      1599.       49.0
+      1613.       74.3
+      1626.      120.9
+      1642.      260.1
+      1649.      236.4
+      1655.      200.0
+ENDDATA             77
+ENDSUBENT           97
+ENDENTRY             8

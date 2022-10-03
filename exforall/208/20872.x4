@@ -1,44 +1,45 @@
-ENTRY            20872   20070409   20070521   20070506       2184
-SUBENT        20872001   20070409   20070521   20070506       2184
-BIB                 15         30
-INSTITUTE  (2JPNTOH)
-REFERENCE  (C,78HARWELL,,198,197809) Experimental details. Graphs.
+ENTRY            20872   20200911   20210105   20210104       2291
+SUBENT        20872001   20200911   20210105   20210104       2291
+BIB                 14         31
+TITLE       The interactions of fast neutrons with Be-9
+AUTHOR     (M.Baba,T.Sakase,T.Nishitani,T.Yamada,T.Momota)
+REFERENCE  (C,78HARWELL,,198,1978) Experimental details. Graphs.
            (W,BABA,197904) Data from private communication.
            (R,NETU-27,17,1979) Internal report, Tohoku Univ.
-AUTHOR     (M.Baba,T.Sakase,T.Nishitani,T.Yamada,T.Momota)
-TITLE      -The interactions of fast neutrons with be-9-.
-FACILITY   (DYNAM) 4.5 MeV dynamitron accelerator with nano-
-            second pulsing system.
-INC-SOURCE (D-D  )
-           (D-T  ) For 15.4 MeV neutrons.
-SAMPLE     .Metallic beryllium cylinder, 2 cm diameter and
+INSTITUTE  (2JPNTOH)
+FACILITY   (DYNAM,2JPNTOH) 4.5 MeV dynamitron accelerator with
+            nano-second pulsing system.
+INC-SOURCE (D-D)
+           (D-T) For 15.4 MeV neutrons.
+SAMPLE      Metallic beryllium cylinder, 2 cm diam. and
             3 cm long.
-METHOD     (TOF  ) Time of flight.
-DETECTOR   (SCIN ) Ne213 liquide scintillator with N-g
+METHOD     (TOF)
+DETECTOR   (SCIN) NE213 liquid scintillator with n-gamma
             discrimination.
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG) No data given.
-PART-DET   (N)     Neutrons.
-CORRECTION .Corrections for background(sample dependent),
+CORRECTION  Corrections for background(sample dependent),
             flux attenuation and multiple scattering have been
             applied.
-ERR-ANALYS .Uncertainties in counting statistics, detector
-            efficiency, normalization, yield extrapolation and
-            MONTE CARLO statistics have been taken into account.
-STATUS     (APRVD) Data taken from private communication with
+ERR-ANALYS (DATA-ERR) Uncertainties in counting statistics,
+            detector efficiency, normalization, yield
+            extrapolation and Monte Carlo statistics have been
+            taken into account.
+STATUS     (TABLE) Data taken from private communication with
             author.
+           (APRVD)
 HISTORY    (19790424C) CN.
-           (19790518E)
            (19840106E)
            (19860210E)
            (20070314A) Date is corrected. And several errors - SM
-ENDBIB              30
+           (20200911A) SD: Corrections in all Subents.
+ENDBIB              31
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        20872002   20070409   20070521   20070506       2184
-BIB                  2          3
+ENDSUBENT           34
+SUBENT        20872002   20200911   20210105   20210104       2291
+BIB                  3          3
 REACTION   (4-BE-9(N,EL)4-BE-9,,SIG)
-           .Angle integrated cross section.
-STATUS     .Data from private communication.
+ANALYSIS   (INTAD)
+HISTORY    (20200911U) SD: ANALYSIS added, STATUS deleted.
 ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          6
@@ -52,12 +53,13 @@ MEV        MB         MB
  1.5400E+01 9.0800E+02 9.0000E+01
 ENDDATA              8
 ENDSUBENT           16
-SUBENT        20872003   20070409   20070521   20070506       2184
-BIB                  3          3
-REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG)
-STATUS     .Data from private communication.
+SUBENT        20872003   20200911   20210105   20210104       2291
+BIB                  2          4
+REACTION   (4-BE-9(N,X)2-HE-4,,SIG)
 HISTORY    (20070314A)   Reaction code corrected
-ENDBIB               3
+           (20200911A) SD: SF3=2N+A -> X in REACTION code.
+            STATUS deleted.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          5
 EN         DATA       DATA-ERR
@@ -68,32 +70,33 @@ MEV        MB         MB
  7.0500E+00 2.9500E+02 5.0000E+01
  1.5400E+01 1.1900E+02 1.9000E+01
 ENDDATA              7
-ENDSUBENT           15
-SUBENT        20872004   20070409   20070521   20070506       2184
-BIB                  4          6
-REACTION   (4-BE-9(N,2N+A)2-HE-4,,SIG)
-           .Angle integrated cross section.
-FLAG       (1.) Cross section calculated as total-elastic-(N,a0),
-            where total and (N,a0) data from ENDF/B-IV.
-STATUS     .Data from private communication.
+ENDSUBENT           16
+SUBENT        20872004   20200911   20210105   20210104       2291
+BIB                  4          7
+REACTION   (4-BE-9(N,X)2-HE-4,,SIG)
+ANALYSIS   (INTAD)
+FLAG       (1.) Cross section calculated as total-elastic-(n,a0),
+            where total and (n,a0) data from ENDF/B-IV.
 HISTORY    (20070314A)   Reaction code corrected
-ENDBIB               6
+           (20200911A) SD: SF3=2N+A -> X in REACTION code.
+           ANALYSIS added, STATUS deleted.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          6
 EN         DATA       DATA-ERR   FLAG
 MEV        MB         MB         NO-DIM
- 3.2600E+00 5.1000E+02            1.0000E+00
- 3.9000E+00 4.8100E+02            1.0000E+00
+ 3.2600E+00 5.1000E+02            1.
+ 3.9000E+00 4.8100E+02            1.
  4.5000E+00 4.5400E+02 9.5000E+01
  6.4000E+00 6.2800E+02 1.1000E+02
  7.0500E+00 5.7600E+02 1.2000E+02
  1.5400E+01 5.1000E+02 7.7000E+01
 ENDDATA              8
-ENDSUBENT           19
-SUBENT        20872005   20070409   20070521   20070506       2184
+ENDSUBENT           20
+SUBENT        20872005   20200911   20210105   20210104       2291
 BIB                  2          2
 REACTION   (4-BE-9(N,EL)4-BE-9,,DA)
-STATUS     .Data from private communication.
+HISTORY    (20200911U) SD: STATUS deleted.
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 4         39
@@ -140,10 +143,10 @@ MEV        NO-DIM     MB/SR      MB/SR
  1.5400E+01-8.1900E-01 4.3000E+00 3.0000E-01
 ENDDATA             41
 ENDSUBENT           48
-SUBENT        20872006   20070409   20070521   20070506       2184
+SUBENT        20872006   20200911   20210105   20210104       2291
 BIB                  2          2
 REACTION   (4-BE-9(N,INL)4-BE-9,PAR,DA)
-STATUS     .Data from private communication.
+HISTORY    (20200911U) SD: STATUS deleted.
 ENDBIB               2
 COMMON               2          3
 E-LVL-MIN  E-LVL-MAX
@@ -187,11 +190,12 @@ MEV        NO-DIM     MB/SR      MB/SR
  1.5400E+01-8.1400E-01 4.0000E+00 6.0000E-01
 ENDDATA             34
 ENDSUBENT           45
-SUBENT        20872007   20070409   20070521   20070506       2184
-BIB                  2          2
-REACTION   (4-BE-9(N,INL)4-BE-9,,DA/DE)
-STATUS     .Data from private communication.
-ENDBIB               2
+SUBENT        20872007   20200911   20210105   20210104       2291
+BIB                  2          3
+REACTION   (4-BE-9(N,X)0-NN-1,,DA/DE)
+HISTORY    (20200911A) SD: SF3=INL -> X; SF4=Be-9 -> NN-1 in
+           REACTION code. STATUS deleted.
+ENDBIB               3
 COMMON               1          3
 ANG
 ADEG
@@ -218,12 +222,13 @@ MEV        MEV        MEV        MB/SR/MEV  MB/SR/MEV
  3.9000E+00 2.0000E+00 2.2000E+00 7.5000E+00 1.9000E+00
  3.9000E+00 2.2000E+00 2.4000E+00 7.0000E+00 1.7000E+00
 ENDDATA             19
-ENDSUBENT           30
-SUBENT        20872008   20070409   20070521   20070506       2184
-BIB                  2          2
-REACTION   (4-BE-9(N,INL)4-BE-9,,DA/DE)
-STATUS     .Data from private communication.
-ENDBIB               2
+ENDSUBENT           31
+SUBENT        20872008   20200911   20210105   20210104       2291
+BIB                  2          3
+REACTION   (4-BE-9(N,X)0-NN-1,,DA/DE)
+HISTORY    (20200911A) SD: SF3=INL -> X; SF4=Be-9 -> NN-1 in
+           REACTION code. STATUS deleted.
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -278,12 +283,13 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
  1.3640E+02 1.2000E+00 1.4000E+00 1.6000E+01 2.8000E+00
  1.3640E+02 1.4000E+00 1.6000E+00 8.9000E+00 2.1000E+00
 ENDDATA             47
-ENDSUBENT           58
-SUBENT        20872009   20070409   20070521   20070506       2184
-BIB                  2          2
-REACTION   (4-BE-9(N,INL)4-BE-9,,DA/DE)
-STATUS     .Data from private communication.
-ENDBIB               2
+ENDSUBENT           59
+SUBENT        20872009   20200911   20210105   20210104       2291
+BIB                  2          3
+REACTION   (4-BE-9(N,X)0-NN-1,,DA/DE)
+HISTORY    (20200911A) SD: SF3=INL -> X; SF4=Be-9 -> NN-1 in
+           REACTION code. STATUS deleted.
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -389,12 +395,13 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
  1.3640E+02 2.6000E+00 2.8000E+00 1.7000E+01 2.1000E+00
  1.3640E+02 2.8000E+00 3.0000E+00 5.6000E+00 8.0000E-01
 ENDDATA             98
-ENDSUBENT          109
-SUBENT        20872010   20070409   20070521   20070506       2184
-BIB                  2          2
-REACTION   (4-BE-9(N,INL)4-BE-9,,DA/DE)
-STATUS     .Data from private communication.
-ENDBIB               2
+ENDSUBENT          110
+SUBENT        20872010   20200911   20210105   20210104       2291
+BIB                  2          3
+REACTION   (4-BE-9(N,X)0-NN-1,,DA/DE)
+HISTORY    (20200911A) SD: SF3=INL -> X; SF4=Be-9 -> NN-1 in
+           REACTION code. STATUS deleted.
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -505,12 +512,13 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
  1.3640E+02 3.2000E+00 3.4000E+00 5.9000E+00 1.2000E+00
  1.3640E+02 3.4000E+00 3.6000E+00 3.5000E+00 1.4000E+00
 ENDDATA            103
-ENDSUBENT          114
-SUBENT        20872011   20070409   20070521   20070506       2184
-BIB                  2          2
-REACTION   (4-BE-9(N,INL)4-BE-9,,DA/DE)
-STATUS     .Data from private communication.
-ENDBIB               2
+ENDSUBENT          115
+SUBENT        20872011   20200911   20210105   20210104       2291
+BIB                  2          3
+REACTION   (4-BE-9(N,X)0-NN-1,,DA/DE)
+HISTORY    (20200911A) SD: SF3=INL -> X; SF4=Be-9 -> NN-1 in
+           REACTION code. STATUS deleted.
+ENDBIB               3
 COMMON               1          3
 EN
 MEV
@@ -619,5 +627,5 @@ ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
  1.4000E+02 8.0000E+00 9.0000E+00 4.6000E+00 1.8000E+00
  1.4000E+02 9.0000E+00 1.0000E+01 1.1000E+00 4.0000E-01
 ENDDATA            101
-ENDSUBENT          112
+ENDSUBENT          113
 ENDENTRY            11

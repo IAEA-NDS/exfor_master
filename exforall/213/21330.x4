@@ -1,54 +1,63 @@
-ENTRY            21330   20170805   20180124   20180123       2263
-SUBENT        21330001   20170805   20180124   20180123       2263
-BIB                 12         26
-INSTITUTE  (2UK ALD)
+ENTRY            21330   20200925   20210105   20210104       2291
+SUBENT        21330001   20200925   20210105   20210104       2291
+BIB                 13         35
+TITLE       Gamma rays from neutron inelastic scattering in
+            germanium
+AUTHOR     (J.F.Barry)
 REFERENCE  (C,66PARIS,1,365,1966) Abstract of CN-23/59.
            (S,INDC-156,(CN-23/59),1967) Supplement to the
             Proceedings of a Conference, Paris, 17-21 Oct.1966
-AUTHOR     (J.F.Barry)
-TITLE       Gamma rays from neutron inelastic scattering in
-            germanium
-FACILITY   (VDG,2UK ALD) Van de Graaff.
-INC-SOURCE (D-T) Tritium gas cell through a 2 mgm/cm2 nickel
+             - data only on figs.
+INSTITUTE  (2UK ALD)
+FACILITY   (VDG,2UK ALD)
+INC-SOURCE (D-T) Tritium gas cell through a 2 mg/cm2 nickel
            window which was supported on a gold grid.
+INC-SPECT  (EN-RSL-HW) Energy spread value
 SAMPLE     The germanium crystal used as both target and detector
            had. an area of ~ 1.5 cm2 and a thickness of ~1 cm.
-METHOD     .Detection of inelastic gammas. The cross section for
+METHOD      Detection of inelastic gammas. The cross section for
             inelastic scattering to the pair of levels near 5
             80 keV using a neutron detection method.
-DETECTOR   (GELI) Li-drifted germanium crystal.
+DETECTOR   (GELI)
            (FISCH) The neutron flux at each energy was measured
            with a fission counter containing a known mass of 237Np
-           (LONGC) A Long Counter 1.5 m from the target monitored
+           (LONGC) A long counter 1.5 m from the target monitored
            neutrons from the reaction at 45. degr.
-ERR-ANALYS .No uncertainties quoted.
-STATUS     (NDD)
+CORRECTION Corrections were made to the neutron flux deduced at
+           the detector position to allow for neutron attenuation
+           and scattering. The attenuation of neutrons in the
+           aluminium vacuum container was calculated to be 4.5%
+           scattering from the cold finger materials 4%.
+ERR-ANALYS (ERR-1) error from neutron flux determination
+           (ERR-2,2.,10.) error due gamma-ray yield determination
 HISTORY    (19800206T)
-           (20170805A) SD:Updated to new date formats,lower case.
+           (20170805A) SD:Updated to new date formats, lower case.
            Meaningless zeros were deleted from the data. Refs
            update. BIB update.
-ENDBIB              26
-COMMON               1          3
-EN-RSL
-KEV
- 50.
+           (20200925A) SD: Corrections in all Subents. BIB updated
+           EN-RSL -> EN-RSL-HW.
+ENDBIB              35
+COMMON               2          3
+EN-RSL-HW  ERR-1
+KEV        PER-CENT
+ 50.           10.
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        21330002   20170805   20180124   20180123       2263
-BIB                  3          8
-REACTION   (32-GE-73(N,INL)32-GE-73,PAR,SIG,G,A) Partial inelastic
-            gamma cross section times fractional isotopic
-            abundance.
-MONITOR    (32-GE-76(N,INL)32-GE-76,PAR,SIG) Cross section for
+ENDSUBENT           42
+SUBENT        21330002   20200925   20210105   20210104       2291
+BIB                  4          8
+REACTION   (32-GE-73(N,INL)32-GE-73,PAR,SIG,G,A)
+MONITOR    (32-GE-0(N,INL)32-GE-0,PAR,SIG) Cross section for
             excitation of 565 keV level in Ge-76 and 595 keV level
             in Ge-74 in natural Ge taken as 0.36 barns
             at 1 MeV from private communication of A.B.Smith.
 STATUS     (NDD)
+HISTORY    (20200925A) SD: SF1=SF4=Ge-76 -> Ge-0 in MONITOR code.
+           EN-NRM, E-NRM1/NRM2 added.
 ENDBIB               8
-COMMON               2          3
-E          MONIT
-KEV        B
- 365.        0.36
+COMMON               5          3
+EN-NRM     E          E-NRM1     E-NRM2     MONIT
+MEV        KEV        KEV        KEV        B
+       1.    365.       565.      595.        0.36
 ENDCOMMON            3
 DATA                 2         13
 EN         DATA
@@ -68,18 +77,15 @@ MEV        B
        1.70      0.065
 ENDDATA             15
 ENDSUBENT           32
-SUBENT        21330003   20170805   20180124   20180123       2263
-BIB                  3          9
-REACTION   (32-GE-72(N,INL)32-GE-72,PAR,SIG,G,REL) Partial
-            inelastic gamma cross section relative to
-            a value of 0.36 b for excitation of this level and
-            the 595 keV level in Ge-74 at 1 MeV on natural
-            germanium.
+SUBENT        21330003   20200925   20210105   20210104       2291
+BIB                  4          6
+REACTION   (32-GE-72(N,INL)32-GE-72,PAR,SIG,G,REL)
 STATUS     (NDD)
-ERR-ANALYS .Gamma line due to 100% internal conversion.
+COMMENT     Gamma line due to 100% isomeric transition.
             Uncertainty in depletion depth in Ge(Li) makes
             normalization impossible.
-ENDBIB               9
+HISTORY    (20200925U) SD: BIB updated. ERR-ANALYS -> COMMENT.
+ENDBIB               6
 COMMON               1          3
 E
 KEV
@@ -109,16 +115,13 @@ MEV        ARB-UNITS
        2.00      0.280
        2.43      0.231
 ENDDATA             22
-ENDSUBENT           40
-SUBENT        21330004   20170805   20180124   20180123       2263
-BIB                  2          6
-REACTION   (32-GE-76(N,INL)32-GE-76,PAR,SIG,G,REL) Relative
-            partial inelastic gamma cross section, normalized to
-           0.36 b at 1 MeV for excitation of the 565 keV level in
-           Ge-76 and the 595 keV level in Ge-74 in natural
-           germanium.
+ENDSUBENT           37
+SUBENT        21330004   20200925   20210105   20210104       2291
+BIB                  3          3
+REACTION   (32-GE-76(N,INL)32-GE-76,PAR,SIG,G,REL)
 STATUS     (NDD)
-ENDBIB               6
+HISTORY    (20200925U) SD: BIB updated.
+ENDBIB               3
 COMMON               1          3
 E
 KEV
@@ -148,22 +151,22 @@ MEV        ARB-UNITS
  2.0000E+00 8.1800E-01
  2.4300E+00 4.9200E-01
 ENDDATA             22
-ENDSUBENT           37
-SUBENT        21330005   20170805   20180124   20180123       2263
-BIB                  3          8
-REACTION   (32-GE-70(N,INL)32-GE-70,PAR,SIG,G,A) Partial
-            inelastic gamma cross section times fractional
-            isotopic abundance.
-MONITOR    (32-GE-76(N,INL)32-GE-76,PAR,SIG) Cross section for
+ENDSUBENT           34
+SUBENT        21330005   20200925   20210105   20210104       2291
+BIB                  4          8
+REACTION   (32-GE-70(N,INL)32-GE-70,PAR,SIG,G,A)
+MONITOR    (32-GE-0(N,INL)32-GE-0,PAR,SIG) Cross section for
             excitation of the 565 and 595 keV levels in Ge-76
             and in Ge-74 from irradiation of natural germanium
             as 0.36 B from private communication of A.B.Smith.
 STATUS     (NDD)
+HISTORY    (20200925A) SD: SF1=SF4=Ge-76 -> Ge-0 in MONITOR code.
+           EN-NRM, E-NRM added.
 ENDBIB               8
-COMMON               2          3
-E          MONIT
-KEV        B
-  1040.      0.36
+COMMON               5          3
+EN-NRM     E          E-NRM      E-NRM      MONIT
+MEV        KEV        KEV        KEV        B
+         1.      1040.      565.      595.      0.36
 ENDCOMMON            3
 DATA                 2         10
 EN         DATA
@@ -180,21 +183,21 @@ MEV        B
        2.43      0.250
 ENDDATA             12
 ENDSUBENT           29
-SUBENT        21330006   20170805   20180124   20180123       2263
-BIB                  3          8
-REACTION   (32-GE-74(N,INL)32-GE-74,PAR,SIG,G,A) Partial
-            inelastic gamma cross section times fractional
-            isotopic abundance.
-MONITOR    (32-GE-76(N,INL)32-GE-76,PAR,SIG) Cross section for
+SUBENT        21330006   20200925   20210105   20210104       2291
+BIB                  4          8
+REACTION   (32-GE-74(N,INL)32-GE-74,PAR,SIG,G,A)
+MONITOR    (32-GE-0(N,INL)32-GE-0,PAR,SIG) Cross section for
             excitation of 565 level in Ge-76 and 595 level in
             Ge-74 taken as 0.36 b from private communication of
             A.B.Smith.
 STATUS     (NDD)
+HISTORY    (20200925A) SD: SF1=SF4=Ge-76 -> Ge-0 in MONITOR code.
+           EN-NRM, E-NRM added.
 ENDBIB               8
-COMMON               2          3
-E          MONIT
-KEV        B
-  595.       0.36
+COMMON               5          3
+EN-NRM     E          E-NRM      E-NRM      MONIT
+MEV        KEV        KEV        KEV        B
+         1.       595.      565.      595.      0.36
 ENDCOMMON            3
 DATA                 2         20
 EN         DATA

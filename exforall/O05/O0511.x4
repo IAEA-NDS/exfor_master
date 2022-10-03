@@ -1,58 +1,69 @@
-ENTRY            O0511   20080402   20080828   20080828       O036
-SUBENT        O0511001   20080402   20080828   20080828       O036
-BIB                 13         35
+ENTRY            O0511   20200902   20210105   20210104       O079
+SUBENT        O0511001   20200902   20210105   20210104       O079
+BIB                 13         44
 TITLE      Continuum protons from the inclusive reaction
            Au-197(p,p') at incident energies between 100 and
             200 MeV.
 AUTHOR     (A.A.Cowley, S.V.Fortsch, J.J.Lawrie, D.M.Whittal,
            F.D.Smit, J.V.Pilcher)
 INSTITUTE  (3SAFNAC)
-REFERENCE  (J,ZP/A,336,189,1990)
-           (J,PR/C,48,743,1993)
-           (J,EUL,13,37,1990)
-HISTORY    (19990323C)
-           (19990516U) Last checking has been done.
-           (19991117A) Date is corrected
-           (20080402A) New references was added as reported
-            S.Dunaeva.
-REL-REF    (R,,J.V.PILCHER+,J,PR/C,40,1937,1989).Details of
+REFERENCE  (J,ZP/A,336,189,1990) - full dataset
+           (J,PR/C,48,743,1993) - triple diff.cr.sect. at 200 MeV
+           (J,EUL,13,37,1990) - triple diff.cr.sect. at 200 MeV
+REL-REF    (M,,J.V.Pilcher+,J,PR/C,40,1937,1989).Details of
            experiments.
 SAMPLE     A high purity (99.9%) gold foil of thickness 4.02+-
             4.02+-0.10 mg/cm**2,with a uniformity of better than
            0.5%/mm, were used as target.
-ADD-RES    (COMP).The phenomenological parametrization of Kalbach.
-DETECTOR   (TELES).The detector telescope consisted of a 1000 mum
-           Si(delta-E) detector, followed by a 75*125 mm
-           NaI(E) detector. Correction for reaction loss from the
-           NaI detector were performed on the delta-E versus
+DETECTOR   (TELES,SI,NAICR) The detector telescope consisted of
+           a 1000 mum Si(delta-E) detector, followed by a 75*125
+           mm NaI(E) detector. Correction for reaction loss from
+           the NaI detector were performed on the delta-E versus
            E-spectra.
 FACILITY   (CYCLO,3SAFNAC)
-METHOD     (SITA)
-           (EDE)
-ERR-ANALYS (ERR-1).A systematic error in the cross section
-           measurements.
-           (ERR-2).A relative uncertainty in the cross section
-           measurements.
-           (EN-ERR).The uncertainty is reported by authors.
-           Less than 0.5 MeV.
-STATUS     (TABLE) From A.A. Cowley.
-ENDBIB              35
-COMMON               3          3
-EN-ERR     ERR-1      ERR-2
-MEV        PER-CENT   PER-CENT
-        0.5        10.         8.
+METHOD     (SITA,EDE)
+ADD-RES    (COMP) The phenomenological parametrization of Kalbach.
+ERR-ANALYS (ERR-SYS) Systematic error. Important contributions:
+           (ERR-1) The uncertainty in the thickness of the target
+           (ERR-2) The uncertainty in the solid angle
+           (ERR-3) The overall energy uncertainty over the
+              entire range
+           (ERR-4,,5.) The total error in the particle
+           identification procedure
+           (ERR-5,,3.)  The error introduced by the subtraction of
+            random coincidence events
+           (ERR-6,,2.)  Uncertainties due to the beam current
+            integrator, due to electronic dead time, and due to
+           contributions to the relevant regions of the
+           two-dimensional energy histograms from slit scattering
+           off collimators
+STATUS     (TABLE) From Dr. A.A. Cowley.
+HISTORY    (19990323C)
+           (19990516U) Last checking has been done.
+           (19991117U) Date is corrected
+           (20080402U) New references were added.
+           (20200902A) SD: Corrections in all Subents.
+           ERR-1 -> ERR-SYS; ERR-2 -> ERR-S (moved to Subent 002).
+            (confirmed by A.A.Cowley, 2020-09-02).
+ENDBIB              44
+COMMON               5          3
+EN-ERR     ERR-SYS    ERR-1      ERR-2      ERR-3
+MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT
+        0.5        10.         3.         1.         4.
 ENDCOMMON            3
-ENDSUBENT           42
-SUBENT        O0511002   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (79-AU-197(P,INL)79-AU-197,EM,DA/DE)
-EN-SEC     (E,P)
-PART-DET   (P)
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-ENDBIB               4
-NOCOMMON
+ENDSUBENT           51
+SUBENT        O0511002   20200902   20210105   20210104       O079
+BIB                  3          6
+REACTION   (79-AU-197(P,X)1-H-1,,DA/DE)
+ERR-ANALYS (ERR-S) Statistical uncertainty
+HISTORY    (20200902A) SD: SF3=INL -> X; SF4=Au-197 -> H-1;
+           SF5=EM deleted from REACTION code  (confirmed by
+           A.A.Cowley, 2020-06-15). EN-SEC, PART-DET deleted.
+           ERR-ANALYS updated. ERR-T -> ERR-S.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5        424
-EN         ANG        E          DATA       ERR-T
+EN         ANG        E          DATA       ERR-S
 MEV        ADEG       MEV        MB/SR/MEV  MB/SR/MEV
        100.        15.        40.    3.83357    0.08189
        100.        15.        50.    3.92443    0.08156
@@ -479,5 +490,5 @@ MEV        ADEG       MEV        MB/SR/MEV  MB/SR/MEV
        200.       120.       120.     0.0055    0.00099
        200.       120.       150.    0.00035    0.00025
 ENDDATA            426
-ENDSUBENT          435
+ENDSUBENT          437
 ENDENTRY             2
