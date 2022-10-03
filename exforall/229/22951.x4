@@ -1,8 +1,8 @@
-ENTRY            22951   20070208   20070521   20070506       2184
-SUBENT        22951001   20070208   20070521   20070506       2184
-BIB                 12         41
-TITLE      .Neutron-neutron final state interaction in the
-            H-2(N,P)2N reaction at EN = 17.4-MeV.
+ENTRY            22951   20220102   20220319   20220317       2307
+SUBENT        22951001   20220102   20220319   20220317       2307
+BIB                 12         42
+TITLE       Neutron-neutron final state interaction in the
+            H-2(n,p)2n reaction at En = 17.4-MeV.
 AUTHOR     (W.Von Witsch, X.Ruan, H.Witala)
 INSTITUTE  (2GERBON)  Von Witsch
            (3CPRAEP)  Ruan
@@ -10,7 +10,7 @@ INSTITUTE  (2GERBON)  Von Witsch
 REFERENCE  (J,PR/C,74,014001,2006)  Main reference
 METHOD     (EDE,COINC)
 FACILITY   (CYCLO,2GERBON)
-SAMPLE     .The target consisted of a 10-mm long steel cylinder
+SAMPLE      The target consisted of a 10-mm long steel cylinder
            lined with graphite on the inside and had a diameter
            of 10-mm, which was closed at both ends with nominally
             75-mum-thick kapton foils and filled with deuterium
@@ -22,10 +22,10 @@ INC-SOURCE (D-D) The neutron beam was produced via
             the H-2(d,N)He-3 reaction with 15-MeV deuterons
             incident on a 42-mm long gas target, which was closed
             with 10 mu-meter thick Havar foils.
-INC-SPECT  .At a typical deuteron beam intensity of 500-Na, the
+INC-SPECT   At a typical deuteron beam intensity of 500-Na, the
             high-energy neutron flux in the monoenergetic peak
-            from the d(d,N)He-3 reaction was 2.9e+6/S/cm**2 at the
-            scattering target with an average energy EN=17.36 MeV
+            from the d(d,n)He-3 reaction was 2.9E+6/S/cm**2 at the
+            scattering target with an average energy En=17.36 MeV
             and an energy spread of 170 keV(FWHM)
 DETECTOR   (TELES,SIBAR,SIBAR)   A counter telescope consisting
              of three 150 mm2 Si-surface barrier detectors,
@@ -42,24 +42,24 @@ ADD-RES    (COMP) MONTE-CARLO simulations based on rigorous three
             interaction.
 HISTORY    (20070131C) SM/MM
            (20070309A) Last corrections have been done - SM.
-ENDBIB              41
+           (20220102A) SD: Correction in Subent 002.
+ENDBIB              42
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        KEV
       17.36       170.
 ENDCOMMON            3
-ENDSUBENT           48
-SUBENT        22951002   20070310   20070521   20070506       2184
-BIB                  4          8
-REACTION   (1-H-2(N,X)1-H-1,,DE,,RAW)      Number of counts per
+ENDSUBENT           49
+SUBENT        22951002   20220102   20220319   20220317       2307
+BIB                  5          7
+REACTION   (1-H-2(N,2N)1-H-1,,DE,P,RAW)    Number of counts per
                                            channel
-ERR-ANALYS (E-ERR-DIG)  Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error of Data given on the graph
-STATUS     (CURVE) Fig.3 of main reference
 FLAG       (1.) Data used to extract neutron-neutron scattering
                 length (Full squares of Fig. 3).
-ENDBIB               8
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE) Fig.3 of Phys.Rev.,C74(2006)014001
+HISTORY    (20220102A) SD: SF3=X -> 2N; SF7=P in REACTION code.
+ENDBIB               7
 COMMON               2          3
 E-ERR-DIG  ERR-DIG
 MEV        ARB-UNITS
@@ -112,49 +112,49 @@ MEV        ARB-UNITS  ARB-UNITS  NO-DIM
  14.734      2240.0       72.37      1.
  14.816      1702.4       51.69      1.
 ENDDATA             45
-ENDSUBENT           62
-SUBENT        22951003   20070208   20070521   20070506       2184
-BIB                  4         11
+ENDSUBENT           61
+SUBENT        22951003   20220102   20220319   20220317       2307
+BIB                  6          8
 REACTION   (0-NN-1(N,EL)0-NN-1,BA,AMP,,RAW,DERIV)
-ANALYSIS   .Data obtained from analysis of proton spectra
-STATUS     .Footnote on page 014001-4 of main reference
+ANALYSIS    Data obtained from analysis of proton spectra
+MISC-COL   (MISC) Proton energy
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE) Footnote on page 014001-4 of of
+                                       Phys.Rev.,C74(2006)014001
            (DEP,22951002)
-FLAG       (1.)  Proton energy is    14.225  MeV
-           (2.)  Proton energy is    14.321  MeV
-           (3.)  Proton energy is    14.432  MeV
-           (4.)  Proton energy is    14.528  MeV
-           (5.)  Proton energy is    14.624  MeV
-           (6.)  Proton energy is    14.734  MeV
-           (7.)  Proton energy is    14.816  MeV
-ENDBIB              11
+HISTORY    (20220102A) SD: FLAG -> MISC. STATUS updated.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          7
-DATA       DATA-ERR   FLAG
-FERMI      FERMI      NO-DIM
-      -19.2       11.4      1.
-      -11.6        4.0      2.
-      -19.1        2.4      3.
-      -15.6        1.5      4.
-      -17.0        1.7      5.
-      -16.2        1.5      6.
-      -17.0        1.3      7.
+DATA       DATA-ERR   MISC
+FERMI      FERMI      MEV
+      -19.2       11.4   14.225
+      -11.6        4.0   14.321
+      -19.1        2.4   14.432
+      -15.6        1.5   14.528
+      -17.0        1.7   14.624
+      -16.2        1.5   14.734
+      -17.0        1.3   14.816
 ENDDATA              9
-ENDSUBENT           25
-SUBENT        22951004   20070208   20070521   20070506       2184
-BIB                  3         12
+ENDSUBENT           22
+SUBENT        22951004   20220102   20220319   20220317       2307
+BIB                  5         15
 REACTION  1(0-NN-1(N,EL)0-NN-1,BA,AMP,,,DERIV)
           2(0-NN-1(N,EL)0-NN-1,BA,AMP,,,DERIV)
           3(0-NN-1(N,EL)0-NN-1,BA,AMP,,,DERIV)
-METHOD    1(ASSOP) .Data obtained from analysis based on
-            calculations with "CD-Bonn" NN potential
-          2(ASSOP) .Data obtained from analysis based on
-            calculations with "Nijm I" NN potential
-          3(ASSOP) .Data obtained from analysis based on
-            calculations with "Bonn-B" NN potential
-STATUS     .From text of main reference
+METHOD    1. Data obtained from analysis based on
+                calculations with "CD-Bonn" NN potential
+          2. Data obtained from analysis based on
+                calculations with "Nijm I" NN potential
+          3. Data obtained from analysis based on
+                calculations with "Bonn-B" NN potential
+ERR-ANALYS (ERR-SYS) Systematic error
+           (ERR-S) Statistical error
+STATUS     (TABLE) Text on p.014001-4 of Phys.Rev.,C74(2006)014001
            (DEP,22951002)
            (DEP,22951003)
-ENDBIB              12
+HISTORY    (20220102U) SD: STATUS updated.
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 7          1
 DATA      1ERR-S     1ERR-SYS   1DATA      2ERR-S     2DATA      3
@@ -164,5 +164,5 @@ FERMI
    -16.52      0.69       0.52     -16.25      0.64     -15.98
   0.64
 ENDDATA              6
-ENDSUBENT           23
+ENDSUBENT           26
 ENDENTRY             4

@@ -1,10 +1,12 @@
-ENTRY            22445   20201212   20210303   20210303       2296
-SUBENT        22445001   20201212   20210303   20210303       2296
-BIB                 17         55
+ENTRY            22445   20210907   20220319   20220317       2304
+SUBENT        22445001   20210907   20220319   20220317       2304
+BIB                 14         54
 TITLE       Cross section of 36S(n,gamma)37S
 AUTHOR     (H.Beer, P.V.Sedyshev,  Yu.P.Popov, W.Balogh, H.Herndl,
            H.Oberhummer)
 REFERENCE  (J,PR/C,52,3442,1995)  Main reference
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
            ((S,ISINN-2,178,1994)=(S,JINR-E3-94-419,178,1994))
                                          Preliminary results
 REL-REF    (M,21647001,H.Beer+,J,PR/C,21,534,1980)  Method of
@@ -26,9 +28,6 @@ DETECTOR   (HPGE)    For gamma radiation detection. 2 keV
            (GLASD)   6Li glass detector for neutron flux
                      monitoring
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-DECAY-MON  (79-AU-198-G,2.69D,DG,412.,0.9550)
-MONIT-REF  (,W.Ratynski+,J,PR/C,37,595,1988)
-DECAY-DATA (16-S-37,5.05MIN,DG,3103.,0.940)
 INC-SOURCE (P-LI7)
 ADD-RES    (THEO)  Theoretical direct-capture model cross section
                    calculations
@@ -43,84 +42,215 @@ ERR-ANALYS (ERR-1)  Error of germanium detector efficiency
                              of neutron beam
            (ERR-5)  Error due to factor fb - gamma intensity
                     attenuation
-           (ERR-6,,0.5)  Error due to sample weight
-                             determination
+           (ERR-6,,0.5)  Error due to sample weight determination
            (ERR-7)  Other systematic errors
 HISTORY    (20000122C)  Compiled by S.M.
            (20000626A)  Corrected by S.M. New reference and some
-                        new keyword's information added.
-                        One Subent added
+             new keyword's information added. One Subent added.
            (20090506U) JINR-E3 reference updated with ISINN.
                        Ranged error structure introduced
            (20100713A) Data corrected in subentry 002, 003
            (20201005U) SD: Title and author's list updated.
            (20201212A) SD: Correction in Subent 002. MONIT-ERR
-           deleted deom Subent 001 (value is given in Subent 002).
-ENDBIB              55
+           deleted from Subent 001 (value is given in Subent 002).
+           (20210907A) SD: Corrections in all Subents.
+           Subents 004
+ENDBIB              54
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-5      ERR-7
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
          6.        0.6        0.1      1.5           2.
 ENDCOMMON            3
-ENDSUBENT           62
-SUBENT        22445002   20201212   20210303   20210303       2296
-BIB                  6         19
+ENDSUBENT           61
+SUBENT        22445002   20210907   20220319   20220317       2304
+BIB                 10         39
 REACTION   (16-S-36(N,G)16-S-37,,SIG,,MXW)
-INC-SPECT   By adjusting proton energy and target thicknesses
-           -proton energy near the threshold of 7Li(p,n) reaction
+INC-SPECT   By adjusting proton energy and target thicknesses.
+            Proton energy near the threshold of 7Li(p,n) reaction
             = 1912 keV and target thickness 30 um -
             the incident neutron spectrum was near Maxwellian
             with a temperature near 25 keV
 SAMPLE      Eleven samples of pressed sulfur powder, 36S isotope
-            content is 5.933%, weights from 21 to 100 milligram,
+            content is 5.933%, weights from 21 to 100 mg,
             diameter 6 mm, placed between two gold foils
-STATUS     (TABLE) Table 2 from Phys.Rev.,C52(1995)3442
-            tbl. 1 from ISINN-2,178,1994 (monitor cr.sect.)
+DECAY-MON  (79-AU-198-G,2.69D,DG,412.,0.9550)
+MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988) The value
+            in work 22099 has been corrected and multiplied
+            by a factor 2/(pi**0.5).
+DECAY-DATA (16-S-37,5.05MIN,DG,3103.,0.940)
+ADD-RES     In the Tbl.II results from all samples are presented:
+            Mass    Mass    Mass   Irrad.  Cr.sect.     error
+            of Au  of Au   sulfur  time              stat.   total
+            front   back
+            side    side
+             (mg)   (mg)    (mg)    (d)     (mu-b)     %     %
+             16.80  16.84   100.32  3.54     192.     1.2   11.3
+             16.61  16.64    95.32  1.70     195.     1.1   10.5
+             16.57  16.51    50.40  1.16     169.     2.8    8.3
+             16.57  16.51    50.40  1.70     168.     2.3    8.1
+             15.71  15.73   148.89  0.58     191.     1.5   13.9
+              8.86   8.80    50.11  2.70     178.     1.0    8.3
+             17.15  17.22    21.18  5.10     190.     1.6    7.5
 ERR-ANALYS (ERR-T)  total error
            (ERR-S,0.2,2.8)  Statistical error
            (MONIT-ERR)  Error of the gold standard
+STATUS     (TABLE) Table II from Phys.Rev.,C52(1995)3442
+           (SPSDD,22445004) Renormalized.
 HISTORY    (20000626A)  Energy heading changed from KT to EN-MEAN
            (20090506U) EN-MEAN heading changed back to KT
            (20100713A) DATA(2) and ERR-T(2) divided by 1000
            (20201212A) SD: Reaction code (1) and data were deleted
             (Superseded by 22445.002.2).
-ENDBIB              19
-COMMON               3          3
-KT         MONIT      MONIT-ERR
-KEV        MB         MB
-        25.       648.        10.
-ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-      0.187      0.014
+           (20210907A) SD: BIB updated. Value of MONIT corrected.
+           Subent superseded.
+ENDBIB              39
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         MB
+        25.      0.187      0.014       586.        9.
 ENDDATA              3
-ENDSUBENT           31
-SUBENT        22445003   20100713   20110107   20101216       2222
-BIB                  6         15
-REACTION   (16-S-36(N,G)16-S-37,,SIG,,SPA) Averaged over neutron
-                                           spectrum
-INC-SPECT  .By adjusting proton energy and target thicknesses
-            equal to 2.5 micrometers the incident neutron energies
+ENDSUBENT           47
+SUBENT        22445003   20210907   20220319   20220317       2304
+BIB                  7         33
+REACTION   (16-S-36(N,G)16-S-37,,SIG,,SPA)
+INC-SPECT   By adjusting proton energy and target thicknesses
+            equal to 2.5 mum the incident neutron energies
             were 151, 176, 218 keV
 ERR-ANALYS (ERR-T)  Total error
            (ERR-S)  Statistical error
-           <EN-ERR> Energy error is not specified. Changed to -RSL
-SAMPLE     .Eleven samples of pressed sulfur powder, 36S isotope
-            content is 5.933%, weights from 21 to 150 milligram,
+SAMPLE      Eleven samples of pressed sulfur powder, 36S isotope
+            content is 5.933%, weights from 21 to 150 mg,
             diameter 6 mm, placed between two gold foils
-STATUS     (TABLE)  From table 2 of the main reference
+ADD-RES     In the Tbl.II results from all samples are presented:
+            Mass    Mass    Mass   Irrad.  Cr.sect.     error
+            of Au  of Au   sulfur  time              stat.   total
+            front   back
+            side    side
+             (mg)   (mg)    (mg)    (d)     (mu-b)     %     %
+              ------------
+             En=151. +-15.keV
+             16.38  16.71    94.96  3.70      85.     3.3    9.5
+             16.46  16.33   150.19  6.90      80.     1.8   11.5
+              ------------
+             En=176. +-20.keV
+             17.35  17.34    94.94  2.40     114.     7.2   11.4
+             17.35  17.34    94.94  7.80     128.     3.2    9.4
+              ------------
+             En=218. +-23.keV
+             17.39  17.39   150.00  3.20      87.     6.3   11.2
+             17.40  17.38   149.85  6.80      74.     4.7   11.7
+STATUS     (TABLE)  From table II of Phys.Rev.,C52(1995)3442
+           (SPSDD,22445005) Renormalized.
 HISTORY    (20000629C)   Compiled by S.M.
            (20090506U)  EN-ERR changed to EN-RSL
            (20100713A) DATA and ERR-T divided by 1000
-ENDBIB              15
+           (20210907A) SD: BIB updated. Subent superseded.
+ENDBIB              33
 NOCOMMON             0          0
 DATA                 5          3
-EN         EN-RSL     DATA       ERR-T      ERR-S
+EN         EN-RSL-HW  DATA       ERR-T      ERR-S
 KEV        KEV        MB         MB         PER-CENT
        151.        15.      0.081      0.007        3.3
        176.        20.      0.125      0.011        7.2
        218.        23.      0.078      0.007        6.3
 ENDDATA              5
-ENDSUBENT           25
-ENDENTRY             3
+ENDSUBENT           43
+SUBENT        22445004   20210907   20220319   20220317       2304
+BIB                 12         35
+REACTION  1((16-S-36(N,G)16-S-37,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(16-S-36(N,G)16-S-37,,SIG,,SPA)
+INC-SPECT   By adjusting proton energy and target thicknesses.
+            Proton energy near the threshold of 7Li(p,n) reaction
+            = 1912 keV and target thickness 30 um -
+            the incident neutron spectrum was near Maxwellian
+            with a temperature near 25 keV
+SAMPLE      Eleven samples of pressed sulfur powder, 36S isotope
+            content is 5.933%, weights from 21 to 100 mg,
+            diameter 6 mm, placed between two gold foils
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+DECAY-DATA (16-S-37,5.05MIN,DG,3103.,0.940)
+ANALYSIS   Cross section value in subentry 22445.002 is
+           renormalized for new gold cross section
+ADD-RES     In the Tbl.II results from all samples are presented:
+            Mass    Mass    Mass   Irrad.  Cr.sect.     error
+            of Au  of Au   sulfur  time              stat.   total
+            front   back
+            side    side
+             (mg)   (mg)    (mg)    (d)     (mu-b)     %     %
+             16.80  16.84   100.32  3.54     192.     1.2   11.3
+             16.61  16.64    95.32  1.70     195.     1.1   10.5
+             16.57  16.51    50.40  1.16     169.     2.8    8.3
+             16.57  16.51    50.40  1.70     168.     2.3    8.1
+             15.71  15.73   148.89  0.58     191.     1.5   13.9
+              8.86   8.80    50.11  2.70     178.     1.0    8.3
+             17.15  17.22    21.18  5.10     190.     1.6    7.5
+CORRECTION  Correction for revised gold standard: 622.7/586=1.062
+ERR-ANALYS (ERR-T)  total error
+           (ERR-S,0.2,2.8)  Statistical error
+           (MONIT-ERR)  Error of the gold standard
+STATUS     (TABLE) p.98 of INDC(GER)-0053
+HISTORY    (20210907C) SD
+ENDBIB              35
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB
+        25.  2.716E-04  0.059E-04    0.199      0.015      622.7
+      6.2
+ENDDATA              6
+ENDSUBENT           46
+SUBENT        22445005   20210907   20220319   20220317       2304
+BIB                 11         33
+REACTION   (16-S-36(N,G)16-S-37,,SIG,,SPA)
+INC-SPECT  Incident neutron energies were 151, 176, 218 keV by
+           adjusting proton energy and target thicknesses equal
+           to 2.5 mum
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+SAMPLE      Eleven samples of pressed sulfur powder, 36S isotope
+            content is 5.933%, weights from 21 to 150 mg,
+            diameter 6 mm, placed between two gold foils
+ADD-RES     In the Tbl.II results from all samples are presented:
+            Mass    Mass    Mass   Irrad.  Cr.sect.     error
+            of Au  of Au   sulfur  time              stat.   total
+            front   back
+            side    side
+             (mg)   (mg)    (mg)    (d)     (mu-b)     %     %
+              ------------
+             En=151. +-15.keV
+             16.38  16.71    94.96  3.70      85.     3.3    9.5
+             16.46  16.33   150.19  6.90      80.     1.8   11.5
+              ------------
+             En=176. +-20.keV
+             17.35  17.34    94.94  2.40     114.     7.2   11.4
+             17.35  17.34    94.94  7.80     128.     3.2    9.4
+              ------------
+             En=218. +-23.keV
+             17.39  17.39   150.00  3.20      87.     6.3   11.2
+             17.40  17.38   149.85  6.80      74.     4.7   11.7
+CORRECTION  Correction for revised gold standard: 622.7/586=1.062
+COMMENT     The respective gold cross sections not specified in
+           original paper.
+ERR-ANALYS (ERR-T)  Total error
+STATUS     (TABLE) p.99 of INDC(GER)-0053
+HISTORY    (20210907C) SD:
+ENDBIB              33
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         PER-CENT
+  622.7       1.
+ENDCOMMON            3
+DATA                 4          3
+EN         EN-RSL-HW  DATA       ERR-T
+KEV        KEV        MB         MB
+       151.        15.      0.086      0.007
+       176.        20.      0.133      0.011
+       218.        23.      0.083      0.007
+ENDDATA              5
+ENDSUBENT           47
+ENDENTRY             5

@@ -1,6 +1,6 @@
-ENTRY            23064   20200909   20210105   20210104       2291
-SUBENT        23064001   20200909   20210105   20210104       2291
-BIB                 17         90
+ENTRY            23064   20211106   20220319   20220317       2305
+SUBENT        23064001   20211106   20220319   20220317       2305
+BIB                 16         96
 TITLE       Solving the stellar Ni-62 problem with AMS.
 AUTHOR     (I.Dillmann, T.Faestermann, G.Korschinek, J.Lachner,
            M.Maiti, M.Poutivtsev, G.Rugel, S.Walter, F.Kaeppeler,
@@ -20,6 +20,8 @@ INSTITUTE  (2GERGSI) C.Domingo-Pardo,M.Heil,R.Reifarth.
 REFERENCE  (J,NIM/B,268,1283,2010) First author I.Dillmann.
            #doi:10.1016/j.nimb.2009.10.153
             Online from 9 Oct.2009.
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
            ((T,Walter,2008)=(R,FZKA-7411,2008)) Author S.Walter.
             Title: The stellar cross sections of Ni-62 and Ni-63
              -experimental investigations using the activation
@@ -41,7 +43,7 @@ SAMPLE     Two samples enriched in Ni-62
            Mg -0.005%, Si -0.005%, K -0.001%, Ca -0.002%,
            Fe -0.003%, Cu -0.002, Cd -0.001%, Pb -0.003%.
            Between two Au foils used as neutron flux monitor.
-INC-SOURCE (P-LI7) Protons of energy 1912 keV (+-1%). 30 microm
+INC-SOURCE (P-LI7) Protons of energy 1912 keV (+-1%). 30 um
            thick layers of metallic Li ON Water-cooled Cu backing.
 INC-SPECT   Exp. incident neutron spectrum ( range En < 118 keV)
            is given on Fig.3.1 of reference T,Walter, fitted by
@@ -74,14 +76,13 @@ DETECTOR   (GLASD) Li-6-glass or ZnS detectors for relative
             efficiency, defined by gold foils.
             Efficiency (2.00 +- 0.04) % for 411.8 keV of Au-198.
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-MONIT-REF  (,W.Ratynski+,J,PR/C,37,595,1988)
-DECAY-DATA (79-AU-198,,DG,411.8,0.9558) (95.58+-0.12)%.
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
 CORRECTION For self-absorption.
            Correction of the number of nuclei decayed during the
            activation - important for short-lived Au-198 isotope,
            negligible for very long half-lives.
 ADD-RES      Ni64(n,gamma)Ni-63 reaction cross-section was
-           measured, no values  are given.
+           measured, no values are given.
 HISTORY    (20090624C)       M.M.
            (20100505A) Volume and page numbers were added in
             Reference J,NIM/B.
@@ -91,33 +92,39 @@ HISTORY    (20090624C)       M.M.
            (20200909A) SD: Correction in Subent 005. Pointers at
            FACILITY, METHOD, etc. deleted (not useful). Second
            facility deleted (used only for AMS).
-ENDBIB              90
-COMMON               2          3
-MONIT      MONIT-ERR
-MB         MB
- 586.       8.
-ENDCOMMON            3
-ENDSUBENT           97
-SUBENT        23064002   20090624   20100209   20100209       2214
-BIB                  6         13
+           (20211106A) SD: Corrections in all Subents.
+           Subents 006-008 added. Subent 005 deleted (comment
+           from INDC(GER)-0053: This data set is a mixture of the
+           activations and time-of-flight measurements, and should
+           be deleted from EXFOR).
+ENDBIB              96
+NOCOMMON             0          0
+ENDSUBENT           99
+SUBENT        23064002   20211106   20220319   20220317       2305
+BIB                  9         18
 REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,SPA)
            Primary experimental c-s for two samples measured in
            quasi-Maxwellian spectrum of kT=25+-0.5 keV.
+MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
+DECAY-DATA (79-AU-198,,DG,411.8,0.9558) (95.58+-0.12)%.
 MISC-COL   (MISC1)  Irradiation time.
            (MISC2)  Total neutron exposures (neutrons).
-           (MISC3)  Resulting isotopes ratio  Ni-63/Ni-62.
+           (MISC3)  Resulting isotopes ratio Ni-63/Ni-62.
 ANALYSIS    Obtained directly from isotopic ratio divided by total
             neutron exposure.
 CORRECTION  Counts of mass 63 from blank sample correspond to
-            isotope ratio Ni-63/Ni-62 =3.0E-13 , smaller than
+            isotope ratio Ni-63/Ni-62 =3.0E-13, smaller than
             uncertainties - did not correct for that.
 ERR-ANALYS (DATA-ERR) Quoted errors are from AMS measurement only.
-STATUS     (TABLE) Table 1 of NIM/B .
-ENDBIB              13
-COMMON               2          3
-KT         KT-ERR
-KEV        KEV
-    25.0   0.5
+           (MONIT-ERR) Uncertainty in monitor raction
+STATUS     (TABLE) Table 1 from Nucl.Instr.Meth.,B268(2010)1283
+           (SPSDD,23064006) Renormalized.
+HISTORY    (20211106A) SD: Subent superseded. KT -> KT-DUMMY.
+ENDBIB              18
+COMMON               4          3
+KT-DUMMY   KT-ERR     MONIT      MONIT-ERR
+KEV        KEV        MB         MB
+     25.0        0.5        586.       8.
 ENDCOMMON            3
 DATA                 6          2
 DATA       DATA-ERR   MISC1      MISC2      MISC3      MISC3-ERR
@@ -125,66 +132,130 @@ MB         MB         D          NO-DIM     NO-DIM     NO-DIM
 34.8        9.8        10.2        1.735E+15    6.0E-11    1.7E-11
 22.6        5.6        10.3        2.312E+15    5.1E-11    1.3E-11
 ENDDATA              4
-ENDSUBENT           26
-SUBENT        23064003   20090624   20100209   20100209       2214
-BIB                  4          7
+ENDSUBENT           31
+SUBENT        23064003   20211106   20220319   20220317       2305
+BIB                  5          9
 REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,SPA)
 ANALYSIS    Weighted experimental cross-section in the
            quasi-Maxwellian neutron spectrum was obtained from two
            primary measured.
 ERR-ANALYS (DATA-ERR) Quoted errors are from AMS measurement only.
-STATUS     (TABLE) Table 1 of NIM/B .
+STATUS     (TABLE) Table 1 from Nucl.Instr.Meth.,B268(2010)1283
            (DEP,23064002)
-ENDBIB               7
+           (SPSDD,23064007) Renormalized.
+HISTORY    (20211106A) SD: Subent superseded. KT -> KT-DUMMY.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          1
-KT         KT-ERR     DATA       DATA-ERR
+KT-DUMMY   KT-ERR     DATA       DATA-ERR
 KEV        KEV        MB         MB
     25.    0.5         25.2       4.9
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        23064004   20090624   20100209   20100209       2214
-BIB                  5         11
-REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW) MACS.
+ENDSUBENT           17
+SUBENT        23064004   20211106   20220319   20220317       2305
+BIB                  6         13
+REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW)
 ERR-ANALYS (DATA-ERR) Not specified.
 ANALYSIS   Weighted exp.cross section in quasi-Maxwellian spectrum
            was transformed into a true Maxwellian one. Details are
-           given in  REL-REF of W.Ratynski+,J,PR/C,37,595,1988.
+           given in REL-REF of W.Ratynski+,J,PR/C,37,595,1988.
 REL-REF    (A,22959002,H.Nassar+,J,PRL,94,092504,2005)
             Agree with value of H.Nassar+ - 23.9 +- 2.4 mb.
-STATUS     (PRELM) Text, page 43 of ref. T,Walter .
-            Text, page 233 of ref. S,AIP-1090,230 .
-            Text of NIM/B abstract and chapter III A.
+STATUS     (TABLE) Text, page 43 from FZKA-7411;
+            Text, page 233 from AIP-1090,230;  Abstract and
+            chapter IIIA from Nucl.Instr.Meth.,B268(2010)1283
            (DEP,23064003)
-ENDBIB              11
+           (SPSDD,23064008) Renormalized.
+HISTORY    (20211106A) SD: Subent superseded.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 3          1
 KT         DATA       DATA-ERR
 KEV        MB         MB
     30.     23.4       4.6
 ENDDATA              3
-ENDSUBENT           19
-SUBENT        23064005   20200909   20210105   20210104       2291
-BIB                  5         13
-REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW,RECOM)
-            Weighted average Maxwellian cross section over four
-            measurements.
-REL-REF    (R,22959002,H.Nassar+,J,PRL,94,092504,2005)
-           (R,20374001,H.Beer+,J,NP/A,240,29,1975)
-           (R,14164003,A.M.Alpizar-Vicente+,J,PR/C,77,015806,2008)
-ERR-ANALYS (DATA-ERR) Nor specified.
-STATUS     (TABLE) Text, page 233 of ref. S,AIP-1090,230.
-           (DEP,23064004)
-           (DEP,22959002)
-           (DEP,14164003)
-           (DEP,20374001)
-HISTORY    (20200909A) SD: SF9=DERIV -> RECOM in REACTION code.
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       DATA-ERR
-KEV        MB         MB
-    30.     26.        4.
-ENDDATA              3
 ENDSUBENT           21
-ENDENTRY             5
+NOSUBENT      23064005   20211106   20220319   20220317       2305
+SUBENT        23064006   20211106   20220319   20220317       2305
+BIB                  7         18
+REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,SPA)
+           Primary experimental c-s for two samples measured in
+           quasi-Maxwellian spectrum of kT=25+-0.5 keV.
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS    Obtained directly from isotopic ratio divided by total
+            neutron exposure.
+            Measured quantity at kT=25 keV: cross section ratio
+            63Ni/197Au = 0.0456+-0.0156
+            Cross section value in Subent 23064.002 is
+           renormalized for new gold cross section
+CORRECTION  Counts of mass 63 from blank sample correspond to
+            isotope ratio Ni-63/Ni-62 =3.0E-13, smaller than
+            uncertainties - did not correct for that.
+            Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (DATA-ERR) Quoted errors are from AMS measurement only.
+           (MONIT-ERR) Uncertainty in monitor raction
+STATUS     (TABLE) Table from p.313 of INDC(GER)-0053
+HISTORY    (20211106C) SD
+ENDBIB              18
+COMMON               4          3
+KT-DUMMY   KT-ERR     MONIT      MONIT-ERR
+KEV        KEV        MB         MB
+     25.0        0.5        622.7       6.
+ENDCOMMON            3
+DATA                 2          2
+DATA       DATA-ERR
+MB         MB
+       37.0       10.2
+       24.0        5.6
+ENDDATA              4
+ENDSUBENT           31
+SUBENT        23064007   20211106   20220319   20220317       2305
+BIB                  7         14
+REACTION  1((28-NI-62(N,G)28-NI-63,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(28-NI-62(N,G)28-NI-63,,SIG,,SPA)
+ANALYSIS    Weighted experimental cross-section in the
+           quasi-Maxwellian neutron spectrum was obtained from two
+           primary measured.
+            Cross section value in Subent 23064.003 is
+           renormalized for new gold cross section
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (DATA-ERR) Quoted errors are from AMS measurement only.
+STATUS     (TABLE) Table from p.314 of INDC(GER)-0053
+           (DEP,23064002)
+HISTORY    (20211106C) SD
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 6          1
+KT-DUMMY   KT-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+KEV        KEV        NO-DIM     NO-DIM     MB         MB
+    25.       0.5        0.0430      0.0084   26.8       5.2
+ENDDATA              3
+ENDSUBENT           22
+SUBENT        23064008   20211106   20220319   20220317       2305
+BIB                  8         15
+REACTION   (28-NI-62(N,G)28-NI-63,,SIG,,MXW)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Weighted exp.cross section in quasi-Maxwellian spectrum
+           was transformed into a true Maxwellian one. Details are
+           given in REL-REF of W.Ratynski+,J,PR/C,37,595,1988.
+            Cross section value in Subent 23064.004 is
+           renormalized for new gold cross section
+CORRECTION  Correction for revised gold standard: 611.6/582 =1.051
+REL-REF    (A,22959002,H.Nassar+,J,PRL,94,092504,2005)
+            Agree with value of H.Nassar+ - 23.9 +- 2.4 mb.
+ERR-ANALYS (DATA-ERR) Not specified.
+           (MONIT-ERR) Uncertainty in monitor raction
+STATUS     (TABLE) Table from p.315 of INDC(GER)-0053
+           (DEP,23064003)
+HISTORY    (20211106C) SD
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       DATA-ERR   MONIT      MONIT-ERR
+KEV        MB         MB         MB         MB
+    30.     24.6       4.8            611.6      6.
+ENDDATA              3
+ENDSUBENT           23
+ENDENTRY             8

@@ -1,18 +1,20 @@
-ENTRY            22448   20140828   20150107   20141107       2240
-SUBENT        22448001   20140828   20150107   20141107       2240
-BIB                 15         33
+ENTRY            22448   20210924   20220319   20220317       2304
+SUBENT        22448001   20210924   20220319   20220317       2304
+BIB                 15         36
 TITLE      The stellar (n,gamma) cross section of the
               unstable 135Cs
 AUTHOR     (S.Jaag, F.Kaeppeler, P.Koehler)
 INSTITUTE  (2GERKFK,1USAORL)
 REFERENCE  (J,NP/A,621,247,1997)
            (J,PR/C,69,025803,2004) corrected data given
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
 FACILITY  1(VDG,2GERKFK) for kT~25 keV irradiations
           2(REAC,2GERMNZ) TRIGA reactor(to obtain number of 135Cs)
 INC-SOURCE1(P-LI7)
           2(REAC)
-INC-SPECT 1kT~25keV quasi-stellar neutron spectrum
-          2Epithermal(En>0.4 eV)/thermal=4/70
+INC-SPECT 1 kT~25keV quasi-stellar neutron spectrum
+          2 Epithermal(En>0.4 eV)/thermal=4/70
 SAMPLE     Cs sample specified as 2E+15 135Cs atoms implanted in
             a graphite disc (0.1 mm thick and 6 mm in diam.) and
             canned in a cylindrical graphite box, which was
@@ -34,9 +36,10 @@ HISTORY    (20000201C) + + Compiled by SM               + +
            (20121223A) SD: EN-MEAN -> KT and values were corrected
             in Subent 2. ERR-T -> DATA-ERR.
            (20140828A) On. 002 superseded, 003 added.
-ENDBIB              33
+           (20210924A) SD: 003 superseded, 004 added.
+ENDBIB              36
 NOCOMMON             0          0
-ENDSUBENT           36
+ENDSUBENT           39
 SUBENT        22448002   20140828   20150107   20141107       2240
 BIB                  6         18
 REACTION   (55-CS-135(N,G)55-CS-136,,SIG,,MXW)
@@ -65,8 +68,8 @@ KEV        MB         MB
  30.        198.       17.
 ENDDATA              3
 ENDSUBENT           26
-SUBENT        22448003   20140828   20150107   20141107       2240
-BIB                  6         10
+SUBENT        22448003   20210924   20220319   20220317       2304
+BIB                  6         12
 REACTION   (55-CS-135(N,G)55-CS-136,,SIG,,MXW)
 ANALYSIS   Reanalysis of the data published in 1997 (198+/-17 mb)
             with improved thermal data (T.Katoh et al., 1997)
@@ -76,13 +79,46 @@ REL-REF    (R,22342002,T.Katoh+,J,NST,34,431,1997)
             135Cs(nth,g) resonance integral = 37.9+/-2.7 barn
 ERR-ANALYS (DATA-ERR) No information on source of uncertainty
 STATUS     (TABLE) Text (p025803-7) of Phys.Rev.C69(2004)025803
+           (SPSDD,22448004) Renormalized.
 HISTORY    (20140828C) On (moved from 22846.005)
-ENDBIB              10
+           (20210924A) SD: Subent superseded.
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       DATA-ERR
-KEV        MB         MB
- 30.        176.       15.
+DATA                 5          1
+KT         DATA       DATA-ERR   MONIT      MONIT-ERR
+KEV        MB         MB         MB         MB
+ 30.        176.       15.          582.        9.
 ENDDATA              3
-ENDSUBENT           18
-ENDENTRY             3
+ENDSUBENT           20
+SUBENT        22448004   20210924   20220319   20220317       2304
+BIB                  9         18
+REACTION  1((55-CS-135(N,G)55-CS-136,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(55-CS-135(N,G)55-CS-136,,SIG,,MXW)
+ANALYSIS   Cross section value in subentry 22448.003 is
+           renormalized for new gold cross section.
+           Intensities of four gamma lines are not specified in
+           the original paper, but not critical due to high
+            (99.7%) intensity of the 818 keV transition.
+CORRECTION  Correction for revised gold standard 611.6/582 =1.051
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+REL-REF    (R,22342002,T.Katoh+,J,NST,34,431,1997)
+            135Cs(nth,g) cross section = 8.3+/-0.3 barn
+           (R,22342004,T.Katoh+,J,NST,34,431,1997)
+            135Cs(nth,g) resonance integral = 37.9+/-2.7 barn
+ERR-ANALYS (DATA-ERR) No information on source of uncertainty
+STATUS     (TABLE) p.100 of INDC(GER)-0053
+HISTORY    (20210924C) SD
+ENDBIB              18
+NOCOMMON             0          0
+DATA                 7          1
+KT         DATA      1DATA-ERR  1DATA      2DATA-ERR  2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB
+        30.     0.2716      0.023       185.        16.      611.6
+         6.
+ENDDATA              6
+ENDSUBENT           29
+ENDENTRY             4

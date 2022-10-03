@@ -1,9 +1,9 @@
-ENTRY            22883   20151216   20160603   20160523       2246
-SUBENT        22883001   20151216   20160603   20160523       2246
-BIB                 18         59
+ENTRY            22883   20211012   20220319   20220317       2305
+SUBENT        22883001   20211012   20220319   20220317       2305
+BIB                 14         57
 TITLE       Nucleosynthesis at the termination point of the
             s-process
-AUTHOR     (U.Ratzel,C.Arlandini,F.Kappeler,C.Couture,
+AUTHOR     (U.Ratzel,C.Arlandini,F.Kappeler,A.Couture,
            M.Wiescher,R.Reifarth,R.Gallino,A.Mengoni, C.Travaglio)
 INSTITUTE  (2GERKFK) Ratzel, Arlandini, Kappeler
            (1USALAS) Reifarth
@@ -12,26 +12,26 @@ INSTITUTE  (2GERKFK) Ratzel, Arlandini, Kappeler
            (3AULMOU) Gallino
            (2ZZZCER) Mengoni
            (2GERGAR) Travaglio
-REFERENCE  (J,PR/C,70,065803,200412)
+REFERENCE  (J,PR/C,70,065803,2004)
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
 REL-REF    (M,21647001,H.Beer+,J,PR/C,21,534,1980) Experim.details
 METHOD     (ACTIV)
-           (STTA)   Stack target irradiation
 FACILITY   (VDG,2GERKFK) 3.7-MV accelerator
-PART-DET   (DG,B-) Au-198 gamma  and Beta- decay electrons
 INC-SOURCE (P-LI7) Proton energy= 1921 keV.
 DETECTOR   (GLASD) Li-6 glass scintillator to monitor
                    neutron flux.
            (D4PI,SILI) 4 pi electron spectrometer of two Si(Li)
             detectors in close geometry to beta- spectra
             measurement. Resolution 0.4% and 0.3% at 0.5
-            and 1.0 MeV electron  energy respectively.
+            and 1.0 MeV electron energy respectively.
             Spectrometer detection efficiency 0.935+-0.016.
            (HPGE) for gamma-activity of gold foils.
 SAMPLE      All Bi-209 samples Bi1, Bi2, Bi3 and one lead sample
-            Pb3 were evaporated on thin (10-25 microgram/cm2)
-            FORMVAR foil stretched over thin aluminum rings with
-            inner diameter 33 mm. Pb3 sample was prepared from a
-            highly enriched (98.7+-0.3% Pb-208) metal.
+            Pb3 were evaporated on thin (10-25 ug/cm2) FORMVAR
+            foil stretched over thin aluminum rings with inner
+            diameter 33 mm. Pb3 sample was prepared from a highly
+            enriched (98.7+-0.3% Pb-208) metal.
             Lead samples Pb1, Pb2, Pb4 were punched from 10-mm
             diameter foils of very pure natural lead (54.2+-1%
             Pb-208) which were sandwiched between thin FORMVAR
@@ -39,8 +39,6 @@ SAMPLE      All Bi-209 samples Bi1, Bi2, Bi3 and one lead sample
             Thin gold foils (0.03 mm, 1.1 mg/cm2) to monitor
             neutron flux were placed on the top of the FORMVAR
             foil.
-MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
-DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 INC-SPECT   Quasi-Maxwellian neutron energy distribution with
             upper energy limit aprx 104 keV
 CORRECTION  Correction factors for the determination of detection
@@ -52,26 +50,28 @@ CORRECTION  Correction factors for the determination of detection
              Intensity of 411.8 keV Au decay line  0.995+-0.001
 ERR-ANALYS  Uncertainties of :
            (ERR-2) Au-197 mass
-           (MONIT-ERR)  Au-197 cross section
            (ERR-6) Error due to neutron flux
            (ERR-T) Total uncertainty
-COMMENT     e-mail: franz.kaeppeler@ik.fzk.de
 HISTORY    (20060130C) SM/MM
            (20151216A) SD: DECAY-DATA corrected in Subents 006-008
            Ref. PR/C,21,534 moved to REL-REF. ERR-S was added to
            ERR-ANALYS in Subents 002-008.
-ENDBIB              59
-COMMON               4          3
-KT         ERR-2      ERR-6      MONIT-ERR
-KEV        PER-CENT   PER-CENT   PER-CENT
- 25.       0.2        2.5             1.5
+           (20211012A) SD: Corrections in all Subents.
+           Subents 011-019 added.
+ENDBIB              57
+COMMON               2          3
+ERR-2      ERR-6
+PER-CENT   PER-CENT
+ 0.2        2.5
 ENDCOMMON            3
-ENDSUBENT           66
-SUBENT        22883002   20151216   20160603   20160523       2246
-BIB                  6         16
-REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW/RAW)
+ENDSUBENT           64
+SUBENT        22883002   20211012   20220319   20220317       2305
+BIB                  9         22
+REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Pb1 sample, thickness 3.38 mg/cm2+-0.7%, irradiation
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+ANALYSIS    Pb1 sample, thickness 3.38 mg/cm2+-0.7%, irradiation
             duration 6.7 hours, average neutron flux 7.8E+8 1/sec,
             signal/background ratio = 0.35, count.time 6.0 hr.
 DECAY-DATA (82-PB-209,3.2HR,B-)
@@ -79,35 +79,41 @@ ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-3) Gamma-detection efficiency error
            (ERR-4) Beta- detection efficiency error
-           (ERR-5) Bea- energy extrapolation to zero error       2
+           (ERR-5) Beta- energy extrapolation to zero error
            (ERR-7) Decay during irradiation error
            (ERR-8) Isotopic enrichment error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
-ENDBIB              16
-COMMON               9          6
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883011) Renormalized.
+HISTORY    (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              22
+COMMON               8          6
 ERR-1      ERR-3      ERR-4      ERR-5      ERR-7      ERR-S
-ERR-8      ERR-9      ERR-T
+ERR-8      ERR-9
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT
-0.7        1.6        2.5        2.0        0.5         2.8
- 0.1        1.0        5.6
+PER-CENT   PER-CENT
+        0.7        1.6        2.5        2.0        0.5        2.8
+        0.1        1.0
 ENDCOMMON            6
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  0.265       0.015
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        0.265       0.015      586.        1.5
 ENDDATA              3
-ENDSUBENT           31
-SUBENT        22883003   20151216   20160603   20160523       2246
-BIB                  6         16
-REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW/RAW)
+ENDSUBENT           37
+SUBENT        22883003   20211012   20220319   20220317       2305
+BIB                  9         22
+REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Pb2 sample, thickness 2.13 mg/cm2+-1.0%, irradiation
-            duration 5.5 hours, average neutron flux 10.E+8 1/sec
+ANALYSIS    Pb2 sample, thickness 2.13 mg/cm2+-1.0%, irradiation
+            duration 5.5 hours, average neutron flux 10.E+8 /sec
             signal/background ratio = 0.63, count.time 6.0 hr.
 DECAY-DATA (82-PB-209,3.2HR,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-3) Gamma-detection efficiency error
@@ -117,30 +123,36 @@ ERR-ANALYS  Uncertainties of :
            (ERR-8) Isotopic enrichment error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
-ENDBIB              16
-COMMON               9          6
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883012) Renormalized.
+HISTORY    (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              22
+COMMON               8          6
 ERR-1      ERR-3      ERR-4      ERR-5      ERR-7      ERR-S
-ERR-8      ERR-9      ERR-T
+ERR-8      ERR-9
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT
-1.0        1.6        2.5        2.0        0.5         2.7
- 0.1        1.0        5.6
+PER-CENT   PER-CENT
+        1.0        1.6        2.5        2.0        0.5        2.7
+        0.1        1.0
 ENDCOMMON            6
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  0.292       0.016
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        0.292       0.016      586.        1.5
 ENDDATA              3
-ENDSUBENT           31
-SUBENT        22883004   20151216   20160603   20160523       2246
-BIB                  6         15
-REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW/RAW)
+ENDSUBENT           37
+SUBENT        22883004   20211012   20220319   20220317       2305
+BIB                  9         21
+REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Pb3 sample, thickness 1.06 mg/cm2+-2.1%, irradiation
-            duration 8.5 hours, average neutron flux 4.8E+8 1/sec
+ANALYSIS    Pb3 sample, thickness 1.06 mg/cm2+-2.1%, irradiation
+            duration 8.5 hours, average neutron flux 4.8E+8 /sec
             signal/background ratio = 0.34, count.time 5.5 hr.
 DECAY-DATA (82-PB-209,3.2HR,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-4) Beta- detection efficiency error
@@ -149,30 +161,36 @@ ERR-ANALYS  Uncertainties of :
            (ERR-8) Isotopic enrichment error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
-ENDBIB              15
-COMMON               8          6
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883013) Renormalized.
+HISTORY    (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              21
+COMMON               7          6
 ERR-1      ERR-4      ERR-5      ERR-7      ERR-S      ERR-8
-ERR-9      ERR-T
+ERR-9
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT
-2.1        1.6        2.0        0.5         2.5        0.3
- 1.0        5.2
+PER-CENT
+        2.1        1.6        2.0        0.5        2.5        0.3
+        1.0
 ENDCOMMON            6
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  0.292       0.015
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        0.292       0.015      586.        1.5
 ENDDATA              3
-ENDSUBENT           30
-SUBENT        22883005   20151216   20160603   20160523       2246
-BIB                  6         15
-REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW/RAW)
+ENDSUBENT           36
+SUBENT        22883005   20211012   20220319   20220317       2305
+BIB                  9         21
+REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Pb4 sample, thickness 4.93 mg/cm2+-0.5%, irradiation
-            duration 6.5 hours, average neutron flux 6.6E+8 1/sec
+ANALYSIS    Pb4 sample, thickness 4.93 mg/cm2+-0.5%, irradiation
+            duration 6.5 hours, average neutron flux 6.6E+8 /sec
             signal/background ratio = 0.94, count.time 6.0 hr.
 DECAY-DATA (82-PB-209,3.2HR,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-4) Beta- detection efficiency error
@@ -181,144 +199,414 @@ ERR-ANALYS  Uncertainties of :
            (ERR-8) Isotopic enrichment error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
-ENDBIB              15
-COMMON               8          6
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883014) Renormalized.
+HISTORY    (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              21
+COMMON               7          6
 ERR-1      ERR-4      ERR-5      ERR-7      ERR-S      ERR-8
-ERR-9      ERR-T
+ERR-9
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT
-0.5        1.6        2.0        0.5         1.8        0.1
- 1.0        4.5
+PER-CENT
+        0.5        1.6        2.0        0.5        1.8        0.1
+        1.0
 ENDCOMMON            6
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  0.269       0.012
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        0.269       0.012       586.        1.5
 ENDDATA              3
-ENDSUBENT           30
-SUBENT        22883006   20151216   20160603   20160523       2246
-BIB                  7         14
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW/RAW)
+ENDSUBENT           36
+SUBENT        22883006   20211012   20220319   20220317       2305
+BIB                  9         20
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Bi1 sample, thickness 3.65 mg/cm2+-0.7%, irradiation
+ANALYSIS    Bi1 sample, thickness 3.65 mg/cm2+-0.7%, irradiation
             duration 35. hours, average neutron flux 3.9E+8 1/sec
             signal/background ratio = 3.3, count.time 20. hr.
 DECAY-DATA (83-BI-210-G,5.01D,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-4) Beta- detection efficiency error
            (ERR-5) Beta- energy extrapolation to zero error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883015) Renormalized.
 HISTORY    (20151216A) SD: hl=5.01hr->5.01d in DECAY-DATA (fig.2)
-ENDBIB              14
-COMMON               6          3
-ERR-1      ERR-4      ERR-5      ERR-S      ERR-9      ERR-T
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-0.7        1.6        1.0         0.4        2.0        4.1
+           (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              20
+COMMON               5          3
+ERR-1      ERR-4      ERR-5      ERR-S      ERR-9
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+        0.7        1.6        1.0        0.4        2.0
 ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  2.46        0.10
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        2.46        0.10        586.        1.5
 ENDDATA              3
-ENDSUBENT           26
-SUBENT        22883007   20151216   20160603   20160523       2246
-BIB                  7         14
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW/RAW)
+ENDSUBENT           32
+SUBENT        22883007   20211012   20220319   20220317       2305
+BIB                  9         20
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Bi2 sample, thickness 5.50 mg/cm2+-0.5%, irradiation
-            duration 35. hours, average neutron flux 6.2E+8 1/sec
+ANALYSIS    Bi2 sample, thickness 5.50 mg/cm2+-0.5%, irradiation
+            duration 35. hours, average neutron flux 6.2E+8 /sec
             signal/background ratio = 6.8, count.time 20. hr.
 DECAY-DATA (83-BI-210-G,5.01D,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-4) Beta- detection efficiency error
            (ERR-5) Beta- energy extrapolation to zero error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883016) Renormalized.
 HISTORY    (20151216A) SD: hl=5.01hr->5.01d in DECAY-DATA (fig.2)
-ENDBIB              14
-COMMON               6          3
-ERR-1      ERR-4      ERR-5      ERR-S      ERR-9      ERR-T
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-0.5        1.6        1.0         0.3        2.0        4.1
+           (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              20
+COMMON               5          3
+ERR-1      ERR-4      ERR-5      ERR-S      ERR-9
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+        0.5        1.6        1.0        0.3        2.0
 ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  2.27        0.10
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        2.27        0.10        586.        1.5
 ENDDATA              3
-ENDSUBENT           26
-SUBENT        22883008   20151216   20160603   20160523       2246
-BIB                  7         14
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW/RAW)
+ENDSUBENT           32
+SUBENT        22883008   20211012   20220319   20220317       2305
+BIB                  9         20
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
 INC-SPECT  quasi-Maxwellian
-ANALYSIS   .Bi3 sample, thickness 1.32 mg/cm2+-1.9%, irradiation
-            duration 44. hours, average neutron flux 6.9E+8 1/sec
+ANALYSIS    Bi3 sample, thickness 1.32 mg/cm2+-1.9%, irradiation
+            duration 44. hours, average neutron flux 6.9E+8 /sec
             signal/background ratio = 2.0, count.time 15. hr.
 DECAY-DATA (83-BI-210-G,5.01D,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
 ERR-ANALYS  Uncertainties of :
            (ERR-1) Sample mass error
            (ERR-4) Beta- detection efficiency error
            (ERR-5) Beta- energy extrapolation to zero error
            (ERR-9) Background subtraction error
            (ERR-S) Statistical error
-STATUS     (TABLE) From Table IV of PR/C,70,065803
+           (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table IV from Phys.Rev.,C70(2004)065803
+           (SPSDD,22883017) Renormalized.
 HISTORY    (20151216A) SD: hl=5.01hr->5.01d in DECAY-DATA (fig.2)
-ENDBIB              14
-COMMON               6          3
-ERR-1      ERR-4      ERR-5      ERR-S      ERR-9      ERR-T
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-1.9        1.6        1.0         0.5        2.0        4.5
+           (20211012A) SD: SF8=MXW/RAW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              20
+COMMON               5          3
+ERR-1      ERR-4      ERR-5      ERR-S      ERR-9
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+       1.9        1.6        1.0        0.5        2.0
 ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  2.45        0.10
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         PER-CENT
+  25.        2.45        0.10        586.        1.5
 ENDDATA              3
-ENDSUBENT           26
-SUBENT        22883009   20060130   20060217   20060213       2175
-BIB                  5         14
-REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW,RECOM) Averaged
-                     over four activation of Sub.002-005
-ANALYSIS   .Extrapolation to the zero sample thickness and
+ENDSUBENT           32
+SUBENT        22883009   20211012   20220319   20220317       2305
+BIB                  6         18
+REACTION   (82-PB-208(N,G)82-PB-209,,SIG,,MXW)
+ANALYSIS    Extrapolation to the zero sample thickness and
             inclusion of the influence of the neutron energy
-            above 106 keV cutoff
-REL-REF    (A,22442006,H.BEER+,J,AJ,474,843,1997)
+            above 106 keV cutoff.
+            Averaged over four activation of Sub.002-005
+REL-REF    (A,22442006,H.Beer+,J,AJ,474,843,1997)
 CORRECTION  For contribution from direct capture and single
             resonances for energy > 106. keV (cutoff energy) -
             increase by (2.7+-0.6)%
-STATUS     (DEP,22883002)
+STATUS     (TABLE) From the text and table VI of
+                            Phys.Rev.,C70(2004)065803
+           (DEP,22883002)
            (DEP,22883003)
            (DEP,22883004)
            (DEP,22883005)
-           .From text of main reference and table VI
-ENDBIB              14
+           (SPSDD,22883018) Renormalized.
+HISTORY    (20211012A) SD: SF9=RECOM deleted from REACTION code.
+           Subent superseded.
+ENDBIB              18
 NOCOMMON             0          0
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  0.31        0.02
+DATA                 3          1
+KT         DATA       ERR-T
+KEV        MB         MB
+  25.        0.31        0.02
 ENDDATA              3
-ENDSUBENT           22
-SUBENT        22883010   20060130   20060217   20060213       2175
-BIB                  3          6
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW,RECOM)
-ANALYSIS   .Extrapolation to the zero sample thickness
-STATUS     (DEP,22883006)
+ENDSUBENT           26
+SUBENT        22883010   20211012   20220319   20220317       2305
+BIB                  4         10
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW)
+ANALYSIS    Extrapolation to the zero sample thickness
+STATUS     (TABLE) From the text and table VI of
+                            Phys.Rev.,C70(2004)065803
+           (DEP,22883006)
            (DEP,22883007)
            (DEP,22883008)
-           .From text of main reference and table VI
-ENDBIB               6
+           (SPSDD,22883019) Renormalized.
+HISTORY    (20211012A) SD: SF9=RECOM deleted from REACTION code.
+           Subent superseded.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 2          1
-DATA       ERR-T
-MB         MB
-  2.54        0.15
+DATA                 3          1
+KT         DATA       ERR-T
+KEV        MB         MB
+  25.        2.54        0.15
 ENDDATA              3
-ENDSUBENT           14
-ENDENTRY            10
+ENDSUBENT           18
+SUBENT        22883011   20211012   20220319   20220317       2305
+BIB                 10         13
+REACTION  1((82-PB-208(N,G)82-PB-209,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(82-PB-208(N,G)82-PB-209,,SIG,,SPA)
+ANALYSIS    Cross section value in Subent 22883.002 is
+           renormalized for new gold cross section
+DECAY-DATA (82-PB-209,3.2HR,B-)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,SPA)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table on p.172 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         4.52E-04   0.26E-04    0.281       0.016    622.7
+  1.0
+ENDDATA              6
+ENDSUBENT           24
+SUBENT        22883012   20211012   20220319   20220317       2305
+BIB                 10         13
+REACTION  1((82-PB-208(N,G)82-PB-209,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(82-PB-208(N,G)82-PB-209,,SIG,,SPA)
+ANALYSIS    Cross section value in Subent 22883.003 is
+            renormalized for new gold cross section
+DECAY-DATA (82-PB-209,3.2HR,B-)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,SPA)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+CORRECTION Correction for revised gold standard: 622.7/586 =1.062
+STATUS     (TABLE) Table on p.173 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         4.98E-04   0.27E-04    0.310       0.017      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           24
+SUBENT        22883013   20211012   20220319   20220317       2305
+BIB                 10         13
+REACTION  1((82-PB-208(N,G)82-PB-209,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(82-PB-208(N,G)82-PB-209,,SIG,,SPA)
+ANALYSIS    Cross section value in Subent 22883.004 is
+            renormalized for new gold cross section
+DECAY-DATA (82-PB-209,3.2HR,B-)
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,SPA)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+STATUS     (TABLE) Table on p.174 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         4.98E-04   0.26E-04    0.310       0.015      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           24
+SUBENT        22883014   20211012   20220319   20220317       2305
+BIB                 10         13
+REACTION  1((82-PB-208(N,G)82-PB-209,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(82-PB-208(N,G)82-PB-209,,SIG,,SPA)
+ANALYSIS    Cross section value in Subent 22883.005 is
+            renormalized for new gold cross section
+DECAY-DATA (82-PB-209,3.2HR,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG,,SPA)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+STATUS     (TABLE) Table on p.175 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         4.59E-04   0.20E-04    0.286       0.012      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           24
+SUBENT        22883015   20211012   20220319   20220317       2305
+BIB                 11         17
+REACTION  1((83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(83-BI-209(N,G)83-BI-210-G,,SIG,,MXW/RAW)
+INC-SPECT  quasi-Maxwellian
+ANALYSIS    Bi1 sample, thickness 3.65 mg/cm2+-0.7%, irradiation
+            duration 35. hours, average neutron flux 3.9E+8 /sec
+            signal/background ratio = 3.3, count.time 20. hr.
+            Cross section value in Subent 22883.006 is
+           renormalized for new gold cross section
+DECAY-DATA (83-BI-210-G,5.01D,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+STATUS     (TABLE) Table on p.176 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              17
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         0.00420    0.00017    2.61         0.10      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           28
+SUBENT        22883016   20211012   20220319   20220317       2305
+BIB                 11         17
+REACTION  1((83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(83-BI-209(N,G)83-BI-210-G,,SIG,,MXW/RAW)
+INC-SPECT  quasi-Maxwellian
+ANALYSIS    Bi2 sample, thickness 5.50 mg/cm2+-0.5%, irradiation
+            duration 35. hours, average neutron flux 6.2E+8 1/sec
+            signal/background ratio = 6.8, count.time 20. hr.
+            Cross section value in Subent 22883.003 is
+           renormalized for new gold cross section
+DECAY-DATA (83-BI-210-G,5.01D,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table on p.177 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              17
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         0.00387    0.00017    2.41         0.10      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           28
+SUBENT        22883017   20211012   20220319   20220317       2305
+BIB                 10         13
+REACTION  1((83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(83-BI-209(N,G)83-BI-210-G,,SIG,,MXW/RAW)
+ANALYSIS    Cross section value in Subent 22883.008 is
+           renormalized for new gold cross section
+DECAY-DATA (83-BI-210-G,5.01D,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table on p.178 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 7          1
+KT-DUMMY   DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         0.00418    0.00017    2.60         0.10      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           24
+SUBENT        22883018   20211012   20220319   20220317       2305
+BIB                  9         12
+REACTION  1((82-PB-208(N,G)82-PB-209,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(82-PB-208(N,G)82-PB-209,,SIG,,MXW)
+ANALYSIS    Cross section value in Subent 22883.009 is
+           renormalized for new gold cross section
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table on p.179 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 7          1
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         5.29E-04   0.34E-04   0.33         0.02      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           23
+SUBENT        22883019   20211012   20220319   20220317       2305
+BIB                  9         12
+REACTION  1((83-BI-209(N,G)83-BI-210-G,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(83-BI-209(N,G)83-BI-210-G,,SIG,,MXW)
+ANALYSIS    Cross section value in Subent 22883.010 is
+           renormalized for new gold cross section
+MONITOR    (79-AU-197(N,G)79-AU-198-G,,SIG)
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,,B-)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 622.7/586 =1.062
+ERR-ANALYS (MONIT-ERR)  Au-197 cross section
+STATUS     (TABLE) Table on p.180 of INDC(GER)-0053
+HISTORY    (20211012C) SD
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 7          1
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+PER-CENT
+  25.         0.00433    0.00026    2.70         0.16      622.7
+       1.0
+ENDDATA              6
+ENDSUBENT           23
+ENDENTRY            19

@@ -1,16 +1,16 @@
-ENTRY            22532   20121224   20130812   20130718       2234
-SUBENT        22532001   20121224   20130812   20130718       2234
-BIB                 16         28
-TITLE      Optical model analysis of  polarized neutron scattering
+ENTRY            22532   20220102   20220319   20220317       2307
+SUBENT        22532001   20220102   20220319   20220317       2307
+BIB                 14         27
+TITLE      Optical model analysis of polarized neutron scattering
            from aluminum, copper and chromium
-AUTHOR     (G.Dagge,W.Grum,J.W.Hammer,K.W.Hoffmann,G.Schreder)
-INSTITUTE  (2GERIFS)
+AUTHOR     (G.Dagge,W.Grum,J.W.Hammer,K.-W.Hoffmann,G.Schreder)
+INSTITUTE  (2GERTHS)
 REFERENCE  (J,PR/C,39,1768,1989)
-REL-REF    (I,,J.W.Hammer+,J,NIM/A,244,455,1986) Description of
-            facility
-FACILITY   (DYNAM,2GERIFS) Neutron scattering facility SCORPION
-ADD-RES    (COMP).The coupled channels optical model calculation.
-INC-SOURCE (POLNS,A-BE) Incident neutrons were produced  by the
+REL-REF    (I,,J.Wolfgang Hammer+,J,NIM/A,244,455,1986)
+            Description of facility
+FACILITY   (DYNAM,2GERTHS) Neutron scattering facility SCORPION
+ADD-RES    (COMP) The coupled channels optical model calculation.
+INC-SOURCE (POLNS,A-BE) Incident neutrons were produced by the
             Be-9(alpha,n) with a 500-muA alpha-beam delivered by
             the Dynamitron accelerator. Beryllium layer 1.2 micron
             on a copper backing
@@ -18,34 +18,30 @@ MONITOR    (1-H-1(N,EL)1-H-1,,DA)
             The relative cross section data were normalized to
             the H-1(n,n)H-1 cross section by measuring elastic
             scattering from a polyethylene sample
-DETECTOR   (SCIN).Four NE213 scintillation counters.
+DETECTOR   (SCIN) Four NE213 scintillation counters.
 METHOD     (BCINT,PSD)
-PART-DET   (N)
 INC-SPECT  *E-RSL*  an overall energy resolution (detectors and
            unfolding procedure) of about 800-keV was achieved.
-CORRECTION .            The scattering data obtained from the
-           unfolded proton-recoil scintillation spectra were
+CORRECTION  The scattering data obtained from the
+           unfolded proton-recoil scintillati on spectra were
            corrected for multiple scattering effects.
-ERR-ANALYS .If present, determined in proper SUBENTS
 HISTORY    (20050301C) SM
            (20121224U) SD: Ref. on NIM corrected (NIM/B -> NIM/A).
-ENDBIB              28
+           (20220102A) SD: Corrections in all Subents.
+ENDBIB              27
 COMMON               1          3
 E-RSL
 KEV
        800.
 ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        22532002   20050314   20050610   20050926       2171
-BIB                  5          7
+ENDSUBENT           34
+SUBENT        22532002   20220102   20220319   20220317       2307
+BIB                  4          4
 REACTION   (13-AL-27(N,EL)13-AL-27,,DA)
-COMMENT    .First excited levels may be not separated from
-            elastic scattering
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-ERR-ANALYS (ERR-DIG).Digitizing error in data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 1(a) of main reference
-ENDBIB               7
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+STATUS     (CURVE)  Fig. 1(a) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102U) SD: ERR-ANALYS deleted. STATUS updated.
+ENDBIB               4
 COMMON               3          3
 EN         ERR-DIG    ANG-ERR-D
 MEV        PER-CENT   ADEG
@@ -81,20 +77,20 @@ ADEG       MB/SR
       121.5       11.2
       125.6       14.6
 ENDDATA             28
-ENDSUBENT           44
-SUBENT        22532003   20050314   20050610   20050926       2171
-BIB                  4          6
-REACTION   (13-AL-27(N,INL)13-AL-27,,DA)
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on figure.
-           (ERR-DIG).Digitizing error in  data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 1(a) of main reference
+ENDSUBENT           41
+SUBENT        22532003   20220102   20220319   20220317       2307
+BIB                  5          6
+REACTION   (13-AL-27(N,INL)13-AL-27,PAR,DA)
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE)  Fig. 1(a) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: SF5=PAR added to REACTION code.
+            E-LVL added. STATUS updated.
 ENDBIB               6
-COMMON               3          3
-EN         ERR-DIG    ANG-ERR-D
-MEV        PER-CENT   ADEG
-       7.62        10.         1.
+COMMON               5          3
+EN         E-LVL      E-LVL      ANG-ERR-D  ERR-DIG
+MEV        MEV        MEV        ADEG       PER-CENT
+       7.62      0.84        1.01     1.         10.
 ENDCOMMON            3
 DATA                 3         13
 ANG-CM     DATA-CM    DATA-ERR
@@ -114,24 +110,21 @@ ADEG       MB/SR      PER-CENT
       112.4        5.8        21.
 ENDDATA             15
 ENDSUBENT           30
-SUBENT        22532004   20050314   20050610   20050926       2171
-BIB                  5          8
+SUBENT        22532004   20220102   20220319   20220317       2307
+BIB                  5          5
 REACTION   (13-AL-27(N,EL)13-AL-27,,POL/DA,,ANA)
-COMMENT    .First excited levels MAY be NOT separated from
-            elastic scattering
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on figure.
-           (ERR-DIG).Digitizing error in data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 1(b) of main reference
-ENDBIB               8
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE)  Fig. 1(b) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102U) SD: ERR-ANALYS, STATUS updated.
+ENDBIB               5
 COMMON               3          3
 EN         ERR-DIG    ANG-ERR-D
 MEV        NO-DIM     ADEG
        7.62      0.017         1.
 ENDCOMMON            3
 DATA                 3         29
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA       DATA-ERR
 ADEG       NO-DIM     NO-DIM
        21.    -9. E-03
        25.1   -3.4E-02
@@ -163,24 +156,22 @@ ADEG       NO-DIM     NO-DIM
       121.2    -1.E-02     7.E-02
       123.9       0.11     8.E-02
 ENDDATA             31
-ENDSUBENT           48
-SUBENT        22532005   20050314   20050610   20050926       2171
-BIB                  6         10
+ENDSUBENT           45
+SUBENT        22532005   20220102   20220319   20220317       2307
+BIB                  5          8
 REACTION   (29-CU-0(N,SCT)29-CU-0,PAR,DA)
-EN-SEC     (E-LVL1,29-CU-63)
-           (E-LVL2,29-CU-65)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-ANALYSIS   .            The scattering to the first excited states
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+ANALYSIS    The scattering to the first excited states
            of both isotopes Cu-65-0.77-MeV and Cu-63-0.67-MeV
            could not be separated from the elastic scattering.
-ERR-ANALYS (ERR-DIG).Digitizing error in data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 2(a) of main reference
-ENDBIB              10
-COMMON               5          3
-EN         E-LVL1     E-LVL2     ERR-DIG    ANG-ERR-D
-MEV        MEV        MEV        PER-CENT   ADEG
-       7.75      0.67       0.77         10.         1.
+STATUS     (CURVE)  Fig. 2(a) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102U) SD: ERR-ANALYS deleted. STATUS updated.
+           EN-SEC deleted. E-LVL1/2 -> E-LVL.
+ENDBIB               8
+COMMON               6          3
+EN         E-LVL      E-LVL      E-LVL      ERR-DIG    ANG-ERR-D
+MEV        MEV        MEV        MEV        PER-CENT   ADEG
+       7.75       0.0        0.67       0.77        10.         1.
 ENDCOMMON            3
 DATA                 2         29
 ANG-CM     DATA-CM
@@ -215,22 +206,26 @@ ADEG       MB/SR
       118.6       2.72
       124.1       3.11
 ENDDATA             31
-ENDSUBENT           50
-SUBENT        22532006   20050314   20050610   20050926       2171
-BIB                  5          7
-REACTION   (29-CU-0(N,INL)29-CU-0,,DA)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-COMMENT    .By Authors: Inelastic scattering data are containing
+ENDSUBENT           48
+SUBENT        22532006   20220102   20220319   20220317       2307
+BIB                  6          8
+REACTION   (29-CU-0(N,INL)29-CU-0,PAR,DA)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+COMMENT     By Authors: Inelastic scattering data are containing
            the sum of the 5/2-, 7/2- and 3/2- states.
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on figure.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 2(a) of main reference
-ENDBIB               7
-COMMON               2          3
-EN         ANG-ERR-D
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE)  Fig. 2(a) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: SF5=PAR added to REACTION code.
+           E-LVL added. ERR-ANALYS, STATUS updated.
+ENDBIB               8
+COMMON               8          6
+EN         E-LVL      E-LVL      E-LVL      E-LVL      E-LVL
+E-LVL      ANG-ERR-D
+MEV        MEV        MEV        MEV        MEV        MEV
 MEV        ADEG
-       7.75         1.
-ENDCOMMON            3
+       7.75       0.96       1.12       1.33       1.48       1.55
+       1.72         1.
+ENDCOMMON            6
 DATA                 3         24
 ANG-CM     DATA-CM    DATA-ERR
 ADEG       MB/SR      PER-CENT
@@ -259,28 +254,26 @@ ADEG       MB/SR      PER-CENT
       110.4        5.4        28.
       124.8         5.        24.
 ENDDATA             26
-ENDSUBENT           42
-SUBENT        22532007   20050314   20050610   20050926       2171
-BIB                  6         11
+ENDSUBENT           46
+SUBENT        22532007   20220102   20220319   20220317       2307
+BIB                  6          9
 REACTION   (29-CU-0(N,SCT)29-CU-0,PAR,POL/DA,,ANA)
-EN-SEC     (E-LVL1,29-CU-63)
-           (E-LVL2,29-CU-65)
-ANALYSIS   .            The scattering to the first excited states
+ANALYSIS    The scattering to the first excited states
            of both isotopes Cu-65-0.77-MeV and Cu-63-0.67-MeV
            could not be separated from the elastic scattering.
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on figure.
-           (ERR-DIG).Digitizing error in data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 2(b) of main reference
-ENDBIB              11
-COMMON               5          3
-EN         E-LVL1     E-LVL2     ERR-DIG    ANG-ERR-D
-MEV        MEV        MEV        NO-DIM     ADEG
-       7.75      0.67       0.77       0.017        0.9
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE)  Fig. 2(b) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: ERR-ANALYS, STATUS updated.
+           EN-SEC deleted. E-LVL1/2 -> E-LVL.
+ENDBIB               9
+COMMON               6          3
+EN         E-LVL      E-LVL      E-LVL      ERR-DIG    ANG-ERR-D
+MEV        MEV        MEV        MEV        NO-DIM     ADEG
+       7.75      0.0       0.67       0.77       0.017        0.9
 ENDCOMMON            3
 DATA                 3         27
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA       DATA-ERR
 ADEG       NO-DIM     NO-DIM
        23.3   -4.8E-02
        26.6   -7.2E-02
@@ -310,21 +303,19 @@ ADEG       NO-DIM     NO-DIM
       118.      4.E-02     9.E-02
       123.4       0.19     7.E-02
 ENDDATA             29
-ENDSUBENT           49
-SUBENT        22532008   20050314   20050610   20050926       2171
-BIB                  6          7
-REACTION   (24-CR-0(N,SCT)24-CR-0,PAR,DA)
-EN-SEC     (E-LVL,24-CR-53)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-COMMENT    *By authors*. Natural chromium was treated as Cr-52.
-ERR-ANALYS (ERR-DIG).Digitizing error in data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 3(a) of main reference
-ENDBIB               7
-COMMON               4          3
-EN         E-LVL      ERR-DIG    ANG-ERR-D
-MEV        MEV        PER-CENT   ADEG
-       7.75       0.56        10.        0.9
+ENDSUBENT           47
+SUBENT        22532008   20220102   20220319   20220317       2307
+BIB                  4          5
+REACTION   (24-CR-0(N,EL)24-CR-0,,DA)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+STATUS     (CURVE)  Fig. 3(a) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: SF3=SCT -> EL, SF5=PAR deleted from
+           REACTION code. ERR-ANALYS deleted. STATUS updated.
+ENDBIB               5
+COMMON               3          3
+EN         ERR-DIG    ANG-ERR-D
+MEV        PER-CENT   ADEG
+       7.75        10.        0.9
 ENDCOMMON            3
 DATA                 2         25
 ANG-CM     DATA-CM
@@ -355,19 +346,21 @@ ADEG       MB/SR
       119.5       13.8
       123.5        8.6
 ENDDATA             27
-ENDSUBENT           43
-SUBENT        22532009   20050314   20050610   20050926       2171
-BIB                  4          5
-REACTION   (24-CR-52(N,INL)24-CR-52,,DA)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on figure.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 3(a) of main reference
-ENDBIB               5
-COMMON               2          3
-EN         ANG-ERR-D
-MEV        ADEG
-       7.75        0.9
+ENDSUBENT           41
+SUBENT        22532009   20220102   20220319   20220317       2307
+BIB                  5          7
+REACTION   (24-CR-0(N,INL)24-CR-0,PAR,DA)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE)  Fig. 3(a) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: SF1=SF4=Cr-52 -> 24-CR-0; SF5=PAR
+           added to REACTION code. E-LVL added to COMMON section.
+           ERR-ANALYS, STATUS updated.
+ENDBIB               7
+COMMON               3          3
+EN         E-LVL      ANG-ERR-D
+MEV        MEV        ADEG
+       7.75      1.43         0.9
 ENDCOMMON            3
 DATA                 3         21
 ANG-CM     DATA-CM    DATA-ERR
@@ -394,24 +387,24 @@ ADEG       MB/SR      PER-CENT
       120.2        7.1        25.
       124.3        8.7        24.
 ENDDATA             23
-ENDSUBENT           37
-SUBENT        22532010   20050314   20050610   20050926       2171
+ENDSUBENT           39
+SUBENT        22532010   20220102   20220319   20220317       2307
 BIB                  5          7
-REACTION   (24-CR-52(N,SCT)24-CR-52,PAR,POL/DA,,ANA)
-EN-SEC     (E-LVL,24-CR-53)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on figure.
-           (ERR-DIG).Digitizing  error in data.
-           (ANG-ERR-D).Digitizing error in angles.
-STATUS     (CURVE)  Fig. 3(b) of main reference
+REACTION   (24-CR-0(N,EL)24-CR-0,,POL/DA,,ANA)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (CURVE)  Fig. 3(b) from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: SF1=SF4=Cr-52 -> Cr-0; SF3=SCT -> EL,
+           SF5=PAR deleted from REACTION code. ERR-ANALYS deleted.
+           STATUS updated.
 ENDBIB               7
-COMMON               4          3
-EN         E-LVL      ERR-DIG    ANG-ERR-D
-MEV        MEV        NO-DIM     ADEG
-       7.75     0.56        0.017         1.
+COMMON               3          3
+EN         ERR-DIG    ANG-ERR-D
+MEV        NO-DIM     ADEG
+       7.75      0.017         1.
 ENDCOMMON            3
 DATA                 3         25
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA       DATA-ERR
 ADEG       NO-DIM     NO-DIM
        20.9   -7.2E-02
        25.0   -3.6E-02
@@ -440,13 +433,14 @@ ADEG       NO-DIM     NO-DIM
       123.2    -0.26       0.12
 ENDDATA             27
 ENDSUBENT           43
-SUBENT        22532011   20050314   20050610   20050926       2171
-BIB                  3          4
+SUBENT        22532011   20220102   20220319   20220317       2307
+BIB                  4          5
 REACTION   (13-AL-27(N,EL)13-AL-27,,DA,,LEG)
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532002)
-ENDBIB               4
+HISTORY    (20220102U) SD: STATUS updated.
+ENDBIB               5
 COMMON               1          3
 EN
 MEV
@@ -465,18 +459,20 @@ NO-DIM     MB/SR
    7.         1.8
    8.        11.6
 ENDDATA             11
-ENDSUBENT           24
-SUBENT        22532012   20050314   20050610   20050926       2171
-BIB                  3          4
-REACTION   (13-AL-27(N,INL)13-AL-27,,DA,,LEG)
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+ENDSUBENT           25
+SUBENT        22532012   20220102   20220319   20220317       2307
+BIB                  4          6
+REACTION   (13-AL-27(N,INL)13-AL-27,PAR,DA,,LEG)
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532003)
-ENDBIB               4
-COMMON               1          3
-EN
-MEV
-       7.62
+HISTORY    (20220102A) SD: SF5=PAR added to REACTION code.
+            E-LVL added. STATUS updated.
+ENDBIB               6
+COMMON               3          3
+EN         E-LVL      E-LVL
+MEV        MEV        MEV
+       7.62      0.84       1.01
 ENDCOMMON            3
 DATA                 2          4
 NUMBER     DATA
@@ -486,23 +482,20 @@ NO-DIM     MB/SR
    2.        3.4
    3.       -0.7
 ENDDATA              6
-ENDSUBENT           19
-SUBENT        22532013   20050314   20050610   20050926       2171
-BIB                  5          9
+ENDSUBENT           21
+SUBENT        22532013   20220102   20220319   20220317       2307
+BIB                  4          6
 REACTION   (29-CU-0(N,SCT)29-CU-0,PAR,DA,,LEG)
-EN-SEC     (E-LVL1,29-CU-63)
-           (E-LVL2,29-CU-65)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-ANALYSIS   .            The scattering to the first excited states
-           of both isotopes Cu-65 =.77-MeV and Cu-63 =.67-MeV
-           could not be separated from the elastic scattering.
-STATUS     .From table 1 of main reference
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532005)
-ENDBIB               9
-COMMON               5          3
-EN         E-LVL1     E-LVL2     ERR-DIG    ANG-ERR-D
-MEV        MEV        MEV        PER-CENT   ADEG
-       7.75      0.67       0.77         10.         1.
+HISTORY    (20220102A) SD: STATUS updated. E-LVL1/2 -> E-LVL.
+           EN-SEC deleted.
+ENDBIB               6
+COMMON               6          3
+EN         E-LVL      E-LVL      E-LVL      ERR-DIG    ANG-ERR-D
+MEV        MEV        MEV        MEV        PER-CENT   ADEG
+       7.75       0.0        0.67       0.77        10.         1.
 ENDCOMMON            3
 DATA                 2          9
 NUMBER     DATA
@@ -517,21 +510,26 @@ NO-DIM     MB/SR
    7.        89.4
    8.        28.1
 ENDDATA             11
-ENDSUBENT           29
-SUBENT        22532014   20050314   20050610   20050926       2171
-BIB                  4          6
-REACTION   (29-CU-0(N,INL)29-CU-0,,DA,,LEG)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-COMMENT    .By Authors: Inelastic scattering data are containing
+ENDSUBENT           26
+SUBENT        22532014   20220102   20220319   20220317       2307
+BIB                  5          8
+REACTION   (29-CU-0(N,INL)29-CU-0,PAR,DA,,LEG)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+COMMENT     By Authors: Inelastic scattering data are containing
            the sum of the 5/2-, 7/2- and 3/2- states.
-STATUS     .From table 1 of main reference
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532006)
-ENDBIB               6
-COMMON               1          3
-EN
+HISTORY    (20220102A) SD: SF5=PAR added to REACTION code.
+           E-LVL added. ERR-ANALYS, STATUS updated.
+ENDBIB               8
+COMMON               7          6
+EN         E-LVL      E-LVL      E-LVL      E-LVL      E-LVL
+E-LVL
+MEV        MEV        MEV        MEV        MEV        MEV
 MEV
-       7.75
-ENDCOMMON            3
+       7.75       0.96       1.12       1.33       1.48       1.55
+       1.72
+ENDCOMMON            6
 DATA                 2          5
 NUMBER     DATA
 NO-DIM     MB/SR
@@ -541,20 +539,20 @@ NO-DIM     MB/SR
    3.        9.8
    4.       10.0
 ENDDATA              7
-ENDSUBENT           22
-SUBENT        22532015   20050314   20050610   20050926       2171
-BIB                  5          6
-REACTION   (24-CR-0(N,SCT)24-CR-0,PAR,DA,,LEG)
-EN-SEC     (E-LVL,24-CR-53)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-COMMENT    *By authors*. Natural chromium was treated as Cr-52.
-STATUS     .From table 1 of main reference
+ENDSUBENT           27
+SUBENT        22532015   20220102   20220319   20220317       2307
+BIB                  4          6
+REACTION   (24-CR-0(N,EL)24-CR-0,,DA,,LEG)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532008)
+HISTORY    (20220102A) SD: SF3=SCT -> EL, SF5=PAR deleted from
+           REACTION code. ERR-ANALYS deleted. STATUS updated.
 ENDBIB               6
-COMMON               2          3
-EN         E-LVL
-MEV        MEV
-       7.75     0.56
+COMMON               1          3
+EN
+MEV
+       7.75
 ENDCOMMON            3
 DATA                 2          9
 NUMBER     DATA
@@ -570,17 +568,20 @@ NO-DIM     MB/SR
   8.         33.9
 ENDDATA             11
 ENDSUBENT           26
-SUBENT        22532016   20050314   20050610   20050926       2171
-BIB                  3          4
-REACTION   (24-CR-52(N,INL)24-CR-52,,DA,,LEG)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+SUBENT        22532016   20220102   20220319   20220317       2307
+BIB                  4          7
+REACTION   (24-CR-0(N,INL)24-CR-0,PAR,DA,,LEG)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532009)
-ENDBIB               4
-COMMON               1          3
-EN
-MEV
-       7.75
+HISTORY    (20220102A) SD: SF1=SF4=Cr-52 -> 24-CR-0; SF5=PAR
+           added to REACTION code. E-LVL added to COMMON section.
+           STATUS updated.
+ENDBIB               7
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+       7.75      1.43
 ENDCOMMON            3
 DATA                 2          7
 NUMBER     DATA
@@ -593,18 +594,16 @@ NO-DIM     MB/SR
   5.          8.3
   6.          5.9
 ENDDATA              9
-ENDSUBENT           22
-SUBENT        22532017   20050314   20050610   20050926       2171
-BIB                  4          8
-REACTION   (13-AL-27(N,SCT)13-AL-27,,POL/DA,,ANA/LEG) Legendre
-             development of the analysing power Ay in the form
-             Ay*(d-sig/d-omega) = Sum(a(l)P(l)(cos(theta)))
-ANALYSIS   .First excited levels cannot be separated from
-            elastic scattering
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+ENDSUBENT           25
+SUBENT        22532017   20220102   20220319   20220317       2307
+BIB                  4          6
+REACTION   (13-AL-27(N,EL)13-AL-27,,POL/DA,,ANA/LEG)
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532004)
-ENDBIB               8
+HISTORY    (20220102A) SD: SF3=SCT -> EL in REACTION code.
+            STATUS updated.
+ENDBIB               6
 COMMON               1          3
 EN
 MEV
@@ -623,19 +622,19 @@ NO-DIM     NO-DIM
   7.         -0.17
   8.         -0.11
 ENDDATA             11
-ENDSUBENT           28
-SUBENT        22532018   20050314   20050610   20050926       2171
-BIB                  3          5
-REACTION   (13-AL-27(N,INL)13-AL-27,,POL/DA,,ANA/LEG) Legendre
-             development of the analysing power Ay in the form
-             Ay*(d-sig/d-omega) = Sum(a(l)P(l)(cos(theta)))
-SAMPLE     .Metallic cylinder 3 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+ENDSUBENT           26
+SUBENT        22532018   20220102   20220319   20220317       2307
+BIB                  4          5
+REACTION   (13-AL-27(N,INL)13-AL-27,PAR,POL/DA,,ANA/LEG)
+SAMPLE      Metallic cylinder 3 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
+HISTORY    (20220102A) SD: SF5=PAR added to REACTION code.
+            E-LVL added. STATUS updated.
 ENDBIB               5
-COMMON               1          3
-EN
-MEV
-       7.62
+COMMON               3          3
+EN         E-LVL      E-LVL
+MEV        MEV        MEV
+       7.62      0.84        1.01
 ENDCOMMON            3
 DATA                 2          4
 NUMBER     DATA
@@ -646,22 +645,19 @@ NO-DIM     NO-DIM
   3.         -0.6
 ENDDATA              6
 ENDSUBENT           20
-SUBENT        22532019   20050314   20050610   20050926       2171
-BIB                  4          9
-REACTION   (29-CU-0(N,SCT)29-CU-0,PAR,POL/DA,,ANA/LEG) Legendre
-             development of the analysing power Ay in the form
-             Ay*(d-sig/d-omega) = Sum(a(l)P(l)(cos(theta)))
-ANALYSIS   .            The scattering to the first excited states
-           of both isotopes Cu-65-0.77-MeV and Cu-63-0.67-MeV
-           could not be separated from the elastic scattering.
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+SUBENT        22532019   20220102   20220319   20220317       2307
+BIB                  4          6
+REACTION   (29-CU-0(N,SCT)29-CU-0,PAR,POL/DA,,ANA/LEG)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532007)
-ENDBIB               9
-COMMON               3          3
-EN         E-LVL1     E-LVL2
-MEV        MEV        MEV
-       7.75     0.67       0.77
+HISTORY    (20220102A) SD: STATUS updated. E-LVL1/2 -> E-LVL.
+           EN-SEC deleted.
+ENDBIB               6
+COMMON               4          3
+EN         E-LVL      E-LVL      E-LVL
+MEV        MEV        MEV        MEV
+       7.75       0.0        0.67       0.77
 ENDCOMMON            3
 DATA                 2          9
 NUMBER     DATA
@@ -676,21 +672,21 @@ NO-DIM     NO-DIM
   7.           1.5
   8.          -2.0
 ENDDATA             11
-ENDSUBENT           29
-SUBENT        22532020   20050314   20050610   20050926       2171
+ENDSUBENT           26
+SUBENT        22532020   20220102   20220319   20220317       2307
 BIB                  4          7
-REACTION   (24-CR-52(N,SCT)24-CR-52,PAR,POL/DA,,ANA/LEG) Legendre
-             development of the analysing power Ay in the form
-             Ay*(d-sig/d-omega) = Sum(a(l)P(l)(cos(theta)))
-EN-SEC     (E-LVL,24-CR-53)
-SAMPLE     .Metallic cylinder 4 cm diametre, 5 cm height
-STATUS     .From table 1 of main reference
+REACTION   (24-CR-0(N,EL)24-CR-0,,POL/DA,,ANA/LEG)
+SAMPLE      Metallic cylinder 4 cm diametre, 5 cm height
+STATUS     (TABLE) Table I from Phys.Rev.,C39(1989)1768
            (DEP,22532010)
+HISTORY    (20220102A) SD: SF1=SF4=Cr-52 -> Cr-0; SF3=SCT -> EL,
+           SF5=PAR deleted from REACTION code. ERR-ANALYS deleted.
+           STATUS updated.
 ENDBIB               7
-COMMON               2          3
-EN         E-LVL
-MEV        MEV
-       7.75   0.56
+COMMON               1          3
+EN
+MEV
+       7.75
 ENDCOMMON            3
 DATA                 2          9
 NUMBER     DATA

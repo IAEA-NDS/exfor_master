@@ -1,49 +1,80 @@
-ENTRY            22841   20200810   20210105   20210104       2291
-SUBENT        22841001   20200810   20210105   20210104       2291
-BIB                 12         27
+ENTRY            22841   20211006   20220319   20220317       2304
+SUBENT        22841001   20211006   20220319   20220317       2304
+BIB                 13         32
 TITLE       Neutron capture measurements on 171Tm
-AUTHOR     (R.Reifarth,R.C.Haight,M.Heil,M.M.Fowler, F.Kaeppeler,
+AUTHOR     (R.Reifarth,R.Haight,M.Heil,M.M.Fowler, F.Kaeppeler,
            G.G.Miller,R.S.Rundberg,J.L.Ullmann, J.B.Wilhelmy)
 INSTITUTE  (2GERKFK) Heil, Kaeppeler
-           (1USALAN) Reifarth, Haight, Fowler, Miller, Rundberg,
+           (1USALAS) Reifarth, Haight, Fowler, Miller, Rundberg,
                      Ullmann, Wilhelmy
 REFERENCE  (J,NP/A,718,478C,2003)
-           ((P,INDC(GER)-049,3,20030331)=(R,JUEL-4074,3,20030331))
-                Data is given
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
+           ((P,INDC(GER)-049,3,2003)=(R,JUEL-4074,3,2003))
+                                                    - Same data
 FACILITY   (VDG,2GERKFK)  3.75 MV Van de Graaff accelerator
 METHOD     (ACTIV)
            The integrated neutron flux was measured by
            simultaneous activation of Au-foils before and
            behind the sample.
-SAMPLE      0.8 microgram sample was made by irradiating 170Er
+SAMPLE      0.8 mug sample was made by irradiating 170Er
             in a reactor at the Idaho National Engineering and
             Environmental Lab.
 INC-SOURCE (P-LI7)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
 INC-SPECT   Quasistellar quasi-Maxwellian neutron spectrum with
             temperature 25 keV
-DETECTOR   (D4PI)    Two face to face Ge-Clover 4pi detectors
+DETECTOR   (D4PI)  Two face to face Ge-Clover 4pi detectors
 ERR-ANALYS (DATA-ERR) Not specified
 HISTORY    (20040730A)   JOS
            (20040730U) Last checking has been done.
            (20130113A) SD: EN-MEAN -> KT and values corrected in
              Subent 2.
            (20200810A) SD: Correction in Subent 002.
-ENDBIB              27
+           (20211006A) SD: Corrections in all Subents.
+           Subent 003 added.
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           30
-SUBENT        22841002   20200810   20210105   20210104       2291
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        22841002   20211006   20220319   20220317       2304
+BIB                  4          7
 REACTION   (69-TM-171(N,G)69-TM-172,,SIG,,MXW)
 DECAY-DATA (69-TM-172,63.6HR,DG,1094.)
-STATUS     (TABLE) Text(p479) of Nucl.Phys.A718(2003)478
+STATUS     (TABLE) Text(p.479) of Nucl.Phys.A718(2003)478
+           (SPSDD,22841003) Renormalized.
 HISTORY    (20130113A) SD: EN-MEAN -> KT and values corrected.
            (20200810A) SD: DECAY-DATA corrected.
-ENDBIB               5
+           (20211006A) SD: Subent superseded.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 KT         DATA       DATA-ERR
 KEV        MB         MB
         25.       350.        30.
 ENDDATA              3
-ENDSUBENT           13
-ENDENTRY             2
+ENDSUBENT           15
+SUBENT        22841003   20211006   20220319   20220317       2304
+BIB                  8         11
+REACTION  1((69-TM-171(N,G)69-TM-172,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(69-TM-171(N,G)69-TM-172,,SIG,,MXW)
+DECAY-DATA (69-TM-172,63.6HR,DG,1094.)
+ANALYSIS   Cross section value in Subent 22841.002 is
+           renormalized for new gold cross section
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 681/648 =1.051
+STATUS     (TABLE) p.162 of INDC(GER)-0053
+HISTORY    (20211006C) SD:
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 7          1
+KT         DATA      1DATA-ERR  1DATA      2DATA-ERR  2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB
+        25.     0.531     0.096        362.        65.     681.
+     6.
+ENDDATA              6
+ENDSUBENT           22
+ENDENTRY             3

@@ -1,25 +1,28 @@
-ENTRY            20878   20210122   20210303   20210303       2296
-SUBENT        20878001   20210122   20210303   20210303       2296
-BIB                 13         42
+ENTRY            20878   20211221   20220319   20220317       2306
+SUBENT        20878001   20211221   20220319   20220317       2306
+BIB                 13         47
 TITLE       Charge distribution in thermal neutron
             induced fission reactions
 AUTHOR     (H.O.Denschlag,G.Fischbach,H.Meixler,G.Paffrath,
             W.Rudolph,M.Weis,K.Wolfsberg)
 REFERENCE  (W,DENSCHLAG,19770608) Complete table.
+           (P,MAINZ-1976,102,1977) short descript.+ part of data
+           (P,MAINZ-1976,84,1977)  short descript.+ part of data
            (P,MAINZ-75,90,1976) - experim. descript., prelim.data
            (P,MAINZ-75,108,1976) -experim.descript.+ part of data
            (T,PAFFRATH,1976) - not available, 01.12.2020
            (T,RUDOLPH,1976)  - not available, 01.12.2020
            (P,MAINZ-75,84,1976)  - short descript.+ part of data
+           (J,VDPG,6,971(E8.5),1977) - short descript., no data
 INSTITUTE  (2GERMNZ) Institut fuer Kernchemie.
 FACILITY   (REAC,2GERMNZ) Mainz TRIGA reactor.
 REL-REF    (M,20879001,W.Rudolph+,J,JIN,39,753,1977) For experim.
             details delayed neutron data are compiled under this
             reference as EXFOR 20879.
 INC-SOURCE (REAC) Thermal Maxwellian flux
-METHOD     (CHSEP) Fast system, for details see various prog.
+METHOD     (CHSEP) Fast system, for details see various Prog.
             Rep. of Mainz.
-DETECTOR   (GELI ) Ge(Li) diode with 2.3 keV resolution and
+DETECTOR   (GELI) Ge(Li) diode with 2.3 keV resolution and
             relative efficiency of 18%.
            (PROPC) 8 He-3 counters with 12% efficiency for
             neutrons.
@@ -43,9 +46,11 @@ HISTORY    (19790417C) WWO.
            (20151215A) SD: DECAY-DATA corrected in Subent 004.
            (20190102A) SD: Subent 004 splitted in two.
            (20210122A) SD: Corrections in Subents 007-009,012,013.
-ENDBIB              42
+           (20211221A) SD: Corrections in Subents 010, 011.
+           Refs         VDPG,6,971(E8.5); MAINZ-1976 added.
+ENDBIB              47
 NOCOMMON             0          0
-ENDSUBENT           45
+ENDSUBENT           50
 NOSUBENT      20878002   20121029   20130226   20130207       2232
 NOSUBENT      20878003   20121029   20130226   20130207       2232
 SUBENT        20878004   20190102   20190424   20190420       2273
@@ -257,36 +262,37 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
  1.2500E-01 2.5000E-02 3.7900E-01 4.7000E-02 5.0400E-01 2.5000E-02
 ENDDATA              3
 ENDSUBENT           25
-SUBENT        20878010   20121029   20130226   20130207       2232
-BIB                  5          7
-REACTION   (94-PU-239(N,F)51-SB-132-G,IND,FY,,MXW)
+SUBENT        20878010   20211221   20220319   20220317       2306
+BIB                  6          8
+REACTION   (94-PU-239(N,F)51-SB-132-M,IND,FY,,MXW)
 INC-SPECT  Maxwellian spectrum
-MONITOR    (92-U-235(N,F)51-SB-132-G,CUM,FY,,MXW)
-           .yield of 132-Sb.
+MONITOR    (92-U-235(N,F)51-SB-132-M,CUM,FY,,MXW)
+DECAY-DATA (51-SB-132-M,4.2MIN,DG) High spin state.
 STATUS     (APRVD) Data taken from priv.comm.
 HISTORY    (19800724A) Reaction re-defined.
-           (19800808E)
-ENDBIB               7
+           (20211221A) SD: Sb-132g -> Sb132m im REACTION and
+           MONITOR codes.
+ENDBIB               8
 COMMON               1          3
 EN-DUMMY
 EV
- 2.5300E-02
+   2.53E-02
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
 PC/FIS     PC/FIS
- 2.6000E+00 1.6000E-01
+     2.6      0.16
 ENDDATA              3
-ENDSUBENT           19
-SUBENT        20878011   20121029   20130226   20130207       2232
-BIB                  5          7
+ENDSUBENT           20
+SUBENT        20878011   20211221   20220319   20220317       2306
+BIB                  6          7
 REACTION   (98-CF-249(N,F)ELEM/MASS,CUM,FY,,MXW)
 INC-SPECT  Maxwellian spectrum
-MONITOR    (92-U-235(N,F)51-SB-132-G,CUM,FY,,MXW)
-           .yield for 132-Sn.
+MONITOR    (92-U-235(N,F)51-SB-132-M,CUM,FY,,MXW)
+DECAY-MON  (51-SB-132-M,4.2MIN,DG) High spin state.
 STATUS     (APRVD) Data taken from priv.comm.
 HISTORY    (19800724A) Reaction re-defined
-           (19800808E)
+           (20211221A) SD: Sb-132g -> Sb132m im MONITOR code.
 ENDBIB               7
 COMMON               1          3
 EN-DUMMY
@@ -296,8 +302,8 @@ ENDCOMMON            3
 DATA                 4          2
 ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 5.0000E+01 1.3200E+02 1.4000E-01 6.0000E-02
- 5.1000E+01 1.3200E+02 1.7900E+00 4.1000E-01
+        50.       132.       0.14       0.06
+        51.       132.       1.79       0.41
 ENDDATA              4
 ENDSUBENT           20
 SUBENT        20878012   20210122   20210303   20210303       2296

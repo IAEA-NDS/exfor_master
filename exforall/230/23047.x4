@@ -1,6 +1,6 @@
-ENTRY            23047   20200807   20201008   20201008       2290
-SUBENT        23047001   20200807   20201008   20201008       2290
-BIB                 13         50
+ENTRY            23047   20211106   20220319   20220317       2305
+SUBENT        23047001   20211106   20220319   20220317       2305
+BIB                 13         53
 TITLE       Precise measurement of the thermal and stellar
            54Fe(n,gamma)55Fe cross sections via accelerator mass
            spectrometry
@@ -14,16 +14,18 @@ INSTITUTE  (3AULCBR,2AUSVIE,3HUNKFI,2AUSATI,2GERKFK,3AULMOU,
 REFERENCE  (J,PR/C,96,025808,2017) - final publ., data.
            Data measured at BNC and ATI compiled separately
                                                   (see REL-REF)
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
            (C,2006CERN,,(274),2006) Paper number 274.
 FACILITY   (VDG,2GERKFK) Karlsruhe 3.7MV Van de Graaff accelerator
-                        for activation. Beam current 80-90 microA.
+                        for activation. Beam current 80-90 uA.
 REL-REF    (O,23394001,A.Wallner+,J,PR/C,96,025808,2017)
             Data measured at ATI
            (O,31790001,A.Wallner+,J,PR/C,96,025808,2017)
             Data for cold neutrons irradiation at Budapest
             Neutron Center
 INC-SOURCE (P-LI7) Li-7(p,n)Be-7 reaction at kT=25 keV.
-            30 microm thick layers of metallic Li or 5 microm
+            30 mum thick layers of metallic Li or 5 mum
             layers of LiF on water-cooled Cu backing. Protons of
             1912 keV and 2284 keV.
 INC-SPECT   Quasi-stellar neutron spectrum of kT=25 +- 0.5 keV.
@@ -51,14 +53,15 @@ HISTORY    (20090103C) M.M.
            (20170825U) SD: Comma was added to ref. 2006CERN.
            (20190922A) SD: New ref. added; data updated.
            (20200807A) SD: Correction in Subent 005.
-ENDBIB              50
+           (20211106A) SD: Corrections in Subents 002,003.
+ENDBIB              53
 NOCOMMON             0          0
-ENDSUBENT           53
-SUBENT        23047002   20190922   20191216   20191119       2282
-BIB                  7         26
-REACTION   (26-FE-54(N,G)26-FE-55,,SIG,,MXW)
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-            Spectrum-averaged values
+ENDSUBENT           56
+SUBENT        23047002   20211106   20220319   20220317       2305
+BIB                  8         32
+REACTION   (26-FE-54(N,G)26-FE-55,,SIG,,SPA)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
+MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
 ANALYSIS    Activation parameters :
            Sample! Activ.!  Average ! Thick-! Mass !   Neutron
                  time(HR)     flux    ness             fluence
@@ -67,8 +70,8 @@ ANALYSIS    Activation parameters :
             Fe-2A  369.5hr   0.95      2.3   369.5  1.270 +- 0.038
             Gold                      0.03 16.1-16.8
             proton energies of 1912 keV
-FLAG       (1.)  Measurement of Fe-1M sample.
-           (2.)  Measurement of Fe-2A sample.
+FLAG       (1.)  Measurement of Fe-1M sample
+           (2.)  Measurement of Fe-2A sample
            (3.) Adopted value
 ERR-ANALYS (ERR-T) Total uncertainty
            (MONIT-ERR) Au cross section
@@ -81,14 +84,20 @@ ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-7) Fe-56 current                0.6%
            (ERR-8) AMS reproducibility          1.5%
 STATUS     (TABLE) Table IX from Phys.Rev.,C96(2017)025808
+           (SPSDD,23047004) The dataset superseded by kT=30 keV
+            value in 23047.004. (NIC-IX values are not based on
+            an AMS 55Fe-standard but relied on an estimate in the
+            AMS measurement only, A.Wallner, 2021-11-27).
 HISTORY    (20190922A) SD: data updated according final publ.
-ENDBIB              26
+           (20211106A) SD: SF8=MXW -> SPA in REACTION code. MONIT
+           value corrected (639. -> 632. mb).
+ENDBIB              32
 COMMON              10          6
-KT         KT-ERR     MONIT      MONIT-ERR  ERR-1      ERR-2
+KT-DUMMY   KT-ERR     MONIT      MONIT-ERR  ERR-1      ERR-2
 ERR-3      ERR-5      ERR-7      ERR-8
 KEV        KEV        MB         MB         PER-CENT   PER-CENT
 PER-CENT   PER-CENT   PER-CENT   PER-CENT
-  25.         5.         639.      9.            0.3         2.
+  25.         5.         632.      9.            0.3         2.
    0.12        1.5        0.6        1.5
 ENDCOMMON            6
 DATA                 3          3
@@ -98,9 +107,9 @@ MB         MB         NO-DIM
  29.6         1.4        2.
  30.3         1.2        3.
 ENDDATA              5
-ENDSUBENT           43
-SUBENT        23047003   20190922   20191216   20191119       2282
-BIB                  8         17
+ENDSUBENT           49
+SUBENT        23047003   20211106   20220319   20220317       2305
+BIB                  8         21
 REACTION   (26-FE-54(N,G)26-FE-55,,SIG,,MXW,DERIV)
 ANALYSIS    Derived from measured c-s of Subent 002 using
             normalization factor NF. NF was obtained using
@@ -117,20 +126,24 @@ FLAG       (1.)  Measurement of Fe-M1 sample.
 STATUS     (TABLE) Table 1 of 2006CERN,,(274),2006
            Data absent in Phys.Rev.,C96(2017)025808
            (DEP,23047002)
+           (SPSDD,23047004) NIC-IX values are not based on an AMS
+            55Fe-standard but relied on an estimate in the AMS
+            measurement only, A.Wallner, 2021-11-27
 HISTORY    (20190922U) SD: STATUS updated.
-ENDBIB              17
-COMMON               1          3
-ASSUM
-MB
- 22.2
+           (20211106A) SD: Subent superseded.
+ENDBIB              21
+COMMON               2          3
+KT         ASSUM
+KEV        MB
+   30.           22.2
 ENDCOMMON            3
-DATA                 4          2
-KT         DATA       MISC       FLAG
-KEV        MB         NO-DIM     NO-DIM
-    30.     30.8       0.709      1.
-    30.     29.8       0.733      2.
+DATA                 3          2
+DATA       MISC       FLAG
+MB         NO-DIM     NO-DIM
+       30.8      0.709         1.
+       29.8      0.733         2.
 ENDDATA              4
-ENDSUBENT           30
+ENDSUBENT           34
 SUBENT        23047004   20190922   20191216   20191119       2282
 BIB                  5         12
 REACTION   (26-FE-54(N,G)26-FE-55,,SIG,,MXW,RECOM)

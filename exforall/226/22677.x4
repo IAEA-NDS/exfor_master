@@ -1,6 +1,6 @@
-ENTRY            22677   20131117   20140820   20140807       2238
-SUBENT        22677001   20131117   20140820   20140807       2238
-BIB                 14         39
+ENTRY            22677   20210928   20220319   20220317       2304
+SUBENT        22677001   20210928   20220319   20220317       2304
+BIB                 14         42
 TITLE       Stellar neutron capture rate of 147Pm for
             constraining the S-Process neutron density
 AUTHOR     (C.Arlandini,M.Heil,R.Reifarth,F.Kaeppeler,
@@ -9,61 +9,95 @@ INSTITUTE  (2GERKFK)   Arlandini, Heil, Reifarth, Kaeppeler
                        Voss, Wisshak
            (4ZZZDUB)   Sedyshev
 REFERENCE  (J,NP/A,688,487C,2001)  Main reference, datum is given
-           (J,NSTS,2,(1),518,200208) first author F.Kaeppeler
-           ((P,INDC(GER)-048,2,200207)=(P,JUEL-3996,1,200207))
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections.
+           (J,NSTS,2,518,2002) first author F.Kaeppeler
+           ((P,INDC(GER)-048,2,2002)=(P,JUEL-3996,1,2002))
 REL-REF    (M,,K.A.Toukan+,J,PR/C,51,1540,1995) Experim. details
 FACILITY   (VDG,2GERKFK)
 METHOD     (ACTIV)   Activation
 DETECTOR   (HPGE)   Two Clover High-Purity Ge Detectors facing
                     each other
-SAMPLE     .A minute amount of 147Pm was added to enriched to
+SAMPLE      A minute amount of 147Pm was added to enriched to
             98.27% samarium-147 isotope serving as carrier. This
             mixture was then oxidized, mixed with 10 milligram of
             fine graphite powder and pressed into a pellet 6 mm
-            diameter, 0.4 mm thickness. Sample mass is 28.7+-1.2
-            nanogram, or (1.17+-0.05) x 10**14 atoms
+            diameter, 0.4 mm thickness. Sample mass is
+            28.7+-1.2 ng, or (1.17+-0.05) x 10**14 atoms
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
 INC-SOURCE (P-LI7)  Protons with energies 1912 keV, 31 keV above
                     7Li(p,n)7Be reaction threshold
 INC-SPECT   Neutron spectrum is near Maxwellian with temperature
             25 keV
-ERR-ANALYS (DATA-ERR) Error including:
+ERR-ANALYS (ERR-T) Error includes:
            (ERR-1) typical error of gamma-ray detection efficiency
 HISTORY    (20020730C)  + + J.O.S.
            (20030313U)  . . References added
            (20040223U)  . . Correlation established
            (20060806U)   Reference year corrected
-           (20101102A) SD: Author's name corrected:
-              F KAEPPELER => F.Kaeppeler
-           Ref. on Phys.Rev. C51 moved to REL-REF
+           (20101102A) SD: Ref. on Phys.Rev. C51 moved to REL-REF.
+           Author's name corrected: F KAEPPELER => F.Kaeppeler
            In Subent 002: EN-MEAN changed on kT as it is given
             in refs.
            (20131117U) SD: Ref. 2001TSUKUB deleted according to
             MEMO CP-D/791. Minor corrections.
-ENDBIB              39
+           (20210928A) SD: Small corrections in all Subents.
+           Subent 003 added.
+ENDBIB              42
 COMMON               1          3
 ERR-1
 PER-CENT
   2.
 ENDCOMMON            3
-ENDSUBENT           46
-SUBENT        22677002   20101102   20110803   20110721       2225
-BIB                  4          9
+ENDSUBENT           49
+SUBENT        22677002   20210928   20220319   20220317       2304
+BIB                  4         10
 REACTION   (61-PM-147(N,G)61-PM-148,,SIG,,MXW)
 DECAY-DATA (61-PM-147,2.62YR,DG,121.) Used to determine sample
              mass.
            (61-PM-148-G,5.37D,DG)
-STATUS     (TABLE) Data taken from the text, page 489C, under
+STATUS     (TABLE) Data taken from the text, page 489c, under
             the fig.2 where units are given as 'keV'
-           (COREL,22829004)
+           (SPSDD,22677003) Renormalized.
 HISTORY    (20101102A) SD: in DECAY-DATA isotope corrected:
              61-PM-148 => 61-PM-148-G
-ENDBIB               9
+           (20210928A) SD: Subent superseded. DATA-ERR-> ERR-T.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 3          1
-KT         DATA       DATA-ERR
-KEV        MB         PER-CENT
-       25.       685.        10.
+DATA                 5          1
+KT         DATA       ERR-T      MONIT      MONIT-ERR
+KEV        MB         MB         MB         MB
+       25.       685.        69.       648.      10.
 ENDDATA              3
-ENDSUBENT           17
-ENDENTRY             2
+ENDSUBENT           18
+SUBENT        22677003   20210928   20220319   20220317       2304
+BIB                  8         17
+REACTION  1((61-PM-147(N,G)61-PM-148,,SIG,,MXW)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,MXW))
+          2(61-PM-147(N,G)61-PM-148,,SIG,,MXW)
+DECAY-DATA (61-PM-147,2.62YR,DG,121.) Used to determine sample
+             mass.
+           (61-PM-148-G,5.37D,DG)
+ANALYSIS   Cross section value in Subent 22677.002 is
+           renormalized for new gold cross section
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION  Correction for revised gold standard: 681/648 =1.051
+COMMENT     The gamma intensities of 148gPm as well as the gamma-
+           lines and intensities of 148mPm adopted in the cross
+           section determination are unknown.
+STATUS     (TABLE) p.126 of INDC(GER)-0053
+           (SPSDD,22829004) Data set from an experiment under
+           improved conditions (see COMMENT).
+HISTORY    (20210928C) SD
+ENDBIB              17
+NOCOMMON             0          0
+DATA                 7          1
+KT         DATA      1ERR-T     1DATA      2ERR-T     2MONIT
+MONIT-ERR
+KEV        NO-DIM     NO-DIM     MB         MB         MB
+MB
+       25.    1.057       0.106       720.        72.     681.
+   7.
+ENDDATA              6
+ENDSUBENT           28
+ENDENTRY             3

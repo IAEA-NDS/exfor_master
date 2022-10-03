@@ -1,17 +1,19 @@
-ENTRY            23051   20110206   20110905   20110902       2226
-SUBENT        23051001   20110206   20110905   20110902       2226
-BIB                 13         31
-REFERENCE  (C,2007NICE,2,1333,200704)
-           #doi:10.1051/ndata:07488
+ENTRY            23051   20211109   20220319   20220317       2305
+SUBENT        23051001   20211109   20220319   20220317       2305
+BIB                 13         36
+TITLE      Measurement of the Bi-209(n,gamma)Bi-210g cross section
+           and updated s-process analysis of the Pb/Bi region
 AUTHOR     (S.Bisterzo, F.Kaeppeler, R.Galino, M.Heil,
            C.Domingo-Pardo, C.Vockenhuber, A.Wallner)
-TITLE      Measurement of the Bi-209(n,gamma)Bi-210g cross section
-           and updated s-process analysis of the Pb/Bi region.
+REFERENCE  (C,2007NICE,2,1333,2007)
+           #doi:10.1051/ndata:07488
+           (R,INDC(GER)-0053,2021) Revised values of Karlsruhe
+           cross sections
 INSTITUTE  (2GERKFK) S.Bisterzo, F.Kaeppeler, C.Domingo-Pardo.
            (2ITYTUR) S.Bisterzo, R.Galino
            (2GERGSI) M.Heil
            (1CANTMF) C.Vockenhuber
-           (2AUSPVI) A.Wallner
+           (2AUSVIE) A.Wallner
 FACILITY   (VDG,2GERKFK) Karlsruhe 3.7MV Van de Graaff accelerator
                         for activation.
 INC-SOURCE (P-LI7) Li-7(p,n)Be-7 reaction at kT=25 keV.Protons of
@@ -24,37 +26,40 @@ SAMPLE     Two very thin Bi metal samples were prepared by
            measurement.
            Each was sandwiched between thin gold foils of the same
            diameter.
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG) at kT=25 keV.
-MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
-METHOD     (ACTIV)  Activation technique .
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA) at kT=25 keV.
+METHOD     (ACTIV)  Activation technique
 DETECTOR   (GLASD) Li-6 glass detector at 90 cm distance from
             lithium target - to monitor the neutron flux in
             intervals of 1 min.
+COMMENT    From Dr.F.Kaeppeler (see INDC(GER)-0053,2021):
+            No data shown, subentry 23051.008 should be deleted.
 HISTORY    (20090301C) M.M.
            (20110206U) SD: DOI identifier was corrected.
-ENDBIB              31
+           (20211109A) SD: Corrections in all Subents. Subent 008
+           deleted (see COMMENT). Subents 009-014 added.
+ENDBIB              36
 NOCOMMON             0          0
-ENDSUBENT           34
-SUBENT        23051002   20090103   20090508   20090507       2210
-BIB                 11         59
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW)
+ENDSUBENT           39
+SUBENT        23051002   20211109   20220319   20220317       2305
+BIB                 11         61
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
 METHOD     (ASPEC)
-PART-DET   (A)
 DECAY-DATA (84-PO-210,138.38D,A,5304.)
             S.Y.F.Chu,R.B.Firestone+, WWW Table of Radioactive
             Isotopes, data base version 28.2.1999,
-            http//ie.lbl.gov/toi/index.htm .
+            http//ie.lbl.gov/toi/index.htm
            (83-BI-210-G,5.013D)
            (83-BI-210-M,3.E+6YR)
 DETECTOR   (SIBAR) Si-detector of 23.72+-0.14 mm diameter, mounted
            in vacuum (2.E3 Pa) chamber several cm in front of
            sample. For alpha-counting. Detector efficiency was
            determined by GEANT-4 simulation.
+MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
 ANALYSIS    Activation parameters :
                                         Sample Bi3    Sample Bi6
             Sample mass, mg             2.98+-0.01%   2.32+-0.01%
             Diameter, cm                1.00+-0.10%   1.00+-0.10%
-            Thickness, microm           3.9+-1.03%    3.0+-1.32%
+            Thickness, um               3.9+-1.03%    3.0+-1.32%
             Number of atoms, 1.E+8 at   8.59+-0.94%   6.69+-1.21%
             Activation time, day        10.74+-0.01%  2.65+-0.05%
             Total time-integrated
@@ -82,6 +87,192 @@ ERR-ANALYS (ERR-1) Uncertainty of sample mass,
            (ERR-5) Uncertainty of activation time,
            (ERR-6) Uncertainty of time integrated total neutron
                    flux,
+           (ERR-7) Uncertainty of waiting time, for Bi6 sample -
+                   max. 0.01%,
+           (ERR-8) Uncertainty of counting time,
+           (ERR-9) Uncertainty of detection efficiency,
+           (ERR-S) Uncertainty of number of counts,
+           (ERR-T) Total uncertainty
+            Uncertainty of Fb turned out to be negligible.
+FLAG       (1.)  Measurement of sample Bi3-a
+           (2.)  Measurement of sample Bi3-b
+           (3.)  Measurement of sample Bi6-a
+           (4.)  Measurement of sample Bi6-b
+STATUS     (TABLE) Tbl.5 (data); Tbls 2,4 (errors) from
+            2007NICE,2,1333,2007
+           (SPSDD,23051009) Renormalized.
+HISTORY    (20210729A) SD: SF8=MXW -> SPA in REACTION code.
+           KT -> KT-DUMMY; MISC -> ERR-T. Subent superseded.
+ENDBIB              61
+COMMON               4          3
+KT-DUMMY   KT-ERR     ERR-1      ERR-2
+KEV        KEV        PER-CENT   PER-CENT
+ 25.0       0.5        0.01       0.10
+ENDCOMMON            3
+DATA                11          4
+DATA       ERR-T      ERR-S      ERR-3      ERR-4      ERR-5
+ERR-6      ERR-7      ERR-8      ERR-9      FLAG
+MB         PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   NO-DIM
+      2.279       2.08       0.18       1.03       0.94       0.01
+       1.82       0.02       0.02       0.99         1.
+      2.223       2.03       0.21       1.03       0.94       0.01
+       1.82       0.01       0.01       0.86         2.
+      2.197       5.61       4.45       1.32       1.21       0.05
+       3.26                  0.01       0.99         3.
+      2.203       3.69       1.42       1.32       1.21       0.05
+       3.26                  0.02       0.99         4.
+ENDDATA             12
+ENDSUBENT           82
+SUBENT        23051003   20211109   20220319   20220317       2305
+BIB                  7         15
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
+ANALYSIS   Average weighted of four runs
+DECAY-DATA (84-PO-210,138.38D) HL of Po-210 from
+            S.Y.F.Chu,R.B.Firestone+, WWW Table of Radioactive
+            Isotopes, data base version 28.2.1999,
+            http//ie.lbl.gov/toi/index.htm
+MONIT-REF  (22099002,W.Ratynski+,J,PR/C,37,595,1988)
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+STATUS     (TABLE)  Tbl.5 and text on p.1334 of 2007NICE,2,1333
+           (DEP,23051002) Single runs
+           (SPSDD,23051010) Renormalized.
+HISTORY    (20210729A) SD: SF8=MXW -> SPA in REACTION code.
+           Subent superseded. DATA-ERR -> ERR-T.
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 6          1
+KT-DUMMY   KT-ERR     DATA       ERR-T      ERR-1      ERR-2
+KEV        KEV        MB         MB         PER-CENT   PER-CENT
+ 25.0           0.5         2.23       0.07       0.01       0.10
+ENDDATA              3
+ENDSUBENT           23
+SUBENT        23051004   20211109   20220319   20220317       2305
+BIB                  6         13
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
+DECAY-DATA (84-PO-210,142.0D) HL=142.00+-1.1 day.
+CORRECTION  Corrected for new recent value of Po-210 half-life
+            from Annual Report of R.Dressler+, Paul Scherrer
+            Institute, Villigen, Switzerland, 2007.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+STATUS     (TABLE)  text on p.1335 of 2007NICE,2,1333
+           (DEP,23051003)
+           (SPSDD,23051011) Renormalized.
+HISTORY    (20210729A) SD: SF8=MXW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 6          1
+KT-DUMMY   KT-ERR     DATA       ERR-T      ERR-1      ERR-2
+KEV        KEV        MB         MB         PER-CENT   PER-CENT
+ 25.0           0.5         2.27       0.07       0.01       0.10
+ENDDATA              3
+ENDSUBENT           21
+SUBENT        23051005   20211109   20220319   20220317       2305
+BIB                  6         13
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW,DERIV)
+            Maxwellian average cross section.
+DECAY-DATA (84-PO-210,138.38D)
+CORRECTION  Corrected for the cutoff in the experimental spectrum
+            at 106.keV.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+STATUS     (TABLE)  text on p.1335 of 2007NICE,2,1333
+           (DEP,23051003)
+           (SPSDD,23051012) Renormalized.
+HISTORY    (20210729A) SD: SF8=MXW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      ERR-1      ERR-2
+KEV        MB         MB         PER-CENT   PER-CENT
+ 30.0            2.16       0.07       0.01       0.10
+ENDDATA              3
+ENDSUBENT           21
+SUBENT        23051006   20211109   20220319   20220317       2305
+BIB                  6         13
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW,DERIV)
+            Maxwellian average cross section
+DECAY-DATA (84-PO-210,142.0D)
+CORRECTION  Corrected for the cutoff in the experimental spectrum
+            at 106.keV.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+STATUS     (TABLE)  text on p.1335 of 2007NICE,2,1333
+           (DEP,23051004)
+           (SPSDD,23051013) Renormalized.
+HISTORY    (20210729A) SD: SF8=MXW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      ERR-1      ERR-2
+KEV        MB         MB         PER-CENT   PER-CENT
+ 30.0            2.20       0.07       0.01       0.10
+ENDDATA              3
+ENDSUBENT           21
+SUBENT        23051007   20211109   20220319   20220317       2305
+BIB                  7         16
+REACTION   (83-BI-209(N,G)83-BI-210-M/T,,SIG/RAT,,MXW,DERIV)
+            Isomeric ratio at kT=30 keV.
+REL-REF    (R,22944001,C.Domingo-Pardo+,J,PR/C,74,025807,2006)
+           (R,,Mutti+,C,98VOLOS,,2004,1998)
+ANALYSIS    The isomeric ratio was obtained using measured SIG-g
+            and average value of two total c-s from REL-REFs :
+            2.58+-0.50 mb and 2.54+-0.48 mb. SIG-m was defined as
+            difference.
+COMMENT    Of authors. This IR value is too uncertain for
+           comparison with IR values at thermal energy.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE)  text on p.1335 of 2007NICE,2,1333
+           (DEP,23051005)
+           (SPSDD,23051014) Renormalized.
+HISTORY    (20210729A) SD: SF8=MXW -> SPA in REACTION code.
+           Subent superseded.
+ENDBIB              16
+NOCOMMON             0          0
+DATA                 3          1
+KT         DATA       DATA-ERR
+KEV        NO-DIM     NO-DIM
+ 30.           0.15       0.42
+ENDDATA              3
+ENDSUBENT           24
+NOSUBENT      23051008   20211109   20220319   20220317       2305
+SUBENT        23051009   20211109   20220319   20220317       2305
+BIB                 12         39
+REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
+METHOD     (ASPEC)
+DECAY-DATA (84-PO-210,138.38D,A,5304.)
+            S.Y.F.Chu,R.B.Firestone+, WWW Table of Radioactive
+            Isotopes, data base version 28.2.1999,
+            http//ie.lbl.gov/toi/index.htm
+           (83-BI-210-G,5.013D)
+           (83-BI-210-M,3.E+6YR)
+DETECTOR   (SIBAR) Si-detector of 23.72+-0.14 mm diameter, mounted
+           in vacuum (2.E3 Pa) chamber several cm in front of
+           sample. For alpha-counting. Detector efficiency was
+           determined by GEANT-4 simulation.
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Cross section value in Subent 23051.002 is
+           renormalized for new gold cross section
+            Measured quantity at kT=25 keV: cross section ratio
+             (209Bi(n,gamma)209Bi-g)/197Au = (3.800+-0.127)E-03
+CORRECTION Correction for revised gold standard: 622.7/586 =1.0626
+ERR-ANALYS (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+           (ERR-3) Uncertainty of sample thickness,
+           (ERR-4) Uncertainty of number of atoms in sample,
+           (ERR-5) Uncertainty of activation time,
+           (ERR-6) Uncertainty of time integrated total neutron
+                   flux,
            (ERR-7) Uncertainty of waiting time,for Bi6 sample -
                    max. 0.01%,
            (ERR-8) Uncertainty of counting time,
@@ -89,181 +280,172 @@ ERR-ANALYS (ERR-1) Uncertainty of sample mass,
            (ERR-S) Uncertainty of number of counts,
            (ERR-T) Total uncertainty.
             Uncertainty of Fb turned out to be negligible.
-MISC-COL   (MISC)  Absolute value of total uncertainty.
 FLAG       (1.)  Measurement of sample Bi3-a.
            (2.)  Measurement of sample Bi3-b.
            (3.)  Measurement of sample Bi6-a.
            (4.)  Measurement of sample Bi6-b.
-STATUS     (TABLE) Table 5 of reference -data.
-            Errors from Table 2, 4.
-ENDBIB              59
+STATUS     (TABLE) Table on p.306 of INDC(GER)-0053
+HISTORY    (20210729C) SD
+ENDBIB              39
 COMMON               4          3
-KT         KT-ERR     ERR-1      ERR-2
+KT-DUMMY   KT-ERR     ERR-1      ERR-2
 KEV        KEV        PER-CENT   PER-CENT
  25.0       0.5        0.01       0.10
 ENDCOMMON            3
-DATA                12          4
+DATA                11          4
 DATA       ERR-T      ERR-S      ERR-3      ERR-4      ERR-5
-ERR-6      ERR-7      ERR-8      ERR-9      MISC       FLAG
-MB         PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   MB         NO-DIM
- 2.279      2.08       0.18       1.03       0.94       0.01
-  1.82       0.02       0.02       0.99       0.047     1.
- 2.223      2.03       0.21       1.03       0.94       0.01
-  1.82       0.01       0.01       0.86       0.045     2.
- 2.197      5.61       4.45       1.32       1.21       0.05
-  3.26                  0.01       0.99       0.123     3.
- 2.203      3.69       1.42       1.32       1.21       0.05
-  3.26                  0.02       0.99       0.081     4.
+ERR-6      ERR-7      ERR-8      ERR-9      FLAG
+MB         MB         PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   NO-DIM
+      2.279      0.047       0.18       1.03       0.94       0.01
+       1.82       0.02       0.02       0.99         1.
+      2.223      0.045       0.21       1.03       0.94       0.01
+       1.82       0.01       0.01       0.86         2.
+      2.197      0.123       4.45       1.32       1.21       0.05
+       3.26                  0.01       0.99         3.
+      2.203      0.081       1.42       1.32       1.21       0.05
+       3.26                  0.02       0.99         4.
 ENDDATA             12
-ENDSUBENT           80
-SUBENT        23051003   20090103   20090508   20090507       2210
-BIB                  5          9
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW)
+ENDSUBENT           60
+SUBENT        23051010   20211109   20220319   20220317       2305
+BIB                  9         19
+REACTION  1((83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
+ANALYSIS    Average weighted of four runs
+            Cross section value in Subent 23051.003 is
+           renormalized for new gold cross section
 DECAY-DATA (84-PO-210,138.38D) HL of Po-210 from
             S.Y.F.Chu,R.B.Firestone+, WWW Table of Radioactive
             Isotopes, data base version 28.2.1999,
             http//ie.lbl.gov/toi/index.htm .
-ERR-ANALYS (ERR-T) Total uncertainty.
-MISC-COL   (MISC)  Absolute value of total uncertainty.
-STATUS     (TABLE) Table 5; text page 1334 of reference.
-           (DEP,23051002) Average weighted of four runs of Sub.002
-ENDBIB               9
-COMMON               2          3
-KT         KT-ERR
-KEV        KEV
- 25.0       0.5
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+CORRECTION Correction for revised gold standard: 622.7/586 =1.0626
+ERR-ANALYS (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+           (ERR-T) Total uncertainty.
+STATUS     (TABLE) Table on p.307 of INDC(GER)-0053
+           (DEP,23051002) Single runs
+HISTORY    (20210729C) SD
+ENDBIB              19
+COMMON               4          3
+KT-DUMMY   KT-ERR     ERR-1      ERR-2
+KEV        KEV        PER-CENT   PER-CENT
+ 25.0       0.5        0.01       0.10
 ENDCOMMON            3
-DATA                 3          1
-DATA       ERR-T      MISC
-MB         PER-CENT   MB
- 2.23       3.14       0.07
+DATA                 4          1
+DATA      1ERR-T     1DATA      2ERR-T     2
+NO-DIM     NO-DIM     MB         MB
+  3.805E-03  0.119E-03   2.37           0.07
 ENDDATA              3
-ENDSUBENT           21
-SUBENT        23051004   20090103   20090508   20090507       2210
-BIB                  5          8
-REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW)
+ENDSUBENT           31
+SUBENT        23051011   20211109   20220319   20220317       2305
+BIB                  9         15
+REACTION  1((83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(83-BI-209(N,G)83-BI-210-G,,SIG,,SPA)
 DECAY-DATA (84-PO-210,142.0D) HL=142.00+-1.1 day.
-CORRECTION  Corrected for new recent value of Po-210 half-life
-            from Annual Report of R.Dressler+, Paul Scherrer
-            Institute, Villigen, Switzerland, 2007.
-ERR-ANALYS (ERR-T) Total uncertainty.
-STATUS      Text page 1335 of reference.
+DECAY-MON  (79-AU-198-G,3881.0MIN,DG,411.80,0.9558)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Cross section value in Subent 23051.004 is
+           renormalized for new gold cross section
+CORRECTION Correction for revised gold standard: 622.7/586=1.0626
+ERR-ANALYS (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+           (ERR-T) Total uncertainty.
+STATUS     (TABLE) Table on p.308 of INDC(GER)-0053
            (DEP,23051003)
-ENDBIB               8
+HISTORY    (20210729C) SD
+ENDBIB              15
 COMMON               2          3
-KT         KT-ERR
-KEV        KEV
- 25.0       0.5
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  0.01       0.10
 ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
- 2.27       0.07
+DATA                 6          1
+KT-DUMMY   KT-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
+KEV        KEV        NO-DIM     NO-DIM     MB         MB
+     25.0       0.5     3.874E-03  0.119E-03   2.41       0.07
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        23051005   20090103   20090508   20090507       2210
-BIB                  5          8
+ENDSUBENT           27
+SUBENT        23051012   20211109   20220319   20220317       2305
+BIB                  8         15
 REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW,DERIV)
             Maxwellian average cross section.
 DECAY-DATA (84-PO-210,138.38D)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Cross section value in Subent 23051.005 is
+           renormalized for new gold cross section
 CORRECTION  Corrected for the cutoff in the experimental spectrum
-            at 106.keV.
-ERR-ANALYS (ERR-T) Total uncertainty.
-STATUS      Text page 1335 of reference.
+            at 106. keV.
+            Correction for revised gold standard: 611.6/582 =1.051
+ERR-ANALYS (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+           (ERR-T) Total uncertainty.
+STATUS     (TABLE) Table on p.309 of INDC(GER)-0053
            (DEP,23051003)
-ENDBIB               8
-COMMON               1          3
-KT
-KEV
- 30.
-ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
- 2.16       0.07
+HISTORY    (20210729C) SD
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      ERR-1      ERR-2
+KEV        MB         MB         PER-CENT   PER-CENT
+    30.        2.16       0.07     0.01       0.10
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        23051006   20090103   20090508   20090507       2210
-BIB                  5          8
+ENDSUBENT           23
+SUBENT        23051013   20211109   20220319   20220317       2305
+BIB                  8         15
 REACTION   (83-BI-209(N,G)83-BI-210-G,,SIG,,MXW,DERIV)
             Maxwellian average cross section
 DECAY-DATA (84-PO-210,142.0D)
+MONIT-REF  (,R.Reifarth+,J,EPJ/P,133,424,2018)
+ANALYSIS   Cross section value in Subent 23051.006 is
+           renormalized for new gold cross section
 CORRECTION  Corrected for the cutoff in the experimental spectrum
             at 106.keV.
-ERR-ANALYS (ERR-T) Total uncertainty.
-STATUS      Text page 1335 of reference.
+            Correction for revised gold standard: 611.6/582 =1.051
+ERR-ANALYS (ERR-1) Uncertainty of sample mass,
+           (ERR-2) Uncertainty of sample diameter,
+           (ERR-T) Total uncertainty.
+STATUS     (TABLE) Table on p.310 of INDC(GER)-0053
            (DEP,23051004)
-ENDBIB               8
-COMMON               1          3
-KT
-KEV
- 30.
-ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-MB         MB
- 2.20       0.07
+HISTORY    (20210729C) SD
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 5          1
+KT         DATA       ERR-T      ERR-1      ERR-2
+KEV        MB         MB         PER-CENT   PER-CENT
+    30.        2.31      0.07        0.01       0.10
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        23051007   20090103   20090508   20090507       2210
-BIB                  6         13
+ENDSUBENT           23
+SUBENT        23051014   20211109   20220319   20220317       2305
+BIB                  8         19
 REACTION   (83-BI-209(N,G)83-BI-210-M/T,,SIG/RAT,,MXW,DERIV)
             Isomeric ratio at kT=30 keV.
 REL-REF    (R,22944001,C.Domingo-Pardo+,J,PR/C,74,025807,2006)
-           (R,,Mutti+,C,98VOLOS,2004,1998)
+           (R,,Mutti+,C,98VOLOS,,2004,1998)
 ANALYSIS    The isomeric ratio was obtained using measured SIG-g
             and average value of two total c-s from REL-REFs :
             2.58+-0.50 mb and 2.54+-0.48 mb. SIG-m was defined as
             difference.
+            Cross section value in Subent 23051.007 is
+           renormalized for new gold cross section
 COMMENT    Of authors. This IR value is too uncertain for
            comparison with IR values at thermal energy.
-ERR-ANALYS (ERR-T) Total uncertainty.
-STATUS      Text page 1335 of reference.
+CORRECTION  Corrected for the cutoff in the experimental spectrum
+            at 106.keV.
+            Correction for revised gold standard: 611.6/582 =1.051
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE) Table on p.311 of INDC(GER)-0053
            (DEP,23051005)
-ENDBIB              13
-COMMON               1          3
-KT
-KEV
- 30.
-ENDCOMMON            3
-DATA                 2          1
-DATA       ERR-T
-NO-DIM     NO-DIM
- 0.15       0.42
+HISTORY    (20210729C) SD
+ENDBIB              19
+NOCOMMON             0          0
+DATA                 3          1
+KT         DATA       DATA-ERR
+KEV        NO-DIM     NO-DIM
+ 30.           0.11       0.42
 ENDDATA              3
-ENDSUBENT           25
-SUBENT        23051008   20090108   20090508   20090507       2210
-BIB                  7         23
-REACTION   (83-BI-209(N,G)83-BI-210-M,,SIG,,MXW)
-FACILITY   (ACCEL,2AUSIRK) For AMS at VERA laboratory.
-METHOD     (AMS)
-ANALYSIS    Activation parameters :
-                                       Sample BiA    Sample BiB
-            Sample mass, mg          214.96+-<0.01% 233.36+-<0.01%
-            Diameter, cm             0.60+-0.17%    0.60+-0.17%
-            Thickness, microm        281.+-0.93%    305.+-0.93%
-            Number of atoms,1.E+8at  619.43+-0.01%  672.45+-0.01%
-            Activation time, day     14.22+-0.01%   8.71+-0.02%
-            Total time-integrated
-            neutr.flux,E+14 n/cm**2  6.29+-0.98%    13.02+-1.15%
-ERR-ANALYS         Uncertainty of sample mass <0.01% ,
-           (ERR-2) Uncertainty of sample diameter - 0.17%,
-           (ERR-3) Uncertainty of sample thickness -0.93%,
-           (ERR-4) Uncertainty of number of atoms in sample 0.01%,
-           (ERR-5) Uncertainty of activation time 0.01% for
-                   BiA sample, 0.02 for BiB sample;
-           (ERR-6) Uncertainty of time integrated total neutron
-                  flux 0.98% for BiA sample, 1.15% for BiB sample.
-STATUS     (UNOBT) Data of C-s are not presented in the article.
-COMMENT    Of authors. This measurement is under way at VERA
-           facility in Vienna. Planning to finish  within 2007.
-ENDBIB              23
-COMMON               5          3
-KT         KT-ERR     ERR-2      ERR-3      ERR-4
-KEV        KEV        PER-CENT   PER-CENT   PER-CENT
- 25.0       0.5        0.17       0.93       0.01
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           31
-ENDENTRY             8
+ENDSUBENT           27
+ENDENTRY            14
