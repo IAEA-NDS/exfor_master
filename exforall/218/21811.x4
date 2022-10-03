@@ -1,9 +1,9 @@
-ENTRY            21811   20190722   20191002   20191001       2281
-SUBENT        21811001   20190722   20191002   20191001       2281
-BIB                 10         25
+ENTRY            21811   20210317   20220002   20211201       2302
+SUBENT        21811001   20210317   20220002   20211201       2302
+BIB                 10         26
 TITLE      The 241Pu(n,f) cross-section and its normalization
 AUTHOR     (C.Wagemans, A.J.Deruytter)
-INSTITUTE  (2ZZZGEL)
+INSTITUTE  (2BLGMOL,2ZZZGEL)
 REFERENCE  (C,82ANTWER,,69,1982)
 FACILITY   (LINAC,2ZZZGEL) GELINA
 INC-SOURCE (PHOTO) 100 MeV electrons on natural uranium target
@@ -26,49 +26,55 @@ HISTORY    (19830114C) A.P.T.
             MONITOR corrected in Subent 002. Ref. INDC(EUR)-15
             deleted (not relevant).
            (20190722A) On. Major revisions in 002.
-ENDBIB              25
+           (20210317A) On. Major revisions in 002.
+ENDBIB              26
 NOCOMMON             0          0
-ENDSUBENT           28
-SUBENT        21811002   20190722   20191002   20191001       2281
-BIB                  8         30
+ENDSUBENT           29
+SUBENT        21811002   20210317   20220002   20211201       2302
+BIB                  9         35
 REACTION   (94-PU-241(N,F),,SIG,,AV)
-MONITOR    ((MONIT)94-PU-241(N,F),,INT)
-           Cross section intgral (0.02 eV - 0.10 eV)=60.11 b*eV,
-            which is corresponding to sigma0=1015 b.
+MONITOR    ((MONIT)94-PU-241(N,F),,SIG)
            (5-B-10(N,A)3-LI-7,,SIG)
 MONIT-REF  ((MONIT)20807001,C.Wagemans+,J,NSE,60,44,1976)
-CORRECTION Correced for
+CORRECTION Corrected for
             - background determined with Rh Au Co and Mn neutron
               filters together with a permanent Al neutron filter
               (0.8% at thermal fission, 5% at 25 keV fission,
                0.4% at thermal 10B(n,a), 1.5% at 25 keV 10B(n,a))
             - deviation of 10B(n,a)7Li cross section from 1/v by
               using Sowerby's analytical expression
-            - fission of 239Pu imprity
+            - fission of 239Pu impurity
 REL-REF    (R,,M.Sowerby+,C,70HELSINKI,1,161,1970)
-            10B(n,a) cross sectio analytical expression
+            10B(n,a) cross section analytical expression
            (R,21704001,C.Wagemans+,J,ANE,7,495,1980)
             239Pu(n,f) fission cross section for correction
-ERR-ANALYS (DATA-ERR) Overall accuracy from
-            - thermal constant (1015+/-7 b),
+ERR-ANALYS (ERR-T) Overall accuracy from
             - 241Pu(n,f) and 10B(n,a) background,
             - sample impurity,
             - deviation of 10B(n,a) cross section from 1/v,
               which is important above 1 keV,
             - statistical error.
+           (MONIT-ERR) thermal constant (1015+/-7 b),
+COMMENT    Cyriel Wagemans (2021-03-15):
+            The actual normalization was done to the cross
+           section integral (0.02 eV - 0.10 eV)=60.11 b*eV
+           since in this way small fluctuations of the cross
+           section in the neighbourhood of 0.0253 eV are
+           neutralized.
 STATUS     (TABLE) Table 1 of Nucl.Data for Sci. & Technol., p69
 HISTORY    (19830117C) A.P.T.
            (20180829A) SD: SF4=Li-7 added to MONITOR reaction.
             ERR-T -> DATA-ERR.
            (20190722A) On. MONITOR corrected.
-ENDBIB              30
-COMMON               3          3
-EN-NRM-MIN EN-NRM-MAX MONIT
-EV         EV         B*EV
- 0.02       0.10       60.11
+           (20210317A) On. DATA-ERR -> ERR-T. MONITOR corrected.
+ENDBIB              35
+COMMON               4          3
+EN-NRM-MIN EN-NRM-MAX MONIT      MONIT-ERR
+EV         EV         B          B
+ 0.02       0.10       1015.      7.
 ENDCOMMON            3
 DATA                 4         15
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-T
 EV         EV         B          PER-CENT
      0.02       0.1    751.3      2.
      0.1        0.5    681.6      2.
@@ -86,5 +92,5 @@ EV         EV         B          PER-CENT
  10000.     20000.       3.09     4.
  20000.     30000.       2.76     4.
 ENDDATA             17
-ENDSUBENT           56
+ENDSUBENT           61
 ENDENTRY             2
