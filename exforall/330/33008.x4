@@ -1,9 +1,9 @@
-ENTRY            33008   20100308   20100610   20100603       3144
-SUBENT        33008001   20100308   20100610   20100603       3144
-BIB                 14         70
+ENTRY            33008   20210924   20220021   20211217       3203
+SUBENT        33008001   20210924   20220021   20211217       3203
+BIB                 15         57
 TITLE      Fission Yields And Recoil Ranges Determined By A Ge(Li)
            detector
-REFERENCE  (S,IAEA-SM-122,741,1969)
+REFERENCE  (C,69VIENNA,,741,1969)
            (R,BARC/I-62,1970) the same data
 AUTHOR     (S.P.Dange,H.C.Jain,S.B.Manohar,K.Satyprakash,
            M.V.Ramaniah,A.Ramaswami,K.Rengan)
@@ -11,42 +11,27 @@ INSTITUTE  (3INDTRM)
 FACILITY   (REAC,3INDTRM) Apsara reactor and CIRUS reactor
 INC-SOURCE (REAC) CIRUS neutron flux  ~ 10.**13 n/cm**2/s.
                   Apsara neutron flux ~ 10.**12 n/cm**2/s.
-SAMPLE     Plutonium containing about 95% 239Pu, enriched
+SAMPLE     (94-PU-239,ENR=0.95)
+           Plutonium containing about 95% 239Pu, enriched
            uranium containing about 90% 235U and uranium-233
            were purified chemically and used for target
            preparation. The targets were prepared by
-           electroplating the required amount of fissile
-           material from isopropyl alcohol medium onto a 10-mil
-           superpure aluminium foil electroplated first with
-           about 50-60 mu-g/cm2 of gold (which, being more
-           electropositive than aluminium, offered a more
-           suitable surface for electrodeposition; at the same
-           time, the main backing was essentially aluminium with
-           minimum scattering). The amount of fissionable material
+           electroplating. The amount of fissionable material
            on a target varied from 10 to 50 mu-g depending on the
            length of irradiation and nuclides of interest.
-           For range measurements the thin-target-thin-catcher
-           method was used. The thickness of uranium or plutonium
-           targets used was usually about 25 mu-g/cm2 and always
-           less than 70 mu-g/cm2. The target was covered with a
-            stack of three 0.3 mil superpure aluminium foils
 DETECTOR   (GELI) A 2 cm3-(4 cm2 area x 5 mm depl.) Ge(Li)
-ANALYSIS   The comparison method is used here. For plutonium
-           fission yield determination, the U-235 and Pu-239
-           targets were covered with 1-mil superpure aluminium
-           foils(1.5 cm diam),wrapped with another superpure
-           aluminium foil, sealed in polyethylene and irradiated
-           simulteniously for different neutron flux in both
-           above said reactors. After irradiation and sufficient
-           cooling, the catcher foils were centered on marked Al
-           plates and covered with cellophane of 6 mg/cm**2
-           thickness. The details of the fission yield
-           calculation are not given in this paper. For the
-           range measurement the thin-target-thin catcher method
-           was used.
-METHOD     (RINGR,GSPEC,RCHEM)
+ANALYSIS   The yields of nuclides in the thermal-neutron-induced
+           fission of 239Pu were determined relative to that of
+           235U. The nuclides determined in the work were not
+           sufficient for plotting mass-yield curve for
+           normalization. The ratio of 99Mo yields in 239Pu to
+           235U fission was used.
+           (DECAY)
+METHOD     (RINGR,GSPEC)
 MONITOR    (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW) Data taken from
             Meek et al., APED-5398-A(1968).
+           ((MONIT)94-PU-239(N,F)42-MO-99,CUM,FY,,MXW)
+MONIT-REF  (,M.E.Meek+,R,APED-5398,1968)
 DECAY-DATA (36-KR-85-M,4.4HR,DG,151.2)
            (38-SR-91,9.7HR,DG,555.6)
            (40-ZR-95,65.D,DG,724.1)
@@ -71,75 +56,61 @@ HISTORY    (20060906C) Bhushan Patil
            and in Subent 002 added SPA in reaction code.
            (20090914A) SD: ref. on BARC/I-62 was added.
            (20100210A) SD: Year of publ. in BARC was corrected.
-ENDBIB              70
-COMMON               3          3
-EN-DUMMY   ERR-SYS    DATA-ERR
-EV         PER-CENT   PER-CENT
- 0.0253       4.0        7.0
+           (20210924A) VS. Reference corrected cf. Memo CP-D/0979
+            Flag->MONIT1 values in 002.
+ENDBIB              57
+COMMON               1          3
+EN-DUMMY
+EV
+ 0.0253
 ENDCOMMON            3
-ENDSUBENT           77
-SUBENT        33008002   20080826   20090724   20090720       3136
-BIB                  4         21
-REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY)
-FLAG       (1.) 5.61 MO-99
-           (2.) 6.02 MO-99
-INC-SPECT  Thermal neutron spectra
-FACILITY   (REAC)Used both APSARA and CIRUS reactor having
-           Thermal neutron flux 10**12 n/cm2/s and 10**13n/cm2/s
-           respectively SAMPLE Plutonium containing about 95%
-           Pu-239.The targets were prepared by electroplating
-           the required amount of fissile material from isopropyl
-           alcohol medium onto a 10 mil super pure aluminum foil
-           electroplated first with about 50-60 microgram/cm**2
-           of gold. The amount of fissionable material on a target
-           varied from 10-50 microgram depending on the length of
-           the irradiation depending on the length of irradiation
-           and nuclides of interest. The actual amount deposited
-           on a target was estimated by the difference in the
-           amount of fissile material in the solution before and
-           after electro deposition, the amount being deposited
-           being determined by the liquid scintillation counting.
-           The area of the fissile material was well defined and
-           identical on all targets, the diameter being 1 cm.
-ENDBIB              21
+ENDSUBENT           64
+SUBENT        33008002   20210924   20220021   20211217       3203
+BIB                  3          5
+REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,MXW)
+ERR-ANALYS (DATA-ERR) The standard deviations calculated from the
+           experimental data. They do not include any
+           systematic errors.
+HISTORY    (20210924A) VS. Flag deleted. MONIT1 values added
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 6         34
-ELEMENT    MASS       ISOMER     DATA       ERR-S      FLAG
-NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
-36.        85.        1.         0.60       0.02       1.
-36.        85.        1.         0.64       0.02       2.
-38.        91.                   1.89       0.06       1.
-38.        91.                   2.03       0.06       2.
-40.        95.                   4.40       0.15       1.
-40.        95.                   4.74       0.16       2.
-42.        99.                   5.61                  1.
-42.        99.                   6.02                  2.
-44.        103.                  6.19       0.43       1.
-44.        103.                  6.65       0.46       2.
-52.        132.                  4.62       0.09       1.
-52.        132.                  4.97       0.10       2.
-53.        131.                  3.68       0.11       1.
-53.        131.                  3.96       0.12       2.
-53.        133.                  6.23       0.15       1.
-53.        133.                  6.69       0.16       2.
-54.        133.                  6.44       0.11       1.
-54.        133.                  6.92       0.12       2.
-54.        135.                  6.08       0.16       1.
-54.        135.                  6.53       0.17       2.
-56.        139.                  5.09       0.08       1.
-56.        139.                  5.47       0.09       2.
-56.        140.                  4.89       0.13       1.
-56.        140.                  5.25       0.14       2.
-57.        142.                  4.82       0.18       1.
-57.        142.                  5.19       0.19       2.
-58.        141.                  4.90       0.08       1.
-58.        141.                  5.27       0.09       2.
-58.        143.                  3.71       0.29       1.
-58.        143.                  3.99       0.31       2.
-58.        144.                  3.36       0.07       1.
-58.        144.                  3.61       0.07       2.
-60.        147.                  1.78       0.07       1.
-60.        147.                  1.92       0.07       2.
+ELEMENT    MASS       ISOMER     DATA       DATA-ERR   MONIT
+NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     PC/FIS
+36.        85.        1.         0.60       0.02       5.61
+36.        85.        1.         0.64       0.02       6.02
+38.        91.                   1.89       0.06       5.61
+38.        91.                   2.03       0.06       6.02
+40.        95.                   4.40       0.15       5.61
+40.        95.                   4.74       0.16       6.02
+42.        99.                   5.61                  5.61
+42.        99.                   6.02                  6.02
+44.        103.                  6.19       0.43       5.61
+44.        103.                  6.65       0.46       6.02
+52.        132.                  4.62       0.09       5.61
+52.        132.                  4.97       0.10       6.02
+53.        131.                  3.68       0.11       5.61
+53.        131.                  3.96       0.12       6.02
+53.        133.                  6.23       0.15       5.61
+53.        133.                  6.69       0.16       6.02
+54.        133.                  6.44       0.11       5.61
+54.        133.                  6.92       0.12       6.02
+54.        135.                  6.08       0.16       5.61
+54.        135.                  6.53       0.17       6.02
+56.        139.                  5.09       0.08       5.61
+56.        139.                  5.47       0.09       6.02
+56.        140.                  4.89       0.13       5.61
+56.        140.                  5.25       0.14       6.02
+57.        142.                  4.82       0.18       5.61
+57.        142.                  5.19       0.19       6.02
+58.        141.                  4.90       0.08       5.61
+58.        141.                  5.27       0.09       6.02
+58.        143.                  3.71       0.29       5.61
+58.        143.                  3.99       0.31       6.02
+58.        144.                  3.36       0.07       5.61
+58.        144.                  3.61       0.07       6.02
+60.        147.                  1.78       0.07       5.61
+60.        147.                  1.92       0.07       6.02
 ENDDATA             36
-ENDSUBENT           62
+ENDSUBENT           46
 ENDENTRY             2

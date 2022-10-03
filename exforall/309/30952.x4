@@ -1,17 +1,17 @@
-ENTRY            30952   20090914   20091224   20091223       3141
-SUBENT        30952001   20090914   20091224   20091223       3141
-BIB                  8         19
+ENTRY            30952   20210923   20220021   20211217       3203
+SUBENT        30952001   20210923   20220021   20211217       3203
+BIB                  9         23
 AUTHOR     (C.Braun,S.Amiel)
-TITLE      Determination of independent fission yields of
-           short-lived halogens in the thermal fission of 235U
-REFERENCE  (P,IA-1218,93,1969) Derived inedependent fission yields
-           (P,IA-1190,104,1968)  Measured delayed neutron yields
+TITLE      Separation of short-lived bromine and iodine fission
+           products, and measurement of their nuclear properties
+REFERENCE  (P,IA-1190,104,1968)
 INSTITUTE  (3ISLSOR)
-METHOD     (RCHEM)
-ANALYSIS   Independent yields were deduced from previoulsly
-           measured delayed neutron yield ratios (2nd reference)
+METHOD     (CHSEP)
+           (GSPEC)
+ANALYSIS   (DECAY)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (RIDER).Reference 69BRA2
-           (NCHKD).
+           (TABLE).Table 1 of IA-1218, p93 (1969).
 HISTORY    (19881017T)
            (19920513A) ML: Reference for delayed neutron yields
                          and analysis added.
@@ -20,36 +20,173 @@ HISTORY    (19881017T)
                          different lab deleted from data Table.
            (19940707U) HW.-Blank records removed.-
            (20090912A) SD:Updated to new date formats,lower case.
-ENDBIB              19
+           (20210923A) VS. Reference (P,IA-1218,93,1969) deleted.
+                       Subentry 002 deleted. Yield derived from
+                       delayed neutron yields ratios.
+                       New subentries 003-011 added.
+ENDBIB              23
 COMMON               1          3
 EN-DUMMY
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        30952002   20090914   20091224   20091223       3141
+ENDSUBENT           30
+NOSUBENT      30952002   20210923   20220021   20211217       3203
+SUBENT        30952003   20210923   20220021   20211217       3203
 BIB                  3          4
-REACTION   (92-U-235(N,F)ELEM/MASS,IND,FY,,MXW)
-MONITOR    ((MONIT1)92-U-235(N,F)35-BR-87,IND,FY,,MXW)
-           ((MONIT2)92-U-235(N,F)53-I-137,IND,FY,,MXW)
-MONIT-REF  (,,W,WAHL,1969)  To Amiel
+REACTION   ((92-U-235(N,F)ELEM/MASS,IND,FY,,MXW)/
+           (92-U-235(N,F)35-BR-88,IND,FY,,MXW))
+PART-DET   (DG)
+DETECTOR   (GELI)
 ENDBIB               4
 NOCOMMON             0          0
-DATA                 8          5
-ELEMENT    MASS       DATA       DATA-ERR   MONIT1     MONIT1-ERR
-MONIT2     MONIT2-ERR
-NO-DIM     NO-DIM     PC/FIS     PC/FIS     PC/FIS     PC/FIS
-PC/FIS     PC/FIS
- 35.        88.         2.06        .67      1.19        0.04
-
- 35.        89.         2.01        .71      1.19        0.04
-
- 35.        90.         1.10        .28      1.19        0.04
-
- 53.       138.         3.27       1.11
-  3.48      0.15
- 53.       139.         1.03        .28
-  3.48      0.15
-ENDDATA             14
-ENDSUBENT           23
-ENDENTRY             2
+DATA                 4          3
+ELEMENT    MASS       DATA       DATA-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 35.        87.         0.36       0.02
+ 35.        89.         1.7        0.1
+ 35.        90.         1.6        0.01
+ENDDATA              5
+ENDSUBENT           14
+SUBENT        30952004   20210923   20220021   20211217       3203
+BIB                  3          4
+REACTION   ((92-U-235(N,F)ELEM/MASS,IND,FY,,MXW)/
+           (92-U-235(N,F)53-I-137,IND,FY,,MXW))
+PART-DET   (DG)
+DETECTOR   (GELI)
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 4          2
+ELEMENT    MASS       DATA       DATA-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 53.       138.            0.49        0.03
+ 53.       139.            0.37        0.02
+ENDDATA              4
+ENDSUBENT           13
+SUBENT        30952005   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (35-BR-87(0,B-)36-KR-87,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (35-BR-87(0,B-)36-KR-87,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.024        0.003
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30952006   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (35-BR-88(0,B-)36-KR-88,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (35-BR-87(0,B-)36-KR-87,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.038        0.007
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30952007   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (35-BR-89(0,B-)36-KR-89,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (35-BR-87(0,B-)36-KR-87,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.058        0.013
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30952008   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (35-BR-90(0,B-)36-KR-90,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (35-BR-87(0,B-)36-KR-87,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.079        0.019
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30952009   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (53-I-137(0,B-)54-XE-137,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (53-I-137(0,B-)54-XE-137,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.048        0.005
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30952010   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (53-I-138(0,B-)54-XE-138,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (53-I-137(0,B-)54-XE-137,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.028        0.004
+ENDDATA              3
+ENDSUBENT           16
+SUBENT        30952011   20211217   20220021   20211217       3203
+BIB                  7          8
+REACTION   (53-I-139(0,B-)54-XE-139,,PN)
+PART-DET   (DN)
+DETECTOR   (BF3,LONGC) An array of six BF3 detectors embedded in
+            paraffin for delayed neutron measurements.
+MONITOR    (53-I-137(0,B-)54-XE-137,,PN)
+MONIT-REF  (,G.R.Keepin,B,KEEPIN,,121,1965)
+COMMENT    By compiler. Assumed dimension n/100dis.
+STATUS     (TABLE) Table 5 of IA-1190, p104 (1969).
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.048        0.010
+ENDDATA              3
+ENDSUBENT           16
+ENDENTRY            11

@@ -1,13 +1,15 @@
-ENTRY            30791   20081112   20081219   20081218       3131
-SUBENT        30791001   20081112   20081219   20081218       3131
-BIB                 13         61
-INSTITUTE  (3CHFTHU)
+ENTRY            30791   20211108   20220021   20211217       3203
+SUBENT        30791001   20211108   20220021   20211217       3203
+BIB                 13         68
+INSTITUTE  (3CHFTHU,3SARRIY)
 TITLE      Cumulative yields of short-lived fission products in
            thermal-neutron fission of 235U
 AUTHOR     (C.Chung,A.A.Hasan,S.Sahin)
-REFERENCE  (J,RCA,37,(3),131,1985) experimental details, data
-           (C,85SANTA,1,529,198505) brief, same data as
+REFERENCE  (J,RCA,37,131,1984) experimental details, data
+           (C,85SANTA,1,529,1985) brief, same data as
            Radiochim. Acta 37,131
+           (J,RE,93,193,1986) A.A.Hasan+, same data
+           (C,87ROSSEA,,(H3),1987) C.Chung, abstract
 FACILITY   (REAC,3CHFTHU). 1 MW open pool type 'THOR'
 INC-SPECT  Thermal reactor neutron spectrum with a cadmium ratio
            of 10:1 (determined by gold foil). To reduce dead-time
@@ -23,6 +25,7 @@ METHOD     To avoid loss of gaseous fission products, the sample
            a polyethylene carrier to the measuring position.
            (FISCT,FPGAM) fission track etch method combined with
            rapid gamma-ray spectroscopy.
+           (GSPEC)
 DETECTOR   (GELI) The counting system consisted of a 50 ccm Ge(Li)
            detector connected to a TN-1710 2048-channel analyzer
            coupled to an Apple-II PC. The system resolution was
@@ -40,10 +43,11 @@ ANALYSIS   Fission yields were obtained from measured photopeak
            rates (deduced from the measured total number of
            fissions = 6.7E+7) using standard equations for growth
            and decay.
+           (DECAY)
 CORRECTION Gamma-ray spectrometry:
             - gamma-ray emission probability
             - efficiency of detection system
-            - interfering gamma-rays from other fisson products
+            - interfering gamma-rays from other fission products
               (the list is given under DECAY-DATA, taken from
               table 3 of Radiochimica Acta 37(1985)131)
            Growth and decay during irradiation and cooling time,
@@ -62,15 +66,18 @@ ERR-ANALYS (ERR-T) Total yield error           (8.7-33.0%)
            (ERR-3)   sample weight                  (3.1%)
 HISTORY    (20010515C) ML.
            (20081107U) On. 002 corrected (heading)
-ENDBIB              61
+           (20211018A) VS. References RE,93,193,1986 and
+                       87ROSSEA,,(H3),198 added.
+                       DATA-MIN and DATA-MAX added in 002.
+ENDBIB              68
 COMMON               4          3
 EN-DUMMY   ERR-1      ERR-2      ERR-3
 EV         PER-CENT   PER-CENT   PER-CENT
  0.0253     4.5        5.0        3.1
 ENDCOMMON            3
-ENDSUBENT           68
-SUBENT        30791002   20081112   20081219   20081218       3131
-BIB                  5         59
+ENDSUBENT           75
+SUBENT        30791002   20211108   20220021   20211217       3203
+BIB                  5         60
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
 DECAY-DATA ((1.)35-BR-89,4.37SEC) Ref.1
            ((1.)36-KR-89,190.8SEC,DG,220.9,0.201) Ref.1
@@ -130,31 +137,32 @@ FLAG       At the time of the experiment, the decay branching of
                 =lower limit (Compiler's comment: correct value)
 STATUS     (TABLE) Table 5 of Radiochim. Acta 37(1985) 131
 HISTORY    (20081107U) On. DATA-ERR -> ERR-T
-ENDBIB              59
+           (20211018A) VS. DATA-MIN and DATA-MAX added.
+ENDBIB              60
 NOCOMMON             0          0
-DATA                 7          9
-MASS       ELEMENT    ISOMER     DATA       ERR-T      DECAY-FLAG
-FLAG
-NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
-NO-DIM
-89.        36.                   5.26       1.13       1.
-
-90.        36.                   5.04       0.63       2.
-
-136.       53.        1.         1.50       0.17       3.
-1.
-136.       53.        1.         0.93       0.10       3.
-2.
-137.       54.                   6.94       0.89       4.
-
-139.       54.                   5.47       1.80       5.
-
-140.       55.                   4.18       0.37       6.
-
-144.       57.                   4.63       0.47       7.
-
-148.       58.                   2.42       0.23       8.
-
+DATA                 9          9
+MASS       ELEMENT    ISOMER     DATA       DATA-MIN   DATA-MAX
+ERR-T      DECAY-FLAG FLAG
+NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     PC/FIS
+PC/FIS     NO-DIM     NO-DIM
+89.        36.                   5.26
+1.13       1.
+90.        36.                   5.04
+0.63       2.
+136.       53.        1.                                 1.50
+0.17       3.         1.
+136.       53.        1.                      0.93
+0.10       3.         2.
+137.       54.                   6.94
+0.89       4.
+139.       54.                   5.47
+1.80       5.
+140.       55.                   4.18
+0.37       6.
+144.       57.                   4.63
+0.47       7.
+148.       58.                   2.42
+0.23       8.
 ENDDATA             22
-ENDSUBENT           86
+ENDSUBENT           87
 ENDENTRY             2

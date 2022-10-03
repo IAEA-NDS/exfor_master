@@ -1,18 +1,19 @@
-ENTRY            30511   20040714              20050926       0000
-SUBENT        30511001   20040714              20050926       0000
-BIB                 13         38
+ENTRY            30511   20211108   20220021   20211217       3203
+SUBENT        30511001   20211108   20220021   20211217       3203
+BIB                 13         42
 INSTITUTE  (3INDTRM)
-REFERENCE  (J,PR/C,19,1827,197905) Final results
+REFERENCE  (J,PR/C,19,1827,1979) Final results
            (P,BARC-872,101,1976) Same r-values,other normalization
            (P,BARC-821,183,1975) Fewer fission products
            (P,BARC-690,132,1973) Superseded
-AUTHOR     (S.B.Manohar, P.P.Venkatesan, Satya Prakash,
-           M.V.Ramaniah)
-TITLE      Mass distribution in the reactor neutron induced
-           fission of 232U
-FACILITY   (REAC) cirus reactor
+           (C,75CALCUTTA,2,138,1975) Data on graphs.
+AUTHOR     (S.B.Manohar, P.P.Venkatesan, S.M.Deshmukh,
+            Satya Prakash, M.V.Ramaniah)
+TITLE      Mass distribution in the neutron induced fission of
+           232U
+FACILITY   (REAC,3INDTRM) CIRUS reactor
 INC-SPECT  Cd-cutoff ratio for 232U(n,f) = 0.5 approximately
-SAMPLE     Isotopic composition in percent =
+SAMPLE     (92-U-232,ENR=0.9914) Isotopic composition in percent =
              232U    99.14
              233U     0.85
              234U     0.004
@@ -27,75 +28,80 @@ METHOD     - The relative 'r-value' method was applied, starting
            were used.
            High yield products were measured by gamma-spectrometry
 DETECTOR   (GELI). For high yield products.
-           (PROPC) End window gas flow proportional counter,for
+           (PROPC) End window gas flow proportional counter for
            low yield products.
-MONITOR    235U targets (2 micrograms) were irradiated together
+ANALYSIS   235U targets (2 micrograms) were irradiated together
            with the 232U targets. activities of the 235U fission
            products were measured in the same way as those of
            232U.
            The 235U fission product yields were taken from the
            compilation of meek+rider.
-MONIT-REF  (,M.E.MEEK+,R,NEDO-12154-1,1974)
-STATUS     Data from table 1 of Phys.Rev. C, 19, 1827.
+MONIT-REF  (,M.E.Meek+,R,NEDO-12154-1,1974)
+STATUS     (TABLE) Data from table 1 of Phys.Rev. C, 19, 1827.
 HISTORY    (19790921C) TL.
            (20040311U) SD: corrected 4-dig. year and lower cases.
-ENDBIB              38
+           (20211018A) VS. Reference 75CALCUTTA,,138,1975 added.
+            Incident spectrum corrected. MONITOR->ANALYSIS in 001.
+                           SF8 and ERR-ANALYS corrected in 002.
+ENDBIB              42
 COMMON               1          3
-EN-DUMMY
+EN-MIN
 EV
- 3.0000E-02
+ 0.55
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        30511002   19840911              20050926       0000
-BIB                  5         19
-REACTION   (92-U-232(N,F)ELEM/MASS,CUM,FY,,SPA)
-MONITOR    (92-U-232(N,F)42-MO-99,CUM,FY,,SPA) Assumed to be equal
+ENDSUBENT           49
+SUBENT        30511002   20211108   20220021   20211217       3203
+BIB                  6         21
+REACTION   (92-U-232(N,F)ELEM/MASS,CUM,FY,,EPI)
+MONITOR    (92-U-232(N,F)42-MO-99,CUM,FY,,EPI) Assumed to be equal
            to the 99Mo yield from 235U.
-MISC-COL   'R'-value, R= A(99,5)*A(P,2)/A(99,2)*A(P,5)
+MISC-COL   (MISC) 'R'-value, R= A(99,5)*A(P,2)/A(99,2)*A(P,5)
              where  A(99,2),A(99,5)...activities of 99Mo as
              fission product from 232U, 235U respectively, and
                     A(P,2),A(P,5) ... activities of product 'p'
              from the fission of 232U,235U respectively.
-CORRECTION A correction (2-5 percent) was applied for the contrib-
-           ution from u-233 fissions.
+CORRECTION A correction (2-5 percent) was applied for the
+           contribution from u-233 fissions.
            The 'raw' yield data obtained from the r-values were
            complemented with the missing yields by interpolation.
            each wing of the mass distribution was then normalized
            to sum up to 100 percent.
-ERR-ANALYS    Gamma counting statistics       2-3%;
-              compton subtraction             2-3%;
-              beta counting statistics        5-7%;
-              chemical yield,self-absorpt.    3%;
-              u-235 evaluated yield data      1-10%.
-ENDBIB              19
-COMMON               1          3
-MONIT
-PC/FIS
- 6.1400E+00
+ERR-ANALYS (ERR-T) The total uncertainty determined from:
+              gamma counting statistics                 2-3%;
+              compton subtraction                       2-3%;
+              beta counting statistics                  5-7%;
+           (ERR-1) chemical yield,self-absorpt       3%;
+           (ERR-2,1.,10.) u-235 evaluated yield data 1-10%.
+HISTORY    (20211018A) VS. SF8: SPA->EPI. ERR-ANALYS corrected.
+ENDBIB              21
+COMMON               2          3
+MONIT      ERR-1
+PC/FIS     PER-CENT
+ 6.1400E+00     3.
 ENDCOMMON            3
 DATA                 6         20
-ELEMENT    MASS       MISC       MISC-ERR   DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 3.8000E+01 8.9000E+01 1.9390E+00 4.0000E-02 6.0100E+00 1.2000E-01
- 3.8000E+01 9.1000E+01 1.8550E+00 5.2000E-02 7.1200E+00 2.0000E-01
- 4.0000E+01 9.5000E+01 1.4900E+00 1.4000E-02 6.3000E+00 6.0000E-02
- 4.0000E+01 9.7000E+01 1.2630E+00 1.7000E-02 4.9400E+00 6.0000E-02
- 4.2000E+01 9.9000E+01 1.0000E+00            4.1500E+00
- 4.4000E+01 1.0300E+02 5.2200E-01 1.0000E-02 1.1000E+00 2.0000E-02
- 4.4000E+01 1.0500E+02 3.6000E-01 4.0000E-02 2.4000E-01 3.0000E-02
- 4.7000E+01 1.1100E+02 7.5800E-01 4.8000E-02 9.0000E-03 6.0000E-04
- 4.8000E+01 1.1500E+02 2.4200E+00 1.4000E-02 1.7000E-02 8.0000E-04
- 5.0000E+01 1.2100E+02 9.4000E-01 8.0000E-02 8.0000E-03 7.0000E-04
- 5.0000E+01 1.2500E+02 5.6000E+00 2.0000E-02 9.2000E-02 3.0000E-03
- 5.1000E+01 1.2700E+02 5.7330E+00 2.2000E-02 3.5800E-01 1.8000E-02
- 5.3000E+01 1.3100E+02 2.0300E+00 1.6000E-02 3.8200E+00 3.0000E-02
- 5.3000E+01 1.3200E+02 1.7170E+00 3.7000E-02 4.6900E+00 1.0000E-01
- 5.4000E+01 1.3300E+02 1.2600E+00 1.0000E-02 5.6400E+00 5.0000E-02
- 5.4000E+01 1.3500E+02 1.2500E+00 3.6000E-02 5.2400E+00 8.0000E-02
- 5.6000E+01 1.4000E+02 1.7180E+00 2.8000E-02 7.0800E+00 1.1000E-01
- 5.8000E+01 1.4100E+02 1.8650E+00 1.0000E-02 7.1200E+00 4.4000E-01
- 5.8000E+01 1.4300E+02 1.3530E+00 8.3000E-02 5.2800E+00 3.2000E-01
- 6.0000E+01 1.4700E+02 9.1700E-01 2.2000E-02 1.3900E+00 3.0000E-02
+ELEMENT    MASS       DATA       ERR-T      MISC       MISC-ERR
+NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM     NO-DIM
+38.         89.       6.01       0.12       1.939      0.040
+38.         91.       7.12       0.20       1.855      0.052
+40.         95.       6.30       0.06       1.490      0.014
+40.         97.       4.94       0.06       1.263      0.017
+42.         99.       4.15                  1.000
+44.        103.       1.10       0.02       0.522      0.010
+44.        105.       0.24       0.03       0.360      0.040
+47.        111.       0.009      0.0006     0.758      0.048
+48.        115.       0.017      0.0008     2.420      0.014
+50.        121.       0.008      0.0007     0.940      0.080
+50.        125.       0.092      0.003      5.600      0.020
+51.        127.       0.358      0.018      5.733      0.022
+53.        131.       3.82       0.03       2.030      0.016
+53.        132.       4.69       0.10       1.717      0.037
+54.        133.       5.64       0.05       1.260      0.010
+54.        135.       5.24       0.08       1.250      0.036
+56.        140.       7.08       0.11       1.718      0.028
+58.        141.       7.12       0.44       1.865      0.010
+58.        143.       5.28       0.32       1.353      0.083
+60.        147.       1.39       0.03       0.917      0.022
 ENDDATA             22
-ENDSUBENT           50
+ENDSUBENT           52
 ENDENTRY             2

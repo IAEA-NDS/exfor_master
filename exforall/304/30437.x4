@@ -1,18 +1,20 @@
-ENTRY            30437   20090310   20090724   20090720       3135
-SUBENT        30437001   20090310   20090724   20090720       3135
-BIB                 13         44
+ENTRY            30437   20211108   20220021   20211217       3203
+SUBENT        30437001   20211108   20220021   20211217       3203
+BIB                 12         44
 INSTITUTE  (3INDTRM)
-REFERENCE  (J,JIN,41,1649,197912) Final publication
+REFERENCE  (J,JIN,41,1649,1979) Final publication
            (P,BARC-900,87,1976) Brief, table, graph given
            (P,BARC-872,104,1976) Preliminary results
+           (C,75CALCUTTA,2,141,1975) Data on graphs
 AUTHOR     (A.Ramaswami,S.P.Dange,Satya Prakash,M.V.Ramaniah)
-           (R.Kannabiran,A.G.C.Nair) Progress report only
-TITLE      Mass yields from thermal neutron induced fission
+           (R.Kannabiran,A.G.C.Nair)
+TITLE      Mass yield from thermal neutron induced fission
            of Cm-245
 FACILITY   (REAC,3INDTRM) CIRUS reactor
 INC-SPECT  Thermal reactor spectrum. The cadmium-ratio for U-235
            and Cm-245 is about 200 in irradiation position.
-SAMPLE     Curium purified free of plutonium and fission products.
+SAMPLE     (96-CM-245,ENR=0.9386)
+           Curium purified free of plutonium and fission products.
            Curium (approx. 50 micrograms/cm2) and uranium (approx.
            5 micrograms/cm2) electrodeposited on gold-plated alu-
            minum foils, wrapped in superpure Al-catcher-foils.
@@ -25,21 +27,19 @@ METHOD     Yield determined by Th 'R-value' method relative to
            U-235 thermal fission yields (see EXFOR 30437.002).
            (REC) Fission fragments were collected by the 'thin-
            target-recoil-catcher' technique.
-           High yield products were measured by direct gamma
-           counting.
+           (GSPEC) High yield products were measured by direct
+           gamma counting.
            (CHSEP) For low yield products radiochemical separation
             was employed followed by beta- or gamma-counting
 DETECTOR   (GELI)
            (PROPC)
-MONITOR    U-235 samples were irradiated together with the curium
-           samples. Preparation and composition  see 'Sample'
-STATUS     (TABLE) Data from Table 1 (R-values) and Table 2
-            (normalized fission yields) of
-                                      J.Inorg.Nucl.Chem.41,1649
+STATUS     (TABLE) Table 2 of J.Inorg.Nucl.Chem.41,1649
            (APRVD), R.Ramaswami, on 1980-03-19
 HISTORY    (19780228C) OS. Data from progr.report compiled.
            (19800201A) ML. Entry revised according final public.
            (20090310A) SD:Updated to new date formats,lower case.
+           (20211018A) VS. Reference 75CALCUTTA,2,141,1974 added.
+                           002 corrected.
 CORRECTION Since 99% of all fissions in the curium-sample
            will be from Cm-245, no corrections for contributions
            from fissions of other curium isotopes were applied.
@@ -52,125 +52,60 @@ EV
  2.3500E-02
 ENDCOMMON            3
 ENDSUBENT           51
-SUBENT        30437002   20090310   20090724   20090720       3135
-BIB                  7         68
+SUBENT        30437002   20211108   20220021   20211217       3203
+BIB                  6         24
 REACTION   (96-CM-245(N,F)ELEM/MASS,CUM,FY,,MXW)
-           Regarded as chain yields except Cd-115,Sn-121,Sn-125.
-           Normalization  relative yields have been measured. The
-             absolute data given below were obtained by forcing
-             the sum of all chain yields (including interpolated
-             and extrapolated values for mass chains not measured)
-             to total 200%.
-           Fission yields measured in a thermal reactor neutron
-             spectrum can be regarded as Maxwellian average data.
-METHOD     of data analysis:
-          1From measured fission product activites,'R-values' (R)
-           were calculated as given under 'MISC-COL' below.
-          2Yields for product X from fission of Cm-245 (=Y(X,245))
+ANALYSIS   From measured fission product activities ratios
+           'R-values' calculated as
+           R=a(99,235)*a(X,245)/(a(99,245)*a(X,235))
+             where 99,X,235 and 245 have the meaning explained
+             under method above.
+           Yields for product X from fission of Cm-245 (=Y(X,245))
            are calculated as
              Y(X,245)=R*Y(99,245)*Y(X,235)/Y(99,235), where
            Y(99,245) is an assumed value for the Cm-245 fission
                      yield of Mo-99
            Y(X,235) and Y(99,235) are the U-235 fission yields of
                     fission product X and Mo-99 respectively.
-          3Final data  see 'Normalization' under REACTION above.
 MONITOR    ((MONIT1)96-CM-245(N,F)42-MO-99,CUM,FY,,MXW)
             Internal standard before normalization
            ((MONIT2)92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
              Taken from the evaluation of Meek and Rider
-MONIT-REF  ((MONIT2),M.E.MEEK+,R,NEDO-12154-1,1974)
-MISC-COL  1(MISC1) 'R-value' calculated from measured activities
-             as  R=a(99,235)*a(X,245)/(a(99,245)*a(X,235))
-             where 99,X,235 and 245 have the meaning explained
-             under method above.
-           (MISC2) Number of determinations of 'R-value'.
-COMMENT   1Compiler's notes: The statistical error (MISC1-ERR)does
-           not include errors of chemical yield,self absorption in
-           the sample,decay spectra analysis,etc.
-          2Taking this into account,the general error of 5%
-           mentioned in the text of the publication should be more
-           realistic for calculating the error of relative Cm-245
-           fission yields.
-          3The 10% error of the final normalization seems to
-           be optimistic in view of the fact that about 140%.
-            (or 95% if reflected yield are included) of the
-           total sum of yields (200%) are estimated values.
-          2Cm-245 fission yields relative to an arbitrary value
-           for Mo-99 (MONIT1),as shown in Table 1 of the final
-           publication,are not included in the data Table below.
-           Only the respective errors are shown (DATA-ERR1).
-ERR-ANALYS For individual fission products the authors give only
-           statistical errors derived from 'R-values' in Table 1.
-           Contributions to the total error are only given in a
-           more general way within the text.
-           Combined relative errors were calculated by the compi-
-           ler as square-root of the sum of squares of individual
-           relative errors.
-           For the convenience of renormalization and a better
-           comparison of errors,the MISC1-ERR,MONIT2-ERR and
-           DATA-ERR1 are given as relative errors.
-          1(MISC1-ERR) Purely statistical error of 'R-values',
-             presumably 1 standard deviation, derived from the
-             spread and number of determinations.
-          2(DATA-ERR1) Combined error of relative Cm-245 fission
-             yields (see,however,compilers note below) derived by
-             the compiler from MISC1-ERR and the errors of U-235
-             fission yields (MONIT2). Note,that the errors of
-             Y(99,235) and of Y(X,235) are combined.
-             The MONIT2-errors are taken from NEDO-12154-1.
-          3(DATA-ERR2) The estimated overall error of Cm-245
-             'absolute' fission yields including a 10% error
-             in the final normalization derived by the compiler
-             from the text of the final publication.
-ENDBIB              68
-COMMON               1          3
-MONIT1
-PC/FIS
- 4.0900E+00
+MONIT-REF  ((MONIT2),M.E.Meek+,R,NEDO-12154-1,1974)
+ERR-ANALYS The present yield determination is 5-10% for asymmetric
+           fission products and 10-15% for symmetric fission
+           products.
+           (ERR-S) Total statistical uncertainty:  5%
+HISTORY    (20211018A) VS. MISC-COL and MISC data deleted.
+                           ERR-ANALYS corrected.
+ENDBIB              24
+COMMON               2          3
+MONIT1     ERR-S
+PC/FIS     PER-CENT
+   4.09E+00     5.
 ENDCOMMON            3
-DATA                10         19
-MASS       ELEMENT    MISC1      MISC1-ERR  MISC2      MONIT2
-MONIT2-ERR DATA       DATA-ERR1  DATA-ERR2
-NO-DIM     NO-DIM     NO-DIM     PER-CENT   NO-DIM     PC/FIS
-PER-CENT   PC/FIS     PER-CENT   PC/FIS
- 8.9000E+01 3.8000E+01 2.6160E-01 2.3000E+00 4.0000E+00 4.8500E+00
- 2.8000E+00 8.2000E-01 4.1000E+00 9.0000E-02
- 9.1000E+01 3.8000E+01 2.4180E-01 2.1000E+00 4.0000E+00 5.9160E+00
- 2.0000E+00 9.3200E-01 3.4000E+00 1.0000E-01
- 9.5000E+01 4.0000E+01 5.0900E-01 8.6000E+00 2.0000E+00 6.4590E+00
- 1.4000E+00 2.1400E+00 9.3000E+00 2.9000E-01
- 9.7000E+01 4.0000E+01 7.4750E-01 2.8000E+00 4.0000E+00 5.9450E+00
- 4.0000E+00 2.8900E+00 5.2000E+00 3.3000E-01
- 9.9000E+01 4.2000E+01 1.0000E+00                       6.1330E+00
- 2.0000E+00 4.0000E+00 2.0000E+00 4.1000E-01
- 1.0300E+02 4.4000E+01 3.2080E+00 6.0000E+00 2.0000E+00 3.1350E+00
- 2.0000E+00 6.5500E+00 6.6000E+00 7.8000E-01
- 1.1100E+02 4.7000E+01 3.1720E+02 5.1000E+00 4.0000E+00 1.8500E-02
- 1.1000E+01 3.8400E+00 1.2000E+01 6.1000E-01
- 1.1500E+02 4.8000E+01 6.9980E+01 2.3000E+00 4.0000E+00 9.1800E-03
- 6.0000E+00 4.1800E-01 6.7000E+00 5.0000E-02
- 1.2100E+02 5.0000E+01 2.8330E+00 1.2000E+01 4.0000E+00 1.2960E-02
- 4.0000E+00 2.5000E-02 1.2000E+01 4.0000E-03
- 1.2500E+02 5.0000E+01 8.3190E+00 6.6000E+00 3.0000E+00 1.3600E-02
- 6.0000E+00 7.4000E-02 9.5000E+00 1.0000E-02
- 1.2700E+02 5.1000E+01 5.2610E+00 2.2000E+01 3.0000E+00 1.2840E-01
- 1.1000E+01 4.5000E-01 2.4000E+01 1.2000E-01
- 1.3100E+02 5.3000E+01 1.5830E+00 6.0000E-01 4.0000E+00 2.8350E+00
- 2.0000E+00 2.9300E+00 2.9000E+00 3.1000E-01
- 1.3200E+02 5.2000E+01 1.3690E+00 1.3000E+00 4.0000E+00 4.1880E+00
- 2.0000E+00 3.7400E+00 3.2000E+00 3.9000E-01
- 1.3300E+02 5.4000E+01 1.2110E+00 1.7000E+00 4.0000E+00 6.7700E+00
- 7.0000E-01 5.3400E+00 2.8000E+00 5.6000E-01
- 1.3500E+02 5.4000E+01 1.6000E+00 1.9000E+00 4.0000E+00 6.6330E+00
- 2.0000E+00 6.9000E+00 3.5000E+00 7.3000E-01
- 1.4000E+02 5.6000E+01 1.3050E+00 4.0000E+00 3.0000E+00 6.3160E+00
- 1.0000E+00 5.5370E+00 4.5000E+00 6.1000E-01
- 1.4100E+02 5.8000E+01 1.3030E+00 1.2000E+00 3.0000E+00 5.8870E+00
- 1.4000E+00 4.9900E+00 2.8000E+00 5.2000E-01
- 1.4300E+02 5.8000E+01 1.1370E+00 6.0000E-01 3.0000E+00 5.9690E+00
- 1.0000E+00 4.4200E+00 2.3000E+00 4.5000E-01
- 1.4700E+02 6.0000E+01 1.6830E+00 1.2000E+00 3.0000E+00 2.2830E+00
- 1.4000E+00 2.5000E+00 2.8000E+00 2.6000E-01
-ENDDATA             42
-ENDSUBENT          119
+DATA                 4         19
+MASS       ELEMENT    DATA       MONIT2
+NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 89.        38.         0.820      4.85
+ 91.        38.         0.932      5.916
+ 95.        40.         2.14       6.459
+ 97.        40.         2.89       5.945
+ 99.        42.         4.00       6.133
+ 103.       44.         6.55       3.135
+ 111.       47.         3.84       0.0185
+ 115.       48.         0.418      0.00918
+ 121.       50.         0.025      0.01296
+ 125.       50.         0.074      0.0136
+ 127.       51.         0.45       0.1284
+ 131.       53.         2.93       2.835
+ 132.       52.         3.74       4.188
+ 133.       54.         5.34       6.77
+ 135.       54.         6.90       6.633
+ 140.       56.         5.537      6.316
+ 141.       58.         4.99       5.887
+ 143.       58.         4.42       5.969
+ 147.       60.         2.50       2.283
+ENDDATA             21
+ENDSUBENT           54
 ENDENTRY             2

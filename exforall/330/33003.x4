@@ -1,18 +1,25 @@
-ENTRY            33003   20080826   20081028   20081023       3130
-SUBENT        33003001   20080826   20081028   20081023       3130
-BIB                 12         84
+ENTRY            33003   20211117   20220021   20211217       3203
+SUBENT        33003001   20211117   20220021   20211217       3203
+BIB                 12         92
 TITLE      Fission Yields in the Thermal Neutron Fission of
-             233-U, 235-U, 239-Pu and 241-Pu
+             233U, 235U, 239Pu and 241Pu
 AUTHOR     (S.A.Chitambar,H.C.Jain,M.V.Ramaniah)
 INSTITUTE  (3INDTRM)
 REFERENCE  (J,RCA,42,169,1987)
+           (C,80WALTAI,,142,1980) Preliminary data in table
+            for fission yields of long lived and stable fission
+             products in thermal neutron fission of 241Pu.
+           (P,BARC-1126,12,1981) preliminary data in table
 DETECTOR   (GELI) For the gamma spectrometric measurements, the
            catcher foils were mounted and counted in a fixed
            geometry of Ge(Li)detector coupled to a multichannel
            analyser.
            (PROPC) The radiochemical measurement was followed on
            an end window gas flow beta proportional counter.
-FACILITY   (REAC) Target assembly for mass spectrometric
+           (MAGSP) Mass spectrometric isotope measurements were
+           done using CH-5 and MAT-261 thermal ionization
+           mass spectrometer.
+FACILITY   (REAC,3INDTRM) Target assembly for mass spectrometric
            analysis was irradiated for a period of 15,30,and 90
            days in the natural uranium heavy water moderated
            Cirus reactor with a neutron flux of 10**12 n/cm2/s.
@@ -21,9 +28,6 @@ FACILITY   (REAC) Target assembly for mass spectrometric
            reactor Cirus and were analysed by gamma ray
            spectrometric technique or radiochemical separation
            followed by beta counting.
-           (SPECM) Mass spectreometric isotope measurements were
-           done using CH-5 and MAT-261 thermal ionization
-           mass spectrometer.
 SAMPLE     Purified solution of 233-U (99.20 atom% 233-U),
            235-U (93.33 atom% 235-U), 239-Pu (97.36 atom% 239-Pu)
            and 241-Pu (78.37 atom% 241-Pu and 5.20 atom% 239-Pu)
@@ -43,7 +47,7 @@ SAMPLE     Purified solution of 233-U (99.20 atom% 233-U),
            aluminium foil.
 METHOD     (ACTIV) The absolute yields of fission products were
            determined using radiochemical, gamma ray spectrometric
-           and mass spectrometric techiniques.
+           and mass spectrometric techniques.
            (GSPEC) For the gamma spectrometric measurements the
            catcher foils were mounted and counted in a fixed
            geometry on a Ge(Li) detector coupled to a multichannel
@@ -52,13 +56,13 @@ METHOD     (ACTIV) The absolute yields of fission products were
            for its decay. The photopeak area was obtained by
            subtraction of linear component from the sum of channel
            contents defining the peak.
-           (RCHEM) The radiochemical separations of the fission
+           (CHSEP) The radiochemical separations of the fission
            products 89,91-Sr, 97-Zr, 99-Mo, 111,112,113-Ag,
            115-Cd, 121-Sn, 123-Sn, 125-Sn, 127-Sb and 140-Ba were
            carried out using standard radiochemical procedures and
            measurement of their activities were carried out using
            end window gas flow beta proportional counter.
-           (MASSP) For mass spectrometric determinations the
+           (ASEP) For mass spectrometric determinations the
            sample in quartz ampoule was dissolved after a cooling
            period of 2 months to 1 year. Isotopic ratios were
            determined using CH-5 and MAT-261 thermal ionisation
@@ -75,8 +79,10 @@ ERR-ANALYS The estimated uncertainties on the fission yield values
            Those determined using gamma ray spectrometric
            technique and radiochemical methods have an
            uncertainties of about 4% on the fission yield values
-           in asymmetric region and upto 12% in the symmetric
+           in asymmetric region and up to 12% in the symmetric
            region.
+           (DATA-ERR) Uncertainties from the replicate
+            measurements
 STATUS     (TABLE) Data from the tables of this paper
            (APRVD) Entry approved by the author Dr. S.A.Chitabar
                    on 16.08.2007
@@ -85,23 +91,27 @@ HISTORY    (20070807C) Compiled by Nirupama N. Mirashi,
            (20080826A) SD,NO. Moved COMMON to Subent 001,
                            Energy changed from MeV to eV and
             in Subents 002-005 added SPA in reaction code.
-ENDBIB              84
+           (20211025A) VS. References 80WALTAI,,142,1980 and
+            BARC-1126,12,1981 added. ERR-S->DATA-ERR
+ENDBIB              92
 COMMON               1          3
 EN-DUMMY
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           91
-SUBENT        33003002   20080826   20081028   20081023       3130
-BIB                  2          4
-REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY,,SPA)
+ENDSUBENT           99
+SUBENT        33003002   20211117   20220021   20211217       3203
+BIB                  4          6
+REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY,,MXW)
+SAMPLE     (92-U-233,ENR=0.992)
 FLAG       (1.) Radiochemical Separation
            (2.) Gamma Spectrometry
            (3.) Mass spectrometry
-ENDBIB               4
+HISTORY    (20211025A) VS. SF8: SPA->MXW
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 5         48
-ELEMENT    MASS       DATA       ERR-S      FLAG
+ELEMENT    MASS       DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 38.        88.        5.46       0.07       3.
 38.        89.        6.39       0.16       3.
@@ -152,20 +162,22 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 60.        148.       1.293      0.013      3.
 60.        150.       0.495      0.005      3.
 ENDDATA             50
-ENDSUBENT           59
-SUBENT        33003003   20080826   20081028   20081023       3130
-BIB                  3          7
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA)
+ENDSUBENT           61
+SUBENT        33003003   20211117   20220021   20211217       3203
+BIB                  5          9
+REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
+SAMPLE     (92-U-233,ENR=0.992)
 FLAG       (1.) Radiochemical Separation
            (2.) Gamma Spectrometry
            (3.) Mass spectrometry
 COMMENT    There is a mistake in the published paper regarding
            133-Cs. It is wrongly typed as 133-Ce in the journal
            paper. (Table 2 page 173)
-ENDBIB               7
+HISTORY    (20211025A) VS. SF8: SPA->MXW
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 5         46
-ELEMENT    MASS       DATA       ERR-S      FLAG
+ELEMENT    MASS       DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 38.        88.        3.57       0.02       3.
 38.        89.        4.79       0.05       1.
@@ -214,17 +226,19 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 60.        148.       1.674      0.006      3.
 60.        150.       0.646      0.007      3.
 ENDDATA             48
-ENDSUBENT           60
-SUBENT        33003004   20080826   20081028   20081023       3130
-BIB                  2          4
-REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,SPA)
+ENDSUBENT           62
+SUBENT        33003004   20211117   20220021   20211217       3203
+BIB                  4          6
+REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,MXW)
+SAMPLE     (94-PU-239,ENR=0.9736)
 FLAG       (1.) Radiochemical Separation
            (2.) Gamma Spectrometry
            (3.) Mass spectrometry
-ENDBIB               4
+HISTORY    (20211025A) VS. SF8: SPA->MXW
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 5         44
-ELEMENT    MASS       DATA       ERR-S      FLAG
+ELEMENT    MASS       DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 38.        88.        1.36       0.03       3.
 38.        89.        1.75       0.04       1.
@@ -271,17 +285,21 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 60.        148.       1.640      0.008      3.
 60.        150.       0.968      0.008      3.
 ENDDATA             46
-ENDSUBENT           55
-SUBENT        33003005   20080826   20081028   20081023       3130
-BIB                  2          4
-REACTION   (94-PU-241(N,F)ELEM/MASS,CUM,FY,,SPA)
+ENDSUBENT           57
+SUBENT        33003005   20211117   20220021   20211217       3203
+BIB                  4          8
+REACTION   (94-PU-241(N,F)ELEM/MASS,CUM,FY,,MXW)
+SAMPLE     (94-PU-241,ENR=0.7837)
+           and 5.20 atom% 239-Pu
+           were used in the experiment.
 FLAG       (1.) Radiochemical Separation
            (2.) Gamma Spectrometry
            (3.) Mass spectrometry
-ENDBIB               4
+HISTORY    (20211025A) VS. SF8: SPA->MXW
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5         53
-ELEMENT    MASS       DATA       ERR-S      FLAG
+ELEMENT    MASS       DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 38.        88.        0.978      0.02       3.
 38.        88.        1.02       0.02       3.
@@ -337,5 +355,5 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 60.        148.       1.93       0.02       3.
 60.        150.       1.20       0.01       3.
 ENDDATA             55
-ENDSUBENT           64
+ENDSUBENT           68
 ENDENTRY             5
