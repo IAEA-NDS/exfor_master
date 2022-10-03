@@ -1,20 +1,24 @@
-ENTRY            10236   20010309   20010426   20050926       0000
-SUBENT        10236001   20010309   20010426   20050926       0000
-BIB                 11         43
+ENTRY            10236   20190722   20191003   20191002       1454
+SUBENT        10236001   20190722   20191003   20191002       1454
+BIB                 12         35
+TITLE      The ratio of the uranium-233 to uranium-235 fission
+            cross section
+AUTHOR     (J.W.Meadows)
 INSTITUTE  (1USAANL)
-REFERENCE  (J,NSE,54,317,197407)
-           (R,ANL-NDM-83,198310) Revisions.
-AUTHOR     (J.W.MEADOWS)
-TITLE      The Ratio of the Uranium-233 to Uranium-235 Fission
-            Cross Section
-INC-SOURCE (P-LI7) Below 3 MeV, 7Li(p,n) source used.
-           (D-D) Above 3 MeV, D(d,n) source used.
-SAMPLE     Isotopic composition in mole percent -
-                      233-U      (99.540)
-                      234-U      ( 0.184)
-                      235-U      ( 0.062)
-                      236-U      ( 0.013)
-                      238-U      ( 0.203)
+REFERENCE  (J,NSE,54,317,1974)
+           (R,ANL-NDM-83,1983) Revised data in table
+FACILITY   (DYNAM,1USAANL) Argonne 8 MeV Tandem Dynamitron
+INC-SOURCE (P-LI7) for below En~5 MeV
+           Targets produced by evaporation of Li on Ta backing.
+           Target thicknesses about 200 keV above 2 MeV neutron
+            energy but thinner at lower energies.
+           (D-D) for above En~5 MeV
+           Deuterium gas in a 2-cm-long cell filled to 2 atm.
+SAMPLE     (92-U-233,ENR=0.99540)
+           (92-U-234,ENR=0.00184)
+           (92-U-235,ENR=0.00062)
+           (92-U-236,ENR=0.00013)
+           (92-U-238,ENR=0.00203)
 METHOD     Absolute measurements made at energies 1.5 to 3.0 MeV
             using average of values obtained from measurements
             on 5 sample pairs.
@@ -22,41 +26,52 @@ METHOD     Absolute measurements made at energies 1.5 to 3.0 MeV
             rates of 233U and 235U samples and also by comparing
             low geometry alpha count rates of 233U samples with
             235U samples spiked with 233U.
-DETECTOR   (FISCH) Double ionization chamber
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           (ERR-T) Total uncertainty includes statistical error
-            plus error (in percent) due to -
-           . half-life of 234U                (0.02)
-           . thermal ratio of 233U/235U       (0.25)
-           . isotopic analysis                (0.25)
-           . alpha-counting system            (0.15)
-           . thickness correction             (0.10)
-           . extrapolation                    (0.10)
-           . dead-time correction             (0.25)
-           . scattering correction            (0.30)
-           . secondary source reactions (20% of correction)
-           . error in neutron energy (about 20% of energy
-             resolution)
+ANALYSIS    Ratio normalized at 1.496, 1.966, 2.495, 2.998 MeV.
+DETECTOR   (FISCH) Low-mass double ionization chamber using
+            methane as the counting gas.
 STATUS     (APRVD) J.W. Meadows, 1984/3/2.
-           Data taken from ANL-NDM-83.
 HISTORY    (19740307C)
            (19750702U) REFERENCE changed
            (19821015A) Converted to REACTION formalism
            (19840306A) Revised as per ANL-NDM-83.
-           (20010309A) Updated to new date formats, lower case.
-ENDBIB              43
+           (20010309U) Updated to new date formats, lower case.
+           (20190722A) On. Major revision in 002.
+ENDBIB              35
 NOCOMMON             0          0
-ENDSUBENT           46
-SUBENT        10236002   20010309   20010426   20050926       0000
-BIB                  2          4
+ENDSUBENT           38
+SUBENT        10236002   20190722   20191003   20191002       1454
+BIB                  6         23
 REACTION  1((92-U-233(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2(92-U-233(N,F),,SIG)
-MONITOR    Ratio normalized at 1.496, 1.966, 2.495, 2.998 MeV.
-          2(92-U-235(N,F),,SIG) From ENDB/B-V.
-ENDBIB               4
-NOCOMMON             0          0
+MONITOR   2(92-U-235(N,F),,SIG)
+MONIT-REF 2(,,3,ENDF/B-V,,1978)
+ERR-ANALYS1(ERR-T) Total error
+            - secondary source reactions (20% of correction)
+            - propagation from neutron energy error (~20% of the
+              energy resolution)
+           (ERR-1,,,F) Normalization of shape ratio:
+            - 234U half-life                      (0.02%)
+            - 233U/235U thermal ratio             (0.25%)
+            - isotopic analysis                   (0.25%)
+            - alpha counting excluding statistics (0.15%)
+            - thickness correction                (0.10%)
+            - extrapolation                       (0.10%)
+            - dead time correction                (0.25%)
+            - scattering correction               (0.30%)
+            - statistical - alpha counting etc.   (0.50%)
+           (ERR-2,,,U) Uncorrelated error, which principle due to
+            the counting statistics, but a part is based on the
+            consistency of repeated measurements.
+STATUS     (TABLE) Table X of ANL-NDM-83
+HISTORY    (20190722A) On. ERR-S -> ERR-2. ERR-1 added.
+ENDBIB              23
+COMMON               1          3
+ERR-1
+PER-CENT
+ 0.82
+ENDCOMMON            3
 DATA                 6         56
-EN         EN-RSL-FW  DATA      1ERR-S     1ERR-T     1DATA      2
+EN         EN-RSL-FW  DATA      1ERR-2     1ERR-T     1DATA      2
 MEV        MEV        NO-DIM     PER-CENT   PER-CENT   B
  0.142      0.042      1.475      0.98       1.56       2.171
  0.153      0.086      1.494      0.82       2.11       2.169
@@ -115,5 +130,5 @@ MEV        MEV        NO-DIM     PER-CENT   PER-CENT   B
  9.143      0.120      1.273      1.17       1.46       2.252
  9.367      0.120      1.288      1.24       1.52       2.273
 ENDDATA             58
-ENDSUBENT           67
+ENDSUBENT           90
 ENDENTRY             2
