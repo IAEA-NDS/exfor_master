@@ -1,125 +1,147 @@
-ENTRY            10428   20110112   20110216   20110117       1369
-SUBENT        10428001   20110112   20110216   20110117       1369
-BIB                 12         31
+ENTRY            10428   20201130   20210427   20210427       1475
+SUBENT        10428001   20201130   20210427   20210427       1475
+BIB                 13         38
+TITLE      Fission cross section of uranium-235 from 3 to 20 MeV
+AUTHOR     (J.B.Czirr, G.S.Sidhu)
 INSTITUTE  (1USALRL)
-REFERENCE  (J,NSE,57,18,197505)
-           (C,75WASH,2,615,197503)
-           (R,UCRL-76676,197503)
-AUTHOR     (J.B.Czirr,G.S.Sidhu)
-TITLE      Fission Cross Section of 235U from 3 to 20 MeV
-FACILITY   (LINAC,1USALRL)
-INC-SOURCE (EVAP) 100-MeV electrons on thick Ta target.
-METHOD     (TOF) Time-of-flight. 37.6 m flight path.
+REFERENCE  (J,NSE,57,18,1975)
+           (C,75WASH,2,615,1975)
+           (R,UCRL-76676,1975)
+REL-REF    (O,10558002,J.B.Czirr+,J,NSE,58,371,1975)
+            Data from 0.75 to 4.1 MeV
+FACILITY   (LINAC,1USALRL) 100-MeV electron linac
+INC-SOURCE (PHOTO) 100-MeV electrons on thick Ta target.
+            Repetition rate of 1440 Hz, pulse width of 10 ns,
+            time-analyzer channel width of 16 ns.
+SAMPLE     CH2 radiator foil (3.30 mg/cm2 thick).
+           (92-U-235,ENR=0.999)
+           Ten 235U (99.9% enrichment) foils (~0.1 mg/cm2 thick
+             for each).
+METHOD     (TOF) flight path of 37.63(1) m for fission chamber,
+            60.41(1) m for proton recoil detector
+           Energy calibrated using narrow carbon resonance at
+            2077+/-2 keV.
 DETECTOR   (FISCH) Parallel-plate fission chamber
-           Flux monitored with Si(Li) semiconductor detector.
+           (SILI) 2-mm thick Si(Li) detector for recoil proton
+            detection
 CORRECTION Corrected for
-             . timing error due to time shift vs pulse height,
-             . n-p scattering angular distribution,
-             . fission fragment angular distribution,
-             . detector efficiency,
-             . deadtime,
-             . flux perturbation.
-ERR-ANALYS (ERR-S) Statistical uncertainty.
-           (ERR-SYS) Systematic uncertainty. Where no uncertainty
-                     given,it is negligible.
-           See report for a complete discussion of error
-            contributions.
+            - timing error due to time shift vs pulse height,
+            - n-p scattering angular distribution,
+            - fission fragment angular distribution,
+            - detector efficiency,
+            - dead-time,
+            - flux perturbation.
 STATUS     (APRVD) Approved by author 1975/8/8.
 HISTORY    (19741008C)
            (19760302A) Corrected data as sent by author
            (19830207A) Converted to REACTION formalism
            (19830607A) BIB, COMMON updated.
            (20030408A) Converted to new date formats, lower case.
-           (20110112A) VM. BIB updates.
-                       Updates to subentry 002.
-ENDBIB              31
+           (20110112A) VM. BIB updates. Updates to subentry 002.
+           (20201130A) On. ERR-ANALYS moved to 002 and revised.
+ENDBIB              38
 NOCOMMON             0          0
-ENDSUBENT           34
-SUBENT        10428002   20110112   20110216   20110117       1369
-BIB                  4         13
+ENDSUBENT           41
+SUBENT        10428002   20201130   20210427   20210427       1475
+BIB                  7         28
 REACTION  1(92-U-235(N,F),,SIG,,REL)
           2(92-U-235(N,F),,SIG)
-MONITOR    Flux measured relative to n-p scattering
-           Energy calibrated using narrow carbon resonance at
-            2077+-2 keV.
-          1Average value between 3 and 4 MeV normalized to 1.000.
-          2(92-U-235(N,F),,SIG,,AV) Average value between 3 and 4
-            MeV normalized to 1198 mb.
-STATUS     (TABLE) Data taken from Table II in main reference.
-              and private communication, Czirr, December 1975.
-HISTORY    (19830207A) Data below 3 MeV deleted. Not from this
+MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
+          1Average between 3 and 4 MeV normalized to 1.000.
+          2((MONIT)92-U-235(N,F),,SIG,,AV)
+MONIT-REF  (,L.Stewart+,R,LA-4574,1971) n-p cross section
+          2((MONIT)10333001,W.P.Poenitz,J,NSE,53,370,1974)
+ERR-ANALYS (ERR-S) Statistical uncertainty (standard deviation)
+            due to fission rate, flux rate and flux background.
+           (ERR-SYS) Systematic uncertainty (rms) taking into
+            account
+            - pulse height versus time shift
+            - (n,p) angular distribution
+            - fission-fragment angular distribution
+            - dead-time correction
+            - flux perturbation
+            - background (fission chamber and flux monitor)
+            - energy scale (fission chamber v.s. flux monitor)
+            - absolute energy scale
+            - pulse-height bias.
+FLAG       (1.) Systematic uncertainty negligible (0.1%)
+STATUS     (TABLE) Table II of Nucl.Sci.Eng.57(1975)18 and
+            private communication, Czirr, December 1975.
+HISTORY    (19751202R) Absolute cross sections received from Czirr
+           (19830207A) Data below 3 MeV deleted. Not from this
                        experiment.
            (20110112A) Data error headings updated.
-ENDBIB              13
+           (20201130A) On. ERR-ANALYS moved from 001 and revised.
+ENDBIB              28
 COMMON               3          3
 EN-NRM-MIN2EN-NRM-MAX2MONIT     2
 MEV        MEV        MB
  3.         4.         1198.
 ENDCOMMON            3
-DATA                 5         61
-EN         DATA      1ERR-S      DATA      2ERR-SYS
-MEV        ARB-UNITS  PER-CENT   B          PER-CENT
- 2.99       1.043      0.9        1.249
- 3.05       1.032      0.9        1.237
- 3.12       1.031      0.9        1.235
- 3.18       1.012      0.9        1.212
- 3.25       1.008      0.9        1.207
- 3.32       0.991      0.9        1.187
- 3.40       0.990      0.9        1.186
- 3.47       0.999      0.9        1.197
- 3.55       0.990      0.9        1.186
- 3.63       0.988      0.9        1.184
- 3.71       1.000      1.0        1.198
- 3.80       0.985      1.0        1.180
- 3.89       0.989      1.0        1.185
- 3.98       0.982      1.0        1.177
- 4.07       0.983      1.0        1.178      0.1
- 4.17       0.978      1.0        1.172      0.1
- 4.27       0.958      1.0        1.148      0.2
- 4.38       0.950      1.0        1.139      0.2
- 4.49       0.959      1.0        1.150      0.3
- 4.60       0.950      1.0        1.139      0.3
- 4.72       0.938      1.0        1.125      0.3
- 4.85       0.927      1.0        1.112      0.3
- 4.98       0.929      1.0        1.115      0.3
- 5.11       0.911      1.0        1.093      0.3
- 5.25       0.906      1.0        1.087      0.3
- 5.39       0.908      1.0        1.090      0.4
- 5.54       0.894      1.0        1.073      0.4
- 5.70       0.886      1.0        1.064      0.4
- 5.87       0.893      1.0        1.073      0.4
- 6.04       0.949      1.0        1.140      0.4
- 6.22       1.024      0.9        1.230      0.4
- 6.40       1.114      0.9        1.338      0.4
- 6.60       1.198      0.9        1.439      0.5
- 6.81       1.282      0.9        1.540      0.6
- 7.02       1.337      0.9        1.607      0.7
- 7.25       1.408      0.9        1.692      0.8
- 7.48       1.462      1.0        1.757      0.8
- 7.73       1.494      1.0        1.795      0.9
- 7.99       1.521      1.0        1.828      0.9
- 8.27       1.525      1.1        1.833      0.9
- 8.55       1.519      1.1        1.826      0.9
- 8.86       1.511      1.2        1.817      0.9
- 9.18       1.496      1.2        1.799      0.9
- 9.52       1.482      1.3        1.782      1.0
- 9.88       1.516      1.3        1.823      1.0
-10.25       1.509      1.3        1.815      1.0
-10.66       1.480      1.3        1.780      1.1
-11.08       1.487      1.4        1.789      1.1
-11.53       1.462      1.5        1.759      1.1
-12.01       1.482      1.6        1.784      1.1
-12.52       1.528      1.6        1.839      1.1
-13.06       1.596      1.7        1.922      1.0
-13.64       1.680      1.8        2.023      1.0
-14.26       1.730      1.9        2.084      1.0
-14.93       1.732      2.0        2.087      1.0
-15.64       1.739      3.7        2.096      1.1
-16.40       1.660      3.8        2.001      1.1
-17.22       1.627      3.9        1.962      1.1
-18.11       1.616      3.4        1.950      1.1
-19.07       1.639      4.1        1.978      1.2
-20.10       1.696      6.2        2.048      1.2
+DATA                 6         61
+EN         DATA      1ERR-S      DATA      2ERR-SYS    FLAG
+MEV        ARB-UNITS  PER-CENT   B          PER-CENT   NO-DIM
+  2.99      1.043      0.9        1.249                 1.
+  3.05      1.032      0.9        1.237                 1.
+  3.12      1.031      0.9        1.235                 1.
+  3.18      1.012      0.9        1.212                 1.
+  3.25      1.008      0.9        1.207                 1.
+  3.32      0.991      0.9        1.187                 1.
+  3.40      0.990      0.9        1.186                 1.
+  3.47      0.999      0.9        1.197                 1.
+  3.55      0.990      0.9        1.186                 1.
+  3.63      0.988      0.9        1.184                 1.
+  3.71      1.000      1.0        1.198                 1.
+  3.80      0.985      1.0        1.180                 1.
+  3.89      0.989      1.0        1.185                 1.
+  3.98      0.982      1.0        1.177                 1.
+  4.07      0.983      1.0        1.178      0.1
+  4.17      0.978      1.0        1.172      0.1
+  4.27      0.958      1.0        1.148      0.2
+  4.38      0.950      1.0        1.139      0.2
+  4.49      0.959      1.0        1.150      0.3
+  4.60      0.950      1.0        1.139      0.3
+  4.72      0.938      1.0        1.125      0.3
+  4.85      0.927      1.0        1.112      0.3
+  4.98      0.929      1.0        1.115      0.3
+  5.11      0.911      1.0        1.093      0.3
+  5.25      0.906      1.0        1.087      0.3
+  5.39      0.908      1.0        1.090      0.4
+  5.54      0.894      1.0        1.073      0.4
+  5.70      0.886      1.0        1.064      0.4
+  5.87      0.893      1.0        1.073      0.4
+  6.04      0.949      1.0        1.140      0.4
+  6.22      1.024      0.9        1.230      0.4
+  6.40      1.114      0.9        1.338      0.4
+  6.60      1.198      0.9        1.439      0.5
+  6.81      1.282      0.9        1.540      0.6
+  7.02      1.337      0.9        1.607      0.7
+  7.25      1.408      0.9        1.692      0.8
+  7.48      1.462      1.0        1.757      0.8
+  7.73      1.494      1.0        1.795      0.9
+  7.99      1.521      1.0        1.828      0.9
+  8.27      1.525      1.1        1.833      0.9
+  8.55      1.519      1.1        1.826      0.9
+  8.86      1.511      1.2        1.817      0.9
+  9.18      1.496      1.2        1.799      0.9
+  9.52      1.482      1.3        1.782      1.0
+  9.88      1.516      1.3        1.823      1.0
+ 10.25      1.509      1.3        1.815      1.0
+ 10.66      1.480      1.3        1.780      1.1
+ 11.08      1.487      1.4        1.789      1.1
+ 11.53      1.462      1.5        1.759      1.1
+ 12.01      1.482      1.6        1.784      1.1
+ 12.52      1.528      1.6        1.839      1.1
+ 13.06      1.596      1.7        1.922      1.0
+ 13.64      1.680      1.8        2.023      1.0
+ 14.26      1.730      1.9        2.084      1.0
+ 14.93      1.732      2.0        2.087      1.0
+ 15.64      1.739      3.7        2.096      1.1
+ 16.40      1.660      3.8        2.001      1.1
+ 17.22      1.627      3.9        1.962      1.1
+ 18.11      1.616      3.4        1.950      1.1
+ 19.07      1.639      4.1        1.978      1.2
+ 20.10      1.696      6.2        2.048      1.2
 ENDDATA             63
-ENDSUBENT           85
+ENDSUBENT          100
 ENDENTRY             2

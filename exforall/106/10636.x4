@@ -1,50 +1,69 @@
-ENTRY            10636   20080812   20080909   20080909       1349
-SUBENT        10636001   20080812   20080909   20080909       1349
-BIB                 11         23
+ENTRY            10636   20201129   20210427   20210427       1475
+SUBENT        10636001   20201129   20210427   20210427       1475
+BIB                 12         33
+TITLE      A measurement of the fission cross section of
+            plutonium-241 from 8 eV to 70 keV
+AUTHOR     (G.W.Carlson, J.W.Behrens, J.B.Czirr)
 INSTITUTE  (1USALRL)
-REFERENCE  (J,NSE,63,149,197706)
-AUTHOR     (G.W.Carlson,J.W.Behrens,J.B.Czirr)
-TITLE      A Measurement of the Fission Cross Section of
-           Plutonium-241 from 8 eV to 70 keV.
+REFERENCE  (J,NSE,63,149,1977)
 FACILITY   (LINAC,1USALRL) Livermore linear accelerator
-METHOD     (TOF) Time-of-flight
-INC-SOURCE Pulsed neutron source
-DETECTOR   (FISCH,SCIN) Fission chambers and 6Li glass
-            scintillators.
-           Data in region from thermal to 2.0 keV was obtained
-            using natural Li glass scintillator; from 100 ev to
-            70 keV data was obtained using 95% enriched detector.
-CORRECTION Data corrected for background, fission chamber
-            absorption, Li glass scattering and absorption,
-            deadtime, and scattering in the Al foils of the
-            fission chamber.
+INC-SOURCE (PHOTO) Pulsed neutron source
+METHOD     (TOF) Two data sets were taken:
+            - low energy data set (thermal to 2.0 keV)
+            - high energy data set (100 eV to 70 keV)
+SAMPLE     235U deposited in 10 layers (2.7 mg/cm2 thick in total)
+           241Pu deposited in 8 layers (1.4 mg/cm2 thick in total)
+            with impurities of 239Pu (1.4%), 240Pu (0.2%),
+            242Pu (0.1%), 241Am (1.8%).
+DETECTOR   (FISCH) 235U and 241Pu deposited on both sides of the
+            positive and negative electrodes
+           (GLASD) 6Li glass scintillators:
+            - natLi glass scintillator in low energy run
+            - 95% 6Li glass scintillator in high energy run
+CORRECTION Corrected for
+            - 239Pu fission (with ENDF/B-IV)
+            - background,
+            - fission chamber absorption,
+            - Li glass scattering and absorption,
+            - dead time,
+            - scattering in the Al foils of the fission chamber,
 STATUS     (APRVD) Approved by author, 1976/12/14
 HISTORY    (19761004C)
            (19770105U) BIB update converted to REACTION formalism
            (19840917A) BIB corrections.
            (20080812A) Converted to new data formats, lower case.
                        BIB updates. Error heading updates.
-ENDBIB              23
+           (20201129A) On. Important alteration in 002.
+ENDBIB              33
 NOCOMMON             0          0
-ENDSUBENT           26
-SUBENT        10636002   20080812   20080909   20080909       1349
-BIB                  5         14
+ENDSUBENT           36
+SUBENT        10636002   20201129   20210427   20210427       1475
+BIB                  6         19
 REACTION  1((94-PU-241(N,F),,SIG)/(3-LI-6(N,T)2-HE-4,,SIG))
           2(94-PU-241(N,F),,SIG)
-MONITOR    The high energy data was normalized to the low energy
-            data in the region of overlap
-          2(3-LI-6(N,T)2-HE-4,,SIG) FROM ENDF/B-IV.
+MONITOR    The high energy data set was normalized to the low
+            energy data set in the region of overlap.
+          2((MONIT)94-PU-241(N,F),,SIG)
+            absolute normalization at thermal
+           (3-LI-6(N,T)2-HE-4,,SIG)
+            shape normalization with ENDF/B-IV
+MONIT-REF 2((MONIT),H.D.Lemmel,C,75WASH,1,286,1975)
 ERR-ANALYS (ERR-S) Statistical uncertainty (standard deviation).
-           (ERR-SYS) Systematic error (RMS).
-            Systematic error below 100 ev primarily due to
+           (ERR-SYS) Systematic error (root-mean-square).
+            Systematic error below 100 eV primarily due to
             thermal-neutron cross section uncertainty. Above 100
             eV error is mainly due to overlap normalization
             (1.2%), flux background error, and 6Li cross section
             error (3% at 50 keV).
-STATUS     (TABLE) Data taken from Table I in reference.
+STATUS     (TABLE) Table I of Nucl.Sci.Eng.63(1977)149
 HISTORY    (19831102A) BIB, DATA headings corrected.
-ENDBIB              14
-NOCOMMON             0          0
+           (20201129A) On. EN-NRM and MONIT added.
+ENDBIB              19
+COMMON               3          3
+EN-NRM-MIN2EN-NRM-MAX2MONIT     2
+EV         EV         B
+ 0.0203     0.0303     1015.
+ENDCOMMON            3
 DATA                 6         30
 EN-MIN     EN-MAX     DATA      1DATA      2ERR-S      ERR-SYS
 KEV        KEV        NO-DIM     B          PER-CENT   PER-CENT
@@ -79,5 +98,5 @@ KEV        KEV        NO-DIM     B          PER-CENT   PER-CENT
  50.0       60.0       2.956        2.15     1.2        3.7
  60.0       70.0       3.031        2.11     1.0        3.6
 ENDDATA             32
-ENDSUBENT           51
+ENDSUBENT           60
 ENDENTRY             2
