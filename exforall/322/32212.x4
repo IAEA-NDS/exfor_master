@@ -1,72 +1,392 @@
-ENTRY            32212   20100305   20100610   20100603       3144
-SUBENT        32212001   20100305   20100610   20100603       3144
-BIB                 15         39
-INSTITUTE  (4UKRIJD)
-REFERENCE  (J,NSTS,2,(1),389,200208)
-AUTHOR     (O.O.Gritzay,V.V.Kolotyi,O.I.Kalchenko,P.M.Vorona,
-           M.L.Gnidak)
+ENTRY            32212   20200312   20200416   20200416       3195
+SUBENT        32212001   20200312   20200416   20200416       3195
+BIB                 13         40
 TITLE      High precision measurements of spectrum averaged
-           total neutron cross section for chromium
+            total neutron cross section for chromium
+AUTHOR     (O.O.Gritzay, V.V.Kolotyi, O.I.Kalchenko, P.M.Vorona,
+            M.L.Gnidak)
+INSTITUTE  (4UKRIJD)
+REFERENCE  (J,NSTS,2,389,2002)
 FACILITY   (REAC,4UKRIJD) Reactor WWR-M
 INC-SOURCE (REAC) Neutron filters installed in horizontal channel
            of the reactor.
-INC-SPECT  Filtered neutron spectrum with average energy
-           24.3keV and 58.8keV
-COMMENT    Average cross section is really the cross section
-           integrated over the filter spectrum taking into account
-           95% response function in the limits EN-MIN--EN-MAX ).
-METHOD     (FNB) Transmission measurement of filtered neutrons.
+INC-SPECT  24 keV. Average energy of the filtered neutron spectrum
+            (23.850 (+1.262,-2.509))keV (95% response function),
+           the filter components (g/cm2):
+           Fe - 236.1, Al - 115.02, S - 19.0, 10B - 1.0.
+           Neutron flux of about 4.4E5 n/cm2/s. The beam purity
+           was about 99% - only 1% of neutrons had the energies
+           70, 120, and 250 keV.
+           58 keV. Average energy of the filtered neutron spectrum
+            (58.424 (+1.929,-4.535) keV (95% response function),
+           the filter components (g/cm2): 58Ni - 84.55, S - 157.7,
+            V - 17.4, Pb - 2.5, Al - 5.4, 10B - 0.2.
+           Neutron flux about 1.E5 n/cm2/s. The purity of beam was
+           about 97.0%, main parasitic lines: 368 keV - 0.62%,
+           690 keV - 1.29%.
+METHOD     (FNB,TRN)
 DETECTOR   (PROPC) Proportional hydrogen counter CHM-38 (the
            counter is filled: 90% H2 + 9.56% CH4 + 0.44% He3,
            pressure 3 atm.,voltage 2500V)
-SAMPLE     52Cr metal powder(enrichment 99,3%),loaded into
-           aluminum container with internal diameter 31.75 mm.,
-           thickness was 0.1207(4) at/barn.
-           Cr-nat. metal plates with diameter 29 mm and thickness
-           0.2415 and 0.3785 at/barn.
-           For background counting rate the polyethylene sample
+SAMPLE     For background counting rate the polyethylene sample
            with thickness 0,731 g/cm2 was used
-ERR-ANALYS (ERR-T) Total error includes:
-             * statistical error of the transmission measurements;
-             * meausurement errors of dimension and weight of the
-                                                      sample;
-             * error due to presence of impurities in the
-                                            sample, etc.
 CORRECTION Correction on the contribution of other chromium
            isotopes(Cr-50(0.1%),Cr-53(0.5%),Cr-54(0.1%) to the
            Cr-52 total cross section was also made.
 STATUS     (APRVD) Approved by author(Gritzay)
 HISTORY    (20031125C) NK and MV
-           (20060609) Finalized
            (20100305A) SD: AUTHOR and TITLE letters were changed
            on lower case.
-ENDBIB              39
+           (20200225A) OG. ERR-T->DATA-ERR, AV->SPA. STATUS added
+           and EN-MIN,EN-MAX updated in Sub002-003.
+           INC-SPECT updated. Sub004 added.
+           (20200312A) On. ERR-ANALYS moved to 002-003.
+ENDBIB              40
 NOCOMMON             0          0
-ENDSUBENT           42
-SUBENT        32212002   20100305   20100610   20100603       3144
-BIB                  2          2
-REACTION   (24-CR-52(N,TOT),,SIG,,AV/RAW)
-STATUS     (TABLE) Table 1 of J,NSTS,2,389,2002
-ENDBIB               2
+ENDSUBENT           43
+SUBENT        32212002   20200312   20200416   20200416       3195
+BIB                  6         17
+REACTION   (24-CR-52(N,TOT),,SIG,,SPA/RAW)
+CORRECTION Not corrected for self-shielding (measurement done
+           with only one sample)
+SAMPLE     52Cr metal powder(enrichment 99,3%),loaded into
+           aluminum container with internal diameter 31.75 mm.,
+           thickness was 0.1207(4) at/barn.
+ERR-ANALYS (DATA-ERR) Total error includes:
+            - statistical error of the transmission measurements
+            - measurement of sample dimension and weight
+            - error due to presence of impurities in sample, etc.
+STATUS     (TABLE) Table 1 in Nucl.Sci.Techn.Supp.,2,389,2002
+           (SUPPL,32214003) Calc. neutron sp. after filter 24 keV
+           (SUPPL,32214004) Calc. neutron sp. after filter 58 keV
+           (SUPPL,32212004) Exper. neutron sp. after filter 58 keV
+HISTORY    (20200123A) OG. STATUS added. EN-MIN,EN-MAX updated -
+           correspond to 95% response function.
+           (20200312A) On. ERR-ANALYS moved from 001.
+ENDBIB              17
+NOCOMMON             0          0
+DATA                 4          2
+EN-MIN     EN-MAX     DATA       DATA-ERR
+KEV        KEV        B          B
+21.307     25.112     2.099      0.012
+53.653     60.333     5.033      0.019
+ENDDATA              4
+ENDSUBENT           26
+SUBENT        32212003   20200312   20200416   20200416       3195
+BIB                  7         18
+REACTION   (24-CR-0(N,TOT),,SIG,,SPA/RAW)
+CORRECTION Not corrected for self-shielding (measurement done
+           with only two enogh thick samples)
+SAMPLE     Cr-nat. metal plates with diameter 29 mm and thickness
+           0.2415 and 0.3785 at/barn.
+FLAG       (0.2415) 0.2415 atoms/barn-thick sample used.
+           (0.3785) 0.3785 atoms/barn-thick sample used.
+ERR-ANALYS (DATA-ERR) Total error includes:
+            - statistical error of the transmission measurements
+            - measurement of sample dimension and weight
+            - error due to presence of impurities in sample, etc.
+STATUS     (TABLE) Table 3 in Nucl.Sci.Techn.Supp.,2,389,2002
+           (SUPPL,32214003) Calc. neutron sp. after filter 24 keV
+           (SUPPL,32214004) Calc. neutron sp. after filter 58 keV
+           (SUPPL,32212004) Exper. neutron sp. after filter 58 keV
+HISTORY    (20200123A) OG. STATUS added. EN-MIN,EN-MAX updated -
+           correspond to 95% response function.
+           (20200312A) On. ERR-ANALYS moved from 001.
+ENDBIB              18
 NOCOMMON             0          0
 DATA                 5          2
-EN-MIN     EN-MAX     DATA       ERR-T      THICKNESS
-KEV        KEV        B          B          ATOMS/B
-19.3       25.8       2.099      0.012      0.1207
-49.9       61.06      5.033      0.019      0.1207
+EN-MIN     EN-MAX     DATA       DATA-ERR   FLAG
+KEV        KEV        B          B          NO-DIM
+21.307     25.112     2.487      0.014      0.3785
+53.653     60.333     4.264      0.008      0.2415
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        32212003   20100305   20100610   20100603       3144
-BIB                  2          2
-REACTION   (24-CR-0(N,TOT),,SIG,,AV/RAW)
-STATUS     (TABLE) Table 3 of J,NSTS,2,389,2002
-ENDBIB               2
+ENDSUBENT           27
+SUBENT        32212004   20200224   20200416   20200416       3195
+BIB                  2        282
+SUPPL-INF  (INCSP) Experimental neutron spectrum after the 58 keV
+           filter, obtained by differentiation of the spectrum of
+           the recoil protons
+           Col. 1: Incident neutron energy (keV)
+           Col. 2: Neutron flux (rel. units)
+             ---------------------------
+           29.4961    5.9731
+           29.6414    6.1279
+           29.7867    6.3051
+           29.9321    6.5072
+           30.0774    6.7369
+           30.2228    6.9969
+           30.3681    7.2889
+           30.5134    7.6143
+           30.6588    7.9684
+           30.8041    8.3461
+           30.9495    8.7426
+           31.0948    9.1498
+           31.2401    9.5650
+           31.3855    9.9762
+           31.5308    10.3750
+           31.6762    10.7549
+           31.8215    11.1080
+           31.9668    11.4309
+           32.1122    11.7211
+           32.2575    11.9719
+           32.4029    12.1822
+           32.5482    12.3492
+           32.6935    12.4738
+           32.8389    12.5590
+           32.9842    12.6037
+           33.1296    12.6129
+           33.2749    12.5859
+           33.4202    12.5279
+           33.5656    12.4420
+           33.7109    12.3340
+           33.8563    12.2109
+           34.0016    12.0762
+           34.1469    11.9352
+           34.2923    11.7963
+           34.4376    11.6641
+           34.5830    11.5498
+           34.7283    11.4592
+           34.8736    11.3971
+           35.0190    11.3754
+           35.1643    11.3930
+           35.3097    11.4598
+           35.4550    11.5789
+           35.6003    11.7520
+           35.7457    11.9842
+           35.8910    12.2738
+           36.0364    12.6219
+           36.1817    13.0229
+           36.3270    13.4711
+           36.4724    13.9613
+           36.6177    14.4869
+           36.7631    15.0408
+           36.9084    15.6098
+           37.0537    16.1852
+           37.1991    16.7502
+           37.3444    17.2940
+           37.4898    17.8037
+           37.6351    18.2639
+           37.7804    18.6672
+           37.9258    18.9982
+           38.0711    19.2531
+           38.2165    19.4279
+           38.3618    19.5191
+           38.5071    19.5340
+           38.6525    19.4762
+           38.7978    19.3600
+           38.9432    19.2018
+           39.0885    19.0160
+           39.2338    18.8277
+           39.3792    18.6541
+           39.5245    18.5190
+           39.6699    18.4398
+           39.8152    18.4342
+           39.9605    18.5131
+           40.1059    18.6854
+           40.2512    18.9553
+           40.3966    19.3148
+           40.5419    19.7619
+           40.6872    20.2768
+           40.8326    20.8467
+           40.9779    21.4510
+           41.1233    22.0621
+           41.2686    22.6633
+           41.4139    23.2281
+           41.5593    23.7398
+           41.7046    24.1809
+           41.8500    24.5369
+           41.9953    24.8020
+           42.1406    24.9699
+           42.2860    25.0461
+           42.4313    25.0330
+           42.5767    24.9420
+           42.7220    24.7852
+           42.8673    24.5799
+           43.0127    24.3441
+           43.1580    24.0971
+           43.3034    23.8551
+           43.4487    23.6342
+           43.5940    23.4520
+           43.7394    23.3188
+           43.8847    23.2479
+           44.0301    23.2449
+           44.1754    23.3191
+           44.3207    23.4682
+           44.4661    23.6951
+           44.6114    23.9988
+           44.7568    24.3738
+           44.9021    24.8191
+           45.0474    25.3281
+           45.1928    25.8973
+           45.3381    26.5248
+           45.4835    27.2088
+           45.6288    27.9471
+           45.7741    28.7359
+           45.9195    29.5750
+           46.0648    30.4598
+           46.2102    31.3930
+           46.3555    32.3711
+           46.5008    33.3891
+           46.6462    34.4441
+           46.7915    35.5279
+           46.9369    36.6361
+           47.0822    37.7568
+           47.2275    38.8828
+           47.3729    40.0059
+           47.5182    41.1191
+           47.6636    42.2131
+           47.8089    43.2852
+           47.9542    44.3301
+           48.0996    45.3459
+           48.2449    46.3393
+           48.3903    47.3088
+           48.5356    48.2660
+           48.6809    49.2191
+           48.8263    50.1779
+           48.9716    51.1590
+           49.1170    52.1688
+           49.2623    53.2240
+           49.4076    54.3354
+           49.5530    55.5150
+           49.6983    56.7760
+           49.8437    58.1268
+           49.9890    59.5770
+           50.1343    61.1320
+           50.2797    62.7981
+           50.4250    64.5803
+           50.5704    66.4871
+           50.7157    68.5221
+           50.8610    70.6906
+           51.0064    72.9957
+           51.1517    75.4449
+           51.2971    78.0398
+           51.4424    80.7852
+           51.5877    83.6900
+           51.7331    86.7561
+           51.8784    89.9932
+           52.0238    93.4059
+           52.1691    97.0010
+           52.3144    100.7861
+           52.4598    104.7711
+           52.6051    108.9629
+           52.7505    113.3728
+           52.8958    118.0150
+           53.0411    122.9033
+           53.1865    128.0531
+           53.3318    133.4807
+           53.4772    139.2008
+           53.6225    145.2299
+           53.7678    151.5842
+           53.9132    158.2769
+           54.0585    165.3209
+           54.2039    172.7242
+           54.3492    180.4910
+           54.4945    188.6191
+           54.6399    197.1051
+           54.7852    205.9389
+           54.9306    215.1041
+           55.0759    224.5750
+           55.2212    234.3271
+           55.3666    244.3242
+           55.5119    254.5309
+           55.6573    264.9049
+           55.8026    275.3979
+           55.9479    285.9672
+           56.0933    296.5582
+           56.2386    307.1209
+           56.3840    317.6047
+           56.5293    327.9535
+           56.6746    338.1187
+           56.8200    348.0480
+           56.9653    357.6893
+           57.1107    366.9963
+           57.2560    375.9142
+           57.4013    384.3941
+           57.5467    392.3919
+           57.6920    399.8580
+           57.8374    406.7500
+           57.9827    413.0209
+           58.1280    418.6239
+           58.2734    423.5159
+           58.4187    427.6559
+           58.5641    431.0070
+           58.7094    433.5320
+           58.8547    435.1989
+           59.0001    435.9781
+           59.1454    435.8480
+           59.2908    434.7953
+           59.4361    432.8065
+           59.5814    429.8791
+           59.7268    426.0189
+           59.8721    421.2373
+           60.0175    415.5569
+           60.1628    409.0047
+           60.3081    401.6161
+           60.4535    393.4334
+           60.5988    384.5046
+           60.7442    374.8839
+           60.8895    364.6297
+           61.0348    353.8040
+           61.1802    342.4724
+           61.3255    330.7020
+           61.4709    318.5622
+           61.6162    306.1223
+           61.7615    293.4523
+           61.9069    280.6212
+           62.0522    267.6969
+           62.1976    254.7455
+           62.3429    241.8302
+           62.4882    229.0119
+           62.6336    216.3476
+           62.7789    203.8907
+           62.9243    191.6900
+           63.0696    179.7902
+           63.2149    168.2308
+           63.3603    157.0466
+           63.5056    146.2667
+           63.6510    135.9151
+           63.7963    126.0111
+           63.9416    116.5687
+           64.0870    107.5975
+           64.2323    99.1022
+           64.3777    91.0837
+           64.5230    83.5392
+           64.6683    76.4622
+           64.8137    69.8436
+           64.9590    63.6716
+           65.1044    57.9323
+           65.2497    52.6100
+           65.3950    47.6878
+           65.5404    43.1475
+           65.6857    38.9701
+           65.8311    35.1365
+           65.9764    31.6268
+           66.1217    28.4214
+           66.2671    25.5007
+           66.4124    22.8455
+           66.5578    20.4367
+           66.7031    18.2562
+           66.8484    16.2862
+           66.9938    14.5097
+           67.1391    12.9106
+           67.2845    11.4736
+           67.4298    10.1840
+           67.5751    9.0284
+           67.7205    7.9942
+           67.8658    7.0695
+           68.0112    6.2436
+           68.1565    5.5066
+           68.3018    4.8494
+           68.4472    4.2638
+           68.5925    3.7424
+           68.7379    3.2787
+           68.8832    2.8667
+           69.0285    2.5012
+           69.1739    2.1775
+           69.3192    1.8916
+HISTORY    (20200224C) OG.
+ENDBIB             282
 NOCOMMON             0          0
-DATA                 5          2
-EN-MIN     EN-MAX     DATA       ERR-T      THICKNESS
-KEV        KEV        B          B          ATOMS/B
-19.3       25.86      2.487      0.014      0.3785
-49.9       61.06      4.264      0.008      0.2415
-ENDDATA              4
-ENDSUBENT           11
-ENDENTRY             3
+NODATA               0          0
+ENDSUBENT          286
+ENDENTRY             4
