@@ -1,43 +1,38 @@
-ENTRY            20943   20190722   20191002   20191001       2281
-SUBENT        20943001   20190722   20191002   20191001       2281
-BIB                 16         51
+ENTRY            20943   20210210   20210422   20210421       2297
+SUBENT        20943001   20210210   20210422   20210421       2297
+BIB                 15         54
 TITLE      The 235U and 238U neutron induced fission cross
             sections relative to the H(n,p) cross section
 AUTHOR     (B.Leugers, S.Cierjacks, P.Brotz, D.Erbe, D.Groeschel,
             G.Schmalz, F.Voss)
 INSTITUTE  (2GERKFK)
 REFERENCE  (C,76ANL,,246,1976)
+REL-REF    (N,20409001,S.Cierjacks+,C,76ANL,,94,1976)
+            238U(n,f)/235U(n,f) ratio from the same experiment
 FACILITY   (ISOCY,2GERKFK)
-INC-SOURCE Pulesed neutrons by 50 MeV deuterons on Uranium
+INC-SOURCE 50 MeV deuterons on thick natural uranium
 SAMPLE     Uranium foils (~400 ug/cm2 thick, 7 cm diameter).
-           235U sample: 1.080% 234U, 93.331% 235U,
-                        0.202% 236U, 5.387% 238U
-           238U sample: 235U/238U composition ratio=0.0001755
 METHOD     (TOF) 57 m flight path
-DETECTOR   (SCIN)  9 gas scintillation chambers for fission
-            fragment detection
+DETECTOR   (SCIN) 9 gas scintillation chambers (85% Ar+15% N)
+            for fission fragment detection
            (TELES) Proton recoil detector for neutron flux
             measurements.
-MONITOR    (1-H-1(N,EL)1-H-1,,SIG) No data given.
-COMMENT    .The relative cross sections have been normalized at
-            14 MeV neutron energy.
-REL-REF    (N,20409001,CIERJACKS+,C,76ANL,,94,197606) Same
-            experiment.
-STATUS     .Data taken from tables in reference.
-CORRECTION .As sources for correction the following effects have
-            been considered , time dependent and independent
-            background, energy dependent detectors efficiency,
-            electronic threshold and dead time, sample mass and
-            isotopic composition and flux detector threshold.
+MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
+CORRECTION Corrected for
+            - time-independent background,
+            - energy-dependent detector efficiency,
+            - electronic threshold and dead time,
+            - sample mass and isotopic composition,
+            - flux detector threshold.
 ERR-ANALYS (ERR-S) Statistical uncertainty including
                    - contributions from background subtraction,
                    - isotopic corrections for U-238.
            (ERR-SYS) Total systematic error including
-                   - energy dependent time dependent background,
-                   - energy dependent detector efficiency.
+                   - energy-dependent time-dependent background,
+                   - energy-dependent detector efficiency.
             There is also a 1% contribution from dead time and
              electronic losses.
-            Sample mass and isotopic composition gives negligible
+            Sample mass and isotopic composition give negligible
              errors.
             The largest contribution is from neutron flux
              measurement including the relative efficiencies for
@@ -45,6 +40,13 @@ ERR-ANALYS (ERR-S) Statistical uncertainty including
               - fission counters,
               - (n,p) cross section (2%),
               - flux measurement itself (1-2%)
+STATUS     Note added by the editors of C,76ANL,,246,1976:
+            The data reported for the ratio of U-238/U-235 and
+           the absolute values for U-238 and for U-235 (based on
+           the hydrogen reference cross section) are both from a
+           single measurement. However, the normalization of the
+           data is somewhat different for the ratio then it is
+           for the individual cross sections.
 HISTORY    (19790503C) CN.
            (19790626E)
            (19801119A) ERR-ANALYS changed
@@ -52,16 +54,26 @@ HISTORY    (19790503C) CN.
            (20071218A) Date is corrected
            (20071218U) ERR-1 changed to ERR-SYS
            (20190722A) On. Major revisions in 002 and 003.
-ENDBIB              51
+           (20210210A) On. Major revision in 002.
+ENDBIB              54
 NOCOMMON             0          0
-ENDSUBENT           54
-SUBENT        20943002   20190722   20191002   20191001       2281
-BIB                  4          4
+ENDSUBENT           57
+SUBENT        20943002   20210210   20210422   20210421       2297
+BIB                  6         13
 REACTION   (92-U-235(N,F),,SIG)
 MONITOR    (92-U-235(N,F),,SIG)
+SAMPLE     235U sample: 235U (93.331%), 234U (1.080%),
+                        236U (0.202%),  238U (5.387%)
+COMMENT    By Friedrich Voss (2021-03-01):
+            All data published in 76ANL and KfK-2673 are from the
+            same measurement.
 STATUS     (TABLE) Table I of C,76ANL,,246,1976
+           (COREL,20409002) 238U(n,f)/235U(n,f) ratio from the
+            same run
+           (SPSDD,20786006) Data from later analysis
 HISTORY    (20190722A) On. MONIT added.
-ENDBIB               4
+           (20210210A) On. STATUS=SPSDD added.
+ENDBIB              13
 COMMON               2          3
 EN-NRM     MONIT
 MEV        B
@@ -215,14 +227,18 @@ MEV        B          PER-CENT   PER-CENT
   1.274     1.211      1.9        8.0
   1.224     1.252      1.9        8.0
 ENDDATA            146
-ENDSUBENT          159
-SUBENT        20943003   20190722   20191002   20191001       2281
-BIB                  4          4
+ENDSUBENT          168
+SUBENT        20943003   20210210   20210422   20210421       2297
+BIB                  5          8
 REACTION   (92-U-238(N,F),,SIG)
 MONITOR    (92-U-238(N,F),,SIG)
+SAMPLE     238U sample: 235U/238U composition ratio=0.0001755
 STATUS     (TABLE) Table II of C,76ANL,,246,1976
+           (COREL,20409002) 238U(n,f)/235U(n,f) ratio from the
+            same run
 HISTORY    (20190722A) On. MONIT added.
-ENDBIB               4
+           (20210210U) On. STATUS=COREL added.
+ENDBIB               8
 COMMON               2          3
 EN-NRM     MONIT
 MEV        B
@@ -376,5 +392,5 @@ MEV        B          PER-CENT   PER-CENT
   1.274     0.087      7.2        8.0
   1.224     0.053      9.1        8.0
 ENDDATA            146
-ENDSUBENT          159
+ENDSUBENT          163
 ENDENTRY             3

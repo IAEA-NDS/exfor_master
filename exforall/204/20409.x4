@@ -1,27 +1,28 @@
-ENTRY            20409   20180724   20190424   20190423       2275
-SUBENT        20409001   20180724   20190424   20190423       2275
-BIB                 11         32
+ENTRY            20409   20210210   20210422   20210421       2297
+SUBENT        20409001   20210210   20210422   20210421       2297
+BIB                 12         34
 TITLE      Measurements of neutron induced fission cross section
             ratios at the karlsruhe isochronous cyclotron
 AUTHOR     (S.Cierjacks, B.Leugers, K.Kari, B.Brotz, D.Erbe,
             D.Groeschel, G.Schmalz, F.Voss)
 INSTITUTE  (2GERKFK)
 REFERENCE  (C,76ANL,,94,1976)
-           (W,CIERJACKS,197407) Numerical values.
+           (W,CIERJACKS,197407) Numerical values
+REL-REF    (N,20943001,B.Leugers+,C,76ANL,,246,1976)
+           238U(n,f) and 235U(n,f) absolute data from the same
+            experiment
 FACILITY   (ISOCY,2GERKFK)
 INC-SOURCE 50 MeV deuteron on thick natural uranium
 METHOD     (TOF) 57 m (238U/235U) or 12 m (239Pu/235U) flight
             path
-DETECTOR   Proton recoil detector for neutron flux measurement
-           (SCIN) 9 gas scintillation chambers (85% Ar+15% N)
-            and NE102 plastic scintillator for promopt gamma
+DETECTOR   (SCIN) 9 gas scintillation chambers (85% Ar+15% N)
+            and NE102 plastic scintillator for prompt gamma
             detection
 CORRECTION Corrected for
             - time-independent background,
-            - detector efficiency,
-            - electronic threshold,
-            - dead time losses,
-            - isotopic impurities.
+            - energy-dependent detector efficiency,
+            - electronic threshold and dead time,
+            - sample mass and isotopic composition
 ERR-ANALYS (ERR-1,,0.5) Time-independent background
            (ERR-2,,0.5) Time-dependent background
            (ERR-3,,0.2) Energy dependent detector efficiency
@@ -33,21 +34,36 @@ HISTORY    (19740723C)
            (19790518E)
            (20071218A) Date is corrected.DATA-ERR changed to ERR-S
            (20180724A) On. Major revisions in 002-003.
-ENDBIB              32
+           (20210210A) On. Major revision in 003.
+ENDBIB              34
 NOCOMMON             0          0
-ENDSUBENT           35
-SUBENT        20409002   20180724   20190424   20190423       2275
-BIB                  7          9
+ENDSUBENT           37
+SUBENT        20409002   20210210   20210422   20210421       2297
+BIB                  7         23
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
 MONITOR    ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG)) at 14 MeV
 MONIT-REF  (,W.P.Poenitz,W,POENITZ,1976)
-SAMPLE     238U sample: 235U/238U=0.0001755
-           235U sample: 235U (93.331%), 234U (1.080%), 236U (0.202
-                        238U (5.387%)
-STATUS     (TABLE) Table III in 1976 Argonne conference p94 (1976)
+SAMPLE     238U sample: 235U/238U composition ratio=0.0001755
+           235U sample: 235U (93.331%), 234U (1.080%),
+                        236U (0.202%),  238U (5.387%)
+STATUS     Note added by the editors of C,76ANL,,246,1976:
+            The data reported for the ratio of U-238/U-235 and
+           the absolute values for U-238 and for U-235 (basing on
+           the hydrogen reference cross section) are both from a
+           single measurement. However, the normalization of the
+           data is somewhat different for the ratio then it is
+           for the individual cross sections.
+           (TABLE) Table III in 1976 Argonne conference p94 (1976)
+           (COREL,20943002) 235U(n,f) absolute cross section
+            determined with n-p reference cross section from the
+            same run.
+           (COREL,20943003) 238U(n,f) absolute cross section
+            determined with n-p reference cross section from the
+            same run.
 ERR-ANALYS (ERR-S) Statistical uncertainty
 HISTORY    (20180724A) On. MONITOR+MONIT-REF added. Data checked.
-ENDBIB               9
+           (20210210U) On. STATUS updated.
+ENDBIB              23
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
 MEV        NO-DIM     PER-CENT
@@ -148,25 +164,31 @@ MEV        NO-DIM     PER-CENT
  29.601     0.812      5.3
  30.413     0.778      5.7
 ENDDATA             93
-ENDSUBENT          111
-SUBENT        20409003   20180724   20190424   20190423       2275
-BIB                  9         15
+ENDSUBENT          125
+SUBENT        20409003   20210210   20210422   20210421       2297
+BIB                  9         21
 REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
 MONITOR    ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG)) at 14 MeV
 MONIT-REF  (21468001,C.A.Uttley+,R,AERE-NP/R-1996,1956)
-COMMENT    By compiler:
-            Uttley et al. (1956) gives 1.15+/-0.05 at 14.1 MeV in
-            Table IV of AERE-NP/R-1996,1956.
 SAMPLE     239Pu sample: 239Pu (96.023%), 238Pu (0.008%),
                          240Pu (3.858%),  241Pu (0.103%),
                          242Pu (0.008%)
            235U sample:  235U (93.337%), 234U (1.080%),
                          236U (0.202%),  238U (5.387%)
-FLAG       (1.)Low-energy limit for validity of these data unclear
-STATUS     (TABLE) Table IV in 1976 Argonne conference p94 (1976)
+FLAG       (1.) Low-energy limit for validity of the data unclear
 ERR-ANALYS (ERR-S) Statistical uncertainty
+COMMENT    By Friedrich Voss (2021-02-23):
+            B.Leugers confirmed that each of Pu isotopes was
+            measured only once. That means that the 1976 and
+            1978 data are based on the same raw data.
+           By compiler:
+            Uttley et al. (1956) gives 1.15+/-0.05 at 14.1 MeV in
+            Table IV of AERE-NP/R-1996,1956.
+STATUS     (TABLE) Table IV in 1976 Argonne conference p94 (1976)
+           (SPSDD,20786005)
 HISTORY    (20180724A) On. MONITOR+MONIT-REF added. Data checked.
-ENDBIB              15
+           (20210210A) On. STATUS=SPSDD added.
+ENDBIB              21
 COMMON               2          3
 EN-NRM     MONIT
 MEV        NO-DIM
@@ -394,5 +416,5 @@ MEV        NO-DIM     PER-CENT   NO-DIM
  20.448     1.211      0.4
  20.891     1.211      0.5
 ENDDATA            220
-ENDSUBENT          244
+ENDSUBENT          250
 ENDENTRY             3
