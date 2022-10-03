@@ -1,6 +1,6 @@
-ENTRY            D4393   20180920   20181204   20181204       D118
-SUBENT        D4393001   20180920   20181204   20181204       D118
-BIB                 12         39
+ENTRY            D4393   20210218   20210615   20210615       D130
+SUBENT        D4393001   20210218   20210615   20210615       D130
+BIB                 12         42
 TITLE      Investigation of alpha-induced reactions on Sb isotopes
            relevant to the astrophysical gamma-process
 AUTHOR     (Z.Korkulu,N.Ozkan,G.G.Kiss,T.Szucs,Gy.Gyurky,Zs.Fulop,
@@ -10,10 +10,11 @@ INSTITUTE  (2TUKKOC,3HUNDEB,2UK HFS)
 REFERENCE  (J,PR/C,97,045803,2018)
            #doi:10.1103/PhysRevC.97.045803
 FACILITY   (CYCLO,3HUNDEB)
-SAMPLE     High purity natural and enriched (99.59%) was was
-           vacuum-evaporated onto 1.8 and 2.5 um Al backing.
+SAMPLE     High purity natural Sb and enriched (99.59%) 121Sb was
+           was vacuum-evaporated onto 1.8 and 2.5 um Al backing.
            Target thickness was measured by RBS and PIXE methods.
 DETECTOR   (HPGE)  For gamma-ray counting
+           (LEGE)  For X-ray counting
 METHOD     (ACTIV,EXTB,GSPEC,SITA)The targets were irradiated at
            11 different alpha-beam energies between 10.09 and
            16.00 MeV. For the 121Sb(a,g)125I reaction the energy
@@ -35,18 +36,20 @@ ERR-ANALYS (EN-ERR)Includes the energy calibration of the
            (ERR-4)decay parameters (3%)
            (ERR-5,10.9,12.4)LEGE detector efficiency  (10.9-12.4%)
            (ERR-S,2.,14.4)statistical uncertainty (2.-14.4%)
+FLAG       (1.) data measured with energy degrader
+           (2.) data measured on enriched target
 ADD-RES    (THEO) The experimental data were compared with the
            results of the theoretical model codes.
 HISTORY    (20180920C) TS
-FLAG       (1.) data measured with energy degrader
-           (2.) data measured on enriched target
-ENDBIB              39
+           (20210218A) TS DATA unit MB in subentries 4,5,6 were
+                       changed to MICRO-B.
+ENDBIB              42
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      ERR-4
 PER-CENT   PER-CENT   PER-CENT   PER-CENT
          4.         3.         6.         3.
 ENDCOMMON            3
-ENDSUBENT           46
+ENDSUBENT           49
 SUBENT        D4393002   20180920   20181204   20181204       D118
 BIB                  4          6
 REACTION   (51-SB-121(A,N)53-I-124,,SIG)
@@ -95,18 +98,18 @@ MEV        MEV        MB         MB         NO-DIM     NO-DIM
       15.48       0.11     230.       19.
 ENDDATA              7
 ENDSUBENT           20
-SUBENT        D4393004   20180920   20181204   20181204       D118
+SUBENT        D4393004   20210218   20210615   20210615       D130
 BIB                  4          5
 REACTION   (51-SB-121(A,G)53-I-125,,SIG)
-DETECTOR   (HPGE)  For gamma-ray counting
 DECAY-DATA (53-I-125,59.40D,DG,35.49,0.0668)
-STATUS     (TABLE) Table 3 of the reference.
-           (COREL,D4393005) Data from X-ray detection
+STATUS     (TABLE) Table3 of the reference.
+           (COREL,D4939005) Data from X-ray counting
+HISTORY    (20210218A) TS MB -> MICRO-B
 ENDBIB               5
 NOCOMMON             0          0
 DATA                 6          6
 EN-CM      EN-ERR     DATA       ERR-T      FLAG       FLAG
-MEV        MEV        MB         MB         NO-DIM     NO-DIM
+MEV        MEV        MICRO-B    MICRO-B    NO-DIM     NO-DIM
       11.11       0.08       13.3       1.9            2.
       11.60       0.08       24.4       4.5
       12.11       0.12       45.3       6.6      1.      2.
@@ -115,19 +118,19 @@ MEV        MEV        MB         MB         NO-DIM     NO-DIM
       13.54       0.10      147.       21.
 ENDDATA              8
 ENDSUBENT           18
-SUBENT        D4393005   20180920   20181204   20181204       D118
+SUBENT        D4393005   20210218   20210615   20210615       D130
 BIB                  4          6
 REACTION   (51-SB-121(A,G)53-I-125,,SIG)
-DETECTOR   (LEGE)  For X-ray counting
 DECAY-DATA (53-I-125,59.40D,XR,27.202,0.396,
                             XR,27.472,0.731)
-STATUS     (TABLE) Table 3 of the reference.
-           (COREL,D4393004) Data from gamma-ray detection
+STATUS     (TABLE) Table3 of the reference.
+           (COREL,D4939004) Data from gamma-ray counting
+HISTORY    (20210218A) TS MB -> MICRO-B
 ENDBIB               6
 NOCOMMON             0          0
 DATA                 6          6
 EN-CM      EN-ERR     DATA       ERR-T      FLAG       FLAG
-MEV        MEV        MB         MB         NO-DIM     NO-DIM
+MEV        MEV        MICRO-B    MICRO-B    NO-DIM     NO-DIM
        9.74       0.11       1.48      0.22      1.      2.
       10.08       0.12       3.32      0.43      1.      2.
       10.62       0.08       5.77      0.77              2.
@@ -136,22 +139,21 @@ MEV        MEV        MB         MB         NO-DIM     NO-DIM
       13.05       0.09      115.      14.                2.
 ENDDATA              8
 ENDSUBENT           19
-SUBENT        D4393006   20180920   20181204   20181204       D118
-BIB                  4          9
-REACTION   (51-SB-121(A,G)53-I-125,,SIG,,AV)
-ANALYSIS   Average cross-section values from X-ray and gamma-ray
-            detection weighted by their statistical uncertainty
+SUBENT        D4393006   20210218   20210615   20210615       D130
+BIB                  4          8
+REACTION   (51-SB-121(A,G)53-I-125,,SIG)
 DECAY-DATA (53-I-125,59.40D,DG,35.49,0.0668,
                             XR,27.202,0.396,
                             XR,27.472,0.731)
-STATUS     (TABLE) Table 3 of the reference. Adopted values.
-           (DEP,D4393004) Data from gamma-ray detection
-           (DEP,D4393005) Data from X-ray detection
-ENDBIB               9
+STATUS     (TABLE) Table3 of the reference. Adopted values.
+           (DEP,D4393004) Data from X-ray counting
+           (DEP,D4393005) Data from gamma-ray counting
+HISTORY    (20210218A) TS MB -> MICRO-B
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 6          9
 EN-CM      EN-ERR     DATA       ERR-T      FLAG       FLAG
-MEV        MEV        MB         MB         NO-DIM     NO-DIM
+MEV        MEV        MICRO-B    MICRO-B    NO-DIM     NO-DIM
        9.74       0.11       1.48       0.22        1.      2.
       10.08       0.12       3.32       0.43        1.      2.
       10.62       0.08       5.77       0.77                2.
@@ -162,5 +164,5 @@ MEV        MEV        MB         MB         NO-DIM     NO-DIM
       13.05       0.09      111.       11.                  2.
       13.54       0.10      147.       21.
 ENDDATA             11
-ENDSUBENT           25
+ENDSUBENT           24
 ENDENTRY             6

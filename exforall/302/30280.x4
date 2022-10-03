@@ -1,36 +1,36 @@
-ENTRY            30280   20081203   20090416   20090416       3132
-SUBENT        30280001   20081203   20090416   20090416       3132
-BIB                 12         25
-INSTITUTE  (3CRORBZ)
-REFERENCE  (J,NP/A,219,332,1974) Full information, graphs
-           (J,NIM,100,211,1972)Nuclear emulsions procedure descr.
-           (C,72LOSANG,,695,197208)
-           (C,70BARCEL,2,435,197007)
-EXP-YEAR   (1973)
+ENTRY            30280   20210420   20210615   20210615       3200
+SUBENT        30280001   20210420   20210615   20210615       3200
+BIB                 13         25
+TITLE      The reaction mechanism of the 7Li(n,t alpha)n reaction
+            at En=14.4 MeV
 AUTHOR     (B.Antolkovic)
-TITLE      The reaction mechanism of the Li-7(n,t alpha)n reaction
-           at 14.4 MeV
-INC-SOURCE (D-T)  T(d,n)alpha reaction
-SAMPLE     Natural-lithium-loaded Ilford KO emulsions of 200 mu
-           were used both as target and detector.
+INSTITUTE  (3CRORBZ)
+REFERENCE  (J,NP/A,219,332,1974)
+           (C,72LOSANG,,695,1972)
+           (C,70BARCEL,2,435,1970)
+REL-REF    (M,,B.Antolkovic,J,NIM,100,211,1972)
+            Nuclear emulsions procedure description
+EXP-YEAR   (1973)
+INC-SOURCE (D-T)
+SAMPLE     Natural-lithium-loaded Ilford KO emulsions of 200 um
+            used as target and detector
 METHOD     Kinematically complete experiment using nuclear
-           emulsions.
-DETECTOR   (TRD) natural-lithium-loaded Ilford KO emulsion of 200
-           mu.
-PART-DET   (A) Alpha-particles
-           (T) Tritons
+            emulsions
+DETECTOR   (TRD) Natural-lithium-loaded Ilford KO emulsion of
+            200 um
+PART-DET   (T,A)
 STATUS     (APRVD) Approved by Antolkovic (17 Jan 1975)
 HISTORY    (19741113C) CA.
-           (19750127A) CA.  -Status 'Aprvd' added.
-                          -Mispunch corrected subentry 3.
-                          -Text changes in subentry 4.
-           (19980608U) HW.- Reaction code altered in subent .004.-
+           (19750127A) CA. Status APRVD added. Mispunch corrected
+            subentry 3. Text changes in subentry 4.
+           (19980608U) HW. REACTION code altered in subent .004.
            (20080423A) BIB section updated
+           (20210420A) On. 005 decomposed to 005, 006 and 007.
 ENDBIB              25
 COMMON               1          3
 EN
 MEV
- 1.4400E+01
+ 14.4
 ENDCOMMON            3
 ENDSUBENT           32
 SUBENT        30280002   20081203   20090416   20090416       3132
@@ -145,29 +145,56 @@ ENDBIB              44
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT           48
-SUBENT        30280005   20081203   20090416   20090416       3132
-BIB                  6          8
-REACTION   (3-LI-7(N,N+T)2-HE-4,PAR,SIG)
+SUBENT        30280005   20210420   20210615   20210615       3200
+BIB                  5          7
+REACTION   (3-LI-7(N,N+T)2-HE-4,ISP,SIG)
+            7Li(4.63 MeV) or 7Li(6.54 MeV) -> t+alpha
+EN-SEC     (E-LVL,3-LI-7)
+STATUS     (TABLE) Text (p.343) of Nucl.Phys.A219(1974)332
+ERR-ANALYS (ERR-S) Statistical error
+           (DATA-ERR) No information on the source of uncertainty
+HISTORY    (20210420A) On. Decomposed to 005, 006 and 007
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 4          2
+E-LVL      DATA       ERR-S      DATA-ERR
+MEV        MB         PER-CENT   MB
+ 4.63       150.                  15.
+ 6.54        54.       10.
+ENDDATA              4
+ENDSUBENT           16
+SUBENT        30280006   20210420   20210615   20210615       3200
+BIB                  7          9
+REACTION   (3-LI-7(N,N+T)2-HE-4,ISP,SIG)
+            5He (g.s.) -> n+alpha
 MONITOR    (3-LI-7(N,N+T)2-HE-4,,SIG)
 MONIT-REF  (,L.Rosen+,R,LA-2643,1962)
-EN-SEC     (E1,3-LI-7) Sequential decay via Li-7.
-           (E2,2-HE-5) Sequential decay via He-5.
-           (E3,2-HE-4) Quasi elastic.
-STATUS     (TABLE) Data are from Nucl.Phys.A219(1974)332.
-ERR-ANALYS (ERR-S) Statistical error only.
-ENDBIB               8
-COMMON               2          3
-MONIT      ERR-S
+EN-SEC     (E-LVL,2-HE-5)
+STATUS     (TABLE) Text (p.339,343) of Nucl.Phys.A219(1974)332
+ERR-ANALYS (ERR-S) Statistical error
+           (DATA-ERR) No information on the source of uncertainty
+HISTORY    (20210420C) On. Moved from 005.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 5          1
+E-LVL      DATA       ERR-S      DATA-ERR   MONIT
+MEV        MB         PER-CENT   MB         MB
+ 0.         49.5       10.        9.         300.
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        30280007   20210420   20210615   20210615       3200
+BIB                  4          5
+REACTION   (3-LI-7(N,N+T)2-HE-4,,SIG,,MSC)
+            n-alpha quasi-elastic scattering cross section
+STATUS     (TABLE) Text (p.343) of Nucl.Phys.A219(1974)332
+ERR-ANALYS (ERR-S) Statistical error
+HISTORY    (20210420C) On. Moved from 005.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 2          1
+DATA       ERR-S
 MB         PER-CENT
- 3.0000E+02 1.0000E+01
-ENDCOMMON            3
-DATA                 4          4
-E1         E2         E3         DATA
-MEV        MEV        MEV        MB
- 4.6300E+00                       1.5000E+02
- 4.6300E+00                       5.4000E+01
-            0.0000E+00            4.9500E+01
-                       0.0000E+00 4.6500E+01
-ENDDATA              6
-ENDSUBENT           23
-ENDENTRY             5
+ 46.5       10.
+ENDDATA              3
+ENDSUBENT           13
+ENDENTRY             7
