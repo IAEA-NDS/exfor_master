@@ -1,8 +1,8 @@
-ENTRY            F0011   20130625   20140228   20140206       F052
-SUBENT        F0011001   20130625   20140228   20140206       F052
-BIB                 10         26
-TITLE      Measurement of the Li-6(He-3,d)Be-7 and
-           Li-7(He-3,t)Be-7 cross sections.
+ENTRY            F0011   20210429   20210813   20210811       F083
+SUBENT        F0011001   20210429   20210813   20210811       F083
+BIB                 10         24
+TITLE      Measurement of the 6Li(3He,d)7Be and
+           7Li(3He,t)7Be cross sections
 AUTHOR     (R.V.Pyle,L.Ruby,J.W.Sterbentz)
 INSTITUTE  (1USABRK)
 REFERENCE  (J,ANS,30,623,1978)
@@ -12,57 +12,61 @@ SAMPLE     Thin targets of 99.32% LiF, 99.99% LiF, and normal LiF
 METHOD     (ACTIV,EXTB)
 FACILITY   (CYCLO,1USABRK)
 DETECTOR   (GELI)
-ERR-ANALYS (ERR-1) The largest error assigned to the resultant
-           cross sections is ascribed to be measurement of the
-           target thickness by successive weightings, before and
-           after evaporation
-           (ERR-2) The additional uncertainties in the calibration
-           standards
+ERR-ANALYS (ERR-1,,5.) The largest error in the target thickness
+           (ERR-2) The uncertainties in the calibration standards
            (ERR-3) The error for the beam-current integrator
            (ERR-T) Total error
 HISTORY    (19811215C)
-           (19990407A) CNPD: corrected 4-dig. year
+           (19990407U) CNPD: corrected 4-dig. year
            (20130625A) REFERENCE, AUTHOR, FACILITY were
            corrected. In sub 002, 004 SF9=EXP in REACTION was
            deleted. In sub 004 data were corrected according to
            the table 1 from the article. In sub 005 SF9=EXP
            in REACTION was replaced by SF9=CALC.
-ENDBIB              26
-COMMON               3          3
-ERR-1      ERR-2      ERR-3
-PER-CENT   PER-CENT   PER-CENT
-        5.0        1.5       0.52
+           (20210429A) SD: Corrections in all Subents. ERR-ANALYS
+           updated.
+ENDBIB              24
+COMMON               2          3
+ERR-2      ERR-3
+PER-CENT   PER-CENT
+        1.5       0.52
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        F0011002   20130625   20140228   20140206       F052
-BIB                  4          4
-REACTION   (3-LI-6(HE3,D)4-BE-7,,SIG)
+ENDSUBENT           31
+SUBENT        F0011002   20210429   20210813   20210811       F083
+BIB                  5          6
+REACTION   (3-LI-6(HE3,X)4-BE-7,,SIG)
+MISC-COL   (MISC) Target (6LiF) thickness (ug/cm2)
 ERR-ANALYS (ERR-S) Statistical counting error
-MISC-COL   (MISC) Target (6LiF) thickness (mu-g/cm2)
-STATUS     (TABLE) Tbl.1
-ENDBIB               4
+STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+HISTORY    (20210429A) SD: SF3=D -> X in REACTION code. STATUS
+            updated.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 5         10
-EN         ERR-S      DATA       ERR-T      MISC
-MEV        PER-CENT   MB         MB         SEE TEXT
-        1.7       0.63       290.        16.       446.
-        1.7       0.83       278.        16.       462.
-        1.7       0.83       282.        16.       464.
-        2.8       0.67       387.        22.       467.
-        2.8       0.65       380.        21.       473.
-        5.9       0.63       397.        22.       509.
-        5.9       0.62       375.        21.       509.
-        5.9       2.51       391.        24.       487.
-        5.9       0.53       403.        23.       505.
-        5.9       0.57       379.        23.       520.
+EN         DATA       ERR-S      ERR-T      MISC
+MEV        MB         PER-CENT   MB         G/CM-SQ
+        1.7       290.       0.63        16.   4.46E-04
+        1.7       278.       0.83        16.   4.62E-04
+        1.7       282.       0.83        16.   4.64E-04
+        2.8       387.       0.67        22.   4.67E-04
+        2.8       380.       0.65        21.   4.73E-04
+        5.9       391.       2.51        24.   4.87E-04
+        5.9       403.       0.53        23.   5.05E-04
+        5.9       375.       0.62        21.   5.09E-04
+        5.9       397.       0.63        22.   5.09E-04
+        5.9       379.       0.57        23.   5.20E-04
 ENDDATA             12
-ENDSUBENT           21
-SUBENT        F0011003   19990409   19990427   20050926       0000
-BIB                  2          2
-REACTION   (3-LI-6(HE3,D)4-BE-7,,SIG,,,CALC)
-STATUS     (TABLE) Table 1
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           23
+SUBENT        F0011003   20210429   20210813   20210811       F083
+BIB                  4          6
+REACTION   (3-LI-6(HE3,X)4-BE-7,,SIG,,AV)
+ANALYSIS    Weighted average over all targets.
+STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+           (DEP,F0011002) Cr.sect. depended on target thickness
+HISTORY    (20210429A) SD: SF3=D -> X; SF8=AV added; SF9=CALC
+           deleted from REACTION code. STATUS updated.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 3          3
 EN         DATA       ERR-T
 MEV        MB         MB
@@ -70,37 +74,42 @@ MEV        MB         MB
      2.8      384.        22.
      5.9      389.        23.
 ENDDATA              5
-ENDSUBENT           12
-SUBENT        F0011004   20130625   20140228   20140206       F052
-BIB                  5          6
+ENDSUBENT           16
+SUBENT        F0011004   20210429   20210813   20210811       F083
+BIB                  6          7
 REACTION   (3-LI-7(HE3,T)4-BE-7,,SIG)
-ERR-ANALYS (ERR-S) Statistical counting error
-MISC-COL   (MISC) Target thickness (mu-g/cm2)
+MISC-COL   (MISC) Target (6LiF) thickness (ug/cm2)
 FLAG       (1.) Target 7LiF
-           (2.) natural LiF
-STATUS     (TABLE) Tbl.1
-ENDBIB               6
+           (2.) Natural LiF
+ERR-ANALYS (ERR-S) Statistical counting error
+STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+HISTORY    (20210429U) SD: STATUS updated.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 6          8
-EN         ERR-S      DATA       ERR-T      MISC       FLAG
-MEV        PER-CENT   MB         MB         SEE TEXT   NO-DIM
-        1.7       8.20        7.2        0.7       544.         1.
-        1.7       9.20        6.5        0.7       540.         1.
-        2.8       1.10        92.         5.       568.         1.
-        2.8       1.00        98.         6.       547.         1.
-        5.9       0.85       199.        11.       509.         1.
-        5.9       0.88       208.        12.       505.         1.
-        5.9       0.86       208.        12.       519.         2.
-        5.9       0.88       203.        11.       526.         2.
+EN         DATA       ERR-S      ERR-T      MISC       FLAG
+MEV        MB         PER-CENT   MB         G/CM-SQ    NO-DIM
+        1.7        6.5       9.20        0.7   5.40E-04         1.
+        1.7        7.2       8.20        0.7   5.44E-04         1.
+        2.8        98.       1.00         6.   5.47E-04         1.
+        2.8        92.       1.10         5.   5.68E-04         1.
+        5.9       208.       0.88        12.   5.05E-04         1.
+        5.9       199.       0.85        11.   5.09E-04         1.
+        5.9       208.       0.86        12.   5.19E-04         2.
+        5.9       203.       0.88        11.   5.26E-04         2.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        F0011005   20130625   20140228   20140206       F052
-BIB                  3          4
-REACTION   (3-LI-7(HE3,T)4-BE-7,,SIG,,,CALC)
+ENDSUBENT           22
+SUBENT        F0011005   20210429   20210813   20210811       F083
+BIB                  5          8
+REACTION   (3-LI-7(HE3,X)4-BE-7,,SIG,,AV)
+ANALYSIS    Weighted average over all targets.
 FLAG       (1.) Target 7LiF
-           (2.) natural LiF
-STATUS     (TABLE) Tbl.1
-ENDBIB               4
+           (2.) Natural LiF
+STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+           (DEP,F0011004) Cr.sect. depended on target thickness
+HISTORY    (20210429A) SD: SF3=T -> X; SF8=AV added; SF9=CALC
+           deleted from REACTION code. STATUS updated.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4          4
 EN         DATA       ERR-T      FLAG
@@ -110,5 +119,5 @@ MEV        MB         MB         NO-DIM
         5.9       204.        12.         1.
         5.9       206.        12.         2.
 ENDDATA              6
-ENDSUBENT           15
+ENDSUBENT           19
 ENDENTRY             5
