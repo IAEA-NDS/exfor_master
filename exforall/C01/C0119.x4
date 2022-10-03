@@ -1,23 +1,27 @@
-ENTRY            C0119   19990715   19990901   20050926       0000
-SUBENT        C0119001   19990715   19990901   20050926       0000
-BIB                 10         14
-INSTITUTE  (1USACAL)
-REFERENCE  (J,PR/C,43,875,199102)
-AUTHOR     (C.R.BRUNE,R.W.KAVANAGH,S.E.KELLOGG,T.R.WANG)
+ENTRY            C0119   20180411   20180903   20180814       C174
+SUBENT        C0119001   20180411   20180903   20180814       C174
+BIB                 10         18
 TITLE      Cross sections for 3H(7Li,n0)9Be and 3H(7Li,n(tot))
-FACILITY   3-MV Pelletron Tandem Accelerator.
-INC-SOURCE 7Li- ions from Cs sputter source.
+AUTHOR     (C.R.Brune,R.W.Kavanagh,S.E.Kellogg,T.R.Wang)
+REFERENCE  (J,PR/C,43,875,199102)
+           #doi:10.1103/PhysRevC.43.875
+INSTITUTE  (1USACAL)
+FACILITY   (VDGT,1USACAL) 3-MV pelletron tandem accelerator.
+INC-SOURCE 7Li-ions from Cs sputter source.
 DETECTOR   Magnetic field measured with NMR gaussmeter.
 MONITOR    Energy calibration for alpha+ particles provided by
-            0.606 and 1.530-MeV resonances in 11B(alpha,n) and
-            24Mg(alpha,gamma).
-STATUS     Data received by electronic mail, C. Brune, 96/12/3.
-           (APRVD) C. R. Brune, 96/12/23
+           0.606 and 1.530-MeV resonances in 11B(alpha,n) and
+           24Mg(alpha,gamma).)
+STATUS     (TABLE) Data received by electronic mail, C. Brune,
+           1996/12/3.
+           (APRVD) C.R. Brune, 1996/12/23
 HISTORY    (19961203C) SD (RFNC-VNIIEF) + VM
-           (19990715A) Reactions updated, new date formats.
-ENDBIB              14
+           (19990715A) reactions updated, new date formats.
+           (20180411A) BP: Corrected reaction strings in
+                      subentries 6-9.
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           17
+ENDSUBENT           21
 SUBENT        C0119002   19990715   19990901   20050926       0000
 BIB                  7         10
 REACTION   (3-LI-7(T,N)4-BE-9,PAR,DA)
@@ -175,29 +179,38 @@ MEV        B*KEV      B*KEV
  1.2414E+00 2.8694E+03 4.3041E+02
 ENDDATA             22
 ENDSUBENT           42
-SUBENT        C0119006   19990715   19990901   20050926       0000
-BIB                  6         13
-REACTION   (3-LI-7(T,N)4-BE-9,,SIG)
+SUBENT        C0119006   20180411   20180903   20180814       C174
+BIB                  8         22
+REACTION   ((1-H-3(3-LI-7,X)0-NN-1,,SIG)=(3-LI-7(T,X)0-NN-1,,SIG))
 SAMPLE     Zirconium-tritide target on platinum backing.
 DETECTOR   (D4PI,PROPC) Polyethylene moderator embedded with
-            twelve 3He proportional counters.
+           twelve 3He proportional counters.
 MONITOR    (1-H-3(P,N)2-HE-3,,SIG,,REL) Taken from Nucl. Data
-            Tables 11, 569 (1973).
-           Detector calibrated relative to 252Cf source.
+           Tables 11, 569 (1973). Detector calibrated relative
+           to 252Cf source.
 CORRECTION 7Li beam energy corrected for energy loss in target.
-ERR-ANALYS (DATA-ERR1) Uncertainty in counting statistics,
-            target uniformity, and correction for energy loss in
-            target.
-           (DATA-ERR2) Overall normalization uncertainty due to
-            efficiency uncertainty.
-ENDBIB              13
+COMMENT    Compiler's comment: These data are the cross section
+           for forming a neutron. Most of the reaction channels
+           than contribute produce TWO neutrons per reaction:
+           7Li(t,n)9Be(*), 7Li(t,alpha)6He(*), 7Li+t ->
+           alpha+alpha+n+n,... The only channel that produces
+           only one per reaction is 7Li(t,n)9Be(g.s.). So there
+           is an opportunity for confusion by a factor of 2 here.
+ERR-ANALYS (DATA-ERR) Uncertainty in counting statistics,
+           target uniformity, and correction for energy loss in
+           target.
+           (ERR-1) Overall normalization uncertainty due to
+           efficiency uncertainty.
+HISTORY    (20180411A) BP: Corrected reaction string from
+           7Li(t,n)9Be (exclusive) to 7Li(t,n+x) (inclusive).
+ENDBIB              22
 COMMON               1          3
-DATA-ERR2
+ERR-1
 PER-CENT
  15.
 ENDCOMMON            3
 DATA                 3         78
-EN-CM      DATA-CM    DATA-ERR1
+EN-CM      DATA       DATA-ERR
 MEV        MB         MB
  9.9560E-02 8.9801E+00 1.0658E+00
  1.0882E-01 1.1809E+01 5.9043E-01
@@ -278,30 +291,39 @@ MEV        MB         MB
  1.4511E+00 1.1151E+03 5.5756E+01
  1.4858E+00 1.1192E+03 5.5958E+01
 ENDDATA             80
-ENDSUBENT          102
-SUBENT        C0119007   19990715   19990901   20050926       0000
-BIB                  6         13
-REACTION   (3-LI-7(T,N)4-BE-9,,SIG)
+ENDSUBENT          111
+SUBENT        C0119007   20180411   20180903   20180814       C174
+BIB                  8         22
+REACTION   ((1-H-3(3-LI-7,X)0-NN-1,,SIG)=(3-LI-7(T,X)0-NN-1,,SIG))
 SAMPLE     Titanium-tritide target on copper backing.
 DETECTOR   (D4PI,PROPC) Polyethylene moderator embedded with
-            twelve 3He proportional counters.
+           twelve 3He proportional counters.
 MONITOR    (1-H-3(P,N)2-HE-3,,SIG,,REL) Taken from Nucl. Data
-            Tables 11, 569 (1973).
-           Detector calibrated relative to 252Cf source.
+           Tables 11, 569 (1973). Detector calibrated relative
+           to 252Cf source.
 CORRECTION 7Li beam energy corrected for energy loss in target.
-ERR-ANALYS (DATA-ERR1) Uncertainty in counting statistics,
-            target uniformity, and correction for energy loss in
-            target.
-           (DATA-ERR2) Overall normalization uncertainty due to
-            efficiency uncertainty.
-ENDBIB              13
+ERR-ANALYS (DATA-ERR) Uncertainty in counting statistics,
+           target uniformity, and correction for energy loss in
+           target.
+           (ERR-1) Overall normalization uncertainty due to
+           efficiency uncertainty.
+COMMENT    Compiler's comment: These data are the cross section
+           for forming a neutron. Most of the reaction channels
+           than contribute produce TWO neutrons per reaction:
+           7Li(t,n)9Be(*), 7Li(t,alpha)6He(*), 7Li+t ->
+           alpha+alpha+n+n,... The only channel that produces
+           only one per reaction is 7Li(t,n)9Be(g.s.). So there
+           is an opportunity for confusion by a factor of 2 here.
+HISTORY    (20180411A) BP: Corrected reaction string from
+           7Li(t,n)9Be (exclusive) to 7Li(t,n+x) (inclusive).
+ENDBIB              22
 COMMON               1          3
-DATA-ERR2
+ERR-1
 PER-CENT
  15.
 ENDCOMMON            3
 DATA                 3         38
-EN-CM      DATA-CM    DATA-ERR1
+EN-CM      DATA       DATA-ERR
 MEV        MB         MB
  5.1500E-02 1.9759E-01 7.3479E-02
  5.1500E-02 2.2784E-01 8.4730E-02
@@ -342,25 +364,34 @@ MEV        MB         MB
  2.6491E-01 1.8440E+02 5.3749E+00
  2.8025E-01 2.0196E+02 5.3836E+00
 ENDDATA             40
-ENDSUBENT           62
-SUBENT        C0119008   19990715   19990901   20050926       0000
-BIB                  7         12
-REACTION   (3-LI-7(T,N)4-BE-9,,SIG,,SFC)
+ENDSUBENT           71
+SUBENT        C0119008   20180411   20180903   20180814       C174
+BIB                  9         21
+REACTION   ((1-H-3(3-LI-7,X)0-NN-1,,SIG,,SFC)=
+           (3-LI-7(T,X)0-NN-1,,SIG,,SFC))
 SAMPLE     Zirconium-tritide target on platinum backing.
 DETECTOR   (D4PI,PROPC) Polyethylene moderator embedded with
-            twelve 3He proportional counters.
+           twelve 3He proportional counters.
 MONITOR    (1-H-3(P,N)2-HE-3,,SIG,,REL) Taken from Nucl. Data
-            Tables 11, 569 (1973).
-           Detector calibrated relative to 252Cf source.
+           Tables 11, 569 (1973). Detector calibrated relative
+           to 252Cf source.
 CORRECTION 7Li beam energy corrected for energy loss in target.
-ERR-ANALYS (DATA-ERR) Uncertainty in counting statistics,
-            target uniformity, and correction for energy loss in
-            target.
+ERR-ANALYS (DATA-ERR) Uncertainty in counting statistics, target
+           uniformity, and correction for energy loss in target.
+COMMENT    Compiler's comment: These data are the cross section
+           for forming a neutron. Most of the reaction channels
+           than contribute produce TWO neutrons per reaction:
+           7Li(t,n)9Be(*), 7Li(t,alpha)6He(*), 7Li+t ->
+           alpha+alpha+n+n,... The only channel that produces
+           only one per reaction is 7Li(t,n)9Be(g.s.). So there
+           is an opportunity for confusion by a factor of 2 here.
 STATUS     (DEP,C0119006)
-ENDBIB              12
+HISTORY    (20180411A) BP: Corrected reaction string from
+           7Li(t,n)9Be (exclusive) to 7Li(t,n+x) (inclusive).
+ENDBIB              21
 NOCOMMON             0          0
 DATA                 3         78
-EN-CM      DATA-CM    DATA-ERR
+EN-CM      DATA       DATA-ERR
 MEV        B*KEV      B*KEV
  9.9560E-02 7.7081E+05 9.1479E+04
  1.0882E-01 6.1151E+05 3.0576E+04
@@ -441,25 +472,34 @@ MEV        B*KEV      B*KEV
  1.4511E+00 5.8045E+04 2.9023E+03
  1.4858E+00 5.7191E+04 2.8595E+03
 ENDDATA             80
-ENDSUBENT           97
-SUBENT        C0119009   19990715   19990901   20050926       0000
-BIB                  7         12
-REACTION   (3-LI-7(T,N)4-BE-9,,SIG,,SFC)
+ENDSUBENT          106
+SUBENT        C0119009   20180411   20180903   20180814       C174
+BIB                  9         21
+REACTION   ((1-H-3(3-LI-7,X)0-NN-1,,SIG,,SFC)=
+           (3-LI-7(T,X)0-NN-1,,SIG,,SFC))
 SAMPLE     Titanium-tritide target on copper backing.
 DETECTOR   (D4PI,PROPC) Polyethylene moderator embedded with
-            twelve 3He proportional counters.
+           twelve 3He proportional counters.
 MONITOR    (1-H-3(P,N)2-HE-3,,SIG,,REL) Taken from Nucl. Data
-            Tables 11, 569 (1973).
-           Detector calibrated relative to 252Cf source.
+           Tables 11, 569 (1973). Detector calibrated relative
+           to 252Cf source.
 CORRECTION 7Li beam energy corrected for energy loss in target.
-ERR-ANALYS (DATA-ERR) Uncertainty in counting statistics,
-            target uniformity, and correction for energy loss in
-            target.
+ERR-ANALYS (DATA-ERR) Uncertainty in counting statistics, target
+           uniformity, and correction for energy loss in target.
+COMMENT    Compiler's comment: These data are the cross section
+           for forming a neutron. Most of the reaction channels
+           than contribute produce TWO neutrons per reaction:
+           7Li(t,n)9Be(*), 7Li(t,alpha)6He(*), 7Li+t ->
+           alpha+alpha+n+n,... The only channel that produces
+           only one per reaction is 7Li(t,n)9Be(g.s.). So there
+           is an opportunity for confusion by a factor of 2 here.
 STATUS     (DEP,C0119007)
-ENDBIB              12
+HISTORY    (20180411A) BP: Corrected reaction string from
+           7Li(t,n)9Be (exclusive) to 7Li(t,n+x) (inclusive).
+ENDBIB              21
 NOCOMMON             0          0
 DATA                 3         38
-EN-CM      DATA-CM    DATA-ERR
+EN-CM      DATA       DATA-ERR
 MEV        B*KEV      B*KEV
  5.1500E-02 1.8209E+06 6.7714E+05
  5.1500E-02 2.0996E+06 7.8083E+05
@@ -500,5 +540,5 @@ MEV        B*KEV      B*KEV
  2.6491E-01 2.1263E+05 6.1978E+03
  2.8025E-01 1.9528E+05 5.2053E+03
 ENDDATA             40
-ENDSUBENT           57
+ENDSUBENT           66
 ENDENTRY             9
