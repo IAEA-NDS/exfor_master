@@ -1,16 +1,16 @@
-ENTRY            40930   20140710   20141103   20141016       4164
-SUBENT        40930001   20140710   20141103   20141016       4164
-BIB                 10         47
-TITLE       Prompt neutrons spectra from the thermal neutron
-            fission of U-233, U-235, Pu-239 and spontaneous
-            fission of Cf-252 in the secondary neutron energy
-            range 0.01 - 12 MeV
-AUTHOR     (B.I.Starostov,V.N.Nefedov,A.A.Boytsov)
-REFERENCE  (J,YK,1985,(3),16,198509)   Data given for CF-252,
-                     curves only for other elements
+ENTRY            40930   20191104   20200113   20200113       4184
+SUBENT        40930001   20191104   20200113   20200113       4184
+BIB                  9         46
+TITLE       Prompt neutron spectra from fission of 233U, 235U and
+            239Pu by thermal neutrons and from spontaneous
+            fission of 252Cf in the 0.01 - 12 MeV energy range
+AUTHOR     (B.I.Starostov,V.N.Nefedov,A.A.Bojtsov)
+REFERENCE  ((J,YK,,(3),16,1985)=
+           (R,INDC(CCP)-252,16,1985))
+            Data given for Cf-252, curves only for other elements
            (R,INDC(CCP)-293,19,1989) Engl. translation of J,YK.
            ((C,83KIEV,2,290,1983)=
-           (R,INDC(CCP)-235,(2),290,1983)) INDC(CCP)-235 VOL II .
+           (R,INDC(CCP)-235,(2),290,1983)) INDC(CCP)-235 vol II .
                       First author B.I.Starostov.
            (R,INDC(CCP)-458,2014)
             Engl.translation of C,83KIEV,2,290,1983.
@@ -46,24 +46,17 @@ HISTORY    (19870831C)  Compiled at the CJD
            (20140710A) Subents 004,006,008 were split into several
            Subents for flag according to recommendation of
            NDS,IAEA - see memo CP-D/714.
-ERR-ANALYS (ERR-T) Total errors .
-           (ERR-1) Error of registration efficiency.
-ENDBIB              47
-COMMON               1          3
-ERR-1
-PER-CENT
- 2.5
-ENDCOMMON            3
-ENDSUBENT           54
-SUBENT        40930002   20110125   20111003   20110930       4153
-BIB                  6         32
+           (20191104U) Refs. YK were corrected.
+ENDBIB              46
+NOCOMMON             0          0
+ENDSUBENT           49
+SUBENT        40930002   20191104   20200113   20200113       4184
+BIB                  7         32
 REACTION   (98-CF-252(0,F),PR,NU/DE,,MXD,DERIV)
-                                            Relative to the
-               Maxwell spectrum with temperature 1.42 MeV
 ANALYSIS   Cf-252 spectrum was derived from data of this
            experiment and other works (REL-REFs) as weighted
            average.
-REL-REF    (R,,B.I.Starostov+,J,YK,1980,(2/37),3,1980) Data and
+REL-REF    (R,,B.I.Starostov+,J,YK,,(2/37),3,1980) Data and
             method of averaging.
            (R,,M.V.Blinov+,C,80KIEV,3,109,1980)
            (R,,O.I.Batenkov+,R,INDC(NDS)-146,161,1983)
@@ -71,12 +64,14 @@ REL-REF    (R,,B.I.Starostov+,J,YK,1980,(2/37),3,1980) Data and
            (R,,A.Lajtai+,R,INDC(NDS)-146,175,1983)
            (R,,H.Klein,R,INDC(NDS)-146,191,1983)
            (R,,H.Maerten+,R,INDC(NDS)-146,195,1983)
-           (R,,V.I.Bol'shov+,J,YK,1981,(3/42),43,1981)
+           (R,,V.I.Bol'shov+,J,YK,,(3/42),43,1981)
            (R,,J.W.Boldeman+,J,ANS,32,733,1979)
-STATUS     (TABLE)  Data are taken from Table 4 of J,YK.
-           (COREL,40874003)  Data in this Subent cover the whole
-           (COREL,40874004)  energy range in difference to Subents
-                             40874002 and 40874004
+ERR-ANALYS (DATA-ERR) Total error
+STATUS     (TABLE)  Data from Table 4 of INDC-CCP-252,16,1985
+           (COREL,40874003)
+           (COREL,40874004)
+            Data in this Subent cover the whole energy range in
+           difference to Subents 40874003 and 40874004
 FLAG       (1.)  Independent variable changed by compiler
              0.43 -> 0.33, supposed as misprint.
 HISTORY    (19990311A)  REACTION value is given explicitly  as
@@ -96,7 +91,7 @@ MEV
   1.42
 ENDCOMMON            3
 DATA                 5        110
-E          E-RSL      DATA       ERR-T      FLAG
+E          E-RSL      DATA       DATA-ERR   FLAG
 MEV        MEV        NO-DIM     PER-CENT   NO-DIM
   3.000E-04  1.0  E-04  1.084E-00  40.
   7.000E-04  2.0  E-04  1.084E-00  30.
@@ -210,37 +205,34 @@ MEV        MEV        NO-DIM     PER-CENT   NO-DIM
  15.4        3.   E-01  7.72 E-01  10.
 ENDDATA            112
 ENDSUBENT          153
-SUBENT        40930003   20110125   20111003   20110930       4153
-BIB                  4          7
+SUBENT        40930003   20191104   20200113   20200113       4184
+BIB                  5          7
 REACTION   (98-CF-252(0,F)0-NN-1,PR,KE)
-                Average neutron energy.
 ADD-RES     T was defined from ratio <E>=(3/2)T for Maxwell
            distribution as N(E)=C*(E**0.5)*exp(-E/T) to be 1.42MeV
-STATUS     (TABLE) Text of ref.J,YK, page 21 .
+ERR-ANALYS (DATA-ERR) Total error
+STATUS     (TABLE) Text of ref.INDC-CCP-252,16,1985, page 21 .
 HISTORY    (20100812A) Corrected: ),PR,AKE,N -> )0-NN-1,PR,KE
            according to N.Otsuka opinion (NDS IAEA).
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
-DATA       ERR-T
+DATA       DATA-ERR
 MEV        MEV
  2.134      .015
 ENDDATA              3
 ENDSUBENT           15
-SUBENT        40930004   20140710   20141103   20141016       4164
-BIB                  7         26
+SUBENT        40930004   20191104   20200113   20200113       4184
+BIB                  7         23
 REACTION   (92-U-233(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the
-                      Maxwell spectrum with temperature 1.34 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with Anthracene Crystal
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 bottom of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given
-                    Only curve is presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+           Error bars digitized where possible.
+           (ERR-1) Error of registration efficiency.
+STATUS     (CURVE) Fig.4 bottom of INDC-CCP-252,16,1985
            (COREL,40930010) 1st cycle with stilbene crystal
            (COREL,40930011) 1st cycle with plastic
            (COREL,40930012) 2nd cycle measurement
@@ -255,11 +247,11 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
            (20110125A) B -> NO-DIM
            (20140710A) Data for FLAG 2-4 were moved in Subents
            010 - 012 .
-ENDBIB              26
-COMMON               4          3
-EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
-EV         MEV        PER-CENT   NO-DIM
- 0.0253     1.34        0.515E-02  0.241E-03
+ENDBIB              23
+COMMON               5          3
+EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG    ERR-1
+EV         MEV        PER-CENT   NO-DIM     PER-CENT
+ 0.0253     1.34        0.515E-02  0.241E-03 2.5
 ENDCOMMON            3
 DATA                 3         32
 E          DATA       DATA-ERR
@@ -297,41 +289,39 @@ MEV        NO-DIM     NO-DIM
  1.5779     1.0322
  1.7219     1.0196
 ENDDATA             34
-ENDSUBENT           69
-SUBENT        40930005   20110125   20111003   20110930       4153
-BIB                  6         10
+ENDSUBENT           66
+SUBENT        40930005   20191104   20200113   20200113       4184
+BIB                  7         11
 REACTION   (92-U-233(N,F)0-NN-1,PR,KE,,MXW)
-                Average neutron energy.
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 ADD-RES     T was defined from ratio <E>=(3/2)T for Maxwell
            distribution as N(E)=C*(E**0.5)*exp(-E/T) to be 1.34MeV
-STATUS     (TABLE) Text of ref.J.YK, page 21 .
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+STATUS     (TABLE) Text of INDC-CCP-252,16,1985, page 21 .
 HISTORY    (20100812A) Corrected:
                ),PR,AKE,N,MXW -> )0-NN-1,PR,KE,,MXW
            according to N.Otsuka opinion (NDS IAEA).
-ENDBIB              10
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN-DUMMY   DATA       ERR-T
+EN-DUMMY   DATA       DATA-ERR
 EV         MEV        MEV
  0.0253     2.015      .015
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        40930006   20140710   20141103   20141016       4164
-BIB                  7         26
+ENDSUBENT           19
+SUBENT        40930006   20191104   20200113   20200113       4184
+BIB                  7         23
 REACTION   (92-U-235(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the Maxwell
-                      spectrum with temperature 1.313MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with Anthracene Crystal
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 top of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given, only curves
-                    are presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+           (ERR-1) Error of registration efficiency.
+STATUS     (CURVE) Fig.4 top of INDC-CCP-252,16,1985
            (COREL,40930013) 1st cycle with stilbene crystal
            (COREL,40930014) 1st cycle with plastic
            (COREL,40930015) 2nd cycle measurement"
@@ -346,11 +336,11 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
            (20110125A) B -> NO-DIM
            (20140710A) Data for FLAG 2-4 were moved in Subents
            013 - 015 .
-ENDBIB              26
-COMMON               4          3
-EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
-EV         MEV        PER-CENT   NO-DIM
- 0.0253     1.313       0.904E-02  0.770E-03
+ENDBIB              23
+COMMON               5          3
+EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG    ERR-1
+EV         MEV        PER-CENT   NO-DIM     PER-CENT
+ 0.0253     1.313       0.904E-02  0.770E-03 2.5
 ENDCOMMON            3
 DATA                 3         30
 E          DATA       DATA-ERR
@@ -386,41 +376,39 @@ MEV        NO-DIM     NO-DIM
  1.7296    1.0205     0.0199
  1.8481    1.0245
 ENDDATA             32
-ENDSUBENT           67
-SUBENT        40930007   20110125   20111003   20110930       4153
-BIB                  6         10
+ENDSUBENT           64
+SUBENT        40930007   20191104   20200113   20200113       4184
+BIB                  7         11
 REACTION   (92-U-235(N,F)0-NN-1,PR,KE,,MXW)
-                Average neutron energy.
 INC-SPECT   Thermal neutrons of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 ADD-RES     T was defined from ratio <E>=(3/2)T for Maxwell
            distribution as N(E)=C*(E**0.5)*exp(-E/T)to be 1.313MeV
-STATUS     (TABLE) Text of ref.J,YK, page 21 .
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+STATUS     (TABLE) Text of INDC-CCP-252,16,1985, page 21 .
 HISTORY    (20100812A) Corrected:
                ),PR,AKE,N,MXW -> )0-NN-1,PR,KE,,MXW
            according to N.Otsuka opinion (NDS IAEA).
-ENDBIB              10
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN-DUMMY   DATA       ERR-T
+EN-DUMMY   DATA       DATA-ERR
 EV         MEV        MEV
  0.0253     1.970      .015
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        40930008   20140710   20141103   20141016       4164
-BIB                  7         25
+ENDSUBENT           19
+SUBENT        40930008   20191104   20200113   20200113       4184
+BIB                  7         22
 REACTION   (94-PU-239(N,F),PR,NU/DE,,MXD)
-                                              Ratio to the Maxwell
-                      spectrum with temperature 1.382 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with Anthracene Crystal
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.3 bottom of J,YK,1985,(3),16,1985.
-                      Numerical data are not given, only curve
-                      is presented on Fig.3 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+           (ERR-1) Error of registration efficiency.
+STATUS     (CURVE) Fig.3 bottom of INDC-CCP-252,16,1985
            (COREL,40930016) 1st cycle with stilbene crystal
            (COREL,40930017) 1st cycle with plastic
            (COREL,40930018) 2nd cycle measurement
@@ -434,11 +422,11 @@ HISTORY    (19990311A)  REACTION value is given explicitly as
            (20110125A) B -> NO-DIM, EN -> E.
            (20140710A) Data of FLAG 2-4 were moved in Subents
             016-018 .
-ENDBIB              25
-COMMON               4          3
-EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
-EV         MEV        PER-CENT   NO-DIM
- 0.0253     1.382       0.136E-01  0.990E-03
+ENDBIB              22
+COMMON               5          3
+EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG    ERR-1
+EV         MEV        PER-CENT   NO-DIM     PER-CENT
+ 0.0253     1.382       0.136E-01  0.990E-03 2.5
 ENDCOMMON            3
 DATA                 3         28
 E          DATA       DATA-ERR
@@ -472,41 +460,38 @@ MEV        NO-DIM     NO-DIM
  1.9371    1.0290     0.0182
  2.2445    1.0335
 ENDDATA             30
-ENDSUBENT           64
-SUBENT        40930009   20110125   20111003   20110930       4153
-BIB                  6         10
+ENDSUBENT           61
+SUBENT        40930009   20191104   20200113   20200113       4184
+BIB                  7         11
 REACTION   (94-PU-239(N,F)0-NN-1,PR,KE,,MXW)
-                Average neutron energy.
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 ADD-RES     T was defined from ratio <E>=(3/2)T for Maxwell
             distribution as N(E)=C*(E**0.5)*exp(-E/T) to be 1.382.
-STATUS     (TABLE) Text of ref.J,YK, page 21 .
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+STATUS     (TABLE) Text of INDC-CCP-252,16,1985, page 21 .
 HISTORY    (20100812A) Corrected:
                ),PR,AKE,N,MXW -> )0-NN-1,PR,KE,,MXW
            according to N.Otsuka opinion (NDS IAEA).
-ENDBIB              10
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 3          1
-EN-DUMMY   DATA       ERR-T
+EN-DUMMY   DATA       DATA-ERR
 EV         MEV        MEV
  0.0253     2.087      .015
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        40930010   20140710   20141103   20141016       4164
-BIB                  7         25
+ENDSUBENT           19
+SUBENT        40930010   20191104   20200113   20200113       4184
+BIB                  7         21
 REACTION   (92-U-233(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the
-                      Maxwell spectrum with temperature 1.34 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with Stilbene Crystal
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 bottom of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given
-                    Only curve is presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.4 bottom of INDC-CCP-252,16,1985
            (COREL,40930004) 1st cycle with anthracene crystal
            (COREL,40930011) 1st cycle with plastic
            (COREL,40930012) 2nd cycle measurement
@@ -520,7 +505,7 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM
            (20140710A) Data were moved from Subent 004.
-ENDBIB              25
+ENDBIB              21
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -546,20 +531,14 @@ MEV        NO-DIM     NO-DIM
  4.2712     1.0086
  4.4635     1.0097
 ENDDATA             18
-ENDSUBENT           52
-SUBENT        40930011   20140710   20141103   20141016       4164
-BIB                  7         24
+ENDSUBENT           48
+SUBENT        40930011   20191104   20200113   20200113       4184
+BIB                  6         18
 REACTION   (92-U-233(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the
-                      Maxwell spectrum with temperature 1.34 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with plastic
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-STATUS     (CURVE) Fig.4 bottom of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given
-                    Only curve is presented on Fig.4 of J,YK.
+STATUS     (CURVE) Fig.4 bottom of INDC-CCP-252,16,1985
            (COREL,40930004) 1st cycle with anthracene crystal
            (COREL,40930010) 1st cycle with stilbene crystal
            (COREL,40930012) 2nd cycle measurement
@@ -573,7 +552,7 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM
            (20140710A) Data were moved from Subent 004.
-ENDBIB              24
+ENDBIB              18
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -600,24 +579,20 @@ MEV        NO-DIM
  9.2176    0.8538
  9.3697    0.8873
 ENDDATA             19
-ENDSUBENT           52
-SUBENT        40930012   20140710   20141103   20141016       4164
-BIB                  7         25
+ENDSUBENT           46
+SUBENT        40930012   20191104   20200113   20200113       4184
+BIB                  7         22
 REACTION   (92-U-233(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the
-                      Maxwell spectrum with temperature 1.34 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          Second cycle of measurement
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 bottom of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given
-                    Only curve is presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.4 bottom of INDC-CCP-252,16,1985
            (COREL,40930004) 1st cycle with anthracene crystal
            (COREL,40930010) 1st cycle with stilbene crystal
-           (COREL,40930011) 1st cycle with plastic"
+           (COREL,40930011) 1st cycle with plastic
 HISTORY    (19990311A)  Reaction value is given explicitly as
                         ratio of two values
            (19990405A)  New REACTION-QUANTITY ratio coding given
@@ -628,13 +603,14 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM
            (20140710A) Data were moved from Subent 004.
-ENDBIB              25
+           (20191104A) Two duplicative lines were deleted.
+ENDBIB              22
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
  0.0253     1.34        0.515E-02  0.241E-03
 ENDCOMMON            3
-DATA                 3         35
+DATA                 3         33
 E          DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM
  0.020351   0.9608    0.1483
@@ -650,8 +626,6 @@ MEV        NO-DIM     NO-DIM
  0.25337    0.9600
  0.28238    0.9293    0.0409
  0.34061    1.0128    0.0375
- 0.34061    1.0128    0.0375
- 0.40216    0.9633    0.0387
  0.40216    0.9633    0.0692
  0.46217    0.9593
  0.53825    0.9285    0.0421
@@ -672,22 +646,18 @@ MEV        NO-DIM     NO-DIM
  2.5971     1.0280
  2.9632     1.0269
  3.3074     1.0257
-ENDDATA             37
-ENDSUBENT           71
-SUBENT        40930013   20140710   20141103   20141016       4164
-BIB                  7         25
+ENDDATA             35
+ENDSUBENT           66
+SUBENT        40930013   20191104   20200113   20200113       4184
+BIB                  7         21
 REACTION   (92-U-235(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the Maxwell
-                      spectrum with temperature 1.313MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with Stilbene Crystal
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 top of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given, only curves
-                    are presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.4 top of INDC-CCP-252,16,1985
            (COREL,40930006) 1st cycle with anthracene crystal
            (COREL,40930014) 1st cycle with plastic
            (COREL,40930015) 2nd cycle measurement"
@@ -701,7 +671,7 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM
            (20140710A) Data were moved from Subent 006.
-ENDBIB              25
+ENDBIB              21
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -750,21 +720,17 @@ MEV        NO-DIM     NO-DIM
  7.2302     1.0131    0.0159
  7.3906     0.9029    0.0302
 ENDDATA             41
-ENDSUBENT           75
-SUBENT        40930014   20140710   20141103   20141016       4164
-BIB                  7         25
+ENDSUBENT           71
+SUBENT        40930014   20191104   20200113   20200113       4184
+BIB                  7         21
 REACTION   (92-U-235(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the Maxwell
-                      spectrum with temperature 1.313MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with plastic
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 top of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given, only curves
-                    are presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.4 top of INDC-CCP-252,16,1985
            (COREL,40930006) 1st cycle with anthracene crystal
            (COREL,40930013) 1st cycle with stilbene crystal
            (COREL,40930015) 2nd cycle measurement"
@@ -778,7 +744,7 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM
            (20140710A) Data were moved from Subent 006.
-ENDBIB              25
+ENDBIB              21
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -813,21 +779,17 @@ MEV        NO-DIM     NO-DIM
  9.6239    0.7919
 10.636     0.7509
 ENDDATA             27
-ENDSUBENT           61
-SUBENT        40930015   20140710   20141103   20141016       4164
-BIB                  7         25
+ENDSUBENT           57
+SUBENT        40930015   20191104   20200113   20200113       4184
+BIB                  7         21
 REACTION   (92-U-235(N,F),PR,NU/DE,,MXD)
-                                             Ratio to the Maxwell
-                      spectrum with temperature 1.313MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD         Second cycle of measurement
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.4 top of J,YK,1985,(3),16,1985.
-           (UNOBT)  Numerical data are not given, only curves
-                    are presented on Fig.4 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.4 top of INDC-CCP-252,16,1985
            (COREL,40930006) 1st cycle with anthracene crystal
            (COREL,40930013) 1st cycle with stilbene crystal
            (COREL,40930014) 1st cycle with plastic"
@@ -841,7 +803,7 @@ HISTORY    (19990311A)  Reaction value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM
            (20140710A) Data were moved from Subent 006.
-ENDBIB              25
+ENDBIB              21
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -883,21 +845,17 @@ MEV        NO-DIM     NO-DIM
  2.4077    1.0295
  2.6682    1.0295
 ENDDATA             34
-ENDSUBENT           68
-SUBENT        40930016   20140710   20141103   20141016       4164
-BIB                  7         24
+ENDSUBENT           64
+SUBENT        40930016   20191104   20200113   20200113       4184
+BIB                  7         20
 REACTION   (94-PU-239(N,F),PR,NU/DE,,MXD)
-                                              Ratio to the Maxwell
-                      spectrum with temperature 1.382 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with Stilbene Crystal
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.3 bottom of J,YK,1985,(3),16,1985.
-                      Numerical data are not given, only curve
-                      is presented on Fig.3 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.3 bottom of INDC-CCP-252,16,1985
            (COREL,40930008) 1st cycle with anthracene crystal
            (COREL,40930017) 1st cycle with plastic
            (COREL,40930018) 2nd cycle measurement.
@@ -910,7 +868,7 @@ HISTORY    (19990311A)  REACTION value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM, EN -> E.
            (20140710A) Data were moved from Subent 008.
-ENDBIB              24
+ENDBIB              20
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -955,21 +913,17 @@ MEV        NO-DIM     NO-DIM
  6.6060     0.9878
  6.7248     0.9565    0.0307
 ENDDATA             37
-ENDSUBENT           70
-SUBENT        40930017   20140710   20141103   20141016       4164
-BIB                  7         24
+ENDSUBENT           66
+SUBENT        40930017   20191104   20200113   20200113       4184
+BIB                  7         20
 REACTION   (94-PU-239(N,F),PR,NU/DE,,MXD)
-                                              Ratio to the Maxwell
-                      spectrum with temperature 1.382 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          First cycle of measurement with plastic
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.3 bottom of J,YK,1985,(3),16,1985.
-                      Numerical data are not given, only curve
-                      is presented on Fig.3 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.3 bottom of INDC-CCP-252,16,1985
            (COREL,40930008) 1st cycle with anthracene crystal
            (COREL,40930016) 1st cycle with stilbene crystal
            (COREL,40930018) 2nd cycle measurement
@@ -982,7 +936,7 @@ HISTORY    (19990311A)  REACTION value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM, EN -> E.
            (20140710A) Data were moved from Subent 008.
-ENDBIB              24
+ENDBIB              20
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -1031,21 +985,17 @@ MEV        NO-DIM     NO-DIM
 10.551      0.7597
 11.287      0.7153
 ENDDATA             41
-ENDSUBENT           74
-SUBENT        40930018   20140710   20141103   20141016       4164
-BIB                  7         24
+ENDSUBENT           70
+SUBENT        40930018   20191104   20200113   20200113       4184
+BIB                  7         20
 REACTION   (94-PU-239(N,F),PR,NU/DE,,MXD)
-                                              Ratio to the Maxwell
-                      spectrum with temperature 1.382 MeV
 INC-SPECT   Thermal spectrum of the reactor
 FACILITY   (REAC,4RUSNIR) CM-2 Reactor
 METHOD          Second cycle of measurement
-ERR-ANALYS (E-ERR-DIG) Digitizing error of E
-           (ERR-DIG)    Digitizing error of DATA
-           (DATA-ERR)   Error bars digitized where possible.
-STATUS     (CURVE) Fig.3 bottom of J,YK,1985,(3),16,1985.
-                      Numerical data are not given, only curve
-                      is presented on Fig.3 of J,YK.
+ERR-ANALYS (DATA-ERR)  Type of error is not explained exactly,
+           probably total.
+                        Error bars digitized where possible.
+STATUS     (CURVE) Fig.3 bottom of INDC-CCP-252,16,1985
            (COREL,40930008) 1st cycle with anthracene crystal
            (COREL,40930016) 1st cycle with stilbene crystal
            (COREL,40930017) 1st cycle with plastic
@@ -1058,7 +1008,7 @@ HISTORY    (19990311A)  REACTION value is given explicitly as
             Digitized data were added.
            (20110125A) B -> NO-DIM, EN -> E.
            (20140710A) Data were moved from Subent 008.
-ENDBIB              24
+ENDBIB              20
 COMMON               4          3
 EN-DUMMY   KT-NRM     E-ERR-DIG  ERR-DIG
 EV         MEV        PER-CENT   NO-DIM
@@ -1105,5 +1055,5 @@ MEV        NO-DIM     NO-DIM
  3.8002    1.0217
  4.3760    1.0346
 ENDDATA             39
-ENDSUBENT           72
+ENDSUBENT           68
 ENDENTRY            18

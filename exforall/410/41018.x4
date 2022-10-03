@@ -1,48 +1,57 @@
-ENTRY            41018   20020724   20030127   20050926       0000
-SUBENT        41018001   20020724   20030127   20050926       0000
-BIB                 11         19
-AUTHOR     (L.I.GOVOR, A.M.DEMIDOV, I.V.MIKHAILOV)
-TITLE       MULTIPOLE MIXTURES IN THE GAMMA-TRANSITIONS OF TE-128
-            IN THE (N,N'GAMMA) REACTION
+ENTRY            41018   20191105   20200113   20200113       4184
+SUBENT        41018001   20191105   20200113   20200113       4184
+BIB                 11         26
+AUTHOR     (L.I.Govor, A.M.Demidov, I.V.Mikhaylov)
+TITLE       Multipole mixtures in the gamma-transitions of Te-128
+            in the (n,n'gamma) reaction
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,YK,1988,(3),42,198808) MAIN REFERENCE,DATA ARE GIVEN
-FACILITY   (REAC)  REACTOR IR-8 OF THE KURCHATOV ATOMIC ENERGY
-                   INSTITUTE
+REFERENCE  ((J,YK,,(3),42,1988)=
+           (R,INDC(CCP)-310,42,1988))
+            Main reference,data are given
+           No Engl.translation of full paper in rep. INDC-CCP-322
+FACILITY   (REAC,4RUSKUR)  Reactor IR-8 of the Kurchatov Atomic
+                 Energy Institute
 INC-SOURCE (REAC)
-INC-SPECT   FAST NEUTRON BEAM OF THE THERMAL REACTOR
-SAMPLE      METALLIC TELLURIUM, MASS 20 GRAM, TE-128 CONTENT
-            IS 98.2 PERCENT
-MONITOR     INTENSITY OF THE PARTICULAR GAMMA-LINE OF THE SAME
-            ELEMENT
-ERR-ANALYS (ERR-S)  SYMMETRIC STATISTICAL ERROR WITHIN
-                    68% CONFIDENCE LEVEL
-HISTORY    (19900710C) + + COMPILED AT THE CENTRE - CJD * *
-           (20020724A) = = CORRECTED AT THE CJD.
-                           ONE SUBENT ADDED, EITHER
+INC-SPECT   Fast neutron beam of the thermal reactor
+SAMPLE      Metallic tellurium, mass 20 gram, Te-128 content
+            is 98.2 %
+           (52-TE-128,ENR=0.982)
+MONITOR     Relative measurement
+ERR-ANALYS (ERR-S)  Symmetrical statistical error within
+                    68% confidence level
+HISTORY    (19900710C) + + Compiled at the centre - CJD * *
+           (20020724A) = = Corrected at the CJD.
+                           One SUBENT added
            (20020725U) Last checking has been done.
-ENDBIB              19
+           (20191105U) Minor correction of YK ref.
+           Ref. INDC-CCP-310 was added.
+           Upper -> lower case correction.
+           BIB information was added.
+ENDBIB              26
 COMMON               1          3
 EN-DUMMY
 MEV
   1.0
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        41018002   20020724   20030127   20050926       0000
-BIB                  5          9
-REACTION   ((52-TE-128(N,INL)52-TE-128,,SPC,,FIS)//
-           (52-TE-128(N,INL)52-TE-128,,SPC,,FIS))
-                     MEASURED RELATIVE TO THE 743-KEV LINE TAKEN
-                     AS 100 UNITS
-EN-SEC     (LVL-INI,52-TE-128)
-DETECTOR   (GELI)  RESOLUTION 2 KEV AT 1.3 MEV, EFFICIENCY 10 PC
-STATUS      DATA ARE TAKEN FROM TABLE 1 OF THE MAIN REFERENCE
-HISTORY    (20020724U)  DATA HEDINGS CORRECTED
+ENDSUBENT           33
+SUBENT        41018002   20191105   20200113   20200113       4184
+BIB                  5         11
+REACTION   ((52-TE-128(N,INL)52-TE-128,,SPC/DA,,FIS)//
+           (52-TE-128(N,INL)52-TE-128,,SPC/DA,,FIS))
+           Measured relative to the 743-keV line taken as 100.,
+            divided by 100 by compiler to have NO-DIM units.
+EN-SEC     (E,G) Gamma energy at 90 deg angle
+             LVL-INI,52-TE-128
+DETECTOR   (GELI)  Resolution 2 keV at 1.3 MeV, efficiency 10 %
+STATUS     (TABLE) From Table 1 of INDC-CCP-310,42,1988
+HISTORY    (20020724U)  Data headings corrected
            (20020725U) Last checking has been done.
-ENDBIB               9
-COMMON               1          3
-E-DN
-KEV
-  743.22
+           (20191105A) SPC -> SPC/DA
+ENDBIB              11
+COMMON               2          3
+E-DN       ANG
+KEV        ADEG
+  743.22    120.
 ENDCOMMON            3
 DATA                 6        146
 E-NM       E-NM-ERR   DATA       ERR-S      DATA-MAX   LVL-INI
@@ -194,15 +203,21 @@ KEV        KEV        NO-DIM     NO-DIM     NO-DIM     KEV
   3804.9     0.07        0.033E-2   0.012E-2
   3838.3     0.09        0.039E-2   0.012E-2              3838.
 ENDDATA            148
-ENDSUBENT          166
-SUBENT        41018003   20020724   20030127   20050926       0000
-BIB                  4          5
+ENDSUBENT          168
+SUBENT        41018003   20191105   20200113   20200113       4184
+BIB                  5         11
 REACTION   (52-TE-128(N,INL)52-TE-128,PAR,DA,G,LEG/RS/FIS)
-DETECTOR   (GELI)  RESOLUTION 2 KEV AT 1.3 MEV, EFFICIENCY 10%
-STATUS     .FROM TABLE 3 OF MAIN REFERENCE
-HISTORY    (20020724U)   COLUMN ORDER CHANGED
+            Transitions not placed at level scheme.
+ANALYSIS    Angular distribution was approximated by Legendre
+           polynomials P :
+           W(angle)=1+a2*P2(COS(angle))+a4*P4(COS(angle)).
+           Gamma spectrum was measured at 90, 105, 120, 135, 150
+           degrees angle relative to neutron beam direction.
+DETECTOR   (GELI)  Resolution 2 keV at 1.3 MeV, efficiency 10%
+STATUS     (TABLE) From Table 3 of INDC-CCP-310,42,1988
+HISTORY    (20020724U)   Columns order changed
            (20020725U) Last checking has been done.
-ENDBIB               5
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         20
 E          NUMBER     DATA       ERR-S
@@ -228,21 +243,25 @@ KEV        NO-DIM     NO-DIM     NO-DIM
  2763.31     2.         -0.01      0.03
  2763.31     4.         -0.08      0.04
 ENDDATA             22
-ENDSUBENT           32
-SUBENT        41018004   20020724   20030127   20050926       0000
-BIB                  5          8
+ENDSUBENT           38
+SUBENT        41018004   20191105   20200113   20200113       4184
+BIB                  6         12
 REACTION   (52-TE-128(N,INL)52-TE-128,PAR,DA,G,LEG/RS/FIS)
-DETECTOR   (GELI)  RESOLUTION 2 KEV AT 1.3 MEV, EFFICIENCY 10%
-EN-SEC     (LVL-INI,52-TE-128)
-           (LVL-FIN,52-TE-128)
-STATUS     .FROM TABLE 2 OF MAIN REFERENCE
-HISTORY    (20020724U)   COLUMN ORDER CHANGED. DATA HEADINGS
-                         MODIFIED
+DETECTOR   (GELI)  Resolution 2 keV at 1.3 MeV, efficiency 10%
+EN-SEC     (E,G) Gamma energy at 90 deg angle
+             LVL-INI,52-TE-128
+             LVL-FIN,52-TE-128
+ANALYSIS    Angular distribution was approximated by Legendre
+           polynomials P :
+           W(angle)=1+a2*P2(COS(angle))+a4*P4(COS(angle))
+STATUS     (TABLE) From Table 2 of INDC-CCP-310,42,1988
+HISTORY    (20020724U)   Columns order changed. Data headings
+                         modified
            (20020725U) Last checking has been done.
-ENDBIB               8
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 6        106
-E          NUMBER     DATA       DATA-ERR   LVL-INI    LVL-FIN
+E          NUMBER     DATA       ERR-S      LVL-INI    LVL-FIN
 KEV        NO-DIM     NO-DIM     NO-DIM     KEV        KEV
    232.43    2.         -0.44        0.14     2395.94    2163.
    232.43    4.         -0.09        0.20     2395.94    2163.
@@ -351,18 +370,16 @@ KEV        NO-DIM     NO-DIM     NO-DIM     KEV        KEV
   3137.5     2.          0.31        0.12     3137.3        0.
   3137.5     4.          0.04        0.15     3137.3        0.
 ENDDATA            108
-ENDSUBENT          121
-SUBENT        41018005   20020725   20030127   20050926       0000
-BIB                  5          8
-REACTION   (52-TE-128(N,INL)52-TE-128,PAR,POL,G,FIS) GAMMA RAYS
-                              POLARIZATION
-DETECTOR   (COMPL)  COMPTON POLARIMETER
-STATUS     .FROM TABLE 4 OF MAIN REFERENCE
-HISTORY    (20020724C)   + + COMPILED AT THE CENTER - CJD
+ENDSUBENT          125
+SUBENT        41018005   20191105   20200113   20200113       4184
+BIB                  5          6
+REACTION   (52-TE-128(N,INL)52-TE-128,PAR,POL,G,FIS)
+DETECTOR   (COMPL)  Compton polarimeter
+STATUS     (TABLE) From Table 4 of INDC-CCP-310,42,1988
+HISTORY    (20020724C)   + + Compiled at the center - CJD
            (20020725U) Last checking has been done.
-ERR-ANALYS (+ERR-S)   POSITIVE UNSYMMETRIC ERROR
-           (-ERR-S)   NEGATIVE UNSYMMETRIC ERROR
-ENDBIB               8
+ERR-ANALYS (ERR-S)   Statistical error
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 6         15
 E          DATA       ERR-S      +ERR-S     -ERR-S     LVL-INI
@@ -383,5 +400,5 @@ KEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM     KEV
  1764.83      0.3                  0.6          0.3       2508.
  1963.42      0.2                  0.9          0.2       2707.
 ENDDATA             17
-ENDSUBENT           30
+ENDSUBENT           28
 ENDENTRY             5

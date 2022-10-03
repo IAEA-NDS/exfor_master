@@ -1,10 +1,10 @@
-ENTRY            40856   20130823   20140110   20131224       4161
-SUBENT        40856001   20130823   20140110   20131224       4161
+ENTRY            40856   20191103   20200113   20200113       4184
+SUBENT        40856001   20191103   20200113   20200113       4184
 BIB                 12         39
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,YK,1984,(3/57),17,198409) Main reference
+REFERENCE  (J,YK,,(3/57),17,1984) Main reference
            (R,INDC(CCP)-281,23,1988) English translation of
-            J,YK,1984,(3/57),17,1984 . INDC(CCP)-281/L .
+            J,YK,,(3/57),17,1984 . INDC(CCP)-281/L .
 REL-REF    (M,40434001,E.F.Fomushkin+,J,AE,39,295,1975) Exp.method
            (M,40434001,E.F.Fomushkin+,J,SJA,39,921,1975)
            Engl.translation of AE,39,295,1975
@@ -15,7 +15,7 @@ AUTHOR     (E.F.Fomushkin,G.F.Novoselov,Yu.I.Vinogravdov,
            V.V.Gavrilov,B.K.Maslennikov,V.N.Polynov,V.M.Surin,
            A.M.Shvetsov)
 TITLE       Energy dependence of the fast-neutron-induced fission
-            cross-section of Am-243
+            cross-section of 243Am
 SAMPLE      Am-243 content is near 100 % , AM-242-m content is
             (2.60+0.45-0.90)E-2 % , Am-241 content is (1.81+.30
             -0.60)E-2 % , Pu-240 content is 6.6E-2 % , Pu-244
@@ -25,8 +25,13 @@ DETECTOR   (SOLST) Semiconductor alpha-spectrometer for Am-243
                    weighting
 DECAY-DATA (95-AM-243,7380.YR) +-40YR
 MONITOR    (92-U-235(N,F),,SIG)
-MONIT-REF  (,V.A.Kon'shin+,R,YK-3,(34),3,1979)
+MONIT-REF  (,V.A.Kon'shin+,J,YK,,(3/34),3,1979)
            (,M.N.Nikolaev+,R,YK-6,(1),10,1972)
+ERR-ANALYS (ERR-1) Am-243 quantity determination error(total),
+            including systematic error of Am-243 nucleus quantity
+             determination (1.37%)
+           (ERR-2) Am-243 half-life relative error
+           (ERR-3) Pu-238 activity error
 HISTORY    (19850424C)
            (20060131A) Sub. 003 reaction SF8 was added.
              Sub.004 DATA2 was added.
@@ -34,49 +39,44 @@ HISTORY    (19850424C)
            (20130822U) M.M. References for Engl.translations were
            added. Two references were moved in REL-REF.
            ERR-ANALYS was corrected. BIB information was updated.
-ERR-ANALYS (DATA-ERR4) Systematic error of Am-243 nucleus quantity
-                   determination
-           (ERR-1) Am-243 quantity determination error(total),
-            including DATA-ERR4.
-           (ERR-2) Am-243 half-life relative error
-           (ERR-3) Pu-238 activity error
+           (20191103U) Refs. YK were corrected
 ENDBIB              39
-COMMON               4          3
-ERR-1      ERR-2      ERR-3      DATA-ERR4
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
- 2.2000E+00 5.4000E-01 1.0000E+00    1.37
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+ 2.2        5.4000E-01 1.0000E+00
 ENDCOMMON            3
 ENDSUBENT           46
-SUBENT        40856002   20060131   20060525   20060324       4137
-BIB                  7         11
+SUBENT        40856002   20191103   20200113   20200113       4184
+BIB                  6         10
 REACTION   (95-AM-243(N,F),,SIG)
 INC-SOURCE (EXPLO)
 METHOD     (TOF) Resolution  5.9 nsec/m(Full width at half high)
-DETECTOR   (TRD)  Polymeric film for fission fragments
-                  detection
-PART-DET   (FF) Fission fragments of Am-243 and U-235 fission
+DETECTOR   (TRD)  Polymeric film for Am-243 and U-235 fission
+           fragments detection
 COMMENT     Cross-section energy dependence was approximated
             by the parabolic barrier penetration formula
              SIGMA(E) = (1.411+-.067B)/(1. + EXP(-2*PI*(E -
-                         (0.90+-.01MEV))/(0.73 +-.02MEV)))
-STATUS     (DEP,40856003)
-ENDBIB              11
+                         (0.90+-.01MeV))/(0.73 +-.02MeV)))
+STATUS     (DEP,40856003) Spectrum averaged CS
+ENDBIB              10
 COMMON               2          3
 EN-MIN     EN-MAX
 MEV        MEV
  3.0000E-01 4.6000E+02
 ENDCOMMON            3
 NODATA               0          0
-ENDSUBENT           19
-SUBENT        40856003   20130822   20140110   20131224       4161
-BIB                  5          6
+ENDSUBENT           18
+SUBENT        40856003   20191103   20200113   20200113       4184
+BIB                  6          7
 REACTION  1(95-AM-243(N,F),,SIG,,SPA)
           2((95-AM-243(N,F),,SIG,,SPA)/(92-U-235(N,F),,SIG,,SPA))
 INC-SOURCE (EXPLO)
 INC-SPECT   Spectrum of the metallic uranium assembly
 DETECTOR   (GLASD)
-STATUS     (TABLE) Text, page 18 of J,YK,1984,(3/57),17,1984 .
-ENDBIB               6
+ERR-ANALYS (ERR-T) Total error
+STATUS     (TABLE) Text, page 18 of J.Yad.Konst.,is.3/57,p.17,1984
+ENDBIB               7
 COMMON               4          3
 EN-DUMMY   EN-NRM     MONIT      MONIT-ERR
 MEV        MEV        B          B
@@ -87,17 +87,18 @@ DATA      1ERR-T     1DATA      2ERR-T     2
 B          B          NO-DIM     NO-DIM
  6.2500E-01 2.5000E-02 4.9000E-01 1.4000E-02
 ENDDATA              3
-ENDSUBENT           18
-SUBENT        40856004   20130822   20140110   20131224       4161
-BIB                  6          7
+ENDSUBENT           19
+SUBENT        40856004   20191103   20200113   20200113       4184
+BIB                  6          8
 REACTION  1(95-AM-243(N,F),,SIG)
           2((95-AM-243(N,F),,SIG)/(92-U-235(N,F),,SIG))
-FACILITY   (VDG) Neutron generator NG-150
+FACILITY   (VDG,4RUSKUR) Neutron generator NG-150
 INC-SOURCE (D-T) Deuterons energy 130-140 keV
 DETECTOR   (GLASD)
 ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (TABLE) Text, page 19 of J,YK,1984,(3/57),17,1984 .
-ENDBIB               7
+           (ERR-T) Total error
+STATUS     (TABLE) Text, page 19 of J.Yad.Konst.,is.3/57,p.17,1984
+ENDBIB               8
 COMMON               1          3
 ERR-S
 PER-CENT
@@ -111,5 +112,5 @@ B
  1.4800E+01 2.2750E+00 8.0000E-02 1.023      0.034      2.2230E+00
  2.8000E-02
 ENDDATA              6
-ENDSUBENT           22
+ENDSUBENT           23
 ENDENTRY             4
