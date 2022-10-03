@@ -1,14 +1,15 @@
-ENTRY            40163   20150109   20160302   20160216       4172
-SUBENT        40163001   20150109   20160302   20160216       4172
-BIB                 14         37
-INSTITUTE  (4RUSRI)
-REFERENCE  (J,SJA,32,203,1972) Eng.trans.of AE,32,178,1972
-           (J,AE,32,(2),178,1972)   Data are given
-           (R,YFI-12,88,1971)   the same data as in AE.
-           (R,INDC(CCP)-030,77,1972) Engl.translation of YFI-12,88
+ENTRY            40163   20210816   20211001   20211001       4199
+SUBENT        40163001   20210816   20211001   20211001       4199
+BIB                 13         41
+TITLE      Slow neutron capture cross section of Pa231
 AUTHOR     (B.M.Aleksandrov,M.A.Bak,A.S.Krivokhatskii,
            E.A.Shlyamin)
-TITLE      Slow neutron capture cross-section of Pa-231
+REFERENCE  (J,SJA,32,203,1972) Eng.trans.of AE,32,178(1),1972
+           #doi:10.1007/BF01125115
+           (J,AE,32,178(1),1972) Issue 2.  Data are given
+           (R,YFI-12,88,1971)   The same data as in AE.
+           (R,INDC(CCP)-030,77,1972) Engl.translation of YFI-12,88
+INSTITUTE  (4RUSRI)
 FACILITY   (REAC,4RUSRI)  VVR-M reactor
 INC-SOURCE (REAC)     VVR-M reactor
 INC-SPECT  Neutron flux about 10**14 neutron/cm**2/sec from VVR-M
@@ -19,14 +20,12 @@ INC-SPECT  Neutron flux about 10**14 neutron/cm**2/sec from VVR-M
 SAMPLE     Samples were prepared by electrolytic deposition of
            microgram amounts of Pa231 (~ 10 mu-g) on a titanium
            backing 0.2 mm thick.
-METHOD     (ACTIV)    Activation
-           (CADMB)    Cadmium bath
+METHOD     (ACTIV)
 DETECTOR   (SIBAR)  Alpha spectrometer with surface-barrier
            gold-silicon detector .
-PART-DET   (A)        Alphas
-STATUS     (TABLE) Numerical data from AE,32,(2),178,7202
-           and from R,YFI-12,88,1972
-ERR-ANALYS (DATA-ERR)      In general the measurement error
+RAD-DET    (91-PA-231,A)
+           (92-U-232,A)
+ERR-ANALYS (ERR-T)         In general the measurement error
            includes measurement error of neutron flux
            (ERR-1) Error in neutron flux
            (ERR-2) Error in ratios of alpha peak areas.
@@ -38,46 +37,57 @@ HISTORY    (19730521C)  Compiled at the centre
            Articles were checked, BIB information was updated in
            REFERENCE,TITLE,INC-SPECT,DETECTOR,FACILITY,ERR-ANALYS.
            ANALYSIS, ERR-2 were added.
-ENDBIB              37
+           (20210816U) Ref. AE page was corrected 178 -> 178(1) .
+            Minor correction of free text.
+            STATUS was moved from Subent 001 into data Subents.
+            DATA-ERR -> ERR-T.
+            Code CADMB was deleted from METHOD.
+ENDBIB              41
 COMMON               2          3
 ERR-1      ERR-2
 PER-CENT   PER-CENT
   4.        1.
 ENDCOMMON            3
-ENDSUBENT           44
-SUBENT        40163002   20150109   20160302   20160216       4172
-BIB                  3          7
+ENDSUBENT           48
+SUBENT        40163002   20210816   20211001   20211001       4199
+BIB                  4          9
 REACTION   (91-PA-231(N,G)91-PA-232,,SIG)
-MONITOR    No information
+MONITOR    Neutron flux was measured by Np-237 sample.
 ANALYSIS   Thermal neutron capture c-s was determined by
            neutron flux ( measured by Np-237), irradiation time,
            areas under U232 and Pa231 alpha peaks for irradiations
            with and without Cd, ratio of half-lives
            T(Pa231)/T(U232)=439.
-ENDBIB               7
+STATUS     (TABLE) Text page 178 of AE,32,(2),178(1),1972,
+            Text page 77 of INDC(CCP)-030,77,1972
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 EV         B          B
  2.5300E-02 260.       13.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        40163003   20150109   20160302   20160216       4172
-BIB                  3          4
+ENDSUBENT           17
+SUBENT        40163003   20210816   20211001   20211001       4199
+BIB                  4          8
 REACTION   (91-PA-231(N,G)91-PA-232,,RI)
 MONITOR    (93-NP-237(N,G)93-NP-238,,RI)
-COMMENT    In common section the En-min column contains the
-           cadmium boundary
-ENDBIB               4
+COMMENT    .In common section the En-min column contains the
+           cadmium boundary.
+           . Cadmium ratio for Np 7.46, for Pa 9.12 were used to
+           determine RI.
+STATUS     (TABLE) Text page 178 of AE,32,(2),178(1),1972,
+            Text page 77 of INDC(CCP)-030,77,1972
+ENDBIB               8
 COMMON               2          3
 EN-MIN     MONIT
 EV         B
  4.0000E-01 945.
 ENDCOMMON            3
 DATA                 2          1
-DATA       DATA-ERR
+DATA       ERR-T
 B          B
  1180.      120.
 ENDDATA              3
-ENDSUBENT           16
+ENDSUBENT           20
 ENDENTRY             3
