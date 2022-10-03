@@ -1,6 +1,6 @@
-ENTRY            O1738   20151207   20160603   20160516       O056
-SUBENT        O1738001   20151207   20160603   20160516       O056
-BIB                 14         64
+ENTRY            O1738   20220117   20220607   20220504       O087
+SUBENT        O1738001   20220117   20220607   20220504       O087
+BIB                 15         62
 TITLE      Excitation functions of radionuclides produced by
            proton induced reactions on gadolinium targets
 AUTHOR     (M.B.Challan, G.S.Moawad, M.A.Abou-Zeid, M.N.H.Comsan)
@@ -24,9 +24,7 @@ SAMPLE     The samples of gadolinium were of 7.901 mg/cm**2
 MONITOR    (29-CU-0(P,X)30-ZN-62,,SIG)
            (29-CU-0(P,X)30-ZN-63,,SIG)
            (29-CU-0(P,X)30-ZN-65,,SIG)
-METHOD     (STTA)
-           (BCINT)
-           (ACTIV)
+METHOD     (STTA,BCINT,ACTIV)
 DETECTOR   (HPGE) 70% HPGe gamma-ray detector, resolution approx.
             2 keV for 1.33 MeV gamma-ray of Co-60.
 CORRECTION  The correction for the activity due to the self-
@@ -49,8 +47,7 @@ ERR-ANALYS (ERR-T) The root average of total error due to
            (ERR-8) The error in secondary particles contribution
            in nuclides production and beam intensity loss as the
            beam traverses the stack thickness.
-           (EN-ERR) The error is reported by authors in table.
-            -number of target nuclei in the sample(target mass)
+COMMENT     -number of target nuclei in the sample(target mass)
             is negligible.
             -flux fluctuation during irradiation time is
             negligible.
@@ -65,13 +62,14 @@ STATUS     (TABLE) Table 3 from 2007LUXOR,,159,2007
 HISTORY    (20090416C) SB
            (20151207A) SD: DECAY-DATA corrected in Subent 002.
            ERR-ANALYS update: DATA-ERR -> ERR-T in all Subents.
-ENDBIB              64
+           (20220117A) SD: Corrections in Subent 003.
+ENDBIB              62
 COMMON               5          3
 ERR-1      ERR-2      ERR-4      ERR-5      ERR-8
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 1.0        1.0        2.5        5.0        7.0
 ENDCOMMON            3
-ENDSUBENT           71
+ENDSUBENT           69
 SUBENT        O1738002   20151207   20160603   20160516       O056
 BIB                  3          3
 REACTION   (64-GD-152(P,N)65-TB-152-G,M+,SIG)
@@ -102,16 +100,19 @@ MEV        MEV        MB         MB
 7.55       0.45       15.56      3.01
 ENDDATA             20
 ENDSUBENT           28
-SUBENT        O1738003   20151207   20160603   20160516       O056
-BIB                  2          7
-REACTION  1(64-GD-154(P,N)65-TB-154-G,,SIG)
-          2(64-GD-154(P,N)65-TB-154-M,,SIG)
-          3(64-GD-154(P,N)65-TB-154-G/M,,SIG/RAT)
+SUBENT        O1738003   20220117   20220607   20220504       O087
+BIB                  3         10
+REACTION  1((64-GD-154(P,N)65-TB-154-G,,SIG)+
+           (64-GD-155(P,2N)65-TB-154-G,,SIG,,RAB))
+          2((64-GD-154(P,N)65-TB-154-M1,,SIG)+
+           (64-GD-155(P,2N)65-TB-154-M1,,SIG,,RAB))
+          3(64-GD-0(P,X)65-TB-154-G/M1,,SIG/RAT)
 DECAY-DATA1(65-TB-154-G,21.5MIN,DG,722.1,0.08,DG,996.3,0.05,
                                 DG,1274.4,0.11)
-          2(65-TB-154-M,9.4HR,DG,247.9,0.22,DG,540.1,0.20,
+          2(65-TB-154-M1,9.4HR,DG,247.9,0.22,DG,540.1,0.20,
             DG,649.5,0.11,DG,996.3,0.09,DG,1004.7,0.11)
-ENDBIB               7
+HISTORY    (20220117A) SD: Three REACTION codes were updated.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 7         18
 EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
@@ -155,5 +156,5 @@ NO-DIM
 7.55       0.45       3.31       0.48       0.72       0.25
 4.59
 ENDDATA             40
-ENDSUBENT           52
+ENDSUBENT           55
 ENDENTRY             3

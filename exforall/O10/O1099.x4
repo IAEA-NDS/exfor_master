@@ -1,6 +1,6 @@
-ENTRY            O1099   20120611   20120921   20120918       O048
-SUBENT        O1099001   20120611   20120921   20120918       O048
-BIB                 13         48
+ENTRY            O1099   20220120   20220607   20220504       O087
+SUBENT        O1099001   20220120   20220607   20220504       O087
+BIB                 13         74
 TITLE      Cross sections for the production of radionuclides by
            proton-induced reactions on W, Ta, Pb and Bi from
            thresholds up to 2.6 GeV
@@ -12,25 +12,26 @@ INSTITUTE  (2GERUH) Center for Radiation Protection and
            (2SWDUPP) Svedberg laboratory
            (2SWTETH) Institute for Particle Physics
 REFERENCE  (J,NSTS,2,242,2002)
+           (T,GLORIS,1998)
 REL-REF    (I,O0500001,M.Gloris+,J,NIM/A,463,593,2001)
-           (M,O0906001,J.Kuhnhenn+,J,RCA,84,697,2001)
+           (M,O0906001,J.Kuhnhenn+,J,RCA,89,697,2001)
            Cross sections for lead target and experimental
            details.
            (M,O0276001,R.Michel+,J,NIM/B,129,153,1997)
            Experimental details and analysis of uncertainties.
 SAMPLE     Metal targets.
 MONITOR    (13-AL-27(P,X)11-NA-22,CUM,SIG)
-           (29-CU-0(P,X)30-ZN-65,IND,SIG) The reaction was used
+           (29-CU-0(P,X)30-ZN-65,,SIG) The reaction was used
            for energy region < 60 MeV.
 FACILITY   (SYNCH,2FR SAT) 200-2000 MeV
            (CYCLO,2SWDUPP) 70-180 MeV
            (CYCLO,2SWTPSI) < 70 MeV
 METHOD     (STTA)
            (GSPEC) A newly developed procedure was used to improve
-           the evaluation and calculation of cross sections.  Now
+           the evaluation and calculation of cross sections. Now
            the decision whether a nuclide is considered to be
-           present  is  based on checking the self-consistency of
-           all influencing parameters.  By supporting the
+           present is based on checking the self-consistency of
+           all influencing parameters. By supporting the
            interpretation of basic quantities used in the
            calculations with graphical display systematic errors
            are minimized.
@@ -42,21 +43,51 @@ ADD-RES    (COMP) A comparison of the experimental data with
            demonstrates the necessity for further improvements
            if medium - energy cross sections for applications
            shall be reliably predicted by theory.
-ERR-ANALYS (ERR-T) See REL-REF
-           (EN-ERR) See REL-REF
+ERR-ANALYS (ERR-T) Total uncertainty includes (see REL-REF):
+             * Uncertainties due to fluctuations in the beam
+            intensity become negligible.
+           (ERR-8,,10.) Uncertainty of absorption of gamma-quanta
+            in the sample
+             * Uncertainty of irradiation time, decay time and
+           counting time are negligible.
+             * Uncertainty of impurities - due to the high purity
+           of the target foils contributions of other constituents
+           were not considered.
+             * Uncertainty of nuclide production by secondary
+           particles
+             * The dead-time of the detector systems was
+           automatically corrected
+           (ERR-1,,2.) uncertainty of the determination of net
+                       peak areas
+           (ERR-2) uncertainty of half-lives
+           (ERR-3) Uncertainty of gamma-abundances -
+           abundances were also taken from REL-REF.
+           (ERR-4) Uncertainty of the full-energy-peak efficiency
+           (ERR-5,,1.) Uncertainty of number of irradiated nuclei
+           (ERR-6) Uncertainty of flux density
+                 No uncertainties were attributed to the monitor
+           cross sections.
+           (ERR-7,,5.) uncertainty due to gamma-gamma-coincidences
+           in case of coincident gamma-rays < 5%.
 STATUS     (TABLE) Data tables were sent by R.Michel
 HISTORY    (20031124C)
            (20040106U) Last checking has been done.
            (20120611A) SD: DECAY-DATA was added to Subent 57
              according to the remark from the author (R.Michel)
-ENDBIB              48
+           (20220120A) SD: Corrections in several Subents.
+ENDBIB              74
+COMMON               4          3
+ERR-2      ERR-3      ERR-4      ERR-6
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  1.          2.        5.         6.
+ENDCOMMON            3
+ENDSUBENT           81
+SUBENT        O1099002   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)4-BE-7,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
 NOCOMMON             0          0
-ENDSUBENT           51
-SUBENT        O1099002   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)4-BE-7,IND,SIG)
-ENDBIB               1
-NOCOMMON
 DATA                 4          7
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -68,7 +99,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      8.255      1.581
   0.259E+04       1.01      6.826  7.609E-01
 ENDDATA              9
-ENDSUBENT           15
+ENDSUBENT           16
 SUBENT        O1099003   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)11-NA-22,CUM,SIG)
@@ -111,11 +142,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01   2.54E-01  3.473E-02
 ENDDATA              4
 ENDSUBENT           10
-SUBENT        O1099006   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)25-MN-54,IND,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099006   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)25-MN-54,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          5
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -125,7 +157,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      1.804  3.422E-01
   0.259E+04       1.01      1.347   1.51E-01
 ENDDATA              7
-ENDSUBENT           13
+ENDSUBENT           14
 SUBENT        O1099007   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)26-FE-59,CUM,SIG)
@@ -155,11 +187,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01   1.11E-01  1.847E-02
 ENDDATA              6
 ENDSUBENT           12
-SUBENT        O1099009   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)27-CO-60,IND/M+,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099009   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)27-CO-60,,SIG)
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          9
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -173,7 +206,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      1.364  2.619E-01
   0.259E+04       1.01      1.075  1.261E-01
 ENDDATA             11
-ENDSUBENT           17
+ENDSUBENT           18
 SUBENT        O1099010   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)30-ZN-65,CUM,SIG)
@@ -193,11 +226,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01      1.424  1.526E-01
 ENDDATA             11
 ENDSUBENT           17
-SUBENT        O1099011   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)33-AS-74,IND,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099011   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)33-AS-74,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         10
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -212,7 +246,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      1.377  2.636E-01
   0.259E+04       1.01      1.057  1.172E-01
 ENDDATA             12
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099012   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)34-SE-75,CUM,SIG)
@@ -260,11 +294,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01      2.884  2.997E-01
 ENDDATA             21
 ENDSUBENT           27
-SUBENT        O1099014   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)37-RB-84,IND/M+,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099014   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)37-RB-84,,SIG)
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         20
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -289,12 +324,13 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      1.143  2.185E-01
   0.259E+04       1.01  9.707E-01  1.094E-01
 ENDDATA             22
-ENDSUBENT           28
-SUBENT        O1099015   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)38-SR-85-G,IND/M+,SIG)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           29
+SUBENT        O1099015   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)38-SR-85-G,M+,SIG)
+HISTORY    (20220120A) SD: SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         26
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -325,7 +361,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      3.638  6.895E-01
   0.259E+04       1.01      2.938  3.104E-01
 ENDDATA             28
-ENDSUBENT           34
+ENDSUBENT           35
 SUBENT        O1099016   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)39-Y-87-G,CUM,SIG)
@@ -413,11 +449,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01      2.694  2.863E-01
 ENDDATA             12
 ENDSUBENT           18
-SUBENT        O1099020   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)43-TC-96-G,IND/M+,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099020   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)43-TC-96-G,M+,SIG)
+HISTORY    (20220120A) SD: SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -430,12 +467,13 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      2.052  4.028E-01
   0.259E+04       1.01      1.487  1.572E-01
 ENDDATA             10
-ENDSUBENT           16
-SUBENT        O1099021   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)47-AG-106-M,IND,SIG)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           17
+SUBENT        O1099021   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)47-AG-106-M,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          6
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -446,12 +484,13 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      2.068  4.154E-01
   0.259E+04       1.01      1.504    1.8E-01
 ENDDATA              8
-ENDSUBENT           14
-SUBENT        O1099022   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)47-AG-110-M,IND,SIG)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           15
+SUBENT        O1099022   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)47-AG-110-M,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          5
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -461,12 +500,13 @@ MEV        MEV        MB         MB
   0.258E+04      1.002  1.424E-01  4.239E-02
   0.259E+04       1.01  1.389E-01  2.814E-02
 ENDDATA              7
-ENDSUBENT           13
-SUBENT        O1099023   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)52-TE-121-M,IND,SIG)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           14
+SUBENT        O1099023   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)52-TE-121-M,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          7
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -478,7 +518,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002  5.879E-01  1.121E-01
   0.259E+04       1.01  4.658E-01  5.862E-02
 ENDDATA              9
-ENDSUBENT           15
+ENDSUBENT           16
 SUBENT        O1099024   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)54-XE-127,CUM,SIG)
@@ -566,11 +606,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01  1.418E+01      1.482
 ENDDATA             10
 ENDSUBENT           16
-SUBENT        O1099029   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)61-PM-144,IND,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099029   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)61-PM-144,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -583,7 +624,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002  5.917E-01   1.14E-01
   0.259E+04       1.01  4.223E-01   5.62E-02
 ENDDATA             10
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        O1099030   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)63-EU-145,CUM,SIG)
@@ -620,11 +661,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01  1.859E+01      2.032
 ENDDATA             10
 ENDSUBENT           16
-SUBENT        O1099032   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)63-EU-148,IND,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099032   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)63-EU-148,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -637,7 +679,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      1.003  2.099E-01
   0.259E+04       1.01  9.516E-01  2.124E-01
 ENDDATA             10
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        O1099033   20040106              20050926       0000
 BIB                  2          3
 REACTION   (74-W-0(P,X)63-EU-149,(CUM),SIG)
@@ -816,11 +858,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01  2.293E+01      2.362
 ENDDATA             13
 ENDSUBENT           19
-SUBENT        O1099042   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)69-TM-168,IND,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099042   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)69-TM-168,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         10
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -835,7 +878,7 @@ MEV        MEV        MB         MB
   0.258E+04      1.002  7.654E-01  1.486E-01
   0.259E+04       1.01  5.593E-01  7.692E-02
 ENDDATA             12
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099043   20040106              20050926       0000
 BIB                  1          1
 REACTION   (74-W-0(P,X)70-YB-166,CUM,SIG)
@@ -1314,11 +1357,12 @@ MEV        MEV        MB         MB
   0.259E+04       1.01  1.818E+01      2.604
 ENDDATA             32
 ENDSUBENT           38
-SUBENT        O1099056   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)75-RE-181,IND,SIG)
-ENDBIB               1
-NOCOMMON
+SUBENT        O1099056   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)75-RE-181,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         32
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -1355,15 +1399,16 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      8.627      1.693
   0.259E+04       1.01      5.515  6.054E-01
 ENDDATA             34
-ENDSUBENT           40
-SUBENT        O1099057   20120611   20120921   20120918       O048
-BIB                  3          5
-REACTION   (74-W-0(P,X)75-RE-182,IND,SIG)
+ENDSUBENT           41
+SUBENT        O1099057   20220120   20220607   20220504       O087
+BIB                  3          6
+REACTION   (74-W-0(P,X)75-RE-182,,SIG)
 DECAY-DATA (75-RE-182-G,64.HR)
 HISTORY    (20120611A) SD: DECAY-DATA was added according to the
              remark from the author (R.Michel). COMMENT from
              compiler deleted.
-ENDBIB               5
+           (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4         22
 EN         EN-ERR     DATA       ERR-T
@@ -1391,12 +1436,13 @@ MEV        MEV        MB         MB
    0.26E+03       1.08      4.609   6.28E-01
   0.764E+03       1.45      2.314  4.857E-01
 ENDDATA             24
-ENDSUBENT           34
-SUBENT        O1099058   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)75-RE-183,IND,SIG)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           35
+SUBENT        O1099058   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)75-RE-183,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         33
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -1434,12 +1480,13 @@ MEV        MEV        MB         MB
   0.258E+04      1.002      4.785    9.3E-01
   0.259E+04       1.01      3.331  4.822E-01
 ENDDATA             35
-ENDSUBENT           41
-SUBENT        O1099059   20040106              20050926       0000
-BIB                  1          1
-REACTION   (74-W-0(P,X)75-RE-184-M,IND,SIG)
-ENDBIB               1
-NOCOMMON
+ENDSUBENT           42
+SUBENT        O1099059   20220120   20220607   20220504       O087
+BIB                  2          2
+REACTION   (74-W-0(P,X)75-RE-184-M,,SIG)
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               2
+NOCOMMON             0          0
 DATA                 4         28
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -1472,12 +1519,13 @@ MEV        MEV        MB         MB
   0.764E+03       1.45   4.64E-01    1.2E-01
   0.988E+03       1.01  6.155E-01  1.076E-01
 ENDDATA             30
-ENDSUBENT           36
-SUBENT        O1099060   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)4-BE-7,IND,SIG)
+ENDSUBENT           37
+SUBENT        O1099060   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)4-BE-7,,SIG)
 DECAY-DATA (4-BE-7,,DG,477.60,0.1040)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -1494,7 +1542,7 @@ MEV        MB         MB
       1570.       3.69       0.56
       2580.        8.5       1.18
 ENDDATA              9
-ENDSUBENT           20
+ENDSUBENT           21
 SUBENT        O1099061   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)11-NA-22,CUM,SIG)
@@ -1538,11 +1586,12 @@ MEV        MEV        MB         MB
       2580.         1.       1.02       0.24
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        O1099064   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)21-SC-46,IND/M+,SIG)
+SUBENT        O1099064   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)21-SC-46,,SIG)
 DECAY-DATA (21-SC-46-G,,DG,889.20,1.)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -1557,7 +1606,7 @@ MEV        MB         MB
       1570.      0.706       0.71
       2580.       1.72       0.62
 ENDDATA              7
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099065   20040106              20050926       0000
 BIB                  2          3
 REACTION   (73-TA-181(P,X)23-V-48,CUM,SIG)
@@ -1600,11 +1649,12 @@ MEV        MB         MB
       2580.      0.283      0.056
 ENDDATA              7
 ENDSUBENT           19
-SUBENT        O1099067   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)25-MN-54,IND,SIG)
+SUBENT        O1099067   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)25-MN-54,,SIG)
 DECAY-DATA (25-MN-54,,DG,834.80,1.000)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -1621,7 +1671,7 @@ MEV        MB         MB
       1570.      0.784      0.262
       2580.       1.76       0.42
 ENDDATA              9
-ENDSUBENT           20
+ENDSUBENT           21
 SUBENT        O1099068   20040106              20050926       0000
 BIB                  2          3
 REACTION   (73-TA-181(P,X)26-FE-59,CUM,SIG)
@@ -1684,11 +1734,12 @@ MEV        MB         MB
       2580.      0.692      0.096
 ENDDATA              5
 ENDSUBENT           16
-SUBENT        O1099071   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)27-CO-58,IND/M+,SIG)
+SUBENT        O1099071   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)27-CO-58,,SIG)
 DECAY-DATA (27-CO-58-G,,DG,810.80,0.9940)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -1703,13 +1754,14 @@ MEV        MB         MB
       1570.      0.658      0.124
       2580.       1.41       0.23
 ENDDATA              7
-ENDSUBENT           18
-SUBENT        O1099072   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)27-CO-60,IND/M+,SIG)
+ENDSUBENT           19
+SUBENT        O1099072   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)27-CO-60,,SIG)
 DECAY-DATA (27-CO-60-G,,DG,1332.50,1.,
                         DG,1173.20,0.9990)
-ENDBIB               3
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               4
 COMMON               1          3
 EN-ERR
 MEV
@@ -1726,7 +1778,7 @@ MEV        MB         MB
       1570.      0.783       0.12
       2580.        1.4       0.23
 ENDDATA              9
-ENDSUBENT           21
+ENDSUBENT           22
 SUBENT        O1099073   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)30-ZN-65,CUM,SIG)
@@ -1749,11 +1801,12 @@ MEV        MB         MB
       2580.       1.79       0.36
 ENDDATA              9
 ENDSUBENT           20
-SUBENT        O1099074   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)33-AS-74,IND,SIG)
+SUBENT        O1099074   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)33-AS-74,,SIG)
 DECAY-DATA (33-AS-74,,DG,595.80,0.6030)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -1769,7 +1822,7 @@ MEV        MB         MB
       1570.      0.764      0.101
       2580.       1.26       0.17
 ENDDATA              8
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        O1099075   20040106              20050926       0000
 BIB                  2          3
 REACTION   (73-TA-181(P,X)34-SE-75,CUM,SIG)
@@ -1814,12 +1867,13 @@ MEV        MEV        MB         MB
       2580.         1.       3.56       0.47
 ENDDATA             11
 ENDSUBENT           19
-SUBENT        O1099077   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)37-RB-84,IND/M+,SIG)
+SUBENT        O1099077   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)37-RB-84,,SIG)
 DECAY-DATA (37-RB-84-G,,DG,881.60,0.6780)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         10
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -1834,7 +1888,7 @@ MEV        MEV        MB         MB
       1570.         1.       0.67      0.094
       2580.         1.       1.16       0.16
 ENDDATA             12
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        O1099078   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)38-SR-82,CUM,SIG)
@@ -1965,12 +2019,13 @@ MEV        MB         MB
       2580.       3.72       0.49
 ENDDATA              8
 ENDSUBENT           19
-SUBENT        O1099084   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)43-TC-96-G,IND/M+,SIG)
+SUBENT        O1099084   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)43-TC-96-G,M+,SIG)
 DECAY-DATA (43-TC-96-G,,DG,849.90,0.9780,
                         DG,812.50,0.8220)
-ENDBIB               3
+HISTORY    (20220120A) SD: SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               4
 COMMON               1          3
 EN-ERR
 MEV
@@ -1984,7 +2039,7 @@ MEV        MB         MB
       1380.      0.596      0.114
       1570.      0.724      0.115
 ENDDATA              6
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099085   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)44-RU-103,CUM,SIG)
@@ -2009,12 +2064,13 @@ MEV        MEV        MB         MB
       2580.         1.      0.883      0.118
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        O1099087   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)45-RH-102-M,IND,SIG)
+SUBENT        O1099087   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)45-RH-102-M,,SIG)
 DECAY-DATA (45-RH-102-M,,DG,766.80,0.3380,
                          DG,1046.60,0.3380)
-ENDBIB               3
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
 COMMON               1          3
 EN-ERR
 MEV
@@ -2026,12 +2082,13 @@ MEV        MB         MB
       1570.      0.395       0.09
       2580.      0.981      0.245
 ENDDATA              4
-ENDSUBENT           16
-SUBENT        O1099088   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)45-RH-102-G,IND,SIG)
+ENDSUBENT           17
+SUBENT        O1099088   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)45-RH-102-G,,SIG)
 DECAY-DATA (45-RH-102-G,,DG,475.10,0.4400)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -2044,7 +2101,7 @@ MEV        MB         MB
        765.      0.182       0.05
       1180.      0.294       0.05
 ENDDATA              5
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        O1099089   20040106              20050926       0000
 BIB                  2          7
 REACTION   (73-TA-181(P,X)47-AG-105-G,CUM,SIG)
@@ -2069,16 +2126,17 @@ MEV        MB         MB
       2580.       5.39       0.71
 ENDDATA              6
 ENDSUBENT           22
-SUBENT        O1099090   20040106              20050926       0000
-BIB                  2          7
-REACTION   (73-TA-181(P,X)47-AG-106-M,IND,SIG)
+SUBENT        O1099090   20220120   20220607   20220504       O087
+BIB                  3          8
+REACTION   (73-TA-181(P,X)47-AG-106-M,,SIG)
 DECAY-DATA (47-AG-106-M,,DG,1045.80,0.2970,
                          DG,717.30,0.2910,
                          DG,451.09,0.2840,
                          DG,616.20,0.2170,
                          DG,1199.40,0.1130,
                          DG,1527.70,0.1640)
-ENDBIB               7
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               8
 COMMON               1          3
 EN-ERR
 MEV
@@ -2092,13 +2150,14 @@ MEV        MB         MB
       1570.      0.727      0.124
       2580.       1.88       0.28
 ENDDATA              6
-ENDSUBENT           22
-SUBENT        O1099091   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)47-AG-110-M,IND,SIG)
+ENDSUBENT           23
+SUBENT        O1099091   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)47-AG-110-M,,SIG)
 DECAY-DATA (47-AG-110-M,,DG,657.70,0.9470,
                          DG,884.70,0.7290)
-ENDBIB               3
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
 COMMON               1          3
 EN-ERR
 MEV
@@ -2112,7 +2171,7 @@ MEV        MB         MB
       1570.      0.102      0.021
       2580.      0.182      0.043
 ENDDATA              6
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099092   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)49-IN-111,CUM,SIG)
@@ -2152,12 +2211,13 @@ MEV        MB         MB
       2580.       7.85       0.99
 ENDDATA              7
 ENDSUBENT           18
-SUBENT        O1099094   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)52-TE-119-M,IND,SIG)
+SUBENT        O1099094   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)52-TE-119-M,,SIG)
 DECAY-DATA (52-TE-119-M,,DG,1212.70,0.6670,
                          DG,1136.80,0.0772)
-ENDBIB               3
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
 COMMON               1          3
 EN-ERR
 MEV
@@ -2169,7 +2229,7 @@ MEV        MB         MB
        986.      0.352      0.059
       1380.      0.843      0.135
 ENDDATA              4
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        O1099095   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)52-TE-119-G,CUM,SIG)
@@ -2182,12 +2242,13 @@ MEV        MEV        MB         MB
       2580.         1.        11.        1.5
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        O1099096   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)52-TE-121-M,IND,SIG)
+SUBENT        O1099096   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)52-TE-121-M,,SIG)
 DECAY-DATA (52-TE-121-M,,DG,212.20,0.8140,
                          DG,573.10,0.8030)
-ENDBIB               3
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
 COMMON               1          3
 EN-ERR
 MEV
@@ -2202,7 +2263,7 @@ MEV        MB         MB
       1570.       0.38      0.053
       2580.      0.614      0.089
 ENDDATA              7
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        O1099097   20040106              20050926       0000
 BIB                  2          5
 REACTION   (73-TA-181(P,X)54-XE-127,CUM,SIG)
@@ -2406,13 +2467,14 @@ MEV        MB         MB
       2580.        18.        2.3
 ENDDATA              9
 ENDSUBENT           20
-SUBENT        O1099106   20040106              20050926       0000
-BIB                  2          4
-REACTION   (73-TA-181(P,X)61-PM-144,IND,SIG)
+SUBENT        O1099106   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (73-TA-181(P,X)61-PM-144,,SIG)
 DECAY-DATA (61-PM-144,,DG,696.50,0.9950,
                        DG,618.09,0.9860,
                        DG,476.80,0.4200)
-ENDBIB               4
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               5
 COMMON               1          3
 EN-ERR
 MEV
@@ -2429,7 +2491,7 @@ MEV        MB         MB
       1570.       0.67      0.092
       2580.      0.543       0.09
 ENDDATA              9
-ENDSUBENT           22
+ENDSUBENT           23
 SUBENT        O1099107   20040106              20050926       0000
 BIB                  2         10
 REACTION   (73-TA-181(P,X)63-EU-145,CUM,SIG)
@@ -2457,11 +2519,12 @@ MEV        MEV        MB         MB
       2580.         1.       16.2        2.2
 ENDDATA             10
 ENDSUBENT           25
-SUBENT        O1099108   20040106              20050926       0000
-BIB                  2          2
-REACTION   (73-TA-181(P,X)63-EU-146,IND,SIG)
+SUBENT        O1099108   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (73-TA-181(P,X)63-EU-146,,SIG)
 DECAY-DATA (63-EU-146,,DG,747.20,0.9800)
-ENDBIB               2
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
 COMMON               1          3
 EN-ERR
 MEV
@@ -2478,7 +2541,7 @@ MEV        MB         MB
       1570.       12.3       30.6
       2590.       4.13       3.57
 ENDDATA              9
-ENDSUBENT           20
+ENDSUBENT           21
 SUBENT        O1099109   20040106              20050926       0000
 BIB                  2          8
 REACTION   (73-TA-181(P,X)63-EU-147,CUM,SIG)
@@ -2504,9 +2567,9 @@ MEV        MEV        MB         MB
       2580.         1.       22.8         3.
 ENDDATA             10
 ENDSUBENT           23
-SUBENT        O1099110   20040106              20050926       0000
-BIB                  3         10
-REACTION   (73-TA-181(P,X)63-EU-147,IND,SIG)
+SUBENT        O1099110   20220120   20220607   20220504       O087
+BIB                  4         11
+REACTION   (73-TA-181(P,X)63-EU-147,,SIG)
 DECAY-DATA (63-EU-147,,DG,121.30,0.2270,
                        DG,677.60,0.1070,
                        DG,601.40,0.0676,
@@ -2516,7 +2579,8 @@ DECAY-DATA (63-EU-147,,DG,121.30,0.2270,
                        DG,955.90,0.0387)
 COMMENT    - By compiler. It is uncertain whether or not the
            precursor Gd-147 is at least partially included.
-ENDBIB              10
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB              11
 COMMON               1          3
 EN-ERR
 MEV
@@ -2530,16 +2594,17 @@ MEV        MB         MB
       1570.       1.21       1.01
       2580.       2.54       1.07
 ENDDATA              6
-ENDSUBENT           25
-SUBENT        O1099111   20040106              20050926       0000
-BIB                  2          6
-REACTION   (73-TA-181(P,X)63-EU-148,IND,SIG)
+ENDSUBENT           26
+SUBENT        O1099111   20220120   20220607   20220504       O087
+BIB                  3          7
+REACTION   (73-TA-181(P,X)63-EU-148,,SIG)
 DECAY-DATA (63-EU-148,,DG,629.90,0.7090,
                        DG,611.30,0.1930,
                        DG,413.90,0.1860,
                        DG,725.70,0.1300,
                        DG,550.30,0.9900)
-ENDBIB               6
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               7
 COMMON               1          3
 EN-ERR
 MEV
@@ -2555,7 +2620,7 @@ MEV        MB         MB
       1570.       1.88       0.25
       2580.       1.45       0.19
 ENDDATA              8
-ENDSUBENT           23
+ENDSUBENT           24
 SUBENT        O1099112   20040106              20050926       0000
 BIB                  3          8
 REACTION   (73-TA-181(P,X)63-EU-149,(CUM),SIG)
@@ -2709,13 +2774,14 @@ MEV        MEV        MB         MB
       2580.         1.        20.        2.5
 ENDDATA             11
 ENDSUBENT           21
-SUBENT        O1099118   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)64-GD-153,IND,SIG)
+SUBENT        O1099118   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (73-TA-181(P,X)64-GD-153,,SIG)
 DECAY-DATA (64-GD-153,,DG,97.40,0.3010,
                        DG,103.20,0.2180)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          3
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -2723,7 +2789,7 @@ MEV        MEV        MB         MB
        986.         1.       1.77       1.06
       2580.         1.      0.562      0.662
 ENDDATA              5
-ENDSUBENT           13
+ENDSUBENT           14
 SUBENT        O1099119   20040106              20050926       0000
 BIB                  2          6
 REACTION   (73-TA-181(P,X)65-TB-151-G,CUM,SIG)
@@ -2823,9 +2889,9 @@ MEV        MEV        MB         MB
       2580.         1.        25.        3.3
 ENDDATA             10
 ENDSUBENT           26
-SUBENT        O1099123   20040106              20050926       0000
-BIB                  2         11
-REACTION   (73-TA-181(P,X)65-TB-155,IND,SIG)
+SUBENT        O1099123   20220120   20220607   20220504       O087
+BIB                  3         12
+REACTION   (73-TA-181(P,X)65-TB-155,,SIG)
 DECAY-DATA (65-TB-155,,DG,161.30,0.0253,
                        DG,148.60,0.0243,
                        DG,262.30,0.0484,
@@ -2836,8 +2902,9 @@ DECAY-DATA (65-TB-155,,DG,161.30,0.0253,
                        DG,163.30,0.0407,
                        DG,220.70,0.0047,
                        DG,340.70,0.0108)
-ENDBIB              11
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 4          5
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -2847,20 +2914,22 @@ MEV        MEV        MB         MB
       1380.         1.       4.32       1.72
       2580.         1.        6.1       1.38
 ENDDATA              7
-ENDSUBENT           23
-SUBENT        O1099124   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)65-TB-156-G,IND/M+,SIG)
+ENDSUBENT           24
+SUBENT        O1099124   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (73-TA-181(P,X)65-TB-156-G+M1,M+,SIG)
 DECAY-DATA (65-TB-156-G,,DG,1421.60,0.1230,
                          DG,1065.10,0.1080)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF4=Tb-156-G -> Tb-156-G+M1;
+           SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 4          1
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
        561.         1.      0.331      0.101
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           13
 SUBENT        O1099125   20040106              20050926       0000
 BIB                  2          2
 REACTION   (73-TA-181(P,X)66-DY-155,CUM,SIG)
@@ -2987,9 +3056,9 @@ MEV        MEV        MB         MB
       2580.         1.       30.8        3.9
 ENDDATA             22
 ENDSUBENT           30
-SUBENT        O1099130   20040106              20050926       0000
-BIB                  2          9
-REACTION   (73-TA-181(P,X)69-TM-168,IND,SIG)
+SUBENT        O1099130   20220120   20220607   20220504       O087
+BIB                  3         10
+REACTION   (73-TA-181(P,X)69-TM-168,,SIG)
 DECAY-DATA (69-TM-168,,DG,815.90,0.4630,
                        DG,447.50,0.2190,
                        DG,184.30,0.1640,
@@ -2998,8 +3067,9 @@ DECAY-DATA (69-TM-168,,DG,815.90,0.4630,
                        DG,720.30,0.1090,
                        DG,829.90,0.0620,
                        DG,821.10,0.1110)
-ENDBIB               9
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB              10
+NOCOMMON             0          0
 DATA                 4         15
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3019,7 +3089,7 @@ MEV        MEV        MB         MB
       1570.         1.       1.48       0.22
       2580.         1.       1.31       0.22
 ENDDATA             17
-ENDSUBENT           31
+ENDSUBENT           32
 SUBENT        O1099131   20040106              20050926       0000
 BIB                  2         10
 REACTION   (73-TA-181(P,X)70-YB-166,CUM,SIG)
@@ -3099,9 +3169,9 @@ MEV        MEV        MB         MB
       2580.         1.       30.6         4.
 ENDDATA             25
 ENDSUBENT           40
-SUBENT        O1099133   20040106              20050926       0000
-BIB                  2          8
-REACTION   (73-TA-181(P,X)70-YB-169,IND/M+,SIG)
+SUBENT        O1099133   20220120   20220607   20220504       O087
+BIB                  3          9
+REACTION   (73-TA-181(P,X)70-YB-169,,SIG)
 DECAY-DATA (70-YB-169-G,,DG,198.09,0.3600,
                          DG,177.20,0.2200,
                          DG,109.80,0.1800,
@@ -3109,8 +3179,9 @@ DECAY-DATA (70-YB-169-G,,DG,198.09,0.3600,
                          DG,307.70,0.1110,
                          DG,118.20,0.0193,
                          DG,93.60,0.0270)
-ENDBIB               8
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 4         15
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3130,7 +3201,7 @@ MEV        MEV        MB         MB
       1570.         1.       2.66       1.72
       2580.         1.       3.57       1.56
 ENDDATA             17
-ENDSUBENT           30
+ENDSUBENT           31
 SUBENT        O1099134   20040106              20050926       0000
 BIB                  2          9
 REACTION   (73-TA-181(P,X)71-LU-169,CUM,SIG)
@@ -3270,9 +3341,9 @@ MEV        MEV        MB         MB
       2580.         1.       39.5        5.1
 ENDDATA             26
 ENDSUBENT           39
-SUBENT        O1099137   20040106              20050926       0000
-BIB                  2          8
-REACTION   (73-TA-181(P,X)71-LU-171,IND/M+,SIG)
+SUBENT        O1099137   20220120   20220607   20220504       O087
+BIB                  3          9
+REACTION   (73-TA-181(P,X)71-LU-171,,SIG)
 DECAY-DATA (71-LU-171-G,,DG,739.80,0.4760,
                          DG,667.40,0.1090,
                          DG,780.70,0.0430,
@@ -3280,8 +3351,9 @@ DECAY-DATA (71-LU-171-G,,DG,739.80,0.4760,
                          DG,689.40,0.0234,
                          DG,840.09,0.0300,
                          DG,853.10,0.0252)
-ENDBIB               8
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 4         15
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3301,19 +3373,20 @@ MEV        MEV        MB         MB
       1380.         1.       17.2        4.7
       2580.         1.       21.3        3.5
 ENDDATA             17
-ENDSUBENT           30
-SUBENT        O1099138   20040106              20050926       0000
-BIB                  3          8
-REACTION   (73-TA-181(P,X)71-LU-172,IND/M+,SIG)
+ENDSUBENT           31
+SUBENT        O1099138   20220120   20220607   20220504       O087
+BIB                  4          9
+REACTION   (73-TA-181(P,X)71-LU-172,,SIG)
 DECAY-DATA (71-LU-172-G,,DG,1093.60,0.6890,
                          DG,900.70,0.3290,
                          DG,810.10,0.1850,
                          DG,912.10,0.1680,
                          DG,697.30,0.0682)
-COMMENT    . By compiler. Production of Lu-172 due to decay
+COMMENT     By compiler. Production of Lu-172 due to decay
             of Hf-172 is negligible
-ENDBIB               8
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 4         23
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3341,7 +3414,7 @@ MEV        MEV        MB         MB
       1570.         1.       8.23       5.16
       2590.         1.       7.76       4.88
 ENDDATA             25
-ENDSUBENT           38
+ENDSUBENT           39
 SUBENT        O1099139   20040106              20050926       0000
 BIB                  3         14
 REACTION   (73-TA-181(P,X)71-LU-173,(CUM),SIG)
@@ -3389,9 +3462,9 @@ MEV        MEV        MB         MB
       2580.         1.       49.2        6.2
 ENDDATA             26
 ENDSUBENT           45
-SUBENT        O1099140   20040106              20050926       0000
-BIB                  2         12
-REACTION   (73-TA-181(P,X)71-LU-173,IND,SIG)
+SUBENT        O1099140   20220120   20220607   20220504       O087
+BIB                  3         13
+REACTION   (73-TA-181(P,X)71-LU-173,,SIG)
 DECAY-DATA (71-LU-173,,DG,272.09,0.1300,
                        DG,171.30,0.0177,
                        DG,635.90,0.0087,
@@ -3403,8 +3476,9 @@ DECAY-DATA (71-LU-173,,DG,272.09,0.1300,
                        DG,171.30,0.0177,
                        DG,78.60,0.0780,
                        DG,100.70,0.0312)
-ENDBIB              12
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB              13
+NOCOMMON             0          0
 DATA                 4         15
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3424,14 +3498,16 @@ MEV        MEV        MB         MB
       1570.         1.       13.4        3.1
       2580.         1.       15.1         3.
 ENDDATA             17
-ENDSUBENT           34
-SUBENT        O1099141   20040106              20050926       0000
-BIB                  2          3
-REACTION   (73-TA-181(P,X)71-LU-174-G,IND/M+,SIG)
+ENDSUBENT           35
+SUBENT        O1099141   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (73-TA-181(P,X)71-LU-174,,SIG)
 DECAY-DATA (71-LU-174-G,,DG,1241.80,0.0600,
                          DG,76.50,0.0540)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF4=Lu-174g -> Lu-174; SF5=IND/M+
+           deleted in REACTION code.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 4         18
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3454,17 +3530,18 @@ MEV        MEV        MB         MB
       1570.         1.       5.12       0.85
       2580.         1.       5.32       1.09
 ENDDATA             20
-ENDSUBENT           28
-SUBENT        O1099142   20040106              20050926       0000
-BIB                  2          6
-REACTION   (73-TA-181(P,X)71-LU-177-M,IND,SIG)
+ENDSUBENT           30
+SUBENT        O1099142   20220120   20220607   20220504       O087
+BIB                  3          7
+REACTION   (73-TA-181(P,X)71-LU-177-M,,SIG)
 DECAY-DATA (71-LU-177-M,,DG,208.40,0.5940,
                          DG,228.50,0.3660,
                          DG,281.80,0.1400,
                          DG,418.50,0.2140,
                          DG,378.50,0.2990)
-ENDBIB               6
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4          5
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3474,7 +3551,7 @@ MEV        MEV        MB         MB
       1570.         1.      0.248      0.035
       2580.         1.      0.311      0.065
 ENDDATA              7
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099143   20040106              20050926       0000
 BIB                  2          7
 REACTION   (73-TA-181(P,X)72-HF-170,CUM,SIG)
@@ -3662,17 +3739,18 @@ MEV        MEV        MB         MB
       2580.         1.       44.3        5.5
 ENDDATA             26
 ENDSUBENT           38
-SUBENT        O1099148   20040106              20050926       0000
-BIB                  2          7
-REACTION   (73-TA-181(P,X)72-HF-175,IND,SIG)
+SUBENT        O1099148   20220120   20220607   20220504       O087
+BIB                  3          8
+REACTION   (73-TA-181(P,X)72-HF-175,,SIG)
 DECAY-DATA (72-HF-175,,DG,343.40,0.8660,
                        DG,89.40,0.0234,
                        DG,432.80,0.0156,
                        DG,229.60,0.0077,
                        DG,353.60,0.0023,
                        DG,318.90,0.0017)
-ENDBIB               7
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 4         17
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3694,10 +3772,10 @@ MEV        MEV        MB         MB
        986.         1.        13.        3.1
       2580.         1.       27.3        4.4
 ENDDATA             19
-ENDSUBENT           31
-SUBENT        O1099149   20040106              20050926       0000
-BIB                  2          9
-REACTION   (73-TA-181(P,X)72-HF-179-M2,IND,SIG)
+ENDSUBENT           32
+SUBENT        O1099149   20220120   20220607   20220504       O087
+BIB                  3         10
+REACTION   (73-TA-181(P,X)72-HF-179-M2,,SIG)
 DECAY-DATA (72-HF-179-M2,,DG,453.70,0.6600,
                           DG,362.60,0.3850,
                           DG,316.09,0.1970,
@@ -3706,8 +3784,9 @@ DECAY-DATA (72-HF-179-M2,,DG,453.70,0.6600,
                           DG,146.10,0.2630,
                           DG,316.09,0.1970,
                           DG,169.80,0.1890)
-ENDBIB               9
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB              10
+NOCOMMON             0          0
 DATA                 4         24
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3736,7 +3815,7 @@ MEV        MEV        MB         MB
       1570.         1.      0.734      0.111
       2580.         1.      0.802      0.121
 ENDDATA             26
-ENDSUBENT           40
+ENDSUBENT           41
 SUBENT        O1099150   20040106              20050926       0000
 BIB                  2          5
 REACTION   (73-TA-181(P,X)73-TA-175,CUM,SIG)
@@ -3848,12 +3927,13 @@ MEV        MEV        MB         MB
       2580.         1.       7.19         2.
 ENDDATA             26
 ENDSUBENT           37
-SUBENT        O1099154   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)4-BE-7,IND,SIG)
+SUBENT        O1099154   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)4-BE-7,,SIG)
 DECAY-DATA (4-BE-7,,DG,477.60,0.1040)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          5
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3863,7 +3943,7 @@ MEV        MEV        MB         MB
       1570.       1.47      3.568     0.4548
       2598.     0.7251      6.265     0.4217
 ENDDATA              7
-ENDSUBENT           14
+ENDSUBENT           15
 SUBENT        O1099155   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)11-NA-22,CUM,SIG)
@@ -3906,13 +3986,14 @@ MEV        MEV        MB         MB
       2598.     0.7251     0.8898     0.1409
 ENDDATA              4
 ENDSUBENT           11
-SUBENT        O1099158   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)21-SC-46,IND/M+,SIG)
+SUBENT        O1099158   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)21-SC-46,,SIG)
 DECAY-DATA (21-SC-46-G,,DG,1120.50,1.,
                         DG,889.20,1.)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3925,7 +4006,7 @@ MEV        MEV        MB         MB
       2598.     0.7235      1.428     0.1518
       2598.     0.7251      1.396    0.09867
 ENDDATA             10
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099159   20040106              20050926       0000
 BIB                  2          3
 REACTION   (83-BI-209(P,X)23-V-48,CUM,SIG)
@@ -3959,12 +4040,13 @@ MEV        MEV        MB         MB
       1570.       1.47     0.5692     0.1043
 ENDDATA              5
 ENDSUBENT           14
-SUBENT        O1099161   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)25-MN-54,IND,SIG)
+SUBENT        O1099161   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)25-MN-54,,SIG)
 DECAY-DATA (25-MN-54,,DG,834.80,1.)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          7
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3976,7 +4058,7 @@ MEV        MEV        MB         MB
       1570.       1.47      1.031     0.3416
       2598.     0.7251      1.368     0.1364
 ENDDATA              9
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        O1099162   20040106              20050926       0000
 BIB                  2          3
 REACTION   (83-BI-209(P,X)26-FE-59,CUM,SIG)
@@ -4039,12 +4121,13 @@ MEV        MEV        MB         MB
       2598.     0.7251     0.4361      0.037
 ENDDATA              6
 ENDSUBENT           13
-SUBENT        O1099165   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)27-CO-58,IND/M+,SIG)
+SUBENT        O1099165   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)27-CO-58,,SIG)
 DECAY-DATA (27-CO-58-G,,DG,810.80,0.9940)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4057,14 +4140,15 @@ MEV        MEV        MB         MB
       1570.       1.47      0.949     0.1358
       2598.     0.7251      1.094     0.0843
 ENDDATA             10
-ENDSUBENT           17
-SUBENT        O1099166   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)27-CO-60,IND/M+,SIG)
+ENDSUBENT           18
+SUBENT        O1099166   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)27-CO-60,,SIG)
 DECAY-DATA (27-CO-60-G,,DG,1332.50,1.,
                         DG,1173.20,0.9990)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4         14
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4083,7 +4167,7 @@ MEV        MEV        MB         MB
       2598.     0.7235      1.579      0.177
       2598.     0.7251      1.541      0.129
 ENDDATA             16
-ENDSUBENT           24
+ENDSUBENT           25
 SUBENT        O1099167   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)30-ZN-65,CUM,SIG)
@@ -4103,12 +4187,13 @@ MEV        MEV        MB         MB
       2598.     0.7251      1.454     0.1412
 ENDDATA             10
 ENDSUBENT           17
-SUBENT        O1099168   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)33-AS-74,IND,SIG)
+SUBENT        O1099168   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)33-AS-74,,SIG)
 DECAY-DATA (33-AS-74,,DG,595.80,0.6030)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4121,7 +4206,7 @@ MEV        MEV        MB         MB
       1570.       1.47      3.284     0.2663
       2598.     0.7251      2.193     0.1522
 ENDDATA             10
-ENDSUBENT           17
+ENDSUBENT           18
 SUBENT        O1099169   20040106              20050926       0000
 BIB                  2          6
 REACTION   (83-BI-209(P,X)34-SE-75,CUM,SIG)
@@ -4153,16 +4238,17 @@ MEV        MEV        MB         MB
       2598.     0.7251      2.279     0.1539
 ENDDATA             18
 ENDSUBENT           29
-SUBENT        O1099170   20040106              20050926       0000
-BIB                  2          6
-REACTION   (83-BI-209(P,X)35-BR-82,IND/M+,SIG)
+SUBENT        O1099170   20220120   20220607   20220504       O087
+BIB                  3          7
+REACTION   (83-BI-209(P,X)35-BR-82,M+,SIG)
 DECAY-DATA (35-BR-82-G,,DG,776.50,0.8340,
                         DG,554.30,0.7060,
                         DG,698.30,0.2790,
                         DG,1317.50,0.2690,
                         DG,619.10,0.4310)
-ENDBIB               6
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4         18
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4185,7 +4271,7 @@ MEV        MEV        MB         MB
        551.       1.69      3.539     0.3254
        757.       1.65      4.123     0.3833
 ENDDATA             20
-ENDSUBENT           31
+ENDSUBENT           32
 SUBENT        O1099171   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)37-RB-83,CUM,SIG)
@@ -4223,13 +4309,14 @@ MEV        MEV        MB         MB
       2598.     0.7251      4.261     0.2755
 ENDDATA             26
 ENDSUBENT           35
-SUBENT        O1099172   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)37-RB-84,IND/M+,SIG)
+SUBENT        O1099172   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)37-RB-84,,SIG)
 DECAY-DATA (37-RB-84-G,,DG,881.60,0.6780,
                         DG,1897.00,0.0074)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4         17
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4251,13 +4338,14 @@ MEV        MEV        MB         MB
       1570.       1.47      5.324     0.3227
       2598.     0.7251      2.971     0.1883
 ENDDATA             19
-ENDSUBENT           27
-SUBENT        O1099173   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)37-RB-86,IND/M+,SIG)
+ENDSUBENT           28
+SUBENT        O1099173   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)37-RB-86,,SIG)
 DECAY-DATA (37-RB-86-G,,DG,1076.60,0.0878)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         26
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4288,7 +4376,7 @@ MEV        MEV        MB         MB
       1398.     0.6859      4.621     0.4166
       1570.       1.47       2.68      1.036
 ENDDATA             28
-ENDSUBENT           35
+ENDSUBENT           36
 SUBENT        O1099174   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)38-SR-82,CUM,SIG)
@@ -4538,15 +4626,16 @@ MEV        MEV        MB         MB
        101.       2.01      0.953    0.09144
 ENDDATA              8
 ENDSUBENT           15
-SUBENT        O1099184   20040106              20050926       0000
-BIB                  2          5
-REACTION   (83-BI-209(P,X)41-NB-96,IND,SIG)
+SUBENT        O1099184   20220120   20220607   20220504       O087
+BIB                  3          6
+REACTION   (83-BI-209(P,X)41-NB-96,,SIG)
 DECAY-DATA (41-NB-96,,DG,568.90,0.5570,
                       DG,1091.30,0.4950,
                       DG,460.09,0.2820,
                       DG,849.90,0.2070)
-ENDBIB               5
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4         23
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4574,7 +4663,7 @@ MEV        MEV        MB         MB
       1398.     0.6859      3.396      0.443
       2598.     0.7251      1.638     0.2301
 ENDDATA             25
-ENDSUBENT           35
+ENDSUBENT           36
 SUBENT        O1099185   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)42-MO-99,CUM,SIG)
@@ -4617,13 +4706,14 @@ MEV        MEV        MB         MB
       2598.     0.7251      2.181     0.2126
 ENDDATA             31
 ENDSUBENT           40
-SUBENT        O1099186   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)43-TC-96-G,IND/M+,SIG)
+SUBENT        O1099186   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)43-TC-96-G,M+,SIG)
 DECAY-DATA (43-TC-96-G,,DG,849.90,0.9780,
                         DG,812.50,0.8220)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          9
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4637,7 +4727,7 @@ MEV        MEV        MB         MB
       1570.       1.47      2.134     0.2189
       2598.     0.7251      1.638     0.1126
 ENDDATA             11
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        O1099187   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)44-RU-103,CUM,SIG)
@@ -4741,14 +4831,16 @@ MEV        MEV        MB         MB
       1570.       1.47      2.048     0.2588
 ENDDATA              6
 ENDSUBENT           13
-SUBENT        O1099190   20040106              20050926       0000
-BIB                  2          4
-REACTION   (83-BI-209(P,X)45-RH-101-G,IND,SIG)
+SUBENT        O1099190   20220120   20220607   20220504       O087
+BIB                  3          6
+REACTION   (83-BI-209(P,X)45-RH-101-G,M+,SIG)
 DECAY-DATA (45-RH-101-G,,DG,198.09,0.7080,
                          DG,325.20,0.1340,
                          DG,127.20,0.7300)
-ENDBIB               4
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=M+ added; SF5=IND deleted from
+           REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4761,10 +4853,10 @@ MEV        MEV        MB         MB
       1398.     0.6859     0.6345    0.04702
       1570.       1.47     0.8024    0.07989
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O1099191   20040106              20050926       0000
-BIB                  2          9
-REACTION   (83-BI-209(P,X)45-RH-102-M,IND,SIG)
+ENDSUBENT           21
+SUBENT        O1099191   20220120   20220607   20220504       O087
+BIB                  3         10
+REACTION   (83-BI-209(P,X)45-RH-102-M,,SIG)
 DECAY-DATA (45-RH-102-M,,DG,631.30,0.5550,
                          DG,697.50,0.4320,
                          DG,1046.60,0.3380,
@@ -4773,8 +4865,9 @@ DECAY-DATA (45-RH-102-M,,DG,631.30,0.5550,
                          DG,766.80,0.3380,
                          DG,418.50,0.0931,
                          DG,628.09,0.0818)
-ENDBIB               9
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB              10
+NOCOMMON             0          0
 DATA                 4         19
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4798,13 +4891,14 @@ MEV        MEV        MB         MB
       1570.       1.47      1.949      0.214
       2598.     0.7235       1.17      0.124
 ENDDATA             21
-ENDSUBENT           35
-SUBENT        O1099192   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)45-RH-102-G,IND,SIG)
+ENDSUBENT           36
+SUBENT        O1099192   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)45-RH-102-G,,SIG)
 DECAY-DATA (45-RH-102-G,,DG,475.10,0.4400)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         12
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4821,7 +4915,7 @@ MEV        MEV        MB         MB
       1170.       1.45     0.5957     0.1454
       1570.       1.47      0.525     0.1099
 ENDDATA             14
-ENDSUBENT           21
+ENDSUBENT           22
 SUBENT        O1099193   20040106              20050926       0000
 BIB                  2          3
 REACTION   (83-BI-209(P,X)45-RH-105-G,CUM,SIG)
@@ -4887,17 +4981,18 @@ MEV        MEV        MB         MB
       2598.     0.7251      2.372     0.1837
 ENDDATA              9
 ENDSUBENT           20
-SUBENT        O1099196   20040106              20050926       0000
-BIB                  2          7
-REACTION   (83-BI-209(P,X)47-AG-106-M,IND,SIG)
+SUBENT        O1099196   20220120   20220607   20220504       O087
+BIB                  3          8
+REACTION   (83-BI-209(P,X)47-AG-106-M,,SIG)
 DECAY-DATA (47-AG-106-M,,DG,1045.80,0.2970,
                          DG,451.09,0.2840,
                          DG,616.20,0.2170,
                          DG,406.20,0.1350,
                          DG,1527.70,0.1640,
                          DG,748.40,0.2070)
-ENDBIB               7
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4910,10 +5005,10 @@ MEV        MEV        MB         MB
       1570.       1.47       1.71     0.2124
       2598.     0.7251      1.205     0.1321
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        O1099197   20040106              20050926       0000
-BIB                  2          8
-REACTION   (83-BI-209(P,X)47-AG-110-M,IND,SIG)
+ENDSUBENT           23
+SUBENT        O1099197   20220120   20220607   20220504       O087
+BIB                  3          9
+REACTION   (83-BI-209(P,X)47-AG-110-M,,SIG)
 DECAY-DATA (47-AG-110-M,,DG,657.70,0.9470,
                          DG,884.70,0.7290,
                          DG,937.50,0.3430,
@@ -4921,8 +5016,9 @@ DECAY-DATA (47-AG-110-M,,DG,657.70,0.9470,
                          DG,763.90,0.2240,
                          DG,706.70,0.1670,
                          DG,1505.00,0.1310)
-ENDBIB               8
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 4         34
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -4961,7 +5057,7 @@ MEV        MEV        MB         MB
       2598.     0.7235     0.8951    0.09428
       2598.     0.7251     0.8888    0.06862
 ENDDATA             36
-ENDSUBENT           49
+ENDSUBENT           50
 SUBENT        O1099198   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)48-CD-115-M,CUM,SIG)
@@ -5014,12 +5110,13 @@ MEV        MEV        MB         MB
       1398.     0.6859      1.538     0.1132
 ENDDATA              4
 ENDSUBENT           11
-SUBENT        O1099201   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)49-IN-114-M,IND,SIG)
+SUBENT        O1099201   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)49-IN-114-M,,SIG)
 DECAY-DATA (49-IN-114-M,,DG,190.27,0.1600)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         26
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5050,7 +5147,7 @@ MEV        MEV        MB         MB
       1398.     0.6859      1.384     0.1156
       1570.       1.47      1.076     0.1906
 ENDDATA             28
-ENDSUBENT           35
+ENDSUBENT           36
 SUBENT        O1099202   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)50-SN-113-G,CUM,SIG)
@@ -5073,12 +5170,13 @@ MEV        MEV        MB         MB
       2598.     0.7251      2.921     0.1903
 ENDDATA             13
 ENDSUBENT           20
-SUBENT        O1099203   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)50-SN-117-M,IND,SIG)
+SUBENT        O1099203   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)50-SN-117-M,,SIG)
 DECAY-DATA (50-SN-117-M,,DG,158.60,0.8640)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         13
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5096,15 +5194,16 @@ MEV        MEV        MB         MB
       1570.       1.47      1.009    0.09257
       2598.     0.7251     0.6608    0.04737
 ENDDATA             15
-ENDSUBENT           22
-SUBENT        O1099204   20040106              20050926       0000
-BIB                  2          4
-REACTION   (83-BI-209(P,X)51-SB-120-M,IND,SIG)
+ENDSUBENT           23
+SUBENT        O1099204   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (83-BI-209(P,X)51-SB-120-M,,SIG)
 DECAY-DATA (51-SB-120-M,,DG,1171.70,1.0000,
                          DG,1023.30,0.9900,
                          DG,197.30,0.8800)
-ENDBIB               4
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 4         17
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5126,15 +5225,17 @@ MEV        MEV        MB         MB
       1170.       1.45     0.8492    0.09593
       1398.     0.6859     0.5708    0.04424
 ENDDATA             19
-ENDSUBENT           28
-SUBENT        O1099205   20040106              20050926       0000
-BIB                  2          4
-REACTION   (83-BI-209(P,X)51-SB-124,IND/M+,SIG)
+ENDSUBENT           29
+SUBENT        O1099205   20220120   20220607   20220504       O087
+BIB                  3          6
+REACTION   (83-BI-209(P,X)51-SB-124-G,M+,SIG)
 DECAY-DATA (51-SB-124-G,,DG,602.70,0.9840,
                          DG,1691.00,0.4900,
                          DG,2091.00,0.0561)
-ENDBIB               4
-NOCOMMON
+HISTORY    (20220120A) SD: SF4=Sb-124 -> Sb-124g;
+            SF5=IND/M+ -> M+ in REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4         29
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5168,7 +5269,7 @@ MEV        MEV        MB         MB
        998.       0.69      0.143    0.01525
       1398.     0.6859    0.09585    0.01028
 ENDDATA             31
-ENDSUBENT           40
+ENDSUBENT           42
 SUBENT        O1099206   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)51-SB-125,CUM,SIG)
@@ -5205,29 +5306,31 @@ MEV        MEV        MB         MB
       276.5     0.8361     0.1082    0.01509
 ENDDATA             25
 ENDSUBENT           34
-SUBENT        O1099207   20040106              20050926       0000
-BIB                  2          4
-REACTION   (83-BI-209(P,X)52-TE-119-M,IND,SIG)
+SUBENT        O1099207   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (83-BI-209(P,X)52-TE-119-M,,SIG)
 DECAY-DATA (52-TE-119-M,,DG,153.60,0.6670,
                          DG,1212.70,0.6670,
                          DG,270.50,0.2820)
-ENDBIB               4
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 4          2
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
        551.       1.69      3.771     0.3308
       1398.     0.6859      0.793    0.07522
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        O1099208   20040106              20050926       0000
-BIB                  2          4
-REACTION   (83-BI-209(P,X)52-TE-121-M,IND,SIG)
+ENDSUBENT           14
+SUBENT        O1099208   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (83-BI-209(P,X)52-TE-121-M,,SIG)
 DECAY-DATA (52-TE-121-M,,DG,212.20,0.8140,
                          DG,573.10,0.8030,
                          DG,507.60,0.1770)
-ENDBIB               4
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 4         32
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5264,7 +5367,7 @@ MEV        MEV        MB         MB
       2598.     0.7235     0.5785    0.06133
       2598.     0.7251     0.5493    0.03682
 ENDDATA             34
-ENDSUBENT           43
+ENDSUBENT           44
 SUBENT        O1099209   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)52-TE-121-G,CUM/M-,SIG)
@@ -5281,12 +5384,13 @@ MEV        MEV        MB         MB
       2598.     0.7251      4.584     0.2915
 ENDDATA              7
 ENDSUBENT           14
-SUBENT        O1099210   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)52-TE-123-M,IND,SIG)
+SUBENT        O1099210   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)52-TE-123-M,,SIG)
 DECAY-DATA (52-TE-123-M,,DG,159.09,0.8400)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         34
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5325,14 +5429,15 @@ MEV        MEV        MB         MB
       2598.     0.7235     0.2519    0.02673
       2598.     0.7251     0.2298    0.01754
 ENDDATA             36
-ENDSUBENT           43
-SUBENT        O1099211   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)53-I-126,IND,SIG)
+ENDSUBENT           44
+SUBENT        O1099211   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)53-I-126,,SIG)
 DECAY-DATA (53-I-126,,DG,388.60,0.3220,
                       DG,666.30,0.3130)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4         12
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5349,7 +5454,7 @@ MEV        MEV        MB         MB
        551.       1.69     0.6038     0.1537
        757.       1.65     0.6289     0.2264
 ENDDATA             14
-ENDSUBENT           22
+ENDSUBENT           23
 SUBENT        O1099212   20040106              20050926       0000
 BIB                  2          5
 REACTION   (83-BI-209(P,X)54-XE-127,CUM,SIG)
@@ -5394,26 +5499,28 @@ MEV        MEV        MB         MB
       2598.     0.7251      5.966     0.4047
 ENDDATA             32
 ENDSUBENT           42
-SUBENT        O1099213   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)55-CS-132,IND,SIG)
+SUBENT        O1099213   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)55-CS-132,,SIG)
 DECAY-DATA (55-CS-132,,DG,667.50,0.9740)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          2
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
        998.       0.69         3.     0.3742
       1398.     0.6859     0.2095     0.1782
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        O1099214   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)55-CS-134,IND/M+,SIG)
+ENDSUBENT           12
+SUBENT        O1099214   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)55-CS-134,,SIG)
 DECAY-DATA (55-CS-134-G,,DG,604.70,0.9760,
                          DG,795.80,0.8540)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4         22
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5440,7 +5547,7 @@ MEV        MEV        MB         MB
        166.       1.26    0.05099    0.00601
       276.5     0.8361    0.03968    0.00552
 ENDDATA             24
-ENDSUBENT           32
+ENDSUBENT           33
 SUBENT        O1099215   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)56-BA-131,CUM,SIG)
@@ -5532,12 +5639,13 @@ MEV        MEV        MB         MB
       2598.     0.7251      8.937     0.5785
 ENDDATA             10
 ENDSUBENT           17
-SUBENT        O1099219   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)61-PM-144,IND,SIG)
+SUBENT        O1099219   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)61-PM-144,,SIG)
 DECAY-DATA (61-PM-144,,DG,618.09,0.9860)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          6
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5548,7 +5656,7 @@ MEV        MEV        MB         MB
       1570.       1.47     0.1692    0.02931
       2598.     0.7251     0.2254    0.02314
 ENDDATA              8
-ENDSUBENT           15
+ENDSUBENT           16
 SUBENT        O1099220   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)63-EU-145,CUM,SIG)
@@ -5587,15 +5695,16 @@ MEV        MEV        MB         MB
       2598.     0.7251      14.73      1.499
 ENDDATA              7
 ENDSUBENT           18
-SUBENT        O1099222   20040106              20050926       0000
-BIB                  2          5
-REACTION   (83-BI-209(P,X)63-EU-148,IND,SIG)
+SUBENT        O1099222   20220120   20220607   20220504       O087
+BIB                  3          6
+REACTION   (83-BI-209(P,X)63-EU-148,,SIG)
 DECAY-DATA (63-EU-148,,DG,550.30,0.9900,
                        DG,629.90,0.7090,
                        DG,611.30,0.1930,
                        DG,1034.10,0.0790)
-ENDBIB               5
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4          4
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -5604,7 +5713,7 @@ MEV        MEV        MB         MB
       2598.     0.7235     0.5414    0.06106
       2598.     0.7251     0.4472     0.1091
 ENDDATA              6
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        O1099223   20040106              20050926       0000
 BIB                  3          5
 REACTION   (83-BI-209(P,X)63-EU-149,(CUM),SIG)
@@ -6099,19 +6208,20 @@ MEV        MEV        MB         MB
       2598.     0.7251      13.33     0.9976
 ENDDATA             12
 ENDSUBENT           27
-SUBENT        O1099248   20040106              20050926       0000
-BIB                  2          3
-REACTION   (83-BI-209(P,X)75-RE-184-G,IND,SIG)
+SUBENT        O1099248   20220120   20220607   20220504       O087
+BIB                  3          4
+REACTION   (83-BI-209(P,X)75-RE-184-G,,SIG)
 DECAY-DATA (75-RE-184-G,,DG,903.30,0.3780,
                          DG,792.10,0.3740)
-ENDBIB               3
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          1
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
       1570.       1.47     0.1649    0.04096
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           12
 SUBENT        O1099249   20040106              20050926       0000
 BIB                  2          3
 REACTION   (83-BI-209(P,X)76-OS-182,CUM,SIG)
@@ -6314,12 +6424,13 @@ MEV        MEV        MB         MB
        757.       1.65      46.98      5.421
 ENDDATA              9
 ENDSUBENT           18
-SUBENT        O1099259   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)79-AU-194,IND,SIG)
+SUBENT        O1099259   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)79-AU-194,,SIG)
 DECAY-DATA (79-AU-194-G,,DG,328.40,0.6300)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4         10
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -6334,7 +6445,7 @@ MEV        MEV        MB         MB
       1570.       1.47      1.823     0.3918
       2598.     0.7251      1.509     0.1621
 ENDDATA             12
-ENDSUBENT           19
+ENDSUBENT           20
 SUBENT        O1099260   20040106              20050926       0000
 BIB                  2          3
 REACTION   (83-BI-209(P,X)79-AU-195,CUM,SIG)
@@ -6380,14 +6491,15 @@ MEV        MEV        MB         MB
       2598.     0.7251      18.95      1.886
 ENDDATA             35
 ENDSUBENT           43
-SUBENT        O1099261   20040106              20050926       0000
-BIB                  2          4
-REACTION   (83-BI-209(P,X)79-AU-196,IND/M+,SIG)
+SUBENT        O1099261   20220120   20220607   20220504       O087
+BIB                  3          5
+REACTION   (83-BI-209(P,X)79-AU-196,,SIG)
 DECAY-DATA (79-AU-196-G,,DG,355.70,0.8690,
                          DG,333.09,0.2290,
                          DG,426.10,0.0720)
-ENDBIB               4
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND/M+ deleted from REACTION code.
+ENDBIB               5
+NOCOMMON             0          0
 DATA                 4          7
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -6399,7 +6511,7 @@ MEV        MEV        MB         MB
       1570.       1.47     0.9011    0.08846
       2598.     0.7251     0.7104    0.04757
 ENDDATA              9
-ENDSUBENT           18
+ENDSUBENT           19
 SUBENT        O1099262   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)80-HG-193-M,CUM,SIG)
@@ -6444,25 +6556,27 @@ MEV        MEV        MB         MB
       2598.     0.7251      25.86       4.21
 ENDDATA             20
 ENDSUBENT           30
-SUBENT        O1099264   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)80-HG-195-M,IND,SIG)
+SUBENT        O1099264   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)80-HG-195-M,,SIG)
 DECAY-DATA (80-HG-195-M,,DG,261.70,0.3340)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          2
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
        551.       1.69      8.288     0.5465
       1170.       1.45      9.798      1.196
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        O1099265   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,X)80-HG-197-M,IND,SIG)
+ENDSUBENT           12
+SUBENT        O1099265   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,X)80-HG-197-M,,SIG)
 DECAY-DATA (80-HG-197-M,,DG,133.90,0.3410)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=IND deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          6
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -6473,7 +6587,7 @@ MEV        MEV        MB         MB
        318.       1.96      3.842     0.5255
        551.       1.69      3.838     0.3127
 ENDDATA              8
-ENDSUBENT           15
+ENDSUBENT           16
 SUBENT        O1099266   20040106              20050926       0000
 BIB                  2          2
 REACTION   (83-BI-209(P,X)80-HG-197-G,CUM,SIG)
@@ -7122,12 +7236,13 @@ MEV        MEV        MB         MB
       2598.     0.7251      6.844     0.4667
 ENDDATA             34
 ENDSUBENT           46
-SUBENT        O1099282   20040106              20050926       0000
-BIB                  2          2
-REACTION   (83-BI-209(P,3N)84-PO-207,M+,SIG)
+SUBENT        O1099282   20220120   20220607   20220504       O087
+BIB                  3          3
+REACTION   (83-BI-209(P,3N)84-PO-207,,SIG)
 DECAY-DATA (84-PO-207-G,,DG,992.40,0.6270)
-ENDBIB               2
-NOCOMMON
+HISTORY    (20220120A) SD: SF5=M+ deleted from REACTION code.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 4          7
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -7139,5 +7254,5 @@ MEV        MEV        MB         MB
       132.8      1.857      48.38      8.832
        551.       1.69       13.2      3.054
 ENDDATA              9
-ENDSUBENT           16
+ENDSUBENT           17
 ENDENTRY           282

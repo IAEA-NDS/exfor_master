@@ -1,6 +1,6 @@
-ENTRY            O0845   20170406   20170609   20170603       O061
-SUBENT        O0845001   20170406   20170609   20170603       O061
-BIB                 16         66
+ENTRY            O0845   20220111   20220607   20220504       O087
+SUBENT        O0845001   20220111   20220607   20220504       O087
+BIB                 16         64
 TITLE      Thin-target excitation functions, cross-sections and
            optimized thick-target yields for
             nat-Mo(p,xn)94g,95m,95g,96(m+g)Tc nuclear reactions
@@ -10,7 +10,7 @@ TITLE      Thin-target excitation functions, cross-sections and
 AUTHOR     (M.Bonardi, C.Birattari, F.Groppi, E.Sabbioni)
 REFERENCE  (J,ARI,57,617,2002)
 REL-REF    (M,B0038001,C.Birattari+,J,NP/A,166,605,1971)
-           The "single  target" activation technique at different
+           The "single target" activation technique at different
            proton energies.
 INSTITUTE  (2ITYMIL) Radiochemistry laboratory.
            (2ZZZISP) Institute for health and consumer protection,
@@ -19,8 +19,7 @@ SAMPLE     High purity metallic Mo foils, the thickness uniformity
             +/-1.4% mass thickness - measured by accurate
            weighting.
 MONITOR    (6-C-12(P,X)6-C-11,,SIG)
-DETECTOR   (GELI)
-           (HPGE)
+DETECTOR   (GELI,HPGE)
 ANALYSIS   (AREA)
            (DECAY) The decay of the different radionuclides has
            been followed for not less than three half-lives (1
@@ -36,14 +35,12 @@ METHOD     (EXTB) A beam current of about 100 Na and an integrated
            (BCINT) A long shaped Faraday cup. The beam intensity
            was checked by monitor reaction also, obtaining
            similar results within the 2%.
-           (SITA)
-           (ACTIV)
-           (GSPEC)
-ERR-ANALYS (ERR-S,0.1,1.) The uncertainty of counting statistics.
-           (ERR-1) The uncertainty of target thickness.
+           (SITA,ACTIV,GSPEC)
+ERR-ANALYS (ERR-S,0.1,1.) The uncertainty of counting statistics
+           (ERR-1) The uncertainty of target thickness
            (ERR-2) The uncertainty of efficiency calibration
            (ERR-3,1.,2.) The uncertainty of integrated charge
-           (ERR-T) Overall error.  The cumulative statistical
+           (ERR-T) Overall error. The cumulative statistical
            errors on each thin-target yield data due to errors on
            photo-peak areas, decay constants, target thickness,
            integrated charge and detector efficiency, were
@@ -54,12 +51,12 @@ ERR-ANALYS (ERR-S,0.1,1.) The uncertainty of counting statistics.
            (EN-ERR) Includes energy losses in target and energy
            spread in beam.
 CORRECTION Cases requiring radioactive decay equilibrium
-           considerations (A=95 and 96) were corrected  using  the
+           considerations (A=95 and 96) were corrected using the
            equations of the radioactive chains.
 ADD-RES    (TTY-C)
            Parameters of polynomials fittings and correlation
            factors for thin-target yields for the Tc radionuclides
-STATUS     (TABLE) Tbl.7 of ARI,57,617,2002
+STATUS     (TABLE) Tbl.7,8 from Appl.Rad.Isot.,57(2002)617
 HISTORY    (20040204C)
            (20040212U) Last checking has been done.
            (20151203A) SD: DECAY-DATA corrected in Subent 005.
@@ -67,17 +64,18 @@ HISTORY    (20040204C)
            MISC -> DATA and second REACTION code was added in
            Subents 002-005. ERR-ANALYS update.
            (20170406A) SD: REACTION corrected in Subents 002,003.
-ENDBIB              66
+           (20220111A) SD: Corrections in Subents 002,003.
+ENDBIB              64
 COMMON               2          3
 ERR-1      ERR-2
 PER-CENT   PER-CENT
         1.5        1.5
 ENDCOMMON            3
-ENDSUBENT           73
-SUBENT        O0845002   20151204   20160603   20160516       O056
-BIB                  5         10
+ENDSUBENT           71
+SUBENT        O0845002   20220111   20220607   20220504       O087
+BIB                  5         12
 REACTION  1(42-MO-0(P,X)43-TC-94-G,,SIG)
-          2(42-MO-0(P,X)43-TC-94-G,,TTY,,TM)
+          2(42-MO-0(P,X)43-TC-94-G,,TTY/DEN,,PHY)
 COMMENT    - By compiler. Isomer transition <0.1%.
 DECAY-DATA (43-TC-94-G,4.883HR,DG,871.097,0.999,
                                DG,702.639,0.996,
@@ -86,7 +84,9 @@ ADD-RES    (DECAY) Half-life has been measured by authors
            T1/2=4.89 +/- 0.05 hours.
 HISTORY    (20151204A) SD: second REACTION code was added;
             MISC -> DATA.
-ENDBIB              10
+           (20220111A) SD: SF6=TTY -> TTY/DEN; SF8=TM -> PHY in
+           REACTION (2) code.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 6         17
 EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
@@ -94,26 +94,26 @@ MEV        MEV        MB         MB         MBQ/C/MEV  MBQ/C/MEV
         4.9        1.5        4.2       0.15      174.9        6.3
         7.5        1.1        9.2        0.4      504.8       18.7
         9.9        0.8       13.6        0.5      908.7       30.9
-       12.5        0.5       31.5         1.      2399.       79.2
+       12.5        0.5       31.5         1.     2399.0       79.2
        15.1        0.3       57.8        1.9     4982.7      164.4
        17.4        0.2       66.7        2.2     6338.2      209.2
-        20.        0.2       72.8        2.4     7632.9      251.9
-       22.6        0.2        76.        2.6     8707.1       296.
-        25.        0.2       78.1        2.5      627.5      308.1
+       20.0        0.2       72.8        2.4     7632.9      251.9
+       22.6        0.2        76.        2.6     8707.1      296.0
+       25.0        0.2       78.1        2.5      627.5      308.1
        27.5        0.2       80.8        2.7    10687.7      352.7
-        30.        0.2       79.5        2.6     11217.      370.2
+       30.0        0.2       79.5        2.6    11217.0      370.2
        32.5        0.2       79.6        2.6    11926.5      393.6
-       34.4        0.2        79.        2.5    12344.9       395.
+       34.4        0.2        79.        2.5    12344.9      395.0
        37.2        0.2       72.1        2.4    11955.2      394.5
        39.8        0.2       60.6         2.    10560.1      348.5
        41.6        0.2       58.4         2.    10521.3      357.7
        43.7        0.2       54.6        1.7    10208.7      326.7
 ENDDATA             19
-ENDSUBENT           34
-SUBENT        O0845003   20151204   20160603   20160516       O056
-BIB                  4          9
+ENDSUBENT           36
+SUBENT        O0845003   20220111   20220607   20220504       O087
+BIB                  4         11
 REACTION  1(42-MO-0(P,X)43-TC-95-M,,SIG)
-          2(42-MO-0(P,X)43-TC-95-M,,TTY,,TM)
+          2(42-MO-0(P,X)43-TC-95-M,,TTY/DEN,,PHY)
 DECAY-DATA (43-TC-95-M,61.D,DG,204.114,0.662,
                             DG,582.062,0.314,
                             DG,835.126,0.279)
@@ -121,30 +121,32 @@ ADD-RES    (DECAY) Half-life has been measured by authors.
            T1/2=61.3 +/- 0.5 days.
 HISTORY    (20151204A) SD: second REACTION code was added;
             MISC -> DATA.
-ENDBIB               9
+           (20220111A) SD: SF6=TTY -> TTY/DEN; SF8=TM -> PHY in
+           REACTION (2) code.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 6         17
 EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
 MEV        MEV        MB         MB         MBQ/C/MEV  MBQ/C/MEV
         4.9        1.5       20.6        0.7       2.84       0.09
-        7.5        1.1       29.7         1.       5.44       0.19
+        7.5        1.1       29.7        1.0       5.44       0.19
         9.9        0.8       34.3        1.1       7.62       0.25
        12.5        0.5       47.5        1.5      12.08       0.39
        15.1        0.3       54.7        1.8      15.72       0.52
        17.4        0.2       52.7        1.7      16.71       0.55
-        20.        0.2       48.6        1.6      16.97       0.58
+       20.0        0.2       48.6        1.6      16.97       0.58
        22.6        0.2       50.2        1.6      19.15       0.61
-        25.        0.2       41.9        1.4       17.2       0.57
-       27.5        0.2       33.3        1.1      14.67        0.5
-        30.        0.2       27.7        0.9      13.01       0.42
+       25.0        0.2       41.9        1.4      17.20       0.57
+       27.5        0.2       33.3        1.1      14.67       0.50
+       30.0        0.2       27.7        0.9      13.01       0.42
        32.5        0.2       27.3        0.9      13.61       0.46
-       34.4        0.2        30.         1.      15.62       0.53
-       37.2        0.2        32.        1.1      17.66       0.58
-       39.8        0.2       30.8         1.      17.88       0.57
-       41.6        0.2        30.         1.        18.       0.59
+       34.4        0.2       30.0        1.0      15.62       0.53
+       37.2        0.2       32.0        1.1      17.66       0.58
+       39.8        0.2       30.8        1.0      17.88       0.57
+       41.6        0.2       30.0        1.0      18.00       0.59
        43.7        0.2       28.4        0.9      17.72       0.58
 ENDDATA             19
-ENDSUBENT           33
+ENDSUBENT           35
 SUBENT        O0845004   20170406   20170609   20170603       O061
 BIB                  5         11
 REACTION  1(42-MO-0(P,X)43-TC-95-G,M+,SIG)

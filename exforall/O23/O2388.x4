@@ -1,10 +1,11 @@
-ENTRY            O2388   20191126   20200302   20200301       O073
-SUBENT        O2388001   20191126   20200302   20200301       O073
-BIB                 10         19
+ENTRY            O2388   20210724   20220607   20220504       O087
+SUBENT        O2388001   20210724   20220607   20220504       O087
+BIB                 10         22
 TITLE      Two-body photodisintegration of 3He*
 AUTHOR     (M.Anghinolfi,P.Corvisiero, M.Guarnone,
            G.Ricco,A.Zucchiatti)
 REFERENCE  (J,NP/A,410,173,1983)
+           (J,NC/A,76,159,1983) - prelim.data
 INSTITUTE  (2ITYGVA)
 FACILITY   (CYCLO,2ITYMIL)
 SAMPLE     The 2H target was a sealed 40 cm long aluminum cylinder
@@ -18,27 +19,30 @@ METHOD     (TOF)
 ERR-ANALYS (ERR-T) the errors result from:
            (ERR-S) the convolution of counting statistics (4%)
            (ERR-1)  the uncertainty in the total efficiency (4%)
-           (ERR-2) uncertainty in  the target thickness (3%)
+           (ERR-2) uncertainty in the target thickness (3%)
 HISTORY    (20191126C) SD
-ENDBIB              19
-COMMON               5          3
-EN-MIN     EN-MAX     ERR-S      ERR-1      ERR-2
-MEV        MEV        PER-CENT   PER-CENT   PER-CENT
-   18.         43.        4.        4.          3.
+           (20210724U) SD: Energy determination corrected in
+           Subents 002-004. Ref. added. EN-MIN/MAX deleted.
+ENDBIB              22
+COMMON               3          3
+ERR-S      ERR-1      ERR-2
+PER-CENT   PER-CENT   PER-CENT
+    4.        4.          3.
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        O2388002   20191126   20200302   20200301       O073
-BIB                  2          2
-REACTION   (1-H-2(P,G)2-HE-3,PAR,DA)
+ENDSUBENT           29
+SUBENT        O2388002   20210724   20220607   20220504       O087
+BIB                  3          3
+REACTION   (1-H-2(P,G)2-HE-3,,DA)
 STATUS     (CURVE) fig.2 from Nucl.Phys.,A410(1983)173
-ENDBIB               2
+HISTORY    (20210724U) SD: E -> E-EXC-CMP.
+ENDBIB               3
 COMMON               2          3
 ANG-ERR-D  ERR-DIG
 ADEG       MU-B/SR
   0.3      0.0022
 ENDCOMMON            3
 DATA                 4         44
-E          ANG-CM     DATA-CM    ERR-T
+E-EXC-CMP  ANG-CM     DATA-CM    ERR-T
 MEV        ADEG       MU-B/SR    MU-B/SR
        32.1       36.7     0.2975     0.0171
        32.1       44.3     0.3697     0.0190
@@ -85,35 +89,36 @@ MEV        ADEG       MU-B/SR    MU-B/SR
        21.5      128.0     0.3059     0.0172
        21.5      138.6     0.2139     0.0153
 ENDDATA             46
-ENDSUBENT           57
-SUBENT        O2388003   20191126   20200302   20200301       O073
-BIB                  4          5
-REACTION   (1-H-2(P,G)2-HE-3,PAR,SIG)
-ANALYSIS    A0 x 4pi
-MISC-COL   (MISC) A0
+ENDSUBENT           58
+SUBENT        O2388003   20210724   20220607   20220504       O087
+BIB                  3          5
+REACTION   (1-H-2(P,G)2-HE-3,,SIG,,D4PI)
 STATUS     (TABLE) Tbl.1 from Nucl.Phys.,A410(1983)173
            (COREL,O2388004) Leg. coeff. a1, a2,...
+HISTORY    (20210724A) SD: SF8=,D4PI added to REACTION code. Data
+           from MISC moved to DATA. MISC deleted. E-LVL->E-EXC-CMP
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 5          5
-E-LVL      DATA       ERR-T      MISC       MISC-ERR
-MEV        MICRO-B    MICRO-B    MICRO-B    MICRO-B
-      21.47       6.41       0.09       0.51       0.03
-      24.14       5.28       0.13       0.42       0.04
-      26.81       4.78       0.09       0.38       0.03
-      29.47       4.15       0.09       0.33       0.03
-      32.14       4.15       0.09       0.33       0.03
+DATA                 3          5
+E-EXC-CMP  DATA       ERR-T
+MEV        MU-B/SR    MU-B/SR
+      21.47       0.51       0.03
+      24.14       0.42       0.04
+      26.81       0.38       0.03
+      29.47       0.33       0.03
+      32.14       0.33       0.03
 ENDDATA              7
 ENDSUBENT           17
-SUBENT        O2388004   20191126   20200302   20200301       O073
-BIB                  2          3
-REACTION   (1-H-2(P,G)2-HE-3,PAR,DA,,LEG/RS)
+SUBENT        O2388004   20210724   20220607   20220504       O087
+BIB                  3          4
+REACTION   (1-H-2(P,G)2-HE-3,,DA,,LEG/RS)
 STATUS     (TABLE) Tbl.1 from Nucl.Phys.,A410(1983)173
-           (COREL,O2388003) A0 x 4pi
-ENDBIB               3
+           (COREL,O2388003) A0
+HISTORY    (20210724U) SD: E-LVL -> E-EXC-CMP.
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 4         20
-E-LVL      NUMBER-CM  DATA-CM    ERR-T
+E-EXC-CMP  NUMBER-CM  DATA-CM    ERR-T
 MEV        NO-DIM     NO-DIM     NO-DIM
       21.47         1.       0.28        0.1
       21.47         2.      -0.82       0.13
@@ -136,5 +141,5 @@ MEV        NO-DIM     NO-DIM     NO-DIM
       32.14         3.      -0.36       0.15
       32.14         4.      -0.08        0.1
 ENDDATA             22
-ENDSUBENT           30
+ENDSUBENT           31
 ENDENTRY             4
