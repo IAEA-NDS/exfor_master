@@ -1,8 +1,8 @@
-ENTRY            23030   20170825   20180129   20180126       2265
-SUBENT        23030001   20170825   20180129   20180126       2265
-BIB                 19        193
+ENTRY            23030   20180317   20190222   20190220       2270
+SUBENT        23030001   20180317   20190222   20190220       2270
+BIB                 18        193
 TITLE       95 MeV neutron scattering on hydrogen, deuterium,
-            carbon, and oxygen.
+            carbon, and oxygen
 AUTHOR     (P.Mermod, J.Blomgren, C.Johansson, A.Oehrn,
            M.Oesterlund,S.Pomp, B.Bergenwall, J.Klug, L.Nilsson,
            N.Olsson, U.Tippawan, P.Nadel-Turonski, O.Jonsson,
@@ -21,11 +21,11 @@ INSTITUTE  (2SWDUPP)P.Mermod, J.Blomgren, C.Johansson,A.Oehrn,
            (2PRTLIS) R.Crespo. Instituto Superior Technico,Lisboa,
                               Portugal.
            (2SPNSEU) A.Moro
-REFERENCE  (J,PR/C,74,054002,2006) Main reference.
+REFERENCE  (J,PR/C,74,054002,2006)
            (T,Oehrn,2008) SCANDAL setup and exp.procedure
                             details.
-           (C,2007NICE,2,1039,2007)
-REL-REF    (N,,S.Dangtip+,J,NIM/A,452,484,2000) MEDLEY setup
+           (C,2007NICE,2,1039,2007)  presentation on the Conf.
+REL-REF    (I,,S.Dangtip+,J,NIM/A,452,484,2000) MEDLEY setup
                                                 details.
            (A,,C.Johansson+,J,PR/C,71,024002,2005) Data used in
                                         normalization procedure.
@@ -147,8 +147,8 @@ ANALYSIS  2 Spectra for collective states in C-12(n,inl) and
             Contribution from excited state Gaussians have been
             subtracted, number of elastic events was obtained by
             integrating the peaks in these spectra.
-MONITOR   1(1-H-1(N,EL)1-H-1,,DA) for (n,p) and nd scattering from
-            MEDLEY and SCANDAL proton/deuteron mode.
+MONITOR   1(1-H-1(N,EL)1-H-1,,DA) for (n,p) and (n,d) scattering
+            from MEDLEY and SCANDAL proton/deuteron mode.
           2(6-C-12(N,EL)6-C-12,,SIG) for normalization in
              measurement at SCANDAL neutron mode.
             Normalization to 286+-7 mb value.
@@ -158,9 +158,6 @@ MONIT-REF 1(22668002,J.Rahm+,J,PR/C,63,044001,2001)  - Absolute
             at 96 MeV of Rahm+, which in turn were re-normalized
             by 0.7% using data of Johansson+ (see REL-REF).
           2(22847002,J.Klug+,J,PR/C,68,064605,2003)
-STATUS     (COREL,22914001) (n,p) and (n,d) data for MEDLEY setup.
-           (COREL,22920001) (n,p) and (n,d) data for SCANDAL setup
-             Used in data deducing for O and C.
 CORRECTION2 Correction for neutron multiple scattering and
             attenuation inside targets before oxygen background
             subtraction. Attenuation correction coefficients were
@@ -180,36 +177,45 @@ CORRECTION2 Correction for neutron multiple scattering and
             efficiency, typically 6% relative effect between small
             and large angles, with negligible systematic error.
 ERR-ANALYS (ERR-T) Total uncertainty.
-            ANG-ERR -Uncertainty in neutron c.m. angle.
            (ERR-1) Uncertainty in absolute normalization -4%.
            (ERR-2) Uncertainty in correction for multiple
             scattering was estimated to be 10% of correction
             itself.
-           (ERR-3) Systematic uncertainty due to Gaussian fits
-            was evaluated to vary from 2% at small angles to 70%
-            at large angles. Max. in COMMON.
+           (ERR-3,2.,70.) Systematic uncertainty due to Gaussian
+             fits was evaluated to vary from 2% at small angles
+            to 70%  at large angles.
 ADD-RES    (THEO) Exp. data are compared with predictions of
                   different models.
-            Kerma coefficients for carbon and oxygen (Table V).
 HISTORY    (20080630C) M.M.
            (20170825U) SD: Ref. 2007NICE,132(#435) deleted (full
            article published in 2007NICE,2,1039,2007.
+           (20180317A) SD: Subents 008-009 added. Subents 006, 007
+           corrected. ERR-ANALYS update. ANG-ERR moved to
+           Subents 002-007. Subents 004, 007 deleted. Data were
+           moved to Subents 003 and 006, correspondingly.
+           STATUS 'COREL' deleted (no alternative results).
 ENDBIB             193
-COMMON               9          6
+COMMON               7          6
 EN         EN-ERR     EN-RSL-FW  MONIT     2MONIT-ERR 2ERR-1
-ERR-2      ANG-ERR    ERR-3
+ERR-2
 MEV        MEV        MEV        MB         MB         PER-CENT
-PER-CENT   ADEG       PER-CENT
-94.8       0.5          2.7        286.      7.         4.
-10.        0.5         70.
+PER-CENT
+       94.8        0.5        2.7       286.         7.         4.
+        10.
 ENDCOMMON            6
 ENDSUBENT          203
-SUBENT        23030002   20080630   20080828   20080828       2200
-BIB                  2          2
+SUBENT        23030002   20180317   20190222   20190220       2270
+BIB                  4          4
 REACTION   (6-C-12(N,EL)6-C-12,,DA)
-STATUS     (TABLE) Table I of main reference.
-ENDBIB               2
-NOCOMMON             0          0
+ERR-ANALYS (ANG-ERR) Uncertainty in neutron c.m. angle.
+STATUS     (TABLE) Table I from Phys.Rev.C74(2006)054002
+HISTORY    (20180317U) SD: ANG-ERR added.
+ENDBIB               4
+COMMON               1          3
+ANG-ERR
+ADEG
+  0.5
+ENDCOMMON            3
 DATA                 3         18
 ANG-CM     DATA-CM    ERR-T
 ADEG       MB/SR      MB/SR
@@ -232,79 +238,75 @@ ADEG       MB/SR      MB/SR
 82.1          0.09      0.09
 85.3          0.04      0.04
 ENDDATA             20
-ENDSUBENT           27
-SUBENT        23030003   20080630   20080828   20080828       2200
-BIB                  3          5
+ENDSUBENT           33
+SUBENT        23030003   20180317   20190222   20190220       2270
+BIB                  5         12
 REACTION   (6-C-12(N,INL)6-C-12,PAR,DA)
              Inelastic scattering to first excited state.
-EN-SEC     (E-LVL,6-C-12) Energy of "first" 2+ excited state,
+LEVEL-PROP (6-C-12,E-LVL=4.4,SPIN=2.,PARITY=1.)
+            Energy of "first" 2+ excited state,
             corresponding to Gaussian at 4.4 MeV.
-STATUS     (TABLE) Table I of main reference.
-ENDBIB               5
-COMMON               1          3
-E-LVL
-MEV
- 4.4
-ENDCOMMON            3
-DATA                 3         13
-ANG-CM     DATA-CM    ERR-T
-ADEG       MB/SR      MB/SR
-32.2        4.0         1.8
-37.4        3.6         0.9
-42.3        3.0         0.8
-46.1        1.8         0.6
-50.6        0.92        0.26
-55.0        0.66        0.22
-59.5        0.48        0.16
-64.6        0.28        0.14
-69.0        0.22        0.11
-74.1        0.11        0.05
-78.3        0.05        0.03
-82.1        0.06        0.04
-85.3        0.04        0.03
-ENDDATA             15
-ENDSUBENT           29
-SUBENT        23030004   20080630   20080828   20080828       2200
-BIB                  3          5
-REACTION   (6-C-12(N,INL)6-C-12,PAR,DA)
-             Inelastic scattering to second excited state.
-EN-SEC     (E-LVL,6-C-12) Energy of "second" 3- excited state,
+           (6-C-12,E-LVL=9.6,SPIN=3.,PARITY=-1.)
+             Energy of "second" 3- excited state,
                  corresponding to Gaussian at 9.6 MeV.
-STATUS     (TABLE) Table I of main reference.
-ENDBIB               5
+ERR-ANALYS (ANG-ERR) Uncertainty in neutron c.m. angle.
+STATUS     (TABLE) Table I of from Phys.Rev.C74(2006)054002
+HISTORY    (20180317A) SD: ANG-ERR added. EN-SEC -> LEVEL-PROP.
+           Data from Subent 004 were added.
+ENDBIB              12
 COMMON               1          3
-E-LVL
-MEV
- 9.6
+ANG-ERR
+ADEG
+  0.5
 ENDCOMMON            3
-DATA                 3         13
-ANG-CM     DATA-CM    ERR-T
-ADEG       MB/SR      MB/SR
-32.2       4.5          1.9
-37.4       5.0          1.2
-42.3       2.6          0.5
-46.1       3.1          0.7
-50.6       1.46         0.38
-55.0       1.96         0.51
-59.5       1.72         0.49
-64.6       1.36         0.54
-69.0       0.35         0.17
-74.1       0.18         0.10
-78.3       0.08         0.05
-82.1       0.02         0.02
-85.3       0.04         0.04
-ENDDATA             15
-ENDSUBENT           29
-SUBENT        23030005   20080630   20080828   20080828       2200
-BIB                  3          6
+DATA                 4         26
+E-LVL      ANG-CM     DATA-CM    ERR-T
+MEV        ADEG       MB/SR      MB/SR
+        4.4       32.2        4.0        1.8
+        4.4       37.4        3.6        0.9
+        4.4       42.3        3.0        0.8
+        4.4       46.1        1.8        0.6
+        4.4       50.6       0.92       0.26
+        4.4       55.0       0.66       0.22
+        4.4       59.5       0.48       0.16
+        4.4       64.6       0.28       0.14
+        4.4       69.0       0.22       0.11
+        4.4       74.1       0.11       0.05
+        4.4       78.3       0.05       0.03
+        4.4       82.1       0.06       0.04
+        4.4       85.3       0.04       0.03
+        9.6       32.2        4.5        1.9
+        9.6       37.4        5.0        1.2
+        9.6       42.3        2.6        0.5
+        9.6       46.1        3.1        0.7
+        9.6       50.6       1.46       0.38
+        9.6       55.0       1.96       0.51
+        9.6       59.5       1.72       0.49
+        9.6       64.6       1.36       0.54
+        9.6       69.0       0.35       0.17
+        9.6       74.1       0.18       0.10
+        9.6       78.3       0.08       0.05
+        9.6       82.1       0.02       0.02
+        9.6       85.3       0.04       0.04
+ENDDATA             28
+ENDSUBENT           49
+NOSUBENT      23030004   20180317   20190222   20190220       2270
+SUBENT        23030005   20180317   20190222   20190220       2270
+BIB                  5          8
 REACTION   (8-O-16(N,EL)8-O-16,,DA)
 ANALYSIS    O-16(n,el) distribution was extracted from H2-O and
             D2-O measurement spectra. spectra obtained previously
             for np and nd scattering were subtracted from H2-O and
             D2-O spectra to obtain oxygen spectra.
-STATUS     (TABLE) Table II of main reference.
-ENDBIB               6
-NOCOMMON             0          0
+ERR-ANALYS (ANG-ERR) Uncertainty in neutron c.m. angle.
+STATUS     (TABLE) Table II from Phys.Rev.C74(2006)054002
+HISTORY    (20180317U) SD: ANG-ERR added.
+ENDBIB               8
+COMMON               1          3
+ANG-ERR
+ADEG
+  0.5
+ENDCOMMON            3
 DATA                 3         18
 ANG-CM     DATA-CM    ERR-T
 ADEG       MB/SR      MB/SR
@@ -327,72 +329,125 @@ ADEG       MB/SR      MB/SR
 80.8           0.02     0.02
 84.0           0.02     0.01
 ENDDATA             20
-ENDSUBENT           31
-SUBENT        23030006   20080630   20080828   20080828       2200
-BIB                  3          9
+ENDSUBENT           37
+SUBENT        23030006   20180317   20190222   20190220       2270
+BIB                  6         20
 REACTION   (8-O-16(N,INL)8-O-16,PAR,DA)
              Inelastic scattering to sum of 3- and 2+ excited
              states.
-EN-SEC     (E-LVL-MEAN,8-O-16) Energy of "first" excited state,
-            corresponding to Gaussian at 6.5 MeV, refers to 3-
-            state at 6.1 MeV and 2+ state at 6.9 MeV together,
-            and probably also the relatively weak 1- state at
-            7.1 MeV.
-STATUS     (TABLE) Table II of main reference.
-ENDBIB               9
+LEVEL-PROP (8-O-16,E-LVL=6.1,SPIN=3.,PARITY=-1.)
+           (8-O-16,E-LVL=6.9,SPIN=2.,PARITY=+1.)
+           (8-O-16,E-LVL=9.8,SPIN=2.,PARITY=1.)
+           (8-O-16,E-LVL=10.4,SPIN=4.,PARITY=1.)
+ANALYSIS    Energy of "first" excited state, corresponding to
+            Gaussian at 6.5 MeV, refers to 3- state at 6.1 MeV
+            and 2+ state  at 6.9 MeV together, and probably also
+            the relatively weak 1- state at 7.1 MeV.
+            Energy of "second" excited state, corresponding to
+            Gaussian at 10.4 MeV, refers to 2+ state at 9.8 MeV
+            and 4+ state at 10.4 MeV together, where 4+ state
+            is expected to dominate.
+ERR-ANALYS (ANG-ERR) Uncertainty in neutron c.m. angle.
+STATUS     (TABLE) Table II from Phys.Rev.C74(2006)054002
+HISTORY    (20180317A) SD: E-LVL-MEAN -> E-LVL. ANG-ERR added.
+           EN-SEC -> LEVEL-PROP. Info moved to ANALYSIS.
+           Data from Subent 007 were added.
+ENDBIB              20
 COMMON               1          3
-E-LVL-MEAN
-MEV
- 6.5
+ANG-ERR
+ADEG
+  0.5
 ENDCOMMON            3
-DATA                 3         12
-ANG-CM     DATA-CM    ERR-T
-ADEG       MB/SR      MB/SR
-31.6        5.3         2.4
-36.5        5.9         1.5
-41.3        2.8         0.8
-45.2        3.0         0.9
-49.8        1.63        0.46
-54.0        1.52        0.49
-58.2        1.11        0.35
-63.5        0.60        0.27
-67.8        0.54        0.22
-73.0        0.28        0.04
-77.2        0.10        0.02
-80.8        0.06        0.02
-ENDDATA             14
-ENDSUBENT           32
-SUBENT        23030007   20080630   20080828   20080828       2200
-BIB                  3          8
-REACTION   (8-O-16(N,INL)8-O-16,PAR,DA)
+DATA                 5         24
+E-LVL      E-LVL      ANG-CM     DATA-CM    ERR-T
+MEV        MEV        ADEG       MB/SR      MB/SR
+        6.1        6.9       31.6        5.3        2.4
+        6.1        6.9       36.5        5.9        1.5
+        6.1        6.9       41.3        2.8        0.8
+        6.1        6.9       45.2        3.0        0.9
+        6.1        6.9       49.8       1.63       0.46
+        6.1        6.9       54.0       1.52       0.49
+        6.1        6.9       58.2       1.11       0.35
+        6.1        6.9       63.5       0.60       0.27
+        6.1        6.9       67.8       0.54       0.22
+        6.1        6.9       73.0       0.28       0.04
+        6.1        6.9       77.2       0.10       0.02
+        6.1        6.9       80.8       0.06       0.02
+        9.8       10.4       31.6        2.7        1.1
+        9.8       10.4       36.5        2.5        0.7
+        9.8       10.4       41.3        2.4        0.5
+        9.8       10.4       45.2        2.0        0.4
+        9.8       10.4       49.8       1.76       0.44
+        9.8       10.4       54.0       1.43       0.37
+        9.8       10.4       58.2       0.88       0.25
+        9.8       10.4       63.5       0.80       0.33
+        9.8       10.4       67.8       0.29       0.13
+        9.8       10.4       73.0       0.14       0.07
+        9.8       10.4       77.2       0.13       0.07
+        9.8       10.4       80.8       0.08       0.02
+ENDDATA             26
+ENDSUBENT           55
+NOSUBENT      23030007   20180317   20190222   20190220       2270
+SUBENT        23030008   20180317   20190222   20190220       2270
+BIB                  3          3
+REACTION   (6-C-12(N,EL)6-C-12,,KER)
+STATUS     (TABLE) Table V from Phys.Rev.C74(2006)054002
+HISTORY    (20180317C) SD
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          1
+DATA       ERR-T
+FGY*M2     FGY*M2
+   0.120        0.007
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        23030009   20180317   20190222   20190220       2270
+BIB                  4          5
+REACTION   (6-C-12(N,EL)6-C-12,PAR,KER)
+LEVEL-PROP (6-C-12,E-LVL=4.4,SPIN=2.,PARITY=1.)
+           (6-C-12,E-LVL=9.6,SPIN=3.,PARITY=-1.)
+STATUS     (TABLE) Table V from Phys.Rev.C74(2006)054002
+HISTORY    (20180317C) SD
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3          2
+E-LVL      DATA       ERR-T
+MEV        FGY*M2     FGY*M2
+       4.4   0.018      0.005
+       9.6   0.029      0.009
+ENDDATA              4
+ENDSUBENT           14
+SUBENT        23030010   20180317   20190222   20190220       2270
+BIB                  3          3
+REACTION   (8-O-16(N,EL)8-O-16,,KER)
+STATUS     (TABLE) Table V from Phys.Rev.C74(2006)054002
+HISTORY    (20180317C) SD
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          1
+DATA       ERR-T
+FGY*M2     FGY*M2
+   0.073       0.004
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        23030011   20180317   20190222   20190220       2270
+BIB                  4          9
+REACTION   (8-O-16(N,INL)8-O-16,PAR,KER)
              Inelastic scattering to sum of 2+ and 4+ excited
              states.
-EN-SEC     (E-LVL-MEAN,8-O-16) Energy of "second" excited state,
-            corresponding to Gaussian at 6.5 MeV, refers to 2+
-            state at 9.8 MeV and 4+ state at 10.4 MeV together,
-            where 4+ state is expected to dominate.
-STATUS     (TABLE) Table II of main reference.
-ENDBIB               8
-COMMON               1          3
-E-LVL-MEAN
-MEV
-10.4
-ENDCOMMON            3
-DATA                 3         12
-ANG-CM     DATA-CM    ERR-T
-ADEG       MB/SR      MB/SR
-31.6        2.7         1.1
-36.5        2.5         0.7
-41.3        2.4         0.5
-45.2        2.0         0.4
-49.8        1.76        0.44
-54.0        1.43        0.37
-58.2        0.88        0.25
-63.5        0.80        0.33
-67.8        0.29        0.13
-73.0        0.14        0.07
-77.2        0.13        0.07
-80.8        0.08        0.02
-ENDDATA             14
-ENDSUBENT           31
-ENDENTRY             7
+LEVEL-PROP (8-O-16,E-LVL=6.1,SPIN=3.,PARITY=-1.)
+           (8-O-16,E-LVL=6.9,SPIN=2.,PARITY=+1.)
+           (8-O-16,E-LVL=9.8,SPIN=2.,PARITY=1.)
+           (8-O-16,E-LVL=10.4,SPIN=4.,PARITY=1.)
+STATUS     (TABLE) Table V from Phys.Rev.C74(2006)054002
+HISTORY    (20180317C) SD
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 4          2
+E-LVL      E-LVL      DATA       ERR-T
+MEV        MEV        FGY*M2     FGY*M2
+ 6.1          6.9       0.017         0.005
+ 9.8         10.4       0.011         0.003
+ENDDATA              4
+ENDSUBENT           18
+ENDENTRY            11

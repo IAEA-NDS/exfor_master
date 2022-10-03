@@ -1,6 +1,6 @@
-ENTRY            22507   20150831   20160302   20160209       2243
-SUBENT        22507001   20150831   20160302   20160209       2243
-BIB                 13         59
+ENTRY            22507   20180917   20190222   20190220       2270
+SUBENT        22507001   20180917   20190222   20190220       2270
+BIB                 13         61
 TITLE      Experimental kerma coefficients and dose distributions
            of C, N, O, Mg, Al, Si, Fe, Zr, A-150 plastic, Al2O3,
            AlN, SiO2 and ZrO2 for neutron energies up to 66 MeV
@@ -11,7 +11,7 @@ INSTITUTE  (2GERPTB)  Schrewe, Newhauser, Brede, and experimental
            (1USAWIS)  DeLuca
            (2SWTPSI)  Paul Scherrer Institute, experimental site
 REFERENCE  (J,PMB,45,651,2000) - final publ., corrected data
-           (C,97TRIEST,2,1643,199705)  Prelim. data without
+           (C,97TRIEST,2,1643,1997)  Prelim. data without
             correction on low neutron energy tail at En > 34. MeV
            (J,AND,65,37,1997)  Details of analysis, gas-to-wall
                                ratio calculation
@@ -50,7 +50,7 @@ ERR-ANALYS (ERR-T)    total error  includes ERR-1, ERR-3 (see
            (ERR-6) uncertainty in the ratio of the W value
             averaged over the dose distribution of neutron
             energy En and the W value of the 'edges'
-STATUS     (TABLE) Tables 2(a), 2(b) of PMB,45,651,2000
+STATUS     (TABLE) Tables 2(a), 2(b) of Phys.Med.Biol.45(2000)651
 HISTORY    (20031231C)   +  +  J.O.S.
            (20040101U) Last checking has been done.
            (20060605U)  Corrected according to MEMO CP-E/088
@@ -60,17 +60,18 @@ HISTORY    (20031231C)   +  +  J.O.S.
            ERR-T, ERR-2, ERR-3, ERR-4 were added to Subents 2-26.
            COMMENT moved to Subent 1.Data units were changed in
            Subents 002-031 (GY*M-SQ -> PGY*CM2).
-ENDBIB              59
+           (20180917A) SD: Data units were changed in
+           Subents 002-031 (PGY*CM2 -> FGY*M2).
+ENDBIB              61
 COMMON               1          3
 ERR-6
 PER-CENT
   3.0
 ENDCOMMON            3
-ENDSUBENT           66
-SUBENT        22507002   20150831   20160302   20160209       2243
+ENDSUBENT           68
+SUBENT        22507002   20180917   20190222   20190220       2270
 BIB                  6         19
-REACTION   (13-AL-CMP(N,TOT),,KER)     Kerma factor for
-             aluminium nitrate Al-N divided by neutron flux
+REACTION   (13-AL-CMP(N,TOT),,KER)
 SAMPLE     .Aluminum nitrate AL-N
            Element (mass fraction): Al (0.658); N (0.342)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
@@ -88,6 +89,7 @@ HISTORY    (20060605A) Sample keyword added
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -96,17 +98,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.759      0.047
         8.0  0.583      0.037
        15.0  1.794      0.105
        17.0  2.055      0.138
 ENDDATA              6
 ENDSUBENT           34
-SUBENT        22507003   20150831   20160302   20160209       2243
+SUBENT        22507003   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (13-AL-27(N,TOT),,KER)    Kerma factor for
-             aluminium divided by neutron flux
+REACTION   (13-AL-27(N,TOT),,KER)
 SAMPLE     Aluminium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of Al.
@@ -122,6 +123,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE added. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -130,28 +132,28 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.196      0.014
         8.0  0.438      0.028
        15.0  1.140      0.065
        17.0  1.436      0.102
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507004   20150831   20160302   20160209       2243
+SUBENT        22507004   20180917   20190222   20190220       2270
 BIB                  6         13
-REACTION   (7-N-14(N,TOT),,KER,,,DERIV)    Kerma factor for
-                              nitrogen divided by neutron flux
+REACTION   (7-N-14(N,TOT),,KER,,,DERIV)
 ANALYSIS   .Derived from data for aluminium and aluminium nitrate
 INC-SPECT  .Monoenergetic neutron beam
 ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
             (low energy neutron background was not subtracted at
             En between 5 and 17 MeV)
-STATUS     (DEP,22507002)
-           (DEP,22507003)
+STATUS     (DEP,22507002)  kerma factor for AlN
+           (DEP,22507003)  kerma factor for Al
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              13
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -160,17 +162,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  1.844      0.135
         8.0  0.863      0.112
        15.0  3.054      0.309
        17.0  3.247      0.399
 ENDDATA              6
 ENDSUBENT           28
-SUBENT        22507005   20150831   20160302   20160209       2243
+SUBENT        22507005   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (13-AL-OXI(N,TOT),,KER)    Kerma factor for
-             aluminium oxide Al2-O3 divided by neutron flux
+REACTION   (13-AL-OXI(N,TOT),,KER)
 SAMPLE     .Al2O3, element (mass fraction): Al (0.529); O (0.471)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of aluminium oxide.
@@ -186,6 +187,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -194,17 +196,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.402      0.025
         8.0  0.641      0.040
        15.0  1.753      0.099
        17.0  1.915      0.129
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507006   20150831   20160302   20160209       2243
+SUBENT        22507006   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (14-SI-OXI(N,TOT),,KER)    Kerma factor for
-             silicon oxide Si-O2 divided by neutron flux
+REACTION   (14-SI-OXI(N,TOT),,KER)
 SAMPLE     .SiO2, Element (mass fraction): Si (0.467) O (0.533)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of silicon oxide.
@@ -220,6 +221,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -228,17 +230,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.406      0.026
         8.0  0.757      0.048
        15.0  1.914      0.137
        17.0  2.048      0.143
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507007   20150831   20160302   20160209       2243
+SUBENT        22507007   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (14-SI-0(N,TOT),,KER)       Kerma factor for
-                              silicon divided by neutron flux
+REACTION   (14-SI-0(N,TOT),,KER)
 SAMPLE     Silicon
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of silicon
@@ -254,6 +255,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ. STATUS 'DEP' deleted
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -262,30 +264,32 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.175      0.011
         8.0  0.812      0.054
        15.0  1.436      0.124
        17.0  1.571      0.136
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507008   20150831   20160302   20160209       2243
-BIB                  6         14
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                              oxygen divided by neutron flux
-ANALYSIS   .Derived from data for aluminium, aluminium oxide,
-            silicon and silicon oxide
+SUBENT        22507008   20180917   20190222   20190220       2270
+BIB                  6         16
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
+ANALYSIS   .Derived from pairs of aluminium oxide/aluminium and
+            silicon oxide/ silicon
 INC-SPECT  .Monoenergetic neutron beam
 ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
             (low energy neutron background was not subtracted at
             En between 5 and 17 MeV)
-STATUS     (DEP,22507030)
-           (DEP,22507031)
+STATUS     (DEP,22507030)  kerma factor obtained from
+                                            pair of Si and SiO2
+           (DEP,22507031) kerma factor obtained from
+                                            pair of Al and AlO2
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651), SF8=FCT was deleted from REACTION code.
            En=14.8 -> 15.MeV. Second reaction code deleted
            following final publ.
-ENDBIB              14
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              16
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
 PER-CENT   PER-CENT   PER-CENT
@@ -293,17 +297,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.620      0.037
         8.0  0.798      0.066
        15.0  2.403      0.170
        17.0  2.460      0.200
 ENDDATA              6
-ENDSUBENT           29
-SUBENT        22507009   20150831   20160302   20160209       2243
+ENDSUBENT           31
+SUBENT        22507009   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (12-MG-0(N,TOT),,KER)    Kerma factor for
-             magnesium divided by neutron flux
+REACTION   (12-MG-0(N,TOT),,KER)
 SAMPLE     Magnesium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of magnesium
@@ -319,6 +322,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -327,17 +331,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.229      0.015
         8.0  0.716      0.048
        15.0  1.382      0.082
        17.0  1.661      0.103
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507010   20150831   20160302   20160209       2243
+SUBENT        22507010   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (6-C-12(N,TOT),,KER)    Kerma factor for
-                carbon divided by neutron flux
+REACTION   (6-C-12(N,TOT),,KER)
 SAMPLE      graphite
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of carbon
@@ -353,6 +356,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -361,17 +365,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.489      0.032
         8.0  1.103      0.071
        15.0  2.191      0.126
        17.0  2.909      0.202
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507011   20150831   20160302   20160209       2243
+SUBENT        22507011   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (26-FE-0(N,TOT),,KER)    Kerma factor for
-                  iron divided by neutron flux
+REACTION   (26-FE-0(N,TOT),,KER)
 SAMPLE      Iron
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of iron
@@ -387,6 +390,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -395,17 +399,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.144      0.009
         8.0  0.304      0.019
        15.0  0.537      0.036
        17.0  0.759      0.061
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507012   20150831   20160302   20160209       2243
+SUBENT        22507012   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (40-ZR-0(N,TOT),,KER)    Kerma factor for
-             zirconium divided by neutron flux
+REACTION   (40-ZR-0(N,TOT),,KER)
 SAMPLE     ZrO2; Element (mass fraction) Zr (0.740); O (0.260)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of zirconium
@@ -421,6 +424,7 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
@@ -429,18 +433,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.102      0.006
         8.0  0.145      0.009
        15.0  0.287      0.019
        17.0  0.313      0.025
 ENDDATA              6
 ENDSUBENT           32
-SUBENT        22507013   20150831   20160302   20160209       2243
-BIB                  6         19
-REACTION   (6-C-CMP(N,TOT),,KER)    Kerma factor for
-             A-150 (tissue-equivalent plastic) divided by
-             neutron flux
+SUBENT        22507013   20180917   20190222   20190220       2270
+BIB                  6         18
+REACTION   (6-C-CMP(N,TOT),,KER)
 SAMPLE      A-150 plastic (76.8% - carbon)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
              design. Walls made of a-150 = tissue- equivalent
@@ -457,7 +459,8 @@ HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=FCT was deleted from REACTION code.
            SAMPLE updated. En=14.8 -> 15.MeV. Second reaction
            code deleted following final publ.
-ENDBIB              19
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              18
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
 PER-CENT   PER-CENT   PER-CENT
@@ -465,17 +468,16 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  4.546      0.323
         8.0  5.364      0.372
        15.0  6.732      0.517
        17.0  7.505      0.588
 ENDDATA              6
-ENDSUBENT           34
-SUBENT        22507014   20150831   20160302   20160209       2243
+ENDSUBENT           33
+SUBENT        22507014   20180917   20190222   20190220       2270
 BIB                  7         20
-REACTION   (40-ZR-OXI(N,TOT),,KER)    Kerma factor for
-             zirconium oxide Zr-O2 divided by neutron flux
+REACTION   (40-ZR-OXI(N,TOT),,KER)
              not corrected for low neutron energy tail
 SAMPLE      ZrO2, Element (mass fraction):  Zr (0.740); O (0.260)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
@@ -494,21 +496,21 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              20
 NOCOMMON             0          0
 DATA                 7          1
 EN         DATA       ERR-T      ERR-2      ERR-3      ERR-4
 MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   PER-CENT   PER-CENT
+MEV        FGY*M2     FGY*M2     PER-CENT   PER-CENT   PER-CENT
 NO-DIM
         44.   2.10       0.21        6.4         2.0       2.0
    0.66
 ENDDATA              6
 ENDSUBENT           31
-SUBENT        22507015   20150831   20160302   20160209       2243
+SUBENT        22507015   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (14-SI-OXI(N,TOT),,KER)    Kerma factor for
-               silicon oxide Si-O2 divided by neutron flux
+REACTION   (14-SI-OXI(N,TOT),,KER)
 SAMPLE      SiO2, Element (mass fraction):  Si (0.467); O (0.533)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of silicon oxide.
@@ -526,6 +528,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -534,16 +537,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   3.62       0.29       5.4        0.69
         44.   3.99       0.34       6.4        0.62
         66.   4.77       0.42       7.2        0.56
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507016   20150831   20160302   20160209       2243
+SUBENT        22507016   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (13-AL-OXI(N,TOT),,KER)    Kerma factor for
-               aluminium oxide Al2-O3 divided by neutron flux
+REACTION   (13-AL-OXI(N,TOT),,KER)
 SAMPLE     .Al2O3, Element (mass fraction): Al (0.529); O (0.471)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                   design. Walls made of aluminium oxide.
@@ -561,6 +563,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -569,16 +572,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   3.31       0.26       5.4         0.70
         44.   3.77       0.32       6.4         0.64
         66.   4.85       0.43       7.2         0.57
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507017   20150831   20160302   20160209       2243
+SUBENT        22507017   20180917   20190222   20190220       2270
 BIB                  6         19
-REACTION   (13-AL-CMP(N,TOT),,KER)   Kerma factor for
-               aluminium nitrate Al-N divided by neutron flux
+REACTION   (13-AL-CMP(N,TOT),,KER)
 SAMPLE     .Aluminum nitrate AL-N
            Element (mass fraction): Al (0.658); N (0.342)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
@@ -596,6 +598,7 @@ HISTORY    (20060605U)  Sample keyword added
            (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -604,17 +607,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   3.33       0.26       5.4        0.70
         44.   3.93       0.31       6.4        0.64
         66.   4.57       0.41       7.2        0.56
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507018   20150831   20160302   20160209       2243
-BIB                  7         21
-REACTION   (6-C-CMP(N,TOT),,KER)    Kerma factor for
-               A-150 (tissue-equivalent plastic) divided by
-               neutron flux
+SUBENT        22507018   20180917   20190222   20190220       2270
+BIB                  7         20
+REACTION   (6-C-CMP(N,TOT),,KER)
 SAMPLE      A-150 plastic (76.8% - carbon)
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of a-150 = tissue-equivalent
@@ -633,7 +634,8 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
-ENDBIB              21
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              20
 COMMON               2          3
 ERR-3      ERR-4
 PER-CENT   PER-CENT
@@ -641,16 +643,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   8.67       0.74       5.4        0.57
         44.   8.07       0.79       6.4        0.49
         66.   7.95       0.74       7.2        0.44
 ENDDATA              5
-ENDSUBENT           35
-SUBENT        22507019   20150831   20160302   20160209       2243
+ENDSUBENT           34
+SUBENT        22507019   20180917   20190222   20190220       2270
 BIB                  6         17
-REACTION   (40-ZR-0(N,TOT),,KER)    Kerma factor for
-               zirconium divided by neutron flux
+REACTION   (40-ZR-0(N,TOT),,KER)
 SAMPLE      Zirconium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of zirconium
@@ -666,6 +667,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              17
 COMMON               2          3
 ERR-3      ERR-4
@@ -674,16 +676,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   0.80       0.06       5.4        0.77
         44.   1.27       0.11       6.4        0.71
         66.   1.76       0.17       7.2        0.64
 ENDDATA              5
 ENDSUBENT           31
-SUBENT        22507020   20150831   20160302   20160209       2243
+SUBENT        22507020   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (26-FE-0(N,TOT),,KER)    Kerma factor for
-                    iron divided by neutron flux
+REACTION   (26-FE-0(N,TOT),,KER)
 SAMPLE      Iron
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of iron
@@ -701,6 +702,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -709,16 +711,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   1.64       0.12       5.4       0.77
         44.   2.21       0.25       6.4       0.72
         66.   2.74       0.25       7.2       0.65
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507021   20150831   20160302   20160209       2243
+SUBENT        22507021   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (14-SI-0(N,TOT),,KER)    Kerma factor for
-                  silicon divided by neutron flux
+REACTION   (14-SI-0(N,TOT),,KER)
 SAMPLE      Silicon
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of silicon
@@ -736,6 +737,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -744,16 +746,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   2.75       0.22       5.4        0.70
         44.   3.05       0.34       6.4        0.64
         66.   3.84       0.33       7.4        0.58
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507022   20150831   20160302   20160209       2243
+SUBENT        22507022   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (13-AL-27(N,TOT),,KER)    Kerma factor for
-               aluminium  divided by neutron flux
+REACTION   (13-AL-27(N,TOT),,KER)
 SAMPLE      Aluminium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of aluminium
@@ -771,6 +772,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -779,16 +781,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   2.40       0.19       5.4        0.73
         44.   2.82       0.24       6.4        0.66
         66.   3.82       0.40       7.4        0.58
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507023   20150831   20160302   20160209       2243
+SUBENT        22507023   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (12-MG-0(N,TOT),,KER)    Kerma factor for
-               magnesium  divided by neutron flux
+REACTION   (12-MG-0(N,TOT),,KER)
 SAMPLE      Magnesium
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of magnesium
@@ -806,6 +807,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -814,16 +816,15 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   3.00       0.23      5.4          0.68
         44.   3.36       0.29      6.4          0.64
         66.   4.35       0.40      7.4          0.57
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507024   20150831   20160302   20160209       2243
+SUBENT        22507024   20180917   20190222   20190220       2270
 BIB                  7         19
-REACTION   (6-C-12(N,TOT),,KER)    Kerma factor for
-               carbon  divided by neutron flux
+REACTION   (6-C-12(N,TOT),,KER)
 SAMPLE      Graphite
 DETECTOR   (PROPC)  Proportional counters of nearly identical
                design. Walls made of carbon
@@ -841,6 +842,7 @@ ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted from REACTION
             code. SAMPLE added.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              19
 COMMON               2          3
 ERR-3      ERR-4
@@ -849,27 +851,27 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 5          3
 EN         DATA       ERR-T      ERR-2      MISC
-MEV        PGY*CM2    PGY*CM2    PER-CENT   NO-DIM
+MEV        FGY*M2     FGY*M2     PER-CENT   NO-DIM
         34.   4.38       0.35       5.4        0.69
         44.   4.80       0.41       6.4        0.61
         66.   5.76       0.56       7.4        0.53
 ENDDATA              5
 ENDSUBENT           33
-SUBENT        22507025   20150831   20160302   20160209       2243
+SUBENT        22507025   20180917   20190222   20190220       2270
 BIB                  6         13
-REACTION   (7-N-14(N,TOT),,KER,,,DERIV)    Kerma factor for
-               nitrogen divided by neutron flux
+REACTION   (7-N-14(N,TOT),,KER,,,DERIV)
 ANALYSIS   .Derived from data for aluminium and aluminium nitrate
 INC-SPECT  .Polyenergetic neutron beam
 ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
             energy' neutron background
            (ERR-3) uncertainty in attenuation in build-up caps -
              only at 34-66 MeV
-STATUS     (DEP,22507016)
-           (DEP,22507022)
+STATUS     (DEP,22507017)  kerma factor for AlN
+           (DEP,22507022)  kerma factor for Al
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted and SF9=DERIV
            was added to REACTION code.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              13
 COMMON               2          3
 ERR-3      ERR-4
@@ -878,27 +880,58 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 4          3
 EN         DATA       ERR-T      ERR-2
-MEV        PGY*CM2    PGY*CM2    PER-CENT
+MEV        FGY*M2     FGY*M2     PER-CENT
         34.   5.13       0.66      5.4
         44.   6.07       0.72      6.4
         66.   6.02       1.00      7.4
 ENDDATA              5
 ENDSUBENT           27
-SUBENT        22507026   20150831   20160302   20160209       2243
-BIB                  6         13
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                 oxygen divided by neutron flux
+SUBENT        22507026   20180917   20190222   20190220       2270
+BIB                  6         15
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
 ANALYSIS   .Derived from data for aluminium, aluminium oxide
 INC-SPECT  .Polyenergetic neutron beam
 ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
             energy' neutron background
            (ERR-3) uncertainty in attenuation in build-up caps -
              only at 34-66 MeV
-STATUS     (DEP,22507016)
-           (DEP,22507022)
+STATUS     (DEP,22507016)  kerma factor for Al2O3
+           (DEP,22507022)  kerma factor for Al
+           (COREL,22507027)
+           (COREL,22507028)
 HISTORY    (20150831A) SD: Data were updated following final publ.
             (PMB,45,651) SF8=RAW/FCT was deleted and SF9=DERIV
            was added to REACTION code.
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              15
+COMMON               2          3
+ERR-3      ERR-4
+PER-CENT   PER-CENT
+   2.0       2.0
+ENDCOMMON            3
+DATA                 4          3
+EN         DATA       ERR-T      ERR-2
+MEV        FGY*M2     FGY*M2     PER-CENT
+        34.   4.33       0.48        5.4
+        44.   4.84       0.56        6.4
+        66.   6.01       0.76        7.4
+ENDDATA              5
+ENDSUBENT           29
+SUBENT        22507027   20180917   20190222   20190220       2270
+BIB                  6         13
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
+ANALYSIS   .Derived from data for silicon and silicon oxide
+INC-SPECT  .Polyenergetic neutron beam
+ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
+            energy' neutron background
+           (ERR-3) uncertainty in attenuation in build-up caps -
+             only at 34-66 MeV
+STATUS     (DEP,22507015)  kerma factor for SiO2
+           (DEP,22507021)  kerma factor for Si
+           (COREL,22507026)
+           (COREL,22507028)
+HISTORY    (20150831C) SD
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              13
 COMMON               2          3
 ERR-3      ERR-4
@@ -907,75 +940,50 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 4          3
 EN         DATA       ERR-T      ERR-2
-MEV        PGY*CM2    PGY*CM2    PER-CENT
-        34.   4.33       0.48        5.4
-        44.   4.84       0.56        6.4
-        66.   6.01       0.76        7.4
-ENDDATA              5
-ENDSUBENT           27
-SUBENT        22507027   20150831   20160302   20160209       2243
-BIB                  6         11
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                 oxygen divided by neutron flux
-ANALYSIS   .Derived from data for silicon and silicon oxide
-INC-SPECT  .Polyenergetic neutron beam
-ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
-            energy' neutron background
-           (ERR-3) uncertainty in attenuation in build-up caps -
-             only at 34-66 MeV
-STATUS     (DEP,22507015)
-           (DEP,22507021)
-HISTORY    (20150831C) SD
-ENDBIB              11
-COMMON               2          3
-ERR-3      ERR-4
-PER-CENT   PER-CENT
-   2.0       2.0
-ENDCOMMON            3
-DATA                 4          3
-EN         DATA       ERR-T      ERR-2
-MEV        PGY*CM2    PGY*CM2    PER-CENT
+MEV        FGY*M2     FGY*M2     PER-CENT
         34.   4.39       0.49        5.4
         44.   4.81       0.58        6.4
         66.   5.60       0.62        7.4
 ENDDATA              5
-ENDSUBENT           25
-SUBENT        22507028   20150831   20160302   20160209       2243
-BIB                  6         11
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                 oxygen divided by neutron flux
+ENDSUBENT           27
+SUBENT        22507028   20180917   20190222   20190220       2270
+BIB                  6         13
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
 ANALYSIS   .Derived from data for zirconium, zirconium oxide
 INC-SPECT  .Polyenergetic neutron beam
 ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
             energy' neutron background
            (ERR-3) uncertainty in attenuation in build-up caps -
              only at 34-66 MeV
-STATUS     (DEP,22507014)
-           (DEP,22507019)
+STATUS     (DEP,22507014) kerma factor for ZrO2
+           (DEP,22507019) kerma factor for Zr
+           (COREL,22507026)
+           (COREL,22507027)
 HISTORY    (20150831C) SD
-ENDBIB              11
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 6          1
 EN         DATA       ERR-T      ERR-2      ERR-3      ERR-4
-MEV        PGY*CM2    PGY*CM2    PER-CENT   PER-CENT   PER-CENT
+MEV        FGY*M2     FGY*M2     PER-CENT   PER-CENT   PER-CENT
         44.   4.48       0.60        6.4       2.0       2.0
 ENDDATA              3
-ENDSUBENT           19
-SUBENT        22507029   20150831   20160302   20160209       2243
+ENDSUBENT           21
+SUBENT        22507029   20180917   20190222   20190220       2270
 BIB                  6         13
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                 oxygen divided by neutron flux
-ANALYSIS   .Mean values derived from Al2O3=Al, SiO2=Si and
-            ZrO2=Zr-walled LPPCs
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
+ANALYSIS   .Mean values derived from Al2O3/Al, SiO2/Si and
+            ZrO2/Zr-walled LPPCs
 INC-SPECT  .Polyenergetic neutron beam
 ERR-ANALYS (ERR-1,0.1,2.0) uncertainty in subtraction of 'non-peak
             energy' neutron background
            (ERR-3) uncertainty in attenuation in build-up caps -
              only at 34-66 MeV
-STATUS     (DEP,22507026)
-           (DEP,22507027)
-           (DEP,22507028)
+STATUS     (DEP,22507026)  kerma factor for Al2O3/Al
+           (DEP,22507027)  kerma factor for SiO2/Si
+           (DEP,22507028)  kerma factor for ZrO2/Zr
 HISTORY    (20150831C) SD
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
 ENDBIB              13
 COMMON               2          3
 ERR-3      ERR-4
@@ -984,25 +992,26 @@ PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 4          3
 EN         DATA       ERR-T      ERR-2
-MEV        PGY*CM2    PGY*CM2    PER-CENT
+MEV        FGY*M2     FGY*M2     PER-CENT
         34.   4.36       0.38        5.4
         44.   4.74       0.42        6.4
         66.   5.74       0.56        7.4
 ENDDATA              5
 ENDSUBENT           27
-SUBENT        22507030   20150831   20160302   20160209       2243
-BIB                  6         10
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                              oxygen divided by neutron flux
+SUBENT        22507030   20180917   20190222   20190220       2270
+BIB                  6         11
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
 ANALYSIS   .Derived from data for silicon and silicon oxide
 INC-SPECT  .Monoenergetic neutron beam
 ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
             (low energy neutron background was not subtracted at
             En between 5 and 17 MeV)
-STATUS     (DEP,22507006)
-           (DEP,22507007)
+STATUS     (DEP,22507006)  kerma factor for Si
+           (DEP,22507007)  kerma factor for SiO2
+           (COREL,22507031)
 HISTORY    (20150831C) SD
-ENDBIB              10
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              11
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
 PER-CENT   PER-CENT   PER-CENT
@@ -1010,26 +1019,27 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.609      0.048
         8.0  0.709      0.096
        15.0  2.335      0.268
        17.0  2.466      0.269
 ENDDATA              6
-ENDSUBENT           25
-SUBENT        22507031   20150831   20160302   20160209       2243
-BIB                  6         10
-REACTION   (8-O-16(N,TOT),,KER,,,DERIV)    Kerma factor for
-                              oxygen divided by neutron flux
+ENDSUBENT           26
+SUBENT        22507031   20180917   20190222   20190220       2270
+BIB                  6         11
+REACTION   (8-O-16(N,TOT),,KER,,,DERIV)
 ANALYSIS   .Derived from data for aluminium, aluminium oxide
 INC-SPECT  .Monoenergetic neutron beam
 ERR-ANALYS (ERR-1) uncertainty in low energy neutron background
             (low energy neutron background was not subtracted at
             En between 5 and 17 MeV)
-STATUS     (DEP,22507003)
-           (DEP,22507005)
+STATUS     (DEP,22507003)  kerma factor for Al
+           (DEP,22507005)  kerma factor for AlO2
+           (COREL,22507030)
 HISTORY    (20150831C) SD
-ENDBIB              10
+           (20180917A) SD: Data units changed (PGY*CM2->FGY*M2).
+ENDBIB              11
 COMMON               3          3
 ERR-1      ERR-2      ERR-4
 PER-CENT   PER-CENT   PER-CENT
@@ -1037,11 +1047,11 @@ PER-CENT   PER-CENT   PER-CENT
 ENDCOMMON            3
 DATA                 3          4
 EN         DATA       ERR-T
-MEV        PGY*CM2    PGY*CM2
+MEV        FGY*M2     FGY*M2
         5.0  0.634      0.053
         8.0  0.869      0.087
        15.0  2.442      0.209
        17.0  2.454      0.267
 ENDDATA              6
-ENDSUBENT           25
+ENDSUBENT           26
 ENDENTRY            31

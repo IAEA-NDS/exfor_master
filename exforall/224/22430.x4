@@ -1,7 +1,7 @@
-ENTRY            22430   20140108   20140820   20140807       2238
-SUBENT        22430001   20140108   20140820   20140807       2238
-BIB                 16         54
-TITLE       .Measurement  of the effective neutron capture cross
+ENTRY            22430   20180316   20190222   20190220       2270
+SUBENT        22430001   20180316   20190222   20190220       2270
+BIB                 16         55
+TITLE       Measurement  of the effective neutron capture cross
             section of Cesium-134 by triple neutron capture
             reaction method
 AUTHOR     (T.Katoh, S.Nakamura, H.Harada, Y.Hatsukawa,
@@ -10,8 +10,8 @@ INSTITUTE  (2JPNJAE)  Hatsukawa, Shinohara, Hata, Kabayashi,
                       Motoishi, Tanase
            (2JPNPNC)  Katoh, Nakamura, Harada
            (2JPNGMT)  Katoh
-REFERENCE  (J,NST,36,(8),635,199908) Main ref. Data are given
-           (S,JAERI-C-98-003,237,199711) Conf. Proc., data given
+REFERENCE  (J,NST,36,635,1999) Main ref. Data are given
+           (S,JAERI-C-98-003,237,1997) Conf. Proc., data given
 REL-REF    (I,22295001,H.Harada+,J,NST,32,(5),395,1995) Exp.detail
 FACILITY   (REAC,2JPNJAE)  Swimming pool type reactor JRR-3
 INC-SOURCE (REAC)  HR-1 pipe of the reactor JRR-3
@@ -55,7 +55,8 @@ HISTORY    (19991203C)  + + Compiled by S.M.      + +
            (20011009U) Last checking has been done.
            (20140108U) SD: Author's list was updated. Minor
             corrections.
-ENDBIB              54
+           (20180316A) SD: REACTION code corrected in Subent 002.
+ENDBIB              55
 COMMON               8          6
 ERR-S      ERR-1      ERR-2      ERR-4      ERR-5      ERR-6
 MONIT1     MONIT2
@@ -64,27 +65,25 @@ B          B
         4.5         2.        2.4        3.6        0.2         1.
       37.18      98.65
 ENDCOMMON            6
-ENDSUBENT           64
-SUBENT        22430002   20011009   20030311   20050926       0000
+ENDSUBENT           65
+SUBENT        22430002   20180316   20190222   20190220       2270
 BIB                  8         36
-REACTION   ((55-CS-134(N,G)55-CS-135,,SIG,,MXW)+
-           (55-CS-134(N,G)55-CS-135,,SIG,,EPI))  Effective Cross
-             Section Equal T0 Sig0*(1+R*SQRT(T/T0)*S0*G-EPI)
-DECAY-DATA (55-CS-134,2.062YR,B-)
-           (55-CS-134,2.062YR,DG,563.,0.0835,
+REACTION   (55-CS-134(N,G)55-CS-135,,SIG,,SPA)  Effective Cross
+             Section Equal to Sig0*(1+R*SQRT(T/T0)*S0*G-EPI)
+DECAY-DATA (55-CS-134-G,2.062YR,DG,563.,0.0835,
                        DG,569.,0.1543,
                        DG,605.,0.9756,
                        DG,796.,0.8544,
                        DG,802.,0.0873,
                        DG,1039.,0.01,
                        DG,1168.,0.1805)
-           (55-CS-135,2.3E+6YR,B-)
-           (55-CS-136,13.16D,DG,819.,0.998,
+           (55-CS-135-G,2.3E+6YR)
+           (55-CS-136-G,13.16D,DG,819.,0.998,
                        DG,1048.,0.798,
                        DG,1235.,0.198)
-REL-REF    (R,22469001,S.NAKAMURA+,J,NST,36,(10),847,199910) Data
-             For Cs-133
-           (R,,K.SHIBATA+,S,JAERI-D-97-003,1997)  Data For CS-136
+REL-REF    (R,22469001,S.Nakamura+,J,NST,36,847,199910) Data
+             for Cs-133
+           (R,,K.Shibata+,S,JAERI-D-97-003,1997)  Data for CS-136
 ASSUMED    (ASSUM1,55-CS-133(N,G)55-CS-134,,SIG,,MXW)
            (ASSUM2,55-CS-135(N,G)55-CS-136,,SIG,,MXW)
            (ASSUM3,55-CS-136(N,G)55-CS-137,,SIG,,MXW)
@@ -98,11 +97,13 @@ SAMPLE     .Natural CsCl sample, purity 99.99% in 133Cs was used
             133Cs to make the amount of 134Cs nuclei definite.
             These 134Cs nuclei were used as sample for the
             134Cs(n,g)135Cs reaction.
-STATUS     (TABLE) Data are Taken from Table 5 of Main Reference
-           .Corrections are Taken from Main Reference
+STATUS     (TABLE) Table 5 of Nucl.Sci.Tech.,36(1999)635
+           .Corrections are taken from NST,36,635,1999
 HISTORY    (20010709A)  Decay-Data and Assumed Values Added
                         Reaction Code Changed
            (20011009U) Last checking has been done.
+           (20180316A) SD: Sum of reactions re-coded as one
+           according to remark from N.Otsuka.EN-MIN -> EN-DUMMY.
 ENDBIB              36
 COMMON              10          6
 ASSUM1     ASSUM1-ERR ASSUM2     ASSUM2-ERR ASSUM3     ASSUM4
@@ -113,7 +114,7 @@ B          B          B          B
         16.       39.7        2.7      57.22
 ENDCOMMON            6
 DATA                 3          1
-EN-MIN     DATA       ERR-T
+EN-DUMMY   DATA       ERR-T
 EV         B          B
    2.53E-02      140.6        8.5
 ENDDATA              3

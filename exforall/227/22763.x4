@@ -1,19 +1,19 @@
-ENTRY            22763   20100714   20110107   20101216       2222
-SUBENT        22763001   20100714   20110107   20101216       2222
-BIB                 17         74
-TITLE      .Excitation functions of natTi(n,x)46,47,48Sc processes
+ENTRY            22763   20180316   20190222   20190220       2270
+SUBENT        22763001   20180316   20190222   20190220       2270
+BIB                 17         77
+TITLE      Excitation functions of natTi(n,x)46,47,48Sc processes
             in the energy range of 12.5 - 19.6 MeV
 AUTHOR     (N.I.Molla, S.M.Qaim, H.Liskien, R.Widera)
 INSTITUTE  (2GERJUL,2ZZZGEL)
 REFERENCE  (J,ARI,42,337,1991)    Main reference
 REL-REF    (M,,H.Lisken+,J,ARI,41,83,1990) Details of exp. method.
-SAMPLE     About 5 g Ti metal powder (>99.9%) was pressed at
+SAMPLE     About 5g Ti metal powder (>99.9%) was pressed at
            10t/cm2 and disk (2cm in diam., 0.5 cm - thick) was
            obtained. Fifteen such samples, each sandwiched
            between pairs of aluminum  sheets (2 cm diam. x0.1cm),
            were suspended from a graduated ring.
 FACILITY   (VDG,2ZZZGEL)
-INC-SOURCE (D-T) A 3 Mg/Cm2 T-Ti Target was used. The target
+INC-SOURCE (D-T) A 3 mg/cm2 T-Ti target was used. The target
             was backed by a 4 cm diameter silver sheet of 0.3 mm
             thickness, fixed in an aluminum  tube of 1 mm wall
             thickness. The silver sheet was cooled by a thin
@@ -67,7 +67,7 @@ ERR-ANALYS (ERR-T) Total uncertainty about 6%. Main uncertainty
            (ERR-1) Total fluence uncertainty -3%.
              Total uncertainty in determination of absolute
              activity -  4. - 5. % .
-STATUS     (TABLE) Table 1 of main reference
+STATUS     (TABLE) Table 1 from Appl.Rad.Isot.42(1991)337
 HISTORY    (20031110C)
            (20060330U) Correction in according to Memo CP-E/089.
                        (M.M.)
@@ -75,13 +75,16 @@ HISTORY    (20031110C)
             BIB information was added. MISC and MISC-ERR were
             added in Subent 002. COMMON was added.
            (20100714A) M.M. Subent 002 was corrected.
-ENDBIB              74
+           (20180316A) SD: MISC and MISC-ERR were added to Subents
+           003, 004. REACTION code corrected in Subents 003,004
+           according to remark from V.Semkova.
+ENDBIB              77
 COMMON               1          3
 ERR-1
 PER-CENT
  3.
 ENDCOMMON            3
-ENDSUBENT           81
+ENDSUBENT           84
 SUBENT        22763002   20100714   20110107   20101216       2222
 BIB                  5         12
 REACTION   ((22-TI-46(N,P)21-SC-46,,SIG)+
@@ -118,65 +121,79 @@ MEV        MEV        MB         MB         SEE TEXT   SEE TEXT
   19.58     0.23        349.       21.       0.731      0.022
 ENDDATA             17
 ENDSUBENT           34
-SUBENT        22763003   20090215   20090508   20090507       2207
-BIB                  4          8
-REACTION   (22-TI-0(N,X)21-SC-47,,SIG)
-ANALYSIS   Cross-section normalized to 47-Ti + 48-Ti (summed
-           abundance 81.2%).Contribution of Ti-47(N,P) and
-           Ti-48(N,NP) were considered. Contribution of (N,NP) was
+SUBENT        22763003   20180316   20190222   20190220       2270
+BIB                  4         15
+REACTION   ((22-TI-47(N,P)21-SC-47,,SIG,,FCT)+
+           (22-TI-48(N,X)21-SC-47,,SIG,,FCT))
+           Cross-section normalized to 47-Ti + 48-Ti (summed
+           abundance 81.2%). Contribution of Ti-47(n,p) and
+           Ti-48(n,np) were considered. Contribution of (n,np) was
            not negligible since Ti-48 abundance is about 10 times
            higher than that of Ti-47.
 DECAY-DATA (21-SC-47,3.42D,DG,159.,0.685)
+MISC-COL   (MISC) Neutron flux density, 10**6 1/cm**2/sec.
+                  Average of two measurements.
 HISTORY    (20090215A) Misprint in abundance was corrected.
-ENDBIB               8
+           (20180316A) SD: Instead of one REACTION code presented
+           as sum of reactions using different targets (Ti-0 ->
+            Ti-47 and Ti-48). MISC and MISC-ERR were added.
+            ANALYSIS deleted (info moved to REACTION code).
+ENDBIB              15
 NOCOMMON             0          0
-DATA                 4         15
-EN         EN-ERR     DATA       ERR-T
-MEV        MEV        MB         MB
-  12.59     0.22        17.1       1.1
-  12.64     0.21        18.9       1.1
-  13.39     0.30        17.8       1.1
-  13.43     0.30        21.8       1.3
-  14.36     0.36        25.3       1.5
-  14.39     0.35        27.1       1.6
-  15.82     0.37        46.5       2.8
-  15.84     0.38        43.8       2.6
-  16.90     0.37        68.7       4.1
-  16.96     0.37        61.6       3.7
-  17.92     0.35        87.1       5.2
-  17.99     0.35        82.6       5.0
-  18.81     0.26       110.0       6.6
-  18.88     0.25        99.2       6.0
-  19.58     0.23       117.5       7.1
+DATA                 6         15
+EN         EN-ERR     DATA       ERR-T      MISC       MISC-ERR
+MEV        MEV        MB         MB         SEE TEXT   SEE TEXT
+  12.59     0.22        17.1       1.1       0.276      0.008
+  12.64     0.21        18.9       1.1       0.254      0.007
+  13.39     0.30        17.8       1.1       0.265      0.007
+  13.43     0.30        21.8       1.3       0.252      0.007
+  14.36     0.36        25.3       1.5       0.277      0.007
+  14.39     0.35        27.1       1.6       0.267      0.007
+  15.82     0.37        46.5       2.8       0.261      0.008
+  15.84     0.38        43.8       2.6       0.274      0.008
+  16.90     0.37        68.7       4.1       0.338      0.010
+  16.96     0.37        61.6       3.7       0.368      0.011
+  17.92     0.35        87.1       5.2       0.408      0.012
+  17.99     0.35        82.6       5.0       0.436      0.012
+  18.81     0.26       110.0       6.6       0.509      0.014
+  18.88     0.25        99.2       6.0       0.532      0.015
+  19.58     0.23       117.5       7.1       0.731      0.022
 ENDDATA             17
-ENDSUBENT           30
-SUBENT        22763004   20090215   20090508   20090507       2207
-BIB                  3          5
-REACTION   (22-TI-0(N,X)21-SC-48,,SIG)
+ENDSUBENT           37
+SUBENT        22763004   20180316   20190222   20190220       2270
+BIB                  6         12
+REACTION   ((22-TI-48(N,P)21-SC-48,,SIG)+
+           (22-TI-49(N,X)21-SC-48,,SIG,,RAB))
+SAMPLE     (22-TI-49,NAT=0.0541)
 ANALYSIS   Cross-section normalized to 48-Ti (abundance 73.8%),
-           assuming that the Ti-48(N,P) is the only contributing
+           assuming that the Ti-48(n,p) is the only contributing
            reaction.
 DECAY-DATA (21-SC-48,1.82D,DG,984.,1.,DG,1038.,0.975,DG,1312.,1.)
-ENDBIB               5
+MISC-COL   (MISC) Neutron flux density, 10**6 1/cm**2/sec.
+                  Average of two measurements.
+HISTORY    (20180316A) SD: Instead of one REACTION code presented
+           as sum of reactions using different targets (Ti-0 ->
+            Ti-47 and Ti-48).  MISC and MISC-ERR were added.
+ENDBIB              12
 NOCOMMON             0          0 3
-DATA                 4         15
-EN         EN-ERR     DATA       ERR-T
-MEV        MEV        MB         MB
-  12.59     0.22       57.6        3.5
-  12.64     0.21       58.8        3.5
-  13.39     0.30       65.0        3.9
-  13.43     0.30       63.4        3.8
-  14.36     0.36       68.7        4.1
-  14.39     0.35       67.7        4.1
-  15.82     0.37       64.0        3.8
-  15.84     0.38       62.5        3.7
-  16.90     0.37       56.5        3.4
-  16.96     0.37       55.2        3.3
-  17.92     0.35       51.4        3.1
-  17.99     0.35       50.6        3.1
-  18.81     0.26       46.1        2.8
-  18.88     0.25       44.7        2.7
-  19.58     0.23       43.9        2.6
+DATA                 6         15
+EN         EN-ERR     DATA       ERR-T      MISC       MISC-ERR
+MEV        MEV        MB         MB         SEE TEXT   SEE TEXT
+  12.59     0.22       57.6        3.5       0.276      0.008
+  12.64     0.21       58.8        3.5       0.254      0.007
+  13.39     0.30       65.0        3.9       0.265      0.007
+  13.43     0.30       63.4        3.8       0.252      0.007
+  14.36     0.36       68.7        4.1       0.277      0.007
+  14.39     0.35       67.7        4.1       0.267      0.007
+  15.82     0.37       64.0        3.8       0.261      0.008
+  15.84     0.38       62.5        3.7       0.274      0.008
+  16.90     0.37       56.5        3.4       0.338      0.010
+  16.96     0.37       55.2        3.3       0.368      0.011
+  17.92     0.35       51.4        3.1       0.408      0.012
+  17.99     0.35       50.6        3.1       0.436      0.012
+  18.81     0.26       46.1        2.8       0.509      0.014
+  18.88     0.25       44.7        2.7       0.532      0.015
+  19.58     0.23       43.9        2.6       0.731      0.022
 ENDDATA             17
-ENDSUBENT           27
+ENDSUBENT           34
 ENDENTRY             4

@@ -1,10 +1,10 @@
-ENTRY            22500   20090820   20090901   20090820       2212
-SUBENT        22500001   20090820   20090901   20090820       2212
-BIB                 17         75
+ENTRY            22500   20180316   20190222   20190220       2270
+SUBENT        22500001   20180316   20190222   20190220       2270
+BIB                 17         76
 TITLE      .Neutron capture of 46Ca at thermonuclear energies
 AUTHOR     (P.Mohr, P.V.Sedyshev, H.Beer, W.Stadler, H.Oberhummer,
-           Yu.V.Popov, W.Rochow)
-INSTITUTE  (2GERKFK) Beer.              Karlsruhe Research Center,
+           Yu.P.Popov, W.Rochow)
+INSTITUTE  (2GERKFK) Beer.   Karlsruhe Research Center,
                 Inst. of Nucl.Physics. Experimental site .
            (2GERTUE) Rochow. Tuebingen Univ., Physical Institute,
                              and experimental site .
@@ -13,15 +13,15 @@ INSTITUTE  (2GERKFK) Beer.              Karlsruhe Research Center,
            (2GERTHD) Mohr. Tachn.Univ.Darmstadt,Inst.Of Nucl.Phys
            (2AUSTHV) Mohr, Stadler, Oberhummer. Techn.Univ.Vienna,
                      Inst. of Nucl. Phys.
-REFERENCE  (J,PR/C,59,(6),3410,199906)    Main Reference
-           ((S,ISINN-6,205,199804)=(S,JINR-E3-98-202,205,199805))
+REFERENCE  (J,PR/C,59,3410,1999)    Main Reference
+           ((S,ISINN-6,205,1998)=(S,JINR-E3-98-202,205,1998))
               Preliminary results for 46Ca and 50Ti -
-REL-REF    (N,,F.Kaeppeler+,J,PR/C,35,936,1987)  Exp. details
+REL-REF    (M,,F.Kaeppeler+,J,PR/C,35,936,1987)  Exp. details
               on activation technique.
-           (N,,H.Beer+,J,PR/C,52,3442,1995) Experimental details
+           (M,,H.Beer+,J,PR/C,52,3442,1995) Experimental details
               on fast cyclic activation method.
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,MXW)
-DECAY-MON  (79-AU-198,2.69D,DG,411.8047,0.9550)
+DECAY-MON  (79-AU-198-G,2.69D,DG,411.8047,0.9550)
              Intensity 0.9550 +- 0.00096 .
 MONIT-REF  (,R.L.Macklin,W,MACKLIN,1998)
            (22099001,W.Ratynski+,J,PR/C,37,595,1988)
@@ -55,7 +55,7 @@ METHOD     (ACTIV)  Activation and fast-cyclic activation methods.
 DECAY-DATA (20-CA-47,4.536D,DG,1297.09,0.74)
               Intensity 0.74 +- 0.09 .
 SAMPLE     -Calcium carbonate Ca-C-O3 powder pressed to tablets
-            of 6 mm diameter, heated to 1000 grad.Celsium for 3
+            of 6 mm diameter, heated to 1000 Celsius degree for 3
             hours, put in a thin al foil. Masses of Ca-C-O3
             samples are in the range 59.6 - 79.6 milligram
             Ca-40 content 81.363%,   Ca-42 content is 1.194%,
@@ -76,13 +76,14 @@ HISTORY    (20010130C)  + +  Compiled by S.M.
             free text. Subent 007 was added.
            (20090509U) JINR-E3 updated with ISINN. Energy headings
             corrected. Ranged errors and ERR-IDD introduced - S.M.
-ENDBIB              75
+           (20180316A) SD: REACTION code corrected in Subent 006.
+ENDBIB              76
 COMMON               1          3
 ERR-IDD
 NO-DIM
    0.09
 ENDCOMMON            3
-ENDSUBENT           82
+ENDSUBENT           83
 SUBENT        22500002   20090820   20090901   20090820       2212
 BIB                  8         26
 REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,MXW)
@@ -239,25 +240,23 @@ KEV        MB
 250.00      0.97616
 ENDDATA             37
 ENDSUBENT           54
-SUBENT        22500006   20090509   20090901   20090820       2212
-BIB                  4         16
-REACTION  1(20-CA-46(N,G)20-CA-47,,SGV,,MXW)            Value
-             given in data Table is (SIGMA*V)-Average Times
-             Avogadro Number Na,  Units = cm**3/sec/mol .
-          2(20-CA-46(N,G)20-CA-47,,SGV,,RNV/MXW)        Value
-             given in data Table is (SIGMA*V)-Average Times
-             Avogadro Number  Na, - Compound nucleus part .
-             Units = cm**3/sec/mol .
-          3(20-CA-46(N,G)20-CA-47,,SGV,,RV/MXW)        Value
-             given in data Table is (SIGMA*V)-Average Times
-             Avogadro Number Na, - 1/V part. Units = cm**3/sec/mol
+SUBENT        22500006   20180316   20190222   20190220       2270
+BIB                  4         14
+REACTION  1(20-CA-46(N,G)20-CA-47,,SGV)
+          2(20-CA-46(N,G)20-CA-47,,SGV,,MSC)  - Compound
+                                               nucleus part
+          3(20-CA-46(N,G)20-CA-47,,SGV,,MSC)        Value
+             given in data Table is (SIGMA*V) - 1/V part.
 INC-SPECT  .Maxwellian
-STATUS     (TABLE)  From Table 3 of Main Reference
+STATUS     (TABLE)  Table 3 of Phys.Rev.C59(1999)3410,1999
            (DEP,22500002)
            (DEP,22500003)
            (DEP,22500004)
 HISTORY    (20090509U)   FCT/MXW,DERIV changed to MXW
-ENDBIB              16
+           (20180316A) SD: SF8=MXW deleted from REACTION (1) code;
+           SF8=RNV/MXW -> MSC in REACTION (2) code;
+           SF8=RV/MXW -> MSC in REACTION (3) code.
+ENDBIB              14
 COMMON               1          3
 ERR-T
 PER-CENT
@@ -302,7 +301,7 @@ KEV        CM3/S/MOL  CM3/S/MOL  CM3/S/MOL
 200.00       4.3237E+5  6.5971E+4 3.6568E+05
 250.00       4.2095E+5  4.8479E+4 3.6108E+05
 ENDDATA             37
-ENDSUBENT           62
+ENDSUBENT           60
 SUBENT        22500007   20090820   20090901   20090820       2212
 BIB                  6         17
 REACTION   (20-CA-46(N,G)20-CA-47,,SIG,,SPA) Averaged over
