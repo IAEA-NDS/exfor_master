@@ -1,17 +1,98 @@
-ENTRY            13251     881102              20050926       0000
-SUBENT        13251001     881102              20050926       0000
-BIB                 13         31
+ENTRY            13251   20190204   20190703   20190630       1448
+SUBENT        13251001   20190204   20190703   20190630       1448
+BIB                 12         30
+TITLE      Low-yield products from fission of Th232, U235, and
+           U238 with 14.8-MeV neutrons
+AUTHOR     (D.R.Nethaway,B.Mendoza,T.E.Voss)
+REFERENCE  (J,PR,182,1251,1969)
+           #doi:10.1103/PhysRev.182.1251
 INSTITUTE  (1USALRL)
-REFERENCE  (J,PR,182,1251,6906)
-AUTHOR     (D.R.NETHAWAY,B.MENDOZA,T.E.VOSS)
-TITLE      LOW-YIELD PRODUCTS FROM FISSION OF TH232, U235, AND
-           U238 WITH 14.8-MEV NEUTRONS
-FACILITY   ICT NEUTRON GENERATOR
-INC-SOURCE (D-T)
-METHOD     (RCHEM)
-DETECTOR   (PROPC) GAS-FLOW BETA PROPORTIONAL COUNTERS
-           (NAICR) NAI(TL) GAMMA DETECTORS
-MONITOR    (39-Y-89(N,2N)39-Y-88,,SIG) FLUX MONITOR
+FACILITY   (NGEN,1USALRL) ICT neutron generator.
+INC-SOURCE (D-T) The neutrons are produced by the reaction of
+           deuterons on tritium in a rotating target assembly.
+DETECTOR   (PROPC) Gas-flow beta proportional counters.
+           (NAICR) NaI(Tl) gamma detectors.
+METHOD     (CHSEP,FPGAM) The irradiations were usually 8 h in
+           length, producing up to 4x10**12 fissions in the
+           Th232, 3x10**13 fissions in the U235, and 1.5x10**13
+           fissions in the U238. After the neutron irradiations,
+           the target foils were dissolved in the presence of
+           10-20-mg amounts of carriers for each of the desired
+           products. The samples were counted on gas-flow beta
+           proportional counters or NaI(Tl) gamma counters.
+MONITOR    (39-Y-89(N,2N)39-Y-88,,SIG) Flux monitor.
+ERR-ANALYS (DATA-ERR) Data uncertainties given include
+           uncertainty in counting efficiencies and counting
+           statistics, and standard deviation. Not included is
+           6% uncertainty in number of fissions.
+STATUS     (TABLE) Table II, page 1254.
+HISTORY    (19890717C) VM
+           (20190204A) BP: Updated to new date formats, lower
+           case. Corrections according last EXFOR rules and
+           Dict. Updated entry, corrected fission yields units
+           from PC/FIS to PRD/FIS.
+ENDBIB              30
+COMMON               2          3
+EN         EN-RSL
+MEV        MEV
+       14.8        0.3
+ENDCOMMON            3
+ENDSUBENT           37
+SUBENT        13251002   20190204   20190703   20190630       1448
+BIB                  6         19
+REACTION   (90-TH-232(N,F)ELEM/MASS,CUM,FY)
+SAMPLE     Natural thorium sample. The target foils varied in
+           thickness from 5 to 20 mils and in weight from 1 to
+           15 g.
+MONITOR    ((MONIT)90-TH-232(N,F),,SIG)
+MONIT-REF  ((MONIT),W.Hart,R,AHSB(S)R-124,1967)
+DECAY-DATA ((1.)28-NI-66,2.29D,B)
+           ((2.)29-CU-67,2.56D,B)
+           ((3.)30-ZN-72,1.94D,B)
+           ((4.)39-Y-93-G,10.1HR,DG)
+           ((5.)56-BA-140,12.80D,DG,1596.,0.962)
+           ((6.)60-ND-147,11.04D,DG,531.,0.131)
+           ((7.)62-SM-153,1.94D,B)
+           ((8.)64-GD-159,0.773D,B)
+           ((9.)65-TB-161,6.96D,B)
+           ((10.)66-DY-166,3.40D)
+           ((10.)67-HO-166-G,1.116D,B)
+           ((11.)68-ER-169,9.5D,B)
+HISTORY    (20190204A) Data units corrected to PRD/FIS.
+ENDBIB              19
+COMMON               1          3
+MONIT
+B
+      0.391
+ENDCOMMON            3
+DATA                 5         11
+ELEMENT    MASS       DATA       DATA-ERR   DECAY-FLAG
+NO-DIM     NO-DIM     PRD/FIS    PRD/FIS    NO-DIM
+        28.        66.    1.31E-6    0.13E-6         1.
+        29.        67.     2.6E-6     0.6E-6         2.
+        30.        72.     7.0E-5     0.6E-5         3.
+        39.        93.      0.053      0.005         4.
+        56.       140.      0.058      0.002         5.
+        60.       147.     0.0181     0.0013         6.
+        62.       153.     8.6E-4     0.9E-4         7.
+        64.       159.     4.4E-5     0.4E-5         8.
+        65.       161.    1.06E-5    0.06E-5         9.
+        66.       166.     2.9E-7     0.2E-7        10.
+        68.       169.     2.3E-7     0.8E-7        11.
+ENDDATA             13
+ENDSUBENT           41
+SUBENT        13251003   20190204   20190703   20190630       1448
+BIB                  8         24
+REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY)
+SAMPLE     (92-U-235,ENR=0.93) The target foils varied in
+           thickness from 5 to 20 mils and in weight from 1 to
+           15 g.
+MONITOR    ((MONIT)92-U-235(N,F),,SIG)
+MONIT-REF  ((MONIT),W.Hart,R,AHSB(S)R-124,1967)
+CORRECTION Corrected for 238U content in foils (~5% of mass),
+           using the measured 238U yields.
+COMMENT    166Dy has typographical error on exponent in Table II.
+           Correct exponent given in Table IV.
 DECAY-DATA ((1.)28-NI-66,2.29D,B)
            ((2.)29-CU-67,2.56D,B)
            ((3.)30-ZN-72,1.94D,B)
@@ -25,103 +106,73 @@ DECAY-DATA ((1.)28-NI-66,2.29D,B)
            ((10.)67-HO-166-G,1.116D,B)
            ((11.)68-ER-169,9.5D,B)
            ((12.)68-ER-172,2.08D)
-           ((12.)69-TM-172,2.65D,B)
-ERR-ANALYS DATA UNCERTAINTIES GIVEN INCLUDE UNCERATINTY IN
-            COUNTING EFFICIENCIES AND COUNTING STATISTICS, AND
-            STANDARD DEVIATION. NOT INCLUDED IS 6% UNCERTAINTY
-            IN NUMBER OF FISSIONS.
-STATUS     (RIDER) REFERENCE 69NET1
-HISTORY    (890717C) VM
-ENDBIB              31
-COMMON               2          3
-EN         EN-RSL
-MEV        MEV
- 14.8       0.3
-ENDCOMMON            3
-ENDSUBENT           38
-SUBENT        13251002     881102              20050926       0000
-BIB                  2          2
-REACTION   (90-TH-232(N,F)ELEM/MASS,CUM,FY)
-MONITOR    ((MONIT2)90-TH-232(N,F),,SIG)
-ENDBIB               2
+HISTORY    (20190204A) Data units corrected to PRD/FIS.
+ENDBIB              24
 COMMON               1          3
-MONIT2
+MONIT
 B
- 0.391
-ENDCOMMON            3
-DATA                 5         11
-ELEMENT    MASS       DATA       DATA-ERR   DECAY-FLAG
-NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
- 28.        66.           1.31E-6    0.13E-6  1.
- 29.        67.            2.6E-6     0.6E-6  2.
- 30.        72.            7.0E-5     0.6E-5  3.
- 39.        93.            0.053      0.005   4.
- 56.       140.            0.058      0.002   5.
- 60.       147.            0.0181     0.0013  6.
- 62.       153.            8.6E-4     0.9E-4  7.
- 64.       159.            4.4E-5     0.4E-5  8.
- 65.       161.           1.06E-5    0.06E-5  9.
- 66.       166.            2.9E-7     0.2E-7 10.
- 68.       169.            2.3E-7     0.8E-7 11.
-ENDDATA             13
-ENDSUBENT           24
-SUBENT        13251003     881102              20050926       0000
-BIB                  5          6
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY)
-SAMPLE     ENRICHED TO 93% 235U
-MONITOR    ((MONIT2)92-U-235(N,F),,SIG)
-CORRECTION CORRECTED FOR 238U CONTECT IN FOILS
-COMMENT    166DY HAS TYPOGRAPHICAL ERROR ON EXPONENT IN TABLE II.
-            CORRECT EXPONENT GIVEN IN TABLE IV.
-ENDBIB               6
-COMMON               1          3
-MONIT2
-B
- 2.24
+       2.24
 ENDCOMMON            3
 DATA                 5         12
 ELEMENT    MASS       DATA       DATA-ERR   DECAY-FLAG
-NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
- 28.        66.            2.8E-6     0.3E-6  1.
- 29.        67.            6.5E-6     0.9E-6  2.
- 30.        72.            6.3E-5     0.3E-5  3.
- 39.        93.            0.054      0.005   4.
- 56.       140.            0.0425     0.0017  5.
- 60.       147.            0.0164     0.0011  6.
- 62.       153.            2.2E-3     0.2E-3  7.
- 64.       159.           1.27E-4    0.13E-4  8.
- 65.       161.            5.6E-5     0.4E-5  9.
- 66.       166.            2.8E-6     0.2E-6 10.
- 68.       169.            8.0E-7     0.6E-7 11.
- 68.       172.            1.8E-7     0.2E-7 12.
+NO-DIM     NO-DIM     PRD/FIS    PRD/FIS    NO-DIM
+        28.        66.     2.8E-6     0.3E-6         1.
+        29.        67.     6.5E-6     0.9E-6         2.
+        30.        72.     6.3E-5     0.3E-5         3.
+        39.        93.      0.054      0.005         4.
+        56.       140.     0.0425     0.0017         5.
+        60.       147.     0.0164     0.0011         6.
+        62.       153.     2.2E-3     0.2E-3         7.
+        64.       159.    1.27E-4    0.13E-4         8.
+        65.       161.     5.6E-5     0.4E-5         9.
+        66.       166.     2.8E-6     0.2E-6        10.
+        68.       169.     8.0E-7     0.6E-7        11.
+        68.       172.     1.8E-7     0.2E-7        12.
 ENDDATA             14
-ENDSUBENT           29
-SUBENT        13251006     881102              20050926       0000
-BIB                  3          3
+ENDSUBENT           47
+SUBENT        13251006   20190204   20190703   20190630       1448
+BIB                  6         20
 REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY)
-SAMPLE     ENRICHED TO 99.8% 238U
-MONITOR    ((MONIT2)92-U-238(N,F),,SIG)
-ENDBIB               3
+SAMPLE     (92-U-238,ENR=0.998) The target foils varied in
+           thickness from 5 to 20 mils and in weight from 1 to
+           15 g.
+MONITOR    ((MONIT)92-U-238(N,F),,SIG)
+MONIT-REF  ((MONIT),W.Hart,R,AHSB(S)R-124,1967)
+DECAY-DATA ((1.)28-NI-66,2.29D,B)
+           ((2.)29-CU-67,2.56D,B)
+           ((3.)30-ZN-72,1.94D,B)
+           ((4.)39-Y-93-G,10.1HR,DG)
+           ((5.)56-BA-140,12.80D,DG,1596.,0.962)
+           ((6.)60-ND-147,11.04D,DG,531.,0.131)
+           ((7.)62-SM-153,1.94D,B)
+           ((8.)64-GD-159,0.773D,B)
+           ((9.)65-TB-161,6.96D,B)
+           ((10.)66-DY-166,3.40D)
+           ((10.)67-HO-166-G,1.116D,B)
+           ((11.)68-ER-169,9.5D,B)
+           ((12.)68-ER-172,2.08D)
+HISTORY    (20190204A) Data units corrected to PRD/FIS.
+ENDBIB              20
 COMMON               1          3
-MONIT2
+MONIT
 B
- 1.24
+       1.24
 ENDCOMMON            3
 DATA                 5         12
 ELEMENT    MASS       DATA       DATA-ERR   DECAY-FLAG
-NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
- 28.        66.            8.5E-7     0.9E-7  1.
- 29.        67.            1.4E-6     0.4E-6  2.
- 30.        72.            3.0E-5     0.4E-5  3.
- 39.        93.            0.044      0.004   4.
- 56.       140.            0.0446     0.0018  5.
- 60.       147.            0.0220     0.0015  6.
- 62.       153.            4.2E-3     0.4E-3  7.
- 64.       159.            2.6E-4     0.3E-4  8.
- 65.       161.            8.9E-5     0.5E-5  9.
- 66.       166.            6.3E-6     0.6E-6 10.
- 68.       169.           1.29E-6    0.09E-6 11.
- 68.       172.            2.1E-7     0.7E-7 12.
+NO-DIM     NO-DIM     PRD/FIS    PRD/FIS    NO-DIM
+        28.        66.     8.5E-7     0.9E-7         1.
+        29.        67.     1.4E-6     0.4E-6         2.
+        30.        72.     3.0E-5     0.4E-5         3.
+        39.        93.      0.044      0.004         4.
+        56.       140.     0.0446     0.0018         5.
+        60.       147.     0.0220     0.0015         6.
+        62.       153.     4.2E-3     0.4E-3         7.
+        64.       159.     2.6E-4     0.3E-4         8.
+        65.       161.     8.9E-5     0.5E-5         9.
+        66.       166.     6.3E-6     0.6E-6        10.
+        68.       169.    1.29E-6    0.09E-6        11.
+        68.       172.     2.1E-7     0.7E-7        12.
 ENDDATA             14
-ENDSUBENT           26
+ENDSUBENT           43
 ENDENTRY             4
