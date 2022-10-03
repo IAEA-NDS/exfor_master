@@ -1,52 +1,72 @@
-ENTRY            13387     891220              20050926       0000
-SUBENT        13387001     891220              20050926       0000
-BIB                 12         12
+ENTRY            13387   20201214   20210607   20210604       1477
+SUBENT        13387001   20201214   20210607   20210604       1477
+BIB                 10         15
+TITLE      U235 thermal neutron fission Yields at masses 90 and 91
+AUTHOR     (G.W.Reed)
 INSTITUTE  (1USAANL)
-REFERENCE  (J,PR,98,1327,5506)
-AUTHOR     (G.W.REED)
-TITLE      U235 THERMAL NEUTRON FISSION YIELDS AT MASSES 90 AND 91
-FACILITY   (REAC) CP-5
-SAMPLE     URANYL NITRATE
-METHOD     (RCHEM)
+REFERENCE  (J,PR,98,1327,1955)
+           #doi:10.1103/PhysRev.98.1327
+           #NSR: 1955RE52
+FACILITY   (REAC,1USAANL) CP-3 pile
+SAMPLE     Uranyl nitrate
+METHOD     (CHSEP)
 DETECTOR   (GEMUC)
-MONITOR    (92-U-235(N,F)38-SR-89,CUM,FY,,SPA)
 DECAY-MON  (38-SR-89,53.D,B-)
-STATUS     (RIDER) 55REE1
-HISTORY    (891212C) VM
-ENDBIB              12
-COMMON               2          3
-EN-DUMMY   MONIT
-EV         PC/FIS
-0.0253       4.78
+HISTORY    (19891212C) VM
+           (20201214U) OG. Converted to lower case and 4-digit
+           year. #NSR and #doi added. STATUS, METHOD, ERR-ANALYS
+           updated.
+ENDBIB              15
+COMMON               1          3
+EN-DUMMY
+EV
+0.0253
 ENDCOMMON            3
-ENDSUBENT           19
-SUBENT        13387002     891220              20050926       0000
-BIB                  2          3
+ENDSUBENT           22
+SUBENT        13387002   20201214   20210607   20210604       1477
+BIB                  6          7
 REACTION   (92-U-235(N,F)ELEM/MASS,IND,FY,,SPA)
-DECAY-DATA ((1.)39-Y-90,65.HR,B-)
-           ((2.)39-Y-91,57.D,B-)
-ENDBIB               3
-NOCOMMON             0          0
+DECAY-DATA ((1.)39-Y-90-G,65.HR,B-)
+           ((2.)39-Y-91-G,57.D,B-)
+MONITOR    (92-U-235(N,F)38-SR-89,CUM,FY,,SPA)
+ERR-ANALYS No information on uncertainties.
+STATUS     (TABLE) Tab.III in Phys.Rev.98,1327,1955.
+HISTORY    (20201214U) OG. STATUS added.
+ENDBIB               7
+COMMON               2          3
+MONIT      MONIT-ERR
+PC/FIS     PC/FIS
+  4.78       0.07
+ENDCOMMON            3
 DATA                 4          2
 MASS       ELEMENT    DATA-MAX   DECAY-FLAG
 NO-DIM     NO-DIM     PC/FIS     NO-DIM
  90.        39.         0.0013    1.
  91.        39.         0.05      2.
 ENDDATA              4
-ENDSUBENT           12
-SUBENT        13387003     891220              20050926       0000
-BIB                  3          4
+ENDSUBENT           20
+SUBENT        13387003   20201214   20210607   20210604       1477
+BIB                  7          9
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA)
-MONITOR     90SR ALSO MEASURED RELATIVE TO 99MO.
-DECAY-DATA ((1.)38-SR-90,19.9YR,B-) 90SR HALF-LIFE OUT-OF-DATE
-           ((2.)39-Y-91,57.D,B-)
-ENDBIB               4
-NOCOMMON             0          0
+MONITOR    ((MONIT1)92-U-235(N,F)38-SR-89,CUM,FY,,SPA)
+           ((MONIT2)92-U-235(N,F)42-MO-99,CUM,FY,,SPA)
+MONIT-REF  ((MONIT2)13372003,G.Reed+,J,PR,92,1473,1953)
+DECAY-DATA ((1.)38-SR-90,19.9YR,B-) 90Sr half-life out-of-date.
+           ((2.)39-Y-91-G,57.D,B-)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
+STATUS     (TABLE) Tab.III in Phys.Rev.98,1327,1955.
+HISTORY    (20201214U) OG. STATUS added.
+ENDBIB               9
+COMMON               3          3
+MONIT1     MONIT1-ERR MONIT2
+PC/FIS     PC/FIS     PC/FIS
+  4.78       0.07       5.98
+ENDCOMMON            3
 DATA                 6          2
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
 NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
  38.        90.         0.         4.02       0.11      1.
  39.        91.         0.         5.35       0.21      2.
 ENDDATA              4
-ENDSUBENT           13
+ENDSUBENT           22
 ENDENTRY             3
