@@ -1,8 +1,8 @@
-ENTRY            12866   20160608   20160902   20160824       1418
-SUBENT        12866001   20160608   20160902   20160824       1418
-BIB                 15         55
+ENTRY            12866   20210920   20220215   20220214       1487
+SUBENT        12866001   20210920   20220215   20220214       1487
+BIB                 15         57
 INSTITUTE  (1USALRL)
-REFERENCE  (C,78MAYAG,,495,197805)
+REFERENCE  (C,78MAYAG,,495,1978)
 AUTHOR     (R.E.Heft)
 TITLE      A consistent set of nuclear-parameter values
            for absolute instrumental neutron activation
@@ -56,7 +56,9 @@ HISTORY    (19840410C)
            (20100617A) OS. Reactions in subentries 208,209 corr.
            (20160603A) OS. Isomer assignments corrected in
              subentries 146-149.
-ENDBIB              55
+           (20210915A) OS. Important corrections in subs.
+            62, 63, 172, 173.
+ENDBIB              57
 COMMON              10          6
 MONIT1     MONIT1-ERR MONIT2     MONIT3     MONIT4     MONIT5
 MONIT5-ERR MONIT6     MONIT7     MONIT8
@@ -65,7 +67,7 @@ B          B          B          B
 27.7       0.5        37.5       98.8       2.720      12.2
 0.6        75.        1550.      280.
 ENDCOMMON            6
-ENDSUBENT           65
+ENDSUBENT           67
 SUBENT        12866002   20091022   20100405   20100330       1360
 BIB                  5          8
 REACTION   (11-NA-23(N,G)11-NA-24,,SIG,,SPA)
@@ -1074,39 +1076,43 @@ EV         B          B
 0.5        5.49       0.07
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        12866062   20091022   20100405   20100330       1360
-BIB                  4          6
-REACTION   (37-RB-85(N,G)37-RB-86,M+,SIG,,SPA)
-SAMPLE     Natural sample, assumed 72.15% abundance.
+SUBENT        12866062   20210920   20220215   20220214       1487
+BIB                  4          8
+REACTION   (37-RB-85(N,G)37-RB-86,,SIG,,SPA)
+SAMPLE     (37-RB-85,NAT=0.7215) Natural sample,
+            assumed 72.15% abundance.
 DECAY-DATA (37-RB-86-G,18.66D,DG,1076.79,0.088)
             **** COMMENT BY AUTHOR: Cross section includes
                  contribution from short-lived parent.
 HISTORY    (20091021A) Reaction corrected.
-ENDBIB               6
+           (20210915A) REACTION SF5 deleted
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 EV         B          B
 0.025      0.519      0.011
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        12866063   20091022   20100405   20100330       1360
-BIB                  4          7
-REACTION   (37-RB-85(N,G)37-RB-86,M+,RI)
-SAMPLE     Natural sample, assumed 72.15% abundance.
+ENDSUBENT           16
+SUBENT        12866063   20210920   20220215   20220214       1487
+BIB                  4          9
+REACTION   (37-RB-85(N,G)37-RB-86,,RI)
+SAMPLE     (37-RB-85,NAT=0.7215) Natural sample,
+            assumed 72.15% abundance.
 DECAY-DATA (37-RB-86-G,18.66D,DG,1076.79,0.088)
             **** COMMENT BY AUTHOR: Cross section includes
                  contribution from short-lived parent.
 HISTORY    (19890424A) Resonance integral energy corrected.
            (20091021A) Reaction corrected.
-ENDBIB               7
+           (20210915A) REACTION SF5 deleted
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 EN-MIN     DATA       DATA-ERR
 EV         B          B
 0.5        8.34       0.42
 ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           17
 SUBENT        12866064   20091022   20100405   20100330       1360
 BIB                  3          3
 REACTION   (37-RB-87(N,G)37-RB-88,,SIG,,SPA)
@@ -2822,41 +2828,55 @@ EV         B          B
 0.5        1.33       0.13
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        12866172   20091022   20100405   20100330       1360
-BIB                  4          7
-REACTION   (71-LU-176(N,G)71-LU-177,M+,SIG,,SPA)
+SUBENT        12866172   20210920   20220215   20220214       1487
+BIB                  4         14
+REACTION   (71-LU-176(N,G)71-LU-177-G,M+,SIG,,SPA)
 SAMPLE     Natural sample, assumed 97.41% abundance.
+           ---Compiler's comment: Table 2 lists abundance of
+           97.41% for Lu-176. This value is actually the
+           abundance of Lu-175. Abundance of Lu-176 is 2.599%.
+           Not clear whether the incorrect abundance value was
+           actually used in determining the cross section.
 DECAY-DATA (71-LU-177-G,6.630E+00D,DG,208.36,0.111)
             **** COMMENT BY AUTHOR: Cross section and resonance
                  integral values include contribution from
                  short-lived parent.
 HISTORY    (20091021A) Reaction corrected.
-ENDBIB               7
+           (20210915A) Isomer code added to REACTION SF1, added
+            compiler's comment to SAMPLE.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 EV         B          B
 0.025      3350.      100.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        12866173   20091022   20100405   20100330       1360
-BIB                  4          8
-REACTION   (71-LU-176(N,G)71-LU-177,M+,RI)
+ENDSUBENT           22
+SUBENT        12866173   20210920   20220215   20220214       1487
+BIB                  4         15
+REACTION   (71-LU-176(N,G)71-LU-177-G,M+,RI)
 SAMPLE     Natural sample, assumed 97.41% abundance.
+           ---Compiler's comment: Table 2 lists abundance of
+           97.41% for Lu-176. This value is actually the
+           abundance of Lu-175. Abundance of Lu-176 is 2.599%.
+           Not clear whether the incorrect abundance value was
+           actually used in determining the resonance integral.
 DECAY-DATA (71-LU-177-G,6.630E+00D,DG,208.36,0.111)
             **** COMMENT BY AUTHOR: Cross section and resonance
                  integral values include contribution from
                  short-lived parent.
 HISTORY    (19890424A) Resonance integral energy corrected.
            (20091021A) Reaction corrected.
-ENDBIB               8
+           (20210915A) Isomer code added to REACTION SF1, added
+            compiler's comment to SAMPLE.
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 3          1
 EN-MIN     DATA       DATA-ERR
 EV         B          B
 0.5        1480.      80.
 ENDDATA              3
-ENDSUBENT           16
+ENDSUBENT           23
 SUBENT        12866174   20091022   20100405   20100330       1360
 BIB                  3          3
 REACTION   (72-HF-174(N,G)72-HF-175,,SIG,,SPA)
