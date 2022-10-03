@@ -1,17 +1,17 @@
-ENTRY            40457   20110712   20111003   20110930       4153
-SUBENT        40457001   20110712   20111003   20110930       4153
-BIB                 12         30
+ENTRY            40457   20210220   20210810   20210810       4195
+SUBENT        40457001   20210220   20210810   20210810       4195
+BIB                 12         32
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,AE,43,(4),266,197710)
-           (J,SJA,43,(4),899,1977) Engl. translation of J,AE,43 .
+REFERENCE  (J,AE,43,266,1977) Issue 4.
+           (J,SJA,43,899,1977) Engl. translation of J,AE,43 .
            #doi:10.1007/BF01117994
-           (P,YFI-25,30,197711)
+           (P,YFI-25,30,1977)
            (R,FEI-577,1975)  Experimental details
 AUTHOR     (V.Ya.Baryba,B.V.Zhuravlev,N.V.Kornilov,
            O.A.Sal'nikov)
 TITLE      Energy and angular distributions of neutrons produced
            in the bombardment of U-238 with 2.47 MeV neutrons
-FACILITY   (CYCTM) Tandem cyclotron EGP-10M, beam energy 10. MeV
+FACILITY   (VDG)  Accelerator EGP-10M, beam energy 10. MeV
                       pulse duration 2. nsec
                      pulse-repetition rate 5.0 MegaHertz
 INC-SOURCE (P-T) Solid tritium target of 1.5 mg.
@@ -26,51 +26,57 @@ DETECTOR   (SOLST) Solid state detector with stilbene crystal of
 MONITOR    (98-CF-252(N,F),PR,NU/DE) For detector efficiency.
            Cf-252 prompt neutron spectrum was described by Terrell
            formula of T=1.42 MeV.
+CORRECTION  Multiple scattering correction is 30.%.
 HISTORY    (19781121C)  Compiled at the centre
            (20110712A) Upper -> lower case correction.
             Dates were corrected for 4-digits year.
             Ref. J,SJA was added.
-CORRECTION  Multiple scattering correction is 30. percent
-ENDBIB              30
+           (20210220A) REACTION was corrected in Subents 004,005.
+            Minor correction of free text.
+ENDBIB              32
 COMMON               2          3
 EN         EN-RSL
 MEV        KEV
  2.47       100.
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        40457002   20110712   20111003   20110930       4153
-BIB                  6         14
+ENDSUBENT           39
+SUBENT        40457002   20210220   20210810   20210810       4195
+BIB                  7         16
 REACTION   (92-U-238(N,INL)92-U-238,PAR,SIG)
 MONITOR   1(92-U-238(N,F),,SIG)
           2(92-U-238(N,F),,NU)
 MONIT-REF 2(40429003,V.Nurpeisov+,R,FEI-543,1974)
           1(,M.N.Nikolaev+,R,YK-8,(1),10,1972) Yad.Const.,8,part1.
 ANALYSIS   (INTAD)
-STATUS     (DEP,40457003) Data obtained from SUBENT 40457003
-           (TABLE) Text, page 67, of J,AE,43,(4),266,1977.
-            = text,page 31, of P,YFI-25,30,1977.
-ERR-ANALYS (DATA-ERR) Total error
-           (DATA-ERR1) Error due to the polynomial representation
-           (DATA-ERR2,4.,6.) Error due to angular distribution
-           (DATA-ERR3) Error due to normalization
-           (DATA-ERR4) Integration error
-ENDBIB              14
+STATUS     (DEP,40457003) Data obtained from SUBENT 40457003 (DA)
+           (TABLE) Text page 67, of At.Energy,v.43,is.4,p.266,1977
+            = text,page 31, of rep.YFI-25,p.30,1977.
+ERR-ANALYS (ERR-T)    Total error
+           (ERR-1) Error due to the polynomial representation
+           (ERR-2,4.,6.) Error due to angular distribution
+           (ERR-3) Error due to normalization
+           (ERR-4)  Integration error
+HISTORY    (20210220A) DATA-ERR -> ERR-T,
+                DATA-ERR1/2/3/4 -> ERR-1/2/3/4.
+ENDBIB              16
 COMMON               5          3
-Q-VAL-MIN  Q-VAL-MAX  DATA-ERR1  DATA-ERR3  DATA-ERR4
+Q-VAL-MIN  Q-VAL-MAX  ERR-1      ERR-3      ERR-4
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
 -1.3500E+00-9.0000E-01 2.         5.         4.
 ENDCOMMON            3
 DATA                 4          1
-DATA       DATA-ERR   MONIT1     MONIT2
+DATA       ERR-T      MONIT1     MONIT2
 MB         MB         B          PRT/FIS
- 3.8000E+02 2.5000E+01 5.5000E-01 2.6600E+00
+ 380.       25.        0.55       2.66
 ENDDATA              3
-ENDSUBENT           26
-SUBENT        40457003   20110712   20111003   20110930       4153
-BIB                  2          2
+ENDSUBENT           28
+SUBENT        40457003   20210220   20210810   20210810       4195
+BIB                  3          4
 REACTION   (92-U-238(N,INL)92-U-238,PAR,DA)
-STATUS     (TABLE) Table 1 of P,YFI-25,30,1977
-ENDBIB               2
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 1 of rep.YFI-25,p.30,1977
+ENDBIB               4
 COMMON               2          3
 Q-VAL-MIN  Q-VAL-MAX
 MEV        MEV
@@ -79,25 +85,30 @@ ENDCOMMON            3
 DATA                 3          5
 ANG        DATA       DATA-ERR
 ADEG       MB/SR      MB/SR
- 3.0000E+01 3.5400E+01 1.5000E+00
- 6.0000E+01 3.0700E+01 1.1000E+00
- 9.0000E+01 3.0200E+01 1.1000E+00
- 1.2000E+02 2.8100E+01 1.2000E+00
- 1.5000E+02 2.7200E+01 1.4000E+00
+ 30.        35.4       1.5
+ 60.        30.7       1.1
+ 90.        30.2       1.1
+ 120.       28.1       1.2
+ 150.       27.2       1.4
 ENDDATA              7
-ENDSUBENT           18
-SUBENT        40457004   20110712   20111003   20110930       4153
-BIB                  4          9
-REACTION   (92-U-238(N,INL)92-U-238,PAR,DA,N,LEG/RSD)
-COMMENT     Cross-section has following representation
-            (D-SIG(TETA)/D-OMEGA)/(D-SIG(90)/D-OMEGA)=
-            1/4PI*(A(0)+SUM(A(L)P(L)))
+ENDSUBENT           20
+SUBENT        40457004   20210220   20210810   20210810       4195
+BIB                  4         14
+REACTION   (92-U-238(N,INL)92-U-238,PAR,DA,,LEG/RSD/FCT)
+            Factor 1/4PI.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
 STATUS     (DEP,40457003) Data obtained from SUBENT 40457003
-           (TABLE) Text, page 67, of J,AE,43,(4),266,1977.
-            = text,page 31, of P,YFI-25,30,1977.
+           (TABLE) Text page 67, of At.Energy,v.43,is.4,p.266,1977
+            = text,page 31, of rep.YFI-25,p.30,1977.
 HISTORY    (20110712A) M.M. "N" was deleted from SF7 according to
             the comment of N.Otsuka (NDS IAEA).
-ENDBIB               9
+           (20210220A) "N" was deleted from SF7, FCT was added
+            Formula used for fitting
+            (D-SIG(TETA)/D-OMEGA)/(D-SIG(90)/D-OMEGA)=
+            1/4PI*(A(0)+SUM(A(L)P(L))) was deleted according to
+            N.Otsuka (NDS, IAEA) comment.
+ENDBIB              14
 COMMON               2          3
 Q-VAL-MIN  Q-VAL-MAX
 MEV        MEV
@@ -106,17 +117,16 @@ ENDCOMMON            3
 DATA                 3          3
 NUMBER     DATA       DATA-ERR
 NO-DIM     NO-DIM     NO-DIM
- 0.         1.2570E+01 2.3000E-01
- 1.         1.7700E+00 3.6000E-01
- 2.         5.9000E-01 5.0000E-01
+ 0.         12.57      0.23
+ 1.         1.77       0.36
+ 2.         0.59       0.50
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        40457005   20110712   20111003   20110930       4153
-BIB                  4         17
-REACTION   (92-U-238(N,F),,DA,N,LEG/RSD)  Angular distribution
-                                        of fission neutrons
-                                        in the energy range
-                                        3. - 9. MeV
+ENDSUBENT           28
+SUBENT        40457005   20210220   20210810   20210810       4195
+BIB                  6         20
+REACTION   (92-U-238(N,F)0-NN-1,,DA,,LEG/RSD/MSC)
+             Angular distribution of fission neutrons
+                    in the energy range 3. - 9. MeV.
 ADD-RES    (N-SPC) Fission neutron spectra were described by
             Maxwellian distribution with T ,MeV :
            Angle      Sample 2              Sample 3
@@ -129,15 +139,19 @@ ADD-RES    (N-SPC) Fission neutron spectra were described by
            average <E>=3/2*<T>=1.995+-0.060 MeV.
 COMMENT     Within 4-percent accuracy - angular distribution
             of fission neutrons is isotropic
-STATUS     (TABLE) Text, page 67, of J,AE,43,(4),266,1977.
-ENDBIB              17
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Text page 67, of At.Energy,v.43,is.4,p.266,1977
+HISTORY    (20210220A) N in SF7 -> 0-NN-1 in SF4. MSC was added
+           according to a comment N.Otsuka (NDS,IAEA)
+ENDBIB              20
 NOCOMMON             0          0
 DATA                 3          3
 NUMBER     DATA       DATA-ERR
 NO-DIM     NO-DIM     NO-DIM
- 0.         1.2660E+01 1.5000E-01
- 1.        -2.7000E-01 2.2000E-01
- 2.         9.0000E-02 3.0000E-01
+ 0.         12.66      0.15
+ 1.        -0.27       0.22
+ 2.         0.09       0.30
 ENDDATA              5
-ENDSUBENT           27
+ENDSUBENT           30
 ENDENTRY             5

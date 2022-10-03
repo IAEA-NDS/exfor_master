@@ -1,6 +1,6 @@
-ENTRY            41615   20190121   20190401   20190326       4181
-SUBENT        41615001   20190121   20190401   20190326       4181
-BIB                 11         39
+ENTRY            41615   20210608   20210810   20210810       4195
+SUBENT        41615001   20210608   20210810   20210810       4195
+BIB                 11         40
 TITLE      Angular Distribution of 4.43-MeV gamma-Rays Produced
            in Inelastic Scattering of 14.1-MeV Neutrons by 12C
            Nuclei
@@ -16,7 +16,7 @@ INSTITUTE  (4ZZZDUB) V.M.Bystritsky,D.N.Grozdanov,A.O.Zontikov,
 REFERENCE  (J,PPN/L,13,504,2016) Issue 4 .
            #doi:10.1134/S154747711604004X
            Engl.translation of:
-           (J,FCY/L,13,(4),793,2016)
+           (J,FCY/L,13,793,2016) Issue 4.
 FACILITY   (NGEN,4ZZZDUB) Portable ING-27 neutron generator
             designed and fabricated at VNIIA, Moscow.
 INC-SOURCE (D-T)
@@ -40,9 +40,10 @@ ANALYSIS    Exp.gamma distributions were fitted as:
 HISTORY    (20161020C) M.M.
            (20190121A) Subent 004 was added.
             Data were added in Subents 002, 003 .
-ENDBIB              39
+           (20210608A) Subent 002 was corrected.
+ENDBIB              40
 NOCOMMON             0          0
-ENDSUBENT           42
+ENDSUBENT           43
 SUBENT        41615002   20190121   20190401   20190326       4181
 BIB                  8         20
 REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,G,COS/RSD)
@@ -114,18 +115,15 @@ NO-DIM     NO-DIM     NO-DIM
   -0.966    1.602      0.049
 ENDDATA             13
 ENDSUBENT           34
-SUBENT        41615004   20190121   20190401   20190326       4181
-BIB                  8         22
-REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,G,LEG/RSD)
+SUBENT        41615004   20210608   20210810   20210810       4195
+BIB                  7         24
+REACTION   (6-C-12(N,INL)6-C-12,PAR,DA,G,LEG/RS)
 REL-REF    (O,41660001,D.N.Grozdanov+,J,PAN,81,588,2018)
            #doi:10.1134/S106377881805006X
            Engl.translation of:
            (O,41660001,D.N.Grozdanov+,J,YF,81,548,2018) Issue 5.
            #doi:10.1134/S0044002718050069
-EN-SEC     (E,G)
-ANALYSIS   .Anisotropy ( Number(Theta)/Number(90deg) ) was fitted
-           W(THETA)=1+a2*P2(cos(Theta))+ a4*P4(cos(THETA))
-           .Legendre coefficients were obtained using formula 14.2
+ADD-RES    .Legendre coefficients were obtained using formula 14.2
              of ENDF-6 Formats Manual
              https://www.bnl.gov/isd/documents/70393.pdf
             2. - 6.495E-02, 4. - -4.722E-02 (received form author)
@@ -138,7 +136,12 @@ STATUS     (DEP,41615003) Angular anisotropy.
 HISTORY    (20190121C)
            (20190128R) Data 2 (received from author A.O.Zontikov)
            were added in free text
-ENDBIB              22
+           (20210608A) SF8:LEG/RSD -> RSD.
+            "EN-SEC (G)" was deleted.
+           Formula used to derive Legendre coefficients
+            W(THETA)=1+a2*P2(cos(Theta))+ a4*P4(cos(THETA))
+           was deleted according to comment of N.Otsuka (NDS,IAEA)
+ENDBIB              24
 COMMON               2          3
 EN         E
 MEV        MEV
@@ -150,5 +153,5 @@ NO-DIM     NO-DIM     NO-DIM
  2.          0.34      0.03
  4.         -0.33      0.03
 ENDDATA              4
-ENDSUBENT           35
+ENDSUBENT           37
 ENDENTRY             4
