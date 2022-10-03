@@ -1,13 +1,13 @@
-ENTRY            31516   20020213   20020417   20050926       0000
-SUBENT        31516001   20020213   20020417   20050926       0000
-BIB                 17         64
+ENTRY            31516   20211005   20211117   20211116       3202
+SUBENT        31516001   20211005   20211117   20211116       3202
+BIB                 17         68
 INSTITUTE  (3ARGCAB)
-REFERENCE  (J,NSE,139,24,200109) Data, details on activity
+REFERENCE  (J,NSE,139,24,2001) Data, details on activity
            measurements
-           (J,NSE,127,245,199711) Further details of the
+           (J,NSE,127,245,1997) Further details of the
            experimental set-up
-AUTHOR     (M.A.ARRIBERE,S.RIBEIRO GUEVARA,P.M.SUAREZ,
-           A.J.KESTELMAN)
+AUTHOR     (M.A.Arribere,S.Ribeiro Guevara,P.M.Suarez,
+           A.J.Kestelman)
 TITLE      Threshold reaction cross sections of nickel isotopes,
            averaged over a U-235 fission neutron spectrum
 METHOD     (ACTIV) Activation method with registration of
@@ -19,7 +19,7 @@ METHOD     (ACTIV) Activation method with registration of
            Co-61) or 1% - Co-58g. 3 cm source-to-detector
            distances for long-lived activities with dead time less
            than 0.2%.
-FACILITY   (REAC)
+FACILITY   (REAC,3ARGCAB)
 INC-SOURCE (REAC) Neutrons from RA-6 materials test reactor
            at Centre Atomico Barilochi.
            Compiler's note: The neutron flux characteristics of
@@ -40,7 +40,7 @@ DETECTOR   (HPGE) 67 cm*3 ORTEC high-purity germanium intrinsic-N
            2 per-cent uncertainty.
 SAMPLE     About 0.25 mm-thick high purity foils (natural Ni)
 MONITOR    (28-NI-58(N,P)27-CO-58,,SIG,,FIS)
-MONIT-REF  (,J.H.BAARD+,B,BAARD,,1989)
+MONIT-REF  (,J.H.Baard+,B,BAARD,,,1989)
 DECAY-MON  (27-CO-58-G,70.82D,DG,811.79,.99448) Attenuation factor
            - 0.987. Data are taken
            from J.K. Tuli, Nuclear Wallet Cards, BNL (1995) for
@@ -50,28 +50,32 @@ DECAY-MON  (27-CO-58-G,70.82D,DG,811.79,.99448) Attenuation factor
            parameters of all measured activities
 CORRECTION Gamma-ray self-attenuation correction factors were
            computed considering the foil samples as slabs and
-           using data  from Nucl. Data Tables, Vol.7, Chap. 6
+           using data from Nucl. Data Tables, Vol.7, Chap. 6
             (1970) p. 565.
 ERR-ANALYS (ERR-S)The statistical component of the uncertainty was
            obtained as weighted mean for a few measurements and
            is given separately.
            (ERR-T)The total uncertainty includes
-           2.8% as uncertainty of the reference cross section
-           value, 2% - uncertainty in the detector absolute
-           efficiency determination, the corresponding isotopic
-           abundance uncertainty, 1-2% other systematic
-           uncertainties (activation product decay constants,
-           time uncertainties and uncertainty of self-attenuation
-           correction
-STATUS     Data taken from Table 2 of main reference.
+           the corresponding isotopic abundance uncertainty
+           (MONIT-ERR) 2.8% as uncertainty of the reference cross
+           section value,
+           (ERR-1) 2% - uncertainty in the detector absolute
+           efficiency determination,
+           (ERR-2,1.,2.) 1-2% other systematic uncertainties
+            (activation product decay constants, time
+           uncertainties and uncertainty of self-attenuation
+           correction.
+STATUS     (TABLE) Data taken from Table 2 of main reference.
 HISTORY    (20020213C) Compiled by VP
-ENDBIB              64
-COMMON               3          3
-EN-DUMMY   MONIT      MONIT-ERR
-MEV        MB         MB
- 1.5        111.       3.
+           (20211004A) VS. REACTION corrected in 002.
+                           ERR-ANALYS updated in 001.
+ENDBIB              68
+COMMON               4          3
+EN-DUMMY   MONIT      MONIT-ERR  ERR-1
+MEV        MB         MB         PER-CENT
+ 1.5        111.       3.         2.
 ENDCOMMON            3
-ENDSUBENT           71
+ENDSUBENT           75
 SUBENT        31516002   20020213   20020417   20050926       0000
 BIB                  5         12
 REACTION   (28-NI-60(N,P)27-CO-60-M,,SIG,,FIS)
@@ -133,11 +137,9 @@ MB         MB         MB
  0.00472    0.00012    0.00026
 ENDDATA              3
 ENDSUBENT           17
-SUBENT        31516005   20020213   20020417   20050926       0000
-BIB                  4         12
-REACTION   (((28-NI-58(N,N+P)27-CO-57,,SIG,,FIS)+
-           (28-NI-58(N,D)27-CO-57,,SIG,,FIS))=
-           (28-NI-58(N,X)27-CO-57,IND,SIG,,FIS))
+SUBENT        31516005   20211005   20211117   20211116       3202
+BIB                  5         12
+REACTION   (28-NI-58(N,X)27-CO-57,,SIG,,FIS)
 DECAY-DATA (27-CO-57,271.79D,DG,122.06,.856)
 SAMPLE     Natural isotopic abundance of Ni-58 was taken as:
            68.077+-0.009%
@@ -147,6 +149,8 @@ METHOD     4 samples were individually irradiated for 5 to 10 min
            counted from 50 to 100 hr. Correction on contribution
            from Ni-58(n,2n)Ni-57 -> beta+ decay ->Co-57 branch
            was introduced using (n,2n) cross section of this work
+HISTORY    (20211004A) VS. REACTION corrected c.f. Memos CP-D/0999
+                           and CP-D/0954.
 ENDBIB              12
 NOCOMMON             0          0
 DATA                 3          1

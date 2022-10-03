@@ -1,10 +1,10 @@
-ENTRY            30105   20160210   20160503   20160408       3173
-SUBENT        30105001   20160210   20160503   20160408       3173
+ENTRY            30105   20211005   20211117   20211116       3202
+SUBENT        30105001   20211005   20211117   20211116       3202
 BIB                 17         53
-INSTITUTE  (3POLIBJ,3POLWWA)
-REFERENCE  (J,NP,74,438,196512)method,results,comparison to theory
-           (C,64PARIS,2,825,196407) review of (n,p) cross section
-           (R,INR-461,196307) full paper, results cfd theory
+INSTITUTE  (3POLIPJ,3POLWWA)
+REFERENCE  (J,NP,74,438,1965)method,results,comparison to theory
+           (C,64PARIS,2,825,1964) review of (n,p) cross section
+           (R,INR-461,1963) full paper, results cfd theory
 AUTHOR     (J.Brzosko,P.Decowski,K.Siwek-Diament,Z.Wilhelmi)
 TITLE      Isomeric cross section ratios for some reactions
            induced by neutrons in Sn and Te isotopes
@@ -12,26 +12,24 @@ REL-REF    (O,30135001,J.Brzosko+,J,NP,74,438,1965)
                     130Te(n,2n) data
            (O,30136001,J.Brzosko+,J,NP,74,438,1965) 116Sn(n,p);
              117Sn(n,p); 124Te(n,p); 128Te(n,p); 28Te(n,p) data
-FACILITY   (VDG) Van de Graaff accelerator of the institute
+FACILITY   (VDG,3POLIPJ) Van de Graaff accelerator
 INC-SOURCE (D-T) neutrons from the T(d,n)alfa reaction
 SAMPLE     Enriched targets
 METHOD     (ACTIV) activation method
-DETECTOR   (SCIN) scintillation detector for the neutrons
+DETECTOR   (SCIN) neutron flux from the T(d,n)alpha reaction
+           measured and recorded by a scintillation monitor.
            (GEMUC)  for beta counting
            (NAICR) 4.4 by 5.1 cm Na-I-crystal of known absolute
            efficiency for the gammas
-PART-DET   (N) neutron flux from the T(d,n)alpha reaction measured
-           and recorded by a scintillation monitor
-           (B-,DG) electrons and gammas from the decaying residual
-           nucleus
-ANALYSIS   Least-squares method used to find from the decay
-           curves the initial activity of the isotopes produced
-           which are identified mainly by accurate half-life
-           measurements sometimes completed by gamma spectrum
-           measurements for better identification
+PART-DET   (B-,DG)
+ANALYSIS   (DECAY) Least-squares method used to find from the
+           decay curves the initial activity of the isotopes
+           produced which are identified mainly by accurate
+           half-life measurements sometimes completed by gamma
+           spectrum measurements for better identification.
 MONITOR    (26-FE-56(N,P)25-MN-56,,SIG)
 CORRECTION Corrections for backscattering, self-absorption,
-           window and air absorption were required for the  beta
+           window and air absorption were required for the beta
            counting. These corrections were calculated on the
            basis of the following references:
            K. Scheiser, radioactive isotope (Springer-Verlag,
@@ -48,15 +46,17 @@ ERR-ANALYS (DATA-ERR) statistical and errors from corrections.
                       No details.
 STATUS     (TABLE) data taken from tables in NP,74,438,1965
 HISTORY    (19711019C)
-           (19770427A)  Correction of resid-nuc in subentry .006
+           (19770427A) Correction of resid-nuc in subentry .006
                       and data-err in subentry .012, another
                       reference added and codes corrected.    YAG.
            (20080208A) BIB section updated
            (20160209U) VS. DECAY-DATA in 006-008 corrected.
-                          REL-REF addeed
+                           REL-REF added
+           (20210930A) VS. SF3=X 009-011. SF4 -M -> -M1+M2 in 003.
+                          3POLIBJ -> 3POLIPJ in 001.
 ENDBIB              53
 COMMON               4          3
-MONIT      MONIT-ERR  EN         EN-RSL
+MONIT      MONIT-ERR  EN         EN-RSL-HW
 MB         MB         MEV        MEV
  1.0400E+02 1.0000E+01 1.4900E+01 5.0000E-01
 ENDCOMMON            3
@@ -73,18 +73,19 @@ MB         MB
  4.0000E-01 2.0000E-01
 ENDDATA              3
 ENDSUBENT           10
-SUBENT        30105003   20080208   20080530   20080530       3126
-BIB                  2          2
-REACTION   (50-SN-118(N,P)49-IN-118-M,,SIG)
-DECAY-DATA (49-IN-118-M,4.9MIN)
-ENDBIB               2
+SUBENT        30105003   20211005   20211117   20211116       3202
+BIB                  3          3
+REACTION   (50-SN-118(N,P)49-IN-118-M1+M2,,SIG)
+DECAY-DATA (49-IN-118-M1,4.9MIN)
+HISTORY    (20210930A) VS. SF4 -M -> -M1+M2. DECAY-DATA M->M1
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
  5.8000E+00 2.0000E-01
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           11
 SUBENT        30105004   20080208   20080530   20080530       3126
 BIB                  3          4
 REACTION   (50-SN-118(N,P)49-IN-118,,SIG,,,DERIV)
@@ -158,52 +159,47 @@ MB         MB
  8.6000E+00 2.0000E+00
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        30105009   20080208   20080530   20080530       3126
-BIB                  2          2
-REACTION   (50-SN-118(N,N+P)49-IN-117-G,,SIG)
+SUBENT        30105009   20211005   20211117   20211116       3202
+BIB                  3          3
+REACTION   (50-SN-118(N,X)49-IN-117-G,,SIG)
 DECAY-DATA (49-IN-117-G,44.6MIN)
-ENDBIB               2
-COMMON               2          3
-SPIN J     PARITY
-NO-DIM     NO-DIM
- 4.5000E+00 1.0000E+00
-ENDCOMMON            3
+HISTORY    (20210930A) VS. SF3=X c.f. Memo CP-D/0999.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
  9.3000E-01 2.6000E-01
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        30105010   20080208   20080530   20080530       3126
-BIB                  2          2
-REACTION   (50-SN-118(N,N+P)49-IN-117-M,,SIG)
+ENDSUBENT           11
+SUBENT        30105010   20211005   20211117   20211116       3202
+BIB                  3          3
+REACTION   (50-SN-118(N,X)49-IN-117-M,,SIG)
 DECAY-DATA (49-IN-117-M,115.7MIN)
-ENDBIB               2
-COMMON               2          3
-SPIN J     PARITY
-NO-DIM     NO-DIM
- 5.0000E-01-1.0000E+00
-ENDCOMMON            3
+HISTORY    (20210930A) VS. SF3=X c.f. Memo CP-D/0999.
+ENDBIB               3
+NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
  4.9000E-01 1.4000E-01
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        30105011   20080208   20080530   20080530       3126
-BIB                  3          4
-REACTION   (50-SN-118(N,N+P)49-IN-117,,SIG)
+ENDSUBENT           11
+SUBENT        30105011   20211005   20211117   20211116       3202
+BIB                  4          5
+REACTION   (50-SN-118(N,X)49-IN-117,,SIG)
 DECAY-DATA (49-IN-117-G,44.6MIN)
            (49-IN-117-M,115.7MIN)
 STATUS     (DEP,30105010) sum of data given in subentries 9 and 10
-ENDBIB               4
+HISTORY    (20210930A) VS. SF3=X c.f. Memo CP-D/0999.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 MB         MB
  1.4200E+00 3.0000E-01
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 SUBENT        30105012   20080208   20080530   20080530       3126
 BIB                  2          2
 REACTION   (50-SN-118(N,2N)50-SN-117-M,,SIG)
