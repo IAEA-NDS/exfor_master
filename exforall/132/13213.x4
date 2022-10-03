@@ -1,64 +1,79 @@
-ENTRY            13213     881102              20050926       0000
-SUBENT        13213001     881102              20050926       0000
-BIB                 10         12
+ENTRY            13213   20201210   20210809   20210705       1478
+SUBENT        13213001   20201210   20210809   20210705       1478
+BIB                  9         17
+TITLE      Heavy mass yields in the slow neutron fission of 233U
+           and 235U
+AUTHOR     (L.R.Bunney,E.M.Scadden)
 INSTITUTE  (1USANRD)
-REFERENCE  (J,JIN,27,273,65)
-AUTHOR     (L.R.BUNNEY,E.M.SCADDEN)
-TITLE      HEAVY MASS YIELD IN THE SLOW NEUTRON FISSION OF U-233
-           AND U-235
+REFERENCE  (J,JIN,27,273,1965)
+           #doi:10.1016/0022-1902(65)80338-4
+           #NSR: 1965BU15
 FACILITY   (REAC,1USAMTR)
-METHOD     (RCHEM)
-DETECTOR   (NAICR)
-ERR-ANALYS ESTIMATED ACCURACY OF DATA 10% FROM PRECISION OF
-            MEASUREMENTS AND AGREEMENT WITH LITERATURE VALUES
-STATUS     (RIDER) REFERENCE 65BUN1
-HISTORY    (890522C) VM
-ENDBIB              12
+METHOD     (CHSEP)
+DETECTOR   (PROPC,NAICR)
+ERR-ANALYS (DATA-ERR) Estimated accuracy of data 10% from
+           precision of measurements and agreement with literature
+           values
+HISTORY    (19890522C) VM
+           (20201210U) OG. Converted to lower case and 4-digit
+           year. #NSR and #doi added. STATUS, METHOD, ERR-ANALYS
+           updated.
+ENDBIB              17
 COMMON               2          3
 EN-DUMMY   DATA-ERR
 EV         PER-CENT
 0.0253      10.
 ENDCOMMON            3
-ENDSUBENT           19
-SUBENT        13213002     881102              20050926       0000
-BIB                  3          9
+ENDSUBENT           24
+SUBENT        13213002   20201210   20210809   20210705       1478
+BIB                  8         16
 REACTION   (92-U-233(N,F)MASS,CHN,FY,,SPA)
-SAMPLE     233U METAL FOIL. ISOTOPIC COMPOSITION: 99.76% 233U,
-            0.022% 234U, 0.007% 235U, 0.21% 238U.
+SAMPLE     233U metal foil.
+           (92-U-233,ENR=0.9976)
+           (92-U-234,ENR=0.00022)
+           (92-U-235,ENR=0.00007)
+           (92-U-238,ENR=0.0021)
 MONITOR    ((MONIT1)92-U-233(N,F)42-MO-99,CUM,FY,,SPA)
            ((MONIT2)92-U-235(N,F)42-MO-99,CUM,FY,,SPA)
            ((MONIT3)92-U-235(N,F)MASS,CHN,FY,,SPA)
-           TAKEN FROM KATCOFF, NUC.18,201 (1960), EXCEPT
-            MASS-157 YIELD TAKEN FROM THIS REFERENCE
-           RELATIVE TO 235U, NORMALIZED TO 99MO YIELD FROM 235U
-ENDBIB               9
+MONIT-REF  ((MONIT3),S.Katcoff,J,NUC,18,201,1960)
+ANALYSIS   Result is average of several runs
+FLAG       (1.) Value for MONIT3 taken from MONIT-REF
+           (2.) Value for MONIT3 taken from this reference
+           relative to 235U, normalized to 99Mo yield from 235U.
+STATUS     (TABLE) Tab.3 (p.277) in J.Inorg.Nucl.Chem.27,273,1965.
+HISTORY    (20201210U) OG. STATUS updated. MONIT-REF, FLAG added.
+ENDBIB              16
 COMMON               2          3
 MONIT1     MONIT2
 PC/FIS     PC/FIS
  4.80       6.06
 ENDCOMMON            3
-DATA                 3         12
-MASS       DATA       MONIT3
-NO-DIM     PC/FIS     PC/FIS
- 91.        6.94        5.84
-141.        7.58        6.4
-143.        5.92        6.03
-144.        4.74        5.62
-147.        1.89        2.36
-149.        0.815       1.13
-151.        0.337       0.44
-153.        0.108       0.169
-156.        0.0121      0.014
-157.        0.00635     0.0061
-159.        0.000905    0.00103
-161.        0.000117    0.000082
+DATA                 4         12
+MASS       DATA       MONIT3     FLAG
+NO-DIM     PC/FIS     PC/FIS     NO-DIM
+ 91.        6.94        5.84         1.
+141.        7.58        6.4          1.
+143.        5.92        6.03         1.
+144.        4.74        5.62         1.
+147.        1.89        2.36         1.
+149.        0.815       1.13         1.
+151.        0.337       0.44         1.
+153.        0.108       0.169        1.
+156.        0.0121      0.014        1.
+157.        0.00635     0.0061       2.
+159.        0.000905    0.00103      1.
+161.        0.000117    0.000082     1.
 ENDDATA             14
-ENDSUBENT           32
-SUBENT        13213003     881102              20050926       0000
-BIB                  2          2
+ENDSUBENT           39
+SUBENT        13213003   20201210   20210809   20210705       1478
+BIB                  5          5
 REACTION   (92-U-235(N,F)MASS,CHN,FY,,MXW)
 MONITOR    (92-U-235(N,F)42-MO-99,CUM,FY,,MXW)
-ENDBIB               2
+ANALYSIS   Result is average of several runs
+STATUS     (TABLE) Tab.2 (p.276) in J.Inorg.Nucl.Chem.27,273,1965
+HISTORY    (20201210U) OG. STATUS added.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 2          9
 MASS       DATA
@@ -73,5 +88,5 @@ NO-DIM     PC/FIS
 159.        0.000993
 161.           8.76E-5
 ENDDATA             11
-ENDSUBENT           18
+ENDSUBENT           21
 ENDENTRY             3

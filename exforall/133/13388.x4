@@ -1,35 +1,44 @@
-ENTRY            13388     891220              20050926       0000
-SUBENT        13388001     891220              20050926       0000
-BIB                  9         11
+ENTRY            13388   20201222   20210809   20210705       1478
+SUBENT        13388001   20201222   20210809   20210705       1478
+BIB                  7         13
+TITLE      Fission of U-235 by 14-MeV neutrons: nuclear charge
+            distribution and yield fine structure
+AUTHOR     (A.C.Wahl)
 INSTITUTE  (1USALAS)
-REFERENCE  (J,PR,99,730,5508)
-AUTHOR     (A.C.WAHL)
-TITLE      FISSION OF U-235 BY 14-MEV NEUTRONS: NUCLEAR CHARGE
-            DISTRIBUTIONS AND YIELD FINE STRUCTURE
-METHOD     (RCHEM)
+REFERENCE  (J,PR,99,730,1955)
+           #doi:10.1103/PhysRev.99.730
+           #NSR: 1955WA35
+METHOD     (CHSEP)
 DETECTOR   (PROPC)
-ERR-ANALYS (DATA-ERR) STANDARD DEVIATION OF THE AVERAGE OF THE
-            RESULTS
-STATUS     (RIDER)
-HISTORY    (891212C) VM
-ENDBIB              11
+HISTORY    (19891212C) VM
+           (20201219A) OG. Converted to lower case and 4-digit
+           year. #NSR, #doi added.  STATUS, FACILITY updated.
+           Sub005 added.
+ENDBIB              13
 NOCOMMON             0          0
-ENDSUBENT           14
-SUBENT        13388002     891220              20050926       0000
-BIB                  3         12
+ENDSUBENT           16
+SUBENT        13388002   20201222   20210809   20210705       1478
+BIB                  8         19
 REACTION   ((92-U-235(N,F)ELEM/MASS,CUM,FY)//
            (92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA))
+FACILITY   (REAC,1USALAS)
+           (CCW,1USALAS)
 MONITOR    ((MONIT1)92-U-235(N,F)42-MO-99,CUM,FY)
            ((MONIT2)92-U-235(N,F)42-MO-99,CUM,FY,,SPA)
+MONIT-REF  ((MONIT2)13374002,J.Terrell+,J,PR,92,1091(I4),1953)
 DECAY-DATA ((1.)52-TE-131-M,30.HR)
            ((2.)53-I-131,8.07D,B-)
            ((3.)52-TE-132,77.7HR)
-           ((4.)53-I-132,2.3HR,B-)
+           ((4.)53-I-132-G,2.3HR,B-)
            ((5.)52-TE-133-M,63.MIN)
-           ((6.)53-I-133,20.9HR,B-)
-           ((7.)53-I-134,52.5MIN,B-)
+           ((6.)53-I-133-G,20.9HR,B-)
+           ((7.)53-I-134-G,52.5MIN,B-)
            ((8.)53-I-135,6.7HR,B-)
-ENDBIB              12
+ERR-ANALYS (DATA-ERR) Standard deviation of the average of the
+            results.
+STATUS     (TABLE) Table on p.730 in Phys.Rev.99,730,1955.
+HISTORY    (20201222A) OG. STATUS updated. MONIT-REF added.
+ENDBIB              19
 COMMON               4          3
 EN-NM      EN-DUM-DN  MONIT1     MONIT2
 MEV        EV         PC/FIS     PC/FIS
@@ -47,22 +56,26 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
 134.        53.                    0.65       0.02      7.
 135.        53.                    0.69       0.02      8.
 ENDDATA             10
-ENDSUBENT           31
-SUBENT        13388003     891220              20050926       0000
-BIB                  6         12
+ENDSUBENT           38
+SUBENT        13388003   20201222   20210809   20210705       1478
+BIB                  8         16
 REACTION   (92-U-235(N,F)ELEM/MASS,IND,FY)
-FACILITY   (CCW)
+FACILITY   (CCW,1USALAS)
 INC-SOURCE (D-T)
 MONITOR    ((MONIT1)92-U-235(N,F)42-MO-99,CUM,FY)
            ((MONIT2)92-U-235(N,F)42-MO-99,CUM,FY,,SPA)
            ((MONIT3)92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA)
+MONIT-REF  ((MONIT2)13374002,J.Terrell+,J,PR,92,1091(I4),1953)
+           ((MONIT3),A.C.Pappas,R,MIT-63,1953)
 DECAY-DATA ((1.)53-I-131,8.07D,B-)
-           ((2.)53-I-132,2.3HR,B-)
-           ((3.)53-I-133,20.9HR,B-)
-           ((4.)53-I-134,52.5MIN,B-)
+           ((2.)53-I-132-G,2.3HR,B-)
+           ((3.)53-I-133-G,20.9HR,B-)
+           ((4.)53-I-134-G,52.5MIN,B-)
            ((5.)53-I-135,6.7HR,B-)
-STATUS     (DEP,13388002)
-ENDBIB              12
+STATUS     (TABLE) Table XIII on p.739 in Phys.Rev.99,730,1955.
+           (DEP,13388002)
+HISTORY    (20201222A) OG. STATUS updated. MONIT-REF added.
+ENDBIB              16
 COMMON               4          3
 EN         EN-NRM     MONIT1     MONIT2
 MEV        EV         PC/FIS     PC/FIS
@@ -77,15 +90,17 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 134.        53.         5.20       8.00      4.
 135.        53.         4.35       6.31      5.
 ENDDATA              7
-ENDSUBENT           28
-SUBENT        13388004     891220              20050926       0000
-BIB                  4          5
-REACTION   ((92-U-235(N,F)ELEM/MASS,IND,FY)/
-           (92-U-235(N,F)MASS,CHN,FY))
-RESULT     (FRIND)
-FACILITY   (CCW)
+ENDSUBENT           32
+SUBENT        13388004   20201222   20210809   20210705       1478
+BIB                  6          7
+REACTION   (92-U-235(N,F)ELEM/MASS,IND,FY,,FRC)
+FACILITY   (CCW,1USALAS)
 INC-SOURCE (D-T)
-ENDBIB               5
+ERR-ANALYS (DATA-ERR) Standard deviation of the average of the
+            results.
+STATUS     (TABLE) Table on p.730 in Phys.Rev.99,730,1955.
+HISTORY    (20201222A) OG. REACTION updated.
+ENDBIB               7
 COMMON               1          3
 EN
 MEV
@@ -101,5 +116,30 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
 133.        53.                                          0.40
 134.        53.                    0.43       0.02
 ENDDATA              8
-ENDSUBENT           22
-ENDENTRY             4
+ENDSUBENT           24
+SUBENT        13388005   20201222   20210809   20210705       1478
+BIB                  5          6
+REACTION   (92-U-235(N,F)ELEM/MASS,IND,FY,,FRC/SPA)
+FACILITY   (REAC,1USALAS)
+ERR-ANALYS (DATA-ERR) Standard deviation of the average of the
+            results.
+STATUS     (TABLE) Table on p.730 in Phys.Rev.99,730,1955.
+HISTORY    (20201222C) OG.
+ENDBIB               6
+COMMON               1          3
+EN
+EV
+0.0253
+ENDCOMMON            3
+DATA                 6          6
+MASS       ELEMENT    ISOMER     DATA       DATA-ERR   DATA-MAX
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+131.        52.         1.                               0.05
+131.        53.                                          0.01
+132.        53.                                          0.01
+133.        52.                                          0.40
+133.        53.                                          0.1
+134.        53.                    0.11       0.02
+ENDDATA              8
+ENDSUBENT           23
+ENDENTRY             5

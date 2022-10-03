@@ -1,62 +1,73 @@
-ENTRY            13308     890907              20050926       0000
-SUBENT        13308001     890907              20050926       0000
-BIB                 16         24
+ENTRY            13308   20201213   20210809   20210705       1478
+SUBENT        13308001   20201213   20210809   20210705       1478
+BIB                 15         28
+TITLE      Cumulative yield of 83-sec 136I from thermal-neutron
+           induced fission of 235U
+AUTHOR     (A.C.Wahl,R.Denig)
 INSTITUTE  (1USAWAS)
-REFERENCE  (J,JIN,34,2413,7208)
-AUTHOR     (A.C.WAHL,R.DENIG)
-TITLE      CUMULATIVE YIELD OF 83-SEC 136I FROM THERMAL-NEUTRON
-            INDUCED FISSION OF 235U
-FACILITY   (CYCLO)
+REFERENCE  (J,JIN,34,2413,1972)
+           #doi:10.1016/0022-1902(72)80186-6
+           #NSR: 1972WA21
+FACILITY   (CYCLO,1USAWAS)
 INC-SOURCE (D-BE)
-INC-SPECT  NETRONS THERMALIZED IN A POLYETHYLENE MODERATOR
-SAMPLE     URANYL NITRATE, 93% 235U
-METHOD     (RCHEM)
+INC-SPECT  Neutrons thermalized in a polyethylene moderator
+SAMPLE     (92-U-235,ENR=0.93) Uranyl nitrate
+METHOD     (CHSEP)
 MONITOR    (92-U-235(N,F)56-BA-140,CUM,FY,,MXW)
 DECAY-MON  (56-BA-140,12.8D)
-DETECTOR   (PROPC) END-WINDOW BETA PROPORTIONAL COUNTERS
-CORRECTION CORRECTED FOR FISSIONS BY UNTHERMALIZED NEUTRONS
-ERR-ANALYS DATA UNCERTAINTY INCLUDES STANDARD ERROR AND THE
-            FOLLOWING UNCERTAINTIES:
-            . 136I ACTIVITY (4%0
-            . 140BA ACTIVITY (2%)
-            . RELATIVE DETECTION EFFICIENCY OF 136I AND 140BA (5%)
-            . YIELD OF 140BA (2%)
-            . 136I HALF-LIFE (7%)
-            . 136TE HALF-LIFE (3%)
-STATUS     (RIDER) REFERENCE 72WAH1
-HISTORY    (890626C) VM
-ENDBIB              24
-COMMON               3          3
-EN-DUMMY   MONIT      MONIT-ERR
-EV         PC/FIS     PC/FIS
-0.0253      6.32       0.10
-ENDCOMMON            3
-ENDSUBENT           31
-SUBENT        13308002     890907              20050926       0000
-BIB                  2          2
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
+DETECTOR   (PROPC) End-window beta proportional counters
+CORRECTION Corrected for fissions by unthermalized neutrons
+ERR-ANALYS (ERR-T)Data uncertainty includes standard error and the
+            following uncertainties:
+           (ERR-1) 136I activity (4%0
+           (ERR-2) 140Ba activity (2%)
+           (ERR-3) Relative detection efficiency of 136I and 140Ba
+           (ERR-4) Yield of 140Ba (2%)
+           (ERR-5) 136I half-life (7%)
+           (ERR-6) 136Te half-life (3%)
+HISTORY    (19890626C) VM
+           (20201213A) OG. Converted to lower case and 4-digit
+           year. #NSR and #doi added. STATUS, METHOD, ERR-ANALYS,
+           REACTION updated.
+ENDBIB              28
+COMMON               9          6
+EN-DUMMY   MONIT      MONIT-ERR  ERR-1      ERR-2      ERR-3
+ERR-4      ERR-5      ERR-6
+EV         PC/FIS     PC/FIS     PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT
+0.0253      6.32       0.10       4.         2.         5.
+ 2.         7.         3.
+ENDCOMMON            6
+ENDSUBENT           38
+SUBENT        13308002   20201213   20210809   20210705       1478
+BIB                  5          5
+REACTION   (92-U-235(N,F)53-I-136-G,CUM,FY,,MXW)
 DECAY-DATA (53-I-136-G,83.SEC)
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 5          1
-ELEMENT    MASS       ISOMER     DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 53.       136.         0.         3.9         .8
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        13308003     890907              20050926       0000
-BIB                  3          5
-REACTION   ((92-U-235(N,F)ELEM/MASS,IND,FY,,MXW)/
-           (92-U-235(N,F)MASS,CHN,FY,,MXW))
-RESULT     (FRIND)
-STATUS     (DEP,13308002) USING I136 M/G = 0.23+-0.11 FROM
-            LUNDAN (1971)
+ANALYSIS   Result is average of 2 measurements
+STATUS     (TABLE) Tab.1 in Inorg.Nucl.Chem.34,2413,1972.
+HISTORY    (20201213U) OG. REACTION updated. STATUS added.
 ENDBIB               5
 NOCOMMON             0          0
-DATA                 4          1
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
- 54.       136.         0.24       0.18
+DATA                 2          1
+DATA       ERR-T
+PC/FIS     PC/FIS
+  3.9         .8
 ENDDATA              3
 ENDSUBENT           13
+SUBENT        13308003   20201213   20210809   20210705       1478
+BIB                  4          6
+REACTION   (92-U-235(N,F)54-XE-136,IND,FY,,FRC/MXW)
+ASSUMED    (ASSUM,92-U-235(N,F)53-I-136-M/G,CUM,FY/RAT) From
+           A.Lundan, personal communication to Wahl et al., 1971
+STATUS     (DEP,13308002)
+           (TABLE) Text on p.2417 in Inorg.Nucl.Chem.34,2413,1972.
+HISTORY    (20201213U) OG. REACTION, STATUS updated, ASSUMED added
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 4          1
+DATA       ERR-T      ASSUM      ASSUM-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+  0.24       0.18       0.23       0.11
+ENDDATA              3
+ENDSUBENT           14
 ENDENTRY             3
