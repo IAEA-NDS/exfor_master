@@ -1,16 +1,20 @@
-ENTRY            M0082   20191001   20191120   20191120       M102
-SUBENT        M0082001   20191001   20191120   20191120       M102
-BIB                 11         18
-TITLE      Relative yields of xenon isotopes in Np-237 and U-235
-            photofission.
+ENTRY            M0082   20201001   20210004   20201203       M108
+SUBENT        M0082001   20201001   20210004   20201203       M108
+BIB                 11         25
+TITLE      Relative yields of xenon isotopes in the photofission
+            of Np-237 and U-235.
 AUTHOR     (K.A.Petrzhak,E.V.Platygina,Yu.A.Solov'ev,V.F.Teplykh)
 INSTITUTE  (4RUSTIL)
 REFERENCE  (J,AE,41,44,1976)
-           (C,80KIEV,3,171,1980)
+           (J,SJA,41,654,1976)
+            English translation of AE,41,44,1976.
+           ((C,80KIEV,3,171,1980)=
+           (S,INDC(CCP)-169,(3),171,1980))
+REL-REF    (O,40545001,V.F.Teplykh+,C,80KIEV,3,171,1980)
 FACILITY   (BETAT,4RUSTIL)
 INC-SOURCE (BRST)
-METHOD     (ASEP)
-PART-DET   (FF)
+METHOD     (ASEP) Noble gases extracted from the target two
+            months after irradiation.
 ERR-ANALYS (ERR-S) Statistical errors only.
 COMMENT    Relative yields of xenon isotopes with A=131 - 136 in
             process of Np-237 and U-235 fission by bremsstrahlung
@@ -19,58 +23,50 @@ HISTORY    (19830317C)
            (19910202A) Corrected by V.Varlamov, V.McLane.
            (20191001A) Corrected by V.Varlamov: REFERENCE, dates,
             DETECTOR, REACTION, STATUS, lowercase.
-ENDBIB              18
+           (20201001A) Corrected by V.Varlamov: TITLE, REFERENCE,
+            PART-DET deleted, STATUS, REACTION, DATA, SUBENTs
+            002 and 003 merged.
+ENDBIB              25
 NOCOMMON             0          0
-ENDSUBENT           21
-SUBENT        M0082002   20191001   20191120   20191120       M102
-BIB                  3          4
-REACTION   (93-NP-237(G,F)ELEM/MASS,CUM,FY,,BRA/REL)
-STATUS     (CURVE) Data from Fig. 1.
+ENDSUBENT           28
+SUBENT        M0082002   20201001   20210004   20201203       M108
+BIB                  3          7
+REACTION   ((93-NP-237(G,F)ELEM/MASS,CUM,FY,,BRA)/
+           (93-NP-237(G,F)54-XE-131,CUM,FY,,BRA))
+STATUS     (TABLE) Data from the table of 80KIEV.
 HISTORY    (20191001A) Corrected by V.Varlamov: REACTION: BRS ->
             BRA.
-ENDBIB               4
+           (20201001A) Corrected by V.Varlamov: REACTION,
+            DATA-UNITS, DATA substituted.
+ENDBIB               7
 COMMON               2          3
 EN-MAX     ELEMENT
 MEV        NO-DIM
     20.        54.
 ENDCOMMON            3
-DATA                 3          4
-MASS       DATA       ERR-S
-NO-DIM     ARB-UNITS  ARB-UNITS
-   131.         0.215      0.006
-   132.         0.230      0.007
-   134.         0.291      0.005
-   136.         0.264      0.004
-ENDDATA              6
-ENDSUBENT           19
-SUBENT        M0082003   20191001   20191120   20191120       M102
-BIB                  3          4
-REACTION   (93-NP-237(G,F)ELEM/MASS,CUM,FY,,BRA/REL)
-STATUS     (CURVE) Data from Fig. 2.
-HISTORY    (20191001A) Corrected by V.Varlamov: REACTION: BRS ->
-            BRA.
-ENDBIB               4
-COMMON               2          3
-EN-MAX     ELEMENT
-MEV        NO-DIM
-    15.        54.
-ENDCOMMON            3
-DATA                 3          4
-MASS       DATA       ERR-S
-NO-DIM     ARB-UNITS  ARB-UNITS
-   131.         0.197      0.012
-   132.         0.214      0.015
-   134.         0.318      0.011
-   136.         0.271      0.009
-ENDDATA              6
-ENDSUBENT           19
-SUBENT        M0082004   20191001   20191120   20191120       M102
-BIB                  3          4
+DATA                 4          8
+EN-MAX     MASS       DATA       ERR-S
+MEV        NO-DIM     NO-DIM     NO-DIM
+   15.        131.      .197       .012
+   15.        132.      .214       .015
+   15.        134.      .318       .011
+   15.        136.      .271       .009
+   20.        131.      .215       .006
+   20.        132.      .230       .007
+   20.        134.      .291       .005
+   20.        136.      .264       .004
+ENDDATA             10
+ENDSUBENT           26
+NOSUBENT      M0082003   20201001   20210004   20201203       M108
+SUBENT        M0082004   20201001   20210004   20201203       M108
+BIB                  3          6
 REACTION   (92-U-235(G,F)ELEM/MASS,CUM,FY,,BRA/REL)
-STATUS     (CURVE) Data from Fig. 3.
+STATUS     (TABLE) Data from Table 1
+            of Sov.J.Atom.Energy 41(1976)654.
 HISTORY    (20191001A) Corrected by V.Varlamov: REACTION: BRS ->
             BRA.
-ENDBIB               4
+           (20201001A) Corrected by V.Varlamov: STATUS.
+ENDBIB               6
 COMMON               2          3
 EN-MAX     ELEMENT
 MEV        NO-DIM
@@ -84,5 +80,5 @@ NO-DIM     ARB-UNITS  ARB-UNITS
    134.         0.285      0.002
    136.         0.273      0.002
 ENDDATA              6
-ENDSUBENT           19
+ENDSUBENT           21
 ENDENTRY             4
