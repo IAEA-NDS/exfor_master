@@ -1,6 +1,6 @@
-ENTRY            O1970   20120301   20120702   20120622       O047
-SUBENT        O1970001   20120301   20120702   20120622       O047
-BIB                  7         16
+ENTRY            O1970   20200405   20200729   20200728       O077
+SUBENT        O1970001   20200405   20200729   20200728       O077
+BIB                  7         22
 TITLE      Fusion and direct reactions for the system 6He + 64Zn
            at and below the Coulomb barrier.
 AUTHOR     (V.Scuderi, A.Di Pietro, P.Figuera, M.Fisichella,
@@ -10,6 +10,7 @@ AUTHOR     (V.Scuderi, A.Di Pietro, P.Figuera, M.Fisichella,
            M.Zadro)
 INSTITUTE  (2ITYCAT,2ITYLNS,2BLGLVN,3CROZAG,2BLGLEU,3CRORBZ)
 REFERENCE  (J,PR/C,84,064604,2011)
+           (J,PR/C,99,054605,2019)
 REL-REF    (O,D0258001,A.Di Pietro+,J,PR/C,69,044613,2004)
            a part data were reported  around the Coulomb barrier
            at En=10,13.6 MeV
@@ -17,11 +18,16 @@ STATUS     (TABLE).Table data were received from
            Dr.Valentina Scuderi 02.03.2011
            (APRVD).By Dr.Valentina Scuderi
 HISTORY    (20120301C) Sb
-ENDBIB              16
+           (20200328R) 64Zn(6He,a+x) angular differential cross
+           sections from Phys.Rev.C99(2019)054605 received from
+           Dr. J.P.Fernandez-Garcia
+           (20200405A) VS New subent 013 supersedes 002 with
+                       new data from Phys.Rev.C99(2019)054605
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        O1970002   20120305   20120702   20120622       O047
-BIB                  8         14
+ENDSUBENT           25
+SUBENT        O1970002   20200405   20200729   20200728       O077
+BIB                  9         23
 REACTION   (30-ZN-64(2-HE-6,X)2-HE-4,,DA)
 FACILITY   (CYCLO,2BLGLVN)
 SAMPLE     A 530 mug/cm**2 self-supporting Zn-64 foil.
@@ -32,14 +38,27 @@ DETECTOR   (TELES,SISD,SISD) Three arrays of silicon strip
            silicon strip detectors (DsSSDs). The first array,
            consists of four LEDA sectors, 300 mum thick. The other
            three LEDA sectors, 500 mum thick.
-ERR-ANALYS (DATA-ERR).The uncertainty is reported on fig.
+ERR-ANALYS (DATA-ERR)The uncertainties include:
+            - Statistical uncertainties
+           (ERR-1)Uncertainty of the target number/cm2 determined
+            by energy loss of 5.48-MeV alpha particles traversing
+            the foil - 2%
+           (ERR-2) Uncertainty in the beam current normalization
+            using Rutherford scattering cross section - 5%.
 STATUS     (TABLE).Table data for fig.3 of J,PR/C,84,064604,2011
+           (SPSDD,O1970013) Superseded by new results from
+           Phys.Rev.C99(2019)054605
 REL-REF    (O,D0258007,A.Di Pietro+,J,PR/C,69,044613,2004)
            Data at E(n)=13 MeV
-ENDBIB              14
-NOCOMMON             0          0
+HISTORY    (20200405A) VS Superseded
+ENDBIB              23
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+       2.          5.
+ENDCOMMON            3
 DATA                 5         78
-EN         ANG        DATA       +DATA-ERR  -DATA-ERR
+EN         ANG        DATA       +ERR-T     -ERR-T
 MEV        ADEG       MB/SR      MB/SR      MB/SR
         15.   35.47884  211.63344    9.60302   12.21138
         15.   38.50429  214.33492     9.0316   11.70911
@@ -120,7 +139,7 @@ MEV        ADEG       MB/SR      MB/SR      MB/SR
         18.  112.90776   15.32998    0.88081    0.88108
         18.  114.47834   15.11846    0.88497     0.8852
 ENDDATA             80
-ENDSUBENT           99
+ENDSUBENT          112
 SUBENT        O1970003   20120305   20120702   20120622       O047
 BIB                  4          9
 REACTION   (30-ZN-64(2-HE-6,X)2-HE-4,,SIG,,MSC,DERIV)
@@ -406,4 +425,110 @@ MEV        ADEG       MB/SR      MB/SR
 13.        159.       21.7       1.736
 ENDDATA             33
 ENDSUBENT           50
-ENDENTRY            12
+SUBENT        O1970013   20200405   20200729   20200728       O077
+BIB                  9         14
+REACTION   (30-ZN-64(2-HE-6,X)2-HE-4,,DA)
+FACILITY   (CYCLO,2BLGLVN)
+REL-REF    (O,D0258001,A.Di Pietro+,J,PR/C,69,044613,2004)
+           Results at 10.0 and 13.6 MeV.
+SAMPLE     A 530 ug/cm2 self-supporting 64Zn foil.
+DETECTOR   (SPEC,SISD,SISD) Three arrays of silicon strip
+           detectors consisting of seven sectors of the LEDA
+           type and two single-sided silicon strip detectors
+METHOD     (TOF) Time-of-flight technique used for the helium
+           identification and separation form hydrogen.
+ERR-ANALYS (DATA-ERR)No information on sources of uncertainties.
+STATUS     (TABLE) Plotted on Fig. 5 of Phys.Rev.C99(2019)054605
+HISTORY    (20200328R) Data received from Dr. J.P.Fernandez-Garcia
+           (20200405A) VS 002 superseded with the new results
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 4         83
+EN         ANG        DATA       DATA-ERR
+MEV        ADEG       MB/SR      MB/SR
+      14.85     38.598  211.633440.009603017
+      14.85  41.850333  214.334920.009031598
+      14.85  45.111333  198.788750.009154673
+      14.85  48.361667  179.00765 0.01010923
+      14.85     51.583  165.989160.007537568
+      14.85  54.756667  152.023650.006419046
+      14.85     57.868   130.0544 0.00628549
+      14.85  60.900667  130.063330.005876894
+      14.85  63.843667  115.719890.005444263
+      14.85  66.686333   93.339780.004954962
+      14.85     69.422   85.702870.005410189
+      14.85  72.045333  88.3309820.011791874
+      14.85   75.19442  77.6604780.017154387
+      14.85  76.873338  72.4568260.014270839
+      14.85  78.582913  68.9152560.015021144
+      14.85  80.320956  59.3747330.014040025
+      14.85  82.084985      54.220.011404369
+      14.85  83.872231  55.3194140.011583386
+      14.85  85.679659  52.9650270.012415914
+      14.85  87.503985  51.919665 0.01083804
+      14.85  89.341711  45.0711380.012690978
+      14.85  91.189153  39.3093710.010604172
+      14.85  93.605684  38.0142930.009246917
+      14.85  95.447537  38.6857490.007479486
+      14.85  97.286362  33.8419460.008116066
+      14.85  99.118301  32.4685690.007194163
+      14.85  100.93956  32.7355690.005948572
+      14.85  102.74647  26.2179150.004186765
+      14.85  104.53552  26.2889120.004472979
+      14.85  106.30339  22.2084510.002371102
+      14.85  108.04701  24.2119420.002514040
+      14.85  109.76356  19.3296240.002200619
+      14.85   111.4505  17.4699520.002081507
+      14.85  113.10559  13.6117790.001813380
+      14.85  114.72687  18.3412480.002198516
+      14.85  116.31272  16.3365620.002068065
+      14.85  117.86177  13.8518430.001901103
+      14.85  119.37297  18.5687720.002297756
+      17.90    19.9525   546.91760.034319455
+      17.90       22.2   545.93610.034131645
+      17.90     24.511  476.918270.029918381
+      17.90  25.690667  435.647090.022339018
+      17.90  28.736333  412.694620.020311355
+      17.90  31.856667  304.834070.015445626
+      17.90  35.038333  319.354330.015567076
+      17.90  38.264667  272.535290.011158172
+      17.90     41.518   243.88290.009905747
+      17.90      44.78  215.218170.008666618
+      17.90     48.031  185.861210.008826897
+      17.90  51.253333  158.971850.006198803
+      17.90     54.429  139.591110.005487925
+      17.90  57.540667  121.728540.004800234
+      17.90  60.574667  101.669930.003952278
+      17.90     63.519  87.1278110.003334058
+      17.90     66.363  72.9188150.002924555
+      17.90  69.099667  63.3596240.002580606
+      17.90  71.724333  57.987414 0.00319021
+      17.90  75.135436  56.0124980.004881277
+      17.90  76.807944  43.1902880.003833661
+      17.90  78.511388  45.1830450.003988303
+      17.90  80.243625  41.7101270.003694944
+      17.90  82.002222  38.2542670.003407647
+      17.90  83.784457  35.296577 0.00316547
+      17.90  85.587337  35.3272090.003159186
+      17.90  87.407621  29.7893510.002704588
+      17.90  89.241845   30.804650.002781559
+      17.90  91.086357  27.8938570.002541528
+      17.90  93.223289  25.6977130.004778648
+      17.90  95.069271  23.7698490.003775645
+      17.90  96.913374  22.5285890.003472026
+      17.90  98.751697  24.1834070.003747787
+      17.90  100.58039  21.5938330.002450105
+      17.90  102.39573  20.2916810.002374720
+      17.90  104.42762  16.4369390.001348183
+      17.90  106.19576  16.5622390.001364568
+      17.90  107.94021  15.6279520.001306993
+      17.90  109.65814  16.0963330.001342973
+      17.90  111.34695  15.0371460.001285669
+      17.90  113.00437  14.6302870.001268177
+      17.90   114.6284  13.3194110.001190906
+      17.90  116.21737  14.0161060.001245871
+      17.90  117.76987  13.5852150.001231578
+      17.90  119.28481  12.1249580.001147622
+ENDDATA             85
+ENDSUBENT          104
+ENDENTRY            13
