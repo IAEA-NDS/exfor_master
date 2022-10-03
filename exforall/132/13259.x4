@@ -1,68 +1,93 @@
-ENTRY            13259     890817              20050926       0000
-SUBENT        13259001     890817              20050926       0000
-BIB                 10         13
+ENTRY            13259   20210512   20220007   20211205       1484
+SUBENT        13259001   20210512   20220007   20211205       1484
+BIB                  8         15
+TITLE      Fission yields in epicadmium neutron fission of U-235,
+            Pu-239 and U-233
+AUTHOR     (B.F.Rider,C.P.Ruiz,J.P.Peterson Jr,F.R.Smith)
 INSTITUTE  (1USAGEV)
-REFERENCE  (P,GEAP-5505,10,6706)
-AUTHOR     (B.F.RIDER,C.P.RUIZ,J.P.PETERSON JR,F.R.SMITH)
-TITLE      FISSION YIELDS IN EPICADMIUM NEUTRON FISSION OF U-235,
-            PU-239 AND U-233
-FACILITY   (REAC) VALLECITOS BOILING WATER REACTOR
-INC-SPECT  CD-O FILTERED SPECTRUM
-MONITOR    (27-CO-59(N,G)27-CO-60,,RI) FLUX MONITOR
-ERR-ANALYS DATA UNCERTAINTIES GIVEN INCLUDE UNCERTAINTY IN:
-            - UNCERTAINTIES IN CROSS SECTIONS
-            - FLUX AND AXIAL FLUX DISTRIBUTION (8%)
-STATUS     (RIDER) REFERENCE 67RID1
-HISTORY    (890815C) VM
-ENDBIB              13
+REFERENCE  (P,GEAP-5505,10,1967)
+FACILITY   (REAC,1USAGEV) Vallecitos boiling water reactor
+INC-SPECT  CdO filtered spectrum
+ERR-ANALYS (ERR-T) Data uncertainties given include:
+            uncertainties in cross sections, and
+           (ERR-1) uncertainties in flux and axial flux
+            distribution (8%)
+HISTORY    (19890815C) VM
+           (20210512A) OG. Converted to lower case and 4-digit
+           year. STATUS updated. EN-MIN updated, MONIT, MONIT-ERR
+           and moved to Sub002-007.
+ENDBIB              15
+COMMON               1          3
+ERR-1
+PER-CENT
+  8.
+ENDCOMMON            3
+ENDSUBENT           22
+SUBENT        13259002   20210512   20220007   20211205       1484
+BIB                  6          7
+REACTION   (92-U-233(N,F)55-CS-137,CUM,FY,,EPI)
+METHOD     (GSPEC)
+DETECTOR   (GELI)
+MONITOR    (27-CO-59(N,G)27-CO-60,,RI) Flux monitor
+STATUS     (TABLE) Tab.11 (p.17) in P,GEAP-5505,10,1967.
+HISTORY    (20210512A) OG. REACTION updated. STATUS, EN-MIN, MONIT
+           added.
+ENDBIB               7
 COMMON               3          3
 EN-MIN     MONIT      MONIT-ERR
 EV         B          B
  0.61       72.5        2.0
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        13259002     890817              20050926       0000
-BIB                  2          2
-REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY,,EPI)
-METHOD     (RCHEM)
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4          1
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 55.       137.         7.3         .8
+DATA                 2          1
+DATA       ERR-T
+PC/FIS     PC/FIS
+  7.3         .8
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        13259003     890817              20050926       0000
-BIB                  2          2
+ENDSUBENT           19
+SUBENT        13259003   20210512   20220007   20211205       1484
+BIB                  5          5
 REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY,,EPI)
 METHOD     (ASEP)
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4          6
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 60.       143.         5.5         .6
- 60.       144.         4.6         .5
- 60.       145.         3.3         .4
- 60.       146.         2.6         .3
- 60.       148.         1.3         .1
- 60.       150.         0.53        .06
-ENDDATA              8
-ENDSUBENT           15
-SUBENT        13259004     890817              20050926       0000
-BIB                  3          3
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,EPI)
-METHOD     (RCHEM)
-MONITOR    (92-U-235(N,F)MASS,CHN,FY,,SPA)
-ENDBIB               3
-COMMON               3          3
-EN-NRM     MASS-NRM   MONIT
-EV         NO-DIM     PC/FIS
- 0.0253     43.        5.87
+MONITOR    (27-CO-59(N,G)27-CO-60,,RI) Flux monitor
+STATUS     (TABLE) Tab.11 (p.17) in P,GEAP-5505,10,1967.
+HISTORY    (20210512A) OG. STATUS, EN-MIN, MONIT added.
+ENDBIB               5
+COMMON               4          3
+EN-MIN     ELEMENT    MONIT      MONIT-ERR
+EV         NO-DIM     B          B
+ 0.61       60.        72.5        2.0
 ENDCOMMON            3
-DATA                 4          7
-ELEMENT    MASS       DATA       DATA-ERR
+DATA                 3          6
+MASS       DATA       ERR-T
+NO-DIM     PC/FIS     PC/FIS
+143.         5.5         .6
+144.         4.6         .5
+145.         3.3         .4
+146.         2.6         .3
+148.         1.3         .1
+150.         0.53        .06
+ENDDATA              8
+ENDSUBENT           22
+SUBENT        13259004   20210512   20220007   20211205       1484
+BIB                  5          7
+REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,EPI)
+METHOD     (CHSEP)
+MONITOR    ((MONIT1)27-CO-59(N,G)27-CO-60,,RI) Flux monitor
+           ((MONIT2)92-U-235(N,F)MASS,CHN,FY,,SPA)
+STATUS     (TABLE) Tab.13 (p.19) in P,GEAP-5505,10,1967.
+HISTORY    (20210512A) OG. STATUS, EN-MIN, MONIT1 added. MASS-NRM
+           corrected, value for Ce-143 removed (not in same tbale)
+ENDBIB               7
+COMMON               8          6
+EN-MIN     EN-NRM     MASS-NRM   MONIT1     MONIT1-ERR EN-NRM1-MN
+MONIT2     MONIT2-ERR
+EV         EV         NO-DIM     B          B          MEV
+PC/FIS     PC/FIS
+ 0.56       0.0253     143.       72.5        2.0       0.55
+ 5.87       0.11
+ENDCOMMON            6
+DATA                 4          6
+ELEMENT    MASS       DATA       ERR-T
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
  52.       132.         4.8         .5
  53.       131.         3.1         .3
@@ -70,18 +95,24 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
  53.       135.         6.9         .7
  56.       140.         7.0         .7
  58.       141.         6.4         .6
- 58.       143.         7.1         .7
-ENDDATA              9
-ENDSUBENT           21
-SUBENT        13259005     890817              20050926       0000
-BIB                  3          3
+ENDDATA              8
+ENDSUBENT           27
+SUBENT        13259005   20210512   20220007   20211205       1484
+BIB                  6          6
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,EPI)
 METHOD     (ASEP)
-MONITOR    HEAVY MASS YIELD CURVE SUMMED TO EQUAL 100%.
-ENDBIB               3
-NOCOMMON             0          0
+ANALYSIS   Heavy mass yield curve summed to equal 100%.
+MONITOR    (27-CO-59(N,G)27-CO-60,,RI) Flux monitor
+STATUS     (TABLE) Tab.14 (p.20) in P,GEAP-5505,10,1967.
+HISTORY    (20210512A) OG. STATUS, EN-MIN, MONIT added.
+ENDBIB               6
+COMMON               3          3
+EN-MIN     MONIT      MONIT-ERR
+EV         B          B
+ 0.56       72.5        2.0
+ENDCOMMON            3
 DATA                 4          7
-ELEMENT    MASS       DATA       DATA-ERR
+ELEMENT    MASS       DATA       ERR-T
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
  55.       137.         7.1         .8
  60.       143.         6.5         .7
@@ -91,34 +122,50 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
  60.       148.         1.9         .2
  60.       150.         0.76        .09
 ENDDATA              9
-ENDSUBENT           17
-SUBENT        13259006     890817              20050926       0000
-BIB                  2          2
-REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,EPI)
-METHOD     (RCHEM)
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4          1
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 55.       137.         6.2         .8
+ENDSUBENT           24
+SUBENT        13259006   20210512   20220007   20211205       1484
+BIB                  6          7
+REACTION   (94-PU-239(N,F)55-CS-137,CUM,FY,,EPI)
+METHOD     (GSPEC)
+DETECTOR   (GELI)
+MONITOR    (27-CO-59(N,G)27-CO-60,,RI) Flux monitor
+STATUS     (TABLE) Tab.11 (p.17) in P,GEAP-5505,10,1967.
+HISTORY    (20210512A) OG. REACTION updated. STATUS, EN-MIN, MONIT
+           added.
+ENDBIB               7
+COMMON               3          3
+EN-MIN     MONIT      MONIT-ERR
+EV         B          B
+ 0.48       72.5        2.0
+ENDCOMMON            3
+DATA                 2          1
+DATA       ERR-T
+PC/FIS     PC/FIS
+  6.2         .8
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        13259007     890817              20050926       0000
-BIB                  2          2
+ENDSUBENT           19
+SUBENT        13259007   20210512   20220007   20211205       1484
+BIB                  5          5
 REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,EPI)
 METHOD     (ASEP)
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4          6
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     PC/FIS     PC/FIS
- 60.       143.         3.8         .5
- 60.       144.         3.3         .4
- 60.       145.         2.6         .3
- 60.       146.         2.2         .3
- 60.       148.         1.5         .2
- 60.       150.         0.89        .12
+MONITOR    (27-CO-59(N,G)27-CO-60,,RI) Flux monitor
+STATUS     (TABLE) Tab.11 (p.17) in P,GEAP-5505,10,1967.
+HISTORY    (20210512A) OG. STATUS, EN-MIN, MONIT added.
+ENDBIB               5
+COMMON               4          3
+EN-MIN     ELEMENT    MONIT      MONIT-ERR
+EV         NO-DIM     B          B
+ 0.48       60.        72.5        2.0
+ENDCOMMON            3
+DATA                 3          6
+MASS       DATA       ERR-T
+NO-DIM     PC/FIS     PC/FIS
+143.         3.8         .5
+144.         3.3         .4
+145.         2.6         .3
+146.         2.2         .3
+148.         1.5         .2
+150.         0.89        .12
 ENDDATA              8
-ENDSUBENT           15
+ENDSUBENT           22
 ENDENTRY             7

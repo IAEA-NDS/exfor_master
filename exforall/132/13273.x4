@@ -1,57 +1,68 @@
-ENTRY            13273   20051227   20060315   20060313       1338
-SUBENT        13273001   20051227   20060315   20060313       1338
-BIB                 10         18
-INSTITUTE  (1USAMIS,1USAORL)
-REFERENCE  (J,PR/C,1,312,1970)
-           (P,ORNL-TM-1333,,1965)
-AUTHOR     (L.H.Niece,D.E.Troutner,R.L.Ferguson)
+ENTRY            13273   20210511   20220007   20211205       1484
+SUBENT        13273001   20210511   20220007   20211205       1484
+BIB                 10         27
 TITLE      Independent yields of 95Zr from thermal-neutron
             fission of 235U and 233U
-FACILITY   (REAC,1USAORL) ORNL
-INC-SPECT  Neutron irradiation at the Oak Ridge Research reactor
-METHOD     (RCHEM)
-ERR-ANALYS Data uncertainty given is total uncertainty and
-            includes uncertainty in:
-            - separation time
-            - half-lives
-            - cumulative yields of precursors
-STATUS     (RIDER) REFERENCE 70NIE1
+AUTHOR     (L.H.Niece,D.E.Troutner,R.L.Ferguson)
+INSTITUTE  (1USAMIS,1USAORL)
+REFERENCE  (J,PR/C,1,312,1970)
+           #doi:10.1103/PhysRevC.1.312
+           #NSR: 1970NI17
+           (P,ORNL-TM-1333,1965)
+FACILITY   (REAC,1USAORL)
+INC-SPECT  The neutron flux is 4.-5.e13 neutrons cm-2 sec-1, and
+           cadmium ratios, determined by measuring 95Zr, are about
+           of 55 for fission of 235U and about of 20 for fission
+           of 233U.
+DETECTOR   (PROPC) A thin-window flow proportional counter using
+           a 90% argon-10% methane counting gas and a flow
+           proportional counter which had a thicker window and
+           used methane gas.
+METHOD     (CHSEP)
+ERR-ANALYS (DATA-ERR) Total uncertainty was estimated by
+           calculating uncertainties in the yield resulting from
+           uncertainties in separation time, half-lives, and
+           cumulative yields of precursors.
 HISTORY    (19890816C) VM
            (20051227C) DR Format updated and ORNL-TM reference
                        added
-ENDBIB              18
+           (20210511A) OG. #NSR, #doi, DETECTOR  added. INC-SPECT,
+           ERR-ANALYS, STATUS, REACTION, SAMPLE updated.
+ENDBIB              27
 COMMON               1          3
 EN-DUMMY
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        13273002   19890817   20060315   20060313       1338
-BIB                  3          4
-REACTION   ((92-U-233(N,F)ELEM/MASS,IND,FY,,SPA)/
-           (92-U-233(N,F)MASS,CHN,FY,,SPA))
-RESULT     (FRIND)
-SAMPLE     Sample enriched to 99.85% 233U
-ENDBIB               4
+ENDSUBENT           34
+SUBENT        13273002   20210511   20220007   20211205       1484
+BIB                  5          5
+REACTION   (92-U-233(N,F)40-ZR-95,IND,FY,,FRC/SPA)
+CORRECTION Corrected for precursor decay
+SAMPLE     (92-U-233,ENR=0.9985)
+STATUS     (TABLE) Tab.1 (p.314) in Phys.Rev.C,1,312,1970.
+HISTORY    (20210511A) OG. REACTION, SAMPLE updated.
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 4          1
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
- 40.        95.        0.034      0.006
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.034      0.006
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        13273003   19890817   20060315   20060313       1338
-BIB                  3          4
-REACTION   ((92-U-235(N,F)ELEM/MASS,IND,FY,,SPA)/
-           (92-U-235(N,F)MASS,CHN,FY,,SPA))
-RESULT     (FRIND)
-SAMPLE     Sample enriched to 95% 235U
-ENDBIB               4
+ENDSUBENT           13
+SUBENT        13273003   20210511   20220007   20211205       1484
+BIB                  5          5
+REACTION   (92-U-235(N,F)40-ZR-95,IND,FY,,FRC/SPA)
+CORRECTION Corrected for precursor decay
+SAMPLE     (92-U-235,ENR=0.95)
+STATUS     (TABLE) Tab.1 (p.314) in Phys.Rev.C,1,312,1970.
+HISTORY    (20210511A) OG. REACTION, SAMPLE updated.
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 4          1
-ELEMENT    MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM     NO-DIM
- 40.        95.        0.0040     0.002
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.0040     0.002
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           13
 ENDENTRY             3
