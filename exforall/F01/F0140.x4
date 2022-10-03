@@ -1,6 +1,6 @@
-ENTRY            F0140   20130305   20130502   20130411       F049
-SUBENT        F0140001   20130305   20130502   20130411       F049
-BIB                 10         21
+ENTRY            F0140   20201119   20210415   20210415       F082
+SUBENT        F0140001   20201119   20210415   20210415       F082
+BIB                  9         21
 TITLE      An anomaly of proton-beryllium collision near
            9Be(p,n)9B threshold.
 AUTHOR     (V.S.Siksin,V.N.Domoracky,L.V.Donetskov,A.N.Voronin,
@@ -12,16 +12,16 @@ REFERENCE  (J,YF,10,1130,1969)
 FACILITY   (VDG,4RUSRGU)
 SAMPLE     Self-supporting Be target of 2 keV thick for 2 MeV
            protons.
-DETECTOR   (SOLST) Two surface-barrier detectors. One - monitor
-           at the 45 degr., second - at 70 degr.
+DETECTOR   (SOLST) Two surface-barrier detectors. One is a monitor
+           at the 45 degr., the second is at 70 degr.
            Threshold neutrons were detected by ZnS(Ag)10B counter.
 METHOD     (PHD)
-ERR-ANALYS (EN-ERR-DIG) Energy digitizing error
 HISTORY    (19840604C)
            (19990409A) CNPD: corrected 4-dig. year
            (20130221A) English translation in REFERENCE was
-           added. ERR-ANALYS in 001 was added. In sub 002 DATA-CM
-           was replaced by DATA. Sub 003 was added.
+           added. ERR-ANALYS in 001 was added. In sub 002
+           DATA-CM was replaced by DATA. Sub 003 was added.
+           (20201119A) Sub 003 corrected.
 ENDBIB              21
 NOCOMMON             0          0
 ENDSUBENT           24
@@ -96,17 +96,23 @@ MEV        MB         MB
       2.096      29.44      3.816
 ENDDATA             55
 ENDSUBENT           69
-SUBENT        F0140003   20130305   20130502   20130411       F049
-BIB                  3          4
-REACTION   (4-BE-9(P,N)5-B-9,,DA)
-ERR-ANALYS (ERR-DIG) Data digitizing error
-           (DATA-ERR) Error from the graphic bars
-STATUS     (CURVE)Fig.3
-ENDBIB               4
+SUBENT        F0140003   20201119   20210415   20210415       F082
+BIB                  4         10
+REACTION   (4-BE-9(P,EL)4-BE-9,,DA)
+ERR-ANALYS (DATA-ERR) Error from the graphic bars consisted of
+           statistical error, error in proton current
+           determination (+ -0.7 %) and multichannel
+           analyser (+ -0.2 %).
+           (ERR-1,,15.) Error in determination of target nuclei
+           number.
+STATUS     (CURVE) Fig.3
+HISTORY    (20201119A) REACTION changed, ERR-ANALYS corrected,
+           number of digits in ERR-DIG changed.
+ENDBIB              10
 COMMON               3          3
 ANG-CM     EN-ERR-DIG ERR-DIG
 ADEG       MEV        MB/SR
-        76.     0.0001    0.11633
+        76.     0.0001       0.12
 ENDCOMMON            3
 DATA                 3         71
 EN         DATA-CM    DATA-ERR
@@ -183,5 +189,5 @@ MEV        MB/SR      MB/SR
      2.0954     214.39       7.53
      2.0972     203.62       9.60
 ENDDATA             73
-ENDSUBENT           86
+ENDSUBENT           92
 ENDENTRY             3
