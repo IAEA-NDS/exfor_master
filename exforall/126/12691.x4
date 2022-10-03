@@ -1,26 +1,43 @@
-ENTRY            12691     890829              20050926       0000
-SUBENT        12691001     890829              20050926       0000
-BIB                  8          9
+ENTRY            12691   20191114   20200309   20200308       1461
+SUBENT        12691001   20191114   20200309   20200308       1461
+BIB                 10         23
+TITLE      Determination of the charge and mass distribution in
+           the fission of 252Cf
+AUTHOR     (E.Cheifetz,J.B.Wilhelmy,R.C.Jared,S.G.Thompson)
+REFERENCE  (J,PR/C,4,1913,1971)
+           #doi:10.1103/PhysRevC.4.1913
+REL-REF    (M,,J.B.Wilhelmy+,J,PRL,25,1122,1970)
+           (M,,E.Cheifetz+,J,PRL,25,38,1970)
 INSTITUTE  (1USABRK)
-REFERENCE  (J,PR/C,4,1913,7111)
-AUTHOR     (E.CHEIFETZ,J.B.WILHELMY,R.C.JARED,S.G.THOMPSON)
-TITLE      DETERMINATION OF THE CHARGE AND MASS DISTRIBUTION IN
-           THE FISSION OF 252CF
-METHOD     (RCHEM)
 DETECTOR   (SOLST)
-STATUS     (RIDER) REFERENCE 71CHE1
-HISTORY    (890828C) VM
-ENDBIB               9
+METHOD     (COINC) The measurement of gamma-rays from 2+1->0+1
+           transitions in coincidence with fission fragment
+           pulses proportional to their kinetic energy enables
+           to extract independent fission yields. About 5% of
+           the ground state yield is expected to by-pass the
+           lowest 2+1 state.
+CORRECTION Corrected for electron conversion and delayed emission
+           components
+ERR-ANALYS (DATA-ERR) No details on sources of uncertainties.
+HISTORY    (19890828C) VM
+           (20191114A) BP: Updated to new date formats,lower
+           case. Corrections according last EXFOR rules and
+           Dict. Added doi, updated method, corrected subentry 2
+           and added subentries 3-4.
+ENDBIB              23
 NOCOMMON             0          0
-ENDSUBENT           12
-SUBENT        12691002     900605              20050926       0000
-BIB                  2          5
-REACTION   (98-CF-252(0,F)ELEM/MASS,IND,FY,G)
-             GAMMA INTENSITIES
-HISTORY    (900326A) GAMMA-RAY ENERGIES ADDED, REACTION CORRECTED,
-                     DATA UNITS CORRECTED
-           (900605A) ISOMER FIELD REMOVED
-ENDBIB               5
+ENDSUBENT           26
+SUBENT        12691002   20191114   20200309   20200308       1461
+BIB                  3          8
+REACTION   (98-CF-252(0,F)ELEM/MASS,PR,SPC)
+STATUS     (TABLE) Table I page 1916-1917. Uncertainties come
+           from the 71CHE1 Rider compilation.
+HISTORY    (19900326A) Gamma-ray energies added, reaction
+           corrected, data units corrected.
+           (19900605A) Isomer field removed.
+           (20191114A) REACTION modified, corrected 118Pd data
+            to 118Cd
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 6         38
 ELEMENT    MASS       E          DATA       DATA-ERR   DATA-MAX
@@ -40,7 +57,7 @@ NO-DIM     NO-DIM     KEV        PC/FIS     PC/FIS     PC/FIS
  46.       112.        348.8     0.77        0.12
  46.       114.        332.9     1.48        0.23
  46.       116.        340.6     0.87        0.13
- 46.       118.        488.0     0.32        0.05
+ 48.       118.        488.0     0.32        0.05
  48.       120.        505.5     0.30        0.10
  52.       132.        974.      0.20        0.10
  52.       134.       1278.      1.50        0.23
@@ -64,5 +81,58 @@ NO-DIM     NO-DIM     KEV        PC/FIS     PC/FIS     PC/FIS
  62.       156.         76.                             0.10
  62.       158.         72.8                            0.15
 ENDDATA             40
-ENDSUBENT           50
-ENDENTRY             2
+ENDSUBENT           53
+SUBENT        12691003   20191114   20200309   20200308       1461
+BIB                  4          9
+REACTION   (98-CF-252(0,F)MASS,SEC,ZP)
+ANALYSIS   Mass chain yields depends on ZP and sigma Z. Since
+           distributions are very arrow and independent yields
+           are only known for even-even nuclei, therefore there
+           are no mass chains that have more than two nuclei.
+           This allowed to solve the equation analytically for
+           A = 102, 106, 112, 136, 140, 144, 146, 154.
+HISTORY    (20191114C) BP
+STATUS     (TABLE) Table II, page 1920.
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 3          8
+MASS       DATA       DATA-ERR
+NO-DIM     NO-DIM     NO-DIM
+      102.0      40.72       0.06
+      106.0      42.24       0.31
+      112.0      44.91       0.11
+      136.0      53.00       0.06
+      140.0      54.84       0.04
+      144.0      56.27       0.09
+      146.0      57.01       0.03
+      154.0      60.66       0.06
+ENDDATA             10
+ENDSUBENT           24
+SUBENT        12691004   20191114   20200309   20200308       1461
+BIB                  4          6
+REACTION   (98-CF-252(0,F)ELEM,SEC,AP)
+ANALYSIS   Mass chain yields depends on AP and sigma A. They
+           were determined by the least squares fitting of
+           measured independent yields.
+HISTORY    (20191114C) BP
+STATUS     (TABLE) Table III, page 1921.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3         12
+ELEMENT    DATA       DATA-ERR
+NO-DIM     NO-DIM     NO-DIM
+       38.0      94.60       0.24
+       40.0     100.77       0.12
+       42.0     105.00       0.16
+       44.0     109.77       0.09
+       46.0     114.10       0.21
+       48.0     118.89       0.43
+       52.0     134.50       0.11
+       54.0     138.45       0.13
+       56.0     143.29       0.08
+       58.0     147.95       0.14
+       60.0     152.55       0.19
+       62.0     158.59       2.92
+ENDDATA             14
+ENDSUBENT           25
+ENDENTRY             4
