@@ -1,78 +1,58 @@
-ENTRY            23297   20160513   20160902   20160829       2250
-SUBENT        23297001   20160513   20160902   20160829       2250
-BIB                 10         15
-TITLE      Interference between resonant and nonresonant capture
-            in 16O(n,g)17O
-AUTHOR     (M.Kinoshita, Y.Nagai)
-INSTITUTE  (2JPNTIT)
-REFERENCE  (T,KINOSHITA,19990214)
+ENTRY            23297   20201028   20210106   20210105       2295
+SUBENT        23297001   20201028   20210106   20210105       2295
+BIB                 11         46
+TITLE      Nonresonant p-wave direct capture and interference
+            effect observed in the 16O(n,g)17O reaction
+AUTHOR     (Y.Nagai, M.Kinoshita, M.Igashira, Y.Nobuhara, H.Makii,
+            K.Mishima, T.Shima, A.Mengoni)
+INSTITUTE  (2JPNTIT,2JPNOSA,2JPNJAE,2JPNKEK,2ITYBOL,2ITYUBO)
+REFERENCE  (J,PR/C,102,044616,2020)
+           (T,KINOSHITA,19990214)
             Master thesis submitted to Tokyo Inst. of Technology
 FACILITY   (VDG,2JPNTIT) 3.2 MV Pelletron Accelerator
-INC-SOURCE (P-LI7)
-METHOD     (TOF)
+INC-SOURCE (P-LI7) FWHM of neutron energy distribution was
+            monitored every 12 hours, and proton energy was
+            increased (up to 8 keV) for recovering the initial
+            neutron average energy.
+           -------------------------------------------------------
+             Ep(MeV) Ip(uA) 7Li-thickness(keV) En(keV)   <En>(keV)
+           -------------------------------------------------------
+              2.040   10.8     84               115-199   157
+              2.210   11.2     64               322-386   349
+              2.240   10.8     65               369-434   398
+              2.264   12.0     46               407-453   427
+              2.299   12.0     47               449-496   468
+              2.333   12.5     53               479-532   498
+              2.390   12.5     52               539-591   556
+           -------------------------------------------------------
+SAMPLE     D2O:   128.5 g,  90.0 mm diam., 20.0 mm thick
+            for <En> <411 keV.
+           7Li2O:  80.64 g, 63.7 mm diam., 18.8 mm thick
+            for <En> >411 keV.
+           Au(1): 123.22 g, 90.0 mm diam.,  1.0 mm thick
+            for D2O measurement normalization.
+           Au(2):  69.85 g, 55.0 mm diam.,  1.7 mm thick.
+            for 7Li2O measurement normalization.
+METHOD     (TOF) Pulse width of 1.5 ns at a repetition rate of
+            4 MHz.
 DETECTOR   (GLASD) 6Li-glass scintillation detector for TOF
-           (NAICR) Anti-Compton NaI(Tl) detector for prompt gammas
+           (NAICR) Anti-Compton NaI(Tl) detector at 125.3 deg
+            with respect to the proton beam direction for prompt
+            gamma detection
 CORRECTION Corrected for
-            - background gammas from 7Li(n,g0)8Li,
-            - background 2.2 MeV gammas due to 1H(n,g)2H.
+            - multiple scattering of neutrons in the sample
+            - self-absorption of neutrons in the sample
+            - gamma-ray absorption by the sample
+            - finite size of sample
 HISTORY    (20160513C) On
-ENDBIB              15
+           (20201028D) On. 002-003 deleted (RAW data).
+           (20201028A) On. 004 superseded. 005-006 added.
+ENDBIB              46
 NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        23297002   20160513   20160902   20160829       2250
-BIB                  5          8
-REACTION   (8-O-16(N,G)8-O-17,PAR,SIG,,RAW)
-           Number of neutron captures/1E+06 neutrons not corrected
-            for multiple scattering and self-shielding
-SAMPLE     D2O, Li2O, and standard Au
-FLAG       (1.) D2O sample used
-           (2.) Li2O sample used
-ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
-STATUS     (TABLE) Table 4.6 of Kinoshita's thesis (1999)
-ENDBIB               8
-NOCOMMON             0          0
-DATA                 6         14
-EN-MEAN    EN-RSL-FW  LVL-NUMB   DATA       DATA-ERR   FLAG
-KEV        KEV        NO-DIM     ARB-UNITS  ARB-UNITS  NO-DIM
- 157.       84.        0.          4.09      0.40       1.
- 157.       84.        1.          6.74      0.56       1.
- 349.       64.        0.          1.55      0.30       1.
- 349.       64.        1.          3.05      0.37       1.
- 398.       65.        0.         15.1       0.8        1.
- 398.       65.        1.         23.2       1.0        1.
- 427.       46.        0.          2.34      0.17       2.
- 427.       46.        1.          4.30      0.25       2.
- 468.       47.        0.          1.99      0.23       2.
- 468.       47.        1.          3.91      0.30       2.
- 498.       53.        0.          1.03      0.20       2.
- 498.       53.        1.          3.29      0.33       2.
- 556.       52.        0.          4.82      0.53       2.
- 556.       52.        1.         12.0       0.7        2.
-ENDDATA             16
-ENDSUBENT           29
-SUBENT        23297003   20160513   20160902   20160829       2250
-BIB                  3          6
-REACTION   (8-O-16(N,G)8-O-17,,SIG,,RAW)
-           Number of neutron captures/1E+06 neutrons not corrected
-            for multiple scattering and self-shielding
-STATUS     (TABLE) Table 4.6 of Kinoshita's thesis (1999)
-           (DEP,23297002) Number of partial neutron captures
-ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 4          7
-EN-MEAN    EN-RSL-FW  DATA       DATA-ERR
-KEV        KEV        ARB-UNITS  ARB-UNITS
- 157.       84.        10.8       0.7
- 349.       64.         4.60      0.48
- 398.       65.        38.3       1.2
- 427.       46.         6.64      0.26
- 468.       47.         5.91      0.37
- 498.       53.         4.33      0.39
- 556.       52.        16.9       0.9
-ENDDATA              9
-ENDSUBENT           20
-SUBENT        23297004   20160513   20160902   20160829       2250
+ENDSUBENT           49
+NOSUBENT      23297002   20201028   20210106   20210105       2295
+NOSUBENT      23297003   20201028   20210106   20210105       2295
+SUBENT        23297004   20201028   20210106   20210105       2295
 BIB                  8         26
 REACTION   (8-O-16(N,G)8-O-17,,SIG)
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
@@ -99,7 +79,7 @@ ERR-ANALYS (ERR-T) Total uncertainty
            (ERR-3)     correction factors for nm, ns (3%)
            (MONIT-ERR) Au capture cross section      (3%)
 STATUS     (TABLE) Table 4.7 of Kinoshita's thesis (1999)
-           (DEP,23297003) Number of neutron captures
+           (SPSDD,23297006) Final data
 ENDBIB              26
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      MONIT-ERR
@@ -118,4 +98,70 @@ KEV        KEV        MICRO-B    MICRO-B    B
  556.       52.          4.01E+01   0.26E+01 0.121
 ENDDATA              9
 ENDSUBENT           44
-ENDENTRY             4
+SUBENT        23297005   20201028   20210106   20210105       2295
+BIB                  4          9
+REACTION   (8-O-16(N,G)8-O-17,PAR,SIG)
+ERR-ANALYS (ERR-T) Quadrature sum of
+            - Counting statistics (~3% for D2O, ~19% for 7Li2O)
+           (ERR-1)     response function             (3%)
+           (ERR-2,,1.) neutron detection efficiency (<1%)
+           (ERR-3)     correction factors            (3%)
+           (MONIT-ERR) Au capture cross section      (3%)
+STATUS     (TABLE) Table VI of Phys.Rev.C102(2020)044616
+HISTORY    (20201028C) On
+ENDBIB               9
+COMMON               3          3
+ERR-1      ERR-3      MONIT-ERR
+PER-CENT   PER-CENT   PER-CENT
+ 3.         3.         3.
+ENDCOMMON            3
+DATA                 5         14
+E-LVL      EN-MIN     EN-MAX     DATA       ERR-T
+MEV        KEV        KEV        MICRO-B    MICRO-B
+ 0.         115.       199.        13.1       1.5
+ 0.         322.       386.        54.       10.
+ 0.         369.       434.       115.       11.
+ 0.         407.       453.       146.       13.
+ 0.         449.       496.        12.8       1.6
+ 0.         479.       532.         4.6       0.9
+ 0.         539.       591.        11.4       1.4
+ 0.871      115.       199.        21.6       2.1
+ 0.871      322.       386.       107.       14.
+ 0.871      369.       434.       177.       14.
+ 0.871      407.       453.       267.       24.
+ 0.871      449.       496.        25.1       2.3
+ 0.871      479.       532.        14.7       1.7
+ 0.871      539.       591.        28.6       2.2
+ENDDATA             16
+ENDSUBENT           34
+SUBENT        23297006   20201028   20210106   20210105       2295
+BIB                  4         10
+REACTION   (8-O-16(N,G)8-O-17,,SIG)
+ERR-ANALYS (ERR-T) Quadrature sum of
+            - Counting statistics (~3% for D2O, ~19% for 7Li2O)
+           (ERR-1)     response function             (3%)
+           (ERR-2,,1.) neutron detection efficiency (<1%)
+           (ERR-3)     correction factors            (3%)
+           (MONIT-ERR) Au capture cross section      (3%)
+STATUS     (TABLE) Table VI of Phys.Rev.C102(2020)044616
+           (DEP,23297005) (n,g0) and (n,g1) parital cross sections
+HISTORY    (20201028C) On
+ENDBIB              10
+COMMON               3          3
+ERR-1      ERR-3      MONIT-ERR
+PER-CENT   PER-CENT   PER-CENT
+ 3.         3.         3.
+ENDCOMMON            3
+DATA                 4          7
+EN-MIN     EN-MAX     DATA       ERR-T
+KEV        KEV        MICRO-B    MICRO-B
+ 115.       199.        34.7       2.8
+ 322.       386.       161.       18.
+ 369.       434.       292.       16.
+ 407.       453.       413.       24.
+ 449.       496.        37.9       2.8
+ 479.       532.        19.3       1.9
+ 539.       591.        40.0       2.6
+ENDDATA              9
+ENDSUBENT           28
+ENDENTRY             6

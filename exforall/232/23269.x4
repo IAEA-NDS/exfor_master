@@ -1,6 +1,6 @@
-ENTRY            23269   20180426   20180903   20180809       2266
-SUBENT        23269001   20180426   20180903   20180809       2266
-BIB                 11         79
+ENTRY            23269   20201207   20210106   20210105       2295
+SUBENT        23269001   20201207   20210106   20210105       2295
+BIB                 11         80
 TITLE      High-accuracy determination of the 238U/235U fission
             cross section ratio up to ~ 1 GeV at n-TOF at CERN
 AUTHOR     (C.Paradela, M.Calviani, D.Tarrio, E.Leal-Cidoncha,
@@ -63,7 +63,7 @@ INC-SOURCE (SPALL) 20 GeV/c protons on Pb.
            Large-aperture collimator (8 cm diam.) used to make
             beam profile flat over the surface of the samples.
 METHOD     (TOF) Flight path of 185 m.
-            Energy resolution of better than 1% at En=100 MeV,
+            Energy resolution better than 1% at En=100 MeV,
              slightly over 5% at En=1 GeV.
 ADD-RES    Weighted average of data sets from four setups (FIC,
             PPAC perpendicular, PPAC tilted 1 and 2) in Table IV
@@ -80,19 +80,20 @@ STATUS     List of data sets compiled in this entry:
 HISTORY    (20150425C) On
            (20160511A) On. Major revision in 002. 006-008 added.
            (20180426A) On. Major revision in 002-008.
-ENDBIB              79
+           (20201207A) On. Major revision in 002-003 and 005.
+ENDBIB              80
 NOCOMMON             0          0
-ENDSUBENT           82
-SUBENT        23269002   20180426   20180903   20180809       2266
-BIB                  9         23
+ENDSUBENT           83
+SUBENT        23269002   20201207   20210106   20210105       2295
+BIB                 10         29
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
 DETECTOR   (IOCH) Fast ionization chamber (FIC).
             Two different measurements were performed with
              - FIC1 (two 235U and four 238U samples)
              - FIC2 (two 235U and one 238U sample)
-PART-DET   (FF) Single fission fragment detection
+PART-DET   (FF) Detection of single fission fragment
 SAMPLE     Sample diameter of 8 cm (FIC1) or 5 cm (FIC2),
-            isotopic purity of better than 99%, non-uniformity of
+            isotopic purity better than 99%, non-uniformity of
             5 to 10 %.
 ANALYSIS   Due to the large uncertainty of 238U mass of FIC2
             (larger than 3%), the FIC2 data set was normalized to
@@ -103,22 +104,28 @@ ERR-ANALYS (ERR-S)     Counting statistics
            (ERR-1)     Sample masses         (2%)
            (ERR-2)     Efficiency correction (1%)
            (ERR-3,,3.) Dead time correction (<3%)
+FLAG       (1.) Carlos Paradela (2020-12-07):
+            One digit should be added to the first two data
+            points in the article table, namely,
+             - 0.002(0) -> 0.0020(4) at 0.661 MeV - 0.724 MeV
+             - 0.002(0) -> 0.0023(4) at 0.724 MeV - 0.794 MeV
 STATUS     (TABLE) Same as Table IV of Phys.Rev.C91(2015)024602
            (COREL,23269007) FIC2 data (finer binning)
 HISTORY    (20150507R) On. Data received from Carlos Paradela.
            (20160511A) On. ERR-3=3% -> <3%. STATUS revised.
            (20180426A) On. REACTION(SF8): AV deleted.
-ENDBIB              23
+           (20201207A) On. First two data points revised.
+ENDBIB              29
 COMMON               2          3
 ERR-1      ERR-2
 PER-CENT   PER-CENT
  2.         1.
 ENDCOMMON            3
-DATA                 4         69
-EN-MIN     EN-MAX     DATA       ERR-S
-MEV        MEV        NO-DIM     NO-DIM
-   0.661      0.724    0.002      0.000
-   0.724      0.794    0.002      0.000
+DATA                 5         69
+EN-MIN     EN-MAX     DATA       ERR-S      FLAG
+MEV        MEV        NO-DIM     NO-DIM     NO-DIM
+   0.661      0.724    0.0020     0.0004     1.
+   0.724      0.794    0.0023     0.0004     1.
    0.794      0.871    0.006      0.001
    0.871      0.955    0.012      0.001
    0.955      1.047    0.015      0.001
@@ -187,12 +194,12 @@ MEV        MEV        NO-DIM     NO-DIM
  316.228    346.737    0.890      0.022
  346.736    380.189    0.919      0.022
 ENDDATA             71
-ENDSUBENT          103
-SUBENT        23269003   20180426   20180903   20180809       2266
-BIB                 10         19
+ENDSUBENT          109
+SUBENT        23269003   20201207   20210106   20210105       2295
+BIB                 11         26
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
 DETECTOR   (PPAC) PPAC mounted in the beam perpendicularly
-PART-DET   (FF) Two fission fragments detection
+PART-DET   (FF) Detection of two fission fragments
 METHOD     (COINC) Two fission fragments detected in coincidence
 SAMPLE     Diam. of 8 cm, 235U (13.97 g, 6.98 E-7at/b (+/-0.7%)
             and 238U (11.5 g,  5.86 E-7at/b (+/-0.7%)
@@ -205,22 +212,29 @@ ERR-ANALYS (ERR-S)     Counting statistics
            (ERR-1)     Sample masses       (1.1%)
            (ERR-2)     Efficiency correction (3%)
            (ERR-3,,1.) Dead time correction (<1%)
+FLAG       (1.) Carlos Paradela (2020-12-07):
+            One digit should be added to the first three data
+            points in the article table, namely,
+             - 0.002(0) ->  0.0025(4) at 0.661 MeV - 0.724 MeV
+             - 0.003(0) ->  0.0030(4) at 0.724 MeV - 0.794 MeV
+             - 0.005(0) ->  0.0049(4) at 0.794 MeV - 0.871 MeV
 STATUS     (TABLE) Same as Table IV of Phys.Rev.C91(2015)024602
 HISTORY    (20150507R) On. Data received from Carlos Paradela.
            (20160511U) On. STATUS revised.
            (20180426A) On. REACTION(SF8): AV deleted.
-ENDBIB              19
+           (20201207A) On. First three data points revised.
+ENDBIB              26
 COMMON               2          3
 ERR-1      ERR-2
 PER-CENT   PER-CENT
  1.1        3.
 ENDCOMMON            3
-DATA                 4         79
-EN-MIN     EN-MAX     DATA       ERR-S
-MEV        MEV        NO-DIM     NO-DIM
-   0.661      0.724    0.002      0.000
-   0.724      0.794    0.003      0.000
-   0.794      0.871    0.005      0.000
+DATA                 5         79
+EN-MIN     EN-MAX     DATA       ERR-S      FLAG
+MEV        MEV        NO-DIM     NO-DIM     NO-DIM
+   0.661      0.724    0.0025     0.0004     1.
+   0.724      0.794    0.0030     0.0004     1.
+   0.794      0.871    0.0049     0.0004     1.
    0.871      0.955    0.012      0.001
    0.955      1.047    0.014      0.001
    1.047      1.148    0.024      0.001
@@ -298,7 +312,7 @@ MEV        MEV        NO-DIM     NO-DIM
  794.328    870.964    0.932      0.015
  870.964    954.993    0.914      0.015
 ENDDATA             81
-ENDSUBENT          109
+ENDSUBENT          116
 SUBENT        23269004   20180426   20180903   20180809       2266
 BIB                 10         20
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
@@ -405,13 +419,13 @@ MEV        MEV        NO-DIM     NO-DIM
  724.436    794.328    1.019      0.030
 ENDDATA             75
 ENDSUBENT          104
-SUBENT        23269005   20180426   20180903   20180809       2266
-BIB                 11         17
+SUBENT        23269005   20201207   20210106   20210105       2295
+BIB                 12         21
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
 MONITOR    ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
 MONIT-REF  (,,3,ENDF/B-VII.1,,2011) at 3 to 5 MeV
 DETECTOR   (PPAC) PPAC mounted at 45 deg relative to the beam
-PART-DET   (FF) Two fission fragments detection
+PART-DET   (FF) Detection of two fission fragments
 METHOD     (COINC) Two fission fragments detected in coincidence
 SAMPLE     Diam. of 8 cm. Not characterized with necessary
             accuracy.
@@ -420,21 +434,24 @@ ERR-ANALYS (ERR-S)     Counting statistics
            (MONIT-ERR) ENDF/B-VII.1 cross section (~1%)
            (ERR-2)     Efficiency correction       (1%)
            (ERR-3,,1.) Dead time correction       (<1%)
+FLAG       (1.) Carlos Paradela (2020-12-07):
+            Better to remove the first data point in the
+            article table: 0.000(0) at 0.955 MeV - 1.047 MeV.
 STATUS     (TABLE) Same as Table IV of Phys.Rev.C91(2015)024602
 HISTORY    (20150507R) On. Data received from Carlos Paradela.
            (20160511U) On. STATUS revised.
            (20180426A) On. REACTION(SF8): AV deleted.
-ENDBIB              17
+           (20201207A) On. First data point removed.
+ENDBIB              21
 COMMON               4          3
 EN-NRM-MIN EN-NRM-MAX MONIT-ERR  ERR-2
 MEV        MEV        PER-CENT   PER-CENT
  3.         5.         1.         1.
 ENDCOMMON            3
-DATA                 4         73
-EN-MIN     EN-MAX     DATA       ERR-S
-MEV        MEV        NO-DIM     NO-DIM
-   0.955      1.047    0.000      0.000
-   1.047      1.148    0.024      0.001
+DATA                 5         72
+EN-MIN     EN-MAX     DATA       ERR-S      FLAG
+MEV        MEV        NO-DIM     NO-DIM     NO-DIM
+   1.047      1.148    0.024      0.001      1.
    1.148      1.259    0.039      0.001
    1.259      1.380    0.057      0.001
    1.380      1.514    0.176      0.003
@@ -506,8 +523,8 @@ MEV        MEV        NO-DIM     NO-DIM
  602.560    660.694    0.971      0.013
  660.694    724.436    0.922      0.013
  724.436    794.328    0.941      0.013
-ENDDATA             75
-ENDSUBENT          101
+ENDDATA             74
+ENDSUBENT          104
 SUBENT        23269006   20180426   20180903   20180809       2266
 BIB                  8         15
 REACTION   ((92-U-238(N,F),,SIG)/(92-U-235(N,F),,SIG))
