@@ -1,46 +1,71 @@
-ENTRY            22484   20030331   20031222   20050926       0000
-SUBENT        22484001   20030331   20031222   20050926       0000
-BIB                 11         22
-TITLE      .Isomeric Cross Section Ratio For the Formation of the
-            Formation of 58Co-M,G in Neutron, Proton, Deutron and
-            Alpha-Particle Induced Reactions in the Energy Region
-            Up to 25 MeV
-AUTHOR     (S.SUDAR, S.M.QAIM)
+ENTRY            22484   20200120   20200305   20200304       2285
+SUBENT        22484001   20200120   20200305   20200304       2285
+BIB                 13         36
+TITLE       Isomeric cross section ratio for the formation of
+            58Co-m,g in neutron, proton, deuteron and
+            alpha-particle induced reactions in the energy region
+            up to 25 MeV
+AUTHOR     (S.Sudar,S.M.Qaim)
 INSTITUTE  (2GERJUL)   Sudar, Qaim
            (3HUNKOS)   Sudar
-REFERENCE  (J,PR/C,53,(6),2885,199606)   Main Reference, Data
-                                         Are Given
-           (J,NSE,88,143,1984)   Experimental Details
-           (J,PR/C,50,2408,1994)    Experimental Details
-           (J,PR/C,49,1525,1994)    Experimental Details
+REFERENCE  (J,PR/C,53,2885,1996)   Main ref., data are given
+REL-REF    (M,21958001,S.M.Qaim+,J,NSE,88,143,1984) Exp.details
+           (M,31432001,F.Cserpak+,J,PR/C,49,1525,1994) Exp.details
+           (O,O1040001,S.Sudar+,J,PR/C,53,2885,1996) p-,d-,alpha-
+           induced reaction data of this work compiled separately
 FACILITY   (CYCLO,2GERJUL)   Compact (2GERJUL) CV28 Variable
                              Energy Cyclotron
-METHOD     (STTA)  Stack Target Irradiation
+METHOD     (STTA)  Stack target irradiation
            (GSPEC) Gamma-Spectrometry
 DETECTOR   (HPGE)
 MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
-MONIT-REF  .IRDF - International Radiation Disimetry File
+MONIT-REF  (,,3,IRDF-1990,,1990) IRDF - International Radiation
+                                 Dosimetry File
+ERR-ANALYS (ERR-T) The total error in cross section was obtained
+           by combining the individual errors in quadrature.
+           (ERR-1,4.,7.) Uncertainty in the neutron flux density
+           (ERR-2,3.,5.) Uncertainty in the efficiencies of the
+                         gamma- and X-ray detectors
+           (ERR-3,0.5,25.) Uncertainty in the initial count rate
+                 at the end of the irradiation was determined by
+                 the least-squares-fitting procedure
+           (ERR-4,,0.1) Uncertainty in the decay data
+           (ERR-5,,0.5) Uncertainty in the coincidence losses
+           (ERR-6,0.5,1.5) Uncertainty in the target atoms/cm2
 ADD-RES    (THEO)
 HISTORY    (20030228C)  NNDC
            (20030331U)  Corrected J.O.S.
-ENDBIB              22
-NOCOMMON
-ENDSUBENT           25
-SUBENT        22484002   20030331   20031222   20050926       0000
-BIB                  6         11
+           (20200120A) SD: DECAY-DATA corrected in Subent 002.
+           Corrections in all Subents. REL-REF,ERR-ANALYS added.
+ENDBIB              36
+NOCOMMON             0          0
+ENDSUBENT           39
+SUBENT        22484002   20200120   20200305   20200304       2285
+BIB                  8         22
 REACTION  1(27-CO-59(N,2N)27-CO-58-M,,SIG)
-          2(27-CO-59(N,2N)27-CO-58-M/T,,SIG/RAT)
-SAMPLE      .Metallic Cobalt Foil 99.99% Chemical Purity 2 Cm
-            Diam, 0.15 mm Thickness Sandwiched Between Two
-            Aluminium Foils 2 Cm Diam, 0.15 mm Thick Each
+          2(27-CO-59(N,2N)27-CO-58-M/T,,SIG/RAT,,,DERIV)
+ANALYSIS    (g.s.+m.s.) production cross sections from the
+                literature (see REL-REF)
+SAMPLE      Metallic cobalt foil 99.99% chemical purity 2 cm
+            diam, 0.15 mm thickness sandwiched between two
+            aluminium foils 2 cm diam, 0.15 mm thick each
 INC-SOURCE (D-D)
-DECAY-DATA (27-CO-58-M,9.15HR,DG,24.9)
-           (27-CO-58-G,71.D,EC,,,B+)
-REL-REF    (R,,V.MCLANE+,B,NEUT.CS 2,,1988) Data For (SIGMA-META)+
-              (SIGMA-GND) Are Taken from this Source
-STATUS     .Data from Table 6 (VI) Of the Main Reference
-ENDBIB              11
-NOCOMMON
+DECAY-DATA (27-CO-58-G,70.92D,DG,810.8,0.994,
+                              XR,6.39,0.077,
+                              XR,6.40,0.153,
+                              XR,7.06,0.027)
+           (27-CO-58-M,9.15HR,XR,6.91,0.078,
+                              XR,6.93,0.154,
+                              XR,7.65,0.028)
+REL-REF    (R,,V.McLane+,B,NEUT.CS 2,,,1988) Data for (sigma-meta)
+             +(sigma-grd) are taken from this source  and
+           (R,22327001,W.Mannhart+,C,94GATLIN,1,285,1994)
+               (g.s.+m.s.) production cross section
+STATUS     (TABLE) Table VI from Prys.Rev.,C53(1996)2885
+HISTORY    (20200120A) SD: DECAY-DATA corrected. SF9=DERIV added
+           to REACTION code ( 2). ANALYSIS added.
+ENDBIB              22
+NOCOMMON             0          0
 DATA                 6          3
 EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     2
 MEV        MEV        MB         MB         NO-DIM     NO-DIM
@@ -48,5 +73,5 @@ MEV        MEV        MB         MB         NO-DIM     NO-DIM
     12.01       0.15       216.        20.       0.68       0.07
     12.97       0.15       390.        37.       0.75       0.06
 ENDDATA              5
-ENDSUBENT           21
+ENDSUBENT           32
 ENDENTRY             2

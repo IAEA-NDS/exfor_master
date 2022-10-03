@@ -1,21 +1,21 @@
-ENTRY            21936   20151213   20160603   20160523       2246
-SUBENT        21936001   20151213   20160603   20160523       2246
-BIB                 18        123
+ENTRY            21936   20200120   20200305   20200304       2285
+SUBENT        21936001   20200120   20200305   20200304       2285
+BIB                 17        123
 INSTITUTE  (2GERKIG)  Experimental Site
 REFERENCE  (R,GKSS-85-E-11,1985)
-           (P,NEANDC(E)-252/U,(5),28,198406)
+           (P,NEANDC(E)-252/U,(5),28,1984)
 AUTHOR     (B.M.Bahal, R.Pepelnik)
 TITLE       Cross section measurements of Cr,Mn,Fe,Co,Ni for an
             accurate determination of these elements in natural
             and synthetic samples using a 14 MeV neutron generator
-FACILITY   (ACCEL,2GERKIG) Neutron generator 'KORONA'
+FACILITY   (NGEN,2GERKIG) Neutron generator 'KORONA'
             Neutron tube with cylindrical acceleration structure.
             Integrated fast pneumatic rabbit system.
 REL-REF    (I,,H.-U.Fanger+,J,JRC,61,147,1981)
            (I,,K.A.Schmidt+,J,AKE,27,159,1981)
            (I,,J.L.Barreira-Filho+,R,GKSS-81-E-53,1981)
              References for facility details.
-           (R,,C.M.Lederer+,B,LEDERER-7,,1978) Reference for
+           (R,,C.M.Lederer+,B,LEDERER-7,,,1978) Reference for
              gamma-intensities and their errors estimates.
 INC-SOURCE (D-T)    Intensity=3.x 10**12 n/sec.
                       Flux=3.10 x 10*10 n/cm**2/sec
@@ -68,7 +68,6 @@ MONITOR    ((MONIT1)13-AL-27(N,P)12-MG-27,,SIG) For short-lived
                                     isotopes, < about 500 sec
            ((MONIT2)13-AL-27(N,A)11-NA-24,,SIG) For long-lived
                                         isotopes > about 500 sec
-PART-DET   (DG)
 ANALYSIS   (SHAPE) Spectrum shape and peak-to-background ratios
             are characteristic for single element analysis.
            (AREA) Peak areas and the background are estimated by
@@ -92,16 +91,16 @@ ERR-ANALYS (ERR-T)     Relative error was defined as the root from
             sum of squares of relative errors for neutron flux,
             gamma-ray intensity, photo-peak efficiency, mass of
             sample, peak area.
-           (ERR-1) Error in mass measurement is usually small(e.g
+              * Error in mass measurement is usually small(e.g.
             for 10 mg mass - 0.1%).
-           (ERR-2) Error in purity estimation, for purity=99% has
+              * Error in purity estimation, for purity=99% has
                 been assumed to be less 0.2%.
-           (ERR-3) Error of peak area estimation - about 0.5%
-           (ERR-4,0.5,3.) Error of detector efficiency:
+              * Error of peak area estimation - about 0.5%
+           (ERR-2,0.5,3.) Error of detector efficiency:
                     in range 150-3000 keV relative er.- less 0.5%,
                                      absolute err. - 2.4%,
                     in range 60-120 keV absolute err. - 3.% .
-           (ERR-5,1.2,3.5) Error in flux using Al(n,alpha)
+           (ERR-3,1.2,3.5) Error in flux using Al(n,alpha)
                    reaction - 1.2%,
                    for long-lived isotopes - 1.3%,
                    is raised to 2.4 % for non-homogeneous mixing.
@@ -122,18 +121,16 @@ HISTORY    (19850121C) BL
              011, 025.
            (20121108A) SD: REACTION code in Subents 2,5,7,11,25
                            was changed.
-           (20151213A) SD: ERR- ANALYS update. DECAY-DATA
+           (20151213A) SD: ERR-ANALYS updated. DECAY-DATA
             corrected in Subent 014.
+           (20200120A) SD: DECAY-DATA corrected in Subents 020,031
 ENDBIB             123
-COMMON               9          6
+COMMON               6          3
 EN         EN-ERR     MONIT1     MONIT1-ERR MONIT2     MONIT2-ERR
-ERR-1      ERR-2      ERR-3
 MEV        MEV        MB         PER-CENT   MB         PER-CENT
-PER-CENT   PER-CENT   PER-CENT
- 1.4700E+01        0.3 1.1300E+02 2.0000E+00 6.8300E+01 1.0000E+00
-        0.1        0.2        0.5
-ENDCOMMON            6
-ENDSUBENT          133
+ 14.7          0.3       113.       2.         68.3       1.0
+ENDCOMMON            3
+ENDSUBENT          130
 SUBENT        21936002   20150818   20160302   20160209       2243
 BIB                  6         13
 REACTION   ((24-CR-52(N,P)23-V-52,,SIG)+
@@ -456,21 +453,23 @@ MB         MB
  2.3100E+02 1.0000E+01
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936020   20080430   20080828   20080828       2198
-BIB                  4          5
+SUBENT        21936020   20200120   20200305   20200304       2285
+BIB                  5          7
 REACTION   (27-CO-59(N,2N)27-CO-58-M,,SIG)
-DECAY-DATA (27-CO-58-M,32180.SEC,EC,,0.85,B+,,0.15)
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+DECAY-DATA (27-CO-58-M,32180.SEC)
+           (27-CO-58-G,71.D,XR)
+RAD-DET    (27-CO-58-G,DG)
+STATUS     (TABLE) Table 3 from GKSS-85-E-11,1985
 HISTORY    (19850122C)
-           (19850423E)
-ENDBIB               5
+           (20200120A) SD: DECAY-DATA corrected. RAD-DET added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  4.7800E+02 2.4000E+01
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 SUBENT        21936021   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (27-CO-59(N,HE3)25-MN-57,,SIG)
@@ -638,21 +637,23 @@ MB         MB
  1.5050E+02 6.0000E+00
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        21936031   20080430   20080828   20080828       2198
-BIB                  4          5
+SUBENT        21936031   20200120   20200305   20200304       2285
+BIB                  5          7
 REACTION   (28-NI-58(N,P)27-CO-58-M,,SIG)
-DECAY-DATA (27-CO-58-M,3.22E+04SEC,EC,,0.85,B+,,0.15)
-STATUS     (TABLE) Main Reference, Table 3. 2nd reference,Table 1.
+DECAY-DATA (27-CO-58-M,3.22E+04SEC)
+           (27-CO-58-G,71.D,XR)
+RAD-DET    (27-CO-58-G,DG)
+STATUS     (TABLE) Table 3 from GKSS-85-E-11,1985
 HISTORY    (19850122C)
-           (19850423E)
-ENDBIB               5
+           (20200120A) SD: DECAY-DATA corrected. RAD-DET added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
  1.6900E+02 1.0000E+01
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 SUBENT        21936032   20080430   20080828   20080828       2198
 BIB                  4          5
 REACTION   (28-NI-64(N,A)26-FE-61,,SIG)
