@@ -1,6 +1,6 @@
-ENTRY            23301   20160810   20170302   20170214       2254
-SUBENT        23301001   20160810   20170302   20170214       2254
-BIB                 12         67
+ENTRY            23301   20191119   20200128   20200115       2283
+SUBENT        23301001   20191119   20200128   20200115       2283
+BIB                 11         70
 AUTHOR     (N.Jovancevic, L.Daraban, H.Stroh, S.Oberstedt,M.Hult,
            C.Bonaldi, W.Geerts, F.-J.Hambsch,G.Lutter,G.Marissens,
            M.Vidali)
@@ -9,6 +9,8 @@ TITLE      The neutron cross-section functions for the reactions
            in the energy range 13.08 - 19.5 MeV.
 REFERENCE  (J,EPJ/A,52,148,2016)
            #doi:10.1140/epja/i2016-16148-4
+           (J,EPJ/CS,146,11025,2017) - same data + data for
+            187Re(n,p)187W and 185Re(n,3n)183Re
 INSTITUTE  (2ZZZGEL)
            (3SRBSRB) Department of Physics, Faculty of Sciences,
            University of Novi Sad, Trg Dositeja Obradovica 3,
@@ -62,15 +64,16 @@ DETECTOR   (BF3,IOCH,IOCH)
            with 50% relative efficiency at subsequent measurements
            after 2 days in the ultra-low background underground
            laboratory HADES;
-PART-DET   (DG)  Decay gamma-rays.
 ANALYSIS   (UNFLD) The neutron cross-sections were calculated
            using an unfolding procedure, where the known spectra
            of the neutron beams and the activity of the
            radionuclides are input parameters.
 HISTORY    (20160810C)  M.M.
-ENDBIB              67
+           (20191119A) SD: Ref. EPJ/CS,146,11025,2017 added.
+           Subents 008, 009 added. PART-DET deleted.
+ENDBIB              70
 NOCOMMON             0          0
-ENDSUBENT           70
+ENDSUBENT           73
 SUBENT        23301002   20160810   20170302   20170214       2254
 BIB                  8         20
 REACTION   (75-RE-187(N,2N)75-RE-186-G,(M),SIG)
@@ -345,4 +348,60 @@ NO-DIM
   7.
 ENDDATA             16
 ENDSUBENT           58
-ENDENTRY             7
+SUBENT        23301008   20191119   20200128   20200115       2283
+BIB                  8         14
+REACTION   (75-RE-185(N,3N)75-RE-183,,SIG)
+DECAY-DATA (75-RE-183,,DG,162.3,0.22)
+MONITOR    (92-U-238(N,F),,SIG) For average neutron fluence rate.
+           From ENDF data base.
+ANALYSIS   Cross section was determined as:
+           Ak/F1 , where Ak - measured induced activity,
+           F1 - average fluence rate corrected for variation in
+           the ion beam current; measured with two ionization
+           chambers with 238U and 235U targets.
+MISC-COL   (MISC) Average neutron fluence rate, 1/(cm2*sec)
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 3 from EPJ Web of Conf.,146(2017)11025
+HISTORY    (20191119C) SD
+ENDBIB              14
+COMMON               2          3
+MONIT      MONIT-ERR
+B          B
+ 1.315      0.013
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     DATA       DATA-ERR   MISC       MISC-ERR
+MEV        MEV        B          B          SEE TEXT   SEE TEXT
+ 18.10      0.28       0.845      0.029      17200.      500.
+ENDDATA              3
+ENDSUBENT           26
+SUBENT        23301009   20191119   20200128   20200115       2283
+BIB                  8         14
+REACTION   (75-RE-187(N,P)74-W-187,,SIG)
+DECAY-DATA (74-W-187,,DG,618.3,0.076)
+MONITOR    (92-U-238(N,F),,SIG) For average neutron fluence rate.
+           From ENDF data base.
+ANALYSIS   Cross section was determined as:
+           Ak/F1 , where Ak - measured induced activity,
+           F1 - average fluence rate corrected for variation in
+           the ion beam current; measured with two ionization
+           chambers with 238U and 235U targets.
+MISC-COL   (MISC) Average neutron fluence rate, 1/(cm2*sec)
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table 3 from EPJ Web of Conf.,146(2017)11025
+HISTORY    (20191119C) SD
+ENDBIB              14
+COMMON               2          3
+MONIT      MONIT-ERR
+B          B
+ 1.315      0.013
+ENDCOMMON            3
+DATA                 6          1
+EN         EN-ERR     DATA       DATA-ERR   MISC       MISC-ERR
+MEV        MEV        B          B          SEE TEXT   SEE TEXT
+ 18.10      0.28       0.00480      0.00017      377.      11.
+ENDDATA              3
+ENDSUBENT           26
+ENDENTRY             9

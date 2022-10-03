@@ -1,6 +1,6 @@
-ENTRY            23391   20180410   20190222   20190221       2269
-SUBENT        23391001   20180410   20190222   20190221       2269
-BIB                 12         53
+ENTRY            23391   20191113   20200128   20200115       2283
+SUBENT        23391001   20191113   20200128   20200115       2283
+BIB                 12         55
 TITLE      242Pu neutron-induced fission cross-section measurement
            from 1 to 2 MeV neutron energy
 AUTHOR     (P.Marini,L.Mathieu,M.Aiche,G.Belier,S.Czajkowski,
@@ -17,11 +17,11 @@ REFERENCE  (J,PR/C,96,054604,2017)
 FACILITY   (VDG,2FR BRC) 4 MV Van de Graaff accelerator
 INC-SOURCE (P-T)  950 microgram/cm2 TiT solid target.
            Proton beam 4microA. Neutron flux ~10**6 n/(cm2*sec)
-           Nominal energy  Coling system   Average energy
+           Nominal energy  Cooling system   Average energy
             1.1 MeV          water          1.024 MeV
             1.5 MeV          water          1.434 MeV
             2.0 MeV          air            1.940 MeV
-            1.1 Mev          air            1.022 MeV
+            1.1 MeV          air            1.022 MeV
 SAMPLE      Pu-242 sample :
             Activity (MBq)              0.2472 +- 0.0007
             Thickness (microgram/cm2)   239.5+-2.1
@@ -30,15 +30,15 @@ SAMPLE      Pu-242 sample :
             Isotopic purity, %          99.96518+-0.00045
             Production method           Electrodeposition
             Number of atoms was determined from alpha-activity
-           and half-lifeand the deposit area.
+           and half-life and the deposit area.
 DECAY-DATA (94-PU-242,3.75E+5YR)  (3.75+-0.02)*10**5 yr.
 DETECTOR   (PHVC) Two fission detectors, each consisting of two
            40 x 40 mm2 solar cells.
            (SI) The neutron flux was measured by a proton-recoil
-           detector cosisted of P-rich radiator ( 4 micrometer
+           detector consisted of P-rich radiator ( 4 micrometer
            polypropylene PP foil) mounted on Ta frame and 50microm
            silicon detector.
-METHOD     (PHD) Pilse height descrimination for alphas from FF -
+METHOD     (PHD) Pulse height discrimination for alphas from FF -
            for Pu-242.
            Pu242 spontaneous fission rate was measured without
            neutron beam.
@@ -48,19 +48,22 @@ METHOD     (PHD) Pilse height descrimination for alphas from FF -
             neutron source - fission sample    54.7+-0.5
             fission sample - photovoltaic cell  5.4+-0.2
             neutron source - PP                89.7+-0.6
-            PP - silican detector collimator   78.8+-0.2   .
-CORRECTION  For dead time  - ~ 1.% with negligieble uncertainty.
+            PP - silicon detector collimator   78.8+-0.2   .
+CORRECTION  For dead time  - ~ 1.% with negligible uncertainty.
             For scattered neutrons.
             For kinematics (+0.5 %) and
-             fission-fragment anisotropy effects (< 2.5 %) .
+             fission-fragment anisotropy effects (< 2.5%) .
 HISTORY    (20180410C)   M.M.
-ENDBIB              53
+           (20191113A) SD: Data correction in Subents 002,003.
+            Small corrections in Subent 001.
+ENDBIB              55
 NOCOMMON             0          0
-ENDSUBENT           56
-SUBENT        23391002   20180410   20190222   20190221       2269
-BIB                  7         27
+ENDSUBENT           58
+SUBENT        23391002   20191113   20200128   20200115       2283
+BIB                  8         32
 REACTION   (94-PU-242(N,F),,SIG)
 MONITOR    ((MONIT)1-H-1(N,EL)1-H-1,,SIG) For neutron flux.
+           (94-PU-242(N,F),,SIG)
 MONIT-REF  (,,3,ENDF/B-VII.1,,2011) At 1.9 MeV
 ANALYSIS    CS was measured relative to np standard cs - see
            formula (4) in PR/C,96,054604,2017  .
@@ -86,7 +89,11 @@ COVARIANCE  (COR,4.,4.) Correlation matrix for 4 measurements
             0.44  0.38   1.       0.54
             0.67  0.41   0.54     1.
 STATUS     (TABLE) Table IX of Phys.Rev.C,96,054604,2017
-ENDBIB              27
+           (COREL,23391003) absolute determination of cr.sect.
+HISTORY    (20191113A) SD: Value: 1.353 b -> 1.354 b at 1.434 MeV
+           according to the Tbl IX. Reaction PU-242(n,f) added to
+           MONITOR.
+ENDBIB              32
 COMMON               1          3
 MONIT-ERR
 PER-CENT
@@ -97,23 +104,24 @@ EN-MEAN    EN-ERR     DATA       ERR-S      ERR-SYS    MONIT
 MEV        MEV        B          PER-CENT   PER-CENT   B
  1.022      0.036      1.414      1.3        2.8        4.174
  1.024      0.036      1.373      1.2        3.3        4.174
- 1.434      0.033      1.353      1.7        3.8        3.475
+ 1.434      0.033      1.354      1.7        3.8        3.475
  1.940      0.032      1.457      1.0        3.5        2.936
 ENDDATA              6
-ENDSUBENT           42
-SUBENT        23391003   20180410   20190222   20190221       2269
-BIB                  5         20
+ENDSUBENT           47
+SUBENT        23391003   20191113   20200128   20200115       2283
+BIB                  7         25
 REACTION   (94-PU-242(N,F),,SIG)
+MONITOR    ((MONIT)1-H-1(N,EL)1-H-1,,SIG) For neutron flux.
 ANALYSIS    CS was determined by two assumption:
            - PP foil has uniform thickness;
             71.9+-0.6 cm2 foil was cut from the same sheet as PP
-           foil, measured number of H-1 atoms was determined ( see
+           foil, measured number of H-1 atoms was determined (see
            III C1 section) to be (3.23+-0.07)*10**19, for density
            0.946 g/cm3, it corresponds to thickness 3.96+-0.08
            microm of PP;
            H-1 quantity was used to normalize CS at different
            energies.
-           - absolute values of corrections are correct.
+           - absolute values of corrections to Np are correct.
 ERR-ANALYS (ERR-S) Statistical uncertainty
            (ERR-SYS) Total systematical uncertainty
 COVARIANCE   (COR,4.,4.) Correlation matrix for 4 measurements
@@ -123,15 +131,23 @@ COVARIANCE   (COR,4.,4.) Correlation matrix for 4 measurements
             0.60  0.54    1.     0.69
             0.78  0.58    0.69   1.
 STATUS     (TABLE) Table IX of Phys.Rev.C,96,054604,2017
-ENDBIB              20
-NOCOMMON             0          0
-DATA                 5          4
-EN-MEAN    EN-ERR     DATA       ERR-S      ERR-SYS
-MEV        MEV        B          PER-CENT   PER-CENT
- 1.022      0.036      1.415      1.3        3.6
- 1.024      0.036      5.373      1.2        4.1
- 1.434      0.033      1.355      1.7        4.5
- 1.940      0.032      1.459      1.0        4.2
+           (COREL,23391002) cr.sect. values normalized to the
+            ENDF-B/VII.1 cr.sect. at 1.9 MeV
+HISTORY    (20191113A) SD: Value: 5.373 b -> 1.375 b at 1.024 MeV
+           according to remark from Dr. O.Iwamoto (see Tbl.IX).
+ENDBIB              25
+COMMON               1          3
+MONIT-ERR
+PER-CENT
+ 0.2
+ENDCOMMON            3
+DATA                 6          4
+EN-MEAN    EN-ERR     DATA       ERR-S      ERR-SYS    MONIT
+MEV        MEV        B          PER-CENT   PER-CENT   B
+ 1.022      0.036      1.415      1.3        3.6        4.174
+ 1.024      0.036      1.375      1.2        4.1        4.174
+ 1.434      0.033      1.355      1.7        4.5        3.475
+ 1.940      0.032      1.459      1.0        4.2        2.936
 ENDDATA              6
-ENDSUBENT           31
+ENDSUBENT           40
 ENDENTRY             3
