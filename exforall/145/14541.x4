@@ -1,35 +1,114 @@
-ENTRY            14541   20190610   20191023   20191022       1455
-SUBENT        14541001   20190610   20191023   20191022       1455
-BIB                 10         16
-TITLE      Total kinetic energy release and mass distribution in
-           the spontaneous fission of 252No
-AUTHOR     (C.E.Bemis,R.L.Ferguson,R.J.Silva,F.Pleasonton,
-           F.Plasil, R.L.Hahn)
+ENTRY            14541   20211012   20220419   20220419       1491
+SUBENT        14541001   20211012   20220419   20220419       1491
+BIB                  8         18
+TITLE      Fragment-mass and kinetic-energy distributions from the
+           spontaneous fission of No252
+AUTHOR     (C.E.Bemis Jr,R.L.Ferguson,F.Plasil,R.J.Silva,
+           F.Pleasonton,R.L.Hahn)
 INSTITUTE  (1USAORL)
-REFERENCE  (J,BAP,21,970(AE10),1976)
+REFERENCE  (J,PR/C,15,705,1977)
+           #doi:10.1103/PhysRevC.15.705
+           (J,BAP,21,970(AE10),1976) Preliminary data for AKE
            #NSR: 1976BEYF
 FACILITY   (ISOCY,1USAORL)
 SAMPLE     The nuclide 252No was produced in the 241Am(15N,4n)
            reaction at ORIC, deposited on 40 mu-g/cm2 C foils
            using He-jet techniques, and rotated periodically
            between a pair of detectors.
-DETECTOR   (SIBAR)
-ERR-ANALYS No information on uncertainties.
-STATUS     (TABLE) Text in Bull.Am.Phys.Soc.,21,(8),970,AE10,1976
+DETECTOR   (SIBAR) Two pairs of silicon surface-barrier detectors.
 HISTORY    (20190610C) OG.
-ENDBIB              16
+           (20211012A) OG. The 1-st reference added.
+           Data in Sub002 updated and added, Subs. 003-005 added.
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        14541002   20190610   20191023   20191022       1455
-BIB                  2          2
-REACTION   (102-NO-252(0,F),PRE,AKE,LF+HF)
-DECAY-DATA (102-NO-252,2.3SEC)
-ENDBIB               2
+ENDSUBENT           21
+SUBENT        14541002   20211012   20220419   20220419       1491
+BIB                  6         11
+REACTION  1(102-NO-252(0,F),SEC,AKE,LF+HF)
+          2(102-NO-252(0,F),PRE,AKE,LF+HF)
+DECAY-DATA (102-NO-252,2.30SEC)
+MISC-COL   (MISC1) The rms width of the TKE distribution
+                                          (post-neutron emission)
+           (MISC2) The rms width of the TKE distribution
+                                          (pre-neutron-emission)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+STATUS     (TABLE) Tab.I (p.710) in Phys.Rev.C,15,705,1977
+           (DEP,14541005)
+HISTORY    (20211012A) OG. Data updated and added.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 1          1
-DATA
-MEV
-202.4
+DATA                 8          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2MISC1      MISC1-ERR
+MISC2      MISC2-ERR
+MEV        MEV        MEV        MEV        MEV        MEV
+MEV        MEV
+198.7      1.2        202.4      1.2        14.9       5.1
+15.4       5.1
+ENDDATA              6
+ENDSUBENT           22
+SUBENT        14541003   20211012   20220419   20220419       1491
+BIB                  5          6
+REACTION  1(102-NO-252(0,F),PRE,AP,LF)
+          2(102-NO-252(0,F),PRE,AP,HF)
+MISC-COL   (MISC) The rms width of the mass distribution
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+STATUS     (TABLE) Tab.II (p.710) in Phys.Rev.C,15,705,1977
+HISTORY    (20211012C) OG.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 6          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2MISC       MISC-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+110.1      0.9        141.9      0.9        8.0        3.1
 ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             2
+ENDSUBENT           14
+SUBENT        14541004   20211012   20220419   20220419       1491
+BIB                  4          7
+REACTION  1(102-NO-252(0,F),SEC,AKE,LF)
+          2(102-NO-252(0,F),PRE,AKE,LF)
+          3(102-NO-252(0,F),SEC,AKE,HF)
+          4(102-NO-252(0,F),PRE,AKE,HF)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+STATUS     (TABLE) Tab.I (p.710) in Phys.Rev.C,15,705,1977
+HISTORY    (20211012C) OG.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 8          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
+DATA      4DATA-ERR  4
+MEV        MEV        MEV        MEV        MEV        MEV
+MEV        MEV
+112.1      1.2        113.7      1.2        86.4       1.2
+88.6       1.2
+ENDDATA              6
+ENDSUBENT           18
+SUBENT        14541005   20211012   20220419   20220419       1491
+BIB                  4          5
+REACTION   (102-NO-252(0,F)MASS,PRE,KE,LF+HF)
+ERR-ANALYS (DATA-ERR) No information on source of uncertainties.
+STATUS     (CURVE) Fig.3 (p.709) in Phys.Rev.C,15,705,1977 was
+           digitized by GSYS2.4.7.
+HISTORY    (20211012C) OG.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 3         15
+MASS       DATA       DATA-ERR
+NO-DIM     MEV        MEV
+        91.    190.398      7.398
+        96.    186.809     12.356
+       102.    197.559      5.644
+       106.    196.030      6.940
+       111.    203.425      5.873
+       117.    210.590      5.797
+       122.    218.366      2.822
+       126.    208.371     12.356
+       131.    211.266      5.034
+       137.    207.067      6.941
+       141.    202.868      5.110
+       146.    200.424      3.203
+       151.    189.590     12.203
+       156.    181.806      8.466
+       166.    195.985
+ENDDATA             17
+ENDSUBENT           27
+ENDENTRY             5
