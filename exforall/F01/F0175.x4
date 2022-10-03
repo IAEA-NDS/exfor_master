@@ -1,65 +1,262 @@
-ENTRY            F0175   20110225   20110803   20110627       F041
-SUBENT        F0175001   20110225   20110803   20110627       F041
-BIB                  9         15
+ENTRY            F0175   20200614   20200819   20200818       F078
+SUBENT        F0175001   20200614   20200819   20200818       F078
+BIB                 11         27
 TITLE      The Be-9(alpha,n)C-12 cross section between
-           1.5 and 7.8 MeV.
+           1.5 and 7.8 MeV
 AUTHOR     (L.Van Der Zwan,K.W.Geiger)
 INSTITUTE  (1CANOTC)
 REFERENCE  (J,NP/A,152,481,1970)
-SAMPLE     Beryllium targets of 50 and 100 mu-g/cm**2 thickness
-            (+ -10%) evaporated on tantalum backings.
 FACILITY   (VDG,1CANOTC)
-DETECTOR   (SCIN) Stilbene DETECTOR (2.5cm diam.x 1.2cm thick)
+SAMPLE     Beryllium targets of 50 and 100 mu-g/cm**2 thickness
+            evaporated on tantalum backings.
+DETECTOR   (SCIN) Stilbene detector (2.5cm diam.x 1.2cm thick)
            and NE213 liquid scintillator (5.1cm long by 5.1 cm).
-METHOD     (PHD)
+           (LONGC) The neutron emission from the target was
+           monitored with a De Pangher long counter
+METHOD     (PSD)
+ADD-RES    (ANGD) Angular distributions in the c.m. system are
+           given at fig.5 in relative units with strange ordinate
+           scale: The maximum relative yield for each distribution
+           is full scale.
+ERR-ANALYS (ERR-SYS) A systematic error is caused mainly by
+           uncertainties in the target thickness
+           and the neutron detection efficiency
+           (ERR-1) Uncertainty in target thickness
 HISTORY    (19850320C)
-           (19990409A) CNPD: corrected 4-dig. year
+           (19990409U) CNPD: corrected 4-dig. year and lower cases
            (20110225A) In the SAMPLE record opening parenthesis in
            column 11 was removed.
-ENDBIB              15
-NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        F0175002   19990409   19990427   20050926       0000
+           (20200614A) SD: Corrections in all Subents. Numerical
+           data revised.
+ENDBIB              27
+COMMON               3          3
+EN-RSL     ERR-SYS    ERR-1
+MEV        PER-CENT   PER-CENT
+  0.002         15.       10.
+ENDCOMMON            3
+ENDSUBENT           34
+SUBENT        F0175002   20200614   20200819   20200818       F078
 BIB                  5          8
-REACTION   (4-BE-9(A,N)6-C-12,PAR,SIG,,,EXP)
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) Digitizing error
-           (ERR-T) Total error
-           (ERR-S) Statistic error
-REL-REF    (N,,SEABORN+,J,PR,129,(5),2217,1963)
-STATUS     (CURVE) fig 7
-EN-SEC     (E-LVL,6-C-12)
+REACTION   (4-BE-9(A,N)6-C-12,PAR,SIG)
+ERR-ANALYS (ERR-S) Statistic error
+REL-REF    (N,F0271001,J.B.Seaborn+,J,PR,129,2217,1963)
+STATUS     (CURVE) fig 7 from Nucl.Phys.,A152(1970)481
+HISTORY    (20200614A) SD: SF9=EXP deleted from REACTION code.
+           EN-ERR -> EN-ERR-DIG; DATA-ERR -> ERR-DIG. EN-SEC
+           deleted. ERR-ANALYS, STATUS updated. ERR-T -> ERR-SYS
+           and moved to Subent 001.
 ENDBIB               8
-COMMON               4          3
-EN-ERR     DATA-ERR   ERR-T      ERR-S
-MEV        MB         PER-CENT   PER-CENT
- 0.02        2.392      15.       10.
+COMMON               3          3
+EN-ERR-DIG ERR-DIG    ERR-S
+MEV        MB         PER-CENT
+ 0.02        2.4         10.
 ENDCOMMON            3
 DATA                 3         22
-EN         E-LVL      DATA
+E-LVL      EN         DATA
 MEV        MEV        MB
-     2.57       0.       111.6
-     2.979      0.        40.6
-     4.341      0.       125.4
-     4.959      7.66      48.17
-     4.99       0.        86.06
-     4.994      0.        73.57
-     5.242      0.        71.92
-     5.246      7.66      55.26
-     5.368      0.        60.68
-     5.744      0.        43.63
-     6.012      0.        46.34
-     6.345      0.        33.03
-     6.364      7.66      41.57
-     6.674      0.        36.38
-     6.776      7.66      41.59
-     6.778      0.        33.26
-     6.966      0.        26.81
-     7.274      0.        29.95
-     7.456      7.66      48.48
-     7.461      0.        27.67
-     7.584      0.        28.92
-     7.869      0.        44.34
+         0.       2.57      111.6
+         0.       2.98       40.6
+         0.       4.34      125.4
+         0.       4.99       86.1
+         0.       4.99       73.6
+         0.       5.24       71.9
+         0.       5.37       60.7
+         0.       5.74       43.6
+         0.       6.01       46.3
+         0.       6.34       33.0
+         0.       6.67       36.4
+         0.       6.78       33.3
+         0.       6.97       26.8
+         0.       7.27       29.9
+         0.       7.46       27.7
+         0.       7.58       28.9
+         0.       7.87       44.3
+       7.66       4.96       48.2
+       7.66       5.25       55.3
+       7.66       6.36       41.6
+       7.66       6.78       41.6
+       7.66       7.46       48.5
 ENDDATA             24
 ENDSUBENT           41
-ENDENTRY             2
+SUBENT        F0175003   20200614   20200819   20200818       F078
+BIB                  4          5
+REACTION   (4-BE-9(A,N)6-C-12,PAR,DA)
+ERR-ANALYS Statistical errors do not exceed the size of the
+           points or +/- 10%, whichever is larger.
+STATUS     (CURVE) fig 4 from Nucl.Phys.,A152(1970)481
+HISTORY    (20200614C) SD
+ENDBIB               5
+COMMON               3          3
+ANG        EN-ERR-DIG ERR-DIG
+ADEG       MEV        MB/SR
+ 0.0         0.003       0.09
+ENDCOMMON            3
+DATA                 3        163
+E-LVL      EN         DATA
+MEV        MEV        MB/SR
+         0.      1.469       0.68
+         0.      1.558       0.83
+         0.      1.614       1.11
+         0.      1.770       2.81
+         0.      1.814       7.61
+         0.      1.875      13.26
+         0.      1.958      17.36
+         0.      2.075      20.61
+         0.      2.164      18.91
+         0.      2.264      24.99
+         0.      2.365      23.01
+         0.      2.476      24.85
+         0.      2.571      26.41
+         0.      2.660      21.05
+         0.      2.772      11.59
+         0.      2.872       6.79
+         0.      2.962       3.83
+         0.      3.062       1.86
+         0.      3.173       0.45
+         0.      3.290       0.31
+         0.      3.424       0.46
+         0.      3.485       1.16
+         0.      3.591       4.13
+         0.      3.680       8.37
+         0.      3.780      15.01
+         0.      3.880      29.55
+         0.      3.985      41.98
+         0.      4.074      47.06
+         0.      4.180      47.21
+         0.      4.286      40.29
+         0.      4.386      31.40
+         0.      4.487      26.32
+         0.      4.593      22.23
+         0.      4.682      18.14
+         0.      4.783      11.51
+         0.      4.883       6.00
+         0.      4.984       2.76
+         0.      5.095       2.48
+         0.      5.184       6.01
+         0.      5.317      10.25
+         0.      5.396       9.12
+         0.      5.496       7.71
+         0.      5.602       5.46
+         0.      5.708       4.47
+         0.      5.825       4.62
+         0.      5.864       4.62
+         0.      5.908       5.04
+         0.      6.014       7.02
+         0.      6.125       9.43
+         0.      6.226       8.44
+         0.      6.304       8.44
+         0.      6.410       7.18
+         0.      6.504       5.06
+         0.      6.610       3.65
+         0.      6.722       2.53
+         0.      6.816       1.54
+         0.      6.911       3.10
+         0.      7.006       4.09
+         0.      7.100       6.07
+         0.      7.178       3.95
+         0.      7.279       3.95
+         0.      7.368       3.53
+         0.      7.479       3.82
+       4.44      1.569       0.97
+       4.44      1.664       2.10
+       4.44      1.758       3.37
+       4.44      1.792       5.49
+       4.44      1.803       7.89
+       4.44      1.858      14.53
+       4.44      1.958      16.09
+       4.44      2.076       9.03
+       4.44      2.159       6.35
+       4.44      2.265       5.65
+       4.44      2.365       4.38
+       4.44      2.466       6.50
+       4.44      2.566      12.71
+       4.44      2.671      17.09
+       4.44      2.766      18.65
+       4.44      2.872      17.52
+       4.44      2.961      17.52
+       4.44      3.078      18.80
+       4.44      3.172      20.35
+       4.44      3.278      21.06
+       4.44      3.384      24.74
+       4.44      3.479      26.86
+       4.44      3.584      30.53
+       4.44      3.668      34.49
+       4.44      3.779      36.18
+       4.44      3.874      37.88
+       4.44      3.982     101.55
+       4.44      4.066      85.18
+       4.44      4.173      81.23
+       4.44      4.284      87.16
+       4.44      4.378      89.56
+       4.44      4.484      82.93
+       4.44      4.585      77.00
+       4.44      4.685      73.20
+       4.44      4.785      74.75
+       4.44      4.885      84.35
+       4.44      4.979      98.05
+       4.44      5.097      87.18
+       4.44      5.197      84.36
+       4.44      5.286      84.08
+       4.44      5.398      80.28
+       4.44      5.498      80.70
+       4.44      5.604      89.03
+       4.44      5.720      97.08
+       4.44      5.821      94.12
+       4.44      5.910      79.44
+       4.44      6.022      67.16
+       4.44      6.129      53.76
+       4.44      6.218      43.59
+       4.44      6.319      33.71
+       4.44      6.425      23.98
+       4.44      6.509      19.74
+       4.44      6.615      15.65
+       4.44      6.716      12.83
+       4.44      6.822      11.71
+       4.44      6.899      12.27
+       4.44      7.000      12.41
+       4.44      7.094      11.15
+       4.44      7.195      11.29
+       4.44      7.289      10.02
+       4.44      7.384      10.03
+       4.44      7.473      13.28
+       7.65      3.786       2.44
+       7.65      3.886       7.67
+       7.65      3.986      14.59
+       7.65      4.075      18.40
+       7.65      4.170      20.38
+       7.65      4.275      20.67
+       7.65      4.381      15.73
+       7.65      4.482      13.05
+       7.65      4.582      10.79
+       7.65      4.683       9.95
+       7.65      4.788      11.79
+       7.65      4.877      16.73
+       7.65      4.977      19.42
+       7.65      5.078      15.47
+       7.65      5.195      12.22
+       7.65      5.290      10.67
+       7.65      5.401      10.82
+       7.65      5.501       9.69
+       7.65      5.602       9.13
+       7.65      5.697       7.01
+       7.65      5.814       5.32
+       7.65      5.908       3.35
+       7.65      6.009       1.38
+       7.65      6.114       1.52
+       7.65      6.215       1.38
+       7.65      6.309       2.23
+       7.65      6.415       2.80
+       7.65      6.510       3.51
+       7.65      6.604       4.78
+       7.65      6.710       5.07
+       7.65      6.811       5.78
+       7.65      6.894       6.34
+       7.65      7.000       6.63
+       7.65      7.089       6.77
+       7.65      7.178       6.91
+       7.65      7.279       6.49
+       7.65      7.368       5.65
+       7.65      7.468       5.51
+ENDDATA            165
+ENDSUBENT          179
+ENDENTRY             3

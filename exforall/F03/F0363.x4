@@ -1,113 +1,130 @@
-ENTRY            F0363   19990508   20000121   20050926       0000
-SUBENT        F0363001   19990508   20000121   20050926       0000
-BIB                  8         11
+ENTRY            F0363   20200614   20200819   20200818       F078
+SUBENT        F0363001   20200614   20200819   20200818       F078
+BIB                  9         14
 TITLE      The gamma radiation from 11B bombarded by protons
-AUTHOR     (T.HUUS,R.B.DAY)
+AUTHOR     (T.Huus,R.B.Day)
 INSTITUTE  (1USACAL)
-REFERENCE  (J,PR,91,599,195308)
+REFERENCE  (J,PR,91,599,1953)
+FACILITY   (VDG,1USACAL)
 SAMPLE     Targets prepared by evaporation (B2O3) on a thin
            tantalum backing
-FACILITY   (VDG)
 DETECTOR   (NAICR) Crystal 1.5in. long, 1.5in. in diam. mounted in
            a Lucite container on a selected 5819 photomultiplier.
+ERR-ANALYS  No information about uncertainties.
 HISTORY    (19860203C)
-           (19990409A) CNPD: corrected 4-dig. year
-ENDBIB              11
+           (19990409U) CNPD: corrected 4-dig. year and lower cases
+           (20200614A) SD: Corrections in all Subents. Numerical
+           data revised. Subent 005 added.
+ENDBIB              14
 COMMON               1          3
 EN-RSL
 PER-CENT
  0.1
 ENDCOMMON            3
-ENDSUBENT           18
-SUBENT        F0363002   19990508   20000121   20050926       0000
-BIB                  6          6
-REACTION   (5-B-11(P,G)6-C-12,PAR,DA,,4PI,EXP)
-ANALYSIS   (4PI1A) Angle 90 degrees
+ENDSUBENT           21
+SUBENT        F0363002   20200614   20200819   20200818       F078
+BIB                  4          7
+REACTION   (5-B-11(P,G)6-C-12,PAR,SIG,,RES)
 MISC-COL   (MISC) Target thickness in MeV.
-EN-SEC     (E-LVL,6-C-12)
-STATUS     (CURVE) Table 2
+STATUS     (CURVE) Table II from Phys.Rev.,91(1953)599
 HISTORY    (19990507A) THICKNESS changed on MISC.
-ENDBIB               6
-COMMON               1          3
-ANG
-ADEG
-  90.0
-ENDCOMMON            3
-DATA                 4          6
-EN         E-LVL      DATA       MISC
-MEV        MEV        MB         MEV
-     0.163      0.     0.5500E-02     0.165
-     0.163      4.44       0.152      0.165
-     0.675      0.     0.2300E-02     0.088
-     0.675      4.44       0.048      0.088
-     1.388      0.         0.035      0.055
-     1.388      4.44       0.018      0.055
+           (20200614A) SD: SF6=DA -> SIG; SF8=4PI -> RES; SF9=EXP
+           deleted from REACTION code. EN-SEC, ANALYSIS deleted.
+           EN -> EN-RES.  DATA-MAX added.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 5          6
+E-LVL      EN-RES     DATA       DATA-MAX   MISC
+MEV        MEV        MB         MB         MEV
+         0.      0.163   0.55E-02                 0.165
+         0.      0.675              0.23E-02      0.088
+         0.      1.388      0.035                 0.055
+       4.44      0.163      0.152                 0.165
+       4.44      0.675      0.048                 0.088
+       4.44      1.388      0.018                 0.055
 ENDDATA              8
-ENDSUBENT           23
-SUBENT        F0363003   19990409   19990429   20050926       0000
-BIB                  4          5
-REACTION   (5-B-11(P,INL)5-B-11,PAR,DA,G,REL,EXP)
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) Digitizing error
-EN-SEC     (E-LVL,5-B-11)
-STATUS     (CURVE) Fig 8
-ENDBIB               5
+ENDSUBENT           20
+SUBENT        F0363003   20200614   20200819   20200818       F078
+BIB                  3          6
+REACTION   (5-B-11(P,INL)5-B-11,PAR,DA,G,REL)
+            No explanation of relative units is given.
+STATUS     (CURVE) Fig 8 from Phys.Rev.,91(1953)599
+HISTORY    (20200614A) SD: SF9=EXP deleted from REACTION code.
+           EN-SEC, ERR-ANALYS deleted. EN-ERR -> EN-ERR-DIG;
+           DATA-ERR -> ERR-DIG.
+ENDBIB               6
 COMMON               4          3
-ANG        E-LVL      EN-ERR     DATA-ERR
+ANG        E          EN-ERR-DIG ERR-DIG
 ADEG       MEV        MEV        ARB-UNITS
   90.00      2.130     0.003      0.13
 ENDCOMMON            3
 DATA                 2         33
 EN         DATA
 MEV        ARB-UNITS
-     2.496      0.7006
-     2.515      0.8569
-     2.537      0.8497
-     2.563      1.004
-     2.589      1.483
-     2.605      2.29
-     2.624      4.72
-     2.635     10.73
-     2.641     14.62
-     2.651     17.05
-     2.655     21.27
-     2.659     28.09
-     2.666     32.64
-     2.673     33.29
-     2.679     32.8
-     2.685     29.39
-     2.691     26.12
-     2.697     22.56
-     2.7       20.61
-     2.706     18.66
-     2.712     17.36
-     2.718     15.41
-     2.731     13.94
-     2.74      12.97
-     2.756     11.99
-     2.772     12.47
-     2.782     12.57
-     2.795     12.95
-     2.805     13.59
-     2.83      14.89
-     2.863     17.25
-     2.882     19.9
-     2.911     21.52
+      2.496       0.70
+      2.515       0.86
+      2.537       0.85
+      2.563       1.00
+      2.589       1.48
+      2.605       2.29
+      2.624       4.72
+      2.635      10.73
+      2.641      14.62
+      2.651      17.05
+      2.655      21.27
+      2.659      28.09
+      2.666      32.64
+      2.673      33.29
+      2.679      32.80
+      2.685      29.39
+      2.691      26.12
+      2.697      22.56
+      2.700      20.61
+      2.706      18.66
+      2.712      17.36
+      2.718      15.41
+      2.731      13.94
+      2.740      12.97
+      2.756      11.99
+      2.772      12.47
+      2.782      12.57
+      2.795      12.95
+      2.805      13.59
+      2.830      14.89
+      2.863      17.25
+      2.882      19.90
+      2.911      21.52
 ENDDATA             35
-ENDSUBENT           49
-SUBENT        F0363004   19990508   20000121   20050926       0000
-BIB                  4          5
-REACTION   (5-B-11(P,INL)5-B-11,PAR,SIG,G,,EXP)
-COMMENT    Cross section value in resonance asumming an isotropic
+ENDSUBENT           50
+SUBENT        F0363004   20200614   20200819   20200818       F078
+BIB                  4          6
+REACTION   (5-B-11(P,INL)5-B-11,PAR,SIG,G)
+COMMENT    Cross section value in resonance assuming an isotropic
            angular distribution
-STATUS     (TABLE) from the text p.605
+STATUS     (TABLE) from the text p.605 of Phys.Rev.,91(1953)599
 HISTORY    (19990507U) E-LVL changed on E.
-ENDBIB               5
+           (20200614A) SD: SF9=EXP deleted from REACTION code.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN         E          DATA
 MEV        MEV        MB
      2.664      2.13      31.
 ENDDATA              3
+ENDSUBENT           14
+SUBENT        F0363005   20200614   20200819   20200818       F078
+BIB                  3          3
+REACTION   (5-B-11(P,G),,WID)
+STATUS     (TABLE) Tbl.II from Phys.Rev.,91(1953)599
+HISTORY    (20200614C) SD
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          3
+EN-RES     DATA
+MEV        MEV
+  0.163       0.005
+  0.675       0.33
+  1.388       1.27
+ENDDATA              5
 ENDSUBENT           13
-ENDENTRY             4
+ENDENTRY             5
