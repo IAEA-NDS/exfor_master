@@ -1,44 +1,45 @@
-ENTRY            30386   20171122   20171122   20171122       3180
-SUBENT        30386001   20171122   20171122   20171122       3180
-BIB                 14         23
-TITLE      Resonance parameters of 206Pb
-AUTHOR     (B.J.Allen,R.L.Macklin)
+ENTRY            30386   20191015   20191211   20191204       3191
+SUBENT        30386001   20191015   20191211   20191204       3191
+BIB                 14         24
+TITLE      Resonance neutron capture in 206Pb
+AUTHOR     (A.R.Musgrove, R.L.Macklin)
 INSTITUTE  (3AULAUA,1USAORL)
 REFERENCE  (P,AAEC/PR-46,16,1980) final report
-           (J,NSE,82,230,1982)    Correction factor given
+           (J,NSE,82,230,1982)    Correction factor (1.0737)
            (W,MUSGROVE,19770210)  Preliminary resonance parameter
 FACILITY   (LINAC,1USAORL) ORELA
 INC-SOURCE (PHOTO)
 METHOD     (TOF)
-DETECTOR   (SCIN) Two non-hydrogeneous liquid scintillator.
+DETECTOR   (SCIN) Two non-hydrogeneous liquid scintillator
 PART-DET   (G)
 ANALYSIS   (AREA) Monte carlo area analysis using ORNL/RPI code
            (SHAPE) Shape analysis for several p-wave resonances
 MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
-ERR-ANALYS (DATA-ERR) No further information.
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
 STATUS     (APRVD) Approved by Musgrove, 77/05/24.
 HISTORY    (19770304C) KO.
-           (19770607U) KO.- APRVD added.-
-           (19830110U) DG.-Insertion of corrigendum and final rep.
-            in reference,convert.from iso-quant to reaction form.-
+           (19770607U) KO. APRVD added.
+           (19830110U) DG. Insertion of corrigendum and final rep.
+            in reference, convert.from ISO-QUANT to REACTION form.
            (20040311U) SD: corrected 4-dig. year and lower cases.
            (20171005A) VS. EN corrected in 003.
            (20171122U) On. BIB updated.
-ENDBIB              23
+           (20191015A) On. Major revisions in 002-003. 004 added.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           26
-SUBENT        30386002   19850121              20050926       0000
+ENDSUBENT           27
+SUBENT        30386002   20191015   20191211   20191204       3191
 BIB                  3         10
 REACTION  1(82-PB-206(N,0),,EN)
-          2((82-PB-206(N,EL),,WID,,G)*(82-PB-206(N,G),,WID)/
-           (82-PB-206(N,TOT),,WID))
+          2(82-PB-206(N,G),,WID/STR)
           3(82-PB-206(N,EL),,WID)
           4(82-PB-206(N,G),,WID)
           5(82-PB-206(N,0),,L)
-STATUS     (TABLE) After the values are taken from table 7 of
-           AAEC/PR-46,  16,1980 (final publication).
-HISTORY    (19830110A) DG.-Data changed by final publication,
-            conversion from iso-quant to reaction formalism.-
+STATUS     (TABLE) Table 7 of AAEC/PR-46,16,1980
+           (OUTDT) Correction factor 1.0737 not taken into account
+HISTORY    (19830110A) DG. Data changed by final publication,
+            conversion from ISO-QUANT to REACTION formalism.
+           (20191015A) On. STATUS=OUTDT added
 ENDBIB              10
 COMMON               1          3
 DATA-ERR  1
@@ -396,18 +397,41 @@ MILLI-EV   NO-DIM     NO-DIM     MILLI-EV   MILLI-EV
 
 ENDDATA            348
 ENDSUBENT          367
-SUBENT        30386003   20171122   20171122   20171122       3180
-BIB                  3          4
+SUBENT        30386003   20191015   20191211   20191204       3191
+BIB                  3          6
 REACTION   (82-PB-206(N,G)82-PB-207,,SIG,,MXW)
 STATUS     (TABLE) Table 8 of AAEC/PR-46,16,1980
-HISTORY    (19830112C) DG.-new entry.-
+           (OUTDT) Correction factor 1.0737 not taken into account
+HISTORY    (19830112C) DG. new entry.
            (20171005A) VS. EN-DUMMY -> KT
-ENDBIB               4
+           (20191015A) On. STATUS=OUTDT added
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 KT         DATA       DATA-ERR
 KEV        MB         MB
  30.        14.7       0.80
 ENDDATA              3
-ENDSUBENT           12
-ENDENTRY             3
+ENDSUBENT           14
+SUBENT        30386004   20191015   20191211   20191204       3191
+BIB                  3          4
+REACTION   (82-PB-206(N,G),,WID,,AV)
+STATUS     (TABLE) Table 8 of AAEC/PR-46,16,1980
+           (OUTDT) Correction factor 1.0737 not taken into account
+HISTORY    (20191015C) On
+ENDBIB               4
+COMMON               1          3
+EN-RES-MAX
+KEV
+ 652.0
+ENDCOMMON            3
+DATA                 5          4
+SPIN J     SPIN J     PARITY     DATA       DATA-ERR
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.5                   -1.        0.22       0.06
+ 0.5                   +1.        1.51       0.6
+ 1.5                   -1.        0.38       0.08
+ 1.5        2.5        +1.        0.48       0.07
+ENDDATA              6
+ENDSUBENT           19
+ENDENTRY             4

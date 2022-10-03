@@ -1,54 +1,53 @@
-ENTRY            30293   20090502   20090724   20090720       3136
-SUBENT        30293001   20090502   20090724   20090720       3136
-BIB                 15         43
-INSTITUTE  (1USAORL) Last author's address.
-           (3AULAUA)
-REFERENCE  (R,AAEC/E-327,197412)
-           (C,78HARWELL,449,197809) Av.sig. + av.res.par. Final
-           (J,NSE,82,(2),230,1982) Correction factor (=0.9833) for
-            neutron capture cross-section is given.
-           (P,AAEC/PR-39,197401) Some preliminary results.
-           (C,73KIEV,2,275,197305) Preliminary, Ca and Ba isotopes
-AUTHOR     (A.R.de L.Musgrove,B.J.Allen,R.L.Macklin)
-TITLE      KeV neutron resonance capture in Barium-135.
-FACILITY   (LINAC) ORNL linear accelerator.
+ENTRY            30293   20191015   20191211   20191204       3191
+SUBENT        30293001   20191015   20191211   20191204       3191
+BIB                 16         42
+TITLE      keV neutron resonance capture in barium-135
+AUTHOR     (A.R.de L.Musgrove, B.J.Allen, R.L.Macklin)
+INSTITUTE  (3AULAUA,1USAORL)
+REFERENCE  (R,AAEC/E-327,1974)
+           (C,78HARWELL,,449,1978) Final <SIG>.
+           (J,NSE,82,230,1982)     Correction factor (0.9833)
+           (P,AAEC/PR-39,1974)     Preliminary RP
+           (C,73KIEV,2,275,1973)   Preliminary RP
+FACILITY   (LINAC,1USAORL) ORELA
 INC-SOURCE (PHOTO)
-SAMPLE     Enriched(93.6%) sample of Ba(135)-Co3.  Thickness
-           was 0.0061 atoms/barn and dimension 2.61*2.61*0.84 cm.
-METHOD     (TOF) Time of flight, path = 40 m.
-DETECTOR   Total energy detector(TED), the detector response is
-           proportional only to the total energy (i.e. binding e.
-           plus centre of mass neutron energy) event. Two fluoro-
-           carbon liquid scintillators(NE-226), 4 cm thick * 10 cm
-           diameter were used.  See Nucl.Instr.Method,91(1971)565.
-           .Li-6 glass and fission chamber for neutron monitor.
-PART-DET   (G) Gammas.
-MONITOR    (3-LI-6(N,T)2-HE-4,,SIG) Uttley et al.,3rd Conf.Neutron
-           Cross-Section + Tech.,Knoxville 1971,p.531 and
-           (79-AU-197(N,G)79-AU-198,,SIG) for neutron flux normal.
-CORRECTION Capture yield data were not corrected for self-
-           shielding and multiple scattering.
-COMMENT    Capture yield data are reported, not capture cross-
-           section data (compiler).
+METHOD     (TOF) 40 m flight path
+SAMPLE     (56-BA-135,ENR=0.936)
+           BaCO3 (0.0061 atoms/barn, 2.61 cm x 2.61 cm x 0.84 cm)
+DETECTOR   (SCIN) Two fluoro-carbon liquid scintillators (NE-226),
+            4 cm thick x 10 cm diameter.
+           (GLASD) Li-6 glass detector for neutron monitor
+           (FISCH) Fission chamber for neutron monitor
+PART-DET   (G)
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
+           (79-AU-197(N,G)79-AU-198,,SIG)
+MONIT-REF  (,C.A.Uttley+,C,71KNOX,,531,1971)
+            6Li(n,a) cross section
+CORRECTION Capture yield data not corrected for self-shielding
+            and multiple scattering
+COMMENT    By compiler:
+            Reported are not capture cross sections but capture
+            yields.
 STATUS     (TABLE) Resonan.param. data from AAEC/E327,Dec.(1974).
-HISTORY    (19750611C) KO.
-           (19761013A) KO.-Modification of subentry .002 and
-           addition of new subentry .004 for av.capt.sig.-
-           (19790522U) KO-Revised data in subentries .003,.004 and
-           new entry of .005 -
-           (19821207U) DG.-Insertion of corrigendum in reference
-            conversion from ISO-QUANT to REACTION formalism.-
-           (19930114U) HW.- Institute codes switched.-
-           (19971009A) HW.- NODATA in subent 002 replaced with
-           original data
+HISTORY    (19750611C) KO
+           (19761013A) KO. Modification of 002 and addition of
+            004 for average capture cross section
+           (19790522U) KO. Revised data in 003, 004 and new entry
+            of 005
+           (19821207U) DG. Insertion of corrigendum in reference,
+            conversion from ISO-QUANT to REACTION formalism.
+           (19930114U) HW. Institute codes switched.
+           (19971009A) HW. NODATA in subent 002 replaced with
+            original data
            (20010517U) OS. Changed to 4 digit year, lower case.
-           (20090429U) SD. Cosmetic changes in subents 001,002
-                        and data were added to Subent 005.
-ENDBIB              43
+           (20090429A) SD. Cosmetic changes in subents 001,002
+            and data were added to Subent 005.
+           (20191015A) On. Major revisions in 002-003 and 005.
+ENDBIB              42
 NOCOMMON             0          0
-ENDSUBENT           46
-SUBENT        30293002   20090502   20090724   20090720       3136
-BIB                  7         20
+ENDSUBENT           45
+SUBENT        30293002   20191015   20191211   20191204       3191
+BIB                  7         21
 REACTION  1(56-BA-135(N,G),,WID/STR)
           2(56-BA-135(N,G),,ARE)
           3(56-BA-135(N,0),,L)
@@ -57,26 +56,27 @@ REACTION  1(56-BA-135(N,G),,WID/STR)
           6(56-BA-135(N,EL),,WID)
           7(56-BA-135(N,G),,WID)
           8(56-BA-135(N,EL),,WID/RED,,G)
-ANALYSIS   (AREA) Area analysis using RPI
+ANALYSIS   (AREA) Area analysis using RPI Montecarlo code
 ASSUMED    (ASSUM1,56-BA-135(N,EL),,WID,,G)
            (ASSUM2,56-BA-135(N,G),,WID)
-ERR-ANALYS No error is given except for 'capture area of
-           resonance' with statistical error.
-FLAG       (1.) Complex peak.
-STATUS     (TABLE) Data from table 1 of AAEC/E327.
-HISTORY    (19761013U) KO. - Addition of 'L' and 'J'
-           into 'REACTION'.-
-           (19821207U) DG.-Convert.from ISO-QUANT to REACTION .-
-           (19971009A) HW.- NODATA replaced with original data.-
+ERR-ANALYS2(ERR-S) Statistical error
+          6(DATA-ERR) No information on the source of uncertainty
+FLAG       (1.) Complex peak
+STATUS     (TABLE) Table 1 of Report AAEC/E327.
+           (OUTDT) Correction factor 0.9833 not taken into account
+HISTORY    (19761013U) KO. Addition of L and J into REACTION
+           (19821207U) DG. ISO-QUANT to REACTION conversion
+           (19971009A) HW- NODATA replaced with original data.
            (20010517A) OS. Changed MISC to ASSUM
-ENDBIB              20
+           (20191015A) On. STAUS=OUTDT added.
+ENDBIB              21
 COMMON               1          3
 ASSUM2-ERR
 MILLI-EV
   15.
 ENDCOMMON            3
 DATA                15         93
-EN-RES     DATA      1DATA      2DATA-ERR  2DATA      3DATA      4
+EN-RES     DATA      1DATA      2ERR-S     2DATA      3DATA      4
 DATA      5ASSUM1    5DATA      6DATA-ERR  6DATA-MIN  7DATA      7
 ASSUM2    6DATA      8FLAG
 KEV        EV         B*EV       PER-CENT   NO-DIM     NO-DIM
@@ -362,18 +362,19 @@ EV         EV         NO-DIM
 
                       1.
 ENDDATA            285
-ENDSUBENT          314
-SUBENT        30293003   20011122   20011221   20050926       0000
-BIB                  4          8
+ENDSUBENT          315
+SUBENT        30293003   20191015   20191211   20191204       3191
+BIB                  4          9
 REACTION  1(56-BA-135(N,G),,WID,,AV)
           2(56-BA-135(N,0),,D)
           3(56-BA-135(N,EL),,STF)
-ERR-ANALYS No further information
-STATUS     Data taken from Table IX of 1978 Harwell Conf. on
-           Neutron Physics and Nuclear Data, p.449.
-HISTORY    (19790522A) KO. -Revised value -
-           (19821207U) DG.-Convert.from ISO-QUANT to REACTION form
-ENDBIB               8
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table IX of 78HARWELL,449,1978
+           (OUTDT) Correction factor 0.9833 not taken into account
+HISTORY    (19790522A) KO. Revised value
+           (19821207U) DG. ISO-QUANT to REACTION conversion
+           (20191015A) On. STAUS=OUTDT added.
+ENDBIB               9
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
@@ -389,18 +390,17 @@ NO-DIM
                                              8.0000E-05 2.0000E-05
  1.0000E+00
 ENDDATA              8
-ENDSUBENT           25
-SUBENT        30293004   20011122   20011221   20050926       0000
-BIB                  4          8
+ENDSUBENT           26
+SUBENT        30293004   20191015   20191211   20191204       3191
+BIB                  4          7
 REACTION   (56-BA-135(N,G)56-BA-136,,SIG,,AV)
-ERR-ANALYS No further information.
-STATUS     Final data taken from Table VI of 1978Harwell Conf. on
-           Neutron Physics and Nucl.Data,p.449.
-           After the values have been multiplied by 0.9833.
-HISTORY    (19790518A) KO.-Alteration and addition of data.-
-           (19821207A) DG.-The values have been corrected,
-            conversion from ISO-QUANT to REACTION Formalism.-
-ENDBIB               8
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table VI of 78HARWELL,449,1978 multiplied by
+            0.9833
+HISTORY    (19790518A) KO. Alteration and addition of data.
+           (19821207A) DG. The values have been corrected,
+            conversion from ISO-QUANT to REACTION Formalism.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4         15
 EN-MIN     EN-MAX     DATA       DATA-ERR
@@ -421,22 +421,22 @@ KEV        KEV        MB         MB
  1.0000E+02 1.5000E+02 2.2600E+02 3.9000E+01
  1.5000E+02 2.0000E+02 2.0600E+02 3.9000E+01
 ENDDATA             17
-ENDSUBENT           30
-SUBENT        30293005   20090502   20090724   20090720       3136
+ENDSUBENT           29
+SUBENT        30293005   20191015   20191211   20191204       3191
 BIB                  4          7
-REACTION   (56-BA-135(N,G)56-BA-136,,SIG,,MXW) Spectrum average
-           for stellar temperature (kT=30 keV,Maxwellian averaged)
-ERR-ANALYS No further information
-STATUS     (TABLE) Data taken from table VIII of 1978 Harwell Conf
-           on Neutron Physics and Nuclear Data, p.449.
-HISTORY    (19790522C) KO.- New subentry -
-           (19821207U) DG.-Convert.from ISO-QUANT to REACTION form
+REACTION   (56-BA-135(N,G)56-BA-136,,SIG,,MXW)
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table VIII of 78HARWELL,449,1978
+           (OUTDT) Correction factor 0.9833 not taken into account
+HISTORY    (19790522C) KO. New subentry
+           (19821207U) DG. ISO-QUANT to REACTION conversion
+           (20191015A) On. STAUS=OUTDT added.
 ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 KT         DATA       DATA-ERR
 KEV        MB         MB
- 3.0000E+01 465.       80.
+ 30.        465.       80.
 ENDDATA              3
 ENDSUBENT           15
 ENDENTRY             5

@@ -1,46 +1,41 @@
-ENTRY            30391   20090105   20090508   20090506       3134
-SUBENT        30391001   20090105   20090508   20090506       3134
-BIB                 13         35
-INSTITUTE  (3AULAUA)
-           (1USAORL) Last author's address.
-REFERENCE  (J,NSE,64,744,197711) Preprint sent by Allen, 77/02/22.
-           (C,78HARWELL,449,1978) Final av.capt.sig.+ av.res.pars.
-           (P,AAEC/PR-42,29,197609) Very short description.
-           (J,NSE,82,(2),230,1982) Correction factor (=1.0360) for
-            neutron capture cross-section is given.
-AUTHOR     (J.W.Boldeman,B.J.Allen,A.R.de L.Musgrove,R.L.Macklin)
-TITLE      The neutron capture cross-section of Y-89.
-FACILITY   (LINAC,1USAORL) Oak Ridge Electron Linear accelerator,
-           ORELA. 40 m flight path station.
+ENTRY            30391   20191015   20191211   20191204       3191
+SUBENT        30391001   20191015   20191211   20191204       3191
+BIB                 14         30
+TITLE      The neutron capture cross-section of yttrium-89
+AUTHOR     (J.W.Boldeman, B.J.Allen, A.R.de L.Musgrove,
+            R.L.Macklin)
+INSTITUTE  (3AULAUA,2FR BRC,1USAORL)
+REFERENCE  (J,NSE,64,744,1977)
+           (C,78HARWELL,,449,1978) Final <SIG> and <RP>
+           (J,NSE,82,230,1982) Correction factor (1.0360)
+FACILITY   (LINAC,1USAORL) ORELA
 INC-SOURCE (PHOTO)
-SAMPLE     Metal, thickness of 0.36cm (=0.0109 atom/b).
-METHOD     (TOF) Time of flight, path = 40 m.
-DETECTOR   (SCIN)
-           Two non-hydrogenous liquid scintillators.
-           The efficiency of the detector is proportional to only
-           the total energy release of the capture reaction.
-           .A thin Li-6 glass scintillator (0.5 mm thick) served
-           as the neutron monitor.
-PART-DET   (G) Gammas.
-ANALYSIS   (AREA)
-           A modified version of the ORNL/RPI code by Sullivan et
-           al.,RPI-328-155(1969)
-           (SHAPE)
-           A shape fit was done when the neutron-width was larger
-           than 0.25 * (experimental resolution-width).
-           See details in AAEC/E 327(1974).
-MONITOR    (3-LI-6(N,T)2-HE-4,,SIG) for normal.of the capture data
+METHOD     (TOF) 40 m flight path
+SAMPLE     Metal, 0.36 cm thick , 0.0109 atom/b
+DETECTOR   (SCIN) Two non-hydrogenous liquid scintillators.
+           (GLASD) Thin Li-6 glass scintillator (0.5 mm thick)
+            served as the neutron monitor.
+PART-DET   (G)
+ANALYSIS   (AREA) A modified version of the ORNL/RPI code used
+           (SHAPE) A shape fit was done when the neutron-width
+            was larger than 0.25*(experimental resolution-width).
+REL-REF    (N,,J.G.Sullivan+,R,RPI-328-155,1969)
+            ORNL/RPI Monte Carlo code for area analysis
+           (M,,A.R.de L.Musgrove+,R,AAEC/E-327,1974)
+            Details of shape analysis
+MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
 HISTORY    (19770329C) KO.
-           (19771116U) KO.-Final ref. Added. Minor amendm't in .00
-           (19790528U) KO. -Correction after 1978 Harwell conf. -
-           (19821111U) DG.-Insertion of corrigendum in reference,
-            convertion from ISO-QUANT to REACTION formalism.-
+           (19771116U) KO. Final ref. added. Minor amendm't in 002
+           (19790528U) KO. Correction after 1978 Harwell conf.
+           (19821111U) DG. Insertion of corrigendum in reference,
+            convertion from ISO-QUANT to REACTION formalism.
            (20090115A) BIB section updated
-ENDBIB              35
+           (20191015A) On. Major revisions in 002-005.
+ENDBIB              30
 NOCOMMON             0          0
-ENDSUBENT           38
-SUBENT        30391002   20090105   20090508   20090506       3134
-BIB                  7         31
+ENDSUBENT           33
+SUBENT        30391002   20191015   20191211   20191204       3191
+BIB                  8         29
 REACTION  1(39-Y-89(N,0),,EN)
           2(39-Y-89(N,EL),,WID)
           3(39-Y-89(N,EL),,WID,,2G)
@@ -49,30 +44,28 @@ REACTION  1(39-Y-89(N,0),,EN)
           6(39-Y-89(N,G),,WID)
           7(39-Y-89(N,G),,WID/STR)
 ASSUMED    (ASSUM1,39-Y-89(N,EL),,WID)
-           Assumed value by the author for analysis.
            (ASSUM2,39-Y-89(N,EL),,WID,,2G)
-           Cited value for analysis, taken from J.Morgenstern et
-           al.,Nucl.Phys.123(1969)561.  Comparison of this value
-           with the neutron width yields value of g and then spin
-           j.
-           (ASSUM3,39-Y-89(N,G),,WID) for analysis
+           (ASSUM3,39-Y-89(N,G),,WID)
+REL-REF    (R,,J.Morgenstern+,J,NP/A,123,561,1969)
+            Source of the assumed 2g*Gamma(n) value
 ERR-ANALYS (DATA-ERR) No further information.
-COMMENT     Note:  Neutron width at 3.383 keV resonance should be
-            read as 'less than 1.0 eV',(from final ref.,77/11/16).
+COMMENT    By compiler:
+            Neutron width at 3.383 keV resonance should be read
+            as 'less than 1.0 eV' (from final ref.,77/11/16).
 FLAG      4(1.) Momentum L is equal or larger than 1.
            (2.) Uncertain but suggested from the gamma-width.
-          5(3.) From measured n-width in capture and 2g*(n-width)
-            in transmission(J.Morgenstern et al.Nucl.Phys.123('69)
-            561.
-           (4.) j = 1 or 2. From the neutron-width.
+          5(3.) From measured neutron width in capture and
+            2g*neutron-width in transmission by Morgenstern('69)
+           (4.) J = 1 or 2. From the neutron-width.
            (5.) uncertain.
-           (6.) j = 1 from s-, j = 2  from p-wave level spacing.
-STATUS     (TABLE) Data taken from Table 1 of
-                                  preprint(Allen 77/02/22).
-HISTORY    (19771116U) KO.- Comment added.-
-           (19821111U) DG.-Convert.From ISO-QUANT to REACTION form
-           (19830426U) DG.-Cosmetic correction.-
-ENDBIB              31
+           (6.) J = 1 from s-, J = 2  from p-wave level spacing.
+STATUS     (TABLE) Table 1 of preprint (Allen 77/02/22).
+           (OUTDT) Correction factor 1.0360 not taken into account
+HISTORY    (19771116U) KO. Comment added.
+           (19821111U) DG. ISO-QUANT to REACTION conversion
+           (19830426U) DG. Cosmetic correction.
+           (20191015A) On. STATUS=OUTDT added.
+ENDBIB              29
 NOCOMMON             0          0
 DATA                17         56
 DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3ASSUM1
@@ -250,24 +243,25 @@ MILLI-EV   MILLI-EV   MILLI-EV   MILLI-EV   MILLI-EV
 
                                   7.6000E+01 8.0000E+00
 ENDDATA            174
-ENDSUBENT          210
-SUBENT        30391003   20090105   20090508   20090506       3134
-BIB                  5         14
+ENDSUBENT          208
+SUBENT        30391003   20191015   20191211   20191204       3191
+BIB                  5         15
 REACTION  1(39-Y-89(N,G),,WID,,AV)
           2(39-Y-89(N,0),,D)
           3(39-Y-89(N,EL),,STF)
 FLAG      1(1.) Preliminary or estimated value
-STATUS     (TABLE) Final data taken from table IX of 1978 Harwell
-           Conf. on Neutron Physics and Nuclear Data, p.449.
-HISTORY    (19790528A) KO -Alteration and addition(STF)
-           (19821111U) DG.-Convert.from ISO-QUANT to REACTION form
-           (19830426U) DG.-Cosmetic correction.-
 ERR-ANALYS1(DATA-ERR) Accuracy quoted in the average gamma-width
-           for s-wave resonances includes a normalization
-              error of 10%
-          2(DATA-ERR) Nothing said about uncertainties
-          3(DATA-ERR) Nothing said about uncertainties
-ENDBIB              14
+            for s-wave resonances includes a normalization error
+            of 10%
+          2(DATA-ERR) No information on the source of uncertainty
+          3(DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table IX of 78HARWELL,449.
+           (OUTDT) Correction factor 1.0360 not taken into account
+HISTORY    (19790528A) KO  Alteration and addition (STF)
+           (19821111U) DG. ISO-QUANT to REACTION conversion
+           (19830426U) DG. Cosmetic correction.
+           (20191015A) On. STATUS=OUTDT added.
+ENDBIB              15
 COMMON               2          3
 EN-RES-MIN EN-RES-MAX
 KEV        KEV
@@ -283,52 +277,50 @@ NO-DIM     NO-DIM
  1.0000E+00 2.1000E+02            1.0000E+00
  4.4000E-04 1.5000E-04
 ENDDATA              8
-ENDSUBENT           31
-SUBENT        30391004   20090105   20090508   20090506       3134
-BIB                  5          5
+ENDSUBENT           32
+SUBENT        30391004   20191015   20191211   20191204       3191
+BIB                  4          6
 REACTION   (39-Y-89(N,G)39-Y-90,,RI,,LIM)
-ANALYSIS   Summation of ((capt.area)/(energy interval))
-STATUS     (TABLE)Data taken from Tbl.2 of preprint(Allen 77/02/22
-HISTORY    (19821111U) DG.-Convert.from ISO-QUANT to REACTION form
-ERR-ANALYS (DATA-ERR) No further information.
-ENDBIB               5
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table II of Nucl.Sci.Eng.64(1977)744
+           (OUTDT) Correction factor 1.0360 not taken into account
+HISTORY    (19821111U) DG. ISO-QUANT to REACTION conversion
+           (20191015A) On. STATUS=OUTDT added. EN-MIN:2.5 -> 3 keV
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       DATA-ERR
 KEV        KEV        MB         MB
- 2.5000E+00 1.0000E+02 3.0000E+02 3.0000E+01
+ 3.         100.       300.       30.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        30391005   20090105   20090508   20090506       3134
-BIB                  4          8
-REACTION   (39-Y-89(N,G)39-Y-90,,SIG,,MXW) Sectrum average for
-            stellar temperature ( Maxwellian
-                                    averaged,''kT'' = 30 keV.).
-STATUS     (TABLE) Data taken from table VIII of 1978 Harwell
-           Conf. on Neutron Pphysics and Nuclear Data, p.449
-HISTORY    (19790528A)KO.-Alteration of data after 1978Harw. Conf.
-           (19821111U) DG.-Convert.from ISO-QUANT to REACTION form
-ERR-ANALYS (DATA-ERR) No further information.
-ENDBIB               8
+ENDSUBENT           14
+SUBENT        30391005   20191015   20191211   20191204       3191
+BIB                  4          7
+REACTION   (39-Y-89(N,G)39-Y-90,,SIG,,MXW)
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table VIII of 78Harwell,p449
+           (OUTDT) Correction factor 1.0360 not taken into account
+HISTORY    (19790528A) KO. Alteration of data after 1978Harw.Conf.
+           (19821111U) DG. ISO-QUANT to REACTION conversion
+           (20191015A) On. STATUS=OUTDT added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          1
 KT         DATA       DATA-ERR
 KEV        MB         MB
- 3.0000E+01 2.0000E+01 3.0000E+00
+ 30.        20.0       3.0
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        30391006   20090105   20090508   20090506       3134
-BIB                  4          9
+ENDSUBENT           15
+SUBENT        30391006   20191015   20191211   20191204       3191
+BIB                  4          7
 REACTION   (39-Y-89(N,G)39-Y-90,,SIG,,AV)
-STATUS     (TABLE) Final data taken from Table II of
-           1978Harwell Conf. on Neutron Physics and
-           Nucl.Data,p.449. after the values have been
-           multiplied by 1.0360
-HISTORY    (19790528A) KO.-Alteration and addition of data
-           (19821111A) DG.-The values have been corrected,
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table II of 1978Harwell,p.449 multiplied by
+            1.0360
+HISTORY    (19790528A) KO. Alteration and addition of data
+           (19821111A) DG. The values have been corrected,
             convertion from ISO-QUANT to REACTION formalism
-ERR-ANALYS (DATA-ERR) No further information
-ENDBIB               9
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4         13
 EN-MIN     EN-MAX     DATA       DATA-ERR
@@ -347,5 +339,5 @@ KEV        KEV        MB         MB
  6.0000E+01 8.0000E+01 1.3000E+01 4.0000E+00
  8.0000E+01 1.0000E+02 9.0000E+00 4.0000E+00
 ENDDATA             15
-ENDSUBENT           29
+ENDSUBENT           27
 ENDENTRY             6
