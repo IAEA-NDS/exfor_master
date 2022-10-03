@@ -1,49 +1,60 @@
-ENTRY            A0356     880111              20050926       0000
-SUBENT        A0356001     880111              20050926       0000
-BIB                  9         16
-TITLE      MEASUREMENT OF THE BRANCHING RATIO H-3(D,G)/H-3(D,N)
-           USING THICK TRITIUM GAS TARGET.
-AUTHOR     (G.L.MORGAN,P.W.LISOWSKI,S.A.WENDER,R.E.BROWN,
-           N.JARMIE,J.F.WILKERSON,D.M.DRAKE)
-REFERENCE  (J,PR/C,33,1224,86)
+ENTRY            A0356   20180604   20180917   20180917       A090
+SUBENT        A0356001   20180604   20180917   20180917       A090
+BIB                 10         29
+TITLE      Measurement of the branching ratio
+           H-3(d,gamma)/H-3(d,n) using thick tritium gas targets
+AUTHOR     (G.L.Morgan,P.W.Lisowski,S.A.Wender,R.E.Brown,
+           N.Jarmie,J.F.Wilkerson,D.M.Drake)
+REFERENCE  (J,PR/C,33,1224,1986)
 INSTITUTE  (1USALAS)
 FACILITY   (VDG,1USALAS)
-ANALYSIS   (AREA)
-METHOD     (SITA,TOF,PSD)
-HISTORY    (871228C)
-ERR-ANALYS (ERR-1).THE OVERALL UNCERTAINTY IN THE RESULT WAS
-           ESTIMATED TO BE ABOUT 11.4%.
-           (ERR-2).THE UNCERTAINTY IN THE NEUTRON MEASUREMENTS.
-           (ERR-3).BGO EFFICIENCY DETERMINATION.
-           (ERR-4).COUNTING STATISTICS IN FOREGROUND AND
-           BACKGROUND.
-ENDBIB              16
-COMMON               4          3
-ERR-1      ERR-2      ERR-3      ERR-4
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-   11.4        5.         9.5        3.
+METHOD     (SITA,TOF,PSD,BCINT)
+            The incident deuteron beam was monitored using a
+           current integrator connected to the target cell.
+SAMPLE      The gas target cell was 1.0 cm in diam. with a length
+           of 2 cm. The entrance window consisted of a molybdenum
+           foil with a thickness of 5.3 mg/cm . The downstream end
+           of the target cell contained a beam stop of gold.
+DETECTOR   (SCIN).NE-213 scintillation counter was used for
+            neutrons.
+           (SCIN)7.6 cm diam. by 7.6 cm bismuth germinate
+           crystals (BGO) was used for gamma-rays.
+ERR-ANALYS (ERR-T) The overall uncertainty in the result was
+           estimated to be about 11.4%.
+           (ERR-2).the uncertainty in the neutron measurements.
+           (ERR-3).BGO efficiency determination.
+           (ERR-4).Counting statistics in foreground and
+           background.
+HISTORY    (19871228C)
+           (20180604A) SD:Updated to new date format, lower case.
+           REACTION code was updated according to MEMO CP-D/933rev
+           in Subent 002. BIB was updated. ERR-ANALYS was updated.
+           ERR-1 -> ERR-T.
+ENDBIB              29
+COMMON               3          3
+ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT
+    5.         9.5        3.
 ENDCOMMON            3
-ENDSUBENT           23
-SUBENT        A0356002     870111              20050926       0000
-BIB                  5          9
-REACTION   ((1-H-3(D,G)2-HE-5,,TTY,,,EXP)/
-           (1-H-3(D,N)2-HE-4,,TTY,,,EXP))
-DETECTOR   (SCIN).NE-213 SCINTILATION COUNTER WAS USED FOR
-            NEUTRONS.
-           (SCIN).BISMUTH GERMINATE CRYSTALS WAS USED FOR G-RAYS.
-REL-REF    (A,A0343002,F.E.CECIL+,J,PRL,53,767,84)
-COMMENT    /BY AUTHORS/.THE RESULTS REPORTED ARE CROSS-SECTION-
-           WEIGHTED AVERAGES OVER SUBSTANTIAL ENERGY RANGES.
-ERR-ANALYS (DATA-ERR).THE ERROR IN THE BRANCHING RATIO.
-ENDBIB               9
+ENDSUBENT           36
+SUBENT        A0356002   20180604   20180917   20180917       A090
+BIB                  4          7
+REACTION   ((1-H-3(D,G)2-HE-5,,MLT,,TT/AV)/
+           (1-H-3(D,N)2-HE-4,,MLT,,TT/AV))
+STATUS     (TABLE) Table II of Phys.Rev.C33(1986)1224
+REL-REF    (A,A0343002,F.E.Cecil+,J,PRL,53,767,1984)
+HISTORY    (20180604A) SD: SF6=TTY -> MLT, SF8=TT/AV added,
+           SF9=EXP deleted from REACTION code. DATA-ERR -> ERR-T.
+           COMMENT deleted. STATUS added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          4
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-T
 MEV        MEV        NO-DIM     NO-DIM
          0.      0.275     5.6E-5     0.6E-5
          0.      0.715     7.6E-5     0.9E-5
       0.194      0.715     7.8E-5     0.9E-5
       0.534      0.715    10.6E-5     1.2E-5
 ENDDATA              6
-ENDSUBENT           20
+ENDSUBENT           18
 ENDENTRY             2

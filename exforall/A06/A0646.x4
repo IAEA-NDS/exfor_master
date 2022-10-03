@@ -1,56 +1,60 @@
-ENTRY            A0646   20000717   20010330   20050926       0000
-SUBENT        A0646001   20000717   20010330   20050926       0000
-BIB                 15         32
-TITLE      Production 0F 155-Tb For Nuclear Medicine in the
-           Reactions 155-Gd(P,N), 156-Gd(P,2N), and 155-Gd(D,2N).
-AUTHOR     (P.P.DMITRIEV, G.A.MOLIN, Z.P.DMITRIEVA)
+ENTRY            A0646   20180613   20180917   20180917       A090
+SUBENT        A0646001   20180613   20180917   20180917       A090
+BIB                 15         34
+TITLE      Production of 155-Tb for nuclear medicine in the
+           reactions 155-Gd(p,n), 156-Gd(p,2n), and 155-Gd(d,2n)
+AUTHOR     (P.P.Dmitriev,G.A.Molin,Z.P.Dmitrieva)
 INSTITUTE  (4RUSFEI)
 REFERENCE  (J,AE,66,419,1989)  In Russian.
-           (J,SJA,66,470,1989) In English.
-REL-REF    (N,A0070001,P.P.DMITRIEV+,J,AE,48,122,1980)
-           (N,A0094001,P.P.DMITRIEV+,J,AE,48,402,1980) Methods to
-           Measure Product Activity and Irradiation Currents.
-STATUS     (CURVE) By CAJAD from Figure 1.
-MONITOR    Copper Foils.
+           (J,SJA,66,470,1989) English transl. of AE,66,419,1989
+REL-REF    (M,A0070001,P.P.Dmitriev+,J,AE,48,122,1980)
+           (M,A0094001,P.P.Dmitriev+,J,AE,48,402,1980) Methods of
+           product activity and irradiation current measurement.
+MONITOR    Copper foils were used to measure the integrated
+           bombardment current
 FACILITY   (CYCLO,4RUSFEI)
 METHOD     (EXTB)
            (ACTIV)
-           (GSPEC) Gamma Spectra were Measured at 20 Days After
-           End of Bombardment.
+           (GSPEC) Gamma spectra were measured at 20 days after
+           end of bombardment.
 DETECTOR   (GELI)
-ERR-ANALYS (EN-ERR)  Data Point Reader Uncertainty
-           (ERR-T) The Uncertainty is Shown on Figure.
-           Uncertainties of Measured Yeilds:
+ERR-ANALYS (DATA-ERR) Total uncertainty from error bars on figs.
+           Uncertainties of measured yields are:
            1. For Tb-155 - 14-17%.
            2. For Tb-156 - 12-15%.
-           Main Sources of the Uncertainties are Uncertainties of
-           Activity and Beam Current Measurements. - Comment by
-           Authors -.
-SAMPLE     Gd/2O/3, Natural.
-ANALYSIS   (AREA)
-           (DECAY)
+           Main sources of the uncertainties are uncertainties of
+           activity and beam current measurements.
+SAMPLE     Gd(2)O(3), natural.
+ANALYSIS   (DECAY)
 ADD-RES    (TTY-C)
+STATUS     (CURVE) By CAJAD from Figure 1 of AE,66,419,1989
 HISTORY    (19990723C) By F.C.
            (19990729U) Last checking has been done.
            (20000717A) DATE is corrected
-ENDBIB              32
-NOCOMMON
-ENDSUBENT           35
-SUBENT        A0646002   20000717   20010330   20050926       0000
-BIB                  4          5
-REACTION   (64-GD-0(P,X)65-TB-155,IND,TTY,,,EXP)
-FLAG       (1.) The Datum is Given in Text of Paper.
-DECAY-DATA (65-TB-155,,DG,105.3,0.18)
-CORRECTION Correction For Self Absorbing in Gadolinium Target was
-           Included.
-ENDBIB               5
+           (20180613A) SD:REACTION code was updated according to
+           MEMO CP-D/933rev. in Subents 002-005. BIB was updated.
+           STATUS moved to Subents 002-005. ERR-T -> DATA-ERR.
+           EN-ERR -> EN-ERR-DIG.
+ENDBIB              34
 COMMON               1          3
-EN-ERR
+EN-ERR-DIG
 MEV
-     9.E-02
+        0.1
 ENDCOMMON            3
+ENDSUBENT           41
+SUBENT        A0646002   20180613   20180917   20180917       A090
+BIB                  5          7
+REACTION   (64-GD-OXI(P,X)65-TB-155,,TTY,,PHY)
+FLAG       (1.)Value from the text on p.419 of AE,66,419,1989
+DECAY-DATA (65-TB-155,,DG,105.3,0.18)
+CORRECTION Correction for self absorbing in gadolinium target
+HISTORY    (20180613A) SD: SF1=Gd-0 -> Gd-OXI; SF8=PHY added;
+           SF5=IND and SF9=EXP deleted from REACTION code.
+           EN-ERR moved to Subent 001.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4          7
-EN         DATA       ERR-T      FLAG
+EN         DATA       DATA-ERR   FLAG
 MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
       11.73       0.89
       14.86       2.52       0.29
@@ -60,22 +64,20 @@ MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
         22.       15.2                    1.
       22.24       15.9        1.9
 ENDDATA              9
-ENDSUBENT           23
-SUBENT        A0646003   20000717   20010330   20050926       0000
-BIB                  4          5
-REACTION   (64-GD-0(D,X)65-TB-155,IND,TTY,,,EXP)
-FLAG       (1.) The Datum is Given in Text of Paper.
+ENDSUBENT           21
+SUBENT        A0646003   20180613   20180917   20180917       A090
+BIB                  5          7
+REACTION   (64-GD-OXI(D,X)65-TB-155,,TTY,,PHY)
+FLAG       (1.)Value from the text on p.419 of AE,66,419,1989
 DECAY-DATA (65-TB-155,,DG,105.3,0.18)
-CORRECTION Correction For Self Absorbing in Gadolinium Target was
-           Included.
-ENDBIB               5
-COMMON               1          3
-EN-ERR
-MEV
-        0.1
-ENDCOMMON            3
+CORRECTION Correction for self absorbing in gadolinium target
+HISTORY    (20180613A) SD: SF1=Gd-0 -> Gd-OXI; SF8=PHY added;
+           SF9=EXP were deleted from REACTION code.
+           EN-ERR moved to Subent 001.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4          7
-EN         DATA       ERR-T      FLAG
+EN         DATA       DATA-ERR   FLAG
 MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
       11.13       0.54
       14.18       1.56       0.29
@@ -85,20 +87,19 @@ MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
         22.       13.7                    1.
       22.13       13.6        1.8
 ENDDATA              9
-ENDSUBENT           23
-SUBENT        A0646004   20000717   20010330   20050926       0000
-BIB                  3          3
-REACTION   (64-GD-0(P,X)65-TB-156,IND,TTY,,,EXP)
-FLAG       (1.) The Datum is Given in Text of Paper.
+ENDSUBENT           21
+SUBENT        A0646004   20180613   20180917   20180917       A090
+BIB                  4          6
+REACTION   (64-GD-OXI(P,X)65-TB-156,,TTY,,PHY)
+FLAG       (1.)Value from the text on p.419 of AE,66,419,1989
 DECAY-DATA (65-TB-156,,DG,1222.,0.294)
-ENDBIB               3
-COMMON               1          3
-EN-ERR
-MEV
-        0.1
-ENDCOMMON            3
+HISTORY    (20180613A) SD: SF1=Gd-0 -> Gd-OXI; SF8=PHY added;
+           SF5=IND and SF9=EXP were deleted from REACTION code.
+           EN-ERR moved to Subent 001.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4          7
-EN         DATA       ERR-T      FLAG
+EN         DATA       DATA-ERR   FLAG
 MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
       11.61       0.96
       14.74       2.32        0.4
@@ -108,20 +109,19 @@ MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
         22.       13.7                    1.
       22.33       13.6        1.8
 ENDDATA              9
-ENDSUBENT           21
-SUBENT        A0646005   20000717   20010330   20050926       0000
-BIB                  3          3
-REACTION   (64-GD-0(D,X)65-TB-156,IND,TTY,,,EXP)
+ENDSUBENT           20
+SUBENT        A0646005   20180613   20180917   20180917       A090
+BIB                  4          6
+REACTION   (64-GD-OXI(D,X)65-TB-156,,TTY,,PHY)
 DECAY-DATA (65-TB-156,,DG,1222.,0.294)
-FLAG       (1.) The Datum is Given in Text of Paper.
-ENDBIB               3
-COMMON               1          3
-EN-ERR
-MEV
-        0.1
-ENDCOMMON            3
+FLAG       (1.)Value from the text on p.419 of AE,66,419,1989
+HISTORY    (20180613A) SD: SF1=Gd-0 -> Gd-OXI; SF8=PHY added;
+           SF5=IND and SF9=EXP were deleted from REACTION code.
+           EN-ERR moved to Subent 001.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 4          7
-EN         DATA       ERR-T      FLAG
+EN         DATA       DATA-ERR   FLAG
 MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
       11.19       1.24        0.4
       14.24       2.16        0.8
@@ -131,5 +131,5 @@ MEV        MBQ/MUAHR  MBQ/MUAHR  NO-DIM
         22.       14.2                    1.
       22.11       15.2        2.4
 ENDDATA              9
-ENDSUBENT           21
+ENDSUBENT           20
 ENDENTRY             5
