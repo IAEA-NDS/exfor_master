@@ -1,48 +1,77 @@
-ENTRY            40406     850329              20050926       0000
-SUBENT        40406001     850329              20050926       0000
-BIB                 10         12
-INSTITUTE  (4CCPKUR)
-REFERENCE  (P,YFI-22,10,7611) DATA GIVEN
-AUTHOR     (B.M.GOKHBERG,S.M.DUBROVINA,V.A.SHIGIN)
-TITLE      FAST NEUTRON FISSION CROSS-SECTION OF PU-244
-FACILITY   (VDG) VAN DE GRAAFF
-DETECTOR   (SOLST) GLASS DETECTOR
+ENTRY            40406   20220217   20220610   20220610       4204
+SUBENT        40406001   20220217   20220610   20220610       4204
+BIB                 13         36
+TITLE      Cross section for fission of 244Pu by fast neutron
+AUTHOR     (B.M.Gokhberg,S.M.Dubrovina,V.A.Shigin)
+REFERENCE  (J,YF,25,21,1977)
+           (J,SNP,25,11,1977)
+            Engl.translation of YF,25,21,1977.
+           (P,YFI-22,10,1976) Data given
+           (R,INDC(CCP)-100,8,1977)
+            Engl.translation of YFI-22,10,1976.
+INSTITUTE  (4RUSKUR)
+FACILITY   (VDG,4RUSKUR)
+INC-SOURCE (P-T)
+SAMPLE     Pu-244 layer of 5 mm diameter, placed at 8 mm distance
+           from neutron source at 0 deg. angle relative to ion
+           beam direction. Pu-244 layer weight was determined by
+           alpha activity to be 2.29 microgram. The largest
+           admixture - 0.7 % of Pu-242.
+DETECTOR   (GLASD) Glass of 20 mm diameter.
+           For fission fragments detection.
+           (LONGC) For neutron flux.
 MONITOR    (94-PU-239(N,F),,SIG)
-            NORMALIZED TO SIGMA FISSION = 1.77 8
-           AT EN = 1.03 MEV
-PART-DET   (FF) FISSION FRAGMENTS
-HISTORY    (770110C)
-ERR-ANALYS NO INFORMATION
-ENDBIB              12
-COMMON               2          3
-MONIT      EN-NRM
-B          MEV
- 1.7700E+00 1.0300E+00
+MONIT-REF  (,,J,REA,10,529,1972) Issue 4.
+CORRECTION Background of scattered neutrons in incident beam - 5%.
+           Background of scattered neutrons at fission fragments
+           registration < 0.1 %.
+           Background of spontaneous fission - 0.2% at energy
+           above the threshold, and up to 15% at 280 keV neutron
+           energy.
+ERR-ANALYS (DATA-ERR) Uncertainty of relative shape of
+           cross-section.
+           (ERR-1) Normalization error is ~ 5.% , not included in
+           DATA-ERR.
+HISTORY    (19770110C)
+           (20220217A) Update for current rules and dictionaries.
+           Refs. YF,25,21,1977; SNP,25,11,1977; INDC(CCP)-100
+           were added.
+           ERR-1, EN-RSL were added.
+ENDBIB              36
+COMMON               4          3
+MONIT      EN-NRM     ERR-1      EN-RSL
+B          MEV        PER-CENT   KEV
+ 1.77       1.03       5.         40.
 ENDCOMMON            3
-ENDSUBENT           19
-SUBENT        40406002     850329              20050926       0000
-BIB                  1          1
+ENDSUBENT           43
+SUBENT        40406002   20220217   20220610   20220610       4204
+BIB                  3          6
 REACTION   (94-PU-244(N,F),,SIG)
-ENDBIB               1
+DECAY-DATA (94-PU-244,6.8E+10YR,SF) (6.8+-0.8)*10**10 yr measured
+           spontaneous fission half-life.
+STATUS     (TABLE) Table of INDC(CCP)-100,8,1977 -
+            Engl.translation of YFI-22,p.10,1976
+           Table on page 23 of Yad.Fiz.,v.25,p.21,1977
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3         15
 EN         DATA       DATA-ERR
-MEV        MB         MB
- 2.8000E-01 1.9000E+01 1.5000E+00
- 4.2500E-01 5.6000E+01 3.0000E+00
- 5.1500E-01 1.1200E+02 5.0000E+00
- 6.2000E-01 2.3200E+02 1.0000E+01
- 7.2500E-01 4.5900E+02 2.0000E+01
- 8.3000E-01 7.2900E+02 2.0000E+01
- 9.3000E-01 1.0150E+03 3.0000E+01
- 1.0300E+00 1.1660E+03 3.0000E+01
- 1.2300E+00 1.1170E+03 3.0000E+01
- 1.3300E+00 1.1660E+03 3.0000E+01
- 1.4300E+00 1.1390E+03 3.0000E+01
- 1.5300E+00 1.0960E+03 3.0000E+01
- 1.6300E+00 1.1070E+03 3.0000E+01
- 1.7300E+00 1.0630E+03 3.0000E+01
- 1.8250E+00 1.0690E+03 3.0000E+01
+KEV        MB         MB
+ 280.        19.       1.5
+ 425.        56.       3.
+ 515.       112.       5.
+ 620.       232.      10.
+ 725.       459.      20.
+ 830.       729.      20.
+ 930.      1015.      30.
+1030.      1166.      30.
+1230.      1117.      30.
+1330.      1166.      30.
+1430.      1139.      30.
+1530.      1096.      30.
+1630.      1107.      30.
+1730.      1063.      30.
+1825.      1069.      30.
 ENDDATA             17
-ENDSUBENT           23
+ENDSUBENT           28
 ENDENTRY             2

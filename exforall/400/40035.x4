@@ -1,19 +1,30 @@
-ENTRY            40035   20091123   20100209   20100209       4148
-SUBENT        40035001   20091123   20100209   20100209       4148
-BIB                 15         59
-INSTITUTE  (4RUSFEI)
-REFERENCE  (R,FEI-32,1965) Data for C,Ti,Fe.Graphs for other nucl.
-           (R,YFI-2,9,1966) Same data as in Report FEI-32.See
-           English translation in INDSWG-126E
-           (R,ICD-2,76,1965) Data in SUBENT 2 for energies from
-           4.26 to 5.66 MeV.See Engl.translation INDSWG-74,7,1965
-           (J,IZV,31,(2),327,196702) Data only for Fe and C.Graphs
-           for others-see english translation BAS,31,311,196702
-           (J,BAS,31,311,196702)  English of IZV 31,(2),327
+ENTRY            40035   20220122   20220610   20220610       4204
+SUBENT        40035001   20220122   20220610   20220610       4204
+BIB                 16         74
+TITLE       Inelastic neutrons scattering by C,Al,Ti,Fe,Bi nuclei
 AUTHOR     (D.L.Broder, A.G.Dovbenko, V.E.Kolesov, A.I.Lashuk,
            I.P.Sadokhin)
-TITLE       Inelastic neutrons scattering by C,Al,Ti,Fe,Bi nuclei
-FACILITY   (VDG)   Electrostatic Accelerator
+REFERENCE  (R,FEI-32,1965) Data for C,Ti,Fe.Graphs for other nucl.
+           (R,YFI-2,9,1966) same data as in report FEI-32.
+           (R,INDSWG-126,7,1966) = INDC(CCP)*014 = INDC(IAE)*028U
+           See English translation of YFI-2,9,1966.
+           (R,ICD-2,76,1965)
+           Review of exp.works. Author V.M.Sluchevskaya.
+           Data of Subents
+           002-009(page 83) 011-014(page 81), 015(page 77)
+           from "private communication, 1964 year".
+           In INDSWG-101=INDC(CCP)*011 - only list of titles and
+           authors ( in English) of ICD-2,76,1965.
+           (R,INDSWG-74,7,1965) In English.
+            Subents 002-009,011-014,015.
+           (J,IZV,31,327,1967) Issue 2.
+           Data only for Fe and C. Graphs for others.
+           (J,BAS,31,311,196702)  English of IZV 31,327,1967
+COMMENT    Of compiler M.M.
+            In INDSWG-74,7,1967 there are misprints in text and
+           upper Table title: hydrogen -> carbon.
+INSTITUTE  (4RUSFEI)
+FACILITY   (VDG,4RUSFEI)   Electrostatic accelerator
 INC-SOURCE (P-T) H3(P,N)HE3 reaction with energy width of
                  neutron beam 35 keV
            (D-D) H2(D,N)HE3 reaction with energy width of
@@ -25,10 +36,11 @@ METHOD             Direct gamma-detection
 DETECTOR   (NAICR) Sodium-iodide crystal with diameter 40 mm and
                    height 40 mm
            (BF3)   Boron counter and
-           (FISCH) fission chamber for neutron flux monitoring
-PART-DET   (G) Gammas
+           (FISCH) U-235 fission chamber for neutron flux
+           monitoring
+PART-DET   (G)
 MONIT-REF  (11477001,R.M.Kiehn+,J,PR,95,989,1954)
-           (11673001,I.Van Loef+,J,PR,101,103,1956)
+           (11673001,J.J.Van Loef+,J,PR,101,103,1956)
            (,D.Hughes+,R,BNL-325,1958)
 MONITOR    ((MONIT)26-FE-0(N,INL)26-FE-0,PAR,SIG) Cross-section
              for gamma-rays with energy 0.84 MeV at inelastic
@@ -36,7 +48,7 @@ MONITOR    ((MONIT)26-FE-0(N,INL)26-FE-0,PAR,SIG) Cross-section
              from R.M.Kiehn, G.Goodman.Phys.Rev.,95,989,1954,
              I.Van Loef,D.Lind. Phys.Rev.,101,103,1956 and
              D.Hughes,R.B.Shwartz Neutron Cross Sections,
-             BNL-325,1958 and  is given in COMMON  section .
+             BNL-325,1958 and is given in COMMON  section .
                    For calibration of energy-scale of gammas
            gamma-sources Na-22 (gamma-energies 0.511 and
            1.280 MeV),Na-24 (1.380 and 2.750 MeV),Co-60 (1.170
@@ -52,7 +64,7 @@ CORRECTION Data were corrected on dead time of analyzer,
             for iron as well as difference between angular
             distributions of neutrons produced in different
             reactions
-ERR-ANALYS (E-ERR)        E-ERR  is error of gamma-energy
+ERR-ANALYS (E-ERR,,2.)  Gamma-energy error < 2.%.
 HISTORY    (19700827C) Compiled at the center
            (19860516A) Some subents superseded
            (19960416A) Several subents superseded. One Subent
@@ -60,228 +72,139 @@ HISTORY    (19700827C) Compiled at the center
            (20091123A) MM. Dates were corrected for 4-digits year.
             Free text was corrected to be human-readable.
             Subents 012-014 were corrected.
-ENDBIB              59
-COMMON               4          3
-MONIT      E-ERR      EN-NRM     E-NRM
-B          PER-CENT   MEV        MEV
-    0.53      2.       1.2        0.84
+           (20220122A) Correction for current rules and
+           dictionaries.
+           Subents 002-009 were merged in 002, 011-013 in 011.
+ENDBIB              74
+COMMON               3          3
+MONIT      EN-NRM     E-NRM
+B          MEV        MEV
+    0.53    1.2        0.84
 ENDCOMMON            3
-ENDSUBENT           66
-SUBENT        40035002   20091123   20100209   20100209       4148
-BIB                  3          3
-REACTION   (26-FE-0(N,INL)26-FE-0,,SPC)
-STATUS     (SPSDD,40161015)
+ENDSUBENT           81
+SUBENT        40035002   20220122   20220610   20220610       4204
+BIB                  3         12
+REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
+STATUS     (SPSDD,40161015) Data from author for wider EN range
+           (TABLE) Table 1 of FEI-32,1965
+            Table of Izv.Ros.Akademii Nauk, Ser.Fiz.,v.31,is.2,
+            p.327,1967;
+            Table III of INDSWG-126,7,1966=INDC(CCP)*014 (Engl.
+            translation of YFI-2,p.9,1966, Table I);
+            Table on page 83 of ICD-2,p.76,1965
 HISTORY    (19960416U)  REACTION code corrected - SF4 added
-ENDBIB               3
-COMMON               1          3
-E
-MEV
-0.84
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           11
-SUBENT        40035003   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161016)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    1.01
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        40035004   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161017)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    1.23
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        40035005   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161018)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    1.82
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        40035006   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161019)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    2.08
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        40035007   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161020)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    2.30
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        40035008   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161021)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    2.60
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
-SUBENT        40035009   20091123   20100209   20100209       4148
-BIB                  2          2
-REACTION   (26-FE-0(N,INL)26-FE-0,PAR,SIG,G)
-STATUS     (SPSDD,40161022)
-ENDBIB               2
-COMMON               1          3
-E
-MEV
-    2.88
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           10
+           (20220122S) E-RSL was added.
+            REACTION was corrected.
+            Subents 002-009 were merged in 002.
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 4         12
+EN         E          E-RSL      DATA
+MEV        MEV        MEV        B
+    6.26   0.84        0.01          1.19
+    6.66   0.84        0.01          1.38
+    6.86   0.84        0.01          1.42
+   15.6    0.84        0.01          0.71
+   15.6    1.01                      0.05
+   15.6    1.23                      0.26
+   15.6    1.82                      0.05
+   15.6    2.08                      0.04
+   15.6    2.30                      0.02
+   15.6    2.60                      0.07
+   15.6    2.88                      0.10
+   16.0    0.84        0.01          0.72
+ENDDATA             14
+ENDSUBENT           31
+NOSUBENT      40035003   20220122   20220610   20220610       4204
+NOSUBENT      40035004   20220122   20220610   20220610       4204
+NOSUBENT      40035005   20220122   20220610   20220610       4204
+NOSUBENT      40035006   20220122   20220610   20220610       4204
+NOSUBENT      40035007   20220122   20220610   20220610       4204
+NOSUBENT      40035008   20220122   20220610   20220610       4204
+NOSUBENT      40035009   20220122   20220610   20220610       4204
 NOSUBENT      40035010     960416              20050926       0000
-SUBENT        40035011   20091123   20100209   20100209       4148
-BIB                  3          6
+SUBENT        40035011   20220122   20220610   20220610       4204
+BIB                  3         10
 REACTION   (22-TI-0(N,INL)22-TI-0,PAR,SIG,G)
-STATUS     (COREL,41186007) Measurement by other detector.
-           (TABLE) Table II of R,YFI-2,9,1966 = Table of
-                   R,ICD-2,76,1965.
+STATUS     (SPSDD,41186007) New publication.
+           (TABLE) Table 2 of FEI-32,1965;
+            Table IV of INDSWG-126,7,1966=INDC(CCP)*014 (Engl.
+            translation of YFI-2,p.9,1966, Table I);
+            Table on page 81 of ICD-2,p.76,1965
 HISTORY    (19960416A)   Data correlated to the new data set
            (20091123A) M.M. Data for EN=2.41-3.21 were added.
-ENDBIB               6
-COMMON               1          3
-E
-MEV
-    0.99
-ENDCOMMON            3
-DATA                 2         20
-EN         DATA
-MEV        B
-    1.10       0.14
-    1.20       0.36
-    1.30       0.32
-    1.41       0.43
-    1.50       0.48
-    1.61       0.53
-    1.70       0.61
-    1.81       0.76
-    1.90       0.59
-    2.01       0.65
-    2.10       0.68
-    2.21       0.77
-    2.30       0.67
-    2.41       0.75
-    2.5        0.74
-    2.61       0.85
-    2.7        0.93
-    2.81       0.84
-    3.01       0.87
-    3.21       0.78
-ENDDATA             22
-ENDSUBENT           37
-SUBENT        40035012   20091123   20100209   20100209       4148
-BIB                  3          6
-REACTION   (22-TI-0(N,INL)22-TI-0,PAR,SIG,G)
-STATUS     (COREL,41186007) Measurement by other detector.
-           (TABLE) Table II of R,YFI-2,9,1966 = Table of
-                   R,ICD-2,76,1965.
-HISTORY    (19960416A)   Data correlated to the new data set
-           (20091123A) M.M. Data for EN=2.41-3.21 were added.
-ENDBIB               6
-COMMON               1          3
-E
-MEV
-    1.38
-ENDCOMMON            3
-DATA                 2         17
-EN         DATA
-MEV        MB
-    1.41      50.
-    1.50      33.
-    1.61      31.
-    1.70      32.
-    1.81      61.
-    1.90      50.
-    2.01      77.
-    2.10      51.
-    2.21      91.
-    2.30      47.
-    2.41      62.
-    2.5       30.
-    2.61      99.
-    2.7       85.
-    2.81     122.
-    3.01     189.
-    3.21     152.
-ENDDATA             19
-ENDSUBENT           34
-SUBENT        40035013   20091123   20100209   20100209       4148
-BIB                  3          6
-REACTION   (22-TI-0(N,INL)22-TI-0,PAR,SIG,G)
-STATUS     (COREL,41186007) Measurement by other detector.
-           (TABLE) Table II of R,YFI-2,9,1966 = Table of
-                   R,ICD-2,76,1965.
-HISTORY    (19960416A)   Data correlated to the new data set .
-           (20091123A) M.M. Data for EN=2.41-3.21 were added.
-ENDBIB               6
-COMMON               1          3
-E
-MEV
-    1.56
-ENDCOMMON            3
-DATA                 2         11
-EN         DATA
-MEV        MB
-    2.01      58.
-    2.10      61.
-    2.21      70.
-    2.30      71.
-    2.41      68.
-    2.5       59.
-    2.61      40.
-    2.7       71.
-    2.81      79.
-    3.01      83.
-    3.21      75.
-ENDDATA             13
-ENDSUBENT           28
-SUBENT        40035014   20091123   20100209   20100209       4148
-BIB                  3          9
+           (20220122A) COREL -> SPSDD
+            Subents 011-013 were merged in 011.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 4         48
+EN         E          E-RSL      DATA
+MEV        MEV        MEV        MB
+    1.10       0.99    0.01          140.
+    1.20       0.99    0.01          360.
+    1.30       0.99    0.01          320.
+    1.41       0.99    0.01          430.
+    1.41       1.38    0.02           50.
+    1.50       0.99    0.01          480.
+    1.50       1.38    0.02           33.
+    1.61       0.99    0.01          530.
+    1.61       1.38    0.02           31.
+    1.70       0.99    0.01          610.
+    1.70       1.38    0.02           32.
+    1.81       0.99    0.01          760.
+    1.81       1.38    0.02           61.
+    1.90       0.99    0.01          590.
+    1.90       1.38    0.02           50.
+    2.01       0.99    0.01          650.
+    2.01       1.38    0.02           77.
+    2.01       1.56    0.02           58.
+    2.10       0.99    0.01          680.
+    2.10       1.38    0.02           51.
+    2.10       1.56    0.02           61.
+    2.21       0.99    0.01          770.
+    2.21       1.38    0.02           91.
+    2.21       1.56    0.02           70.
+    2.30       0.99    0.01          670.
+    2.30       1.38    0.02           47.
+    2.30       1.56    0.02           71.
+    2.41       0.99    0.01          750.
+    2.41       1.38    0.02           62.
+    2.41       1.56    0.02           68.
+    2.5        0.99    0.01          740.
+    2.5        1.38    0.02           30.
+    2.5        1.56    0.02           59.
+    2.61       0.99    0.01          850.
+    2.61       1.38    0.02           99.
+    2.61       1.56    0.02           40.
+    2.7        0.99    0.01          930.
+    2.7        1.38    0.02           85.
+    2.7        1.56    0.02           71.
+    2.81       0.99    0.01          840.
+    2.81       1.38    0.02          122.
+    2.81       1.56    0.02           79.
+    3.01       0.99    0.01          870.
+    3.01       1.38    0.02          189.
+    3.01       1.56    0.02           83.
+    3.21       0.99    0.01          780.
+    3.21       1.38    0.02          152.
+    3.21       1.56    0.02           75.
+ENDDATA             50
+ENDSUBENT           65
+NOSUBENT      40035012   20220122   20220610   20220610       4204
+NOSUBENT      40035013   20220122   20220610   20220610       4204
+SUBENT        40035014   20220122   20220610   20220610       4204
+BIB                  3         10
 REACTION   (22-TI-0(N,INL)22-TI-0,,SIG)
-STATUS     (COREL,41186008) Measurement by other detector.
-           (TABLE) Table II of R,YFI-2,9,1966 = Table of
-                   R,ICD-2,76,1965.
-           (DEP,40035011)
-           (DEP,40035012)
-           (DEP,40035013)
+STATUS     (SPSDD,41186008) New publication.
+           (TABLE) Table 2 of FEI-32,1965;
+            Table IV of INDSWG-126,7,1966=INDC(CCP)*014 (Engl.
+            translation of YFI-2,p.9,1966, Table I);
+            Table on page 81 of ICD-2,p.76,1965
+           (DEP,40035011) Par.C-S for Egamma=0.99,1.38,1.56 MeV
 HISTORY    (19960416U) Data correlated to the new data set .
            (20091123A) M.M. Data for EN=2.41-3.21 were added.
-ENDBIB               9
+           (20220122A) COREL -> SPSDD
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 2         20
 EN         DATA
@@ -307,15 +230,19 @@ MEV        B
     3.01       1.14
     3.21       1.00
 ENDDATA             22
-ENDSUBENT           36
-SUBENT        40035015   20091123   20100209   20100209       4148
-BIB                  3          5
+ENDSUBENT           37
+SUBENT        40035015   20220122   20220610   20220610       4204
+BIB                  3          9
 REACTION   (6-C-12(N,INL)6-C-12,PAR,SIG,G)
-STATUS     (TABLE) Data are taken from the references
-            J,IZV,31,(2),327,196702,
-            R,FEI-32,1965, R,ICD-2,76,1965
+STATUS     (TABLE) Table 1 of FEI-32,1965;
+            Table of Izv.Ros.Akademii Nauk, Ser.Fiz.,v.31,is.2,
+            p.327,1967;
+            Table III of INDSWG-126,7,1966=INDC(CCP)*014 (Engl.
+            translation of YFI-2,p.9,1966, Table I);
+            Table on page 77 of ICD-2,p.76,1965
 HISTORY    (19960416C)   + +  Compiled at the center  + +
-ENDBIB               5
+           (20220122A) MB -> B as given in Tables of articles.
+ENDBIB               9
 COMMON               2          3
 E          E-RSL
 MEV        MEV
@@ -323,9 +250,9 @@ MEV        MEV
 ENDCOMMON            3
 DATA                 2          2
 EN         DATA
-MEV        MB
+MEV        B
   15.6      0.17
   16.0      0.14
 ENDDATA              4
-ENDSUBENT           18
+ENDSUBENT           22
 ENDENTRY            15

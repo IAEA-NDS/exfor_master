@@ -1,21 +1,25 @@
-ENTRY            40824   20210512   20210810   20210810       4195
-SUBENT        40824001   20210512   20210810   20210810       4195
-BIB                  9         23
+ENTRY            40824   20220118   20220610   20220610       4204
+SUBENT        40824001   20220118   20220610   20220610       4204
+BIB                  9         30
 TITLE      Measurement of the ratio of the 239Pu and 235U fission
             cross sections for 0.024-7.4-MeV neutrons
 AUTHOR     (B.I.Fursov, V.M.Kupriyanov, V.I.Ivanov, G.N.Smirenkin)
-INSTITUTE  (4RUSFEI)
 REFERENCE  (J,AE,43,261,1977)
            (J,SJA,43,894,1977)
-           (R,YFI-25-3,1977)   Reprint of J,AE,43,261,1977
-           (C,75KIEV,6,3,1975) Prelim. data in tables
+           #doi:10.1007/BF01117993
+           (R,YFI-25,3,1977)   Reprint of J,AE,43,261,1977.
+            In INDC(CCP)-171 - only first author and title.
+           ((C,75KIEV,6,3,1975)=
+           (R,INDC(CCP)-099,(6),3,1975))   Prelim. data in tables
+INSTITUTE  (4RUSFEI)
 FACILITY   (VDG)
 INC-SOURCE (P-LI7) En=127 keV to 320 keV
            (P-T)
            (D-D) En=3.6 MeV to 7.4 MeV
 SAMPLE     Uranium and plutonium oxides (10 and 15 mm diam.)
             deposited on Al backing (0.06 mm thick).
-STATUS     (APRVD) Smirenkin 1984.10
+STATUS     (APRVD) Smirenkin 1984-10
+           . This ENTRY 40824 supersedes ENTRY 40501.
 HISTORY    (19850125C)
            (20070914A) Common block Sub.002 was corrected.
             Dates were corrected for 4-digits year.
@@ -24,18 +28,22 @@ HISTORY    (19850125C)
             ERR-5 -> ERR-S was corrected in Subent 002.
            (20170724A) On. ASSUMED deleted. Major rev. in 002-003.
            (20210512U) On. Minor revision in 003.
-ENDBIB              23
+           (20220118U) M.M. Misprint in YFI ref. was corrected.
+            Ref. of INDC(CCP)-099 was added.
+            Minor correction of free text.
+ENDBIB              30
 NOCOMMON             0          0
-ENDSUBENT           26
-SUBENT        40824002   20170724   20180122   20180119       4176
-BIB                 10         39
+ENDSUBENT           33
+SUBENT        40824002   20220118   20220610   20220610       4204
+BIB                 10         43
 REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
-SAMPLE     Mass quantification was attempted by thermal fission
+SAMPLE     Mass quantification ( ratio of number of fissile nuclei
+           in layers, 239Pu/235U) was attempted by thermal fission
             cross section measurement (1.3848 at 24.7 deg-C
             assumed) and alpha spectroscopy.
-           239Pu contents are
+           . 239Pu contents are
             239Pu 99.891%, 240Pu 0.109 %
-           235U contents are
+           . 235U contents are
             235U 91.2326%, 234U 1.1003+/-0.0073%,
             236U  0.0036%, 238U  7.6635%
 DECAY-DATA (92-U-235,7.0381E+08YR) 7.0381+/-0.0048E+08 year
@@ -50,7 +58,6 @@ CORRECTION Corrected for
             - experimental-hall-scattered neutrons(0.12% at 3 MeV)
             - (p,n) neutron background            (0.22% at 3 MeV)
 ERR-ANALYS (ERR-T) Total uncertainty (1.14% at 3 MeV) includes:
-            - 239Pu/235U number ratio             (0.81% at 3 MeV)
             - glass detector scanning             (0.40% at 3 MeV)
             - neutron flux difference between 239Pu and 235U
                layers                             (0.18% at 3 MeV)
@@ -62,17 +69,21 @@ ERR-ANALYS (ERR-T) Total uncertainty (1.14% at 3 MeV) includes:
             - experimental-hall-scattered neutrons(0.10% at 3 MeV)
             - (p,n) neutron background            (0.10% at 3 MeV)
             - inelastic scattering                (0.20% at 3 MeV)
-           (ERR-1) 239Pu/235U number ratio        (0.81%)
+            and ERR-1.
+           (ERR-1) 239Pu/235U ratio of number of fissile nuclei in
+                  layers                          (0.81%)
 FLAG       (1.) Partial uncertainties given under ERR-ANALYS.
-STATUS     (TABLE) Table 1 of Sov.J.Atom.Energy 43(1977)894
+STATUS     (TABLE) Table 1 of Sov.J.Atom.Energy 43(1977)894 -DATA,
+            Table 2 - uncertainties.
            (COREL,40824003) Data from ionization chamber
 HISTORY    (20170724A) On. Coded uncertainties moved to free text.
             Numerical data checked against the article table.
-ENDBIB              39
-COMMON               1          3
-ERR-1
-PER-CENT
- 0.81
+           (20220118U) M.M. ERR-HL was added in COMMON block.
+ENDBIB              43
+COMMON               2          3
+ERR-1      ERR-HL
+PER-CENT   YR
+ 0.81       0.0048E+08
 ENDCOMMON            3
 DATA                 5         13
 EN         EN-RSL     DATA       ERR-T      FLAG
@@ -91,14 +102,14 @@ MEV        KEV        NO-DIM     PER-CENT   NO-DIM
  6.00       142.       1.642      1.16
  7.00       173.       1.423      1.32
 ENDDATA             15
-ENDSUBENT           63
-SUBENT        40824003   20210512   20210810   20210810       4195
-BIB                  8         33
+ENDSUBENT           67
+SUBENT        40824003   20220118   20220610   20220610       4204
+BIB                  8         34
 REACTION   ((94-PU-239(N,F),,SIG)/(92-U-235(N,F),,SIG))
 ANALYSIS   Normalized to the glass detector data set
-SAMPLE     239Pu contents are
+SAMPLE     . 239Pu contents are
             239Pu 99.891%, 240Pu 0.109 %
-           235U contents are
+           . 235U contents are
             235U 99.9955%, 234U  0.0010%
             236U  0.0035%, 238U <0.0005%
 DETECTOR   (IOCH) Double ionization chamber with two pairs of
@@ -120,14 +131,15 @@ ERR-ANALYS (ERR-T) Total uncertainty includes:
             - fission chamber efficiency energy dependence (0.3%)
            (ERR-2) Absolute ratio(average) of glass detector(1.3%)
            (ERR-3) Normalization of energy dependent curve (0.22%)
-STATUS     (TABLE) Table 3 of Sov.J.Atom.Energy 43(1977)896
+STATUS     (TABLE) Table 3 of Sov.J.Atom.Energy 43(1977)896 -DATA,
+            text page 898 - uncertainties.
            (DEP,40824002) Absolute ratio -
            (COREL,40824002) data from glass detector -
               which Subent 003 data were normalized to.
 HISTORY    (20170724A) On. ERR-ANALYS updated. Numerical data
             checked against the article table.
            (20210512U) On. "1.14% at 3 MeV" in ERR-ANALYS deleted.
-ENDBIB              33
+ENDBIB              34
 COMMON               2          3
 ERR-2      ERR-3
 PER-CENT   PER-CENT
@@ -217,5 +229,5 @@ MEV        KEV        NO-DIM     PER-CENT
  7.2        178.       1.380      1.45
  7.4        183.       1.355      1.48
 ENDDATA             82
-ENDSUBENT          124
+ENDSUBENT          125
 ENDENTRY             3
