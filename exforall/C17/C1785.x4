@@ -1,22 +1,26 @@
-ENTRY            C1785   20120716   20121029   20121005       C118
-SUBENT        C1785001   20120716   20121029   20121005       C118
-BIB                  9         24
+ENTRY            C1785   20201103   20210524   20210522       C199
+SUBENT        C1785001   20201103   20210524   20210522       C199
+BIB                  9         30
 TITLE      Correlation between the 12C+12C, 12C+13C, and 13C+13C
            fusion cross sections
 AUTHOR     (M.Notani,H.Esbensen,X.Fang,B.Bucher,P.Davies,
            C.L.Jiang,L.Lamm,C.J.Lin,C.Ma,E.Martin,K.E.Rehm,
            W.P.Tan,S.Thomas,X.D.Tang,E.Brown)
 INSTITUTE  (1USANOT,1USAANL,2UK SUR,3CPRAEP,1USAMSU)
-REFERENCE  (J,PR/C,85,014607,2012)
-           (J,NP/A,834,192c,2010) Preliminary data
+REFERENCE  (J,PR/C,85,014607,2012) Main references.
+           #doi:10.1103/PhysRevC.85.014607
+           (J,NP/A,834,192C,2010) Preliminary data.
+           #doi:10.1016/j.nuclphysa.2009.12.037
+           (J,JP/CS,381,012120,2012) Conference proceedings.
+           #doi:10.1088/1742-6596/381/1/012120
 FACILITY   (VDGT,1USANOT) Experiment performed at the 10 MeV FN
-           Tandem Van de Graaff at the University of Notre Dame
+           tandem Van de Graaff at the university of Notre Dame
 METHOD     (ACTIV,BGCT) 24Na activity determined using beta-gamma
            coincidence technique
 SAMPLE     Natural carbon target with thickness of 1 mm.
 DETECTOR   (SCIN) two 1-mm-thick plastic scintillation counters
            were used to detect the beta rays from 24Na
-           (HPGE) Cascading gamma rays (1369- and 2754-keV) were
+           (HPGE) cascading gamma rays (1369- and 2754-keV) were
            detected by two Ge clover detectors.
            To stop the beta particles from reaching the germanium
            detectors, the carbon target and the two plastic
@@ -25,10 +29,12 @@ DETECTOR   (SCIN) two 1-mm-thick plastic scintillation counters
            7-cm-thick lead to reduce the cosmic ray background.
 HISTORY    (20100305C) Compiled by S.H.
            (20120528A) Main ref. compiled by S.H.
-ENDBIB              24
+           (20201103A) BP: Digitized S-factors (added sub.3),
+            added doi, conference proceedings, updated authors.
+ENDBIB              30
 NOCOMMON             0          0
-ENDSUBENT           27
-SUBENT        C1785002   20120528   20121029   20121005       C118
+ENDSUBENT           33
+SUBENT        C1785002   20201103   20210524   20210522       C199
 BIB                  6         12
 REACTION   (6-C-12(6-C-13,FUS),,SIG,,,DERIV)
 ANALYSIS   Compound formation cross section was derived from the
@@ -36,12 +42,12 @@ ANALYSIS   Compound formation cross section was derived from the
            a theoretical branching ratio to the proton emission
            channel
 REL-REF    (N,,R.A.Dayras+,J,NP/A,265,153,1976)
-           Theoretical branching ratio described
+           theoretical branching ratio described
 DECAY-DATA (11-NA-24,14.9HR,DG,1369.,,DG,2754.)
-STATUS     (CURVE) Data taken from fig. 3 of the reference
-                   Waiting for data from author
+STATUS     (CURVE) Fig. 3 of the main reference; Waiting for data
+           from author.
 ERR-ANALYS (ERR-SYS) Systematic uncertainty, which is dominant
-                     experimental uncertainty
+                     experimental uncertainty.
 ENDBIB              12
 COMMON               1          3
 ERR-SYS
@@ -76,4 +82,49 @@ MEV        B
        4.80   1.02E-02
 ENDDATA             25
 ENDSUBENT           46
-ENDENTRY             2
+SUBENT        C1785003   20201103   20210524   20210522       C199
+BIB                  5          9
+REACTION   (6-C-12(6-C-13,FUS),,SIG,,SFC,DERIV)
+ANALYSIS   S factor based on the penetrability of a simple square
+           model: S=sigma(E) E exp(87.21/sqrt(E)+0.46E).
+ERR-ANALYS (ERR-SYS) The 12C+13C data is dominated by a 20%
+           systematic uncertainty.
+           (DATA-ERR) Uncertainty shown in figure
+STATUS     (DEP,C1785002)
+           (CURVE) Fig. 1 of conference proceedings.
+HISTORY    (20201103C)
+ENDBIB               9
+COMMON               1          3
+ERR-SYS
+PER-CENT
+       20.0
+ENDCOMMON            3
+DATA                 3         23
+EN-CM      DATA       DATA-ERR
+MEV        B*MEV      B*MEV
+      2.637  3.603E+16  9.176E+15
+      2.730  3.786E+16  8.939E+15
+      2.824  4.177E+16  1.064E+16
+      2.923  4.724E+16  1.203E+16
+      3.027  4.182E+16  9.877E+15
+      3.115  3.356E+16  6.637E+15
+      3.214  4.731E+16  1.205E+16
+      3.312  4.733E+16  1.118E+16
+      3.401  4.973E+16  1.080E+16
+      3.500  4.402E+16  8.704E+15
+      3.593  4.978E+16  9.844E+15
+      3.692  6.208E+16  1.228E+16
+      3.796  5.914E+16  1.170E+16
+      3.889  6.368E+16  1.504E+16
+      3.988  6.217E+16  1.351E+16
+      4.076  6.220E+16  1.351E+16
+      4.175  6.535E+16  1.782E+16
+      4.269  9.213E+16  2.175E+16
+      4.367  7.958E+16  1.575E+16
+      4.466  7.044E+16  1.531E+16
+      4.560  7.584E+16  1.648E+16
+      4.653  6.713E+16  1.458E+16
+      4.799  6.555E+16  1.424E+16
+ENDDATA             25
+ENDSUBENT           43
+ENDENTRY             3
