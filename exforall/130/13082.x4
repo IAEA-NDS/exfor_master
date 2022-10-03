@@ -1,53 +1,83 @@
-ENTRY            13082   20061127   20070306   20070213       1341
-SUBENT        13082001   20061127   20070306   20070213       1341
-BIB                 10         14
-INSTITUTE  (1USANRD)
-REFERENCE  (J,PR,139,B304,1965)
-           (C,65SALZBURG,1,423,1965)
-AUTHOR     (H.V.Weiss)
+ENTRY            13082   20210103   20210820   20210820       1479
+SUBENT        13082001   20210103   20210820   20210820       1479
+BIB                 11         20
 TITLE      Near-symmetric fission-identification and yield of
             Cd121.
-FACILITY   (REAC) Vallecitos NTR
-METHOD     (RCHEM)
+AUTHOR     (H.V.Weiss)
+INSTITUTE  (1USANRD)
+REFERENCE  (J,PR,139,B304,1965)
+           #doi:10.1103/PhysRev.139.B304
+           #NSR: 1965WE10
+           (C,65SALZBURG,1,423,1965) The same as in the main ref.
+           and yield of In121.
+REL-REF    (O,C2503001,D.G.Sarantites+,J,PR,138,B353,1965) Fission
+           yield of In121.
+FACILITY   (REAC,1USANRD) Vallecitos NTR
+METHOD     (CHSEP)
+SAMPLE     (92-U-235,ENR=0.9317)
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG) Flux monitor
-ERR-ANALYS No information
-STATUS     (RIDER) Reference 65WEI1 (65WEI2)
-           (COREL,13183001) See for 121In data
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 HISTORY    (19881017T)
            (20061127A) DR Reference corrected to follow APS format
-ENDBIB              14
+           (20210103A) OG. #doi and #NSR added. STATUS updated.
+           ADD-RES, Sub004 added.
+ENDBIB              20
 COMMON               1          3
 EN-DUMMY
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           21
-SUBENT        13082002     890518              20050926       0000
-BIB                  3          4
+ENDSUBENT           27
+SUBENT        13082002   20210103   20210820   20210820       1479
+BIB                  5          9
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,SPA)
 MONITOR    (92-U-235(N,F)42-MO-99,CUM,FY,,SPA)
 DECAY-DATA ((1.)48-CD-121-G,12.8SEC)
-           ((2.)50-SN-121-G,27.5HR)
-ENDBIB               4
+           ((2.)50-SN-121-M,27.5HR)
+           ((3.)49-IN-121-M,3.1MIN)
+ADD-RES    (DECAY) The half-life of Cd121 determined to be
+            12.8 (+0.4, -0.3) s
+STATUS     (TABLE) Text on p.B305-B306 in Phys.Rev.139,B304,1965
+           and on p.436 in Phys.Chem.Fis.Conf.,Salzburg,1,423,1965
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 6          2
+DATA                 6          3
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
 NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
- 48.       121.         0.            6.4E-3     0.5E-3 1.
- 50.       121.         0.            1.1E-2     0.1E-2 2.
-ENDDATA              4
-ENDSUBENT           13
-SUBENT        13082003     890518              20050926       0000
-BIB                  3          3
+ 48.       121.         0.            6.4E-3     0.5E-3    1.
+ 49.       121.         1.            3.2E-3               3.
+ 50.       121.         0.            1.1E-2     0.1E-2    2.
+ENDDATA              5
+ENDSUBENT           19
+SUBENT        13082003   20210103   20210820   20210820       1479
+BIB                  3          4
 REACTION   (92-U-235(N,F)MASS,CHN,FY,,SPA)
-ANALYSIS   ASSUMED YIELD OF 121(M)SN = 0.0008%
+ASSUMED    (ASSUM,92-U-235(N,F)50-SN-121-M,CUM,FY,,SPA)
 STATUS     (DEP,13082002)
-ENDBIB               3
+           (TABLE) Text on p.B306 in Phys.Rev.139,B304,1965.
+ENDBIB               4
 NOCOMMON             0          0
-DATA                 3          1
-MASS       DATA       DATA-ERR
-NO-DIM     PC/FIS     PC/FIS
-121.        0.012      0.001
+DATA                 4          1
+MASS       DATA       DATA-ERR   ASSUM
+NO-DIM     PC/FIS     PC/FIS     PC/FIS
+121.        0.012      0.001     0.0008
 ENDDATA              3
-ENDSUBENT           11
-ENDENTRY             3
+ENDSUBENT           12
+SUBENT        13082004   20210103   20210820   20210820       1479
+BIB                  5          7
+REACTION   (92-U-235(N,F)48-CD-121-G,CUM,FY,,FRC/SPA)
+MONITOR    (92-U-235(N,F)42-MO-99,CUM,FY,,SPA)
+DECAY-DATA (48-CD-121-G,12.8SEC)
+STATUS     (TABLE) Text on p.B305 in Phys.Rev.139,B304,1965.
+           (DEP,13082002)
+           (DEP,13082003)
+HISTORY    (20210103C)
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+  0.53        0.09
+ENDDATA              3
+ENDSUBENT           15
+ENDENTRY             4
