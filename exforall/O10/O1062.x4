@@ -1,13 +1,11 @@
-ENTRY            O1062   20040524              20050926       0000
-SUBENT        O1062001   20040524              20050926       0000
-BIB                 12         26
+ENTRY            O1062   20190206   20190715   20190702       O068
+SUBENT        O1062001   20190206   20190715   20190702       O068
+BIB                 12         25
 TITLE      Optimization of irradiation parameters for Ga-67
-           production from Zn-nat(P,XN) nuclear reactions.
+           production from Zn-nat(p,xn) nuclear reactions.
 AUTHOR     (M.Bonardi, C.Birattari)
 INSTITUTE  (2ITYMIL)
 REFERENCE  (J,JRC,76,311,1983)
-HISTORY    (20031027C)
-           (20040524U) Last checking has been done.
 SAMPLE     Two series of zinc targets, thicknesses 179 and 4.13
            mg/cm**2, isotopic composition:
            Zn-64 48.9%, Zn-66 27.8%, Zn-67 41%, Zn-68 18.6%,
@@ -21,27 +19,25 @@ ADD-RES    (TTY-C) Evaluations were made both of target thickness
            were determined.
 DETECTOR   (GELI) A coaxial Ge(Li) detector.
 FACILITY   (CYCLO,2ITYMIL) The AVF cyclotron of Milan University.
-METHOD     (ACTIV)
-           (BCINT)
-ERR-ANALYS (EN-ERR-DIG).Data-point reader uncertainty.
-           (ERR-DIG).Data-point reader uncertainty.
-           (ERR-1) An overall uncertainty of detector efficiency.
-STATUS     (CURVE).By CAJAD.
-ENDBIB              26
-COMMON               1          3
-ERR-1
-PER-CENT
-        1.5
-ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        O1062002   20040524              20050926       0000
-BIB                  4          5
-REACTION   (30-ZN-0(P,X)30-ZN-65,,TTY,,DT/AV)
-RAD-DET    (30-ZN-65,DG)
+METHOD     (ACTIV,BCINT,EXTB)
+ERR-ANALYS (ERR-1,,1.5) Uncertainty in detector efficiency.
+STATUS     (CURVE).By CAJAD. Fig.1 from J.Rad.Chem.,76(1983)311
+HISTORY    (20031027C)
+           (20040524U) Last checking has been done.
+           (20190206A) SD: ERR-ANALYS corrected. Corrections
+           in all Subents.
+ENDBIB              25
+NOCOMMON             0          0
+ENDSUBENT           28
+SUBENT        O1062002   20190206   20190715   20190702       O068
+BIB                  4          6
+REACTION   (30-ZN-0(P,X)30-ZN-65,,TTY/DEN,,PHY)
 DECAY-DATA (30-ZN-65,244.D,DG,1116.,0.5075)
 COMMENT    - By authors. The results were obtained with 179 mg/cm2
            target.
-ENDBIB               5
+HISTORY    (20190206A) SF6=TTY -> TTY/DEN, SF8=DT/AV -> PHY in
+           REACTION code.   MUCI/MUAHR -> CI/AHR/MEV.
+ENDBIB               6
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
@@ -49,7 +45,7 @@ MEV        PER-CENT
 ENDCOMMON            3
 DATA                 3          6
 EN-MIN     EN-MAX     DATA
-MEV        MEV        MUCI/MUAHR
+MEV        MEV        CI/AHR/MEV
       18.22      19.22       1.67
       23.45      24.45       2.87
       28.42      29.42       2.67
@@ -57,18 +53,19 @@ MEV        MEV        MUCI/MUAHR
       37.62      38.62       2.14
       43.24      44.24       2.46
 ENDDATA              8
-ENDSUBENT           22
-SUBENT        O1062003   20040524              20050926       0000
-BIB                  4          8
-REACTION   (30-ZN-0(P,X)31-GA-67,,TTY,,DT/AV)
-RAD-DET    (31-GA-67,DG)
+ENDSUBENT           23
+SUBENT        O1062003   20190206   20190715   20190702       O068
+BIB                  4          9
+REACTION   (30-ZN-0(P,X)31-GA-67,,TTY/DEN,,PHY)
 FLAG       (1.) The result was obtained with 179 mg/cm2 target.
            (2.) The result was obtained with 4.13 mg/cm2 target.
 DECAY-DATA (31-GA-67,78.HR,DG,93.,0.3805,
                            DG,185.,0.236,
                            DG,300.,0.1902,
                            DG,394.,0.0537)
-ENDBIB               8
+HISTORY    (20190206A) SF6=TTY -> TTY/DEN, SF8=DT/AV -> PHY in
+           REACTION code.   MUCI/MUAHR -> CI/AHR/MEV.
+ENDBIB               9
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
@@ -76,7 +73,7 @@ MEV        PER-CENT
 ENDCOMMON            3
 DATA                 4         11
 EN-MIN     EN-MAX     DATA       FLAG
-MEV        MEV        MUCI/MUAHR NO-DIM
+MEV        MEV        CI/AHR/MEV NO-DIM
        5.77       6.77       2.91         1.
       10.22      11.22       13.2         2.
       12.73      13.73       20.9         1.
@@ -89,18 +86,19 @@ MEV        MEV        MUCI/MUAHR NO-DIM
       37.72      38.72       35.8         1.
       43.22      44.22       31.5         1.
 ENDDATA             13
-ENDSUBENT           30
-SUBENT        O1062004   20040524              20050926       0000
-BIB                  4          8
-REACTION   (30-ZN-0(P,X)31-GA-66,,TTY,,DT/AV)
-RAD-DET    (31-GA-66,DG)
+ENDSUBENT           31
+SUBENT        O1062004   20190206   20190715   20190702       O068
+BIB                  4          9
+REACTION   (30-ZN-0(P,X)31-GA-66,,TTY/DEN,,PHY)
 FLAG       (1.) The result was obtained with 179 mg/cm2 target.
            (2.) The result was obtained with 4.13 mg/cm2 target.
 DECAY-DATA (31-GA-66,9.4HR,DG,1039.,0.382,
                            DG,2752.,0.283,
                            DG,834.,0.061,
                            DG,2190.,0.057)
-ENDBIB               8
+HISTORY    (20190206A) SF6=TTY -> TTY/DEN, SF8=DT/AV -> PHY in
+           REACTION code.   MUCI/MUAHR -> CI/AHR/MEV.
+ENDBIB               9
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
@@ -108,7 +106,7 @@ MEV        PER-CENT
 ENDCOMMON            3
 DATA                 4         11
 EN-MIN     EN-MAX     DATA       FLAG
-MEV        MEV        MUCI/MUAHR NO-DIM
+MEV        MEV        CI/AHR/MEV NO-DIM
        5.87       6.87       50.1         1.
        9.98      10.98       598.         2.
       12.74      13.74       677.         2.
@@ -121,5 +119,5 @@ MEV        MEV        MUCI/MUAHR NO-DIM
        37.7       38.7       434.         1.
        43.4       44.4       343.         1.
 ENDDATA             13
-ENDSUBENT           30
+ENDSUBENT           31
 ENDENTRY             4

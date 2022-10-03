@@ -1,9 +1,9 @@
-ENTRY            O0306   20180322   20190207   20190201       O066
-SUBENT        O0306001   20180322   20190207   20190201       O066
-BIB                 12         50
+ENTRY            O0306   20190306   20190715   20190702       O068
+SUBENT        O0306001   20190306   20190715   20190702       O068
+BIB                 12         51
 TITLE      Excitation functions and yield for medically important
-           generators Sr82 -> Rb82, Xe-123 -> I-123 and Bi-201 ->
-           Pb-201 -> Tl-201 obtained with 100 MeV protons
+           generators 82Sr -> 82Rb, 123Xe -> 123I and
+           201Bi -> 201Pb -> Tl-201 obtained with 100 MeV protons
            obtained with 100 MeV protons.
 AUTHOR     (C.Deptula,V.A.Khalkin,Kim Sen Han,O.Knotek,V.A.Konov,
            P.Mikecz,L.M.Popinenkova,E.Rurarz,N.G.Zaitseva)
@@ -16,7 +16,9 @@ ADD-RES    (COMP).Hybrid model of nuclear reactions using the well
            developed computer code overlaid Alice (including
            pre-equilibrium effects)
            (TTY-C)
-DETECTOR   (GELI)
+DETECTOR   (GELI) Ge(Li) detector (40 cm3, resolution 1.2 keV
+            FWHM at 122 keV), a 4096 channel analyser and
+            associated electronics
 MONITOR    (13-AL-27(P,X)11-NA-24,CUM,SIG,,,EVAL)
 MONIT-REF  (,J.Tobailem+,R,CEA-N-1466,1971)
 FACILITY   (LINAC,4RUSFVE).LU-100 at the Institute for High Energy
@@ -29,15 +31,12 @@ METHOD     (STTA)
            (ACTIV)
            (GSPEC)  The  stacks  were  repeatedly measured over a
            period of several day.
-ERR-ANALYS In the Calculation of the cross sections the following
-           errors have been taken into account-
+ERR-ANALYS (ERR-T) total error includes:
            (ERR-1) The Error in the primary incident energy of the
            proton beam.
            (ERR-2) The error in the total number of protons on the
            targets (mainly due to the error of the monitor
            reactions) in the stack.
-           (ERR-3) The error in the target thickness for foils.
-           (ERR-4) The error in the target thickness for pellets.
            (ERR-5,3.,5.) The statistical error in the integrated
            area of the photo-peaks.
            (ERR-S) The error in the counting statistics.
@@ -48,37 +47,42 @@ ERR-ANALYS In the Calculation of the cross sections the following
            (ERR-10) The Error in the counting geometry.
            (ERR-11) The error of irradiation and decay times.
 HISTORY    (19970221C)
-           (20150331A).SB- corrections in Author
+           (20150331A).SB- corrections in author' list
            (20180322U) SD: ref. SRA,29,376 was added.
            Author's name and title were corrected.
-ENDBIB              50
-COMMON              10          6
-ERR-1      ERR-2      ERR-3      ERR-4      ERR-S      ERR-7
-ERR-8      ERR-9      ERR-10     ERR-11
+           (20190306A) SD: Major corrections in all Subents.
+           BIB updated. Subents 011-019 deleted (not for EXFOR)
+ENDBIB              51
+COMMON               8          6
+ERR-1      ERR-2      ERR-S      ERR-7      ERR-8      ERR-9
+ERR-10     ERR-11
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-        0.5         5.         5.         8.         3.         5.
-         5.         5.         3.         3.
+PER-CENT   PER-CENT
+        0.5         5.         3.         5.         5.         5.
+         3.         3.
 ENDCOMMON            6
-ENDSUBENT           60
-SUBENT        O0306002   19990712   20050616   20050926       0000
-BIB                  6         11
-REACTION   (37-RB-0(P,X)38-SR-82,IND,SIG)
+ENDSUBENT           61
+SUBENT        O0306002   20190306   20190715   20190702       O068
+BIB                  7         14
+REACTION   (37-RB-0(P,X)38-SR-82,,SIG)
 DECAY-DATA (38-SR-82,25.D,DG)
-COMMENT    /by Authors/.The Proton Energy is Average Proton Energy
-           At the Mid Thickness of Rb-Cl Discs.
-SAMPLE     The Pellets Made from Natural Rb-Cl (RB-85-72.17%,
-           RB-87-27.83%,CL-35-75.77%,CL-37-24.23%) Were Used As
-           Target. The Pellets Thicknesses were Determined by
-           Weight and Area Measurements. The Stack of 20 Rb-Cl
-           Pellets were Used.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-STATUS     (TABLE)  Table 3.
-ENDBIB              11
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+COMMENT    /by Authors/.The proton energy is average proton energy
+           at the mid thickness of Rb-Cl discs.
+SAMPLE     The pellets made from natural Rb-Cl (RB-85-72.17%,
+           RB-87-27.83%,CL-35-75.77%,CL-37-24.23%) were used as
+           target. The pellets thicknesses were determined by
+           weight and area measurements. The stack of 20 Rb-Cl
+           pellets were used.
+ERR-ANALYS (ERR-3) The error in the target thickness for pellets.
+STATUS     (TABLE)  Table 3 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              14
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     8.       15.
 ENDCOMMON            3
 DATA                 2         31
 EN         DATA
@@ -101,7 +105,7 @@ MEV        MB
        70.4        61.
        67.9        65.
        63.1        61.
-        60.        56.
+       60.0        56.
        58.3        58.
        57.1        65.
        54.3        79.
@@ -115,29 +119,31 @@ MEV        MB
        39.6        28.
        32.5        14.
 ENDDATA             33
-ENDSUBENT           53
-SUBENT        O0306003   19990712   20050616   20050926       0000
-BIB                  6         15
-REACTION   (53-I-127(P,5N)54-XE-123,IND,SIG)
+ENDSUBENT           56
+SUBENT        O0306003   20190306   20190715   20190702       O068
+BIB                  7         17
+REACTION   (53-I-127(P,5N)54-XE-123,,SIG)
 DECAY-DATA (54-XE-123,2.1HR,DG)
-COMMENT    /by Authors/.The Purity of I-123 Produced by the
-           I-127(P,5N)Xe-123-I-123 Reaction is Determined by the
-           Proton Energy and the Target Thickness.
-SAMPLE     The Na-I Pellets of Thickness Varying from 0.45 to 0.55
-           G/Cm**2 were Hermetically Sealed in a Polyethylene
-           Envelopes in Order to Avoid Radioxenon Loss and Prevent
-           Water Absorption (NAI IS HYDROSCOPIC). The Pellets
-           Thicknesses were Determined by Weight and Area
-           Measurements. The Stack of 25 Sealed Pellets were Used.
-           The Total Thickness of All Na-I Pellets in One Stack
-           Was 12+-1 G/Cm**2.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-STATUS     (TABLE) Table 4.
-ENDBIB              15
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+COMMENT    /by Authors/.The purity of I-123 produced by the
+           I-127(p,5n)Xe-123-I-123 reaction is determined by the
+           proton energy and the target thickness.
+SAMPLE     The Na-I pellets of thickness varying from 0.45 to
+           0.55 g/cm2 were hermetically sealed in a polyethylene
+           envelopes in order to avoid radioxenon loss and prevent
+           water absorption (NaI is hydroscopic). The pellets
+           thicknesses were determined by weight and area
+           measurements. The stack of 25 sealed pellets were used.
+           The total thickness of All Na-I pellets in one stack
+           was 12+-1 g/cm**2.
+ERR-ANALYS (ERR-3) The error in the target thickness for pellets.
+STATUS     (TABLE)  Table 4 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated.
+ENDBIB              17
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     8.       15.
 ENDCOMMON            3
 DATA                 2         12
 EN         DATA
@@ -155,26 +161,28 @@ MEV        MB
         50.       180.
         45.       100.
 ENDDATA             14
-ENDSUBENT           38
-SUBENT        O0306004   19990712   20050616   20050926       0000
-BIB                  5         12
-REACTION   (53-I-127(P,3N)54-XE-125-G,IND/M+,SIG)
+ENDSUBENT           40
+SUBENT        O0306004   20190306   20190715   20190702       O068
+BIB                  6         14
+REACTION   (53-I-127(P,3N)54-XE-125,,SIG)
 DECAY-DATA (54-XE-125-G,17.HR,DG)
-SAMPLE     The Na-I Pellets of Thickness Varying from 0.45 to 0.55
-           G/Cm**2 were Hermetically Sealed in a Polyethylene
-           Envelopes in Order to Avoid Radioxenon Loss and Prevent
-           Water Absorption (NAI IS HYDROSCOPIC). The Pellets
-           Thicknesses were Determined by Weight and Area
-           Measurements.The Stack of 25 Sealed Pellets were Used.
-           The Total Thickness of All Nai Pellets in One Stack
-           Was 12+-1 G/Cm**2.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-STATUS     (TABLE) Table 4.
-ENDBIB              12
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+SAMPLE     The Na-I pellets of thickness varying from 0.45 to
+           0.55 g/cm2 were hermetically sealed in a polyethylene
+           envelopes in order to avoid radioxenon loss and prevent
+           water absorption (NaI is hydroscopic). The pellets
+           thicknesses were determined by weight and area
+           measurements. The stack of 25 sealed pellets were used.
+           The total thickness of All Na-I pellets in one stack
+           was 12+-1 g/cm**2.
+ERR-ANALYS (ERR-3) The error in the target thickness for pellets.
+STATUS     (TABLE)  Table 4 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF4=Xe-125g -> Xe-125; SF5=IND/M+
+           deleted from REACTION code. ERR-ANALYS, COMMON updated.
+ENDBIB              14
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     8.       15.
 ENDCOMMON            3
 DATA                 2         11
 EN         DATA
@@ -191,34 +199,38 @@ MEV        MB
         50.       105.
         45.       135.
 ENDDATA             13
-ENDSUBENT           34
-SUBENT        O0306005   19990712   20050616   20050926       0000
-BIB                  7         20
-REACTION   (82-PB-206(P,2N)83-BI-205,IND,SIG)
+ENDSUBENT           36
+SUBENT        O0306005   20190306   20190715   20190702       O068
+BIB                  8         24
+REACTION   (82-PB-206(P,2N)83-BI-205,,SIG)
 DECAY-DATA (83-BI-205,15.3D,DG)
-MISC-COL   (MISC) Thin-Target Yield.
-SAMPLE     A Stacked Foil Target /Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2/ was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-206 Foil-
+MISC-COL   (MISC) Thin-target yield.
+SAMPLE     (82-PB-206,ENR=0.940) A stacked foil target /thin
+           circular foils 10 mm in diam. with thickness which
+           varied from 0.15-0.20 mg/cm2 was constructed using
+           enriched metallic lead.
+           The isotopic composition of the Pb-206 foil-
            Pb-204-0.01%,
            Pb-206-94.0+-0.1%,
            Pb-207-4.04%,
-           Pb-208-1.96%..
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208. A Total
-           Of 20 Triad /60 Foils with Total Mass 11 G/Cm**2/ were
-           Used.
-CRITIQUE   - By Compiler - Stack Construction Does not Exclude
-           Influence of Recoil Nuclei Lost on Measured Cross
-           Section.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-STATUS     (TABLE) Table 7.
-ENDBIB              20
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+           Pb-208-1.96%.
+           Each stack consisted of 3 foils /triad/ with three
+           different Pb isotopes-Pb-206,Pb-207 and Pb-208. A total
+           of 20 triad /60 Foils with total mass 11 g/cm2 were
+           used.
+CRITIQUE   - By Compiler - Stack construction does not exclude
+           influence of recoil nuclei lost on measured cross
+           section.
+ERR-ANALYS (ERR-3) The error in the target thickness for foils.
+STATUS     (TABLE)  Table 7 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              24
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     5.       13.
 ENDCOMMON            3
 DATA                 3         20
 EN         DATA       MISC
@@ -228,7 +240,7 @@ MEV        MB         MUCI/MUAHR
        92.4        34.         6.
        90.4        36.         6.
        88.2        38.         7.
-        86.        38.         7.
+       86.0        38.         7.
        83.8        38.         7.
        81.5        40.         7.
        79.2        41.         7.
@@ -242,36 +254,40 @@ MEV        MB         MUCI/MUAHR
        58.1        49.         8.
        55.2        54.        10.
        52.1        54.        10.
-        49.        57.        10.
+       49.0        57.        10.
 ENDDATA             22
-ENDSUBENT           51
-SUBENT        O0306006   19990712   20050616   20050926       0000
-BIB                  7         20
-REACTION   (82-PB-206(P,N)83-BI-206,IND,SIG)
+ENDSUBENT           55
+SUBENT        O0306006   20190306   20190715   20190702       O068
+BIB                  8         24
+REACTION   (82-PB-206(P,N)83-BI-206,,SIG)
 DECAY-DATA (83-BI-206,6.2D,DG)
-MISC-COL   (MISC) Thin-Target Yield.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-206 Foil-
+MISC-COL   (MISC) Thin-target yield.
+SAMPLE     (82-PB-206,ENR=0.940) A stacked foil target /thin
+           circular foils 10 mm in diam. with thickness which
+           varied from 0.15-0.20 mg/cm2 was constructed using
+           enriched metallic lead.
+           The isotopic composition of the Pb-206 foil-
            Pb-204-0.01%,
            Pb-206-94.0+-0.1%,
            Pb-207-4.04%,
            Pb-208-1.96%..
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad /60 Foils with Total Mass 11 G/Cm**2/ were
-           Used.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-CRITIQUE   - By Compiler - Stack Construction Does not Exclude
-           Influence of Recoil Nuclei Lost on Measured Cross
-           Section.
-STATUS     (TABLE)
-ENDBIB              20
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+           Each stack consisted of 3 foils /triad/ with three
+           different Pb isotopes-Pb-206,Pb-207 and Pb-208. A total
+           of 20 triad /60 Foils with total mass 11 g/cm2 were
+           used.
+ERR-ANALYS (ERR-3) The error in the target thickness for foils.
+CRITIQUE   - By Compiler - Stack construction does not exclude
+           influence of recoil nuclei lost on measured cross
+           section.
+STATUS     (TABLE)  Table 7 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              24
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     5.       13.
 ENDCOMMON            3
 DATA                 3         20
 EN         DATA       MISC
@@ -281,7 +297,7 @@ MEV        MB         MUCI/MUAHR
        92.4         9.         4.
        90.4         9.         4.
        88.2         9.         4.
-        86.         9.         4.
+       86.0         9.         4.
        83.8        10.         4.
        81.5        10.         4.
        79.2        10.         4.
@@ -295,36 +311,40 @@ MEV        MB         MUCI/MUAHR
        58.1        13.         5.
        55.2        13.         5.
        52.1        14.         6.
-        49.        15.         6.
+       49.0        15.         6.
 ENDDATA             22
-ENDSUBENT           51
-SUBENT        O0306007   19990712   20050616   20050926       0000
-BIB                  7         20
-REACTION   (82-PB-207(P,3N)83-BI-205,IND,SIG)
+ENDSUBENT           55
+SUBENT        O0306007   20190306   20190715   20190702       O068
+BIB                  8         24
+REACTION   (82-PB-207(P,3N)83-BI-205,,SIG)
 DECAY-DATA (83-BI-205,15.3D,DG)
 MISC-COL   (MISC) Thin-Target Yield.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-207 Foil-
-           Pb-204-0.01%,
+SAMPLE     (82-PB-207,ENR=0.890) A stacked foil target /thin
+           circular foils 10 mm in diam. with thickness which
+           varied from 0.15-0.20 mg/cm2 was constructed using
+           enriched metallic lead.
+           The isotopic composition of the Pb-207 foil-
+            Pb-204-0.01%,
            Pb-206-2.66%,
            Pb-207-89.0+-0.1%,
            Pb-208-8.24%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208. A Total
-           Of 20 Triad -60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-CRITIQUE   - By Compiler - Stack Construction Does not Exclude
-           Influence of Recoil Nuclei Lost on Measured Cross
-           Section.
-STATUS     (TABLE) Table 8.
-ENDBIB              20
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+           Each stack consisted of 3 foils /triad/ with three
+           different Pb isotopes-Pb-206,Pb-207 and Pb-208. A total
+           of 20 triad /60 Foils with total mass 11 g/cm2 were
+           used.
+ERR-ANALYS (ERR-3) The error in the target thickness for foils.
+CRITIQUE   - By Compiler - Stack construction does not exclude
+           influence of recoil nuclei lost on measured cross
+           section.
+STATUS     (TABLE)  Table 8 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              24
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     5.       13.
 ENDCOMMON            3
 DATA                 3         20
 EN         DATA       MISC
@@ -337,47 +357,51 @@ MEV        MB         MUCI/MUAHR
        86.7        62.        10.
        84.5        64.        11.
        82.3        61.        10.
-        80.        63.        10.
+       80.0        63.        10.
        77.6        70.        12.
        75.1        70.        12.
        72.7        67.        11.
        70.1        69.        13.
        67.5        69.        11.
        64.9        72.        11.
-        62.        72.        13.
+       62.0        72.        13.
        59.1        76.        14.
        56.2        81.        13.
        53.2        87.        14.
-        50.       105.        17.
+       50.0       105.        17.
 ENDDATA             22
-ENDSUBENT           51
-SUBENT        O0306008   19990712   20050616   20050926       0000
-BIB                  7         20
-REACTION   (82-PB-207(P,2N)83-BI-206,IND,SIG)
+ENDSUBENT           55
+SUBENT        O0306008   20190306   20190715   20190702       O068
+BIB                  8         24
+REACTION   (82-PB-207(P,2N)83-BI-206,,SIG)
 DECAY-DATA (83-BI-206,6.2D,DG)
-MISC-COL   (MISC) Thin-Target Yield.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-207 Foil-
-           Pb-204-0.01%,
+MISC-COL   (MISC) Thin-target yield.
+SAMPLE     (82-PB-207,ENR=0.890) A stacked foil target /thin
+           circular foils 10 mm in diam. with thickness which
+           varied from 0.15-0.20 mg/cm2 was constructed using
+           enriched metallic lead.
+           The isotopic composition of the Pb-207 foil-
+            Pb-204-0.01%,
            Pb-206-2.66%,
            Pb-207-89.0+-0.1%,
            Pb-208-8.24%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-CRITIQUE   - By Compiler - Stack Construction Does not Exclude
-           Influence of Recoil Nuclei Lost on Measured Cross
-           Section.
-STATUS     (TABLE) Table 8.
-ENDBIB              20
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+           Each stack consisted of 3 foils /triad/ with three
+           different Pb isotopes-Pb-206,Pb-207 and Pb-208. A total
+           of 20 triad /60 Foils with total mass 11 g/cm2 were
+           used.
+ERR-ANALYS (ERR-3) The error in the target thickness for foils.
+CRITIQUE   - By Compiler - Stack construction does not exclude
+           influence of recoil nuclei lost on measured cross
+           section.
+STATUS     (TABLE)  Table 8 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              24
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     5.       13.
 ENDCOMMON            3
 DATA                 3         20
 EN         DATA       MISC
@@ -390,624 +414,141 @@ MEV        MB         MUCI/MUAHR
        86.7        25.        10.
        84.5        26.        10.
        82.3        27.        11.
-        80.        26.        11.
+       80.0        26.        11.
        77.6        27.        12.
        75.1        29.        13.
        72.7        30.        12.
        70.1        30.        14.
        67.5        31.        13.
        64.9        32.        13.
-        62.        34.        13.
+       62.0        34.        13.
        59.1        36.        16.
        56.2        37.        14.
        53.2        43.        17.
-        50.        48.        19.
+       50.0        48.        19.
 ENDDATA             22
-ENDSUBENT           51
-SUBENT        O0306009   19990712   20050616   20050926       0000
-BIB                  7         20
-REACTION   (82-PB-208(P,4N)83-BI-205,IND,SIG)
+ENDSUBENT           55
+SUBENT        O0306009   20190306   20190715   20190702       O068
+BIB                  8         24
+REACTION   (82-PB-208(P,4N)83-BI-205,,SIG)
 DECAY-DATA (83-BI-205,15.3D,DG)
-MISC-COL   (MISC) Thin-Target Yield.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-208 Foil-
+MISC-COL   (MISC) Thin-target yield.
+SAMPLE     (82-PB-208,ENR=0.975) A stacked foil target /thin
+           circular foils 10 mm in diam. with thickness which
+           varied from 0.15-0.20 mg/cm2 was constructed using
+           enriched metallic lead.
+           The isotopic composition of the Pb-208 foil-
            Pb-204-0.08%,
            Pb-206-0.82%,
            Pb-207-1.6%,
            Pb-208-97.5+-0.1%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-CRITIQUE   - By Compiler - Stack Construction Does not Exclude
-           Influence of Recoil Nuclei Lost on Measured Cross
-           Section.
-STATUS     (TABLE) Table 9.
-ENDBIB              20
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+           Each stack consisted of 3 foils /triad/ with three
+           different Pb isotopes-Pb-206,Pb-207 and Pb-208. A total
+           of 20 triad /60 Foils with total mass 11 g/cm2 were
+           used.
+ERR-ANALYS (ERR-3) The error in the target thickness for foils.
+CRITIQUE   - By Compiler - Stack construction does not exclude
+           influence of recoil nuclei lost on measured cross
+           section.
+STATUS     (TABLE)  Table 9 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              24
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     5.       13.
 ENDCOMMON            3
 DATA                 3         20
 EN         DATA       MISC
 MEV        MB         MUCI/MUAHR
-        98.        60.        11.
+       98.0        60.        11.
        95.9        66.        12.
        93.8        66.        12.
        91.7        68.        12.
        89.6        71.        13.
        87.5        71.        13.
        85.2        74.        13.
-        83.        72.        12.
+       83.0        72.        12.
        80.7        76.        14.
        78.4        75.        13.
        75.9        76.        14.
        73.5        83.        15.
-        71.        88.        17.
+       71.0        88.        17.
        68.4        93.        16.
        65.8       100.        18.
-        63.       100.        18.
+       63.0       100.        18.
        60.1       111.        19.
        57.2       112.        21.
        54.2       115.        21.
        51.1       128.        22.
 ENDDATA             22
-ENDSUBENT           51
-SUBENT        O0306010   19990712   20050616   20050926       0000
-BIB                  7         20
-REACTION   (82-PB-208(P,3N)83-BI-206,IND,SIG)
+ENDSUBENT           55
+SUBENT        O0306010   20190306   20190715   20190702       O068
+BIB                  8         24
+REACTION   (82-PB-208(P,3N)83-BI-206,,SIG)
 DECAY-DATA (83-BI-206,6.2D,DG)
-MISC-COL   (MISC) Thin-Target Yield.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-208 Foil-
+MISC-COL   (MISC) Thin-target yield.
+SAMPLE     (82-PB-208,ENR=0.975) A stacked foil target /thin
+           circular foils 10 mm in diam. with thickness which
+           varied from 0.15-0.20 mg/cm2 was constructed using
+           enriched metallic lead.
+           The isotopic composition of the Pb-208 foil-
            Pb-204-0.08%,
            Pb-206-0.82%,
            Pb-207-1.6%,
            Pb-208-97.5+-0.1%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-CRITIQUE   - By Compiler - Stack Construction Does not Exclude
-           Influence of Recoil Nuclei Lost on Measured Cross
-           Section.
-STATUS     (TABLE) Table 9.
-ENDBIB              20
-COMMON               1          3
-ERR-T
-PER-CENT
-        15.
+           Each stack consisted of 3 foils /triad/ with three
+           different Pb isotopes-Pb-206,Pb-207 and Pb-208. A total
+           of 20 triad /60 foils with total mass 11 g/cm2 were
+           used.
+ERR-ANALYS (ERR-3) The error in the target thickness for foils.
+CRITIQUE   - By Compiler - Stack construction does not exclude
+           influence of recoil nuclei lost on measured cross
+           section.
+STATUS     (TABLE)  Table 9 from Nukleonika,35(1990)3.
+HISTORY    (20190306A) SD: SF5=IND deleted from REACTION code.
+           ERR-ANALYS, COMMON updated. Energies updated
+           according to presentation in the table.
+ENDBIB              24
+COMMON               2          3
+ERR-3      ERR-T
+PER-CENT   PER-CENT
+     5.       13.
 ENDCOMMON            3
 DATA                 3         20
 EN         DATA       MISC
 MEV        MB         MUCI/MUAHR
-        98.        36.        15.
+       98.0        36.        15.
        95.9        37.        16.
        93.8        38.        16.
        91.7        39.        17.
        89.6        40.        19.
        87.5        40.        18.
        85.2        43.        18.
-        83.        43.        18.
+       83.0        43.        18.
        80.7        45.        21.
        78.4        45.        20.
        75.9        48.        22.
        73.5        49.        22.
-        71.        51.        23.
+       71.0        51.        23.
        68.4        52.        24.
        65.8        56.        24.
-        63.        56.        24.
+       63.0        56.        24.
        60.1        59.        27.
        57.2        61.        28.
        54.2        65.        29.
        51.1        69.        29.
 ENDDATA             22
-ENDSUBENT           51
-SUBENT        O0306011   19990712   20050616   20050926       0000
-BIB                  4         27
-REACTION   (82-PB-206(P,X)81-TL-201,CUM,TTY,,DT)
-           The Irradiated Pb-206 Target was Kept For Period of
-           Time -33Hours- Sufficient For the Accumulation of the
-           Maximum Activity of Tl-201 from the Parent Products
-           Via the Decay Chain-Bi-201-M,G-Pb-201-Tl-201.There are
-           Measured the Cumulative Activity of Tl-201 Being the
-           Sum Activities Induced Via Direct Formation in the
-            (P,PXN) And (P,AXN) Reactions and Through the Bi-201-M
-           And Bi-201-G Decay.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-206 Foil-
-           Pb-204-0.01%,
-           Pb-206-94.0+-0.1%,
-           Pb-207-4.04%,
-           Pb-208-1.96%..
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 21.
-ENDBIB              27
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         19
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       45.7      0.539
-       48.8       1.03        12.
-       52.6        1.7
-        56.       1.93
-       61.2       1.83
-       63.1        1.7
-       64.9       1.58
-       67.5       1.31
-       70.5       1.21
-       73.8       1.04
-       76.8       1.03
-        79.       0.99
-       81.6       0.98
-       83.9       0.91
-       86.1        0.9
-       88.7       0.89
-       92.4        0.8
-        95.       0.74
-       97.3       0.78
-ENDDATA             21
-ENDSUBENT           57
-SUBENT        O0306012   19990712   20050616   20050926       0000
-BIB                  4         19
-REACTION   (82-PB-206(P,X)81-TL-200,CUM,TTY,,DT)
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-206 Foil-
-           Pb-204-0.01%,
-           Pb-206-94.0+-0.1%,
-           Pb-207-4.04%,
-           Pb-208-1.96%..
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 21.
-ENDBIB              19
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         21
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       49.6        0.2        25.
-       53.3       0.22        50.
-        56.      0.235        10.
-        58.       0.47        13.
-       61.4        0.8        11.
-       63.7       1.01
-       64.9        1.2
-       66.4       1.51
-        69.       1.66        11.
-       70.9       1.71
-       73.9       1.69
-       76.9       1.51
-       78.3        1.4
-       81.3        1.3
-       83.2        1.2
-       85.8       1.15
-       87.6        1.1
-       90.6       0.99         9.
-       93.2       1.01        12.
-       94.3       0.91
-       96.2       0.93        11.
-ENDDATA             23
-ENDSUBENT           51
-SUBENT        O0306013   19990712   20050616   20050926       0000
-BIB                  4         19
-REACTION   (82-PB-206(P,X)81-TL-202,CUM,TTY,,DT)
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-206 Foil-
-           Pb-204-0.01%,
-           Pb-206-94.0+-0.1%,
-           Pb-207-4.04%,
-           Pb-208-1.96%..
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 21.
-ENDBIB              19
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         22
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       46.7    7.9E-03
-       50.1    7.6E-03         8.
-       53.5    8.3E-03        10.
-       56.1     8.E-03
-       58.7    7.9E-03         9.
-       62.5    9.6E-03
-       64.3    9.8E-03
-       65.1   1.09E-02
-        67.   1.04E-02
-       69.6   1.19E-02
-       72.6   1.18E-02
-       74.5   1.25E-02
-       76.7   1.29E-02
-        79.   1.42E-02
-       81.6   1.45E-02
-        85.   1.44E-02
-       86.5   1.58E-02
-       88.7   1.57E-02
-       91.3   1.61E-02
-       93.6    1.6E-02
-       95.8   1.38E-02        12.
-       96.9   1.64E-02
-ENDDATA             24
-ENDSUBENT           52
-SUBENT        O0306014   19990712   20050616   20050926       0000
-BIB                  4         27
-REACTION   (82-PB-207(P,X)81-TL-201,CUM,TTY,,DT)
-           The Irradiated Pb-207 Target was Kept For Period of
-           Time /33Hours/ Sufficient For the Accumulation of the
-           Maximum Activity of Tl-201 from the Parent Products
-           Via the Decay Chain-Bi-201-M,G-Pb-201-Tl-201.There are
-           Measured the Cumulative Activity of Tl-201 Being the
-           Sum Activities Induced Via Direct Formation in the
-            (P,PXN) And (P,AXN) Reactions and Through the Bi-201-M
-           And Bi-201-G Decay.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-207 Foil-
-           Pb-204-0.01%,
-           Pb-206-2.66%,
-           Pb-207-89.0+-0.1%,
-           Pb-208-8.24%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad (60 FOILS WITH TOTAL MASS 11 G/CM**2) Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 22.
-ENDBIB              27
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         23
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       53.2       0.21
-       54.9      0.291
-       57.6       0.48        10.
-       60.6        0.8        11.
-       62.3       1.02
-       63.6       1.25
-       65.3       1.37
-       66.6       1.54
-       67.6       1.54
-       68.6       1.64
-       70.9       1.63
-       73.2       1.58
-       74.2       1.45
-       76.9       1.49
-       79.8       1.32
-       81.5        1.2
-       84.1       1.13
-       86.4       1.06
-       88.4       1.03
-       90.7         1.
-       92.7         1.
-       94.7       0.94        11.
-        97.         1.        13.
-ENDDATA             25
-ENDSUBENT           61
-SUBENT        O0306015   19990712   20050616   20050926       0000
-BIB                  4         19
-REACTION   (82-PB-207(P,X)81-TL-200,CUM,TTY,,DT)
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-207 Foil-
-           Pb-204-0.01%,
-           Pb-206-2.66%,
-           Pb-207-89.0+-0.1%,
-           Pb-208-8.24%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 22.
-ENDBIB              19
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         19
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       54.7    8.3E-02        19.
-       58.4        0.1        30.
-       60.7      0.122        14.
-       63.1      0.155        10.
-       65.4      0.202        10.
-       68.1      0.298
-       69.4      0.366
-       70.8      0.425
-       73.5      0.685
-       74.5       0.84
-       76.5       1.04         9.
-       81.8        1.4
-       84.1        1.4
-       86.8       1.31
-       88.8       1.31
-       90.7       1.23
-        93.       1.23
-       94.7       1.12        12.
-       96.7       1.06         8.
-ENDDATA             21
-ENDSUBENT           49
-SUBENT        O0306016   19990712   20050616   20050926       0000
-BIB                  4         19
-REACTION   (82-PB-207(P,X)81-TL-202,CUM,TTY,,DT)
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-207 Foil-
-           Pb-204-0.01%,
-           Pb-206-2.66%,
-           Pb-207-89.0+-0.1%,
-           Pb-208-8.24%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 22.
-ENDBIB              19
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         20
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       52.4    7.1E-03
-       55.1    7.6E-03
-       57.7    7.8E-03
-       60.4    8.5E-03
-       63.1    9.6E-03
-       65.7     9.E-03
-       67.7   1.08E-02
-        69.   1.08E-02
-        70.   1.14E-02
-       73.3   1.32E-02
-        76.   1.44E-02
-       78.6    1.4E-02
-       81.3   1.48E-02        10.
-       84.6   1.57E-02
-       86.6   1.48E-02
-       88.6   1.67E-02        10.
-       90.2   1.77E-02
-       92.5   1.71E-02
-       94.5   1.61E-02
-       96.5   1.76E-02
-ENDDATA             22
-ENDSUBENT           50
-SUBENT        O0306017   19990712   20050616   20050926       0000
-BIB                  4         27
-REACTION   (82-PB-208(P,X)81-TL-201,CUM,TTY,,DT)
-           The Irradiated Pb-208 Target was Kept For Period of
-           Time -33Hours- Sufficient For the Accumulation of the
-           Maximum Activity of Tl-201 from the Parent Products
-           Via the Decay Chain-Bi-201-M,G-Pb-201-Tl-201.There are
-           Measured the Cumulative Activity of Tl-201 Being the
-           Sum Activities Induced Via Direct Formation in the
-            (P,PXN) And (P,AXN) Reactions and Through the Bi-201-M
-           And Bi-201-G Decay.
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-208 Foil-
-           Pb-204-0.08%,
-           Pb-206-0.82%,
-           Pb-207-1.6%,
-           Pb-208-97.5+-0.1%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 23.
-ENDBIB              27
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         20
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       51.4       0.11
-       54.4      0.119
-       57.7       0.13        12.
-        60.      0.165        15.
-       62.9      0.216        13.
-       64.6      0.251
-       66.5       0.36
-       67.9      0.445
-       69.5      0.567
-       70.2       0.75        12.
-       73.4       0.97
-       75.7       1.13        13.
-       78.7       1.27
-       80.3       1.26
-        83.       1.25
-       85.6        1.1        12.
-       87.2       1.06        10.
-       89.9       0.99
-       94.1       0.82
-       96.8       0.79
-ENDDATA             22
-ENDSUBENT           58
-SUBENT        O0306018   19990712   20050616   20050926       0000
-BIB                  4         19
-REACTION   (82-PB-208(P,X)81-TL-200,CUM,TTY,,DT)
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-208 Foil-
-           Pb-204-0.08%,
-           Pb-206-0.82%,
-           Pb-207-1.6%,
-           Pb-208-97.5+-0.1%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 23.
-ENDBIB              19
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         22
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       52.8    4.8E-02        40.
-       54.4    2.4E-02        21.
-       57.7   2.98E-02        10.
-       60.3    4.4E-02        11.
-       63.3    5.8E-02        30.
-       64.9    6.9E-02
-       65.9    9.1E-02         7.
-       68.2   5.87E-02
-       70.2    7.2E-02
-       71.2      0.111        12.
-       73.5      0.145        13.
-       74.8       0.11         7.
-       76.1       0.19        16.
-       77.7      0.266        11.
-        81.       0.38        13.
-       83.3      0.547
-       85.6       0.65        12.
-       87.6       0.81
-       89.5       0.91
-       92.8       0.96
-       94.1       0.98
-       96.4       1.04
-ENDDATA             24
-ENDSUBENT           52
-SUBENT        O0306019   19990712   20050616   20050926       0000
-BIB                  4         19
-REACTION   (82-PB-208(P,X)81-TL-202,,TTY,,DT)
-SAMPLE     A Stacked Foil Target -Thin Circular Foils 10 mm in
-           Diameter with Thickness Which Varied from 0.15-0.20
-           Mg/Cm**2- Was Constructed Using Enriched Metallic Lead.
-           The Isotopic Composition of the Pb-208 Foil-
-           Pb-204-0.08%,
-           Pb-206-0.82%,
-           Pb-207-1.6%,
-           Pb-208-97.5+-0.1%.
-           Each Stack Consisted of 3 Foils /Triad/ with 3
-           Different Pb Isotopes-Pb-206,Pb-207 and Pb-208.A Total
-           Of 20 Triad =60 Foils with Total Mass 11 G/Cm**2- Were
-           Used.
-           Target was Measured 4-5 Times at Least and the Final
-           Result was the Weighted Average of the Measurements.
-ERR-ANALYS (ERR-T).The Uncertainty is Reported by Authors.
-           (DATA-ERR).Data-Point Reader Uncertainty.
-           (EN-ERR).Data-Point Reader Uncertainty.
-STATUS     (CURVE)  By CAJAD. Figure 23.
-ENDBIB              19
-COMMON               3          3
-ERR-T      DATA-ERR   EN-ERR
-PER-CENT   PER-CENT   MEV
-        20.         5.        0.5
-ENDCOMMON            3
-DATA                 3         22
-EN         DATA       ERR-T
-MEV        MCI/MUAHR  PER-CENT
-       48.8   1.04E-02
-       53.4     1.E-02        15.
-       55.1    8.5E-03        15.
-       58.1    8.2E-03        11.
-       60.7    7.4E-03        11.
-       63.6    7.6E-03         9.
-       65.6     8.E-03        11.
-       68.2     9.E-03
-       70.2     9.E-03
-       71.2    9.3E-03         9.
-       73.2    9.8E-03
-       74.8    9.7E-03
-       76.5     1.E-02
-       79.1   1.06E-02         8.
-       81.4   1.15E-02
-        84.   1.18E-02
-       85.3   1.18E-02
-       88.3   1.17E-02        10.
-       90.3   1.31E-02
-       92.2   1.31E-02
-       94.9    1.3E-02
-       96.8   1.42E-02
-ENDDATA             24
-ENDSUBENT           52
+ENDSUBENT           55
+NOSUBENT      O0306011   20190306   20190715   20190702       O068
+NOSUBENT      O0306012   20190306   20190715   20190702       O068
+NOSUBENT      O0306013   20190306   20190715   20190702       O068
+NOSUBENT      O0306014   20190306   20190715   20190702       O068
+NOSUBENT      O0306015   20190306   20190715   20190702       O068
+NOSUBENT      O0306016   20190306   20190715   20190702       O068
+NOSUBENT      O0306017   20190306   20190715   20190702       O068
+NOSUBENT      O0306018   20190306   20190715   20190702       O068
+NOSUBENT      O0306019   20190306   20190715   20190702       O068
 ENDENTRY            19

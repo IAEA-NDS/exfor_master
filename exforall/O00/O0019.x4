@@ -1,38 +1,41 @@
-ENTRY            O0019     941012              20050926       0000
-SUBENT        O0019001     941012              20050926       0000
-BIB                  8         16
-TITLE      FISSION OF TH-232 INDUCED BY 4-11 MEV PROTONS.
-AUTHOR     (W.KURCEWICZ,J.SZERYPO,P.HORNSHOJ,N.RUD,Z.ZELAZNY,
-           W.REISDORF)
-INSTITUTE  (3POLWWA)
-           (2DENAAU)
-           (2GERGSI)
-REFERENCE  (J,ZP/A,306,99,82)
-HISTORY    (941011C)
-           (941130U)
-ADD-RES     STATISTICAL DECAY MODEL.THE ABSORPTION CROSS SECTIONS
-           FOR PROTONS IN THE VICINITY OF AND BELOW THE COULOMB
-           BARRIER ARE ALSO DISCUSSED AND CONFRONTED WITH OPTICAL
-           MODEL PREDICTIONS USING PUBLISHED GLOBAL PROTON
-           POTENTIALS.
+ENTRY            O0019   20190208   20190715   20190702       O068
+SUBENT        O0019001   20190208   20190715   20190702       O068
+BIB                  8         15
+TITLE      Fission of Th-232 induced by 4-11 MeV protons.
+AUTHOR     (W.Kurcewicz,J.Szerypo,P.Hornshoj,N.Rud,Z.Zelazny,
+           W.Reisdorf)
+INSTITUTE  (3POLWWA,2DENAAU,2GERGSI)
+REFERENCE  (J,ZP/A,306,99,1982)
 METHOD     (SITA)
-ERR-ANALYS (DATA-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-ENDBIB              16
-NOCOMMON
-ENDSUBENT           19
-SUBENT        O0019002     941012              20050926       0000
-BIB                  5          6
-REACTION   (90-TH-232(P,F)MASS,,PY,,,EXP).NORMALISED TO 100.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+ADD-RES     Statistical decay model. The absorption cross sections
+           for protons in the vicinity of and below the Coulomb
+           barrier are also discussed and confronted with optical
+           model predictions using published global proton
+           potentials.
+HISTORY    (19941011C)
+           (20190208A) SD:Updated to new date formats,lower case.
+           Corrections in all Subents.
+ENDBIB              15
+NOCOMMON             0          0
+ENDSUBENT           18
+SUBENT        O0019002   20190208   20190715   20190702       O068
+BIB                  7         10
+REACTION   (90-TH-232(P,F)MASS,CHN,FY)
+FACILITY   (LINAC,3POLIBJ) The linear accelerator.
 METHOD     (RELFY)
-SAMPLE     THE TARGETS OF METALLIC THORIUM FOIL WHICH HAD A
-           THICKNESS OF 12 AND 16.6 MG/CM**2 WERE USED.
-DETECTOR   (GELI)
-FACILITY   (LINAC,3POLIBJ).THE LINEAR ACCELERATOR.
-ENDBIB               6
-NOCOMMON
+SAMPLE     The targets of metallic thorium foil which had a
+           thickness of 12.0 and 16.6 mg/cm**2 were used.
+DETECTOR   (GELI) 45 and 32cm3 Ge(Li) detectors with FWHM 3.3
+           and 3.5 keV at 1,333 keV (60Co), respectively.
+STATUS     (TABLE) Tbl.1 from Z.Phys.,A306(1982)99
+HISTORY    (20190208A) SD: SF5=CHN added, SF6=PY -> FY; SF9=EXP
+           deleted from REACTION code. BIB added. NO-DIM -> PC/FIS
+ENDBIB              10
+NOCOMMON             0          0
 DATA                 4         26
 EN         MASS       DATA       DATA-ERR
-MEV        NO-DIM     NO-DIM     NO-DIM
+MEV        NO-DIM     PC/FIS     PC/FIS
        8.00        85.       2.95       0.14
        8.00        87.       5.15       0.22
        8.00        88.       5.27       0.21
@@ -60,46 +63,58 @@ MEV        NO-DIM     NO-DIM     NO-DIM
        8.00       146.       2.60       0.40
        8.00       149.       1.53       0.17
 ENDDATA             28
-ENDSUBENT           39
-SUBENT        O0019003     941012              20050926       0000
-BIB                  7         14
-REACTION   (90-TH-232(P,F),,SIG,,,EXP).DIRECT COUTING OF FISSION
-           FRAGMENTS IN A CALIBRATED GEOMETRY.
+ENDSUBENT           43
+SUBENT        O0019003   20190208   20190715   20190702       O068
+BIB                  8         19
+REACTION  1(90-TH-232(P,F),,SIG) Direct counting of fission
+           fragments in a calibrated geometry.
+          2(90-TH-232(P,F),,SIG,,,DERIV) - from direct and
+             indirect measurements
+COMMENT    /By authors/ From the consistent set of values obtained
+           in direct and indirect measurements we adopt an average
+           value of 3.3(0.3) mb for the fission cross section of
+           Th-232 for E(p)=8.00 MeV.
+FACILITY   (VDGT,2DENAAU) EN tandem accelerator.
+DETECTOR   (SIBAR).A heavy-ion surface barrier annular detector
+           with an area of 300 mm**2,a thickness of 80 mum and
+           a 5 mm diameter central hole was used.
+SAMPLE     Metallic thorium targets with thickness of 1.3 and
+            3.1 mg/cm**2 were used.
 METHOD     (BCINT)
-DETECTOR   (SOLST).A HEAVY-ION SURFACE BARRIER ANNULAR DETECTOR
-           WITH AN AREA OF 300 MM**2,A THICKNESS OF 80 MUM AND
-           A 5 MM DIAMETER CENTRAL HOLE WAS USED.
-FACILITY   (VDGT,2DENAAU).EN TANDEM ACCELERATOR.
-SAMPLE     METALLIC THORIUM TARGETS WITH THICKNESS OF 1.3 AND
-            3.1 MG/CM**2 WERE USED.
-ERR-ANALYS (EN-ERR).THE UNCERTAINTY IS REPORTED BY AUTHORS.
-COMMENT    /BY AUTHORS/.FROM THE CONSISTENT SET OF VALUES OBTAINED
-           IN DIRECT AND INDIRECT MEASUREMENTS WE ADOPT AN AVERAGE
-           VALUE OF 3.3(0.3) MB FOR THE FISSION CROSS SECTION OF
-           TH-232 FOR E(P)=8.00 MEV.
-ENDBIB              14
-NOCOMMON
-DATA                 4          1
-EN         EN-ERR     DATA       DATA-ERR
-MEV        MEV        MB         MB
-       8.00       0.01        3.1        0.4
+STATUS     (TABLE) From the text on p.101 of Z.Phys.,A306(1982)99
+HISTORY    (20190208A) SD: SF9=EXP deleted from REACTION code.
+           STATUS added. EN-ERR -> EN-RSL-HW. REACTION code (2)
+           added.
+ENDBIB              19
+NOCOMMON             0          0
+DATA                 6          1
+EN         EN-RSL-HW  DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MB         MB         MB         MB
+       8.00       0.01        3.1        0.4   3.3        0.3
 ENDDATA              3
-ENDSUBENT           22
-SUBENT        O0019004     941012              20050926       0000
-BIB                  6         11
-REACTION   (90-TH-232(P,F),,SIG,,,EXP)
-SAMPLE     THE TARGET WAS A TH-232 FOIL OF 6.8 MG/CM**2 THICKNESS
-           AND THE SOLID ANGLE OF THE DETECTOR WAS 0.23 SR.
-DETECTOR   (SOLST).SEE SUBENT O0019003.
-FACILITY   (VDGT,2DENAAU).SEE SUBENT O0019003.
-REL-REF    (D,,V.N.KONONOV+,J,YF,27,298,78)
-           (A,,G.R.CHOPPIN+,J,PR,131,2149,63)
-COMMENT    /BY AUTHORS/.IN THIS MEASUREMENT ONLY THE RELATIVE
-           EXCITATION FUNCTION WAS DETERMINED.THE DATA WERE
-           CONVERTED TO ABSOLUTE VALUES THROUGH A NORMALIZATION
-           TO THE ABSOLUTE CROSS SECTION OBTAINED AT E(P)=8 MEV.
-ENDBIB              11
-NOCOMMON
+ENDSUBENT           27
+SUBENT        O0019004   20190208   20190715   20190702       O068
+BIB                  9         18
+REACTION   (90-TH-232(P,F),,SIG)
+SAMPLE     The target was a Th-232 foil of 6.8 mg/cm**2 thickness
+           and the solid angle of the detector was 0.23 Sr.
+FACILITY   (VDGT,2DENAAU) EN tandem accelerator.
+DETECTOR   (SIBAR).A heavy-ion surface barrier annular detector
+           with an area of 300 mm**2,a thickness of 80 mum and
+           a 5 mm diameter central hole was used.
+REL-REF    (D,A0024003,V.N.Kononov+,J,YF,27,298,1978)
+           (A,P0028002,G.R.Choppin+,J,PR,131,2149,1963)
+METHOD     (BCINT)
+COMMENT    /By authors/.in this measurement only the relative
+           excitation function was determined.The data were
+           converted to absolute values through a normalization
+           to the absolute cross section obtained at E(p)=8 MeV.
+STATUS     (TABLE) Tbl.2 from Z.Phys.,A306(1982)99
+           (DEP,O0019003) - used for normalization.
+HISTORY    (20190208U) SD: SF9=EXP deleted from REACTION code.
+           STATUS added. REL-REF updated.
+ENDBIB              18
+NOCOMMON             0          0
 DATA                 3         15
 EN         DATA       DATA-ERR
 MEV        MB         MB
@@ -113,11 +128,11 @@ MEV        MB         MB
        7.43     9.0E-1     0.9E-1
        7.94        2.9        0.3
        8.44        7.5        0.7
-       8.94       18.0        2.0
+       8.94        18.         2.
        9.44        34.         3.
        9.94        65.         6.
       10.44        92.         8.
       10.95       136.        13.
 ENDDATA             17
-ENDSUBENT           33
+ENDSUBENT           40
 ENDENTRY             4
