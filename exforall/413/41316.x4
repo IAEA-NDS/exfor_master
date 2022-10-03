@@ -1,166 +1,169 @@
-ENTRY            41316   20040608              20050926       0000
-SUBENT        41316001   20040608              20050926       0000
-BIB                 12         20
+ENTRY            41316   20200312   20200515   20200514       4186
+SUBENT        41316001   20200312   20200515   20200514       4186
+BIB                 12         41
 INSTITUTE  (4UKRKGU)
-REFERENCE  (J,YF,27,616,197803)  MAIN REFERENCE, DATA ARE GIVEN
-           (J,SNP,27,329,197803) ENGLISH TRANSLATION
-           (J,UFZ,20,2061,1975)    EXPERIMENTAL DETAILS
-AUTHOR     (YU.E.KOZYR',G.A.PROKOPETS)
-TITLE      .RADIATIVE TRANSITIONS FROM UNBOUND STATES OF
-            FE AND CO NUCLEI
-MONITOR    .NO INFORMATION GIVEN
+REFERENCE  (J,YF,27,616,1978)    Main reference, data are given
+           (J,SNP,27,329,1978)   English translation
+           (J,UFZ,20,2061,1975)    Experimental details.
+            Neutron energy spectrum (Fe) for 70deg. - fig.2a.
+AUTHOR     (Yu.E.Kozyr',G.A.Prokopets)
+TITLE       Radiative transitions from unbound states of
+            Fe and Co nuclei
+MONITOR    .No information given in Sov.Nucl.Phys.,v.27,p.329,1978
 FACILITY   (VDG)
-METHOD     (TOF)  FLIGHT BASE IS 1 M
-DETECTOR   (SOLST)   STILBENE CRYSTAL FOR NEUTRONS
-           (NAICR)   150*200 MM CRYSTAL FOR PROMPT GAMMAS
+METHOD     (TOF)  Flight base is 1 m , time resolution 4nsec.
+            Measurements for two gamma detection thresholds -
+            1.5 and 2 MeV.
+DETECTOR   (SOLST)   Stilbene crystal for neutrons .
+           Neutron detector efficiency was calibrated by elastic
+           scattering on hydrogen.
+           (NAICR)   150*200 mm crystal for prompt gammas
+           (SIBAR) For alphas from T(d,n)He4 detection.
 INC-SOURCE (D-T)
-ERR-ANALYS .DATA SPECIFIED IN PROPER SUBENTS
-STATUS     .        DATA ARE TAKEN FROM TABLE 1 OF MAIN REFERENCE
-           .Several data sets obtaines 1978/4/10 and 1979/2/27,
+STATUS       .Several data sets obtained 1978/4/10 and 1979/2/27,
             from Kozyr'.
-HISTORY    (19981121C)  + +  COMPILED AT THE CJD  + +
-           (20031010A)  .SUBENTRIES Moved from data set 40596.
-           (20040608A)  .SUBENTRY ADDED
-ENDBIB              20
+ADD-RES     In J.Sov.Nucl.Phys.,v.27,p.329,1978 text page 331
+            the ratio ( was in Subent 019) <GAMMAgamma/GAMMAn>
+            is given 0.51 ( given in the article)
+            value 0.57 ( was in Subent 019; probably from
+            authors or misprint; energy interval was
+            11456 keV - 14.E+06 MeV was also wrong - probably
+            keV, MeV -> eV ?).
+            It's compared in the article with value 0.07 - average
+            over E* interval 11.2 - 14.4 MeV measured by
+            O.Sal'nikov (J.Yad.Fiz.,v.12,p.1132,1970; Engl.transl.
+            Sov.J.Nucl.Phys.,12,620,1971)
+HISTORY    (19981121C)  + +  Compiled at the CJD  + +
+           (20031010A)  .SUBENTRIES moved from data set 40596.
+           (20040608A)  .SUBENTRY added
+           (20200312A) M.M. Upper -> lower case correction.
+           STATUS information was updated.
+           Subent 019 was deleted - see ADD-RES.
+           Subents 006,006,011,012,017,018 were deleted according
+           to a comment of N.Otsuka (NDS,IAEA) - data are moved
+           in MISC1, MISC2 in Subents 002,004.
+ENDBIB              41
 COMMON               1          3
 EN
 MEV
- 1.4600E+01
+ 14.6
 ENDCOMMON            3
-ENDSUBENT           27
-SUBENT        41316002   20031014              20050926       0000
-BIB                  5          6
-REACTION   (26-FE-56(N,INL)26-FE-56,,SIG)
-ERR-ANALYS (ERR-S)     Systematic error of experiment
-ANALYSIS   (INTED) Integration of dE data at 78 degrees.
-STATUS     (DEP,41316006) Data taken from Table in main reference.
-HISTORY    (19981121T)  + + CONVERTED FROM SUBENT 88016002
-                        . . CORRECTED
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 2          1
-DATA       ERR-S
-MB         MB
- 670.        70.
+ENDSUBENT           48
+SUBENT        41316002   20200312   20200515   20200514       4186
+BIB                  6         12
+REACTION   (26-FE-56(N,INL)26-FE-56,,DA,,4PI)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           article
+ANALYSIS   (INTED) Integration of DE data at 78 degrees.
+MISC-COL   (MISC1) C-S for excitation energy < binding energy
+           (MISC2) C-S for excitation energy > binding energy
+STATUS     (TABLE) Table 1 of J.Sov.Nucl.Phys.,v.27,p.329,1978
+           (DEP,41316006)  CS for E-exc > and < Bn
+HISTORY    (19981121T)  + + Converted from SUBENT 88016002
+                        . . Corrected
+           (20200312A) "ERR-S systematic error of experiment" ->
+           DATA-ERR,  ,SIG -> DA,,4PI
+ENDBIB              12
+COMMON               1          3
+ANG
+ADEG
+ 78.
+ENDCOMMON            3
+DATA                 6          1
+DATA       DATA-ERR   MISC1      MISC1-ERR  MISC2      MISC2-ERR
+MB         MB         MB         MB         MB         MB
+ 670.        70.         425.       40.       245.        30.
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        41316003   20031014              20050926       0000
-BIB                  5          9
+ENDSUBENT           24
+SUBENT        41316003   20200312   20200515   20200514       4186
+BIB                  5         12
 REACTION   (26-FE-56(N,2N)26-FE-55,,SIG,,,DERIV)
 ANALYSIS   Calculated as difference between theoretical cross
             section for emission of 1st neutron and (n,n'gamma)
             cross section.
-ERR-ANALYS (ERR-S)     Systematic error of experiment
-STATUS     (DEP,41316002)
-           (DEP,41316006) Data taken from Table in main reference.
-HISTORY    (19981121T)  + + CONVERTED FROM SUBENT 88016003
-           (20040531U)  . . BIB-INFO UPDATED
-ENDBIB               9
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           article
+STATUS     (TABLE) Table 1 of J.Sov.Nucl.Phys.,v.27,p.329,1978
+           (DEP,41316002) Inelastic CS
+HISTORY    (19981121T)  + + Converted from SUBENT 88016003
+           (20040531U)  . . BIB-info updated
+           (20200312A) "ERR-S systematic error of experiment" ->
+           DATA-ERR
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
-DATA       ERR-S
+DATA       DATA-ERR
 MB         MB
  480.        50.
 ENDDATA              3
-ENDSUBENT           17
-SUBENT        41316004   20031014              20050926       0000
-BIB                  5          7
-REACTION   (27-CO-59(N,INL)27-CO-59,,SIG)
-ANALYSIS   (INTED) Integration of dE data at 60 degrees.
-ERR-ANALYS (ERR-S)     Systematic error of experiment
-STATUS     (DEP,41316015)
-           (DEP,41316016) Data taken from Table in main reference.
-HISTORY    (19981121T)  + + CONVERTED FROM SUBENT 88016004
-           (20040531U)  . . BIB-INFO UPDATED
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 2          1
-DATA       ERR-S
-MB         MB
- 400.        40.
+ENDSUBENT           20
+SUBENT        41316004   20200312   20200515   20200514       4186
+BIB                  6         12
+REACTION   (27-CO-59(N,INL)27-CO-59,,DA,,4PI)
+ANALYSIS   (INTED) Integration of DE data at 60 degrees.
+MISC-COL   (MISC1) C-S for excitation energy < binding energy
+           (MISC2) C-S for excitation energy > binding energy
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           article
+STATUS     (TABLE) Table 1 of J.Sov.Nucl.Phys.,v.27,p.329,1978
+           (DEP,41316016)  (n,gamma n') CS
+HISTORY    (19981121T)  + + Converted from SUBENT 88016004
+           (20040531U)  . . BIB-info Updated
+           (20200312A) "ERR-S systematic error of experiment" ->
+           DATA-ERR, ,SIG -> DA,,4PI
+ENDBIB              12
+COMMON               1          3
+ANG
+ADEG
+ 60.
+ENDCOMMON            3
+DATA                 6          1
+DATA       DATA-ERR   MISC1      MISC1-ERR  MISC2      MISC2-ERR
+MB         MB         MB         MB         MB         MB
+ 400.        40.       300.       30.       100.        10.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        41316005   20031014              20050926       0000
-BIB                  5          9
+ENDSUBENT           24
+SUBENT        41316005   20200312   20200515   20200514       4186
+BIB                  5         12
 REACTION   (27-CO-59(N,2N)27-CO-58,,SIG,,,DERIV)
 ANALYSIS   Calculated as difference between theoretical cross
             section for emission of 1st neutron and (n,n'gamma)
             cross section.
-ERR-ANALYS (ERR-S)     Systematic error of experiment
-STATUS     (DEP,41316004)
-           (DEP,41316007) Data taken from Table in main reference.
-HISTORY    (19981121T)  + + CONVERTED FROM SUBENT 88016005
-           (20040531U)  . . BIB-INFO UPDATED
-ENDBIB               9
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           article
+STATUS     (TABLE) Table 1 of J.Sov.Nucl.Phys.,v.27,p.329,1978
+           (DEP,41316004) Inelastic CS
+HISTORY    (19981121T)  + + Converted from SUBENT 88016005
+           (20040531U)  . . BIB-info updated
+           (20200312A) "ERR-S systematic error of experiment" ->
+           DATA-ERR
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 2          1
-DATA       ERR-S
+DATA       DATA-ERR
 MB         MB
   660.        70.
 ENDDATA              3
-ENDSUBENT           17
-SUBENT        41316006   20040531              20050926       0000
-BIB                  4         11
-REACTION  1((26-FE-56(N,INL)26-FE-56,PAR,SIG)+
-           (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)) SIGMA FOR
-              EXCITATION ENERGY LESS THAN BINDING ENERGY
-          2((26-FE-56(N,INL)26-FE-56,PAR,SIG)+
-           (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)) SIGMA FOR
-              EXCITATION ENERGY MORE THAN BINDING ENERGY
-EN-SEC     (E-EXC,26-FE-56)  Excitation energies are taken
-                             from the literature
-STATUS     .Data taken from Table in main reference.
-HISTORY    (20030815C)  COMPILED AT CJD
-           (20040531U)  . . BIB-INFO UPDATED
-ENDBIB              11
-COMMON               2          3
-E-EXC-MAX 1E-EXC-MIN 2
-KEV        KEV
-  11456.      11456.
-ENDCOMMON            3
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-MB         MB         MB         MB
-   425.       40.       245.        30.
-ENDDATA              3
-ENDSUBENT           23
-SUBENT        41316007   20040531              20050926       0000
-BIB                  4         12
-REACTION  1((27-CO-59(N,INL)27-CO-59,PAR,SIG)+
-           (27-CO-59(N,INL)27-CO-59,PAR,SIG,G)) SIGMA FOR
-              EXCITATION ENERGY LESS THAN BINDING ENERGY
-          2((27-CO-59(N,INL)27-CO-59,PAR,SIG)+
-           (27-CO-59(N,INL)27-CO-59,PAR,SIG,G)) SIGMA FOR
-              EXCITATION ENERGY MORE THAN BINDING ENERGY
-EN-SEC     (E-EXC,26-FE-56)  Excitation energies are take
-                             from the literature
-STATUS     (DEP,41316005)
-            Data taken from Table in main reference.
-HISTORY    (20030815C)   COMPILED AT CJD
-           (20040531U)  . . BIB-INFO UPDATED
-ENDBIB              12
-COMMON               2          3
-E-EXC-MAX 1E-EXC-MIN 2
-KEV        KEV
-  14456.      14456.
-ENDCOMMON            3
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-MB         MB         MB         MB
-   300.       30.       100.        10.
-ENDDATA              3
-ENDSUBENT           24
-SUBENT        41316008   20040608              20050926       0000
-BIB                  6          7
-REACTION   (26-FE-56(N,INL)26-FE-56,,DE)
+ENDSUBENT           20
+NOSUBENT      41316006   20200312   20200515   20200514       4186
+NOSUBENT      41316007   20200312   20200515   20200514       4186
+SUBENT        41316008   20200312   20200515   20200514       4186
+BIB                  5          9
+REACTION   (26-FE-56(N,INL)26-FE-56,,DA/DE,,4PI)
 METHOD     (COINC) From neutron-gamma coincidence
-ANALYSIS   (4PI1A) 4pi times double-differential cross section
-            at 70 degrees.
 ERR-ANALYS (ERR-S)      Standard deviation
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               7
-NOCOMMON             0          0
+STATUS     (TABLE)  Data from the author - Kozyr'
+HISTORY    (20040608C)  Compiled at the center - CJD
+           (20200314A) Reaction was corrected ,DE) -> DA/DE,,4PI)
+           and angle was added in COMMON .
+           "ANALYSIS (4PI1A)" was deleted according to a comment
+           of N.Otsuka (NDS,IAEA)
+ENDBIB               9
+COMMON               1          3
+ANG
+ADEG
+ 70.
+ENDCOMMON            3
 DATA                 3         29
 E          DATA       ERR-S
 MEV        MB/MEV     PER-CENT
@@ -194,17 +197,23 @@ MEV        MB/MEV     PER-CENT
       0.669      92.         54.
       0.566     150.         22.
 ENDDATA             31
-ENDSUBENT           43
-SUBENT        41316009   20040608              20050926       0000
-BIB                  5          6
-REACTION   (26-FE-56(N,X)0-NN-1,,DE)
-ANALYSIS   (4PI1A) 4pi times double-differential cross section
-            at 70 degrees.
-ERR-ANALYS (ERR-S)     Standard Deviation
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               6
-NOCOMMON             0          0
+ENDSUBENT           49
+SUBENT        41316009   20200312   20200515   20200514       4186
+BIB                  4          8
+REACTION   (26-FE-56(N,X)0-NN-1,,DA/DE,,4PI)
+ERR-ANALYS (ERR-S)     Standard deviation
+STATUS     (TABLE)  Data from the author - Kozyr'
+HISTORY    (20040608C)  Compiled at the center - CJD
+           (20200314A) Reaction was corrected ,DE) -> DA/DE,,4PI)
+           and angle was added in COMMON .
+           "ANALYSIS (4PI1A)" was deleted according to a comment
+           of N.Otsuka (NDS,IAEA)
+ENDBIB               8
+COMMON               1          3
+ANG
+ADEG
+ 70.
+ENDCOMMON            3
 DATA                 3         30
 E          DATA       ERR-S
 MEV        MB/MEV     PER-CENT
@@ -239,60 +248,33 @@ MEV        MB/MEV     PER-CENT
       0.669    473.         12.
       0.566    352.         21.
 ENDDATA             32
-ENDSUBENT           43
-SUBENT        41316010   20040608              20050926       0000
-BIB                  4          4
+ENDSUBENT           49
+SUBENT        41316010   20200312   20200515   20200514       4186
+BIB                  4          6
 REACTION   (26-FE-56(N,G+N)26-FE-56,SEQ,SIG)
 ERR-ANALYS No information on uncertainty.
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               4
+STATUS     (TABLE)  Data from the author - Kozyr'
+           In J.Sov.Nucl.Phys.,v.27,p.329,1978 of page 331
+           the CS for  Fe (n,gamma n') >= 30 mb
+HISTORY    (20040608C)  Compiled at the center - CJD
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 1          1
 DATA
 MB
   60.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        41316011   20040608              20050926       0000
-BIB                  3          5
-REACTION   (26-FE-56(N,INL)26-FE-56,CN/PAR,SIG)
-            Excitation energy higher than binding energy,
-             compound nucleus contribution.
-ERR-ANALYS (ERR-S)     Systematic error of experiment
-STATUS     Data taken from Table in main reference.
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 3          1
-E-EXC-MIN  DATA       ERR-S
-KEV        MB         MB
- 11197.     243.        30.
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        41316012   20040608              20050926       0000
-BIB                  4          6
-REACTION   (26-FE-56(N,INL)26-FE-56,CN/PAR,SIG)
-            Excitation energy lower than binding energy,
-             compound nucleus contribution.
-ERR-ANALYS (ERR-S)  Systematic error of experiment
-STATUS     Data taken from Table in main reference.
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          1
-E-EXC-MAX  DATA       ERR-S
-KEV        MB         MB
- 11197.     425.        40.
-ENDDATA              3
 ENDSUBENT           14
-SUBENT        41316013   20040608              20050926       0000
+NOSUBENT      41316011   20200312   20200515   20200514       4186
+NOSUBENT      41316012   20200312   20200515   20200514       4186
+SUBENT        41316013   20200312   20200515   20200514       4186
 BIB                  5          6
 REACTION   (27-CO-59(N,X)0-NN-1,,DA/DE)
-SAMPLE      Hollow Cylinder, Hight 70. Mm, Outer and Inner
-            Diameters  70. And 37. Mm
+SAMPLE      Hollow cylinder, height 70. mm, outer and inner
+            diameters  70. and 37. mm
 ERR-ANALYS (ERR-S)     Standard Deviation
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
+STATUS     (TABLE)  Data sent from the author - Kozyr'
+HISTORY    (20040608C)  Compiled at the center - CJD
 ENDBIB               6
 COMMON               2          3
 EN-RSL     ANG-RSL
@@ -508,16 +490,22 @@ MEV        ADEG       MB/SR/MEV  PER-CENT
   1.477E+01     9.E+01       4.04    5.
 ENDDATA            206
 ENDSUBENT          221
-SUBENT        41316014   20040608              20050926       0000
-BIB                  5          6
-REACTION   (27-CO-59(N,X)0-NN-1,,DE)
-ANALYSIS   (4PI1A) 4pi times double-differential cross section
-            at 70 degrees.
-ERR-ANALYS (ERR-S)     Standard Deviation
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               6
-NOCOMMON             0          0
+SUBENT        41316014   20200312   20200515   20200514       4186
+BIB                  4          8
+REACTION   (27-CO-59(N,X)0-NN-1,,DA/DE,,4PI)
+ERR-ANALYS (ERR-S)     Standard deviation
+STATUS     (TABLE)  Data sent from the author - Kozyr'
+HISTORY    (20040608C)  Compiled at the center - CJD
+           (20200314A) Reaction was corrected ,DE) -> DA/DE,,4PI)
+           and angle was added in COMMON .
+           "ANALYSIS (4PI1A)" was deleted according to a comment
+           of N.Otsuka (NDS,IAEA)
+ENDBIB               8
+COMMON               1          3
+ANG
+ADEG
+ 70.
+ENDCOMMON            3
 DATA                 3         21
 E          DATA       ERR-S
 MEV        MB/MEV     PER-CENT
@@ -543,18 +531,24 @@ MEV        MB/MEV     PER-CENT
       0.96     747.         4.
       0.78     858.         4.
 ENDDATA             23
-ENDSUBENT           34
-SUBENT        41316015   20040608              20050926       0000
-BIB                  6          7
-REACTION   (27-CO-59(N,INL)27-CO-59,,DE)
+ENDSUBENT           40
+SUBENT        41316015   20200312   20200515   20200514       4186
+BIB                  5          9
+REACTION   (27-CO-59(N,INL)27-CO-59,,DA/DE,,4PI)
 METHOD     (COINC) Obtained from neutron-gamma coincidence
-ANALYSIS   (4PI1A) 4pi times double-differential cross section
-            at 70 degrees.
 ERR-ANALYS (ERR-S)     Standard deviation
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               7
-NOCOMMON             0          0
+STATUS     (TABLE)  Data from the author - Kozyr'
+HISTORY    (20040608C)  Compiled at the center - CJD
+           (20200314A) Reaction was corrected ,DE) -> DA/DE,,4PI)
+           and angle was added in COMMON .
+           "ANALYSIS (4PI1A)" was deleted according to a comment
+           of N.Otsuka (NDS,IAEA)
+ENDBIB               9
+COMMON               1          3
+ANG
+ADEG
+ 70.
+ENDCOMMON            3
 DATA                 3         21
 E          DATA       ERR-S
 MEV        MB/MEV     PER-CENT
@@ -580,64 +574,24 @@ MEV        MB/MEV     PER-CENT
       0.969      50.7         14.
       0.785     140.          10.
 ENDDATA             23
-ENDSUBENT           35
-SUBENT        41316016   20040608              20050926       0000
-BIB                  4          4
+ENDSUBENT           41
+SUBENT        41316016   20200312   20200515   20200514       4186
+BIB                  4          6
 REACTION   (27-CO-59(N,G+N)27-CO-59,SEQ,SIG)
 ERR-ANALYS No information on uncertainty.
-STATUS     (TABLE)  DATA SENT BY THE AUTHOR - KOZYR'
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               4
+STATUS     (TABLE)  Data from the author - Kozyr'
+           In J.Sov.Nucl.Phys.,v.27,p.329,1978 of page 331
+           the CS for Co (n,gamma n') >= 40 mb
+HISTORY    (20040608C)  Compiled at the center - CJD
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 1          1
 DATA
 MB
   40.
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        41316017   20040608              20050926       0000
-BIB                  4          6
-REACTION   (27-CO-59(N,INL)27-CO-59,CN/PAR,SIG)
-            Excitation energy higher than binding energy,
-             compound nucleus contribution.
-ERR-ANALYS (ERR-S)  Systematic error of experiment
-STATUS     Data taken from Table in main reference.
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          1
-E-EXC-MIN  DATA       ERR-S
-KEV        MB         MB
- 10453.     100.        10.
-ENDDATA              3
 ENDSUBENT           14
-SUBENT        41316018   20040608              20050926       0000
-BIB                  4          6
-REACTION   (27-CO-59(N,INL)27-CO-59,CN/PAR,SIG)
-            Excitation energy lower than binding energy,
-             compound nucleus contribution.
-ERR-ANALYS (ERR-S)     Systematic error of experiment
-STATUS     Data taken from Table in main reference.
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          1
-E-EXC-MAX  DATA       ERR-S
-KEV        MB         MB
- 10453.     300.        30.
-ENDDATA              3
-ENDSUBENT           14
-SUBENT        41316019   20040608              20050926       0000
-BIB                  3          3
-REACTION   ((26-FE-56(N,G),PAR,WID)/(26-FE-56(N,EL),PAR,WID))
-STATUS     .DATA FROM THE TEXT OF MAIN REFERENCE
-HISTORY    (20040608C)  COMPILED AT THE CENTER - CJD
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 3          1
-E-EXC-MIN  E-EXC-MAX  DATA
-KEV        KEV        NO-DIM
-  11456.    14.   E+06    0.57
-ENDDATA              3
-ENDSUBENT           11
+NOSUBENT      41316017   20200312   20200515   20200514       4186
+NOSUBENT      41316018   20200312   20200515   20200514       4186
+NOSUBENT      41316019   20200312   20200515   20200514       4186
 ENDENTRY            19

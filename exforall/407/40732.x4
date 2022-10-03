@@ -1,42 +1,83 @@
-ENTRY            40732     920702              20050926       0000
-SUBENT        40732001     920702              20050926       0000
-BIB                 12         22
-TITLE      .MEASUREMENT OF INELASTIC NEUTRON SPECTRA ON FE NUCLEI
-           .AND ANALYSIS OF THE HARD PART OF NEUTRON EMISSION
-           .SPECTRUM FOR 14.3-MEV INCIDENT NEUTRONS
-AUTHOR     (A.A.LYCHAGIN,V.P.LUNEV,O.A.SAL'NIKOV,V.A.VINOGRADOV,
-           B.V.DEVKIN,S.E.SUKHIKH)
-INSTITUTE  (4CCPFEI)
-REFERENCE  (R,FEI-923,79)
+ENTRY            40732   20200315   20200515   20200514       4186
+SUBENT        40732001   20200315   20200515   20200514       4186
+BIB                 13         36
+TITLE      .Measurement of inelastic neutron spectra on Fe nuclei
+            and analysis of the hard part of neutron emission
+            spectrum for 14.3-MeV energy of incident neutrons
+AUTHOR     (A.A.Lychagin,V.P.Lunev,O.A.Sal'nikov,V.A.Vinogradov,
+           B.V.Devkin,S.E.Sukhikh)
+INSTITUTE  (4RUSFEI)
+REFERENCE  (R,FEI-923,1979)
 INC-SOURCE (D-T)
-METHOD     (TOF) FLIGHT BASE 3M
-FACILITY   (VDG) ACCELERATOR KG-0.3
-DETECTOR   (SOLST) STILBENE CRYSTAL
+METHOD     (TOF) Flight base 3m
+FACILITY   (CCW,4RUSFEI) Accelerator KG-0.3
+SAMPLE      Cylinder of 45mm outer diameter, 25 mm inner diameter,
+            50 mm long. Placed at 170 mm distance from neutron
+            source.
+DETECTOR   (SOLST) Stilbene crystal of 70 mm diameter, 50 mm long,
+           with FEU-30 photomultiplier as scattered neutron
+           detector.
+           .Stilbene crystal of 45 mm diameter, 25 mm long, with
+           FEU-30 photomultiplier as incident neutron monitor.
 MONITOR    (6-C-12(N,INL)6-C-12,PAR,DA)
+           Differential CS for first excited level - for absolute
+           normalization. Coefficient (1.24+-0.1)*10**-4
            (1-H-1(N,EL)1-H-1,,SIG)
-PART-DET   (N)
-HISTORY    (840618C) COMPILED AT THE CJD
-           (870220U) REACTION SF4,SF5 IN SAN 002 CORRECTED
-                     EN-SEC KEYWORD IN SAN 001 DELETED AND QUANTI-
-                     TY IN SAN 004 EXPLAINED
-           (920702A) SAN 004 DELETED BECAUSE VALUE GIVEN THERE
-                     IS THEORETICAL PARAMETER AND NOT EXPERIMENTAL
-                     VALUE
-STATUS     (PRELM) CLASSIFIED AS PRELIMINARY BY AUTHOR(LYCHAGIN)
-ENDBIB              22
+            Coefficient (1.32+-0.12)*10**-4
+CORRECTION For attenuation and multiple scattering.
+STATUS     (PRELM) Classified as preliminary by author(Lychagin)
+HISTORY    (19840618C) Compiled at the CJD
+           (19870220U) REACTION SF4,SF5 in SAN 002 corrected.
+                     EN-SEC keyword in SAN 001 deleted and quanti-
+                     ty in SAN 004 explained.
+           (19920702A) SAN 004 deleted because value given there
+                     is theoretical parameter and not experimental
+                     value
+           (20200315A) VDG -> CCW in FACILITY.
+           Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           ERR-ANALYS was added in Subent 002.
+ENDBIB              36
 COMMON               2          3
-EN         EN-RSL
+EN         EN-RSL-HW
 MEV        MEV
   14.3        .2
 ENDCOMMON            3
-ENDSUBENT           29
-SUBENT        40732002     890504              20050926       0000
-BIB                  1          1
+ENDSUBENT           43
+SUBENT        40732002   20200315   20200515   20200514       4186
+BIB                  5         24
 REACTION   (26-FE-0(N,INL)26-FE-0,PAR,DA)
-ENDBIB               1
-NOCOMMON             0          0
+ANALYSIS   Spectra were transformed from lab.system in C.M.S.,
+           relation between angles is given in Table 1. Finally,
+           angles in C.M.S was taken as angles values in
+           lab.system, uncertainty due to this transformation was
+           introduced in data error.
+ERR-ANALYS (DATA-ERR) relative error includes (see fromula on p.6
+           of FEI-923 for calculation):
+           - Statistical uncertainty of time spectra measurement,
+           - Uncertainty of time-of-flight (+-1 channel,
+           TAU=1.034 nsec) = TAU/t,
+           (ERR-1) Uncertainty due to channel width definition,
+           (ERR-2) Uncertainty due to differential no-linearity,
+           average for energy range,
+           (ERR-3,,1.) Uncertainty due to time-of-flight
+           determination,
+           (ERR-4) Uncertainty of detection efficiency,
+           (ERR-5) Uncertainty of monitoring,
+           (ERR-6) Uncertainty due to correction for attenuation
+           and multiple scattering,
+           (ERR-7,,0.3) Uncertainty due to transformation in
+           C.M.S.
+STATUS     (TABLE) Table 3 of rep.FEI-923,1979
+HISTORY    (20200315A) DATA -> DATA-CM
+ENDBIB              24
+COMMON               6          3
+ANG-RSL-HW ERR-1      ERR-2      ERR-4      ERR-5      ERR-6
+ADEG       PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 1.          1.        1.         4.         2.1        4.
+ENDCOMMON            3
 DATA                 5         36
-ANG        E-MIN      E-MAX      DATA       DATA-ERR
+ANG        E-MIN      E-MAX      DATA-CM    DATA-ERR
 ADEG       MEV        MEV        MB/SR      MB/SR
    45.        1.5         2.5       29.5       1.
    45.        2.5         3.5       19.2        .7
@@ -75,19 +116,23 @@ ADEG       MEV        MEV        MB/SR      MB/SR
    150.       6.5         8.5      6.1         .3
    150.       8.5        10.5      3.1         .2
 ENDDATA             38
-ENDSUBENT           44
-SUBENT        40732003     850107              20050926       0000
-BIB                  1          3
-REACTION   ((26-FE-56(N,INL)26-FE-56,,SIG)+
-           (26-FE-56(N,2N)26-FE-55,,SIG)+
-           (26-FE-56(N,2N)26-FE-55,,SIG))
-ENDBIB               3
+ENDSUBENT           71
+SUBENT        40732003   20200315   20200515   20200514       4186
+BIB                  5          7
+REACTION   (26-FE-56(N,X)0-NN-1,EM,SIG)
+ANALYSIS    CS was calculated by integral spectrum.
+ERR-ANALYS (DATA-ERR) Total error.
+STATUS     (TABLE) Text page 9 of rep.FEI-923,1979
+           (DEP,40732002) Spectrum
+HISTORY    (20200315A) Reaction was corrected:
+            SIG(n,n')+2*SIG(n,2n) -> (n,x) neutron emission.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
-DATA       ERR-T
+DATA       DATA-ERR
 B          B
  1.66       0.09
 ENDDATA              3
-ENDSUBENT           11
-NOSUBENT      40732004     920702              20050926       0000
+ENDSUBENT           15
+NOSUBENT      40732004   20200315   20200515   20200514       4186
 ENDENTRY             4

@@ -1,19 +1,18 @@
-ENTRY            40386   20161114   20170703   20170630       4175
-SUBENT        40386001   20161114   20170703   20170630       4175
-BIB                 10         23
+ENTRY            40386   20200203   20200515   20200514       4186
+SUBENT        40386001   20200203   20200515   20200514       4186
+BIB                  9         23
 INSTITUTE  (4RUSKUR)   Govor, Demidov
            (3IRQNRI)   Akhmed, Shakarchi, Al-Amili, Al-Asafi
-REFERENCE  (P,YFI-21,8,197601) Tables of data are given
+REFERENCE  (P,YFI-21,8,1976) Tables of data are given
            (P,INDC(CCP)-111,7,1978) Engl.translation of YFI-21,8
 AUTHOR     (L.I.Govor,A.M.Demidov,M.R.Akhmed,Kh.I.Shakarchi,
            S.Al-Najar, M.A.Al-Amili,N.Al-Asafi)
 TITLE      The level population for 104Pd and 106Pd in inelastic
            scattering of fast neutrons from a reactor
-FACILITY   (REAC,4RUSKUR)  Reactor
-INC-SOURCE (REAC) Reactor
+FACILITY   (REAC,3IRQNRI)
+INC-SOURCE (REAC)
 METHOD     (GSPEC)  Direct detection of gammas
-DETECTOR   (GELI) Germanium-lithium detector
-PART-DET   (G) Gammas
+DETECTOR   (GELI)
 HISTORY    (19770105C)  Compiled at the centre
            (20021015U) Corrected in CJD after Varlamov's comment
            (20021015A) Date is corrected
@@ -24,15 +23,16 @@ HISTORY    (19770105C)  Compiled at the centre
            BIB information was updated in TITLE,AUTHOR,ERR-ANALYS.
            STATUS was added.
            Data values were corrected to obtain NO-DIM units.
+           (20200203A) Subent 002 was corrected.
 ENDBIB              23
 COMMON               1          3
 EN-DUMMY
 MEV
- 1.0000E+00
+ 1.0
 ENDCOMMON            3
 ENDSUBENT           30
-SUBENT        40386002   20161114   20170703   20170630       4175
-BIB                  6         14
+SUBENT        40386002   20200203   20200515   20200514       4186
+BIB                  7         25
 REACTION   ((46-PD-104(N,INL)46-PD-104,,SPC,,FIS)//
            (46-PD-104(N,INL)46-PD-104,,SPC,,FIS))
            In table of the article the data are given in %,
@@ -42,19 +42,30 @@ EN-SEC     (E-DN,G)
 MONITOR    .All intensities are measured relative to the intensity
             of 555.74 keV gamma-rays from Pd-104(n,ng) reaction
 ERR-ANALYS (ERR-S)   Statistical.
-            E-RSL is nominator energy resolution
+COMMENT    .Of compiler.
+            Angle of measurement is not mentioned in the article,
+            but probably SPC -> SPC/DA and ANG=90deg ?
+           .Of author.
+            E-gamma 1397., 1409., 1542.,1762., 1782., 1794.,
+            2420. keV are multiplets;
 STATUS     (TABLE) Table of INDC(CCP)-111,7,1978
+               = preprint YFI-21,p.8,1976 (initial publication)
+           (SPSDD,31816077) Publication in GAMMAATLAS,1978.
+           Number of lines is the same,
+           the data are slightly different.
 HISTORY    (20161114A) M.M. Data values were corrected to obtain
             NO-DIM units. LVL-INI, LVL-FIN were added.
             All data values were corrected as given in the Table.
-ENDBIB              14
-COMMON               1          3
-E-DN
-KEV
-  555.74
+           (20200203A) Code SPSDD was added (memo 4C-3/417).
+            COMMENT was added.
+ENDBIB              25
+COMMON               2          3
+E-DN       E-DN-ERR
+KEV        KEV
+  555.74     0.07
 ENDCOMMON            3
 DATA                 6        104
-E-NM       E-RSL      DATA       ERR-S      LVL-INI    LVL-FIN
+E-NM       E-NM-ERR   DATA       ERR-S      LVL-INI    LVL-FIN
 KEV        KEV        NO-DIM     NO-DIM     KEV        KEV
  215.6      0.2         0.7   E-2   0.2  E-2
  460.0      0.5         0.16  E-2   0.03 E-2  1793.8    1333.7
@@ -161,5 +172,5 @@ KEV        KEV        NO-DIM     NO-DIM     KEV        KEV
  3032.0     0.8         0.14  E-2   0.04 E-2
  3281.3     1.1         0.07  E-2   0.03 E-2  3281.5       0.
 ENDDATA            106
-ENDSUBENT          129
+ENDSUBENT          140
 ENDENTRY             2

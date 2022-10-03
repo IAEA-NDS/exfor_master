@@ -1,6 +1,6 @@
-ENTRY            41154   20091203   20100209   20100209       4148
-SUBENT        41154001   20091203   20100209   20100209       4148
-BIB                 10         27
+ENTRY            41154   20200214   20200515   20200514       4186
+SUBENT        41154001   20200214   20200515   20200514       4186
+BIB                  9         25
 TITLE       Determination of the resonance structure parameters
             of the U-238 cross-section on the basis of the
             measurements of total and partial transmissions
@@ -10,16 +10,13 @@ AUTHOR     (Yu.V.Grigoriev,V.N.Koshcheev,G.N.Manturov,
 INSTITUTE  (4RUSFEI)  Grigoriev(=Grigor'ev), Koshcheev, Manturov,
                       Sinitsa
            (4ZZZDUB)  Sirakov, Yaneva
-REFERENCE  (R,FEI-2072,199003)  Data Tables are given
+REFERENCE  (R,FEI-2072,1990)  Data Tables are given
            (T,GRIGORIEV,2005)  Dissertation of
                                   Dr.Yu.V.Grigoriev
-MONITOR     No Information.
-FACILITY   (REAC,4ZZZDUB)   Fast Pulse Reactor IBR-30
-STATUS       Data are taken from the references
-           (COREL,40876001) Exp. details and other data - see
-                            ENTRY 40876 .
-SAMPLE       Metallic uranium disks, thickness from 1 mm (4.7e-3
-             atoms/barn) to 64 mm (3.03e-1 atoms/barn)
+MONITOR     No information.
+FACILITY   (REAC,4ZZZDUB)   Fast pulse reactor IBR-30
+SAMPLE       Metallic uranium disks, thickness from 1 mm (4.7E-3
+             atoms/barn) to 64 mm (3.03E-1 atoms/barn)
 ERR-ANALYS             Errors, if present, are not specified
 HISTORY    (19940608C)  + + Compiled at the Centre - CJD + +
            (19950421U)  - - REACTION code in SAN 004 corrected - -
@@ -28,20 +25,24 @@ HISTORY    (19940608C)  + + Compiled at the Centre - CJD + +
            (20070417A) M.M. Data of SUBENT .003 were corrected.
             Second reference was added.
            (20091203A) Information in STATUS was added.
-ENDBIB              27
+           (20200214U) Corrections in STATUS of data Subents.
+ENDBIB              25
 NOCOMMON             0          0
-ENDSUBENT           30
-SUBENT        41154002   20091203   20100209   20100209       4148
-BIB                  4          8
+ENDSUBENT           28
+SUBENT        41154002   20200214   20200515   20200514       4186
+BIB                  5         11
 REACTION   (92-U-238(N,TOT),,SIG,,AV) Average over energy
                region given in the data table
 METHOD     (TOF) Time-of-flight, flight base is 1006 m
 DETECTOR   (HE3SP)  Battery of 18 He-3 counters for total
                     transmission measurements
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           articles.
 STATUS     (TABLE) Table 1 of R,FEI-2072,1990 =
                    Table 39 of T,GRIGORIEV,2005 .
-           (COREL,40876006)  41154 superseds 40876006 .
-ENDBIB               8
+                             41154.002 supersedes 40876.006 .
+           (DEP,40876004) Transmission
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4          8
 EN-MIN     EN-MAX     DATA       DATA-ERR
@@ -55,17 +56,20 @@ KEV        KEV        B          B
        46.5       100.       12.8        0.3
        100.       200.       11.5        0.3
 ENDDATA             10
-ENDSUBENT           23
-SUBENT        41154003   20091203   20100209   20100209       4148
-BIB                  4          7
+ENDSUBENT           26
+SUBENT        41154003   20200214   20200515   20200514       4186
+BIB                  5         10
 REACTION   (92-U-238(N,G)92-U-239,,SIG,,AV)  Cross-section
             averaged over energy interval given in the data
             table with the weight Exp(-(TOT-SIG)*L)
 METHOD     (TOF) Time-of-flight, flight base is 501 m
 DETECTOR   (NAICR)  Multisectional scintillation counter
                     consisting of 16 Na-I(TL) crystals
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           articles.
 STATUS     (TABLE) Table 41 of T,GRIGORIEV,2005 .
-ENDBIB               7
+           (DEP,40876004) Self-indication function
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4          7
 EN-MIN     EN-MAX     DATA       DATA-ERR
@@ -78,56 +82,57 @@ KEV        KEV        B          B
        21.5       46.5       0.44       0.03
        46.5       100.       0.31       0.04
 ENDDATA              9
-ENDSUBENT           21
-SUBENT        41154004   20091203   20100209   20100209       4148
-BIB                  4         14
-REACTION   (92-U-238(N,EL),,STF) Strength function dependent on
-                                    angular momentum
-ASSUMED    (ASSUM1,92-U-238(N,0),,D)Average level spacing for L=0
-           (ASSUM2,92-U-238(N,0),,D)Average level spacing for L=1
-           (ASSUM3,92-U-238(N,0),,D)Average level spacing for L=2
-           (ASSUM4,92-U-238(N,EL),PAR,STF) Strength Function, L=2
-STATUS     (DEP,41154002)
-           (DEP,41154003)
+ENDSUBENT           24
+SUBENT        41154004   20200214   20200515   20200514       4186
+BIB                  5         15
+REACTION   (92-U-238(N,EL),,STF)
+ASSUMED    (ASSUM,92-U-238(N,0),,D)
+            For L=0,1 - in DATA block, for L=2 4.1 eV ;
+            Strength function for L=2 2.E-04
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           articles.
+STATUS     (DEP,41154002)  Total CS
+           (DEP,41154003)  Capture CS
            (TABLE)   Table 4 of R,FEI-2072,1990.
-           (COREL,40876007) 41154004 superseds 40876007 .
+                            41154004 supersedes 40876007 .
 HISTORY    (19950421U)  'PAR' in REACTION SF5 deleted
-           (19990817U)  Data headings corrected. G-Wid moved to
+           (19990817U)  Data headings corrected. G-WID moved to
                         separate SUBENT
            (20011224U) Last checking has been done.
-ENDBIB              14
-COMMON               6          3
-EN-MIN     EN-MAX     ASSUM1     ASSUM2     ASSUM3     ASSUM4
-KEV        KEV        EV         EV         EV         NO-DIM
-       4.65       200.       20.8        6.9        4.1     2.E-04
+           (20200214A) EN-MIN/MAX -> EN-RES-MIN/MAX
+ENDBIB              15
+COMMON               2          3
+EN-RES-MIN EN-RES-MAX
+KEV        KEV
+       4.65       200.
 ENDCOMMON            3
-DATA                 3          2
-MOMENTUM L DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM
-         0.    1.1E-04     5.E-06
-         1.    1.7E-04     2.E-05
+DATA                 4          2
+MOMENTUM L DATA       DATA-ERR   ASSUM
+NO-DIM     NO-DIM     NO-DIM     EV
+         0.    1.1E-04     5.E-06  20.8
+         1.    1.7E-04     2.E-05   6.9
 ENDDATA              4
-ENDSUBENT           27
-SUBENT        41154005   20091203   20100209   20100209       4148
-BIB                  4         13
-REACTION   (92-U-238(N,G),,WID)     Gamma-Width dependent of
-                                    angular momentum
-ASSUMED    (ASSUM1,92-U-238(N,0),,D)Average level spacing for L=0
-           (ASSUM2,92-U-238(N,0),,D)Average level spacing for L=1
-           (ASSUM3,92-U-238(N,0),,D)Average level spacing for L=2
-           (ASSUM4,92-U-238(N,EL),PAR,STF) Strength Function, L=2
-STATUS     (DEP,41154002)
-           (DEP,41154003)
+ENDSUBENT           28
+SUBENT        41154005   20200214   20200515   20200514       4186
+BIB                  5         13
+REACTION   (92-U-238(N,G),,WID)
+ASSUMED    (ASSUM,92-U-238(N,0),,D)
+           For L=0 - in DATA block, for L=1 6.9eV, for L=2 4.1eV ;
+            Strength function for L=2 2.E-04
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+           articles.
+STATUS     (DEP,41154002)  Total CS
+           (DEP,41154003)  Capture CS
            (TABLE)  Table 4 of R,FEI-2072,1990.
-           (COREL,40876009) 41154005 superseds 40876009.
+                            41154005 supersedes 40876009.
 HISTORY    (19990817C)  Compiled at CJD
-           (20011224U) Last checking has been done.'PAR' SF5 DELTD
+           (20011224U) Last checking has been done.'PAR' SF5 deltd
            (20030108U) Energy data heading changed to EN-RES-
 ENDBIB              13
-COMMON               5          3
-MOMENTUM L ASSUM1     ASSUM2     ASSUM3     ASSUM4
-NO-DIM     EV         EV         EV         NO-DIM
-         0.       20.8        6.9        4.1     2.E-04
+COMMON               2          3
+MOMENTUM L ASSUM
+NO-DIM     EV
+         0.       20.8
 ENDCOMMON            3
 DATA                 4          1
 EN-RES-MIN EN-RES-MAX DATA       DATA-ERR
@@ -135,35 +140,31 @@ KEV        KEV        MILLI-EV   MILLI-EV
        4.65       200.       23.5        0.7
 ENDDATA              3
 ENDSUBENT           25
-SUBENT        41154006   20091203   20100209   20100209       4148
-BIB                  4         13
-REACTION   (92-U-238(N,EL)92-U-238,POT,RAD) Radius of potential
-                                            scattering
-ASSUMED    (ASSUM1,92-U-238(N,0),,D)Average level spacing for L=0
-           (ASSUM2,92-U-238(N,0),,D)Average level spacing for L=1
-           (ASSUM3,92-U-238(N,0),,D)Average level spacing for L=2
-           (ASSUM4,92-U-238(N,EL),PAR,STF) Strength Function, L=2
-           (ASSUM5,92-U-238(N,EL)92-U-238,POT,RAD) Radius for L=2
-STATUS     (DEP,41154002)
-           (DEP,41154003)
+SUBENT        41154006   20200214   20200515   20200514       4186
+BIB                  4         12
+REACTION   (92-U-238(N,EL)92-U-238,,RAD)
+ASSUMED    (ASSUM,92-U-238(N,0),,D)
+            For L=0,1 - in DATA block, for L=2 4.1 eV ;
+            Strength function for L=2 2.E-04
+            Radus for L=3 9.35 Fermi
+STATUS     (DEP,41154002) Total CS
+           (DEP,41154003) Capture CS
            (TABLE) Table 4 of R,FEI-2072,1990.
-           (COREL,40876010) 41154006 superseds 40876009 .
+                            41154006 supersedes 40876010 .
 HISTORY    (19990817C)  Compiled at CJD
            (20011224U) Last checking has been done.
-ENDBIB              13
-COMMON               7          6
-EN-MIN     EN-MAX     ASSUM1     ASSUM2     ASSUM3     ASSUM4
-ASSUM5
-KEV        KEV        EV         EV         EV         NO-DIM
-FERMI
-       4.65       200.       20.8        6.9        4.1     2.E-04
-       9.35
-ENDCOMMON            6
-DATA                 2          2
-MOMENTUM L DATA
-NO-DIM     FERMI
-         0.       9.35
-         1.        8.0
+           (20200214A) POT was deleted from SF5.
+ENDBIB              12
+COMMON               2          3
+EN-MIN     EN-MAX
+KEV        KEV
+       4.65       200.
+ENDCOMMON            3
+DATA                 3          2
+MOMENTUM L DATA       ASSUM
+NO-DIM     FERMI      EV
+         0.       9.35  20.8
+         1.        8.0   6.9
 ENDDATA              4
-ENDSUBENT           29
+ENDSUBENT           25
 ENDENTRY             6

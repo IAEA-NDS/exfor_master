@@ -1,24 +1,25 @@
-ENTRY            40284   20120322   20120702   20120621       4156
-SUBENT        40284001   20120322   20120702   20120621       4156
-BIB                 14         42
+ENTRY            40284   20200327   20200515   20200514       4186
+SUBENT        40284001   20200327   20200515   20200514       4186
+BIB                 15         50
 INSTITUTE  (4RUSFEI)
-REFERENCE  (C,73KIEV,3,270,197305) Data given partially
+REFERENCE  (C,73KIEV,3,270,1973) Data given partially
 AUTHOR     (V.G.Vorob'yeva,N.D.D'yachenko,B.D.Kuz'minov,
            A.I.Sergachev,V.M.Surin)
 TITLE      Mass yields and kinetic energy of fragments
            for fission of plutonium isotopes
+FACILITY   (VDG,4RUSFEI)
+INC-SOURCE (D-D)
 METHOD     (COINC) Coincidence between the fission fragments
-DETECTOR   (SOLST) Silicon detector
+DETECTOR   (SI)    Silicon detector for FF
 ANALYSIS   Mass of fission fragments was calculated
            according to the formula MH=A*EL/(EL+EH).
            here A- mass-number of fissible nucleus,
                 EL and EH- kinetic energy measured for light
                 and heavy fission fragments
-MONITOR    (92-U-235(N,F),,AKE,FF)
             Average kinetic energy
            of fragments at the fission of U-235
-           by thermal neutrons
-PART-DET   (FF) Fission fragments
+           by thermal neutrons was used for normalization.
+ASSUMED    (ASSUM,92-U-235(N,F),,AKE,FF) At thermal energy
 COMMENT    Of compiler. Titles of Figures 1 and 3 are jumbled in
            the article.
 STATUS     Data given by authors
@@ -34,7 +35,6 @@ ERR-ANALYS Statistical errors of mass-yields and
                 EK- average kinetic energy of fragments
                     with given mass M,
                 N-  number of the registered fragments
-                    at the fission of plutonium isotopes
                     by neutrons.
 HISTORY    (19750520C)
            (20120322A) M.M. Misprint in EN units was corrected in
@@ -43,71 +43,79 @@ HISTORY    (19750520C)
            COMMENT of compiler was added.
             AKE -> KE was corrected in Subents 010-012,015-016
            according to comment of N.Otsuka (NDS IAEA) .
-ENDBIB              42
-COMMON               2          3
-MONIT      EN-NRM
-MEV        EV
- 1.7225E+02 2.5300E-02
+           (20200327U) COREL was added in Subents 004,005 .
+            FF -> LF+HF in SF7.
+           "PART-DET (FF)" was deleted according to a comment of
+           N.Otsuka (NDS,IAEA).
+           Code (SEC) was added in SF5 - see CORRECTION (probably
+           from authors), but no explanation in the article;
+           MONITOR -> ASSUMED according to a comment of
+           N.Otsuka (NDS,IAEA).
+ENDBIB              50
+COMMON               1          3
+ASSUM
+MEV
+ 1.7225E+02
 ENDCOMMON            3
-ENDSUBENT           49
-SUBENT        40284002   20120322   20120702   20120621       4156
-BIB                  5          5
-REACTION   (94-PU-238(N,F),,AKE,FF)
-FACILITY   (VDG,4RUSFEI)  Van-de-Graaff
-INC-SOURCE (D-D)  Deuteron-deuterium reaction
-STATUS     (TABLE) Table 1 of C,73KIEV,3,270,1973 for 0.8 MeV.
+ENDSUBENT           57
+SUBENT        40284002   20200327   20200515   20200514       4186
+BIB                  4          7
+REACTION   (94-PU-238(N,F),(SEC),AKE,LF+HF)
+STATUS     (TABLE) Table 1 of Conf.Proc.73KIEV,3,270,1973 for
+           0.8 MeV.
 ERR-ANALYS (DATA-ERR) Not specified in article.
-ENDBIB               5
+HISTORY    (20200327A) Second data line was deleted - source of
+           these data is not clear, no such inc.energy in the
+           article (EN=122MeV, AKE=0.128+-0.038 MeV)
+ENDBIB               7
 NOCOMMON             0          0
-DATA                 3          2
+DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        MEV        MEV
  8.0000E-01 1.7850E+02 2.5000E+00
- 1.2200E+02 1.2800E-01 3.8000E-02
-ENDDATA              4
-ENDSUBENT           14
-SUBENT        40284003   20120322   20120702   20120621       4156
-BIB                  5          7
-REACTION   (94-PU-239(N,F),,AKE,FF)
-FACILITY   (VDG,4RUSFEI)  Van-de-Graaff
-INC-SOURCE (D-D)  Deuteron-deuterium reaction
-           Thermal neutrons were obtained by moderation of
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        40284003   20200327   20200515   20200514       4186
+BIB                  4          5
+REACTION   (94-PU-239(N,F),(SEC),AKE,LF+HF)
+INC-SOURCE  Thermal neutrons were obtained by moderation of
            fast neutrons in paraffin block
-STATUS     (TABLE) Table 1 of C,73KIEV,3,270,1973.
+STATUS     (TABLE) Table 1 of Conf.Proc.73KIEV,3,270,1973.
 ERR-ANALYS (DATA-ERR) Not specified in article.
-ENDBIB               7
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         MEV        MEV
  2.5300E-02 1.7880E+02 5.0000E-01
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        40284004   20120322   20120702   20120621       4156
-BIB                  5          5
-REACTION   (94-PU-240(N,F),,AKE,FF)
-FACILITY   (VDG,4RUSFEI)  Van-de-Graaff
-INC-SOURCE (D-D)  Deuteron-deuterium reaction
-STATUS     (TABLE) Table 1 of C,73KIEV,3,270,1973.
+ENDSUBENT           13
+SUBENT        40284004   20200327   20200515   20200514       4186
+BIB                  5          6
+REACTION   (94-PU-240(N,F),(SEC),AKE,LF+HF)
+FACILITY   (VDG,4RUSFEI)
+INC-SOURCE (D-D)
+STATUS     (TABLE) Table 1 of Conf.Proc.73KIEV,3,270,1973.
+           (COREL,40342006) Different analysis, monitor .
 ERR-ANALYS (DATA-ERR) Not specified in article.
-ENDBIB               5
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        MEV        MEV
  1.3300E+00 1.7820E+02 5.0000E-01
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40284005   20120322   20120702   20120621       4156
-BIB                  5          9
-REACTION   (94-PU-241(N,F),,AKE,FF)
-FACILITY   (VDG,4RUSFEI)  Van-de-Graaff
-INC-SOURCE (D-D)  Deuteron-deuterium reaction
-           Thermal neutrons were obtained by moderation of
+ENDSUBENT           14
+SUBENT        40284005   20200327   20200515   20200514       4186
+BIB                  4          9
+REACTION   (94-PU-241(N,F),(SEC),AKE,LF+HF)
+INC-SOURCE  Thermal neutrons were obtained by moderation of
            fast neutrons in paraffin block
 STATUS     (TABLE) From authors.
-           Data at thermal point - Table 1 of C,73KIEV,3,270,1973.
-           Data are on Fig.3 of C,73KIEV,3,270,1973.
+           Data at thermal point - Table 1 of
+           Conf.Proc.73KIEV,3,270,1973.
+           Data are on Fig.3 of Conf.Proc.73KIEV,3,270,1973.
+           (COREL,40342007) Different analysis, monitor .
 ERR-ANALYS (DATA-ERR) Not specified in article.
 ENDBIB               9
 NOCOMMON             0          0
@@ -125,16 +133,15 @@ MEV        MEV        MEV
  2.7400E+00 1.7864E+02 1.0000E-01
 ENDDATA             11
 ENDSUBENT           25
-SUBENT        40284006   20120322   20120702   20120621       4156
-BIB                  5          7
-REACTION   (94-PU-242(N,F),,AKE,FF)
-FACILITY   (VDG,4RUSFEI)  Van-de-Graaff
-INC-SOURCE (D-D)  Deuteron-deuterium reaction
+SUBENT        40284006   20200327   20200515   20200514       4186
+BIB                  3          6
+REACTION   (94-PU-242(N,F),(SEC),AKE,LF+HF)
 STATUS     (TABLE) From authors.
-           Data at 0.7 MeV - Table 1 of C,73KIEV,3,270,1973.
-           Data are on Fig.3 of C,73KIEV,3,270,1973.
+           Data at 0.7 MeV - Table 1 of
+           Conf.Proc.73KIEV,3,270,1973.
+           Data are on Fig.3 of Conf.Proc.73KIEV,3,270,1973.
 ERR-ANALYS (DATA-ERR) Not specified in article.
-ENDBIB               7
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3         12
 EN         DATA       DATA-ERR
@@ -152,7 +159,7 @@ MEV        MEV        MEV
  3.1500E+00 1.7837E+02 1.0000E-01
  3.3700E+00 1.7820E+02 1.0000E-01
 ENDDATA             14
-ENDSUBENT           26
+ENDSUBENT           25
 SUBENT        40284007   20120322   20120702   20120621       4156
 BIB                  3          4
 REACTION   (94-PU-242(0,F)MASS,PRE,FY)
