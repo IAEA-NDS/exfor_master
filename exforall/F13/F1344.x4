@@ -1,6 +1,6 @@
-ENTRY            F1344   20180605   20181008   20180927       F068
-SUBENT        F1344001   20180605   20181008   20180927       F068
-BIB                  9         19
+ENTRY            F1344   20210608   20210819   20210819       F085
+SUBENT        F1344001   20210608   20210819   20210819       F085
+BIB                  9         21
 TITLE      Angular alpha-gamma correlation analysis of the
            mechanism of a-28Si scattering at Ea=25 MeV.
 AUTHOR     (A.V.Ignatenko,V.M.Lebedev,N.V.Orlova,A.V.Spasskii,
@@ -20,13 +20,15 @@ SAMPLE     Silicon plates with the thickness from 0.4 to 2
             (about 2 mg/cm2) were used.
 METHOD     (COINC,GSPEC)
 HISTORY    (20180605C)
-ENDBIB              19
+           (20210608A) SD: Corrections in Subents 004-008.
+           Subents 007, 008 deleted.
+ENDBIB              21
 COMMON               1          3
 EN
 MEV
         25.
 ENDCOMMON            3
-ENDSUBENT           26
+ENDSUBENT           28
 SUBENT        F1344002   20180605   20181008   20180927       F068
 BIB                  3          3
 REACTION   (14-SI-28(A,EL)14-SI-28,,DA)
@@ -266,179 +268,207 @@ MEV        ADEG       MB/SR      MB/SR
        4.98     165.75 4.5034E-01 1.1846E-01
 ENDDATA            146
 ENDSUBENT          158
-SUBENT        F1344004   20180605   20181008   20180927       F068
-BIB                  4         10
-REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,A/G,NCP/REL)
-COMMENT    No explanation of relative units is given. Angle
-           definition: ANG-AZ is an azimuthal angle between
-           alpha and gamma reaction planes, ANG1-CM is a
-           polar angle between initial alpha beam direction
-           and scattered alphas direction, ANG2 is a polar
-           angle between initial alpha beam direction and
-           residual gamma direction.
-ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (CURVE) Fig.2
-ENDBIB              10
-COMMON               4          3
-E-LVL      ANG1       ANG-ERR-D  ERR-DIG
-MEV        ADEG       ADEG       ARB-UNITS
-       1.78        20.       0.71      4.531
+SUBENT        F1344004   20210608   20210819   20210819       F085
+BIB                  5         15
+REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,G/A,REL)
+           No explanation of relative units is given.
+ANG-SEC    ANG-AZ-RL is an azimuthal angle between reaction
+           planes = 180.degr.
+           (ANG1,A) A polar angle between initial alpha beam
+                    direction and scattered alphas direction
+           (ANG2,G) A polar angle between initial alpha beam
+                    direction and residual gamma direction
+ERR-ANALYS (ANG-ERR-D)Digitizing error for ANG2
+           (ERR-S) Statistical error.
+STATUS     (CURVE) Fig.2 from Yad.Fiz.,55(1992)597
+HISTORY    (20210608A) SD: SF7=A/G -> G/A; SF8=NCP/REL -> REL in
+           REACTION code. ANG-AZ-RL=180.degr. excluded from the
+           COMMON section and values at ANG1 multiplied by -1.
+           ANG-SEC added. Part of data from Subent 005 added.
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 7         15
+E-LVL      ANG1       ANG2       ANG-ERR-D  DATA       ERR-S
+ERR-DIG
+MEV        ADEG       ADEG       ADEG       ARB-UNITS  ARB-UNITS
+ARB-UNITS
+       1.78       -20.      18.08       0.71    243.170
+      4.531
+       1.78       -20.      51.03       0.71    268.820
+      4.531
+       1.78       -20.      84.65       0.71     35.751
+      4.531
+       1.78       -20.     115.41       0.71    296.510
+      4.531
+       1.78       -20.     150.26       0.71    196.820     15.680
+      4.531
+       1.78       -50.      19.66       1.21     48.108      3.174
+      0.571
+       1.78       -50.      52.98       1.21     50.067      3.174
+      0.571
+       1.78       -50.      85.21       1.21      7.575
+      0.571
+       1.78       -50.     118.12       1.21     46.032      3.174
+      0.571
+       1.78       -50.     149.97       1.21     36.864      3.174
+      0.571
+       4.62       -50.      19.11       0.42    0.62432    0.07934
+    0.00667
+       4.62       -50.      50.68       0.42    0.50181    0.06347
+    0.00667
+       4.62       -50.      85.15       0.42    0.55429    0.06347
+    0.00667
+       4.62       -50.     119.81       0.42    0.46397    0.07934
+    0.00667
+       4.62       -50.     149.83       0.42    0.32537    0.06347
+    0.00667
+ENDDATA             34
+ENDSUBENT           54
+SUBENT        F1344005   20210608   20210819   20210819       F085
+BIB                  5         14
+REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,G/A,NCP/REL)
+           No explanation of relative units is given.
+ANG-SEC    ANG-AZ-RL is the azimuthal angle between alpha and
+           gamma reaction planes.
+           (ANG1,A) A polar angle between initial alpha beam
+                    direction and scattered alphas direction
+           (ANG2,G) A polar angle between initial alpha beam
+                    direction and residual gamma direction
+ERR-ANALYS (ANG-ERR-D)Digitizing error for ANG2
+           (ERR-S) Statistical error.
+STATUS     (CURVE) Fig.2 from Yad.Fiz.,55(1992)597
+HISTORY    (20210608A) SD: SF7=A/G -> G/A in REACTION code.
+           ANG-SEC added. Part of data from Subents 007, 008 added
+           ANG-AZ -> ANG-AZ-RL.
+ENDBIB              14
+COMMON               1          3
+ANG-AZ-RL
+ADEG
+       270.
 ENDCOMMON            3
-DATA                 4         14
-ANG-AZ     ANG2       DATA       ERR-S
-ADEG       ADEG       ARB-UNITS  ARB-UNITS
-       180.      18.08    243.170
-       180.      51.03    268.820
-       180.      84.65     35.751
-       180.     115.41    296.510
-       180.     150.26    196.820     15.680
-       225.      16.42    143.690
-       225.      28.89    183.720     23.520
-       225.      50.77    232.220     15.680
-       225.      61.80    225.110     15.680
-       225.      83.86    203.050
-       225.      94.85    211.620
-       225.     116.89    197.400
-       225.     126.39    174.510     23.520
-       225.     148.66     74.046     15.680
-ENDDATA             16
-ENDSUBENT           35
-SUBENT        F1344005   20180605   20181008   20180927       F068
-BIB                  4         10
-REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,A/G,NCP/REL)
-COMMENT    No explanation of relative units is given. Angle
-           definition: ANG-AZ is an azimuthal angle between
-           alpha and gamma reaction planes, ANG1-CM is a
-           polar angle between initial alpha beam direction
-           and scattered alphas direction, ANG2 is a polar
-           angle between initial alpha beam direction and
-           residual gamma direction.
-ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (CURVE) Fig.2
-ENDBIB              10
-COMMON               5          3
-E-LVL      ANG-AZ     ANG1       ANG-ERR-D  ERR-DIG
-MEV        ADEG       ADEG       ADEG       ARB-UNITS
-       1.78       270.        20.       0.49      0.902
+DATA                 7         24
+E-LVL      ANG1       ANG2       DATA       ERR-S      ANG-ERR-D
+ERR-DIG
+MEV        ADEG       ADEG       ARB-UNITS  ARB-UNITS  ADEG
+ARB-UNITS
+       1.78        20.      19.10     42.388     10.954       0.49
+      0.902
+       1.78        20.      42.68     42.724     14.112       0.49
+      0.902
+       1.78        20.      52.29     30.314      9.408       0.49
+      0.902
+       1.78        20.      74.52     14.947      9.408       0.49
+      0.902
+       1.78        20.      87.14     11.989      4.704       0.49
+      0.902
+       1.78        20.     106.00     12.257      9.408       0.49
+      0.902
+       1.78        20.     118.40     24.980      4.704       0.49
+      0.902
+       1.78        20.     137.24     26.816     10.976       0.49
+      0.902
+       1.78        20.     149.83     25.427      9.408       0.49
+      0.902
+       1.78        50.      20.44     19.053      2.352       0.76
+      0.309
+       1.78        50.      52.16     20.778      3.920       0.76
+      0.309
+       1.78        50.      61.70     20.040      5.488       0.76
+      0.309
+       1.78        50.      85.89      1.340      1.568       0.76
+      0.309
+       1.78        50.     119.00     12.481      4.704       0.76
+      0.309
+       1.78        50.     128.34     21.936                  0.76
+      0.309
+       4.62        50.      18.74    0.62887    0.11034       0.42
+    0.00667
+       4.62        50.      29.87    0.53586    0.11034       0.42
+    0.00667
+       4.62        50.      51.80    0.57053    0.11034       0.42
+    0.00667
+       4.62        50.      73.77    0.57367    0.11034       0.42
+    0.00667
+       4.62        50.      85.16    0.29151    0.09458       0.42
+    0.00667
+       4.62        50.     105.41    0.40477    0.11034       0.42
+    0.00667
+       4.62        50.     117.92    0.43809    0.11034       0.42
+    0.00667
+       4.62        50.     138.13    0.58287    0.11034       0.42
+    0.00667
+       4.62        50.     150.75    0.53737    0.11034       0.42
+    0.00667
+ENDDATA             52
+ENDSUBENT           75
+SUBENT        F1344006   20210608   20210819   20210819       F085
+BIB                  5         13
+REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,G/A,NCP/REL)
+           No explanation of relative units is given.
+ANG-SEC    ANG-AZ-RL is the azimuthal angle between alpha and
+           gamma reaction planes.
+           (ANG1,A) A polar angle between initial alpha beam
+                    direction and scattered alphas direction
+           (ANG2,G) A polar angle between initial alpha beam
+                    direction and residual gamma direction
+ERR-ANALYS (ANG-ERR-D)Digitizing error for ANG2
+           (ERR-S) Statistical error.
+STATUS     (CURVE) Fig.2 from Yad.Fiz.,55(1992)597
+HISTORY    (20210608A) SD: SF7=A/G -> G/A in REACTION code.
+           ANG-SEC added. Part of data from Subents 004, 008 added
+ENDBIB              13
+COMMON               1          3
+ANG-AZ-RL
+ADEG
+       225.
 ENDCOMMON            3
-DATA                 3          9
-ANG2       DATA       ERR-S
-ADEG       ARB-UNITS  ARB-UNITS
-      19.10     42.388     10.954
-      42.68     42.724     14.112
-      52.29     30.314      9.408
-      74.52     14.947      9.408
-      87.14     11.989      4.704
-     106.00     12.257      9.408
-     118.40     24.980      4.704
-     137.24     26.816     10.976
-     149.83     25.427      9.408
-ENDDATA             11
-ENDSUBENT           30
-SUBENT        F1344006   20180605   20181008   20180927       F068
-BIB                  4         10
-REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,A/G,NCP/REL)
-COMMENT    No explanation of relative units is given. Angle
-           definition: ANG-AZ is an azimuthal angle between
-           alpha and gamma reaction planes, ANG1-CM is a
-           polar angle between initial alpha beam direction
-           and scattered alphas direction, ANG2 is a polar
-           angle between initial alpha beam direction and
-           residual gamma direction.
-ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (CURVE) Fig.2
-ENDBIB              10
-COMMON               4          3
-E-LVL      ANG1       ANG-ERR-D  ERR-DIG
-MEV        ADEG       ADEG       ARB-UNITS
-       1.78        50.       1.21      0.571
-ENDCOMMON            3
-DATA                 4         10
-ANG-AZ     ANG2       DATA       ERR-S
-ADEG       ADEG       ARB-UNITS  ARB-UNITS
-       180.      19.66     48.108      3.174
-       180.      52.98     50.067      3.174
-       180.      85.21      7.575
-       180.     118.12     46.032      3.174
-       180.     149.97     36.864      3.174
-       225.      19.46     23.763      4.761
-       225.      52.41     59.044      4.761
-       225.      84.44     34.006
-       225.     117.69     42.310      3.174
-       225.     149.61     26.793      4.761
-ENDDATA             12
-ENDSUBENT           31
-SUBENT        F1344007   20180605   20181008   20180927       F068
-BIB                  4         10
-REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,A/G,NCP/REL)
-COMMENT    No explanation of relative units is given. Angle
-           definition: ANG-AZ is an azimuthal angle between
-           alpha and gamma reaction planes, ANG1-CM is a
-           polar angle between initial alpha beam direction
-           and scattered alphas direction, ANG2 is a polar
-           angle between initial alpha beam direction and
-           residual gamma direction.
-ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (CURVE) Fig.2
-ENDBIB              10
-COMMON               5          3
-E-LVL      ANG-AZ     ANG1       ANG-ERR-D  ERR-DIG
-MEV        ADEG       ADEG       ADEG       ARB-UNITS
-       1.78       270.        50.       0.76      0.309
-ENDCOMMON            3
-DATA                 3          6
-ANG2       DATA       ERR-S
-ADEG       ARB-UNITS  ARB-UNITS
-      20.44     19.053      2.352
-      52.16     20.778      3.920
-      61.70     20.040      5.488
-      85.89      1.340      1.568
-     119.00     12.481      4.704
-     128.34     21.936
-ENDDATA              8
-ENDSUBENT           27
-SUBENT        F1344008   20180605   20181008   20180927       F068
-BIB                  4         10
-REACTION   (14-SI-28(A,INL)14-SI-28,PAR,DA/DA,A/G,NCP/REL)
-COMMENT    No explanation of relative units is given. Angle
-           definition: ANG-AZ is an azimuthal angle between
-           alpha and gamma reaction planes, ANG1-CM is a
-           polar angle between initial alpha beam direction
-           and scattered alphas direction, ANG2 is a polar
-           angle between initial alpha beam direction and
-           residual gamma direction.
-ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (CURVE) Fig.2
-ENDBIB              10
-COMMON               4          3
-E-LVL      ANG1       ANG-ERR-D  ERR-DIG
-MEV        ADEG       ADEG       ARB-UNITS
-       4.62        50.       0.42    0.00667
-ENDCOMMON            3
-DATA                 4         19
-ANG-AZ     ANG2       DATA       ERR-S
-ADEG       ADEG       ARB-UNITS  ARB-UNITS
-       180.      19.11    0.62432    0.07934
-       180.      50.68    0.50181    0.06347
-       180.      85.15    0.55429    0.06347
-       180.     119.81    0.46397    0.07934
-       180.     149.83    0.32537    0.06347
-       225.      19.02    1.54330    0.07881
-       225.      51.98    1.54800    0.07881
-       225.      85.32    1.28480    0.06305
-       225.     119.97    1.21090    0.06305
-       225.     151.27    1.27840    0.07881
-       270.      18.74    0.62887    0.11034
-       270.      29.87    0.53586    0.11034
-       270.      51.80    0.57053    0.11034
-       270.      73.77    0.57367    0.11034
-       270.      85.16    0.29151    0.09458
-       270.     105.41    0.40477    0.11034
-       270.     117.92    0.43809    0.11034
-       270.     138.13    0.58287    0.11034
-       270.     150.75    0.53737    0.11034
-ENDDATA             21
-ENDSUBENT           40
+DATA                 7         19
+E-LVL      ANG1       ANG2       ANG-ERR-D  DATA       ERR-S
+ERR-DIG
+MEV        ADEG       ADEG       ADEG       ARB-UNITS  ARB-UNITS
+ARB-UNITS
+       1.78        20.      16.42       0.71    143.690
+      4.531
+       1.78        20.      28.89       0.71    183.720     23.520
+      4.531
+       1.78        20.      50.77       0.71    232.220     15.680
+      4.531
+       1.78        20.      61.80       0.71    225.110     15.680
+      4.531
+       1.78        20.      83.86       0.71    203.050
+      4.531
+       1.78        20.      94.85       0.71    211.620
+      4.531
+       1.78        20.     116.89       0.71    197.400
+      4.531
+       1.78        20.     126.39       0.71    174.510     23.520
+      4.531
+       1.78        20.     148.66       0.71     74.046     15.680
+      4.531
+       1.78        50.      19.46       1.21     23.763      4.761
+      0.571
+       1.78        50.      52.41       1.21     59.044      4.761
+      0.571
+       1.78        50.      84.44       1.21     34.006
+      0.571
+       1.78        50.     117.69       1.21     42.310      3.174
+      0.571
+       1.78        50.     149.61       1.21     26.793      4.761
+      0.571
+       4.62        50.      19.02       0.42    1.54330    0.07881
+    0.00667
+       4.62        50.      51.98       0.42    1.54800    0.07881
+    0.00667
+       4.62        50.      85.32       0.42    1.28480    0.06305
+    0.00667
+       4.62        50.     119.97       0.42    1.21090    0.06305
+    0.00667
+       4.62        50.     151.27       0.42    1.27840    0.07881
+    0.00667
+ENDDATA             42
+ENDSUBENT           64
+NOSUBENT      F1344007   20210608   20210819   20210819       F085
+NOSUBENT      F1344008   20210608   20210819   20210819       F085
 SUBENT        F1344009   20180605   20181008   20180927       F068
 BIB                  2          2
 REACTION   (14-SI-28(A,EL)14-SI-28,,IPA)
