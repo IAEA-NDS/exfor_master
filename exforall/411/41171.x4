@@ -1,76 +1,88 @@
-ENTRY            41171   20090922   20091127   20091127       4147
-SUBENT        41171001   20090922   20091127   20091127       4147
-BIB                 17         38
-TITLE       Neutron spectra in fission of Np-237 by the neutrons
-            with energies 2.9 and 14.7 MeV.
+ENTRY            41171   20210126   20210316   20210315       4192
+SUBENT        41171001   20210126   20210316   20210315       4192
+BIB                 17         46
+TITLE       Neutron spectra in 237Np fission induced by neutrons
+            of energy 2.9 and 14.7 MeV
 AUTHOR     (G.S.Boykov,V.D.Dmitriev,M.I.Svirin,G.N.Smirenkin)
 INSTITUTE  (4RUSRI ) Boykov, Dmitriev
            (4RUSFEI) Svirin, Smirenkin
-REFERENCE  (J,YF,57,(12),2126,199412)
+REFERENCE  (J,YF,57,2126,1994) Issue 12
            (J,PAN,57,2047,1994)  Engl. translation of YF.
-REL-REF    (N,41094001,G.S.Boykov+,J,AE,69,23,1990) Exp. Details
-MONITOR    (98-CF-252(0,F),,AKE,N)
-           ((MONIT)98-CF-252(0,F),PR,NU)
+           (J,ANE,21,585,1994) Data Table
+REL-REF    (N,41094001,G.S.Boikov+,J,AE,69,23,1990) Exp. details
+MONITOR    ((MONIT2)98-CF-252(0,F)0-NN-1,,KEM)
+           T0=1.420 MeV was used to approximate Cf neutron
+           spectrum, see formula (3) in Yad.Fiz.,v.57,p.2126.
+           ((MONIT1)98-CF-252(0,F),PR,NU)
 MONIT-REF  (,,R,NEANDC-311,1992)
            (,,R,INDC(SEC)-101,1992)
            (,,P,FEI-1917,1988)
            (,,R,IAEA-410,158,1987) IAEA-TECDOC-410
 METHOD     (TOF) Time-of-flight path 205cm under 90degrees to
               neutron beam.
-FACILITY   (VDG,4RUSRI)   Neutron Generator NG-400
+FACILITY   (VDG,4RUSRI)   Neutron generator NG-400
 DETECTOR   (FISCH)  Multi-layer fission chamber of 4 sections,
             FF registration efficiency - 70%.
 PART-DET   (N,FF)
 INC-SOURCE (D-D,D-T)
-SAMPLE       Np-237 layers of 2mg/cm2 thickness on both sides of
-            Aluminum  backing, 1.87g in each of three sections.
+SAMPLE       Np-237 layers of 2 mg/cm2 thickness on both sides of
+            aluminum  backing, 1.87 g in each of three sections.
             In 4th section of fission chamber - Np-237 layer on
             one side of backing with implanted Cf-252 nuclei.
 CORRECTION  Correction was made for neutron angular correlation.
-ERR-ANALYS (ERR-T)   Total Error takes into account:
-                  Statistical Error,
-                  Standard E-AVG and NU-BAR Errors,
-                  Corrections Errors,
-                  Systematic Errors.
+ERR-ANALYS (DATA-ERR) Error takes into account:
+                  statistical error,
+                  standard E-AVG and NU-BAR errors,
+                  corrections errors,
+                  systematic errors.
 STATUS      Data are taken from YF .
-HISTORY    (19950517C)  + + Compiled At The Center - CJD + +
+HISTORY    (19950517C)  + + Compiled at the center - CJD + +
            (20061215U) J,PAN,57,2047,1994 reference was added.
             Dates were corrected for 4-digit year. Information was
              added  into SUB.001. M.M.
            (20090922A) M.M. COMMON was added.
-             Reference J,AE,69,23,1990 was move in REL-REF.
-ENDBIB              38
-COMMON               2          3
-MONIT      MONIT-ERR
-PRT/FIS    PRT/FIS
- 3.7570     0.0054
+             Reference J,AE,69,23,1990 was moved in REL-REF.
+           (20210126A) Ref. J,ANE,21,585,1994 was added.
+            STATUS information was updated.
+             ,,AKE,N)  -> 0-NN-1,,KE) in MONITOR
+            MONIT -> MONIT1. MONIT2 value was added.
+            ERR-T -> DATA-ERR.
+ENDBIB              46
+COMMON               3          3
+MONIT1     MONIT1-ERR MONIT2
+PRT/FIS    PRT/FIS    MEV
+ 3.7570     0.0054     1.420
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        41171002   20090922   20091127   20091127       4147
-BIB                  2          2
-REACTION   (93-NP-237(N,F),PR,AKE,N)
-STATUS     (TABLE) Table 1 of J,YF,57,(12),2126,1994 .
-ENDBIB               2
+ENDSUBENT           53
+SUBENT        41171002   20210126   20210316   20210315       4192
+BIB                  3          5
+REACTION   (93-NP-237(N,F)0-NN-1,PR,KE)
+STATUS     (TABLE) Table 1 of Yad.Fiz.,v.57,is.12,p.2126,1994,
+           Table 1 of Annals of Nucl.Energy,v.21,p.585,1994
+HISTORY    (20210126A) Reaction was corrected:
+            ,PR,AKE,N) -> 0-NN-1,PR,KE)
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3          2
-EN         DATA       ERR-T
-EV         MEV        MEV
-   2.9 E+06   2.06       0.03
-   1.47E+07   2.13       0.04
+EN         DATA       DATA-ERR
+MEV        MEV        MEV
+   2.9        2.06       0.03
+  14.7        2.13       0.04
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        41171003   20090922   20091127   20091127       4147
-BIB                  3          3
+ENDSUBENT           14
+SUBENT        41171003   20210126   20210316   20210315       4192
+BIB                  3          4
 REACTION   (93-NP-237(N,F),PR,NU)
-STATUS     (TABLE) Table 1 of J,YF,57,(12),2126,1994 .
+STATUS     (TABLE) Table 1 of Yad.Fiz.,v.57,is.12,p.2126,1994,
+           Table 1 of Annals of Nucl.Energy,v.21,p.585,1994
 HISTORY    (20061215A) DATA Units were changed 'NO-DIM'->'PRT/FIS'
-ENDBIB               3
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3          2
-EN         DATA       ERR-T
+EN         DATA       DATA-ERR
 EV         PRT/FIS    PRT/FIS
-   2.9 E+06   3.01       0.07
-   1.47E+07   4.52       0.10
+   2.9        3.01       0.07
+  14.7        4.52       0.10
 ENDDATA              4
-ENDSUBENT           12
+ENDSUBENT           13
 ENDENTRY             3
