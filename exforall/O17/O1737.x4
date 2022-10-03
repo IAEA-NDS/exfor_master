@@ -1,6 +1,6 @@
-ENTRY            O1737   20160730   20161101   20160922       O058
-SUBENT        O1737001   20160730   20161101   20160922       O058
-BIB                 14         31
+ENTRY            O1737   20191006   20191218   20191217       O072
+SUBENT        O1737001   20191006   20191218   20191217       O072
+BIB                 13         33
 TITLE      Thin target yields and EMPIRE-II predictions on the
            accelerator production of technetium-99-m
 AUTHOR     (M.B.Challan, M.N.H.Cosman, M.A.Abou-Zeid)
@@ -26,81 +26,90 @@ METHOD     (STTA)
            (ACTIV)
 DETECTOR   (HPGE) 70% HPGe gamma-ray detector, resolution approx.
             2 keV for 1.33 MeV gamma-ray of Co-60.
-ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
-           (EN-ERR).The error is reported by authors in table.
-ADD-RES    (COMP).Computer codes IMPIRE-II.
-MISC-COL   (MISC).Calculated integral yields in units GBq/C*MeV
+ERR-ANALYS (ERR-T) Estimated uncertainty
+           (ERR-1) Uncertainty in target thickness
+ADD-RES    (COMP) Computer codes IMPIRE-II.
 HISTORY    (20090416C) SB
            (20160730U) SD: Small correction in MONIT-REF.
-ENDBIB              31
-NOCOMMON             0          0
-ENDSUBENT           34
-SUBENT        O1737002   20090416   20090724   20090723       O039
-BIB                  3          4
-REACTION  1(42-MO-0(P,X)43-TC-99-M,,SIG)
-          2(42-MO-0(P,X)43-TC-99-M,,TTY,,DT)
+           (20191006A) SD: REACTION code corrected in
+           Subents 002,003. ERR-ANALYS updated. DATA-ERR -> ERR-T.
+           MISC-COL deleted.
+ENDBIB              33
+COMMON               1          3
+ERR-1
+PER-CENT
+  1.4
+ENDCOMMON            3
+ENDSUBENT           40
+SUBENT        O1737002   20191006   20191218   20191217       O072
+BIB                  4          5
+REACTION   (42-MO-0(P,X)43-TC-99-M,CUM,SIG)
 DECAY-DATA (43-TC-99-M,6.01HR,DG,140.5,0.8906)
-STATUS     (TABLE) Table 2.
-ENDBIB               4
+STATUS     (TABLE) Table 2 from J.Nucl.Rad.Phys..2(2007)1
+HISTORY    (20191006A) SD: REACTION code (2) deleted.  SF5=CUM
+           added to REACTION (1). STATUS updated. DATA-ERR->ERR-T.
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 6         21
-EN         EN-ERR     DATA      1DATA-ERR  1DATA      2MISC
-MEV        MEV        MB         MB         MUCI/MUAHR SEE TEXT
-17.74      0.75       37.25      3.82       44.7       2.38
-17.21      0.73       35.73      3.66       45.6       2.22
-16.67      0.71       35.46      3.64       46.0       2.06
-16.12      0.68       35.90      3.68       46.4       1.90
-15.56      0.66       34.72      3.75       46.9       1.73
-14.98      0.64       34.12      3.69       47.3       1.57
-13.83      0.59       37.28      4.03       47.7       1.40
-13.62      0.58       34.82      3.76       47.9       1.23
-13.56      0.57       33.07      3.72       47.7       1.06
-12.84      0.54       33.83      3.81       46.3       0.90
-12.56      0.53       26.44      2.98       43.1       0.73
-12.15      0.52       25.49      2.87       38.1       0.58
-11.79      0.50       24.41      2.96       32.3       0.45
-11.49      0.49       21.53      2.61       26.5       0.33
-10.67      0.45       15.01      1.82       21.3       0.24
-10.54      0.45       11.83      1.44       16.7       0.16
-10.34      0.44       10.72      1.43       12.6       0.11
-9.46       0.40       8.21       1.09       9.0        0.06
-9.10       0.39       4.81       0.64       5.9        0.03
-8.73       0.37       3.51       0.47       3.2        0.01
-8.11       0.34       1.41       0.29       0.7        0.00246
+DATA                 4         21
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+17.74      0.75       37.25      3.82
+17.21      0.73       35.73      3.66
+16.67      0.71       35.46      3.64
+16.12      0.68       35.90      3.68
+15.56      0.66       34.72      3.75
+14.98      0.64       34.12      3.69
+13.83      0.59       37.28      4.03
+13.62      0.58       34.82      3.76
+13.56      0.57       33.07      3.72
+12.84      0.54       33.83      3.81
+12.56      0.53       26.44      2.98
+12.15      0.52       25.49      2.87
+11.79      0.50       24.41      2.96
+11.49      0.49       21.53      2.61
+10.67      0.45       15.01      1.82
+10.54      0.45       11.83      1.44
+10.34      0.44       10.72      1.43
+9.46       0.40       8.21       1.09
+9.10       0.39       4.81       0.64
+8.73       0.37       3.51       0.47
+8.11       0.34       1.41       0.29
 ENDDATA             23
-ENDSUBENT           32
-SUBENT        O1737003   20090416   20090724   20090723       O039
-BIB                  2          3
-REACTION  1(42-MO-0(P,X)43-TC-99,,SIG)
-          2(42-MO-0(P,X)43-TC-99,,TTY,,DT)
-STATUS     (TABLE) Table 1
-ENDBIB               3
+ENDSUBENT           33
+SUBENT        O1737003   20191006   20191218   20191217       O072
+BIB                  3          5
+REACTION   (42-MO-0(P,X)43-TC-96,,SIG)
+STATUS     (TABLE) Table 1 from J.Nucl.Rad.Phys..2(2007)1
+HISTORY    (20191006A) SD: SF4=Tc-99 -> Tc-96 in REACTION code (1)
+           REACTION code (2) deleted. STATUS updated.
+           DATA-ERR -> ERR-T.
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 6         22
-EN         EN-ERR     DATA      1DATA-ERR  1DATA      2MISC
-MEV        MEV        MB         MB         MUCI/MUAHR SEE TEXT
-17.74      0.75       117.00     11.70      50.47      0.75
-17.21      0.73       115.14     11.51      53.64      0.73
-16.67      0.71       120.00     12.00      56.44      0.70
-16.12      0.68       111.25     11.13      59.35      0.67
-15.56      0.66       121.34     12.13      62.32      0.64
-14.98      0.64       125.74     12.57      65.29      0.61
-13.83      0.59       154.72     15.47      68.17      0.57
-13.62      0.58       148.95     14.90      70.74      0.53
-13.56      0.57       134.97     13.50      72.90      0.50
-12.84      0.54       151.37     15.14      74.54      0.46
-12.56      0.53       154.47     15.45      75.43      0.41
-12.15      0.52       144.21     14.42      75.33      0.37
-11.79      0.50       134.29     13.43      74.17      0.33
-11.49      0.49       128.42     12.84      71.80      0.29
-10.67      0.45       111.67     11.17      68.24      0.25
-10.54      0.45       109.15     10.92      63.63      0.21
-10.34      0.44       117.59     11.76      58.10      0.18
-9.46       0.40       108.23     10.82      52.02      0.15
-9.10       0.39       92.18      9.22       45.73      0.12
-8.73       0.37       78.52      7.85       39.40      0.09
-8.11       0.34       67.99      6.80       33.19      0.07
-7.71       0.33       43.80      4.38       27.38      0.05
+DATA                 4         22
+EN         EN-ERR     DATA       ERR-T
+MEV        MEV        MB         MB
+17.74      0.75       117.00     11.70
+17.21      0.73       115.14     11.51
+16.67      0.71       120.00     12.00
+16.12      0.68       111.25     11.13
+15.56      0.66       121.34     12.13
+14.98      0.64       125.74     12.57
+13.83      0.59       154.72     15.47
+13.62      0.58       148.95     14.90
+13.56      0.57       134.97     13.50
+12.84      0.54       151.37     15.14
+12.56      0.53       154.47     15.45
+12.15      0.52       144.21     14.42
+11.79      0.50       134.29     13.43
+11.49      0.49       128.42     12.84
+10.67      0.45       111.67     11.17
+10.54      0.45       109.15     10.92
+10.34      0.44       117.59     11.76
+9.46       0.40       108.23     10.82
+9.10       0.39       92.18      9.22
+8.73       0.37       78.52      7.85
+8.11       0.34       67.99      6.80
+7.71       0.33       43.80      4.38
 ENDDATA             24
-ENDSUBENT           32
+ENDSUBENT           34
 ENDENTRY             3

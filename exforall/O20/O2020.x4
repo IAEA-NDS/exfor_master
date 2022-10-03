@@ -1,5 +1,5 @@
-ENTRY            O2020   20140825   20150311   20150202       O053
-SUBENT        O2020001   20140825   20150311   20150202       O053
+ENTRY            O2020   20191007   20191218   20191217       O072
+SUBENT        O2020001   20191007   20191218   20191217       O072
 BIB                 12         39
 TITLE      Preparation of Cu-67 via deuteron irradiation of Zn-70.
 AUTHOR     (J.Kozempel,  K.Abbas, F.Simonelli, A.Bulgheroni,
@@ -21,9 +21,7 @@ SAMPLE     Enriched Zn-70 metal was obtained in the form of an
            degraders.
 MONITOR    (22-TI-0(P,X)23-V-48,,SIG)
 DETECTOR   (HPGE)
-METHOD     (STTA)
-           (BCINT)
-           (CHSEP)
+METHOD     (STTA,BCINT,CHSEP)
 COMMENT    From Dr. J.Kozempel (2014-08-21): For beam monitoring,
            we used both monitor reaction on Ti foil (48-V) and a
            Faraday cup, so we detected 0, 34 uA using monitor
@@ -40,6 +38,8 @@ ERR-ANALYS (ERR-1).Counting uncertainty including detector
 HISTORY    (20120828C) SB
            (20140825A) SD: COMMENT from Dr. J.Kozempel was added.
            REACTION code corrected in Subent 3.
+           (20191008A) SD: REACTION code corrected in Subent 003.
+           Corrections in all Subents.
 ENDBIB              39
 COMMON               5          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
@@ -47,24 +47,23 @@ PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 12.        6.5        0.1        10.        5.
 ENDCOMMON            3
 ENDSUBENT           46
-SUBENT        O2020002   20110121   20121218   20121211       O049
-BIB                  4         12
+SUBENT        O2020002   20191007   20191218   20191217       O072
+BIB                  5         11
 REACTION   (30-ZN-70(D,X)29-CU-67,,SIG)
-STATUS     (TABLE).Table 3 of J,RCA,100,419,2012
 DECAY-DATA (29-CU-67,61.8HR,DG,185.,0.487,DG,93.,0.161,
                              DG,91.,0.07)
-ERR-ANALYS (EN-ERR).The error is reported by authors.
-           Primary beam energy straggling is estimated to be less
-           than 0.5%, and the uncertainty propagated within the
-           stacks up to 5%.
-           (DATA-ERR).The error is reported by authors in table.
-           Overall cross-section uncertainty estimates ranged from
-            7 to 16%, except for the lowest energy data point
-           which had an uncertainty of 28%
-ENDBIB              12
+ERR-ANALYS (EN-ERR) Uncertainty includes:
+            * Primary beam energy straggling < 0.5%, and
+            * the uncertainty propagated within the stacks < 5%.
+           (ERR-T) Overall cross-section uncertainty estimates
+           ranged from 7 to 16%, except for the lowest energy
+           data point which had an uncertainty of 28%
+STATUS     (TABLE) Table 3 of Radiochim.Acta,100(2012)419
+HISTORY    (20191008A) SD: ERR-ANALYS updated. DATA-ERR -> ERR-T.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         18
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
 10.0       0.3        3.2        0.9
 10.8       0.4        4.7        0.6
@@ -85,17 +84,23 @@ MEV        MEV        MB         MB
 19.3       0.7        24.8       1.8
 19.7       0.6        22.0       2.4
 ENDDATA             20
-ENDSUBENT           37
-SUBENT        O2020003   20140825   20150311   20150202       O053
-BIB                  3          7
-REACTION   (30-ZN-70(D,X)ELEM/MASS,,TTY,,PHY/MSC)
+ENDSUBENT           36
+SUBENT        O2020003   20191007   20191218   20191217       O072
+BIB                  4         13
+REACTION   (30-ZN-70(D,X)ELEM/MASS,,TTY,,PHY)
            Yield at EOB after 0.34 muA, 3 hr irradiation
              (EOB activity/current/irradiation time)
-STATUS     (TABLE).Table 4 of J,RCA,100,419,2012
-HISTORY    (20140825A) SD. In RECTION code:TTY,,DT -> TTY,,PHY/MSC
+CRITIQUE    Sandor Takacs: 67Cu and 71mZn data are wrong in
+            Table 4. Each was calculated with the half-life of
+            64Cu. The correct values are: 0.89 and 21.76 for
+            67Cu and 71mZn respectively.
+STATUS     (TABLE) Table 4 of Radiochim.Acta,100(2012)419
+HISTORY    (20140825A) SD.In REACTION code:TTY,,DT -> TTY,,PHY/MSC
             (EOB activity/current/irrad.time). Confirmed by
             Dr.J.Kozempel (2014-08-21).
-ENDBIB               7
+           (20191008A) SD: SF8=PHY/MSC -> PHY in REACTION code.
+            CRITIQUE was added.
+ENDBIB              13
 COMMON               2          3
 EN-MIN     EN-MAX
 MEV        MEV
@@ -111,5 +116,5 @@ NO-DIM     NO-DIM     NO-DIM     MBQ/MUAHR
 31.        66.                   0.03
 31.        67.                   0.06
 ENDDATA              8
-ENDSUBENT           24
+ENDSUBENT           30
 ENDENTRY             3

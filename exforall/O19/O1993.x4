@@ -1,13 +1,11 @@
-ENTRY            O1993   20120906   20121218   20121211       O049
-SUBENT        O1993001   20120906   20121218   20121211       O049
+ENTRY            O1993   20191007   20191218   20191217       O072
+SUBENT        O1993001   20191007   20191218   20191217       O072
 BIB                 11         22
 TITLE      Production of Cr-51 by deuteron activation of natural
            chromium.
 AUTHOR     (R.Bisconti, K.Casteleyn, M.Castiglioni, F.Fossati,
            L.Manes,M.F.Stroosnijder)
-INSTITUTE  (2ITYPAV)
-           (2ZZZISP)
-HISTORY    (20120911C)  SB
+INSTITUTE  (2ITYPAV,2ZZZISP)
 REFERENCE  (J,NIM/B,88,282,1994)
 FACILITY   (CYCLO,2ZZZISP) variable cyclotron
 DECAY-DATA (24-CR-51,27.7D,DG,320.)
@@ -15,14 +13,16 @@ SAMPLE     High purity, more than 99.99%, natural chromium foils
            of 10+-1 mum thickness and 10 mm diameter on a 125 mum
            mylar.
 DETECTOR   (GE)
-METHOD     (ACTIV)
-           (STTA)
-           (BCINT)
-ERR-ANALYS (ERR-1).The error in foil thickness.
-           (ERR-2,,2.).The error in counting statistics <2%.
-           (ERR-3,,2.).The error in detector efficiency <2%.
-           (ERR-4,,2.).The error in calibration  <2%.
-           (ERR-5).The error in current integration is 1%.
+METHOD     (ACTIV,STTA,BCINT)
+ERR-ANALYS (ERR-T) Total ucertainty includes:
+           (ERR-1) The error in foil thickness.
+           (ERR-2,,2.) The error in counting statistics <2%.
+           (ERR-3,,2.) The error in detector efficiency <2%.
+           (ERR-4,,2.) The error in calibration  <2%.
+           (ERR-5) The error in current integration is 1%.
+HISTORY    (20120911C)  SB
+           (20191007A) SD: REACTION code corrected in
+           Subents 002,003. ERR-ANALYS updated.
 ENDBIB              22
 COMMON               2          3
 ERR-1      ERR-5
@@ -30,16 +30,20 @@ PER-CENT   PER-CENT
         10.         1.
 ENDCOMMON            3
 ENDSUBENT           29
-SUBENT        O1993002   20120906   20121218   20121211       O049
-BIB                  3          4
-REACTION   (24-CR-0(D,X)24-CR-51,,TTY,,DT)
-STATUS     (TABLE).Table 2 of J,NIM/B,88,282,1994
-ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors
-           (EN-ERR).The uncertainty is reported by authors
-ENDBIB               4
+SUBENT        O1993002   20191007   20191218   20191217       O072
+BIB                  4          8
+REACTION   (24-CR-0(D,X)24-CR-51,CUM,TTY,,PHY)
+ERR-ANALYS (EN-ERR) standard deviation of 3.3% includes:
+             * uncertainty in the stopping power data by TRIM (3%)
+             * uncertainty in the dE/E of the incident beam (~1%)
+             * the absolute value of the beam energy (1 %)
+STATUS     (TABLE) Table 2 from Nucl.Instrum.Meth.,B88(1994)282
+HISTORY    (20191007A) SD: SF5=CUM added; SF8=DT -> PHY in
+           REACTION code. DATA-ERR -> ERR-T. ERR-ANALYS updated.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         14
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        KBQ/MUAHR  KBQ/MUAHR
 16.3       0.5        8.8        0.9
 16.0       0.5        7.9        0.8
@@ -56,16 +60,18 @@ MEV        MEV        KBQ/MUAHR  KBQ/MUAHR
 3.7        0.1        5.9        0.6
 2.7        0.09       0.65       0.07
 ENDDATA             16
-ENDSUBENT           25
-SUBENT        O1993003   20120911   20121218   20121211       O049
-BIB                  3          3
-REACTION   (24-CR-0(D,X)24-CR-51,,SIG)
-STATUS     (CURVE).By CAJAD-fig.4 of J,NIM/B,88,282,1994
-ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors
-ENDBIB               3
+ENDSUBENT           29
+SUBENT        O1993003   20191007   20191218   20191217       O072
+BIB                  3          5
+REACTION   (24-CR-0(D,X)24-CR-51,CUM,SIG)
+STATUS     (CURVE) fig.4 from Nucl.Instrum.Meth.,B88(1994)282
+HISTORY    (20191007A) SD: SF5=CUM added to REACTION code.
+           ERR-ANALYS deleted (info moved to Subent 001.)
+           DATA-ERR -> ERR-T.
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 3         15
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        MB         MB
        1.67      5.243
        2.70     30.007
@@ -83,5 +89,5 @@ MEV        MB         MB
       16.00    382.074     41.119
       16.30    425.151     44.394
 ENDDATA             17
-ENDSUBENT           25
+ENDSUBENT           27
 ENDENTRY             3

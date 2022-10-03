@@ -1,6 +1,6 @@
-ENTRY            O2135   20130628   20140422   20140415       O051
-SUBENT        O2135001   20130628   20140422   20140415       O051
-BIB                 14         33
+ENTRY            O2135   20191011   20191218   20191217       O072
+SUBENT        O2135001   20191011   20191218   20191217       O072
+BIB                 13         25
 TITLE      Yield and purity of Sr-82 produced via the
            Rb-nat(p,xn)Sr-82 process
 AUTHOR     (S.M.Qaim, G.F.Steyn, I.Spahn, S.Spellerberg,
@@ -10,6 +10,28 @@ REL-REF    (I,D4030006,F.Roesch+,J,RCA,61,1,1993)
 INSTITUTE  (2GERJUL)
            (3SAFITH)
 FACILITY   (CYCLO,2GERJUL) the injector cyclotron of COSY
+METHOD     (ACTIV,STTA,BCINT)
+MONITOR    (28-NI-0(P,X)28-NI-57,,SIG)
+MONIT-REF  (,F.Tarkanyi+,R,IAEA-TECDOC-1211,49,2001)
+DETECTOR   (HPGE)
+ERR-ANALYS (ERR-T) Total uncertainty includes:
+           (ERR-1,15.).The uncertainty in the peak area analysis
+           was estimated to be about 15%.
+           (ERR-2,6.).The uncertainty in the efficiency of the
+           detector about 6%.
+           (ERR-3,10.).The uncertainty in the proton flux
+           measurement about 10%.
+STATUS     (TABLE) Tables 1,2 of Appl.Rad.Isot.,65(2007)247
+HISTORY    (20130628C) SB
+           (20191011A) SD: REACTION code corrected in Subent 003.
+           ERR-ANALYS updated. DATA-ERR -> ERR-T. SAMPLE moved to
+           Subents 002-004.
+ENDBIB              25
+NOCOMMON             0          0
+ENDSUBENT           28
+SUBENT        O2135002   20191011   20191218   20191217       O072
+BIB                  3         10
+REACTION   (37-RB-0(P,X)38-SR-85,,SIG)
 SAMPLE     Samples were prepared using RbCl of natural isotopic
            abundance(95%). The powder was sedimented on an
            aluminium backing (15 mm in dia, 0.1 mm thick) and
@@ -18,32 +40,11 @@ SAMPLE     Samples were prepared using RbCl of natural isotopic
            sample thickness was determined by weighing.
            Production yields of Sr-82 and Sr-85 were measured
            experimentally using thick RbCl-nat targets.
-METHOD     (ACTIV,STTA,BCINT)
-MONITOR    (28-NI-0(P,X)28-NI-57,,SIG)
-MONIT-REF  (,F.Tarkanyi+,R,IAEA-TECDOC-1211,49,2001)
-DETECTOR   (HPGE)
-ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors in
-           table.
-           (EN-ERR).The uncertainty is reported by authors in
-           table.
-           (ERR-1,15.).The uncertainty in the peak area analysis
-           was estimated to be about 15%.
-           (ERR-2,6.).The uncertainty in the efficiency of the
-           detector about 6%.
-           (ERR-3,10.).The uncertainty in the proton flux
-           measurement about 10%.
-STATUS     (TABLE).Table 1-2 of J,ARI,65,247,2007
-HISTORY    (20130628C) SB
-ENDBIB              33
-NOCOMMON             0          0
-ENDSUBENT           36
-SUBENT        O2135002   20130615   20140422   20140415       O051
-BIB                  1          1
-REACTION   (37-RB-0(P,X)38-SR-85,,SIG)
-ENDBIB               1
+HISTORY    (20191011A) SD: DATA-ERR -> ERR-T.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4          9
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
 24.5       0.4        34.4       6.9
 27.7       0.4        86.6       17.3
@@ -55,16 +56,24 @@ MEV        MEV        MB         MB
 41.3       0.2        63.6       12.7
 44.7       0.2        45.4       9.1
 ENDDATA             11
-ENDSUBENT           17
-SUBENT        O2135003   20130615   20140422   20140415       O051
-BIB                  1          2
-REACTION   (37-RB-0(P,X)38-SR-82,,TTY,,PHY)
-           time-irrd=1 hour
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           26
+SUBENT        O2135003   20191011   20191218   20191217       O072
+BIB                  3          6
+REACTION   (37-RB-0(P,X)38-SR-82,,TTY,,EOB)
+SAMPLE     About 8.6 g natRbCl was pressed to a pellet of 2.0 cm
+           diam. and placed in an aluminium capsule. Several
+           capsules were prepared and irradiated.
+HISTORY    (20191011A) SD: SF8=PHY -> EOB in REACTION code.
+           TIME-IRRD added. DATA-ERR -> ERR-T.
+ENDBIB               6
+COMMON               1          3
+TIME-IRRD
+HR
+  1.
+ENDCOMMON            3
 DATA                 4          6
-EN-MIN     EN-MAX     DATA       DATA-ERR
-MEV        MEV        MBQ/MUAHR  MBQ/MUAHR
+EN-MIN     EN-MAX     DATA       ERR-T
+MEV        MEV        MBQ/MUA    MBQ/MUA
 65.0       44.2       8.67       0.92
 61.5       39.4       9.02       0.95
 60.0       37.4       9.07       0.92
@@ -72,21 +81,29 @@ MEV        MEV        MBQ/MUAHR  MBQ/MUAHR
 50.0       21.4       4.41       0.42
 45.0       9.7        1.86       0.20
 ENDDATA              8
-ENDSUBENT           15
-SUBENT        O2135004   20130615   20140422   20140415       O051
-BIB                  1          2
-REACTION   (37-RB-0(P,X)38-SR-85,,TTY,,PHY)
-           time-irrd=1 hour
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           23
+SUBENT        O2135004   20191011   20191218   20191217       O072
+BIB                  3          6
+REACTION   (37-RB-0(P,X)38-SR-85,,TTY,,EOB)
+SAMPLE     About 8.6 g natRbCl was pressed to a pellet of 2.0 cm
+           diam. and placed in an aluminium capsule. Several
+           capsules were prepared and irradiated.
+HISTORY    (20191011A) SD: SF8=PHY -> EOB in REACTION code.
+           TIME-IRRD added. DATA-ERR -> ERR-T.
+ENDBIB               6
+COMMON               1          3
+TIME-IRRD
+HR
+  1.
+ENDCOMMON            3
 DATA                 4          5
-EN-MIN     EN-MAX     DATA       DATA-ERR
-MEV        MEV        MBQ/MUAHR  MBQ/MUAHR
+EN-MIN     EN-MAX     DATA       ERR-T
+MEV        MEV        MBQ/MUA    MBQ/MUA
 65.0       44.2       1.54       0.22
 60.0       37.4       2.15       0.32
 55.0       29.9       3.11       0.46
 50.0       21.4       3.60       0.50
 45.0       9.7        5.15       0.72
 ENDDATA              7
-ENDSUBENT           14
+ENDSUBENT           22
 ENDENTRY             4

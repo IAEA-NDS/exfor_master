@@ -1,14 +1,11 @@
-ENTRY            O1665   20080910   20081219   20081219       O037
-SUBENT        O1665001   20080910   20081219   20081219       O037
-BIB                 14         36
+ENTRY            O1665   20191004   20191218   20191217       O072
+SUBENT        O1665001   20191004   20191218   20191217       O072
+BIB                 13         30
 TITLE      Cross-sections of the reaction Th-232(p,3n)Pa-230
            for production of U-230 for targeted alpha therapy.
 AUTHOR     (A.Morgenstern, C.Apostolidis, F.Bruchertseifer,
            R.Capote, T.Gouder, F.Simonelli, M.Sin, K.Abbas)
-INSTITUTE  (2ZZZITU)
-           (3ZZZIAE)
-           (2ZZZISP)
-           (3RUMBUU)
+INSTITUTE  (2ZZZITU,3ZZZIAE,2ZZZISP,3RUMBUU)
 REFERENCE  (J,ARI,66,1275,2008)
 SAMPLE     Thin Th-232 targets were prepared by sputter deposition
            from a Th-232 metal source in an Ar plasma as thin
@@ -17,18 +14,13 @@ SAMPLE     Thin Th-232 targets were prepared by sputter deposition
            proton-energy degrader. A copper foil of 12.5 mum
            thickness(99.99%) was placed as a monitor foil.
 ADD-RES    (COMP).The EMPIRE II CODE.
-METHOD     (STTA)
-           (BCINT)
-           (EDEG)
-           (ACTIV)
-           (GSPEC)
+METHOD     (STTA,BCINT,EDEG,ACTIV,GSPEC)
 FACILITY   (CYCLO,2ZZZISP) The Scanditronix MC-40 cyclotron of
            the Joint Research Centre (Ispra,  Italy).
 MONITOR    (29-CU-0(P,X)30-ZN-62,,SIG)
            Proton currents were analyzed based on this reaction
            using IAEA recommended cross section data.
 DETECTOR   (HPGE)
-STATUS     (TABLE) In the paper.
 RAD-DET    (91-PA-230,DG)
 DECAY-DATA (91-PA-230,17.4D,DG,951.95,0.2913,DG,918.48,0.08244,
            DG,454.95,0.06265,DG,898.68,0.05826,
@@ -37,25 +29,30 @@ DECAY-DATA (91-PA-230,17.4D,DG,951.95,0.2913,DG,918.48,0.08244,
            DG,781.35,0.01484,DG,1026.05,0.01462,DG,571.1,0.01083,
            DG,1009.7,0.01083)
 HISTORY    (20080910C) SB
-ENDBIB              36
+           (20191004A) SD: REACTION code corrected in Subent 003.
+           Corrections in all Subents.
+ENDBIB              30
 NOCOMMON             0          0
-ENDSUBENT           39
-SUBENT        O1665002   20080910   20081219   20081219       O037
-BIB                  2         10
+ENDSUBENT           33
+SUBENT        O1665002   20191004   20191218   20191217       O072
+BIB                  4         13
 REACTION   (90-TH-232(P,3N)91-PA-230,,SIG)
 ERR-ANALYS (EN-ERR).The uncertainty of incident proton energies
            in individual foils was calculated from the
            uncertainties of thickness of monitor, target and
            degrader foils and ranges from 5% to 10%.
-           (ERR-T).The uncertainty is reported by authors in
-           table which included statistical uncertainty of gamma-
-           ray counting, uncertainty in the monitor foil thickness
-           and the uncertainty in efficiency calibration of the
+           (DATA-ERR) total uncertainty includes:
+            * statistical uncertainty of gamma-ray counting,
+            * uncertainty in the monitor foil thickness
+            * the uncertainty in efficiency calibration of the
            gamma-ray detector ranges from 5% to 21%.
-ENDBIB              10
+STATUS     (TABLE) Tbl. 2 from Appl.Rad.Isot.,66(2008)1275
+HISTORY    (20191004A) SD: ERR-ANALYS updated. STATUS added.
+           ERR-T -> DATA-ERR.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4         15
-EN         EN-ERR     DATA       ERR-T
+EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
 16.4       0.4        90.5       19.0
 17.6       0.4        149.5      10.5
@@ -73,24 +70,29 @@ MEV        MEV        MB         MB
 31.6       0.1        64.8       8.3
 34.0       0.2        50.1       9.4
 ENDDATA             17
-ENDSUBENT           32
-SUBENT        O1665003   20080910   20081219   20081219       O037
-BIB                  5          9
-REACTION  1(90-TH-232(P,3N)91-PA-230,,TTY,,DT,CALC)
-          2(90-TH-232(P,X)92-U-230,,TTY,,DT,CALC)
+ENDSUBENT           35
+SUBENT        O1665003   20191004   20191218   20191217       O072
+BIB                  7         14
+REACTION  1(90-TH-232(P,3N)91-PA-230,,TTY,,(PHY),DERIV)
+          2(90-TH-232(P,X)92-U-230,,TTY,,(PHY),DERIV)
+ANALYSIS   (INTEF) Derived from measured excitation function
 COMMENT    *By authors*.The thick target yield of Pa-230 was
-           calculated as 8.41 MBq/muAHr at 33.5 MeV, resulting in
-            0.24 MBq/muAHr of U-230 at 28 day after end of beam.
+           calculated as 8.41 MBq/muAhr at 33.5 MeV, resulting in
+            0.24 MBq/muAhr of U-230 at 28 day after end of beam.
 RAD-DET   2(92-U-230,DG) 28 day after end of beam.
 DECAY-DATA2(92-U-230,20.8D,DG,72.2,0.006,DG,154.23,0.00125,
            DG,230.37,0.00122)
-STATUS     (DEP,O1665002)
-ENDBIB               9
+STATUS     (TABLE) From the text on p.1278 of
+                                      Appl.Rad.Isot.,66(2008)1275
+           (DEP,O1665002)
+HISTORY    (20191004A) SD: SF8=DT -> (PHY); SF9=CALC -> DERIV in
+           both REACTION codes. STATUS added. ANALYSIS added.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA      1DATA      2
 MEV        MBQ/MUAHR  MBQ/MUAHR
 33.5       8.41       0.24
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           22
 ENDENTRY             3

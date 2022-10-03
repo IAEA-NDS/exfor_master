@@ -1,6 +1,6 @@
-ENTRY            O1420   20190310   20190715   20190702       O068
-SUBENT        O1420001   20190310   20190715   20190702       O068
-BIB                 10         53
+ENTRY            O1420   20190915   20191218   20191217       O071
+SUBENT        O1420001   20190915   20191218   20191217       O071
+BIB                 10         54
 TITLE      E1 and E2 S-factors of 12-C(alpha,gamma0)16-O from
            gamma-ray angular distributions with a 4pi-detector
            array.
@@ -52,15 +52,20 @@ METHOD     (EXTB) The 4He+-beam intensity was in the range
 HISTORY    (20071122C) S.B
            (20100708A).Correction in Data-units in subentries
             003-006 was made, according B.Pritychenko remarks.
-           (20140205U) SD: Ref.on NIM/a,698,49 added to REL-REF.
+           (20140205U) SD: Ref.on NIM/A,698,49 added to REL-REF.
            (20190310U) SD: Ref. on thesis added.
-ENDBIB              53
-NOCOMMON             0          0
-ENDSUBENT           56
-SUBENT        O1420002   20070525   20080407   20080403       O034
-BIB                  3         11
-REACTION   (6-C-12(A,G)8-O-16,,DA,,REL)   Figure 10
-STATUS     (CURVE) By CAJAD.
+           (20190915A) SD: Important corrections in all Subents.
+ENDBIB              54
+COMMON               1          3
+E-LVL
+MEV
+  0.
+ENDCOMMON            3
+ENDSUBENT           61
+SUBENT        O1420002   20190915   20191218   20191217       O071
+BIB                  4         13
+REACTION   (6-C-12(A,G)8-O-16,PAR,DA,,REL)
+STATUS     (CURVE) Fig. 10 from Phys.Rev.,C73(2006)055801 By CAJAD
 ERR-ANALYS (DATA-ERR) The estimation of the errors in the net
            extracted yields were determined in the standard way
            from the yield estimates of the total and background
@@ -70,10 +75,12 @@ ERR-ANALYS (DATA-ERR) The estimation of the errors in the net
            calibration, an additional contribution to the error
            was calculated by varying slightly the position and
            width of the window around the expected values.
-ENDBIB              11
+HISTORY    (20190915A) SD: SF5=PAR added to REACTION code.
+           EN-SEC, E-LVL added. COMMON moved to Subent 001.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4         54
-EN         ANG-CM     DATA       DATA-ERR
+EN         ANG-CM     DATA-CM    DATA-ERR
 KEV        ADEG       ARB-UNITS  ARB-UNITS
       1850.        30.        34.         9.
       1850.        48.        70.        13.
@@ -130,10 +137,10 @@ KEV        ADEG       ARB-UNITS  ARB-UNITS
       3580.       120.       187.        13.
       3580.       130.       323.        23.
 ENDDATA             56
-ENDSUBENT           72
-SUBENT        O1420003   20100709   20110107   20101118       O042
-BIB                  6         21
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG)
+ENDSUBENT           74
+SUBENT        O1420003   20190915   20191218   20191217       O071
+BIB                  7         21
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG)
            2-parameter fit, phase fixed.
 COMMENT    -By author.En-cm-is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -143,17 +150,17 @@ COMMENT    -By author.En-cm-is effective c.m. energy calculated
 MISC-COL   (MISC1) Relative phase for E1 and E2 capture gamma-ray
            for the two-parameter fit, the phase was fixed
            by Barker's method with the phases taken from
-           elastic scattering. See Rel-Ref
+           elastic scattering. See REL-REF
            (MISC2) It is effective value of c.m. energy
            Calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-REL-REF    (R,,F.C.BARKER+,J,AUJ,44,369,1991) The method to
+REL-REF    (R,,F.C.Barker+,J,AUJ,44,369,1991) The method to
            calculate relative phase shift from elastic
            alpha-particles scattering
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
-           (MISC2-ERR) The uncertainty of MISC2.
-STATUS     (TABLE)  Table I of J,PR/C,73,055801,2006
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+STATUS     (TABLE)  Table I from Phys.Rev.,C73(2006)055801
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
 ENDBIB              21
 COMMON               1          3
 POLAR
@@ -161,7 +168,7 @@ NO-DIM
         -1.
 ENDCOMMON            3
 DATA                 8         25
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 MISC2      MISC2-ERR
 MEV        MEV        NB         NB         ADEG       ADEG
 MEV        MEV
@@ -217,9 +224,9 @@ MEV        MEV
 
 ENDDATA             54
 ENDSUBENT           84
-SUBENT        O1420004   20100709   20110107   20101118       O042
-BIB                  6         21
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG)
+SUBENT        O1420004   20190915   20191218   20191217       O071
+BIB                  7         21
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG)
            2-parameter fit, phase fixed
 COMMENT    -By author.En-cm is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -229,17 +236,17 @@ COMMENT    -By author.En-cm is effective c.m. energy calculated
 MISC-COL   (MISC1) Relative phase for E1 and E2 capture gamma-ray
            for the two-parameter fit, the phase was fixed
            by Barker's method with the phases taken from
-           elastic scattering. See Rel-Ref
+           elastic scattering. See REL-REF
            (MISC2) It is effective value of c.m. energy
            calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-REL-REF    (R,,F.C.BARKER+,J,AUJ,44,369,1991) The method to
+REL-REF    (R,,F.C.Barker+,J,AUJ,44,369,1991) The method to
            calculate relative phase shift from elastic
            alpha-particles scattering (for subent 003-010.
-STATUS     (TABLE)  Table I of J,PR/C,73,055801,2006
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1
-           (MISC2-ERR) The uncertainty of MISC2
+STATUS     (TABLE)  Table I from Phys.Rev.,C73(2006)055801
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
 ENDBIB              21
 COMMON               1          3
 POLAR
@@ -247,7 +254,7 @@ NO-DIM
         +2.
 ENDCOMMON            3
 DATA                 8         25
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 MISC2      MISC2-ERR
 MEV        MEV        NB         NB         ADEG       ADEG
 MEV        MEV
@@ -303,9 +310,9 @@ MEV        MEV
 
 ENDDATA             54
 ENDSUBENT           84
-SUBENT        O1420005   20100709   20110107   20101118       O042
-BIB                  5         15
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG)
+SUBENT        O1420005   20190915   20191218   20191217       O071
+BIB                  6         15
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG)
            3-parameter fit, phase free.
 COMMENT    -By author. En-cm is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -316,10 +323,10 @@ MISC-COL   (MISC1) Relative phase for E1 and E2 capture gamma-ray
            (MISC2) It is effective value of c.m. energy
            calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
-           (MISC2-ERR) The uncertainty of MISC2.
-STATUS     (TABLE)  Table I of J,PR/C,73,055801,2006
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+STATUS     (TABLE)  Table I from Phys.Rev.,C73(2006)055801
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
 ENDBIB              15
 COMMON               1          3
 POLAR
@@ -327,7 +334,7 @@ NO-DIM
         -1.
 ENDCOMMON            3
 DATA                 8         25
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 MISC2      MISC2-ERR
 MEV        MEV        NB         NB         ADEG       ADEG
 MEV        MEV
@@ -383,9 +390,9 @@ MEV        MEV
 
 ENDDATA             54
 ENDSUBENT           78
-SUBENT        O1420006   20100709   20110107   20101118       O042
-BIB                  5         15
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG)
+SUBENT        O1420006   20190915   20191218   20191217       O071
+BIB                  6         15
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG)
            3-parameter fit, phase free.
 COMMENT    -By author.En-cm-is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -396,10 +403,10 @@ MISC-COL   (MISC1) Relative phase for E1 and E2 capture gamma-ray
            (MISC2) It is effective value of c.m. energy
            Calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
-           (MISC2-ERR) The uncertainty of MISC2.
-STATUS     (TABLE)  Table I of J,PR/C,73,055801,2006
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+STATUS     (TABLE)  Table I from Phys.Rev.,C73(2006)055801
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
 ENDBIB              15
 COMMON               1          3
 POLAR
@@ -407,7 +414,7 @@ NO-DIM
         +2.
 ENDCOMMON            3
 DATA                 8         25
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 MISC2      MISC2-ERR
 MEV        MEV        NB         NB         ADEG       ADEG
 MEV        MEV
@@ -463,9 +470,9 @@ MEV        MEV
 
 ENDDATA             54
 ENDSUBENT           78
-SUBENT        O1420007   20070525   20080407   20080403       O034
-BIB                  6         17
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG,,SFC)
+SUBENT        O1420007   20190915   20191218   20191217       O071
+BIB                  7         18
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG,,SFC)
            2-parameter fit, phase fixed
 COMMENT    -By author.En-cm-is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -475,21 +482,22 @@ COMMENT    -By author.En-cm-is effective c.m. energy calculated
 MISC-COL   (MISC1) It is effective value of c.m. energy
            Calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-REL-REF    (R,,F.C.BARKER+,J,AUJ,44,369,1991) The method to
+REL-REF    (R,,F.C.Barker+,J,AUJ,44,369,1991) The method to
            calculate relative phase shift from elastic
            alpha-particles scattering (for subent 003-010.
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
-STATUS     (TABLE) in text
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C73(2006)055801
            (DEP,O1420003)
-ENDBIB              17
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
+ENDBIB              18
 COMMON               1          3
 POLAR
 NO-DIM
         -1.
 ENDCOMMON            3
 DATA                 6         25
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 MEV        MEV        B*KEV      B*KEV      MEV        MEV
        1.31       0.04        17.         6.
        1.34       0.04        11.         5.
@@ -517,10 +525,10 @@ MEV        MEV        B*KEV      B*KEV      MEV        MEV
       2.757      0.003        3.9        0.5
        2.78      0.003         4.        0.6
 ENDDATA             27
-ENDSUBENT           53
-SUBENT        O1420008   20070525   20080407   20080403       O034
-BIB                  5         14
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG,,SFC)
+ENDSUBENT           54
+SUBENT        O1420008   20190915   20191218   20191217       O071
+BIB                  6         15
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG,,SFC)
            3-parameter fit, phase free.
 COMMENT    -By author.En-cm-is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -530,18 +538,19 @@ COMMENT    -By author.En-cm-is effective c.m. energy calculated
 MISC-COL   (MISC1) It is effective value of c.m. energy
            Calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
-STATUS     (TABLE) in text
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C73(2006)055801
            (DEP,O1420005)
-ENDBIB              14
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
+ENDBIB              15
 COMMON               1          3
 POLAR
 NO-DIM
         -1.
 ENDCOMMON            3
 DATA                 6         25
-EN         EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN         EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 MEV        MEV        B*KEV      B*KEV      MEV        MEV
        1.31       0.04        11.         5.
        1.34       0.04        11.         4.
@@ -569,10 +578,10 @@ MEV        MEV        B*KEV      B*KEV      MEV        MEV
       2.757      0.003        3.8        0.5
        2.78      0.003         4.        0.6
 ENDDATA             27
-ENDSUBENT           50
-SUBENT        O1420009   20070525   20080407   20080403       O034
-BIB                  6         22
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG,,SFC)
+ENDSUBENT           51
+SUBENT        O1420009   20190915   20191218   20191217       O071
+BIB                  7         23
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG,,SFC)
            2-parameter fit, phase fixed
 COMMENT    -By author.En-cm-is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -582,8 +591,7 @@ COMMENT    -By author.En-cm-is effective c.m. energy calculated
 MISC-COL   (MISC1) It is effective value of c.m. energy
            Calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
 FLAG       (1.) Calculations with cross sections tabulated
            O1420004 and EN-CM.
            (2.) Calculations with cross sections tabulated
@@ -592,16 +600,18 @@ FLAG       (1.) Calculations with cross sections tabulated
            tabulated, though they are almost identical.  Values
            and error bars take into account uncertainties in the
            procedure to determine the EN-CM value used.
-STATUS     (TABLE) in text
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C73(2006)055801
            (DEP,O1420004)
-ENDBIB              22
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
+ENDBIB              23
 COMMON               1          3
 POLAR
 NO-DIM
         +2.
 ENDCOMMON            3
 DATA                 7         20
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 FLAG
 MEV        MEV        B*KEV      B*KEV      MEV        MEV
 NO-DIM
@@ -646,10 +656,10 @@ NO-DIM
        2.78      0.003        2.1        0.4
          1.
 ENDDATA             44
-ENDSUBENT           75
-SUBENT        O1420010   20070525   20080407   20080403       O034
-BIB                  6         22
-REACTION   (6-C-12(A,G)8-O-16,EP,SIG,,SFC)
+ENDSUBENT           76
+SUBENT        O1420010   20190915   20191218   20191217       O071
+BIB                  7         23
+REACTION   (6-C-12(A,G)8-O-16,EP/PAR,SIG,,SFC)
            3-parameter fit. Phase free.
 COMMENT    -By author.En-cm-is effective c.m. energy calculated
            by using constant S factors for E1 and E2 contributions
@@ -659,8 +669,7 @@ COMMENT    -By author.En-cm-is effective c.m. energy calculated
 MISC-COL   (MISC1) It is effective value of c.m. energy
            Calculated using a pure Breit-Wigner E2 resonance for
            the E2 contribution and constant S factor for the E1.
-ERR-ANALYS (EN-ERR) The uncertainty of c.m. energy.
-           (MISC1-ERR) The uncertainty of MISC1.
+ERR-ANALYS (DATA-ERR) No information about source of uncertainties
 FLAG       (1.) Calculations with cross sections tabulated
            O1420006 and EN-CM.
            (2.) Calculations with cross sections tabulated
@@ -669,16 +678,18 @@ FLAG       (1.) Calculations with cross sections tabulated
            tabulated, though they are almost identical.  Values
            and error bars take into account uncertainties in the
            procedure to determine the EN-CM value used.
-STATUS     (TABLE) in text
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C73(2006)055801
            (DEP,O1420006)
-ENDBIB              22
+HISTORY    (20190915A) SD: SF5=EP -> EP/PAR added to REACTION code
+           ERR-T -> DATA-ERR.
+ENDBIB              23
 COMMON               1          3
 POLAR
 NO-DIM
         +2.
 ENDCOMMON            3
 DATA                 7         20
-EN-CM      EN-ERR     DATA       ERR-T      MISC1      MISC1-ERR
+EN-CM      EN-ERR     DATA       DATA-ERR   MISC1      MISC1-ERR
 FLAG
 MEV        MEV        B*KEV      B*KEV      MEV        MEV
 NO-DIM
@@ -723,5 +734,5 @@ NO-DIM
        2.78      0.003        2.2        0.4
          1.
 ENDDATA             44
-ENDSUBENT           75
+ENDSUBENT           76
 ENDENTRY            10
