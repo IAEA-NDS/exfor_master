@@ -1,130 +1,226 @@
-ENTRY            20521   20170723   20180123   20180123       2261
-SUBENT        20521001   20170723   20180123   20180123       2261
-BIB                 13         34
+ENTRY            20521   20170805   20190219   20190217       2268
+SUBENT        20521001   20170805   20190219   20190217       2268
+BIB                 12         40
 INSTITUTE  (2GERMNZ)
 REFERENCE  (J,JIN,35,1407,1973)
 AUTHOR     (J.-V.Kratz, H.Franz, G.Herrmann)
-TITLE       Delayed-neutrons from arsenic isotopes As-84, As-85
-            and As-86
-FACILITY   (REAC,2GERMNZ) Fast pneumatic tube system of the
-                           Mainz reactor
+TITLE       Delayed-neutrons from arsenic isotopes 84As, 85As
+            and 86As
+FACILITY   (REAC,2GERMNZ) Fast pneumatic tube system of the Mainz
+           reactor
 INC-SPECT  Thermal neutron flashes of 0.1 sec duration and
-            about 10.**14 neutrons/cm2 maximum.
-SAMPLE      Samples consisted of 0.50 mg of U-235 and a known
-            activity of 17.7d As-74 dissolved in 0.1 ml of
-            0.1 N HNO3 and sealed in small glass capsules.
-METHOD     (CHSEP) Chemical separation
-DETECTOR   (PROPC)    He-3 counter of about 4% efficiency and
-            3 counts/min background.
-           (NAICR)    3 * 3 inch NaI(Tl) scintillator for Ss-74
+            about 1.e+14 neutrons/cm2 maximum flux.
+SAMPLE       0.50 mg of U-235 and known activity of As-74 (17.7 d)
+            dissolved in 0.1 ml of 0.1 N HNO3 and sealed in small
+           glass capsules.
+METHOD     (CHSEP) Two chemical separations :
+           - by selective absorbtion, complete within 2.5sec,
+           - solvent extraction step added, complete within 5.0sec
+DETECTOR   (PROPC)    He-3 counter of about 4 % efficiency and
+            3 counts/min background - for neutrons counting.
+           (NAICR)    3 * 3 inch NaI(Tl) scintillator for As-74
             activities.
            (GELI)    Gamma-ray spectra of short-lived arsenic,
-            selenium and bromine isotopes by a 40 cm3 Ge(Li)
-            detector with a resolution of 2.8 keV FWHM at 1332keV.
-ANALYSIS    Chemical yields were determined by comparing the
-            activity of 17.7d As-74 recovered in the counting
-            sample with that added prior to irradiation.
-              The neutron flux was not monitored since the
+           selenium and bromine isotopes by a 40 cm3  Ge(Li)
+           detector with a resolution of 2.8 keV FWHM at 1332 keV.
+COMMENT    Of authors.The neutron flux was not monitored since the
             integrated fluxes recorded with a fission chamber were
-            found to be reproducible within +- 3%.
-ERR-ANALYS (ERR-1) Uncertainty in neutron flux
-           (DATA-ERR) Errors are 2 standard deviations. However
-            exact calculations of errors were not always possible.
-STATUS     (TABLE) From table 2 of J.Inorg.Nucl.Chem.,35(1973)1407
+            found to be reproducible within +- 3 % .
+ERR-ANALYS (DATA-ERR) Errors are 2 standard deviations in article.
+            However exact calculations of errors were not always
+           possible.
+            Error valuse were re-calculated by compiler from
+            two sigma to one sigma.
 HISTORY    (19740729C)
+           (19760421E)
            (19800722A) Minor corrections.
+           (19800808E)
            (20170723A) SD:Updated to new date formats,lower case.
            MONITOR -> ANALYSIS. Subents 004-006 were added.
-ENDBIB              34
+           (20170805A) M.M.
+           EN-DUMMY, ELEMENT, ERR-1 were moved in Subents 002,003.
+           BIB information was updated
+           DATA-ERR was re-calculated from two sigma to one sigma.
+ENDBIB              40
+NOCOMMON             0          0
+ENDSUBENT           43
+SUBENT        20521002   20170805   20190219   20190217       2268
+BIB                  7         22
+REACTION   (92-U-235(N,F)ELEM/MASS,DL/CUM,NU,,MXW)
+            Delayed NU for specific precursors.
+DECAY-DATA ((1.)33-AS-84,5.5SEC,DG)   ~5.5 sec
+           ((2.)33-AS-85,2.05SEC,DG)  2.05+-0.05 sec
+           ((3.)33-AS-86,0.9SEC,DG)   0.9+-0.2 sec
+ANALYSIS   (DECAY) Neutron decay curve was analyzed
+            Delayed neutron yields (As-84, 985) were obtained by
+           comparing the neutron activities in the As fraction
+           with those of the corresponding delayed-neutron groups
+           in unseparated samples of U-235, irradiated and
+           counted under the same  conditions.
+            Delayed neutron yields for As-86 was obtained from
+           0.8 sec activity amounting ~ 7 % of 2.0 sec component.
+MONITOR    (92-U-235(N,F),DL/GRP,NU)
+            From G.R.Keepin,Physics of Nuclear Kinetics,p.90,
+           Addison-Wesley, Reading,Mass., 1965
+ERR-ANALYS (ERR-1) Error in neutron flux
+STATUS     (TABLE) Table 2 of J.Inorg.Nucl.Chem.,35,1407,1973
+            Text, page 1414 of JIN,35,1407,1973
+HISTORY    (19800722A) REACTION corrected.
+           (20170723A) SD: NO-DIM -> PC/FIS
+           (20170805A) M.M. ANALYSIS, MONITOR
+ENDBIB              22
 COMMON               3          3
-EN-DUMMY   ELEMENT    ERR-1
-EV         NO-DIM     PER-CENT
- 2.5300E-02   33.        3.0
+EN-DUMMY   ERR-1      ELEMENT
+EV         PER-CENT   NO-DIM
+ 2.5300E-02  3.        33.
 ENDCOMMON            3
+DATA                 8          3
+MASS       DATA       +DATA-ERR  -DATA-ERR  DECAY-FLAG HL-NRM
+MONIT      MONIT-ERR
+NO-DIM     PC/FIS     PC/FIS     PC/FIS     NO-DIM     SEC
+PC/FIS     PC/FIS
+ 84.           2. E-04    0.5E-04    0.5E-04 1.         6.
+   31.0E-02    3.6E-02
+ 85.           7.8E-02    0.6E-02    0.6E-02 2.         2.
+   62.4E-02    2.6E-02
+ 86.           5.7E-03   1.25E-03   0.75E-03 3.
+
+ENDDATA             10
 ENDSUBENT           41
-SUBENT        20521002   20170723   20180123   20180123       2261
-BIB                  3          7
-REACTION   (92-U-235(N,F)ELEM/MASS,DL,NU,,MXW)
-            Delayed nu for specific precursors.
-DECAY-DATA ((1.)33-AS-84,5.5SEC,DG)
-           ((2.)33-AS-85,2.05SEC,DG)
-           ((3.)33-AS-86,0.90SEC,DG)
-HISTORY    (19800722A) REACTION code corrected.
-           (20170723A) SD: NO-DIM -> PC/FIS in DATA section.
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 5          3
-MASS       DATA       +DATA-ERR  -DATA-ERR  DECAY-FLAG
-NO-DIM     PC/FIS     PC/FIS     PC/FIS     PC/FIS
-        84.    2.0E-04    1.0E-04    1.0E-04         1.
-        85.    7.8E-02    1.2E-02    1.2E-02         2.
-        86.    5.7E-03    2.5E-03    1.5E-03         3.
-ENDDATA              5
-ENDSUBENT           17
-SUBENT        20521003   20170723   20180123   20180123       2261
-BIB                  4         11
+SUBENT        20521003   20170805   20190219   20190217       2268
+BIB                  8         17
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-DECAY-DATA ((1.)33-AS-84,5.5SEC,DG)
-           ((2.)33-AS-87,0.3SEC,DG)
-ADD-RES    .Cumulative fission yields of As-85,86 are estimated
-            from yield systematics in this region.
-                  Mass    Fiss.yield  Decay-data
-                   85.    3.4E-01      2.05sec
-                   86.    1.5E-01      0.90sec
-HISTORY    (19800722A) REACTION code corrected.
-           (20170723A) SD: NO-DIM -> PC/FIS in DATA section.
-            COMMENT -> ADD-RES (data moved to ADD-RES too).
-ENDBIB              11
-NOCOMMON             0          0
-DATA                 4          2
-MASS       DATA       DATA-ERR   DECAY-FLAG
-NO-DIM     PC/FIS     PC/FIS     NO-DIM
-        84.    1.5E-01    2.0E-02         1.
-        87.    4.0E-02    2.0E-02         2.
-ENDDATA              4
-ENDSUBENT           20
-SUBENT        20521004   20170723   20180123   20180123       2261
-BIB                  3          3
-REACTION   (33-AS-84(0,B-)34-SE-84,,PN)
-DECAY-DATA (33-AS-84,5.5SEC,DG)
-HISTORY    (20170723C) SD
-ENDBIB               3
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
- 0.0013       0.0006
+DECAY-DATA (33-AS-87,0.3SEC,DG)   ~0.3 sec
+ANALYSIS   (DECAY)
+           - Cumulative fission yield of As-87 was defined from a
+           fractional yield of  1.8+-0.8 % of this work and a
+           chain yield of 2.37+-0.05 % (from rel.ref.of A.C.Whal+)
+ASSUMED    (ASSUM,92-U-235(N,F)MASS,CHN,FY,,MXW)
+REL-REF    (R,,A.C.Whal+,C,69VIENNA,,813,1969)
+ERR-ANALYS (ERR-1) Error in neutron flux
+STATUS     (TABLE) Table 2 of J.Inorg.Nucl.Chem.,35,1407,1973
+           (DEP,20521007) fractional cumulative yield
+            Preliminary data on HL and fis. yield of ~0.6sec As-87
+           are in Entry 22047
+HISTORY    (19800722A) REACTION corrected.
+           (20170723A) SD: NO=DIM -> PC/FIS in DATA section
+           (20170805A) M.M. ANALYSIS, REL-REF,ASSUMED were added.
+            Part of data were moved in ASSUMED in Subents 004-006.
+ENDBIB              17
+COMMON               5          3
+EN-DUMMY   ERR-1      MASS       ASSUM      ASSUM-ERR
+EV         PER-CENT   NO-DIM     PC/FIS     PC/FIS
+ 2.5300E-02  3.        87.        2.37       0.05
+ENDCOMMON            3
+DATA                 3          1
+ELEMENT    DATA       DATA-ERR
+NO-DIM     PC/FIS     PC/FIS
+ 33.        0.04       0.01
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        20521005   20170723   20180123   20180123       2261
-BIB                  4          5
-REACTION   (33-AS-85(0,B-)34-SE-85,,PN)
-DECAY-DATA (33-AS-85,2.05SEC,DG)
-ERR-ANALYS Errors do not include the uncertainties in
-           the fission yields.
+ENDSUBENT           29
+SUBENT        20521004   20170805   20190219   20190217       2268
+BIB                  7         17
+REACTION   (33-AS-84(0,B-)34-SE-84,,PN,,,DERIV)
+DECAY-DATA (33-AS-84,5.5SEC,DG)   ~5.5 sec
+ASSUMED    (ASSUM,92-U-235(N,F)33-AS-84,CUM,FY,,MXW)
+ANALYSIS    Neutron emission probability was defined as
+           measured delayed neutron yield (Subent 002) divided by
+           fission cumulative yield of As-84 ,
+           which was determined from fractional cumulative yield
+           17+-2 % of P.del Marmol, 15.3+-1.2 % of J.-V.Kratz+ and
+           chain yield o.96+-0.02 % from A.C.Wahl+.
+REL-REF    (R,,P.del Marmol,J,JIN,30,2873,1968)
+           (R,,A.C.Whal+,C,69VIENNA,,813,1969)
+           Also J.-V.Kratz+, to be published.
+STATUS     (TABLE) Table 2 of J.Inorg.Nucl.Chem.,35,1407,1973
+           (DEP,20521002) Delayed neutron yield.
 HISTORY    (20170723C) SD
-ENDBIB               5
+           (20170805A) M.M. ANALYSIS, REL-REF, ASSUMED were added,
+             DEP code was added in STATUS
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-NO-DIM     NO-DIM
- 0.23       0.03
+DATA                 4          1
+DATA       DATA-ERR   ASSUM      ASSUM-ERR
+NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 0.0013       0.0003   0.15       0.01
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        20521006   20170723   20180123   20180123       2261
-BIB                  4          6
-REACTION   (33-AS-86(0,B-)34-SE-86,,PN)
-DECAY-DATA (33-AS-86,0.90SEC,DG)
-           (33-AS-87,0.3SEC,DG)
-ERR-ANALYS  Errors do not include the uncertainties in
+ENDSUBENT           25
+SUBENT        20521005   20170805   20190219   20190217       2268
+BIB                  7         15
+REACTION   (33-AS-85(0,B-)34-SE-85,,PN,,,DERIV)
+DECAY-DATA (33-AS-85,2.05SEC,DG)  2.05+-0.05 sec
+ASSUMED    (ASSUM,92-U-235(N,F)33-AS-85,CUM,FY,,MXW)
+ANALYSIS    Neutron emission probability was defined as
+           measured delayed neutron yield (Subent 002) divided by
+           fission cumulative yield of As-85 ,
+           which was estimated from the yield systematics int his
+           mass region (J.-V.Kratz+, to be published)
+ERR-ANALYS            Errors do not include the uncertainties in
            the fission yields.
+STATUS     (TABLE) Table 2 of J.Inorg.Nucl.Chem.,35,1407,1973
+           (DEP,20521002) Delayed neutron yield.
 HISTORY    (20170723C) SD
-ENDBIB               6
+           (20170805A) M.M. ANALYSIS, ASSUMED were added ,
+             DEP code was added in STATUS
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 3          1
-DATA       +DATA-ERR  -DATA-ERR
-NO-DIM     NO-DIM     NO-DIM
- 0.038       0.017      0.010
+DATA       DATA-ERR   ASSUM
+NO-DIM     NO-DIM     PC/FIS
+ 0.23       0.015      0.34
 ENDDATA              3
-ENDSUBENT           14
-ENDENTRY             6
+ENDSUBENT           23
+SUBENT        20521006   20170805   20190219   20190217       2268
+BIB                  7         15
+REACTION   (33-AS-86(0,B-)34-SE-86,,PN,,,DERIV)
+DECAY-DATA (33-AS-86,0.9SEC,DG)   0.9+-0.2 sec
+ASSUMED    (ASSUM,92-U-235(N,F)33-AS-86,CUM,FY,,MXW)
+ANALYSIS    Neutron emission probability was defined as
+           measured delayed neutron yield (Subent 002) divided by
+           fission cumulative yield of As-86 ,
+           which was estimated from the yield systematics in this
+           mass region (J.-V.Kratz+, to be published)
+ERR-ANALYS            Errors do not include the uncertainties in
+           the fission yields.
+STATUS     (TABLE) Table 2 of J.Inorg.Nucl.Chem.,35,1407,1973
+           (DEP,20521002) Delayed neutron yield.
+HISTORY    (20170723C) SD
+           (20170805A) M.M. ANALYSIS was added ,
+             DEP code was added in STATUS
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 4          1
+DATA       +DATA-ERR  -DATA-ERR  ASSUM
+NO-DIM     NO-DIM     NO-DIM     PC/FIS
+ 0.038      0.0085     0.005      0.15
+ENDDATA              3
+ENDSUBENT           23
+SUBENT        20521007   20170805   20190219   20190217       2268
+BIB                  9         14
+REACTION   ((92-U-235(N,F)33-AS-87,CUM,FY,,MXW)/
+           (92-U-235(N,F)MASS,CHN,FY,,MXW))
+RESULT     (FRCUM)
+DECAY-DATA (33-AS-87,0.3SEC,DG)   ~0.3 sec
+           (35-BR-87,55.SEC)
+ANALYSIS   (DECAY)
+ASSUMED    (ASSUM,(92-U-235(N,F)35-BR-87,CUM,FY,,MXW)/
+           (92-U-235(N,F)MASS,CHN,FY,,MXW))
+            From H.D.Schuessler+
+REL-REF    (R,,H.D.Schuessler+,C,69VIENNA,,591,1969)
+           (A,,G.T.Garvey+,J,RMP,41,S1,1969)  4.+-2. %
+ERR-ANALYS (ERR-1) Error in neutron flux
+STATUS     (TABLE) Text, p.1413 of J.Inorg.Nucl.Chem.,35,1407,1973
+HISTORY    (20170805C) M.M.
+ENDBIB              14
+COMMON               2          3
+EN-DUMMY   ERR-1
+EV         PER-CENT
+ 2.5300E-02  3.
+ENDCOMMON            3
+DATA                 5          1
+MASS       DATA       DATA-ERR   ASSUM      ASSUM-ERR
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+ 87.        0.018      0.0045       0.95      0.04
+ENDDATA              3
+ENDSUBENT           26
+ENDENTRY             7

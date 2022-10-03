@@ -1,6 +1,6 @@
-ENTRY            20879   20151212   20160603   20160523       2246
-SUBENT        20879001   20151212   20160603   20160523       2246
-BIB                 12         31
+ENTRY            20879   20171022   20190219   20190217       2268
+SUBENT        20879001   20171022   20190219   20190217       2268
+BIB                 13         54
 INSTITUTE  (2GERMNZ) Institut fuer Kernchemie.
 REFERENCE  (J,JIN,39,753,1977)
 AUTHOR     (W.Rudolph,K.-L.Kratz,G.Herrmann)
@@ -17,12 +17,28 @@ METHOD     (ACTIV)
            sample was started after 2.7 sec chemical separation
 DETECTOR   (FISCH) As flux monitor.
            (PROPC) 8 He-3 counters with an efficiency of
-           12.0 +- 2.0% (Am-Li reference ), for neutrons .
-           (GELI ) diode with a resolution of 2.3keV FWHM at
+           12.0 +-0.4 % (Am-Li reference ), for neutrons .
+           (GELI)  diode with a resolution of 2.3keV FWHM at
              1332keV and an efficiency of 18% of an Na-I
             3 by 3 in. crystal.
 PART-DET   (N)
            (G)
+ADD-RES    . Table 4 of J.Inorg.Nucl.Chem.,39,753,1977
+            Zp calculated from measured yield data and previously
+            known data for chains 134 and 135 from  a
+            compilation of Woell and Denschlag (priv.comm):
+             Mass    Zpropable          SIGMA-value
+             134.   52.078 +- 0.032    0.500 +- 0.001
+             135.   52.546 +- 0.013    0.531 +- 0.001
+           SIGMA-value of the mass-chains distribution ,
+            Zp errors include  uncertainties due to:
+            * amount of U-235,
+            * chemical yield,
+            * counting geometry,
+            * fission yields of iodine reference,
+            * scatter in fractional yield.
+             From these data fractional independent yield of
+            Te-134 was calculated to be  82 % .
 HISTORY    (19790410C) WWO.
            (19800723A) Changes in Subents.
            (19821119A) Subent 5 deleted, delayed neutron emission
@@ -32,75 +48,69 @@ HISTORY    (19790410C) WWO.
            (20151212A) SD:Updated to new date formats,lower case.
            DECAY-DATA corrected in Subents 006,007. ERR-ANALYS
            moved to Subents 006,007. MONITOR moved to Subent 004.
-ENDBIB              31
-COMMON               1          3
-EN-DUMMY
-EV
- 2.5000E-02
-ENDCOMMON            3
-ENDSUBENT           38
-NOSUBENT      20879003   20151212   20160603   20160523       2246
-SUBENT        20879004   20151212   20160603   20160523       2246
-BIB                  6         15
-REACTION   ((92-U-235(N,F)52-TE-134,IND,FY,,MXW)/
-           (92-U-235(N,F)MASS,CHN,FY))  Fractional independent
-             thermal fission yield.
-MONITOR    ((92-U-235(N,F)53-I-134,IND,FY)/
+           (20171022A) M.M. COMMENT was added.
+            Subents 008-011 were added (Pn, Table 5).
+            EN-DUMMY was moved in Subents 004-007.
+            NOSUBENT lines were inserted for Subents 002, 005 ,
+            Subent 003 was restored,
+            Subents 004,006 data were moved in ADD-RES,
+            according to comments of N.Otsuka(NDS,IAEA)
+ENDBIB              54
+NOCOMMON             0          0
+ENDSUBENT           57
+NOSUBENT      20879002   20171022   20190219   20190217       2268
+SUBENT        20879003   20171022   20190219   20190217       2268
+BIB                  8         18
+REACTION   ((92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)/
            (92-U-235(N,F)MASS,CHN,FY))
-MONIT-REF  (,G.Woell,W,WOELL,1975) With Denschlag, unpublished
-            compilation of fission yields, for
-            134-, 135-I reference data.
-ANALYSIS    A Gaussian was assumed for the charge distribution
-            and the fractional independent yield calculated
-            with its parameters from the measured yield data
-            and those measured by other authors (see MONIT-REF).
-STATUS     (TABLE) From the text on p.757 from JIN,39,753,1977.
-HISTORY    (19800723A) Reaction re-defined, units corrected.
-           MONITOR added.
-ENDBIB              15
-NOCOMMON             0          0
-DATA                 2          1
-MASS       DATA
-NO-DIM     NO-DIM
-  134.        0.82
-ENDDATA              3
-ENDSUBENT           23
-SUBENT        20879006   20151212   20160603   20160523       2246
-BIB                  5         13
-REACTION   (92-U-235(N,F)MASS,,ZP) Mean mass chain charge.
-ANALYSIS    Calculated from measured yield data and previously
-            known data for chains 134 and 135 from  a
-            compilation of Woell and Denschlag (priv.comm).
-ERR-ANALYS (DATA-ERR) The errors given include all
-            uncertainties due to:
-            * amount of U-235,
-            * chemical yield,
-            * counting geometry,
-            * fission yields of iodine reference,
-            * scatter in fractional yield.
-STATUS     (TABLE) Table 4 from JIN,39,753,1977.
-HISTORY    (19800724C) Subent added.
-ENDBIB              13
-NOCOMMON             0          0
-DATA                 3          2
-MASS       DATA       DATA-ERR
-NO-DIM     NO-DIM     NO-DIM
- 134.       52.078      0.032
- 135.       52.546      0.013
-ENDDATA              4
-ENDSUBENT           22
-SUBENT        20879007   20151212   20160603   20160523       2246
-BIB                  8         43
-REACTION   (92-U-235(N,F)ELEM/MASS,DL,NU,,MXW)
-            Delayed partial nu from specific precursors.
-MONITOR    (92-U-235(N,F)ELEM/MASS,DL/GRP,NU,,MXW)
+RESULT     (FRCUM)
+DECAY-DATA ((0.)51-SB-134-G,0.8SEC)
+           ((1.)51-SB-134-M,10.SEC)
+ANALYSIS    Sb-134-G yield was derived from that of Sb-134-M
+           using isomeric ratio of Kerek+.
+REL-REF    (R,,A.Kerek+,J,NP/A,195,177,1972)
+CORRECTION .For -
+            contamination in irradiated sample, e.t.c.
+STATUS     (TABLE) Table 3 of J.Inorg.Nucl.Chem.,39,753,1977.
+           (SPSDD,20878004) Superseded by newer publication.
+HISTORY    (19790410C) WWO.
+           (19790518E)
+           (19800723D) Deleted, duplicate data with 20878.004
+           (19800808D)
+           (19800723S) Subent was restored from archive, data
+           were added from Table 3.
+ENDBIB              18
+COMMON               2          3
+EN-DUMMY   ELEMENT
+EV         NO-DIM
+0.0253      51.
+ENDCOMMON            3
+DATA                 5          4
+MASS       ISOMER     DATA       DATA-ERR   DECAY-FLAG
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+  134.      1.           6.2 E-02   0.4 E-02  1.
+  134.      0.           1.32E-02   0.08E-02  0.
+  134.                   7.4 E-02   0.4 E-02
+  135.                   2.3 E-02   0.1 E-02
+ENDDATA              6
+ENDSUBENT           33
+NOSUBENT      20879004   20171022   20190219   20190217       2268
+NOSUBENT      20879005   20171022   20190219   20190217       2268
+NOSUBENT      20879006   20171022   20190219   20190217       2268
+SUBENT        20879007   20171022   20190219   20190217       2268
+BIB                  9         46
+REACTION   (92-U-235(N,F)ELEM/MASS,DL/CUM,NU,,MXW)
+            Delayed NU from specific precursors.
+REL-REF    (A,23349002,L.Tomlinson+,J,JIN,30,1649,1968)
+MONITOR    (92-U-235(N,F),DL/GRP,NU,,MXW)
 DECAY-DATA (51-SB-134-M,10.0SEC,DN) Delayed neutrons.
            (51-SB-135,1.706SEC,DN)
            (51-SB-136,0.75SEC,DN)
             Half-life value measured.
-ANALYSIS   Data were converted into absolute neutron yields by
+ANALYSIS   (DECAY) Neutron decay curve analyzed.
+           Data were converted into absolute neutron yields by
            relating them to the absolute neutron group abundances
-           of U-235, which are well known (see G. R. Keepin,
+           of U-235, which are well known (see G.R.Keepin,
            Physics of Nuclear Kinetic, Add.Wesley,NY (1965)). The
            neutron-decay curve of 32 unseparated samples of
            irradiated 235U (0.01 mg) was analyzed in terms of the
@@ -127,15 +137,20 @@ ERR-ANALYS (DATA-ERR) The errors given include all
             * counting geometry,
             * fission yields of iodine reference,
             * scatter in fractional yield.
-STATUS     (TABLE) Table 2 from JIN,39,753,1977.
+STATUS     (TABLE) Table 2 from J.Inorg.Nucl.Chem.,39,753,1977.
 HISTORY    (19800723A) Reaction re-defined, data factor removed.
            (19830202A) A.P.T. This Subent was originally numbered
            002. It was deleted in error and is now reinstated.
            (20151212A) SD: Col. ISOMER was added to DATA section.
            Sb-134 -> Sb-134 in DECAY-DATA (half-life=10.sec).Units
            NO-DIM -> PRT/FIS at DATA and DATA-ERR cols. BIB update
-ENDBIB              43
-NOCOMMON             0          0
+           (20171022A) M.M. CUM was added in SF5
+ENDBIB              46
+COMMON               1          3
+EN-DUMMY
+EV
+ 2.5000E-02
+ENDCOMMON            3
 DATA                 5          3
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR
 NO-DIM     NO-DIM     NO-DIM     PRT/FIS    PRT/FIS
@@ -143,5 +158,116 @@ NO-DIM     NO-DIM     NO-DIM     PRT/FIS    PRT/FIS
   51.        135.                    3.1E-04    0.3E-04
   51.        136.                    0.7E-04    0.3E-04
 ENDDATA              5
-ENDSUBENT           53
-ENDENTRY             5
+ENDSUBENT           60
+SUBENT        20879008   20171022   20190219   20190217       2268
+BIB                  7         16
+REACTION   (51-SB-134-M(0,B-)52-TE-134,,PN,,,DERIV)
+DECAY-DATA (51-SB-134-M,10.5SEC) 10.5+-0.6 sec from neutron decay,
+            10.43+-0.14 sec from gamma decay.
+           (52-TE-134,,DG,211.,,DG,79.,,DG,767.)
+ANALYSIS    Neutron emission probability Pn is ratio of
+            absolute neutron abundances ( Subent 007) to the
+           respective cumulative fission yields, which were
+           obtained by multiplying exp.mass yields of Walker with
+           the fractional cumulative fis.yield ( Subent 003).
+REL-REF    (D,,W.H.Walker,R,AECL-4704,1974)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (TABLE) Table 5 of J.Inorg.Nucl.Chem.,39,753,1977.
+           (DEP,20879007) Neutron abundances.
+           (DEP,20879003) Fractional cumulative fis. yield
+HISTORY    (20171022C) M.M.
+ENDBIB              16
+COMMON               1          3
+EN-NRM
+EV
+ 0.0253
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.00090    0.00015
+ENDDATA              3
+ENDSUBENT           28
+SUBENT        20879009   20171022   20190219   20190217       2268
+BIB                  7         16
+REACTION   (51-SB-135(0,B-)52-TE-135,,PN,,,DERIV)
+DECAY-DATA (51-SB-135,1.706SEC)  1.706+-0.014 sec from neutron
+           decay, 1.9+-0.2 from gamma-decay.
+           (52-TE-135,,DG,870.,0.253,DG,267.,0.119,DG,603.,1.0)
+ANALYSIS    Neutron emission probability Pn is ratio of
+            absolute neutron abundances ( Subent 007) to the
+           respective cumulative fission yields, which were
+           obtained by multiplying exp.mass yields of Walker with
+           the fractional cumulative fis.yield (Subent 003)
+REL-REF    (D,,W.H.Walker,R,AECL-4704,1974)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (TABLE) Table 5 of J.Inorg.Nucl.Chem.,39,753,1977.
+           (DEP,20879007) Neutron abundances.
+           (DEP,20879003) Fractional cumulative fis. yield
+HISTORY    (20171022C) M.M.
+ENDBIB              16
+COMMON               1          3
+EN-NRM
+EV
+ 0.0253
+ENDCOMMON            3
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.199      0.021
+ENDDATA              3
+ENDSUBENT           28
+SUBENT        20879010   20171022   20190219   20190217       2268
+BIB                  8         17
+REACTION   (51-SB-136(0,B-)52-TE-136,,PN,,,DERIV)
+DECAY-DATA (51-SB-136,0.75SEC)  0.75+-0.20 sec from neutron decay
+           (52-TE-136,17.5SEC,DG,331.)
+ANALYSIS    Neutron emission probability Pn is ratio of
+            absolute neutron abundances ( Subent 007) to the
+           respective cumulative fission yields, which were
+           obtained by multiplying exp.mass yields of Walker with
+           the estimated fractional cumulative fis.yield 0.36 %
+ASSUMED    (ASSUM,(92-U-235(N,F)51-SB-136,CUM,FY,,MXW)/
+           (92-U-235(N,F)MASS,CHN,FY))
+REL-REF    (D,,W.H.Walker,R,AECL-4704,1974)
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (TABLE) Table 5 of J.Inorg.Nucl.Chem.,39,753,1977.
+           (DEP,20879007) Neutron abundances.
+           (DEP,20879003) Fractional cumulative fis. yield
+HISTORY    (20171022C) M.M.
+ENDBIB              17
+COMMON               1          3
+EN-NRM
+EV
+ 0.0253
+ENDCOMMON            3
+DATA                 3          1
+DATA       DATA-ERR   ASSUM
+NO-DIM     NO-DIM     NO-DIM
+ 0.32      0.14        0.0036
+ENDDATA              3
+ENDSUBENT           29
+SUBENT        20879011   20171022   20190219   20190217       2268
+BIB                  6         10
+REACTION   (52-TE-136(0,B-)53-I-136,,PN,,,DERIV)
+DECAY-DATA (52-TE-136,25.SEC)  25.+-5. sec from neutron decay,
+              ~15.sec from gamma-decay
+ANALYSIS    Neutron emission probability was derived from
+           neutron intensity ratio of Sb-136 and Te-136.
+ERR-ANALYS (DATA-ERR) Type of error is not explained in the
+            article
+STATUS     (TABLE) Table 5 of J.Inorg.Nucl.Chem.,39,753,1977.
+           (DEP,20879010) Sb-136 neutron emission probability.
+HISTORY    (20171022C) M.M.
+ENDBIB              10
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+ 0.007      0.004
+ENDDATA              3
+ENDSUBENT           18
+ENDENTRY            11
