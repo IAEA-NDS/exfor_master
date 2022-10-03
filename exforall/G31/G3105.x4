@@ -1,6 +1,6 @@
-ENTRY            G3105   20120703   20121203   20120823       G025
-SUBENT        G3105001   20120703   20121203   20120823       G025
-BIB                 16         38
+ENTRY            G3105   20190606   20200421   20200421       G044
+SUBENT        G3105001   20190606   20200421   20200421       G044
+BIB                 13         31
 TITLE      Measurement of photo-neutron cross-sections in 208Pb
             and 209Bi with 50-70 MeV bremsstrahlung
 AUTHOR     (H.Naik, S.Singh, A.Goswami, V.K.Manchanda, G.N.Kim,
@@ -8,6 +8,7 @@ AUTHOR     (H.Naik, S.Singh, A.Goswami, V.K.Manchanda, G.N.Kim,
             S.Ganesan, S.Suryanarayana, M.H.Cho, W.Namkung)
 INSTITUTE  (3INDTRM,3KORKNU,3KORPUE)
 REFERENCE  (J,NIM/B,269,1417,2011)
+           (J,EPJ/A,52,339,2016) Revised cross sections in table
 FACILITY   (LINAC,3KORPUE) Pohang Accelerator Laboratory (PAL)
 INC-SOURCE (BRST) Pulsed electron beam on thin tungsten target
             (size 10.0 x 10.0 cm, thickness 0.1 mm)
@@ -19,35 +20,27 @@ METHOD     (ACTIV) Irradiated for 2-4 hours (10-15 mA, 3.75 Hz)
            (GSPEC) After cooling for 30 min
 DETECTOR   (HPGE) To count gamma-ray reaction products,
             1.8 keV FWHM at 1332.5 keV peak of 60Co
-MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
-           (13-AL-27(G,N+2P)11-NA-24,,SIG) 0.05-0.2 mb
-            at the bremsstrahlung energy range of 50-70 MeV
-DECAY-MON  (29-CU-64,,DG,1345.8)
-           (11-NA-24,,DG,1368.6)
-MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
-            65Cu(g,n)64Cu cross section
-           (,V.Di.Napoli+,J,NCL,1,835,1971)
-            27Al(g,n+2p)24Na cross section
-REL-REF    (R,,E.Browne+,B,BROWNE,,1986) WWW Version 2.1
+REL-REF    (R,,E.Browne+,B,BROWNE,,,1986) WWW Version 2.1
            (R,,J.Blachot+,J,APH,6,3,1981) Decay data
 ERR-ANALYS (ERR-T) Total uncertainty
-           (ERR-SYS) Overall systematic error                (6%)
-                      - Irradiation time                  (~0.5%)
-                      - Detection efficiency calibration    (~3%)
-                      - Half-life and gamma-ray abundance   (~1%)
            (ERR-S,5.,10.) Counting statistics             (5-10%)
+           (ERR-SYS) Overall systematic error due to         (6%)
+           (ERR-1)    - Irradiation time                  (~0.5%)
+           (ERR-2)    - Detection efficiency calibration    (~3%)
+           (ERR-3)    - Half-life and gamma-ray abundance   (~1%)
 STATUS     (APRVD) Approved by G.N.Kim (2011-06-23)
 HISTORY    (20110527C) S.C.Yang
            (20120703U) On. SAMPLE: free text revised
-ENDBIB              38
-COMMON               3          3
-MONIT      MONIT-ERR  ERR-SYS
-MB         MB         PER-CENT
- 16.35      0.78       6.
+           (20190606A) On. 002-014 superseded. 015-021 added.
+ENDBIB              31
+COMMON               4          3
+ERR-SYS    ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 6.         0.5        3.         1.
 ENDCOMMON            3
-ENDSUBENT           45
-SUBENT        G3105002   20110527   20110905   20110818       G023
-BIB                  3         21
+ENDSUBENT           38
+SUBENT        G3105002   20190606   20200421   20200421       G044
+BIB                  7         32
 REACTION   (83-BI-209(G,3N)83-BI-206,,SIG,,BRA)
 DECAY-DATA ((1.)83-BI-206,6.243D,DG,183.98,0.158)
            ((2.)83-BI-206,6.243D,DG,262.7,0.0302)
@@ -68,9 +61,24 @@ DECAY-DATA ((1.)83-BI-206,6.243D,DG,183.98,0.158)
            ((17.)83-BI-206,6.243D,DG,1595.27,0.0501)
            ((18.)83-BI-206,6.243D,DG,1718.7,0.38044)
            ((19.)83-BI-206,6.243D,DG,1878.65,0.0201)
-STATUS     (TABLE) Table 1 of J,NIM/B,269,1417,2011
-ENDBIB              21
-NOCOMMON             0          0
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 1 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105018) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              32
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+ 16.35      0.78
+ENDCOMMON            3
 DATA                 4         91
 EN-MAX     DATA       ERR-T      DECAY-FLAG
 MEV        MB         MB         NO-DIM
@@ -166,9 +174,9 @@ MEV        MB         MB         NO-DIM
 70.        0.733      0.042      18.
 70.        0.832      0.036      19.
 ENDDATA             93
-ENDSUBENT          119
-SUBENT        G3105003   20110527   20110905   20110818       G023
-BIB                  3         15
+ENDSUBENT          134
+SUBENT        G3105003   20190606   20200421   20200421       G044
+BIB                  7         26
 REACTION   (83-BI-209(G,4N)83-BI-205,,SIG,,BRA)
 DECAY-DATA ((1.)83-BI-205,15.3D,DG,284.18,0.01692)
            ((2.)83-BI-205,15.3D,DG,549.85,0.0295)
@@ -183,9 +191,24 @@ DECAY-DATA ((1.)83-BI-205,15.3D,DG,284.18,0.01692)
            ((11.)83-BI-205,15.3D,DG,1775.79,0.0399)
            ((12.)83-BI-205,15.3D,DG,1861.67,0.0617)
            ((13.)83-BI-205,15.3D,DG,1903.42,0.0247)
-STATUS     (TABLE) Table 2 of J,NIM/B,269,1417,2011
-ENDBIB              15
-NOCOMMON             0          0
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 2 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105019) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              26
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+ 16.35      0.78
+ENDCOMMON            3
 DATA                 4         45
 EN-MAX     DATA       ERR-T      DECAY-FLAG
 MEV        MB         MB         NO-DIM
@@ -235,17 +258,32 @@ MEV        MB         MB         NO-DIM
 70.        0.360      0.052      11.
 70.        0.384      0.025      12.
 ENDDATA             47
-ENDSUBENT           67
-SUBENT        G3105004   20110527   20110905   20110818       G023
-BIB                  3          6
+ENDSUBENT           82
+SUBENT        G3105004   20190606   20200421   20200421       G044
+BIB                  7         17
 REACTION   (83-BI-209(G,5N)83-BI-204,,SIG,,BRA)
 DECAY-DATA ((1.)83-BI-204,11.22HR,DG,374.72,0.820)
            ((2.)83-BI-204,11.22HR,DG,899.15,0.988)
            ((3.)83-BI-204,11.22HR,DG,911.78,0.135,
                                   DG,912.22,0.111)
-STATUS     (TABLE) Table 3 of J,NIM/B,269,1417,2011
-ENDBIB               6
-NOCOMMON             0          0
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 3 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105020) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              17
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+ 16.35      0.78
+ENDCOMMON            3
 DATA                 4         15
 EN-MAX     DATA       ERR-T      DECAY-FLAG
 MEV        MB         MB         NO-DIM
@@ -265,21 +303,36 @@ MEV        MB         MB         NO-DIM
 70.        0.178      0.015      2.
 70.        0.185      0.015      3.
 ENDDATA             17
-ENDSUBENT           28
-SUBENT        G3105005   20110527   20110905   20110818       G023
-BIB                  3         10
+ENDSUBENT           43
+SUBENT        G3105005   20190606   20200421   20200421       G044
+BIB                  7         21
 REACTION   (83-BI-209(G,6N)83-BI-203,,SIG,,BRA)
-DECAY-DATA ((1.)83-BI-203,11.76HR,DG,722.4,0.0477)
-           ((2.)83-BI-203,11.76HR,DG,816.2,0.040)
-           ((3.)83-BI-203,11.76HR,DG,820.3,0.300)
-           ((4.)83-BI-203,11.76HR,DG,825.2,0.146)
-           ((5.)83-BI-203,11.76HR,DG,847.3,0.080)
-           ((6.)83-BI-203,11.76HR,DG,1033.8,0.090)
-           ((7.)83-BI-203,11.76HR,DG,1536.4,0.075)
-           ((8.)83-BI-203,11.76HR,DG,1847.4,0.114)
-STATUS     (TABLE) Table 4 of J,NIM/B,269,1417,2011
-ENDBIB              10
-NOCOMMON             0          0
+DECAY-DATA ((1.)83-BI-203-G,11.76HR,DG,722.4,0.0477)
+           ((2.)83-BI-203-G,11.76HR,DG,816.2,0.040)
+           ((3.)83-BI-203-G,11.76HR,DG,820.3,0.300)
+           ((4.)83-BI-203-G,11.76HR,DG,825.2,0.146)
+           ((5.)83-BI-203-G,11.76HR,DG,847.3,0.080)
+           ((6.)83-BI-203-G,11.76HR,DG,1033.8,0.090)
+           ((7.)83-BI-203-G,11.76HR,DG,1536.4,0.075)
+           ((8.)83-BI-203-G,11.76HR,DG,1847.4,0.114)
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 4 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105021) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              21
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+ 16.35      0.78
+ENDCOMMON            3
 DATA                 4         19
 EN-MAX     DATA       ERR-T      DECAY-FLAG
 MEV        MB         MB         NO-DIM
@@ -303,17 +356,32 @@ MEV        MB         MB         NO-DIM
 70.        0.136      0.015      7.
 70.        0.092      0.008      8.
 ENDDATA             21
-ENDSUBENT           36
-SUBENT        G3105006   20110527   20110905   20110818       G023
-BIB                  4          6
+ENDSUBENT           51
+SUBENT        G3105006   20190606   20200421   20200421       G044
+BIB                  8         17
 REACTION   (82-PB-208(G,4N)82-PB-204-M,,SIG,,BRA)
 SAMPLE     (82-PB-208,ENR=0.9986)
 DECAY-DATA ((1.)82-PB-204-M,67.2MIN,DG,374.72,0.890)
            ((2.)82-PB-204-M,67.2MIN,DG,899.15,0.990)
            ((3.)82-PB-204-M,67.2MIN,DG,911.78,0.9069)
-STATUS     (TABLE) Table 5 of J,NIM/B,269,1417,2011
-ENDBIB               6
-NOCOMMON             0          0
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 5 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105015) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              17
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+ 16.35      0.78
+ENDCOMMON            3
 DATA                 4          9
 EN-MAX     DATA       ERR-T      DECAY-FLAG
 MEV        MB         MB         NO-DIM
@@ -327,15 +395,30 @@ MEV        MB         MB         NO-DIM
 70.        0.355      0.026      2.
 70.        0.378      0.029      3.
 ENDDATA             11
-ENDSUBENT           22
-SUBENT        G3105007   20110527   20110905   20110818       G023
-BIB                  4          4
+ENDSUBENT           37
+SUBENT        G3105007   20190606   20200421   20200421       G044
+BIB                  8         15
 REACTION   (82-PB-208(G,5N)82-PB-203,,SIG,,BRA)
 SAMPLE     (82-PB-208,ENR=0.9986)
-DECAY-DATA (82-PB-203,51.873HR,DG,279.2,0.810)
-STATUS     (TABLE) Table 6 of J,NIM/B,269,1417,2011
-ENDBIB               4
-NOCOMMON             0          0
+DECAY-DATA (82-PB-203-G,51.873HR,DG,279.2,0.810)
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 6 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105016) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              15
+COMMON               2          3
+MONIT      MONIT-ERR
+MB         MB
+ 16.35      0.78
+ENDCOMMON            3
 DATA                 3          3
 EN-MAX     DATA       ERR-T
 MEV        MB         MB
@@ -343,9 +426,9 @@ MEV        MB         MB
 60.        0.145      0.025
 70.        0.187      0.024
 ENDDATA              5
-ENDSUBENT           14
-SUBENT        G3105008   20110527   20110905   20110818       G023
-BIB                  4          8
+ENDSUBENT           29
+SUBENT        G3105008   20190606   20200421   20200421       G044
+BIB                  8         19
 REACTION   (82-PB-208(G,6N)82-PB-202-M,,SIG,,BRA)
 SAMPLE     (82-PB-208,ENR=0.9986)
 DECAY-DATA ((1.)82-PB-202-M,3.53HR,DG,422.18,0.860)
@@ -353,12 +436,23 @@ DECAY-DATA ((1.)82-PB-202-M,3.53HR,DG,422.18,0.860)
            ((3.)82-PB-202-M,3.53HR,DG,657.49,0.324)
            ((4.)82-PB-202-M,3.53HR,DG,786.99,0.500)
            ((5.)82-PB-202-M,3.53HR,DG,960.67,0.920)
-STATUS     (TABLE) Table 7 of J,NIM/B,269,1417,2011
-ENDBIB               8
-COMMON               1          3
-EN-MAX
-MEV
-70.
+MONITOR    ((MONIT)29-CU-65(G,N)29-CU-64,,SIG)
+           (13-AL-27(G,X)11-NA-24,,SIG) 0.05-0.2 mb
+            at the bremsstrahlung energy range of 50-70 MeV
+DECAY-MON  (29-CU-64,,DG,1345.8)
+           (11-NA-24,,DG,1368.6)
+MONIT-REF  ((MONIT),S.Shibata+,J,PR/C,35,254,1987)
+            65Cu(g,n)64Cu cross section
+           (,V.Di.Napoli+,J,NCL,1,835,1971)
+            27Al(g,n+2p)24Na cross section
+STATUS     (TABLE) Table 7 of Nucl.Instrum.Meth.B 269,1417,2011
+           (SPSDD,G3105017) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB              19
+COMMON               3          3
+EN-MAX     MONIT      MONIT-ERR
+MEV        MB         MB
+70.         16.35      0.78
 ENDCOMMON            3
 DATA                 3          5
 DATA       ERR-T      DECAY-FLAG
@@ -369,14 +463,16 @@ MB         MB         NO-DIM
 0.113      0.026      4.
 0.084      0.034      5.
 ENDDATA              7
-ENDSUBENT           24
-SUBENT        G3105009   20110527   20110905   20110818       G023
-BIB                  2          4
+ENDSUBENT           35
+SUBENT        G3105009   20190606   20200421   20200421       G044
+BIB                  3          6
 REACTION   (83-BI-209(G,6N)83-BI-203,,SIG,,BRA,DERIV)
             Average of gamma line dependent cross sections
-STATUS     (TABLE) Table 8 of J,NIM/B,269,1417,2011
+STATUS     (TABLE) Table 8 of Nucl.Instrum.Meth.B 269,1417,2011
            (DEP,G3105005) Gamma line dependent cross sections
-ENDBIB               4
+           (SPSDD,G3105021) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          3
 EN-MAX     DATA       ERR-T
@@ -385,14 +481,16 @@ MEV        MB         MB
 65.        0.057      0.008
 70.        0.105      0.022
 ENDDATA              5
-ENDSUBENT           14
-SUBENT        G3105010   20110527   20110905   20110818       G023
-BIB                  2          4
+ENDSUBENT           16
+SUBENT        G3105010   20190606   20200421   20200421       G044
+BIB                  3          6
 REACTION   (83-BI-209(G,5N)83-BI-204,,SIG,,BRA,DERIV)
             Average of gamma line dependent cross sections
-STATUS     (TABLE) Table 8 of J,NIM/B,269,1417,2011
+STATUS     (TABLE) Table 8 of Nucl.Instrum.Meth.B 269,1417,2011
            (DEP,G3105004) Gamma line dependent cross sections
-ENDBIB               4
+           (SPSDD,G3105020) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          5
 EN-MAX     DATA       ERR-T
@@ -403,14 +501,16 @@ MEV        MB         MB
 65.        0.163      0.023
 70.        0.171      0.019
 ENDDATA              7
-ENDSUBENT           16
-SUBENT        G3105011   20110527   20110905   20110818       G023
-BIB                  2          4
+ENDSUBENT           18
+SUBENT        G3105011   20190606   20200421   20200421       G044
+BIB                  3          6
 REACTION   (83-BI-209(G,4N)83-BI-205,,SIG,,BRA,DERIV)
             Average of gamma line dependent cross sections
-STATUS     (TABLE) Table 8 of J,NIM/B,269,1417,2011
+STATUS     (TABLE) Table 8 of Nucl.Instrum.Meth.B 269,1417,2011
            (DEP,G3105003) Gamma line dependent cross sections
-ENDBIB               4
+           (SPSDD,G3105019) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          5
 EN-MAX     DATA       ERR-T
@@ -421,14 +521,16 @@ MEV        MB         MB
 65.        0.403      0.056
 70.        0.420      0.055
 ENDDATA              7
-ENDSUBENT           16
-SUBENT        G3105012   20110527   20110905   20110818       G023
-BIB                  2          4
+ENDSUBENT           18
+SUBENT        G3105012   20190606   20200421   20200421       G044
+BIB                  3          6
 REACTION   (83-BI-209(G,3N)83-BI-206,,SIG,,BRA,DERIV)
             Average of gamma line dependent cross sections
-STATUS     (TABLE) Table 8 of J,NIM/B,269,1417,2011
+STATUS     (TABLE) Table 8 of Nucl.Instrum.Meth.B 269,1417,2011
            (DEP,G3105002) Gamma line dependent cross sections
-ENDBIB               4
+           (SPSDD,G3105018) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          5
 EN-MAX     DATA       ERR-T
@@ -439,28 +541,32 @@ MEV        MB         MB
 65.        0.783      0.077
 70.        0.819      0.088
 ENDDATA              7
-ENDSUBENT           16
-SUBENT        G3105013   20110527   20110905   20110818       G023
-BIB                  2          4
-REACTION   (82-PB-208(G,6N)82-PB-202,,SIG,,BRA,DERIV)
+ENDSUBENT           18
+SUBENT        G3105013   20190606   20200421   20200421       G044
+BIB                  3          6
+REACTION   (82-PB-208(G,6N)82-PB-202-M,,SIG,,BRA,DERIV)
             Average of gamma line dependent cross sections
-STATUS     (TABLE) Table 9 of J,NIM/B,269,1417,2011
+STATUS     (TABLE) Table 9 of Nucl.Instrum.Meth.B 269,1417,2011
            (DEP,G3105008) Gamma line dependent cross sections
-ENDBIB               4
+           (SPSDD,G3105017) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          1
 EN-MAX     DATA       ERR-T
 MEV        MB         MB
 70.        0.106      0.023
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        G3105014   20110527   20110905   20110818       G023
-BIB                  2          4
-REACTION   (82-PB-208(G,4N)82-PB-204,,SIG,,BRA,DERIV)
+ENDSUBENT           14
+SUBENT        G3105014   20190606   20200421   20200421       G044
+BIB                  3          6
+REACTION   (82-PB-208(G,4N)82-PB-204-M,,SIG,,BRA,DERIV)
             Average of gamma line dependent cross sections
-STATUS     (TABLE) Table 9 of J,NIM/B,269,1417,2011
+STATUS     (TABLE) Table 9 of Nucl.Instrum.Meth.B 269,1417,2011
            (DEP,G3105006) Gamma line dependent cross sections
-ENDBIB               4
+           (SPSDD,G3105015) Renormalized cross sections
+HISTORY    (20190606A) On. STATUS=SPSDD added.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3          3
 EN-MAX     DATA       ERR-T
@@ -469,5 +575,221 @@ MEV        MB         MB
 60.        0.344      0.025
 70.        0.373      0.016
 ENDDATA              5
-ENDSUBENT           14
-ENDENTRY            14
+ENDSUBENT           16
+SUBENT        G3105015   20190606   20200421   20200421       G044
+BIB                  7         13
+REACTION   (82-PB-208(G,4N)82-PB-204-M,,SIG,,BRA)
+DECAY-DATA (82-PB-204-M,67.2MIN,DG,374.72,0.89,
+                                DG,899.15,0.99,
+                                DG,911.78,0.9069)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 4          3
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+50.        0.653      0.062      0.068
+60.        0.696      0.084      0.116
+70.        0.650      0.085      0.155
+ENDDATA              5
+ENDSUBENT           23
+SUBENT        G3105016   20190606   20200421   20200421       G044
+BIB                  7         12
+REACTION   (82-PB-208(G,5N)82-PB-203,,SIG,,BRA)
+DECAY-DATA (82-PB-203-G,51.87HR,DG,279.2,0.81,
+                                DG,401.32,0.0353)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 4          3
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+50.        2.288      0.416      0.068
+60.        3.480      0.596      0.116
+70.        3.329      0.427      0.155
+ENDDATA              5
+ENDSUBENT           22
+SUBENT        G3105017   20190606   20200421   20200421       G044
+BIB                  7         15
+REACTION   (82-PB-208(G,6N)82-PB-202-M,,SIG,,BRA)
+DECAY-DATA (82-PB-202-M,3.53HR,DG,422.18,0.86,
+                               DG,459.72,0.086,
+                               DG,657.49,0.324,
+                               DG,786.99,0.50,
+                               DG,960.7,0.92)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              15
+NOCOMMON             0          0
+DATA                 4          2
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+60.        0.628      0.127      0.116
+70.        0.823      0.221      0.155
+ENDDATA              4
+ENDSUBENT           24
+SUBENT        G3105018   20190606   20200421   20200421       G044
+BIB                  7         29
+REACTION   (83-BI-209(G,3N)83-BI-206,,SIG,,BRA)
+DECAY-DATA (83-BI-206,6.243D,DG,183.98,0.158,
+                             DG,262.7,0.0302,
+                             DG,343.51,0.23439,
+                             DG,398.0,0.10741,
+                             DG,497.06,0.1531,
+                             DG,516.18,0.40747,
+                             DG,537.45,0.304,
+                             DG,620.48,0.0576,
+                             DG,632.25,0.0447,
+                             DG,657.16,0.0191,
+                             DG,803.1,0.990,
+                             DG,881.01,0.66164,
+                             DG,895.12,0.15656,
+                             DG,1018.63,0.07596,
+                             DG,1098.26,0.135,
+                             DG,1405.01,0.0143,
+                             DG,1595.27,0.0501,
+                             DG,1718.7,0.38044,
+                             DG,1878.65,0.0201)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              29
+NOCOMMON             0          0
+DATA                 4          5
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+50.        8.411      0.516      0.068
+55.        7.672      0.741      0.092
+60.        7.290      0.499      0.116
+65.        7.560      0.743      0.133
+70.        7.297      0.784      0.155
+ENDDATA              7
+ENDSUBENT           41
+SUBENT        G3105019   20190606   20200421   20200421       G044
+BIB                  7         26
+REACTION   (83-BI-209(G,4N)83-BI-205,,SIG,,BRA)
+DECAY-DATA (83-BI-205,15.31D,DG,284.18,0.01692,
+                             DG,549.85,0.0295,
+                             DG,570.6,0.0434,
+                             DG,580.3,0.0594,
+                             DG,703.44,0.310,
+                             DG,759.1,0.0104,
+                             DG,910.87,0.0164,
+                             DG,987.62,0.1613,
+                             DG,1043.72,0.0751,
+                             DG,1190.03,0.0226,
+                             DG,1351.5,0.0106,
+                             DG,1616.31,0.0228,
+                             DG,1764.36,0.325,
+                             DG,1775.79,0.0399,
+                             DG,1861.67,0.0617,
+                             DG,1903.42,0.0247)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              26
+NOCOMMON             0          0
+DATA                 4          5
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+50.        6.584      1.129      0.068
+55.        6.545      0.613      0.092
+60.        5.912      0.775      0.116
+65.        5.541      0.770      0.133
+70.        5.166      0.677      0.155
+ENDDATA              7
+ENDSUBENT           38
+SUBENT        G3105020   20190606   20200421   20200421       G044
+BIB                  7         14
+REACTION   (83-BI-209(G,5N)83-BI-204,,SIG,,BRA)
+DECAY-DATA (83-BI-204,11.22HR,DG,374.72,0.820,
+                              DG,899.15,0.988,
+                              DG,911.78,0.135,
+                              DG,912.22,0.111)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 4          5
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+50.        2.645      0.274      0.068
+55.        3.838      0.836      0.092
+60.        3.770      0.380      0.116
+65.        3.570      0.504      0.133
+70.        3.164      0.352      0.155
+ENDDATA              7
+ENDSUBENT           26
+SUBENT        G3105021   20190606   20200421   20200421       G044
+BIB                  7         18
+REACTION   (83-BI-209(G,6N)83-BI-203,,SIG,,BRA)
+DECAY-DATA (83-BI-203-G,11.76HR,DG,722.4,0.0477,
+                                DG,816.2,0.040,
+                                DG,820.3,0.300,
+                                DG,825.2,0.146,
+                                DG,847.3,0.080,
+                                DG,1033.8,0.090,
+                                DG,1536.4,0.075,
+                                DG,1847.4,0.114)
+MONITOR    (13-AL-27(G,X)11-NA-24,,SIG,,BRA)
+            - Al foil (purity > 99.99%, thickness: 0.025 mm)
+            The ratio of the photon flux above the monitor
+            threshold and the flux above the 208Pb(g,xn)
+            was calculated by GEANT4 code.
+DECAY-MON  (11-NA-24,14.959HR,DG,1368.6,1.00)
+MONIT-REF  (,V.Di Napoli+,J,NCL,1,835,1971)
+STATUS     (TABLE) Table 5 of Eur.Phys.J.A52,339,2016
+HISTORY    (20190606C) S.C.Yang
+ENDBIB              18
+NOCOMMON             0          0
+DATA                 4          3
+EN-MAX     DATA       ERR-T      MONIT
+MEV        MB         MB         MB
+60.        1.012      0.176      0.116
+65.        2.024      0.284      0.133
+70.        2.835      0.594      0.155
+ENDDATA              5
+ENDSUBENT           28
+ENDENTRY            21
