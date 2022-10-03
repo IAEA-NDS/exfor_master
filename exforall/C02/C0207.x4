@@ -1,12 +1,12 @@
-ENTRY            C0207     980304              20050926       0000
-SUBENT        C0207001     980304              20050926       0000
-BIB                 11         17
+ENTRY            C0207   20210828   20211123   20211122       C203
+SUBENT        C0207001   20210828   20211123   20211122       C203
+BIB                 11         19
 INSTITUTE  (2UK LVP)
-REFERENCE  (J,NP,18,638,60)
-AUTHOR     (VASTUPAL PARIKH)
+REFERENCE  (J,NP,18,638,1960)
+AUTHOR     (Vastupal Parikh)
 TITLE      Cross-sections for Al27(p,3pn)Na24, Al27(p,5p5n)F18
             and C12(p,3p3n)Be7 relative to C12(p,pn)C11
-FACILITY   (SYNCY)
+FACILITY   (SYNCY,2UK LVP)
 INC-SOURCE Mean energy of proton beam was accurate to +-15 MeV
 SAMPLE     2 sets of target plates consisting of aluminum
             sandwiched between two carbon plates.
@@ -16,37 +16,44 @@ METHOD     (ACTIV,BCINT,INTB)
 DETECTOR   (GEMUC)
 CORRECTION Counting rates corrected for background radiation and
             deadtime of Geiger counter.
-HISTORY    (870319C)
-           (980304A) BIB update. Converted to lower case.
-ENDBIB              17
+HISTORY    (19870319C)
+           (19980304A) BIB update. Converted to lower case.
+           (20210725A) OS. REACTION corrected in subs.2,3,5,
+            ERR-ANALYS and STATUS updated
+ENDBIB              19
 COMMON               1          3
 EN-ERR
 MEV
  15.
 ENDCOMMON            3
-ENDSUBENT           24
-SUBENT        C0207002     980304              20050926       0000
-BIB                  6         16
-REACTION   ((6-C-12(P,N+P)6-C-11,,SIG)/
-           (13-AL-27(P,N+3P)11-NA-24,,SIG))
+ENDSUBENT           26
+SUBENT        C0207002   20210828   20211123   20211122       C203
+BIB                  7         17
+REACTION   ((6-C-12(P,X)6-C-11,,SIG)/
+           (13-AL-27(P,X)11-NA-24,,SIG))
 DECAY-DATA (6-C-11,20.5MIN)
-           (11-NA-24-G,15.1HR)
+           (11-NA-24,15.1HR)
            No other data given by authors.
 CORRECTION 4.8% correction for Na24 due to secondary neutrons
             was made for the thick target.
-ERR-ANALYS Error includes uncertainties in
-           . annihilation radiation efficiency (2.7%),
-           . Na24 gamma radiation efficiency (2.5%)
+ERR-ANALYS (ERR-T) Error includes uncertainties in
            . statistical counting error in measuring C11 and Na24
-             activities.
-           . uncertainty in proton flux
+             activities,
+           . uncertainty in proton flux,
+           (ERR-1) annihilation radiation efficiency (2.7%),
+           (ERR-2) Na24 gamma radiation efficiency (2.5%)
 FLAG       (1.) Thick target sandwich
            (2.) Thin target sandwich
-STATUS     Data taken from Table 1 in article.
-ENDBIB              16
-NOCOMMON             0          0
+STATUS     (TABLE) Data taken from Table 1 in article.
+HISTORY    (20210725A) REACTION SF3 changed to X
+ENDBIB              17
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  2.7         2.5
+ENDCOMMON            3
 DATA                 4          6
-EN         DATA       DATA-ERR   FLAG
+EN         DATA       ERR-T      FLAG
 MEV        NO-DIM     NO-DIM     NO-DIM
  202.       3.99       0.20      1.
  202.       3.97       0.18      2.
@@ -55,23 +62,28 @@ MEV        NO-DIM     NO-DIM     NO-DIM
  342.       3.47       0.13      1.
  342.       3.49       0.25      2.
 ENDDATA              8
-ENDSUBENT           29
-SUBENT        C0207003     980304              20050926       0000
-BIB                  4         10
-REACTION   ((6-C-12(P,N+P)6-C-11,,SIG)/(6-C-12(P,X)4-BE-7,,SIG))
+ENDSUBENT           34
+SUBENT        C0207003   20210828   20211123   20211122       C203
+BIB                  5         11
+REACTION   ((6-C-12(P,X)6-C-11,,SIG)/(6-C-12(P,X)4-BE-7,,SIG))
 DECAY-DATA (6-C-11,20.5MIN)
            (4-BE-7,54.5D)
            No other data given by authors.
-ERR-ANALYS (DATA-ERR) Uncertainty given includes
+ERR-ANALYS (ERR-T) Uncertainty given includes
            . statistical uncertainty in C11 and Be7 activities,
-           . efficiency calibration of annihilation radiation
-             (2.7%).
-           Relative error of each measurement (0.7%).
-STATUS     Data taken from Table 1 in article.
-ENDBIB              10
-NOCOMMON             0          0
+           (ERR-1) efficiency calibration of annihilation
+             radiation (2.7%).
+           (ERR-2) Relative error of each measurement (0.7%).
+STATUS     (TABLE) Data taken from Table 2 in article.
+HISTORY    (20210725A) REACTION SF3 changed to X, STATUS corrected
+ENDBIB              11
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+   2.7       0.7
+ENDCOMMON            3
 DATA                 3          5
-EN         DATA       DATA-ERR
+EN         DATA       ERR-T
 MEV        NO-DIM     NO-DIM
  202.       4.34       0.12
  252.       4.30       0.12
@@ -79,7 +91,7 @@ MEV        NO-DIM     NO-DIM
  342.       3.97       0.11
  352.       4.05       0.11
 ENDDATA              7
-ENDSUBENT           22
+ENDSUBENT           27
 SUBENT        C0207004     980304              20050926       0000
 BIB                  3          5
 REACTION   ((13-AL-27(P,X)9-F-18,,SIG)/
@@ -98,15 +110,17 @@ MEV        NO-DIM
  342.       0.66
 ENDDATA              6
 ENDSUBENT           16
-SUBENT        C0207005     980304              20050926       0000
-BIB                  4          6
-REACTION   (13-AL-27(P,N+3P)11-NA-24,,SIG)
-DECAY-DATA (11-NA-24-G,15.1HR)
+SUBENT        C0207005   20210828   20211123   20211122       C203
+BIB                  4          8
+REACTION   (13-AL-27(P,X)11-NA-24,,SIG)
+DECAY-DATA (11-NA-24,15.1HR)
            No other data given by authors.
 STATUS     (CPX) Data from CPX file compiled in 1964/67 by
-            F.K. McGowan et al.
-HISTORY    (980304A) Moved from data set P0052.
-ENDBIB               6
+            F.K. McGowan et al., corresponding to Fig.3 in the
+            article
+HISTORY    (19980304A) Moved from data set P0052.
+           (20210725A) REACTION SF3 changed to X
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 2         14
 EN         DATA
@@ -126,5 +140,5 @@ MEV        MB
   894.000      9.320
  1000.000      8.960
 ENDDATA             16
-ENDSUBENT           27
+ENDSUBENT           29
 ENDENTRY             5

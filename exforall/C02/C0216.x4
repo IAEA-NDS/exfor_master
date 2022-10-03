@@ -1,11 +1,11 @@
-ENTRY            C0216     960422              20050926       0000
-SUBENT        C0216001     960422              20050926       0000
-BIB                 11         17
+ENTRY            C0216   20210828   20211123   20211122       C203
+SUBENT        C0216001   20210828   20211123   20211122       C203
+BIB                 10         17
 INSTITUTE  (1USABNL)
-REFERENCE  (J,PR,111,1386,58)
-AUTHOR     (J.B.CUMMING,G.FRIEDLANDER,C.E.SWARTZ)
-TITLE      C-12(P,PN)C-11 CROSS SECTION AT 2 AND 3 BEV
-FACILITY   (SYNCY)
+REFERENCE  (J,PR,111,1386,1958)
+AUTHOR     (J.B.Cumming,G.Friedlander,C.E.Swartz)
+TITLE      C-12(p,pn)C-11 Cross Section at 2 and 3 BeV
+FACILITY   (SYNCY,1USABNL)
 SAMPLE     Cylindrical polystyrene-based plastic scintillators,
            1 inch thick and from 1 to 1.84 inches in diameter.
 METHOD     (ACTIV)
@@ -14,24 +14,34 @@ DETECTOR   (SCIN,TELES) Proton flux was measured with a counter
 CORRECTION Corrections for formation of C11 by secondary
            particles, for scattering and absorption effects and
            for deadtime losses were made.
-ERR-ANALYS Standard deviation 1.0% and systematic error 5% were
-           estimated.
-HISTORY    (870408C)
-           (960422A) Converted to lower case.
+HISTORY    (19870408C)
+           (19960422A) Converted to lower case.
+           (20210715A) OS. REACTIONs corrected, ERR-ANALYS and
+            STATUS updated
 ENDBIB              17
 NOCOMMON             0          0
 ENDSUBENT           20
-SUBENT        C0216002     960422              20050926       0000
-BIB                  5          7
-REACTION   (6-C-12(P,N+P)6-C-11,,SIG)
+SUBENT        C0216002   20210828   20211123   20211122       C203
+BIB                  7         13
+REACTION   (6-C-12(P,X)6-C-11,,SIG)
 DECAY-DATA (6-C-11,20.4MIN,B+,970.,1.0)
 FLAG       (1.) Scintillator diameter in 1.0 in..
            (2.) Scintillator diameter in 1.84 in..
            (3.) Scintillator diameter in 1.5 in.,
 CORRECTION Corrected from thick target cross sections.
-HISTORY    (960422A) REACTION corrected.
-ENDBIB               7
-NOCOMMON             0          0
+ERR-ANALYS (DATA-ERR) Root-mean square combination of error of
+           thick target cross section and of ratio thick/thin
+           target cross section
+           (ERR-SYS) Systematic error 5%
+STATUS     (TABLE) Table II, Phys.Rev.111,1386,1958
+HISTORY    (19960422A) REACTION corrected.
+           (20210715A) REACTION SF3 changed to X
+ENDBIB              13
+COMMON               1          3
+ERR-SYS
+PER-CENT
+  5.
+ENDCOMMON            3
 DATA                 4          6
 EN         DATA       DATA-ERR   FLAG
 GEV        MB         MB         NO-DIM
@@ -42,17 +52,22 @@ GEV        MB         MB         NO-DIM
  3.0        26.1       1.3       2.
  3.0        27.2       0.7       3.
 ENDDATA              8
-ENDSUBENT           20
-SUBENT        C0216003     890111              20050926       0000
-BIB                  5          7
-REACTION   (13-AL-27(P,N+3P)11-NA-24,,SIG)
+ENDSUBENT           30
+SUBENT        C0216003   20210828   20211123   20211122       C203
+BIB                  7         12
+REACTION   (13-AL-27(P,X)11-NA-24,,SIG)
 ANALYSIS   From previously measured values of 12C(p,pn)11C/
             27Al(p,3pn)24Na of Wolfgang+, Phys.Rev.,96,190 (1954).
-MONITOR    (6-C-12(P,N+P)6-C-11,UND,SIG)
+REL-REF    (R,C0214002,R.L.Wolfgang+,J,PR,96,190,1954)
+MONITOR    (6-C-12(P,X)6-C-11,,SIG)
+ERR-ANALYS (DATA-ERR) Source of uncertainty not given
 STATUS     (DEP,C0216002)
            (DEP,C0214002)
-HISTORY    (960422A) REACTION, MONITOR corrected.
-ENDBIB               7
+           (TABLE) Text p.1394, Phys.Rev.111,1386,1958
+HISTORY    (19960422A) REACTION, MONITOR corrected.
+           (20210715A) REACTION and MONITOR SF3 changed to X,
+            STATUS updated, REL-REF added
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 5          2
 EN         DATA       DATA-ERR   MONIT      MONIT-ERR
@@ -60,5 +75,5 @@ GEV        MB         MB         MB         MB
  2.0        10.4       0.6        26.0       0.9
  3.0        10.0       0.6        26.6       1.0
 ENDDATA              4
-ENDSUBENT           16
+ENDSUBENT           21
 ENDENTRY             3

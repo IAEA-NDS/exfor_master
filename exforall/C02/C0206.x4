@@ -1,12 +1,12 @@
-ENTRY            C0206     960422              20050926       0000
-SUBENT        C0206001     960422              20050926       0000
-BIB                 12         21
+ENTRY            C0206   20210828   20211123   20211122       C203
+SUBENT        C0206001   20210828   20211123   20211122       C203
+BIB                 12         22
 INSTITUTE  (2UK LVP)
-REFERENCE  (J,NP,18,628,60)
-AUTHOR     (VASTUPAL PARIKH)
-TITLE      Absolute cross-sections of C12(p,pn)C11
-            from 288 to 383 MeV
-FACILITY   (SYNCY)
+REFERENCE  (J,NP,18,628,1960)
+AUTHOR     (Vastupal Parikh)
+TITLE      Absolute cross-sections of C12(p,pn)C11 from 288 to
+           383 MeV
+FACILITY   (SYNCY,2UK LVP)
 INC-SOURCE The incident beam energy spread was about +- 3 MeV.
 SAMPLE     Graphite thickness about 0.17-0.54 g/cm2.
            C13 impurity 1.1 %.
@@ -15,25 +15,32 @@ DETECTOR   (GEMUC)
 CORRECTION Corrections of beam intensity variation,finite
            source size and absorption of proton in target
            were made. Correction due to C13 impurity was not made.
-ERR-ANALYS (DATA-ERR) Compounded error due to uncertainty in
-            - efficiency calibration       (2.7%)
-            - monitoring proton flux       (1.3%)
-            - counting statistics for 11C.
+ERR-ANALYS (ERR-T) Compounded error due to the following:
+           (ERR-1) uncertainty in efficiency calibration (2.7%)
+           (ERR-2) uncertainty in monitoring proton flux (1.3%)
            (ERR-S) Statistical error in counting 11C.
-HISTORY    (870317C)
-           (960422A) Converted to lower case.
-ENDBIB              21
-NOCOMMON             0          0
-ENDSUBENT           24
-SUBENT        C0206002     960422              20050926       0000
-BIB                  3          3
-REACTION   (6-C-12(P,N+P)6-C-11,,SIG)
-DECAY-DATA (6-C-11,20.5MIN,AR,511.,1.00)
-HISTORY    (890111A) REACTION corrected.
-ENDBIB               3
+HISTORY    (19870317C)
+           (19960422A) Converted to lower case.
+           (20210725A) OS. REACTION corrected, ERR-ANALYS updated,
+            STATUS added
+ENDBIB              22
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  2.7         1.3
+ENDCOMMON            3
+ENDSUBENT           29
+SUBENT        C0206002   20210828   20211123   20211122       C203
+BIB                  4          5
+REACTION   (6-C-12(P,X)6-C-11,,SIG)
+DECAY-DATA (6-C-11,20.5MIN,AR,511.)
+STATUS     (TABLE) Table 2, Nucl.Phys.18,628,1960
+HISTORY    (19890111A) REACTION corrected.
+           (20210725A) REACTION SF3 changed to X
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 5          5
-EN         EN-RSL     DATA       DATA-ERR   ERR-S
+EN         EN-RSL     DATA       ERR-T      ERR-S
 MEV        MEV        MB         MB         PER-CENT
  288.       3.         33.7       1.2        2.2
  313.       3.         34.8       1.1        1.3
@@ -41,5 +48,5 @@ MEV        MEV        MB         MB         PER-CENT
  362.       3.         32.4       1.0
  383.       3.         31.6       1.0        1.1
 ENDDATA              7
-ENDSUBENT           15
+ENDSUBENT           17
 ENDENTRY             2
