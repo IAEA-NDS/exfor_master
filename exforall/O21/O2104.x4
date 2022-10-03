@@ -1,5 +1,5 @@
-ENTRY            O2104   20120809   20130530   20130516       O050
-SUBENT        O2104001   20120809   20130530   20130516       O050
+ENTRY            O2104   20200212   20200623   20200616       O076
+SUBENT        O2104001   20200212   20200623   20200616       O076
 BIB                 12         18
 TITLE      Excitation function of Pr-141 (p,n) Nd-141 up to
            11.1 MeV.
@@ -7,8 +7,7 @@ AUTHOR     (J.Olkowsky, M.Le Pape, I.Gratot)
 INSTITUTE  (2FR PAR)
 REFERENCE  (J,NP,23,164,1961)
 FACILITY   (CYCLO,2FR PAR)
-METHOD     (ACTIV)
-           (STTA)
+METHOD     (ACTIV,STTA)
 MONITOR    ((MONIT)29-CU-63(P,N)30-ZN-63,,SIG)
 MONIT-REF  (B0017005,S.N.Ghoshal,J,PR,80,939,1950)
 DECAY-MON  (30-ZN-63,38.MIN,B+,2300.,0.85)
@@ -19,6 +18,7 @@ SAMPLE     The praseodymium sources was used as the oxide has very
            600 mg/cm**2 by weighing. A stack of this target,
            separated by 20 mum aluminum  was used.
 HISTORY    (20120809C) SB
+           (20200212U) SD: Small correction in Subent 002.
 ENDBIB              18
 COMMON               1          3
 MONIT
@@ -26,13 +26,19 @@ MB
 500.
 ENDCOMMON            3
 ENDSUBENT           25
-SUBENT        O2104002   20120809   20130530   20130516       O050
-BIB                  3          3
+SUBENT        O2104002   20200212   20200623   20200616       O076
+BIB                  4          5
 REACTION   (59-PR-141(P,N)60-ND-141,,SIG)
-DECAY-DATA (60-ND-141,2.5HR,EC,38.)
-STATUS     (CURVE).By CAJAD-Fig.1 of J,NP,23,164,1961
-ENDBIB               3
-NOCOMMON             0          0
+DECAY-DATA (60-ND-141-G,2.5HR,XR,38.)
+STATUS     (CURVE) By CAJAD-Fig.1 from Nucl.Phys.,23(1961)164
+HISTORY    (20200212U) SD: DECAY-DATA, STATUS updated. Errors of
+           digitizing added.
+ENDBIB               5
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PER-CENT
+  0.002      0.5
+ENDCOMMON            3
 DATA                 2         29
 EN         DATA
 MEV        MB
@@ -66,5 +72,5 @@ MEV        MB
       10.84  4.141E+02
       10.96  4.336E+02
 ENDDATA             31
-ENDSUBENT           39
+ENDSUBENT           45
 ENDENTRY             2

@@ -1,12 +1,14 @@
-ENTRY            O0594   20140121   20140701   20140623       O052
-SUBENT        O0594001   20140121   20140701   20140623       O052
-BIB                 16         46
+ENTRY            O0594   20200314   20200623   20200616       O076
+SUBENT        O0594001   20200314   20200623   20200616       O076
+BIB                 15         49
 TITLE      Nuclear charge dispersion of light-mass fission
            products in the fission of U-235 and U-238 by medium-
            energy protons
 AUTHOR     (A.H.Khan,G.B.Saha,L.Yaffe)
 INSTITUTE  (1CANMCG)
-REFERENCE  (J,CJC,48,1924,1970)
+REFERENCE  (J,CJC,48,1924,1970) - final publ.
+           (J,CJC,47,3817,1969) - prelim. publ., isomeric ratios
+           are given.
 SAMPLE     Target material were U-235 (94%) and natural uranium
            foils ranging in thickness from 77-122 mg/cm**2. The
            target foils sandwiched between two aluminum catcher
@@ -25,13 +27,12 @@ METHOD     (CHSEP)
            radii in the internal circulating proton beam.
            (SITA)
            (BCINT) The beam intensity varied between 0.5 to 1 muA.
-MISC-COL   (MISC).The number of determinations.
-STATUS     (TABLE) Tables 2-4 from CJC,48,1924
+MISC-COL   (MISC) The number of determinations.
 ADD-RES    (Z-DIS)
            Total isobaric cross section For a=93.
 ANALYSIS   (DECAY) The activities of all nuclides were measured
            for several half-lives.
-ERR-ANALYS (ERR-T) The uncertainties quoted include both the
+ERR-ANALYS (DATA-ERR) The uncertainties quoted include both the
            random errors associated with the decay curve analyses,
            dilution factors, chemical yields, etc., as well as
            systematic errors associated with detector
@@ -45,44 +46,50 @@ ERR-ANALYS (ERR-T) The uncertainties quoted include both the
 HISTORY    (19991007C)
            (19991013U) Last checking has been done.
            (19991117A) DATE is corrected
-           (20140121A) SD: REACTION code corrected in
-           Subents 3,5,11,13 according MEMO CP-D/781.  BIB update.
-ENDBIB              46
+           (20140121A) SD: REACTION code corrected in Subents 003,
+           005, 011, 013 according MEMO CP-D/781. BIB update.
+           (20200314A) SD: Corrections in all Subents.
+           Subents 018-021 added from O0665. ERR-T -> DATA-ERR.
+ENDBIB              49
 NOCOMMON             0          0
-ENDSUBENT           49
-SUBENT        O0594002   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (92-U-235(P,F)39-Y-90-M,IND,SIG)
-RAD-DET    (39-Y-90-M,DG)
+ENDSUBENT           52
+SUBENT        O0594002   20200314   20200623   20200616       O076
+BIB                  5          6
+REACTION   (92-U-235(P,F)39-Y-90-M,,SIG)
 DECAY-DATA (39-Y-90-M,3.2HR,DG,202.,0.97)
-DETECTOR   (NAICR) A 3-In.*3-In. NaI(Tl) Crystal.
-ENDBIB               4
-NOCOMMON
+DETECTOR   (NAICR) A 3-in.*3-in. NaI(Tl) crystal.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.       0.13       0.02       260.         1.
         30.       0.22       0.03       390.         1.
         40.       0.32       0.05       260.         2.
-        50.       0.67        0.1       210.         1.
+        50.       0.67       0.10       210.         1.
         60.       0.79       0.11       180.         2.
         70.       0.98       0.11       160.         2.
         77.        1.4        0.2       150.         1.
         85.        1.3        0.2       140.         1.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594003   20140121   20140701   20140623       O052
-BIB                  5          6
-REACTION   (92-U-235(P,F)39-Y-90,IND,SIG)
-RAD-DET    (39-Y-90-G,B-)
+ENDSUBENT           21
+SUBENT        O0594003   20200314   20200623   20200616       O076
+BIB                  5          8
+REACTION   (92-U-235(P,F)39-Y-90,,SIG)
 DECAY-DATA (39-Y-90-G,64.2HR,B-,,1.)
-DETECTOR   (PROPC).End-window proportional counter.
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
 HISTORY    (20140121A) SD: Illegal isom. frag combination -M+G
-           deleted from SF4 of REACTION code.
-ENDBIB               6
+           deleted from SF4 of REACTION code. ERR-T -> DATA-ERR.
+           (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        2.4        0.4       260.         1.
         30.        3.4        0.5       390.         1.
@@ -93,40 +100,44 @@ MEV        MB         MB         MB         NO-DIM
         77.        6.1        0.9       150.         1.
         85.        6.0        1.0       140.         1.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        O0594004   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (92-U-235(P,F)39-Y-91-M,IND,SIG)
-RAD-DET    (39-Y-91-M,EC)
+ENDSUBENT           23
+SUBENT        O0594004   20200314   20200623   20200616       O076
+BIB                  5          6
+REACTION   (92-U-235(P,F)39-Y-91-M,,SIG)
 DECAY-DATA (39-Y-91-M,50.MIN,AR,511.,0.95)
-DETECTOR   (NAICR) A 3-In.*3-In. NaI(Tl) Crystal.
-ENDBIB               4
-NOCOMMON
+DETECTOR   (NAICR) A 3-in.*3-in. NaI(Tl) crystal.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        1.3        0.2       260.         1.
         30.        2.1        0.3       390.         1.
         40.        3.5        0.5       260.         2.
         50.        3.9        0.5       210.         1.
         60.        5.5        0.8       180.         2.
-        70.         6.         1.       160.         2.
+        70.        6.0        1.0       160.         2.
         77.        5.2        0.7       150.         1.
         85.         5.        0.6       140.         1.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594005   20140121   20140701   20140623       O052
-BIB                  5          6
-REACTION   (92-U-235(P,F)39-Y-91,IND,SIG)
-RAD-DET    (39-Y-91-G,B-)
+ENDSUBENT           21
+SUBENT        O0594005   20200314   20200623   20200616       O076
+BIB                  5          8
+REACTION   (92-U-235(P,F)39-Y-91,,SIG)
 DECAY-DATA (39-Y-91-G,59.D,B-,,1.)
-DETECTOR   (PROPC).End-Window Proportional Counter.
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
 HISTORY    (20140121A) SD: Illegal isom. frag combination -M+G
            deleted from SF4 of REACTION code.
-ENDBIB               6
+           (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        3.0        0.7       260.         1.
         30.        4.9        1.0       390.         1.
@@ -137,38 +148,42 @@ MEV        MB         MB         MB         NO-DIM
         77.       11.8        2.6       150.         1.
         85.       11.5        2.5       140.         1.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        O0594006   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (92-U-235(P,F)39-Y-92,IND,SIG)
-RAD-DET    (39-Y-92,B-)
+ENDSUBENT           23
+SUBENT        O0594006   20200314   20200623   20200616       O076
+BIB                  5          6
+REACTION   (92-U-235(P,F)39-Y-92,,SIG)
 DECAY-DATA (39-Y-92,3.5HR,B-,,1.)
-DETECTOR   (PROPC).End-Window Proportional Counter.
-ENDBIB               4
-NOCOMMON
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
-        20.        6.9         1.       260.         1.
+        20.        6.9        1.0       260.         1.
         30.        9.9        1.5       390.         1.
         40.       14.3        2.4       260.         2.
-        50.        16.        2.4       210.         1.
+        50.       16.0        2.4       210.         1.
         60.       19.7        3.1       180.         2.
         70.       16.9        2.7       160.         2.
         77.       19.5        2.9       150.         1.
         85.        18.        2.7       140.         1.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594007   19991117   20030923   20050926       0000
-BIB                  4          4
+ENDSUBENT           21
+SUBENT        O0594007   20200314   20200623   20200616       O076
+BIB                  5          6
 REACTION   (92-U-235(P,F)39-Y-93,CUM,SIG)
-RAD-DET    (39-Y-93,B-)
-DECAY-DATA (39-Y-93,10.1HR,B-,,1.)
-DETECTOR   (PROPC).End-Window Proportional Counter.
-ENDBIB               4
-NOCOMMON
+DECAY-DATA (39-Y-93-G,10.1HR,B-,,1.)
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314U) SD: RAD-DET deleted. STATUS added.
+           ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        55.         7.       260.         1.
         30.        53.         7.       390.         1.
@@ -179,20 +194,22 @@ MEV        MB         MB         MB         NO-DIM
         77.        92.        12.       150.         1.
         85.        84.        11.       140.         1.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594008   19991117   20030923   20050926       0000
-BIB                  4          7
+ENDSUBENT           21
+SUBENT        O0594008   20200314   20200623   20200616       O076
+BIB                  6          9
 REACTION   (92-U-235(P,F)38-SR-91,CUM,SIG)
-           It is Parent of Y-91.Not Measured Directly.
-RAD-DET    (39-Y-91-M,B-)
-           (39-Y-91-G,B-)
 DECAY-DATA (39-Y-91-M,50.MIN,DG,551.,0.95)
            (39-Y-91-G,59.D,B-,,1.)
-COMMENT    - By Authors - Branch to Y-91-M is 59%
-ENDBIB               7
-NOCOMMON
+           (38-SR-91,9.7HR)
+RAD-DET    (39-Y-91-M,AR)
+           (39-Y-91-G,B-)
+COMMENT    - By Authors - Branch to Y-91-m is 59%
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314U) SD: STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        43.         7.       260.         1.
         30.        40.         7.       390.         1.
@@ -203,19 +220,22 @@ MEV        MB         MB         MB         NO-DIM
         77.        75.        13.       150.         1.
         85.        74.        12.       140.         1.
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        O0594009   19991117   20030923   20050926       0000
-BIB                  4          6
-REACTION   (92-U-235(P,F)38-SR-92,IND,SIG)
-           It is Parent of Y-92.Not Measured Directly.
-RAD-DET    (39-Y-92,B-)
+ENDSUBENT           24
+SUBENT        O0594009   20200314   20200623   20200616       O076
+BIB                  6          9
+REACTION   (92-U-235(P,F)38-SR-92,,SIG)
 DECAY-DATA (39-Y-92,3.5HR,B-,,1.)
-DETECTOR   (NAICR) A 3-In.*3-In. NaI(Tl) Crystal.
-           (PROPC).End-Window Proportional Counter.
-ENDBIB               6
-NOCOMMON
+           (38-SR-92,2.7HR)
+RAD-DET    (39-Y-92,B-)
+DETECTOR   (NAICR) A 3-in.*3-in. NaI(Tl) crystal.
+           (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 3 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        47.         7.       260.         1.
         30.        41.         6.       390.         1.
@@ -226,17 +246,19 @@ MEV        MB         MB         MB         NO-DIM
         77.        78.        12.       150.         1.
         85.        75.        11.       140.         1.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        O0594010   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (92-U-238(P,F)39-Y-90-M,IND,SIG)
-RAD-DET    (39-Y-90-M,DG)
+ENDSUBENT           24
+SUBENT        O0594010   20200314   20200623   20200616       O076
+BIB                  5          6
+REACTION   (92-U-238(P,F)39-Y-90-M,,SIG)
 DECAY-DATA (39-Y-90-M,3.2HR,DG,202.,0.97)
-DETECTOR   (NAICR) A 3-In.*3-In. NaI(Tl) Crystal.
-ENDBIB               4
-NOCOMMON
+DETECTOR   (NAICR) A 3-in.*3-in. NaI(Tl) Crystal.
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.       0.12       0.02       260.         1.
         30.       0.15       0.02       390.         2.
@@ -247,19 +269,21 @@ MEV        MB         MB         MB         NO-DIM
         77.       0.33       0.05       150.         1.
         85.       0.37       0.05       140.         2.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594011   20140121   20140701   20140623       O052
-BIB                  5          6
-REACTION   (92-U-238(P,F)39-Y-90,IND,SIG)
-RAD-DET    (39-Y-90-G,B-)
+ENDSUBENT           21
+SUBENT        O0594011   20200314   20200623   20200616       O076
+BIB                  5          8
+REACTION   (92-U-238(P,F)39-Y-90,,SIG)
 DECAY-DATA (39-Y-90-G,64.2HR,B-,,1.)
-DETECTOR   (PROPC).End-Window Proportional Counter.
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
 HISTORY    (20140121A) SD: Illegal isom. frag combination -M+G
            deleted from SF4 of REACTION code.
-ENDBIB               6
+           (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        2.9        0.4       260.         1.
         30.        3.0        0.5       390.         2.
@@ -270,40 +294,44 @@ MEV        MB         MB         MB         NO-DIM
         77.        4.4        0.7       150.         1.
         85.        4.4        0.7       140.         2.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        O0594012   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (92-U-238(P,F)39-Y-91-M,IND,SIG)
-RAD-DET    (39-Y-91-M,EC)
-DECAY-DATA (39-Y-91-M,50.MIN,AR,511.,0.95)
-DETECTOR   (NAICR) A 3-In.*3-In. NaI(Tl) Crystal.
-ENDBIB               4
-NOCOMMON
+ENDSUBENT           23
+SUBENT        O0594012   20200314   20200623   20200616       O076
+BIB                  5          6
+REACTION   (92-U-238(P,F)39-Y-91-M,,SIG)
+DECAY-DATA (39-Y-91-M,50.MIN,DG,511.,0.95)
+DETECTOR   (NAICR) A 3-in.*3-in. NaI(Tl) crystal.
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.       0.97       0.13       260.         1.
         30.        1.6        0.2       390.         2.
         40.        1.8        0.2       260.         2.
         50.        1.9        0.3       210.         2.
-        60.         2.        0.3       180.         1.
+        60.        2.0        0.3       180.         1.
         70.        1.8        0.2       160.         1.
         77.        1.8        0.2       150.         1.
         85.         2.        0.3       140.         2.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594013   20140121   20140701   20140623       O052
-BIB                  5          6
-REACTION   (92-U-238(P,F)39-Y-91,IND,SIG)
-RAD-DET    (39-Y-91-G,B-)
+ENDSUBENT           21
+SUBENT        O0594013   20200314   20200623   20200616       O076
+BIB                  5          8
+REACTION   (92-U-238(P,F)39-Y-91,,SIG)
 DECAY-DATA (39-Y-91-G,59.D,B-,,1.)
-DETECTOR   (PROPC).End-Window Proportional Counter.
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
 HISTORY    (20140121A) SD: Illegal isom. frag combination -M+G
            deleted from SF4 of REACTION code.
-ENDBIB               6
+           (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        4.5        1.0       260.         1.
         30.        5.6        1.3       390.         2.
@@ -314,38 +342,42 @@ MEV        MB         MB         MB         NO-DIM
         77.        7.6        1.7       150.         1.
         85.        7.7        1.7       140.         2.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        O0594014   19991117   20030923   20050926       0000
-BIB                  4          4
-REACTION   (92-U-238(P,F)39-Y-92,IND,SIG)
-RAD-DET    (39-Y-92,B-)
+ENDSUBENT           23
+SUBENT        O0594014   20200314   20200623   20200616       O076
+BIB                  5          6
+REACTION   (92-U-238(P,F)39-Y-92,,SIG)
 DECAY-DATA (39-Y-92,3.5HR,B-,,1.)
-DETECTOR   (PROPC).End-Window Proportional Counter.
-ENDBIB               4
-NOCOMMON
+DETECTOR   (PROPC) End-window proportional counter.
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           RAD-DET deleted. STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        7.3        1.1       260.         1.
         30.        8.9        1.2       390.         2.
         40.        11.        1.8       260.         2.
         50.        10.        1.7       210.         2.
         60.        13.        1.9       180.         1.
-        70.        13.         2.       160.         1.
+        70.        13.        2.0       160.         1.
         77.        13.        1.9       150.         1.
         85.        12.        1.8       140.         2.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594015   19991117   20030923   20050926       0000
-BIB                  4          4
+ENDSUBENT           21
+SUBENT        O0594015   20200314   20200623   20200616       O076
+BIB                  5          6
 REACTION   (92-U-238(P,F)39-Y-93,CUM,SIG)
-RAD-DET    (39-Y-93,B-)
-DECAY-DATA (39-Y-93,10.1HR,B-,,1.)
+DECAY-DATA (39-Y-93-G,10.1HR,B-,,1.)
 DETECTOR   (PROPC).End-Window Proportional Counter.
-ENDBIB               4
-NOCOMMON
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314U) SD: RAD-DET deleted. STATUS added.
+           ERR-T -> DATA-ERR.
+ENDBIB               6
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        42.         5.       260.         1.
         30.        67.        10.       390.         2.
@@ -356,20 +388,22 @@ MEV        MB         MB         MB         NO-DIM
         77.        67.         9.       150.         1.
         85.        66.        10.       140.         2.
 ENDDATA             10
-ENDSUBENT           19
-SUBENT        O0594016   19991117   20030923   20050926       0000
-BIB                  4          7
+ENDSUBENT           21
+SUBENT        O0594016   20200314   20200623   20200616       O076
+BIB                  6          9
 REACTION   (92-U-238(P,F)38-SR-91,CUM,SIG)
-           It is Parent of Y-91.Not Measured Directly.
-RAD-DET    (39-Y-91-M,B-)
-           (39-Y-91-G,B-)
 DECAY-DATA (39-Y-91-M,50.MIN,DG,511.,0.95)
            (39-Y-91-G,59.D,B-,,0.41)
+           (38-SR-91,9.7HR)
+RAD-DET    (39-Y-91-M,AR)
+           (39-Y-91-G,B-)
 COMMENT    - By Authors - Branch to Y-91-M is Equal 59%.
-ENDBIB               7
-NOCOMMON
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314U) SD: STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        26.         4.       260.         1.
         30.        52.        10.       390.         2.
@@ -380,19 +414,22 @@ MEV        MB         MB         MB         NO-DIM
         77.        60.        10.       150.         1.
         85.        61.        10.       140.         2.
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        O0594017   19991117   20030923   20050926       0000
-BIB                  4          6
-REACTION   (92-U-238(P,F)38-SR-92,IND,SIG)
-           It is Parent of Y-92.Not Measured Directly.
-RAD-DET    (39-Y-92,B-)
+ENDSUBENT           24
+SUBENT        O0594017   20200314   20200623   20200616       O076
+BIB                  6          9
+REACTION   (92-U-238(P,F)38-SR-92,,SIG)
 DECAY-DATA (39-Y-92,3.5HR,B-,,1.)
+           (38-SR-92,2.7HR)
+RAD-DET    (39-Y-92,B-)
 DETECTOR   (NAICR) A 3-In.*3-In. NaI(Tl) Crystal.
-           (PROPC).End-Window Proportional Counter.
-ENDBIB               6
-NOCOMMON
+           (PROPC) End-Window Proportional Counter.
+STATUS     (TABLE) Tbl. 4 from  Canad.J.Chem.,48(1970)1924
+HISTORY    (20200314A) SD: SF5=IND deleted from REACTION code.
+           STATUS added. ERR-T -> DATA-ERR.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 5          8
-EN         DATA       ERR-T      MONIT      MISC
+EN         DATA       DATA-ERR   MONIT      MISC
 MEV        MB         MB         MB         NO-DIM
         20.        31.         5.       260.         1.
         30.        60.         8.       390.         2.
@@ -403,5 +440,101 @@ MEV        MB         MB         MB         NO-DIM
         77.        52.         8.       150.         1.
         85.        60.        10.       140.         2.
 ENDDATA             10
-ENDSUBENT           21
-ENDENTRY            17
+ENDSUBENT           24
+SUBENT        O0594018   20200314   20200623   20200616       O076
+BIB                  4          7
+REACTION   (92-U-235(P,F)39-Y-90-M/T,,SIG/RAT)
+DECAY-DATA (39-Y-90-M,3.2HR,DG,202.,0.97)
+           (39-Y-90-G,64.2HR,B-,,1.)
+STATUS     (TABLE) Table I from Canad.J.Chem.,47(1969)3817
+           (DEP,O0594002) Experimental data for Y-90-m
+           (DEP,O0594003) Experimental data for Y-90-g
+HISTORY    (20200314T) SD: From Subent O0665.002.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          8
+EN         DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+        20.       0.05       0.01
+        30.       0.06       0.01
+        40.       0.08       0.02
+        50.       0.14       0.03
+        60.       0.17       0.03
+        70.       0.17       0.03
+        77.       0.23       0.05
+        85.       0.22       0.06
+ENDDATA             10
+ENDSUBENT           22
+SUBENT        O0594019   20200314   20200623   20200616       O076
+BIB                  4          7
+REACTION   (92-U-235(P,F)39-Y-91-M/T,,SIG/RAT)
+DECAY-DATA (39-Y-91-M,50.MIN,DG,551.,0.95)
+           (39-Y-91-G,59.D,B-,,1.)
+STATUS     (TABLE) Table I from Canad.J.Chem.,47(1969)3817
+           (DEP,O0594004) Experimental data for Y-91-m
+           (DEP,O0594005) Experimental data for Y-91-g
+HISTORY    (20200314T) SD: From Subent O0665.003.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          8
+EN         DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+        20.       0.44       0.11
+        30.       0.43       0.11
+        40.       0.47       0.12
+        50.       0.43       0.11
+        60.       0.48       0.12
+        70.       0.49       0.13
+        77.       0.44       0.11
+        85.       0.44       0.11
+ENDDATA             10
+ENDSUBENT           22
+SUBENT        O0594020   20200314   20200623   20200616       O076
+BIB                  4          7
+REACTION   (92-U-238(P,F)39-Y-90-M/T,,SIG/RAT)
+DECAY-DATA (39-Y-90-M,3.2HR,DG,202.,0.97)
+           (39-Y-90-G,64.2HR,B-,,1.)
+STATUS     (TABLE) Table II from Canad.J.Chem.,47(1969)3817
+           (DEP,O0594010) Experimental data for Y-90-m
+           (DEP,O0594011) Experimental data for Y-90-g
+HISTORY    (20200314T) SD: From Subent O0665.004.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          8
+EN         DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+        20.       0.04       0.01
+        30.       0.05       0.01
+        40.       0.05       0.01
+        50.       0.06       0.01
+        60.       0.06       0.01
+        70.       0.07       0.01
+        77.       0.08       0.02
+        85.       0.08       0.02
+ENDDATA             10
+ENDSUBENT           22
+SUBENT        O0594021   20200314   20200623   20200616       O076
+BIB                  4          7
+REACTION   (92-U-238(P,F)39-Y-91-M/T,,SIG/RAT)
+DECAY-DATA (39-Y-91-M,50.MIN,DG,551.,0.95)
+           (39-Y-91-G,59.D,B-,,1.)
+STATUS     (TABLE) Table II from Canad.J.Chem.,47(1969)3817
+           (DEP,O0594012) Experimental data for Y-91-m
+           (DEP,O0594013) Experimental data for Y-91-g
+HISTORY    (20200314T) SD: From Subent O0665.005.
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          8
+EN         DATA       DATA-ERR
+MEV        NO-DIM     NO-DIM
+        20.       0.22       0.06
+        30.       0.29       0.08
+        40.       0.33       0.09
+        50.       0.32       0.08
+        60.       0.31       0.08
+        70.       0.27       0.07
+        77.       0.24       0.06
+        85.       0.26       0.07
+ENDDATA             10
+ENDSUBENT           22
+ENDENTRY            21
