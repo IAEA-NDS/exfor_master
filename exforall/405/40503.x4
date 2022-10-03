@@ -1,6 +1,6 @@
-ENTRY            40503   20140121   20140701   20140617       4163
-SUBENT        40503001   20140121   20140701   20140617       4163
-BIB                  7         37
+ENTRY            40503   20201016   20210320   20210319       4193
+SUBENT        40503001   20201016   20210320   20210319       4193
+BIB                  7         46
 TITLE       Energy spectra and yields of light nuclei in the
             ternary fission
 AUTHOR     (I.A.Kondurov,A.M.Nikitin, D.M.Seliverstov,
@@ -10,19 +10,23 @@ INSTITUTE  (4RUSLIN)
            A.A.Vorob'ev =A.A.Vorobiev =A.A.Vorobyev =A.A.Vorobyov,
             V.T.Grachev = V.T.Grachov, A.I.Egorov = A.I.Yegorov,
             D.M.Seliverstov = D.M.Seleverstov
-REFERENCE  (C,77KIEV,3,258,1977)   Figures only.
+REFERENCE  ((C,77KIEV,3,258,1977)=
+           (R,INDC(CCP)-118,(III),258,1977))
+              Figures only.
            (R,BCDL-6,11,1977)
             Summary of all measurements. Data Tables.
-           (J,PL/B,30,(5),332,1969)   U-233.
+           (J,PL/B,30,332,1969) Issue 5.  U-233.
            First author A.A.Vorobiev. U-233 data Table.
-           (J,PL/B,40,(1),102,1972)
+           (J,PL/B,40,102,1972) issue 1.
             Table of yields for U-235 .
            First author A.A.Vorobyov.
-           (J,YF,20,(3),461,1974)
+           (J,YF,20,461,1974) Issue 3.
             First author A.A.Vorob'ev .
-           (J,SNP,20,248,1974) Engl.translation of J,YF,20,461
-           (C,75KIEV,6,97,1976) Table of yields-Subents 007-010.
-FACILITY   (REAC)
+           (J,SNP,20,248,1975) Engl.translation of J,YF,20,461
+           ((C,75KIEV,6,97,1976)=
+           (R,INDC(CCP)-099,(VI),97,1976))
+           Table of yields - Subents 007-010.
+FACILITY   (REAC,4RUSLIN)
 PART-DET   (FF)
            (A)
 HISTORY    (19800616C)
@@ -38,13 +42,19 @@ HISTORY    (19800616C)
            Ref.was corrected: R,LIJAF-6,11,197709 ->
                               R,BCDL-6,11,197709 .
             EN-DUMMY was added, where relevant.
-ENDBIB              37
+           (20201016A) Year of ref. SNP,20 was corrected.
+           Refs. INDC(CCP)-118, -099 were added.
+            Minor correction of free text in STATUS
+            Reaction was corrected in Subents 002-006, 015-032,
+            035-055 as ratio.
+ENDBIB              46
 NOCOMMON             0          0
-ENDSUBENT           40
-SUBENT        40503002   20140121   20140701   20140617       4163
-BIB                  9         16
-REACTION   (92-U-233(N,F)ELEM/MASS,TER,FY,,REL)     Relative
-                              to 1.E4 yield of He-4.
+ENDSUBENT           49
+SUBENT        40503002   20201016   20210320   20210319       4193
+BIB                 10         20
+REACTION   ((92-U-233(N,F)ELEM/MASS,TER,FY)/
+           (92-U-233(N,F)2-HE-4,TER,FY))
+             Relative to yield of He-4.
 INC-SOURCE (REAC)
 SAMPLE      Samples of 1.2 milligrams/cm2 and .09 milligrams/cm2
             U(3)O(8), on Al backings, covered with Al foils.
@@ -52,14 +62,17 @@ DETECTOR   (MAGSP)
 METHOD     (MASSP)
 ANALYSIS   Extrapolated yields were defined as areas under
            Gaussians.
-MISC-COL   (MISC-MIN) Energy ranges
-           (MISC-MAX)               for Gaussian fits.
-STATUS     (TABLE) Table 1 of PL/B,30,(5),332,1969,
-            Table 1 of R,BCDL-6,11,1977.
+MISC-COL   (MISC) MIN/MAX Energy ranges for Gaussian fits.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table 1 of
+           Physics Letters,Section B,v.30,is.5,p.332,1969,
+            Table 1 of Rep.BCDL-6,p.11,1977.
            (DEP,40503011) In Subent 011 - primarily measured
             yields.
 HISTORY    (20140121A) M.M. LCP code was deleted from REACTION.
-ENDBIB              16
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB              20
 COMMON               1          3
 EN-DUMMY
 EV
@@ -67,23 +80,23 @@ EV
 ENDCOMMON            3
 DATA                 6         10
 ELEMENT    MASS       DATA       ERR-S      MISC-MIN   MISC-MAX
-NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  MEV        MEV
-  1.          2.          41.       2.       5.5        13.3
-  1.          3.         460.      20.       4.0        11.0
-  2.          4.       10000.               12.0        24.3
-  2.          6.         137.       7.       8.1        18.6
-  2.          8.           3.6      0.4      6.6        14.8
-  3.          7.           3.7      0.2     11.0        30.4
-  3.          8.           1.8      0.2     11.0        26.0
-  3.          9.           3.6      0.5     11.8        22.0
-  4.          9.           3.7      0.8
-  4.         10.          43.       3.       6.4        25.6
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     MEV        MEV
+  1.          2.          41. E-4   2.   E-4 5.5        13.3
+  1.          3.         460. E-4  20.   E-4 4.0        11.0
+  2.          4.       10000. E-4           12.0        24.3
+  2.          6.         137. E-4   7.   E-4 8.1        18.6
+  2.          8.           3.6E-4   0.4  E-4 6.6        14.8
+  3.          7.           3.7E-4   0.2  E-411.0        30.4
+  3.          8.           1.8E-4   0.2  E-411.0        26.0
+  3.          9.           3.6E-4   0.5  E-411.8        22.0
+  4.          9.           3.7E-4   0.8  E-4
+  4.         10.          43. E-4   3.   E-4 6.4        25.6
 ENDDATA             12
-ENDSUBENT           37
-SUBENT        40503003   20140121   20140701   20140617       4163
-BIB                 10         39
-REACTION   (92-U-235(N,F)ELEM/MASS,TER,FY,,REL)     Relative
-                             to 1.E4 yield of He-4
+ENDSUBENT           41
+SUBENT        40503003   20201016   20210320   20210319       4193
+BIB                 11         44
+REACTION   ((92-U-235(N,F)ELEM/MASS,TER,FY)/
+           (92-U-235(N,F)2-HE-4,TER,FY))
 INC-SOURCE (REAC)
 SAMPLE      Sample of 0.7 milligram/cm2 of (U-235)-oxide
 INC-SPECT   Target was irradiated in reactor neutron flux of
@@ -96,32 +109,37 @@ ANALYSIS   The measured energy spectra were fitted by Gaussians.
            yield obtained from the observed H-3/He-4 ratio with
            H-3 absolute yield from REL-REF of
 REL-REF    (R,,E.N.Sloth+,J,JIN,24,337,1962)
-STATUS     (TABLE) Table 1 of J,PL/B,40,102,1972 .
-            Table 2 of R,BCDL-6,11,1977.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table 1 of
+           Physics Letters,Section B,v.40,p.102,1972,
+            Table 2 of Rep.BCDL-6,p.11,1977.
            (DEP,40503013) He-4 yield used for normalization.
-           (COREL,40243001) In Entry 40243 - previous measurement
-           with other samples.
-            Measured energy spectra:
-           (DEP,40503015)
-           (DEP,40503016)
-           (DEP,40503017)
-           (DEP,40503018)
-           (DEP,40503019)
-           (DEP,40503020)
-           (DEP,40503021)
-           (DEP,40503022)
-           (DEP,40503023)
-           (DEP,40503024)
-           (DEP,40503025)
-           (DEP,40503026)
-           (DEP,40503027)
-           (DEP,40503028)
-           (DEP,40503029)
+           (COREL,40243003)
+           (COREL,40243004)
+            In Entry 40243 - previous measurement with other
+            samples.
+           (DEP,40503015) 1-H-2 spectrum
+           (DEP,40503016) 1-H-3 spectrum
+           (DEP,40503017) 2-He-4 spectrum
+           (DEP,40503018) 2-He-6 spectrum
+           (DEP,40503019) 2-He-8 spectrum
+           (DEP,40503020) 3-Li-7 spectrum
+           (DEP,40503021) 3-Li-8 spectrum
+           (DEP,40503022) 3-Li-9 spectrum
+           (DEP,40503023) 4-Be-9 spectrum
+           (DEP,40503024) 4-Be-10 spectrum
+           (DEP,40503025) 4-Be-11 spectrum
+           (DEP,40503026) 4-Be-12 spectrum
+           (DEP,40503027) 5-B-11 spectrum
+           (DEP,40503028) 6-C-14 spectrum
+           (DEP,40503029) 8-O-20 spectrum
 HISTORY    (20140121A) M.M. LCP code was deleted from REACTION.
             DATA values given for MASS=0.
             (sum of all isotopes of this element)
            were moved in Subent 030 .
-ENDBIB              39
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB              44
 COMMON               1          3
 EN-DUMMY
 EV
@@ -129,40 +147,40 @@ EV
 ENDCOMMON            3
 DATA                 5         27
 ELEMENT    MASS       DATA       ERR-S      DATA-MAX
-NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  ARB-UNITS
-   1.         2.         50.        2.
-   1.         3.        720.       30.
-   2.         3.                             0.01
-   2.         4.      10000.
-   2.         6.        191.        8.
-   2.         8.          8.2        .6
-   3.         6.           .05       .02
-   3.         7.          4.1        .3
-   3.         8.          1.8        .3
-   3.         9.         3.         .4
-   4.         7.                             0.01
-   4.         9.          2.9        .3
-   4.        10.         32.        2.
-   4.        11.          2.         .3
-   4.        12.          1.5        .3
-   5.        10.                             0.02
-   5.        11.           .25       .1
-   5.        12.           .17       .05
-   5.        13.           .2        .06
-   5.        14.           .1        .05
-   6.        13.           .5        .3
-   6.        14.          5.4        .6
-   6.        15.          1.5       1.
-   6.        16.           .2        .1
-   7.        16.                             0.05
-   8.        18.                             0.05
-   8.        20.           .5        .2
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+   1.         2.         50.  E-4    2.  E-4
+   1.         3.        720.  E-4   30.  E-4
+   2.         3.                              0.01  E-4
+   2.         4.      10000.  E-4
+   2.         6.        191.  E-4    8.  E-4
+   2.         8.          8.2 E-4     .6 E-4
+   3.         6.           .05E-4     .02E-4
+   3.         7.          4.1 E-4     .3 E-4
+   3.         8.          1.8 E-4     .3 E-4
+   3.         9.         3.   E-4    .4  E-4
+   4.         7.                              0.01  E-4
+   4.         9.          2.9 E-4     .3 E-4
+   4.        10.         32.  E-4    2.  E-4
+   4.        11.          2.  E-4     .3 E-4
+   4.        12.          1.5 E-4     .3 E-4
+   5.        10.                              0.02  E-4
+   5.        11.           .25E-4     .1 E-4
+   5.        12.           .17E-4     .05E-4
+   5.        13.           .2 E-4     .06E-4
+   5.        14.           .1 E-4     .05E-4
+   6.        13.           .5 E-4     .3 E-4
+   6.        14.          5.4 E-4     .6 E-4
+   6.        15.          1.5 E-4    1.  E-4
+   6.        16.           .2 E-4     .1 E-4
+   7.        16.                              0.05  E-4
+   8.        18.                              0.05  E-4
+   8.        20.           .5 E-4     .2 E-4
 ENDDATA             29
-ENDSUBENT           77
-SUBENT        40503004   20140121   20140701   20140617       4163
-BIB                  9         34
-REACTION   (94-PU-239(N,F)ELEM/MASS,TER,FY,,REL)     Relative
-                             to 1.E4 of He-4
+ENDSUBENT           82
+SUBENT        40503004   20201016   20210320   20210319       4193
+BIB                 10         38
+REACTION   ((94-PU-239(N,F)ELEM/MASS,TER,FY)/
+           (94-PU-239(N,F)2-HE-4,TER,FY))
 INC-SOURCE (REAC)
 SAMPLE      Samples of .5 and .15 milligrams of Pu
 DETECTOR   (MAGSP)
@@ -171,11 +189,13 @@ ANALYSIS   The measured energy spectra were fitted by Gaussians.
            Extrapolated yields were taken as the areas under the
            Gaussians.
 COMMENT    Of compiler. Data for B-10,11,12 are absent in
-           Table 3 of R,BCDL-6,11,1977. They were added - taking
-           into account a balance between sum of isotopic yields
-           and B element yield in Subent 031.
-STATUS     (TABLE) Table I of J,YF,20,(3),461,1974.
-                   Table 3 of R,BCDL-6,11,1977.
+            Table 3 of Rep.BCDL-6,p.11,1977.
+            They were added - taking into account a balance
+           between sum of isotopic yields and B element yield in
+           Subent 031.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table I of Yad.Fiz.,v.20,is.3,p.461,1974.
+            Table 3 of Rep.BCDL-6,p.11,1977.
             Measured energy spectra:
            (DEP,40503035)
            (DEP,40503036)
@@ -194,8 +214,10 @@ HISTORY    (20140121A) M.M. LCP code was deleted from REACTION.
             (sum of all isotopes of this element)
            were moved in Subent 031 .
            Data for B-10,11,12 were added from Table I of
-           YF,20,461,1974 - see COMMENT.
-ENDBIB              34
+           Yad.Fiz.,v.20,p.461,1974 - see COMMENT.
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB              38
 COMMON               1          3
 EN-DUMMY
 EV
@@ -203,41 +225,41 @@ EV
 ENDCOMMON            3
 DATA                 5         26
 ELEMENT    MASS       DATA       ERR-S      DATA-MAX
-NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  ARB-UNITS
-   1.         2.          69.        2.
-   1.         3.         720.       30.
-   2.         3.                            0.01
-   2.         4.       10000.
-   2.         6.         192.        5.
-   2.         8.           8.8        .4
-   3.         6.                            0.05
-   3.         7.           6.5        .2
-   3.         8.           3.2        .3
-   3.         9.           5.3        .3
-   4.         7.                            0.01
-   4.         9.           5.1        .6
-   4.        10.          49.        1.
-   4.        11.           3.5        .3
-   4.        12.           2.2        .5
-   5.        10.                            0.02
-   5.        11.           0.9       0.3
-   5.        12.           1.0       0.4
-   5.        13.           1.3        .4
-   5.        14.            .2        .1
-   6.        13.                            1.0
-   6.        14.          14.         .6
-   6.        15.           3.5       1.3
-   6.        16.           3.5       1.6
-   7.        16.                            0.02
-   8.        20.            .8        .4
+NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+   1.         2.          69. E-4    2.  E-4
+   1.         3.         720. E-4   30.  E-4
+   2.         3.                                0.01E-4
+   2.         4.       10000. E-4
+   2.         6.         192. E-4    5.  E-4
+   2.         8.           8.8E-4     .4 E-4
+   3.         6.                                0.05E-4
+   3.         7.           6.5E-4     .2 E-4
+   3.         8.           3.2E-4     .3 E-4
+   3.         9.           5.3E-4     .3 E-4
+   4.         7.                                0.01E-4
+   4.         9.           5.1E-4     .6 E-4
+   4.        10.          49. E-4    1.  E-4
+   4.        11.           3.5E-4     .3 E-4
+   4.        12.           2.2E-4     .5 E-4
+   5.        10.                                0.02E-4
+   5.        11.           0.9E-4    0.3 E-4
+   5.        12.           1.0E-4    0.4 E-4
+   5.        13.           1.3E-4     .4 E-4
+   5.        14.            .2E-4     .1 E-4
+   6.        13.                                1.0 E-4
+   6.        14.          14. E-4     .6 E-4
+   6.        15.           3.5E-4    1.3 E-4
+   6.        16.           3.5E-4    1.6 E-4
+   7.        16.                                0.02E-4
+   8.        20.            .8E-4     .4 E-4
 ENDDATA             28
-ENDSUBENT           71
-SUBENT        40503005   20140121   20140701   20140617       4163
-BIB                  8         25
-REACTION   (95-AM-242-M(N,F)ELEM/MASS,TER,FY,,REL)
-                           Relative to 1.E4 of He-4
+ENDSUBENT           75
+SUBENT        40503005   20201016   20210320   20210319       4193
+BIB                  9         28
+REACTION   ((95-AM-242-M(N,F)ELEM/MASS,TER,FY)/
+           (95-AM-242-M(N,F)2-HE-4,TER,FY))
 INC-SOURCE (REAC)
-SAMPLE      Sample of AM-242-M was prepared from .35milligrams
+SAMPLE      Sample of Am-242-M was prepared from .35 milligram
             of Am-241 by irradiation in 1.E15neutron/cm2/sec
             flux of reactor (sample has .005 milligrams of
             Am-242-M)
@@ -246,8 +268,9 @@ METHOD     (MASSP)
 ANALYSIS   The measured energy spectra were fitted by Gaussians.
            Extrapolated yields were taken as the areas under the
            Gaussians.
-STATUS     (TABLE) Table III of J,YF,20,(3),461,1974.
-                   Table 4 of R,BCDL-6,11,1977.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table III of Yad.Fiz.,v.20,is.3,p.461,1974.
+            Table 4 of Rep.BCDL-6,p.11,1977.
             Measured energy spectra:
            (DEP,40503047)
            (DEP,40503048)
@@ -259,7 +282,9 @@ STATUS     (TABLE) Table III of J,YF,20,(3),461,1974.
            (DEP,40503054)
            (DEP,40503055)
 HISTORY    (20140121A) M.M. LCP code was deleted from REACTION.
-ENDBIB              25
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB              28
 COMMON               1          3
 EN-DUMMY
 EV
@@ -267,41 +292,43 @@ EV
 ENDCOMMON            3
 DATA                 4          9
 ELEMENT    MASS       DATA       ERR-S
-NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS
-   1.         3.          620.       60.
-   2.         4.        10000.
-   2.         6.          214.        6.
-   3.         7.            8.2       2.6
-   3.         8.            3.6        .4
-   3.         9.            6.4       1.3
-   4.         9.            7.5       1.5
-   4.        10.           57.        6.
-   6.         14.        14.5      1.5
+NO-DIM     NO-DIM     NO-DIM     NO-DIM
+   1.         3.         620. E-4    60. E-4
+   2.         4.       10000. E-4
+   2.         6.         214. E-4     6. E-4
+   3.         7.           8.2E-4     2.6E-4
+   3.         8.           3.6E-4      .4E-4
+   3.         9.           6.4E-4     1.3E-4
+   4.         9.           7.5E-4     1.5E-4
+   4.        10.          57. E-4     6. E-4
+   6.         14.       14.5  E-4  1.5   E-4
 ENDDATA             11
-ENDSUBENT           45
-SUBENT        40503006   20140121   20140701   20140617       4163
-BIB                  4          7
-REACTION   (98-CF-252(0,F)ELEM/MASS,TER,FY,,REL)
-                           Relative to 1.E4 of He-4
+ENDSUBENT           48
+SUBENT        40503006   20201016   20210320   20210319       4193
+BIB                  4          9
+REACTION   ((98-CF-252(0,F)ELEM/MASS,TER,FY)/
+           (98-CF-252(0,F)2-HE-4,TER,FY))
 METHOD     (EDE)
-STATUS     (TABLE) Table 5 of R,BCDL-6,11,1977.
+STATUS     (TABLE) Table 5 of Rep.BCDL-6,p.11,1977.
 HISTORY    (20140121A) M.M. LCP code was deleted from REACTION.
            INC-SOURCE was deleted - spontaneous fission.
            B yield was moved in Subent 032.
-ENDBIB               7
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          5
 ELEMENT    MASS       DATA
-NO-DIM     NO-DIM     ARB-UNITS
-   1.          1.        159.
-   1.          2.         53.
-   1.          3.        710.
-   2.          6.        409.
-   2.          8.         10.5
+NO-DIM     NO-DIM     NO-DIM
+   1.          1.        159. E-4
+   1.          2.         53. E-4
+   1.          3.        710. E-4
+   2.          6.        409. E-4
+   2.          8.         10.5E-4
 ENDDATA              7
-ENDSUBENT           19
-SUBENT        40503007   20140121   20140701   20140617       4163
-BIB                  8         21
+ENDSUBENT           21
+SUBENT        40503007   20201016   20210320   20210319       4193
+BIB                  8         22
 REACTION   (92-U-233(N,F)ELEM/MASS,TER,FY,,REL)     Relative
                            to 1.E6 of binary fissions
 INC-SPECT   Reactor thermal neutrons of 4.E+7 n/sec/cm**2,
@@ -315,15 +342,16 @@ CORRECTION  Background from n,alpha reaction was subtracted.
 ERR-ANALYS (ERR-1) Systematical uncertainty due to background
            subtraction and due to particle spectrum shape
            uncertainty.
-STATUS     (TABLE) Table 2 of C,75KIEV,6,97,1976 .
-                   Table 12 of R,BCDL-6,11,1977 -
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Table 2 of Conf.Proc.,75KIEV,v.6,p.97,1976 .
+            Table 12 of Rep.BCDL-6,p.11,1977 -
            data are little different for:
            H-3 - 87+-4.3, He-4 - 1880+-50, He-6 - 25.7+-1.5.
 HISTORY    (20140121A) ERR-S -> ERR-T. STATUS, ERR-ANALYS and
            COMMON were added. 1.E7 -> 1.E6 in free text of
            reaction according to Table 2 title.
             LCP code was deleted from REACTION.
-ENDBIB              21
+ENDBIB              22
 COMMON               2          3
 EN-DUMMY   ERR-1
 EV         PER-CENT
@@ -344,11 +372,11 @@ NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS
    4.         9.           .69       .15
    4.        10.          8.0        .6
 ENDDATA             13
-ENDSUBENT           43
-SUBENT        40503008   20140121   20140701   20140617       4163
-BIB                 10         24
+ENDSUBENT           44
+SUBENT        40503008   20201016   20210320   20210319       4193
+BIB                 10         25
 REACTION   (92-U-235(N,F)ELEM/MASS,TER,FY,,REL)     Relative
-            to the number of 1.E6 of binary fissions
+            to the number 1.E6 of binary fissions
 INC-SPECT   Reactor thermal neutrons of 4.E+7 n/sec/cm**2,
            Cd ratio on Au - 5.8 .
 DETECTOR   (TELES,SIBAR) Two detectors of 12 mm diameter and
@@ -363,15 +391,16 @@ REL-REF    (R,,M.Dakowski+,J,PL/B,25,213,1967)
 ERR-ANALYS (ERR-1) Systematical uncertainty due to background
            subtraction and due to particle spectrum shape
            uncertainty.
-STATUS     (TABLE) Table 2 of C,75KIEV,6,97,1976 .
-                   Table 12 of R,BCDL-6,11,1977 .
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Table 2 of Conf.Proc.,75KIEV,v.6,p.97,1976 .
+            Table 12 of Rep.BCDL-6,p.11,1977.
 HISTORY    (20140121A) ERR-S -> ERR-T. STATUS, ERR-ANALYS and
            COMMON were added. 1.E7 -> 1.E6 in free text of
            reaction according to Table 2 title.
             LCP code was deleted from REACTION.
             Data given without error were moved in DATA-MAX
-           column as presented in Table 12 of R,BCDL-6,11,1977.
-ENDBIB              24
+           column as presented in Table 12 of Rep.BCDL-6,p.11,1977
+ENDBIB              25
 COMMON               2          3
 EN-DUMMY   ERR-1
 EV         PER-CENT
@@ -409,9 +438,9 @@ NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  NO-DIM     ARB-UNITS
    8.        18.                                       0.008
    8.        20.            .08      .03
 ENDDATA             30
-ENDSUBENT           63
-SUBENT        40503009   20140121   20140701   20140617       4163
-BIB                  9         23
+ENDSUBENT           64
+SUBENT        40503009   20201016   20210320   20210319       4193
+BIB                  9         24
 REACTION   (94-PU-239(N,F)ELEM/MASS,TER,FY,,REL)     Relative
             to the number of 1.E6 of binary fissions
 INC-SPECT   Reactor thermal neutrons of 4.E+7 n/sec/cm**2,
@@ -427,15 +456,16 @@ FLAG       (1.) Data from
 ERR-ANALYS (ERR-1) Systematical uncertainty due to background
            subtraction and due to particle spectrum shape
            uncertainty.
-STATUS     (TABLE) Table 2 of C,75KIEV,6,97,1976 .
-                   Table 12 of R,BCDL-6,11,1977 .
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Table 2 of Conf.Proc.,75KIEV,v.6,p.97,1976 .
+            Table 12 of Rep.BCDL-6,p.11,1977.
 HISTORY    (20140121A) ERR-S -> ERR-T. STATUS, ERR-ANALYS and
            COMMON were added. 1.E7 -> 1.E6 in free text of
            reaction according to Table 2 title.
             LCP code was deleted from REACTION.
             Data given without error were moved in DATA-MAX
-           column as presented in Table 12 of R,BCDL-6,11,1977.
-ENDBIB              23
+           column as presented in Table 12 of Rep.BCDL-6,p.11,1977
+ENDBIB              24
 COMMON               2          3
 EN-DUMMY   ERR-1
 EV         PER-CENT
@@ -472,17 +502,18 @@ NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS  NO-DIM     ARB-UNITS
    7.        16.                                       0.004
    8.        20.            .16       .08
 ENDDATA             29
-ENDSUBENT           61
-SUBENT        40503010   20140121   20140701   20140617       4163
-BIB                  5         15
+ENDSUBENT           62
+SUBENT        40503010   20201016   20210320   20210319       4193
+BIB                  5         16
 REACTION   (98-CF-252(0,F)ELEM/MASS,TER,FY,,REL)     Relative
             to the number of 1.E6 of binary fissions
 SAMPLE     Cf-252 layer on Al backing of 32.4 microm thickness,
            sample activity about 10**5 fis/sec.
 ERR-ANALYS (ERR-1) Systematical uncertainty due to particle
            spectrum shape uncertainty.
-STATUS     (TABLE) Table 2 of C,75KIEV,6,97,1976 .
-                   Table 12 of R,BCDL-6,11,1977 -
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Table 2 of Conf.Proc.,75KIEV,v.6,p.97,1976 .
+            Table 12 of Rep.BCDL-6,p.11,1977 -
            data for Li-7 - 3.7 without error,
                 for Be-10 - 22 without error.
 HISTORY    (20140121A) ERR-S -> ERR-T. STATUS, ERR-ANALYS and
@@ -490,7 +521,7 @@ HISTORY    (20140121A) ERR-S -> ERR-T. STATUS, ERR-ANALYS and
            reaction according to Table 2 title.
             LCP code was deleted from REACTION.
             Data for Li-8,9, Be-9,11,12, C-14,15 were added.
-ENDBIB              15
+ENDBIB              16
 COMMON               1          3
 ERR-1
 PER-CENT
@@ -515,12 +546,12 @@ NO-DIM     NO-DIM     ARB-UNITS  ARB-UNITS
    6.       14.           6.5
    6.       15.           1.6
 ENDDATA             17
-ENDSUBENT           41
-SUBENT        40503011   20140121   20140701   20140617       4163
-BIB                  9         14
+ENDSUBENT           42
+SUBENT        40503011   20201016   20210320   20210319       4193
+BIB                 10         16
 REACTION   (92-U-233(N,F)ELEM/MASS,TER/PAR,FY,,REL)
             Directly measured relative yields.
-            Relative to 1.E+4 alpha particles.
+            Relative to about 1.E+4 alpha particles.
 INC-SOURCE (REAC)
 SAMPLE      Samples of 1.2 milligrams/cm2 and .09 milligrams/cm2
             U(3)O(8), on Al backings, covered with Al foils.
@@ -529,10 +560,12 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) E-MIN/MAX - measured energy range.
 ANALYSIS   Measured yields were normalized to the extrapolated
            He-4 yield.
-STATUS     (TABLE) Table 1 of PL/B,30,(5),332,1969
-                   Table 2 of R,BCDL-6,11,1977.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table 1 of
+           Physics Letters,Section B,v.30,is.5,p.332,1969,
+            Table 2 of Rep.BCDL-6,p.11,1977.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              14
+ENDBIB              16
 COMMON               1          3
 EN-DUMMY
 EV
@@ -572,11 +605,10 @@ ARB-UNITS
   4.         11.      21.0       30.0
  0.3
 ENDDATA             32
-ENDSUBENT           55
-SUBENT        40503012   20140121   20140701   20140617       4163
+ENDSUBENT           57
+SUBENT        40503012   20201016   20210320   20210319       4193
 BIB                  8         12
 REACTION   (92-U-233(N,F)ELEM/MASS,TER,KEP)
-            Most probable energy
 INC-SOURCE (REAC)
 SAMPLE      Samples of 1.2 milligrams/cm2 and .09 milligrams/cm2
             U(3)O(8), on Al backings, covered with Al foils.
@@ -584,8 +616,9 @@ ANALYSIS   Measured yields distributions were fitted by Gaussians.
 MISC-COL   (MISC) FWHM of energy distribution.
 ERR-ANALYS (DATA-ERR) Error includes calibration uncertainty.
            (ERR-1) Estimated calibration uncertainty.
-STATUS     (TABLE) Table 1 of PL/B,30,(5),332,1969 .
-                   Table 1 of R,BCDL-6,11,1977.
+STATUS     (TABLE) Table 1 of
+           Physics Letters,Section B,v.30,is.5,p.332,1969,
+            Table 1 of Rep.BCDL-6,p.11,1977.
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              12
 COMMON               2          3
@@ -607,10 +640,9 @@ NO-DIM     NO-DIM     MEV        MEV        MEV        MEV
   4.         10.      17.0        0.4       15.7       0.9
 ENDDATA             11
 ENDSUBENT           32
-SUBENT        40503013   20140121   20140701   20140617       4163
-BIB                  8         11
+SUBENT        40503013   20201016   20210320   20210319       4193
+BIB                  9         13
 REACTION   (92-U-235(N,F)2-HE-4,TER,FY)
-                              He-4 yield.
 INC-SOURCE (REAC)
 SAMPLE      Sample of 0.7 milligram/cm2 of (U-235)-oxide
 INC-SPECT   Target was irradiated in reactor neutron flux of
@@ -618,9 +650,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
 ANALYSIS   The He-4 yield was obtained from the observed
            H-3/He-4 ratio with H-3 absolute yield from REL-REF :
 REL-REF    (R,,E.N.Sloth+,J,JIN,24,337,1962)
-STATUS     (TABLE) Text,page 102 1 of J,PL/B,40,102,1972 .
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article
+STATUS     (TABLE) Text,page 102 1 of
+           Physics Letters,Section B,v.40,p.102,1972
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              11
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
@@ -631,11 +666,10 @@ DATA       DATA-ERR
 PRD/FIS    PRD/FIS
     1.30E-3    0.14E-3
 ENDDATA              3
-ENDSUBENT           23
-SUBENT        40503014   20140121   20140701   20140617       4163
-BIB                 12         39
+ENDSUBENT           25
+SUBENT        40503014   20201016   20210320   20210319       4193
+BIB                 13         41
 REACTION   (92-U-235(N,F)ELEM/MASS,TER,KEP)
-            Most probable energy.
 INC-SOURCE (REAC)
 SAMPLE      Sample of 0.7 milligram/cm2 of (U-235)-oxide
 INC-SPECT   Target was irradiated in reactor neutron flux of
@@ -647,15 +681,18 @@ MISC-COL   (MISC) FWHM of energy distribution.
 ADD-RES    Energy distributions were fitted by a function
            proportional to EXP(-E0/<E0>). The best fits were
            obtained by <E0> values, MeV,
-            ( Table 2 of J,PL/B,40,102,1972) :
+            Table 2 of Physics Letters,Section B,v.40,p.102,1972 :
            H-2 - 1.74, H-3 - 2.57, He-4 - 2.2, He-6 - 1.88,
            He-8 - 1.28, Li-7 - 1.45, Li-8 - 1.22, Li-9 - 0.96,
            Be-9 - 1.2, Be-10 - 1.55, Be-11 - 1.07, Be-12 - 0.81,
            B-11 - 1.40, C-14 - 1.39, O-20 - 0.90 .
-COMMENT    Of compiler M.M. In Table 2 of R,BCDL-6,11,1977
+COMMENT    Of compiler M.M. In Table 2 of Rep.BCDL-6,p.11,1977
            data for H-2 - 8.6+-0.15
-STATUS     (TABLE) Table 1 of J,PL/B,40,102,1972 .
-                   Table 2 of R,BCDL-6,11,1977 .
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article
+STATUS     (TABLE) Table 1 of
+           Physics Letters,Section B,v.40,p.102,1972,
+            Table 2 of Rep.BCDL-6,p.11,1977.
             Measured energy spectra:
            (DEP,40503015)
            (DEP,40503016)
@@ -673,7 +710,7 @@ STATUS     (TABLE) Table 1 of J,PL/B,40,102,1972 .
            (DEP,40503028)
            (DEP,40503029)
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              39
+ENDBIB              41
 COMMON               1          3
 EN-DUMMY
 EV
@@ -696,8 +733,8 @@ NO-DIM     NO-DIM     MEV        MEV        MEV        MEV
    4.        12.      12.0       1.5        15.8       2.7
    6.        14.      21.8       0.7        19.4       1.4
 ENDDATA             15
-ENDSUBENT           63
-SUBENT        40503015   20140121   20140701   20140617       4163
+ENDSUBENT           65
+SUBENT        40503015   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)1-H-2,TER,FY/DE,,REL)
             H-2 energy spectrum.
@@ -708,12 +745,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.026  MeV,
            for DATA - 0.129  ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -744,7 +781,7 @@ MEV        ARB-UNITS  ARB-UNITS
  14.866      7.334     2.183
 ENDDATA             20
 ENDSUBENT           45
-SUBENT        40503016   20140121   20140701   20140617       4163
+SUBENT        40503016   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)1-H-3,TER,FY/DE,,REL)
             H-3 energy spectrum.
@@ -755,12 +792,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.026 MeV,
            for DATA - 0.17 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -789,8 +826,8 @@ MEV        ARB-UNITS  ARB-UNITS
  11.257     58.60      5.38
 ENDDATA             18
 ENDSUBENT           43
-SUBENT        40503017   20140121   20140701   20140617       4163
-BIB                  7         16
+SUBENT        40503017   20201016   20210320   20210319       4193
+BIB                  7         15
 REACTION   (92-U-235(N,F)2-HE-4,TER,FY/DE,,REL)
             He-4 energy spectrum.
             Data are given as yield/MEV/10**4 alpha-particles.
@@ -800,14 +837,13 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051  MeV,
            for DATA - 1.44  ARB-UNITS .
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              16
+ENDBIB              15
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -845,8 +881,8 @@ MEV        ARB-UNITS
  28.859      21.98
  29.673      21.82
 ENDDATA             30
-ENDSUBENT           55
-SUBENT        40503018   20140121   20140701   20140617       4163
+ENDSUBENT           54
+SUBENT        40503018   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)2-HE-6,TER,FY/DE,,REL)
             He-6 energy spectrum.
@@ -857,12 +893,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051  MeV,
            for DATA - 0.026  ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -895,7 +931,7 @@ MEV        ARB-UNITS  ARB-UNITS
  19.060      4.324     0.330
 ENDDATA             22
 ENDSUBENT           47
-SUBENT        40503019   20140121   20140701   20140617       4163
+SUBENT        40503019   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)2-HE-8,TER,FY/DE,,REL)
             He-8 energy spectrum.
@@ -906,12 +942,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.328 MeV,
            for DATA - 0.0082 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -937,7 +973,7 @@ MEV        ARB-UNITS  ARB-UNITS
  14.994    0.2187     0.0495
 ENDDATA             15
 ENDSUBENT           40
-SUBENT        40503020   20140121   20140701   20140617       4163
+SUBENT        40503020   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)3-LI-7,TER,FY/DE,,REL)
             Li-7 energy spectrum.
@@ -948,12 +984,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051 MeV,
            for DATA - 0.0005 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -980,7 +1016,7 @@ MEV        ARB-UNITS  ARB-UNITS
  27.041    0.0216     0.0088
 ENDDATA             16
 ENDSUBENT           41
-SUBENT        40503021   20140121   20140701   20140617       4163
+SUBENT        40503021   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)3-LI-8,TER,FY/DE,,REL)
             Li-8 energy spectrum.
@@ -991,12 +1027,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051  MeV,
            for DATA - 0.00025 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1020,7 +1056,7 @@ MEV        ARB-UNITS  ARB-UNITS
  21.545    0.04913    0.00891
 ENDDATA             13
 ENDSUBENT           38
-SUBENT        40503022   20140121   20140701   20140617       4163
+SUBENT        40503022   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)3-LI-9,TER,FY/DE,,REL)
             Li-9 energy spectrum.
@@ -1031,12 +1067,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051  MeV,
            for DATA - 0.0005 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1059,7 +1095,7 @@ MEV        ARB-UNITS  ARB-UNITS
  16.486    0.13442    0.01553
 ENDDATA             12
 ENDSUBENT           37
-SUBENT        40503023   20140121   20140701   20140617       4163
+SUBENT        40503023   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)4-BE-9,TER,FY/DE,,REL)
             Be-9 energy spectrum.
@@ -1070,12 +1106,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051  MeV,
            for DATA - 0.0003 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1100,7 +1136,7 @@ MEV        ARB-UNITS  ARB-UNITS
  29.343    0.0294     0.0077
 ENDDATA             14
 ENDSUBENT           39
-SUBENT        40503024   20140121   20140701   20140617       4163
+SUBENT        40503024   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)4-BE-10,TER,FY/DE,,REL)
             Be-10 energy spectrum.
@@ -1111,12 +1147,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.050  MeV,
            for DATA - 0.0032 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1144,7 +1180,7 @@ MEV        ARB-UNITS  ARB-UNITS
  30.970     0.1832    0.0716
 ENDDATA             17
 ENDSUBENT           42
-SUBENT        40503025   20140121   20140701   20140617       4163
+SUBENT        40503025   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)4-BE-11,TER,FY/DE,,REL)
             Be-11 energy spectrum.
@@ -1155,12 +1191,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.050 MeV,
            for DATA - 0.00026 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1183,7 +1219,7 @@ MEV        ARB-UNITS  ARB-UNITS
  23.333    0.05678    0.00723
 ENDDATA             12
 ENDSUBENT           37
-SUBENT        40503026   20140121   20140701   20140617       4163
+SUBENT        40503026   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)4-BE-12,TER,FY/DE,,REL)
             Be-12 energy spectrum.
@@ -1194,12 +1230,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051  MeV,
            for DATA - 0.00026 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1222,7 +1258,7 @@ MEV        ARB-UNITS  ARB-UNITS
  21.814    0.02250    0.00768
 ENDDATA             12
 ENDSUBENT           37
-SUBENT        40503027   20140121   20140701   20140617       4163
+SUBENT        40503027   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)5-B-11,TER,FY/DE,,REL)
             B-11 energy spectrum.
@@ -1233,12 +1269,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.0506 MeV,
            for DATA - 0.00003  ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1254,7 +1290,7 @@ MEV        ARB-UNITS  ARB-UNITS
  31.883    0.07005    0.00259
 ENDDATA              5
 ENDSUBENT           30
-SUBENT        40503028   20140121   20140701   20140617       4163
+SUBENT        40503028   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)6-C-14,TER,FY/DE,,REL)
             C-14 energy spectrum.
@@ -1265,12 +1301,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.512 MeV,
            for DATA - 0.0005 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1296,7 +1332,7 @@ MEV        ARB-UNITS  ARB-UNITS
  37.497    0.0576     0.0137
 ENDDATA             15
 ENDSUBENT           40
-SUBENT        40503029   20140121   20140701   20140617       4163
+SUBENT        40503029   20201016   20210320   20210319       4193
 BIB                  7         16
 REACTION   (92-U-235(N,F)8-O-20,TER,FY/DE,,REL)
             O-20 energy spectrum.
@@ -1307,12 +1343,12 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
            10**13 1/(sec*cm**2)
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.051 MeV,
            for DATA - 0.00003 ARB-UNITS .
+           (DATA-ERR)   Not specified.
 STATUS     (CURVE) Data were digitized from Fig.1 of
-            J,PL/B,40,102,1972 .
+           Physics Letters,Section B,v.40,p.102,1972,
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              16
 COMMON               3          3
@@ -1328,10 +1364,10 @@ MEV        ARB-UNITS  ARB-UNITS
  32.080    0.01100    0.00489
 ENDDATA              5
 ENDSUBENT           30
-SUBENT        40503030   20140121   20140701   20140617       4163
-BIB                  9         12
-REACTION   (92-U-235(N,F)ELEM,TER/CHG,FY,,REL)     Relative
-                             to 1.E4 yield of He-4
+SUBENT        40503030   20201016   20210320   20210319       4193
+BIB                 10         15
+REACTION   ((92-U-235(N,F)ELEM,CHG/TER,FY)/
+           (92-U-235(N,F)2-HE-4,TER,FY))
 INC-SOURCE (REAC)
 SAMPLE      Sample of 0.7 milligram/cm2 of (U-235)-oxide
 INC-SPECT   Target was irradiated in reactor neutron flux of
@@ -1339,10 +1375,13 @@ INC-SPECT   Target was irradiated in reactor neutron flux of
 DETECTOR   (MAGSP)
 METHOD     (MASSP)
 ANALYSIS   Sum of all isotopes of given element.
-STATUS     (TABLE)  Table 2 of R,BCDL-6,11,1977.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE)  Table 2 of Rep.BCDL-6,p.11,1977.
            (DEP,40503003) Isotopes yields.
 HISTORY    (20140121C) M.M. Data were moved from Subent 003.
-ENDBIB              12
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB              15
 COMMON               1          3
 EN-DUMMY
 EV
@@ -1350,26 +1389,29 @@ EV
 ENDCOMMON            3
 DATA                 3          4
 ELEMENT    DATA       ERR-S
-NO-DIM     ARB-UNITS  ARB-UNITS
- 3.          9.         .6
- 4.         38.        2.
- 5.           .7        .14
- 6.          7.6       1.2
+NO-DIM     NO-DIM     NO-DIM
+ 3.            9.  E-4    .6  E-4
+ 4.           38.  E-4   2.   E-4
+ 5.             .7 E-4    .14 E-4
+ 6.            7.6 E-4   1.2  E-4
 ENDDATA              6
-ENDSUBENT           27
-SUBENT        40503031   20140121   20140701   20140617       4163
-BIB                  8         10
-REACTION   (94-PU-239(N,F)ELEM,TER/CHG,FY,,REL)     Relative
-                             to .1E4 of He-4 .
+ENDSUBENT           30
+SUBENT        40503031   20201016   20210320   20210319       4193
+BIB                  9         13
+REACTION   ((94-PU-239(N,F)ELEM,CHG/TER,FY)/
+           (94-PU-239(N,F)2-HE-4,TER,FY))
 INC-SOURCE (REAC)
 SAMPLE      Samples of .5 and .15 milligrams of Pu
 DETECTOR   (MAGSP)
 METHOD     (MASSP)
 ANALYSIS   Sum of all isotopes of given element.
-STATUS     (TABLE) Table 3 of R,BCDL-6,11,1977.
+ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (TABLE) Table 3 of Rep.BCDL-6,p.11,1977.
            (DEP,40503004) Isotopes yields.
 HISTORY    (20140121A) M.M. Data were moved from Subent 004.
-ENDBIB              10
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
@@ -1377,38 +1419,41 @@ EV
 ENDCOMMON            3
 DATA                 3          3
 ELEMENT    DATA       ERR-S
-NO-DIM     ARB-UNITS  ARB-UNITS
-   3.          15.         .5
-   5.           3.4        .7
-   6.          21.        2.1
+NO-DIM     NO-DIM     NO-DIM
+   3.          15. E-4     .5 E-4
+   5.           3.4E-4     .7 E-4
+   6.          21. E-4    2.1 E-4
 ENDDATA              5
-ENDSUBENT           24
-SUBENT        40503032   20140121   20140701   20140617       4163
-BIB                  3          4
-REACTION   (98-CF-252(0,F)ELEM,TER/CHG,FY,,REL)
-                           Relative to 1.E4 of He-4
-STATUS     (TABLE) Table 5 of R,BCDL-6,11,1977.
+ENDSUBENT           27
+SUBENT        40503032   20201016   20210320   20210319       4193
+BIB                  3          6
+REACTION   ((98-CF-252(0,F)ELEM,CHG/TER,FY)/
+           (98-CF-252(0,F)2-HE-4,TER,FY))
+STATUS     (TABLE) Table 5 of Rep.BCDL-6,p.11,1977.
 HISTORY    (20140121C) M.M. Data were moved from Subent 006 .
-ENDBIB               4
+           (20201016A) Reaction was corrected as ratio.
+            ARB-UNITS -> NO-DIM
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          1
 ELEMENT    DATA-APRX
-NO-DIM     ARB-UNITS
-   5.           4.
+NO-DIM     NO-DIM
+   5.           4. E-4
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40503033   20140121   20140701   20140617       4163
-BIB                  9         24
+ENDSUBENT           14
+SUBENT        40503033   20201016   20210320   20210319       4193
+BIB                 10         25
 REACTION   (94-PU-239(N,F)ELEM/MASS,TER,KEP)
-            Most probable energy.
 INC-SOURCE (REAC)
 SAMPLE      Samples of .5 and .15 milligrams of Pu
 DETECTOR   (MAGSP)
 METHOD     (MASSP)
 ANALYSIS   The measured energy spectra were fitted by Gaussians.
 MISC-COL   (MISC) FWHM of particle energy distribution.
-STATUS     (TABLE) Table I of J,YF,20,(3),461,1974.
-                   Table 3 of R,BCDL-6,11,1977.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (TABLE) Table I of Yad.Fiz.,v.20,is.3,p.461,1974.
+                   Table 3 of Rep.BCDL-6,p.11,1977.
             Measured energy spectra:
            (DEP,40503035)
            (DEP,40503036)
@@ -1423,7 +1468,7 @@ STATUS     (TABLE) Table I of J,YF,20,(3),461,1974.
            (DEP,40503045)
            (DEP,40503046)
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              24
+ENDBIB              25
 COMMON               1          3
 EN-DUMMY
 EV
@@ -1447,11 +1492,10 @@ NO-DIM     NO-DIM     MEV        MEV        MEV        MEV
    6.        14.      20.2       0.6        22.2       0.7
    6.        15.      18.6       3.3        19.7       7.1
 ENDDATA             16
-ENDSUBENT           49
-SUBENT        40503034   20140121   20140701   20140617       4163
-BIB                  9         24
+ENDSUBENT           50
+SUBENT        40503034   20201016   20210320   20210319       4193
+BIB                 10         25
 REACTION   (95-AM-242-M(N,F)ELEM/MASS,TER,KEP)
-           Most probable energy.
 INC-SOURCE (REAC)
 SAMPLE      Sample of AM-242-M was prepared from .35milligrams
             of Am-241 by irradiation in 1.E15neutron/cm2/sec
@@ -1461,8 +1505,10 @@ DETECTOR   (MAGSP)
 METHOD     (MASSP)
 ANALYSIS   The measured energy spectra were fitted by Gaussians.
 MISC-COL   (MISC) FWHM of particle energy distribution.
-STATUS     (TABLE) Table III of J,YF,20,(3),461,1974.
-                   Table 4 of R,BCDL-6,11,1977.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (TABLE) Table III of Yad.Fiz.,v.20,is.3,p.461,1974.
+                   Table 4 of Rep.BCDL-6,p.11,1977.
             Measured energy spectra:
            (DEP,40503047)
            (DEP,40503048)
@@ -1474,7 +1520,7 @@ STATUS     (TABLE) Table III of J,YF,20,(3),461,1974.
            (DEP,40503054)
            (DEP,40503055)
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              24
+ENDBIB              25
 COMMON               1          3
 EN-DUMMY
 EV
@@ -1492,9 +1538,9 @@ NO-DIM     NO-DIM     MEV        MEV        MEV        MEV
    4.        10.      16.2       0.9        17.2       1.7
    6.        14.      26.4       0.5        22.9       2.0
 ENDDATA             10
-ENDSUBENT           43
-SUBENT        40503035   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           44
+SUBENT        40503035   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)1-H-2,TER,FY/DE,,REL)
             H-2 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1505,14 +1551,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.028  MeV,
            for DATA - 0.014  ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1543,9 +1591,9 @@ MEV        ARB-UNITS  ARB-UNITS
  14.792     1.574     0.279
  15.596     0.753     0.251
 ENDDATA             23
-ENDSUBENT           49
-SUBENT        40503036   20140121   20140701   20140617       4163
-BIB                  9         16
+ENDSUBENT           51
+SUBENT        40503036   20201016   20210320   20210319       4193
+BIB                  9         17
 REACTION   (94-PU-239(N,F)1-H-3,TER,FY/DE,,REL)
             H-3 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1560,9 +1608,10 @@ ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            for E - 0.028  MeV,
            for DATA - 0.139  ARB-UNITS .
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              16
+ENDBIB              17
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1595,8 +1644,8 @@ MEV        ARB-UNITS
  11.259     57.654
  11.848     42.797
 ENDDATA             25
-ENDSUBENT           50
-SUBENT        40503037   20140121   20140701   20140617       4163
+ENDSUBENT           51
+SUBENT        40503037   20201016   20210320   20210319       4193
 BIB                  9         17
 REACTION   (94-PU-239(N,F)2-HE-4,TER,FY/DE,,REL)
             HE-4 relative energy spectrum,
@@ -1608,12 +1657,12 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056  MeV,
            for DATA - 1.37   ARB-UNITS .
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
 ENDBIB              17
 COMMON               3          3
@@ -1652,8 +1701,8 @@ MEV        ARB-UNITS
  30.710       0.13
 ENDDATA             28
 ENDSUBENT           54
-SUBENT        40503038   20140121   20140701   20140617       4163
-BIB                  9         17
+SUBENT        40503038   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)2-HE-6,TER,FY/DE,,REL)
             HE-6 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1664,14 +1713,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056  MeV,
            for DATA - 0.026  ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1700,9 +1751,9 @@ MEV        ARB-UNITS  ARB-UNITS
  17.903      5.374     0.439
  19.012      3.892     0.384
 ENDDATA             21
-ENDSUBENT           47
-SUBENT        40503039   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           49
+SUBENT        40503039   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)2-HE-8,TER,FY/DE,,REL)
             HE-8 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1713,14 +1764,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056  MeV,
            for DATA - 0.0014 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1750,9 +1803,9 @@ MEV        ARB-UNITS  ARB-UNITS
  14.847    0.2711     0.0269
  15.628    0.2358     0.0198
 ENDDATA             22
-ENDSUBENT           48
-SUBENT        40503040   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           50
+SUBENT        40503040   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)3-LI-7,TER,FY/DE,,REL)
             Li-7 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1763,14 +1816,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056 MeV,
            for DATA - 0.0009 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1792,9 +1847,9 @@ MEV        ARB-UNITS  ARB-UNITS
  22.836    0.1864     0.0165
  25.471    0.0569     0.0226
 ENDDATA             14
-ENDSUBENT           40
-SUBENT        40503041   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           42
+SUBENT        40503041   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)3-LI-8,TER,FY/DE,,REL)
             Li-8 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1805,14 +1860,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.0559 MeV,
            for DATA - 0.0007 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1833,9 +1890,9 @@ MEV        ARB-UNITS  ARB-UNITS
  18.201    0.2196     0.0309
  20.671    0.1806     0.0247
 ENDDATA             13
-ENDSUBENT           39
-SUBENT        40503042   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           41
+SUBENT        40503042   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)3-LI-9,TER,FY/DE,,REL)
             Li-9 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1846,14 +1903,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056 MeV,
            for DATA - 0.0009 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1874,9 +1933,9 @@ MEV        ARB-UNITS  ARB-UNITS
  18.121    0.23989    0.04259
  20.025    0.20069    0.03322
 ENDDATA             13
-ENDSUBENT           39
-SUBENT        40503043   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           41
+SUBENT        40503043   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)4-BE-9,TER,FY/DE,,REL)
             Be-9 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1887,14 +1946,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056  MeV,
            for DATA - 0.0007 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1920,9 +1981,9 @@ MEV        ARB-UNITS  ARB-UNITS
  31.061    0.01592    0.00562
  32.291    0.03074    0.00491
 ENDDATA             18
-ENDSUBENT           44
-SUBENT        40503044   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           46
+SUBENT        40503044   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)4-BE-10,TER,FY/DE,,REL)
             Be-10 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1933,14 +1994,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056 MeV,
            for DATA - 0.0055 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -1967,9 +2030,9 @@ MEV        ARB-UNITS  ARB-UNITS
  32.147     0.2214     0.0496
  35.290     0.0793     0.0496
 ENDDATA             19
-ENDSUBENT           45
-SUBENT        40503045   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           47
+SUBENT        40503045   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)4-BE-11,TER,FY/DE,,REL)
             Be-11 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -1980,14 +2043,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.056 MeV,
            for DATA - 0.0006 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2008,9 +2073,9 @@ MEV        ARB-UNITS  ARB-UNITS
  23.621    0.09575    0.01887
  26.707    0.04800    0.00888
 ENDDATA             13
-ENDSUBENT           39
-SUBENT        40503046   20140121   20140701   20140617       4163
-BIB                  9         17
+ENDSUBENT           41
+SUBENT        40503046   20201016   20210320   20210319       4193
+BIB                  9         19
 REACTION   (94-PU-239(N,F)6-C-14,TER,FY/DE,,REL)
             C-14 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2021,14 +2086,16 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.057 MeV,
            for DATA - 0.0014 ARB-UNITS .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
 STATUS     (CURVE) Fig.1 of R,BCDL-6,11,1977.
-            The same data on Fig.1 of J,YF,20,(3),461,1974.
+            The same data on Fig.1 of
+           Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              17
+ENDBIB              19
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2048,9 +2115,9 @@ MEV        ARB-UNITS  ARB-UNITS
  26.852    0.3557     0.0493
  28.829    0.3613     0.0287
 ENDDATA             12
-ENDSUBENT           38
-SUBENT        40503047   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           40
+SUBENT        40503047   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)1-H-2,TER,FY/DE,,REL)
             H-2 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2064,13 +2131,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.115 MeV,
            for DATA - 0.145 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2092,9 +2160,9 @@ MEV        ARB-UNITS  ARB-UNITS
  26.720     3.0950
  28.773     2.3522
 ENDDATA             14
-ENDSUBENT           42
-SUBENT        40503048   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           43
+SUBENT        40503048   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)1-H-3,TER,FY/DE,,REL)
             H-3 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2108,13 +2176,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.115 MeV,
            for DATA - 0.291 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2137,9 +2206,9 @@ MEV        ARB-UNITS  ARB-UNITS
  20.324     47.453     4.657
  21.814     51.225     5.241
 ENDDATA             15
-ENDSUBENT           43
-SUBENT        40503049   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           44
+SUBENT        40503049   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)2-HE-4,TER,FY/DE,,REL)
             He-4 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2153,13 +2222,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.114 MeV,
            for DATA - 2.93 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2187,9 +2257,9 @@ MEV        ARB-UNITS  ARB-UNITS
  27.284      50.48
  28.981      20.90
 ENDDATA             20
-ENDSUBENT           48
-SUBENT        40503050   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           49
+SUBENT        40503050   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)2-HE-6,TER,FY/DE,,REL)
             He-6 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2203,13 +2273,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.114 MeV,
            for DATA - 0.058  ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2235,9 +2306,9 @@ MEV        ARB-UNITS  ARB-UNITS
  19.477      3.667    0.466
  20.828      2.673    0.641
 ENDDATA             18
-ENDSUBENT           46
-SUBENT        40503051   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           47
+SUBENT        40503051   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)3-LI-7,TER,FY/DE,,REL)
             Li-7 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2251,13 +2322,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.115 MeV,
            for DATA - 0.0029 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2274,9 +2346,9 @@ MEV        ARB-UNITS  ARB-UNITS
  18.299    0.4531     0.0669
  20.471    0.4559     0.0989
 ENDDATA              9
-ENDSUBENT           37
-SUBENT        40503052   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           38
+SUBENT        40503052   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)3-LI-8,TER,FY/DE,,REL)
             Li-8 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2290,13 +2362,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.115 MeV,
            for DATA - 0.00150 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2313,9 +2386,9 @@ MEV        ARB-UNITS  ARB-UNITS
  16.018    0.23000    0.05247
  18.381    0.17289    0.06558
 ENDDATA              9
-ENDSUBENT           37
-SUBENT        40503053   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           38
+SUBENT        40503053   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)4-BE-9,TER,FY/DE,,REL)
             Be-9 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2329,13 +2402,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.114 MeV,
            for DATA - 0.0014 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2353,9 +2427,9 @@ MEV        ARB-UNITS  ARB-UNITS
  28.788    0.19073    0.06065
  32.287    0.06347    0.02021
 ENDDATA             10
-ENDSUBENT           38
-SUBENT        40503054   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           39
+SUBENT        40503054   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)4-BE-10,TER,FY/DE,,REL)
             Be-10 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2369,13 +2443,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.116 MeV,
            for DATA - 0.0145 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2393,9 +2468,9 @@ MEV        ARB-UNITS  ARB-UNITS
  25.577     1.7989    0.1452
  29.235     0.6937    0.0872
 ENDDATA             10
-ENDSUBENT           38
-SUBENT        40503055   20140121   20140701   20140617       4163
-BIB                  9         19
+ENDSUBENT           39
+SUBENT        40503055   20201016   20210320   20210319       4193
+BIB                  9         20
 REACTION   (95-AM-242-M(N,F)6-C-14,TER,FY/DE,,REL)
             C-14 relative energy spectrum,
             units are yield/(MeV*1.E+4 alpha particles) .
@@ -2409,13 +2484,14 @@ METHOD     (MASSP)
 EN-SEC     (E,LCP) Energy of LCP.
 ERR-ANALYS (E-ERR-DIG)  Digitizing error for E
            (ERR-DIG)    Digitizing error for DATA
-           (DATA-ERR)   Not specified.
            Quantization error (one pixel)
            for E - 0.114 MeV,
            for DATA - 0.0029 ARB-UNITS .
-STATUS     (CURVE) Fig.3 of J,YF,20,(3),461,1974.
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article
+STATUS     (CURVE) Fig.3 of Yad.Fiz.,v.20,is.3,p.461,1974.
 HISTORY    (20140121C) M.M. Subent was compiled.
-ENDBIB              19
+ENDBIB              20
 COMMON               3          3
 EN-DUMMY   E-ERR-DIG  ERR-DIG
 EV         MEV        ARB-UNITS
@@ -2434,5 +2510,5 @@ MEV        ARB-UNITS  ARB-UNITS
  33.823    0.4234     0.0613
  36.443    0.3706     0.0525
 ENDDATA             11
-ENDSUBENT           39
+ENDSUBENT           40
 ENDENTRY            55

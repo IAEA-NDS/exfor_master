@@ -1,16 +1,15 @@
-ENTRY            40196   20151113   20160302   20160216       4172
-SUBENT        40196001   20151113   20160302   20160216       4172
-BIB                 17         68
-INSTITUTE  (4RUSLEB) Physical Institute of the Academy of
-             Sciences, USSR (Lebedev's FIAN)
-REFERENCE  (J,SNP,14,8,1972) Eng.transl.of YF,14,(1),14,1971
-           (J,YF,14,(1),14,1971) Graphs only
+ENTRY            40196   20201020   20210320   20210319       4193
+SUBENT        40196001   20201020   20210320   20210319       4193
+BIB                 17         75
+INSTITUTE  (4RUSLEB)
+REFERENCE  (J,SNP,14,8,1972) Eng.transl.of YF,14,14,1971
+           (J,YF,14,14,1971) Issue 1.Graphs only
 AUTHOR     (E.S.Konobeevskii,R.M.Musaelyan,V.I.Popov,I.V.Surkova)
-TITLE        Excitation of low-lying ge-70 and Ge-72 in
-             inelastic neutron scattering near threshold
+TITLE       Excitation of low-lying Ge70 and Ge72 states in
+            inelastic neutron scattering near threshold
 FACILITY   (VDG,4RUSLEB) Electrostatic accelerator of
              protons (EG-2.5)
-INC-SOURCE (P-T) T-tritium target .
+INC-SOURCE (P-T) Ti-tritium target .
 INC-SPECT  The width of neutron energy spectrum was determined
            mainly from the proton energy loss in the target (about
            25.keV for protons energy 2.MeV).
@@ -23,12 +22,16 @@ INC-SPECT  The width of neutron energy spectrum was determined
            The difference between the fluxes measured by these two
            ways was ~5% .
 SAMPLE     Germanium-lithium detector was used simultaneously as
-           sample
-DETECTOR   (NAICR) Gamma-spectrometer having a Nal crystal and
-           (GELI) Ge(Li) detector with thickness 3.5 mm.
+           sample.
+            Natural Ge and Fe - for normalization purpose at
+            measurement with scintillation spectrometer.
+DETECTOR   (NAICR) Gamma-spectrometer having a NaI crystal and
+           (GELI) Ge(Li) detector with thickness 3.5 mm to measure
+            relative gamma yield, which was normalized to data
+            obtained by scintillation spectrometer.
            (LONGC) The neutron yield was monitored with a
                    'long' counter
-PART-DET   (G,E) Gammas and conversion electrons
+PART-DET   (G,ICE)
 REL-REF    (M,,E.S.Konobeevskiy+,J,IZV,33,1753,1969) Experimental
             conditions
 MONITOR    (26-FE-56(N,INL)26-FE-56,PAR,SIG) For 2+ level.
@@ -39,13 +42,13 @@ MONITOR    (26-FE-56(N,INL)26-FE-56,PAR,SIG) For 2+ level.
             (Ge-70)  with energy 1.216 MeV was carried out on E0
             transition which probability was equal to .014 - known
            from D.E.Alburger,Phys.Rev.,109,1222,1958
-MONIT-REF  (11720002,A.B.Tucker+,J,PR,B137,1181,1965)
+MONIT-REF  (11720002,A.B.Tucker+,J,PR,137,B1181,1965)
 COMMENT     Of compiler. Monitor value of 0.19 b is given by
            authors with reference to MONIT-REF.
            EN-NRM energy is mentioned by authors  -
-            30 keV above threshold of MONITOR reaction;
-           value of 897 keV was taken by compiler from MONIT-REF
-           as energy about 30 keV above threshold and 0.19 b CS.
+            ~30 keV above threshold of MONITOR reaction;
+           in Subent 11720002 0.19 b C-S is given at incident
+           neutron energy 897 keV.
 ERR-ANALYS (MONIT-ERR) Error of CS used for normalization ~20.%.
            (ERR-2,,10.)   Error of relative yield of gammas for
             neutrons > or = 50 keV above threshold.
@@ -53,12 +56,11 @@ ERR-ANALYS (MONIT-ERR) Error of CS used for normalization ~20.%.
             3-5 keV error of mean neutron energy is due to energy
            calibration of the accelerator and the measurement of
            the target thickness.
-STATUS     (APRVD)   Data received from one of the author's
-           (TABLE)
+STATUS     (APRVD)
 HISTORY    (19740404C)  Data compiled at the centre
            (19891101U)  Obsolete keywords are corrected, two
             author's names also corrected, ISO-QUANT into
-            REACTION  converted
+            REACTION converted
            (19901011U)  Column number in COMMON section changed;
                       several minor errors corrected
            (20010311U)  Dates corrected. BIB-information
@@ -69,26 +71,37 @@ HISTORY    (19740404C)  Data compiled at the centre
            was updated in AUTHOR,TITLE,STATUS,MONIT-REF,MONITOR,
            ERR-ANALYS,STATUS
            COMMENT and EN-NRM were added.
-ENDBIB              68
-COMMON               4          3
-E-NRM      MONIT      MONIT-ERR  E-NRM
-MEV        MB         PER-CENT   KEV
-  0.845      0.19      20.        897.
+           (20201020A) EN-NRM=897 keV was deleted according to a
+           comment of N.Otsuka (NDS, IAEA) .
+            E-NRM -> E-LVL-NRM ( 2+ level of Fe-56).
+            STATUS information was added in data Subents.
+            E -> ICE in PART-DET.
+ENDBIB              75
+COMMON               3          3
+E-LVL-NRM  MONIT      MONIT-ERR
+MEV        MB         PER-CENT
+  0.845      0.19      20.
 ENDCOMMON            3
-ENDSUBENT           75
-SUBENT        40196002   20151113   20160302   20160216       4172
-BIB                  2          2
+ENDSUBENT           82
+SUBENT        40196002   20201020   20210320   20210319       4193
+BIB                  4          8
 REACTION   (32-GE-70(N,INL)32-GE-70,PAR,SIG)
-EN-SEC     (E-LVL,32-GE-70) 2+ level
-ENDBIB               2
+FLAG       (1.) Point is marked as "normalization point" on
+            Fig.3 upper
+STATUS     (TABLE) From author.
+            Authors' data correspond to data on Fig.3 upper of
+            Sov.Nucl.Phys.,v.14,p.8,1972
+HISTORY    (20201020A) EN-SEC line was deleted according to a
+            comments of N.Otsuka (NDS,IAEA)
+ENDBIB               8
 COMMON               1          3
 E-LVL
 KEV
  1040.
 ENDCOMMON            3
-DATA                 2         15
-EN-CM      DATA
-KEV        B
+DATA                 3         15
+EN-CM      DATA       FLAG
+KEV        B          NO-DIM
  1050.         0.07
  1070.         0.20
  1080.         0.33
@@ -97,30 +110,36 @@ KEV        B
  1130.         0.51
  1150.         0.62
  1170.         0.70
- 1180.         0.86
- 1200.         0.83
+ 1180.         0.86    1.
+ 1200.         0.83    1.
  1220.         0.92
- 1240.         0.95
+ 1240.         0.95    1.
  1250.         1.06
  1270.         1.15
  1290.         1.35
 ENDDATA             17
-ENDSUBENT           28
-SUBENT        40196003   20151113   20160302   20160216       4172
-BIB                  3          4
+ENDSUBENT           34
+SUBENT        40196003   20201020   20210320   20210319       4193
+BIB                  5         10
 REACTION   (32-GE-70(N,INL)32-GE-70,PAR,SIG)
-EN-SEC     (E-LVL,32-GE-70) 0+ level
 ERR-ANALYS (ERR-4)  Other errors for 0+ levels ( measurement of
            detector volume and neutron flux).
-ENDBIB               4
+FLAG       (1.) Point is marked as "normalization point" on
+            Fig.3 lower
+STATUS     (TABLE) From author.
+            Authors' data correspond to data on Fig.3 lower of
+            Sov.Nucl.Phys.,v.14,p.8,1972
+HISTORY    (20201020A) EN-SEC line was deleted according to a
+            comments of N.Otsuka (NDS,IAEA)
+ENDBIB              10
 COMMON               2          3
 E-LVL      ERR-4
 KEV        PER-CENT
  1216.       20.
 ENDCOMMON            3
-DATA                 2         21
-EN-CM      DATA
-KEV        B
+DATA                 3         21
+EN-CM      DATA       FLAG
+KEV        B          NO-DIM
  1210.         0.008
  1230.         0.018
  1240.         0.021
@@ -134,8 +153,8 @@ KEV        B
  1320.         0.069
  1330.         0.079
  1340.         0.090
- 1342.         0.084
- 1350.         0.082
+ 1342.         0.084    1.
+ 1350.         0.082    1.
  1360.         0.079
  1370.         0.099
  1380.         0.092
@@ -143,29 +162,36 @@ KEV        B
  1400.         0.104
  1420.         0.096
 ENDDATA             23
-ENDSUBENT           36
-SUBENT        40196004   20151113   20160302   20160216       4172
-BIB                  3          4
+ENDSUBENT           42
+SUBENT        40196004   20201020   20210320   20210319       4193
+BIB                  5         11
 REACTION   (32-GE-72(N,INL)32-GE-72,PAR,SIG)
-EN-SEC     (E-LVL,32-GE-70) 0+ level.
 ERR-ANALYS (ERR-4)  other errors for 0+ levels ( measurement of
            detector volume and neutron flux).
-ENDBIB               4
+FLAG       (1.) Point is marked as "normalization point" on
+            Fig.4 lower
+STATUS     (TABLE) From author.
+            Authors' data (23 points) correspond to
+            data (24 points)on Fig.4 lower of
+            Sov.Nucl.Phys.,v.14,p.8,1972
+HISTORY    (20201020A) EN-SEC line was deleted according to a
+            comments of N.Otsuka (NDS,IAEA)
+ENDBIB              11
 COMMON               2          3
 E-LVL      ERR-4
 KEV        PER-CENT
   691.       20.
 ENDCOMMON            3
-DATA                 2         23
-EN-CM      DATA
-KEV        B
+DATA                 3         23
+EN-CM      DATA       FLAG
+KEV        B          NO-DIM
   700.         0.015
   720.         0.025
   730.         0.038
   740.         0.050
   760.         0.065
   770.         0.080
-  780.         0.093
+  780.         0.093    1.
   790.         0.090
   800.         0.092
   810.         0.105
@@ -175,7 +201,7 @@ KEV        B
   850.         0.127
   860.         0.128
   870.         0.130
-  872.         0.138
+  872.         0.138    1.
   880.         0.143
   890.         0.157
   900.         0.148
@@ -183,22 +209,28 @@ KEV        B
   920.         0.142
   930.         0.142
 ENDDATA             25
-ENDSUBENT           38
-SUBENT        40196005   20151113   20160302   20160216       4172
-BIB                  3          4
+ENDSUBENT           45
+SUBENT        40196005   20201020   20210320   20210319       4193
+BIB                  5         10
 REACTION   (32-GE-72(N,INL)32-GE-72,PAR,SIG)
-EN-SEC     (E-LVL,32-GE-70) 2+ level
 CORRECTION For contribution from gamma-spectrum of Al-27;
            evaluated experimentally to be 10%.
-ENDBIB               4
+FLAG       (1.) Point is marked as "normalization point" on
+            Fig.4 upper
+STATUS     (TABLE) From author.
+            Authors' data correspond to data on Fig.4 upper of
+            Sov.Nucl.Phys.,v.14,p.8,1972
+HISTORY    (20201020A) EN-SEC line was deleted according to a
+            comments of N.Otsuka (NDS,IAEA)
+ENDBIB              10
 COMMON               1          3
 E-LVL
 KEV
   835.
 ENDCOMMON            3
-DATA                 2         19
-EN-CM      DATA
-KEV        B
+DATA                 3         19
+EN-CM      DATA       FLAG
+KEV        B          NO-DIM
   840.         0.04
   860.         0.20
   870.         0.35
@@ -207,24 +239,27 @@ KEV        B
   900.         0.42
   910.         0.46
   930.         0.64
-  940.         0.85
+  940.         0.85     1.
   950.         0.76
-  960.         0.73
+  960.         0.73     1.
   980.         0.85
-  990.         0.90
+  990.         0.90     1.
  1000.         0.94
- 1010.         1.07
+ 1010.         1.07     1.
  1020.         1.05
  1050.         1.32
  1070.         1.42
  1090.         1.60
 ENDDATA             21
-ENDSUBENT           34
-SUBENT        40196006   20151113   20160302   20160216       4172
-BIB                  2          2
+ENDSUBENT           40
+SUBENT        40196006   20201020   20210320   20210319       4193
+BIB                  3          5
 REACTION   (32-GE-74(N,INL)32-GE-74,PAR,SIG)
-EN-SEC     (E-LVL,32-GE-70)
-ENDBIB               2
+STATUS     (TABLE) From author.
+           Data are not presented in Sov.Nucl.Phys.,v.14,p.8,1972
+HISTORY    (20201020A) EN-SEC line was deleted according to a
+            comments of N.Otsuka (NDS,IAEA)
+ENDBIB               5
 COMMON               1          3
 E-LVL
 KEV
@@ -254,12 +289,15 @@ KEV        B
   840.         1.27
   870.         1.35
 ENDDATA             22
-ENDSUBENT           33
-SUBENT        40196007   20151113   20160302   20160216       4172
-BIB                  2          2
+ENDSUBENT           36
+SUBENT        40196007   20201020   20210320   20210319       4193
+BIB                  3          5
 REACTION   (32-GE-76(N,INL)32-GE-76,PAR,SIG)
-EN-SEC     (E-LVL,32-GE-76)
-ENDBIB               2
+STATUS     (TABLE) From author.
+           Data are not presented in Sov.Nucl.Phys.,v.14,p.8,1972
+HISTORY    (20201020A) EN-SEC line was deleted according to a
+            comments of N.Otsuka (NDS,IAEA)
+ENDBIB               5
 COMMON               1          3
 E-LVL
 KEV
@@ -293,5 +331,5 @@ KEV        B
   860.         1.22
   870.         1.36
 ENDDATA             26
-ENDSUBENT           37
+ENDSUBENT           40
 ENDENTRY             7

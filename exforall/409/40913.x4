@@ -1,14 +1,14 @@
-ENTRY            40913   20160604   20180122   20180119       4176
-SUBENT        40913001   20160604   20180122   20180119       4176
-BIB                  9         27
-TITLE       Ratio of the fission cross sections of U-234 and
-            U-235 in the energy range 5. - 10.5 MeV
+ENTRY            40913   20201010   20210320   20210319       4193
+SUBENT        40913001   20201010   20210320   20210319       4193
+BIB                  9         29
+TITLE       Ratio of the fission cross sections of 234U and
+            235U in the neutron energy range 5. - 10.5 MeV
 AUTHOR     (A.A.Goverdovskii,A.K.Gordyushin,B.D.Kuz'minov,
            V.F.Mitrofanov,A.I.Sergachev)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,AE,62,(3),190,1987) Main Reference
+REFERENCE  (J,AE,62,190,1987) Issue 3. Main reference
            (J,SJA,62,238,1987) Engl.transl.of AE,62,190,1987
-           (J,YF,44,(1),287,1986)  For Subents .004-.006
+           (J,YF,44,287,1986) Iss.1. For Subents .004-.006
            (J,SNP,44,179,1986) Engl.transl.of YF,44,(1),287,1986
 FACILITY   (VDG,4RUSFEI)  Pulse Accelerator 'EGP-1'
 METHOD     (TOF)       Time-of-flight
@@ -23,15 +23,17 @@ HISTORY    (19870915C)   Compiled at the CJD
             from Sub.004-006 to Sub.001.
            (20160602U) SD: Refs SJA,62,238,1987 and
            SNP,44,179,1986 were added. Title and list of authors
-           update  following SJA,62,238,1987. Small corrections
+           update following SJA,62,238,1987. Small corrections
            in Subents 002-006.
            (20170710A) M.M. Previous correction of SD was
            checked at CJD. Minor correction in ERR-ANALYS .
            ANG-RSL -> ANG-RSL-HW in Subents 004,005 .
-ENDBIB              27
+           (20201010A) Subent 005 was corrected
+           Minor correction of free text in all Subents.
+ENDBIB              29
 NOCOMMON             0          0
-ENDSUBENT           30
-SUBENT        40913002   20160604   20180122   20180119       4176
+ENDSUBENT           32
+SUBENT        40913002   20201010   20210320   20210319       4193
 BIB                  5         17
 REACTION   ((92-U-234(N,F),,SIG)/(92-U-235(N,F),,SIG))
 DETECTOR   (FISCH) Double ionization chamber
@@ -39,7 +41,7 @@ CORRECTION  Corrections were made on the moderation of fiss.
             fragments in sample .10%, on the scattered neutrons
             background .05%, on the efficiency difference of
             twin chambers .60%, on the neutron flux difference
-            in U-234 and U-235 layers 2.%, on the noncorrelated
+            in U-234 and U-235 layers 2.%, on the non-correlated
             neutron background 2.5%, on the correlated neutron
             background 3.0%
 ERR-ANALYS (ERR-1)  Energy dependence normalization error
@@ -49,7 +51,7 @@ ERR-ANALYS (ERR-1)  Energy dependence normalization error
            (ERR-4)  Error of corrections
            (ERR-S)  Statistical error
            (ERR-T)  Total error
-STATUS     (TABLE)   from Table of AE,62,(3),190,1987
+STATUS     (TABLE)  Table of At.Energy,v.62,is.3,p.190,1987
 ENDBIB              17
 COMMON               4          3
 ERR-1      ERR-2      ERR-3      ERR-4
@@ -94,31 +96,37 @@ MEV        MEV        NO-DIM     PER-CENT   PER-CENT
  10.41       .06       1.123        1.1       1.5
 ENDDATA             35
 ENDSUBENT           61
-NOSUBENT      40913003   20051027   20060215   20060215       4136
-SUBENT        40913004   20160604   20180122   20180119       4176
-BIB                  5          5
-REACTION   (92-U-234(N,F),PRE,AKE/DA,FF)
+NOSUBENT      40913003   20201010   20210320   20210319       4193
+SUBENT        40913004   20201010   20210320   20210319       4193
+BIB                  6         10
+REACTION   (92-U-234(N,F),PRE,AKE,FF)
 DETECTOR   (SIBAR)   Silicon surface-barrier detector
+FLAG       (0.)   Measurement angle 0. deg
+           (90.)  Measurement angle 90. deg
+            Angular resolution (HWHM) = 10. deg.
 ERR-ANALYS (DATA-ERR) Total error
-STATUS     (TABLE) Tbl. 1 from YF,44,(1),179,1986
+STATUS     (TABLE) Tbl. 1 from Yad.Fiz.,v.44,is.1,p.179,1986
 HISTORY    (20160604U) ERR-T -> DATA-ERR
-ENDBIB               5
+            ANG -> FLAG. ANG-RSL-HW was moved in free text.
+            DA was deleted from SF6.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 5          4
-EN         ANG        ANG-RSL-HW DATA       DATA-ERR
-MEV        ADEG       ADEG       MEV        MEV
-  0.60       0.        10.        172.43     .38
-  0.60      90.        10.        171.90     .50
-  0.78       0.        10.        170.98     .35
-  0.78      90.        10.        172.18     .35
+DATA                 4          4
+EN         DATA       DATA-ERR   FLAG
+MEV        MEV        MEV        NO-DIM
+  0.60      172.43     .38         0.
+  0.60      171.90     .50        90.
+  0.78      170.98     .35         0.
+  0.78      172.18     .35        90.
 ENDDATA              6
-ENDSUBENT           16
-SUBENT        40913005   20160604   20180122   20180119       4176
-BIB                  3          3
-REACTION   (92-U-234(N,F),PRE,DA,FF,RSD)
+ENDSUBENT           21
+SUBENT        40913005   20201010   20210320   20210319       4193
+BIB                  4          4
+REACTION   (92-U-234(N,F),,DA,FF,RSD)
 DETECTOR   (SIBAR)  Silicon surface-barrier detector
-STATUS     (TABLE) Tbl. 1 from YF,44,(1),179,1986
-ENDBIB               3
+STATUS     (TABLE) Tbl. 1 from Yad.Fiz.,v.44,is.1,p.179,1986
+HISTORY    (20201010A) Code PRE was deleted from Reaction.
+ENDBIB               4
 COMMON               2          3
 ANG        ANG-RSL-HW
 ADEG       ADEG
@@ -130,16 +138,17 @@ MEV        NO-DIM
  .60        1.07
  .78        1.70
 ENDDATA              4
-ENDSUBENT           16
-SUBENT        40913006   20160604   20180122   20180119       4176
-BIB                  5          6
+ENDSUBENT           17
+SUBENT        40913006   20201010   20210320   20210319       4193
+BIB                  5          7
 REACTION   (92-U-234(N,F),PRE,AKE,FF)
 DETECTOR   (SIBAR)  Silicon surface-barrier detector
 ERR-ANALYS (DATA-ERR) Total error
-STATUS     (APRVD)  Goverdovskij,1987/09. Fig.1 from YF,44,(1),179
+STATUS     (APRVD)  Goverdovskij,1987/09.
+           Fig.1 from Yad.Fiz.,v.44,is.1,p.179,1986
            (TABLE) Data from the author
 HISTORY    (20160604U) ERR-T -> DATA-ERR
-ENDBIB               6
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         14
 EN         DATA       DATA-ERR
@@ -159,5 +168,5 @@ MEV        MEV        MEV
  2.05        172.22    .1
  2.30        172.20    .1
 ENDDATA             16
-ENDSUBENT           27
+ENDSUBENT           28
 ENDENTRY             6
