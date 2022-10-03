@@ -1,7 +1,7 @@
-ENTRY            23088   20100301   20100809   20100806       2220
-SUBENT        23088001   20100301   20100809   20100806       2220
-BIB                 12         60
-TITLE      .Neutron Capture Cross Section Measurement on 243Am
+ENTRY            23088   20200805   20201008   20201008       2290
+SUBENT        23088001   20200805   20201008   20201008       2290
+BIB                 12         61
+TITLE       Neutron capture cross section measurement on 243Am
             with a 4pi-Ge spectrometer
 AUTHOR     (J.Hori, M.Oshima, H.Harada, K.Furutaka, M.Koizumi,
            F.Kitatani, Y.Toh, S.Nakamura, A.Kimura, M.Igashira,
@@ -27,7 +27,7 @@ INC-SOURCE (PHOTO)  Fast neutrons were produced from the water-
              cooled photo-neutron target assembly, 5 cm in diam.
              and 6 cm long, which was composed of 12 sheets of
              tantalum plates with total thickness of 29 mm.
-            .The target was surrounded with a water moderator.
+             The target was surrounded with a water moderator.
 METHOD     (TOF)  The flight path used in the experiment is in
              direction of 90-degree to the LINAC electron beam.
            (SITA) Intermittent capture sample, dummy sample and
@@ -39,19 +39,19 @@ DETECTOR   (HPGE) 4pi Ge spectrometer surrounded with large
            (PROPC)  BF3 proportional counter was set at the exit
              of the first flight tube used as a neutron intensity
              monitor
-           .To decrease the background, a 10 mm thick lead was
+            To decrease the background, a 10 mm thick lead was
             set on the surface of each detector
-SAMPLE     .The sample of 243Am was 128 mg of americium oxide
+SAMPLE      The sample of 243Am was 128 mg of americium oxide
             Am-O2 powder packed in an aluminum disk container 30
             mm in diameter and 0.5 mm thick walls. The thickness
             of sample 8.92E-5 atoms/b, sample radioactivity
             835 MBq.
-           .The dummy sample of identical Al case without the
+            The dummy sample of identical Al case without the
             americium oxide powder was used for the background
             measurements. The identical Al case with Pb was also
             used for determination of background level due to
             neutrons scattered by the capture sample.
-           .The enriched 10B sample, purity 93 %, was used for
+            The enriched 10B sample, purity 93 %, was used for
             the measurement of the incident neutron flux/spectrum
             on the sample. The 10B sample was encapsulated in a
             cylinder thin-walled (0.2 mm) aluminum container 25
@@ -59,11 +59,12 @@ SAMPLE     .The sample of 243Am was 128 mg of americium oxide
             5.68E-2 atoms/b.
 MONITOR    (5-B-10(N,A)3-LI-7,,SIG) For neutron flux and spectrum
                                     determination
-CORRECTION .Corrections are made for background  and for dead time
+CORRECTION  Corrections are made for background  and for dead time
 HISTORY    (20100301C)  S.M.
-ENDBIB              60
+           (20200805U) SD: Correction in Subents 003, 004.
+ENDBIB              61
 NOCOMMON             0          0
-ENDSUBENT           63
+ENDSUBENT           64
 SUBENT        23088002   20100301   20100809   20100806       2220
 BIB                  2          2
 REACTION   (95-AM-243(N,G)95-AM-244,,SIG)
@@ -76,19 +77,19 @@ EV         EV
 ENDCOMMON            3
 NODATA               0          0
 ENDSUBENT           10
-SUBENT        23088003   20100301   20100809   20100806       2220
+SUBENT        23088003   20200805   20201008   20201008       2290
 BIB                  4          6
 REACTION   ((95-AM-243(N,G)95-AM-244,,RI)//
            (95-AM-243(N,G)95-AM-244,,SIG))
-MONITOR    ((MONIT1)95-AM-243(N,G)95-AM-244,,SIG)
-MONIT-REF  (,,3,JENDL-3.3,,2002)
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
 STATUS     (TABLE)  Table 1 of JAEA-C-2009-004
            (DEP,23088002)
+HISTORY    (20200805U) SD: ERR-ANALYS added.MONIT(/REF) deleted.
 ENDBIB               6
-COMMON               3          3
-EN-DN      EN-NRM     MONIT1
-EV         EV         B
-  0.0253      0.0253    76.6
+COMMON               1          3
+EN-DN
+EV
+  0.0253
 ENDCOMMON            3
 DATA                 3          1
 EN-MIN-NM  DATA       DATA-ERR
@@ -96,18 +97,21 @@ EV         NO-DIM     NO-DIM
     0.5      25.7        1.5
 ENDDATA              3
 ENDSUBENT           18
-SUBENT        23088004   20100301   20100809   20100806       2220
-BIB                  3          4
+SUBENT        23088004   20200805   20201008   20201008       2290
+BIB                  5          7
 REACTION   (95-AM-243(N,G)95-AM-244,,RI)
-ASSUMED    (ASSUM,95-AM-243(N,G)95-AM-244,,SIG)
+MONITOR    (95-AM-243(N,G)95-AM-244,,SIG)
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
 STATUS     (TABLE)  Table 1 of JAEA-C-2009-004
            (DEP,23088003)
-ENDBIB               4
+HISTORY    (20200805U) SD: ASSUMED -> MONITOR; ASSUM -> MONIT.
+           ERR-ANALYS added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          1
-EN-MIN     DATA       DATA-ERR   ASSUM
+EN-MIN     DATA       DATA-ERR   MONIT
 EV         B          B          B
     0.5      1969.        111.       76.6
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           15
 ENDENTRY             4

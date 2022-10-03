@@ -1,17 +1,17 @@
-ENTRY            22231   20181111   20190405   20190405       2272
-SUBENT        22231001   20181111   20190405   20190405       2272
-BIB                 15        231
-INSTITUTE  (2GERPTB) G.Dietze, H.Klein and experimental site
-           (3CRORBZ) B.Antolkovic
+ENTRY            22231   20200808   20201008   20201008       2290
+SUBENT        22231001   20200808   20201008   20201008       2290
+BIB                 15        228
+TITLE       Reaction cross sections on carbon for neutron energies
+              from 11.5 to 19 MeV
+AUTHOR     (B.Antolkovic,G.Dietze,H.Klein)
 REFERENCE  (J,NSE,107,1,1991) Subents 002-008 data
            (J,RPD,44,31,1992) Subents 009- data
            Secondary alpha particle spectra and  partial kerma
            factors of the reaction n + 12C -> n + 3 alpha
            carbon deduced from microscopic cross sections at
            incident neutron energies below 75 MeV .
-AUTHOR     (B.Antolkovic,G.Dietze,H.Klein)
-TITLE      -Reaction cross sections on carbon for neutron energies
-              from 11.5 to 19 MeV
+INSTITUTE  (2GERPTB) G.Dietze, H.Klein and experimental site
+           (3CRORBZ) B.Antolkovic
 REL-REF    (M,,B.Antolkovic+,J,NP/A,524,285,1991)
            Processing and analysis of data
 FACILITY   (VDG,2GERPTB) The PTB Van De Graaff generator was used
@@ -151,7 +151,7 @@ DETECTOR   (PLATE) The nuclear emulsions which contain carbon
             sections were taken from ENDF/B-V.
 COMMENT    Of compiler M.M. Alpha energy diff. CS presented on
            Fig. 1 of J.Radiation Protection Dosimetry,44,31,1992
-           have unsufficient quality for digitization -
+           have insufficient quality for digitization -
            overlapping, triangles and full points could not be
            separated.
 ADD-RES    Distribution of alpha particle spectrum, normalized
@@ -217,14 +217,10 @@ ADD-RES    Distribution of alpha particle spectrum, normalized
             4.589         0.0524 +- 0.0494
             4.863         0.0256 +- 0.0268
 HISTORY    (19930707C) N.O.
-           (19931129E)
            (19961225A)  *  *  Corrected by S. Maev
-              .In SAN 001 -
-              .monitor code added
-              .FACILITY, DETECTOR, SAMPLE  codes corrected
-              .DATA-ERR changed to ERR-T and error's structure
-               is given
-              . Subent 003/007 data were moved in Subent 002/006 *
+           MONITOR added; FACILITY, DETECTOR, SAMPLE, ERR-ANALYS
+           corrected. DATA-ERR -> ERR-T. Subents 002 and 003;
+           006 and 007 were merged.
            (20181111A) M.M. Upper -> lower case correction.
            Dates were corrected for 4-digits year.
            ERR-ANALYS was corrected according to now-days rules.
@@ -232,9 +228,10 @@ HISTORY    (19930707C) N.O.
            INC-SOURCE, ANALYSIS information was added
            Second ref. was added . Subents  009-011 were added.
            EN-ERR and EN-RSL were added in data Subents.
-ENDBIB             231
+           (20200808A) SD: Corrections in Subents 006,009,010.
+ENDBIB             228
 NOCOMMON             0          0
-ENDSUBENT          234
+ENDSUBENT          231
 SUBENT        22231002   20181111   20190405   20190405       2272
 BIB                  8         48
 REACTION   (6-C-12(N,N+2A)2-HE-4,ISP,SIG)
@@ -490,10 +487,12 @@ MEV        MEV        MEV        MB         MB
  19.0       0.030      0.380      300.0      17.9
 ENDDATA              8
 ENDSUBENT           63
-SUBENT        22231006   20181111   20190405   20190405       2272
-BIB                  8         54
-REACTION   (6-C-12(N,N+A)4-BE-8,ISP/PAR,SIG)
-ANALYSIS     Data for explosure of emulsions and data analysis:
+SUBENT        22231006   20200808   20201008   20201008       2290
+BIB                  8         58
+REACTION   (6-C-12(N,N+A)4-BE-8,ISP/PAR,SIG,,MSC)
+           cross section for all (n,n3a) reactions via 8Be(g.s.)
+           and characterized by the three-alpha energy
+ANALYSIS     Data for exposure of emulsions and data analysis:
             En,MeV  F,1/cm2  N     L,cm  Nb/N,% C1*C2  C3
             11.9    1.44E+8  1400  45.0  8.1    1.21   1.88
             12.9    1.48E+8   859  45.0  9.1    1.19   1.58
@@ -546,7 +545,9 @@ HISTORY    (19930707C) N.O.
             (N,N+2A)2-HE-4,PAR,SIG -> (N,N+A)4-BE-8,ISP/PAR,SIG ;
              E-EXC-MIN=8.MeV was added at first poin instead of
              blank.
-ENDBIB              54
+           (20200808A) SD: SF8=MSC added to REACTION code with
+           explanation.
+ENDBIB              58
 COMMON               4          3
 E-LVL      ERR-1      ERR-2      ERR-3
 MEV        PER-CENT   PER-CENT   PER-CENT
@@ -622,7 +623,7 @@ MB         MB
  19.0        0.030      0.380     17.50      18.50      18.0
   0.5       0.4
 ENDDATA             68
-ENDSUBENT          131
+ENDSUBENT          135
 NOSUBENT      22231007   20181111   20190405   20190405       2272
 SUBENT        22231008   20181111   20190405   20190405       2272
 BIB                  9         64
@@ -722,11 +723,11 @@ MEV        MEV        MEV        MB         MB
  19.0       0.030      0.380      379.6     19.9
 ENDDATA             23
 ENDSUBENT           96
-SUBENT        22231009   20181030   20190405   20190405       2272
-BIB                  7         16
-REACTION   (6-C-12(N,N+A)4-BE-8,ISP/PAR,SIG) Partial cross section
-            for transition via Be-8-ground in
-            ( n + 12C -> n + 3 alpha ) break up reaction.
+SUBENT        22231009   20200808   20201008   20201008       2290
+BIB                  7         18
+REACTION   (6-C-12(N,N+A)4-BE-8,ISP/PAR,SIG,,MSC)
+           cross section for all (n,n3a) reactions via 8Be(g.s.)
+           and characterized by the three-alpha energy
 EN-SEC     (E-EXC,6-C-12) Min., max. and mean energies in DATA
            block are given.
            (E-LVL,4-BE-8)
@@ -735,12 +736,14 @@ CORRECTION   Low energy cut-off, Tables 1, 2 of J.Radiation
            Protection Dosimetry,44,31,1992 data were used as input
             in Monte Carlo calculation by E-cut-off = 0.45 MeV .
 ERR-ANALYS (ERR-T)    Total error
-           (ERR-1,10.) Correction uncertainty less 10.%
+           (ERR-1,,10.) Correction uncertainty less 10.%
 STATUS     (TABLE) Table 1 of J.Radiation Protection Dosimetry,44,
            31,1992
             This Subent supersedes Subent 22231.006
 HISTORY    (20181111C) M.M. Subent was added.
-ENDBIB              16
+           (20200808A) SD: SF8=MSC added to REACTION code with
+           explanation.
+ENDBIB              18
 COMMON               1          3
 E-LVL
 MEV
@@ -818,12 +821,12 @@ MB         MB
  19.0       0.030      0.380      17.25      18.25      17.75
     0.5     0.4
 ENDDATA             70
-ENDSUBENT           95
-SUBENT        22231010   20181030   20190405   20190405       2272
-BIB                  7         15
-REACTION   (6-C-12(N,N+A)4-BE-8,ISP/PAR,SIG) Partial cross section
-            for transition via Be-8-1st-excited-level in
-            ( n + 12C -> n + 3 alpha ) break up reaction.
+ENDSUBENT           97
+SUBENT        22231010   20200808   20201008   20201008       2290
+BIB                  7         17
+REACTION   (6-C-12(N,N+A)4-BE-8,ISP/PAR,SIG,,MSC)
+           cross section for all (n,n3a) reactions via 8Be(g.s.)
+           and characterized by the three-alpha energy
 EN-SEC     (E-EXC,6-C-12) Min., max. and mean energies in DATA
            block are given.
            (LVL-NUMB,4-BE-8)
@@ -832,11 +835,13 @@ CORRECTION   Low energy cut-off, Tables 1, 2 of J.Radiation
            Protection Dosimetry,44,31,1992 data were used as input
             in Monte Carlo calculation by E-cut-off = 0.45 MeV .
 ERR-ANALYS (ERR-T)    Total error
-           (ERR-1,10.) Correction uncertainty less 10.%
+           (ERR-1,,10.) Correction uncertainty less 10.%
 STATUS     (TABLE) Table 1 of J.Radiation Protection Dosimetry,44,
            31,1992
 HISTORY    (20181111C) M.M. Subent was added.
-ENDBIB              15
+           (20200808A) SD: SF8=MSC added to REACTION code with
+           explanation.
+ENDBIB              17
 COMMON               1          3
 LVL-NUMB
 NO-DIM
@@ -902,7 +907,7 @@ MB         MB
  19.0       0.030      0.380      17.25      18.25      17.75
  10.2       1.9
 ENDDATA             58
-ENDSUBENT           82
+ENDSUBENT           84
 SUBENT        22231011   20181030   20190405   20190405       2272
 BIB                  9         24
 REACTION  1(6-C-12(N,N+2A)2-HE-4,,KER,,,DERIV)  Kerma factor KF
