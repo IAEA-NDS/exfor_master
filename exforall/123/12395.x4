@@ -1,62 +1,131 @@
-ENTRY            12395     820519              20050926       0000
-SUBENT        12395001     820519              20050926       0000
-BIB                  7          8
+ENTRY            12395   20201210   20210525   20210525       1476
+SUBENT        12395001   20201210   20210525   20210525       1476
+BIB                 10         36
+TITLE      Number of Neutrons per Fission for 25 and 49
+AUTHOR     (T.M.Snyder,R.W.Williams)
+REFERENCE  (R,LA-102,1944)
 INSTITUTE  (1USALAS)
-REFERENCE  (R,LA-102,44)
-AUTHOR     (T.SNYDER,R.WILLIAMS)
-TITLE      NUMBER OF NEUTRONS PER FISSION FOR 25 AND 49.
-INC-SPECT  THERMAL SPECTRUM
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (820519A) CONVERTED TO REACTION FORMALISM
-ENDBIB               8
+FACILITY   (CYCLO,1USALAS)
+INC-SPECT  The thermal flux which is available well back in the
+           graphite block, using the cyclotron as a neutron
+           source.
+METHOD     The number of fast neutrons given off was measured by
+           making a volume integral of the resonance activity
+           acquired by indium foils and comparing this with a
+           similar integral from a Ra-Be source of known output;
+           the number of fissions was measured by counting the
+           fissions from a thin foil on the face of a case
+           containing the sample of fissionable material, and
+           knowing the ratio of weights of material in the foil
+           to material in the sample. The measurement gives a
+           rather accurate value of the ratio nubar/Q where Q is
+           the neutron output of Ra-Be source.
+CORRECTION The self absorption correction was calculated on the
+           basis of this average counting rate plus the
+           assumption of an isotropic neutron flux around the
+           sample. The straight-through self-absorption in the
+           sample was about 11 percent in the worst case (round
+           25 sample); it becomes larger when averaged over all
+           angles, but is partially monitored by the detector
+           foil, one side of which is shaded by the sample. The
+           net correction was 5 percent for the round 25 sample.
+COMMENT    Compiler's comment: Los Alamos notation uses 49 for
+           Z=94, A=239 (239Pu) and 25 for Z=92, A=235 (235U).
+HISTORY    (19760804T) Translated from SCISRS.
+           (19820519A) Converted to reaction formalism
+           (20201210A) BP: Added 239Pu/235U or 49/25 ratio data,
+           corrected units, ALF->ETA, updated to new date formats,
+            lower case. Corrections according last EXFOR rules and
+            Dict.
+ENDBIB              36
+COMMON               1          3
+EN-DUMMY
+EV
+     0.0253
+ENDCOMMON            3
+ENDSUBENT           43
+SUBENT        12395002   20201210   20210525   20210525       1476
+BIB                  3          7
+REACTION   (92-U-235(N,F),,NU,,SPA)
+SAMPLE     The 25 foils from material of the same isotopic
+           constitution as weighing 25 samples (E-10 oxide).
+           Direct weighing of these foils proved unreliable,
+           apparently because their large areas encourage the
+           deposition of impurities.
+STATUS     (TABLE) page 18.
+ENDBIB               7
 NOCOMMON             0          0
-ENDSUBENT           11
-SUBENT        12395002     820519              20050926       0000
-BIB                  1          1
-REACTION   (92-U-235(N,F),,NU,,MXW)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 2          1
-EN-DUMMY   DATA
-EV         NO-DIM
- 0.0253     2.44
+DATA                 1          1
+DATA
+PRT/FIS
+       2.44
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        12395003     820519              20050926       0000
-BIB                  1          1
-REACTION   (94-PU-239(N,F),,NU,,MXW)
-ENDBIB               1
+ENDSUBENT           15
+SUBENT        12395003   20201210   20210525   20210525       1476
+BIB                  3         11
+REACTION   (94-PU-239(N,F),,NU,,SPA)
+SAMPLE     For 49 the thin foil was made by transferring
+           quantitatively an aliquot of the total sample on to a
+           thin platinum disk. The value thus obtained was
+           checked by comparing the fission counts from this
+           foil with the fission mounts from a very small 49
+           foil which had been alpha-counted accurately; and
+           alpha-counting a very small aliquot from the total
+           sample (note that the ratio is independent of the
+           specific activity of 49).
+STATUS     (TABLE) page 18.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 2          1
-EN-DUMMY   DATA
-MEV        NO-DIM
- 2.53   -08 2.86
+DATA                 1          1
+DATA
+PRT/FIS
+       2.86
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        12395004     820519              20050926       0000
+ENDSUBENT           19
+SUBENT        12395004   20201210   20210525   20210525       1476
 BIB                  3          3
-REACTION   (94-PU-239(N,ABS),,ETA,,MXW)
+REACTION   (94-PU-239(N,ABS),,ETA,,SPA)
 ASSUMED    (ASSUM,94-PU-239(N,ABS),,SIG)
-INC-SPECT   THERMAL SPECTRUM
+STATUS     (TABLE) pages 2-3,24.
 ENDBIB               3
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       ASSUM
-MEV        B          B
- 2.53   -08 0.44   +00 1057.
+DATA                 2          1
+DATA       ASSUM
+PRT/INC    B
+       0.44      1057.
 ENDDATA              3
 ENDSUBENT           11
-SUBENT        12395005     820519              20050926       0000
-BIB                  2          2
-REACTION   (92-U-235(N,ABS),,ALF,,MXW)
+SUBENT        12395005   20201210   20210525   20210525       1476
+BIB                  4          5
+REACTION   (92-U-235(N,ABS),,ETA,,SPA)
 ASSUMED    (ASSUM,92-U-235(N,G)92-U-236,,SIG)
-ENDBIB               2
+HISTORY    (20201210A) BP: Corrected assumed from 2.16 to 644 b.
+           Changed ALF to ETA.
+STATUS     (TABLE) page 2-3.
+ENDBIB               5
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       ASSUM
-EV         B          B
- 0.0253      0.13      2.16
+DATA                 2          1
+DATA       ASSUM
+PRT/INC    B
+       0.13      644.0
 ENDDATA              3
-ENDSUBENT           10
-ENDENTRY             5
+ENDSUBENT           13
+SUBENT        12395006   20201211   20210525   20210525       1476
+BIB                  4          8
+REACTION   ((94-PU-239(N,F),,NU,,SPA)/(92-U-235(N,F),,NU,,SPA))
+ERR-ANALYS (DATA-ERR) Authors attempted to assign reasonable
+           probable errors to these correction factors, and have
+           considered the errors in mass ratios.
+HISTORY    (20201210C) BP
+STATUS     (DEP,12395003)
+           (DEP,12395002)
+           (TABLE) page 18.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+       1.17       0.02
+ENDDATA              3
+ENDSUBENT           16
+ENDENTRY             6
