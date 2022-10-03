@@ -1,29 +1,50 @@
-ENTRY            L0013     970129              20050926       0000
-SUBENT        L0013001     970129              20050926       0000
-BIB                  9         11
+ENTRY            L0013   20181204   20190221   20190220       L037
+SUBENT        L0013001   20181204   20190221   20190220       L037
+BIB                  9         13
 INSTITUTE  (1USAGGA)
-REFERENCE  (J,PR,176,1366,6812)
-AUTHOR     (R.E.SUND,M.P.BAKER,L.A.KULL,R.B.WALTON)
+REFERENCE  (J,PR,176,1366,1968)
+AUTHOR     (R.E.Sund,M.P.Baker,L.A.Kull,R.B.Walton)
 TITLE      Measurements of the 63Cu(gamma,n) and (gamma,2n) cross
             sections.
-FACILITY   (LINAC)
-INC-SOURCE Positron annihilation
+FACILITY   (LINAC,1USAGGA)
+INC-SOURCE (ARAD)
 METHOD     (ACTIV)
 DETECTOR   (NAICR)
-HISTORY    (780511T) Converted from Berman compilation
-           (891201A) BIB Updated
-ENDBIB              11
+HISTORY    (19780511T) Converted from Berman compilation
+           (19891201A) BIB Updated
+           (20181204A) OS. Sub.4 added. CORRECTION, ERR-ANALYS and
+            STATUS added.
+ENDBIB              13
 NOCOMMON             0          0
-ENDSUBENT           14
-SUBENT        L0013002     970129              20050926       0000
-BIB                  3          3
+ENDSUBENT           16
+SUBENT        L0013002   20181204   20190221   20190220       L037
+BIB                  6         18
 REACTION   (29-CU-63(G,N)29-CU-62,,SIG)
 DECAY-DATA (29-CU-62,9.8MIN,AR)
-HISTORY    (891205A) REACTION Corrected
-ENDBIB               3
-NOCOMMON             0          0
+CORRECTION Data corrected for:
+           - Positron-electron difference caused by the emission
+             of secondary electrons from the Faraday cup;
+           - attenuation of gamma rays in the Cu samples;
+           - the small activity produced by second interaction of
+             photons which had initially been Compton scattered
+ERR-ANALYS (ERR-4) Error given in table includes statistical error
+            and uncertainty in determination of positron-electron
+            difference caused by the emission of secondary
+            electrons from the Faraday cup.
+            Additional errors:
+           (ERR-1) Uncertainty in photon flux
+           (ERR-2) Uncertainty in efficiency of NaI crystals
+           (ERR-3) Errors from miscellaneous sources
+STATUS     (BERMN) Data shown in Fig.9, Phys.Rev.176,1366,1968
+HISTORY    (19891205A) REACTION Corrected
+ENDBIB              18
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+   6.         4.         3.
+ENDCOMMON            3
 DATA                 3         66
-EN         DATA       DATA-ERR
+EN         DATA       ERR-4
 MEV        MB         MB
   10.12         .4         .8
   10.59         .6         .8
@@ -92,20 +113,77 @@ MEV        MB         MB
   24.92       10.2        1.6
   25.06       12.0        2.2
 ENDDATA             68
-ENDSUBENT           76
-SUBENT        L0013003     970129              20050926       0000
-BIB                  3          3
+ENDSUBENT           95
+SUBENT        L0013003   20181204   20190221   20190220       L037
+BIB                  6         15
 REACTION   (29-CU-63(G,2N)29-CU-61,,SIG)
 DECAY-DATA (29-CU-61,3.3HR,AR)
-HISTORY    (891205A)
-ENDBIB               3
-NOCOMMON             0          0
+CORRECTION Data corrected for:
+           - Positron-electron difference caused by the emission
+             of secondary electrons from the Faraday cup;
+           - attenuation of gamma rays in the Cu samples;
+           - the small activity produced by second interaction of
+             photons which had initially been Compton scattered
+ERR-ANALYS (ERR-S) Statistical uncertainty
+           (ERR-1) Uncertainty in photon flux
+           (ERR-2) Uncertainty in efficiency of NaI crystals
+           (ERR-3) Error in positron branching fraction
+           (ERR-4) Errors from miscellaneous sources
+STATUS     (TABLE) Data from Table I, Phys.Rev.176,1366,1968
+HISTORY    (19891205A)
+ENDBIB              15
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+   6.         5.        12.         3.
+ENDCOMMON            3
 DATA                 3          3
-EN         DATA       DATA-ERR
+EN         DATA       ERR-S
 MEV        MB         MB
   22.2         8.0        0.5
   23.7        10.0        0.5
   25.7         9.3        0.5
 ENDDATA              5
-ENDSUBENT           13
-ENDENTRY             3
+ENDSUBENT           29
+SUBENT        L0013004   20181204   20190221   20190220       L037
+BIB                  6         14
+REACTION   (29-CU-63(G,N+P)28-NI-61,,SIG,,,DERIV)
+ANALYSIS   This Cu-63(gamma,np)Ni-61 reaction  cross section was
+           obtained from author's (gamma,n) measurement (sub.2)
+           and the (gamma,n)+(gamma,n+p) measurement by Fultz et
+           al.
+REL-REF    (R,L0006006,S.C.Fultz+,J,PR,133,B1149,1964)
+ERR-ANALYS (ERR-S) Error resulting from statistical uncertainties
+            in data from which the cross section was derived
+           (ERR-1) Error resulting from uncertainties in flux and
+            detector efficiencies
+STATUS     (CURVE) Data from Fig.13, Phys.Rev.176,1366,1968
+           (DEP,L0013002)
+           (DEP,L0006006)
+HISTORY    (20181204C) Subentry moved from M0371.005, BIB modified
+ENDBIB              14
+COMMON               1          3
+ERR-1
+PER-CENT
+  8.
+ENDCOMMON            3
+DATA                 3         14
+EN         DATA       ERR-S
+MEV        MB         MB
+       16.7       -1.4        2.3
+       17.3       -3.4        2.3
+       18.0       -4.5        2.4
+       18.6       -1.3        2.5
+       19.3        3.5        2.6
+       19.9        2.1        2.4
+       20.5        6.0        2.0
+       21.2       10.5        2.1
+       21.9       14.0        2.8
+       22.4       13.2        3.0
+       23.1       14.5        3.3
+       23.6       16.9        3.9
+       24.2        9.3        3.0
+       25.0        6.9        3.0
+ENDDATA             16
+ENDSUBENT           39
+ENDENTRY             4
