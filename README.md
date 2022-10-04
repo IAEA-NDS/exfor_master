@@ -9,7 +9,7 @@ This repository contains all EXFOR Master files restored from backup zip files m
 
 See details in: [https://nds.iaea.org/nrdc/](https://nds.iaea.org/nrdc/)
 
-Data retrieval system is avaialbe at: [https://nds.iaea.org/exfor/](https://nds.iaea.org/exfor/)
+Data retrieval system is available at: [https://nds.iaea.org/exfor/](https://nds.iaea.org/exfor/)
 
 -----------------------------------------------------------------------------
 
