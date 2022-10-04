@@ -1,6 +1,6 @@
-ENTRY            L0150   20150204   20150505   20150428       L026
-SUBENT        L0150001   20150204   20150505   20150428       L026
-BIB                 10         17
+ENTRY            L0150   20220616   20220823   20220823       L049
+SUBENT        L0150001   20220616   20220823   20220823       L049
+BIB                 10         18
 TITLE      Photoneutron Cross Sections for Aluminum and Silicon
            to 62 MeV
 AUTHOR     (D.W.Anderson,A.J.Bureau,B.C.Cook,T.J.Englert)
@@ -18,9 +18,10 @@ METHOD     (ACTIV) While accumulating data for a single yield
            were run through 50 irradiation and counting cycles.
            After a bombardment, a 50-msec delay time elapsed.
 HISTORY    (20150204C) BP
-ENDBIB              17
+           (20220602A) OS. REACTION coding in subs.3,5 changed
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           20
+ENDSUBENT           21
 SUBENT        L0150002   20150204   20150505   20150428       L026
 BIB                  8         18
 REACTION   ((13-AL-27(G,N)13-AL-26-M,,SIG,,BRS)+
@@ -155,20 +156,20 @@ MEV        MEV        MB         MB
      63.118                 0.143
 ENDDATA            109
 ENDSUBENT          132
-SUBENT        L0150003   20150204   20150505   20150428       L026
-BIB                  8         23
+SUBENT        L0150003   20220616   20220823   20220823       L049
+BIB                  9         24
 REACTION   ((14-SI-28(G,N)14-SI-27,,SIG,,BRS)+
            (14-SI-28(G,2N)14-SI-26,,SIG,,BRS/FCT)+
-           (14-SI-28(G,N+P)13-AL-26-M,,SIG,,BRS))  Factor of 2.0
-            to (g,2n) contribution was introduced during the data
-            analysis.
+           (14-SI-28(G,X)13-AL-26-M,,SIG,,BRS))
+            FCT=2 due to detection of annihilation events twice
+             (26Si -> 26mAl -> 26gAl)
 RAD-DET    (14-SI-27,AR)
            (14-SI-26,AR)
            (13-AL-26-M,AR)
 DECAY-DATA (13-AL-26-M,6.36SEC,B+)
            (14-SI-27,4.16SEC,B+)
            (14-SI-26,2.1SEC)
-ANALYSIS   (LEAST) Least Structure analysis.
+ANALYSIS   (LEAST)
 INC-SPECT  Horizontal bars (given as EN-RSL) indicate the
            resolution function width.
 ERR-ANALYS (DATA-ERR) Vertical bars indicate errors in cross
@@ -180,7 +181,8 @@ CORRECTION Contributions due to other multiparticle reactions
 STATUS     (CURVE) Fig. 5, page 980. Combination of discrete
            points and continuous curves, and the points for
            digitization were determined by the compiler.
-ENDBIB              23
+HISTORY    (20220602A) 3rd REACTION code modified
+ENDBIB              24
 NOCOMMON             0          0
 DATA                 4        125
 EN         EN-RSL     DATA       DATA-ERR
@@ -311,7 +313,7 @@ MEV        MEV        MB         MB
      64.786                 7.033
      65.015                 8.167
 ENDDATA            127
-ENDSUBENT          155
+ENDSUBENT          156
 SUBENT        L0150004   20150204   20150505   20150428       L026
 BIB                  5         11
 REACTION   ((13-AL-27(G,N)13-AL-26,,INT)+
@@ -333,13 +335,13 @@ MEV        MEV        MB*MEV     MB*MEV
         0.0       62.0       69.0        4.0
 ENDDATA              3
 ENDSUBENT           19
-SUBENT        L0150005   20150204   20150505   20150428       L026
-BIB                  5         13
-REACTION   ((14-SI-28(G,N)14-SI-27,,INT)+
-           (14-SI-28(G,2N)14-SI-26,,INT,,FCT)+
-           (14-SI-28(G,N+P)13-AL-26,,INT))   Factor of 2.0 to
-            (g,2n) contribution was introduced during the data
-            analysis.
+SUBENT        L0150005   20220616   20220823   20220823       L049
+BIB                  6         14
+REACTION   ((14-SI-28(G,N)14-SI-27,,INT,,BRS)+
+           (14-SI-28(G,2N)14-SI-26,,INT,,BRS/FCT)+
+           (14-SI-28(G,X)13-AL-26-M,,INT,,BRS))
+            FCT=2 due to detection of annihilation events twice
+             (26Si -> 26mAl -> 26gAl)
 ERR-ANALYS (DATA-ERR) No details on sources of uncertainties.
 ANALYSIS   Absolute values were determined using data by
            Katz et al. and  Summers-Gill et al.
@@ -348,12 +350,13 @@ REL-REF    (R,M0273001,L.Katz+,J,PR,84,1115,1951)
            (R,,L.Katz+,J,CJP,32,580,1954)
 STATUS     (TABLE) abstract, page 978.
            (DEP,L0150003)
-ENDBIB              13
+HISTORY    (20220602A) 3rd REACTION code modified
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        MB*MEV     MB*MEV
         0.0       62.0      195.0        7.0
 ENDDATA              3
-ENDSUBENT           21
+ENDSUBENT           22
 ENDENTRY             5

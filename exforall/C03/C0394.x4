@@ -1,31 +1,37 @@
-ENTRY            C0394   20040213   20040406   20050926       0000
-SUBENT        C0394001   20040213   20040406   20050926       0000
-BIB                 11         18
+ENTRY            C0394   20220530   20220823   20220823       C213
+SUBENT        C0394001   20220530   20220823   20220823       C213
+BIB                  8         15
 INSTITUTE  (2FR PAR)
-REFERENCE  (J,NP,39,447,1962)
+REFERENCE  (J,NP,39,447,1962) in French
 AUTHOR     (H.Gauvin,M.Lefort,X.Tarrago)
 TITLE      Emission of alpha particles from the spallation
            reactions
-FACILITY   (SYNCY)
-METHOD     (ACTIV,CHSEP)
+FACILITY   (SYNCY,2FR PAR)
 DETECTOR   (NAICR)
-MONITOR    (6-C-12(P,N+P)6-C-11,,SIG)
-           (6-C-12(P,3N+3P)4-BE-7,,SIG)
-           (13-AL-27(P,N+3P)11-NA-24,,SIG)
-           (13-AL-27(P,3N+3P)11-NA-22,,SIG)
-           4 reactions used to monitor proton flux.
-           Table of values used given in article.
-ERR-ANALYS Not given in detail.
-STATUS     Data taken from Tables 2 and 3.
+REL-REF    (N,D0128001,C.Brun+,J,JPR,23,371,1962)
+           Similar Al and C target cross sections from the same
+           group. (Relation not very clear.)
 HISTORY    (19871015C)
            (20040213A) Updated to new data formats, lower case.
-ENDBIB              18
+           (20220520A) OS. REACTION and units corrected in sub.4;
+            REL-REF added, STATUS updated, MONITOR updated,
+            deleted sub.8
+ENDBIB              15
 NOCOMMON             0          0
-ENDSUBENT           21
-SUBENT        C0394002   20040213   20040406   20050926       0000
-BIB                  1          1
+ENDSUBENT           18
+SUBENT        C0394002   20220530   20220823   20220823       C213
+BIB                  4         10
 REACTION   (90-TH-232(P,X)ELEM/MASS,,SIG)
-ENDBIB               1
+MONITOR    4 reactions used to monitor proton flux.
+           See subentries 5-7. No details given on how the data
+           for these reactions were combined for flux monitoring.
+           (6-C-12(P,X)6-C-11,,SIG)
+           (6-C-12(P,X)4-BE-7,,SIG)
+           (13-AL-27(P,X)11-NA-24,,SIG)
+           (13-AL-27(P,X)11-NA-22,,SIG)
+ERR-ANALYS (DATA-ERR) Not given in detail.
+STATUS     (TABLE) Tableau 3, Nucl.Phys.39,447,1962
+ENDBIB              10
 COMMON               1          3
 EN
 MEV
@@ -40,26 +46,47 @@ NO-DIM     NO-DIM     MB         MB
  89.        224.       2.5        0.3
  91.        227.       0.06
 ENDDATA              7
-ENDSUBENT           17
-SUBENT        C0394003   20040213   20040406   20050926       0000
-BIB                  2          5
+ENDSUBENT           26
+SUBENT        C0394003   20220530   20220823   20220823       C213
+BIB                  5         14
 REACTION  1((90-TH-232(P,X)89-AC-222,,SIG)+
            (90-TH-232(P,X)83-BI-210,,SIG))
           2((90-TH-232(P,X)89-AC-219,,SIG)+
            (90-TH-232(P,X)85-AT-211,,SIG))
+MONITOR    4 reactions used to monitor proton flux.
+           See subentries 5-7. No details given on how the data
+           for these reactions were combined for flux monitoring.
+           (6-C-12(P,X)6-C-11,,SIG)
+           (6-C-12(P,X)4-BE-7,,SIG)
+           (13-AL-27(P,X)11-NA-24,,SIG)
+           (13-AL-27(P,X)11-NA-22,,SIG)
+ERR-ANALYS (DATA-ERR) Not given in detail.
+STATUS     (TABLE) Tableau 3, Nucl.Phys.39,447,1962
 HISTORY    (20040213A) Reactions updated.
-ENDBIB               5
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 4          1
 EN         DATA      1DATA-ERR  1DATA      2
 MEV        MB         MB         MB
  82.        7.          1.         0.065
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        C0394004   20040213   20040406   20050926       0000
-BIB                  1          1
-REACTION   (83-BI-209(P,X)ELEM/MASS,,SIG)
-ENDBIB               1
+ENDSUBENT           22
+SUBENT        C0394004   20220530   20220823   20220823       C213
+BIB                  5         13
+REACTION   (83-BI-209(A,X)ELEM/MASS,,SIG)
+MONITOR    4 reactions used to monitor proton flux.
+           See subentries 5-7. No details given on how the data
+           for these reactions were combined for flux monitoring.
+           (6-C-12(P,X)6-C-11,,SIG)
+           (6-C-12(P,X)4-BE-7,,SIG)
+           (13-AL-27(P,X)11-NA-24,,SIG)
+           (13-AL-27(P,X)11-NA-22,,SIG)
+ERR-ANALYS (DATA-ERR) Not given in detail.
+HISTORY    (20220520A) REACTION SF1 changed P -> A  (products
+            cannot be produced with protons); units corrected
+            MB -> MICRO-B
+STATUS     (TABLE) Tableau 2, Nucl.Phys.39,447,1962
+ENDBIB              13
 COMMON               1          3
 ELEMENT
 NO-DIM
@@ -67,7 +94,7 @@ NO-DIM
 ENDCOMMON            3
 DATA                 5         16
 EN-MIN     EN-MAX     MASS       DATA       DATA-ERR
-MEV        MEV        NO-DIM     MB         MB
+MEV        MEV        NO-DIM     MICRO-B    MICRO-B
  150.       155.       211.       8.5        0.7
  150.       155.       210.       8.5        1.2
  150.       155.       209.       7.         1.
@@ -85,94 +112,90 @@ MEV        MEV        NO-DIM     MB         MB
   70.        73.       211.       2.9        0.3
   60.        63.       211.       2.25       0.30
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        C0394005   20040213   20040406   20050926       0000
-BIB                  2          2
+ENDSUBENT           40
+SUBENT        C0394005   20220530   20220823   20220823       C213
+BIB                  6          8
 REACTION   (13-AL-27(P,X)11-NA-22,,SIG)
+MONITOR    (6-C-12(P,X)6-C-11,,SIG)
+MONIT-REF  (B0101002,W.E.Crandall+,J,PR,101,329,1956)
+ERR-ANALYS (DATA-ERR) Not given in detail.
+STATUS     (COREL,D0128004) - Data published in another manuscript
+           submitted the same week.
+           (TABLE) Table 1 of Nucl.Phys.39(1962)447
 HISTORY    (20040213C) VM
-ENDBIB               2
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 3         12
-EN         DATA       DATA-ERR
-MEV        MB         MB
- 40.        16.         2.
- 50.        40.         2.
- 60.        36.         2.
- 70.        28.         1.5
- 80.        24.0        1.5
- 85.        22.         1.
- 90.        22.         1.
-100.        21.5        1.
-110.        20.         1.
-120.        19.         1.
-130.        19.         1.
-150.        18.         1.
+DATA                 4         12
+EN         DATA       DATA-ERR   MONIT
+MEV        MB         MB         MB
+ 40.        16.         2.        87.
+ 50.        40.         2.        87.
+ 60.        36.         2.        81.
+ 70.        28.         1.5       76.
+ 80.        24.0        1.5       70.
+ 85.        22.         1.        68.
+ 90.        22.         1.        65.
+100.        21.5        1.        62.
+110.        20.         1.        57.
+120.        19.         1.        53.
+130.        19.         1.        50.
+150.        18.         1.        45.
 ENDDATA             14
-ENDSUBENT           21
-SUBENT        C0394006   20040213   20040406   20050926       0000
-BIB                  2          2
+ENDSUBENT           27
+SUBENT        C0394006   20220530   20220823   20220823       C213
+BIB                  6          8
 REACTION   (13-AL-27(P,X)11-NA-24,,SIG)
+MONITOR    (6-C-12(P,X)6-C-11,,SIG)
+MONIT-REF  (B0101002,W.E.Crandall+,J,PR,101,329,1956)
+ERR-ANALYS (DATA-ERR) Not given in detail.
+STATUS     (COREL,D0128003) - Data published in another manuscript
+           submitted the same week.
+           (TABLE) Table 1 of Nucl.Phys.39(1962)447
 HISTORY    (20040213C) VM
-ENDBIB               2
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 3         10
-EN         DATA       DATA-ERR
-MEV        MB         MB
- 60.         7.         1.
- 70.         9.
- 80.        10.         0.5
- 85.        10.2
- 90.        10.5
-100.        10.5
-110.        10.3
-120.        10.1
-130.         9.8
-150.         9.6        0.5
+DATA                 4         10
+EN         DATA       DATA-ERR   MONIT
+MEV        MB         MB         MB
+ 60.         7.         1.        81.
+ 70.         9.                   76.
+ 80.        10.         0.5       70.
+ 85.        10.2                  68.
+ 90.        10.5                  65.
+100.        10.5                  62.
+110.        10.3                  57.
+120.        10.1                  53.
+130.         9.8                  50.
+150.         9.6        0.5       45.
 ENDDATA             12
-ENDSUBENT           19
-SUBENT        C0394007   20040213   20040406   20050926       0000
-BIB                  2          2
+ENDSUBENT           25
+SUBENT        C0394007   20220530   20220823   20220823       C213
+BIB                  6          8
 REACTION   (6-C-12(P,X)4-BE-7,,SIG)
+MONITOR    (6-C-12(P,X)6-C-11,,SIG)
+MONIT-REF  (B0101002,W.E.Crandall+,J,PR,101,329,1956)
+ERR-ANALYS (DATA-ERR) Not given in detail.
+STATUS     (COREL,D0128002) - Data published in another manuscript
+           submitted the same week.
+           (TABLE) Table 1 of Nucl.Phys.39(1962)447
 HISTORY    (20040213C) VM
-ENDBIB               2
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 3         11
-EN         DATA       DATA-ERR
-MEV        MB         MB
- 50.        22.         1.
- 60.        21.         1.
- 70.        19.         1.
- 80.        17.5        1.
- 85.        16.5        1.
- 90.        16.         1.
-100.        15.         0.8
-110.        14.         0.8
-120.        13.         0.7
-130.        12.
-150.        10.5        0.5
+DATA                 4         11
+EN         DATA       DATA-ERR   MONIT
+MEV        MB         MB         MB
+ 50.        22.         1.        87.
+ 60.        21.         1.        81.
+ 70.        19.         1.        76.
+ 80.        17.5        1.        70.
+ 85.        16.5        1.        68.
+ 90.        16.         1.        65.
+100.        15.         0.8       62.
+110.        14.         0.8       57.
+120.        13.         0.7       53.
+130.        12.                   50.
+150.        10.5        0.5       45.
 ENDDATA             13
-ENDSUBENT           20
-SUBENT        C0394008   20040213   20040406   20050926       0000
-BIB                  2          2
-REACTION   (6-C-12(P,N+P)6-C-11,,SIG)
-HISTORY    (20040213C) VM
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 2         12
-EN         DATA
-MEV        MB
- 40.        87.
- 50.        87.
- 60.        81.
- 70.        76.
- 80.        70.
- 85.        68.
- 90.        65.
-100.        62.
-110.        57.
-120.        53.
-130.        50.
-150.        45.
-ENDDATA             14
-ENDSUBENT           21
+ENDSUBENT           26
+NOSUBENT      C0394008   20220530   20220823   20220823       C213
 ENDENTRY             8
