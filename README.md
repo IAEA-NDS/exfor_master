@@ -6,7 +6,7 @@
  -----------------------------------------------------------------------------
 
 ### EXFOR Master Files Backup Test Repository
-This repository contains the all EXFOR Master files restored from backup zip files maintained in the IAEA Nuclear Data Section. All data have been compiled by International Network of Nuclear Reaction Data Centres (NRDC).
+This repository contains all EXFOR Master files restored from backup zip files maintained in the IAEA Nuclear Data Section. All data have been compiled by International Network of Nuclear Reaction Data Centres (NRDC).
 
 See details in: [https://nds.iaea.org/nrdc/](https://nds.iaea.org/nrdc/)
 
