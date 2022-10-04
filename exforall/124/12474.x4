@@ -1,50 +1,84 @@
-ENTRY            12474     830809              20050926       0000
-SUBENT        12474001     830809              20050926       0000
-BIB                  6          8
+ENTRY            12474   20220210   20220928   20220927       1498
+SUBENT        12474001   20220210   20220928   20220927       1498
+BIB                  9         23
+TITLE      The neutron-induced fission cross section of U-236 as
+           a function of energy
+AUTHOR     (W.Nyer)
+REFERENCE  (R,LA-1258,1951)
 INSTITUTE  (1USALAS)
-REFERENCE  (R,LA-1258,5105)
-TITLE      THE NEUTRON-INDUCED FISSION CROSS SECTION OF U-236 AS
-            A FUNCTION OF ENERGY.
-AUTHOR     (W.NYER)
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (830809A) CONVERTED TO REACTION FORMALISM
-ENDBIB               8
+FACILITY   (CCW,1USALAS) The Z Building Cockcroft-Walton
+           accelerator.
+           (VDG,1USALAS)
+INC-SOURCE (P-T,D-D,D-T) For energies between 690 and 1320
+           keV, the VDG accelerator with the reaction (P-T) was
+           used. The 2.55 and 14.1 MeV neutrons by means of the
+           D(d,n)He3 and T(d,n)He4 reactions, respectively.
+SAMPLE     Uranium foils prepared by John Povelites of Group
+           CMR-4.
+CORRECTION A correction of about 3% was applied for the effect
+           of low energy epi-cadmium neutrons in the 14.1 MeV
+           measurement.
+HISTORY    (19760804T) Translated from SCISRS.
+           (19830809A) Converted to reaction formalism.
+           (20220210A) BP: Updated to new date formats, lower
+           case. Corrections according last EXFOR rules and
+           Dict. Added facility, incoming source, correction,
+           error analysis.
+ENDBIB              23
 NOCOMMON             0          0
-ENDSUBENT           11
-SUBENT        12474002     830809              20050926       0000
-BIB                  1          2
-REACTION   ((92-U-236(N,F),,SIG)/
-           (92-U-235(N,F),,SIG))
-ENDBIB               2
+ENDSUBENT           26
+SUBENT        12474002   20220210   20220928   20220927       1498
+BIB                  5         13
+REACTION   ((92-U-236(N,F),,SIG)/(92-U-235(N,F),,SIG))
+METHOD     The measurements consisted of determining the ratio
+           of the number of fissions in the 236U foil to the
+           number of fissions in the 235U foil when the chamber
+           was placed in a flux of neutrons of known energy E.
+ERR-ANALYS (ERR-S) Statistical errors. No estimate of the errors
+           in the cross section due to the presence of low
+           energy epi-cadmium neutrons was made for any
+           measurement except the 14.1 MeV case. It is
+           believed that this error is small.
+STATUS     (TABLE) Table I, page 8.
+HISTORY    (20220210A) BP: Changed DATA-ERR to ERR-S, added
+                       method.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 5          6
-EN         +EN-RSL    -EN-RSL    DATA       DATA-ERR
+EN         +EN-RSL    -EN-RSL    DATA       ERR-S
 MEV        MEV        MEV        NO-DIM     NO-DIM
- 6.90   -01 3.4    -02 3.4    -02 3.     -02 6.     -02
- 7.70   -01 3.5    -02 4.0    -02 1.4    -01 6.     -02
- 1.000  +00 4.0    -02 5.0    -02 2.7    -01 5.     -02
- 1.320  +00 3.3    -02 5.2    -02 5.2    -01 7.     -02
- 2.55   +00 8.     -02 8.     -02 4.0    -01 4.     -02
- 1.41   +01 1.     -01 1.     -01 7.1    -01 3.     -02
+   6.90E-01    3.4E-02    3.4E-02     3.E-02     6.E-02
+   7.70E-01    3.5E-02    4.0E-02    1.4E-01     6.E-02
+      1.000    4.0E-02    5.0E-02    2.7E-01     5.E-02
+      1.320    3.3E-02    5.2E-02    5.2E-01     7.E-02
+       2.55     8.E-02     8.E-02    4.0E-01     4.E-02
+   1.41E+01     1.E-01     1.E-01    7.1E-01     3.E-02
 ENDDATA              8
-ENDSUBENT           15
-SUBENT        12474003     830809              20050926       0000
-BIB                  3          3
+ENDSUBENT           26
+SUBENT        12474003   20220210   20220928   20220927       1498
+BIB                  6         11
 REACTION   (92-U-236(N,F),,SIG)
-STATUS     (DEP)
-MONITOR    (92-U-235(N,F),,SIG)
-ENDBIB               3
+REL-REF    (R,12306004,W.Nyer,R,LAMS-938,1950) 235U data.
+           (R,12514002,W.Nyer,R,LA-719,1948) 238U data.
+           (R,12312004,J.H.Williams,R,LA-520,1946) U238/U235 data.
+ANALYSIS   Used known 235,238U cross sections to deduce 236U
+           cross sections.
+ERR-ANALYS (DATA-ERR) No details on sources of uncertainties.
+STATUS     (DEP,12474002)
+           (TABLE) Table I, page 8.
+HISTORY    (20220210A) BP: Changed monitor to analysis, added
+                       related references.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 5          6
 EN         +EN-RSL    -EN-RSL    DATA       DATA-ERR
 MEV        MEV        MEV        B          B
- 6.90   -01 3.4    -02 3.4    -02 4.     -02 8.     -02
- 7.70   -01 3.5    -02 4.0    -02 1.9    -01 8.     -02
- 1.000  +00 4.0    -02 5.0    -02 3.6    -01 7.     -02
- 1.320  +00 3.3    -02 5.2    -02 6.9    -01 1.0    -01
- 2.55   +00 8.     -02 8.     -02 5.3    -01 6.     -02
- 1.41   +01 1.     -01 1.     -01 1.65   +00 1.0    -01
+   6.90E-01    3.4E-02    3.4E-02     4.E-02     8.E-02
+   7.70E-01    3.5E-02    4.0E-02    1.9E-01     8.E-02
+      1.000    4.0E-02    5.0E-02    3.6E-01     7.E-02
+      1.320    3.3E-02    5.2E-02    6.9E-01    1.0E-01
+       2.55     8.E-02     8.E-02    5.3E-01     6.E-02
+   1.41E+01     1.E-01     1.E-01       1.65    1.0E-01
 ENDDATA              8
-ENDSUBENT           16
+ENDSUBENT           24
 ENDENTRY             3
