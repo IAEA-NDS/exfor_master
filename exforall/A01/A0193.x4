@@ -1,16 +1,14 @@
-ENTRY            A0193   20080611   20080908   20080901       A063
-SUBENT        A0193001   20080611   20080908   20080901       A063
-BIB                 11         60
+ENTRY            A0193   20220330   20220916   20220915       A100
+SUBENT        A0193001   20220330   20220916   20220915       A100
+BIB                 11         62
 TITLE      A pellet method for the measurement of excitation
            functions:  cross-sections for 140-Ce(p,2n)139-Pr and
            140-Ce(p,3n)138-m-Pr
 AUTHOR     (S.K.Zeisler, D.W.Becker)
 INSTITUTE  (2GERDKZ) German Cancer Research Center
-REFERENCE  (J,NIM/B,160,216,1999)
+REFERENCE  (J,NIM/B,160,216,2000)
 FACILITY   (CYCLO,2GERDKZ)
-METHOD     (STTA) See sample
-           (BCINT)
-           (GSPEC)
+METHOD     (STTA,BCINT,GSPEC)
 DETECTOR   (HPGE)
 SAMPLE     A cylindrical pellet was formed from commercially
            available natural cerium dioxide powder CeO2 99.9%
@@ -18,8 +16,8 @@ SAMPLE     A cylindrical pellet was formed from commercially
            thickness measured with a precision of 0.001 mm to
            determine the material density for stopping power
            calculations as well as the amount of target atoms.
-           The dimensions of a typical pellet were:  diameter 13
-           mm, height 6.4 mm, weight 3.9 G.  The pellet was glued
+           The dimensions of a typical pellet were: diameter 13 mm
+           height 6.4 mm, weight 3.9 g.  The pellet was glued
            onto an aluminum block and the surface precut on the
            rotation microtome for precise adjustment after
            irradiation.  The holder was finally placed into a
@@ -27,9 +25,9 @@ SAMPLE     A cylindrical pellet was formed from commercially
            One hour after the end of bombardment, the aluminum
            block with the pellet was removed from the target
            holder and mounted into the microtome.
-           The pellet was cut into thin slices of 4 mum each.  10
-           slices of 4 mum each were combined, equalling a sample
-           of 40 mum thickness.
+           The pellet was cut into thin slices of 4 mum each.
+           10 slices of 4 mum each were combined, equaling a
+           sample of 40 mum thickness.
 COMMENT    - By author - abstract:
            the cross-section measurement of particle-induced
            nuclear reactions is commonly performed using the
@@ -48,31 +46,41 @@ COMMENT    - By author - abstract:
            140Ce(p,3n)138-m-Pr reactions.  The calculated results
            were in good agreement with the experimental yield
            obtained from thick target irradiations.
-ERR-ANALYS (ERR-T).The total errors in the measured cross-sections
+ERR-ANALYS (ERR-T) The total errors in the measured cross-sections
            were estimated by taking square roots of the sums of
-           the squares of the individual errors  -  particle  flux
-            (6.5%);  number of target nuclei (6%);  radioactivity
-           measurement (2-29%).
-           (EN-ERR).The errors due to the uncertainty of the
-           cerium stopping power were estimated.  For the lowest
-           energy of 12.57 MeV, the mean error amounts to 0.45 MeV
-            (3.6%).
+           the squares of the individual errors
+           (ERR-1) Uncertainty in particle flux;
+           (ERR-2) Uncertainty in number of target nuclei;
+           (ERR-3,2.,29.) Uncertainty in radioactivity
+           measurement.
+           (EN-ERR) The errors due to the uncertainty of the
+           cerium stopping power were estimated. For the lowest
+           energy of 12.57 MeV, the mean error amounts to
+           0.45 MeV (3.6%).
 HISTORY    (20000508C)
            (20080611A) BIB section updated
-            Corrections were made according new exfor rules and
-            N.Otsuka and Nicolas remarks.
-ENDBIB              60
-NOCOMMON             0          0
-ENDSUBENT           63
-SUBENT        A0193002   20010614   20010705   20050926       0000
-BIB                  3          5
-REACTION   (58-CE-140(P,3N)59-PR-138-M,,SIG,,,EXP)
-RAD-DET    (59-PR-138-M,DG)
+            Corrections were made according new EXFOR rules and
+            N.Otsuka and A.Nichols remarks.
+           (20220330A) SD: Corrections in all Subents. ERR-ANALYS
+           updated.
+ENDBIB              62
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+        6.5        6.
+ENDCOMMON            3
+ENDSUBENT           69
+SUBENT        A0193002   20220330   20220916   20220915       A100
+BIB                  4          7
+REACTION   (58-CE-140(P,3N)59-PR-138-M,,SIG)
 DECAY-DATA (59-PR-138-M,2.02HR,DG,1037.8,1.01,
                                DG,788.7,1.,
                                DG,302.7,0.80)
-ENDBIB               5
-NOCOMMON
+STATUS     (TABLE) Tbl.1 from Nucl.Instr.Meth.,B160(2000)216
+HISTORY    (20220330A) SD: SF9=EXP deleted from REACTION code.
+           STATUS added.
+ENDBIB               7
+NOCOMMON             0          0
 DATA                 4         41
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -89,15 +97,15 @@ MEV        MEV        MB         MB
       30.22       0.08       212.        19.
       30.02       0.08       280.        26.
       29.81       0.09       254.        23.
-       29.6       0.09       255.        23.
-      29.39        0.1       229.        21.
-      29.18        0.1       173.        16.
+      29.60       0.09       255.        23.
+      29.39       0.10       229.        21.
+      29.18       0.10       173.        16.
       28.97       0.12       229.        21.
       28.76       0.12       189.        17.
       28.54       0.13       200.        18.
       28.33       0.13       146.        13.
       28.11       0.14       179.        17.
-       27.9       0.14       164.        15.
+      27.90       0.14       164.        15.
       27.68       0.15       163.        15.
       27.46       0.15       154.        14.
       27.24       0.16       143.        14.
@@ -106,35 +114,38 @@ MEV        MEV        MB         MB
       26.56       0.17        97.         9.
       26.34       0.18        82.         8.
       26.11       0.18        66.         7.
-      25.88        0.2        62.         6.
-      25.65        0.2        51.         6.
+      25.88       0.20        62.         6.
+      25.65       0.20        51.         6.
       25.41       0.21        38.         4.
       25.18       0.21        27.         4.
       24.94       0.22        21.         3.
-       24.7       0.22        16.         3.
+      24.70       0.22        16.         3.
       24.46       0.23        11.         1.
       24.22       0.23        13.         2.
       23.98       0.24         7.         1.
       23.48       0.25         5.         1.
       22.98       0.26         3.         1.
 ENDDATA             43
-ENDSUBENT           53
-SUBENT        A0193003   20010614   20010705   20050926       0000
-BIB                  4         12
-REACTION   (58-CE-140(P,2N)59-PR-139,,SIG,,,EXP)
-RAD-DET    (58-CE-139-G,DG) It is Dauther of Pr-139.
+ENDSUBENT           55
+SUBENT        A0193003   20220330   20220916   20220915       A100
+BIB                  6         15
+REACTION   (58-CE-140(P,2N)59-PR-139,,SIG)
+RAD-DET    (58-CE-139-G,DG) It is daughter of Pr-139.
 DECAY-DATA (58-CE-139-G,137.5D,DG,165.9,0.80)
 COMMENT    - By Author -
-           1.  In the First Series of Spectra, When Yield of
-           Pr-138-M was Measured, No Ce-139 Could be Found Which
-           Indicates That the 140-Ce(P,N+P)139-Ce Reaction Must
-           Have a Very Low Cross Section at Proton Energy Below 32
-           MeV.  For the Process No Cross Section Data have Been
-           Published yet.
-           2. Ce-139 Gamma Spectra was Recorded After Three Days
-           To Measure Quantitatively the Long-Lived Radioisotopes.
-ENDBIB              12
-NOCOMMON
+           1.  In the first series of spectra, when yield of
+           Pr-138m was measured, no Ce-139 could be found which
+           indicates that the 140-Ce(p,n+p)139-Ce reaction must
+           have a very low cross section at proton energy below
+           32 MeV. For the process no cross section data have been
+           published yet.
+           2. Ce-139 gamma spectra was recorded after three days
+           to measure quantitatively the long-lived radioisotopes.
+STATUS     (TABLE) Tbl.2 from Nucl.Instr.Meth.,B160(2000)216
+HISTORY    (20220330A) SD: SF9=EXP deleted from REACTION code.
+           STATUS added.
+ENDBIB              15
+NOCOMMON             0          0
 DATA                 4         76
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -151,15 +162,15 @@ MEV        MEV        MB         MB
       30.22       0.08       359.       115.
       30.02       0.08       554.        89.
       29.81       0.09       502.        87.
-       29.6       0.09       581.        89.
-      29.39        0.1       503.        82.
-      29.18        0.1       430.        81.
+      29.60       0.09       581.        89.
+      29.39       0.10       503.        82.
+      29.18       0.10       430.        81.
       28.97       0.12       582.        85.
       28.76       0.12       556.        81.
       28.54       0.13       627.        90.
       28.33       0.13       501.        83.
       28.11       0.14       642.        92.
-       27.9       0.14       741.       126.
+      27.90       0.14       741.       126.
       27.68       0.15       759.       108.
       27.46       0.15       783.       106.
       27.24       0.16       829.       113.
@@ -168,12 +179,12 @@ MEV        MEV        MB         MB
       26.56       0.17       945.       114.
       26.34       0.18       908.       107.
       26.11       0.18      1046.      0129.
-      25.88        0.2      1066.      0129.
-      25.65        0.2       952.       117.
+      25.88       0.20      1066.      0129.
+      25.65       0.20       952.       117.
       25.41       0.21      1090.      0126.
       25.18       0.21      1117.      0126.
       24.94       0.22      1074.      0127.
-       24.7       0.22      1245.      0149.
+      24.70       0.22      1245.      0149.
       24.46       0.23      1197.      0140.
       24.22       0.23      1233.      0134.
       23.98       0.24      1202.      0136.
@@ -186,14 +197,14 @@ MEV        MEV        MB         MB
       22.21       0.28      1180.      0151.
       21.95       0.29      1015.      0122.
       21.69       0.29      1083.      0125.
-      21.43        0.3      1155.      0134.
-      21.16        0.3      1138.      0136.
+      21.43       0.30      1155.      0134.
+      21.16       0.30      1138.      0136.
       20.89       0.31      1206.      0137.
       20.62       0.31      1268.      0155.
       20.34       0.32      1127.      0133.
       20.06       0.32      1042.      0122.
       19.78       0.33      1068.      0135.
-       19.5       0.33       998.       147.
+      19.50       0.33       998.       147.
       19.21       0.34      1016.      0118.
       18.92       0.34       968.       129.
       18.62       0.35       978.       126.
@@ -201,11 +212,11 @@ MEV        MEV        MB         MB
       18.03       0.37       955.       127.
       17.72       0.37       832.       107.
       17.41       0.38       806.        96.
-       17.1       0.38       805.       106.
+      17.10       0.38       805.       106.
       16.78       0.39       756.        95.
       16.46       0.39       787.       137.
-      16.14        0.4       606.        87.
-      15.81        0.4       560.        96.
+      16.14       0.40       606.        87.
+      15.81       0.40       560.        96.
       15.47       0.41       430.        73.
       15.13       0.41       384.        73.
       14.78       0.42       260.        63.
@@ -215,5 +226,5 @@ MEV        MEV        MB         MB
       12.95       0.45       102.        31.
       12.57       0.45        40.        11.
 ENDDATA             78
-ENDSUBENT           95
+ENDSUBENT           98
 ENDENTRY             3
