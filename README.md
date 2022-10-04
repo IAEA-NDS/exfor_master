@@ -16,7 +16,7 @@ Data retrieval system is avaialbe at: [https://nds.iaea.org/exfor/](https://nds.
 #### Download
 You can download the repository from a terminal using:
 ```
-git clone https://github.com/shinokumura/exfor_master.git
+git clone https://github.com/IAEA-NDS/exfor_master.git
 ```
 
 
