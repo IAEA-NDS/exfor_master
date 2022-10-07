@@ -16,6 +16,7 @@ import glob
 import re
 import os
 import sys
+import json
 import shutil
 import datetime
 from git import (
@@ -28,8 +29,9 @@ import logging
 logging.basicConfig(filename="process.log", level=logging.DEBUG, filemode="w")
 
 # sys.path.append("../")
-from config import EXFOR_ALL_URL, EXFOR_ALL_PATH
-from gitconf import repo_path
+from config import EXFOR_ALL_URL, EXFOR_ALL_PATH, EXFOR_ALL_TEMP, headers
+from gitconf import GIT_REPO_PATH, GIT_REPO_URL, ME, KEY_ME
+
 
 
 ####################################################################
@@ -79,18 +81,11 @@ def get_latest_date(x: list):
     if x:
         d = []
         for a in x:
-            print(a.replace("EXFOR-", "").replace("exfor-", ""))
             d.append(convert_dtform(a.replace("EXFOR-", "").replace("exfor-", "")))
         return max(d)
     else:
         return None
 
-
-
-def get_unimported_backup():
-    x1 = get_local_files()
-    x2 = get_server_files()
-    pass
 
 
 
@@ -150,7 +145,7 @@ def bck_filename(date_dt):
         if not os.path.exists(
             "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".bck"])
         ):
-            # because exfor-YYYY-MM-DD.bck and exfor-YYYY-MM-DD.BCK are mixed
+            # because exfor-YYYY-MM-DD.bck and exfor-YYYY-MM-DD.BCK are mixed in some .zip files
             return "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".BCK"])
     else:
         return "".join(["EXFOR-", date_dt.strftime("%Y-%m-%d"), ".bck"])
@@ -159,10 +154,9 @@ def bck_filename(date_dt):
 
 
 def download_backup_zip(date):
-
     if not isinstance(date, str):
         # date_dt: datatime.date(YYYY, MM, DD) format
-        zipfile = zip_filename(date_dt)
+        zipfile = zip_filename(date)
 
     else:
         # date: "EXFOR-YYYY-MM-DD-1"
@@ -239,6 +233,7 @@ def split_bck_file(filename: str):
 
 
 def run_rsync():
+    ## not used
     print("rsync")
     logging.info(f"rsync started")
     cmd = "rsync -azP --delete --ignore-times " + EXFOR_ALL_TEMP + " " + EXFOR_ALL_PATH
@@ -263,23 +258,19 @@ def del_files(filename: str):
 # Git functions
 ####################################################################
 
-repo = Repo(repo_path)
+repo = Repo(GIT_REPO_PATH)
 # Repo.clone_from("git@github.com:shinokumura/exfor_master.git" , repo_path, branch="main")
 assert not repo.bare
 
 
 def git_new_branch(date_str):
-    # for remote in repo.remotes:
-    #     print('Remote named "{}" with URL "{}"'.format(remote, remote.url))
     repo.git.checkout("HEAD", b=date_str)  # create a new branch
-    # print("Repo active branch is {}".format(repo.active_branch))
     logging.info(f"repo.active_branch {repo.active_branch}")
 
 
 
 
 def git_add_commit(date_str):
-    # print("Repo active branch is {}".format(repo.active_branch))
     repo.git.add("exforall/")
     repo.git.commit(m=date_str)
     logging.info(f"branch commit {date_str}")
@@ -288,7 +279,6 @@ def git_add_commit(date_str):
 
 
 def git_push_branch(date_str):
-    # print(repo.git.status())
     origin = repo.remote(name="origin")
     origin.push(date_str)
     logging.info(f"origin.push {date_str}")
@@ -315,6 +305,83 @@ def git_branches():
     return branches
 
 
+
+def semantic_release_name(branch_name):
+    name_sp = branch_name.split("-")
+    if len(branch_name) == 10:
+        return "v" + str(name_sp[0]) + str(name_sp[1])+ str(name_sp[2]) + ".0"
+    elif branch_name.count("-") == 3:
+        return "v" + str(name_sp[0]) + str(name_sp[1])+ str(name_sp[2]) + "." + name_sp[3]
+    elif len(branch_name) == 11:
+        return "v" + str(name_sp[0]) + str(name_sp[1])+ str(name_sp[2])[0:2] + "." + name_sp[2][2:]
+
+
+
+
+def git_log():
+    return repo.git.log("--name-status", "--no-merges", "-n1", "--pretty=oneline")
+
+
+
+
+def git_tagging(branch_name):
+    repo.git.checkout(branch_name)
+    print("- Updating local",  branch_name)
+    repo.git.pull("origin", branch_name)
+    repo.git.fetch("origin")
+
+    msg = git_log()
+    repo.create_tag("Backup-" + branch_name, 
+                    ref=branch_name,
+                    message=msg)
+    origin = repo.remote(name="origin")
+    origin.push("Backup-" + branch_name)
+
+
+
+
+def git_release(branch_name):
+    data_body = {"tag_name":"Backup-" + branch_name,
+            "name":semantic_release_name(branch_name),
+            "draft":False,
+            "prerelease":False,
+            "generate_release_notes":False}
+
+    r = requests.post(
+        GIT_REPO_URL, 
+        data=json.dumps(data_body), 
+        headers=headers, 
+        verify=False,
+        auth=(ME, KEY_ME)
+    )
+
+
+
+
+
+def process_zip_file(date_str):
+    # download and unzip .zip file
+    download_backup_zip(zip_filename(date_str))
+    bck_filename = unzip_file(zip_filename(date_str))
+
+    # create new branch and extract master file and split into exntry
+    git_new_branch(date_str)
+    split_bck_file(bck_filename)
+
+    # git commit, push, merge
+    git_add_commit(date_str)
+    git_push_branch(date_str)
+    git_merge_to_main(date_str)
+
+    # create Release in Github
+    git_tagging(date_str)
+    git_release(date_str)
+
+    # delete donwnloaded .zip and .bck files
+    del_files(zip_filename(date_str))
+    del_files(bck_filename)
+
+
 ####################################################################
 # This is the process to run through all server files.
 # Some of the zip file cannot be proecssed. (e.g.
@@ -328,22 +395,7 @@ def runall():
     for xx in x:
         print(xx)
         date_str = xx.replace("EXFOR-", "").replace("exfor-", "")
-        date_dt = convert_dtform(date_str)
-
-        download_backup_zip(xx)
-        filename = unzip_file(xx + ".zip")
-
-        git_new_branch(date_str)
-        split_bck_file(filename)
-
-        # run_rsync()
-
-        git_add_commit(date_str)
-        git_push_branch(date_str)
-        git_merge_to_main(date_str)
-
-        del_files(xx + ".zip")
-        del_files(filename)
+        process_zip_file(date_str)
 
 
 
@@ -353,44 +405,38 @@ def runall():
 
 
 def update():
-    
     x = get_server_files()
     branches = git_branches()
 
     processed = []
     not_processed = []
 
+    # check if there is unprocessed zip file or not
     for xx in x:
         date_str = xx.replace("EXFOR-", "").replace("exfor-", "")
 
         if date_str in branches:
             processed.append(date_str)
+
         else:
             not_processed.append(date_str)
-            
-    ## exfor-2010-07-12.zip is broken
+
+
+    ## because exfor-2010-07-12.zip is broken
     not_processed.remove('2010-07-12')
 
+
     if not_processed:
-        for xx in not_processed:
-            download_backup_zip(xx)
-            filename = unzip_file(xx + ".zip")
+        for date_str_np in not_processed:
+            process_zip_file(date_str_np)
 
-            git_new_branch(date_str)
-            split_bck_file(filename)
 
-            git_add_commit(date_str)
-            git_push_branch(date_str)
-            git_merge_to_main(date_str)
-
-            del_files(xx + ".zip")
-            del_files(filename)
     else:
         logging.info(f"repository is up-to-date")
 
 
 
 if __name__ == "__main__":
-
-    # runall()
+    # branches = git_branches()
+    # print(branches)
     update()
