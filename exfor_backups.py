@@ -129,8 +129,9 @@ def convert_dtform(dtstring: str):
 
 
 
-def zip_filename(date_dt):
+def zip_filename(date_str):
     # date_dt: datatime.date(YYYY, MM, DD) format
+    date_dt = convert_dtform(date_str.replace("EXFOR-", "").replace("exfor-", ""))
     if date_dt < datetime.date(2010, 7, 1):
         return "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".zip"])
     else:
@@ -154,13 +155,14 @@ def bck_filename(date_dt):
 
 
 def download_backup_zip(date):
-    if not isinstance(date, str):
-        # date_dt: datatime.date(YYYY, MM, DD) format
-        zipfile = zip_filename(date)
+    zipfile = zip_filename(date)
+    # if not isinstance(date, str):
+    #     # date_dt: datatime.date(YYYY, MM, DD) format
+    #     zipfile = zip_filename(date)
 
-    else:
-        # date: "EXFOR-YYYY-MM-DD-1"
-        zipfile = date + ".zip"
+    # else:
+    #     # date: "EXFOR-YYYY-MM-DD-1"
+    #     zipfile = date + ".zip"
 
     if not os.path.exists(zipfile):
         url = "".join([EXFOR_ALL_URL, zipfile])

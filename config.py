@@ -1,8 +1,10 @@
+from gitconf import GIT_REPO_PATH
+
 EXFOR_ALL_URL = "https://nds.iaea.org/exfor-master/backup/"
 
 
 EXFOR_ALL_TEMP = "/Users/sin/Desktop/exforall/"  # do not remove for rsync "/"
-EXFOR_ALL_PATH = "history_test_from_backup/exforall"
+EXFOR_ALL_PATH = GIT_REPO_PATH + "exforall/"
 
 headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64)",
