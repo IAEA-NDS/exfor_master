@@ -1,18 +1,23 @@
-ENTRY            41494   20210408   20210607   20210607       4194
-SUBENT        41494001   20210408   20210607   20210607       4194
-BIB                 11         37
+ENTRY            41494   20220405   20221013   20221013       4207
+SUBENT        41494001   20220405   20221013   20221013       4207
+BIB                 11         44
 TITLE       Relative yield of delayed neutrons and half-life of
             their precursor nuclei from U-238 fission by
             14.2-17.9 MeV neutrons .
-AUTHOR     (V.M.Piksaikin,V.A.Roshchenko,G.G.Korolev)
+AUTHOR     (V.M.Piksaikin,V.A.Roshchenko,G.G.Korolev,
+           D.E.Gremyachkin,A.S.Egorov,V.F.Mitrofanov,B.F.Samylin,
+           K.V.Mitrofanov)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,AE,102,124,2007) Issue 2.  Main reference
-           (J,AE/T,102,151,2007) Engl.translation of AE,102,124
+REFERENCE  (J,AE/T,102,151,2007) Engl.translation of AE,102,124
            #doi:10.1007/s10512-007-0023-1
+           (J,AE,102,124,2007) Issue 2.  Main reference
            (J,PTE,,(6),29,2006)    Exp. details
            (J,IET,49,765,2006) Issue 6.
              Eng. translation of PTE,,(6),29,2006
            (J,YK,,(3),5,2018) Data of Subent 002 in Table.
+            First author D.E.Gremyachkin.
+           (J,PNE,118,103068,2020) Data confirmed.
+            First author D.E.Gremyachkin.
 FACILITY   (VDG,4RUSFEI)    Cascade generator KG-2.5
 INC-SOURCE (D-T)  T(d,n)2-He-4 .Tritium target on molybdenum or
             copper backing with titanium layer of 1 mg/cm**2
@@ -38,39 +43,63 @@ HISTORY    (20070427C) Compiled at CJD. M.M.
            Minor correction of J,PTE, .
            (20210408A) Ref. YK was added.
            Misprint in TITLE was corrected.
-ENDBIB              37
+           (20220405A) Several author names were added from
+            YK,,(3),5,2018.
+ENDBIB              44
 NOCOMMON             0          0
-ENDSUBENT           40
-SUBENT        41494002   20210408   20210607   20210607       4194
-BIB                  5         27
+ENDSUBENT           47
+SUBENT        41494002   20220405   20221013   20221013       4207
+BIB                  6         49
 REACTION   ((92-U-238(N,F),DL/GRP,NU)/(92-U-238(N,F),DL,NU))
                  6-group delayed neutron abundances
 ERR-ANALYS (DATA-ERR) Total errors are given
-ADD-RES      Correlation matrix for 17.9 MeV incident neutron
+COVARIANCE   Correlation matrix:
+             ai - relative yield,
+             Ti - HL of delayed neutrons.
+            (XY,12,N,Correlated Parameters )
+               N Parameter
+               1 a1
+               2 T1
+               3 a2
+               4 T2
+               5 a3
+               6 T3
+               7 a4
+               8 T4
+               9 a5
+              10 T5
+              11 a6
+              12 T6
+            (Z,78,NO-DIM,COR) at EN=17.9 MeV incident neutron
              energy (Table 2 of main reference) is given below:
-           Ti- Half-life parameter, Ai -Abundance parameter,
-           i - group number (from 1 to 6).
-              Total matrix:
-              A1  T1  A2   T2   A3   T3   A4   T4   A5   T5  A6 T6
-           A1 1.
-           T1 0. 1.
-           A2 0. 0.79 1.
-           T2 0. 0.19 0.10 1.
-           A3 0. 0.31 0.34 0.30 1.
-           T3 0. 0.09 -.15 0.63 -.28 1.
-           A4 0. 0.55 0.55 0.52 -.05 0.55 1.
-           T4 0. 0.09 0.15 0.   -.51 0.02 0.01 1.
-           A5 0. 0.19 0.21 0.15 0.03 0.07 -.03 0.32 1.
-           T5 0. 0.10 0.10 0.10 0.   0.08 -.12 0.19 0.   1.
-           A6 0. 0.02 0.02 0.01 0.   0.01 0.   0.03 -.02 .01 1.
-           T6 0. 0.02 0.03 0.02 0.   0.01 0.   0.04 -.03 0.  0. 1.
-STATUS     (TABLE)  Table 1 of J,AE,102,(2),124,200
-            Table 1 of J,YK,,3,5,2018 - little different EN:
+           1.
+           0. 1.
+           0. 0.79  1.
+           0. 0.19  0.10 1.
+           0. 0.31  0.34 0.30  1.
+           0. 0.09 -0.15 0.63 -0.28 1.
+           0. 0.55  0.55 0.52 -0.05 0.55  1.
+           0. 0.09  0.15 0.   -0.51 0.02  0.01 1.
+           0. 0.19  0.21 0.15  0.03 0.07 -0.03 0.32 1.
+           0. 0.10  0.10 0.10  0.   0.08 -0.12 0.19 0.   1.
+           0. 0.02  0.02 0.01  0.   0.01  0.   0.03 -.02 .01 1.
+           0. 0.02  0.03 0.02  0.   0.01  0.   0.04 -.03 0.  0. 1.
+ADD-RES     Average half-life of delayed neutron precursors:
+                EN, MeV          HL, sec
+             14.2 +- 0.2       5.95 +- 0.15
+             15.5 +- 0.2       6.02 +- 0.14
+             16.2 +- 0.2       6.17 +- 0.15
+             17.9 +- 0.2       6.22 +- 0.15
+STATUS     (TABLE)  Table 1 of At.Energy,v.102,is.2,p.124,2007,
+            =Table 1 of
+            J. Progress in Nuclear Energy,v.118,p.103068,2020.
+           Table 1 of Yad.Konst.,is.3,p.5,2018 -
+            little different EN:
            14.2 - 14.23, 15.5 - 15.83, 16.2 - 16.76, 17.9 - 17.98;
            HL, DATA, DATA-ERR are the same.
 HISTORY    (20210408A) GRP-NUM was deleted ( HL is given for each
             of six groups).
-ENDBIB              27
+ENDBIB              49
 NOCOMMON             0          0
 DATA                 6         24
 EN         EN-ERR     HL         HL-ERR     DATA       DATA-ERR
@@ -100,5 +129,5 @@ MEV        MEV        SEC        SEC        NO-DIM     NO-DIM
 17.9       0.2         0.49      0.01       0.195      0.005
 17.9       0.2         0.178     0.005      0.056      0.002
 ENDDATA             26
-ENDSUBENT           58
+ENDSUBENT           80
 ENDENTRY             2
