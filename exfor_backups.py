@@ -24,14 +24,11 @@ from git import (
     Repo,
 )  # GitPython https://gitpython.readthedocs.io/en/stable/tutorial.html
 from zipfile import ZipFile
-import logging
 
+import logging
 logging.basicConfig(filename="process.log", level=logging.DEBUG, filemode="w")
 
-# sys.path.append("../")
-from config import EXFOR_ALL_URL, EXFOR_ALL_PATH, EXFOR_ALL_TEMP, headers
-from gitconf import GIT_REPO_PATH, GIT_REPO_URL, ME, KEY_ME
-
+from config import EXFOR_ALL_URL, EXFOR_ALL_PATH, EXFOR_ALL_TEMP, headers,  GIT_REPO_PATH, GIT_REPO_URL
 
 
 ####################################################################
@@ -65,7 +62,7 @@ def get_server_files():
 
     for link in links:
         x += [link.get("href").split(".")[0]]
-    print(x)
+
     return x  # get_latest_date(x)
 
 
@@ -197,7 +194,6 @@ def unzip_file(zipfile: str):
 
 def split_bck_file(filename: str):
     logging.info(f"split started")
-    print("split into ENTRY number")
     with open(filename, "r", encoding="cp1250") as infile:
         shutil.rmtree(EXFOR_ALL_PATH + "/")
         os.mkdir(EXFOR_ALL_PATH)
@@ -212,7 +208,7 @@ def split_bck_file(filename: str):
                 if os.path.exists(os.path.join(EXFOR_ALL_PATH, entrynum[0:3])):
                     pass
                 else:
-                    print(entrynum[0:3])
+                    # print(entrynum[0:3])
                     os.mkdir(EXFOR_ALL_PATH + "/" + entrynum[0:3])
 
                 outfile = open(
@@ -308,6 +304,18 @@ def git_branches():
 
 
 
+
+def git_tags():
+    tags = []
+    # remote_refs = repo.remote().refs
+    for tag in repo.tags:
+        tags.append(tag.name.replace("Backup-",""))
+    return tags
+
+
+
+
+
 def semantic_release_name(branch_name):
     name_sp = branch_name.split("-")
     if len(branch_name) == 10:
@@ -328,14 +336,12 @@ def git_log():
 
 def git_tagging(branch_name):
     repo.git.checkout(branch_name)
-    print("- Updating local",  branch_name)
     repo.git.pull("origin", branch_name)
     repo.git.fetch("origin")
 
     msg = git_log()
-    repo.create_tag("Backup-" + branch_name, 
-                    ref=branch_name,
-                    message=msg)
+    repo.create_tag("Backup-" + branch_name, ref=branch_name, message=msg)
+    
     origin = repo.remote(name="origin")
     origin.push("Backup-" + branch_name)
 
@@ -343,43 +349,60 @@ def git_tagging(branch_name):
 
 
 def git_release(branch_name):
-    data_body = {"tag_name":"Backup-" + branch_name,
-            "name":semantic_release_name(branch_name),
-            "draft":False,
-            "prerelease":False,
-            "generate_release_notes":False}
+    data_body = {
+        "tag_name": "Backup-" + branch_name,
+        "name": semantic_release_name(branch_name),
+        "draft": False,
+        "prerelease": False,
+        "generate_release_notes": False
+        }
 
     r = requests.post(
         GIT_REPO_URL, 
         data=json.dumps(data_body), 
         headers=headers, 
         verify=False,
-        auth=(ME, KEY_ME)
+#        auth=(ME, KEY_ME)
     )
 
+
+
+def git_delete_branch(date_str):
+    repo.git.checkout("main")
+    repo.git.branch("-d", date_str)
+    origin = repo.remote(name="origin")
+    origin.push()
+    logging.info(f"repo.git.branch -d")
 
 
 
 
 def process_zip_file(date_str):
-    # download and unzip .zip file
+    ## download and unzip .zip file
     download_backup_zip(zip_filename(date_str))
     bck_filename = unzip_file(zip_filename(date_str))
 
-    # create new branch and extract master file and split into exntry
+    ## create new branch and extract master file and split into exntry
     git_new_branch(date_str)
     split_bck_file(bck_filename)
 
-    # git commit, push, merge
+    ## git commit, push, merge
     git_add_commit(date_str)
     git_push_branch(date_str)
     git_merge_to_main(date_str)
 
-    # create Release in Github
+    ## create Release in Github
     git_tagging(date_str)
-    git_release(date_str)
 
-    # delete donwnloaded .zip and .bck files
+    ## release does not work from the CLI from Github/Actions, 
+    ## it needs curl to post to REST API 
+    ## (see .github/workflows/manual.yaml)
+    # git_release(date_str)
+
+    ## delete branch
+    git_delete_branch(date_str)
+
+    ## delete donwnloaded .zip and .bck files
     del_files(zip_filename(date_str))
     del_files(bck_filename)
 
@@ -408,16 +431,17 @@ def runall():
 
 def update():
     x = get_server_files()
-    branches = git_branches()
+    # branches = git_branches()
+    tags = git_tags()
 
     processed = []
     not_processed = []
 
-    # check if there is unprocessed zip file or not
+    ## check if there is unprocessed zip file or not
     for xx in x:
         date_str = xx.replace("EXFOR-", "").replace("exfor-", "")
 
-        if date_str in branches:
+        if date_str in tags:
             processed.append(date_str)
 
         else:
@@ -427,18 +451,20 @@ def update():
     ## because exfor-2010-07-12.zip is broken
     not_processed.remove('2010-07-12')
 
-
     if not_processed:
         for date_str_np in not_processed:
             process_zip_file(date_str_np)
-
 
     else:
         logging.info(f"repository is up-to-date")
 
 
+    return " ".join(not_processed)
+
+
 
 if __name__ == "__main__":
-    # branches = git_branches()
-    # print(branches)
-    update()
+
+    print(update())
+
+
