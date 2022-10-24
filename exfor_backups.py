@@ -93,7 +93,7 @@ def download_latest_master_from_bk():
     d2 = get_latest_date(get_server_files())
 
     if d1 == d2:
-        print("Local is the latest version. Exit.")
+        logging.info(f"Local is the latest version. Exit.")
         pass
 
     elif d1 > d2:
@@ -167,8 +167,8 @@ def download_backup_zip(date):
         r = requests.get(url, allow_redirects=True)
 
         if r.status_code == 404:
-            print("Something wrong with retrieving new dictionary from the IAEA-NDS.")
-            pass
+            logging.error(f"Something wrong with retrieving new dictionary from the IAEA-NDS.")
+            sys.exit()
 
         open(zipfile, "wb").write(r.content)
         logging.info(f"zip file downloaded")
@@ -244,9 +244,9 @@ def run_rsync():
 def del_files(filename: str):
     if os.path.isfile(filename):
         os.remove(filename)
-        print("File has been deleted")
+        logging.info(f"File has been deleted")
     else:
-        print("File does not exist")
+        logging.info(f"File does not exist")
 
 
 
@@ -418,7 +418,6 @@ def runall():
     x = get_server_files()
 
     for xx in x:
-        print(xx)
         date_str = xx.replace("EXFOR-", "").replace("exfor-", "")
         process_zip_file(date_str)
 
