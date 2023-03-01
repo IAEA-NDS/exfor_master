@@ -1,48 +1,74 @@
-ENTRY            40489     930929              20050926       0000
-SUBENT        40489001     930929              20050926       0000
-BIB                 14         28
-AUTHOR     (L.N.YUROVA,A.V.BUSHUEV,V.N.OZERKOV,V.V.CHACHIN,
-           A.V.ZVONAREV,YU.G.LIFOROV,YU.V.KOLEGANOV,
-           V.V.MILLER,O.V.GORBATYUK)
-TITLE        YIELDS OF SOME SPECIES OF FRAGMENTS AT THE FISSION
-             OF  U-235,  U-238,  PU-239  INDUCED BY THE
-             NEUTRON SPECTRUM OF THE REACTOR  BR-1
+ENTRY            40489   20220722   20230118   20230118       4208
+SUBENT        40489001   20220722   20230118   20230118       4208
+BIB                 15         49
+TITLE      Yields of some fragments from fission of 235U, 238U,
+           and 239PU by neutrons from spectrum of BR-1 fast
+           reactor
+AUTHOR     (L.N.Yurova,A.V.Bushuev,V.N.Ozerkov,V.V.Chachin,
+           A.V.Zvonarev,Yu.G.Liforov,Yu.V.Koleganov,
+           V.V.Miller,O.V.Gorbatyuk)
+REFERENCE  (J,SJA,47,528,1979)    English of AE,47,26
+           (J,AE,47,26,1979) Issue 1
 INSTITUTE  (4RUSMIF,4RUSFEI)
-REFERENCE  (J,AE,47,(1),26,7907)
-           (J,SJA,47,528,8001)    ENGLISH OF AE,47,26
-SAMPLE      THIN FOILS OF  PLUTONIUM AND URANIUM OXIDES PLACED
-            IN  ALUMINIUM  CONTAINER
-PART-DET   (FF,G)
-FACILITY   (REAC,4RUSFEI) REACTOR BR-1
-DETECTOR   (TRD,GELI)
-METHOD     (RVAL) R-METHOD
-INC-SOURCE (REAC)
-ERR-ANALYS             TOTAL ERROR
-INC-SPECT    FAST FISSION NEUTRON SPECTRUM OF THE FAST REACTOR
-HISTORY    (800808C)  COMPILED AT THE CENTRE  ++ CJD ++
-           (911206U)  OBSOLETE KEYWORDS CORRECTED
-                    CONNECTION TO RIDER'S ENTRY 90755 ESTABLISHED
-           (920809U) 'PRE' IN MONITOR AND IN ALL REACTION CODES
-                     ARE REPLACED BY 'CUM'
-           (930929A)  SUBENTS ARE REARRANGED ACCORDING TO NEW
-                      RULES OF COMPILATION
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-            DATA OF THIS ENTRY IN PART COINCIDES WITH THOSE OF
-            RIDER'S ENTRY 90755. RIDER'S REFERENCE 79YUR1.
-ENDBIB              28
-NOCOMMON
-ENDSUBENT           31
-SUBENT        40489002     930929              20050926       0000
-BIB                  4          8
-REACTION   ((92-U-235(N,F)ELEM/MASS,CUM,FY,,FST)/
-           (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW))  RATIO OF YIELDS
-            FOR THE FISSION BY FAST AND THERMAL NEUTRONS
+FACILITY   (REAC,4RUSFEI) Reactor BR-1
+INC-SOURCE (REAC) For fast neutrons.
+           (THCOL) For thermal neutrons - graphite thermal column
+           of 1000 x 1000 x 1000 mm size.
+INC-SPECT    Fast fission neutron spectrum of the fast reactor.
+            Maximal neutron flux in the reactor core center
+           10**10 n/(cm2*sec).
+SAMPLE      Thin foils of plutonium and uranium oxides placed
+            in aluminum container of 3 mm diameter, 15 mm height,
+            wall thickness 0.5 mm.
+           (92-U-235,ENR=0.90)
+PART-DET   (FF,DG)
+DETECTOR   (TRD) Polished glass disks of 7 mm diameter, 1 mm
+           thickness. Placed in the sample container.
+           Tracks were counted several times by different
+           operators to be not more than 2.E+3.
+           (GELI) for measurement of gamma-spectra of irradiated
+           samples. Energy resolution 1.69 keV at 1333 keV gamma
+           energy.
+METHOD     (RVAL) R-method.
+            Cooling time 8 hr, measurement time 4-6 days.
+CORRECTIONS For contribution of 238U and 240Pu fission in the
+           activity of U and Pu samples - 1.016 and 1.015,
+           respectively.
+ERR-ANALYS (ERR-T)     Total error consists of:
+           . errors arising during irradiation,
+           . errors of corrections,
+           (ERR-1,,1.) statistical error in determination of ratio
+           at gamma-spectra measurement,
+           (ERR-2) track counting over the entire series (18-20).
+HISTORY    (19800808C)  Compiled at the centre CJD
+           (19911206U)  Obsolete keywords corrected.
+                    Connection to RIDER's ENTRY 90755 established
+           (19920809U) 'PRE' in monitor and in all reaction codes
+                     are replaced by 'CUM'
+           (19930929A)  SUBENTS are rearranged according to new
+                      rules of compilation
+           (20220722A) Update for current rules and dictionaries.
+STATUS      Data of this ENTRY in part coincides with those of
+            RIDER's ENTRY 90755. RIDER's reference 79YUR1.
+ENDBIB              49
+COMMON               1          3
+ERR-2
+PER-CENT
+ 1.3
+ENDCOMMON            3
+ENDSUBENT           56
+SUBENT        40489002   20220722   20230118   20230118       4208
+BIB                  5          9
+REACTION   ((92-U-235(N,F)ELEM/MASS,CUM,FY,,FST)//
+           (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW))  Ratio of yields
+            for the fission by fast and thermal neutrons
 RESULT     (RVAL)
 MONITOR    (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-HISTORY    (920809U)  'PRE' REPLACED BY 'CUM'
-           (930929A)  DATA FOR ABSOLUTE YIELD TRANSFERRED TO
-                      SUBENT 404889005
-ENDBIB               8
+STATUS     (TABLE) Table 1 of J,SJA,47,528,1980
+HISTORY    (19920809U)  'PRE' replaced by 'CUM'
+           (19930929A)  Data for absolute yield transferred to
+                      SUBENT 40489005
+ENDBIB               9
 COMMON               2          3
 EN-MEAN-NM EN-MEAN-DN
 EV         EV
@@ -66,18 +92,18 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
   58.       143.                   0.943      0.013
   60.       147.                   0.96       0.04
 ENDDATA             16
-ENDSUBENT           33
-SUBENT        40489003     930929              20050926       0000
+ENDSUBENT           34
+SUBENT        40489003   20220722   20230118   20230118       4208
 BIB                  5          9
-REACTION   ((94-PU-239(N,F)ELEM/MASS,CUM,FY,,FST)/
-           (94-PU-239(N,F)ELEM/MASS,CUM,FY,,MXW)) RATIO OF YIELDS
-             FOR THE FAST AND FOR THE THERMAL NEUTRONS
+REACTION   ((94-PU-239(N,F)ELEM/MASS,CUM,FY,,FST)//
+           (94-PU-239(N,F)ELEM/MASS,CUM,FY,,MXW)) Ratio of yields
+             for the fast and for the thermal neutrons
 RESULT     (RVAL)
-MONITOR     NO INFORMATION
-COMMENT     DATA FOR ELEM=39 REFER TO THE ISOMER STATE
-HISTORY    (920809U)  'PRE' REPLACED BY 'CUM'
-           (930908A)  DATA FOR ABSOLUTE YIELD TRANSFERRED TO
-                      SUBENT 404889006
+MONITOR     No information
+STATUS     (TABLE) Table 1 of J,SJA,47,528,1980
+HISTORY    (19920809U)  'PRE' replaced by 'CUM'
+           (19930908A)  Data for absolute yield transferred to
+                      SUBENT 40489006
 ENDBIB               9
 COMMON               2          3
 EN-MEAN-NM EN-MEAN-DN
@@ -103,17 +129,17 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
   60.       147.                  0.96       0.04
 ENDDATA             16
 ENDSUBENT           34
-SUBENT        40489004     930929              20050926       0000
+SUBENT        40489004   20220722   20230118   20230118       4208
 BIB                  5          9
-REACTION   ((92-U-238(N,F)ELEM/MASS,CUM,FY,,FST)/
-           (92-U-238(N,F)ELEM/MASS,CUM,FY,,MXW))  RATIO OF YIELDS
-             FOR THE FAST NEUTRONS AND THE THERMAL NEUTRONS
+REACTION   ((92-U-238(N,F)ELEM/MASS,CUM,FY,,FST)//
+           (92-U-238(N,F)ELEM/MASS,CUM,FY,,MXW))  Ratio of yields
+             for the fast neutrons and the thermal neutrons
 RESULT     (RVAL)
 MONITOR    (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-COMMENT     FOR ELEMENT 39 YIELD IS GIYEN FOR THE METASTABLE STATE
-HISTORY    (920809U)  'PRE' REPLACED BY 'CUM'
-           (930908A)  DATA FOR ABSOLUTE YIELD TRANSFERRED TO
-                      SUBENT 404889007
+STATUS     (TABLE) Table 1 of J,SJA,47,528,1980
+HISTORY    (19920809U)  'PRE' replaced by 'CUM'
+           (19930908A)  Data for absolute yield transferred to
+                      SUBENT 40489007
 ENDBIB               9
 COMMON               2          3
 EN-MEAN-NM EN-MEAN-DN
@@ -135,13 +161,17 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
   58.       143.                   0.808      0.017
 ENDDATA             12
 ENDSUBENT           30
-SUBENT        40489005     930929              20050926       0000
-BIB                  4          4
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,FST)  BY FAST NEUTRONS
-STATUS     (DEP,40489002)
+SUBENT        40489005   20220722   20230118   20230118       4208
+BIB                  5          8
+REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,FST)
 MONITOR    (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-HISTORY    (930929C)  + + COMPILED AT THE CENTRE + +
-ENDBIB               4
+MONIT-REF  (,W.Walker,R,IAEA-169,(11a),1974)
+            W.Walker,C,73BOLOGNA, Paper # 11a, 1973.
+            Published in IAEA-169 (1974).
+STATUS     (TABLE) Table 2 of J,SJA,47,528,1980
+           (DEP,40489002) Ratio fast/thermal
+HISTORY    (19930929C)  + + Compiled at the centre + +
+ENDBIB               8
 COMMON               2          3
 EN-MEAN    EN-NRM
 EV         EV
@@ -181,14 +211,18 @@ PC/FIS
   60.       147.                   2.16       0.10          2.25
     0.04
 ENDDATA             32
-ENDSUBENT           45
-SUBENT        40489006     930929              20050926       0000
-BIB                  4          4
+ENDSUBENT           49
+SUBENT        40489006   20220722   20230118   20230118       4208
+BIB                  5          8
 REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY,,FST)
 MONITOR    (94-PU-239(N,F)ELEM/MASS,CUM,FY,,MXW)
-HISTORY    (930929C)  + + COMPILED AT THE CENTRE + +
-STATUS     (DEP,40489003)
-ENDBIB               4
+MONIT-REF  (,W.Walker,R,IAEA-169,(11a),1974)
+            W.Walker,C,73BOLOGNA, Paper # 11a, 1973.
+            Published in IAEA-169 (1974).
+STATUS     (TABLE) Table 2 of J,SJA,47,528,1980
+           (DEP,40489003) Ratio fast/thermal
+HISTORY    (19930929C)  + + Compiled at the centre + +
+ENDBIB               8
 COMMON               2          3
 EN-MEAN    EN-NRM
 EV         EV
@@ -228,14 +262,14 @@ PC/FIS
   60.       147.                      2.05       0.10      2.13
     0.07
 ENDDATA             32
-ENDSUBENT           45
-SUBENT        40489007     930929              20050926       0000
-BIB                  5          5
-REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY,,FST) FOR FAST NEUTRONS
+ENDSUBENT           49
+SUBENT        40489007   20220722   20230118   20230118       4208
+BIB                  4          5
+REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY,,FST)
 MONITOR    (92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
-COMMENT     FOR ELEMENT 39 YIELD IS GIYEN FOR THE METASTABLE STATE
-STATUS     (DEP,40489004)
-HISTORY    (930929C)  + + COMPILED AT THE CENTRE + +
+STATUS     (TABLE) Table 2 of J,SJA,47,528,1980
+           (DEP,40489004) Ratio fast/thermal
+HISTORY    (19930929C)  + + Compiled at the centre + +
 ENDBIB               5
 COMMON               2          3
 EN-MEAN    EN-NRM
