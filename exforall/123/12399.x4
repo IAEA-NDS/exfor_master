@@ -1,6 +1,6 @@
-ENTRY            12399   20110806   20111215   20111113       1374
-SUBENT        12399001   20110806   20111215   20111113       1374
-BIB                 14         48
+ENTRY            12399   20220822   20230113   20230110       1500
+SUBENT        12399001   20220822   20230113   20230110       1500
+BIB                 12         48
 INSTITUTE  (1USAANL)
 REFERENCE  (J,JNE,21,157,1967)
 AUTHOR     (J.W.Meadows,J.F.Whalen)
@@ -16,8 +16,6 @@ SAMPLE     The fissionable material was spread uniformly over the
            contained 187 mg of uranium enriched to 96%; while the
            252Cf detector contained enough californium to give
            approx. 600 fissions per minute.
-MONITOR    (98-CF-252(0,F),,NU)
-MONIT-REF  (21252001,D.S.Mather+,J,PR,133,B1403,1964)
 METHOD     Two fission detectors, one containing 235U and the
            other 252Cf, were surrounded by the neutron detector.
            Neutrons entered through the tapered collimator. A
@@ -42,47 +40,56 @@ DETECTOR   (BF3)  The neutron detector consisted of twenty-four
            4 cm long. The two chambers were separated by a plate
            thick enough to prevent the passage of fission
            fragments.
-STATUS     (SCSRS)
+STATUS     (TABLE) Table 2 of J.Nucl.Energy 21(1967)157
 HISTORY    (19760804T) Translated from SCISRS
            (19800507U) Converted to reaction formalism
            (19841018A) Data heading corrected.
            (20070426A) DR Subentry 4 added.
            (20110806A) SD: BIB updated. Data units in Subent 002
                     changed. Fields in NODATA of Sub.003 corrected
+           (20220630A) OS. MONITOR moved from sub.1 to sub.2,
+            STATUS updated, errors updated in sub.2
 ENDBIB              48
+NOCOMMON             0          0
+ENDSUBENT           51
+SUBENT        12399002   20220822   20230113   20230110       1500
+BIB                  6          9
+REACTION   (92-U-235(N,F),PR,NU)
+MONITOR    (98-CF-252(0,F),,NU)
+MONIT-REF  (21252001,D.S.Mather+,J,PR,133,B1403,1964)
+ERR-ANALYS (ERR-1) Relative error
+           (ERR-T) Total error
+STATUS     (DEP,12399004) U235/Cf252 ratios
+HISTORY    (20110806A) SD: Data units changed: NO-DIM to PRT/FIS.
+           (20220630A) Monitor moved from sub.1, ERR-1 added,
+             STATUS added
+ENDBIB               9
 COMMON               2          3
 MONIT      MONIT-ERR
 NO-DIM     NO-DIM
  3.782      0.02
 ENDCOMMON            3
-ENDSUBENT           55
-SUBENT        12399002   20110806   20111215   20111113       1374
-BIB                  2          2
-REACTION   (92-U-235(N,F),PR,NU)
-HISTORY    (20110806A) SD: Data units changed: NO-DIM to PRT/FIS.
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4         16
-EN         EN-RSL     DATA       DATA-ERR
-MEV        MEV        PRT/FIS    PRT/FIS
-0.039      0.05       2.422      0.023
-0.046      0.05       2.423      0.027
-0.15       0.032      2.462      0.024
-0.225      0.03       2.48       0.024
-0.265      0.028      2.47       0.027
-0.298      0.027      2.472      0.027
-0.325      0.027      2.514      0.024
-0.358      0.025      2.436      0.024
-0.375      0.025      2.477      0.027
-0.405      0.025      2.468      0.027
-0.425      0.025      2.534      0.023
-0.476      0.024      2.512      0.024
-0.548      0.021      2.489      0.023
-0.675      0.018      2.514      0.023
-0.785      0.021      2.527      0.021
-1.         0.02       2.561      0.023
+DATA                 5         16
+EN         EN-RSL     DATA       ERR-1      ERR-T
+MEV        MEV        PRT/FIS    PRT/FIS    PRT/FIS
+0.039      0.05       2.422        0.017       0.023
+0.046      0.05       2.423        0.016       0.027
+0.15       0.032      2.462        0.018       0.024
+0.225      0.03       2.48         0.018       0.024
+0.265      0.028      2.47         0.022       0.027
+0.298      0.027      2.472        0.022       0.027
+0.325      0.027      2.514        0.018       0.024
+0.358      0.025      2.436        0.018       0.024
+0.375      0.025      2.477        0.022       0.027
+0.405      0.025      2.468        0.022       0.027
+0.425      0.025      2.534        0.017       0.023
+0.476      0.024      2.512        0.019       0.024
+0.548      0.021      2.489        0.017       0.023
+0.675      0.018      2.514        0.017       0.023
+0.785      0.021      2.527        0.014       0.021
+1.         0.02       2.561        0.016       0.023
 ENDDATA             18
-ENDSUBENT           25
+ENDSUBENT           36
 SUBENT        12399003   20110806   20111215   20111113       1374
 BIB                  3          3
 REACTION   (92-U-235(N,F),PR,NU)

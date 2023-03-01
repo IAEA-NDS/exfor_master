@@ -1,12 +1,12 @@
-ENTRY            10528   20040511   20040517   20050926       0000
-SUBENT        10528001   20040511   20040517   20050926       0000
-BIB                 15         27
+ENTRY            10528   20220822   20230113   20230110       1500
+SUBENT        10528001   20220822   20230113   20230110       1500
+BIB                 15         29
 INSTITUTE  (1USAKTY)
-REFERENCE  (J,PL/B,58,293,197509)
-           (J,BAP,20,624(EE9),197504)
+REFERENCE  (J,PL/B,58,293,1975)
+           (J,BAP,20,624(EE9),1975)
 AUTHOR     (C.Lagrange,R.E.Shamu,T.Burrows,G.P.Glasgow,G.Hardie,
            F.D.McDaniel)
-TITLE      Effects of nuclear deformation on neutron elastic
+TITLE      Effect of nuclear deformation on neutron elastic
            scattering
 FACILITY   (VDG,1USAKTY)
 INC-SOURCE (D-D)
@@ -16,25 +16,27 @@ METHOD     (TOF) Time-of-flight, flight path 3.5 m.
 DETECTOR   (SCIN) NE-213 liquid scintillator with pulse-shape
                   discrimination.
 MONITOR    (1-H-1(N,EL)1-H-1,,DA)
-MONIT-REF  (,HOPKINS+,J,ND/A,9,137,1971)
+MONIT-REF  (,J.C.Hopkins+,J,ND/A,9,137,1971)
 CORRECTION Data given have been corrected for neutron attenuation
            in sample, multiple scattering, scattering from
            aluminum container and oxygen in sample, and effects
            of finite geometry.
 ERR-ANALYS (ERR-S) Data errors given are statistical errors.
-           SYSTEMATIC UNCERTAINTY LESS THAN 10 PERCENT.
+           (ERR-SYS,,10.) Systematic uncertanty less than 10%.
 STATUS     (APRVD) Approved by T.Burrows, 1975/9/26.
-                   Data taken from private comm., Shamu, 1975/8.
+           (TABLE) Data taken from private comm., Shamu, 1975/8.
 HISTORY    (19750804C)
            (19830901A) Converted to REACTION formalism
            (20040511A) Updated to new date formats, lower case.
-ENDBIB              27
+           (20220802A) OS. REACTIONS in subs.4,5 modified,
+             minor BIB changes
+ENDBIB              29
 COMMON               2          3
 EN         EN-ERR
 MEV        MEV
  6.25       0.100
 ENDCOMMON            3
-ENDSUBENT           34
+ENDSUBENT           36
 SUBENT        10528002   20040511   20040517   20050926       0000
 BIB                  1          1
 REACTION   (62-SM-148(N,EL)62-SM-148,,DA)
@@ -88,15 +90,15 @@ NO-DIM     MB/SR      PER-CENT
 10.         46.42     40.4
 ENDDATA             13
 ENDSUBENT           20
-SUBENT        10528004   20040511   20040517   20050926       0000
-BIB                  1          2
-REACTION   ((62-SM-154(N,EL)62-SM-154,,DA)+
-           (62-SM-154(N,INL)62-SM-154,PAR,DA))
+SUBENT        10528004   20220822   20230113   20230110       1500
+BIB                  2          2
+REACTION   (62-SM-154(N,SCT)62-SM-154,PAR,DA)
+HISTORY    (20220802A) REACTION sum replaced by (N,SCT),PAR
 ENDBIB               2
-COMMON               2          3
-E-LVL      E-LVL
-KEV        KEV
-82.        267.
+COMMON               3          3
+E-LVL      E-LVL      E-LVL
+KEV        KEV        KEV
+  0.          82.          267.
 ENDCOMMON            3
 DATA                 3         21
 ANG-CM     DATA-CM    ERR-S
@@ -124,19 +126,19 @@ ADEG       MB/SR      MB/SR
 156.2       33.29      1.6
 ENDDATA             23
 ENDSUBENT           34
-SUBENT        10528005   20040511   20040517   20050926       0000
-BIB                  2          3
-REACTION   ((62-SM-154(N,EL)62-SM-154,,DA,,LEG)+
-           (62-SM-154(N,INL)62-SM-154,PAR,DA,,LEG))
+SUBENT        10528005   20220822   20230113   20230110       1500
+BIB                  3          3
+REACTION   (62-SM-154(N,SCT)62-SM-154,PAR,DA,,LEG)
 STATUS     (DEP,10528004)
+HISTORY    (20220802A) REACTION sum replaced by (N,SCT),PAR
 ENDBIB               3
-COMMON               2          3
-E-LVL      E-LVL
-KEV        KEV
-82.        267.
+COMMON               3          3
+E-LVL      E-LVL      E-LVL
+KEV        KEV        KEV
+  0.         82.        267.
 ENDCOMMON            3
 DATA                 3         11
-NUMBER     DATA       DATA-ERR
+NUMBER     DATA       ERR-S
 NO-DIM     MB/SR      PER-CENT
  0.        187.79      7.7
  1.        384.57     10.4

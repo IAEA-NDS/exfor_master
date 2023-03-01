@@ -1,24 +1,27 @@
-ENTRY            10325   20020926   20021120   20050926       0000
-SUBENT        10325001   20020926   20021120   20050926       0000
-BIB                  9         15
+ENTRY            10325   20220822   20230113   20230110       1500
+SUBENT        10325001   20220822   20230113   20230110       1500
+BIB                  9         18
 INSTITUTE  (1USAANL)
 REFERENCE  (J,ZP,264,379,1973)
-AUTHOR     (A.B.Smith,P.T.Gunther,J.F.Whalen)
+AUTHOR     (A.B.Smith,P.T.Guenther,J.F.Whalen)
 TITLE      Neutron Total and Scattering Cross Sections of Niobium
             in the Continuum Region
-FACILITY   (DYNAM) Tandem dynamatron
-INC-SOURCE (P-LI7)    Lithium-7 (p,n) source
+FACILITY   (DYNAM,1USAANL) Tandem dynamatron
+INC-SOURCE (P-LI7)
 METHOD     (TOF) Time-of-flight over 5-7 meter path length
 STATUS     (APRVD) Approved by author
-           Data received in private comm., Smith, Jan. 1974.
+           (TABLE) Data received in private comm., Smith,
+            Jan. 1974.
 HISTORY    (19740718C)
            (19750902A) BIB changes
            (19830107A) Converted to REACTION formalism
            (19840418A) BIB, DATA corrected.
            (20020926A) Updated to new date formats, lower case.
-ENDBIB              15
+           (20220802A) OS. REACTION and ERR-ANALYS corrected in
+            sub.4
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           18
+ENDSUBENT           21
 SUBENT        10325002   20020926   20021120   20050926       0000
 BIB                  2          4
 REACTION   (41-NB-93(N,TOT),,SIG,,AV)
@@ -190,20 +193,21 @@ ENDBIB               2
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT            6
-SUBENT        10325004   20020926   20021120   20050926       0000
-BIB                  4          7
-REACTION   ((41-NB-93(N,EL)41-NB-93,,DA)+
-           (41-NB-93(N,INL)41-NB-93,PAR,DA))
-ERR-ANALYS Systematic uncertainty estimated to be in the range
-            5-10% with the larger value associated with the
-            minima of the angular distributions.
+SUBENT        10325004   20220822   20230113   20230110       1500
+BIB                  4          8
+REACTION   (41-NB-93(N,SCT)41-NB-93,PAR,DA)
+ERR-ANALYS (ERR-SYS,5.,10.) Systematic uncertainty estimated to be
+            in the range 5-10% with the larger value associated
+            with the minima of the angular distributions.
 FLAG       (1.) Second measurement at energy given.
 HISTORY    (19840627A) BIB correction.
-ENDBIB               7
-COMMON               2          3
-EN-RSL     E-LVL
-KEV        KEV
- 50.        29.
+           (20220802A) REACTION sum replaced by (N,SCT),PAR;
+            ERR-SYS code added
+ENDBIB               8
+COMMON               3          3
+EN-RSL     E-LVL      E-LVL
+KEV        KEV        KEV
+ 50.         0.          29.
 ENDCOMMON            3
 DATA                 4        481
 EN         ANG        DATA       FLAG
@@ -690,7 +694,7 @@ MEV        ADEG       B/SR       NO-DIM
      4.0000   148.3000     0.0460
      4.0000   154.3000     0.0620
 ENDDATA            483
-ENDSUBENT          499
+ENDSUBENT          500
 SUBENT        10325005   20020926   20021120   20050926       0000
 BIB                  3          3
 REACTION   (41-NB-93(N,INL)41-NB-93,PAR,SIG)
