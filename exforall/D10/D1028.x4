@@ -1,0 +1,405 @@
+ENTRY            D1028   20220911   20230116   20230116       D137
+SUBENT        D1028001   20220911   20230116   20230116       D137
+BIB                  8         14
+TITLE      The methodology for validation of cross sections in
+            quasi Monoenergetic neutron field
+AUTHOR     (Z.Matej, M.Kostal, M.Majerle, M.Ansorge, E.Losa,
+            M.Zmeskal, M.Schulc, J.Simon, M.Stefanik, J.Novak,
+            D.Koliadko, F.Cvachovec, F.Mravec, V.Prenosil, V.Zach,
+            T.Czakoj, V.Rypar, R.Capote)
+INSTITUTE  (3CZRCZR) Masaryk University, Brno; University of
+            Defence, Brno
+           (3CZRUJV,3CZRUJF,3ZZZIAE)
+REFERENCE  (J,NIM/A,1040,167075,2022)
+METHOD     (BCINT) charge collection by isolated target station
+FACILITY   (CYCLO,3CZRUJF) U-120M cyclotron
+STATUS     (APRVD) Approved by Mitja Majerla (2022-09-26)
+HISTORY    (20220910C) On
+ENDBIB              14
+NOCOMMON             0          0
+ENDSUBENT           17
+SUBENT        D1028002   20220911   20230116   20230116       D137
+BIB                  9         12
+REACTION   (3-LI-7(P,X)0-NN-1,,DA)
+INC-SPECT  (EN-RSL-HW1) Proton energy spread
+           (EN-RSL-HW2) Proton energy loss due to ionization
+SAMPLE     0.5 mm thick natural Li foil followed by a 1 cm
+            thick carbon slab
+METHOD     (TOF) NE213 at 2 m to 4.5 m from Li target
+DETECTOR   (SCIN) 2''x2'' liquid scintillator (NE213)
+REL-REF    (M,D0980001,M.Majerle+,J,EPJ/CS,239,20010,2020)
+            Procedure of TOF analysis
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Data received from Mitja Majerle
+HISTORY    (20220926R) On. Data received from Mitja Majerle
+ENDBIB              12
+COMMON               1          3
+ANG
+ADEG
+ 0.
+ENDCOMMON            3
+DATA                 5          2
+EN         EN-RSL-HW1 EN-RSL-HW2 DATA       DATA-ERR
+MEV        KEV        KEV        MB/SR      MB/SR
+ 12.0       50.        450.       5.3        0.6
+ 14.0       60.        400.       6.1        0.7
+ENDDATA              4
+ENDSUBENT           25
+SUBENT        D1028003   20220911   20230116   20230116       D137
+BIB                  9         11
+REACTION   (3-LI-7(P,N)4-BE-7,,SIG)
+DECAY-DATA (4-BE-7,53.22D,DG,477.612,0.1044)
+INC-SPECT  (EN-RSL-HW1) Proton energy spread
+           (EN-RSL-HW2) Proton energy loss due to ionization
+DETECTOR   (HPGE)
+METHOD     (ACTIV)
+REL-REF    (M,D0980001,M.Majerle+,J,EPJ/CS,239,20010,2020)
+            Procedure of TOF analysis
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Data received from Mitja Majerle
+HISTORY    (20220926R) On. Data received from Mitja Majerle
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 5          2
+EN         EN-RSL-HW1 EN-RSL-HW2 DATA       DATA-ERR
+MEV        KEV        KEV        MB         MB
+ 12.0       50.        450.       51.2       2.9
+ 14.0       60.        400.       47.7       2.8
+ENDDATA              4
+ENDSUBENT           20
+SUBENT        D1028004   20220911   20230116   20230116       D137
+BIB                  6         11
+REACTION   ((3-LI-7(P,N)4-BE-7,PAR,DA)/(3-LI-7(P,N)4-BE-7,,SIG))
+INC-SPECT  (EN-RSL-HW1) Proton energy spread
+           (EN-RSL-HW2) Proton energy loss due to ionization
+ANALYSIS   Ratio of the measured 0 deg neutron cross section
+            and measured activation cross section from the
+            same 7Li irradiation
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Data received from Mitja Majerle
+           (DEP,D1028002) 7Li(p,n+x) 0 deg cross section
+           (DEP,D1028003) 7Li(p,n)7Be cross section
+HISTORY    (20220926R) On. Data received from Mitja Majerle
+ENDBIB              11
+COMMON               3          3
+ANG        E-LVL      E-LVL
+ADEG       MEV        MEV
+ 0.         0.         0.429
+ENDCOMMON            3
+DATA                 5          2
+EN         EN-RSL-HW1 EN-RSL-HW2 DATA       DATA-ERR
+MEV        KEV        KEV        1/SR       1/SR
+ 12.0       50.        450.       0.10       0.01
+ 14.0       60.        400.       0.13       0.01
+ENDDATA              4
+ENDSUBENT           24
+SUBENT        D1028005   20220911   20230116   20230116       D137
+BIB                  8         23
+REACTION  1(3-LI-7(P,X)0-NN-1,,PY/DA/DE,,TT/CH)
+          2(3-LI-7(P,X)0-NN-1,,PY/DA/DE,,TT/CH)
+INC-SPECT  Ep=12.4 MeV is the energy of protons before entering
+            to the target and not the mean energy of protons in
+            the target.
+DETECTOR   (SCIN) Cylindrical stilbene (10 mm diam, 10 mm height)
+            placed at 403.85 cm from Li target
+METHOD     (PHD)
+          1Deconvolution of recoiled proton spectrum
+          2(TOF)
+MISC-COL   (MISC) Evaluated group-wise neutron spectra in
+            activation foils in [1/cm2/sec] for which the first
+            column (E/MeV) gives the upper bounadry of each group
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+           (MISC-ERR) Covering the most significant sourecs of
+            uncertainty
+            - Statistical uncertainty <1%
+            - deconvolution (5%),
+            - evaluation (3%)
+            - calibration (~ 1%, in peaks ~ 10%)
+            - iteration number (~ 0.1%, in peaks ~ 5%)
+STATUS     (TABLE) Fig.9 of Nucl.Instrum.Meth.A1040(2022)167075
+HISTORY    (20220911R) On. Data received from Michal Kostal.
+ENDBIB              23
+COMMON               2          3
+EN         ANG
+MEV        ADEG
+ 12.4       0.
+ENDCOMMON            3
+DATA                 6        110
+E          DATA      1DATA-ERR  1DATA      2MISC       MISC-ERR
+MEV        P/MEVMUCSR PER-CENT   P/MEVMUCSR SEE TEXT   PER-CENT
+  1.1         1.37E+08  5.4                   1.129E+06  6.1
+  1.2         1.69E+08  5.1                   1.387E+06  5.9
+  1.3         2.03E+08  5.3                   1.620E+06  6.1
+  1.4         1.47E+08  5.2                   1.173E+06  6.0
+  1.5         1.07E+08  5.3                   7.773E+05  6.1
+  1.6         9.46E+07  5.1                   6.867E+05  5.9
+  1.7         8.34E+07  5.3                   6.058E+05  6.1
+  1.8         7.12E+07  5.1                   4.587E+05  5.9
+  1.9         6.05E+07  5.9                   3.898E+05  6.6
+  2.0         5.50E+07  5.1                   3.244E+05  5.9
+  2.1         4.98E+07  5.4                   2.940E+05  6.2
+  2.2         4.59E+07  5.4                   2.708E+05  6.1
+  2.3         4.21E+07  6.4                   2.346E+05  7.1
+  2.4         4.21E+07  6.2                   2.345E+05  6.9
+  2.5         4.20E+07  6.0                   2.316E+05  6.7
+  2.6         4.32E+07  5.2                   2.383E+05  6.0
+  2.7         4.45E+07  5.1                   2.451E+05  5.9
+  2.8         4.54E+07  5.2                   2.450E+05  6.0
+  2.9         4.63E+07  5.2                   2.500E+05  6.0
+  3.0         4.69E+07  5.2                   2.436E+05  6.0
+  3.1         4.74E+07  5.2                   2.465E+05  6.0
+  3.2         4.54E+07  5.1                   2.360E+05  5.9
+  3.3         4.34E+07  5.2                   2.163E+05  6.0
+  3.4         4.22E+07  5.1                   2.104E+05  6.0
+  3.5         4.10E+07  5.3                   2.039E+05  6.1
+  3.6         3.92E+07  5.4                   1.950E+05  6.1
+  3.7         3.75E+07  5.4                   1.863E+05  6.2
+  3.8         3.54E+07  5.4                   1.761E+05  6.2
+  3.9         3.33E+07  5.4                   1.658E+05  6.2
+  4.0         3.13E+07  5.2                   1.493E+05  6.0
+  4.1         2.93E+07  5.2                   1.400E+05  6.0
+  4.2         2.90E+07  5.4                   1.382E+05  6.2
+  4.3         2.86E+07  5.7                   1.335E+05  6.4
+  4.4         2.77E+07  5.2                   1.296E+05  6.0
+  4.5         2.69E+07  5.2                   1.246E+05  6.0
+  4.6         2.67E+07  5.6                   1.240E+05  6.3
+  4.7         2.66E+07  6.3                   1.233E+05  7.0
+  4.8         2.66E+07  5.7                   1.224E+05  6.5
+  4.9         2.66E+07  5.4                   1.223E+05  6.2
+  5.0         2.68E+07  5.6         2.40E+07  1.235E+05  6.4
+  5.1         2.71E+07  6.0         2.34E+07  1.208E+05  6.7
+  5.2         2.85E+07  5.7         2.34E+07  1.270E+05  6.4
+  5.3         3.00E+07  5.5         2.55E+07  1.329E+05  6.3
+  5.4         3.24E+07  5.3         2.62E+07  1.439E+05  6.1
+  5.5         3.52E+07  5.4         2.85E+07  1.560E+05  6.2
+  5.6         3.84E+07  5.5         3.08E+07  1.697E+05  6.3
+  5.7         4.20E+07  6.2         3.69E+07  1.855E+05  6.9
+  5.8         4.39E+07  7.0         4.05E+07  1.911E+05  7.6
+  5.9         4.59E+07  7.9         4.37E+07  1.999E+05  8.5
+  6.0         4.69E+07  7.8         4.52E+07  2.041E+05  8.4
+  6.1         4.78E+07  7.7         4.61E+07  2.051E+05  8.3
+  6.2         4.69E+07  6.6         4.35E+07  2.012E+05  7.2
+  6.3         4.60E+07  5.9         3.98E+07  1.960E+05  6.6
+  6.4         4.25E+07  5.4         3.73E+07  1.809E+05  6.2
+  6.5         3.91E+07  5.7         3.13E+07  1.666E+05  6.4
+  6.6         3.45E+07  5.5         2.65E+07  1.466E+05  6.3
+  6.7         3.03E+07  5.4         1.96E+07  1.288E+05  6.2
+  6.8         2.58E+07  5.4         1.54E+07  1.104E+05  6.2
+  6.9         2.19E+07  5.7         1.27E+07  9.373E+04  6.5
+  7.0         1.91E+07  5.5         1.15E+07  8.167E+04  6.2
+  7.1         1.66E+07  5.4         1.05E+07  7.074E+04  6.2
+  7.2         1.46E+07  5.3         9.28E+06  6.224E+04  6.1
+  7.3         1.28E+07  5.3         8.49E+06  5.501E+04  6.1
+  7.4         1.15E+07  5.4         7.61E+06  4.945E+04  6.2
+  7.5         1.03E+07  5.9         7.12E+06  4.433E+04  6.7
+  7.6         9.51E+06  6.4         6.32E+06  4.113E+04  7.0
+  7.7         8.75E+06  6.9         5.67E+06  3.787E+04  7.5
+  7.8         8.23E+06  6.7         5.70E+06  3.545E+04  7.3
+  7.9         7.74E+06  6.6         5.43E+06  3.330E+04  7.2
+  8.0         7.39E+06  6.3         5.05E+06  3.182E+04  7.0
+  8.1         7.06E+06  6.2         4.96E+06  3.007E+04  6.9
+  8.2         6.92E+06  6.5         4.74E+06  2.947E+04  7.2
+  8.3         6.78E+06  7.0         5.09E+06  2.888E+04  7.6
+  8.4         6.70E+06  7.0         4.62E+06  2.854E+04  7.6
+  8.5         6.62E+06  7.5         4.60E+06  2.820E+04  8.1
+  8.6         6.60E+06  7.4         4.84E+06  2.810E+04  7.9
+  8.7         6.59E+06  7.6         4.54E+06  2.804E+04  8.2
+  8.8         6.74E+06  7.3         4.67E+06  2.864E+04  7.9
+  8.9         6.89E+06  7.1         5.11E+06  2.929E+04  7.7
+  9.0         7.19E+06  7.0         5.35E+06  3.056E+04  7.6
+  9.1         7.50E+06  7.0         6.03E+06  3.205E+04  7.6
+  9.2         8.02E+06  6.7         6.95E+06  3.426E+04  7.4
+  9.3         8.58E+06  7.2         7.81E+06  3.719E+04  7.8
+  9.4         9.52E+06  7.4         1.01E+07  4.123E+04  8.0
+  9.5         1.06E+07  7.8         1.20E+07  4.577E+04  8.4
+  9.6         1.22E+07  8.0         1.32E+07  5.388E+04  8.6
+  9.7         1.40E+07  8.4         1.49E+07  6.213E+04  8.9
+  9.8         1.65E+07  7.5         1.63E+07  7.239E+04  8.1
+  9.9         1.94E+07  7.4         1.75E+07  8.521E+04  8.0
+ 10.0         2.24E+07  7.7         2.06E+07  9.862E+04  8.2
+ 10.1         2.60E+07  7.9         2.40E+07  1.132E+05  8.5
+ 10.2         3.19E+07  6.6         2.77E+07  1.386E+05  7.2
+ 10.3         3.91E+07  6.2         3.18E+07  1.691E+05  6.9
+ 10.4         4.58E+07  6.0         3.54E+07  1.980E+05  6.7
+ 10.5         5.37E+07  6.0         4.39E+07  2.324E+05  6.7
+ 10.6         6.03E+07  5.9         5.12E+07  2.603E+05  6.6
+ 10.7         6.77E+07  6.1         5.25E+07  2.925E+05  6.8
+ 10.8         6.73E+07  6.3         5.24E+07  2.908E+05  7.0
+ 10.9         6.68E+07  7.9         4.84E+07  2.888E+05  8.4
+ 11.0         5.44E+07  7.4         4.33E+07  2.352E+05  8.0
+ 11.1         4.41E+07  7.7         3.73E+07  1.915E+05  8.3
+ 11.2         3.16E+07  8.2         3.27E+07  1.370E+05  8.7
+ 11.3         2.24E+07  9.4         2.58E+07  9.748E+04  9.8
+ 11.4         1.42E+07 10.9         1.93E+07  6.184E+04 11.3
+ 11.5         8.93E+06 13.1         1.16E+07  3.882E+04 13.4
+ 11.6         1.80E+06 16.9         7.00E+06  7.889E+03 17.2
+ 11.7         3.70E+05 20.9         5.87E+06  1.622E+03 21.1
+ 11.8         2.92E+05 20.8         4.31E+06  1.273E+03 21.0
+ 11.9         2.30E+05 21.3                   9.998E+02 21.5
+ 12.0         2.57E+05 20.8                   1.120E+03 21.0
+ENDDATA            112
+ENDSUBENT          144
+SUBENT        D1028006   20220911   20230116   20230116       D137
+BIB                  8         23
+REACTION  1(3-LI-7(P,X)0-NN-1,,PY/DA/DE,,TT/CH)
+          2(3-LI-7(P,X)0-NN-1,,PY/DA/DE,,TT/CH)
+INC-SPECT  Ep=14.4 MeV is the energy of protons before entering
+            to the target and not the mean energy of protons in
+            the target.
+DETECTOR   (SCIN) Cylindrical stilbene (10 mm diam, 10 mm height)
+            placed at 403.85 cm from Li target
+METHOD     (PHD)
+          1Deconvolution of recoiled proton spectrum
+          2(TOF)
+MISC-COL   (MISC) Evaluated group-wise neutron spectra in
+            activation foils in [1/cm2/sec] for which the first
+            column (E/MeV) gives the upper bounadry of each group
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+           (MISC-ERR) Covering the most significant sourecs of
+            uncertainty
+            - Statistical uncertainty <1%
+            - deconvolution (5%),
+            - evaluation (3%)
+            - calibration (~ 1%, in peaks ~ 10%)
+            - iteration number (~ 0.1%, in peaks ~ 5%)
+STATUS     (TABLE) Fig.9 of Nucl.Instrum.Meth.A1040(2022)167075
+HISTORY    (20220911R) On. Data received from Michal Kostal.
+ENDBIB              23
+COMMON               2          3
+EN         ANG
+MEV        ADEG
+ 14.4       0.
+ENDCOMMON            3
+DATA                 6        127
+E          DATA      1DATA-ERR  1DATA      2MISC       MISC-ERR
+MEV        P/MEVMUCSR PER-CENT   P/MEVMUCSR SEE TEXT   PER-CENT
+  1.1         1.34E+08  6.0                   1.494E+06  6.0
+  1.2         1.20E+08  5.9                   1.342E+06  5.9
+  1.3         1.08E+08  5.9                   1.184E+06  5.9
+  1.4         9.24E+07  5.9                   1.012E+06  5.9
+  1.5         7.91E+07  5.9                   7.998E+05  5.9
+  1.6         7.70E+07  5.9                   7.782E+05  5.9
+  1.7         7.47E+07  5.9                   7.557E+05  5.9
+  1.8         7.43E+07  5.9                   6.717E+05  5.9
+  1.9         7.37E+07  6.5                   6.667E+05  6.5
+  2.0         7.31E+07  5.9                   6.010E+05  5.9
+  2.1         7.25E+07  6.5                   5.953E+05  6.5
+  2.2         6.16E+07  6.2                   5.060E+05  6.2
+  2.3         5.22E+07  6.4                   4.076E+05  6.4
+  2.4         4.79E+07  6.0                   3.746E+05  6.0
+  2.5         4.40E+07  6.0                   3.435E+05  6.0
+  2.6         4.47E+07  5.9                   3.492E+05  5.9
+  2.7         4.54E+07  5.9                   3.548E+05  5.9
+  2.8         4.58E+07  5.9                   3.579E+05  5.9
+  2.9         4.61E+07  6.1                   3.606E+05  6.1
+  3.0         4.09E+07  6.2                   3.099E+05  6.2
+  3.1         3.62E+07  7.0                   2.743E+05  7.0
+  3.2         3.29E+07  5.9                   2.493E+05  5.9
+  3.3         2.99E+07  6.5                   2.181E+05  6.5
+  3.4         2.99E+07  5.9                   2.187E+05  5.9
+  3.5         3.00E+07  6.1                   2.193E+05  6.1
+  3.6         3.05E+07  6.0                   2.232E+05  6.0
+  3.7         3.11E+07  6.6                   2.272E+05  6.6
+  3.8         3.14E+07  5.9                   2.268E+05  5.9
+  3.9         3.18E+07  6.4                   2.293E+05  6.4
+  4.0         3.18E+07  6.0                   2.183E+05  6.0
+  4.1         3.18E+07  5.9                   2.184E+05  5.9
+  4.2         3.19E+07  5.9                   2.192E+05  5.9
+  4.3         3.20E+07  6.3                   2.138E+05  6.3
+  4.4         3.30E+07  6.3                   2.202E+05  6.3
+  4.5         3.40E+07  6.3                   2.261E+05  6.3
+  4.6         3.58E+07  5.9                   2.381E+05  5.9
+  4.7         3.77E+07  6.1                   2.510E+05  6.1
+  4.8         3.88E+07  5.9                   2.503E+05  5.9
+  4.9         3.98E+07  5.9                   2.573E+05  5.9
+  5.0         3.96E+07  5.9                   2.561E+05  5.9
+  5.1         3.94E+07  6.0                   2.449E+05  6.0
+  5.2         4.02E+07  6.0                   2.496E+05  6.0
+  5.3         4.10E+07  6.0                   2.497E+05  6.0
+  5.4         4.13E+07  6.1                   2.516E+05  6.1
+  5.5         4.16E+07  6.8                   2.534E+05  6.8
+  5.6         4.11E+07  6.0         4.60E+07  2.535E+05  6.0
+  5.7         4.07E+07  6.5         4.24E+07  2.506E+05  6.5
+  5.8         3.73E+07  6.5         4.04E+07  2.278E+05  6.5
+  5.9         3.42E+07  6.6         3.73E+07  2.086E+05  6.6
+  6.0         3.24E+07  6.5         3.39E+07  1.980E+05  6.5
+  6.1         3.07E+07  6.5         3.10E+07  1.836E+05  6.5
+  6.2         2.93E+07  5.9         2.90E+07  1.747E+05  5.9
+  6.3         2.78E+07  6.7         2.68E+07  1.644E+05  6.7
+  6.4         2.85E+07  5.9         2.61E+07  1.685E+05  5.9
+  6.5         2.92E+07  6.4         2.48E+07  1.728E+05  6.4
+  6.6         2.84E+07  6.0         2.48E+07  1.674E+05  6.0
+  6.7         2.75E+07  5.9         2.41E+07  1.623E+05  5.9
+  6.8         2.78E+07  6.0         2.18E+07  1.651E+05  6.0
+  6.9         2.80E+07  6.0         2.44E+07  1.665E+05  6.0
+  7.0         2.89E+07  6.0         2.51E+07  1.719E+05  6.0
+  7.1         2.99E+07  6.0         2.57E+07  1.762E+05  6.0
+  7.2         2.99E+07  6.6         2.57E+07  1.763E+05  6.6
+  7.3         2.99E+07  7.5         2.73E+07  1.771E+05  7.5
+  7.4         3.38E+07  7.0         3.04E+07  2.006E+05  7.0
+  7.5         3.84E+07  8.0         3.36E+07  2.275E+05  8.0
+  7.6         4.11E+07  7.1         3.73E+07  2.442E+05  7.1
+  7.7         4.39E+07  7.7         4.30E+07  2.614E+05  7.7
+  7.8         4.63E+07  6.3         4.82E+07  2.721E+05  6.3
+  7.9         4.89E+07  6.5         5.31E+07  2.872E+05  6.5
+  8.0         5.12E+07  6.5         5.29E+07  3.007E+05  6.5
+  8.1         5.37E+07  6.7         5.38E+07  3.108E+05  6.7
+  8.2         5.07E+07  6.3         5.27E+07  2.936E+05  6.3
+  8.3         4.78E+07  8.3         4.66E+07  2.765E+05  8.3
+  8.4         4.16E+07  9.1         4.03E+07  2.403E+05  9.1
+  8.5         3.60E+07 12.6         3.20E+07  2.082E+05 12.6
+  8.6         2.98E+07 10.8         2.66E+07  1.732E+05 10.8
+  8.7         2.45E+07 13.0         1.90E+07  1.426E+05 13.0
+  8.8         2.10E+07 11.9         1.30E+07  1.235E+05 11.9
+  8.9         1.79E+07 12.4         1.02E+07  1.053E+05 12.4
+  9.0         1.45E+07 12.7         8.73E+06  8.561E+04 12.7
+  9.1         1.18E+07 14.8         7.66E+06  6.870E+04 14.8
+  9.2         9.95E+06 11.4         7.29E+06  5.804E+04 11.4
+  9.3         8.38E+06  8.6         7.17E+06  4.908E+04  8.6
+  9.4         7.51E+06  8.6         7.05E+06  4.400E+04  8.6
+  9.5         6.72E+06  9.4         5.68E+06  3.937E+04  9.4
+  9.6         6.08E+06  8.0         5.34E+06  3.584E+04  8.0
+  9.7         5.50E+06  7.2         5.53E+06  3.240E+04  7.2
+  9.8         4.89E+06  9.3         5.05E+06  2.893E+04  9.3
+  9.9         4.33E+06 12.2         5.16E+06  2.565E+04 12.2
+ 10.0         3.73E+06 10.4         5.04E+06  2.208E+04 10.4
+ 10.1         3.20E+06 10.2         4.54E+06  1.893E+04 10.2
+ 10.2         3.08E+06 10.9         4.62E+06  1.819E+04 10.9
+ 10.3         2.96E+06 12.1         3.78E+06  1.773E+04 12.1
+ 10.4         2.82E+06 11.1         2.99E+06  1.690E+04 11.1
+ 10.5         2.68E+06 11.4         3.71E+06  1.609E+04 11.4
+ 10.6         2.73E+06 11.6         3.99E+06  1.639E+04 11.6
+ 10.7         2.77E+06 12.0         3.15E+06  1.665E+04 12.0
+ 10.8         2.97E+06 11.7         3.63E+06  1.825E+04 11.7
+ 10.9         3.18E+06 11.8         4.18E+06  1.958E+04 11.8
+ 11.0         3.34E+06 13.0         3.16E+06  2.057E+04 13.0
+ 11.1         3.52E+06 15.4         5.06E+06  2.210E+04 15.4
+ 11.2         4.13E+06 14.8         5.64E+06  2.596E+04 14.8
+ 11.3         4.86E+06 15.2         5.34E+06  3.215E+04 15.2
+ 11.4         5.96E+06 15.5         7.50E+06  3.944E+04 15.5
+ 11.5         7.33E+06 15.9         8.51E+06  4.850E+04 15.9
+ 11.6         8.93E+06 16.8         9.86E+06  6.004E+04 16.8
+ 11.7         1.09E+07 18.2         1.32E+07  7.324E+04 18.2
+ 11.8         1.44E+07 21.9         1.78E+07  9.211E+04 21.9
+ 11.9         1.90E+07 25.9         2.35E+07  1.220E+05 25.9
+ 12.0         2.73E+07 23.8         2.54E+07  1.751E+05 23.8
+ 12.1         3.94E+07 22.0         3.43E+07  2.416E+05 22.0
+ 12.2         5.18E+07 22.3         4.55E+07  3.179E+05 22.3
+ 12.3         6.84E+07 22.7         5.49E+07  4.129E+05 22.7
+ 12.4         8.72E+07 15.1         6.03E+07  5.267E+05 15.1
+ 12.5         1.12E+08 13.0         6.81E+07  6.738E+05 13.0
+ 12.6         1.14E+08  7.3         7.30E+07  6.858E+05  7.3
+ 12.7         1.16E+08  8.3         7.39E+07  6.992E+05  8.3
+ 12.8         9.78E+07 17.9         7.45E+07  5.925E+05 17.9
+ 12.9         8.22E+07 27.4         7.15E+07  4.982E+05 27.4
+ 13.0         4.37E+07 39.2         6.66E+07  2.650E+05 39.2
+ 13.1         2.30E+07 49.4         5.54E+07  1.401E+05 49.4
+ 13.2         8.26E+06 55.0         4.48E+07  5.030E+04 55.0
+ 13.3         2.91E+06 60.7         3.80E+07  1.771E+04 60.7
+ 13.4         1.14E+06 34.1         3.14E+07  6.952E+03 34.1
+ 13.5         4.41E+05 39.7         2.34E+07  2.684E+03 39.7
+ 13.6         5.21E+05 11.2         1.60E+07  3.151E+03 11.2
+ 13.7                               4.56E+06
+ENDDATA            129
+ENDSUBENT          161
+ENDENTRY             6

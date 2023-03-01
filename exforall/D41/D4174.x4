@@ -1,18 +1,19 @@
-ENTRY            D4174   20061213   20070306   20070212       D051
-SUBENT        D4174001   20061213   20070306   20070212       D051
-BIB                 15         55
+ENTRY            D4174   20220617   20230116   20230116       D137
+SUBENT        D4174001   20220617   20230116   20230116       D137
+BIB                 15         53
 TITLE      Cross sections of deuteron induced nuclear reactions
            on iridium
-AUTHOR     (F.Tarkanyi,B.Kiraly,F.Ditroi,S.Takacs,J.Csikai,
-           A.Hermanne,M.S.Uddin,M.Hagiwara,M.Baba,Yu.N.Shubin,
-           S.F.Kovalev)
+AUTHOR     (F.Tarkanyi, B.Kiraly, F.Ditroi, S.Takacs, J.Csikai,
+           A.Hermanne, M.S.Uddin, M.Hagiwara, M.Baba,
+           Yu.N.Shubin, S.F.Kovalev)
 INSTITUTE  (3HUNDEB,2BLGVUB,2JPNTOH,4RUSFEI,3HUNKOS)
 REFERENCE  (J,NIM/B,247,210,2006)
            (C,2005BRUSS,,52,2005) Abstract book. Preliminary data
            were presented at the conference.
-FACILITY   (CYCLO,2BLGVUB)
-           (CYCLO,2JPNTOH)
+FACILITY   (CYCLO,2JPNTOH) for stack1
+           (CYCLO,2BLGVUB) for stack2
 SAMPLE     Natural iridium foils.
+DETECTOR   (HPGE)
 METHOD     (EXTB,STTA,ACTIV,GSPEC)
            Two irradiations,
            initial deuteron energies: 40 and 21 MeV,
@@ -30,35 +31,36 @@ ANALYSIS   The complex gamma spectra were analyzed with the FGM
 DECAY-DATA Decay data were taken from WWW Table of Radioactive
            Isotopes by L.P.Ekstrom and R.B.Firestone,
            database version: 2/28/99.
-DETECTOR   (HPGE)
 MONITOR    (13-AL-27(D,X)11-NA-22,,SIG)
            (13-AL-27(D,X)11-NA-24,,SIG)
            (22-TI-0(D,X)23-V-48,,SIG)
-MONIT-REF  (,F.TARKANYI+,R,IAEA-TECDOC-1211,2001) Chapter 4
-           (D4081001,S.TAKACS+,J,NIM/B,174,235,2001)
+MONIT-REF  (,F.Tarkanyi+,R,IAEA-TECDOC-1211,2001) Chapter 4
+           (D4081001,S.Takacs+,J,NIM/B,174,235,2001)
 ERR-ANALYS (EN-ERR) Estimated combining the uncertainties of the
            energy degradation depending on the thickness of the
            target foils in the stack and energy straggling.
            (ERR-T) Error sources:
-              * number of the bombarding particles (7%),
-              * number of the target nuclei (3%),
-              * decay data (3%),
-              * detector efficiency (5%),
-              * peak area (1-10%).
+           (ERR-1) number of the bombarding particles (7%)
+           (ERR-2) number of the target nuclei (3%)
+           (ERR-3) decay data (3%)
+           (ERR-4) detector efficiency (5%)
+           (ERR-5,1.,10.) peak area (1-10%)
            The linearly contributing independent processes were
            taken into account extracting square root of
            quadratically summed relative uncertainties.
-ADD-RES    (THEO) The measured experimental data were compared to
-           and analyzed with theoretical calculations based on
-           the model code ALICE-IPPE.
-           (TTY-C) On the basis of the new experimental cross
+ADD-RES    (TTY-C) On the basis of the new experimental cross
            sections integral yields were calculated.
 HISTORY    (20060518C) KB
            (20061213U) KB Data unit was corrected in subentry
            D4174006 in free text under REACTION.
-ENDBIB              55
-NOCOMMON             0          0
-ENDSUBENT           58
+           (20220617A) VT. Revision in 006
+ENDBIB              53
+COMMON               4          3
+ERR-1      ERR-2      ERR-3      ERR-4
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+         7.         3.         3.         5.
+ENDCOMMON            3
+ENDSUBENT           60
 SUBENT        D4174002   20060518   20060720   20060609       D046
 BIB                  3          8
 REACTION  1(77-IR-0(D,X)78-PT-188,,SIG)
@@ -189,41 +191,41 @@ MEV        MEV        MB         MB         MB         MB
       38.0       0.3       98.       11.       176.       23.
 ENDDATA             18
 ENDSUBENT           47
-SUBENT        D4174006   20061213   20070306   20070212       D051
-BIB                  3         12
-REACTION  G(77-IR-0(D,X)77-IR-194-G+L,,SIG)
+SUBENT        D4174006   20220617   20230116   20230116       D137
+BIB                  4         12
+REACTION  G(77-IR-0(D,X)77-IR-194-G,,SIG)
            Includes contribution from 194Ir 31.85 msec level
            after its total isomeric transition
           M(77-IR-0(D,X)77-IR-194-M,,SIG)
 DECAY-DATAG(77-IR-194-G,19.28HR,DG,293.55,0.0252,
                                 DG,328.46,0.131)
-           (77-IR-194-L,31.85MSEC)
           M(77-IR-194-M,171.D,DG,338.8,0.55,
                               DG,482.83,0.97,
                               DG,562.5/562.64,0.70,
                               DG,687.7,0.59)
-STATUS     (TABLE) Data were taken from Table 3 of the ref.
+STATUS     (TABLE) Table 3 of J,NIM/B,247,210,2006
+HISTORY    (20220617A) VT. REACTION: -G+L -> -G replaced
 ENDBIB              12
 NOCOMMON             0          0
 DATA                 6         16
 EN         EN-ERR     DATA      GERR-T     GDATA      MERR-T     M
 MEV        MEV        MB         MB         MB         MB
-       1.7       1.5        0.25      0.13      0.36       0.10
-       5.8       1.1       16.0       1.8       0.11       0.10
-       6.8       1.8       22.5       3.8
-       9.6       0.8      110.       13.        0.24       0.15
-      12.6       0.7      141.       16.        0.38       0.37
-      13.1       1.6      126.       18.        0.22       0.06
-      15.2       0.5      124.       15.        0.44       0.31
-      16.5       1.4      103.       12.        0.44       0.09
-      17.5       0.5      104.       12.        0.61       0.29
-      19.7       0.3       88.       10.        0.27       0.22
-      21.1       1.2       71.1       8.4       0.44       0.09
-      25.1       1.0       54.7       7.2       0.36       0.09
-      28.7       0.8       44.8       7.4       0.42       0.12
-      32.0       0.6       39.4       6.8       0.31       0.12
-      35.1       0.4       31.6       4.4       0.71       0.21
-      38.0       0.3       25.3       5.9
+        1.7        1.5       0.25       0.13       0.36       0.10
+        5.8        1.1       16.0        1.8       0.11       0.10
+        6.8        1.8       22.5        3.8
+        9.6        0.8       110.        13.       0.24       0.15
+       12.6        0.7       141.        16.       0.38       0.37
+       13.1        1.6       126.        18.       0.22       0.06
+       15.2        0.5       124.        15.       0.44       0.31
+       16.5        1.4       103.        12.       0.44       0.09
+       17.5        0.5       104.        12.       0.61       0.29
+       19.7        0.3        88.        10.       0.27       0.22
+       21.1        1.2       71.1        8.4       0.44       0.09
+       25.1        1.0       54.7        7.2       0.36       0.09
+       28.7        0.8       44.8        7.4       0.42       0.12
+       32.0        0.6       39.4        6.8       0.31       0.12
+       35.1        0.4       31.6        4.4       0.71       0.21
+       38.0        0.3       25.3        5.9
 ENDDATA             18
 ENDSUBENT           35
 ENDENTRY             6
