@@ -271,7 +271,6 @@ def git_new_branch(date_str):
 
 def git_add_commit(date_str):
     repo.git.add("exforall/")
-    repo.git.add("process.log")
     repo.git.commit(m=date_str)
     logging.info(f"branch commit {date_str}")
     print("add and commit to branch:", date_str)
