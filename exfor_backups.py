@@ -209,7 +209,6 @@ def split_bck_file(filename: str):
                 if os.path.exists(os.path.join(EXFOR_ALL_PATH, entrynum[0:3])):
                     pass
                 else:
-                    # print(entrynum[0:3])
                     os.mkdir(EXFOR_ALL_PATH + "/" + entrynum[0:3])
 
                 outfile = open(
@@ -264,7 +263,7 @@ assert not repo.bare
 def git_new_branch(date_str):
     repo.git.checkout("HEAD", b=date_str)  # create a new branch
     logging.info(f"repo.active_branch {repo.active_branch}")
-    print("create new branch:", date_str)
+    # print("create new branch:", date_str)
 
 
 
@@ -273,7 +272,7 @@ def git_add_commit(date_str):
     repo.git.add("exforall/")
     repo.git.commit(m=date_str)
     logging.info(f"branch commit {date_str}")
-    print("add and commit to branch:", date_str)
+    # print("add and commit to branch:", date_str)
 
 
 
@@ -281,8 +280,8 @@ def git_add_commit(date_str):
 def git_push_branch(date_str):
     origin = repo.remote(name="origin")
     origin.push(date_str)
-    # logging.info(f"origin.push {date_str}")
-    print("branch push:", date_str)
+    logging.info(f"origin.push {date_str}")
+    # print("branch push:", date_str)
 
 
 
@@ -292,8 +291,8 @@ def git_merge_to_main(date_str):
     repo.git.merge(date_str)
     origin = repo.remote(name="origin")
     origin.push()
-    # logging.info(f"repo.git.merge and origin.push master")
-    print("branch merged to main:", date_str)
+    logging.info(f"repo.git.merge and origin.push master")
+    # print("branch merged to main:", date_str)
 
 
 
@@ -375,14 +374,13 @@ def git_delete_branch(date_str):
     repo.git.branch("-d", date_str)
     origin = repo.remote(name="origin")
     origin.push()
-    # logging.info(f"repo.git.branch -d")
-    print("branch deleted:", date_str)
+    logging.info(f"repo.git.branch -d")
+    # print("branch deleted:", date_str)
 
 
 
 
 def process_zip_file(date_str):
-    print(date_str)
     ## download and unzip .zip file
     download_backup_zip(date_str)
     bck_filename = unzip_file(zip_filename(date_str))
