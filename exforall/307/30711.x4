@@ -1,21 +1,20 @@
-ENTRY            30711   20090906   20091127   20091125       3140
-SUBENT        30711001   20090906   20091127   20091125       3140
-BIB                 11         31
-INSTITUTE  (3CPRSIU)
-REFERENCE  (J,CNP,7,106,198505) in Chinese, English abstract
-AUTHOR     (Li Jingde,Xie Daquan,Li Yexiang,Zhang Di,Wang Shiming,
-           Cao Jianhua)
+ENTRY            30711   20220818   20230120   20230119       3208
+SUBENT        30711001   20220818   20230120   20230119       3208
+BIB                 12         31
 TITLE      Differential elastic scattering cross-sections of
            14.2 MeV neutrons for niobium
-FACILITY   (CCW,3CPRSIU)  400KV
-INC-SOURCE (D-T)  T(d,n)alpha reaction
-SAMPLE     Metal niobium,  purity 99.5% cylindrical, 2cm in
-           diameter, 4cm high
+AUTHOR     (Li Jingde, Xie Daquan, Li Yexiang, Zhang Di,
+           Wang Shiming, Cao Jianhua)
+INSTITUTE  (3CPRSIU)
+REFERENCE  (J,CNP,7,106,1985) in Chinese, English abstract
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+FACILITY   (CCW,3CPRSIU) 400 KV
+INC-SOURCE (D-T) T(d,n)alpha reaction
+SAMPLE     Metal niobium,  purity 99.5% cylindrical, 2 cm in
+           diameter, 4 cm high
+DETECTOR   Liquid scintillation counter 10.4 cm diameter 5cm thick
 METHOD     (ASSOP,TOF) Absolute measurement.
-DETECTOR   Liquid scinillation counter 10.4 cm diameter 5cm thick
-ERR-ANALYS (ERR-T) Total error is in 4.7-8.5%
-            The main sources of error are:
-           (ERR-S,1.5,7.2) Statistical uncertainty 1.5-7%
+ERR-ANALYS (ERR-S,1.5,7.2) Statistical uncertainty 1.5-7%
            (ERR-1) Uncertainty in inelastic correction 2%
            (ERR-2) Uncertainty in neutron flux attenuation and
                    multiscattering correction - 3.6%
@@ -28,10 +27,11 @@ HISTORY    (19860827C)-.W.D.-
            (19940411U) HW.- Subent 003 deleted.-
            (19940411U) HW.- Delete flag added to subent 003.-
            (19970411A) HW.- Header in common corrected.-
-           (20090725A) SD:Updated to new date formats,lower case.
+           (20090725A) SD: Updated to new date formats,lower case.
             Subentry 3 added.
            COMMON section and codes for uncertainties were
            added in Subent 001
+           (20220818A) VT. Revision in 002-003. REL-REF added
 ENDBIB              31
 COMMON               4          3
 EN         ERR-1      ERR-2      ERR-3
@@ -39,30 +39,35 @@ MEV        PER-CENT   PER-CENT   PER-CENT
 14.2         2.          3.6       0.5
 ENDCOMMON            3
 ENDSUBENT           38
-SUBENT        30711002   20090906   20091127   20091125       3140
-BIB                  3          6
-REACTION   (41-NB-93(N,EL)41-NB-93,,SIG)
+SUBENT        30711002   20220818   20230120   20230119       3208
+BIB                  6         10
+REACTION   (41-NB-93(N,EL)41-NB-93,EXL,SIG)
+CRITIQUE   Comment by S.Simakov: possible inclusion of inelastic
+           scattering below Ex ~> 0.1 MeV.
 ANALYSIS   (INTAD) Sigma given is obtained from the integrated
            angular distribution from the subentry 30711003.
-STATUS     (TABLE) Data from Chin.J.Nucl.Phys.7,106,1985, text
-                   on p.110
+ERR-ANALYS (ERR-T) Total error is in 4.7-8.5%
+            The main sources of error are:
+STATUS     (TABLE) Text (p.110) of Chin.J.Nucl.Phys.7(1985)106
            (DEP,30711003)
-ENDBIB               6
+HISTORY    (20220818A) VT. REACTION: SF5 -> EXL and CRITIQUE added
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 2          1
 DATA       ERR-T
 MB         MB
- 2.0830E+03 7.6600E+01
+      2083.       76.6
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        30711003   20090923   20091127   20091125       3140
-BIB                  4          5
-REACTION   (41-NB-93(N,EL)41-NB-93,,DA)
-ERR-ANALYS (ANG-ERR-D)  Digitizing error of angle
-           (ERR-DIG)    Digitizing error of data
-STATUS     (CURVE) Data from Fig.4, Chin.J.Nucl.Phys.7,106,1985
+ENDSUBENT           18
+SUBENT        30711003   20220818   20230120   20230119       3208
+BIB                  4          6
+REACTION   (41-NB-93(N,EL)41-NB-93,EXL,DA)
+CRITIQUE   Comment by S.Simakov: possible inclusion of inelastic
+           scattering below Ex ~> 0.1 MeV.
+STATUS     (CURVE) Fig.4 of Chin.J.Nucl.Phys.7(1985)106
 HISTORY    (20090917C)
-ENDBIB               5
+           (20220818A) VT. REACTION: SF5 -> EXL and CRITIQUE added
+ENDBIB               6
 COMMON               2          3
 ANG-ERR-D  ERR-DIG
 ADEG       PER-CENT
@@ -94,5 +99,5 @@ ADEG       MB/SR
  140.35     10.055
  151.10     9.1868
 ENDDATA             24
-ENDSUBENT           38
+ENDSUBENT           39
 ENDENTRY             3
