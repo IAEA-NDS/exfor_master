@@ -1,4 +1,4 @@
-####################################################################
+exfor_backups.pyexfor_backups.py####################################################################
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
@@ -132,7 +132,7 @@ def zip_filename(date_str):
     if date_dt < datetime.date(2010, 7, 1):
         return "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".zip"])
     else:
-        return "".join(["EXFOR-", date_dt.strftime("%Y-%m-%d"), ".zip"])
+        return "".join(["EXFOR-", date_str, ".zip"])
 
 
 
@@ -151,8 +151,9 @@ def bck_filename(date_dt):
 
 
 
-def download_backup_zip(date):
-    zipfile = zip_filename(date)
+def download_backup_zip(date_str):
+    zipfile = zip_filename(date_str)
+
     # if not isinstance(date, str):
     #     # date_dt: datatime.date(YYYY, MM, DD) format
     #     zipfile = zip_filename(date)
@@ -385,8 +386,9 @@ def git_delete_branch(date_str):
 
 
 def process_zip_file(date_str):
+    print(date_str)
     ## download and unzip .zip file
-    download_backup_zip(zip_filename(date_str))
+    download_backup_zip(date_str)
     bck_filename = unzip_file(zip_filename(date_str))
 
     ## create new branch and extract master file and split into exntry
@@ -439,6 +441,7 @@ def update():
     x = get_server_files()
     # branches = git_branches()
     tags = git_tags()
+    # print(tags)
 
     processed = []
     not_processed = []
@@ -456,10 +459,12 @@ def update():
 
     ## because exfor-2010-07-12.zip is broken
     not_processed.remove('2010-07-12')
+    print(not_processed)
 
     if not_processed:
         for date_str_np in not_processed:
             process_zip_file(date_str_np)
+            # pass
 
     else:
         logging.info(f"repository is up-to-date")
