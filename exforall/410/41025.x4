@@ -1,24 +1,27 @@
-ENTRY            41025   20180303   20180525   20180525       4178
-SUBENT        41025001   20180303   20180525   20180525       4178
-BIB                 13         25
+ENTRY            41025   20221019   20230227   20230227       4209
+SUBENT        41025001   20221019   20230227   20230227       4209
+BIB                 13         30
 TITLE       Measurement of the yield of fission products of 235U
             and 239Pu by the method of semiconductor gamma
             spectrometry
 AUTHOR     (A.N.Gudkov,V.M.Zhivun,A.B.Koldobskii,S.V.Krivasheev,
            V.G.Nesterov,N.S.Piven',E.V.Semenova,G.N.Smirenkin)
+REFERENCE  (J,SJA,65,765,1988) Engl.transl.of J,AE,65,208,1988
+           (J,AE,65,208,1988) Issue 3.
 INSTITUTE  (4RUSMIF,4RUSFEI)
-REFERENCE  (J,AE,65,208,1988) Issue 3.
-           (J,SJA,65,765,1988) Engl.transl.of J,AE,65,208,1988
 FACILITY   (ACCEL,4RUSFEI) EG-1 electrostatic accelerator
 INC-SOURCE (P-T) Tritium target.
-METHOD     (ACTIV) Irradiation time 16hr ( U-25), 15hr (Pu-239).
+METHOD     (ACTIV) Irradiation time 16hr ( U-235), 15hr (Pu-239).
 DETECTOR   (SOLST) Semiconductor spectrometer of the standard
-           architecture. Resolution 1.3keV for 1333keV gamma line.
+           architecture. Resolution 3.1keV for 1333keV gamma line.
 MONITOR    (94-PU-239(N,F)40-ZR-97,CUM,FY)
 DECAY-MON  (40-ZR-97,,DG,743.6)
 REL-REF    (R,12817001,J.E.Gindler+,J,PR/C,27,2058,1983)
-            Pu-239 fission cum.yielda of Zr-97 were used to
+            Pu-239 fission cum.yields of Zr-97 were used to
             derive Zr-97 yield at 3 MeV .
+           (R,,W.Reus+,R,GSI-79-2,1979)
+           "Gamma-ray catalogue" of W.Reus,W.Westweier,J.Warnecke,
+            characteristics for analysis of measured spectra.
 ERR-ANALYS (DATA-ERR)  Error is not specified
 HISTORY    (19901025C)  + + Compiled at the center -CJD + +
            (20180303A) M.M. Upper -> lower case correction.
@@ -26,13 +29,15 @@ HISTORY    (19901025C)  + + Compiled at the center -CJD + +
            Ref. SJA,65,765,1988 was added.
            BIB information was updated.
            MONITOR value and DECAY-MON were added.
-ENDBIB              25
+           (20221019A) Subent 003 was corrected,
+           Subent 004 was added.
+ENDBIB              30
 COMMON               4          3
 EN         EN-ERR     MONIT      MONIT-ERR
 MEV        MEV        PC/FIS     PC/FIS
    3.00      0.05      5.87       0.36
 ENDCOMMON            3
-ENDSUBENT           32
+ENDSUBENT           37
 SUBENT        41025002   20180303   20180525   20180525       4178
 BIB                  4          7
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY)
@@ -58,16 +63,17 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
   58.       143.                   5.69       0.62
 ENDDATA             11
 ENDSUBENT           23
-SUBENT        41025003   20180303   20180525   20180525       4178
-BIB                  5          7
+SUBENT        41025003   20221019   20230227   20230227       4209
+BIB                  6          8
 REACTION   (94-PU-239(N,F)ELEM/MASS,CUM,FY)
-SAMPLE      Mass is 30.318 +- 0.088 gram
+SAMPLE      Mass is 30.318 +- 0.088 gram,
             Pu-239 content is 93 %
 REL-REF    (A,,B.Meek+,R,NEDO-1254-2,1979) For fiss. spectrum .
             Good general agreement .
 CORRECTION  For self-absorption.
 STATUS     (TABLE) Table 3 of SJA,65,765,1988
-ENDBIB               7
+HISTORY    (20221019A) Data for Xe-135 were moved in Subent .004
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5         15
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR
@@ -88,5 +94,28 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
   56.       140.                   6.12       0.65
   57.       140.                   6.20       0.67
 ENDDATA             17
-ENDSUBENT           29
-ENDENTRY             3
+ENDSUBENT           30
+SUBENT        41025004   20221019   20230227   20230227       4209
+BIB                  7         13
+REACTION   (94-PU-239(N,F)54-XE-135,IND,FY,,FRC)
+            Total relative independent yield of both isomers of
+            Xe-135.
+SAMPLE      Mass is 30.318 +- 0.088 gram,
+            Pu-239 content is 93 %
+REL-REF    (A,,B.Meek+,R,NEDO-1254-2,1979) For fiss. spectrum .
+            0.0214 +- 0.016
+CORRECTION  For self-absorption.
+COMMENT     Of A.Mattera. 2022-09-10.
+            Xe-135 yield (0.22+/-0.09) is an independent
+            fractional yield.
+STATUS     (TABLE) Table 3 of SJA,65,765,1988
+HISTORY    (20221019C) Data for Xe-135 were moved from Subent .003
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+  0.22       0.09
+ENDDATA              3
+ENDSUBENT           21
+ENDENTRY             4

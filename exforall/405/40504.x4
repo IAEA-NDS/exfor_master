@@ -1,14 +1,15 @@
-ENTRY            40504   20130201   20130812   20130621       4160
-SUBENT        40504001   20130201   20130812   20130621       4160
-BIB                 14         34
-INSTITUTE  (4ZZZDUB)
-           (3HUNKFI)  T.Nagy=(T.Nad' in Russian list of authors)
-REFERENCE  (C,75KIEV,5,245,197506)
-AUTHOR     (Yu.P.Gangrskiy,B.N.Markov,T.Nagy)
+ENTRY            40504   20221017   20230227   20230227       4209
+SUBENT        40504001   20221017   20230227   20230227       4209
+BIB                 14         39
 TITLE       Measurement of cross-sections of production of
             spontaneously-fissionable isomers in reaction
             with neutrons.
-FACILITY   (ACCEL,4ZZZDUB) Neutron generator NG-200 of  4ZZZDUB
+AUTHOR     (Yu.P.Gangrskiy,B.N.Markov,T.Nagy)
+REFERENCE  ((C,75KIEV,5,245,1975)=
+           (S,INDC(CCP)-099,(5),245,1975))
+INSTITUTE  (4ZZZDUB)
+           (3HUNKFI)  T.Nagy=(T.Nad' in Russian list of authors)
+FACILITY   (ACCEL,4ZZZDUB) Neutron generator NG-200
 INC-SOURCE (D-T)
            (D-D)
 METHOD     (FISCT) Fission events counting at beam on and beam off
@@ -22,7 +23,11 @@ ANALYSIS     DATA 1 were derived from DATA 2 (primarily measured
             by of counts at beam on and beam off) using fission
            c-s for respective isotope as monitor. Monitor values
            and references are not given.
-STATUS     (TABLE) Table of C,75KIEV,5,245,1975
+STATUS     (TABLE) Table of C,75KIEV,5,245,1975;
+            data uncertainties - text page 247.
+ERR-ANALYS (DATA-ERR) Not specified.
+            For (n,2n) reaction error is 25 percents,
+            for other reactions -50 percents
 HISTORY    (19800102C)
            (20110920A) M.M. Upper -> lower case correction.
             Dates were corrected for 4-digits year.
@@ -32,12 +37,12 @@ HISTORY    (19800102C)
            (20130301A) Corrections 95-AM-242-M2 -> 95-AM-242-L in
            Subents 002,009 according to the comment of N.Otsuka,
             NDS, IAEA.
-ERR-ANALYS (DATA-ERR) Not specified.
-            For (n,2n) reaction error is 25 percents,
-            for other reactions -50 percents
-ENDBIB              34
+           (20221017A) Subent 003 was corrected.
+            Minor correction of free text.
+            Ref. INDC(CCP)-099,5,245,1975 was added.
+ENDBIB              39
 NOCOMMON             0          0
-ENDSUBENT           37
+ENDSUBENT           42
 SUBENT        40504002   20130201   20130812   20130621       4160
 BIB                  4          8
 REACTION  1(95-AM-241(N,G)95-AM-242-L,,SIG) Cross-section for
@@ -60,17 +65,20 @@ B          PER-CENT   NO-DIM
     1.5E-05    50.         8.E-06
 ENDDATA              3
 ENDSUBENT           20
-SUBENT        40504003   20110920   20111215   20111212       4154
-BIB                  4          8
-REACTION  1(95-AM-243(N,G)95-AM-244-M1,,SIG) Cross-section for
+SUBENT        40504003   20221017   20230227   20230227       4209
+BIB                  4         11
+REACTION  1(95-AM-243(N,G)95-AM-244-L,,SIG) Cross-section for
                                  fissionable isomer production
-          2((95-AM-243(N,G)95-AM-244-M1,,SIG)/
+          2((95-AM-243(N,G)95-AM-244-L,,SIG)/
            (95-AM-243(N,F),,SIG))
-DECAY-DATA (95-AM-244-M1,1.1E-3SEC)
+DECAY-DATA (95-AM-244-L,1.1E-3SEC)
 MONITOR   1(95-AM-243(N,F),,SIG)
 HISTORY    (20110920A) In REACTION and DECAY-DATA:
             Am-244 -> Am-243, Am-245 -> Am-244.
-ENDBIB               8
+           (20221017A) Corrections were done:
+           DECAY-DATA  95-AM-244-M1: M1 -> L
+           REACTION    95-AM-244-M1: SF4: M1 -> L
+ENDBIB              11
 COMMON               1          3
 EN
 MEV
@@ -81,7 +89,7 @@ DATA      1DATA-ERR  1DATA      2
 B          PER-CENT   NO-DIM
     1.4E-05    50.        1.0E-05
 ENDDATA              3
-ENDSUBENT           20
+ENDSUBENT           23
 SUBENT        40504004   20110920   20111215   20111212       4154
 BIB                  3          6
 REACTION  1(92-U-238(N,INL)92-U-238-L,,SIG) Cross-section for

@@ -1,23 +1,23 @@
-ENTRY            40959   20191105   20200113   20200113       4184
-SUBENT        40959001   20191105   20200113   20200113       4184
-BIB                 11         24
+ENTRY            40959   20221108   20230227   20230227       4210
+SUBENT        40959001   20221108   20230227   20230227       4210
+BIB                 11         25
+TITLE      Differential cross section for forward elastic
+           scattering of neutrons by uranium
+AUTHOR     (V.M.Morozov,Yu.G.Zubov,N.S.Lebedeva)
+REFERENCE  (J,SNP,46,778,1987) Engl.translation of J,YF,46,1326
+           (J,YF,46,1326,1987)  Main reference. Issue 5.
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,YF,46,1326,198711)  Main reference. Iss.5
-           (J,SNP,46,778,1987) Engl.translation of J,YF,46 .Is.5
-           (J,PTE,,(6),33,1986)  Exp. details only
-            First author Yu.G.Zubov.
 REL-REF    (M,40307012,G.V.Gorlov,J,YF,8,1086,1968) Issue 6.
             Method of measurement for 4.-5.34 MeV energy range.
-AUTHOR     (V.M.Morozov,Yu.G.Zubov,N.S.Lebedeva)
-TITLE      Differential cross-section for forward elastic
-           scattering of neutrons by uranium
+           (I,,Yu.G.Zubov+,J,PTE,,(6),33,1986)  Exp. details only
 FACILITY   (ACCEL,4RUSKUR) Electrostatic accelerator ESU-2.5 .
 INC-SOURCE (D-D) Heavy water vapor and heavy water ice as targets
 DETECTOR   (SCIN)  Seven stilbene detectors for neutron
                    detection
            (LONGC) Long counter for proton monitoring
 MONITOR    (82-PB-0(N,EL)82-PB-0,,DA)
-ERR-ANALYS (ERR-1) Error of normalization.
+ERR-ANALYS (ERR-1) Error of normalization of differential
+           cross sections ~7.%.
 HISTORY    (19880901C)  Compiled in the CJD
            (20010315A) DATE is corrected
            (20110802A) M.M. In Subent 007 : MEV -> KEV.
@@ -25,24 +25,35 @@ HISTORY    (19880901C)  Compiled in the CJD
            BIB information was added.
             CALC -> DERIV.
            (20191105U) Minor correction of refs.
-ENDBIB              24
+           (20221108A) Correction for current rules.
+ENDBIB              25
 COMMON               1          3
 ERR-1
 PER-CENT
  7.
 ENDCOMMON            3
-ENDSUBENT           31
-SUBENT        40959002   20110802   20111003   20110930       4153
-BIB                  6          7
-REACTION   (92-U-0(N,EL)92-U-0,,DA)
+ENDSUBENT           32
+SUBENT        40959002   20221108   20230227   20230227       4210
+BIB                  7         13
+REACTION   (92-U-0(N,SCT)92-U-0,PAR,DA)
 SAMPLE      Natural uranium cylinder of 0.073 at/b thickness.
 CORRECTION For multiple scattering, for backgrounds.
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+            Comment on page 139.
 ERR-ANALYS (ERR-S) Statistical error.
-STATUS     (TABLE) Table 1 of J,YF,46,(5),1326,1987
+STATUS     (TABLE) Table I of J,SNP,46,778,1987 - Engl.translation
+           of J,YF,46,1326,1987
 HISTORY    (20110802A) M.M. ERR-T -> ERR-S according to text,
             p.1327 of J,YF,46,(5),1326,1987 .
-ENDBIB               7
-NOCOMMON             0          0
+           (20221108A) Correction according to a comment of
+           S.Simakov: EL - > SCT, PAR was added in SF5,
+           see REL-REF.
+ENDBIB              13
+COMMON               1          3
+E-EXC-MX-A
+KEV
+ 140.
+ENDCOMMON            3
 DATA                 5          8
 EN         EN-RSL     ANG        DATA       ERR-S
 MEV        KEV        ADEG       B/SR       B/SR
@@ -55,15 +66,27 @@ MEV        KEV        ADEG       B/SR       B/SR
   5.34      140.        3.5       9.60       .19
   5.34      140.        6.5       9.05       .18
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        40959003   20110802   20111003   20110930       4153
-BIB                  2          2
-REACTION   (92-U-235(N,EL)92-U-235,,DA)
-STATUS     (TABLE) Table 2 of J,YF,46,(5),1326,1987
-ENDBIB               2
-NOCOMMON             0          0
+ENDSUBENT           32
+SUBENT        40959003   20221108   20230227   20230227       4210
+BIB                  5         10
+REACTION   (92-U-235(N,SCT)92-U-235,PAR,DA)
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+            Comment on page 139.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table II of J,SNP,46,778,1987 -
+           Engl.translation of J,YF,46,1326,1987
+HISTORY    (20221108A) Correction according to a comment of
+           S.Simakov: EL - > SCT, PAR was added in SF5,
+           see REL-REF.
+ENDBIB              10
+COMMON               2          3
+E-EXC-MX-A EN-ERR
+KEV        KEV
+ 3.5        5.
+ENDCOMMON            3
 DATA                 4         20
-EN         ANG        DATA       ERR-T
+EN         ANG        DATA       DATA-ERR
 KEV        ADEG       B/SR       B/SR
  1620.        8.         3.36        .13
  1620.       13.         3.35        .13
@@ -86,15 +109,22 @@ KEV        ADEG       B/SR       B/SR
  1926.       18.         2.81        .11
  1926.       23.         2.03        .08
 ENDDATA             22
-ENDSUBENT           29
-SUBENT        40959004   20110802   20111003   20110930       4153
-BIB                  2          2
+ENDSUBENT           41
+SUBENT        40959004   20221108   20230227   20230227       4210
+BIB                  3          5
 REACTION   (92-U-238(N,EL)92-U-238,,DA)
-STATUS     (TABLE) Table 3 of J,YF,46,(5),1326,1987
-ENDBIB               2
-NOCOMMON             0          0
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table III of J,SNP,46,778,1987 -
+           Engl.translation of J,YF,46,1326,1987
+ENDBIB               5
+COMMON               1          3
+EN-ERR
+KEV
+ 5.
+ENDCOMMON            3
 DATA                 4         20
-EN         ANG        DATA       ERR-T
+EN         ANG        DATA       DATA-ERR
 KEV        ADEG       B/SR       B/SR
  1620.        8.         3.32        .13
  1620.       13.         3.23        .10
@@ -117,26 +147,29 @@ KEV        ADEG       B/SR       B/SR
  1926.       18.         2.89        .09
  1926.       23.         2.36        .07
 ENDDATA             22
-ENDSUBENT           29
-SUBENT        40959005   20110802   20111003   20110930       4153
-BIB                  5         12
-REACTION   (92-U-0(N,EL)92-U-0,,DA,,,DERIV)
+ENDSUBENT           36
+SUBENT        40959005   20221108   20230227   20230227       4210
+BIB                  6         15
+REACTION   (92-U-0(N,SCT)92-U-0,PAR,DA,,,DERIV)
 ANALYSIS   Data were obtained by the visual extrapolation of the
            measured data to zero angle.
-ERR-ANALYS (+DATA-ERR)  Positive unsymmetrical error
-           (-DATA-ERR)  Negative unsymmetrical error
-              Error of extrapolation.
-STATUS     (DEP,40959002) See ANALYSIS.
-           (DEP,40307012) See FLAG.
-           (TABLE) Table 1 of J,YF,46,(5),1326,1987
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+            Comment on page 139.
+ERR-ANALYS (DATA-ERR)  Probable error of extrapolation.
+STATUS     (TABLE) Table I of J,SNP,46,778,1987 - Engl.translation
+           of J,YF,46,1326,1987
+           (DEP,40959002) See ANALYSIS.
 HISTORY    (20110802) M.M.
                 Data at EN=4.00 MeV were moved in Subent 40307024
             as published in REL-REF of G.V.Gorlov+.
-ENDBIB              12
-COMMON               1          3
-ANG
-ADEG
-  0.
+           (20221108A) Correction according to a comment of
+           S.Simakov: EL - > SCT, PAR was added in SF5,
+           see REL-REF.
+ENDBIB              15
+COMMON               2          3
+ANG        E-EXC-MX-A
+ADEG       KEV
+  0.        140.
 ENDCOMMON            3
 DATA                 5          4
 EN         EN-RSL     DATA       +DATA-ERR  -DATA-ERR
@@ -146,21 +179,27 @@ MEV        KEV        B/SR       B/SR       B/SR
   5.00      140.       9.75       .10         .10
   5.34      140.       9.85       .20         .10
 ENDDATA              6
-ENDSUBENT           27
-SUBENT        40959006   20110802   20111003   20110930       4153
-BIB                  4          7
-REACTION   (92-U-235(N,EL)92-U-235,,DA,,,DERIV)
+ENDSUBENT           30
+SUBENT        40959006   20221108   20230227   20230227       4210
+BIB                  6         13
+REACTION   (92-U-235(N,SCT)92-U-235,PAR,DA,,,DERIV)
 ANALYSIS   Data were obtained by the visual extrapolation of the
            measured data to zero angle.
-ERR-ANALYS (+DATA-ERR)  Positive unsymmetrical error
-           (-DATA-ERR)  Negative unsymmetrical error
-STATUS     (DEP,40959003) See ANALYSIS.
-           (TABLE) Table 2 of J,YF,46,(5),1326,1987
-ENDBIB               7
-COMMON               3          3
-EN-ERR     EN-RSL     ANG
-KEV        KEV        ADEG
- 5.          3.5         0.
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+            Comment on page 139.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table II of J,SNP,46,778,1987 -
+           Engl.translation of J,YF,46,1326,1987
+           (DEP,40959003) See ANALYSIS.
+HISTORY    (20221108A) Correction according to a comment of
+           S.Simakov: EL - > SCT, PAR was added in SF5,
+           see REL-REF.
+ENDBIB              13
+COMMON               4          3
+EN-ERR     EN-RSL     ANG        E-EXC-MX-A
+KEV        KEV        ADEG       KEV
+ 5.          3.5         0.       3.5
 ENDCOMMON            3
 DATA                 4          5
 EN         DATA       +DATA-ERR  -DATA-ERR
@@ -171,17 +210,18 @@ KEV        B/SR       B/SR       B/SR
 1848.      3.30       .10         .10
 1926.      3.80       .10         .10
 ENDDATA              7
-ENDSUBENT           23
-SUBENT        40959007   20110802   20111003   20110930       4153
-BIB                  4          7
+ENDSUBENT           29
+SUBENT        40959007   20221108   20230227   20230227       4210
+BIB                  4          8
 REACTION   (92-U-238(N,EL)92-U-238,,DA,,,DERIV)
 ANALYSIS   Data were obtained by the visual extrapolation of the
            measured data to zero angle.
-ERR-ANALYS (+DATA-ERR)  Positive unsymmetrical error
-           (-DATA-ERR)  Negative unsymmetrical error
-STATUS     (DEP,40959004) See ANALYSIS.
-           (TABLE) Table 3 of J,YF,46,(5),1326,1987
-ENDBIB               7
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table III of J,SNP,46,778,1987 -
+           Engl.translation of J,YF,46,1326,1987
+           (DEP,40959004) See ANALYSIS.
+ENDBIB               8
 COMMON               3          3
 EN-ERR     EN-RSL     ANG
 KEV        KEV        ADEG
@@ -196,15 +236,20 @@ KEV        B/SR       B/SR       B/SR
  1848.       3.45        .10       .10
  1926.       3.75        .10       .10
 ENDDATA              7
-ENDSUBENT           23
-SUBENT        40959008   20110802   20111003   20110930       4153
-BIB                  2          5
+ENDSUBENT           24
+SUBENT        40959008   20221108   20230227   20230227       4210
+BIB                  4         10
 REACTION   (92-U-235(N,EL)92-U-235,,AMP,,FCT) DATA is equal to
               the imaginary part of the scattering amplitude at
-              zero angle which IS K*SIGMA(TOT)/4PI
-STATUS     (DEP,40959006)
-           (TABLE) Table 2 of J,YF,46,(5),1326,1987
-ENDBIB               5
+              zero angle which is K*SIGMA(TOT)/4PI,
+             K - neutron wave number.
+ANALYSIS    Data were calculated on the basis of SIGMA-total
+           measured simultaneously with angular distributions.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table II of J,SNP,46,778,1987 -
+           Engl.translation of J,YF,46,1326,1987
+ENDBIB              10
 COMMON               2          3
 EN-ERR     EN-RSL
 KEV        KEV
@@ -219,18 +264,23 @@ KEV        CM         CM
  1848.        1.66E-12     3.E-14
  1926.        1.72E-12     3.E-14
 ENDDATA              7
-ENDSUBENT           21
-SUBENT        40959009   20110802   20111003   20110930       4153
-BIB                  3          8
+ENDSUBENT           26
+SUBENT        40959009   20221108   20230227   20230227       4210
+BIB                  5         13
 REACTION   (92-U-0(N,EL)92-U-0,,AMP,,FCT) DATA is equal to
               the imaginary part of the scattering amplitude at
-              zero angle which is equal K*SIGMA(TOT)/4PI
-STATUS     (DEP,40959005)
-           (TABLE) Table 1 of J,YF,46,(5),1326,1987
+              zero angle which is equal K*SIGMA(TOT)/4PI,
+             K - neutron wave number.
+ANALYSIS    Data were calculated on the basis of SIGMA-total
+           measured simultaneously with angular distributions.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table I of J,SNP,46,778,1987 - Engl.translation
+           of J,YF,46,1326,1987
 HISTORY    (20110802) M.M.
              Data at EN=4.00 MeV were moved in Subent 40307025
             as published in REL-REF of G.V.Gorlov+.
-ENDBIB               8
+ENDBIB              13
 COMMON               1          3
 EN-RSL
 KEV
@@ -244,15 +294,20 @@ MEV        CM         CM
  5.00         2.93E-12     4.E-14
  5.34         3.03E-12     4.E-14
 ENDDATA              6
-ENDSUBENT           23
-SUBENT        40959010   20110802   20111003   20110930       4153
-BIB                  2          5
+ENDSUBENT           28
+SUBENT        40959010   20221108   20230227   20230227       4210
+BIB                  4         10
 REACTION   (92-U-238(N,EL)92-U-238,,AMP,,FCT) DATA is equal to
               the imaginary part of the scattering amplitude at
-              zero angle which is equal K*SIGMA(TOT)/4PI
-STATUS     (DEP,40959007)
-           (TABLE) Table 3 of J,YF,46,(5),1326,1987
-ENDBIB               5
+              zero angle which is equal K*SIGMA(TOT)/4PI,
+             K - neutron wave number.
+ANALYSIS    Data were calculated on the basis of SIGMA-total
+           measured simultaneously with angular distributions.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE) Table III of J,SNP,46,778,1987 -
+           Engl.translation of J,YF,46,1326,1987
+ENDBIB              10
 COMMON               2          3
 EN-ERR     EN-RSL
 KEV        KEV
@@ -267,5 +322,5 @@ KEV        CM         CM
  1848.        1.74E-12     3.E-14
  1926.        1.79E-12     3.E-14
 ENDDATA              7
-ENDSUBENT           21
+ENDSUBENT           26
 ENDENTRY            10

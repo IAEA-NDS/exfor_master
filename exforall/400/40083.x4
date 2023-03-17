@@ -1,12 +1,12 @@
-ENTRY            40083   20150911   20151123   20151113       4170
-SUBENT        40083001   20150911   20151123   20151113       4170
-BIB                 10         48
-INSTITUTE  (4RUSKUR)
-REFERENCE  (J,YF,5,(1),18,1967)
-           (J,SNP,5,13,1967) Engl.transl. of YF,5,(1),18
-AUTHOR     (A.A.Druzhinin,A.A.Lbov,L.P.Bilibin)
-TITLE       Cross Section of the Fast-neutron Reactions (n,gamma)
+ENTRY            40083   20221014   20230227   20230227       4209
+SUBENT        40083001   20221014   20230227   20230227       4209
+BIB                  6         35
+TITLE      Cross sections of the fast-neutron reactions (n,gamma)
            and (n,2n) for Re isotopes
+AUTHOR     (A.A.Druzhinin,A.A.Lbov,L.P.Bilibin)
+REFERENCE  (J,SNP,5,13,1967) Engl.transl. of YF,5,18,1967
+           (J,YF,5,18,1967) Issue 1.
+INSTITUTE  (4RUSKUR)
 METHOD     (ACTIV)
             Absolute activity of Re-186, Re-188, Au-198, Na-24 was
            defined by 4PI-counting method by proportional
@@ -18,21 +18,6 @@ METHOD     (ACTIV)
            The identification of activities was done by HLs,
            gamma-spectra, absorption curves in Al, beta spectra
            from scin. beta spectrometer.
-PART-DET   (B-) For Re-186, -188, Au-198, Na-24.
-           (DG) For Re-184, -184m.
-DECAY-DATA (75-RE-184,,DG,895.,0.148,DG,904.,0.445)
-           From N.G.Gusev+, Radioactivnye izotopy kak
-           gamma-izluchenie ( Radioactive Isotopes as
-           gamma-emitters), Atomizdat, 1964.
-           (75-RE-184-M,,DG,895.,0.50,DG,904.,0.50)
-            Value of 50% was used for Re-184m, taking into account
-            the yield of 0-30% in the decay of metastable state of
-            Re-184m directly to excited levels of W-184 from
-            REL-REF :
-REL-REF    (R,,B.Harmatz+,J,NP,56,1,1964)
-ERR-ANALYS (DATA-ERR)  Probably total because error of monitor
-                cross-section was included in error of data
-                when relative method wa used.
 HISTORY    (19780712C)
            (19830724U)  Corrections introduced
            (19840723U)  New corrections introduced
@@ -49,23 +34,25 @@ HISTORY    (19780712C)
            (20150911U) M.M.  Article was checked, BIB information
            was updated in TITLE,INC-SPECT,ANALYSIS,MONITOR,METHOD,
            CORRECTION,SAMPLE,FLAG,STATUS,DECAY-DATA,REL-REF
-ENDBIB              48
+           (20221014A) ERR-ANALYS and DECAY-DATA were moved in
+           data Subents.
+ENDBIB              35
 NOCOMMON             0          0
-ENDSUBENT           51
-SUBENT        40083002   20150911   20151123   20151113       4170
-BIB                 13         24
-REACTION   (75-RE-185(N,G)75-RE-186,,SIG,,SPA)  Averaged
-                             over neutron  spectrum
+ENDSUBENT           38
+SUBENT        40083002   20221014   20230227   20230227       4209
+BIB                 15         25
+REACTION   (75-RE-185(N,G)75-RE-186,,SIG,,SPA)
 INC-SPECT     Two different spectra, both close to the spectrum of
            fission neutrons. Neutron flux ~10**14 n/cm2;
            irradiation time 3-6 hr.
-DETECTOR   (NAICR)
-PART-DET   (G)
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
-MONIT-REF  (,D.I.Hudges+,J,PR,75,1781,1949)
+DETECTOR   (PROPC) 4PI methane-filled flow-type counter for B-
+DECAY-DATA (75-RE-186,,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,FST)
+DECAY-MON  (79-AU-198,,B-)
+MONIT-REF  (11450001,D.J.Hughes+,J,PR,75,1781,1949)
 INC-SOURCE .No information
-SAMPLE     (75-RE-185,ENR=0.808) Enriched, Re-185 Content is 80.8%
-           Also natural sample .
+SAMPLE     (75-RE-185,ENR=0.808) Enriched, Re-185 content is 80.8%
+           .Also natural sample .
 CORRECTION .Correction for Re-187(n,2n) reaction
 FLAG       (1.) Average of two relative measurements with
            - natural sample - 405+-45 mb,
@@ -74,11 +61,12 @@ FLAG       (1.) Average of two relative measurements with
 ANALYSIS    EN-DUMMY means the energy of monoenergetic neutrons,
            at which the CS of (n,gamma) reaction is equal to the
            cross section obtained with neutron spectrum.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table I.
+ERR-ANALYS (DATA-ERR)  Error of monitor cross-section was included
+STATUS     (TABLE) Table I of J,SNP,5,13,1967
 HISTORY    (20010726A)   Merged with Subent 003.
-                         Bib-Information Added
+                         BIB-Information added
            (20010726U) Last checking has been done.
-ENDBIB              24
+ENDBIB              25
 NOCOMMON             0          0
 DATA                 6          2
 EN-DUMMY   DATA       DATA-ERR   MONIT      MONIT-ERR  FLAG
@@ -86,34 +74,47 @@ MEV        MB         MB         MB         MB         NO-DIM
         0.6       410.        50.       190.        19.  1.
         0.8       360.        50.       140.        10.  2.
 ENDDATA              4
-ENDSUBENT           33
-NOSUBENT      40083003              20011019   20050926       0000
-SUBENT        40083004   20150911   20151123   20151113       4170
-BIB                 11         23
-REACTION  1(75-RE-185(N,2N)75-RE-184-M,,SIG) Measurements were
-               made with monitor and absolute ones :
+ENDSUBENT           34
+NOSUBENT      40083003   19980303   20230227   20230227       4209
+SUBENT        40083004   20221014   20230227   20230227       4209
+BIB                 15         36
+REACTION  1(75-RE-185(N,2N)75-RE-184-M,,SIG,,AV)
           2(75-RE-185(N,2N)75-RE-184-M,,SIG)
           3(75-RE-185(N,2N)75-RE-184-M,,SIG)
 FACILITY   (LINAC,4RUSKUR)  Deuterium accelerator,
                                       beam energy 150 keV.
-DETECTOR   (PROPC) 4Pi methane-filled flow-type counter for B-
 INC-SOURCE (D-T) Deuterons of 150 keV.
 INC-SPECT   Neutron flux ~10**13 n/cm2 during irradiation of ~8hr.
             The effective flux was determined from induced beta
            activity of Zr and Al samples.
-SAMPLE     (75-RE-185,ENR=0.808) Enriched, Re-185 Content is 80.8%
+SAMPLE     (75-RE-185,ENR=0.808) Enriched, Re-185 content is 80.8%
+DETECTOR   (NAICR) Gamma spectrometer with NaI(Tl) crystal of
+            40x40 mm.
+DECAY-DATA (75-RE-184-M,,DG,895.,0.50,DG,904.,0.50)
+            Value of 50% was used for Re-184m, taking into account
+            the yield of 0-30% in the decay of metastable state of
+            Re-184m directly to excited levels of W-184 from
+            REL-REF :
+REL-REF    (R,,B.Harmatz+,J,NP,56,1,1964)
 MONITOR   2((MONIT)13-AL-27(N,A)11-NA-24,,SIG)
             For relative measurement.
           3(92-U-238(N,F),,SIG)   For neutron flux monitoring
+DECAY-MON 2(11-NA-24,,B-)
 ANALYSIS  1 Average of four measurements:
           2 two by relative method - 250+-100 mb, 270 +- 90 mb;
           3 two by absolute method - 270+-110 mb, 240 +-110 mb.
 CORRECTION Correction for fluctuation of neutron flux was
            determined by numerical integration and was < 0.8 %.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table I.
+ERR-ANALYS1(DATA-ERR) Type of uncertainty is not explained in the
+            article.
+          2(DATA-ERR) Error of monitor cross-section was included
+          3(DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table I of J,SNP,5,13,1967
 HISTORY    (20010726U)   BIB-information added
            (20010726U) Last checking has been done.
-ENDBIB              23
+           (20221014A) AV was added in REACTION 1.
+ENDBIB              36
 COMMON               1          3
 EN
 MEV
@@ -129,33 +130,44 @@ MB         MB
                          270.      90.       117.        10.
 240.       110.
 ENDDATA              8
-ENDSUBENT           40
-SUBENT        40083005   20150911   20151123   20151113       4170
-BIB                 11         23
-REACTION  1(75-RE-185(N,2N)75-RE-184,,SIG) Measurements were
-               made with monitor and absolute ones :
+ENDSUBENT           53
+SUBENT        40083005   20221014   20230227   20230227       4209
+BIB                 14         34
+REACTION  1(75-RE-185(N,2N)75-RE-184,,SIG,,AV)
           2(75-RE-185(N,2N)75-RE-184,,SIG)
           3(75-RE-185(N,2N)75-RE-184,,SIG)
 FACILITY   (LINAC,4RUSKUR)  Deuterium accelerator,
                                       beam energy 150 keV.
-DETECTOR   (PROPC) 4Pi methane-filled flow-type counter for B-
+DETECTOR   (NAICR) Gamma spectrometer with NaI(Tl) crystal of
+            40x40 mm.
+DECAY-DATA (75-RE-184,,DG,895.,0.148,DG,904.,0.445)
+           From N.G.Gusev+, Radioactivnye izotopy kak
+           gamma-izluchenie ( Radioactive Isotopes as
+           gamma-emitters), Atomizdat, 1964.
 INC-SOURCE (D-T)
 INC-SPECT   Neutron flux ~10**13 n/cm2 during irradiation of ~8hr.
             The effective flux was determined from induced beta
            activity of Zr and Al samples.
-SAMPLE     (75-RE-185,ENR=0.808) Enriched, Re-185 Content is 80.8%
+SAMPLE     (75-RE-185,ENR=0.808) Enriched, Re-185 content is 80.8%
 MONITOR   2((MONIT)13-AL-27(N,A)11-NA-24,,SIG)
             For relative measurement.
           3(92-U-238(N,F),,SIG)   For neutron flux monitoring
+DECAY-MON 2(11-NA-24,,B-)
 ANALYSIS  1 Average of four measurements:
           2- two by relative method - 1430+-220 mb, 1450+-220 mb,
           3- two by absolute method - 1520+-230 mb, 1300+-200 mb.
 CORRECTION Correction for fluctuation of neutron flux was
            determined by numerical integration and was < 0.8 %.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table I.
+ERR-ANALYS1(DATA-ERR) Type of uncertainty is not explained in the
+            article.
+          2(DATA-ERR) Error of monitor cross-section was included
+          3(DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table I of J,SNP,5,13,1967
 HISTORY    (20010726U)   BIB-information added
            (20010726U) Last checking has been done.
-ENDBIB              23
+           (20221014A) AV was added in REACTION 1.
+ENDBIB              34
 COMMON               1          3
 EN
 MEV
@@ -171,31 +183,32 @@ MB         MB
                            1450.  220.         117.        10.
  1300.     200.
 ENDDATA              8
-ENDSUBENT           40
-SUBENT        40083006   20150911   20151123   20151113       4170
-BIB                 12         21
-REACTION   (75-RE-187(N,G)75-RE-188,,SIG,,SPA)  Averaged over
-                               reactor's fast neutron  spectrum
-DETECTOR   (NAICR)
-PART-DET   (G)
+ENDSUBENT           51
+SUBENT        40083006   20221014   20230227   20230227       4209
+BIB                 14         22
+REACTION   (75-RE-187(N,G)75-RE-188,,SIG,,SPA)
+DETECTOR   (PROPC) 4PI methane-filled flow-type counter for B-
+DECAY-DATA (75-RE-188,,B-)
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
-MONIT-REF  (,D.I.Hudges+,J,PR,75,1781,1949)
-INC-SOURCE .No Information
+DECAY-MON  (79-AU-198,,B-)
+MONIT-REF  (11450001,D.J.Hughes+,J,PR,75,1781,1949)
+INC-SOURCE .No information
 INC-SPECT     Two different spectra, both close to the spectrum of
            fission neutrons. Neutron flux ~10**14 n/cm2;
            irradiation time 3-6 hr.
-SAMPLE     (75-RE-187,ENR=0.975) Enriched, Re-187 Content is 97.5%
-           Also natural sample.
+SAMPLE     (75-RE-187,ENR=0.975) Enriched, Re-187 content is 97.5%
+           .Also natural sample.
 FLAG       (1.) Average of two measurements by relative method:
            - with natural sample  280+-30 mb;
            - with enriched sample 285+-30 mb.
 ANALYSIS    EN-DUMMY means the energy of monoenergetic neutrons,
            at which the CS of (n,gamma) reaction is equal to the
            cross section obtained with neutron spectrum.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table I.
+ERR-ANALYS (DATA-ERR)  Error of monitor cross-section was included
+STATUS     (TABLE) Table I of J,SNP,5,13,1967
 HISTORY    (20010726U)   BIB-information added; data corrected
            (20010726U) Last checking has been done.
-ENDBIB              21
+ENDBIB              22
 NOCOMMON             0          0
 DATA                 6          2
 EN-DUMMY   DATA       DATA-ERR   MONIT      MONIT-ERR  FLAG
@@ -203,39 +216,45 @@ MEV        MB         MB         MB         MB         NO-DIM
         0.6       280.        30.       190.        19.   1.
         0.8       220.        10.       140.        10.
 ENDDATA              4
-ENDSUBENT           30
-SUBENT        40083007   20150911   20151123   20151113       4170
-BIB                  8         13
-REACTION   (75-RE-187(N,2N)75-RE-186,,SIG,,SPA)  Averaged over
-                                undefined neutron spectrum
-DETECTOR   (PROPC) 4Pi methane-filled flow-type counter for B-
-MONITOR    ((MONIT)13-AL-27(N,A)11-NA-24,,SIG)
-INC-SPECT   Similar to the Fission Spectrum
-SAMPLE     (75-RE-187,ENR=0.975) Enriched, Re-187 Content is 97.5%
+ENDSUBENT           31
+SUBENT        40083007   20221014   20230227   20230227       4209
+BIB                 11         18
+REACTION   (75-RE-187(N,2N)75-RE-186,,SIG,,SPA)
+DETECTOR   (PROPC) 4PI methane-filled flow-type counter for B-
+DECAY-DATA (75-RE-186,,B-)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
+DECAY-MON  (79-AU-198,,B-)
+INC-SPECT   Similar to the fission spectrum
+SAMPLE     (75-RE-187,ENR=0.975) Enriched, Re-187 content is 97.5%
 ANALYSIS    Measurement with enriched sample by relative method.
             EN-DUMMY means the energy of monoenergetic neutrons,
            at which the CS of (n,gamma) reaction is equal to the
            cross section obtained with neutron spectrum.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table I.
+ERR-ANALYS (DATA-ERR)  Error of monitor cross-section was included
+STATUS     (TABLE) Table I of J,SNP,5,13,1967
 HISTORY    (20010726U)   BIB-information added
            (20010726U) Last checking has been done.
-ENDBIB              13
+           (20221014A) Monitor was corrected:
+            13-AL-27(N,A)11-NA-24,,SIG  ->
+            79-AU-197(N,G)79-AU-198,,SIG,,SPA
+ENDBIB              18
 NOCOMMON             0          0
 DATA                 5          1
 EN-DUMMY   DATA       DATA-ERR   MONIT      MONIT-ERR
 MEV        MB         MB         MB         MB
-        0.6        10.         6.       117.        10.
+        0.6        10.         6.       190.        19.
 ENDDATA              3
-ENDSUBENT           21
-SUBENT        40083008   20150911   20151123   20151113       4170
-BIB                 11         25
-REACTION  1(75-RE-187(N,2N)75-RE-186,,SIG) Absolute measurement
-                                  and measurements with monitor:
+ENDSUBENT           26
+SUBENT        40083008   20221014   20230227   20230227       4209
+BIB                 14         32
+REACTION  1(75-RE-187(N,2N)75-RE-186,,SIG,,AV)
           2(75-RE-187(N,2N)75-RE-186,,SIG)
           3(75-RE-187(N,2N)75-RE-186,,SIG)
+SAMPLE     (75-RE-187,ENR=0.975) Enriched, Re-187 content is 97.5%
 FACILITY   (LINAC,4RUSKUR)  Deuterium accelerator,
                                       beam energy 150 keV.
-DETECTOR   (PROPC) 4Pi methane-filled flow-type counter for B-
+DETECTOR   (PROPC) 4PI methane-filled flow-type counter for B-
+DECAY-DATA (75-RE-186,,B-)
 INC-SOURCE (D-T)
 INC-SPECT   Neutron flux ~10**13 n/cm2 during irradiation of ~8hr.
             The effective flux was determined from induced beta
@@ -243,7 +262,7 @@ INC-SPECT   Neutron flux ~10**13 n/cm2 during irradiation of ~8hr.
 MONITOR   2((MONIT)13-AL-27(N,A)11-NA-24,,SIG)
             For relative measurements.
           3(92-U-238(N,F),,SIG)   For neutron flux monitoring
-SAMPLE     (75-RE-187,ENR=0.975) Enriched, Re-187 Content is 97.5%
+DECAY-MON 2(11-NA-24,,B-)
 ANALYSIS  1 Average of 6 measurements with enriched sample:
           2- 3 by relative method - 1440+-140 mb, 1540+-140 mb,
                                     1460+-130 mb;
@@ -251,10 +270,16 @@ ANALYSIS  1 Average of 6 measurements with enriched sample:
                                     1620+-170 mb.
 CORRECTION Correction for fluctuation of neutron flux was
            determined by numerical integration and was < 0.8 %.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table I.
+ERR-ANALYS1(DATA-ERR) Type of uncertainty is not explained in the
+            article.
+          2(DATA-ERR) Error of monitor cross-section was included
+          3(DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (TABLE) Table I of J,SNP,5,13,1967
 HISTORY    (20010726U)   BIB-information added
            (20010726U) Last checking has been done.
-ENDBIB              25
+           (20221014A) AV was added in REACTION 1.
+ENDBIB              32
 COMMON               1          3
 EN
 MEV
@@ -272,27 +297,41 @@ MB         MB
                          1460.   130.              117.        10.
      1620.  170.
 ENDDATA             10
-ENDSUBENT           44
-SUBENT        40083009   20150911   20151123   20151113       4170
-BIB                 10         17
-REACTION   (75-RE-0(N,G),,SIG,,SPA) Averaged over
-                    neutron spectrum
-DETECTOR   (NAICR)
-MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
-MONIT-REF  (,D.I.Hudges+,J,PR,75,1781,1949)
+ENDSUBENT           51
+SUBENT        40083009   20221014   20230227   20230227       4209
+BIB                 14         31
+REACTION   (75-RE-0(N,G),,SIG,,SPA)
+REL-REF    (A,40691002,Yu.Ya.Stavisskii+,J,SJA,19,905,1965)
+            Calculated value 289 mb at Eeff=0.8 MeV - by using
+           the data of 40691.
+            325+-60 mb and 290+-60 mb at monoenergetic neutrons
+           of 0.6+-0.1 and 0.8+-0.1 MeV energy,respectively.
+SAMPLE      Natural rhenium
 INC-SOURCE .No information
 INC-SPECT     Two different spectra, both close to the spectrum of
            fission neutrons. Neutron flux ~10**14 n/cm2;
            irradiation time 3-6 hr.
-SAMPLE      Natural rhenium
-ANALYSIS    EN-DUMMY means the energy of monoenergetic neutrons,
+DETECTOR   (PROPC) 4PI methane-filled flow-type counter for B-
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG,,SPA)
+DECAY-MON  (79-AU-198,,B-)
+MONIT-REF  (11450001,D.J.Hughes+,J,PR,75,1781,1949)
+ANALYSIS   .EN-DUMMY means the energy of monoenergetic neutrons,
            at which the CS of (n,gamma) reaction is equal to the
            cross section obtained with neutron spectrum.
-STATUS     (TABLE) 'Yadernaja Fizika',5,(1),18,1967 ,Table II.
+           . Formula and explanation ( how to derive cross-section
+           for Re-nat) are not given in the article; cross-section
+           is just mentioned as "measured by authors".
+COMMENT    Of N.Otsuka ( NDS, IAEA).
+           "The cross sections are equal to the sum of the 185Re
+            and 187Re neutron capture cross sections measured in
+            this work (40083.002 and 006) weighted by their
+            natural isotopic abundances."
+ERR-ANALYS (DATA-ERR)  Error of monitor cross-section was included
+STATUS     (TABLE) Table II of J,SNP,5,13,1967
 HISTORY    (20010726U)   BIB-information added
            (20010726U) Last checking has been done.
            (20150911A) M.M. MONIT-ERR for 0.8 MeV was corrected.
-ENDBIB              17
+ENDBIB              31
 NOCOMMON             0          0
 DATA                 5          2
 EN-DUMMY   DATA       DATA-ERR   MONIT      MONIT-ERR
@@ -300,5 +339,5 @@ MEV        MB         MB         MB         MB
         0.6       330.        40.       190.        19.
         0.8       270.        30.       140.        10.
 ENDDATA              4
-ENDSUBENT           26
+ENDSUBENT           40
 ENDENTRY             9
