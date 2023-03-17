@@ -1,4 +1,4 @@
-exfor_backups.pyexfor_backups.py####################################################################
+####################################################################
 #
 # This file is part of exfor-parser.
 # Copyright (C) 2022 International Atomic Energy Agency (IAEA)
@@ -258,7 +258,6 @@ def del_files(filename: str):
 ####################################################################
 
 repo = Repo(GIT_REPO_PATH)
-# Repo.clone_from("git@github.com:shinokumura/exfor_master.git" , repo_path, branch="main")
 assert not repo.bare
 
 
@@ -313,7 +312,6 @@ def git_branches():
 
 def git_tags():
     tags = []
-    # remote_refs = repo.remote().refs
     for tag in repo.tags:
         tags.append(tag.name.replace("Backup-",""))
     return tags
@@ -369,7 +367,6 @@ def git_release(branch_name):
         data=json.dumps(data_body), 
         headers=headers, 
         verify=False,
-#        auth=(ME, KEY_ME)
     )
 
 
@@ -439,9 +436,7 @@ def runall():
 
 def update():
     x = get_server_files()
-    # branches = git_branches()
     tags = git_tags()
-    # print(tags)
 
     processed = []
     not_processed = []
@@ -459,12 +454,11 @@ def update():
 
     ## because exfor-2010-07-12.zip is broken
     not_processed.remove('2010-07-12')
-    print(not_processed)
+    logging.info(f"process starts for {not_processed}")
 
     if not_processed:
         for date_str_np in not_processed:
             process_zip_file(date_str_np)
-            # pass
 
     else:
         logging.info(f"repository is up-to-date")
