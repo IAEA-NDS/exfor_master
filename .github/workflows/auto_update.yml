@@ -62,7 +62,7 @@ jobs:
             tagname="Backup-"$not_processed
             echo $tagname
 
-            sem_release=$(bash ${GITHUB_WORKSPACE}/script/semantic_release_name.sh $not_processed)
+            sem_release=$(bash ${GITHUB_WORKSPACE}/semantic_release_name.sh $not_processed)
             echo $sem_release
 
             curl -X POST https://api.github.com/repos/${{ github.repository }}/releases \
@@ -83,7 +83,7 @@ jobs:
         run: |
           if [[ -n "${{ steps.runpy.outputs.NP }}" ]]
           then
-            bash ${GITHUB_WORKSPACE}/script/get_update_date.sh > entry_updatedate.dat
+            bash ${GITHUB_WORKSPACE}/get_update_date.sh > entry_updatedate.dat
             git config user.name github-actions
             git config user.email github-actions@github.com
             git add entry_updatedate.dat
