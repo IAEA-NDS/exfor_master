@@ -1,95 +1,95 @@
-ENTRY            20272   20181012   20190424   20190420       2273
-SUBENT        20272001   20181012   20190424   20190420       2273
-BIB                 13         26
-TITLE       Measurement of the average cross-section for the
-            Th-232(n,f) reaction for the fission-type reactor
+ENTRY            20272   20221206   20230400   20230314       2312
+SUBENT        20272001   20221206   20230400   20230314       2312
+BIB                 12         24
+TITLE      Measurement of average cross section for the
+            232Th(n,f) reaction for the fission-type reactor
             spectrum
 REFERENCE  (R,KURRI-AR-3,84,1970)
 AUTHOR     (K.Kobayashi, I.Kimura)
 INSTITUTE  (2JPNKTO)
-PART-DET   (DG)    Gammas
-FACILITY   (REAC,2JPNKTO)    KUR-reactor (fast),   fission type
-            spectrum. Fast neutron flux about 10.**12 n/cm2/sec
-            for 30 min.
-INC-SOURCE (REAC)
-INC-SPECT  .Fission spectrum approximated by fast spectrum
-            above 1.5 MeV
-METHOD     (ACTIV)    Reactivity measurement.
-DETECTOR   (GELI)    Planar-type Ge(Li) of 2 cm3.
-SAMPLE      1/2 inch in diam., 0.004 inch thick.
-            Chemical purity 99.95%
-ERR-ANALYS (ERR-1) Uncertainty in neutron flux
+FACILITY   (REAC,2JPNKTO) KUR
+INC-SOURCE (REAC) Core of KUR
+INC-SPECT  Same as the fission spectrum within experimental error
+           (confirmed by multiple foil activation, 6Li sandwich
+            counter and nuclear emulsion plates)
+SAMPLE     99.95% pure, 1/2 inch diam., 0.004 inch thick
+DETECTOR   (GELI)  Planar-type Ge(Li) of 2 cm3.
+PART-DET   (DG)
+METHOD     (ACTIV)
 HISTORY    (19711010C)
            (19800722A) MONITOR added.
-           (19840106U) A.P.T. Japan code changed to jpn
-           (19900823A) S.W. n-source replaced, flag added to
-                     Subent 003.
+           (19840106U) A.P.T. Japan code changed to JPN
+           (19900823A) S.W. N-SOURCE replaced, flag added to
+            Subent 003.
            (20181012U) SD:Updated to new date formats,lower case.
-           Ref. KURRI-AR-3 treated as the primary reference.
-           ERR-ANALYS updated. MONITOR moved to Subent 002.
-ENDBIB              26
-COMMON               2          3
-EN-DUMMY   ERR-1
-MEV        PER-CENT
-   1.5        2.
-ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        20272002   20181012   20190424   20190420       2273
-BIB                  5         12
+            Ref. KURRI-AR-3 treated as the primary reference.
+            ERR-ANALYS updated. MONITOR moved to Subent 002.
+           (20221206A) On. Recompiled.
+ENDBIB              24
+NOCOMMON             0          0
+ENDSUBENT           27
+SUBENT        20272002   20221206   20230400   20230314       2312
+BIB                  6         17
 REACTION   (90-TH-232(N,F),,SIG,,FIS)
 MONITOR    (28-NI-58(N,P)27-CO-58,,SIG)
            (12-MG-24(N,P)11-NA-24,,SIG)
            (13-AL-27(N,A)11-NA-24,,SIG)
-STATUS     (TABLE) Table 3 from KURRI-AR-3,84,1970
-           (DEP,20272003)
-ERR-ANALYS (ERR-SYS) Systematic error
-           (ERR-T) Total error includes:
-             * Statistical error in counting activities of
-               five fission products + ERR-1 + ERR-SYS.
+ASSUMED    (ASSUM,90-TH-232(N,F)56-BA-140,CUM,FY,,FIS)
+ERR-ANALYS (ERR-T) Including counting statistics of five fission
+            products and
+           (ERR-1) Uncertainty in neutron flux
+           (ERR-2) Systematic errors
+STATUS     (TABLE) Table 3 of KURRI-AR-3,84,1970
+           (DEP,20272003) Fission product yields
+           (SPSDD,20693014) New measurement relative to 140Ba FPY
+           (SPSDD,20792002) New measurement with online detection
+           (SPSDD,20792003) New measurement relative to 140Ba FPY
 HISTORY    (19800722A) MONITORs added.
            (20181012U) SD: STATUS, MONITORs moved to Subent 001.
-ENDBIB              12
+           (20221206A) On. ERR-SYS -> ERR-2. ERR-1 added.
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 3          1
-DATA       ERR-SYS    ERR-T
-MB         PER-CENT   MB
- 67.           2.        6.
+DATA                 6          1
+KT-DUMMY   DATA       ERR-T      ERR-1      ERR-2      ASSUM
+MEV        MB         MB         PER-CENT   PER-CENT   PC/FIS
+ 1.32       67.        6.         2.         2.         7.64
 ENDDATA              3
-ENDSUBENT           20
-SUBENT        20272003   20181012   20190424   20190420       2273
-BIB                  8         19
+ENDSUBENT           25
+SUBENT        20272003   20221206   20230400   20230314       2312
+BIB                  9         20
 REACTION   (90-TH-232(N,F)ELEM/MASS,CUM,FY,,FIS)
 MONITOR    (90-TH-232(N,F)56-BA-140,CUM,FY,,FIS)
-MONIT-REF  (22791001,M.Bresesti+,J,JIN,29,1189,1967) - value from
-             the abstract (value preferred by M.Bresesti+).
+MONIT-REF  (22791001,M.Bresesti+,J,JIN,29,1189,1967)
 DECAY-DATA (38-SR-91,9.67HR)
            (40-ZR-95,65.5D)
            (54-XE-135-G,9.14HR)
            (55-CS-132,6.59D)
-FLAG       (1.) Mass 132 yield is here assumed to be for the chain
+FLAG       (1.) Comment by T.R.England and  B.F.Rider (1994):
+            Mass 132 yield is here assumed to be for the chain
             yield because Cs is shielded and has an independent
-            and cumulative yield of < 9.0E-12 %. see Rider
-            references (70KOB1) in NEDO-12154-3C ENDF-322.
-ERR-ANALYS (ERR-T) Total error
-STATUS     (TABLE) Table 2 from KURRI-AR-3,84,1970; values of
-            decay data were taken from fig.6.
+            and cumulative yield of less than (9E-12)%.
+REL-REF    (C,,T.R.England+,R,LA-UR-94-3106,1994)
+            Comment on 70KOB1
+ERR-ANALYS (DATA-ERR) No information on the source of uncertainty
+STATUS     (TABLE) Table 2 of KURRI-AR-3,84,1970
 HISTORY    (19800722A) MONITOR added.
            (19900823A) S.W. Flag added.
-           (20181012U) SD: STATUS updated. MONIT-REF, ERR-ANALYS
-           added. DATA-ERR -> ERR-T. DECAY-DATA added.
-ENDBIB              19
-COMMON               1          3
-MONIT
-PC/FIS
- 7.64
+           (20181012A) SD: STATUS updated. MONIT-REF, ERR-ANALYS
+            added. DATA-ERR -> ERR-T. DECAY-DATA added.
+           (20221206A) On. ERR-T -> DATA-ERR.
+ENDBIB              20
+COMMON               2          3
+KT-DUMMY   MONIT
+MEV        PC/FIS
+ 1.32       7.64
 ENDCOMMON            3
 DATA                 5          4
-ELEMENT    MASS       DATA       ERR-T      FLAG
+ELEMENT    MASS       DATA       DATA-ERR   FLAG
 NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
-        38.        91.        6.6        1.0
-        40.        95.        5.0        0.5
-        54.       135.        3.9        0.9
-        55.       132.        2.5        0.3         1.
+ 38.         91.       6.6        1.0
+ 40.         95.       5.0        0.5
+ 54.        135.       3.9        0.9
+ 55.        132.       2.5        0.3        1.
 ENDDATA              6
-ENDSUBENT           34
+ENDSUBENT           35
 ENDENTRY             3

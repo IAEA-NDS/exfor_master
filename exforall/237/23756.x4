@@ -1,5 +1,5 @@
-ENTRY            23756   20211125   20220822   20220723       2311
-SUBENT        23756001   20211125   20220822   20220723       2311
+ENTRY            23756   20221007   20230400   20230314       2312
+SUBENT        23756001   20221007   20230400   20230314       2312
 BIB                 12         79
 TITLE      Measurement of the 232Th(n,f) cross section with
             quasi-monoenergetic neutron beams in the energy range
@@ -71,7 +71,6 @@ ERR-ANALYS Partial uncertainties received from V.Michalopoulou:
            -----------------------------------------------------
                            Neg.=Negligible
            -----------------------------------------------------
-           (ERR-S)      Statistical uncertainty
            (ERR-1,,2.)  Parasitic neutrons           (<2%)
            (ERR-2,,1.)  Amplitude cut                (<1%)
            (ERR-3,,0.1) Dead time                  (<0.1%)
@@ -80,6 +79,7 @@ ERR-ANALYS Partial uncertainties received from V.Michalopoulou:
 STATUS     (TABLE) Table 4 of Eur.Phys.J.A57(2021)277
            (APRVD)Proof-read by Veatriki Michalopoulou(2021-12-08)
 HISTORY    (20211125C) On
+           (20221007A) On. Major revisions in 002 and 003.
 ENDBIB              79
 COMMON               1          3
 ERR-5
@@ -87,43 +87,57 @@ PER-CENT
  3.
 ENDCOMMON            3
 ENDSUBENT           86
-SUBENT        23756002   20211125   20220822   20220723       2311
-BIB                  5         11
+SUBENT        23756002   20221007   20230400   20230314       2312
+BIB                  7         19
 REACTION  1((90-TH-232(N,F),,SIG)/(92-U-235(N,F),,SIG))
           2((90-TH-232(N,F),,SIG)/(92-U-238(N,F),,SIG))
           3(90-TH-232(N,F),,SIG)
 MONITOR   3((MONIT1)92-U-235(N,F),,SIG)
            ((MONIT2)92-U-238(N,F),,SIG)
+METHOD     Irradiation of two different 232Th samples with 235U
+            and 238U samples
 ANALYSIS  3Average of cross sections normalized with 235U(n,f)
             and 238U(n,f) with the difference between them being
             less than 1% at both energies.
-ERR-ANALYS3(MONIT1-ERR) Uncertainty in 235U(n,f) cross section
-           (MONIT2-ERR) Uncertainty in 238U(n,f) cross section
+ERR-ANALYS1(ERR-6,,,U) 232Th(n,f) counting statistics
+           (ERR-7,,,U) 235U(n,f) counting statistics
+          2(ERR-6,,,U) 232Th(n,f) counting statistics
+           (ERR-7,,,U) 238U(n,f) counting statistics
+          3(ERR-S)      Statistical uncertainty
+           (MONIT1-ERR) 235U(n,f) cross section
+           (MONIT2-ERR) 238U(n,f) cross section
 STATUS     (COREL,23756003) Cross sections at 3.0 MeV and above
-ENDBIB              11
+HISTORY    (20221007A) On. ERR-6/7 values received from V.M. added
+ENDBIB              19
 NOCOMMON             0          0
-DATA                11          2
-EN         EN-RSL-HW  DATA      1DATA      2DATA      3ERR-S     3
-ERR-4      MONIT1    3MONIT1-ERR3MONIT2    3MONIT2-ERR3
-MEV        MEV        NO-DIM     NO-DIM     B          PER-CENT
-PER-CENT   B          PER-CENT   PER-CENT   PER-CENT
-  2.0       0.1        0.0908     0.218      0.117      4.3
- 0.         1.289      1.3        0.538      1.3
-  2.5       0.1        0.0887     0.205      0.112      2.7
- 0.         1.261      1.3        0.545      1.3
-ENDDATA              8
-ENDSUBENT           24
-SUBENT        23756003   20211125   20220822   20220723       2311
-BIB                  4          5
+DATA                15          2
+EN         EN-RSL-HW  DATA      1ERR-6     1ERR-7     1DATA      2
+ERR-6     2ERR-7     2DATA      3ERR-S     3ERR-4      MONIT1    3
+MONIT1-ERR3MONIT2    3MONIT2-ERR3
+MEV        MEV        NO-DIM     PER-CENT   PER-CENT   NO-DIM
+PER-CENT   PER-CENT   B          PER-CENT   PER-CENT   B
+PER-CENT   PER-CENT   PER-CENT
+ 2.0        0.1        0.0908     3.4        1.1        0.218
+ 3.2        1.2        0.117      4.3        0.         1.289
+ 1.3        0.538      1.3
+ 2.5        0.1        0.0887     3.0        1.0        0.205
+ 2.9        1.1        0.112      2.7        0.         1.261
+ 1.3        0.545      1.3
+ENDDATA             12
+ENDSUBENT           36
+SUBENT        23756003   20221007   20230400   20230314       2312
+BIB                  5          7
 REACTION  1((90-TH-232(N,F),,SIG)/(92-U-238(N,F),,SIG))
           2(90-TH-232(N,F),,SIG)
 MONITOR   2(92-U-238(N,F),,SIG)
-ERR-ANALYS2(MONIT-ERR) Uncertainty in 238U(n,f) cross section
+ERR-ANALYS (ERR-S)     Statistical uncertainty
+          2(MONIT-ERR) 238U(n,f) cross section
 STATUS     (COREL,23756002) Cross sections at 2.0 and 2.5 MeV
-ENDBIB               5
+HISTORY    (20221007A) On. ERR-ANALYS(ERR-S) moved from 001.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 8         10
-EN         EN-RSL-HW  DATA      1DATA      2ERR-S      ERR-4     2
+EN         EN-RSL-HW  DATA      1DATA      2ERR-S      ERR-4
 MONIT     2MONIT-ERR 2
 MEV        MEV        NO-DIM     B          PER-CENT   PER-CENT
 B          PER-CENT
@@ -148,5 +162,5 @@ B          PER-CENT
  17.8       0.3        0.378      0.50       8.0        0.
  1.320      1.5
 ENDDATA             24
-ENDSUBENT           34
+ENDSUBENT           36
 ENDENTRY             3
