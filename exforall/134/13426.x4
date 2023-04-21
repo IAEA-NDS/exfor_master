@@ -1,62 +1,117 @@
-ENTRY            13426     891220              20050926       0000
-SUBENT        13426001     891220              20050926       0000
-BIB                  9         13
+ENTRY            13426   20220317   20230411   20230411       1503
+SUBENT        13426001   20220317   20230411   20230411       1503
+BIB                 11         40
+TITLE      Yield of Kr85 and Xe133 in the thermal neutron
+           fission of U235 and yield of Kr85 in the thermal
+           neutron fission of Pu239
+AUTHOR     (S.Katcoff,W.Rubinson)
+REFERENCE  (R,BNL-1652,1953) Original publication.
+           (J,JIN,27,1447,1965) Journal publication.
+           #doi:10.1016/0022-1902(65)80001-x
+REL-REF    (O,13371001,S.Katcoff+,J,PR,91,1458,1953) Independent
+           and cumulative yields ratios from the same experiment.
+           (I,13371001,S.Katcoff+,J,PR,91,1458,1953)
+           the double-chamber fission counting apparatus.
 INSTITUTE  (1USABNL)
-REFERENCE  (R,BNL-1652,53)
-AUTHOR     (S.KATCOFF,W.RUBINSON)
-TITLE      YIELD OF KR85 AND XE133 IN THE THERMAL NEUTRON FISSION
-            OF U235 AND YIELD OF KR85 IN THE THERMAL NEUTRON
-            FISSION OF PU239
-METHOD     (RCHEM)
-DETECTOR   (IOCH) FOR FISSION COUNTING
-DECAY-DATA (36-KR-85,10.8YR)
-STATUS     (RIDER)
-           133XE YIELD IN 235U FISSION PUBLISHED IN PHYS.REV. 91,
-            1458 (1953)
-HISTORY    (900111C) VM
-ENDBIB              13
+FACILITY   (REAC,1USABNL) Brookhaven pile.
+INC-SPECT  2x10**11 n/cm**2/sec, the flux was constant to +- 2%
+           after reaching its full value.
+DETECTOR   (PROPC,FISCH) Two gas proportional counters with
+           silver cathodes, 2 cm dia. and 30 cm long. The
+           krypton pressure was about 300 mm and methane was
+           added to bring the total pressure to 1 atm.
+SAMPLE     The fission foils, which consist of 0.01 microg of
+           235U or 239Pu deposited on a Pt disk 0.002 inch thick
+           and 1 inch in diameter.
+METHOD     (CHSEP,FISCT) Absolute radiochemical methods, fission
+           yields to half life (Y/T). Foils were mounted on
+           platinum in each of the two chambers of fission
+           counting apparatus. The entire assembly was then
+           irradiated in the brookhaven graphite reactor for
+           6-12 hr, and the fission counting rates of the foils
+           were recorded continuously. After irradiation the
+           85Kr was radiochemically separated from the slug,
+           purified, and its activity measured by internal gas
+           phase proportional counting. From these values of the
+           85Kr activity and the measured number of fissions the
+           fission yield was calculated.
+HISTORY    (19900111C) VM
+           (20220317A) BP: Updated to new date formats, lower
+           case. Corrections according last EXFOR rules and
+           Dict. Replaced RIDER's data with the original
+           publication, updated METHOD, added FACILITY, INC-SPECT,
+            REL-REF.
+ENDBIB              40
 COMMON               1          3
 EN-DUMMY
 EV
-0.0253
+     0.0253
 ENDCOMMON            3
-ENDSUBENT           20
-SUBENT        13426002     891220              20050926       0000
-BIB                  3          4
-REACTION   (92-U-235(N,F)36-KR-85,CUM,FY,,SPA)
-SAMPLE     ENRICHED TO 93.72% 235U
-ERR-ANALYS (DATA-ERR) ACCURACY ESTIMATED DERIVED FROM ACCURACIES
-            OF 3% IN YIELD/HALF-LIFE VALUE AND 4% IN HALF-LIFE
-ENDBIB               4
+ENDSUBENT           47
+SUBENT        13426002   20220317   20230411   20230411       1503
+BIB                  6         14
+REACTION   (92-U-235(N,F)36-KR-85-G,CUM,FY,,SPA)
+SAMPLE     (92-U-235,ENR=0.9372)
+ERR-ANALYS (DATA-ERR) The standard deviation is 1.59% of Y/T. As
+           concern for possible systematic errors. We feel that
+           is unlikely that measured Y/T values differ from true
+           more than 3%. Which we adopt as our accuracy estimate.
+           (ERR-1) 1% per slug fissions.
+           (ERR-2) 2% for 85Kr activity.
+DECAY-DATA ((1.)36-KR-85-G,10.27YR)  10.27+-0.18 years
+           ((2.)36-KR-85-G,10.8YR)
+STATUS     (TABLE) page 49 of R,BNL-1652,1953.
+           (SPSDD,13215002)
+HISTORY    (20220317A) BP: Replaced RIDER's data with the
+           original published data. Added STATUS (SPSDD)
+ENDBIB              14
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+        1.0        2.0
+ENDCOMMON            3
+DATA                 3          2
+DATA       DATA-ERR   DECAY-FLAG
+PC/FIS     PER-CENT   NO-DIM
+      0.260       2.36         1.
+      0.273        1.9         2.
+ENDDATA              4
+ENDSUBENT           27
+SUBENT        13426003   20220317   20230411   20230411       1503
+BIB                  5          9
+REACTION   (94-PU-239(N,F)36-KR-85-G,CUM,FY,,SPA)
+ERR-ANALYS (DATA-ERR) Standard deviation per determination of Y/T
+           is 4.3%.
+DECAY-DATA ((1.)36-KR-85-G,10.27YR) 10.27+-0.18 years
+           ((2.)36-KR-85-G,10.8YR)
+STATUS     (TABLE) page 49 of R,BNL-1652,1953.
+           (SPSDD,13215003)
+HISTORY    (20220317A) BP: Replaced RIDER's data with the
+           original published data. Added STATUS (SPSDD)
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-PC/FIS     PER-CENT
- 0.273      5.
-ENDDATA              3
-ENDSUBENT           12
-SUBENT        13426003     891220              20050926       0000
-BIB                  2          2
-REACTION   (94-PU-239(N,F)36-KR-85,CUM,FY,,SPA)
-ERR-ANALYS (DATA-ERR) STANDARD DEVIATION
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 2          1
-DATA       DATA-ERR
-PC/FIS     PER-CENT
- 0.0994      4.4
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        13426004     891220              20050926       0000
-BIB                  1          2
+DATA                 3          2
+DATA       DATA-ERR   DECAY-FLAG
+PC/FIS     PER-CENT   NO-DIM
+      0.094        4.8         1.
+     0.0994        4.4         2.
+ENDDATA              4
+ENDSUBENT           18
+SUBENT        13426004   20220317   20230411   20230411       1503
+BIB                  4          7
 REACTION   ((92-U-235(N,F)54-XE-133,CUM,FY,,SPA)/
-           (92-U-235(N,F)36-KR-85,CUM,FY,,SPA))
-ENDBIB               2
+           (92-U-235(N,F)36-KR-85-G,CUM,FY,,SPA))
+DECAY-DATA (54-XE-133-G,5.27D)
+           (36-KR-85-G,10.8YR)
+STATUS     (TABLE) Table XIII, page 54 of R,BNL-1652,1953.
+HISTORY    (20220317A) BP: Updated subentry to reflect the
+           original publication.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 1          1
 DATA
 NO-DIM
- 24.0
+       24.0
 ENDDATA              3
-ENDSUBENT           10
+ENDSUBENT           15
 ENDENTRY             4
