@@ -1,31 +1,41 @@
-ENTRY            40995     890922              20050926       0000
-SUBENT        40995001     890922              20050926       0000
-BIB                  7         14
-TITLE       NP-236 NEUTRON FISSION CROSS-SECTION IN THE ENERGY
-            RANGE UP TO 10 KEV
-AUTHOR     (G.V.VAL'SKIY,E.A.GROMOVA,V.V.DANICHEV,V.N.DEMENT'EV,
-           V.S.ZENKEVICH,S.S.KOVALENKO,G.V.MOZOLEV,YU.S.PLEVA,
-           YU.A.SELITSKIY,N.I.TRUBAEV,A.M.FRIDKIN,V.B.FUNSHTEIN,
-           V.A.YAKOVLEV)
-INSTITUTE  (4CCPKUR,4CCPRI ,4CCPLIN)
-REFERENCE  (C,87KIEV,3,99,8709)
-SAMPLE      NP-236 SAMPLE WAS OBTAINED BY THE MEANS OF IRRADIATION
-            OF U-238 BY THE 30-MEV PROTONS. SAMPLE CONTAINS 36.2
-            +-1.3 NANOGRAM OF NP-236, 5.0+-0.3 NANOGRAM OF NP-235,
-            254+-8 NANOGRAM OF NP-237, 10.9+-0.5 NANOGRAM OF U-235
-STATUS      DATA ARE TAKEN FROM THE REFERENCE
-HISTORY    (890922C)  COMPILED AT THE CENTRE - CJD
-ENDBIB              14
+ENTRY            40995   20221228   20230419   20230418       4211
+SUBENT        40995001   20221228   20230419   20230418       4211
+BIB                  7         19
+TITLE       Np-236 neutron fission cross-section in the energy
+            range up to 10 keV
+AUTHOR     (G.V.Val'skiy,E.A.Gromova,V.V.Danichev,V.N.Dement'ev,
+           V.S.Zenkevich,S.S.Kovalenko,G.V.Mozolev,Yu.S.Pleva,
+           Yu.A.Selitskiy,N.I.Trubaev,A.M.Fridkin,V.B.Funshtein,
+           V.A.Yakovlev)
+REFERENCE  (C,87KIEV,3,99,1987)
+INSTITUTE  (4RUSKUR,4RUSRI,4RUSLIN)
+SAMPLE      Np-236 sample was obtained by the means of irradiation
+            of U-238 by the 30-MeV protons. Sample contains 36.2
+            +-1.3 nanogram of Np-236, 5.0+-0.3 nanogram of Np-235,
+            254+-8 nanogram of Np-237, 10.9+-0.5 nanogram of U-235
+ADD-RES     On page 102 of C,87KIEV,3,99,1987 there are curves of
+            Np-236 C-S, C-S of admixtures U-235 and Np-237
+            taking into account their content in sample.
+HISTORY    (19890922C)  Compiled at the centre - CJD
+           (20221228A) Correction for current rules.
+            Subents 005-007 are deleted - quality of curves is
+            bad for digitization, see also ADD-RES.
+ENDBIB              19
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        40995002     890922              20050926       0000
-BIB                  5          5
+ENDSUBENT           22
+SUBENT        40995002   20221228   20230419   20230418       4211
+BIB                  7         10
 REACTION   (93-NP-236(N,F),,SIG)
-FACILITY   (REAC,4CCPLIN) REACTOR WWR-M
-INC-SOURCE (REAC)  NEUTRONS FROM THE GRAPHITE MONOCROMATOR
+FACILITY   (REAC,4RUSLIN) Reactor WWR-M
+INC-SOURCE (REAC)  Neutrons from the graphite monochromator
 MONITOR    (92-U-235(N,F),,SIG)
-ERR-ANALYS (ERR-1)  ERROR DUE TO THE U-235 ADMIXTURE IN SAMPLE
-ENDBIB               5
+            525 +- 16 ng of U-235.
+DETECTOR   (SOLST) Mica layers between Np and U layers.
+            FF registration efficiency 96 +- 1 %.
+ERR-ANALYS (ERR-1)  Error due to the U-235 admixture in sample
+           (ERR-T) Total error
+STATUS     (TABLE) Table 1 of C,87KIEV,3,99,1987
+ENDBIB              10
 COMMON               1          3
 ERR-1
 PER-CENT
@@ -40,17 +50,25 @@ EV         EV         B          B
    2.28E-01    1.4E-02   1.22E+03   8.0 E+01
    3.0 E-01    2. E-02   9.00E+02   7.0 E+01
 ENDDATA              7
-ENDSUBENT           21
-SUBENT        40995003     890922              20050926       0000
-BIB                  5          7
-REACTION   (93-NP-236(N,F),,SIG,,AV) CROSS SECTION AVERAGED OVER
-              ENERGY INTERVAL GIVEN IN THE TABLE
-FACILITY   (LINAC,4CCPKUR)  LUE-60
+ENDSUBENT           26
+SUBENT        40995003   20221228   20230419   20230418       4211
+BIB                  8         15
+REACTION   (93-NP-236(N,F),,SIG,,AV/SDT)
+ANALYSIS    Cross section averaged over 1/E spectrum in energy
+            interval in frames of 26 groups constants system.
+FACILITY   (LINAC,4RUSKUR)  LUE-60
+            50 MeV electrons pulse of 50 - 100 nsec, 200 Hz
+           frequency. Electron-gamma-n converter from W .
+            5.E+12 neutron/sec.
 MONITOR    (92-U-235(N,F),,SIG)
-METHOD     (SLODT)
-ERR-ANALYS (ERR-1)  ERROR DUE TO THE DETECTORS' EFFICIENCY
-                    UNCERTAINTY
-ENDBIB               7
+METHOD     (SLODT) Neutron slowing down time in lead.
+DETECTOR   (PPAC) For FF detection.
+ERR-ANALYS (ERR-1)  Error due to the detectors' efficiency
+                    uncertainty
+           (ERR-S) Statistical uncertainty
+           (ERR-T) Total uncertainty
+STATUS     (TABLE) Table 2 of C,87KIEV,3,99,1987
+ENDBIB              15
 COMMON               3          3
 ERR-1      ERR-S      ERR-T
 PER-CENT   PER-CENT   PER-CENT
@@ -74,78 +92,56 @@ EV         EV         B
    4.65E+03   1.0 E+04    4.9
    1.0 E+04   2.15E+04    3.3
 ENDDATA             16
-ENDSUBENT           32
-SUBENT        40995004     890922              20050926       0000
-BIB                  5          7
+ENDSUBENT           40
+SUBENT        40995004   20221228   20230419   20230418       4211
+BIB                  5          8
 REACTION   (93-NP-236(N,F),,RI)
-STATUS     (DEP,40995002)
-           (DEP,40995003)
-FACILITY   (REAC,4CCPLIN)
-           (LINAC,4CCPKUR)
-ERR-ANALYS (DATA-ERR)  ERROR IS NOT SPECIFIED
-MONITOR     NO INFORMATION
-ENDBIB               7
+FACILITY   (REAC,4RUSLIN)
+           (LINAC,4RUSKUR)
+REL-REF    (A,40922003,B.N.Belyaev+,J,AE,60,141,1986) Issue 2.
+ERR-ANALYS (DATA-ERR)  Error is not specified
+STATUS     (TABLE) Text page 101 of C,87KIEV,3,99,1987
+           (DEP,40995002) Measured C-S at RUSLIN
+           (DEP,40995003) Measured C-S at RUSKUR
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
 EN-MIN     DATA       DATA-ERR
 EV         B          B
    2.53E-02   1040.      60.
 ENDDATA              3
-ENDSUBENT           15
-SUBENT        40995005     890922              20050926       0000
-BIB                  5          5
-REACTION   (93-NP-236(N,F),,SIG)
-STATUS     (UNOBT)  DATA ARE NOT AVAILABLE. CURVE IS GIVEN
-FACILITY   (LINAC,4CCPKUR)
-MONITOR     NO INFORMATION
-ERR-ANALYS  NO INFORMATION
-ENDBIB               5
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            9
-SUBENT        40995006     890922              20050926       0000
-BIB                  5          5
-REACTION   (92-U-235(N,F),,SIG)
-STATUS     (UNOBT)  DATA ARE NOT AVAILABLE. CURVE IS GIVEN
-FACILITY   (LINAC,4CCPKUR)
-ERR-ANALYS  NO INFORMATION
-MONITOR     NO INFORMATION
-ENDBIB               5
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            9
-SUBENT        40995007     890922              20050926       0000
-BIB                  5          5
-REACTION   (93-NP-237(N,F),,SIG)
-STATUS     (UNOBT) DATA ARE NOT AVAILABLE. CURVE IS GIVEN
-FACILITY   (LINAC,4CCPKUR)
-MONITOR     NO INFORMATION
-ERR-ANALYS  NO INFORMATION
-ENDBIB               5
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            9
-SUBENT        40995008     890922              20050926       0000
-BIB                  6          9
-REACTION  1(93-NP-236(N,TOT),,WID,,AV)
+ENDSUBENT           16
+NOSUBENT      40995005   20221228   20230419   20230418       4211
+NOSUBENT      40995006   20221228   20230419   20230418       4211
+NOSUBENT      40995007   20221228   20230419   20230418       4211
+SUBENT        40995008   20221228   20230419   20230418       4211
+BIB                  7         16
+REACTION  1(93-NP-236(N,TOT),,WID,,AV,DERIV)
           2(93-NP-236(N,F),,WID,,AV)
-STATUS     (DEP,40995002)
-           (DEP,40995003)
-ASSUMED    (ASSUM,93-NP-236(N,G),,WID)
-FACILITY   (REAC,4CCPLIN)
-           (LINAC,4CCPKUR)
-MONITOR     NO INFORMATION
-ERR-ANALYS (DATA-ERR) NOT SPECIFIED
-ENDBIB               9
-COMMON               3          3
-EN-MIN     EN-MAX     ASSUM
-EV         EV         EV
-   2.53E-02   2.15E+03    5.3E-02
+ASSUMED   1(ASSUM,93-NP-236(N,G),,WID,,AV)
+            Calculated in frame of giant dipole resonance model
+            by parameters from rel.ref. of S.Bjoernholm+
+REL-REF    (R,,S.Bjoernholm+,J,RMP,52,725,1980) Issue 4.
+FACILITY   (REAC,4RUSLIN)
+           (LINAC,4RUSKUR)
+ERR-ANALYS (DATA-ERR) Not specified
+STATUS     (TABLE) Text page 102 of C,87KIEV,3,99,1987
+           (DEP,40995002) Measured C-S at RUSLIN
+           (DEP,40995003) Measured C-S at RUSKUR
+HISTORY    (20221228A) AV -> SPA. DERIV was added in reaction.
+            AV,CALC were added in ASSUMED reaction.
+            CALC code was deleted according to a comment of
+            N.Otsuka (NDS, IAEA).
+ENDBIB              16
+COMMON               2          3
+EN-MIN     EN-MAX
+EV         EV
+   2.53E-02   2.15E+03
 ENDCOMMON            3
-DATA                 4          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-EV         EV         EV         EV
-    4.6E-01    1.8E-01    4.1E-01    1.6E-01
+DATA                 5          1
+DATA      1DATA-ERR  1ASSUM     1DATA      2DATA-ERR  2
+EV         EV         EV         EV         EV
+    0.46       0.18       0.053      0.41       0.16
 ENDDATA              3
-ENDSUBENT           21
+ENDSUBENT           28
 ENDENTRY             8

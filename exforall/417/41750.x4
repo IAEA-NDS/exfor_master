@@ -1,6 +1,6 @@
-ENTRY            41750   20220622   20221013   20221013       4207
-SUBENT        41750001   20220622   20221013   20221013       4207
-BIB                 14         62
+ENTRY            41750   20230131   20230419   20230418       4211
+SUBENT        41750001   20230131   20230419   20230418       4211
+BIB                 14         64
 TITLE      Inelastic scattering of 14.1 MeV neutrons on iron
 AUTHOR     (N.A.Fedorov, D.N.Grozdanov, Yu.N.Kopatch,
            T.Yu.Tretyakova,I.N.Ruskov,V.R.Skoy,I.D.Dashkov,
@@ -9,7 +9,8 @@ AUTHOR     (N.A.Fedorov, D.N.Grozdanov, Yu.N.Kopatch,
                   and TANGRA collaboration.
             Two last authors are from S,ISINN-26,,80,2019.
 REFERENCE  (J,EPJ/A,57,194,2021)
-           (S,ISINN-26,80,2019) Preliminary publication.
+           ((S,ISINN-26,80,2019)=(S,JINR-E3-2019-18,80,2019))
+           Preliminary publication.
 INSTITUTE  (4ZZZDUB) N.A.Fedorov,Yu.N.Kopatch,V.M.Bystritsky,
            D.N.Grozdanov,F.A.Aliyev,V.R.Skoy,S.Dabylova,C.Hramco.
            (4RUSMOS) N.A.Fedorov,T.Yu.Tretyakova,A.V.Gorelikov
@@ -63,13 +64,14 @@ ADD-RES     In Table 1 of S,ISINN-26,,80,2019 there are directly
             Table 1 of J,EPJ/A,57,194,2021 - optical model
             parameters.
 HISTORY    (20220622C) M.M.
-ENDBIB              62
+           (20230131A) Subent 004 was corrected.
+ENDBIB              64
 COMMON               1          3
 EN
 MEV
  14.1
 ENDCOMMON            3
-ENDSUBENT           69
+ENDSUBENT           71
 SUBENT        41750002   20220622   20221013   20221013       4207
 BIB                  6         27
 REACTION   ((26-FE-56(N,X)0-G-0,,SPC)//
@@ -166,22 +168,71 @@ KEV        NO-DIM     NO-DIM     NO-DIM
  1238.3     4.         0.16       0.08
 ENDDATA              6
 ENDSUBENT           36
-SUBENT        41750004   20220622   20221013   20221013       4207
-BIB                  4         12
-REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,REL)
+SUBENT        41750004   20230131   20230419   20230418       4211
+BIB                  5         18
+REACTION   (26-FE-56(N,INL)26-FE-56,PAR,DA,G,FCT)
+            See formula (5) in J,EPJ/A,57,194,2021 -
+           W(ANG) = (dSIG/dANG)/(SIG/(4*PI)),
 REL-REF    (N,40575004,A.P.Degtyarev+,C,77KIEV,2,3,1977)
            (N,20493021,U.Abbondanno+,J,JNE,27,227,1973)
            (N,20474006,J.Lachkar+,J,NSE,55,168,1974)
              Three data sets used for comparison after
            re-normalization to the same form.
-STATUS     (UNOBT)  Angular distributions (point-wise) are on
-           Fig.10 a,b of J,EPJ/A,57,194,2021 (c.m.s.);
-           Fig.5 a (847 keV) and b (1238 keV)
-            of S,ISINN-26,,80,2019
+ERR-ANALYS .Quantization errors ( 1/2 pixel):
+           scale X - 0.19 deg, scale Y - 0.0022 .
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+STATUS     (CURVE) Fig.10a,b of J,EPJ/A,57,194,2021,black circles.
+           Also data are on Fig.5 a,b of S,ISINN-26,,80,2019.
 HISTORY    (20220622C) Request of data was sent to corresponding
            author N.Fedorov 22 June 2022.
-ENDBIB              12
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT           16
+           (20230131A) Digitized data were added.
+            REL -> FCT, UNOBT -> CURVE.
+ENDBIB              18
+COMMON               2          3
+ANG-ERR-D  ERR-DIG
+ADEG       NO-DIM
+ 0.17       0.0016
+ENDCOMMON            3
+DATA                 4         36
+E          ANG-CM     DATA-CM    DATA-ERR
+KEV        ADEG       NO-DIM     NO-DIM
+     847.      16.49     1.1010     0.0390
+     847.      19.49     1.1054     0.0390
+     847.      28.12     1.1573     0.0346
+     847.      31.87     1.0664     0.0303
+     847.      41.24     1.0491     0.0346
+     847.      44.62     1.0102     0.0303
+     847.      54.74     1.0405     0.0303
+     847.      58.50     0.8890     0.0260
+     847.      68.62     0.9842     0.0216
+     847.      72.00     0.9236     0.0303
+     847.      82.50     0.9540     0.0216
+     847.      85.87     0.9366     0.0303
+     847.      96.37     0.9756     0.0260
+     847.      99.37     0.9540     0.0260
+     847.     110.24     0.9930     0.0260
+     847.     113.25     0.8977     0.0260
+     847.     123.74     1.0666     0.0303
+     847.     126.74     0.9973     0.0303
+    1238.      16.32     1.2569     0.0736
+    1238.      19.33     1.2179     0.0649
+    1238.      28.35     1.2526     0.0649
+    1238.      31.73     1.1054     0.0736
+    1238.      41.50     1.2136     0.0736
+    1238.      45.25     1.0881     0.0606
+    1238.      55.02     0.8500     0.0606
+    1238.      58.41     0.7461     0.0519
+    1238.      68.55     0.9583     0.0649
+    1238.      71.93     0.8024     0.0476
+    1238.      82.44     1.1141     0.1169
+    1238.      85.83     0.9237     0.0476
+    1238.      96.35     0.9886     0.0606
+    1238.      99.35     0.9756     0.0390
+    1238.     110.24     1.0536     0.0693
+    1238.     113.25     0.9064     0.0606
+    1238.     124.14     1.0363     0.0519
+    1238.     127.15     0.8848     0.0563
+ENDDATA             38
+ENDSUBENT           65
 ENDENTRY             4

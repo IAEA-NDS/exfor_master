@@ -1,29 +1,30 @@
-ENTRY            41029   20190218   20190401   20190326       4181
-SUBENT        41029001   20190218   20190401   20190326       4181
-BIB                 10         30
+ENTRY            41029   20230123   20230419   20230418       4211
+SUBENT        41029001   20230123   20230419   20230418       4211
+BIB                 10         32
 TITLE       Intermediate resonances in elastic scattering of
             neutrons by 82-Se
 COMMENT     Of compiler M.M.
             - In title of BAS,53,(5),180,1989 there is a misprint
            85-Se -> 82-Se .
-            - Fig.2 of BAS,53,(5),180,1989 is not good for
-           digitization, because energy scale is of low quality.
 AUTHOR     (R.M.Musaelyan,V.I.Popov,V.M.Skorkin)
-INSTITUTE  (4RUSJIA)
-REFERENCE  (J,IZV,53,1012,1989) Issue 5.
-           (J,BAS,53,(5),180,1989) Eng.trans.of IZV,53,(5),1012
+REFERENCE  (J,BAS,53,(5),180,1989) Eng.trans.of IZV,53,(5),1012
+           (J,IZV,53,1012,1989) Issue 5.
            (C,88BAKU,,291,1988)
             Dif.el.CS at 440-740 keV energy range are mentioned,
            no data, no figures.
-REL-REF    (R,,R.M.Musaelyan+,J,KSF,,(12),28,1982)  Exp. details
-           Total cross sections for Se isotopes, energy resolution
-           ~15 keV, energy range 0.3 - 1 MeV.
-               (in Entry 40843, 40842 ?)
+INSTITUTE  (4RUSJIA)
+REL-REF    (R,,R.M.Musaelyan+,J,KSF,,(12),28,1982)  Exp. details.
            (R,,R.M.Musaelyan+,J,SPL,,(12),22,1982)
             Engl.transl. of KSF,,(12),28,1982
+           (O,40843001,R.M.Musaelyan+,J,BAS,53,(5),180,1989)
+           Total cross sections for Se-82, energy resolution
+           ~15 keV, Subent 40843.015 corresponds to Fig.1a data;
+           averaged in energy interval ~50 keV - Subent 40843.010
+           correspond to Fig.1b data,
+           data from author.
 MONITOR     No information
-FACILITY   (VDG,4RUSJIA) Van-de Graaff accelerator
-INC-SPECT   Energy resolution ~45 keV. Nine energy  points.
+FACILITY   (VDG,4RUSJIA) Van de Graaff accelerator
+INC-SPECT   Energy resolution ~45 keV. Nine energy points.
 HISTORY    (19901126C)  + + Compiled at the center- CJD + +
            (20180305A) M.M. Upper -> lower case correction.
             Dates were corrected for 4-digits year.
@@ -31,153 +32,197 @@ HISTORY    (19901126C)  + + Compiled at the center- CJD + +
            BIB information was added .
            KSF,,(12),28,1982 was moved in REL-REF.
            (20190218U) Engl.translation was added in REL-REF .
-ENDBIB              30
+           (20230123A) Subents 003-010 were merged in Subent 003.
+ENDBIB              32
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        41029002   20180305   20180525   20180525       4178
-BIB                  4          5
+ENDSUBENT           35
+SUBENT        41029002   20230123   20230419   20230418       4211
+BIB                  6         13
 REACTION  1(34-SE-82(N,0),,EN)
           2(34-SE-82(N,TOT),,WID)
+          3(34-SE-82(N,EL),,WID)
 ANALYSIS   (SLA) Single-level R-matrix approximation
+FLAG       (1.) Derived from approximation of differential cross
+           sections.
+           (2.) Derived from approximation of total cross sections
 ERR-ANALYS (DATA-ERR) Type of error is not explained in article
 STATUS     (TABLE) Table 1 of BAS,53,(5),180,1989
+           (DEP,40843015) Total C-S
+           (DEP,41029003) Differential C-S
+HISTORY    (20230123A) Data were corrected as given in Table 1.
+            GAMMAn was added as DATA 3.
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 7         10
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
+FLAG
+KEV        KEV        KEV        KEV        KEV        KEV
+NO-DIM
+  310.        30.        140.       70.      18.         6.
+
+  513.         6.         51.        7.      17.         3.
+   2.
+  510.         6.         70.        5.      20.         1.
+   1.
+  657.         6.         60.        5.      35.         3.
+   2.
+  660.         6.         56.        5.      30.         2.
+   1.
+  791.        20.         40.       60.       9.
+
+  923.        16.         18.       27.       8.
+
+ 1010.        40.        122.       30.      64.
+
+ 1119.        13.         50.       14.      36.        13.
+
+ 1180.        15.         96.       27.      70.        40.
+
+ENDDATA             24
+ENDSUBENT           42
+SUBENT        41029003   20230123   20230419   20230418       4211
+BIB                  4          5
+REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
+ERR-ANALYS  Quantization error (1/2 pixel):
+            scale X- 1.0 keV, scale Y -0.042 b/sr.
+STATUS     (CURVE) Fig.2a of BAS,53,(5),180,1989
+HISTORY    (20230123A) Digitized data were added.
 ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          8
-DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-KEV        KEV        KEV        KEV
-  310.        30.        140.       70.
-  513.         6.         51.        7.
-  657.         6.         60.        5.
-  791.        20.         40.       60.
-  923.        16.         18.       27.
- 1010.        40.        122.       30.
- 1119.        13.         50.       14.
- 1180.        15.         96.       27.
-ENDDATA             10
-ENDSUBENT           20
-SUBENT        41029003   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
-  30.
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+KEV        B/SR
+0.75       0.0019
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029004   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
-  45.
+DATA                 3         72
+ANG        EN         DATA
+ADEG       KEV        B/SR
+        30.      441.8     0.8042
+        30.      468.6     0.9377
+        30.      500.4     1.2268
+        30.      527.5     1.0257
+        30.      575.6     0.6146
+        30.      613.6     0.8636
+        30.      644.5     1.2914
+        30.      678.8     1.1972
+        30.      737.5     0.6731
+        45.      439.3     0.6572
+        45.      470.5     0.7261
+        45.      504.4     0.9913
+        45.      531.5     0.7821
+        45.      578.7     0.5425
+        45.      621.3     0.6862
+        45.      646.8     1.0157
+        45.      676.8     0.9702
+        45.      736.9     0.5606
+        60.      439.8     0.5803
+        60.      467.4     0.5993
+        60.      497.6     0.8107
+        60.      530.3     0.6623
+        60.      575.3     0.4513
+        60.      614.1     0.5756
+        60.      646.2     0.8032
+        60.      676.6     0.6945
+        60.      733.7     0.4528
+        85.      437.0     0.3866
+        85.      466.7     0.4392
+        85.      498.6     0.4671
+        85.      530.7     0.4450
+        85.      579.2     0.3409
+        85.      619.1     0.3612
+        85.      649.0     0.3805
+        85.      679.1     0.3749
+        85.      737.5     0.2884
+       105.      437.4     0.3232
+       105.      469.3     0.3420
+       105.      499.2     0.3607
+       105.      531.5     0.3155
+       105.      577.7     0.2796
+       105.      619.7     0.2753
+       105.      649.7     0.2699
+       105.      677.9     0.2324
+       105.      735.9     0.2375
+       120.      437.2     0.4033
+       120.      467.2     0.4061
+       120.      499.5     0.3591
+       120.      529.7     0.3120
+       120.      575.8     0.2996
+       120.      613.9     0.2781
+       120.      647.7     0.3229
+       120.      678.0     0.2591
+       120.      738.1     0.2480
+       135.      436.8     0.4617
+       135.      468.8     0.4645
+       135.      497.1     0.4086
+       135.      527.7     0.2946
+       135.      577.5     0.3323
+       135.      619.4     0.3527
+       135.      645.3     0.3800
+       135.      675.7     0.2993
+       135.      735.7     0.2879
+       150.      435.2     0.5232
+       150.      467.2     0.5182
+       150.      495.3     0.5048
+       150.      528.3     0.3239
+       150.      574.0     0.3842
+       150.      615.7     0.4280
+       150.      645.5     0.4708
+       150.      676.3     0.3377
+       150.      736.5     0.3033
+ENDDATA             74
+ENDSUBENT           88
+NOSUBENT      41029004   20230123   20230419   20230418       4211
+NOSUBENT      41029005   20230123   20230419   20230418       4211
+NOSUBENT      41029006   20230123   20230419   20230418       4211
+NOSUBENT      41029007   20230123   20230419   20230418       4211
+NOSUBENT      41029008   20230123   20230419   20230418       4211
+NOSUBENT      41029009   20230123   20230419   20230418       4211
+NOSUBENT      41029010   20230123   20230419   20230418       4211
+SUBENT        41029011   20230123   20230419   20230418       4211
+BIB                  5          8
+REACTION   (34-SE-82(N,EL)34-SE-82,,DA,,LEG/4PI)
+STATUS     (CURVE) Fig.2b of BAS,53,(5),180,1989
+ANALYSIS   Formula for approximation by Legendre polynomials Pi is
+            dSIG/d(angle) * 4PI =
+            (B0+B1*P1(cos(angle))+B2*P2(cos(angle)))
+ERR-ANALYS  Quantization error (1/2 pixel):
+            scale X - 1.0 keV, scale Y - 0.021 b.
+HISTORY    (20230123A) Digitized data were added.
+ENDBIB               8
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+KEV        B
+ 1.13      0.016
 ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029005   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
-  60.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029006   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
-  85.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029007   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
-  105.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029008   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
- 120.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029009   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
- 135.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029010   20180305   20180525   20180525       4178
-BIB                  2          4
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA)
-STATUS     (UNOBT) Data are not available
-                   Data curve on Fig.2a of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ENDBIB               4
-COMMON               1          3
-ANG
-ADEG
-  150.
-ENDCOMMON            3
-NODATA               0          0
-ENDSUBENT           12
-SUBENT        41029011   20180305   20180525   20180525       4178
-BIB                  3          6
-REACTION   (34-SE-82(N,EL)34-SE-82,,DA,,LEG)
-STATUS     (UNOBT) Data are not available
-                   Data curves on Fig.2b of BAS,53,(5),180,1989
-           Quality of figure is low for digitization
-ANALYSIS    Formula for Legendre polinomials P is
-            (1/4*PI)*(B0+B1*P1(cos(angle))+B2*P2(cos(angle)))
-ENDBIB               6
-NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT           10
+DATA                 3         27
+NUMBER     EN         DATA
+NO-DIM     KEV        B
+         0.      437.6      6.289
+         0.      468.8      6.641
+         0.      500.9      7.744
+         0.      532.4      6.431
+         0.      578.1      4.961
+         0.      616.5      5.776
+         0.      647.7      7.502
+         0.      679.0      6.398
+         0.      737.2      4.394
+         1.      440.9      2.087
+         1.      472.2      2.667
+         1.      500.2      5.164
+         1.      534.2      4.602
+         1.      579.7      1.799
+         1.      620.4      3.076
+         1.      650.2      5.900
+         1.      685.8      5.951
+         1.      739.5      2.497
+         2.      442.8      3.230
+         2.      477.5      3.776
+         2.      504.0      4.727
+         2.      533.3      2.945
+         2.      581.2      2.150
+         2.      621.0      3.474
+         2.      651.5      6.141
+         2.      680.3      4.889
+         2.      740.0      2.181
+ENDDATA             29
+ENDSUBENT           46
 ENDENTRY            11
