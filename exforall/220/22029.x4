@@ -1,52 +1,64 @@
-ENTRY            22029   20160818   20170201   20170124       2252
-SUBENT        22029001   20160818   20170201   20170124       2252
-BIB                 14         34
-REFERENCE  (J,JP/G,11,1341,1985)         Main reference
-           (J,NIM,206,431,1983) Experimental details
-REL-REF    (R,20801016,G.Haouat+,J,NSE,81,491,1982) Additional
-                                                    results
-           (R,,P.T.Guenther+,J,PR/C,26,2433,1982) Additional
-                                                  results
+ENTRY            22029   20230209   20230523   20230523       2313
+SUBENT        22029001   20230209   20230523   20230523       2313
+BIB                 15         41
 TITLE       Neutron analysing powers and a low-energy optical
             model analysis
 AUTHOR     (J.R.M.Annand,R.B.Galloway)
+REFERENCE  (J,JP/G,11,1341,1985)         Main reference
+           (J,NIM,206,431,1983) Experim. details, Bi prelim.data
+REL-REF    (O,20801016,G.Haouat+,J,NSE,81,491,1982) Additional
+                                                    results
+           (O,10803001,P.T.Guenther+,J,PR/C,26,2433,1982) -
+                                        Additional results
 INSTITUTE  (2UK EDG)
 FACILITY   (VDG,2UK EDG)
 INC-SOURCE (D-D) Polarization of neutrons emitted at 49dgrs taken
             as -0.15+-0.01
-METHOD     (TOF)
+METHOD     (TOF,PSD,PHD) Proton recoil spectra were collected with
+           pulse shape discrimination against gamma rays and pulse
+           height discrimination to reduce detection
 DETECTOR   (SCIN)24 NE213 detectors, 5 cm in diam. and 15 cm long,
            at angles 20-167 dgrs with an interval of 7 dgrs
-MONITOR     Two flux monitors were used to normalise polarimeter
+MONITOR     Two flux monitors were used to normalize polarimeter
             counting rates. A collimated beam monitor looking at
             neutrons emitted at 49 degrees and a target yield
             monitor viewing neutrons emitted at 90 degrees.
+ADD-RES     All of the optical model analysis has been made with
+            compound elastic scattering accounted for using a
+            recent formulation of the statistical model.
 CORRECTION  Made by using an analytical method, followed by a
             Monte-Carlo method.
 ERR-ANALYS (ERR-T) Contain uncertainties in source to sample
             distance and relative detector efficiencies. Counting
             statistics uncertainties are small.
+           (ERR-1) The overall normalisation error
 STATUS     (TABLE)  Data were taken from private communication
                     R.Galloway, 1987-02
 HISTORY    (19870615C) IF.
            (20070306A) Date and numerical error in Subent 007
-            are corrected  - SM/N.Ohtsuka. Code for ANALYSIS key-
+            are corrected  - SM/N.Otsuka. Code for ANALYSIS key-
             word in Subent 001 erased.
            (20070309A) Last corrections have been done.
            (20160818U) SD: COMMENT and CRITIQUE were added to
            Subent 003. Author's names corrected (initials added).
-ENDBIB              34
-COMMON               2          3
-EN         EN-ERR
-EV         EV
-    3.0E+06     2.E+05
+           (20230209A) SD: Corrections in several Subents.
+ENDBIB              41
+COMMON               3          3
+EN         EN-ERR     ERR-1
+EV         EV         PER-CENT
+    3.0E+06     2.E+05       8.
 ENDCOMMON            3
-ENDSUBENT           41
-SUBENT        22029002   20070306   20070521   20070506       2184
-BIB                  2          2
-REACTION   (74-W-0(N,EL)74-W-0,,DA)
-SAMPLE     .Solid sintered cylinder
-ENDBIB               2
+ENDSUBENT           48
+SUBENT        22029002   20230209   20230523   20230523       2313
+BIB                  5          7
+REACTION   (74-W-0(N,EL)74-W-0,EXL,DA)
+SAMPLE      Solid sintered cylinder
+CRITIQUE    S.Simakov (2022-08-06): Possible inclusion of
+            inelastic scattering below Ex~<0.8 MeV
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+HISTORY    (20230209A) SD: SF5=EXL added to REACTION code.
+           CRITIQUE and REL-REF added.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         22
 ANG-CM     DATA-CM    ERR-T
@@ -74,7 +86,7 @@ ADEG       MB/SR      MB/SR
  1.6000E+02 3.0400E+01 2.0000E+00
  1.6700E+02 4.1500E+01 2.6000E+00
 ENDDATA             24
-ENDSUBENT           31
+ENDSUBENT           36
 SUBENT        22029003   20160818   20170201   20170124       2252
 BIB                  5          8
 REACTION   (80-HG-0(N,EL)80-HG-0,,DA)
@@ -213,16 +225,21 @@ ADEG       MB/SR      MB/SR
 167.        3.7280E+02  2.190E+01
 ENDDATA             24
 ENDSUBENT           31
-SUBENT        22029007   20070309   20070521   20070506       2184
-BIB                  4          7
-REACTION   (92-U-238(N,EL)92-U-238,,DA)
-SAMPLE     .Solid cylinders casted
+SUBENT        22029007   20230209   20230523   20230523       2313
+BIB                  6         12
+REACTION   (92-U-238(N,EL)92-U-238,EXL,DA)
+SAMPLE      Solid cylinders casted
 FLAG       (1.)    Numerical data at 34 degree may be wrong.
                Probably value is that given is this line
                assessed according to Fig. 3 of main reference
            (2.)    Old numerical value
+CRITIQUE    S.Simakov (2022-08-06): Possible inclusion of
+            inelastic scattering below Ex~<0.8 MeV
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
 HISTORY    (20070309A)  Numerical value at ANG=34 deg specified
-ENDBIB               7
+           (20230209A) SD: SF5=EXL added to REACTION code.
+           CRITIQUE and REL-REF added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         23
 ANG-CM     DATA-CM    ERR-T      FLAG
@@ -251,13 +268,17 @@ ADEG       MB/SR      MB/SR      NO-DIM
 160.        9.0500E+01  8.000E+00
 167.        1.0650E+02  9.200E+00
 ENDDATA             25
-ENDSUBENT           37
-SUBENT        22029008   20070306   20070521   20070506       2184
-BIB                  3          3
-REACTION   (74-W-0(N,EL)74-W-0,,POL/DA,,ANA)
-ANALYSIS   .Optical model analysis
-SAMPLE     .Solid cylinders casted
-ENDBIB               3
+ENDSUBENT           42
+SUBENT        22029008   20230209   20230523   20230523       2313
+BIB                  5          7
+REACTION   (74-W-0(N,EL)74-W-0,EXL,POL/DA,,ANA)
+SAMPLE      Solid cylinders casted
+CRITIQUE    S.Simakov (2022-08-06): Possible inclusion of
+            inelastic scattering below Ex~<0.8 MeV
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+HISTORY    (20230209A) SD: SF5=EXL added to REACTION code.
+           CRITIQUE and REL-REF added. ANALYSIS deleted.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         22
 ANG-CM     DATA       ERR-T
@@ -285,7 +306,7 @@ ADEG       NO-DIM     NO-DIM
 160.         0.328     0.093
 167.         0.202     0.070
 ENDDATA             24
-ENDSUBENT           32
+ENDSUBENT           36
 SUBENT        22029009   20070306   20070521   20070506       2184
 BIB                  3          3
 REACTION   (80-HG-0(N,EL)80-HG-0,,POL/DA,,ANA)
@@ -422,12 +443,16 @@ ADEG       NO-DIM     NO-DIM
 167.         0.344     0.044
 ENDDATA             24
 ENDSUBENT           32
-SUBENT        22029013   20070306   20070521   20070506       2184
-BIB                  3          3
-REACTION   (92-U-238(N,EL)92-U-238,,POL/DA,,ANA)
-ANALYSIS   .Optical model analysis
-SAMPLE     .Solid cylinders casted
-ENDBIB               3
+SUBENT        22029013   20230209   20230523   20230523       2313
+BIB                  5          7
+REACTION   (92-U-238(N,EL)92-U-238,EXL,POL/DA,,ANA)
+SAMPLE      Solid cylinders casted
+CRITIQUE    S.Simakov (2022-08-06): Possible inclusion of
+            inelastic scattering below Ex~<0.8 MeV
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+HISTORY    (20230209A) SD: SF5=EXL added to REACTION code.
+           CRITIQUE and REL-REF added. ANALYSIS deleted.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         22
 ANG-CM     DATA       ERR-T
@@ -455,5 +480,5 @@ ADEG       NO-DIM     NO-DIM
 160.         0.661     0.105
 167.         0.419     0.098
 ENDDATA             24
-ENDSUBENT           32
+ENDSUBENT           36
 ENDENTRY            13

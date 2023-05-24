@@ -1,14 +1,13 @@
-ENTRY            O0316   20200114   20200623   20200616       O076
-SUBENT        O0316001   20200114   20200623   20200616       O076
-BIB                 11         29
-TITLE      A systematic study of proton capture reactions in the
-           Se-Sb region at energies relevant to the p process
-AUTHOR     (S.Harissopulos,S.Galanopoulos,P.Demetriou,A.Spyrou,
-           G.Kriembardis,M.Kokkoris,A.G.Karydas,Ch.Zarkadas,
-           R.Kunz, M.Fey,J.W.Hammer,G.Gyurky,Zs.Fulop,E.Somorjai,
-           A.Dewald, K.O.Zell,P.Von Brentano,R.Julin,S.Goriely)
-INSTITUTE  (2GRCATH,2GERTHS,3HUNDEB,2GERKLN,2SF JYV,2BLGBRU)
-REFERENCE  (J,NP/A,719,115C,2003)
+ENTRY            O0316   20221225   20230523   20230523       O093
+SUBENT        O0316001   20221225   20230523   20230523       O093
+BIB                 12         44
+TITLE      Cross section measurements of proton capture
+           reactions on Sr isotopes for astrophysics applications
+AUTHOR     (S.Harissopulos, E.Vagena, P.Dimitriou, M.Axiotis,
+           S.Galanopoulos, V.Foteinou, A.Lagoyannis)
+INSTITUTE  (2GRCATH)
+REFERENCE  (J,PR/C,104,025804,2021)
+           (J,NP/A,719,C115,2003) Prelim.results for 86Sr
 REL-REF    (O,O0918001,S.Harissopulos+,J,PR/C,64,055804,2001) -
                               final data for 93Nb
            (O,O2330001,S.Harissopulos+,J,PR/C,93,025804,2016) -
@@ -17,33 +16,427 @@ REL-REF    (O,O0918001,S.Harissopulos+,J,PR/C,64,055804,2001) -
                               final data for 89Y.
            (O,O2460001,V.Foteinou+,J,PR/C,97,035806,2018) -
                               final data for 80Se.
-FACILITY   (DYNAM,2GERTHS) 4-MV single-ended dynamitron
-           (VDGT,2GRCATH) 5.5-MV T11 Van de Graaff
-SAMPLE     (38-SR-86,ENR=0.9689) 86SrC03 targets were evaporated
-           on Ta-backings of 0.2 or 0.4 mm thickness.
-            Target thickness was 103. mu-g/cm2.
-DETECTOR   (HPGE)  four large volume HPGe detectors,
+           (M,,Sotirios V.Harissopulos,J,EPJ/P,133,332,2018) -
+              experimental setup of gamma-angular distributions
+              measurement.
+           (M,O1054001,S.Galanopoulos+,J,PR/C,67,015801,2003) -
+              experimental setup of gamma-angular distributions
+           (M,,A.Spyrou+,J,PR/C,76,015802,2007) -
+                                     4pi gamma-summing technique
+FACILITY   (DYNAM,2GERTHS) 4-MV single-ended dynamitron (cross
+           sections were determined by measuring gamma-angular
+           distributions at incident beam energies
+           in the 2-3.6 MeV range)
+           (DYNAM,2GERBOC) The 4pi gamma-summing technique was
+           employed using protons with energies from 2 to 5 MeV
+SAMPLE      Targets were prepared by evaporating highly enriched
+           isotopic material onto 0.2-mm-thick tantalum disks
+           with a diameter of 4 cm.
+DETECTOR   (HPGE,BGO)  four large volume HPGe detectors,
            all shielded with bismouthgermanium-oxide (BGO)
            crystals for Compton background suppression.
-           (BGO)
+           (NAICR)
 METHOD     (BCINT)
            Gamma-angular distribution measurements
-ERR-ANALYS (ERR-1) Uncertainty of target thickness
-HISTORY    (20200114C)  SD
-ENDBIB              29
+CORRECTION  Cr.sect. corrected for screening effects.
+ERR-ANALYS (ERR-1) Systematic error due to the x-ray fluorescence
+           technique and the specific setup used
+           (ERR-S,1.,2.) Statistical error
+           (ERR-T) Total error
+HISTORY    (20200114C) SD
+           (20221225A) SD: Data were added.
+ENDBIB              44
 COMMON               1          3
 ERR-1
 PER-CENT
-  6.
+  7.
 ENDCOMMON            3
-ENDSUBENT           36
-SUBENT        O0316002   20200114   20200623   20200616       O076
-BIB                  2          3
-REACTION   (38-SR-86(P,G)39-Y-87,,SIG,,SFC)
-STATUS     (UNOBT) fig.1 from Nucl.Phys.,A719(2003)115c
-            Author is going to publish it in the near future.
-ENDBIB               3
+ENDSUBENT           51
+SUBENT        O0316002   20221225   20230523   20230523       O093
+BIB                  7         13
+REACTION  1(38-SR-86(P,G)39-Y-87,,SIG)
+          2(38-SR-86(P,G)39-Y-87,,SIG,,SFC)
+DECAY-DATA (39-Y-87-G,79.8HR)
+SAMPLE     (38-SR-86,ENR=0.9689) 86SrCO3 targets were evaporated
+           on Ta-backings.
+            Targets thicknesses were:
+             92. +- 7. ug/cm2 for gamma-angular distributions;
+            194. +- 16. ug/cm2 for 4pi gamma-summing
+FLAG       (1.) result from gamma-angular distributions
+           (2.) result from 4pi gamma-summing
+ERR-ANALYS (ERR-2,3.,4.) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225A) SD: Data from new publ. was added.
+ENDBIB              13
+COMMON               1          3
+EN-ERR
+MEV
+   0.005
+ENDCOMMON            3
+DATA                 6         15
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2FLAG
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV      NO-DIM
+      2.464       178.        31.  1.060E+07   1.85E+06         1.
+      2.479       183.         7.  1.019E+07   3.74E+05         2.
+      2.578       255.         8.  9.304E+06   2.94E+05         2.
+      2.677       357.        10.  8.731E+06   2.49E+05         2.
+      2.776       431.        11.  7.249E+06   1.93E+05         2.
+      2.876       542.        14.  6.364E+06   1.65E+05         2.
+      2.959       697.        98.  6.150E+06   8.65E+05         1.
+      2.975       696.        17.  5.823E+06   1.39E+05         2.
+      3.074       888.        21.  5.396E+06   1.30E+05         2.
+      3.174      1080.        26.  4.823E+06   1.15E+05         2.
+      3.273      1270.        30.  4.243E+06   1.02E+05         2.
+      3.372      1546.        37.  3.915E+06   9.30E+04         2.
+      3.454      1738.       268.  3.530E+06   5.45E+05         1.
+      3.471      1842.        43.  3.580E+06   8.40E+04         2.
+      3.570      2078.        48.  3.136E+06   7.20E+04         2.
+ENDDATA             17
+ENDSUBENT           39
+SUBENT        O0316003   20221225   20230523   20230523       O093
+BIB                  7         13
+REACTION  1(38-SR-86(P,G)39-Y-87-M,,SIG)
+          2(38-SR-86(P,G)39-Y-87-M,,SIG,,SFC)
+DECAY-DATA (39-Y-87-M,13.37HR,DG,381.)
+SAMPLE     (38-SR-86,ENR=0.9689) 86SrCO3 targets were evaporated
+           on Ta-backings.
+            Targets thicknesses were:
+             92. +- 7. ug/cm2 for gamma-angular distributions;
+            194. +- 16. ug/cm2 for 4pi gamma-summing
+FLAG       (1.) result from gamma-angular distributions
+           (2.) result from 4pi gamma-summing
+ERR-ANALYS (ERR-2,3.,4.) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              13
+COMMON               1          3
+EN-ERR
+MEV
+   0.005
+ENDCOMMON            3
+DATA                 6         15
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2FLAG
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV      NO-DIM
+      2.464        29.         8.  1.730E+06   4.76E+05         1.
+      2.479        33.         3.  1.838E+06   1.67E+05         2.
+      2.578        48.         4.  1.751E+06   1.46E+05         2.
+      2.677        64.         4.  1.568E+06   9.80E+04         2.
+      2.776        80.         5.  1.349E+06   7.60E+04         2.
+      2.876       111.         6.  1.299E+06   6.60E+04         2.
+      2.959       148.        23.  1.310E+06   2.03E+05         1.
+      2.975       148.         7.  1.239E+06   5.70E+04         2.
+      3.074       201.         9.  1.222E+06   5.50E+04         2.
+      3.174       243.        10.  1.085E+06   4.50E+04         2.
+      3.273       290.        12.  9.690E+05   4.00E+04         2.
+      3.372       350.        14.  8.870E+05   3.40E+04         2.
+      3.454       445.        96.  9.040E+05   1.95E+05         1.
+      3.471       442.        17.  8.590E+05   3.30E+04         2.
+      3.570       505.        19.  7.620E+05   2.90E+04         2.
+ENDDATA             17
+ENDSUBENT           39
+SUBENT        O0316004   20221225   20230523   20230523       O093
+BIB                  6         12
+REACTION  1(38-SR-86(P,G)39-Y-87-G,,SIG)
+          2(38-SR-86(P,G)39-Y-87-G,,SIG,,SFC)
+SAMPLE     (38-SR-86,ENR=0.9689) 86SrCO3 targets were evaporated
+           on Ta-backings.
+            Targets thicknesses were:
+             92. +- 7. ug/cm2 for gamma-angular distributions;
+            194. +- 16. ug/cm2 for 4pi gamma-summing
+FLAG       (1.) result from gamma-angular distributions
+           (2.) result from 4pi gamma-summing
+ERR-ANALYS (ERR-2,3.,4.) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl.II from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              12
 NOCOMMON             0          0
-NODATA               0          0
-ENDSUBENT            7
-ENDENTRY             2
+DATA                 6         15
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2FLAG
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV      NO-DIM
+      2.464       149.        33.   8.87E+06   1.96E+06         1.
+      2.479       150.         6.  8.354E+06   3.34E+05         2.
+      2.578       207.         7.  7.553E+06   2.55E+05         2.
+      2.677       293.         9.  7.164E+06   2.29E+05         2.
+      2.776       351.        11.    5.9E+06   1.77E+05         2.
+      2.876       432.        13.  5.065E+06   1.51E+05         2.
+      2.959       549.        99.   4.85E+06   8.74E+05         1.
+      2.975       548.        15.  4.584E+06   1.27E+05         2.
+      3.074       687.        19.  4.173E+06   1.18E+05         2.
+      3.174       837.        24.  3.738E+06   1.06E+05         2.
+      3.273       980.        28.  3.274E+06   9.40E+04         2.
+      3.372      1196.        34.  3.028E+06   8.60E+04         2.
+      3.454      1294.       283.   2.63E+06   5.75E+05         1.
+      3.471      1400.        40.  2.721E+06   7.80E+04         2.
+      3.570      1573.        44.  2.374E+06   6.60E+04         2.
+ENDDATA             17
+ENDSUBENT           34
+SUBENT        O0316005   20221225   20230523   20230523       O093
+BIB                  6         12
+REACTION  1(38-SR-87(P,G)39-Y-88,,SIG)
+          2(38-SR-87(P,G)39-Y-88,,SIG,,SFC)
+SAMPLE     (38-SR-87,ENR=0.9155) 87SrCO3 targets were evaporated
+           on Ta-backings.
+            Targets thicknesses were:
+             73. +- 9. ug/cm2 for gamma-angular distributions;
+             96. +- 11. ug/cm2 for 4pi gamma-summing
+FLAG       (1.) result from gamma-angular distributions
+           (2.) result from 4pi gamma-summing
+ERR-ANALYS (ERR-2) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbls III, IV from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   10.
+ENDCOMMON            3
+DATA                 6         29
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2FLAG
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV      NO-DIM
+      1.982        39.         8. 2.9113E+07  5.749E+06         1.
+      2.081        68.        12. 2.7990E+07  4.763E+06         1.
+      2.179       107.        17. 2.5583E+07  3.961E+06         1.
+      2.280       182.        27. 2.5856E+07   3.86E+06         1.
+      2.379       244.        35. 2.1447E+07    3.1E+06         1.
+      2.479       394.        57. 2.1952E+07  3.191E+06         1.
+      2.566       572.       125. 2.1970E+07  4.783E+06         2.
+      2.578       523.        73. 1.9104E+07  2.665E+06         1.
+      2.676       725.        95. 1.7851E+07  2.345E+06         1.
+      2.764       982.       213. 1.7275E+07  3.755E+06         2.
+      2.810       993.       142. 1.4767E+07  2.114E+06         1.
+      2.877      1121.       155. 1.3127E+07  1.817E+06         1.
+      2.962      1612.       350. 1.4114E+07  3.064E+06         2.
+      2.978      1561.       210. 1.2954E+07   1.74E+06         1.
+      3.016      1880.       255. 1.3777E+07  1.867E+06         1.
+      3.056      1419.       196. 9.1380E+06  1.264E+06         1.
+      3.142      1353.       191. 6.6690E+06   9.39E+05         1.
+      3.160      1134.       242. 5.2950E+06  1.128E+06         2.
+      3.176      1216.       168. 5.4050E+06   7.45E+05         1.
+      3.317      1365.       199. 4.0300E+06   5.87E+05         1.
+      3.358      1289.       278. 3.4000E+06   7.34E+05         2.
+      3.373      1186.       171. 2.9990E+06   4.33E+05         1.
+      3.474      1242.       188. 2.3990E+06   3.64E+05         1.
+      3.555      1249.       264. 1.9570E+06   4.14E+05         2.
+      3.570      1446.       218. 2.1850E+06   3.29E+05         1.
+      3.753      1571.       336. 1.5270E+06   3.27E+05         2.
+      3.951      1903.       404. 1.1910E+06   2.53E+05         2.
+      4.149      2057.       431. 8.5800E+05    1.8E+05         2.
+      4.940      1640.       351. 1.7500E+05    3.7E+04         2.
+ENDDATA             31
+ENDSUBENT           52
+SUBENT        O0316006   20221225   20230523   20230523       O093
+BIB                  7         12
+REACTION  1(38-SR-87(P,G)39-Y-88-G,,SIG)
+          2(38-SR-87(P,G)39-Y-88-G,,SIG,,SFC)
+DECAY-DATA (39-Y-88-G,106.626D)
+SAMPLE     (38-SR-87,ENR=0.9155) 87SrCO3 targets were evaporated
+           on Ta-backings.
+            Targets thicknesses were:
+             73. +- 9. ug/cm2 for gamma-angular distributions;
+             96. +- 11. ug/cm2 for 4pi gamma-summing
+METHOD     4pi gamma-summing technique
+ERR-ANALYS (ERR-2) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl. III from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              12
+COMMON               1          3
+ERR-2
+PER-CENT
+   10.
+ENDCOMMON            3
+DATA                 5         10
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV
+      2.566       549.       186. 2.1060E+07  4.775E+06
+      2.764       940.       318. 1.6531E+07  3.749E+06
+      2.962      1540.       522. 1.3487E+07  3.059E+06
+      3.160      1061.       360. 4.9530E+06  1.124E+06
+      3.358      1212.       415. 3.1980E+06   7.32E+05
+      3.555      1155.       393. 1.8100E+06   4.12E+05
+      3.753      1466.       501. 1.4260E+06   3.26E+05
+      3.951      1752.       599. 1.0970E+06   2.51E+05
+      4.149      1884.       641. 7.8500E+05   1.79E+05
+      4.940      1485.       520. 1.5800E+05    5.5E+04
+ENDDATA             12
+ENDSUBENT           33
+SUBENT        O0316007   20221225   20230523   20230523       O093
+BIB                  8         13
+REACTION  1(38-SR-87(P,G)39-Y-88-L,,SIG)
+          2(38-SR-87(P,G)39-Y-88-L,,SIG,,SFC)
+DECAY-DATA (39-Y-88-L,13.98MSEC)
+LEVEL-PROP (39-Y-88-L,E-LVL=675.,SPIN=8.,PARITY=+1.)
+SAMPLE     (38-SR-87,ENR=0.9155) 87SrCO3 targets were evaporated
+           on Ta-backings.
+            Targets thicknesses were:
+             73. +- 9. ug/cm2 for gamma-angular distributions;
+             96. +- 11. ug/cm2 for 4pi gamma-summing
+METHOD     4pi gamma-summing technique
+ERR-ANALYS (ERR-2) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl. III from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              13
+COMMON               1          3
+ERR-2
+PER-CENT
+    10.
+ENDCOMMON            3
+DATA                 5         10
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV
+      2.566        24.         7.   9.09E+05   2.74E+05
+      2.764        42.        12.   7.44E+05   2.06E+05
+      2.962        72.        19.   6.27E+05   1.67E+05
+      3.160        73.        20.   3.42E+05   9.50E+04
+      3.358        77.        22.   2.02E+05   5.70E+04
+      3.555        94.        25.   1.47E+05   3.90E+04
+      3.753       105.        29.   1.02E+05   2.80E+04
+      3.951       151.        44.   9.50E+04   2.80E+04
+      4.149       173.        46.   7.20E+04   1.90E+04
+      4.940       158.        37.   1.70E+04   5.00E+03
+ENDDATA             12
+ENDSUBENT           34
+SUBENT        O0316008   20221225   20230523   20230523       O093
+BIB                  5         11
+REACTION  1(38-SR-88(P,G)39-Y-89,,SIG)
+          2(38-SR-88(P,G)39-Y-89,,SIG,,SFC)
+SAMPLE     (38-SR-88,ENR=0.9984) 88Sr(NO3)2 targets were
+           evaporated on Ta-backings.
+            Target thickness was:
+             95. +- 7. ug/cm2 for 4pi gamma-summing
+ERR-ANALYS (ERR-2,3.,4.) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl.V from Phys.Rev.,C104(2021)025804
+           (COREL,O1054003) Gamma-angular distributions from
+            Tbl.V from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 5          5
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV
+      2.478       169.        31.  9.484E+06   1.74E+06
+      2.979       630.        83.  5.219E+06   6.88E+05
+      3.552      1817.       263.  2.876E+06   4.16E+05
+      3.952      3026.       387.  1.894E+06   2.42E+05
+      4.561      4407.       617.   8.63E+05   1.21E+05
+ENDDATA              7
+ENDSUBENT           23
+SUBENT        O0316009   20221225   20230523   20230523       O093
+BIB                  6         12
+REACTION  1(38-SR-88(P,G)39-Y-89-G,,SIG)
+          2(38-SR-88(P,G)39-Y-89-G,,SIG,,SFC)
+SAMPLE     (38-SR-88,ENR=0.9984) 88Sr(NO3)2 targets were
+           evaporated on Ta-backings.
+            Targets thicknesses were:
+            168. +- 12. ug/cm2 for gamma-angular distributions;
+             95. +- 7. ug/cm2 for 4pi gamma-summing
+FLAG       (1.) result from gamma-angular distributions
+           (2.) result from 4pi gamma-summing
+ERR-ANALYS (ERR-2,3.,4.) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl.V from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              12
+NOCOMMON             0          0
+DATA                 6         38
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2FLAG
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV      NO-DIM
+      1.379       0.50       0.10 5.2417E+07 1.0483E+07         2.
+      1.479       0.73       0.10 2.7337E+07 3.7450E+06         2.
+      1.580       1.82       0.30 2.6712E+07 4.4030E+06         2.
+      1.680        2.7        0.4 1.7092E+07 2.5320E+06         2.
+      1.780         7.        0.8 2.0571E+07 2.3510E+06         2.
+      1.880       12.9        1.6 1.8755E+07 2.3260E+06         2.
+      1.982       13.9        1.7 1.0436E+07 1.2760E+06         2.
+      2.080        41.         5. 1.7108E+07 2.0860E+06         2.
+      2.180        50.         6. 1.1954E+07 1.4340E+06         2.
+      2.280       114.        12. 1.6222E+07 1.7080E+06         2.
+      2.380       134.        14. 1.1742E+07 1.2270E+06         2.
+      2.478       148.        32. 8.3060E+06 1.7960E+06         1.
+      2.480       137.        15. 7.6210E+06 8.3400E+05         2.
+      2.561       172.        18. 6.7570E+06 7.0700E+05         2.
+      2.581       162.        17. 5.8560E+06 6.1400E+05         2.
+      2.680       300.        32. 7.2840E+06 7.7700E+05         2.
+      2.780       341.        37. 5.6650E+06 6.1500E+05         2.
+      2.880       409.        49. 4.7450E+06 5.6900E+05         2.
+      2.957       486.        54. 4.3330E+06 4.8100E+05         2.
+      2.979       515.        87. 4.2670E+06 7.2100E+05         1.
+      2.980       520.        69. 4.2940E+06 5.7000E+05         2.
+      3.081       795.        88. 4.7380E+06 5.2400E+05         2.
+      3.180       782.        91. 3.4400E+06 4.0000E+05         2.
+      3.281       972.       114. 3.1820E+06 3.7300E+05         2.
+      3.354      1009.       121. 2.6920E+06 3.2300E+05         2.
+      3.380      1091.       129. 2.7100E+06 3.2000E+05         2.
+      3.478      1549.       183. 2.9640E+06 3.5000E+05         2.
+      3.552      1347.       164. 2.1320E+06 2.6000E+05         2.
+      3.552      1428.       276. 2.2600E+06 4.3700E+05         1.
+      3.750      1630.       195. 1.5990E+06 1.9100E+05         2.
+      3.948      2136.       229. 1.3480E+06 1.4500E+05         2.
+      3.952      2285.       406. 1.4300E+06 2.5400E+05         1.
+      4.146      2588.       297. 1.0870E+06 1.2500E+05         2.
+      4.344      3292.       381. 9.4700E+05 1.1000E+05         2.
+      4.541      3142.       332. 6.3600E+05 6.7000E+04         2.
+      4.561      3367.       648. 6.5900E+05 1.2700E+05         1.
+      4.739      3270.       334. 4.7700E+05 4.9000E+04         2.
+      4.937      1962.       222. 2.1000E+05 2.4000E+04         2.
+ENDDATA             40
+ENDSUBENT           57
+SUBENT        O0316010   20221225   20230523   20230523       O093
+BIB                  7         13
+REACTION  1(38-SR-88(P,G)39-Y-89-M,,SIG)
+          2(38-SR-88(P,G)39-Y-89-M,,SIG,,SFC)
+DECAY-DATA (39-Y-89-M,15.663SEC,DG,909.)
+SAMPLE     (38-SR-88,ENR=0.9984) 88Sr(NO3)2 targets were
+           evaporated on Ta-backings.
+            Targets thicknesses were:
+            168. +- 12. ug/cm2 for gamma-angular distributions;
+             95. +- 7. ug/cm2 for 4pi gamma-summing
+FLAG       (1.) result from gamma-angular distributions
+           (2.) result from 4pi gamma-summing
+ERR-ANALYS (ERR-2,3.,4.) Uncertainty in target homogeneities
+STATUS     (TABLE) Tbl.V from Phys.Rev.,C104(2021)025804
+HISTORY    (20221225C) SD
+ENDBIB              13
+NOCOMMON             0          0
+DATA                 6         38
+EN-CM      DATA      1ERR-T     1DATA      2ERR-T     2FLAG
+MEV        MICRO-B    MICRO-B    B*MEV      B*MEV      NO-DIM
+      1.379       0.05       0.04  5.242E+06  4.193E+06         2.
+      1.479       0.07       0.05  2.621E+06  1.872E+06         2.
+      1.580       0.18       0.06  2.642E+06   8.81E+05         2.
+      1.680       0.20       0.06  1.266E+06    3.8E+05         2.
+      1.780       0.60       0.13  1.763E+06   3.82E+05         2.
+      1.880        1.5        0.2  2.181E+06   2.91E+05         2.
+      1.982        1.6        0.3  1.201E+06   2.25E+05         2.
+      2.080         4.         1.  1.669E+06   4.17E+05         2.
+      2.180         6.         1.  1.434E+06   2.39E+05         2.
+      2.280        14.         1.  1.992E+06   1.42E+05         2.
+      2.380        15.         1.  1.314E+06    8.8E+04         2.
+      2.478        21.         5.  1.178E+06   2.81E+05         1.
+      2.480        22.         2.  1.224E+06   1.11E+05         2.
+      2.561        24.         2.  9.430E+05    7.9E+04         2.
+      2.581        26.         2.  9.400E+05    7.2E+04         2.
+      2.680        48.         3.  1.165E+06    7.3E+04         2.
+      2.780        53.         4.  8.800E+05    6.6E+04         2.
+      2.880        95.         7.  1.102E+06    8.1E+04         2.
+      2.957       102.         7.  9.090E+05    6.2E+04         2.
+      2.979       115.        17.  9.530E+05   1.41E+05         1.
+      2.980       120.         8.  9.910E+05    6.6E+04         2.
+      3.081       185.        11.  1.103E+06    6.6E+04         2.
+      3.180       210.        13.  9.240E+05    5.7E+04         2.
+      3.281       263.        17.  8.610E+05    5.6E+04         2.
+      3.354       266.        17.  7.100E+05    4.5E+04         2.
+      3.380       300.        19.  7.450E+05    4.7E+04         2.
+      3.478       464.        28.  8.880E+05    5.4E+04         2.
+      3.552       367.        24.  5.810E+05    3.8E+04         2.
+      3.552       389.        73.  6.160E+05   1.16E+05         1.
+      3.750       487.        31.  4.780E+05     3.E+04         2.
+      3.948       715.        44.  4.510E+05    2.8E+04         2.
+      3.952       741.       127.  4.640E+05    7.9E+04         1.
+      4.146       951.        59.  3.990E+05    2.5E+04         2.
+      4.344      1259.        77.  3.620E+05    2.2E+04         2.
+      4.541       976.        62.  1.980E+05    1.3E+04         2.
+      4.561      1040.       193.  2.040E+05    3.8E+04         1.
+      4.739       952.        60.  1.390E+05     9.E+03         2.
+      4.937       676.        43.  7.200E+04     5.E+03         2.
+ENDDATA             40
+ENDSUBENT           58
+ENDENTRY            10

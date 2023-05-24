@@ -1,10 +1,12 @@
-ENTRY            O0305   20220105   20220607   20220505       O086
-SUBENT        O0305001   20220105   20220607   20220505       O086
-BIB                 12         30
-TITLE      Tritium production by 6-Bev protons.
+ENTRY            O0305   20221114   20230523   20230523       O093
+SUBENT        O0305001   20221114   20230523   20230523       O093
+BIB                 12         34
+TITLE      Tritium production by 6-Bev protons
 AUTHOR     (L.A.Currie)
 INSTITUTE  (1USAPSU)
 REFERENCE  (J,PR,114,878,1959)
+            Re-normalized data at 2.05 GeV were added to
+                                              C0836 (see REL-REF).
 SAMPLE     Targets, with areas of about 2 x 2 cm and thicknesses
            varying from 0.41 g/cm**2 to 4.8 g/cm**2, included pure
            metals as well as organic materials. Included with the
@@ -13,17 +15,16 @@ SAMPLE     Targets, with areas of about 2 x 2 cm and thicknesses
            1 mg/cm**2 or 0.002 in. gold.
 REL-REF    (R,C0836001,L.A.Currie+,J,PR,101,1557,1956) The cross
            sections for tritium production in various substances
-           by 2.05 BeV proton have been measured.
+           by 2.05 GeV proton have been measured. Re-normalized
+           data were added.
 DETECTOR   (GEMUC) A Geiger Counter.
 FACILITY   (SYNCY,1USAUSA) The Bevatron was used.
 METHOD     (ACTIV,CHSEP,STTA,REC)
-ERR-ANALYS (ERR-S) Statistical counting errors.
+ERR-ANALYS (ERR-S,,5.) Statistical counting errors.
            (ERR-1) Uncertainties in target analysis.
-           (MONIT-ERR) Error in the monitor cross sections.
-           (ERR-T) The uncertainty is reported by authors.
+           (MONIT-ERR,,10.) Error in the monitor cross sections.
+           (ERR-T) Over-all errors
 STATUS     (TABLE) Tbl. 1 from Phys.Rev. 114,878,1959
-           (COREL,C0836001) With old monitor value
-                                               (9.0 mb at 2 GeV)
 HISTORY    (19960306C)
            (19970309U) Last checking has been done.
            (20101002A) SD: Cosmetic corrections:
@@ -31,112 +32,117 @@ HISTORY    (19960306C)
             two digits => four digits in REF., MONIT-REF, HISTORY
             SF9=EXP in all REACTIONs deleted
            (20220104A) SD: Correction in Subent 114.
-ENDBIB              30
-COMMON               4          3
-ERR-T      ERR-S      ERR-1      MONIT-ERR
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
-        20.         5.         5.        10.
+           (20221114A) SD: Correction in several Subents.
+           Subents 009-011 deleted - data moved to C0836 (values
+           at E=2.05 GeV was not measured in current experiment)
+ENDBIB              34
+COMMON               2          3
+ERR-T      ERR-1
+PER-CENT   PER-CENT
+        20.         5.
 ENDCOMMON            3
-ENDSUBENT           37
-SUBENT        O0305002   20101202   20110621   20110607       O043
-BIB                  5          9
+ENDSUBENT           41
+SUBENT        O0305002   20221114   20230523   20230523       O093
+BIB                  6          9
 REACTION   (6-C-0(P,X)1-H-3,,SIG)
 SAMPLE     Polyethylene (CH2) was used as target.
-MONITOR    ((MONIT1)13-AL-27(P,X)9-F-18,,SIG)
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-           (C0286001,A.Caretto+,J,PR,110,1130,1958) For F-18
-FLAG       (1.) Previous result - see C0836    -corrected for the
-           Subsequent change in monitor cross-section.
-           Polystyrene (C) was used as a target.
+MONITOR    ((MONIT)13-AL-27(P,X)9-F-18,,SIG)
+MISC-COL   (MISC) Thickness of the target
+MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956)  For Na-24
+           (C0286001,A.A.Caretto+,J,PR,110,1130,1958) For F-18
+HISTORY    (20221114A) SD: Value at E=2.05 GeV (not measured in
+           current experiment) moved to C0836.
+           THICKNESS -> MISC (not independent variable).
 ENDBIB               9
-NOCOMMON             0          0
-DATA                 6          3
-EN         DATA       THICKNESS  MONIT1     MONIT2     FLAG
-GEV        MB         G/CM-SQ    MB         MB         NO-DIM
-       2.05        17.                         10.8      1.
-        5.7        18.       0.75        7.4
-        6.2        20.       0.45        7.4
-ENDDATA              5
-ENDSUBENT           19
-SUBENT        O0305003   20101202   20110621   20110607       O043
-BIB                  5          9
+COMMON               1          3
+MONIT
+MB
+        7.4
+ENDCOMMON            3
+DATA                 3          2
+EN         DATA       MISC
+GEV        MB         G/CM-SQ
+        5.7        18.       0.75
+        6.2        20.       0.45
+ENDDATA              4
+ENDSUBENT           22
+SUBENT        O0305003   20221114   20230523   20230523       O093
+BIB                  6          9
 REACTION   (7-N-0(P,X)1-H-3,,SIG)
 SAMPLE     Melamine (C3N6H6) was used as target.
-MONITOR    ((MONIT1)13-AL-27(P,X)9-F-18,,SIG)
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-           (C0286001,A.Caretto+,J,PR,110,1130,1958) For F-18
-FLAG       (1.) Previous result - see C0836    -corrected for the
-           Subsequent change in monitor cross-section.
-           Hexamethylene tetramine (N) used as a target
+MONITOR    ((MONIT)13-AL-27(P,X)9-F-18,,SIG)
+MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956)  For Na-24
+           (C0286001,A.A.Caretto+,J,PR,110,1130,1958) For F-18
+MISC-COL   (MISC) Thickness of the target
+HISTORY    (20221114A) SD: Value at E=2.05 GeV (not measured in
+           current experiment) moved to C0836.
+           THICKNESS -> MISC (not independent variable).
 ENDBIB               9
 NOCOMMON             0          0
-DATA                 6          2
-EN         DATA       THICKNESS  MONIT1     MONIT2     FLAG
-GEV        MB         G/CM-SQ    MB         MB         NO-DIM
-       2.05        30.                        10.8       1.
+DATA                 4          1
+EN         DATA       MISC       MONIT
+GEV        MB         G/CM-SQ    MB
         6.2        35.        1.3        7.4
-ENDDATA              4
-ENDSUBENT           18
-SUBENT        O0305004   20101202   20110621   20110607       O043
-BIB                  5          9
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        O0305004   20221114   20230523   20230523       O093
+BIB                  6          9
 REACTION   (8-O-0(P,X)1-H-3,,SIG)
 SAMPLE     Lucite (C5O2H8) was used as target.
-MONITOR    ((MONIT1)13-AL-27(P,X)9-F-18,,SIG)
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-           (C0286001,A.Caretto+,J,PR,110,1130,1958) For F-18
-FLAG       (1.) Previous result - see C0836    -corrected for the
-           Subsequent change in monitor cross-section.
-           Oxalic acid (O) used as a target
+MONITOR    ((MONIT)13-AL-27(P,X)9-F-18,,SIG)
+MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956)  For Na-24
+           (C0286001,A.A.Caretto+,J,PR,110,1130,1958) For F-18
+MISC-COL   (MISC) Thickness of the target
+HISTORY    (20221114A) SD: Value at E=2.05 GeV (not measured in
+           current experiment) moved to C0836.
+           THICKNESS -> MISC (not independent variable).
 ENDBIB               9
 NOCOMMON             0          0
-DATA                 6          2
-EN         DATA       THICKNESS  MONIT1     MONIT2     FLAG
-GEV        MB         G/CM-SQ    MB         MB         NO-DIM
-       2.05        36.                        10.8         1.
+DATA                 4          1
+EN         DATA       MISC       MONIT
+GEV        MB         G/CM-SQ    MB
         6.2        38.        1.3        7.4
-ENDDATA              4
-ENDSUBENT           18
-SUBENT        O0305005   20101202   20110621   20110607       O043
-BIB                  5          8
+ENDDATA              3
+ENDSUBENT           17
+SUBENT        O0305005   20221114   20230523   20230523       O093
+BIB                  6         10
 REACTION   (13-AL-27(P,X)1-H-3,,SIG)
 SAMPLE     Aluminium was used as target.
 MONITOR    ((MONIT1)13-AL-27(P,X)9-F-18,,SIG)
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-           (C0286001,A.Caretto+,J,PR,110,1130,1958) For F-18
-FLAG       (1.) Previous result - See C0836    -Corrected for the
-           Subsequent change in monitor cross-section.
-ENDBIB               8
+           ((MONIT2)13-AL-27(P,X)11-NA-24,CUM,SIG)
+MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956)  For Na-24
+           (C0286001,A.A.Caretto+,J,PR,110,1130,1958) For F-18
+MISC-COL   (MISC) Thickness of the target
+HISTORY    (20221114A) SD: Value at E=2.05 GeV (not measured in
+           current experiment) moved to C0836.
+           THICKNESS -> MISC (not independent variable).
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 6          3
-EN         DATA       THICKNESS  MONIT1     MONIT2     FLAG
-GEV        MB         G/CM-SQ    MB         MB         NO-DIM
+DATA                 5          2
+EN         DATA       MISC       MONIT1     MONIT2
+GEV        MB         G/CM-SQ    MB         MB
        0.12         8.        2.5                  10.
-       2.05        44.                           10.8           1.
         5.7        50.       0.41        7.4
-ENDDATA              5
-ENDSUBENT           18
-SUBENT        O0305006   20101202   20110621   20110607       O043
-BIB                  5          8
+ENDDATA              4
+ENDSUBENT           19
+SUBENT        O0305006   20221114   20230523   20230523       O093
+BIB                  6          9
 REACTION   (26-FE-0(P,X)1-H-3,,SIG)
 SAMPLE     Iron was used as target.
-MONITOR    ((MONIT1)13-AL-27(P,X)9-F-18,,SIG)
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-           (C0286001,A.Caretto+,J,PR,110,1130,1958) For F-18
-FLAG       (1.) Previous Result - See C0836    -Corrected for the
-           Subsequent change in monitor cross-section.
-ENDBIB               8
+MONITOR    ((MONIT)13-AL-27(P,X)9-F-18,,SIG)
+MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956)  For Na-24
+           (C0286001,A.A.Caretto+,J,PR,110,1130,1958) For F-18
+MISC-COL   (MISC) Thickness of the target
+HISTORY    (20221114A) SD: Value at E=2.05 GeV (not measured in
+           current experiment) moved to C0836.
+           THICKNESS -> MISC (not independent variable).
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 6          2
-EN         DATA       THICKNESS  MONIT1     MONIT2     FLAG
-GEV        MB         G/CM-SQ    MB         MB         NO-DIM
-       2.05        64.                        10.8       1.
+DATA                 4          1
+EN         DATA       MISC       MONIT
+GEV        MB         G/CM-SQ    MB
         6.2        57.        4.8        7.4
-ENDDATA              4
+ENDDATA              3
 ENDSUBENT           17
 SUBENT        O0305007   20101202   20110621   20110607       O043
 BIB                  4          4
@@ -152,76 +158,31 @@ GEV        MB         G/CM-SQ    MB
         6.2       440.        2.5        7.4
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        O0305008   20101202   20110621   20110607       O043
-BIB                  6         12
+SUBENT        O0305008   20221114   20230523   20230523       O093
+BIB                  7         13
 REACTION   (82-PB-0(P,X)1-H-3,,SIG)
 SAMPLE     Lead targets were used (see col.THICKNESS)
-MONITOR    ((MONIT1)13-AL-27(P,X)9-F-18,,SIG)
-           ((MONIT2)13-AL-27(P,N+3P)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-           (C0286001,A.Caretto+,J,PR,110,1130,1958) For F-18
-FLAG       (1.) Previous result - See C0836    -Corrected for the
-           Subsequent change in monitor cross-section.
-           (2.) .Result of a 25% correction for loss of tritium
+MONITOR    ((MONIT)13-AL-27(P,X)9-F-18,,SIG)
+MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956)  For Na-24
+           (C0286001,A.A.Caretto+,J,PR,110,1130,1958) For F-18
+MISC-COL   (MISC) Thickness of the target
+FLAG       (2.) Result of a 25% correction for loss of tritium
            from the thin lead target due to recoil.
 HISTORY    (20101202A) SD: ERR-S deleted. Description moved
                            to the FLAG (2.)
-ENDBIB              12
+           (20221114A) SD: Value at E=2.05 GeV (not measured in
+           current experiment) moved to C0836.
+           THICKNESS -> MISC (not independent variable).
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 6          3
-EN         DATA       THICKNESS  MONIT1     MONIT2     FLAG
-GEV        MB         G/CM-SQ    MB         MB         NO-DIM
-       2.05       610.                       10.8        1.
-        6.2       510.       0.45        7.4             2.
+DATA                 5          2
+EN         DATA       MISC       MONIT      FLAG
+GEV        MB         G/CM-SQ    MB         NO-DIM
+        6.2       510.       0.45        7.4        2.
         6.2       450.        2.6        7.4
-ENDDATA              5
+ENDDATA              4
 ENDSUBENT           22
-SUBENT        O0305009   20220105   20220607   20220505       O086
-BIB                  5          6
-REACTION   (12-MG-0(P,X)1-H-3,,SIG)
-MONITOR    ((MONIT)13-AL-27(P,X)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-COMMENT    Previous result - See C0836    -Corrected for the
-           Subsequent change in monitor cross-section.
-HISTORY    (20220104A) SD: Energy units corrected (MEV -> GEV).
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       MONIT
-GEV        MB         MB
-  2.05      36.        10.8
-ENDDATA              3
-ENDSUBENT           14
-SUBENT        O0305010   20220105   20220607   20220505       O086
-BIB                  5          6
-REACTION   (28-NI-0(P,X)1-H-3,,SIG)
-MONITOR    ((MONIT)13-AL-27(P,X)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-COMMENT    Previous result - See C0836    -Corrected for the
-           Subsequent change in monitor cross-section.
-HISTORY    (20220104A) SD: Energy units corrected (MEV -> GEV).
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       MONIT
-GEV        MB         MB
-  2.05      90.         10.8
-ENDDATA              3
-ENDSUBENT           14
-SUBENT        O0305011   20220105   20220607   20220505       O086
-BIB                  5          6
-REACTION   (47-AG-0(P,X)1-H-3,,SIG)
-MONITOR    ((MONIT)13-AL-27(P,X)11-NA-24,CUM,SIG)
-MONIT-REF  (C0257001,H.Hicks+,J,PR,102,1390,1956)  For Na-24
-COMMENT    Previous result - See C0836    -Corrected for the
-           Subsequent change in monitor cross-section.
-HISTORY    (20220104A) SD: Energy units corrected (MEV -> GEV).
-ENDBIB               6
-NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       MONIT
-GEV        MB         MB
-  2.05      160.        10.8
-ENDDATA              3
-ENDSUBENT           14
+NOSUBENT      O0305009   20221114   20230523   20230523       O093
+NOSUBENT      O0305010   20221114   20230523   20230523       O093
+NOSUBENT      O0305011   20221114   20230523   20230523       O093
 ENDENTRY            11

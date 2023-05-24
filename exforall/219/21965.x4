@@ -1,17 +1,17 @@
-ENTRY            21965   20170816   20180124   20180124       2264
-SUBENT        21965001   20170816   20180124   20180124       2264
-BIB                 10         36
-INSTITUTE  (2AUSIRK) A.Pavlik, G.Winkler, M.Uhl
-           (2ZZZGEL) A.Paulsen., H.Liskien.
+ENTRY            21965   20230209   20230523   20230504       2314
+SUBENT        21965001   20230209   20230523   20230504       2314
+BIB                 10         37
+TITLE       Neutron-induced reactions on Ni-58
+AUTHOR     (A.Pavlik, G.Winkler, M.Uhl, A.Paulsen, H.Liskien)
 REFERENCE  (J,NSE,90,186,1985) Main reference for Ni-58 data.
            (C,82ANTWER,,400,1982)
 REL-REF    (O,21807001,A.Pavlik+,J,JP/G,8,1283,1982)  Details of
             the experiment and analysis; data for Zr-90(n,2n)
            (I,,A.Pavlik,T,PAVLIK,1982)   Thesis,  University of
                     Vienna. Experimental details.
-AUTHOR     (A.Pavlik, G.Winkler, M.Uhl, A.Paulsen, H.Liskien)
-TITLE       Neutron-induced reactions on Ni-58
-INC-SOURCE (D-T)   T(d,n)He-4 reaction.
+INSTITUTE  (2AUSIRK) A.Pavlik, G.Winkler, M.Uhl
+           (2ZZZGEL) A.Paulsen., H.Liskien.
+INC-SOURCE (D-T)
             IRK;   air-jet-cooled solid state Ti-T target.
             Geel;  solid state target of tritium occluded in
                    a 3.9 mg/cm**2 Y-layer on a 0.5 mm Cu-backing.
@@ -26,7 +26,7 @@ ERR-ANALYS (ERR-T)    Does not include the error of the
                      reaction product
            (EN-ERR)   Center of the neutron energy line
                       displacement
-           .Error matrices are given in tables 5,6.
+            Error matrices are given in tables 5,6.
 HISTORY    (19850702C) Subents 2 and 3 were taken from EXFOR 21807
             and were translated to this entry because of new
             results on Ni-58
@@ -37,13 +37,14 @@ HISTORY    (19850702C) Subents 2 and 3 were taken from EXFOR 21807
            in Subent 006. ERR-ANALYS update in Subents 002-006.
            ERR-HL -> ERR-16. Two refs moved to REL-REF. STATUS
            'COREL' deleted (info moved to REL-REF).
-ENDBIB              36
+           (20230209U) SD: Correction in Subent 004.
+ENDBIB              37
 COMMON               1          3
 ERR-1
 PER-CENT
    0.2
 ENDCOMMON            3
-ENDSUBENT           43
+ENDSUBENT           44
 SUBENT        21965002   20170816   20180124   20180124       2264
 BIB                 10         51
 REACTION   (28-NI-58(N,2N)28-NI-57,,SIG)
@@ -240,29 +241,27 @@ MB         PER-CENT   PER-CENT   PER-CENT   PER-CENT   NO-DIM
        0.85       0.75       0.80       0.20       0.06
 ENDDATA             40
 ENDSUBENT          103
-SUBENT        21965004   20170816   20180124   20180124       2264
+SUBENT        21965004   20230209   20230523   20230504       2314
 BIB                 10         46
-REACTION   (28-NI-58(N,X)27-CO-57,,SIG)    Sum of the N,N+P,
-                 N,P+N and N,D reactions
+REACTION   (28-NI-58(N,X)27-CO-57,,SIG)
 FACILITY   (VDG,2ZZZGEL) 7 MV Van de Graaff accelerator of GEEL.
                            For the energy range 12.3 to 19.5 MeV.
                            Energy steps 0.2 to 0.8 MeV.
-METHOD     (SITA)   Single target irradiation
-           (REC)    Recoil particle method
+METHOD     (SITA,REC)
 DETECTOR   (TELES,CSICR,CSICR) To detect the recoil protons used
               at the CBNM
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
-DECAY-DATA (27-CO-57,,DG)
-SAMPLE     .Natural Ni, purity > 99.98%
-           .Samples were fastened to the inner side of a 1 mm
+RAD-DET    (27-CO-57,DG)
+SAMPLE      Natural Ni, purity > 99.98%
+            Samples were fastened to the inner side of a 1 mm
             thick aluminum ring 20 cm in diam. with the target in
             the centre, arranged in steps of 6 and 12 degr.
             symmetric to the direction of the deuteron beam.
 STATUS     (TABLE) Tbl.III from NSE,90,186,1985
            (COREL,21965005) with 27Al(n,a)24Na monitor (Vienna)
-ERR-ANALYS .The principal sources of uncertainty were
-           (ERR-2,,,P) ERROR due to the irradiation geometry of
-                    THE sample
+ERR-ANALYS  The principal sources of uncertainty were
+           (ERR-2,,,P) Error due to the irradiation geometry of
+                    the sample
            (ERR-3)   Error due to the sample mass including purity
            (ERR-4,,,F)   Error due to the detector efficiency
            (ERR-7)   Error due to the irradiation time, dead time
@@ -288,14 +287,16 @@ ERR-ANALYS .The principal sources of uncertainty were
 HISTORY    (19850702C) IF.
            (20060609A)  Error structure, energy resolution added
            (20170816U) SD: ERR-ANALYS update.
+           (20230209U) SD: ERR-12 deleted from COMMON section
+            (value is given in the DATA section).
 ENDBIB              46
-COMMON              10          6
+COMMON               9          6
 ERR-16     ERR-3      ERR-4      ERR-7      ERR-8      ERR-9
-ERR-10     ERR-12     ERR-14     ERR-15
+ERR-10     ERR-14     ERR-15
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-PER-CENT   PER-CENT   PER-CENT   PER-CENT
+PER-CENT   PER-CENT   PER-CENT
        0.02        0.1        3.6       0.04        2.0        2.5
-       0.35        0.2       0.20       0.10
+       0.35       0.20       0.10
 ENDCOMMON            6
 DATA                10         12
 EN         EN-ERR     EN-RSL-FW  DATA       ERR-T      ERR-S

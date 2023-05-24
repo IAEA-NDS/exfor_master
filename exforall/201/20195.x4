@@ -1,24 +1,33 @@
-ENTRY            20195   20170425   20180123   20180123       2261
-SUBENT        20195001   20170425   20180123   20180123       2261
-BIB                 14         26
-INSTITUTE  (2BLGLVN)
-REFERENCE  (J,JPR,22,652,1961)  (in French)
-AUTHOR     (G.Deconninck, A.Gonze, P.Macq, J.P.Meulders)
+ENTRY            20195   20230130   20230523   20230523       2313
+SUBENT        20195001   20230130   20230523   20230523       2313
+BIB                 16         36
 TITLE       Total cross-sections for 28.4 MeV neutrons
-FACILITY   (CYCLO,2BLGLVN)    Cyclotron
-INC-SOURCE (D-T)    Deuteron-tritium
+AUTHOR     (G.Deconninck, A.Gonze, P.Macq, J.P.Meulders)
+REFERENCE  (J,JPR,22,652,1961)  (in French)
+INSTITUTE  (2BLGLVN)
+FACILITY   (CYCLO,2BLGLVN)
+INC-SOURCE (D-T)
 INC-SPECT  (EN-RSL) not specified
 SAMPLE     Samples in the form of powder, or in crystal such
            as S, Mn, As, I, P were obtained by compression.
            Liquid elements such as Hg, CCl(4) Br were placed in
            a thin-walled cylinder.
 METHOD     (TRN) Transmission with good geometry.
-DETECTOR   (SCIN)     NE-102 plastic scintillator.
-CORRECTION .Corrected for inscattering and background.
+DETECTOR   (SCIN) NE-102 plastic scintillator.
+CORRECTION  Corrected for 'inscattering' (see COMMENT) and
+           background.
+COMMENT    The detector additionally to transmitted neutrons
+           received elastically scattered neutrons from the
+           target. Counting these neutrons is a measurement error
+           that results in a reduction in the calculated total
+           cross section.
+REL-REF    (M,20172001,G.Deconninck+,J,BCS,44,851,1958) - Method
+            of 'inscattering' error calculation.
 ERR-ANALYS (DATA-ERR) The statistical error is an order of
-           magnitude greater than the error due to inscattering,
-           no further details given.
-STATUS     (TABLE) Tabls (without numbers) on p.655 of JPR,22,652
+           magnitude greater than the error due to
+            'inscattering', no further details given.
+STATUS     (TABLE) Tables (without numbers) on p.655 of
+                                     J.Phys.Radium,22(1961)652
 HISTORY    (19721005C)
            (19820128A) A.P.T. Subents 020 021 022 added and
              ISO-QUANT changed to REACTION codes
@@ -27,13 +36,14 @@ HISTORY    (19721005C)
            Subents 002-022. REACTION code corrected in Subent 021.
            Free text update in Subent 001, SAMPLE,INC-SPECT were
            added.
-ENDBIB              26
+           (20230130A) SD: Corrections in Subents 021, 022.
+ENDBIB              36
 COMMON               2          3
 EN         EN-RSL
 MEV        PER-CENT
    28.4       1.
 ENDCOMMON            3
-ENDSUBENT           33
+ENDSUBENT           43
 SUBENT        20195002   20170425   20180123   20180123       2261
 BIB                  2          3
 REACTION   (11-NA-23(N,TOT),,SIG)
@@ -282,32 +292,42 @@ ADEG       B/SR       PER-CENT
  5.         1.24        0.2
 ENDDATA              3
 ENDSUBENT           12
-SUBENT        20195021   20170425   20180123   20180123       2261
-BIB                  2          4
-REACTION   (50-SN-0(N,EL)50-SN-0,,DA)
+SUBENT        20195021   20230130   20230523   20230523       2313
+BIB                  4          9
+REACTION   (50-SN-0(N,EL)50-SN-0,EXL,DA)
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+CRITIQUE   S.Simakov (2022-08-06): Possible inclusion of inelastic
+           scattering below Ex~0.57 MeV
 HISTORY    (19820128C) A.P.T.
            (20170425A) SD: Meaningless zeros were deleted from
            the values. SF4=Sn-0 was added to REACTION code.
-ENDBIB               4
+           (20230130A) SD: CRITIQUE, REL-REF added. SF5=EXL added
+           to REACTION code.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 ANG        DATA       DATA-ERR
 ADEG       B/SR       PER-CENT
  5.         6.25        0.41
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        20195022   20170425   20180123   20180123       2261
-BIB                  2          4
-REACTION   (92-U-238(N,EL)92-U-238,,DA)
+ENDSUBENT           17
+SUBENT        20195022   20230130   20230523   20230523       2313
+BIB                  4          9
+REACTION   (92-U-238(N,EL)92-U-238,EXL,DA)
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+CRITIQUE   S.Simakov (2022-08-06): Possible inclusion of inelastic
+           scattering below Ex~0.57 MeV
 HISTORY    (19820128C) A.P.T.
            (20170425A) SD: Meaningless zeros were deleted from
            the values.
-ENDBIB               4
+           (20230130A) SD: CRITIQUE, REL-REF added. SF5=EXL added
+           to REACTION code.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 ANG        DATA       DATA-ERR
 ADEG       B/SR       PER-CENT
  5.         24.3        0.87
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           17
 ENDENTRY            22

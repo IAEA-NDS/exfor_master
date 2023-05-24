@@ -1,15 +1,15 @@
-ENTRY            21722   20170120   20170403   20170325       2257
-SUBENT        21722001   20170120   20170403   20170325       2257
-BIB                 15         61
-INSTITUTE  (2JPNKYU) For I.F,M.S,A.K,Y.W,H.T,M.H,.
-REFERENCE  (J,NST,9,301,197205)
-AUTHOR     (I.Fujita,M.Sonoda,A.Katase,Y.Wakuta,H.Tawara,
-           M.Hyakutake,K.Iwatani)
+ENTRY            21722   20230211   20230523   20230504       2314
+SUBENT        21722001   20230211   20230523   20230504       2314
+BIB                 15         62
 TITLE       Inelastic scattering of 14 MeV neutrons by medium
             weight nuclei
+AUTHOR     (I.Fujita,M.Sonoda,A.Katase,Y.Wakuta,H.Tawara,
+           M.Hyakutake,K.Iwatani)
+REFERENCE  (J,NST,9,301,1972)
+INSTITUTE  (2JPNKYU) For I.F,M.S,A.K,Y.W,H.T,M.H,.
 FACILITY   (CCW,2JPNKYU)   Cockroft-Walton accelerator.
 INC-SOURCE (D-T)   200 keV deuterons on tritium target.
-SAMPLE     .Scatterers were placed 76.1 mm from the tritium target
+SAMPLE      Scatterers were placed 76.1 mm from the tritium target
             and were of natural elements in a light aluminium
             can, 30 mm diameter, 30 mm thick. Chemical purities
             were as follows:
@@ -17,31 +17,31 @@ SAMPLE     .Scatterers were placed 76.1 mm from the tritium target
             Mn - 99.0%, Fe - 99.99%, Co - 99.9%,
             Ni - 99.5%, Cu - 99.999%, Zn 85%,
             Ge - 99.9999999%, As - 99.98%
-METHOD     (TOF,ASSOP,PSD) Time of flight, associated particle
-            technique for measurement of the energy spectra of
-            inelastically scattered neutrons at 110 degrees.
-            Flight path 1 meter. Start pulses from alpha detector
-            and stop from neutron detector.
+METHOD     (TOF,ASSOP,PSD) Associated particle technique for
+            measurement of the energy spectra of inelastically
+            scattered neutrons at 110 degrees. Flight path 1 m.
+            Start pulses from alpha detector and stop from
+            neutron detector.
 DETECTOR   (SCIN) Neutron detector was NE213 liquid scintillator
             diameter 127 mm, 50 mm thick, with pulse shape
             discrimination against gammas. Counting efficiency
             determined by neutron scattered from hydrogen at
             various angles.
-           .Alpha detector was a 0.05 mm thick plastic
+            Alpha detector was a 0.05 mm thick plastic
             scintillator placed 50 mm from the tritium target.
-ANALYSIS   .Level densities are derived from measured inelastic
+ANALYSIS    Level densities are derived from measured inelastic
             neutron spectra with a compound nucleus - statistical
             model theory. A Fermi gas model, assuming a constant
             nuclear temperature was used.
-           .A high energy limit of 6.5 MeV was set to avoid the
+            A high energy limit of 6.5 MeV was set to avoid the
             contribution from the tail of elastically scattered
             neutrons.
-           .A lower energy limit was set for each element,
+            A lower energy limit was set for each element,
             somewhat higher than the largest energy of neutrons
             emitted in (n,2n) reactions. The effect of (n,pn)
             and (n,2n) reactions on isotopes of low abundance
             was neglected.
-           .For the inverse reaction cross section three different
+            For the inverse reaction cross section three different
             sets were used. See flags.
 MONITOR    (6-C-12(N,EL)6-C-12,,DA) Absolute efficiency was
             calibrated using the cross section of neutron elastic
@@ -62,9 +62,10 @@ HISTORY    (19810113C)
                 corrected according to last EXFOR rules and Dict.
                 REACTION code in Subents 024-034 corrected.
            (20170120U) SD: Year of publ. corrected (1973 -> 1972).
-ENDBIB              61
+           (20230211A) SD: Correction in Subents 038, 045.
+ENDBIB              62
 NOCOMMON             0          0
-ENDSUBENT           64
+ENDSUBENT           65
 SUBENT        21722002   20110227   20110905   20110902       2226
 BIB                  4          9
 REACTION  1(22-TI-0(0,0),,TEM) Nuclear temperature.
@@ -793,25 +794,29 @@ MEV        ADEG       MB/SR      PER-CENT
   14.1         1.1E+02   1.87E+01         8.
 ENDDATA              3
 ENDSUBENT           17
-SUBENT        21722038   20110227   20110905   20110902       2226
-BIB                  4          9
-REACTION   (25-MN-55(N,EL)25-MN-55,,DA) Differential elastic cross
-            section at 110 degrees.
-ANALYSIS   .Differential elastic cross sections are derived from
+SUBENT        21722038   20230211   20230523   20230504       2314
+BIB                  7         13
+REACTION   (25-MN-55(N,EL)25-MN-55,EXL,DA)
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+CRITIQUE   S.Simakov (2022-08-06): possible inclusion of inelastic
+            scattering below Ex~3.3 to 4.2 MeV
+ANALYSIS    Differential elastic cross sections are derived from
             measured neutron spectra.
-COMMENT    .These measurements are given as a check of the
+COMMENT     These measurements are given as a check of the
             reliability of the inelastic cross sections.
-           .The values given may include some contributions from
+            The values given may include some contributions from
             low lying excited levels.
-STATUS     (TABLE) .Table 6 from NST,9,301,1973
-ENDBIB               9
+STATUS     (TABLE) Table 6 from Nucl.Sci.Tech.,9,301,1973
+HISTORY    (20230211A) SD: SF5=EXL added to REACTION code.
+           CRITIQUE and REL-REF added.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4          1
 EN         ANG        DATA       DATA-ERR
 MEV        ADEG       MB/SR      PER-CENT
-  14.1         1.1E+02   1.82E+01         8.
+       14.1       110.       18.2         8.
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           21
 SUBENT        21722039   20110227   20110905   20110902       2226
 BIB                  4          9
 REACTION   (26-FE-0(N,EL)26-FE-0,,DA) Differential elastic cross
@@ -926,23 +931,27 @@ MEV        ADEG       MB/SR      PER-CENT
   14.1         1.1E+02   1.58E+01         8.
 ENDDATA              3
 ENDSUBENT           17
-SUBENT        21722045   20110227   20110905   20110902       2226
-BIB                  4          9
-REACTION   (33-AS-75(N,EL)33-AS-75,,DA) Differential elastic cross
-            section at 110 degrees.
-ANALYSIS   .Differential elastic cross sections are derived from
+SUBENT        21722045   20230211   20230523   20230504       2314
+BIB                  7         13
+REACTION   (33-AS-75(N,EL)33-AS-75,EXL,DA)
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+CRITIQUE   S.Simakov (2022-08-06): possible inclusion of inelastic
+            scattering below Ex~3.3 to 4.2 MeV
+ANALYSIS    Differential elastic cross sections are derived from
             measured neutron spectra.
-COMMENT    .These measurements are given as a check of the
+COMMENT     These measurements are given as a check of the
             reliability of the inelastic cross sections.
-           .The values given may include some contributions from
+            The values given may include some contributions from
             low lying excited levels.
-STATUS     (TABLE) .Table 6 from NST,9,301,1973
-ENDBIB               9
+STATUS     (TABLE) Table 6 from Nucl.Sci.Tech.,9,301,1973
+HISTORY    (20230211A) SD: SF5=EXL added to REACTION code.
+           CRITIQUE and REL-REF added.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4          1
 EN         ANG        DATA       DATA-ERR
 MEV        ADEG       MB/SR      PER-CENT
-  14.1         1.1E+02    1.8E+01         8.
+       14.1       110.        18.         8.
 ENDDATA              3
-ENDSUBENT           17
+ENDSUBENT           21
 ENDENTRY            45

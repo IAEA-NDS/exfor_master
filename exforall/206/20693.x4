@@ -1,22 +1,22 @@
-ENTRY            20693   20150701   20160302   20160209       2243
-SUBENT        20693001   20150701   20160302   20160209       2243
+ENTRY            20693   20230201   20230523   20230523       2313
+SUBENT        20693001   20230201   20230523   20230523       2313
 BIB                 16         68
+TITLE       Fission spectrum averaged cross sections of some
+            threshold reactions measured with fast reactor 'YAYOI'
+AUTHOR     (K.Kobayashi,I.Kimura,M.Nakazawa,M.Akiyama)
+REFERENCE  (J,NST,13,531,1976) Full report with tables.
+           ((P,NEANDC(J)-42,31,1975)=
+           (P,INDC(JAP)-28,31,1975))
+           (R,EUR-5667,(2),142,1975)  - Review with same data
 INSTITUTE  (2JPNKTO)
            (2JPNTOK) M.N, M.A.
-REFERENCE  (J,NST,13,531,197610) Full report with tables.
-           ((P,NEANDC(J)-42,31,197509)=
-           (P,INDC(JAP)-28,31,197509))
-           (R,EUR-5667,(2),142,1975)  - Review with same data
-AUTHOR     (K.Kobayashi,I.Kimura,M.Nakazawa,M.Akiyama)
-TITLE       Fission spectrum averaged cross sections of some
-            threshold reactions measured with fast reactor YAYOI.
 FACILITY   (REAC,2JPNTOK) Core centre of fast reactor YAYOI.
 INC-SOURCE (REAC)  Core of YAYOI reactor.
 INC-SPECT  .Spectrum equal to that of fission neutrons above about
             2-MeV. Scarce thermal and epithermal neutrons.
            .High fast neutron flux = 5.x 10**11 n/cm2/sec.
-METHOD     (ACTIV)  Activation.
-DETECTOR   (GELI)  77 CC Ge(Li) detector calibrated with
+METHOD     (ACTIV)
+DETECTOR   (GELI)  77 cm3 Ge(Li) detector calibrated with
             standard sources of Mn-54, Co-57, Co-60, Y-88, Cs-137
             and Hg-203.
 MONITOR    ((MONIT1)49-IN-115(N,INL)49-IN-115-M,,SIG)
@@ -33,7 +33,7 @@ COMMENT    .General agreement with previous values but
             systematically smaller by about 10%  than
             those recommended by Fabry.
            .Compiler's comment: - A neutron spectrum of the YAYOI
-            facility  is available in the IRDF-2002 'Standard
+            facility is available in the IRDF-2002 'Standard
             spectra' in IRDF-2002 collection of the reactor
             spectra:
              www-nds.iaea.org/irdf2002/index.htmlx
@@ -61,21 +61,21 @@ HISTORY    (19761124C)   JQ.
            (19790323A) PDJ. Revised values published.
            (19801107A) G.C. Monitor reaction corrected.
            (19840106U) A.P.T. Japan code changed to JPN
-           (19860306A)N.Ch
+           (19860306U) N.Ch
            (20110227A) SD:Updated to new date formats,lower case.
-                corrected according last EXFOR rules and Dict.
-                ERR-ANALYS corrected and ERR-SYS added.
-                Ref. on EUR-5667,(2),142,1975 added.
-                DATA in Subent 009 corrected.
+           Corrections in all Subents. ERR-ANALYS corrected and
+           ERR-SYS added. Ref. on EUR-5667,(2),142,1975 added.
+           DATA in Subent 009 corrected.
            (20150701U) SD: information about reactor spectra
             was added to COMMENT.
+           (20230201U) SD: Corrections in Subents 014, 016.
 ENDBIB              68
 COMMON               7          6
 EN-DUMMY   MONIT1     MONIT2     MONIT3     ERR-1      ERR-2
 ERR-SYS
 MEV        MB         MB         MB         PER-CENT   PER-CENT
 PER-CENT
- 1.5000E+00 1.7700E+02 1.0200E+02 6.4400E-01 3.0000E+00 1.5000E+00
+   1.5            177.      102.   0.644         3.          1.5
   3.0
 ENDCOMMON            6
 ENDSUBENT           78
@@ -299,23 +299,24 @@ MB         MB
  3.8100E-02 2.4000E-03
 ENDDATA              3
 ENDSUBENT           18
-SUBENT        20693014   20110227   20110905   20110902       2226
-BIB                  4          7
+SUBENT        20693014   20230201   20230523   20230523       2313
+BIB                  6          8
 REACTION   (90-TH-232(N,F),,SIG,,FIS)
-SAMPLE     .Sample 1.27cm diam, 0.127mm thick, purity 99.89%.
+SAMPLE      Sample 1.27cm diam, 0.127mm thick, purity 99.89%.
+ASSUMED    (ASSUM,90-TH-232(N,F)56-BA-140,CUM,FY)
+REL-REF    (R,,M.E.Meek+,R,NEDO-12154,46,1972)
 DECAY-DATA (57-LA-140,,DG,1596.,0.96)
 HISTORY    (19790323A) PDJ. More details.
-           (19790511E)
            (19801112A) G.C., Data headings changed.
-           (19801121E)
-ENDBIB               7
+           (20230201U) SD: ASSUMED and REL-REF added.
+ENDBIB               8
 NOCOMMON             0          0
-DATA                 2          1
-DATA       ERR-T
-MB         MB
- 7.8600E+01 3.9000E+00
+DATA                 3          1
+DATA       ERR-T      ASSUM
+MB         MB         PC/FIS
+       78.6        3.9       7.91
 ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           16
 SUBENT        20693015   20110227   20110905   20110902       2226
 BIB                  4          9
 REACTION   (92-U-238(N,2N)92-U-237,,SIG,,FIS)
@@ -335,24 +336,25 @@ MB         MB
  1.5700E+01 8.0000E-01
 ENDDATA              3
 ENDSUBENT           17
-SUBENT        20693016   20110227   20110905   20110902       2226
-BIB                  4          8
+SUBENT        20693016   20230201   20230523   20230523       2313
+BIB                  6          9
 REACTION   (92-U-238(N,F),,SIG,,FIS)
-SAMPLE     .Three foils 1.27cm diam, 0.025,0.175,0.175mm thick,
+SAMPLE      Three foils 1.27cm diam, 0.025,0.175,0.175mm thick,
             purity 99.97%, U-235 content 0.04,0.23 and 0.72%.
+ASSUMED    (ASSUM,92-U-238(N,F)56-BA-140,CUM,FY)
+REL-REF    (R,,M.E.Meek+,R,NEDO-12154,46,1972)
 DECAY-DATA (57-LA-140,,DG,1596.,0.96)
 HISTORY    (19790323A) PDJ. More details.
-           (19790511E)
            (19801112A) G.C., Data headings changed.
-           (19801121E)
-ENDBIB               8
+           (20230201U) SD: ASSUMED and REL-REF added.
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 2          1
-DATA       ERR-T
-MB         MB
- 2.9400E+02 1.5000E+01
+DATA                 3          1
+DATA       ERR-T      ASSUM
+MB         MB         PC/FIS
+       294.        15.       6.02
 ENDDATA              3
-ENDSUBENT           16
+ENDSUBENT           17
 SUBENT        20693017   20110227   20110905   20110902       2226
 BIB                  4          8
 REACTION   (22-TI-46(N,P)21-SC-46,,SIG,,FIS)

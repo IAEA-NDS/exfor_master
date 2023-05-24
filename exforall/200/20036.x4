@@ -1,14 +1,14 @@
-ENTRY            20036   20190117   20190424   20190420       2274
-SUBENT        20036001   20190117   20190424   20190420       2274
+ENTRY            20036   20230129   20230523   20230523       2313
+SUBENT        20036001   20230129   20230523   20230523       2313
 BIB                 15         61
 TITLE       Neutron scattering by U-235 and Pu-239 for incident
             neutrons of 2, 3 and 4 MeV
 INSTITUTE  (2UK ALD)
 REFERENCE  (R,AWRE-O-55/69,1969)
 AUTHOR     (R.Batchelor, K.Wyld)
-FACILITY   (VDG,2UK ALD) 6 Mv Van de Graaff, terminal pulsing and
+FACILITY   (VDG,2UK ALD) 6 MV Van de Graaff, terminal pulsing and
             bunching (Klystron).
-INC-SOURCE (P-T)    T(p,n)He3 reaction.
+INC-SOURCE (P-T)
             The incident energies, 2, 3 and 4 MeV are nominal but
             are correct within the limits of the overall neutron
             energy spreads which are about +- 50 keV.
@@ -16,10 +16,9 @@ SAMPLE      The samples were hollow cylinders. nominally
             2 in. high, 1 in. outer diam. and 0.65 in. inner
             diam., and were canned in aluminium of total wall
             thickness 0.020 in.
-METHOD     (TOF)    Time of flight, flight path = 1.74 m.
-            The resolution of the time-of-flight spectrometer was
-            about 5 nanosec.
-DETECTOR   (SCIN)    Liquid scintillator detector.
+METHOD     (TOF) flight path = 1.74 m. The resolution of the
+           time-of-flight spectrometer was about 5 nanosec.
+DETECTOR   (SCIN) Liquid scintillator detector.
 ANALYSIS    The differential cross-sections were estimated
             by interpolating each continuous non-elastic spectrum
             underneath the elastic 'peak' and subtracting to give
@@ -50,7 +49,7 @@ ERR-ANALYS (DATA-ERR) The errors on the spectra are about 5% and
             arise from
              * errors in the knowledge of the backgrounds,
              * errors in the detector efficiency calibration and
-             * errrors in the time calibration.
+             * errors in the time calibration.
              At the very low energies, in the region below about
             600 keV, the errors on the individual steps exceed
             5% and are not easy to determine precisely.
@@ -62,6 +61,7 @@ HISTORY    (19710202C)
            (20190117A) SD:Updated to new date formats,lower case.
            Subents 002-004; 006-008; 009-011; 012-014; 016-018;
            019-021 were merged.
+           (20230129A) SD: Corrections in several Subents.
 ENDBIB              61
 COMMON               1          3
 EN-RSL
@@ -69,16 +69,22 @@ MEV
   0.05
 ENDCOMMON            3
 ENDSUBENT           68
-SUBENT        20036002   20190117   20190424   20190420       2274
-BIB                  4          7
-REACTION   (92-U-235(N,EL)92-U-235,,DA)
+SUBENT        20036002   20230129   20230523   20230523       2313
+BIB                  6         13
+REACTION   (92-U-235(N,EL)92-U-235,EXL,DA)
 SAMPLE      92.6% U-235.
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+CRITIQUE   S.Simakov (2022-08-06): Possible inclusion of inelastic
+           scattering below Ex~0.55 MeV at 2 and 3 MeV,
+                               1.25 MeV at 4 MeV
 STATUS     (TABLE) Data from table 1 of AWRE-O-55/69.
 HISTORY    (19810121A)
            (20190117A) SD: Data from Subents 003, 004 added.
            STATUS updated. COS -> ANG according to presentation
            in the table.
-ENDBIB               7
+           (20230129A) SD: CRITIQUE, REL-REF added. SF5=EXL added
+           to REACTION code.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4         27
 EN         ANG        DATA       DATA-ERR
@@ -111,7 +117,7 @@ MEV        ADEG       B/SR       B/SR
          4.       120.      0.022      0.010
          4.       135.      0.050      0.010
 ENDDATA             29
-ENDSUBENT           41
+ENDSUBENT           47
 NOSUBENT      20036003   20190117   20190424   20190420       2274
 NOSUBENT      20036004   20190117   20190424   20190420       2274
 SUBENT        20036005   20190117   20190424   20190420       2274
@@ -141,8 +147,8 @@ MEV        B          B
          4.       2.10       0.35
 ENDDATA              5
 ENDSUBENT           25
-SUBENT        20036006   20190117   20190424   20190420       2274
-BIB                  6         13
+SUBENT        20036006   20230129   20230523   20230523       2313
+BIB                  6         14
 REACTION   (92-U-235(N,INL)92-U-235,,DE)
 SAMPLE      92.6% U-235.
 ANALYSIS    Inelastic neutron spectra were obtained by subtraction
@@ -150,20 +156,21 @@ ANALYSIS    Inelastic neutron spectra were obtained by subtraction
             The fission spectra are represented by
              (a * square root (E) * exp(-B * E)).
 REL-REF    (M,,J.Terrell,J,PR,113,527,1959)
-STATUS     (TABLE) data taken from table 3  of AWRE-O-55/69.
-           (DEP,20036009) Dependent of nonelastic data
+STATUS     (TABLE) data taken from table 3 of AWRE-O-55/69.
+           (DEP,20036009) Dependent of non-elastic data
 HISTORY    (19810121A)
            (19860311U)N.Ch
            (19860620U)HH data heading corrected
            (20190117A) SD: Data from Subents 007,008 added.
-ENDBIB              13
+           (20230129A) SD: E-EXC-MIN/MAX -> E-MIN/MAX.
+ENDBIB              14
 COMMON               1          3
 DATA-ERR
 PER-CENT
  5.
 ENDCOMMON            3
 DATA                 4         42
-EN         E-EXC-MAX  E-EXC-MIN  DATA
+EN         E-MAX      E-MIN      DATA
 MEV        MEV        MEV        B/MEV
          2.      0.473      0.386       1.52
          2.      0.566      0.473       1.80
@@ -208,25 +215,26 @@ MEV        MEV        MEV        B/MEV
          4.      2.273      2.070       0.15
          4.      2.500      2.273       0.17
 ENDDATA             44
-ENDSUBENT           66
+ENDSUBENT           67
 NOSUBENT      20036007   20190117   20190424   20190420       2274
 NOSUBENT      20036008   20190117   20190424   20190420       2274
-SUBENT        20036009   20190117   20190424   20190420       2274
-BIB                  4          6
+SUBENT        20036009   20230129   20230523   20230523       2313
+BIB                  4          7
 REACTION   (92-U-235(N,X)0-NN-1,EM,DE)
 SAMPLE      92.6% U-235.
 STATUS     (TABLE) Data from table 3 of AWRE-O-55/69.
 HISTORY    (19810121A)
            (20190117A) SD: SF3=NON -> X; SF4=NN-1 and SF5=EM added
            to REACTION code. Data from Subents 010,011 added.
-ENDBIB               6
+           (20230129A) SD: E-EXC-MIN/MAX -> E-MIN/MAX.
+ENDBIB               7
 COMMON               1          3
 DATA-ERR
 PER-CENT
  5.
 ENDCOMMON            3
 DATA                 4         60
-EN         E-EXC-MAX  E-EXC-MIN  DATA
+EN         E-MAX      E-MIN      DATA
 MEV        MEV        MEV        B/MEV
          2.      0.473      0.386       2.67
          2.      0.566      0.473       2.97
@@ -289,20 +297,26 @@ MEV        MEV        MEV        B/MEV
          4.      5.208      2.744       0.26
          4.      6.144      5.208       0.07
 ENDDATA             62
-ENDSUBENT           77
+ENDSUBENT           78
 NOSUBENT      20036010   20190117   20190424   20190420       2274
 NOSUBENT      20036011   20190117   20190424   20190420       2274
-SUBENT        20036012   20190117   20190424   20190420       2274
-BIB                  4          8
-REACTION   (94-PU-239(N,EL)94-PU-239,,DA)
+SUBENT        20036012   20230129   20230523   20230523       2313
+BIB                  6         14
+REACTION   (94-PU-239(N,EL)94-PU-239,EXL,DA)
 SAMPLE      93.63% Pu-239, 5.86% Pu-240, 0.51% Pu-241,
             stabilized with 1.2% gallium.
+REL-REF    (C,,S.Simakov+,S,INDC(NDS)-0857,91,2022)
+CRITIQUE   S.Simakov (2022-08-06): Possible inclusion of inelastic
+           scattering below Ex~0.55 MeV at 2 and 3 MeV,
+                               1.25 MeV at 4 MeV
 STATUS     (TABLE) Data from table 2 of AWRE-O-55/69.
 HISTORY    (19810121A)
            (20190117A) SD: Data from Subents 013, 014 added.
            STATUS updated. COS -> ANG according to presentation
            in the table.
-ENDBIB               8
+           (20230129A) SD: CRITIQUE, REL-REF added. SF5=EXL added
+           to REACTION code.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 4         27
 EN         ANG        DATA       DATA-ERR
@@ -335,7 +349,7 @@ MEV        ADEG       B/SR       B/SR
          4.       120.      0.018      0.020
          4.       135.      0.056      0.020
 ENDDATA             29
-ENDSUBENT           42
+ENDSUBENT           48
 NOSUBENT      20036013   20190117   20190424   20190420       2274
 NOSUBENT      20036014   20190117   20190424   20190420       2274
 SUBENT        20036015   20190117   20190424   20190420       2274
@@ -362,8 +376,8 @@ MEV        B          B
          4.       1.81       0.69
 ENDDATA              5
 ENDSUBENT           22
-SUBENT        20036016   20190117   20190424   20190420       2274
-BIB                  6         14
+SUBENT        20036016   20230129   20230523   20230523       2313
+BIB                  6         15
 REACTION   (94-PU-239(N,INL)94-PU-239,,DE)
 SAMPLE      93.63% Pu-239, 5.86% Pu-240, 0.51% Pu-241,
             stabilized with 1.2% gallium.
@@ -373,19 +387,20 @@ ANALYSIS    Inelastic neutron spectra were obtained by subtraction
              (a * square root (E) * exp(-B * E)).
 REL-REF    (M,,J.Terrell,J,PR,113,527,1959)
 STATUS     (TABLE) data from table 4 of AWRE-O-55/69.
-           (DEP,20036019) Dependent of nonelastic data,
+           (DEP,20036019) Dependent of non-elastic data,
                           see ANALYSIS
 HISTORY    (19810121A)
            (20190117A) SD: Data from Subents 017, 018 added.
            STATUS updated.
-ENDBIB              14
+           (20230129A) SD: E-EXC-MIN/MAX -> E-MIN/MAX.
+ENDBIB              15
 COMMON               1          3
 DATA-ERR
 PER-CENT
   5.
 ENDCOMMON            3
 DATA                 4         40
-EN         E-EXC-MAX  E-EXC-MIN  DATA
+EN         E-MAX      E-MIN      DATA
 MEV        MEV        MEV        B/MEV
          2.      0.473      0.386       0.39
          2.      0.566      0.473       1.39
@@ -428,11 +443,11 @@ MEV        MEV        MEV        B/MEV
          4.      2.273      2.070       0.09
          4.      2.500      2.273       0.10
 ENDDATA             42
-ENDSUBENT           65
+ENDSUBENT           66
 NOSUBENT      20036017   20190117   20190424   20190420       2274
 NOSUBENT      20036018   20190117   20190424   20190420       2274
-SUBENT        20036019   20190117   20190424   20190420       2274
-BIB                  4          8
+SUBENT        20036019   20230129   20230523   20230523       2313
+BIB                  4          9
 REACTION   (94-PU-239(N,X)0-NN-1,EM,DE)
 SAMPLE      93.63% Pu-239, 5.86% Pu-240, 0.51% Pu-241,
             stabilized with 1.2% gallium.
@@ -441,14 +456,15 @@ HISTORY    (19810121A)
            (20190117A) SD: SF3=NON -> X; SF4=NN-1 andSF5=EM added
            to REACTION code.  Data from Subents 020, 021 added.
            STATUS updated.
-ENDBIB               8
+           (20230129A) SD: E-EXC-MIN/MAX -> E-MIN/MAX.
+ENDBIB               9
 COMMON               1          3
 DATA-ERR
 PER-CENT
  5.
 ENDCOMMON            3
 DATA                 4         60
-EN         E-EXC-MAX  E-EXC-MIN  DATA
+EN         E-MAX      E-MIN      DATA
 MEV        MEV        MEV        B/MEV
          2.      0.473      0.386       2.55
          2.      0.566      0.473       3.47
@@ -511,7 +527,7 @@ MEV        MEV        MEV        B/MEV
          4.      5.208      2.744       0.53
          4.      6.144      5.208       0.13
 ENDDATA             62
-ENDSUBENT           79
+ENDSUBENT           80
 NOSUBENT      20036020   20190117   20190424   20190420       2274
 NOSUBENT      20036021   20190117   20190424   20190420       2274
 ENDENTRY            21

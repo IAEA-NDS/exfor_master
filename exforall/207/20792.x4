@@ -1,8 +1,8 @@
-ENTRY            20792   20211220   20220319   20220317       2306
-SUBENT        20792001   20211220   20220319   20220317       2306
-BIB                 11         19
-TITLE       Fission spectrum averaged cross sections for the
-            Th-232(n,F) reaction
+ENTRY            20792   20230202   20230523   20230523       2313
+SUBENT        20792001   20230202   20230523   20230523       2313
+BIB                 11         20
+TITLE       Fission spectrum averaged cross section for the
+            Th-232(n,f) reaction
 AUTHOR     (K.Kobayashi)
 INSTITUTE  (2JPNKTO) Kyoto university research reactor institute.
 REFERENCE  (J,ANE,4,177,1977) Final publication.
@@ -12,7 +12,7 @@ INC-SPECT   Fast neutron spectrum has been confirmed to
             be equivalent to that of 235U fission neutrons.
 MONITOR    (28-NI-58(N,P)27-CO-58,,SIG,,FIS)
 ERR-ANALYS (ERR-T) Total error
-           (ERR-1,,3.) Uncertainty in flux normalisation
+           (ERR-1,,3.) Uncertainty in flux normalization
            (ERR-3,,3.5) other systematic errors
 STATUS     (TABLE) Table 1 from Annals of Nucl.Energy,4(1977)177
 HISTORY    (19781204C) PDJ.
@@ -20,13 +20,14 @@ HISTORY    (19781204C) PDJ.
            (20211220A) SD:Updated to new date formats,lower case.
            MONITOR reaction updated (-G+M from SF4 and /SUM from
            SF6 deleted).
-ENDBIB              19
+           (20230202U) SD: Corrections in Subent 003.
+ENDBIB              20
 COMMON               1          3
 MONIT
 MB
- 1.0200E+02
+       102.
 ENDCOMMON            3
-ENDSUBENT           26
+ENDSUBENT           27
 SUBENT        20792002   20211220   20220319   20220317       2306
 BIB                  9         21
 REACTION   (90-TH-232(N,F),,SIG,,FIS)
@@ -58,8 +59,8 @@ MEV        MB         MB         PER-CENT
      1.5         77.4       3.7      1.5
 ENDDATA              3
 ENDSUBENT           29
-SUBENT        20792003   20211220   20220319   20220317       2306
-BIB                  8         18
+SUBENT        20792003   20230202   20230523   20230523       2313
+BIB                 10         21
 REACTION   (90-TH-232(N,F),,SIG,,FIS)
 SAMPLE      Commercial thorium foils. Impurities checked by
             thermal neutrons contributed about 1.5% to
@@ -70,6 +71,8 @@ DETECTOR   (PLATE) Fission plate irradiated simultaneously
            (GELI) induced activity detected with GeLi detector.
             30cc calibrated with standard sources.
             Activities of 140-La and 140-Ba were measured.
+ASSUMED    (ASSUM,90-TH-232(N,F)56-BA-140,CUM,FY)
+REL-REF    (R,,M.E.Meek+,R,NEDO-12154,46,1972)
 ANALYSIS    Average cross section from activity and known
             140-La and 140-Ba fission yields and decay
             parameters.
@@ -78,12 +81,13 @@ DECAY-DATA (57-LA-140,,DG)
 ERR-ANALYS (ERR-S) Statistical error
 HISTORY    (19801112A) G.C. Data headings changed.
            (20211220U) SD: BIB updated.
-ENDBIB              18
+           (20230202U) SD: ASSUMED and REL-REF added.
+ENDBIB              21
 NOCOMMON             0          0
-DATA                 4          1
-EN-DUMMY   DATA       ERR-T      ERR-S
-MEV        MB         MB         PER-CENT
-     1.5        78.1      3.9        2.
+DATA                 5          1
+EN-DUMMY   DATA       ERR-T      ERR-S      ASSUM
+MEV        MB         MB         PER-CENT   PC/FIS
+     1.5        78.1      3.9        2.            7.91
 ENDDATA              3
-ENDSUBENT           26
+ENDSUBENT           29
 ENDENTRY             3
