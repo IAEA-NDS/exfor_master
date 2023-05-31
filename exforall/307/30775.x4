@@ -1,23 +1,19 @@
-ENTRY            30775   20110816   20110905   20110817       3151
-SUBENT        30775001   20110816   20110905   20110817       3151
-BIB                 10         35
+ENTRY            30775   20230110   20230529   20230529       3209
+SUBENT        30775001   20230110   20230529   20230529       3209
+BIB                  9         32
 TITLE      Measurements of the prompt fission neutron spectrum
             from the spontaneous fission of Cf-252
 AUTHOR     (J.W.Boldeman, B.E.Clancy, D.Culley)
 INSTITUTE  (3AULAUA)
-REFERENCE  (J,NSE,93,181,198606)  Table, graph
+REFERENCE  (J,NSE,93,181,198606) Table, graph
            (S,IAEA-335,304,198506) Graph
            (P,AAEC/AP/PR-81,4,1981) No data given
-METHOD     (TOF) Start signal = neutron detection
-                 Stop signal  = time-delayed fission signal
 DETECTOR   (IOCH) As fission counter, a parallel plate ionization
             chamber filled with pure methane was used.
-           (SCIN) As neutron detectors
-            En=1-15 MeV:     a plastic scintillator  (Subent 002)
-            En=124-2600 keV: a Li glass scintillator (Subent 003)
-            (see subentry 3).
 CORRECTION Data were corrected for
-             - Dead time (start and stop signal);
+             - Dead time on start and stop signal
+                (<2.6% for high energy measurement,
+                  1.6% for low energy measurement);
              - Air attenuation;
              - Delayed neutron response (Li glass scintillator);
              - Delayed gamma rays (plastic scintillator);
@@ -36,19 +32,25 @@ HISTORY    (19880321C) OS
             with SF8=MXD
            (20100507A) SD: Cosmetic corrections
            (20100518U) On. Cosmetic corrections
-ENDBIB              35
+           (20230110U) On. DETECTOR and METHOD moved to 002-003.
+ENDBIB              32
 COMMON               1          3
 KT-NRM
 MEV
  1.42
 ENDCOMMON            3
-ENDSUBENT           42
-SUBENT        30775002   20110816   20110905   20110817       3151
-BIB                  3          3
+ENDSUBENT           39
+SUBENT        30775002   20230110   20230529   20230529       3209
+BIB                  5          8
 REACTION   (98-CF-252(0,F),PR,NU/DE,,MXD)
-DETECTOR   (SCIN) NE-102 plastic scintillator
+SAMPLE     252Cf (8 to 5E+04 fissions/s) on stainless steel
+DETECTOR   (SCIN) NE-102 plastic scintillator,
+            50.8 mm diam, 25.4 mm thick
+METHOD     (TOF) flight path=3.015 m,
+            time-resolution between 2.6 and 3.0 nsec
 HISTORY    (20100518A) On. PR,DE,N,MXD -> PR,NU/DE,,MXD
-ENDBIB               3
+           (20230110U) On. DETECTOR and METHOD moved from 001.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         59
 E          DATA       ERR-S      ERR-T
@@ -113,13 +115,18 @@ MEV        NO-DIM     NO-DIM     NO-DIM
  13.75      1.072      0.400      0.400
  14.25      1.052      0.600      0.600
 ENDDATA             61
-ENDSUBENT           69
-SUBENT        30775003   20110816   20110905   20110817       3151
-BIB                  3          3
+ENDSUBENT           74
+SUBENT        30775003   20230110   20230529   20230529       3209
+BIB                  5          8
 REACTION   (98-CF-252(0,F),PR,NU/DE,,MXD)
-DETECTOR   (SCIN) Li-6 enriched glass scintillator
+SAMPLE     252Cf (4.4E+04 fissions/s) on stainless steel
+DETECTOR   (SCIN) Li glass scintillator,
+            50.8 mm diam., 2.0 mm thick
+METHOD     (TOF) flight path=40 cm,
+            time-resolution between 2.6 and 3.0 nsec
 HISTORY    (20100518A) On. PR,DE,N,MXD -> PR,NU/DE,,MXD
-ENDBIB               3
+           (20230110U) On. DETECTOR and METHOD moved from 001.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         28
 E          DATA       ERR-S      ERR-T
@@ -153,5 +160,5 @@ MEV        NO-DIM     NO-DIM     NO-DIM
  2.070      0.983      0.025      0.025
  2.664      0.983      0.025      0.025
 ENDDATA             30
-ENDSUBENT           38
+ENDSUBENT           43
 ENDENTRY             3

@@ -1,27 +1,31 @@
-ENTRY            D4327   20180606   20181204   20181204       D118
-SUBENT        D4327001   20180606   20181204   20181204       D118
-BIB                 12         41
+ENTRY            D4327   20221004   20230529   20230529       D138
+SUBENT        D4327001   20221004   20230529   20230529       D138
+BIB                 13         42
 TITLE      New cross section data and review of production routes
-           of medically used 110mIn
-AUTHOR     (F.Tarkanyi,S.Takacs,F.Ditroi,A.Hermanne,M.Baba,
-            B.M.A.Mohsena,A.V.Ignatyuk)
-INSTITUTE  (3HUNDEB,2BLGVUB,2JPNTOH,4RUSFEI)
+            of medically used 110mIn
+AUTHOR     (F.Tarkanyi, S.Takacs, F.Ditroi, A.Hermanne, M.Baba,
+            B.M.A.Mohsena, A.V.Ignatyuk)
+INSTITUTE  (3HUNDEB,2BLGVUB,2JPNTOH,3EGYCAI,4RUSFEI)
 REFERENCE  (J,NIM/B,351,6,2015)
            #doi:10.1016/j.nimb.2015.03.067
 FACILITY   (CYCLO,2BLGLVN)
            (CYCLO,2JPNTOH)
            (CYCLO,3HUNDEB)
+SAMPLE     Iradiation done in a Faraday-type target holder.
+           In(p,x) at Ep=70 MeV:
+            Er(25 um)-Co(50 um)-Al(10 um)-In(50 um)-Al(100 um)
+           In(p,x) at Ep=65 MeV:
+            Al(11 um)-In(116.3 um)-Al(99.2 um)-V (8.41 um)-
+            Al(99.2 um)-Ho(26.2 um)-Al(99.2 um)
+           Ag(a,x) at Ea=27 MeV:
+            8 Ag(8.1 um) and 6 Cu(7.4ulm) foils
+           Ag(h,x) at Eh=26 MeV:
+            17 Ag (8.1 um) and 3 Ti (12 um) foils
 DETECTOR   (HPGE)
-METHOD     (ACTIV) Activation method was used. Irradiation were
-           done at 65 and 70 MeV proton energies.
-           (EXTB) The beam was extracted from the cyclotron and
-           the irradiation was done in a Faraday-type target
-           holder.
-           (STTA) Stacked target irradiation technique was
-           applied.
-           (EDEG) Energy degradation in each layers the stack
-           was calculated by using the semi-empirical polynomial
-           formula of Ziegler and Andersen.
+METHOD     (EXTB,ACTIV) Irradiation done at 65 and 70 MeV
+           (STTA,EDEG) Energy degradation in each layers the
+            stack was calculated by using the semi-empirical
+            polynomial formula of Ziegler and Andersen
            (GSPEC) Nondestructive gamma-spectrometry was used.
            (MOSEP) The beam energy and intensity were monitored
 MONITOR    (13-AL-27(P,X)11-NA-24,,SIG)
@@ -30,21 +34,18 @@ MONITOR    (13-AL-27(P,X)11-NA-24,,SIG)
            (22-TI-0(A,X)24-CR-51,,SIG)
            (13-AL-27(A,X)11-NA-24,,SIG)
            (13-AL-27(A,X)11-NA-22,,SIG)
-MONIT-REF  (,F.Tarkanyi+,R,IAEA-NDS-1211,2001)    Chapter 4
-ERR-ANALYS (EN-ERR) includes the uncertainty of the primary beam
-           energy and straggling effect.
-           (DATA-ERR) The uncertainty of the cross section is
-           calculated as the quadratic sums of the contributing
-           errors:
-ADD-RES    (THEO) The experimental data were compared to the
-           results of the theoretical model codes TALYS
-           (TTY-C) Fitted excitation functions were used for
-           calculation of integral physical yields.
+MONIT-REF  (,F.Tarkanyi+,R,IAEA-NDS-1211,2001) Chapter 4
+ERR-ANALYS (EN-ERR) Uncertainty of the primary beam energy and
+            straggling effect
+           (DATA-ERR) Quadrature sum of individual contributions
+ADD-RES    (TTY-C) Fitted excitation functions were used for
+            calculation of integral physical yields.
 HISTORY    (20160503C) ts
            (20180606A) ts Major revisions in 002-010.
-ENDBIB              41
+           (20221004A) On. Major revision in 003 and 005.
+ENDBIB              42
 NOCOMMON             0          0
-ENDSUBENT           44
+ENDSUBENT           45
 SUBENT        D4327002   20180606   20181204   20181204       D118
 BIB                  5          6
 REACTION   (49-IN-0(P,X)50-SN-110,,SIG)
@@ -92,66 +93,72 @@ MEV        MEV        MB         MB         NO-DIM
       69.5      0.3     100.1     11.3      1.
 ENDDATA             34
 ENDSUBENT           45
-SUBENT        D4327003   20180606   20181204   20181204       D118
-BIB                  4          7
-REACTION   (47-AG-0(HE3,X)49-IN-109,,SIG)
+SUBENT        D4327003   20221004   20230529   20230529       D138
+BIB                  5         10
+REACTION   (47-AG-109(HE3,3N)49-IN-109,,SIG)
 DECAY-DATA (49-IN-109-G,4.167HR,DG,331.2,0.097,
-                              DG,649.8,0.28,
-                              DG,1099.2,0.30,
-                              DG,1321.3,0.119)
-STATUS     (TABLE) Data are from Table 4. of the article
+                                DG,649.8,0.28,
+                                DG,1099.2,0.30,
+                                DG,1321.3,0.119)
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            109Ag isotopic cross sections are in Table 4.
+STATUS     (TABLE) Table 4 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN, MICRO-B -> MB
-ENDBIB               7
+           (20221004A) On. REACTION(SF1,SF3) corrected.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4         13
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      11.9      0.6        0.4       0.1
-      13.3      0.5        1.6       0.2
-      14.7      0.5        6.8       0.6
-      15.9      0.5       18.4       1.5
-      17.1      0.5       54.2       3.2
-      18.2      0.5       87.4       5.0
-      19.3      0.4      126.1       7.0
-      20.3      0.4      164.2       9.1
-      22.2      0.4      230.7      12.6
-      23.1      0.4      247.1      13.5
-      24.1      0.3      262.4      14.3
-      25.0      0.3      272.2      14.9
-      26.6      0.3      277.8      15.1
+ 11.9       0.6          0.4       0.1
+ 13.3       0.5          1.6       0.2
+ 14.7       0.5          6.8       0.6
+ 15.9       0.5         18.4       1.5
+ 17.1       0.5         54.2       3.2
+ 18.2       0.5         87.4       5.0
+ 19.3       0.4        126.1       7.0
+ 20.3       0.4        164.2       9.1
+ 22.2       0.4        230.7      12.6
+ 23.1       0.4        247.1      13.5
+ 24.1       0.3        262.4      14.3
+ 25.0       0.3        272.2      14.9
+ 26.6       0.3        277.8      15.1
 ENDDATA             15
-ENDSUBENT           27
-SUBENT        D4327004   20180606   20181204   20181204       D118
-BIB                  4          6
+ENDSUBENT           30
+SUBENT        D4327004   20221004   20230529   20230529       D138
+BIB                  5          9
 REACTION   (47-AG-0(HE3,X)49-IN-110-M,,SIG)
 DECAY-DATA (49-IN-110-M,69.1MIN,DG,657.75,0.9774,
                                 DG,818.05,0.0087,
                                 DG,1125.77,0.0104)
-STATUS     (TABLE) Data are from Table 4. of the article
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            Elemental cross sections are in Table 4.
+STATUS     (TABLE) Table 4 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN
-ENDBIB               6
+           (20221004U) On. COMMENT added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         14
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      10.4      0.6       0.3      0.1
-      11.9      0.6       3.7      0.5
-      13.3      0.5      18.0      2.1
-      14.7      0.5      41.0      4.7
-      15.9      0.5      36.6      4.8
-      17.1      0.5      36.7      4.7
-      18.2      0.5      29.3      4.2
-      19.3      0.4      21.1      3.5
-      20.3      0.4      18.9      3.3
-      22.2      0.4      14.7      2.7
-      23.1      0.4       9.7      2.5
-      24.1      0.3      11.7      2.5
-      25.0      0.3      11.4      2.4
-      26.6      0.3       9.3      2.1
+ 10.4       0.6         0.3       0.1
+ 11.9       0.6         3.7       0.5
+ 13.3       0.5        18.0       2.1
+ 14.7       0.5        41.0       4.7
+ 15.9       0.5        36.6       4.8
+ 17.1       0.5        36.7       4.7
+ 18.2       0.5        29.3       4.2
+ 19.3       0.4        21.1       3.5
+ 20.3       0.4        18.9       3.3
+ 22.2       0.4        14.7       2.7
+ 23.1       0.4         9.7       2.5
+ 24.1       0.3        11.7       2.5
+ 25.0       0.3        11.4       2.4
+ 26.6       0.3         9.3       2.1
 ENDDATA             16
-ENDSUBENT           27
-SUBENT        D4327005   20180606   20181204   20181204       D118
-BIB                  4          9
+ENDSUBENT           30
+SUBENT        D4327005   20221004   20230529   20230529       D138
+BIB                  5         14
 REACTION   (47-AG-109(HE3,2N)49-IN-110-G,,SIG)
 DECAY-DATA (49-IN-110-G,4.92HR,DG,641.68,0.26,
                                DG,657.75,0.98,
@@ -159,109 +166,123 @@ DECAY-DATA (49-IN-110-G,4.92HR,DG,641.68,0.26,
                                DG,884.667,0.93,
                                DG,937.478,0.684,
                                DG,997.16,0.105)
-STATUS     (TABLE) Data are from Table 4. of the article
+COMMENT    By Ferenc Ditroi (2022-10-03):
+            109Ag isotopic cross sections are in Table 4.
+            The numbers in Table 4 are wrong.
+STATUS     (TABLE) Data received from Ferenc Ditroi.
 HISTORY    (20180606A) ts EN-CM -> EN
-ENDBIB               9
+           (20221003R) On. Correct data from Ferenc Ditroi.
+           (20221004A) On. DATA and DATA-ERR values corrected.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 4         12
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      13.3      0.5      0.5       6.6
-      14.7      0.5      1.2      19.1
-      15.9      0.5      2.2      38.4
-      17.1      0.5      3.2      55.8
-      18.2      0.5      3.4      60.4
-      19.3      0.4      3.5      60.8
-      20.3      0.4      3.3      58.7
-      22.2      0.4      2.7      48.2
-      23.1      0.4      2.3      40.8
-      24.1      0.3      1.9      34.2
-      25.0      0.3      1.7      29.4
-      26.6      0.3      1.4      23.0
+ 13.3       0.5         6.6       1.0
+ 14.7       0.5        19.1       2.5
+ 15.9       0.5        38.4       4.6
+ 17.1       0.5        55.8       6.6
+ 18.2       0.5        60.4       7.1
+ 19.3       0.4        60.8       7.2
+ 20.3       0.4        58.7       6.9
+ 22.2       0.4        48.2       5.6
+ 23.1       0.4        40.8       4.9
+ 24.1       0.3        34.2       4.0
+ 25.0       0.3        29.4       3.6
+ 26.6       0.3        23.0       2.9
 ENDDATA             14
-ENDSUBENT           28
-SUBENT        D4327006   20180606   20181204   20181204       D118
-BIB                  4          5
+ENDSUBENT           33
+SUBENT        D4327006   20221004   20230529   20230529       D138
+BIB                  5          8
 REACTION   (47-AG-109(HE3,N)49-IN-111,,SIG)
 DECAY-DATA (49-IN-111-G,2.81D,DG,171.28,0.907,
-                            DG,245.35,0.941)
-STATUS     (TABLE) Data are from Table 4. of the article
+                              DG,245.35,0.941)
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            109Ag isotopic cross sections are in Table 4.
+STATUS     (TABLE) Table 4 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN
-ENDBIB               5
+           (20221004U) On. COMMENT added.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         12
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      13.3      0.5      1.0      0.4
-      14.7      0.5      2.4      0.6
-      15.9      0.5      2.3      0.8
-      17.1      0.5      3.5      1.3
-      18.2      0.5      6.7      1.5
-      19.3      0.4      5.8      1.6
-      20.3      0.4      7.1      1.5
-      22.2      0.4      4.4      1.3
-      23.1      0.4      4.8      1.5
-      24.1      0.3      3.7      0.9
-      25.0      0.3      6.5      2.0
-      26.6      0.3      4.9      2.0
+ 13.3       0.5        1.0        0.4
+ 14.7       0.5        2.4        0.6
+ 15.9       0.5        2.3        0.8
+ 17.1       0.5        3.5        1.3
+ 18.2       0.5        6.7        1.5
+ 19.3       0.4        5.8        1.6
+ 20.3       0.4        7.1        1.5
+ 22.2       0.4        4.4        1.3
+ 23.1       0.4        4.8        1.5
+ 24.1       0.3        3.7        0.9
+ 25.0       0.3        6.5        2.0
+ 26.6       0.3        4.9        2.0
 ENDDATA             14
-ENDSUBENT           24
-SUBENT        D4327007   20180606   20181204   20181204       D118
-BIB                  4          7
+ENDSUBENT           27
+SUBENT        D4327007   20221004   20230529   20230529       D138
+BIB                  5         10
 REACTION   (47-AG-0(A,X)49-IN-109,,SIG)
 DECAY-DATA (49-IN-109-G,4.167HR,DG,331.2,0.097,
-                              DG,649.8,0.28,
-                              DG,1099.2,0.30,
-                              DG,1321.3,0.119)
-STATUS     (TABLE) Data are from Table 4. of the article
+                                DG,649.8,0.28,
+                                DG,1099.2,0.30,
+                                DG,1321.3,0.119)
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            Elemental cross sections are in Table 5.
+STATUS     (TABLE) Table 5 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN, MICRO-B -> MB
-ENDBIB               7
+           (20221004U) On. STATUS corrected. COMMENT added.
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4          9
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      16.7      0.5       33.8       4.7
-      18.2      0.4      115.0      13.2
-      19.5      0.4      266.0      30.2
-      20.8      0.4      374.5      42.2
-      22.0      0.4      495.8      56.0
-      23.2      0.3      533.2      60.0
-      24.3      0.3      629.4      70.9
-      25.4      0.3      620.6      69.8
-      26.5      0.3      695.9      78.2
+ 16.7       0.5         33.8       4.7
+ 18.2       0.4        115.0      13.2
+ 19.5       0.4        266.0      30.2
+ 20.8       0.4        374.5      42.2
+ 22.0       0.4        495.8      56.0
+ 23.2       0.3        533.2      60.0
+ 24.3       0.3        629.4      70.9
+ 25.4       0.3        620.6      69.8
+ 26.5       0.3        695.9      78.2
 ENDDATA             11
-ENDSUBENT           23
-SUBENT        D4327008   20180606   20181204   20181204       D118
-BIB                  4          6
+ENDSUBENT           26
+SUBENT        D4327008   20221004   20230529   20230529       D138
+BIB                  5          9
 REACTION   (47-AG-107(A,N)49-IN-110-M,,SIG)
 DECAY-DATA (49-IN-110-M,69.1MIN,DG,657.75,0.9774,
                                 DG,818.05,0.0087,
                                 DG,1125.77,0.0104)
-STATUS     (TABLE) Data are from Table 4. of the article
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            107Ag isotopic cross sections are in Table 5.
+STATUS     (TABLE) Table 5 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN
-ENDBIB               6
+           (20221004U) On. STATUS corrected. COMMENT added.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         14
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-       9.9      0.6        2.3       0.1
-      11.9      0.6       31.2       1.8
-      12.0      0.5       27.2       1.6
-      13.6      0.5      128.0       7.5
-      15.3      0.5      255.6      14.9
-      16.7      0.5      338.8      19.7
-      18.2      0.4      282.8      16.5
-      19.5      0.4      275.6      16.0
-      20.8      0.4      140.7       8.2
-      22.0      0.4      124.5       7.3
-      23.2      0.3       59.8       3.5
-      24.3      0.3       62.8       3.7
-      25.4      0.3       43.6       2.5
-      26.5      0.3       45.9       2.7
+  9.9       0.6          2.3       0.1
+ 11.9       0.6         31.2       1.8
+ 12.0       0.5         27.2       1.6
+ 13.6       0.5        128.0       7.5
+ 15.3       0.5        255.6      14.9
+ 16.7       0.5        338.8      19.7
+ 18.2       0.4        282.8      16.5
+ 19.5       0.4        275.6      16.0
+ 20.8       0.4        140.7       8.2
+ 22.0       0.4        124.5       7.3
+ 23.2       0.3         59.8       3.5
+ 24.3       0.3         62.8       3.7
+ 25.4       0.3         43.6       2.5
+ 26.5       0.3         45.9       2.7
 ENDDATA             16
-ENDSUBENT           27
-SUBENT        D4327009   20180606   20181204   20181204       D118
-BIB                  4          9
+ENDSUBENT           30
+SUBENT        D4327009   20221004   20230529   20230529       D138
+BIB                  5         11
 REACTION   (47-AG-107(A,N)49-IN-110-G,,SIG)
 DECAY-DATA (49-IN-110-G,4.92HR,DG,641.68,0.26,
                                DG,657.75,0.98,
@@ -269,53 +290,57 @@ DECAY-DATA (49-IN-110-G,4.92HR,DG,641.68,0.26,
                                DG,884.667,0.93,
                                DG,937.478,0.684,
                                DG,997.16,0.105)
-STATUS     (TABLE) Data are from Table 4. of the article
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            107Ag isotopic cross sections are in Table 5.
+STATUS     (TABLE) Table 5 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN
-ENDBIB               9
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         13
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      11.9      0.6        5.6       0.4
-      12.0      0.5        4.4       0.3
-      13.6      0.5       39.3       2.3
-      15.3      0.5      106.8       6.2
-      16.7      0.5      221.7      12.9
-      18.2      0.4      260.7      15.2
-      19.5      0.4      278.8      16.3
-      20.8      0.4      208.3      12.2
-      22.0      0.4      163.9       9.6
-      23.2      0.3      104.3       6.1
-      24.3      0.3       82.1       4.8
-      25.4      0.3       55.0       3.2
-      26.5      0.3       61.3       3.6
+ 11.9       0.6          5.6       0.4
+ 12.0       0.5          4.4       0.3
+ 13.6       0.5         39.3       2.3
+ 15.3       0.5        106.8       6.2
+ 16.7       0.5        221.7      12.9
+ 18.2       0.4        260.7      15.2
+ 19.5       0.4        278.8      16.3
+ 20.8       0.4        208.3      12.2
+ 22.0       0.4        163.9       9.6
+ 23.2       0.3        104.3       6.1
+ 24.3       0.3         82.1       4.8
+ 25.4       0.3         55.0       3.2
+ 26.5       0.3         61.3       3.6
 ENDDATA             15
-ENDSUBENT           29
-SUBENT        D4327010   20180606   20181204   20181204       D118
-BIB                  4          5
+ENDSUBENT           31
+SUBENT        D4327010   20221004   20230529   20230529       D138
+BIB                  5          7
 REACTION   (47-AG-109(A,2N)49-IN-111,,SIG)
 DECAY-DATA (49-IN-111-G,2.81D,DG,171.28,0.907,
-                            DG,245.35,0.941)
-STATUS     (TABLE) Data are from Table 4. of the article
+                              DG,245.35,0.941)
+COMMENT    By Ferenc Ditroi (2022-10-04):
+            109Ag isotopic cross sections are in Table 5.
+STATUS     (TABLE) Table 5 of Nucl.Instrum.Meth.B351(2015)6
 HISTORY    (20180606A) ts EN-CM -> EN
-ENDBIB               5
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4         13
 EN         EN-ERR     DATA       DATA-ERR
 MEV        MEV        MB         MB
-      11.9      0.6        0.3       0.02
-      12.0      0.5        0.3       0.03
-      13.6      0.5        2.5       0.14
-      15.3      0.5       63.3       3.4
-      16.7      0.5      264.6      14.3
-      18.2      0.4      445.7      24.1
-      19.5      0.4      679.1      36.7
-      20.8      0.4      800.2      43.3
-      22.0      0.4      982.5      53.1
-      23.2      0.3      991.9      53.6
-      24.3      0.3     1149.5      62.1
-      25.4      0.3     1114.2      60.2
-      26.5      0.3     1220.6      66.0
+ 11.9       0.6           0.3      0.02
+ 12.0       0.5           0.3      0.03
+ 13.6       0.5           2.5      0.14
+ 15.3       0.5          63.3      3.4
+ 16.7       0.5         264.6     14.3
+ 18.2       0.4         445.7     24.1
+ 19.5       0.4         679.1     36.7
+ 20.8       0.4         800.2     43.3
+ 22.0       0.4         982.5     53.1
+ 23.2       0.3         991.9     53.6
+ 24.3       0.3        1149.5     62.1
+ 25.4       0.3        1114.2     60.2
+ 26.5       0.3        1220.6     66.0
 ENDDATA             15
-ENDSUBENT           25
+ENDSUBENT           27
 ENDENTRY            10
