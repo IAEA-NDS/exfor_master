@@ -1,28 +1,31 @@
-ENTRY            41451   20141020   20150107   20141212       4165
-SUBENT        41451001   20141020   20150107   20141212       4165
-BIB                  9         17
+ENTRY            41451   20230303   20230616   20230615       4212
+SUBENT        41451001   20230303   20230616   20230615       4212
+BIB                  9         20
 TITLE       Spins and life-times of the Ge-74 levels from (n,n'g)
              reaction
 AUTHOR     (Yu.G.Kosyak, L.V.Chekushina, A.S.Ermatov)
-INSTITUTE  (4KASKAZ)
-REFERENCE  (J,IZV,67,(1),140,2003)  Main Reference, Data Given
-           (J,BAS,67,(1),151,2003)
+REFERENCE  (J,BAS,67,151,2003)
            Engl.translation of IZV,67,(1),140,2003 .
+           (J,IZV,67,140,2003)  Main reference, data given.
+            Issue 1.
+INSTITUTE  (4KASKAZ)
 FACILITY   (REAC,4KASKAZ) WWR-K reactor of National Nuclear Center
 SAMPLE      Metallic sample enriched by Ge-74 to 99.7%
+           (32-GE-74,ENR=0.997)
 METHOD      Inelastic scattering of fast reactor neutrons
             described in :
-REL-REF    (M,,Yu.G.Kosyak+,B,KOSYAK,4,1986)
+REL-REF    (M,,Yu.G.Kosyak+,B,KOSYAK,,4,1986)
             Details of method.
-HISTORY    (20050902C)   Compiled at the Centre - CJD (M.M.)
+HISTORY    (20050902C)   Compiled at the centre - CJD (M.M.)
            (20141020A) Engl.translation ref. was added.
            Articles were checked, BIB information was updated.
             SPA was added in reaction.
-ENDBIB              17
+           (20230303A) Subent 002 was corrected
+ENDBIB              20
 NOCOMMON             0          0
-ENDSUBENT           20
-SUBENT        41451002   20141020   20150107   20141212       4165
-BIB                  9         21
+ENDSUBENT           23
+SUBENT        41451002   20230303   20230616   20230615       4212
+BIB                  9         24
 REACTION   ((32-GE-74(N,INL)32-GE-74,,SPC,,SPA)//
            (32-GE-74(N,INL)32-GE-74,,SPC,,SPA))
 COMMENT    Of compiler. Intensities in Table 1 are given relative
@@ -33,25 +36,28 @@ INC-SPECT   Fast neutron spectrum of the thermal reactor
 ANALYSIS    Gamma-transition energies were defined from gamma
            spectra measurement at 90 deg.
            Intensities, populations of levels, their spins were
-           found at three angles 90, 124,146 deg.
+           found at three angles 90, 124, 146 deg.
 STATUS     (TABLE) Table 1 of IZV,67,(1),140,2003
 MISC-COL   (MISC1)   Spin of the initial level
-           (MISC2)   Parity of the Initial Level
+           (MISC2)   Parity of the initial level
            (MISC3)   Spin of the final level
            (MISC4)   Parity of the final level
 ERR-ANALYS (DATA-ERR)  Errors are not specified
-           (E-ERR)  Errors of E-gamma definition
+           (E-NM-ERR) Errors of E-gamma for numerator
+           (E-DN-ERR) Errors of E-gamma for denominator
 FLAG       (1.) Initial level spin and parity known uncertainly
            (2.) New gamma transition
 HISTORY    (20131020A) COMMENT was added, intensities recalculated
-ENDBIB              21
+           (20230303A) E-ERR -> E-NM-ERR in Data block,
+            E-ERR -> E-DN-ERR in Common block.
+ENDBIB              24
 COMMON               3          3
-EN-DUMMY   E-DN       E-ERR
+EN-DUMMY   E-DN       E-DN-ERR
 MEV        KEV        KEV
          1.      595.9   0.1
 ENDCOMMON            3
 DATA                11         83
-E-NM       E-ERR      DATA       DATA-ERR   DATA-APRX  LVL-INI
+E-NM       E-NM-ERR   DATA       DATA-ERR   DATA-APRX  LVL-INI
 MISC1      MISC2      MISC3      MISC4      FLAG
 KEV        KEV        NO-DIM     NO-DIM     NO-DIM     KEV
 NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
@@ -222,5 +228,5 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
 2999.         1.        0.10 E-02 0.02  E-02            2998.6
 1.         +1.        0.         +1.         2.
 ENDDATA            170
-ENDSUBENT          200
+ENDSUBENT          203
 ENDENTRY             2

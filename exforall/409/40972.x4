@@ -1,19 +1,30 @@
-ENTRY            40972   20180217   20180525   20180525       4178
-SUBENT        40972001   20180217   20180525   20180525       4178
-BIB                 10         22
-INSTITUTE  (4RUSFEI,3HUNKOS)
-REFERENCE  (J,YF,45,1226,1987)  Data curve is given. Issue 5.
-           (J,SNP,45,761,1987) Engl.trans.of J,YF,45,(5),1226,1987
-           (R,FEI-1771,1985) Experimental details
-AUTHOR     (A.A.Lychagin,S.P.Simakov,B.V.Devkin,O.A.Sal'nikov,
+ENTRY            40972   20230215   20230616   20230615       4212
+SUBENT        40972001   20230215   20230616   20230615       4212
+BIB                 11         35
+TITLE       Study of reaction Fe-56(n,n'gamma) with 14.1-MeV
+            neutrons
+AUTHOR     (A.A.Lychagin,S.P.Simakov,B.V.Devkin,O.A.Salnikov,
            A.A.Androsenko,P.A.Androsenko,A.B.Pashchenko,
            O.T.Grudzevich,G.Petoe,T.Staricskai,L.Vasvari)
-TITLE       Study of the Fe-56(n,n'gamma) reaction with 14.1-MeV
-            neutrons
+REFERENCE  (J,SNP,45,761,1987) Engl.trans.of J,YF,45,(5),1226,1987
+           (J,YF,45,1226,1987)  Data curve is given. Issue 5.
+           ((C,86DUBROV,,272,1986)=
+           (R,INDC(YUG)-010,272,1986))  Preliminary results
+           (R,FEI-1722,1985)        Experimental details
+INSTITUTE  (4RUSFEI,3HUNKOS)
 INC-SOURCE (D-T)
-METHOD     (COINC) Coincidence of neutrons and 0.846MeV gammas
-DETECTOR   (COIN,GELI,SCIN)
+METHOD     (COINC) Coincidence of neutrons and 0.846 MeV gammas
+           (TOF)
+DETECTOR   (COIN,GELI,SCIN) Scintillator NE-127 100 mm diameter
+                      and 50 mm thickness and coaxial Ge(Li) of
+                      50 cm3 volume, time resolution ~6 nsec.
+           Neutron detector efficiency was measured by neutron
+           spectrum of Cf-252 spontaneous fission.
 PART-DET   (G,N)
+CORRECTION Background was measured without sample.
+           For random coincidences.
+           For contribution of 57Fe(n,2n)56Fe (calculated
+           theoretically) and 2H(d,n)3He (measured) reactions.
 STATUS     (APRVD) Lychagin, 1988-12. Confirmed 1992-04-21
 HISTORY    (19890424C)  Compiled at the center - CJD
            (19920423A)  Incident neutron energy EN=14.1 MeV given
@@ -23,26 +34,43 @@ HISTORY    (19890424C)  Compiled at the center - CJD
            (20020729A) Date is corrected
            (20180217A) M.M. Upper -> lower case correction.
            Ref.SNP,45,761,1987 was added.
-ENDBIB              22
+           (20230215A) Update for current rules and dictionaries.
+           Ref. R,FEI-1771,1985 (misprinted) -> R,FEI-1722,1985.
+ENDBIB              35
 COMMON               1          3
 EN
 EV
     1.41E+7
 ENDCOMMON            3
-ENDSUBENT           29
-SUBENT        40972002   20180217   20180525   20180525       4178
-BIB                  7         10
+ENDSUBENT           42
+SUBENT        40972002   20230215   20230616   20230615       4212
+BIB                 10         25
 REACTION   (26-FE-56(N,INL)26-FE-56,,DE)
-SAMPLE      Natural iron
-MONITOR     No information
-EN-SEC     (E,N) Energy resolution ~6keV  for 1.17 MeV gamma
+SAMPLE      Natural iron, metallic hollow cylinder, inner
+            diameter 15 mm, outer diameter 35 mm, height 10 mm
+MONITOR     Normalization to angle-average double-differential C-S
+           of neutron inelastic scattering at energy range from
+           3.5 to 5 MeV.
+MONIT-REF  (,A.A.Lychagin+,R,FEI-923,1973)
+EN-SEC     (E,N) Energy resolution ~6 keV for 1.17 MeV gamma
                  energy
+ANALYSIS   Up to 96% of all gamma transitions from the excited
+           states of Fe-56 go through the low-lying 2+ state of
+           energy 0.846 MeV therefore this coincidence spectrum
+           descibes just Fe-56(n,n'gamma) reaction.
 ERR-ANALYS (DATA-ERR)  Total error
+ADD-RES      Integral of exp. dif. C-S from 0.1 to 0.9 MeV is
+            55 +- 29 mb (Table 1 of INDC(YUG)-010,,272,1986,
+           Table of J,SNP,45,761,1987)
 STATUS     (TABLE) From author A.A.Lychagin
+           . This Subent 40972.002 ( data from A.Lychagin)
+            supersedes Subent 40936.002 ( data from S.Simakov)
+           . Fig.2 of INDC(YUG)-010,,272,1986;
+             Fig.2 of J,SNP,45,761,1987
 HISTORY    (19920423A)  Data-unit changed from B/MEV to MB/MEV
                       Data-heading 'EN' changed to 'E'
            (19930219U) SF7 in reaction code deleted
-ENDBIB              10
+ENDBIB              25
 NOCOMMON             0          0
 DATA                 3         38
 E          DATA       DATA-ERR
@@ -86,5 +114,5 @@ MEV        MB/MEV     MB/MEV
   9.8       16.3       10.4
  10.4       18.9       18.5
 ENDDATA             40
-ENDSUBENT           55
+ENDSUBENT           70
 ENDENTRY             2
