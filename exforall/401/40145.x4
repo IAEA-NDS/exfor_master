@@ -1,23 +1,22 @@
-ENTRY            40145   20121010   20130207   20130114       4158
-SUBENT        40145001   20121010   20130207   20130114       4158
-BIB                 13         25
-INSTITUTE  (4RUSKUR)
-REFERENCE  (J,YF,14,(5),943,1971)  Tables and graphs given
-           (J,SNP,14,528,1972)     English translation
-REL-REF    (M,,N.I.Borisova+,J,YF,8,695,1968)
-            Details of method.
+ENTRY            40145   20230405   20230908   20230908       4213
+SUBENT        40145001   20230405   20230908   20230908       4213
+BIB                 12         26
+TITLE      Mass distribution of fragments from slow neutron
+           fission of Cf-249
 AUTHOR     (B.V.Kurchatov,L.N.Morozov,V.I.Novgorodtseva,
            V.A.Pchelin,L.V.Chistyakov,V.M.Shubko)
-TITLE      Mass distribution of the fission products from Cf-249
-           exposed to slow neutrons
+REFERENCE  (J,SNP,14,528,1972)     English translation
+           (J,YF,14,943,1971) Issue 5. Tables and graphs given
+INSTITUTE  (4RUSKUR)
+REL-REF    (M,41075001,N.I.Borisova+,J,YF,8,695,1968)
+            Details of method.
 FACILITY   (REAC,4RUSKUR)     Reactor IRT-4000
 INC-SOURCE (REAC)
 INC-SPECT   (3.-5.)*10**12  n/cm**2/s .
 SAMPLE      Cf-249 on Pt disk as spot of 4 mm diameter.
 METHOD     (ACTIV) Irradiation in channel inside Be reflector.
-           (RCHEM) Radiochemical Method
+           (CHSEP) Radiochemical method
 MONITOR     No information
-STATUS     Data from publication
 HISTORY    (19730425C)  Compiled at the centre
            (19911111A)  Two SUBENTS added from the RIDER's ENTRY
                       90517. Obsolete keywords corrected.
@@ -26,31 +25,37 @@ HISTORY    (19730425C)  Compiled at the centre
            SJA -> SNP . EN -> EN-DUMMY.
            BIB information was updated.
             Subent 005 was added.
-ENDBIB              25
+           (20230405A) Subent 003 was corrected.
+            Minor correction of free text in all Subents.
+ENDBIB              26
 COMMON               1          3
 EN-DUMMY
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        40145002   20121010   20130207   20130114       4158
-BIB                  5         10
-REACTION   (98-CF-249(N,F)ELEM/MASS,CUM,FY,,MXW) Cumulative yield
+ENDSUBENT           33
+SUBENT        40145002   20230405   20230908   20230908       4213
+BIB                  6         15
+REACTION   (98-CF-249(N,F)ELEM/MASS,CUM,FY,,MXW)
+REL-REF    (N,23271002,K.F.Flynn+,J,HCA,52,2216,1969)
+            Data used fro comparison.
 FLAG       (2.)       Sum of stable and metastable products
 ERR-ANALYS (ERR-S) Statistical error
            (ERR-T,5.) Total error including statistical error,
            error of chemical yield determination, absolute
            counting calibration error.
-STATUS     (TABLE) Table 1 of J,YF,14,(5),943,1971.
+STATUS     (TABLE,,B.V.Kurchatov+,J,YF,14,943,1971) Table 1
 HISTORY    (19911111U) MXW in SF8 and column 'ISOMER' added
            (20121010A) M.M. DATA-ERR -> ERR-S according to text,
                             page 944 of J,YF,14,(5),943,1971.
-ENDBIB              10
+           (20230405A) Br-82 and Cs-136 yields were moved in
+           new Subent 006 according to text, page 946 of
+           J,YF,14,943,1971 - "independent yields"
+ENDBIB              15
 NOCOMMON             0          0
-DATA                 6         37
-ELEMENT    MASS       ISOMER     DATA       DATA-ERR   FLAG
+DATA                 6         35
+ELEMENT    MASS       ISOMER     DATA       ERR-S      FLAG
 NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
-35.        82.         0.         0.0015     0.00012
 35.        83.                    0.13       0.003
 38.        89.                    0.32       0.013
 39.        91.         0.         0.805
@@ -72,7 +77,6 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 51.        129.        0.        1.23       0.05
 53.        131.                  2.20       0.16
 53.        133.        0.        4.77       0.27
-55.        136.        0.        0.42       0.016
 55.        137.                  5.57       0.21
 56.        139.                  5.68       0.16
 56.        140.                  5.36
@@ -87,50 +91,89 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
 63.        157.                  0.52
 64.        159.                  0.34
 65.        161.                  0.21
-ENDDATA             39
-ENDSUBENT           54
-SUBENT        40145003   20010311   20011019   20050926       0000
-BIB                  4          5
-REACTION   ((98-CF-249(N,F)ELEM/MASS,IND,FY,,MXW)/
-           (98-CF-249(N,F)ELEM/MASS,CHN,FY,,MXW))
-RESULT     (FRIND)
-STATUS     (RIDER)  RIDER'S REFERENCE IS 72KUR1
-HISTORY    (19911111T)  CONVERTED FROM RIDER'S SUBENT 90517003
-ENDBIB               5
+ENDDATA             37
+ENDSUBENT           57
+SUBENT        40145003   20230405   20230908   20230908       4213
+BIB                  4         12
+REACTION   (98-CF-249(N,F)ELEM/MASS,IND,FY,,FRC/MXW)
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not known - the value
+           is absent in the article.
+STATUS     (TABLE,,B.V.Kurchatov+,J,YF,14,943,1971)
+              Text page 948, without uncertainties.
+                    RIDER's reference is 72KUR1
+HISTORY    (19911111T)  Converted from RIDER'S Subent 90517003
+           (20220405A)  Denominator reaction was corrected
+            ELEM/MASS -> MASS
+           (20230405A) Br-82 data were added.
+            Code FRC was introduced in SF8 instead to ratio to
+            "MASS,CHN,FY".
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 5          1
+DATA                 5          2
 ELEMENT    MASS       ISOMER     DATA       DATA-ERR
 NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
   55.       136.        0.            7.9E-2     3.0E-3
-ENDDATA              3
-ENDSUBENT           13
-SUBENT        40145004   20010311   20011019   20050926       0000
-BIB                  3          3
+  38.        82.                     1.27E-2
+ENDDATA              4
+ENDSUBENT           21
+SUBENT        40145004   20230405   20230908   20230908       4213
+BIB                  5         13
 REACTION   (98-CF-249(N,F)MASS,CHN,FY,,MXW)
-STATUS     (RIDER)  RIDER'S REFERENCE IS 72KUR1
-HISTORY    (19911111T)  CONVERTED FROM RIDER'S SUBENT 90517004
-ENDBIB               3
+ERR-ANALYS (ERR-S) Statistical error
+           (ERR-T,5.) Total error including statistical error,
+           error of chemical yield determination, absolute
+           counting calibration error.
+STATUS     (RIDER)  RIDER's reference is 72KUR1
+COMMENT    Of compiler .
+            These data values are given in Table 1 and
+           respectively in Subent 002 as cumulative yield of
+           Cd-117.
+HISTORY    (19911111T)  Converted from RIDER'S Subent 90517004
+           (20230405A) COMMENT was added.
+            DATA-ERR -> ERR-S.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 3          1
-MASS       DATA       DATA-ERR
+MASS       DATA       ERR-S
 NO-DIM     PC/FIS     PC/FIS
   117.       1.88        .16
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        40145005   20120515   20130207   20130114       4158
-BIB                  5          6
+ENDSUBENT           21
+SUBENT        40145005   20230405   20230908   20230908       4213
+BIB                  5          7
 REACTION   (98-CF-249(N,F),,NU,,,DERIV)
 ANALYSIS    NU was derived from the yield curve.
-ERR-ANALYS (DATA-ERR) Not Specified.
-STATUS     (TABLE) Text of abstract of J,YF,14,(5),943,1971.
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE,,B.V.Kurchatov+,J,YF,14,943,1971)
+             Text of abstract, text page 946.
            (DEP,40145002) See ANALYSIS.
 HISTORY    (20121010C) M.M.
-ENDBIB               6
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 PRT/FIS    PRT/FIS
  4.0        0.5
 ENDDATA              3
-ENDSUBENT           14
-ENDENTRY             5
+ENDSUBENT           15
+SUBENT        40145006   20230405   20230908   20230908       4213
+BIB                  4          9
+REACTION   (98-CF-249(N,F)ELEM/MASS,IND,FY,,MXW)
+ERR-ANALYS (ERR-S) Statistical error
+           (ERR-T,5.) Total error including statistical error,
+           error of chemical yield determination, absolute
+           counting calibration error.
+STATUS     (TABLE,,B.V.Kurchatov+,J,YF,14,943,1971) Table 1
+HISTORY    (20230405C) Br-82 and Cs-136 yields were moved from
+            Subent 002 according to text, page 946 of
+           J,YF,14,943,1971 - "independent yields"
+ENDBIB               9
+NOCOMMON             0          0
+DATA                 5          2
+ELEMENT    MASS       ISOMER     DATA       ERR-S
+NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 35.        82.        0.         0.0015     0.00012
+ 55.       136.        0.         0.42       0.016
+ENDDATA              4
+ENDSUBENT           18
+ENDENTRY             6

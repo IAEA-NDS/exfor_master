@@ -1,13 +1,13 @@
-ENTRY            40087   20111014   20111215   20111212       4154
-SUBENT        40087001   20111014   20111215   20111212       4154
-BIB                  9         30
-INSTITUTE  (4RUSITE)
-REFERENCE  (C,70HELSINKI,1,339,197006)
-            Preprint IAEA-CN-26/89.
+ENTRY            40087   20230621   20230908   20230908       4213
+SUBENT        40087001   20230621   20230908   20230908       4213
+BIB                  9         31
+TITLE      Measurement of ALPHA values for U-235 and Pu-239
 AUTHOR     (F.N.Belyaev,K.G.Ignat'ev,S.I.Sukhoruchkin,
            S.P.Borovlev,V.V.Pavlov,M.B.Polozov,A.N.Soldatov)
-TITLE      Measurement of ALPHA values for U-235 and Pu-239.
-FACILITY   (CYCLO,4RUSITE)    Cyclotron
+REFERENCE  (C,70HELSINKI,1,339,1970)
+            Preprint IAEA-CN-26/89.
+INSTITUTE  (4RUSITE)
+FACILITY   (CYCLO,4RUSITE)
 SAMPLE     Metallic Pu-239 sample with thickness of 2.2E-3
            atom/barn included 1.8 percent of Pu-240 admixture
 METHOD     (TOF)      Time of flight. Flight path 14.56 m.
@@ -20,6 +20,7 @@ METHOD     (TOF)      Time of flight. Flight path 14.56 m.
            resonance filters.
            For verification and for mastering of method the
            ALPHA value for U-235 was also measured.
+CORRECTION Correction on background was introduced
 HISTORY    (19731129C)       Compiled at the centre
            (20111014A) M.M. F -> ABS in REACTION of Subent 002.
             Upper -> lower case correction.
@@ -30,17 +31,17 @@ HISTORY    (19731129C)       Compiled at the centre
            - Subents 2, 6-8 are restored from the article or
             from trans 4017.
             Subent 009 was added.
-CORRECTION Correction on background was introduced
-ENDBIB              30
+           (20230621A) Subent 009 was corrected.
+ENDBIB              31
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        40087002   20111014   20111215   20111212       4154
+ENDSUBENT           34
+SUBENT        40087002   20230621   20230908   20230908       4213
 BIB                  5          6
 REACTION   (94-PU-239(N,ABS),,ALF,,RES)
 COMMENT    In data section alpha values for completely resolved
            resonances are given
 ERR-ANALYS (DATA-ERR)         No information available
-STATUS     (TABLE) Table 3 of C,70HELSINKI,I,339,1970.
+STATUS     (TABLE,,F.N.Belyaev+,C,70HELSINKI,I,339,1970) Table 3
 HISTORY    (20111014S) M.M. Data were restored from the article.
 ENDBIB               6
 NOCOMMON             0          0
@@ -54,8 +55,8 @@ EV         NO-DIM     NO-DIM
 44.5       9.60       0.60
 ENDDATA              7
 ENDSUBENT           18
-SUBENT        40087003   20111014   20111215   20111212       4154
-BIB                  8         17
+SUBENT        40087003   20230621   20230908   20230908       4213
+BIB                  9         19
 REACTION   (94-PU-239(N,ABS),,ALF,,AV)
 DETECTOR   (SCIN)     In first method the fission effect was
            measured on secondary fast neutron yield from
@@ -68,15 +69,17 @@ MONITOR    (94-PU-239(N,ABS),,ETA)
 MONIT-REF  (40087009,F.N.Belyaev+,C,70HELSINKI,I,339,1970)
             Value was measured in additional experiment,
            see SUBENT 009.
-PART-DET   (N)        Neutrons
-           (G)        Gammas
+PART-DET   (N,G)
 COMMENT    Data were averaged on standard energy interval
 ERR-ANALYS (ERR-S)           Statistical errors are given
-STATUS     (TABLE) Table 4 of C,70HELSINKI,I,339,1970.
-ENDBIB              17
+STATUS     (TABLE,,F.N.Belyaev+,C,70HELSINKI,I,339,1970) Table 4
+           (COREL,40087004) Data normalized to ETA at thermal
+           energy
+HISTORY    (20230621A) Units of ETA : NO-DIM -> PRT/REAC
+ENDBIB              19
 COMMON               3          3
 EN-NRM     MONIT      MONIT-ERR
-EV         NO-DIM     NO-DIM
+EV         PRT/REAC   PRT/REAC
  3.0000E-02 1.7280E+00 2.6000E-02
 ENDCOMMON            3
 DATA                 4         15
@@ -98,24 +101,26 @@ KEV        KEV        NO-DIM     NO-DIM
  4.0000E+00 5.0000E+00 8.7000E-01 1.1000E-01
  5.0000E+00 1.0000E+01 6.7000E-01 8.0000E-02
 ENDDATA             17
-ENDSUBENT           43
-SUBENT        40087004   20111014   20111215   20111212       4154
-BIB                  7         11
+ENDSUBENT           45
+SUBENT        40087004   20230621   20230908   20230908       4213
+BIB                  8         13
 REACTION   (94-PU-239(N,ABS),,ALF,,AV)
 DETECTOR   (SCIN)     In second method capture effect and fission
            effect were measured by means of detector with stilbene
            crystal
 MONITOR    (94-PU-239(N,ABS),,ETA)
             At thermal energy for normalization
-PART-DET   (G)        Gammas
-           (N)        Neutrons
+PART-DET   (G,N)
 COMMENT    Data were averaged on standard energy interval
 ERR-ANALYS (ERR-S)          Statistical errors are given
-STATUS     (TABLE) Table 4 of C,70HELSINKI,I,339,1970.
-ENDBIB              11
+STATUS     (TABLE,,F.N.Belyaev+,C,70HELSINKI,I,339,1970) Table 4
+           (COREL,40087003) Data normalized to ETA at 0.3 eV
+           resonance
+HISTORY    (20230621A) Units of ETA : NO-DIM -> PRT/REAC
+ENDBIB              13
 COMMON               2          3
 EN-NRM     MONIT
-EV         NO-DIM
+EV         PRT/REAC
  2.5300E-02 2.1100E+00
 ENDCOMMON            3
 DATA                 4         15
@@ -137,20 +142,21 @@ KEV        KEV        NO-DIM     NO-DIM
  4.0000E+00 5.0000E+00 7.6000E-01 2.0000E-01
  5.0000E+00 1.0000E+01 6.6000E-01 1.4000E-01
 ENDDATA             17
-ENDSUBENT           37
-SUBENT        40087005   20111014   20111215   20111212       4154
-BIB                  5         10
+ENDSUBENT           39
+SUBENT        40087005   20230621   20230908   20230908       4213
+BIB                  5         11
 REACTION   (94-PU-239(N,ABS),,ALF,,AV)
-PART-DET   (N)        Neutrons
-           (G)        Gammas
+PART-DET   (N,G)
 COMMENT    Data were averaged on standard energy interval and
            on measurements by different detectors
 ERR-ANALYS (ERR-S)           Statistical errors are given
            Alpha value in interval of energies from 1.0 keV up to
            10.0 keV taking into account statistical errors and
            errors of normalization was equal to 0.82+-0.07
-STATUS     (TABLE) Table 4 of C,70HELSINKI,I,339,1970.
-ENDBIB              10
+STATUS     (TABLE,,F.N.Belyaev+,C,70HELSINKI,I,339,1970) Table 4
+           (DEP,40087003) Measurement by NaI crystal and ZnS
+           (DEP,40087004) Measurement by stilbene crystal.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         15
 EN-MIN     EN-MAX     DATA       ERR-S
@@ -171,8 +177,8 @@ KEV        KEV        NO-DIM     NO-DIM
  4.0000E+00 5.0000E+00 8.3000E-01 1.0000E-01
  5.0000E+00 1.0000E+01 6.7000E-01 7.0000E-02
 ENDDATA             17
-ENDSUBENT           32
-SUBENT        40087006   20111014   20111215   20111212       4154
+ENDSUBENT           33
+SUBENT        40087006   20230621   20230908   20230908       4213
 BIB                  5          8
 REACTION   (94-PU-239(N,G)94-PU-240,,SIG)
 DETECTOR   (NAICR) Sodium-iodide crystal used for gamma detection
@@ -181,7 +187,7 @@ STATUS     (TABLE) From authors.
 HISTORY    (19731129R) Data were received from authors.
            (19850329D) "ALL POINTS ELIMINATED FROM SET"
            (20111014S) M.M. Data were restored from trans 4017,
-            a reason to delete data had not given.
+            a reason to delete data was not given.
 ENDBIB               8
 NOCOMMON             0          0
 DATA                 2         96
@@ -285,7 +291,7 @@ EV         B
    99.375     11.1899
 ENDDATA             98
 ENDSUBENT          111
-SUBENT        40087007   20111014   20111215   20111212       4154
+SUBENT        40087007   20230621   20230908   20230908       4213
 BIB                  5          8
 REACTION   (94-PU-239(N,F),,SIG)
 DETECTOR   (NAICR) Sodium-iodide crystal used for gamma detection
@@ -398,16 +404,18 @@ EV         B
    99.375     24.3199
 ENDDATA             98
 ENDSUBENT          111
-SUBENT        40087008   20111014   20111215   20111212       4154
-BIB                  4          7
+SUBENT        40087008   20230621   20230908   20230908       4213
+BIB                  4          9
 REACTION   (94-PU-239(N,ABS),,ALF)
 ERR-ANALYS            No information available
 STATUS     (TABLE) From authors.
+           (DEP,40087006) Capture C-S
+           (DEP,40087007) Fission C-S
 HISTORY    (19731129R) Data were received from authors.
            (19850329D) "ALL POINTS ELIMINATED FROM SET"
            (20111014S) M.M. Data were restored from trans 4017,
             a reason to delete data was not given.
-ENDBIB               7
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 2         96
 EN         DATA
@@ -509,28 +517,52 @@ EV         NO-DIM
   101.285      0.8899
    99.375      0.4599
 ENDDATA             98
-ENDSUBENT          110
-SUBENT        40087009   20111014   20111215   20111212       4154
-BIB                  5          9
-REACTION  1(94-PU-239(N,ABS),,ALF)
-          2(94-PU-239(N,ABS),,ETA)
+ENDSUBENT          112
+SUBENT        40087009   20230621   20230908   20230908       4213
+BIB                  6          9
+REACTION   (94-PU-239(N,ABS),,ALF)
             Obtained in additional measurement.
 MONITOR    ((MONIT1)94-PU-239(N,F),,NU)
            ((MONIT2)94-PU-239(N,ABS),,ALF)
+MONIT-REF  (,G.C.Hanna+,J,REA,7,(4),3,1969)
+ERR-ANALYS (DATA-ERR) Not specified.
+STATUS     (TABLE,,F.N.Belyaev+,C,70HELSINKI,I,339,1970) Table 2
+HISTORY    (20230621A) DATA 2 were moved in Subent 010 according
+           to a comment of N.Otsuka (NDS,IAEA)
+ENDBIB               9
+COMMON               3          3
+EN-NRM     MONIT1     MONIT2
+EV         PRT/FIS    NO-DIM
+0.025       2.88       0.36
+ENDCOMMON            3
+DATA                 4          1
+EN         DATA       +DATA-ERR  -DATA-ERR
+EV         NO-DIM     NO-DIM     NO-DIM
+0.30       0.66       0.03       0.02
+ENDDATA              3
+ENDSUBENT           21
+SUBENT        40087010   20230621   20230908   20230908       4213
+BIB                  6         10
+REACTION   (94-PU-239(N,ABS),,ETA)
+            Obtained in additional measurement.
+MONITOR    ((MONIT1)94-PU-239(N,F),,NU)
            ((MONIT3)94-PU-239(N,ABS),,ETA)
 MONIT-REF  (,G.C.Hanna+,J,REA,7,(4),3,1969)
 ERR-ANALYS (DATA-ERR) Not specified.
-STATUS     (TABLE) Table 2 of C,70HELSINKI,I,339,1970.
-ENDBIB               9
-COMMON               4          3
-EN-NRM     MONIT1     MONIT2     MONIT3
-EV         PRT/FIS    NO-DIM     NO-DIM
-0.025       2.88       0.36      2.11
+STATUS     (TABLE,,F.N.Belyaev+,C,70HELSINKI,I,339,1970) Table 2
+HISTORY    (20230621T) Units of ETA : NO-DIM -> PRT/REAC.
+            DATA were moved from Subent 009 according
+           to a comment of N.Otsuka (NDS,IAEA)
+ENDBIB              10
+COMMON               3          3
+EN-NRM     MONIT1     MONIT3
+EV         PRT/FIS    PRT/REAC
+0.025       2.88      2.11
 ENDCOMMON            3
-DATA                 6          1
-EN         DATA      1+DATA-ERR 1-DATA-ERR 1DATA      2DATA-ERR  2
-EV         NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
-0.30       0.66       0.03       0.02        1.728      0.026
+DATA                 3          1
+EN         DATA       DATA-ERR
+EV         PRT/REAC   PRT/REAC
+0.30        1.728      0.026
 ENDDATA              3
-ENDSUBENT           21
-ENDENTRY             9
+ENDSUBENT           22
+ENDENTRY            10
