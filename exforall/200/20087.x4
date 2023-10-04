@@ -1,126 +1,119 @@
-ENTRY            20087   19710908              20050926       0000
-SUBENT        20087001   19710908              20050926       0000
-BIB                 14         16
+ENTRY            20087   20230319   20230928   20230915       2317
+SUBENT        20087001   20230319   20230928   20230915       2317
+BIB                 14         17
+TITLE       (n,2n) cross-section measurements on Sr-86, Y-89,
+            Nb-93 and Cs-133 for 14.1 MeV neutrons
+AUTHOR     (H.Vonach,H.Muenzer)
+REFERENCE  (J,OSA,96,120,1959) (In German).
 INSTITUTE  (2AUSIRK)
-REFERENCE  (J,OSA,96,120,5903)
-AUTHOR     (H.VONACH,H.MUENZER)
-TITLE      -(N,2N) CROSS-SECTION MEASUREMENTS ON SR-86, Y-89,
-            NB-93 AND CS-133 FOR 14.1 MEV NEUTRONS.- (IN GERMAN).
-FACILITY   (CCW)      COCKCROFT-WALTON ACCELERATOR, 200 KEV.
-INC-SOURCE (D-T)      DEUTERON-TRITIUM
-INC-SPECT  .NEUTRON FLUX IS 1.-2.E+11 NEUTRONS/CM-SQ/SEC.
-METHOD     (ACTIV)    ACTIVATION
-DETECTOR   (NAICR)    SODIUM-IODIDE CRYSTAL  1.5 * 1 INCH
-MONITOR    (13-AL-27(N,A)11-NA-24-G,,SIG)SIGMA=116 +- 8 MILLIBARN.
-STATUS     .DATA FROM PUBLICATION.
-HISTORY    (701105C)
-           (710908E)
-CORRECTION .EXTENSION OF SAMPLE, BACKSCATTERING, ABSORPTION.
-ERR-ANALYS .NO INFORMATION GIVEN
-ENDBIB              16
-COMMON               1          3
-EN
-MEV
- 1.4100E+01
+FACILITY   (CCW,2AUSIRK) 200 KV.
+INC-SOURCE (D-T)
+INC-SPECT   Neutron flux is 1.-2.E+11 neutrons/cm2/sec.
+METHOD     (ACTIV)
+DETECTOR   (NAICR) Sodium-Iodide crystal  1.5 * 1 inch
+MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)
+CORRECTION  Extension of sample, backscattering, absorption.
+ERR-ANALYS (DATA-ERR) No information given
+STATUS     (TABLE) Tbl. 1 from Oesterr.Akad.Wiss.,96(1959)120
+HISTORY    (19701105C)
+           (20230319A) SD:Updated to new date formats, lower case.
+           Corrections in all Subents.
+ENDBIB              17
+COMMON               3          3
+EN         MONIT      MONIT-ERR
+MEV        MB         MB
+     14.1         116.        8.
 ENDCOMMON            3
-ENDSUBENT           23
-SUBENT        20087002   19830901              20050926       0000
+ENDSUBENT           24
+SUBENT        20087002   20230319   20230928   20230915       2317
 BIB                  4          6
-REACTION   (38-SR-86(N,2N)38-SR-85-G,M+,SIG,,FCT)
-           .SIGMA(GROUND) + 86 PER-CENT SIGMA(METASTABLE).
-SAMPLE                CHEMICAL COMPOSITION = SR-C-O(3).
-PART-DET   (DG)       DECAY GAMMAS OF 65 DAY ACTIVITY.
-HISTORY    (701105C)
-           (710908E)
+REACTION   (38-SR-86(N,2N)38-SR-85-G,(M),SIG)
+            sigma(ground) + 86% sigma(metastable).
+SAMPLE     Chemical composition = Sr-C-O(3).
+DECAY-DATA (38-SR-85-G,65.D,DG)
+HISTORY    (20230319A) SD: SF5=M+ -> (M); SF8=FCT deleted from
+            REACTION code. BIB updated.
 ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 6.8000E-01 1.1000E-01
+       0.68       0.11
 ENDDATA              3
 ENDSUBENT           14
-SUBENT        20087003   19830901              20050926       0000
-BIB                  4          7
-REACTION   (38-SR-86(N,2N)38-SR-85-M,,SIG,,FCT)
-           .GIVEN CROSS SECTION = 14 PER-CENT SIGMA(METASTABLE).
-SAMPLE                CHEMICAL COMPOSITION = SR-C-O(3).
-PART-DET   (DG)       150 KEV GAMMA OF 70 MIN ACTIVITY
-            WITH A BRANCHING RATIO OF 14 PER-CENT.
-HISTORY    (701105C)
-           (710908E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 3          1
-HL         DATA       DATA-ERR
-MIN        B          B
- 7.0000E+01 2.1000E-02 8.0000E-03
-ENDDATA              3
-ENDSUBENT           15
-SUBENT        20087004   19830901              20050926       0000
+SUBENT        20087003   20230319   20230928   20230915       2317
 BIB                  4          5
-REACTION   (38-SR-86(N,2N)38-SR-85,,SIG)
-PART-DET   (DG   )    DECAY GAMMAS.
-STATUS     (DEP  )    SUM OF PARTIAL CROSS-SECTIONS IN THIS ENTRY.
-HISTORY    (710803C)
-           (710908E)
+REACTION   (38-SR-86(N,2N)38-SR-85-M,,SIG)
+SAMPLE     Chemical composition = Sr-C-O(3).
+DECAY-DATA (38-SR-85-M,70.MIN,DG,150.,0.14)
+HISTORY    (20230319A) SD: SF8=FCT deleted from REACTION code.
+            BIB updated.
 ENDBIB               5
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 7.0000E-01 1.2000E-01
+      0.021      0.008
 ENDDATA              3
 ENDSUBENT           13
-SUBENT        20087005   19830901              20050926       0000
-BIB                  4          6
+SUBENT        20087004   20230319   20230928   20230915       2317
+BIB                  3          4
+REACTION   (38-SR-86(N,2N)38-SR-85,,SIG)
+STATUS     (DEP,20087002) gr.st.cr.sect.
+           (DEP,20087003) metast.cr.sect.
+HISTORY    (20230319U) SD: BIB updated.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+B          B
+       0.70       0.12
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        20087005   20230319   20230928   20230915       2317
+BIB                  3          4
 REACTION   (39-Y-89(N,2N)39-Y-88,,SIG)
-SAMPLE                CHEMICAL COMPOSITION = Y(2)-O(3).
-PART-DET   (DG)       DECAY GAMMAS
-            ONLY TOTAL ACTIVITY ABOVE 30 KEV MEASURED.
-HISTORY    (701105C)
-           (710908E)
+            only total activity above 30 keV measured.
+SAMPLE      Chemical composition = Y(2)-O(3).
+HISTORY    (20230319U) SD: BIB updated.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+B          B
+       0.54       0.08
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        20087006   20230319   20230928   20230915       2317
+BIB                  4          6
+REACTION   (41-NB-93(N,2N)41-NB-92-M,,SIG)
+            only total activity above 30 keV measured.
+SAMPLE     Chemical composition = Nb(2)-0(5).
+DECAY-DATA (41-NB-92-M,9.9D,DG) Hl+-0.1d
+HISTORY    (19860710A)HH: ISO to REACTION
+           (20230319U) SD: BIB updated.
 ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 5.4000E-01 8.0000E-02
+       0.43       0.07
 ENDDATA              3
 ENDSUBENT           14
-SUBENT        20087006   19860926              20050926       0000
-BIB                  4          8
-REACTION   (41-NB-93(N,2N)41-NB-92-M,,SIG)
-SAMPLE     CHEMICAL COMPOSITION = NB(2)-0(5).
-DECAY-DATA (41-NB-92-M,9.9D,DG) HL+-0.1D
-            ONLY TOTAL ACTIVITY ABOVE 30 KEV MEASURED.
-HISTORY    (701105C)
-           (710908E)
-           (860710A)HH ISO TO REACTION
-           (860722E)
-ENDBIB               8
+SUBENT        20087007   20230319   20230928   20230915       2317
+BIB                  4          6
+REACTION   (55-CS-133(N,2N)55-CS-132,,SIG)
+            only total activity above 30 keV measured.
+SAMPLE      Chemical composition = Cs(2)-C-O(3).
+DECAY-DATA (55-CS-132,7.0D,DG) Hl+-0.1d
+            Half-life of Cs-132 measured, t(1/2) = 7.0 +- 0.1 days
+HISTORY    (20230319U) SD: BIB updated.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          1
 DATA       DATA-ERR
 B          B
- 4.3000E-01 7.0000E-02
+       1.55       0.25
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        20087007   19830901              20050926       0000
-BIB                  5          7
-REACTION   (55-CS-133(N,2N)55-CS-132,,SIG)
-SAMPLE                CHEMICAL COMPOSITION = CS(2)-C-O(3).
-PART-DET   (DG)       DECAY GAMMAS
-            ONLY TOTAL ACTIVITY ABOVE 30 KEV MEASURED.
-COMMENT    .HALF-LIFE OF CS-132 MEASURED, T(1/2) = 7.0 +- 0.1 DAYS
-HISTORY    (701105C)
-           (710908E)
-ENDBIB               7
-NOCOMMON             0          0
-DATA                 4          1
-HL         HL-ERR     DATA       DATA-ERR
-D          D          B          B
- 7.0000E+00 1.0000E-01 1.5500E+00 2.5000E-01
-ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           14
 ENDENTRY             7
