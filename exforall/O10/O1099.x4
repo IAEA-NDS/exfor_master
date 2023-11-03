@@ -1,6 +1,6 @@
-ENTRY            O1099   20230128   20230523   20230523       O093
-SUBENT        O1099001   20230128   20230523   20230523       O093
-BIB                 13         80
+ENTRY            O1099   20230521   20231025   20231025       O096
+SUBENT        O1099001   20230521   20231025   20231025       O096
+BIB                 13         81
 TITLE      Cross sections for the production of radionuclides by
            proton-induced reactions on W, Ta, Pb and Bi from
            thresholds up to 2.6 GeV
@@ -81,13 +81,14 @@ HISTORY    (20031124C)
            (20220120A) SD: Corrections in several Subents.
            (20230128A) SD: Correction in Subent 269. Ref. in
            REL-REF added (T,PROTOSCHILL).
-ENDBIB              80
+           (20230521A) SD: Corrections in Subents 057,145,240.
+ENDBIB              81
 COMMON               4          3
 ERR-2      ERR-3      ERR-4      ERR-6
 PER-CENT   PER-CENT   PER-CENT   PER-CENT
   1.          2.        5.         6.
 ENDCOMMON            3
-ENDSUBENT           87
+ENDSUBENT           88
 SUBENT        O1099002   20220120   20220607   20220504       O087
 BIB                  2          2
 REACTION   (74-W-0(P,X)4-BE-7,,SIG)
@@ -1406,15 +1407,16 @@ MEV        MEV        MB         MB
   0.259E+04       1.01      5.515  6.054E-01
 ENDDATA             34
 ENDSUBENT           41
-SUBENT        O1099057   20220120   20220607   20220504       O087
-BIB                  3          6
-REACTION   (74-W-0(P,X)75-RE-182,,SIG)
+SUBENT        O1099057   20230521   20231025   20231025       O096
+BIB                  3          7
+REACTION   (74-W-0(P,X)75-RE-182-G,,SIG)
 DECAY-DATA (75-RE-182-G,64.HR)
 HISTORY    (20120611A) SD: DECAY-DATA was added according to the
              remark from the author (R.Michel). COMMENT from
              compiler deleted.
            (20220120A) SD: SF5=IND deleted from REACTION code.
-ENDBIB               6
+           (20230521A) SD: SF4=Re-182 -> Re-182g in REACTION code.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4         22
 EN         EN-ERR     DATA       ERR-T
@@ -1442,7 +1444,7 @@ MEV        MEV        MB         MB
    0.26E+03       1.08      4.609   6.28E-01
   0.764E+03       1.45      2.314  4.857E-01
 ENDDATA             24
-ENDSUBENT           35
+ENDSUBENT           36
 SUBENT        O1099058   20220120   20220607   20220504       O087
 BIB                  2          2
 REACTION   (74-W-0(P,X)75-RE-183,,SIG)
@@ -3623,16 +3625,24 @@ MEV        MEV        MB         MB
       2580.         1.        17.         3.
 ENDDATA             17
 ENDSUBENT           27
-SUBENT        O1099145   20040106              20050926       0000
-BIB                  2          6
+SUBENT        O1099145   20230521   20231025   20231025       O096
+BIB                  5         14
 REACTION   (73-TA-181(P,X)72-HF-172,CUM,SIG)
-DECAY-DATA (72-HF-172,,DG,1093.60,0.6960,
+DECAY-DATA (71-LU-172-G,,DG,1093.60,0.6960,
                        DG,900.70,0.3320,
                        DG,181.50,0.2280,
                        DG,810.10,0.1860,
                        DG,912.10,0.1700)
-ENDBIB               6
-NOCOMMON
+RAD-DET    (71-LU-172-G,DG)
+COMMENT    N.Otsuka (06.10.2023): ENSDF shows that the gamma lines
+           coded under DECAY-DATA are not for 172Hf decay but
+           172gLu decay. Namely, the production cross section of
+           172Hf was determined by measuring its daughter's
+           activity.
+HISTORY    (20230521A) SD: RAD-DET added. 72-HF-172 -> 71-LU-172
+            in DECAY-DATA and RAD-DET (see COMMENT).
+ENDBIB              14
+NOCOMMON             0          0
 DATA                 4         24
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -3661,7 +3671,7 @@ MEV        MEV        MB         MB
       1570.         1.        28.        3.6
       2580.         1.       25.8        3.4
 ENDDATA             26
-ENDSUBENT           37
+ENDSUBENT           45
 SUBENT        O1099146   20040106              20050926       0000
 BIB                  2         10
 REACTION   (73-TA-181(P,X)72-HF-173,CUM,SIG)
@@ -6056,18 +6066,26 @@ MEV        MEV        MB         MB
       2598.     0.7251      10.51     0.8522
 ENDDATA              6
 ENDSUBENT           14
-SUBENT        O1099240   20040106              20050926       0000
-BIB                  2          8
+SUBENT        O1099240   20230521   20231025   20231025       O096
+BIB                  5         16
 REACTION   (83-BI-209(P,X)72-HF-172,CUM,SIG)
-DECAY-DATA (72-HF-172,,DG,1093.60,0.6960,
+DECAY-DATA (71-LU-172-G,,DG,1093.60,0.6960,
                        DG,900.70,0.3320,
                        DG,181.50,0.2280,
                        DG,912.10,0.1700,
                        DG,810.10,0.1860,
                        DG,125.90,0.1130,
                        DG,1002.70,0.0614)
-ENDBIB               8
-NOCOMMON
+RAD-DET    (71-LU-172-G,DG)
+COMMENT    N.Otsuka (06.10.2023): ENSDF shows that the gamma lines
+           coded under DECAY-DATA are not for 172Hf decay but
+           172gLu decay. Namely, the production cross section of
+           172Hf was determined by measuring its daughter's
+           activity.
+HISTORY    (20230521A) SD: RAD-DET added. 72-HF-172 -> 71-LU-172
+            in DECAY-DATA and RAD-DET (see COMMENT).
+ENDBIB              16
+NOCOMMON             0          0
 DATA                 4          8
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -6080,7 +6098,7 @@ MEV        MEV        MB         MB
       2598.     0.7235      12.09      1.247
       2598.     0.7251      12.09     0.9014
 ENDDATA             10
-ENDSUBENT           23
+ENDSUBENT           31
 SUBENT        O1099241   20040106              20050926       0000
 BIB                  2          4
 REACTION   (83-BI-209(P,X)72-HF-173,CUM,SIG)
