@@ -1,11 +1,22 @@
 EXFOR_ALL_URL = "https://nds.iaea.org/exfor-master/backup/"
+EXFOR_TRANS_URL = "https://nds.iaea.org/nrdc/exfor-master/trans/"
 
 
-# GIT_REPO_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/exfor_master_soku/"  # private repo
-GIT_REPO_PATH = "./"  # here
-GIT_REPO_URL = "https://api.github.com/repos/IAEA-NDS/exfor_master/releases"
+# GIT_REPO_PATH = "./"  # here
+GIT_REPO_PATH = "/Users/okumuras/Documents/nucleardata/test/exfor_master/" # Private Repo
 
-EXFOR_ALL_TEMP = "exforall_tmp/"  # do not remove for rsync "/"
+# GIT_REPO_URL = "https://api.github.com/repos/IAEA-NDS/exfor_master/releases"
+GIT_REPO_URL = "https://api.github.com/repos/shinokumura/exfor_master/releases"
+
+
+"""
+This is the contingency plan to use OECD/NEA Github
+"""
+TRANS_REPO_PATH = "../trans"
+TRANS_REPO_URL = "https://git.oecd-nea.org/exfor/nrdc/trans"
+
+
+TEMP_TRANS = "./trans"
 EXFOR_ALL_PATH = GIT_REPO_PATH + "exforall/"
 
 
