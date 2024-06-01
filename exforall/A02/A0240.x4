@@ -1,6 +1,6 @@
-ENTRY            A0240   20190628   20191007   20191003       A092
-SUBENT        A0240001   20190628   20191007   20191003       A092
-BIB                 11         39
+ENTRY            A0240   20231220   20240313   20240313       A104
+SUBENT        A0240001   20231220   20240313   20240313       A104
+BIB                 11         41
 TITLE      3He activation analysis for S,Cl,K and Ca.
 AUTHOR     (D.M.Lee,S.S.Markowitz)
 INSTITUTE  (1USABRK)
@@ -20,7 +20,9 @@ ANALYSIS    Absolute cross-sections were calculated
            based on the assumption that the reactions were
            attributed entirely to a single reaction on a
            specific target nuclide.
-ERR-ANALYS (ERR-T). The estimated absolute uncertainty in the
+           Each of the cross-sections shown in 'data-section'
+           represents an average value of 2-3 replicates.
+ERR-ANALYS (ERR-T) The estimated absolute uncertainty in the
            cross sections includes:
             * uncertainty in the determination of total
               beam current,
@@ -29,24 +31,24 @@ ERR-ANALYS (ERR-T). The estimated absolute uncertainty in the
               rates,
             * the uniformity of thickness of targets,
             * possibility of recoil gas losses during irradiation.
-           (ERR-S). Average deviation.
-           Each of the cross-sections shown in 'data-section'
-           represents an average value of 2-3 replicates.
-STATUS     (TABLE) Tbl.2 from J.Radioanalyt.Chem.,19(1974)159
+           (ERR-S) Average deviation.
+STATUS     (TABLE,,D.M.Lee+,J,JRC,19,159,1974) Tbl.2
 HISTORY    (19850319C)
            (19850409U)
            (19870422U)
            (19880104U)
-           (20190628A) SD:Updated to new date formats,lower case.
+           (20190628A) SD:Updated to new date formats, lower case.
            Ref. corrected (RCA -> JRC). Ref. LBL-682 added.
            Major corrections. STATUS added.
-ENDBIB              39
+           (20231220A) SD: Correction in Subents 003, 004. Several
+           Subents were split.
+ENDBIB              41
 COMMON               1          3
 ERR-S
 PER-CENT
     5.
 ENDCOMMON            3
-ENDSUBENT           46
+ENDSUBENT           48
 SUBENT        A0240002   20190628   20191007   20191003       A092
 BIB                  5         14
 REACTION   (16-S-32(HE3,X)17-CL-34-M,(CUM),SIG)
@@ -89,15 +91,10 @@ MEV        MEV        MB
    22.1       21.8        6.7
 ENDDATA             17
 ENDSUBENT           40
-SUBENT        A0240003   20190628   20191007   20191003       A092
-BIB                  5         16
-REACTION  4(17-CL-35(HE3,A)17-CL-34-M,,SIG)
-          8(17-CL-37(HE3,2P)17-CL-38,,SIG)
-          K(17-CL-37(HE3,2N)19-K-38-G,,SIG)  The g.s. is shielded
-                          by the IT decay of the short-lived m.s.
-DECAY-DATA4(17-CL-34-M,32.5MIN,DG,2120.,0.38)
-          8(17-CL-38-G,37.1MIN,DG,2170.,0.47)
-          K(19-K-38-G,7.7MIN,DG,2170.,1.)
+SUBENT        A0240003   20231220   20240313   20240313       A104
+BIB                  5         13
+REACTION   (17-CL-35(HE3,X)17-CL-34-M,,SIG)
+DECAY-DATA (17-CL-34-M,32.5MIN,DG,2120.,0.38)
 COMMENT    /By compiler/. authors did not reported method of
            dividing Cl-38 from K-38. both nuclide have identical
            gamma-rays 2170. keV. Method decay curve was used,
@@ -107,63 +104,61 @@ SAMPLE     Pb-Cl-2.  The thickness of the targets were determined
 HISTORY    (20190628A) SD: SF5=IND and SF9=EXP deleted from
            REACTION codes. SAMPLE updated. ERR-ANALYS moved to
            Subent 001.
-ENDBIB              16
+           (20231220A) SD: SF3=A -> X in REACTION (4) code. Subent
+           was split in three Subents (see Subents 006,007).
+ENDBIB              13
 COMMON               1          3
 ERR-T
 PER-CENT
    15.
 ENDCOMMON            3
-DATA                 5         14
-EN-MAX     EN-MIN     DATA      4DATA      8DATA      K
-MEV        MEV        MB         MB         MB
-    7.8        7.3        7.9                   0.5
-    8.4        8.1                   0.1        3.8
-    9.2        8.6       10.3        2.8
-   10.3        9.4                              9.1
-   10.9       10.4       12.1       13.4        9.3
-   11.5       11.0       11.6       21.8       12.9
-   12.6       12.3                             18.3
-   14.0       13.6        9.5       48.0       22.8
-   15.0       14.7        8.5       53.1       23.0
-   15.6       15.3        7.4       60.5
-   16.0       15.7        7.8       62.2       22.6
-   17.3       17.0        7.7       70.0
-   18.1       17.8        6.7       75.0       20.1
-   20.2       19.9        8.1       77.7       17.2
-ENDDATA             16
-ENDSUBENT           41
-SUBENT        A0240004   20190628   20191007   20191003       A092
-BIB                  4          9
-REACTION  K(19-K-39(HE3,A)19-K-38-G,,SIG)   The g.s. is shielded
-                          by the IT decay of the short-lived m.s.
-          M(19-K-39(HE3,2A)17-CL-34-M,,SIG)
-DECAY-DATAK(19-K-38-G,7.7MIN,DG,2170.,1.)
-          M(17-CL-34-M,32.5MIN,DG,2120.,0.38)
-SAMPLE     KI. The thickness of the targets were determined
+DATA                 3         11
+EN-MAX     EN-MIN     DATA
+MEV        MEV        MB
+        7.8        7.3        7.9
+        9.2        8.6       10.3
+       10.9       10.4       12.1
+       11.5       11.0       11.6
+       14.0       13.6        9.5
+       15.0       14.7        8.5
+       15.6       15.3        7.4
+       16.0       15.7        7.8
+       17.3       17.0        7.7
+       18.1       17.8        6.7
+       20.2       19.9        8.1
+ENDDATA             13
+ENDSUBENT           35
+SUBENT        A0240004   20231220   20240313   20240313       A104
+BIB                  4          8
+REACTION   (19-K-39(HE3,X)19-K-38-G,,SIG)
+DECAY-DATA (19-K-38-G,7.7MIN,DG,2170.,1.)
+SAMPLE     KI. The thickness of the targets was determined
            by weighing; they ranged from 1.5 to 4.5 mg/cm2.
 HISTORY    (20190628A) SD: SF9=EXP deleted from REACTION code.
            SAMPLE updated. ERR-ANALYS moved to Subent 001.
-ENDBIB               9
+           (20231220A) SD: SF3=A -> X in REACTION (K) code. Subent
+           was split in two Subents (see Subent 008).
+ENDBIB               8
 COMMON               1          3
 ERR-T
 PER-CENT
    20.
 ENDCOMMON            3
-DATA                 4         10
-EN-MAX     EN-MIN     DATA      KDATA      M
-MEV        MEV        MB         MB
-    7.8        7.3        6.4
-    8.4        8.1        8.2
-    9.0        8.4        9.8
-   10.3        9.4       10.2
-   10.9       10.4        9.9
-   12.6       12.3        7.7
-   15.        14.7        6.9        0.5
-   16.4       16.         6.3        3.6
-   18.1       17.8        6.1        7.1
-   20.2       19.9        5.8        8.2
+DATA                 3         10
+EN-MAX     EN-MIN     DATA
+MEV        MEV        MB
+        7.8        7.3        6.4
+        8.4        8.1        8.2
+        9.0        8.4        9.8
+       10.3        9.4       10.2
+       10.9       10.4        9.9
+       12.6       12.3        7.7
+        15.       14.7        6.9
+       16.4        16.        6.3
+       18.1       17.8        6.1
+       20.2       19.9        5.8
 ENDDATA             12
-ENDSUBENT           30
+ENDSUBENT           29
 SUBENT        A0240005   20190628   20191007   20191003       A092
 BIB                  5          9
 REACTION   (20-CA-40(HE3,X)19-K-38-G,(CUM),SIG)
@@ -194,4 +189,92 @@ MEV        MEV        MB
    20.2       19.9       76.6
 ENDDATA             10
 ENDSUBENT           28
-ENDENTRY             5
+SUBENT        A0240006   20231220   20240313   20240313       A104
+BIB                  5          9
+REACTION   (17-CL-37(HE3,2P)17-CL-38,,SIG)
+DECAY-DATA (17-CL-38-G,37.1MIN,DG,2170.,0.47)
+COMMENT    /By compiler/ Authors did not reported method of
+           dividing Cl-38 from K-38. Both nuclide have identical
+           gamma-rays 2170. keV. Method decay curve was used,
+           probably.
+SAMPLE     Pb-Cl-2.  The thickness of the targets were determined
+           by weighing; they ranged from 1.5 to 4.5 mg/cm2.
+HISTORY    (20231220T) SD: Part of Subent 003.
+ENDBIB               9
+COMMON               1          3
+ERR-T
+PER-CENT
+   15.
+ENDCOMMON            3
+DATA                 3         11
+EN-MAX     EN-MIN     DATA
+MEV        MEV        MB
+        8.4        8.1        0.1
+        9.2        8.6        2.8
+       10.9       10.4       13.4
+       11.5       11.0       21.8
+       14.0       13.6       48.0
+       15.0       14.7       53.1
+       15.6       15.3       60.5
+       16.0       15.7       62.2
+       17.3       17.0       70.0
+       18.1       17.8       75.0
+       20.2       19.9       77.7
+ENDDATA             13
+ENDSUBENT           31
+SUBENT        A0240007   20231220   20240313   20240313       A104
+BIB                  5          9
+REACTION   (17-CL-37(HE3,2N)19-K-38-G,,SIG)
+DECAY-DATA (19-K-38-G,7.7MIN,DG,2170.,1.)
+COMMENT    /By compiler/. authors did not reported method of
+           dividing Cl-38 from K-38. both nuclide have identical
+           gamma-rays 2170. keV. Method decay curve was used,
+           probably.
+SAMPLE     Pb-Cl-2.  The thickness of the targets were determined
+           by weighing; they ranged from 1.5 to 4.5 mg/cm2.
+HISTORY    (20231220T) SD: Part of Subent 003.
+ENDBIB               9
+COMMON               1          3
+ERR-T
+PER-CENT
+   15.
+ENDCOMMON            3
+DATA                 3         11
+EN-MAX     EN-MIN     DATA
+MEV        MEV        MB
+        7.8        7.3        0.5
+        8.4        8.1        3.8
+       10.3        9.4        9.1
+       10.9       10.4        9.3
+       11.5       11.0       12.9
+       12.6       12.3       18.3
+       14.0       13.6       22.8
+       15.0       14.7       23.0
+       16.0       15.7       22.6
+       18.1       17.8       20.1
+       20.2       19.9       17.2
+ENDDATA             13
+ENDSUBENT           31
+SUBENT        A0240008   20231220   20240313   20240313       A104
+BIB                  4          5
+REACTION   (19-K-39(HE3,2A)17-CL-34-M,,SIG)
+DECAY-DATA (17-CL-34-M,32.5MIN,DG,2120.,0.38)
+SAMPLE     KI. The thickness of the targets was determined
+           by weighing; they ranged from 1.5 to 4.5 mg/cm2.
+HISTORY    (20231220T) SD: Part of Subent 004.
+ENDBIB               5
+COMMON               1          3
+ERR-T
+PER-CENT
+   20.
+ENDCOMMON            3
+DATA                 3          4
+EN-MAX     EN-MIN     DATA
+MEV        MEV        MB
+        15.       14.7        0.5
+       16.4        16.        3.6
+       18.1       17.8        7.1
+       20.2       19.9        8.2
+ENDDATA              6
+ENDSUBENT           20
+ENDENTRY             8

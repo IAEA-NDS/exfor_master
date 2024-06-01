@@ -1,28 +1,21 @@
-ENTRY            A0062   20080611   20080908   20080901       A063
-SUBENT        A0062001   20080611   20080908   20080901       A063
-BIB                 17         36
-TITLE      Medical I-123 production from radioxenon formed in
-           spallation reactions by 660 MeV protons
-AUTHOR     (M.Adilbish, V.G.Chumin, V.A.Khalkin, O.Khotek,
-           M.Ja.Kuznecova, Ju.V.Norseev, V.I.Fominykh,
-           N.G.Zaitseva)
-REFERENCE  (R,JINR-P6-12447,1979)
-           (J,ARI,31,163,1980)
-           (R,JINR-P6-81-178,1981) Instrumetation only.
+ENTRY            A0062   20231221   20240313   20240313       A104
+SUBENT        A0062001   20231221   20240313   20240313       A104
+BIB                 17         37
+TITLE      123I production from radioxenon formed in spallation
+           reactions by 660 MeV protons for medical research
+AUTHOR     (M.Adilbish, V.G.Chumin, V.A.Khalkin, O.Knotek,
+            M.Ja.Kuznetsova, Ju.V.Norseev, V.I.Fominykh,
+            N.G.Zaitseva)
+REFERENCE  (J,ARI,31,163,1980)
+           (R,JINR-P6-12447,1979)
+REL-REF    (I,,N.G.Zaitseva+,R,JINR-P6-81-178,1981) Instrum.descr.
+           (D,,E.G.Alekseev+,R,LIJAF-191,1975) At 1 GeV
 INSTITUTE  (4ZZZDUB)
-HISTORY    (19800602C)
-           (20040114A) Omitted values are included.
-           (20080611A).Corrections were made according new exfor
-            rules and N.Soppera remarks.
 FACILITY   (SYNCY,4ZZZDUB)
-DETECTOR   (GELI).For decay gammas.
-STATUS     (APRVD).By N.G.Zaitceva.
-ERR-ANALYS (ERR-T) Uncertainties include accidental error
-           and systematic error associated with uncertainty of
-           gamma-rays record efficiency and omitting of
-           self-absorption of gamma-rays in sample.
+DETECTOR   (GELI) 38 cm3, 2.6 keV resolution at 159 keV
 MISC-COL   (MISC) Number of definitions.
-METHOD     (EXTB)
+METHOD     (EXTB,ACTIV) Irradiated for about 2 hr
+           (CHSEP) Radioxenon separation
 DECAY-DATA (54-XE-123,2.08HR,DG,148.,0.50,
                              DG,178.,0.16,
                              DG,330.,0.086)
@@ -31,105 +24,205 @@ DECAY-DATA (54-XE-123,2.08HR,DG,148.,0.50,
                              DG,453.,0.043)
            (54-XE-122,20.1HR,DG,350.,0.078)
 MONITOR    (13-AL-27(P,X)11-NA-24,CUM,SIG)
-MONIT-REF  (,E.BRUNINX,R,CERN-61-1,1961)
+MONIT-REF  (,E.Bruninx,R,CERN-61-1,1961)
 DECAY-MON  (11-NA-24,15.HR,DG,1368.,1.)
-COMMENT    *By authors*.Xe-121 cross section were received by
+COMMENT    *By authors*. Xe-121 cross section was received by
            extrapolation of cross sections values Xe-123, Xe-125
            Xe-122.
-REL-REF    (D,,E.G.ALEKSEEV+,R,LIJAF-191,1975) At 1 GeV
-ENDBIB              36
+CORRECTION Self-absorption of gamma-rays in the sample neglected.
+STATUS     (TABLE,,M.Adilbish+,J,ARI,31,163,1980) Table 2
+           (APRVD) By N.G.Zaitseva.
+HISTORY    (19800602C)
+           (20040114A) Omitted values are included.
+           (20080611A) Corrections were made according to new
+           EXFOR rules and N.Soppera remarks.
+           (20231221A) SD: Corrections in all Subents. Several
+           Subents were split.
+ENDBIB              37
 COMMON               1          3
 EN
 MEV
        660.
 ENDCOMMON            3
-ENDSUBENT           43
-SUBENT        A0062002   20080611   20080908   20080901       A063
-BIB                  2          9
-REACTION  A(53-I-127(P,5N)54-XE-123,,SIG)
-          B(53-I-127(P,3N)54-XE-125,,SIG)
-          C(53-I-127(P,6N)54-XE-122,,SIG)
-          D(53-I-127(P,7N)54-XE-121,,SIG,,,CALC)
-          E((53-I-127(P,5N)54-XE-123,,SIG)/
-           (53-I-127(P,3N)54-XE-125,,SIG))
-          F((53-I-127(P,5N)54-XE-123,,SIG)/
-           (53-I-127(P,7N)54-XE-121,,SIG,,,CALC))
+ENDSUBENT           44
+SUBENT        A0062002   20231221   20240313   20240313       A104
+BIB                  4          7
+REACTION   (53-I-127(P,5N)54-XE-123,,SIG)
 SAMPLE     Water solution LiI salt.
-ENDBIB               9
+ERR-ANALYS (DATA-ERR) Arithmetic-mean deviation
+HISTORY    (20231221A) SD: REACTIONs with SF9=CALC deleted.
+           REACTION ratio code was deleted (not experim.)
+           ERR-T -> DATA-ERR. Subent was split in three Subents
+            (see Subents 006,007).
+ENDBIB               7
 NOCOMMON             0          0
-DATA                11          1
-DATA      AERR-T     ADATA      BERR-T     BDATA      CERR-T     C
-DATA      DDATA      EERR-T     EDATA      FMISC
-MB         MB         MB         MB         MB         MB
-MB         NO-DIM     NO-DIM     NO-DIM     NO-DIM
-        3.8        0.4        6.6        0.5        2.6        0.3
-        1.3       0.58        0.1        2.9         2.
-ENDDATA              6
-ENDSUBENT           20
-SUBENT        A0062003   20040114   20040322   20050926       0000
-BIB                  2          9
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        3.8        0.4         2.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        A0062003   20231221   20240313   20240313       A104
+BIB                  4          7
+REACTION   (55-CS-133(P,X)54-XE-123,CUM,SIG)
 SAMPLE     Water solution of cesium nitrate
-REACTION  A(55-CS-133(P,X)54-XE-123,CUM,SIG)
-          B(55-CS-133(P,X)54-XE-125,CUM,SIG)
-          C(55-CS-133(P,X)54-XE-122,CUM,SIG)
-          D(55-CS-133(P,X)54-XE-121,CUM,SIG,,,CALC)
-          E((55-CS-133(P,X)54-XE-123,CUM,SIG)/
-           (55-CS-133(P,X)54-XE-125,CUM,SIG))
-          F((55-CS-133(P,X)54-XE-123,CUM,SIG)/
-           (55-CS-133(P,X)54-XE-121,,SIG,,,CALC))
-ENDBIB               9
-NOCOMMON
-DATA                11          1
-DATA      AERR-T     ADATA      BERR-T     BDATA      CERR-T     C
-DATA      DDATA      EERR-T     EDATA      FMISC
-MB         MB         MB         MB         MB         MB
-MB         NO-DIM     NO-DIM     NO-DIM     NO-DIM
-       29.3        1.7        45.         5.       19.9        1.5
-        11.       0.65       0.08        2.7         5.
-ENDDATA              6
-ENDSUBENT           20
-SUBENT        A0062004   20040114   20040322   20050926       0000
-BIB                  2          9
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221A) SD: REACTIONs with SF9=CALC deleted.
+           REACTION ratio code was deleted (not experim.)
+           ERR-T -> DATA-ERR. Subent was split in three Subents
+            (see Subents 008,009).
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+       29.3        1.7         5.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        A0062004   20231221   20240313   20240313       A104
+BIB                  4          7
+REACTION   (56-BA-0(P,X)54-XE-123,CUM,SIG)
 SAMPLE     Water solution of barium nitrate.
-REACTION  A(56-BA-0(P,X)54-XE-123,CUM,SIG)
-          B(56-BA-0(P,X)54-XE-125,CUM,SIG)
-          C(56-BA-0(P,X)54-XE-122,CUM,SIG)
-          D(56-BA-0(P,X)54-XE-121,CUM,SIG,,,CALC)
-          E((56-BA-0(P,X)54-XE-123,CUM,SIG)/
-           (56-BA-0(P,X)54-XE-125,CUM,SIG))
-          F((56-BA-0(P,X)54-XE-123,CUM,SIG)/
-           (56-BA-0(P,X)54-XE-121,,SIG,,,CALC))
-ENDBIB               9
-NOCOMMON
-DATA                11          1
-DATA      AERR-T     ADATA      BERR-T     BDATA      CERR-T     C
-DATA      DDATA      EERR-T     EDATA      FMISC
-MB         MB         MB         MB         MB         MB
-MB         NO-DIM     NO-DIM     NO-DIM     NO-DIM
-        26.         4.        38.         6.       17.8        2.6
-       10.5       0.66       0.18        2.4         3.
-ENDDATA              6
-ENDSUBENT           20
-SUBENT        A0062005   20040114   20040322   20050926       0000
-BIB                  2          9
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221A) SD: REACTIONs with SF9=CALC deleted.
+           REACTION ratio code was deleted (not experim.)
+           ERR-T -> DATA-ERR. Subent was split in three Subents
+            (see Subents 010,011).
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        26.         4.         3.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        A0062005   20231221   20240313   20240313       A104
+BIB                  4          7
+REACTION   (57-LA-0(P,X)54-XE-123,CUM,SIG)
 SAMPLE     Water solution of lanthanum nitrate.
-REACTION  A(57-LA-0(P,X)54-XE-123,CUM,SIG)
-          B(57-LA-0(P,X)54-XE-125,CUM,SIG)
-          C(57-LA-0(P,X)54-XE-122,CUM,SIG)
-          D(57-LA-0(P,X)54-XE-121,CUM,SIG,,,CALC)
-          E((57-LA-0(P,X)54-XE-123,CUM,SIG)/
-           (57-LA-0(P,X)54-XE-125,CUM,SIG))
-          F((57-LA-0(P,X)54-XE-123,CUM,SIG)/
-           (57-LA-0(P,X)54-XE-121,,SIG,,,CALC))
-ENDBIB               9
-NOCOMMON
-DATA                11          1
-DATA      AERR-T     ADATA      BERR-T     BDATA      CERR-T     C
-DATA      DDATA      EERR-T     EDATA      FMISC
-MB         MB         MB         MB         MB         MB
-MB         NO-DIM     NO-DIM     NO-DIM     NO-DIM
-       31.9        1.6       47.7        3.9        25.        3.2
-        14.       0.67       0.09        2.3         5.
-ENDDATA              6
-ENDSUBENT           20
-ENDENTRY             5
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221A) SD: REACTIONs with SF9=CALC deleted.
+           REACTION ratio code was deleted (not experim.)
+           ERR-T -> DATA-ERR. Subent was split in three Subents
+            (see Subents 012,013).
+ENDBIB               7
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+       31.9        1.6         5.
+ENDDATA              3
+ENDSUBENT           15
+SUBENT        A0062006   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (53-I-127(P,3N)54-XE-125,,SIG)
+SAMPLE     Water solution LiI salt.
+ERR-ANALYS (DATA-ERR) Arithmetic-mean deviation
+HISTORY    (20231221T) SD: Part of Subent 002.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        6.6        0.5         2.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062007   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (53-I-127(P,6N)54-XE-122,,SIG)
+SAMPLE     Water solution LiI salt.
+ERR-ANALYS (DATA-ERR) Arithmetic-mean deviation
+HISTORY    (20231221T) SD: Part of Subent 002.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        2.6        0.3         2.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062008   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (55-CS-133(P,X)54-XE-125,CUM,SIG)
+SAMPLE     Water solution of cesium nitrate
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221T) SD: Part of Subent 003.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        45.         5.         5.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062009   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (55-CS-133(P,X)54-XE-122,CUM,SIG)
+SAMPLE     Water solution of cesium nitrate
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221T) SD: Part of Subent 003.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+       19.9        1.5         5.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062010   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (56-BA-0(P,X)54-XE-125,CUM,SIG)
+SAMPLE     Water solution of barium nitrate.
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221T) SD: Part of Subent 004.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        38.         6.         3.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062011   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (56-BA-0(P,X)54-XE-122,CUM,SIG)
+SAMPLE     Water solution of barium nitrate.
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221T) SD: Part of Subent 004.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+       17.8        2.6         3.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062012   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (57-LA-0(P,X)54-XE-125,CUM,SIG)
+SAMPLE     Water solution of lanthanum nitrate.
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221T) SD: Part of Subent 005.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+       47.7        3.9         5.
+ENDDATA              3
+ENDSUBENT           12
+SUBENT        A0062013   20231221   20240313   20240313       A104
+BIB                  4          4
+REACTION   (57-LA-0(P,X)54-XE-122,CUM,SIG)
+SAMPLE     Water solution of lanthanum nitrate.
+ERR-ANALYS (DATA-ERR) Mean-square deviation
+HISTORY    (20231221T) SD: Part of Subent 005.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+DATA       DATA-ERR   MISC
+MB         MB         NO-DIM
+        25.        3.2         5.
+ENDDATA              3
+ENDSUBENT           12
+ENDENTRY            13

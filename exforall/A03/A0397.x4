@@ -1,93 +1,114 @@
-ENTRY            A0397   20120110   20120213   20120213       A075
-SUBENT        A0397001   20120110   20120213   20120213       A075
-BIB                 11         32
-TITLE      Experimental study of the 19-F(p,a+g)16-O reaction
+ENTRY            A0397   20231222   20240313   20240313       A104
+SUBENT        A0397001   20231222   20240313   20240313       A104
+BIB                 12         31
+TITLE      Experimental study of the 19-F(p,alpha+gamma)16-O
+           reaction
 AUTHOR     (J.P.Ribeiro, A.P.Jesus, B.Braizinha, J.Cruz, R.Mateus,
            J.V.Pinto)
 REFERENCE  (J,NP/A,688,468,2001)
 REL-REF    (I,O0859001,A.P.Jesus+,J,NIM/B,161-163,186,2000)
-           Details of  experimental set-up.
-INSTITUTE  (2PRTFNL) Centro de Fisica Nuclear da Universidade de
-            Lisboa
-           (2PRTLIS) Faculdade de Ciencias
-           (2PRTNOV) Faculdade de Ciencias e Tecnologia
+           Details of experimental set-up.
+INSTITUTE  (2PRTLIS,2PRTNOV)
 FACILITY   (VDG,2PRTLFE)
 COMMENT    - By compiler. The gamma-ray excitation function is not
            presented in the paper.
-METHOD     (SITA)
-           (MOMIX)
-SAMPLE     The targets were made of Gd+F/2 evaporated on a thin
-           carbon foil.  Three different targets, with 68, 47 and
-           20  microgramm/ cm**2 thicknesses were employed.  Their
-           energy thicknesses were 8.3, 5.6, 2.4 KeV for 872-KeV
-           protons and 6.5, 4.4, 1.9 KeV for 1370-KeV protons,
-           respectively.  The three targets had stoicheiometric
+METHOD     (SITA,MOMIX)
+SAMPLE     The targets were made of Gd+F(3) evaporated on a thin
+           carbon foil. Three different targets, with 68, 47 and
+           20 um/cm2 thicknesses were employed. Their energy
+           thicknesses were 8.3, 5.6, 2.4 keV for 872-keV
+           protons and 6.5, 4.4, 1.9 keV for 1370-keV protons,
+           respectively. The three targets had stoichiometric
            ratio of F to Gd equal to 2.89, 2.22, 2.82,
            respectively.
+ERR-ANALYS (ERR-1) Uncertainty in the thickness and stoicheiometry
+ADD-RES    Cosine coefficients obtained by fitting a differential
+           cross section (see Subent 004) at resonance energy are
+           given in Tbl.2.
 HISTORY    (20020706C)
-           (20020711R) Data tables.
-           (20020711A) Corrections according to data tables are
-           included.
-           (20030715A) Corrections according to V.McLane Are
-           included.
-           (20120110A).sb-correction in Rel-Ref:v.161 to v.161-163
-           according M.Bossant remarks
-STATUS     (TABLE) From prof. A.P.Jesus
-ENDBIB              32
-NOCOMMON             0          0
-ENDSUBENT           35
-SUBENT        A0397002   20030929   20040322   20050926       0000
-BIB                  5          5
-REACTION   (9-F-19(P,A)8-O-16,PAR,SIG)
-PART-DET   (A)
+           (20020711R) Data tables from prof. A.P.Jesus
+           (20020711A) Corrections according to data tables.
+           (20030715A) Corrections according to V.McLane.
+           (20120110A) SB-correction in Rel-Ref:v.161 to v.161-163
+           according to M.Bossant remarks
+           (20231222A) SD: Corrections in all Subents.
+ENDBIB              31
+COMMON               1          3
+ERR-1
+PER-CENT
+         3.
+ENDCOMMON            3
+ENDSUBENT           38
+SUBENT        A0397002   20231222   20240313   20240313       A104
+BIB                  6          9
+REACTION   (9-F-19(P,A)8-O-16,PAR,SIG,,RES)
 DETECTOR   (SIBAR)
-EN-SEC     (E-LVL,8-O-16)
-ERR-ANALYS (ERR-T) The uncertainties are shown in published table.
-ENDBIB               5
-NOCOMMON
-DATA                 4          2
-EN         E-LVL      DATA       ERR-T
-KEV        MEV        MB         MB
-       872.     6.1304       388.        12.
-      1370.     6.1304       325.        10.
-ENDDATA              4
-ENDSUBENT           14
-SUBENT        A0397003   20030929   20040322   20050926       0000
-BIB                  4          5
-REACTION   (9-F-19(P,A)8-O-16,PAR,SIG,G)
-PART-DET   (G)
-EN-SEC     (E-LVL-INI,8-O-16)
-           (E,G)
-ERR-ANALYS (ERR-T) The uncertainties are shown in published table
-ENDBIB               5
-COMMON               2          3
-E-LVL-INI  E
-MEV        MEV
-     6.1304      6.125
+REL-REF    (M,,H.W.Becker+,J,ZP/A,305,319,1982) The procedure to
+           extract the resonance cross sections is described.
+ERR-ANALYS (ERR-T) Total uncertainty
+STATUS     (TABLE,,J.P.Ribeiro+,J,NP/A,688,468,2001) Tbl.1
+           Same data were received from prof. A.P.Jesus
+HISTORY    (20231222A) SD: SF8=RES added to REACTION code.
+            BIB updated. EN -> EN-RES.
+ENDBIB               9
+COMMON               1          3
+E-LVL
+MEV
+     6.1304
 ENDCOMMON            3
 DATA                 3          2
-EN         DATA       ERR-T
+EN-RES     DATA       ERR-T
+KEV        MB         MB
+       872.       388.        12.
+      1370.       325.        10.
+ENDDATA              4
+ENDSUBENT           22
+SUBENT        A0397003   20231222   20240313   20240313       A104
+BIB                  6         12
+REACTION   (9-F-19(P,A)8-O-16,PAR,SIG,G,RES)
+EN-SEC     (E,G)
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-2) Uncertainty in detector absolute efficiency
+REL-REF    (M,,H.W.Becker+,J,ZP/A,305,319,1982) The procedure to
+           extract the resonance cross sections is described.
+STATUS     (TABLE) From prof. A.P.Jesus. Similar data are
+            presented in Tbl.1 of Nucl.Phys.,A688(2001)468
+            (difference in one value: 345. mb is given in
+            the table).
+HISTORY    (20231222A) SD: SF8=RES added to REACTION code.
+            BIB updated. EN -> EN-RES; E-LVL-INI -> LVL-INI.
+ENDBIB              12
+COMMON               3          3
+E          LVL-INI    ERR-2
+MEV        MEV        PER-CENT
+      6.125     6.1304        8.
+ENDCOMMON            3
+DATA                 3          2
+EN-RES     DATA       ERR-T
 KEV        MB         MB
        872.       404.        32.
       1370.       346.        25.
 ENDDATA              4
-ENDSUBENT           18
-SUBENT        A0397004   20030929   20040322   20050926       0000
-BIB                  5          6
-REACTION   (9-F-19(P,A)8-O-16,PAR,DA,,REL)
-PART-DET   (A)
+ENDSUBENT           25
+SUBENT        A0397004   20231222   20240313   20240313       A104
+BIB                  5          9
+REACTION   (9-F-19(P,A)8-O-16,PAR,DA,,RES/REL)
+            Number of alpha particles
 DETECTOR   (SIBAR)
-EN-SEC     (E-LVL,8-O-16)
-ERR-ANALYS (ERR-T) The uncertainties were scanned by compiler from
-           published figure
-ENDBIB               6
+ERR-ANALYS (ERR-S) Statistical error
+STATUS     (TABLE) From prof. A.P.Jesus. Same data are
+            presented on fig.1 of Nucl.Phys.,A688(2001)468
+            as a function from cos**2.
+HISTORY    (20231222A) SD: SF8=REL -> RES/REL in REACTION code.
+            EN -> EN-RES; ERR-T -> ERR-S.
+ENDBIB               9
 COMMON               1          3
 E-LVL
 MEV
      6.1304
 ENDCOMMON            3
 DATA                 4         11
-EN         ANG        DATA       ERR-T
+EN-RES     ANG        DATA       ERR-S
 KEV        ADEG       ARB-UNITS  ARB-UNITS
        872.       123.     10167.       200.
        872.       132.      8904.       180.
@@ -101,34 +122,49 @@ KEV        ADEG       ARB-UNITS  ARB-UNITS
       1370.       151.      9196.       180.
       1370.       165.      9659.       190.
 ENDDATA             13
-ENDSUBENT           28
-SUBENT        A0397005   20030929   20040322   20050926       0000
-BIB                  4          4
-REACTION   (9-F-19(P,A)8-O-16,,SIG)
-PART-DET   (A)
+ENDSUBENT           31
+SUBENT        A0397005   20231222   20240313   20240313       A104
+BIB                  6          9
+REACTION   (9-F-19(P,A)8-O-16,,SIG,,RES)
 DETECTOR   (SIBAR)
-ERR-ANALYS (ERR-T) The uncertainties are shown in published table.
-ENDBIB               4
-NOCOMMON
+REL-REF    (M,,H.W.Becker+,J,ZP/A,305,319,1982) The procedure to
+           extract the resonance cross sections is described.
+ERR-ANALYS (ERR-T) Total uncertainty
+STATUS     (TABLE,,J.P.Ribeiro+,J,NP/A,688,468,2001) Tbl.1
+           Same data were received From prof. A.P.Jesus
+HISTORY    (20231222A) SD: SF8=RES added to REACTION code.
+            BIB updated. EN -> EN-RES.
+ENDBIB               9
+NOCOMMON             0          0
 DATA                 3          2
-EN         DATA       ERR-T
+EN-RES     DATA       ERR-T
 KEV        MB         MB
        872.       528.        22.
       1370.       361.        14.
 ENDDATA              4
-ENDSUBENT           13
-SUBENT        A0397006   20030929   20040322   20050926       0000
-BIB                  3          3
-REACTION   (9-F-19(P,A)8-O-16,,SIG,G)
-PART-DET   (G)
-ERR-ANALYS (ERR-T) The uncertainties are shown in published table
-ENDBIB               3
-NOCOMMON
+ENDSUBENT           18
+SUBENT        A0397006   20231222   20240313   20240313       A104
+BIB                  5          9
+REACTION   (9-F-19(P,A)8-O-16,,SIG,G,RES)
+REL-REF    (M,,H.W.Becker+,J,ZP/A,305,319,1982) The procedure to
+           extract the resonance cross sections is described.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-2) Uncertainty in detector absolute efficiency
+STATUS     (TABLE,,J.P.Ribeiro+,J,NP/A,688,468,2001) Tbl.1
+           Same data were received From prof. A.P.Jesus
+HISTORY    (20231222A) SD: SF8=RES added to REACTION code.
+            BIB updated. EN -> EN-RES.
+ENDBIB               9
+COMMON               1          3
+ERR-2
+PER-CENT
+        8.
+ENDCOMMON            3
 DATA                 3          2
-EN         DATA       ERR-T
+EN-RES     DATA       ERR-T
 KEV        MB         MB
        872.       546.        43.
       1370.       388.        28.
 ENDDATA              4
-ENDSUBENT           12
+ENDSUBENT           22
 ENDENTRY             6

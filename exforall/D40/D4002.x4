@@ -1,25 +1,23 @@
-ENTRY            D4002   20060731   20061121   20061120       D048
-SUBENT        D4002001   20060731   20061121   20061120       D048
-BIB                 16         46
-TITLE      Excitation functions of proton induced
-           nuclear reactions on natural nickel for
-           monitoring beam energy and intensity
-AUTHOR     (F.Tarkanyi,F.Szelecsenyi,P.Kopecky)
-INSTITUTE  (3HUNDEB)
-           (3CZRUJV)
-EXP-YEAR   (1991)
+ENTRY            D4002   20230720   20240313   20240313       D139
+SUBENT        D4002001   20230720   20240313   20240313       D139
+BIB                 14         46
+TITLE      Excitation functions of proton induced nuclear
+           reactions on natural nickel for monitoring beam
+           energy and intensity
+AUTHOR     (F.Tarkanyi, F.Szelecsenyi, P.Kopecky)
+INSTITUTE  (3HUNDEB,3CZRUJV)
 REFERENCE  (J,ARI,42,513,1991).Main reference
-SAMPLE     metallic foils of high purity nat-Ni
-           thickneses of 10, 20 and 30 microns
+FACILITY   (ISOCY,3CZRUJV)
+           (ISOCY,3HUNDEB)
+SAMPLE     metallic foils of high purity nat-Ni thickness of 10,
+           20 and 30 microns
+DETECTOR   (GELI,HPGE)
 MONITOR    (29-CU-63(P,N)30-ZN-63,,SIG)
            (29-CU-63(P,2N)30-ZN-62,,SIG)
            (29-CU-65(P,N)30-ZN-65,,SIG)
 MONIT-REF  (,P.KOPECKY,J,ARI,36,657,1985)
            (,A.GRUTTER,J,NP/A,383,98,1982)
            (,R.COLLE+,J,PR/C,9,1819,1974)
-FACILITY   (ISOCY,3CZRUJV)
-           (ISOCY,3HUNDEB)
-STATUS     (APRVD).By Tarkanyi
 METHOD     (ACTIV,STTA,EXTB).
            degradation of proton energy was calculated according
            to C. F. Williamson et.al., CEA-R3042(1966).
@@ -28,28 +26,34 @@ METHOD     (ACTIV,STTA,EXTB).
            determined by fitting to the well known excitation
            function of nat Cu (P.Kopecky,J,ARI,36,657,1985 and
            F.Tarkanyi+,Acta Radiologica, Supl.376,72,1991).
-ADD-RES    (COMP)
 ANALYSIS   (AREA)
-DETECTOR   (GELI,HPGE)
-ERR-ANALYS (EN-ERR).The incident proton energy was defined by
+ERR-ANALYS (EN-ERR) The incident proton energy was defined by
            operating condition of the cyclotron and measured by
-           analysing magnet with an accuracy of 0.2 MeV.
-           uncertainty of the proton energy along the stack
-           includes errors in the thicknesses of target foil
-           and energy stragling and was determined relative to
-           monitor reactions.
-           (DATA-ERR).The overall uncertainties of the cross
-           section were obtained by summing quadratically the
-           individual relative errors in current integration,
-           counting statistics of photopeak integration, detector
-           efficiency, number of target nuclei and decay data.
+           analyzing magnet with an accuracy of 0.2 MeV.
+           (ERR-T) The total estimated errors in cross sections
+           are (9-12%) obtained by summing quadratically the
+           individual relative errors:
+           (ERR-S,1.,6.) Counting statistics (1-6%)
+           (ERR-1) Detector efficiency  (5%)
+           (ERR-2) Decay-data  (3%)
+           (ERR-3) Number of target nuclei (1%)
+           (ERR-4,7.,9.) Incident bombarding particle intensity
+                                                    (7-9%)
+STATUS     (APRVD).By Tarkanyi
+           (TABLE,,F.Tarkanyi+,J,ARI,42,513,1991) Table 2
 HISTORY    (19951025C)
            (19951102U)
            (20061107U) BIB section updated. Data from D4002002 are
            superseded.
+           (20230720A) VT+On. Revision in 003-005. ERR-ANALYS
+           updated in 001
 ENDBIB              46
-NOCOMMON             0          0
-ENDSUBENT           49
+COMMON               3          3
+ERR-1      ERR-2      ERR-3
+PER-CENT   PER-CENT   PER-CENT
+         5.         3.         1.
+ENDCOMMON            3
+ENDSUBENT           53
 SUBENT        D4002002   20060731   20061121   20061120       D048
 BIB                  5         11
 REACTION   (28-NI-0(P,X)28-NI-57,,SIG)
@@ -67,19 +71,20 @@ ENDBIB              11
 NOCOMMON             0          0
 NODATA               0          0
 ENDSUBENT           15
-SUBENT        D4002003   20060731   20061121   20061120       D048
-BIB                  4          7
-REACTION   (28-NI-0(P,X)27-CO-57,,SIG)
-RAD-DET    (27-CO-57,DG)
+SUBENT        D4002003   20230720   20240313   20240313       D139
+BIB                  4          8
+REACTION   (28-NI-0(P,X)27-CO-57,CUM,SIG)
 DECAY-DATA (27-CO-57,271.8D,DG,122.1,0.855,
                             DG,136.5,0.107)
 REL-REF    (A,B0055001,S.KAUFMAN,J,PR,117,1532,1960)
            (A,B0020007,S.TANAKA+,J,JIN,34,2419,1972)
            (A,B0083007,R.MICHEL+,J,ZP/A,286,393,1978)
-ENDBIB               7
+HISTORY    (20230720A) VT+On. REACTION: SF5: CUM added and
+           DATA: DATA-ERR -> ERR-T replaced.
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         40
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
         9.9        0.4        6.1        0.6
        10.3        0.4        7.0       0.72
@@ -122,21 +127,22 @@ MEV        MEV        MB         MB
        29.1        0.2       356.        36.
        29.6        0.2       359.        39.
 ENDDATA             42
-ENDSUBENT           54
-SUBENT        D4002004   20060731   20061121   20061120       D048
-BIB                  4          8
-REACTION   (28-NI-0(P,X)27-CO-56,,SIG)
-RAD-DET    (27-CO-56,DG)
+ENDSUBENT           55
+SUBENT        D4002004   20230720   20240313   20240313       D139
+BIB                  4          9
+REACTION   (28-NI-0(P,X)27-CO-56,CUM,SIG)
 DECAY-DATA (27-CO-56,77.7D,DG,846.8,0.999,
                            DG,1037.9,0.141,
                            DG,1238.3,0.670)
 REL-REF    (A,B0020008,S.TANAKA+,J,JIN,34,2419,1972)
            (A,B0083006,R.MICHEL+,J,ZP/A,286,393,1978)
            (A,A0351003,V.N.ALEKSANDROV,J,AE,62,411,1987)
-ENDBIB               8
+HISTORY    (20230720A) VT+On. REACTION: SF5: CUM added and
+           DATA: DATA-ERR -> ERR-T replaced.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4         26
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
        17.7        0.4      0.022      0.003
        18.4        0.4       0.12       0.02
@@ -165,21 +171,21 @@ MEV        MEV        MB         MB
        29.1        0.2       47.3        4.8
        29.6        0.2       58.3        5.9
 ENDDATA             28
-ENDSUBENT           41
-SUBENT        D4002005   20060731   20061121   20061120       D048
+ENDSUBENT           42
+SUBENT        D4002005   20230720   20240313   20240313       D139
 BIB                  4          8
 REACTION   (28-NI-0(P,X)27-CO-55,,SIG)
-RAD-DET    (27-CO-55,DG)
 DECAY-DATA (27-CO-55,17.5HR,DG,477.2,0.202,
-                           DG,931.2,0.750,
-                           DG,1408.4,0.169)
+                            DG,931.2,0.750,
+                            DG,1408.4,0.169)
 REL-REF    (A,B0055001,S.KAUFMAN,J,PR,117,1532,1960)
            (A,B0020004,S.TANAKA+,J,JIN,34,2419,1972)
            (A,B0083005,R.MICHEL+,J,ZP/A,286,393,1978)
+HISTORY    (20230720A) VT+On. DATA: DATA-ERR-> ERR-T replaced.
 ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         54
-EN         EN-ERR     DATA       DATA-ERR
+EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
         7.9        0.4       0.48       0.06
         8.8        0.4       2.05       0.22

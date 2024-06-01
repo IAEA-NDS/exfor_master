@@ -1,13 +1,20 @@
-ENTRY            V0042   20110212   20110323   20110308       V028
-SUBENT        V0042001   20110212   20110323   20110308       V028
-BIB                 10         51
+ENTRY            V0042   20230405   20240313   20240313       V042
+SUBENT        V0042001   20230405   20240313   20240313       V042
+BIB                 10         66
 TITLE      Thermal-neutron absorption cross-sections of Mn and S
 AUTHOR     (E.J.Axton)
 INSTITUTE  (2ZZZGEL)
 REFERENCE  (J,ANE,13,627,1986)
+REL-REF    (E,,S.Mughabghab+,B,NEUT.CS 1A,,,1981)       MU1981
+           (E,,E.J.Axton+,J,MET,18,97,1982)             AX1982
+           (E,,J.R.Smith+,R,EPRI-NP-3436,1984)          SM1984
+           (E,,E.J.Axton+,J,MET,21,181,1985)            AX1985
+           (E,,A.Arbildo+,J,ANE,13,237,1986)            AR1986
+           (E,,V.P.Vertebndyi,J,YK,1982,(1/45),10,1982) VE1982
+           (E,,S.Raman+,J,PR/C,32,18,1985)              RA1985
 METHOD     Simultaneous evaluation of the thermal-neutron
             absorption cross sections of H, Mn and S was made by
-            analysing different values measured by different
+            analyzing different values measured by different
             authors.
            Simultaneous evaluation is essential because the
             quantity measured in the Mn-bath dilution technique
@@ -28,37 +35,45 @@ METHOD     Simultaneous evaluation of the thermal-neutron
              0.024773 -> 0.024792
              0.024762 -> 0.024788
              0.024790 -> 0.024818
-REL-REF    (E,,S.Mughabghab+,B,NEUT.CS 1A,,1981)        MU1981
-           (E,,E.J.Axton+,J,MET,18,97,1982)             AX1982
-           (E,,J.R.Smith+,R,EPRI-NP-3436,1984)          SM1984
-           (E,,E.J.Axton+,J,MET,21,181,1985)            AX1985
-           (E,,A.Arbildo+,J,ANE,13,237,1986)            AR1986
-           (E,,V.P.Vertebndyi,J,YK,1982,(1/45),10,1982) VE1982
-           (E,,S.Raman+,J,PR/C,32,18,1985)              RA1985
 ERR-ANALYS (DATA-ERR) The uncertainties of the ratio measurements
             do not include the uncertainties in F(which is a
             factor that represents the values of (1+sigS/sigMn)
             assumed by the various authors) due to the uncertainty
             of sigs,which, in some of the values were included as
             correlated uncertainties
-COVARIANCE  sigH         1.00
-            sigMn        0.77  1.00
-            sigS         0.05 -0.10  1.00
-            sigH/sigMn  -0.02 -0.65  0.23  1.00
-            sigS/sigH   -0.15 -0.26  0.98  0.23  1.00
-            sigS/sigMn  -0.14 -0.35  0.97  0.38  0.99  1.00
+COVARIANCE  (XY,6,N,REACTION)
+             N  REACTION
+             1 (1-H-1(N,G)1-H-2,,SIG,,,EVAL)
+             2 (25-MN-55(N,G)25-MN-56,,SIG,,,EVAL)
+             3 (16-S-0(N,ABS),,SIG,,,EVAL)
+             4 ((1-H-1(N,G)1-H-2,,SIG,,,EVAL)/
+               (25-MN-55(N,G)25-MN-56,,SIG,,,EVAL))
+             5 ((16-S-0(N,ABS),,SIG,,,EVAL)/
+               (1-H-1(N,G)1-H-2,,SIG,,,EVAL))
+             6 ((16-S-0(N,ABS),,SIG,,,EVAL)/
+               (25-MN-55(N,G)25-MN-56,,SIG,,,EVAL))
+            (Z,21,PER-CENT,COR)
+             1.00
+             0.77  1.00
+             0.05 -0.10  1.00
+            -0.02 -0.65  0.23  1.00
+            -0.15 -0.26  0.98  0.23  1.00
+            -0.14 -0.35  0.97  0.38  0.99  1.00
 STATUS     (TABLE) Table 2 of Ann.Nucl.Eng.13(1986)627
 HISTORY    (19870707C) MR-
            (19991026A) Converted to new date formalism, lower
                        case. BIB corrections.
            (20110212A) On. REL-REF added
-ENDBIB              51
+           (20230331C) VT+On 005-007 created
+           (20230331A) VT+On. COVARIANCE updated according to
+           new format and 005-007 subents created.
+ENDBIB              66
 COMMON               1          3
 EN
 EV
 0.0253
 ENDCOMMON            3
-ENDSUBENT           58
+ENDSUBENT           73
 SUBENT        V0042002   19991027   20000322   20050926       0000
 BIB                  1          1
 REACTION   (1-H-1(N,G)1-H-2,,SIG,,,EVAL)
@@ -93,4 +108,43 @@ MB         MB
 535.0      5.5
 ENDDATA              3
 ENDSUBENT            9
-ENDENTRY             4
+SUBENT        V0042005   20230405   20240313   20240313       V042
+BIB                  2          3
+REACTION   ((1-H-1(N,G)1-H-2,,SIG,,,EVAL)/
+           (25-MN-55(N,G)25-MN-56,,SIG,,,EVAL))
+HISTORY    (20230331C) VT+On
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+   0.024799    0.00005
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        V0042006   20230405   20240313   20240313       V042
+BIB                  2          3
+REACTION   ((16-S-0(N,ABS),,SIG,,,EVAL)/
+           (1-H-1(N,G)1-H-2,,SIG,,,EVAL))
+HISTORY    (20230331C) VT+On
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+      1.609      0.017
+ENDDATA              3
+ENDSUBENT           11
+SUBENT        V0042007   20230405   20240313   20240313       V042
+BIB                  2          3
+REACTION   ((16-S-0(N,ABS),,SIG,,,EVAL)/
+           (25-MN-55(N,G)25-MN-56,,SIG,,,EVAL))
+HISTORY    (20230331C) VT+On
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          1
+DATA       DATA-ERR
+NO-DIM     NO-DIM
+    0.03990     0.0005
+ENDDATA              3
+ENDSUBENT           11
+ENDENTRY             7

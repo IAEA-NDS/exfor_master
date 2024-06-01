@@ -1,13 +1,12 @@
-ENTRY            D0083   20040217   20040331   20050926       0000
-SUBENT        D0083001   20040217   20040331   20050926       0000
-BIB                 13         37
+ENTRY            D0083   20230828   20240313   20240313       D139
+SUBENT        D0083001   20230828   20240313   20240313       D139
+BIB                 13         43
 TITLE      Production of 75Br via the 76Se(p,2n)75Br reaction
            at a compact cyclotron
-AUTHOR     (Z.Kovacs,G.Blessing,S.M.Qaim,G.Stoecklin)
+AUTHOR     (Z.Kovacs, G.Blessing, S.M.Qaim, G.Stoecklin)
 INSTITUTE  (2GERJUL)
 REFERENCE  (J,ARI,36,635,1985)
-FACILITY   (CYCLO) CV28
-METHOD     (STTA,EXTB,EDEG)
+FACILITY   (CYCLO,2GERJUL) CV28
 SAMPLE     The samples were prepared using electroplating method.
            The average 4mu-m thick 76Se-layers (corresponding to
            approx. 2mg/cm2) were obtained. Two stacks containing
@@ -15,10 +14,11 @@ SAMPLE     The samples were prepared using electroplating method.
            For beam monitoring and energy degradation several
            10 mu-m thick high purity Au-, 48 mu-m thick commercial
            Cu-, and 90 mu-m thick Al-foils were placed at several
-           places in eack stick. The exact thickness of each foil
+           places in each stick. The exact thickness of each foil
            needed in calculations was determined by weighing.
-DETECTOR   (GELI) The activity of each foilwas determined via
+DETECTOR   (GELI) The activity of each foil was determined via
            gamma-ray spectroscopy using a 32 cm3 Ge(Li) detector.
+METHOD     (ACTIV,STTA,EXTB,EDEG)
 MONITOR    (79-AU-197(P,N)80-HG-197,,SIG)
            (79-AU-197(P,2N)80-HG-196,,SIG)
            (29-CU-65(P,N)30-ZN-65,,SIG)
@@ -33,18 +33,24 @@ MONITOR    (79-AU-197(P,N)80-HG-197,,SIG)
            Weinreich et al.,First Int.Symp.on Radiopharm.
            Chemistry, Brookhaven Nation.Lab. NY, Sept. 1976, p.66
 DECAY-DATA All data from Table of Isotopes, 7th edn.
-ERR-ANALYS (DATA-ERR) Total error
-           (EN-ERR-DIG) Digitizing error
-           (ERR-DIG)   Digitizing error
+ERR-ANALYS (DATA-ERR) Total errors lie between 10 and 20% are due
+           to:
+            - statistical errors
+            - thickness of each foil and selenium layer
+            - beam current measurement
+            - efficiency of the detector
+            - counting geometry and decay schemes
 STATUS     (CURVE) Digitized curves from the article
-HISTORY    (20040217C)  SD
-ENDBIB              37
+HISTORY    (20040217C) SD
+           (20230828A) VT+On. Revision in 001, 005-008. In 001
+           ACTIV added in METHOD.
+ENDBIB              43
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 MEV        PER-CENT
  0.03       0.2
 ENDCOMMON            3
-ENDSUBENT           44
+ENDSUBENT           50
 SUBENT        D0083002   20040113   20040331   20050926       0000
 BIB                  2          2
 REACTION   (34-SE-76(P,N)35-BR-76,,SIG)
@@ -149,11 +155,12 @@ MEV        MB         MB
  39.822     69.085     10.927
 ENDDATA             10
 ENDSUBENT           17
-SUBENT        D0083005   20040113   20040331   20050926       0000
-BIB                  2          2
-REACTION   (34-SE-76(P,A)33-AS-73,,SIG)
+SUBENT        D0083005   20230828   20240313   20240313       D139
+BIB                  3          3
+REACTION   (34-SE-76(P,X)33-AS-73,,SIG)
 DECAY-DATA (33-AS-73,80.3D,DG,53.,0.05)
-ENDBIB               2
+HISTORY    (20230828A) VT+On. REACTION: SF3: A->X replaced
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3         25
 EN         DATA       DATA-ERR
@@ -184,12 +191,13 @@ MEV        MB         MB
  38.819     38.478     5.3604
  39.839     83.043     10.850
 ENDDATA             27
-ENDSUBENT           34
-SUBENT        D0083006   20040113   20040331   20050926       0000
-BIB                  2          2
-REACTION   (34-SE-76(P,N+A)33-AS-72,,SIG)
+ENDSUBENT           35
+SUBENT        D0083006   20230828   20240313   20240313       D139
+BIB                  3          3
+REACTION   (34-SE-76(P,X)33-AS-72,,SIG)
 DECAY-DATA (33-AS-72,26.HR,DG,834.,0.8)
-ENDBIB               2
+HISTORY    (20230828A) VT+On. REACTION: SF3: N+A->X replaced
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3         21
 EN         DATA       DATA-ERR
@@ -216,12 +224,13 @@ MEV        MB         MB
  38.776     20.504     2.6802
  39.878     18.450     2.7333
 ENDDATA             23
-ENDSUBENT           30
-SUBENT        D0083007   20040113   20040331   20050926       0000
-BIB                  2          2
-REACTION   (34-SE-76(P,2N+A)33-AS-71,,SIG)
+ENDSUBENT           31
+SUBENT        D0083007   20230828   20240313   20240313       D139
+BIB                  3          3
+REACTION   (34-SE-76(P,X)33-AS-71,,SIG)
 DECAY-DATA (33-AS-71,64.HR,DG,175.,0.837)
-ENDBIB               2
+HISTORY    (20230828A) VT+On. REACTION: SF3: 2N+A->X replaced
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 3          9
 EN         DATA       DATA-ERR
@@ -236,12 +245,14 @@ MEV        MB         MB
  38.806     63.856     9.4600
  39.816     64.956     7.9426
 ENDDATA             11
-ENDSUBENT           18
-SUBENT        D0083008   20040113   20040331   20050926       0000
-BIB                  2          2
-REACTION   (34-SE-76(P,N+P)34-SE-75,,SIG)
-DECAY-DATA (34-SE-75,120.D,DG,136.,0.54,DG,265.,0.58)
-ENDBIB               2
+ENDSUBENT           19
+SUBENT        D0083008   20230828   20240313   20240313       D139
+BIB                  3          4
+REACTION   (34-SE-76(P,X)34-SE-75,,SIG)
+DECAY-DATA (34-SE-75,120.D,DG,136.,0.54,
+                           DG,265.,0.58)
+HISTORY    (20230828A) VT+On. REACTION: SF3: N+P->X replaced
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3         32
 EN         DATA       DATA-ERR
@@ -279,7 +290,7 @@ MEV        MB         MB
  38.842     208.13     31.503
  39.943     230.30     40.805
 ENDDATA             34
-ENDSUBENT           41
+ENDSUBENT           43
 SUBENT        D0083009   20040113   20040331   20050926       0000
 BIB                  2          2
 REACTION   (34-SE-76(P,X)33-AS-74,,SIG)
