@@ -1,43 +1,48 @@
-ENTRY            E1403   20060906   20061115   20060906       E037
-SUBENT        E1403001   20060906   20061115   20060906       E037
-BIB                 10         19
-TITLE      INELASTIC SCATTERING OF PROTONS, 3HE, AND 4HE AT
-           30 MEV/NUCLEON FROM 166ER AND 176YB AND QUADRUPOLE
-           MOMENTS OF THE OPTICAL POTENTIAL
-AUTHOR     (O.KAMIGAITO, H.SAKAGUCHI, M.NAKAMURA, S.HIRATA,
-           H.TOGAWA, T.NAKANO, M.YOSOI, M.IEIRI, T.ICHIHARA,
-           H.M.SHIMIZU, Y.NAKAI, S.KOBAYASHI)
-INSTITUTE  (2JPNKTO) DEPARTMENT OF PHYSICS
-REFERENCE  (J,PR/C,45,(4),1533,199204)
-METHOD     (EDE)
-FACILITY   (CYCLO,2JPNOSA)
-DETECTOR   (COIN,MAGSP,SWPC,SOLST)
-SAMPLE     - Chemical form of target is element.
-           - Physical form of target is solid.
+ENTRY            E1403   20240503   20240505   20240505       E143
+SUBENT        E1403001   20240503   20240505   20240505       E143
+BIB                 10         22
+TITLE      Inelastic scattering of protons, 3He, and 4He at 30
+           MeV/nucleon from 166Er and 176Yb
+AUTHOR     (O.Kamigaito, H.Sakaguchi, M.Nakamura, S.Hirata,
+            H.Togawa, T.Nakano, M.Yosoi, M.Ieiri, T.Ichihara,
+            H.M.Shimizu, Y.Nakai, S.Kobayashi)
+INSTITUTE  (2JPNKTO)
+REFERENCE  (J,PR/C,45,1533,1992)
+SAMPLE     - Chemical-form of target is element.
+           - Physical-form of target is solid.
+           - Target-thickness is 1.0,2.0 mg/cm2.
            - Target is self supported.
-STATUS     DATA CONVERTED FROM NRDF
-HISTORY    (19941018T) CONVERTED FROM NRDF D1403
+METHOD     (EDE)
+FACILITY   (ISOCY,2JPNOSA) AVF Cyclotron at RCNP
+DETECTOR   (COIN,MAGSP,SWPC,SOLST)
+STATUS     Data converted from NRDF
+HISTORY    (19941018T) Converted from NRDF D1403
            (20040402A) On. Units and values of beam polarization
                        corrected
            (20060708A) On. REFERENCE AND SAMPLE added
-ENDBIB              19
+           (20240318A) MA: modified REACTION in 024-029, COMMON
+                       in 002-007,024-029, DATA in 002-023; added
+                       STATUS in 002-029.
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           22
-SUBENT        E1403002   20060906   20061115   20060906       E037
-BIB                  4          5
+ENDSUBENT           25
+SUBENT        E1403002   20240503   20240505   20240505       E143
+BIB                  6          7
 REACTION   (68-ER-166(P,EL)68-ER-166,,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (P)
-ENDBIB               5
-COMMON               2          3
-EN         POL-BM
-MEV        NO-DIM
-30.        0.8
+ANG-SEC    (ANG-CM,P)
+INC-SOURCE Beam intensity is 20 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 2
+HISTORY    (20240318A) MA: STATUS: added; COMMON: POL-BM deleted;
+                       Heading: DATA -> DATA-CM.
+ENDBIB               7
+COMMON               1          3
+EN
+MEV
+ 30.
 ENDCOMMON            3
 DATA                 2         18
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   1.494E+01  1.727E+04
   2.116E+01  5.239E+03
@@ -58,26 +63,30 @@ ADEG       MB/SR
   8.611E+01  2.711E+00
   9.041E+01  8.590E-01
 ENDDATA             20
-ENDSUBENT           34
-SUBENT        E1403003   20060906   20061115   20060906       E037
-BIB                  7          9
+ENDSUBENT           36
+SUBENT        E1403003   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (68-ER-166(P,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (68-ER-166,E-LVL=0.81,SPIN=2.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 2
 HISTORY    (20040402A) On. ERR-ANALYS added
            (20060708A) On. Heading of data error corrected
-ENDBIB               9
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.81
+           (20240318A) MA: STATUS: added; COMMON: POL-BM deleted;
+                       COMMON/E-LVL: 0.81 -> 0.081; Heading: DATA
+                       -> DATA-CM.
+ENDBIB              13
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.081
 ENDCOMMON            3
 DATA                 3         17
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   2.044E+01  3.293E+01
   2.534E+01  3.093E+01
@@ -97,23 +106,26 @@ ADEG       MB/SR      MB/SR
   8.516E+01  2.383E+00
   8.942E+01  2.279E+00
 ENDDATA             19
-ENDSUBENT           37
-SUBENT        E1403004   20060906   20061115   20060906       E037
-BIB                  5          6
+ENDSUBENT           41
+SUBENT        E1403004   20240503   20240505   20240505       E143
+BIB                  8          9
 REACTION   (68-ER-166(P,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.0,PARITY=+1.)
-ENDBIB               6
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.265
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 2
+HISTORY    (20240318A) MA: STATUS: added; COMMON: POL-BM deleted;
+                       Heading: DATA -> DATA-CM.
+ENDBIB               9
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.265
 ENDCOMMON            3
 DATA                 2         14
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   3.481E+01  3.339E-06
   3.628E+01  3.270E-06
@@ -130,22 +142,24 @@ ADEG       MB/SR
   8.556E+01  5.687E-07
   8.945E+01  4.133E-07
 ENDDATA             16
-ENDSUBENT           31
-SUBENT        E1403005   20060906   20061115   20060906       E037
-BIB                  4          5
+ENDSUBENT           34
+SUBENT        E1403005   20240503   20240505   20240505       E143
+BIB                  6          7
 REACTION   (70-YB-176(P,EL)70-YB-176,,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (P)
-ENDBIB               5
-COMMON               2          3
-EN         POL-BM
-MEV        NO-DIM
-30.        0.8
+ANG-SEC    (ANG-CM,P)
+INC-SOURCE Beam intensity is 20 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 3
+HISTORY    (20240318A) MA: STATUS: added; COMMON: POL-BM deleted;
+                       Heading: DATA -> DATA-CM.
+ENDBIB               7
+COMMON               1          3
+EN
+MEV
+ 30.
 ENDCOMMON            3
 DATA                 2         20
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   9.848E+00  1.039E+05
   1.517E+01  1.949E+04
@@ -168,23 +182,27 @@ ADEG       MB/SR
   9.180E+01  1.174E+00
   9.623E+01  1.902E+00
 ENDDATA             22
-ENDSUBENT           36
-SUBENT        E1403006   20060906   20061115   20060906       E037
-BIB                  5          6
+ENDSUBENT           38
+SUBENT        E1403006   20240503   20240505   20240505       E143
+BIB                  8         10
 REACTION   (70-YB-176(P,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (70-YB-176,E-LVL=0.82,SPIN=2.0,PARITY=+1.)
-ENDBIB               6
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.82
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 3
+HISTORY    (20240318A) MA: STATUS: added; COMMON: POL-BM deleted;
+                       COMMON/E-LVL: 0.82 -> 0.082; Heading: DATA
+                       -> DATA-CM.
+ENDBIB              10
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.082
 ENDCOMMON            3
 DATA                 2         18
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   1.948E+01  3.536E+01
   2.447E+01  2.982E+01
@@ -205,23 +223,26 @@ ADEG       MB/SR
   9.150E+01  2.051E+00
   9.605E+01  1.411E+00
 ENDDATA             20
-ENDSUBENT           35
-SUBENT        E1403007   20060906   20061115   20060906       E037
-BIB                  5          6
+ENDSUBENT           39
+SUBENT        E1403007   20240503   20240505   20240505       E143
+BIB                  8          9
 REACTION   (70-YB-176(P,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.0,PARITY=+1.)
-ENDBIB               6
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.272
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 3
+HISTORY    (20240318A) MA: STATUS: added; COMMON: POL-BM deleted;
+                       Heading: DATA -> DATA-CM.
+ENDBIB               9
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.272
 ENDCOMMON            3
 DATA                 2         15
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   3.528E+01  8.213E-01
   3.937E+01  9.993E-01
@@ -239,26 +260,28 @@ ADEG       MB/SR
   9.108E+01  1.959E-01
   9.624E+01  2.135E-01
 ENDDATA             17
-ENDSUBENT           32
-SUBENT        E1403008   20060906   20061115   20060906       E037
-BIB                  6          9
+ENDSUBENT           35
+SUBENT        E1403008   20240503   20240505   20240505       E143
+BIB                  7         11
 REACTION   (68-ER-166(HE3,EL)68-ER-166,,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (HE3)
+ANG-SEC    (ANG-CM,2-HE-3)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 4
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB               9
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              11
 COMMON               1          3
 EN
 MEV
-90.
+ 90.
 ENDCOMMON            3
 DATA                 3         37
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   6.975E+01  3.047E+04
   6.637E+01  7.197E+03
@@ -298,24 +321,27 @@ ADEG       MB/SR      MB/SR
   1.928E+01  1.341E-03  2.150E-04
   1.751E+01  5.940E-04  1.553E-04
 ENDDATA             39
-ENDSUBENT           57
-SUBENT        E1403009   20060906   20061115   20060906       E037
-BIB                  6          7
+ENDSUBENT           59
+SUBENT        E1403009   20240503   20240505   20240505       E143
+BIB                  8         10
 REACTION   (68-ER-166(HE3,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (HE3)
-LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,2-HE-3)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 4
 HISTORY    (20060708A) On. POL-BM deleted.
-ENDBIB               7
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              10
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-90.        0.081
+ 90.        0.081
 ENDCOMMON            3
 DATA                 2         32
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   6.247E+01  7.225E+01
   6.188E+01  7.252E+01
@@ -350,24 +376,27 @@ ADEG       MB/SR
   2.011E+01  4.002E-03
   1.806E+01  7.957E-03
 ENDDATA             34
-ENDSUBENT           50
-SUBENT        E1403010   20060906   20061115   20060906       E037
-BIB                  6          7
+ENDSUBENT           53
+SUBENT        E1403010   20240503   20240505   20240505       E143
+BIB                  8         10
 REACTION   (68-ER-166(HE3,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (HE3)
-LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,2-HE-3)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 4
 HISTORY    (20060708A) On. POL-BM deleted.
-ENDBIB               7
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              10
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-90.        0.265
+ 90.        0.265
 ENDCOMMON            3
 DATA                 2         30
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   5.991E+01  1.499E+00
   5.899E+01  1.649E+00
@@ -400,27 +429,30 @@ ADEG       MB/SR
   1.957E+01  1.155E-02
   1.774E+01  4.219E-03
 ENDDATA             32
-ENDSUBENT           48
-SUBENT        E1403011   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           51
+SUBENT        E1403011   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (68-ER-166(HE3,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (HE3)
-LEVEL-PROP (68-ER-166,E-LVL=0.545,SPIN=6.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,2-HE-3)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.545,SPIN=6.,PARITY=+1.)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 4
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-90.        0.545
+ 90.        0.545
 ENDCOMMON            3
 DATA                 3         22
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   5.114E+01  8.074E-02
   5.003E+01  9.127E-02
@@ -445,26 +477,28 @@ ADEG       MB/SR      MB/SR
   1.965E+01  1.845E-03
   1.789E+01  2.773E-03
 ENDDATA             24
-ENDSUBENT           43
-SUBENT        E1403012   20060906   20061115   20060906       E037
-BIB                  6          9
+ENDSUBENT           46
+SUBENT        E1403012   20240503   20240505   20240505       E143
+BIB                  7         11
 REACTION   (70-YB-176(HE3,EL)70-YB-176,,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (HE3)
+ANG-SEC    (ANG-CM,2-HE-3)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 5
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB               9
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              11
 COMMON               1          3
 EN
 MEV
-90.
+ 90.
 ENDCOMMON            3
 DATA                 3         39
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   6.893E+01  2.271E+04
   6.788E+01  1.341E+04
@@ -506,24 +540,27 @@ ADEG       MB/SR      MB/SR
   1.928E+01  6.917E-04  1.723E-04
   1.703E+01  6.880E-04  1.173E-04
 ENDDATA             41
-ENDSUBENT           59
-SUBENT        E1403013   20060906   20061115   20060906       E037
-BIB                  6          7
+ENDSUBENT           61
+SUBENT        E1403013   20240503   20240505   20240505       E143
+BIB                  8         10
 REACTION   (70-YB-176(HE3,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (HE3)
-LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,2-HE-3)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 5
 HISTORY    (20060708A) On. POL-BM deleted.
-ENDBIB               7
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              10
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-90.        0.082
+ 90.        0.082
 ENDCOMMON            3
 DATA                 2         32
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   6.254E+01  7.094E+01
   6.102E+01  6.373E+01
@@ -558,24 +595,27 @@ ADEG       MB/SR
   1.920E+01  4.361E-03
   1.679E+01  1.085E-02
 ENDDATA             34
-ENDSUBENT           50
-SUBENT        E1403014   20060906   20061115   20060906       E037
-BIB                  6          7
+ENDSUBENT           53
+SUBENT        E1403014   20240503   20240505   20240505       E143
+BIB                  8         10
 REACTION   (70-YB-176(HE3,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (HE3)
-LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,2-HE-3)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 5
 HISTORY    (20060708A) On. POL-BM deleted.
-ENDBIB               7
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              10
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-90.        0.272
+ 90.        0.272
 ENDCOMMON            3
 DATA                 2         32
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   6.190E+01  1.867E+00
   6.106E+01  2.406E+00
@@ -610,27 +650,30 @@ ADEG       MB/SR
   1.895E+01  6.513E-03
   1.665E+01  2.630E-03
 ENDDATA             34
-ENDSUBENT           50
-SUBENT        E1403015   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           53
+SUBENT        E1403015   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (70-YB-176(HE3,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.250 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (HE3)
-LEVEL-PROP (70-YB-176,E-LVL=0.565,SPIN=6.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,2-HE-3)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.565,SPIN=6.,PARITY=+1.)
+INC-SOURCE Beam intensity is 250 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 5
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-90.        0.565
+ 90.        0.565
 ENDCOMMON            3
 DATA                 3         26
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   5.512E+01  8.237E-02
   5.394E+01  1.069E-01
@@ -659,26 +702,28 @@ ADEG       MB/SR      MB/SR
   1.920E+01  2.021E-03
   1.668E+01  1.826E-03
 ENDDATA             28
-ENDSUBENT           47
-SUBENT        E1403016   20060906   20061115   20060906       E037
-BIB                  6          9
+ENDSUBENT           50
+SUBENT        E1403016   20240503   20240505   20240505       E143
+BIB                  7         11
 REACTION   (68-ER-166(A,EL)68-ER-166,,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (A)
+ANG-SEC    (ANG-CM,A)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 6
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB               9
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              11
 COMMON               1          3
 EN
 MEV
-120.
+ 120.
 ENDCOMMON            3
 DATA                 3         34
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   1.132E+01  4.605E+03
   1.256E+01  3.173E+03
@@ -715,27 +760,30 @@ ADEG       MB/SR      MB/SR
   5.153E+01  3.543E-03  6.734E-04
   5.319E+01  6.391E-03  8.739E-04
 ENDDATA             36
-ENDSUBENT           54
-SUBENT        E1403017   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           56
+SUBENT        E1403017   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (68-ER-166(A,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (A)
-LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,A)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 6
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-120.       0.081
+ 120.       0.081
 ENDCOMMON            3
 DATA                 3         32
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   1.134E+01  2.564E+02  1.410E+02
   1.347E+01  1.783E+02
@@ -770,24 +818,27 @@ ADEG       MB/SR      MB/SR
   5.111E+01  1.249E-02
   5.295E+01  1.056E-02
 ENDDATA             34
-ENDSUBENT           53
-SUBENT        E1403018   20060906   20061115   20060906       E037
-BIB                  6          7
+ENDSUBENT           56
+SUBENT        E1403018   20240503   20240505   20240505       E143
+BIB                  8         10
 REACTION   (68-ER-166(A,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (A)
-LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,A)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 6
 HISTORY    (20060708A) On. POL-BM deleted.
-ENDBIB               7
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              10
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-120.       0.265
+ 120.       0.265
 ENDCOMMON            3
 DATA                 2         30
-ANG-CM     DATA
+ANG-CM     DATA-CM
 ADEG       MB/SR
   1.551E+01  7.102E+00
   1.648E+01  4.756E+00
@@ -820,27 +871,30 @@ ADEG       MB/SR
   5.068E+01  3.096E-02
   5.243E+01  2.542E-02
 ENDDATA             32
-ENDSUBENT           48
-SUBENT        E1403019   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           51
+SUBENT        E1403019   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (68-ER-166(A,INL)68-ER-166,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (A)
-LEVEL-PROP (68-ER-166,E-LVL=0.545,SPIN=6.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,A)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.545,SPIN=6.,PARITY=+1.)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 6
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-120.       0.545
+ 120.       0.545
 ENDCOMMON            3
 DATA                 3         24
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   2.137E+01  5.529E-01
   2.241E+01  3.549E-01  3.523E-02
@@ -867,26 +921,28 @@ ADEG       MB/SR      MB/SR
   5.110E+01  2.149E-02
   5.263E+01  1.684E-02
 ENDDATA             26
-ENDSUBENT           45
-SUBENT        E1403020   20060906   20061115   20060906       E037
-BIB                  6          9
+ENDSUBENT           48
+SUBENT        E1403020   20240503   20240505   20240505       E143
+BIB                  7         11
 REACTION   (70-YB-176(A,EL)70-YB-176,,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (A)
+ANG-SEC    (ANG-CM,A)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 7
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB               9
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              11
 COMMON               1          3
 EN
 MEV
-120.
+ 120.
 ENDCOMMON            3
 DATA                 3         44
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   1.024E+01  8.247E+03
   1.090E+01  5.170E+03
@@ -933,27 +989,30 @@ ADEG       MB/SR      MB/SR
   5.372E+01  9.334E-04  8.588E-04
   5.462E+01  1.654E-03  1.352E-03
 ENDDATA             46
-ENDSUBENT           64
-SUBENT        E1403021   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           66
+SUBENT        E1403021   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (70-YB-176(A,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (A)
-LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,A)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 7
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-120.       0.082
+ 120.       0.082
 ENDCOMMON            3
 DATA                 3         43
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   1.031E+01  6.742E+01
   1.122E+01  5.982E+01
@@ -999,27 +1058,30 @@ ADEG       MB/SR      MB/SR
   5.334E+01  9.481E-03  3.984E-03
   5.434E+01  2.803E-03  2.055E-03
 ENDDATA             45
-ENDSUBENT           64
-SUBENT        E1403022   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           67
+SUBENT        E1403022   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (70-YB-176(A,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (A)
-LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,A)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 7
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: STATUS: added; Heading: DATA ->
+                       DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-120.       0.272
+ 120.       0.272
 ENDCOMMON            3
 DATA                 3         43
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   1.066E+01  4.270E+00
   1.154E+01  2.795E+00
@@ -1065,27 +1127,30 @@ ADEG       MB/SR      MB/SR
   5.345E+01  2.875E-02  7.153E-03
   5.441E+01  2.414E-02  8.508E-03
 ENDDATA             45
-ENDSUBENT           64
-SUBENT        E1403023   20060906   20061115   20060906       E037
-BIB                  7         10
+ENDSUBENT           67
+SUBENT        E1403023   20240503   20240505   20240505       E143
+BIB                  9         13
 REACTION   (70-YB-176(A,INL)70-YB-176,PAR,DA)
-INC-SOURCE BEAM-INTENSITY IS 0.140 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (A)
-LEVEL-PROP (70-YB-176,E-LVL=0.565,SPIN=6.0,PARITY=+1.)
+ANG-SEC    (ANG-CM,A)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.565,SPIN=6.,PARITY=+1.)
+INC-SOURCE Beam intensity is 140 nA.
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 7
 HISTORY    (20040402A) On. ERR-ANALYS added
-           (20060708A) On. POL-BM deleted.
-                           Heading of data error corrected.
-ENDBIB              10
+           (20060708A) On. POL-BM deleted. Heading of data error
+                       corrected.
+           (20240318A) MA: SF8: ANA added; STATUS: added;
+                       Heading: DATA -> DATA-CM.
+ENDBIB              13
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
-120.       0.565
+ 120.       0.565
 ENDCOMMON            3
 DATA                 3         41
-ANG-CM     DATA       ERR-S
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
   1.167E+01  4.955E-01  1.614E-01
   1.272E+01  7.229E-01
@@ -1129,22 +1194,25 @@ ADEG       MB/SR      MB/SR
   5.338E+01  1.454E-02  6.634E-03
   5.425E+01  8.440E-03  4.686E-03
 ENDDATA             43
-ENDSUBENT           62
-SUBENT        E1403024   20060906   20061115   20060906       E037
-BIB                  6          8
-REACTION   (68-ER-166(P,EL)68-ER-166,,POL/DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (P)
+ENDSUBENT           65
+SUBENT        E1403024   20240503   20240505   20240505       E143
+BIB                  7         11
+REACTION   (68-ER-166(P,EL)68-ER-166,,POL/DA,,ANA)
+ANG-SEC    (ANG-CM,P)
+INC-SOURCE Beam intensity is 20 nA.
+           (POLIS)
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 2
 HISTORY    (20040402A) On. ERR-ANALYS added
            (20060708A) On. Heading of data error corrected
-ENDBIB               8
-COMMON               2          3
-EN         POL-BM
-MEV        NO-DIM
-30.        0.8
+           (20240318A) MA: SF8: ANA added; STATUS: added; COMMON:
+                       POL-BM deleted.
+ENDBIB              11
+COMMON               1          3
+EN
+MEV
+ 30.
 ENDCOMMON            3
 DATA                 3         16
 ANG-CM     DATA       ERR-S
@@ -1166,23 +1234,27 @@ ADEG       NO-DIM     NO-DIM
   8.549E+01 -7.459E-01  2.953E-02
   8.962E+01 -2.304E-01  4.698E-02
 ENDDATA             18
-ENDSUBENT           35
-SUBENT        E1403025   20060906   20061115   20060906       E037
-BIB                  7          9
-REACTION   (68-ER-166(P,INL)68-ER-166,PAR,POL/DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.0,PARITY=+1.)
+ENDSUBENT           38
+SUBENT        E1403025   20240503   20240505   20240505       E143
+BIB                  9         13
+REACTION   (68-ER-166(P,INL)68-ER-166,PAR,POL/DA,,ANA)
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.081,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+           (POLIS)
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 2
 HISTORY    (20040402A) On. ERR-ANALYS added
            (20060708A) On. Heading of data error corrected
-ENDBIB               9
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.081
+           (20240318A) MA: SF8: ANA added; STATUS: added; COMMON:
+                       POL-BM deleted.
+ENDBIB              13
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.081
 ENDCOMMON            3
 DATA                 3         17
 ANG-CM     DATA       ERR-S
@@ -1205,23 +1277,27 @@ ADEG       NO-DIM     NO-DIM
   8.507E+01  9.191E-02
   8.963E+01 -7.631E-02  2.241E-02
 ENDDATA             19
-ENDSUBENT           37
-SUBENT        E1403026   20060906   20061115   20060906       E037
-BIB                  7          9
-REACTION   (68-ER-166(P,INL)68-ER-166,PAR,POL/DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 97.69%.
-           TARGET-THICKNESS IS 1.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.0,PARITY=+1.)
+ENDSUBENT           41
+SUBENT        E1403026   20240503   20240505   20240505       E143
+BIB                  9         13
+REACTION   (68-ER-166(P,INL)68-ER-166,PAR,POL/DA,,ANA)
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,68-ER-166)
+LEVEL-PROP (68-ER-166,E-LVL=0.265,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+           (POLIS)
+SAMPLE     (68-ER-166,ENR=0.9769)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 2
 HISTORY    (20040402A) On. ERR-ANALYS added
            (20060708A) On. Heading of data error corrected
-ENDBIB               9
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.265
+           (20240318A) MA: SF8: ANA added; STATUS: added; COMMON:
+                       POL-BM deleted.
+ENDBIB              13
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.265
 ENDCOMMON            3
 DATA                 3         14
 ANG-CM     DATA       ERR-S
@@ -1241,19 +1317,22 @@ ADEG       NO-DIM     NO-DIM
   8.582E+01 -1.337E-02  3.497E-02
   8.989E+01  9.887E-02  2.616E-02
 ENDDATA             16
-ENDSUBENT           34
-SUBENT        E1403027   20060906   20061115   20060906       E037
-BIB                  4          5
-REACTION   (70-YB-176(P,EL)70-YB-176,,POL/DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (P)
-ENDBIB               5
-COMMON               2          3
-EN         POL-BM
-MEV        NO-DIM
-30.        0.8
+ENDSUBENT           38
+SUBENT        E1403027   20240503   20240505   20240505       E143
+BIB                  6          8
+REACTION   (70-YB-176(P,EL)70-YB-176,,POL/DA,,ANA)
+ANG-SEC    (ANG-CM,P)
+INC-SOURCE Beam intensity is 20 nA.
+           (POLIS)
+SAMPLE     (70-YB-176,ENR=0.9668)
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 3
+HISTORY    (20240318A) MA: SF8: ANA added; STATUS: added; COMMON:
+                       POL-BM deleted.
+ENDBIB               8
+COMMON               1          3
+EN
+MEV
+ 30.
 ENDCOMMON            3
 DATA                 2         19
 ANG-CM     DATA
@@ -1278,23 +1357,27 @@ ADEG       NO-DIM
   9.079E+01  6.546E-01
   9.591E+01  5.126E-01
 ENDDATA             21
-ENDSUBENT           35
-SUBENT        E1403028   20060906   20061115   20060906       E037
-BIB                  7          9
-REACTION   (70-YB-176(P,INL)70-YB-176,PAR,POL/DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.0,PARITY=+1.)
+ENDSUBENT           38
+SUBENT        E1403028   20240503   20240505   20240505       E143
+BIB                  9         13
+REACTION   (70-YB-176(P,INL)70-YB-176,PAR,POL/DA,,ANA)
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.082,SPIN=2.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+           (POLIS)
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 3
 HISTORY    (20040402A) On. ERR-ANALYS added
            (20060708A) On. Heading of data error corrected
-ENDBIB               9
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.082
+           (20240318A) MA: SF8: ANA added; STATUS: added; COMMON:
+                       POL-BM deleted.
+ENDBIB              13
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.082
 ENDCOMMON            3
 DATA                 3         18
 ANG-CM     DATA       ERR-S
@@ -1318,23 +1401,27 @@ ADEG       NO-DIM     NO-DIM
   9.106E+01 -1.170E-01
   9.628E+01 -1.756E-01  2.940E-02
 ENDDATA             20
-ENDSUBENT           38
-SUBENT        E1403029   20060906   20061115   20060906       E037
-BIB                  7          9
-REACTION   (70-YB-176(P,INL)70-YB-176,PAR,POL/DA)
-INC-SOURCE BEAM-INTENSITY IS 0.020 MICRO-AMPERE.
-SAMPLE     TARGET ENRICHMENT IS 96.68%.
-           TARGET-THICKNESS IS 2.0 MG/CM2.
-PART-DET   (P)
-LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.0,PARITY=+1.)
+ENDSUBENT           42
+SUBENT        E1403029   20240503   20240505   20240505       E143
+BIB                  9         13
+REACTION   (70-YB-176(P,INL)70-YB-176,PAR,POL/DA,,ANA)
+ANG-SEC    (ANG-CM,P)
+EN-SEC     (E-LVL,70-YB-176)
+LEVEL-PROP (70-YB-176,E-LVL=0.272,SPIN=4.,PARITY=+1.)
+INC-SOURCE Beam intensity is 20 nA.
+           (POLIS)
+SAMPLE     (70-YB-176,ENR=0.9668)
 ERR-ANALYS (ERR-S) Statistical uncertainty
+STATUS     (CURVE,,O.Kamigaito+,J,PR/C,45,1533,1992) Fig. 3
 HISTORY    (20040402A) On. ERR-ANALYS added
            (20060708A) On. Heading of data error corrected
-ENDBIB               9
-COMMON               3          3
-EN         POL-BM     E-LVL
-MEV        NO-DIM     MEV
-30.        0.8        0.272
+           (20240318A) MA: SF8: ANA added; STATUS: added; COMMON:
+                       POL-BM deleted.
+ENDBIB              13
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+ 30.        0.272
 ENDCOMMON            3
 DATA                 3         15
 ANG-CM     DATA       ERR-S
@@ -1355,11 +1442,5 @@ ADEG       NO-DIM     NO-DIM
   9.148E+01  1.618E-01  2.579E-02
   9.667E+01  1.889E-01  2.579E-02
 ENDDATA             17
-ENDSUBENT           35
-NOSUBENT      E1403030   19950216              20050926       0000
-NOSUBENT      E1403031   19950216              20050926       0000
-NOSUBENT      E1403032   19950216              20050926       0000
-NOSUBENT      E1403033   19950216              20050926       0000
-NOSUBENT      E1403034   19950216              20050926       0000
-NOSUBENT      E1403035   19950216              20050926       0000
+ENDSUBENT           39
 ENDENTRY            35
