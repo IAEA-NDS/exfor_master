@@ -1,18 +1,17 @@
-ENTRY            M1020   20211011   20211122   20211122       M115
-SUBENT        M1020001   20211011   20211122   20211122       M115
-BIB                 11         33
+ENTRY            M1020   20240117   20240408   20240408       M128
+SUBENT        M1020001   20240117   20240408   20240408       M128
+BIB                 12         35
 TITLE      Studying the activation of 177Lu in (gamma,pxn)
             reactions.
 AUTHOR     (V.A.Zheltonozhsky,M.V.Zheltonozhskaya,A.M.Savrasov,
            S.S.Belyshev,A.P.Chernyaev,V.N.Yatsenko)
-REFERENCE  (J,IZV,84,1116,2020)
-           #doi:10.31857/S03676765200800347
-           (J,BAS,84,923,2020)
-           English translation of IZV,84,1116,2020.
+REFERENCE  (J,BAS,84,923,2020)
            #doi:10.3103/S1062873820080328
+           English translation of IZV,84,1116,2020.
+           (J,IZV,84,1116,2020)
+           #doi:10.31857/S03676765200800347
 INSTITUTE  (4RUSMOS,4UKRIJD)
-            The Burnasyan Federal Medical Biological Center,
-            Russia.
+           (4RUSRUS) Federal Medical Biological Center, Moscow
 INC-SOURCE (BRST)
 METHOD     (ACTIV) Induced beta-delayed g-activity measured.
 DETECTOR   (HPGE) Gamma spectrometers developed on the basis of
@@ -23,31 +22,31 @@ DETECTOR   (HPGE) Gamma spectrometers developed on the basis of
             the 343 keV g-line of 175Hf and 1.8-2.0 keV on the
             1173-keV and 1332 keV g-lines of 60Co.
 ANALYSIS   Gamma-quanta energy spectrum lines data.
-REL-REF    (M,,V.A.Zheltonozhsky+,J,YF,83,303,2020)
-           Description of the facilities used.
+REL-REF    (I,,V.A.Zheltonozhsky+,J,YF,83,303,2020)
+            Description of the facilities used.
 COMMENT    The weighted-average reaction cross sections were
             obtained using weighted-average fluxes of
             bremsstrahlung gamma-rays since those are
             continuously distributed from the boundary energy
             EN-MAX and therefore only integrated cross sections
             are in fact measured in experiments.
+STATUS     (APRVD) Approved by A.M.Savrasov, 17 January 2024.
 HISTORY    (20201109C) Data were compiled at the Russia MSU SINP
             CDFE by V.Varlamov.
            (20211011A) Corr. by V.Varlamov: REFERENCE, REL-REF.
-ENDBIB              33
+           (20240117A) Corrected by VV and OG: STATUS, DATA in
+            SUBENTs 002-007, FACILITY and MONITOR in SUBENT 007.
+ENDBIB              35
 NOCOMMON             0          0
-ENDSUBENT           36
-SUBENT        M1020002   20201109   20210019   20201218       M109
-BIB                  9         20
+ENDSUBENT           38
+SUBENT        M1020002   20240117   20240408   20240408       M128
+BIB                 10         21
 REACTION   (72-HF-0(G,X)71-LU-177,,SIG,,BRA)
             The weighted-average reaction cross section.
 DECAY-DATA (71-LU-177,,DG,208.3)
             Data from Fig. 1.
-MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG,,,EVAL)+
-           (73-TA-181(G,N+P)72-HF-179,,SIG,,,EVAL))
+MONITOR    (72-HF-176(G,X)0-NN-1,UNW,SIG,,BRS)
 MONIT-REF  (M0850003,V.V.Varlamov+,J,PAN,76,1403,2013)
-CRITIQUE   In text on page 924 of BAS,84,923,2020 the energy
-            value 208 keV is used instead of 208.3 keV in Fig. 1
 FACILITY   (MICRT,4RUSMOS) 55 MeV RTM-55 racetrack microtron of
             Skobeltsyn Institute of Nuclear Physics, Lomonosov
             Moscow State University.
@@ -58,8 +57,12 @@ SAMPLE     The target was manufactured from both metallic
             the form of a rectangular strip 4.0 x 5.0 x 0.7 mm
             in size weighing around 180 mg.
 ERR-ANALYS (DATA-ERR) Mean-root-square errors.
-STATUS     (TABLE) Data from the Table 1.
-ENDBIB              20
+COMMENT    A typo in Table 1 (Instead of MB, should be MICRO-B).
+STATUS     (TABLE,,V.A.Zheltonozhsky+,J,BAS,84,923,2020)
+            Data from Table 1.
+HISTORY    (20240117A) Corrected by VV and OG: COMMENT, STATUS,
+            MB -> MICRO-B.
+ENDBIB              21
 COMMON               1          3
 EN-MAX
 MEV
@@ -67,21 +70,19 @@ MEV
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+MICRO-B    MICRO-B
   200.        30.
 ENDDATA              3
-ENDSUBENT           32
-SUBENT        M1020003   20201109   20210019   20201218       M109
-BIB                  9         20
+ENDSUBENT           33
+SUBENT        M1020003   20240117   20240408   20240408       M128
+BIB                 10         22
 REACTION   (72-HF-179(G,X)71-LU-177,,SIG,,BRA)
             The weighted-average reaction cross section.
 DECAY-DATA (71-LU-177,,DG,208.3)
             Data from Fig. 1.
-MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG,,,EVAL)+
-           (73-TA-181(G,N+P)72-HF-179,,SIG,,,EVAL))
+MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG)+
+           (73-TA-181(G,N+P)72-HF-179,,SIG))
 MONIT-REF  (M0850003,V.V.Varlamov+,J,PAN,76,1403,2013)
-CRITIQUE   In text on page 924 of BAS,84,923,2020 the energy
-            value 208 keV is used instead of 208.3 keV in Fig. 1
 FACILITY   (MICRT,4RUSMOS) 55 MeV RTM-55 racetrack microtron of
             Skobeltsyn Institute of Nuclear Physics, Lomonosov
             Moscow State University.
@@ -92,8 +93,12 @@ SAMPLE     The target was manufactured from both metallic
             powder of 179HfO2 (73.7% 179Hf) poured into plastic
             bag 0.8 x 0.9 x 0.3 cm in size weighing 350 mg.
 ERR-ANALYS (DATA-ERR) Mean-root-square errors.
-STATUS     (TABLE) Data from the Table 1.
-ENDBIB              20
+COMMENT    A typo in Table 1 (Instead of MB, should be MICRO-B).
+STATUS     (TABLE,,V.A.Zheltonozhsky+,J,BAS,84,923,2020)
+            Data from Table 1.
+HISTORY    (20240117A) Corrected by VV and OG: COMMENT, STATUS,
+            MB -> MICRO-B.
+ENDBIB              22
 COMMON               1          3
 EN-MAX
 MEV
@@ -101,21 +106,19 @@ MEV
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+MICRO-B    MICRO-B
   120.        20.
 ENDDATA              3
-ENDSUBENT           32
-SUBENT        M1020004   20201109   20210019   20201218       M109
-BIB                  9         20
+ENDSUBENT           34
+SUBENT        M1020004   20240117   20240408   20240408       M128
+BIB                 10         22
 REACTION   (72-HF-180(G,X)71-LU-177,,SIG,,BRA)
             The weighted-average reaction cross section.
 DECAY-DATA (71-LU-177,,DG,208.3)
             Data from Fig. 1.
-MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG,,,EVAL)+
-           (73-TA-181(G,N+P)72-HF-179,,SIG,,,EVAL))
+MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG)+
+           (73-TA-181(G,N+P)72-HF-179,,SIG))
 MONIT-REF  (M0850003,V.V.Varlamov+,J,PAN,76,1403,2013)
-CRITIQUE   In text on page 924 of BAS,84,923,2020 the energy
-            value 208 keV is used instead of 208.3 keV in Fig. 1
 FACILITY   (MICRT,4RUSMOS) 55 MeV RTM-55 racetrack microtron of
             Skobeltsyn Institute of Nuclear Physics, Lomonosov
             Moscow State University.
@@ -125,9 +128,13 @@ SAMPLE     The target was manufactured from both metallic
            At EN-MAX = 55 MeV the enriched target that was powder
             of 180HfO2 (94.3% 180Hf) poured into plastic bag
             1.0 x 1.0 x 0.3 cm in size weighing 390 mg.
-STATUS     (TABLE) Data from the Table 1.
 ERR-ANALYS (DATA-ERR) Mean-root-square errors.
-ENDBIB              20
+COMMENT    A typo in Table 1 (Instead of MB, should be MICRO-B).
+STATUS     (TABLE,,V.A.Zheltonozhsky+,J,BAS,84,923,2020)
+            Data from Table 1.
+HISTORY    (20240117A) Corrected by VV and OG: COMMENT, STATUS,
+            MB -> MICRO-B.
+ENDBIB              22
 COMMON               1          3
 EN-MAX
 MEV
@@ -135,22 +142,20 @@ MEV
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+MICRO-B    MICRO-B
     1.7        0.5
 ENDDATA              3
-ENDSUBENT           32
-SUBENT        M1020005   20201109   20210019   20201218       M109
-BIB                  9         18
+ENDSUBENT           34
+SUBENT        M1020005   20240117   20240408   20240408       M128
+BIB                  9         20
 REACTION   (72-HF-0(G,X)71-LU-177,,SIG,,BRA)
             The weighted-average reaction cross section.
 DECAY-DATA (71-LU-177,,DG,208.3)
             Data from Fig. 1.
 MONITOR    (71-LU-175(G,N)71-LU-174,,SIG)
            (71-LU-175(G,2N)71-LU-173,,SIG)
-COMMENT    MONOTOR data were taken from
+            MONITOR data were taken from
             WWW.NDS.IAEA.ORG/EXFOR/SERVET/X4sMAKEX4
-CRITIQUE   In text on page 924 of BAS,84,923,2020 the energy
-            value 208 keV is used instead of 208.3 keV in Fig. 1
 FACILITY   (LINAC,4UKRKFT) linear electron accelerator LUE-50
             of Kharkiv Institute of Physics and Technology,
             Ukraine.
@@ -158,8 +163,12 @@ SAMPLE     The target consisted of rectangular strip of metallic
             hafnium 3.0 x 6.0 x 2.4 mm in size weighing around
             570 mg.
 ERR-ANALYS (DATA-ERR) Mean-root-square errors.
-STATUS     (TABLE) Data from the Table 1.
-ENDBIB              18
+COMMENT    A typo in Table 1 (Instead of MB, should be MICRO-B).
+STATUS     (TABLE,,V.A.Zheltonozhsky+,J,BAS,84,923,2020)
+            Data from Table 1.
+HISTORY    (20240117A) Corrected by VV and OG: COMMENT, STATUS,
+            MB -> MICRO-B.
+ENDBIB              20
 COMMON               1          3
 EN-MAX
 MEV
@@ -167,21 +176,19 @@ MEV
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+MICRO-B    MICRO-B
   450.        70.
 ENDDATA              3
-ENDSUBENT           30
-SUBENT        M1020006   20201109   20210019   20201218       M109
-BIB                  9         19
+ENDSUBENT           32
+SUBENT        M1020006   20240117   20240408   20240408       M128
+BIB                 10         21
 REACTION   (72-HF-178(G,P)71-LU-177,,SIG,,BRA)
             The weighted-average reaction cross section.
 DECAY-DATA (71-LU-177,,DG,208.3)
             Data from Fig. 1.
-MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG,,,EVAL)+
-           (73-TA-181(G,N+P)72-HF-179,,SIG,,,EVAL))
+MONITOR    ((73-TA-181(G,N)73-TA-180,,SIG)+
+           (73-TA-181(G,N+P)72-HF-179,,SIG))
 MONIT-REF  (M0850003,V.V.Varlamov+,J,PAN,76,1403,2013)
-CRITIQUE   In text on page 924 of BAS,84,923,2020 the energy
-            value 208 keV is used instead of 208.3 keV in Fig. 1
 FACILITY   (LINAC,4RUSRUS) The Varian Trilogy of the Burnasyan
             Federal Medical Biological Center, Russia.
 SAMPLE     The target was manufactured from both metallic
@@ -191,8 +198,12 @@ SAMPLE     The target was manufactured from both metallic
             strips of metallic hafnium 3.0 x 4.0 x 3.5 mm in size
             weighing around 540 mg.
 ERR-ANALYS (DATA-ERR) Mean-root-square errors.
-STATUS     (TABLE) Data from the Table 1.
-ENDBIB              19
+COMMENT    A typo in Table 1 (Instead of MB, should be MICRO-B).
+STATUS     (TABLE,,V.A.Zheltonozhsky+,J,BAS,84,923,2020)
+            Data from Table 1.
+HISTORY    (20240117A) Corrected by VV and OG: COMMENT, STATUS,
+            MB -> MICRO-B.
+ENDBIB              21
 COMMON               1          3
 EN-MAX
 MEV
@@ -200,23 +211,19 @@ MEV
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+MICRO-B    MICRO-B
   1360.       190.
 ENDDATA              3
-ENDSUBENT           31
-SUBENT        M1020007   20201109   20210019   20201218       M109
-BIB                  9         19
+ENDSUBENT           33
+SUBENT        M1020007   20240117   20240408   20240408       M128
+BIB                 10         20
 REACTION   (72-HF-178(G,P)71-LU-177,,SIG,,BRA)
             The weighted-average reaction cross section.
 DECAY-DATA (71-LU-177,,DG,208.3)
             Data from Fig. 1.
-MONITOR    ((72-HF-176(G,N)72-HF-175,,SIG,,BRS)+
-           (72-HF-176(G,2N)72-HF-174,,SIG,,BRS))
+MONITOR    (72-HF-176(G,X)0-NN-1,UNW,SIG,,BRS)
 MONIT-REF  (M0007002,A.M.Goryachev+,J,SNP,26,246,1977)
-CRITIQUE   In text on page 924 of BAS,84,923,2020 the energy
-            value 208 keV is used instead of 208.3 keV in Fig. 1
-FACILITY   (LINAC,4RUSRUS)  The Varian Trilogy of the Burnasyan
-            Federal Medical Biological Center, Russia.
+FACILITY   (MICRT,4UKRIEP)
 SAMPLE     The target was manufactured from both metallic
             hafnium of natural isotopic composition, and from
             enriched powdered hafnium.
@@ -224,8 +231,13 @@ SAMPLE     The target was manufactured from both metallic
             natHfO2 weighing 8.85 g, poured into an aluminium
             cylindrical container 8 mm tall and 2 cm in diameter.
 ERR-ANALYS (DATA-ERR) Mean-root-square errors.
-STATUS     (TABLE) Data from the Table 1.
-ENDBIB              19
+COMMENT    A typo in Table 1 (MICRO-B instead of MB).
+STATUS     (TABLE,,V.A.Zheltonozhsky+,J,BAS,84,923,2020)
+            Data from Table 1.
+HISTORY    (20240117A) Corrected by VV and OG: FACILITY (LINAC,
+            4RUSRUS -> MICRT,4UKRIEP), MONITOR, COMMENT, STATUS,
+            MB -> MICRO-B.
+ENDBIB              20
 COMMON               1          3
 EN-MAX
 MEV
@@ -233,8 +245,8 @@ MEV
 ENDCOMMON            3
 DATA                 2          1
 DATA       DATA-ERR
-MB         MB
+MICRO-B    MICRO-B
    590.        60.
 ENDDATA              3
-ENDSUBENT           31
+ENDSUBENT           32
 ENDENTRY             7
