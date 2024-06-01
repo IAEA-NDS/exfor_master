@@ -1,31 +1,38 @@
-ENTRY            40857   19851225              20050926       0000
-SUBENT        40857001   19851225              20050926       0000
-BIB                  7         12
-TITLE       GAMMA-RAY SPECTRA FROM THE U-238(N,G)U-239 REACTION
-            ARISING AFTER NEUTRON CAPTURE WITH ENERGIES  2., 24
-            AND  55. KEV
-AUTHOR     (A.V.MURZIN,V.A.LIBMAN,I.V.KONONENKO,N.A.LUBCHENKO,
-           I.N.KHARAKOZ)
-INSTITUTE  (4CCPIJI)
+ENTRY            40857   20231226   20240331   20240331       4216
+SUBENT        40857001   20231226   20240331   20240331       4216
+BIB                  8         18
+TITLE       Gamma-ray spectra from the U-238(n,g)U-239 reaction
+            arising at capture of neutrons with average energy
+            2., 24 and 55. keV
+AUTHOR     (A.V.Murzin,V.A.Libman,I.V.Kononenko,N.A.Lubchenko,
+           I.N.Kharakoz)
+REFERENCE  ((C,83KIEV,2,313,1983)=
+           (R,INDC(CCP)-235,(2),313,1983))
+INSTITUTE  (4UKRIJD)
 DETECTOR   (GELI)
            (NAICR)
-REFERENCE  (C,83KIEV,2,313,8309)
-SAMPLE       METALLIC U-238, U-235 CONTENT IS 0.3 PERCENT
-HISTORY    (850504C)
-           (851225A) NEW SUBENT INTRODUCED
-ENDBIB              12
+SAMPLE       Metallic U-238, U-235 content is 0.3 %.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+HISTORY    (19850504C)
+           (19851225A) New SUBENT introduced
+           (20231226A) Ref. INDC(CCP)-235,(2),313,1983 was added.
+            Upper -> lower case correction .
+            Dates were corrected for 4-digits year.
+ENDBIB              18
 NOCOMMON             0          0
-ENDSUBENT           15
-SUBENT        40857002   19851225              20050926       0000
-BIB                  5          7
-REACTION   (92-U-238(N,G)92-U-239,,SPC,,REL/AV) AVERAGED OVER
-                    RESONANCES, REFERENCE VALUE - U-232+U-233
+ENDSUBENT           21
+SUBENT        40857002   20231226   20240331   20240331       4216
+BIB                  5          8
+REACTION   (92-U-238(N,G)92-U-239,,SPC,,REL/AV) Averaged over
+                    resonances, reference value - U-232+U-233
 MONITOR    (92-U-232(N,G)92-U-233,,SPC)
-METHOD      METHOD OF SCANDIUM, IRON AND SILICIUM FILTERS
-STATUS     (PRELM) MURZIN, 8405
-EN-SEC     (E,G) ENERGY ENTRY IN TABLE IS DIFFERENCE BETWEEN THE
-                 GAMMA-RAY AND INCIDENT NEUTRON ENERGIES
-ENDBIB               7
+METHOD      Method of scandium, iron and silicon filters
+STATUS     (TABLE) From author.
+           (PRELM) Murzin, 1984-05
+EN-SEC     (E,G) Energy entry in table is difference between the
+                 gamma-ray and incident neutron energies
+ENDBIB               8
 COMMON               1          3
 E-NRM
 KEV
@@ -147,40 +154,48 @@ KEV        KEV        KEV        ARB-UNITS  ARB-UNITS
   55.       3546.     1260.          165.       22.
   55.       3537.     1269.          105.       25.
 ENDDATA            114
-ENDSUBENT          130
-SUBENT        40857003   19860717              20050926       0000
-BIB                  4          9
-REACTION   (92-U-238(N,G)92-U-239,,SIG,,RTE/AV) AVERAGED OVER
-                                                RESONANCES
-MONITOR    (5-B-10(N,A+G)3-LI-7,,SPC)
-ASSUMED    (ASSUM1,92-U-238(N,G),,WID)  FOR S-WAVE GAMMAS
-           (ASSUM2,92-U-238(N,0),,STF)  FOR L=0
-           (ASSUM3,92-U-238(N,G),,WID)  FOR P-WAVE GAMMAS
-           (ASSUM4,92-U-238(N,0),,STF)  FOR L=1
-           (ASSUM,92-U-238(N,G),,WID)  FOR D-WAVE GAMMAS
-STATUS     (CURVE)
-ENDBIB               9
+ENDSUBENT          131
+SUBENT        40857003   20231226   20240331   20240331       4216
+BIB                  5         16
+REACTION   (92-U-238(N,G)92-U-239,,SIG,,RTE/AV) Averaged over
+                                                resonances
+MONITOR    (5-B-10(N,A)3-LI-7,,SIG)
+            Uranium activation cross-section was measured relative
+           to B10(n,alpha+gamma)Li7 reaction cross-section.
+ASSUMED    (ASSUM1,92-U-238(N,G),,WID)  For s-wave gammas
+           (ASSUM2,92-U-238(N,0),,STF)  For L=0
+           (ASSUM3,92-U-238(N,G),,WID)  For p-wave gammas
+           (ASSUM4,92-U-238(N,0),,STF)  For L=1
+           (ASSUM,92-U-238(N,G),,WID)  For d-wave gammas
+STATUS     (CURVE,,A.V.Murzin+,R,INDC(CCP)-235,(2),313,1983)
+            Fig.2
+HISTORY    (20231226A) ASSUM1,2,3 : 2.3E-01 milli-eV -> 0.023 eV
+            as given in the article, page 317.
+           MONITOR was corrected:
+            5-B-10(N,A+G)3-LI-7,,SPC -> 5-B-10(N,A)3-LI-7,,SIG
+ENDBIB              16
 COMMON               5          3
 ASSUM1     ASSUM2     ASSUM3     ASSUM4     ASSUM
-MILLI-EV   NO-DIM     MILLI-EV   NO-DIM     MILLI-EV
- 2.3000E-01 1.1000E-04 2.3000E-01 2.2000E-04 2.3000E-01
+EV         NO-DIM     EV         NO-DIM     EV
+ 0.023      1.1   E-04 0.023      2.2   E-04 0.023
 ENDCOMMON            3
 DATA                 3          3
 EN         DATA       DATA-ERR
 KEV        B*RT-EV    B*RT-EV
- 2.0000E+00 6.7000E+01 5.0000E+00
- 2.4000E+01 6.5000E+01 5.0000E+00
- 5.5000E+01 6.0000E+01 6.0000E+00
+ 2.         6.7000E+01 5.0000E+00
+ 24.        6.5000E+01 5.0000E+00
+ 55.        6.0000E+01 6.0000E+00
 ENDDATA              5
-ENDSUBENT           23
-SUBENT        40857004   19851225              20050926       0000
-BIB                  4          5
-REACTION   (92-U-238(N,G)92-U-239,,SPC,,REL) RELATIVE TO H(N,G)
-                AND FE-56(N,G) INTENSITY
-SAMPLE      U-235 CONTENT IS .4 PERCENT
-STATUS     (APRVD)  MURZIN, 8512
+ENDSUBENT           30
+SUBENT        40857004   20231226   20240331   20240331       4216
+BIB                  4          6
+REACTION   (92-U-238(N,G)92-U-239,,SPC,,REL) Relative to H(n,g)
+                and FE-56(n,g) intensity
+SAMPLE      U-235 content is .4 %.
+STATUS     (TABLE) From the author.
+           (APRVD)  Murzin, 1985-12
 EN-SEC     (E,G)
-ENDBIB               5
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 7        112
 EN         EN-RSL-FW  E          E-RSL      E-LVL-FIN  DATA
@@ -412,5 +427,5 @@ ARB-UNITS
  55.         2.       3530.4      .4         1276.9        105.
       25.
 ENDDATA            228
-ENDSUBENT          238
+ENDSUBENT          239
 ENDENTRY             4

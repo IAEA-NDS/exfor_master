@@ -1,39 +1,72 @@
-ENTRY            40827   19850118              20050926       0000
-SUBENT        40827001   19850118              20050926       0000
-BIB                 12         15
-INSTITUTE  (4CCPRI)
-REFERENCE  (C,83KIEV,2,142,8310)  GIVEN CURVES
-AUTHOR     (JU.N.TROFIMOV,JU.A.NEMILOV)
-TITLE       NP-237 RADIATION CAPTURE CROSS-SECTION FOR THE
-            ENERGY INTERVAL 0.3 - 1.9 MEV
-FACILITY   (VDG)
-INC-SOURCE (P-T)
+ENTRY            40827   20231226   20240331   20240331       4216
+SUBENT        40827001   20231226   20240331   20240331       4216
+BIB                 16         34
+TITLE       Np-237 radiation capture cross-section for the
+            energy interval 0.3 - 1.9 MeV
+AUTHOR     (Yu.N.Trofimov,Yu.A.Nemilov)
+REFERENCE  ((C,83KIEV,2,142,1983)=
+           (R,INDC(CCP)-235,(2),142,1983))  Given curves
+INSTITUTE  (4RUSRI)
+FACILITY   (VDG,4RUSRI)
+INC-SOURCE (P-T)  T-Ti targets.
 METHOD     (ACTIV)
-DETECTOR   (GELI)
+SAMPLE      NpO(2)(NO(3))2 powder.
+DETECTOR   (GELI) Ge(Li) of 38 cm3 volume, resolution 3 keV for
+           1332 keV line.
+           Samples and detectors were covered by Cd foils.
 DECAY-DATA (93-NP-238,2.117D,DG)
+            HL=2.117+-0.002 day
            (94-PU-238,,DG,984.,0.227)
-           (79-AU-198-G,2.695D,,411.8,0.9533)
+            22.7+-0.7 %
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
-STATUS     (APRVD)  TROFIMOV, 8406
-HISTORY    (850118C)
-ENDBIB              15
+DECAY-MON  (79-AU-198-G,2.695D,DG,411.8,0.9553)
+            HL=2.695+-0.001 day, 95.53+-0.05 %
+MONIT-REF  (,,R,BNL-NCS-50446,1975)
+            BNL/NCS-50446, ENDF/B-IV dosimetry file, N.Y.,1975
+REL-REF    (R,,N.G.Gusev+,B,GUSEV,,,1977) Decay data for Au-198
+           (R,,A.V.Bushuev+,J,YK,,(2/46),30,1982)
+            Decay data for Pu-238.
+           (R,,,R,INDC(NDS)-109,1979) Np-238 HL.
+STATUS     (APRVD)  Trofimov, 1984-06
+HISTORY    (19850118C)
+           (20231226A) Ref. INDC(CCP)-235,(2),142,1983 was added.
+            BIB information was updated.
+            Upper -> lower case correction .
+            Dates were corrected for 4-digits year.
+            411.8 keV gamma intensity was corrected
+            0.9533 -> 0.9553 as given in the article.
+ENDBIB              34
 NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        40827002   19850118              20050926       0000
-BIB                  1          1
+ENDSUBENT           37
+SUBENT        40827002   20231226   20240331   20240331       4216
+BIB                  4         11
 REACTION   (93-NP-237(N,G)93-NP-238,,SIG)
-ENDBIB               1
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Total uncertainty .
+            Sources of uncertainty:
+           (ERR-1) Statistical accuracy for Au-198,
+           (ERR-2) Statistical accuracy for Np-238,
+           (ERR-3) Gamma self-absorption in sample,
+           (ERR-4) Gamma spectrometer calibration,
+           (ERR-5) Radiation capture cross section for Au-197,
+STATUS     (TABLE) From author Yu.Trofimov.
+            Data are on Fig.2 of INDC(CCP)-235,(2),142,1983
+HISTORY    (20231226A) ERR-ANALYS was added.
+ENDBIB              11
+COMMON               5          3
+ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
+PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.5        1.5        1.5        2.         3.
+ENDCOMMON            3
 DATA                 4          7
 EN         EN-RSL     DATA       ERR-T
 MEV        MEV        MB         MB
- 2.5000E-01            8.5100E+02
- 3.3000E-01 1.3000E-01 5.1900E+02 3.2000E+01
- 6.5000E-01 1.3000E-01 3.1000E+02 2.3000E+01
- 8.7000E-01 1.2000E-01 2.6800E+02 2.0000E+01
- 1.1800E+00 1.1000E-01 1.9000E+02 1.4000E+01
- 1.3900E+00 1.0000E-01 1.4800E+02 1.2000E+01
- 1.9100E+00 9.0000E-02 9.9000E+01 8.0000E+00
+  .25                  851.
+  .33       .13        519.        32.
+  .65       .13        310.        23.
+  .87       .12        268.        20.
+ 1.18       .11        190.        14.
+ 1.39       .10        148.        12.
+ 1.91       .09         99.        8.
 ENDDATA              9
-ENDSUBENT           15
+ENDSUBENT           29
 ENDENTRY             2

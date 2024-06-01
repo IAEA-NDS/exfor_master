@@ -1,36 +1,46 @@
-ENTRY            40803   20070420   20070911   20070815       4140
-SUBENT        40803001   20070420   20070911   20070815       4140
-BIB                  8         15
+ENTRY            40803   20231226   20240331   20240331       4216
+SUBENT        40803001   20231226   20240331   20240331       4216
+BIB                 10         22
+TITLE       Measurement of the 238U and 232Th capture cross
+           sections for neutrons of 5-200 keV
+AUTHOR     (V.A.Tolstikov,L.E.Sherman,Yu.Ya.Stavisskii)
+REFERENCE  (J,SJA,15,1170,1963) Engl.translation of AE,15,414,1963
+           (J,JNE/AB,18,599,1964) Engl.translation of
+             AE,15,414,1963
+           (J,AE,15,414,1963) Issue 5.
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,AE,15,(5),414,1963)
-           (J,SJA,15,1170,1963)
-           (J,JNE/AB,18,599,1964)
-AUTHOR     (V.A.TOLSTIKOV,L.E.SHERMAN,JU.JA.STAVISSKII)
-TITLE       A Measurement Of The Capture Cross Sections Of U-238
-            And Th-232 For 5-200 keV Neutrons.
-FACILITY   (VDG)   Van-de-Graaf Generator
-METHOD     (ACTIV) Activation
-DETECTOR   (PROPC) For Fission Detection
-           (LONGC) For Sample Thickness Measurement
-HISTORY    (19840904T) Converted From ENTRY 80258
+FACILITY   (VDG,4RUSFEI)
+INC-SOURCE (P-LI7) LiF layer.
+METHOD     (ACTIV)
+DETECTOR   (PROPC) Beta - counter to measure induced activity of
+           uranium and thorium.
+           (LONGC) For neutron flux
+MONITOR    (5-B-10(N,X)2-HE-4,,SIG) For shape,
+            assuming 1/v law in the 1-200 keV energy region.
+HISTORY    (19840904T) Converted from ENTRY 80258
            (20050827U) Correction according to Memo CP-E/70,
                         dates were corrected
            (20070420U) Year of 2nd Reference was corrected. M.M.
-ENDBIB              15
+           (20231226A) BIB information was updated.
+            Upper -> lower case correction
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           18
-SUBENT        40803002   20050827   20051111   20051111       4135
-BIB                  4          5
+ENDSUBENT           25
+SUBENT        40803002   20231226   20240331   20240331       4216
+BIB                  6          8
 REACTION   (90-TH-232(N,G)90-TH-233,,SIG)
-MONITOR    (90-TH-232(N,G)90-TH-233,,SIG)
-            RELATIVE TO U-235 FISSION AT 71.5 KEV.
-PART-DET   (B-)    COUNTED TH-233 DECAY BETAS
-STATUS     (SCSRS,CURVE)
-ENDBIB               5
-COMMON               2          3
-EN-NRM     MONIT
-KEV        MB
- 7.1500E+01 3.9000E+02
+MONITOR    ((MONIT)90-TH-232(N,G)90-TH-233,,SIG)
+MONIT-REF  (40642005,Yu.Ya.Stavisskii+,J,AE,10,508,1961)
+RAD-DET    (90-TH-232,B-)
+STATUS     (CURVE,,V.A.Tolstikov+,J,SJA,15,1170,1963)
+            Fig. a on page 1171
+HISTORY    (20231216A) MONIT-ERR was added.
+            PART-DET -> RAD-DET
+ENDBIB               8
+COMMON               3          3
+EN-NRM     MONIT      MONIT-ERR
+KEV        MB         MB
+ 71.5       390.       59.
 ENDCOMMON            3
 DATA                 2         10
 EN         DATA
@@ -46,17 +56,23 @@ MEV        B
  7.0000E-02 3.9000E-01
  1.0000E-01 2.7500E-01
 ENDDATA             12
-ENDSUBENT           26
-SUBENT        40803003   20050827   20051111   20051111       4135
-BIB                  5          6
+ENDSUBENT           29
+SUBENT        40803003   20231226   20240331   20240331       4216
+BIB                  6          8
 REACTION   (92-U-238(N,G)92-U-239,,SIG)
-MONITOR    (92-U-238(N,G)92-U-239,,SIG)
-            NORMALIZED TO DATA OF BELANOVA AT 24 KEV.
-PART-DET   (B)     COUNTED U-239 DECAY BETAS.
-COMMENT    READ FROM CURVE.
-STATUS     (SCSRS,CURVE)
-ENDBIB               6
-NOCOMMON             0          0
+MONITOR    ((MONIT)92-U-238(N,G)92-U-239,,SIG)
+MONIT-REF  (40374021,T.S.Belanova,J,AE,8,549,1960)
+RAD-DET    (92-U-239,B)
+STATUS     (CURVE,,V.A.Tolstikov+,J,SJA,15,1170,1963)
+            Fig. b on page 1171
+HISTORY    (20231216A) EN-NRM, MONIT, MONIT-ERR were added.
+            PART-DET -> RAD-DET
+ENDBIB               8
+COMMON               3          3
+EN-NRM     MONIT      MONIT-ERR
+KEV        MB         MB
+ 24.        568.       57.
+ENDCOMMON            3
 DATA                 2         10
 EN         DATA
 MEV        B
@@ -71,5 +87,5 @@ MEV        B
  1.6000E-01 1.6000E-01
  1.7000E-01 1.4000E-01
 ENDDATA             12
-ENDSUBENT           23
+ENDSUBENT           29
 ENDENTRY             3
