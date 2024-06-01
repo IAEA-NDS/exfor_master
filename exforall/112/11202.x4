@@ -1,30 +1,40 @@
-ENTRY            11202   19800820              20050926       0000
-SUBENT        11202001   19800820              20050926       0000
-BIB                  8         10
+ENTRY            11202   20240213   20240506   20240506       1510
+SUBENT        11202001   20240213   20240506   20240506       1510
+BIB                  9         15
 INSTITUTE  (1USALAS)
-REFERENCE  (J,NSE,36,275,69)
-AUTHOR     (J.C.HOPKINS,D.M.DRAKE)
-TITLE      ELASTIC AND INELASTIC SCATTERING OF FAST NEUTRONS FROM
-           B10, B11, NATURAL GE, AND NB93.
-METHOD     (TOF) TIME-OF-FLIGHT
+REFERENCE  (J,NSE,36,275,1969)
+           #doi:10.13182/NSE69-A18724
+AUTHOR     (J.C.Hopkins,D.M.Drake)
+TITLE      Elastic and inelastic scattering of fast neutrons from
+           B10, B11, natural Ge, and Nb93.
+FACILITY   (VDG,1USALAS) Los Alamos time-of-flight facility
+METHOD     (TOF) Time-of-flight
 MONITOR    (1-H-1(N,SCT)1-H-1,,SIG)
-STATUS     (SCSRS)
-HISTORY    (760929T) TRANSLATED FROM SCISRS
-           (800820A) CONVERTED TO REACTION FORMALISM
-ENDBIB              10
+ERR-ANALYS (DATA-ERR) No details about sources of uncertainties
+HISTORY    (19760929T) Translated from SCISRS
+           (19800820A) Converted to reaction formalism
+           (20240208A) OS. Added ERR-ANALYS, FACILITY, SAMPLE,
+            updated STATUS, REACTION corrected in subs.2,17,
+            converted to lower and upper case
+ENDBIB              15
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        11202002   19800820              20050926       0000
-BIB                  1          1
-REACTION   ((5-B-10(N,EL)5-B-10,,DA)+(5-B-10(N,INL)5-B-10,PAR,DA))
-ENDBIB               1
-COMMON               4          3
-E-LVL      E-LVL      E-LVL      ANG-RSL
-MEV        MEV        MEV        ADEG
- 0.72       1.74       2.15       1.6
+ENDSUBENT           18
+SUBENT        11202002   20240213   20240506   20240506       1510
+BIB                  4          6
+REACTION   (5-B-10(N,SCT)5-B-10,PAR,DA)
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.1
+HISTORY    (20240208A) REACTION changed to SCT, SAMPLE added
+ENDBIB               6
+COMMON               5          3
+E-LVL      E-LVL      E-LVL      E-LVL      ANG-RSL
+MEV        MEV        MEV        MEV        ADEG
+ 0.         0.72       1.74       2.15       1.6
 ENDCOMMON            3
 DATA                 5         25
-EN         EN-RSL     COS-CM     DATA       DATA-ERR
+EN         EN-RSL     COS-CM     DATA-CM    DATA-ERR
 MEV        MEV        NO-DIM     MB/SR      MB/SR
  7.02       0.13       0.84000    3.120  +02 1.60   +01
  7.02       0.13       0.73600    1.850  +02 1.00   +01
@@ -52,12 +62,18 @@ MEV        MEV        NO-DIM     MB/SR      MB/SR
  7.55       0.12      -0.7500     4.6    +01 3.     +00
  7.55       0.12      -0.7600     4.2    +01 3.     +00
 ENDDATA             27
-ENDSUBENT           37
-SUBENT        11202003   19800820              20050926       0000
-BIB                  2          2
+ENDSUBENT           42
+SUBENT        11202003   20240213   20240506   20240506       1510
+BIB                  5          8
 REACTION   (5-B-10(N,INL)5-B-10,PAR,SIG)
-STATUS     (DEP)       INTEGRATED ANGULAR DISTRIBUTION
-ENDBIB               2
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+ANALYSIS   (INTAD)
+STATUS     (DEP,11202004)
+           (SCSRS)
+HISTORY    (20240208A) SAMPLE, ANALYSIS added
+ENDBIB               8
 COMMON               3          3
 E-LVL      E-LVL      E-LVL
 MEV        MEV        MEV
@@ -68,18 +84,23 @@ EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  7.02   +00 1.3    -01 2.3    -02 5.     -03
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        11202004   19800820              20050926       0000
-BIB                  1          1
+ENDSUBENT           20
+SUBENT        11202004   20240213   20240506   20240506       1510
+BIB                  4          6
 REACTION   (5-B-10(N,INL)5-B-10,PAR,DA)
-ENDBIB               1
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.2
+HISTORY    (20240208A) SAMPLE added
+ENDBIB               6
 COMMON               4          3
 E-LVL      E-LVL      E-LVL      ANG-RSL
 MEV        MEV        MEV        ADEG
  5.11       5.17       5.18       1.6
 ENDCOMMON            3
 DATA                 5         16
-EN         EN-RSL     COS-CM     DATA       DATA-ERR
+EN         EN-RSL     COS-CM     DATA-CM    DATA-ERR
 MEV        MEV        NO-DIM     MB/SR      MB/SR
  7.02       0.13       0.80200    1.66   +00 3.8    -01
  7.02       0.13       0.67700    1.50   +00 3.5    -01
@@ -98,12 +119,17 @@ MEV        MEV        NO-DIM     MB/SR      MB/SR
  7.55       0.12      -0.5160     2.45   +00 3.2    -01
  7.55       0.12      -0.7930     2.48   +00 3.2    -01
 ENDDATA             18
-ENDSUBENT           28
-SUBENT        11202005   19800820              20050926       0000
-BIB                  2          2
+ENDSUBENT           33
+SUBENT        11202005   20240213   20240506   20240506       1510
+BIB                  5          7
 REACTION   (5-B-10(N,INL)5-B-10,PAR,SIG)
-STATUS     (DEP)       INTEGRATED ANGULAR DISTRIBUTION
-ENDBIB               2
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+ANALYSIS   (INTAD)
+STATUS     (TABLE,,J.C.Hopkins+,J,NSE,36,275,1969) Table I
+HISTORY    (20240208A) SAMPLE, ANALYSIS added
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 6          4
 E-LVL      E-LVL      EN         EN-RSL     DATA       DATA-ERR
@@ -113,19 +139,24 @@ MEV        MEV        MEV        MEV        B          B
  5.92   +00 6.03   +00 7.02   +00 1.3    -01 5.4    -02 2.1    -02
  5.92   +00 6.03   +00 7.55   +00 1.2    -01 7.1    -02 5.     -03
 ENDDATA              6
-ENDSUBENT           13
-SUBENT        11202006   19800820              20050926       0000
-BIB                  2          2
+ENDSUBENT           18
+SUBENT        11202006   20240213   20240506   20240506       1510
+BIB                  5          7
 REACTION   (5-B-10(N,INL)5-B-10,PAR,DA)
-EN-SEC     MAIN CONTRIBUTION FROM 6.03 MEV LEVEL
-ENDBIB               2
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+ANALYSIS   Main contribution from 6.03 MeV level
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.2
+HISTORY    (20240208A) SAMPLE added
+ENDBIB               7
 COMMON               3          3
 E-LVL      E-LVL      ANG-RSL
 MEV        MEV        ADEG
  5.92       6.03       1.6
 ENDCOMMON            3
 DATA                 5         13
-EN         EN-RSL     COS-CM     DATA       DATA-ERR
+EN         EN-RSL     COS-CM     DATA-CM    DATA-ERR
 MEV        MEV        NO-DIM     MB/SR      MB/SR
  7.02       0.13       0.73200    6.57   +00 2.63   +00
  7.02       0.13       0.56800    3.18   +00 1.27   +00
@@ -141,12 +172,17 @@ MEV        MEV        NO-DIM     MB/SR      MB/SR
  7.55       0.12      -0.5920     4.61   +00 3.2    -01
  7.55       0.12      -0.8330     5.51   +00 3.9    -01
 ENDDATA             15
-ENDSUBENT           26
-SUBENT        11202007   19800820              20050926       0000
-BIB                  2          2
+ENDSUBENT           31
+SUBENT        11202007   20240213   20240506   20240506       1510
+BIB                  5          7
 REACTION   (5-B-10(N,INL)5-B-10,PAR,SIG)
-STATUS     (DEP)       INTEGRATED ANGULAR DISTRIBUTION
-ENDBIB               2
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+ANALYSIS   (INTAD)
+STATUS     (SCSRS)
+HISTORY    (20240208A) SAMPLE, ANALYSIS added
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 5          6
 E-LVL      EN         EN-RSL     DATA       DATA-ERR
@@ -158,17 +194,22 @@ MEV        MEV        MEV        B          B
     4.77    7.02   +00 1.3    -01 4.2    -02 7.     -03
     4.77    7.55   +00 1.2    -01 3.3    -02 5.     -03
 ENDDATA              8
-ENDSUBENT           15
-SUBENT        11202008   19800820              20050926       0000
-BIB                  2          3
-REACTION   ((5-B-10(N,EL)5-B-10,,SIG)+
-           (5-B-10(N,INL)5-B-10,PAR,SIG))
-STATUS     (DEP)       INTEGRATED ANGULAR DISTRIBUTION
-ENDBIB               3
-COMMON               3          3
-E-LVL      E-LVL      E-LVL
-MEV        MEV        MEV
- 0.72       1.74       2.15
+ENDSUBENT           20
+SUBENT        11202008   20240213   20240506   20240506       1510
+BIB                  5          8
+REACTION   (5-B-10(N,SCT)5-B-10,PAR,SIG)
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+ANALYSIS   (INTAD)
+STATUS     (TABLE,,J.C.Hopkins+,J,NSE,36,275,1969) Table I
+HISTORY    (20240208A) REACTION changed to SCT, SAMPLE, ANALYSIS
+            added
+ENDBIB               8
+COMMON               4          3
+E-LVL      E-LVL      E-LVL      E-LVL
+MEV        MEV        MEV        MEV
+ 0.         0.72       1.74       2.15
 ENDCOMMON            3
 DATA                 4          2
 EN         EN-RSL     DATA       DATA-ERR
@@ -176,16 +217,21 @@ MEV        MEV        B          B
  7.02   +00 1.3    -01 1.227  +00 8.7    -02
  7.55   +00 1.2    -01 1.176  +00 8.3    -02
 ENDDATA              4
-ENDSUBENT           16
-SUBENT        11202009   19800820              20050926       0000
-BIB                  2          3
+ENDSUBENT           21
+SUBENT        11202009   20240213   20240506   20240506       1510
+BIB                  5          8
 REACTION   (5-B-10(N,INL)5-B-10,PAR,DA)
-EN-SEC     DATA AT 5-MEV LEVEL ENERGY IS SUM OF 4.77 AND 5.17 MEV
-            CONTRIBUTIONS.
-ENDBIB               3
+SAMPLE     Cylinder,2.3 cm long, 1.9 cm in diameter
+           (5-B-10,ENR=0.956)
+           (5-B-11,ENR=0.044)
+ANALYSIS   Data at 5-MeV level energy is sum of 4.77 and 5.17 MeV
+            contributions.
+STATUS     (SCSRS)
+HISTORY    (20240208A) SAMPLE added
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 6         62
-E-LVL      EN         EN-RSL     COS-CM     DATA       DATA-ERR
+E-LVL      EN         EN-RSL     COS-CM     DATA-CM    DATA-ERR
 MEV        MEV        MEV        NO-DIM     MB/SR      MB/SR
     2.15    7.02   +00 1.3    -01 0.61300    2.54   +00 7.4    -01
     2.15    7.02   +00 1.3    -01 0.48800    2.95   +00 8.6    -01
@@ -250,24 +296,34 @@ MEV        MEV        MEV        NO-DIM     MB/SR      MB/SR
     5.      7.55   +00 1.2    -01-0.5080     5.12   +00 3.6    -01
     5.      7.55   +00 1.2    -01-0.7890     6.43   +00 4.5    -01
 ENDDATA             64
-ENDSUBENT           72
-SUBENT        11202010   19800820              20050926       0000
-BIB                  2          2
+ENDSUBENT           77
+SUBENT        11202010   20240213   20240506   20240506       1510
+BIB                  5          7
 REACTION   (5-B-11(N,EL)5-B-11,,SIG)
-STATUS     (DEP)       INTEGRATED ANGULAR DISTRIBUTION.
-ENDBIB               2
+SAMPLE     Cylinder,2.4 cm long, 1.9 cm in diameter
+           (5-B-11,ENR=0.9855)
+           (5-B-10,ENR=0.0145)
+ANALYSIS   (INTAD)
+STATUS     (TABLE,,J.C.Hopkins+,J,NSE,36,275,1969) Table II
+HISTORY    (20240208A) SAMPLE, ANALYSIS added
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  7.55   +00 1.2    -01 1.230  +00 8.8    -02
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        11202011   19800820              20050926       0000
-BIB                  2          2
+ENDSUBENT           15
+SUBENT        11202011   20240213   20240506   20240506       1510
+BIB                  5          7
 REACTION   (5-B-11(N,INL)5-B-11,PAR,SIG)
-STATUS     (DEP)       INTEGRATED ANGULAR DISTRIBUTION.
-ENDBIB               2
+SAMPLE     Cylinder,2.4 cm long, 1.9 cm in diameter
+           (5-B-11,ENR=0.9855)
+           (5-B-10,ENR=0.0145)
+ANALYSIS   (INTAD)
+STATUS     (TABLE,,J.C.Hopkins+,J,NSE,36,275,1969) Table II
+HISTORY    (20240208A) SAMPLE, ANALYSIS added
+ENDBIB               7
 COMMON               2          3
 EN         EN-RSL
 MEV        MEV
@@ -279,43 +335,53 @@ MEV        B          B
  2.14       5.2    -02 1.6    -02
  4.46       1.68   -01 2.5    -02
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        11202012   19800820              20050926       0000
-BIB                  1          1
+ENDSUBENT           20
+SUBENT        11202012   20240213   20240506   20240506       1510
+BIB                  4          6
 REACTION   (5-B-11(N,EL)5-B-11,,DA)
-ENDBIB               1
-COMMON               2          3
-EN         EN-RSL
-MEV        MEV
- 7.55   +00 1.2    -01
+SAMPLE     Cylinder,2.4 cm long, 1.9 cm in diameter
+           (5-B-11,ENR=0.9855)
+           (5-B-10,ENR=0.0145)
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.3
+HISTORY    (20240208A) SAMPLE added
+ENDBIB               6
+COMMON               3          3
+EN         EN-RSL     ANG-RSL
+MEV        MEV        ADEG
+ 7.55       0.12       1.6
 ENDCOMMON            3
-DATA                 4         11
-COS-CM     ANG-RSL    DATA       DATA-ERR
-NO-DIM     ADEG       MB/SR      MB/SR
- 0.88000       1.6     3.880  +02 2.30   +01
- 0.76000       1.6     2.210  +02 1.30   +01
- 0.66000       1.6     1.290  +02 8.0    +00
- 0.51000       1.6     5.50   +01 3.0    +00
- 0.33000       1.6     2.80   +01 2.0    +00
- 0.12000       1.6     3.90   +01 2.0    +00
--0.1000        1.6     6.50   +01 4.0    +00
--0.2000        1.6     6.40   +01 4.0    +00
--0.3000        1.6     6.70   +01 4.0    +00
--0.6600        1.6     4.70   +01 3.0    +00
--0.7500        1.6     4.30   +01 3.0    +00
+DATA                 3         11
+COS-CM     DATA-CM    DATA-ERR
+NO-DIM     MB/SR      MB/SR
+ 0.88000    3.880  +02 2.30   +01
+ 0.76000    2.210  +02 1.30   +01
+ 0.66000    1.290  +02 8.0    +00
+ 0.51000    5.50   +01 3.0    +00
+ 0.33000    2.80   +01 2.0    +00
+ 0.12000    3.90   +01 2.0    +00
+-0.1000     6.50   +01 4.0    +00
+-0.2000     6.40   +01 4.0    +00
+-0.3000     6.70   +01 4.0    +00
+-0.6600     4.70   +01 3.0    +00
+-0.7500     4.30   +01 3.0    +00
 ENDDATA             13
-ENDSUBENT           23
-SUBENT        11202013   19800820              20050926       0000
-BIB                  1          1
+ENDSUBENT           28
+SUBENT        11202013   20240213   20240506   20240506       1510
+BIB                  4          6
 REACTION   (5-B-11(N,INL)5-B-11,PAR,DA)
-ENDBIB               1
+SAMPLE     Cylinder,2.4 cm long, 1.9 cm in diameter
+           (5-B-11,ENR=0.9855)
+           (5-B-10,ENR=0.0145)
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.4
+HISTORY    (20240208A) SAMPLE added
+ENDBIB               6
 COMMON               3          3
 EN         EN-RSL     ANG-RSL
 MEV        MEV        ADEG
  7.55   +00 0.12       1.6
 ENDCOMMON            3
 DATA                 4         22
-E-LVL      COS-CM     DATA       DATA-ERR
+E-LVL      COS-CM     DATA-CM    DATA-ERR
 MEV        NO-DIM     MB/SR      MB/SR
  2.14       0.88000    3.0    +00 8.     -01
  2.14       0.76000    2.6    +00 7.     -01
@@ -340,43 +406,56 @@ MEV        NO-DIM     MB/SR      MB/SR
  4.46      -0.7000     1.65   +01 2.5    +00
  4.46      -0.7800     1.61   +01 2.5    +00
 ENDDATA             24
-ENDSUBENT           34
-SUBENT        11202014   19800820              20050926       0000
-BIB                  1          1
-REACTION   (32-GE-0(N,INL),,SIG)
-ENDBIB               1
+ENDSUBENT           39
+SUBENT        11202014   20240213   20240506   20240506       1510
+BIB                  4          5
+REACTION   (32-GE-0(N,INL)32-GE-0,,SIG)
+SAMPLE     Cylinder,2.57 cm long, inner diameter 0.165 cm,
+            outer diameter 1.59 cm
+STATUS     (TABLE,,J.C.Hopkins+,J,NSE,36,275,1969) Text (p.279)
+HISTORY    (20240208A) SAMPLE added
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  7.55   +00 1.3    -01 1.680  +00 1.70   -01
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        11202015   19860501              20050926       0000
-BIB                  3          3
+ENDSUBENT           13
+SUBENT        11202015   20240213   20240506   20240506       1510
+BIB                  5          8
 REACTION   (32-GE-0(N,EL)32-GE-0,,SIG)
-STATUS     (DEP,11202015) INTEGRATED ANGULAR DISTRIBUTION.
-HISTORY    (860501A) BIB UPDATE.
-ENDBIB               3
+SAMPLE     Natural Ge. Cylinder,2.57 cm long, inner diameter
+           0.165 cm, outer diameter 1.59 cm
+ANALYSIS   (INTAD)
+STATUS     (DEP,11202016)
+           (TABLE,,J.C.Hopkins+,J,NSE,36,275,1969) Text (p.279)
+HISTORY    (19860501A) BIB update.
+           (20240208A) SAMPLE, ANALYSIS added, STATUS corrected
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  7.55   +00 1.3    -01 2.5    +00 2.     -01
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        11202016   19860501              20050926       0000
-BIB                  2          2
+ENDSUBENT           16
+SUBENT        11202016   20240213   20240506   20240506       1510
+BIB                  4          6
 REACTION   (32-GE-0(N,EL)32-GE-0,,DA)
-HISTORY    (860501A) REACTION SF4 ADDED.
-ENDBIB               2
+SAMPLE     Natural Ge. Cylinder,2.57 cm long, inner diameter
+           0.165 cm, outer diameter 1.59 cm
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.6
+HISTORY    (19860501A) REACTION SF4 added.
+           (20240208A) SAMPLE added
+ENDBIB               6
 COMMON               3          3
 EN         EN-RSL     ANG-RSL
 MEV        MEV        ADEG
  7.55   +00 1.3    -01 1.6
 ENDCOMMON            3
 DATA                 3         11
-COS-CM     DATA       DATA-ERR
+COS-CM     DATA-CM    DATA-ERR
 NO-DIM     MB/SR      MB/SR
  0.90000    1.640  +03 1.30   +02
  0.80000    4.65   +02 3.7    +01
@@ -390,27 +469,36 @@ NO-DIM     MB/SR      MB/SR
 -0.6100     1.6    +01 1.     +00
 -0.7100     1.6    +01 1.     +00
 ENDDATA             13
-ENDSUBENT           24
-SUBENT        11202017   19800820              20050926       0000
-BIB                  1          1
-REACTION   (41-NB-93(N,EL)41-NB-93,,DA)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 6         12
-EN         EN-RSL     COS-CM     ANG-RSL    DATA       DATA-ERR
-MEV        MEV        NO-DIM     ADEG       MB/SR      MB/SR
- 5.95   +00 2.4    -01 0.77300       1.6     8.7    +01 7.     +00
- 5.95   +00 2.4    -01 0.56600       1.6     7.6    +01 6.     +00
- 5.95   +00 2.4    -01 0.29100       1.6     1.64   +02 1.3    +01
- 5.95   +00 2.4    -01-0.0110        1.6     4.4    +01 4.     +00
- 5.95   +00 2.4    -01-0.3520        1.6     1.44   +01 1.2    +00
- 5.95   +00 2.4    -01-0.7130        1.6     4.5    +01 4.     +00
- 7.47   +00 1.7    -01 0.77300       1.6     9.9    +01 8.     +00
- 7.47   +00 1.7    -01 0.56600       1.6     1.27   +02 1.0    +01
- 7.47   +00 1.7    -01 0.29100       1.6     1.37   +02 1.1    +01
- 7.47   +00 1.7    -01-0.0110        1.6     2.8    +01 2.     +00
- 7.47   +00 1.7    -01-0.3520        1.6     1.66   +01 1.3    +00
- 7.47   +00 1.7    -01-0.7130        1.6     3.6    +01 3.     +00
+ENDSUBENT           28
+SUBENT        11202017   20240213   20240506   20240506       1510
+BIB                  4          6
+REACTION   (41-NB-93(N,SCT)41-NB-93,PAR,DA)
+SAMPLE     Cylinder, 1.9 cm long, inner diameter
+           0.165 cm, outer diameter 1.59 cm
+STATUS     (CURVE,,J.C.Hopkins+,J,NSE,36,275,1969) Fig.5
+HISTORY    (20240208A) REACTION SF3 changed to SCT, SAMPLE and
+            LVL-NUMB added
+ENDBIB               6
+COMMON               3          3
+LVL-NUMB   LVL-NUMB   ANG-RSL
+NO-DIM     NO-DIM     ADEG
+ 0.          1.        1.6
+ENDCOMMON            3
+DATA                 5         12
+EN         EN-RSL     COS-CM     DATA-CM    DATA-ERR
+MEV        MEV        NO-DIM     MB/SR      MB/SR
+ 5.95   +00 2.4    -01 0.77300    8.7    +01 7.     +00
+ 5.95   +00 2.4    -01 0.56600    7.6    +01 6.     +00
+ 5.95   +00 2.4    -01 0.29100    1.64   +02 1.3    +01
+ 5.95   +00 2.4    -01-0.0110     4.4    +01 4.     +00
+ 5.95   +00 2.4    -01-0.3520     1.44   +01 1.2    +00
+ 5.95   +00 2.4    -01-0.7130     4.5    +01 4.     +00
+ 7.47   +00 1.7    -01 0.77300    9.9    +01 8.     +00
+ 7.47   +00 1.7    -01 0.56600    1.27   +02 1.0    +01
+ 7.47   +00 1.7    -01 0.29100    1.37   +02 1.1    +01
+ 7.47   +00 1.7    -01-0.0110     2.8    +01 2.     +00
+ 7.47   +00 1.7    -01-0.3520     1.66   +01 1.3    +00
+ 7.47   +00 1.7    -01-0.7130     3.6    +01 3.     +00
 ENDDATA             14
-ENDSUBENT           20
+ENDSUBENT           29
 ENDENTRY            17

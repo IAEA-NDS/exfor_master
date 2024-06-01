@@ -1,39 +1,49 @@
-ENTRY            12797   20070809   20070824   20070809       1344
-SUBENT        12797001   20070809   20070824   20070809       1344
-BIB                  9         16
+ENTRY            12797   20240213   20240506   20240506       1510
+SUBENT        12797001   20240213   20240506   20240506       1510
+BIB                  9         21
 INSTITUTE  (1USAANL)
-REFERENCE  (R,ANL-NDM-70,1982)
+REFERENCE  (R,ANL-NDM-70,1982) Description of Nb experiment,
+            graphs
+           (J,NP/A,415,1,1984) Graphs for Nb and other targets
+           #doi:10.1016/0375-9474(84)90596-7
 AUTHOR     (A.B.Smith,P.T.Guenther,J.F.Whalen)
 TITLE      Fast-neutron total and scattering cross sections of
             niobium
-FACILITY   (DYNAM)
+FACILITY   (DYNAM,1USAANL)
 INC-SOURCE (P-LI7)
 METHOD     (TOF)  5.5 meter flight path
 STATUS     (APRVD) A.B.Smith, 83/3/7.
-           Data received in private communication 1/3/83
+           (TABLE) Data received in private communication 1/3/83
 HISTORY    (19830128C)
-           (19840416A) REFERENCE ADDED.
-           (19860604A) BIB UPDATES.
-           (20070717A) DR Data at E-EXC=1.697 MeV and En=4 MeV
-                          and at E-EXC=1.971 MeV and En =2.6 MeV
+           (19840416A) Reference added.
+           (19860604A) Bib updates.
+           (20070717A) DR. Data at E-exc=1.697 MeV and En=4 MeV
+                          and at E-exc=1.971 MeV and En =2.6 MeV
                           corrected according to publication
-ENDBIB              16
+           (20240209A) OS. 2nd REFERENCE moved to sub.1,
+            REACTION corrected in subs.3,4, ERR-ANALYS updated
+ENDBIB              21
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        12797002   19830215              20050926       0000
-BIB                  6          8
+ENDSUBENT           24
+SUBENT        12797002   20240213   20240506   20240506       1510
+BIB                  7          9
 REACTION   (41-NB-93(N,TOT),,SIG,,AV)
-SAMPLE     METALLIC NIOBIUM CYLINDER, 2.5 CM DIAMETER AND 1.25
-            CM LONG.
-INC-SPECT  BEAM RESOLUTION APPROXIMATELY 50 KEV
-CORRECTION DATA WERE CORRECTED FOR DEAD-TIME
-ANALYSIS   DATA WERE AVERAGED OVER 100 KEV INTERVALS
-ERR-ANALYS (DATA-ERR) TOTAL UNCERTAINTY. THE STATISTICAL
-            UNCERTAINTY IS ABOUT 1 PERCENT.
-ENDBIB               8
-NOCOMMON             0          0
+SAMPLE     Metallic niobium cylinder, 2.5 cm diameter and 1.25
+            cm long.
+INC-SPECT  Beam resolution approximately 50 keV
+CORRECTION Data were corrected for dead-time
+ANALYSIS   Data were averaged over 100 keV intervals
+ERR-ANALYS (ERR-T) Total uncertainty.
+           (ERR-S) Statistical uncertainty (~1%)
+HISTORY    (20240209A) ERR-S added, DATA-ERR  ->  ERR-T
+ENDBIB               9
+COMMON               1          3
+ERR-S
+PER-CENT
+  1.
+ENDCOMMON            3
 DATA                 3         38
-EN-MEAN    DATA       DATA-ERR
+EN-MEAN    DATA       ERR-T
 MEV        B          B
   7.498E-01  7.348E+00  4.731E-02
   8.259E-01  7.122E+00  4.904E-02
@@ -74,31 +84,32 @@ MEV        B          B
   4.351E+00  3.699E+00  7.273E-02
   4.457E+00  3.713E+00  7.544E-02
 ENDDATA             40
-ENDSUBENT           53
-SUBENT        12797003   19860604              20050926       0000
-BIB                  9         14
-REACTION   ((41-NB-93(N,EL)41-NB-93,,DA,,AV)+
-           (41-NB-93(N,INL)41-NB-93,PAR,DA,,AV))
-REFERENCE  (J,NP/A,415,1,8403)
-SAMPLE     METALLIC NIOBIUM CYLINDER, 2 CM DIAMETER AND 2 CM LONG
-DETECTOR   (SCIN) PROTON RECOIL SCINTILLATORS
+ENDSUBENT           58
+SUBENT        12797003   20240213   20240506   20240506       1510
+BIB                  9         15
+REACTION   (41-NB-93(N,SCT)41-NB-93,PAR,DA,,AV)
+SAMPLE     Metallic niobium cylinder, 2 cm diameter and 2 cm long
+DETECTOR   (SCIN) Proton recoil scintillators
 MONITOR    (6-C-0(N,TOT),,SIG)
-INC-SPECT  BEAM RESOLUTION 50 TO 75 KEV
-ANALYSIS   DATA WERE AVERAGED OVER 50 KEV INTERVALS
-CORRECTION DATA WERE CORRECTED FOR MULTIPLE-SCATTERING, BEAM-
-            ATTENUATION AND ANGULAR-RESOLUTION.
-ERR-ANALYS (DATA-ERR) OVERALL UNCERTAINTY LESS THAN 5 PERCENT
-              STATISTICAL UNCERTAINTY     LESS THAN 2 PERCENT
-              DETECTOR NORMALIZATION                3 PERCENT
-              CORRECTIONS                           1 PERCENT
-ENDBIB              14
-COMMON               2          3
-E-EXC-MAX  ANG-RSL
-KEV        ADEG
- 30.         0.5
+INC-SPECT  Beam resolution 50 to 75 keV
+ANALYSIS   Data were averaged over 50 keV intervals
+CORRECTION Data were corrected for multiple-scattering, beam-
+            attenuation and angular-resolution.
+ERR-ANALYS (ERR-T) Overall uncertainty
+           (ERR-S,,2.)  Statistical uncertainty less than 2%
+           (ERR-1) Detector normalization 3%
+           (ERR-2) Corrections 1%
+HISTORY    (20240209A) REACTION changed to SCT,PAR;
+            ERR-S, ERR-1, ERR-2 added, DATA-ERR -> ERR-T,
+            REFERENCE moved to sub.1
+ENDBIB              15
+COMMON               4          3
+E-EXC-MAX  ANG-RSL    ERR-1      ERR-2
+KEV        ADEG       PER-CENT   PER-CENT
+ 30.         0.5         3.         1.
 ENDCOMMON            3
 DATA                 4        139
-EN-MEAN    ANG        DATA       DATA-ERR
+EN-MEAN    ANG        DATA       ERR-T
 MEV        ADEG       B/SR       PER-CENT
    1.55E+00   2.11E+01   1.17E+00   8.00
    1.55E+00   3.09E+01   9.73E-01   8.00
@@ -240,30 +251,31 @@ MEV        ADEG       B/SR       PER-CENT
    2.85E+00   1.47E+02   6.71E-02   5.00
    2.85E+00   1.57E+02   1.18E-01   5.00
 ENDDATA            141
-ENDSUBENT          164
-SUBENT        12797004   19860604              20050926       0000
-BIB                  8         13
-REACTION   ((41-NB-93(N,EL)41-NB-93,,DA)+
-           (41-NB-93(N,INL)41-NB-93,PAR,DA))
-REFERENCE  (J,NP/A,415,1,8403)
-SAMPLE     METALLIC NIOBIUM CYLINDER, 2 CM DIAMETER AND 2 CM LONG
-DETECTOR   (SCIN) PROTON RECOIL SCINTILLATORS
+ENDSUBENT          165
+SUBENT        12797004   20240213   20240506   20240506       1510
+BIB                  8         14
+REACTION   (41-NB-93(N,SCT)41-NB-93,PAR,DA)
+SAMPLE     Metallic niobium cylinder, 2 cm diameter and 2 cm long
+DETECTOR   (SCIN) Proton recoil scintillators
 MONITOR    (6-C-0(N,TOT),,SIG)
-INC-SPECT  BEAM RESOLUTION 50 TO 75 KEV
-CORRECTION DATA WERE CORRECTED FOR MULTIPLE-SCATTERING, BEAM-
-            ATTENUATION AND ANGULAR-RESOLUTION.
-ERR-ANALYS (DATA-ERR) OVERALL UNCERTAINTY LESS THAN 5 PERCENT
-              STATISTICAL UNCERTAINTY     LESS THAN 2 PERCENT
-              DETECTOR NORMALIZATION                3 PERCENT
-              CORRECTIONS                           1 PERCENT
-ENDBIB              13
-COMMON               2          3
-E-EXC-MAX  ANG-RSL
-KEV        ADEG
- 30.         0.5
+INC-SPECT  Beam resolution 50 to 75 keV
+CORRECTION Data were corrected for multiple-scattering, beam-
+            attenuation and angular-resolution.
+ERR-ANALYS (ERR-T) Overall uncertainty
+           (ERR-S,,2.)  Statistical uncertainty less than 2%
+           (ERR-1) Detector normalization 3%
+           (ERR-2) Corrections 1%
+HISTORY    (20240209A) REACTION changed to SCT,PAR;
+            ERR-S, ERR-1, ERR-2 added, DATA-ERR -> ERR-T,
+            REFERENCE moved to sub.1
+ENDBIB              14
+COMMON               4          3
+E-EXC-MAX  ANG-RSL    ERR-1      ERR-2
+KEV        ADEG       PER-CENT   PER-CENT
+ 30.         0.5         3.        1.
 ENDCOMMON            3
 DATA                 4        120
-EN         ANG        DATA       DATA-ERR
+EN         ANG        DATA       ERR-T
 MEV        ADEG       B/SR       PER-CENT
    3.00E+00   2.10E+01   1.10E+00   5.00
    3.00E+00   2.50E+01   8.64E-01   5.00
@@ -386,25 +398,30 @@ MEV        ADEG       B/SR       PER-CENT
    4.00E+00   1.50E+02   5.44E-02   7.00
    4.00E+00   1.57E+02   7.59E-02   7.00
 ENDDATA            122
-ENDSUBENT          144
-SUBENT        12797005   20070809   20070824   20070809       1344
-BIB                  8         12
+ENDSUBENT          145
+SUBENT        12797005   20240213   20240506   20240506       1510
+BIB                  9         13
 REACTION   (41-NB-93(N,INL)41-NB-93,PAR,SIG)
 SAMPLE     Metallic niobium cylinder, 2 cm diameter and 2 cm long
 DETECTOR   (SCIN) Proton recoil scintillators
 MONITOR    (6-C-0(N,TOT),,SIG)
 INC-SPECT  Beam resolution 50 to 75 keV
 ANALYSIS   (INTAD) Obtained from integrating a second order
-            Legendre fit to differential data.
+            LEGENDRE fit to differential data.
 CORRECTION Data were corrected for multiple-scattering, beam-
             attenuation and angular-resolution.
-ERR-ANALYS (DATA-ERR) Overall uncertainty from 10 to 30 percent
-              detector normalization                3 percent
-              corrections                           1 percent
-ENDBIB              12
-NOCOMMON             0          0
+ERR-ANALYS (ERR-T) Overall uncertainty (from 10 to 30%)
+           (ERR-1) Detector normalization                3%
+           (ERR-2) Corrections                           1%
+HISTORY    (20240209A) ERR-1, ERR-2 added, DATA-ERR -> ERR-T
+ENDBIB              13
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+   3.         1.
+ENDCOMMON            3
 DATA                 5         93
-E-EXC      E-EXC-ERR  EN         DATA       DATA-ERR
+E-EXC      E-EXC-ERR  EN         DATA       ERR-T
 KEV        KEV        MEV        B          B
   788.     23.          1.600E+00  3.900E-01  9.750E-02
   788.     23.          1.700E+00  4.360E-01  1.090E-01
@@ -500,5 +517,5 @@ KEV        KEV        MEV        B          B
  2176.     25.          3.800E+00  1.570E-01  5.000E-02
  2176.     25.          4.000E+00  1.600E-01  5.310E-02
 ENDDATA             95
-ENDSUBENT          112
+ENDSUBENT          117
 ENDENTRY             5

@@ -1,9 +1,10 @@
-ENTRY            C0326   19961010              20050926       0000
-SUBENT        C0326001   19961010              20050926       0000
-BIB                 14         26
+ENTRY            C0326   20240418   20240506   20240506       C236
+SUBENT        C0326001   20240418   20240506   20240506       C236
+BIB                 14         29
 INSTITUTE  (1USAPUR)
-REFERENCE  (J,JIN,32,1775,70)
-AUTHOR     (J.A.PANONTIN,N.T.PORILE)
+REFERENCE  (J,JIN,32,1775,1970)
+           #doi:10.1016/0022-1902(70)80582-6
+AUTHOR     (J.A.Panontin,N.T.Porile)
 TITLE      Charge distribution and recoil properties in the
             fission of 238U by 11.5 GeV protons
 FACILITY   (SYNCH,1USAANL) ZGS
@@ -14,8 +15,8 @@ METHOD     (ACTIV,CHSEP,INTB)
 DETECTOR   (NAICR) NaI(Tl) detector.
            (NAICR) Thin NaI crystal.
            (PROPC) Methane-flow proportional counter.
-MONITOR    ((MONIT)13-AL-27(P,N+3P)11-NA-24,,SIG)
-MONIT-REF  ((MONIT),J.B.CUMMING,J,ARN,13,261,63)
+MONITOR    ((MONIT)13-AL-27(P,X)11-NA-24,,SIG)
+MONIT-REF  ((MONIT)B0022003,J.B.Cumming,J,ARN,13,261,1963)
 CORRECTION Activities corrected for
            .chemical yield,
            .detector efficiency,
@@ -23,35 +24,43 @@ CORRECTION Activities corrected for
            .aliquot, absorber, parent-daughter factors,
            .disintegration conversion factors.
 ERR-ANALYS (DATA-ERR) Standard deviations
-STATUS     Data taken from reference, Tables I and II.
-HISTORY    (871217C)
-           (961011A) Isomers corrected. REACTION, other BIB
+STATUS     (TABLE,,J.A.Panontin+,J,JIN,32,1775,1970) Tables 1+2
+HISTORY    (19871217C)
+           (19961011A) Isomers corrected. REACTION, other BIB
                      corrections; converted to lower case.
-ENDBIB              26
+           (20240415A) OS. DECAY-DATA in sub.2 corrected,
+            several BIB corrections
+ENDBIB              29
 COMMON               2          3
 EN-NRM     MONIT
 GEV        MB
  12.        8.6
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        C0326002   19961010              20050926       0000
-BIB                  2         15
+ENDSUBENT           36
+SUBENT        C0326002   20240418   20240506   20240506       C236
+BIB                  3         21
 REACTION   (92-U-238(P,F)ELEM/MASS,CUM,SIG)
-DECAY-DATA ((1.)46-PD-100,3.63D,EC,,1.0)
-           ((2.)46-PD-101,8.4HR,EC,,0.968,B+,,0.032)
-           ((3.)46-PD-103,17.0HR,EC,,1.0)
+DECAY-DATA ((1.)46-PD-100,3.63D,XR)
+           ((2.)46-PD-101,8.4HR)
+           ((2.)45-RH-101-M,,DG,307.)
+           ((3.)46-PD-103,17.0HR,XR)
+           Compiler's comment (2024-05-05):
+            The half-life is now known to be ~17 d.
            ((4.)46-PD-109-G,13.5HR,B-,,1.0)
            ((5.)46-PD-111-G,22.MIN,B-,,1.0)
            ((6.)46-PD-112,21.0HR,B-,,1.0)
            ((7.)47-AG-103-G,1.1HR)
-           ((8.)47-AG-105-G,40.0D,EC,,1.0)
+           ((8.)47-AG-105-G,40.0D,XR)
            ((9.)47-AG-111-G,7.5D,B-,,1.0)
-           ((11.)48-CD-107,6.7HR,EC,,0.997,B+,,0.003)
+           ((11.)48-CD-107,6.7HR,XR)
            ((12.)48-CD-115-G,2.3D,B-,,1.0)
            ((13.)49-IN-107-G,32.MIN)
-           ((14.)49-IN-111-G,2.81D,EC,,1.0)
-           ((15.)50-SN-111,35.0MIN,EC,,0.68,B+,,0.32)
-ENDBIB              15
+           ((14.)49-IN-111-G,2.81D,DG,247.)
+           ((15.)50-SN-111,35.0MIN)
+           ((15.)49-IN-111,,DG,247.)
+HISTORY    (20240415A) DECAY-DATA: Several radiation fields
+            replaced, 2 lines added
+ENDBIB              21
 COMMON               1          3
 EN
 GEV
@@ -75,7 +84,7 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     MB         MB
  49.        111.       0.         14.         5.84      0.09
  50.        111.                  15.         2.45      0.12
 ENDDATA             16
-ENDSUBENT           40
+ENDSUBENT           46
 SUBENT        C0326003   19961010              20050926       0000
 BIB                  3          7
 REACTION   (92-U-238(P,F)ELEM/MASS,IND,SIG)

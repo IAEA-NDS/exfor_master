@@ -1,11 +1,12 @@
-ENTRY            C1832   20111206   20120207   20120202       C112
-SUBENT        C1832001   20111206   20120207   20120202       C112
-BIB                  7         13
+ENTRY            C1832   20240505   20240506   20240506       C235
+SUBENT        C1832001   20240505   20240506   20240506       C235
+BIB                  7         16
 TITLE      Characteristics of an intense neutron source based on
            the d+Be Reaction
 AUTHOR     (M.J.Saltmarsh,C.A.Ludemann,C.B.Fulmer,R.C.Styles)
 INSTITUTE  (1USAORL)
 REFERENCE  (J,NIM,145,81,1977)
+           #doi:10.1016/0029-554X(77)90559-6
 FACILITY   (CYCLO,1USAORL) Experiment performed using deuteron
            beam from the Oak Ridge Isochronous Cyclotron (ORIC)
 SAMPLE     Beryllium cylinder 38 mm in diameter and 38 mm long.
@@ -14,13 +15,15 @@ SAMPLE     Beryllium cylinder 38 mm in diameter and 38 mm long.
            just enough material to stop the 40MeV deuteron beam
 HISTORY    (20110530C) Compiled by S.H.
            (20111107U) OS. Minor corr. in sub.8
-ENDBIB              13
+           (20240218A) OS. Correction in subs.8,9
+           (20240505A) On. Major alteration in 009.
+ENDBIB              16
 COMMON               2          3
 EN         THICKNESS
 MEV        G/CM-SQ
 40.0       1.165
 ENDCOMMON            3
-ENDSUBENT           20
+ENDSUBENT           23
 SUBENT        C1832002   20110530   20111102   20111011       C108
 BIB                  5          9
 REACTION   (4-BE-9(D,X)0-NN-1,,TTY/PY/DA/DE)
@@ -327,22 +330,23 @@ PRD/MUC/SR
    0.08E+10
 ENDDATA             26
 ENDSUBENT           59
-SUBENT        C1832008   20111206   20120207   20120202       C112
-BIB                  4          9
-REACTION   (4-BE-9(D,X)0-NN-1,PAR,TTY/PY/DA) Average value from
-            TOF and activation measurements
-STATUS     (TABLE) Data taken from tab.3 of the reference
-           (DEP,C1832006)
-           (DEP,C1832007)
+SUBENT        C1832008   20240505   20240506   20240506       C235
+BIB                  5         10
+REACTION   (4-BE-9(D,X)0-NN-1,PAR,PY/DA,,TT/CH)
+ANALYSIS   Average value from TOF and activation measurements
 ERR-ANALYS (ERR-1) Uncertainty at specific angle, determined from
                    scatter of experimental data
            (ERR-2) Overall uncertainty in normalization
+STATUS     (TABLE,,M.J.Saltmarsh+,J,NIM,145,81,1977) Table 3
+           (DEP,C1832006)
+           (DEP,C1832007)
 HISTORY    (20111107U) OS. Spelling corr.
-ENDBIB               9
-COMMON               3          3
-ANG        E-MIN      ERR-2
-ADEG       MEV        PER-CENT
-90.0       2.0        7.0
+           (20240218A) ANG deleted in COMMON, REACTION modified
+ENDBIB              10
+COMMON               2          3
+E-MIN      ERR-2
+MEV        PER-CENT
+2.0        7.0
 ENDCOMMON            3
 DATA                 3         14
 ANG        DATA       ERR-1
@@ -362,27 +366,29 @@ ADEG       PRD/MUC/SR PRD/MUC/SR
     80.0      1.67E+10   0.08E+10
     90.0      1.21E+10   0.06E+10
 ENDDATA             16
-ENDSUBENT           34
-SUBENT        C1832009   20110601   20111102   20111011       C108
-BIB                  5          9
-REACTION   (3-LI-7(D,X)0-NN-1,PAR,TTY/PY/DA) Flight path 0.75 m
-STATUS     (TABLE) Data taken from tab.5 of the reference
+ENDSUBENT           35
+SUBENT        C1832009   20240505   20240506   20240506       C235
+BIB                  6         11
+REACTION   (3-LI-7(D,X)0-NN-1,PAR,PY/DA,,TT/CH)
 DETECTOR   (SCIN)NE213 liquid scintillator 37.3 mm in diameter
            by 34.1 mm long viewed by a 56AVP photomultiplier tube.
-METHOD     (TOF)
+METHOD     (TOF) Flight path 0.75 m
 ERR-ANALYS (ERR-1,4.0,6.0) Uncertainty in monitor statistics
            (ERR-2) Uncertainty in monitor calibration
            (ERR-3) Uncertainty in detector efficiency
            (ERR-T) Total uncertainty
-ENDBIB               9
-COMMON               4          3
-ANG        E-MIN      ERR-2      ERR-3
-ADEG       MEV        PER-CENT   PER-CENT
-90.0       2.0        3.0        15.0
+STATUS     (TABLE,,M.J.Saltmarsh+,J,NIM,145,81,1977) Table 5
+HISTORY    (20240218A) ANG deleted in COMMON, REACTION modified
+           (20240505A) On. DATA: PRT/MUC/SR -> PRD/MUC/SR
+ENDBIB              11
+COMMON               3          3
+E-MIN      ERR-2      ERR-3
+MEV        PER-CENT   PER-CENT
+2.0        3.0        15.0
 ENDCOMMON            3
 DATA                 3          7
 ANG        DATA       ERR-T
-ADEG       PRT/MUC/SR PRD/MUC/SR
+ADEG       PRD/MUC/SR PRD/MUC/SR
     0.0      40.90E+10   2.90E+10
     7.0      38.20E+10   2.00E+10
    15.0      13.00E+10   0.90E+10
@@ -391,5 +397,5 @@ ADEG       PRT/MUC/SR PRD/MUC/SR
    60.0       2.76E+10   0.19E+10
    90.0       1.59E+10   0.11E+10
 ENDDATA              9
-ENDSUBENT           27
+ENDSUBENT           29
 ENDENTRY             9

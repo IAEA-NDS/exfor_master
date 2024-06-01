@@ -1,37 +1,41 @@
-ENTRY            12796   19840416              20050926       0000
-SUBENT        12796001   19840416              20050926       0000
-BIB                 12         16
+ENTRY            12796   20240213   20240506   20240506       1510
+SUBENT        12796001   20240213   20240506   20240506       1510
+BIB                 12         19
 INSTITUTE  (1USAANL)
-REFERENCE  (J,NP/A,415,1,8403)
-           (R,ANL-NDM-68,8207)
-AUTHOR     (A.B.SMITH,P.T.GUENTHER,J.F.WHALEN)
-TITLE      FAST-NEUTRON TOTAL AND SCATTERING CROSS SECTIONS OF
-            103-RH
-FACILITY   (DYNAM)
+REFERENCE  (J,NP/A,415,1,1984)
+           #doi:10.1016/0375-9474(84)90596-7
+           (R,ANL-NDM-68,1982)
+AUTHOR     (A.B.Smith,P.T.Guenther,J.F.Whalen)
+TITLE      Fast-neutron total and scattering cross sections of
+            103-Rh
+FACILITY   (DYNAM,1USAANL)
 INC-SOURCE (P-LI7)
-METHOD     (TOF)  5.4 METER FLIGHT PATH
-DETECTOR   (SCIN) PROTON RECOIL SCINTILLATORS
-SAMPLE     METALLIC RHODIUM CYLINDER, 2 CM DIAMETER AND 2 CM LONG.
-MONITOR    (6-C-0(N,TOT),,SIG)  MEASURED IN THE EXPERIMENT
-STATUS     DATA RECEIVED IN PRIVATE COMMUNICATION 12/13/82
-           (APRVD) A.B.SMITH, 83/2/22
-HISTORY    (821222C)
-           (840416A) REFERENCE ADDED.
-ENDBIB              16
+METHOD     (TOF)  5.4 meter flight path
+DETECTOR   (SCIN) Proton recoil scintillators
+SAMPLE     Metallic rhodium cylinder, 2 cm diameter and 2 cm long.
+MONITOR    (6-C-0(N,TOT),,SIG)  Measured in the experiment
+STATUS     (TABLE) Data received in private communication 12/13/82
+           (APRVD) A.B.Smith, 83/2/22
+HISTORY    (19821222C)
+           (19840416A) Reference added.
+           (20240209A) OS. REACTION corrected in subs.3,4,
+            ERR-ANALYS updated, converted to lower and upper case
+ENDBIB              19
 NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        12796002   19830223              20050926       0000
-BIB                  5          6
+ENDSUBENT           22
+SUBENT        12796002   20240213   20240506   20240506       1510
+BIB                  6          7
 REACTION   (45-RH-103(N,TOT),,SIG,,AV)
-INC-SPECT  BEAM RESOLUTION 30 TO 50 KEV
-CORRECTION DATA WERE CORRECTED FOR DEAD-TIME
-ANALYSIS   DATA WERE AVERAGED OVER 100 KEV INTERVALS
-ERR-ANALYS (DATA-ERR) TOTAL UNCERTAINTY. THE STATISTICAL
-            UNCERTAINTY IS LESS THAN 1 PERCENT.
-ENDBIB               6
+INC-SPECT  Beam resolution 30 to 50 keV
+CORRECTION Data were corrected for dead-time
+ANALYSIS   Data were averaged over 100 keV intervals
+ERR-ANALYS (ERR-T) Total uncertainty. The statistical
+            uncertainty is less than 1%.
+HISTORY    (20240209A) DATA-ERR -> ERR-T
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3         39
-EN-MEAN    DATA       DATA-ERR
+EN-MEAN    DATA       ERR-T
 MEV        B          B
   6.946E-01  6.949E+00  9.896E-02
   7.588E-01  6.883E+00  8.242E-02
@@ -73,30 +77,32 @@ MEV        B          B
   4.345E+00  3.979E+00  5.652E-02
   4.444E+00  3.992E+00  5.890E-02
 ENDDATA             41
-ENDSUBENT           52
-SUBENT        12796003   19830223              20050926       0000
-BIB                  5         10
-REACTION   ((45-RH-103(N,EL)45-RH-103,,DA,,AV)+
-           (45-RH-103(N,INL)45-RH-103,PAR,DA,,AV))
-INC-SPECT  BEAM RESOLUTION 30 TO 70 KEV
-ANALYSIS   DATA WERE AVERAGED OVER 50 KEV INTERVALS
-CORRECTION DATA WERE CORRECTED FOR MULTIPLE-SCATTERING, BEAM-
-            ATTENUATION AND ANGULAR-RESOLUTION.
-ERR-ANALYS (DATA-ERR) OVERALL UNCERTAINTY LESS THAN 5 PERCENT
-              STATISTICAL UNCERTAINTY     LESS THAN 1 PERCENT
-              DETECTOR NORMALIZATION                3 PERCENT
-              CORRECTIONS                           1 PERCENT
-ENDBIB              10
-COMMON               2          3
-E-EXC-MAX  ANG-RSL
-KEV        ADEG
- 93.         0.75
+ENDSUBENT           53
+SUBENT        12796003   20240213   20240506   20240506       1510
+BIB                  6         11
+REACTION   (45-RH-103(N,SCT)45-RH-103,PAR,DA,,AV)
+INC-SPECT  Beam resolution 30 to 70 keV
+ANALYSIS   Data were averaged over 50 keV intervals
+CORRECTION Data were corrected for multiple-scattering, beam-
+            attenuation and angular-resolution.
+ERR-ANALYS (ERR-T) Overall uncertainty
+           (ERR-S,,1.) Statistical uncertainty less than 1%
+           (ERR-1) Detector normalization                3%
+           (ERR-2) Corrections                           1%
+HISTORY    (20240209A) REACTION changed to SCT,PAR;
+            ERR-S, ERR-1, ERR-2 added, DATA-ERR -> ERR-T
+ENDBIB              11
+COMMON               4          3
+E-EXC-MAX  ANG-RSL    ERR-1      ERR-2
+KEV        ADEG       PER-CENT   PER-CENT
+ 93.         0.75        3.         1.
 ENDCOMMON            3
 DATA                 4        309
-EN-MEAN    ANG        DATA       DATA-ERR
+EN-MEAN    ANG        DATA       ERR-T
 MEV        ADEG       B/SR       PER-CENT
    1.50E+00   2.13E+01   1.46E+00   5.00
    1.50E+00   3.12E+01   1.16E+00   5.00
+   1.50E+00   4.71E+01   6.73E-01   5.00
    1.50E+00   6.41E+01   3.21E-01   5.00
    1.50E+00   8.00E+01   1.56E-01   5.00
    1.50E+00   9.70E+01   9.44E-02   5.00
@@ -104,9 +110,9 @@ MEV        ADEG       B/SR       PER-CENT
    1.50E+00   1.30E+02   5.87E-02   6.82
    1.50E+00   1.46E+02   7.87E-02   5.09
    1.50E+00   1.56E+02   1.11E-01   5.00
-   1.50E+00   4.71E+01   6.73E-01   5.00
    1.55E+00   2.13E+01   1.46E+00   5.00
    1.55E+00   3.12E+01   1.15E+00   5.00
+   1.55E+00   4.71E+01   6.40E-01   5.00
    1.55E+00   6.41E+01   2.85E-01   5.00
    1.55E+00   8.00E+01   1.34E-01   5.00
    1.55E+00   9.70E+01   8.93E-02   5.00
@@ -114,7 +120,6 @@ MEV        ADEG       B/SR       PER-CENT
    1.55E+00   1.30E+02   5.33E-02   5.63
    1.55E+00   1.46E+02   7.41E-02   5.00
    1.55E+00   1.56E+02   1.12E-01   5.00
-   1.55E+00   4.71E+01   6.40E-01   5.00
    1.60E+00   2.13E+01   1.43E+00   5.00
    1.60E+00   3.12E+01   1.13E+00   5.00
    1.60E+00   4.71E+01   6.42E-01   5.00
@@ -405,26 +410,27 @@ MEV        ADEG       B/SR       PER-CENT
    2.98E+00   1.46E+02   4.88E-02   6.15
    2.98E+00   1.56E+02   8.14E-02   5.00
 ENDDATA            311
-ENDSUBENT          330
-SUBENT        12796004   19830223              20050926       0000
-BIB                  4          9
-REACTION   ((45-RH-103(N,EL)45-RH-103,,DA)+
-           (45-RH-103(N,INL)45-RH-103,PAR,DA))
-INC-SPECT  BEAM RESOLUTION 30 TO 70 KEV
-CORRECTION DATA WERE CORRECTED FOR MULTIPLE-SCATTERING, BEAM-
-            ATTENUATION AND ANGULAR-RESOLUTION.
-ERR-ANALYS (DATA-ERR) OVERALL UNCERTAINTY LESS THAN 5 PERCENT
-              STATISTICAL UNCERTAINTY     LESS THAN 1 PERCENT
-              DETECTOR NORMALIZATION                3 PERCENT
-              CORRECTIONS                           1 PERCENT
-ENDBIB               9
-COMMON               2          3
-E-EXC-MAX  ANG-RSL
-KEV        ADEG
- 93.         0.75
+ENDSUBENT          331
+SUBENT        12796004   20240213   20240506   20240506       1510
+BIB                  5         10
+REACTION   (45-RH-103(N,SCT)45-RH-103,PAR,DA)
+INC-SPECT  Beam resolution 30 to 70 keV
+CORRECTION Data were corrected for multiple-scattering, beam-
+            attenuation and angular-resolution.
+ERR-ANALYS (ERR-T) Overall uncertainty
+           (ERR-S,,1.) Statistical uncertainty less than 1%
+           (ERR-1) Detector normalization                3%
+           (ERR-2) Corrections                           1%
+HISTORY    (20240209A) REACTION changed to SCT,PAR;
+            ERR-S, ERR-1, ERR-2 added, DATA-ERR -> ERR-T
+ENDBIB              10
+COMMON               4          3
+E-EXC-MAX  ANG-RSL    ERR-1      ERR-2
+KEV        ADEG       PER-CENT   PER-CENT
+ 93.         0.75        3.        1.
 ENDCOMMON            3
 DATA                 4        160
-EN         ANG        DATA       DATA-ERR
+EN         ANG        DATA       ERR-T
 MEV        ADEG       B/SR       PER-CENT
    3.05E+00   2.23E+01   1.06E+00   5.00
    3.05E+00   2.52E+01   9.42E-01   5.00
@@ -587,23 +593,28 @@ MEV        ADEG       B/SR       PER-CENT
    3.75E+00   1.57E+02   5.44E-02   5.51
    3.75E+00   1.60E+02   6.23E-02   5.00
 ENDDATA            162
-ENDSUBENT          180
-SUBENT        12796005   19830223              20050926       0000
-BIB                  5          9
+ENDSUBENT          181
+SUBENT        12796005   20240213   20240506   20240506       1510
+BIB                  6         10
 REACTION   (45-RH-103(N,INL)45-RH-103,PAR,SIG)
-INC-SPECT  BEAM RESOLUTION 30 TO 70 KEV
-ANALYSIS   (INTAD) OBTAINED FROM INTEGRATING A SECOND ORDER
-            LEGENDRE FIT TO DIFFERENTIAL DATA.
-CORRECTION DATA WERE CORRECTED FOR MULTIPLE-SCATTERING, BEAM-
-            ATTENUATION AND ANGULAR-RESOLUTION.
-ERR-ANALYS (DATA-ERR) OVERALL UNCERTAINTY FROM 10 TO 30 PERCENT
-              DETECTOR NORMALIZATION                3 PERCENT
-              CORRECTIONS                           1 PERCENT
-ENDBIB               9
-NOCOMMON             0          0
+INC-SPECT  Beam resolution 30 to 70 keV
+ANALYSIS   (INTAD) Obtained from integrating a second order
+            Legendre fit to differential data.
+CORRECTION Data were corrected for multiple-scattering, beam-
+            attenuation and angular-resolution.
+ERR-ANALYS (ERR-T) Overall uncertainty (from 10 to 30%)
+           (ERR-1) Detector normalization                3%
+           (ERR-2) Corrections                           1%
+HISTORY    (20240209A) Added ERR-1, ERR-2, DATA-ERR -> ERR-T
+ENDBIB              10
+COMMON               2          3
+ERR-1      ERR-2
+PER-CENT   PER-CENT
+  3.         1.
+ENDCOMMON            3
 DATA                 7         58
 E-EXC      E-EXC-ERR  E-EXC      E-EXC-ERR  EN         DATA
-DATA-ERR
+ERR-T
 KEV        KEV        KEV        KEV        MEV        B
 B
   334.     13.                                1.606E+00  4.957E-01
@@ -723,5 +734,5 @@ B
  1840.     79.                                2.900E+00  3.640E-01
   1.270E-01
 ENDDATA            120
-ENDSUBENT          134
+ENDSUBENT          139
 ENDENTRY             5

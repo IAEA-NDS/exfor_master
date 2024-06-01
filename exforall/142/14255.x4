@@ -1,12 +1,13 @@
-ENTRY            14255   20140417   20141203   20141111       1401
-SUBENT        14255001   20140417   20141203   20141111       1401
-BIB                 13         49
+ENTRY            14255   20240505   20240506   20240506       1510
+SUBENT        14255001   20240505   20240506   20240506       1510
+BIB                 13         52
 TITLE      Feeding of the 11/2- isomers in stable Ir and Au
            isotopes
 AUTHOR     (N.Fotiades,R.O.Nelson,M.Devlin,S.Holloway,T.Kawano,
            P.Talou,M.B.Chadwick,J.A.Becker,P.E.Garrett)
 INSTITUTE  (1USALAS,1USALRL)
 REFERENCE  (J,PR/C,80,044612,2009)
+           #doi:10.1103/PhysRevC.80.044612
            (C,2007NICE,1,495,2007) Preliminary data on 197Au
 FACILITY   (LINAC,1USALAS) Experiment performed at WNR
            spallation neutron source on the 60R (60deg right)
@@ -50,13 +51,15 @@ ERR-ANALYS (ERR-T) Total uncertainty
 HISTORY    (20091210C) Compiled by S.H.
            (20100328U) Reference to Nice 2007 conference included
            (20140417A) SD: REACTION code corrected in Subents 2-16
-ENDBIB              49
+           (20240212A) OS. Isomer extension corr.in subs.14,17
+           (20240505A) On. Major alteration in 014.
+ENDBIB              52
 COMMON               6          3
 ERR-1      ERR-2      ERR-3      ERR-4      ERR-5      ERR-6
 PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
 1.0        1.0        5.0        1.0        0.1        8.0
 ENDCOMMON            3
-ENDSUBENT           56
+ENDSUBENT           59
 SUBENT        14255002   20140417   20141203   20141111       1401
 BIB                  5         15
 REACTION   (77-IR-191(N,INL)77-IR-191-M1,PAR,SIG,G,MSC) - Partial
@@ -887,12 +890,12 @@ MEV        MEV        MB         MB
  17.981    0.812          0.6     0.8
 ENDDATA             34
 ENDSUBENT           57
-SUBENT        14255014   20140417   20141203   20141111       1401
-BIB                  5         20
-REACTION   (77-IR-191(N,INL)77-IR-191-M,PAR,SIG,G,MSC)
-            Gamma production cross section corrected by the
-            internal conversion coefficient
-DECAY-DATA (77-IR-191-M,4.94SEC)
+SUBENT        14255014   20240505   20240506   20240506       1510
+BIB                  6         23
+REACTION   (77-IR-191(N,INL)77-IR-191-M1,(M),SIG,,,DERIV)
+ANALYSIS   Derived from 219.7, 385.5 and 420.1, and 482.5 keV
+            prompt gamma production cross sections
+DECAY-DATA (77-IR-191-M1,4.94SEC)
 STATUS     (TABLE) Data from author (N.F.) presented in fig.5.
             Sum of cross sect. obtained for the four transitions
             that presented in  fig. 2 of the PR/C,80,044612 and
@@ -909,12 +912,11 @@ SAMPLE     The 191Ir target consisted of thin-walled polystyrene
            during part of the experiments for normalization.
 HISTORY    (20140417A) SD: SF1=Ir-193 -> Ir-191; SF4=Ir-193m ->
             Ir-191m; SF8=MSC added in REACTION code.
-ENDBIB              20
-COMMON               4          3
-E          E          E          E
-KEV        KEV        KEV        KEV
-219.7      385.5      420.1      482.5
-ENDCOMMON            3
+           (20240212A) SF4: M -> M1, SF5: (M) added.
+             DECAY-DATA:  M -> M1
+           (20240505A) On. REACITON revised. COMMON deleted.
+ENDBIB              23
+NOCOMMON             0          0
 DATA                 4         44
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
@@ -963,7 +965,7 @@ MEV        MEV        MB         MB
 17.98        0.81       108.3       3.8
 19.68        0.93       102.8       3.7
 ENDDATA             46
-ENDSUBENT           75
+ENDSUBENT           74
 SUBENT        14255015   20140417   20141203   20141111       1401
 BIB                  5         21
 REACTION   (77-IR-193(N,INL)77-IR-193-M,PAR,SIG,G,MSC)
@@ -1130,10 +1132,10 @@ MEV        MEV        MB         MB
 69.29         5.96        18.0      0.5
 ENDDATA             52
 ENDSUBENT           81
-SUBENT        14255017   20091210   20100218   20100217       1359
-BIB                  4         14
-REACTION   (77-IR-191(N,INL)77-IR-191-M/G,,SIG/RAT)
-DECAY-DATA (77-IR-191-M,4.94SEC)
+SUBENT        14255017   20240505   20240506   20240506       1510
+BIB                  5         15
+REACTION   (77-IR-191(N,INL)77-IR-191-M1/G,,SIG/RAT)
+DECAY-DATA (77-IR-191-M1,4.94SEC)
 STATUS     (TABLE) Data presented in fig. 7 of the reference
             sent by author (N.F.)
            (DEP,14255002)
@@ -1146,7 +1148,8 @@ SAMPLE     The 191Ir target consisted of thin-walled polystyrene
            areal density of 0.54 g/cm2. Two 0.05 mm natural Fe
            foils were placed on the front of the targets
            during part of the experiments for normalization.
-ENDBIB              14
+HISTORY    (20240212A) REACTION SF4 and DECAY-DATA:  M -> M1
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 2         44
 EN         DATA
@@ -1196,7 +1199,7 @@ MEV        NO-DIM
 17.98         0.535
 19.68         0.524
 ENDDATA             46
-ENDSUBENT           65
+ENDSUBENT           66
 SUBENT        14255018   20091210   20100218   20100217       1359
 BIB                  4         14
 REACTION   (77-IR-193(N,INL)77-IR-193-M/G,,SIG/RAT)

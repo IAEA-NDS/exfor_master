@@ -1,29 +1,33 @@
-ENTRY            C0325   19961011              20050926       0000
-SUBENT        C0325001   19961011              20050926       0000
-BIB                 13         20
+ENTRY            C0325   20240505   20240506   20240506       C236
+SUBENT        C0325001   20240505   20240506   20240506       C236
+BIB                 13         24
 INSTITUTE  (2ZZZCER)
-REFERENCE  (J,JIN,32,2489,70)
-AUTHOR     (E.HAGEBO)
+REFERENCE  (J,JIN,32,2489,1970)
+           #doi:10.1016/0022-1902(70)80292-5
+AUTHOR     (E.Hagebo)
 TITLE      Some yields and isomeric yield ratios of indium
             isotopes produced by high-energy fission
-FACILITY   (SYNCY). Below 600 MeV proton energy,
-           (SYNCH). At 7.1 GeV and 18.2 GeV.
+FACILITY   (SYNCY,2ZZZCER). Below 600 MeV proton energy,
+           (SYNCH,2ZZZCER). At 7.1 GeV and 18.2 GeV.
 SAMPLE     In general, UO(3)-powder enclosed in aluminum foil.
            For 18.2 GeV, metal foils were used.
 METHOD     (ACTIV,CHSEP)
 DETECTOR   (PROPC) Thin-windor methane-flow proportional counter.
            (GELI)
-MONITOR    ((MONIT)13-AL-27(P,N+3P)11-NA-24,,SIG)
-MONIT-REF  ((MONIT),K.GOEBEL+,J,NP,24,28,61)
+MONITOR    ((MONIT)13-AL-27(P,X)11-NA-24,,SIG)
+MONIT-REF  ((MONIT)B0094002,K.Goebel+,J,NP,24,28,1961)
 ERR-ANALYS (DATA-ERR) Standard deviations. Uncertainty in
             standard cross section not included.
-STATUS     Data taken from reference, Table I and II.
-HISTORY    (871216C)
-           (961011A) Isomers corrected. REACTION, other BIB
+STATUS     (TABLE,,E.Hagebo,J,JIN,32,2489,1970) Tables 1 and 2
+HISTORY    (19871216C)
+           (19961011A) Isomers corrected. REACTION, other BIB
                      corrections, converted to lower case.
-ENDBIB              20
+           (20240415A) OS. Correction in DECAY-DATA in sub.3,
+             several BIB corrections
+           (20240505A) On. Major alteration in 003.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           23
+ENDSUBENT           27
 SUBENT        C0325002   19961011              20050926       0000
 BIB                  3         10
 REACTION   (92-U-0(P,F)ELEM/MASS,CUM,SIG)
@@ -67,40 +71,44 @@ MB         MB         MB
              8.5       0.6
 ENDDATA             26
 ENDSUBENT           41
-SUBENT        C0325003   19961011              20050926       0000
-BIB                  3          7
+SUBENT        C0325003   20240505   20240506   20240506       C236
+BIB                  3         11
 REACTION   (92-U-0(P,F)ELEM/MASS,,SIG)
 DECAY-DATA ((1.)49-IN-110-G,4.9HR,DG,660.,1.0)
-           ((2.)49-IN-116-M,54.MIN,DG,1300.,0.82,B-,1000.,1.0)
+           ((2.)49-IN-116-M1,54.MIN,DG,1300.,0.82,
+                                    B-,1000.,1.0)
            ((3.)49-IN-117-G,38.MIN,B-,740.,1.0)
-           ((4.)49-IN-117-M,1.95HR,B-,1770.,0.55,EC,290.,0.25)
+           ((4.)49-IN-117-M,1.95HR,B-,1620./1770.,0.55,
+                                   ICE,290.,0.25)
            ((5.)49-IN-119-M,18.MIN,B-,2700.,1.0)
-HISTORY    (961011A) Energy corrected for 110In.
-ENDBIB               7
+HISTORY    (19961011A) Energy corrected for 110In.
+           (20240415A) DECAY-DATA for In117m corrected
+           (20240505A) On. ISOMER=2 added for 116mIn
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 9          9
-EN         ELEMENT    MASS       ISOMER     DECAY-FLAG DATA
-DATA-ERR   MONIT      MONIT-ERR
-GEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM     MB
-MB         MB         MB
-  0.57      49.        116.       1.         2.         11.9
-  0.6       11.        0.5
-  0.57      49.        117.       0.         3.         18.6
-            11.        0.5
-  0.57      49.        117.       1.         4.          0.64
-            11.        0.5
-  0.57      49.        119.       1.         5.          4.8
-            11.        0.5
- 18.2       49.        110.       0.         1.          2.06
-             8.5       0.6
- 18.2       49.        116.       1.         2.          3.50
-  0.29       8.5       0.6
- 18.2       49.        117.       0.         3.          4.08
-             8.5       0.6
- 18.2       49.        117.       1.         4.          0.182
-             8.5       0.6
- 18.2       49.        119.       1.         5.          1.61
-             8.5       0.6
+DATA                10          9
+EN         ELEMENT    MASS       ISOMER     ISOMER     DECAY-FLAG
+DATA       DATA-ERR   MONIT      MONIT-ERR
+GEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
+MB         MB         MB         MB
+  0.57      49.        116.       1.         2.         2.
+ 11.9        0.6       11.        0.5
+  0.57      49.        117.       0.                    3.
+ 18.6                  11.        0.5
+  0.57      49.        117.       1.                    4.
+  0.64                 11.        0.5
+  0.57      49.        119.       1.                    5.
+  4.8                  11.        0.5
+ 18.2       49.        110.       0.                    1.
+  2.06                  8.5       0.6
+ 18.2       49.        116.       1.         2.         2.
+  3.50       0.29       8.5       0.6
+ 18.2       49.        117.       0.                    3.
+  4.08                  8.5       0.6
+ 18.2       49.        117.       1.                    4.
+  0.182                 8.5       0.6
+ 18.2       49.        119.       1.                    5.
+  1.61                  8.5       0.6
 ENDDATA             22
-ENDSUBENT           34
+ENDSUBENT           38
 ENDENTRY             3
