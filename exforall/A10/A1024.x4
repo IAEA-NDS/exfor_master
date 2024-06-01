@@ -1,35 +1,43 @@
-ENTRY            A1024   19990319   19990505   20050926       0000
-SUBENT        A1024001   19990319   19990505   20050926       0000
-BIB                 10         17
-INSTITUTE  (1USALAS)
-REFERENCE  (J,PR,88,(3),433,195211)
-AUTHOR     (J.C.ALLRED,A.H.ARMSTRONG,R.O.BONDELIN,L.ROSEN)
+ENTRY            A1024   20240318   20240502   20240502       A110
+SUBENT        A1024001   20240318   20240502   20240502       A110
+BIB                 10         23
 TITLE      Elastic scattering of 9.7 MeV protons by deuterium and
            by hydrogen
-FACILITY   (CYCLO) 9.7 MeV
+AUTHOR     (J.C.Allred,A.H.Armstrong,R.O.Bondelin,L.Rosen)
+REFERENCE  (J,PR,88,433,1952)
+INSTITUTE  (1USALAS)
+FACILITY   (CYCLO,1USALAS) 9.7 MeV
 SAMPLE     The target gas
-METHOD     (EXTB)
+METHOD     (EXTB,BCINT)
 DETECTOR   (PLATE) Multiplate camera
-ERR-ANALYS (EN-ERR) Scale error
-           (DATA-ERR) The absolute error at angles where back-
-           ground correction is unnecessary;
-           (DATA-ERR1) Absolute data error at the angles where
-           background correction is unnecessary;
+ERR-ANALYS (ERR-1) Uncertainty in the geometry of slit system of
+           multiplate camera,
+           (ERR-2) Uncertainty in the measurements of temperature
+           and pressure,
+           (ERR-3) Uncertainty in the current integration,
+           (ERR-4) Uncertainty in the microscope calibration and
+           personal factors,
+           (ERR-5) The average uncertainty in the background
+           corrections,
+           (ERR-S,,2.) Statistical error
            (ERR-T) Total error
 HISTORY    (19810220C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990115U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              17
-COMMON               3          3
-EN-ERR     DATA-ERR1  DATA-ERR
-MEV        PER-CENT   PER-CENT
- 0.15        5.         3.5
+           (20240318A) SD: Corrections in all Subents.
+ENDBIB              23
+COMMON               6          3
+EN-ERR     ERR-1      ERR-2      ERR-3      ERR-4      ERR-5
+MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ 0.15        1.         0.5          2.5         1.        2.
 ENDCOMMON            3
-ENDSUBENT           24
-SUBENT        A1024002   19990319   19990505   20050926       0000
-BIB                  2          2
-REACTION   (1-H-2(P,EL)1-H-2,,DA,,,EXP)
-STATUS     (TABLE) Table 1
-ENDBIB               2
+ENDSUBENT           30
+SUBENT        A1024002   20240318   20240502   20240502       A110
+BIB                  3          4
+REACTION   (1-H-2(P,EL)1-H-2,,DA)
+STATUS     (TABLE,,J.C.Allred+,J,PR,88,433,1952) Table 1
+HISTORY    (20240318A) SD: SF9=EXP deleted from REACTION code.
+           STATUS updated.
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
@@ -104,13 +112,15 @@ ADEG       MB/SR      MB/SR
    175.       190.        15.
    176.2      195.        15.
 ENDDATA             67
-ENDSUBENT           78
-SUBENT        A1024003   19990319   19990505   20050926       0000
-BIB                  2          2
-REACTION   (1-H-1(P,EL)1-H-1,,DA,,,EXP)
-STATUS     (TABLE) Table 2
-ENDBIB               2
-NOCOMMON
+ENDSUBENT           80
+SUBENT        A1024003   20240318   20240502   20240502       A110
+BIB                  3          4
+REACTION   (1-H-1(P,EL)1-H-1,,DA)
+STATUS     (TABLE,,J.C.Allred+,J,PR,88,433,1952) Table 2
+HISTORY    (20240318A) SD: SF9=EXP deleted from REACTION code.
+           STATUS updated.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4         27
 EN         ANG-CM     DATA-CM    ERR-T
 MEV        ADEG       MB/SR      MB/SR
@@ -142,5 +152,5 @@ MEV        ADEG       MB/SR      MB/SR
      9.85      44.        56.8        2.9
      9.85      61.        54.1        2.5
 ENDDATA             29
-ENDSUBENT           36
+ENDSUBENT           38
 ENDENTRY             3

@@ -1,36 +1,52 @@
-ENTRY            A1030   19990319   19990505   20050926       0000
-SUBENT        A1030001   19990319   19990505   20050926       0000
-BIB                  9         15
-INSTITUTE  (1USAWIS)
-REFERENCE  (J,NP/A,132,(2),455,196907)
-AUTHOR     (D.C.KOCHER,T.B.CLEGG)
+ENTRY            A1030   20240317   20240502   20240502       A110
+SUBENT        A1030001   20240317   20240502   20240502       A110
+BIB                 10         27
 TITLE      Cross sections for proton-deuteron scattering from 1.0
            10.0 MeV
-FACILITY   (VDGT)
+AUTHOR     (D.C.Kocher,T.B.Clegg)
+REFERENCE  (J,NP/A,132,455,1969)
+INSTITUTE  (1USAWIS)
+FACILITY   (VDGT,1USAWIS)
 SAMPLE     The gas target
-DETECTOR   (SOLST) SILI
-ERR-ANALYS (ERR-T) Total error. In A1030003 are listed the
-           results of the error analysis for data points which are
-           representative of maximal and minimal uncertainties.
-           These cases are typical of forward angle and back angle
-           detector settings, respectively.
+DETECTOR   (SIBAR)
+METHOD     (BCINT)
+ERR-ANALYS (ERR-T) Total error
+           (ERR-S,0.09,0.11) Statistical uncertainty
+           (ERR-1,0.11,0.19) Uncertainty in background
+                             subtraction
+           (ERR-2,0.15,0.34) Uncertainty in contamination
+                             corrections.
+           (ERR-3,0.16,0.20) Uncertainty in gas density, g-factor,
+                            integrator calibration
+           (ERR-4,0.05,0.10) Correction uncertainty
+           (ERR-5,0.04,1.70) Angle uncertainty
+           (ERR-6) Additional uncertainty due to the different
+                   ways of registration
+           (ERR-7,0.07,0.98) Energy uncertainty
 HISTORY    (19810309C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990115U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              15
-NOCOMMON
-ENDSUBENT           18
-SUBENT        A1030002   19990319   19990505   20050926       0000
-BIB                  3          7
-REACTION   (1-H-2(P,EL)1-H-2,,DA,,,EXP)
+           (20240317A) SD: Corrections in all Subents. Subent 003
+           deleted (information moved to ERR-ANALYS). Subent 002
+           was split in two.
+ENDBIB              27
+COMMON               1          3
+ERR-6
+PER-CENT
+      0.36
+ENDCOMMON            3
+ENDSUBENT           34
+SUBENT        A1030002   20240317   20240502   20240502       A110
+BIB                  4          7
+REACTION   (1-H-2(P,EL)1-H-2,,DA)
 FLAG       (1.) p on d, recoil deuteron.
            (2.) d on p, elastic deuteron.
            (3.) d on p, recoil proton.
-           (4.) weighted average of p on d and d on p.
-           (5.) weighted average of elastic proton and recoil.
-STATUS     (TABLE) Table 1,2
+STATUS     (TABLE,,D.C.Kocher+,J,NP/A,132,455,1969) Tables 1,2
+HISTORY    (20240317A) SD: SF9=EXP deleted from REACTION code.
+           STATUS updated. Subent was split in two.
 ENDBIB               7
-NOCOMMON
-DATA                 5        219
+NOCOMMON             0          0
+DATA                 5        207
 EN         ANG-CM     DATA-CM    ERR-T      FLAG
 MEV        ADEG       MB/SR      PER-CENT   NO-DIM
      1.        56.       216.5        0.99       3.
@@ -62,15 +78,11 @@ MEV        ADEG       MB/SR      PER-CENT   NO-DIM
      1.993     64.33     156.7        0.49
      1.993     71.18     143.6        0.51
      1.993     74.       140.2        0.76       3.
-     1.993     82.       130.         0.6        4.
-     1.993     92.       123.8        0.58       4.
      1.993    102.       126.7        0.58       3.
      1.993    110.       137.6        0.55       3.
      1.993    112.       140.6        0.58       1.
-     1.993    118.       156.         0.52       4.
      1.993    124.       176.2        0.52       1.
      1.993    126.       184.8        0.58       3.
-     1.993    130.       201.         0.54       4.
      1.993    136.       228.         0.5        1.
      1.993    142.       259.4        0.48       1.
      1.993    148.       296.9        0.5        1.
@@ -95,24 +107,17 @@ MEV        ADEG       MB/SR      PER-CENT   NO-DIM
      2.995     64.33     150.3        0.55
      2.995     74.       129.3        1.1        3.
      2.995     82.65     112.3        0.56       2.
-     2.995     92.        98.5        0.64       4.
-     2.995    102.        91.4        0.61       4.
      2.995    110.        94.2        0.62       3.
      2.995    112.        95.6        0.6        1.
-     2.995    118.       105.1        0.59       4.
      2.995    124.       119.         0.59       1.
      2.995    126.       127.6        0.72       3.
-     2.995    130.       142.3        0.62       4.
      2.995    132.       149.6        0.6        1.
-     2.995    136.       170.         0.63       5.
      2.995    142.       201.2        0.56       1.
      2.995    148.       238.5        0.54       1.
      2.995    150.       253.7        0.55       3.
      2.995    152.       270.         0.72       3.
      2.995    154.       279.         0.59       1.
      2.995    158.       298.2        0.55       1.
-     2.995    160.       315.9        0.68       4.
-     2.995    166.       349.3        1.2        4.
      3.998     10.5     2290.         1.5
      3.998     14.98     631.         1.5
      3.998     19.46     330.8        1.
@@ -135,7 +140,6 @@ MEV        ADEG       MB/SR      PER-CENT   NO-DIM
      3.998    118.        74.9        0.62       1.
      3.998    124.        84.5        0.72       1.
      3.998    130.       101.7        0.67       1.
-     3.998    136.       126.2        0.77       5.
      3.998    142.       156.6        0.62       1.
      3.998    148.       196.1        0.57       1.
      3.998    154.       234.5        0.55       1.
@@ -252,31 +256,34 @@ MEV        ADEG       MB/SR      PER-CENT   NO-DIM
     10.04     154.        86.6        2.         1.
     10.04     160.       117.6        1.3        1.
     10.04     166.       148.5        1.5        1.
-ENDDATA            221
-ENDSUBENT          233
-SUBENT        A1030003   19990319   19990505   20050926       0000
-BIB                  3         10
-REACTION   (1-H-2(P,EL)1-H-2,,DA,,,EXP)
-ERR-ANALYS (ANG-ERR) Angle uncertainty.
-           (EN-ERR) Energy uncertainty.
-           (ERR-S) Statistical uncertainty.
-           (DATA-ERR) Background substraction.
-           (DATA-ERR1) Contamination corrections.
-           (DATA-ERR2) Gas density, g-factor, integrator calibrat.
-           (DATA-ERR3) Correction uncertainty.
-           (DATA-ERR4) Additional uncertainty.
-STATUS     (TABLE) Table 3
-ENDBIB              10
-NOCOMMON
-DATA                12          2
-EN         EN-ERR     ANG-CM     ANG-ERR    DATA-CM    ERR-T
-ERR-S      DATA-ERR   DATA-ERR1  DATA-ERR2  DATA-ERR3  DATA-ERR4
-MEV        PER-CENT   ADEG       PER-CENT   MB/SR      PER-CENT
-PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
-     2.995      0.98      10.5        1.7     4142.         2.1
-     0.09       0.19       0.34       0.2        0.05       0.36
-     3.998      0.07      45.93       0.04     183.7        0.46
-     0.11       0.11       0.15       0.16       0.1        0.36
-ENDDATA              8
-ENDSUBENT           23
-ENDENTRY             3
+ENDDATA            209
+ENDSUBENT          221
+SUBENT        A1030003   20240317   20240502   20240502       A110
+SUBENT        A1030004   20240317   20240502   20240502       A110
+BIB                  4          6
+REACTION   (1-H-2(P,EL)1-H-2,,DA,,AV)
+FLAG       (4.) weighted average of p on d and d on p.
+           (5.) weighted average of elastic proton and recoil.
+STATUS     (TABLE,,D.C.Kocher+,J,NP/A,132,455,1969) Tables 1,2
+           (DEP,A1030002) Measured data
+HISTORY    (20240317T) SD: Part of Subent 002.
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 5         12
+EN         ANG-CM     DATA-CM    ERR-T      FLAG
+MEV        ADEG       MB/SR      PER-CENT   NO-DIM
+     1.993     82.       130.00       0.60       4.
+     1.993     92.       123.80       0.58       4.
+     1.993    118.       156.00       0.52       4.
+     1.993    130.       201.00       0.54       4.
+     2.995     92.        98.50       0.64       4.
+     2.995    102.        91.40       0.61       4.
+     2.995    118.       105.10       0.59       4.
+     2.995    130.       142.30       0.62       4.
+     2.995    136.       170.00       0.63       5.
+     2.995    160.       315.90       0.68       4.
+     2.995    166.       349.3        1.2        4.
+     3.998    136.       126.20       0.         5.
+ENDDATA             14
+ENDSUBENT           25
+ENDENTRY             4
