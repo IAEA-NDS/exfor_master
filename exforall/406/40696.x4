@@ -1,67 +1,137 @@
-ENTRY            40696   20010319   20010718   20050926       0000
-SUBENT        40696001   20010319   20010718   20050926       0000
-BIB                 10         16
-INSTITUTE  (4UKRIJI)
-REFERENCE  (J,AE,23,(1),67,196707)
-           (J,SJA,23,742,1967)
-           (R,INDC-187,,1967)  TABULATED DATA
-AUTHOR     (G.G.ZAIKIN,I.A.KORZH,N.T.SKLJAR,I.A.TOTSKIJ)
-TITLE      CROSS SECTIONS FOR THE RADIATIVE CAPTURE OF FAST
-           NEUTRONS BY TI50 AND V51.
+ENTRY            40696   20231016   20240202   20240202       4215
+SUBENT        40696001   20231016   20240202   20240202       4215
+BIB                 14         64
+TITLE      Cross sections for the radiative capture of fast
+           neutrons by Ti50 and V51
+AUTHOR     (G.G.Zaikin,I.A.Korzh,N.T.Sklyar,I.A.Totskij)
+REFERENCE  (J,SJA,23,742,1967) Engl.translation of AE,23,67,1967
+           (J,AE,23,67,1967) Issue 1.
+           ((R,YFI-4,34(2),1967)=
+           (R,INDC-187,34(2),1967)) Tabulated data. In Russian.
+            INDC(CCP)*017 = INDC-187A at NDS web-site.
+INSTITUTE  (4UKRIJD)
 FACILITY   (VDG)
-INC-SOURCE (P-LI7)
-           (P-T)
-METHOD     (ACTIV) ACTIVATION
-DETECTOR   (PROPC) END-WINDOW PROPORTIONAL COUNTERS
-STATUS     (SCSRS)
-HISTORY    (19840213T) CONVERTED FROM ENTRY 80097
-           (19870602U) INSTITUTE CODE CORRECTED - IJI TO IFU
-           (20010319A) DATE is corrected
-ENDBIB              16
-NOCOMMON             0          0
-ENDSUBENT           19
-SUBENT        40696002   20010319   20010718   20050926       0000
-BIB                  2          2
+INC-SOURCE (P-LI7) For En < 500 keV.
+           (P-T)   For En > 800 keV
+            Thermal neutrons were obtained by a plexiglass block
+            of 17 cm thickness between accelerator target and
+            sample.
+METHOD     (ACTIV)
+SAMPLE      Natural.
+            Impurities for titanium < 3.% ,
+                       for vanadium < 1.%.
+DETECTOR   (PROPC) End-window proportional counters MST-17 -
+            for induced activity of samples.
+           (FISCH) U-235 fission chamber with a layer of high
+           enriched U-235 ( 0.5 mg/cm2 thickness) -
+           for neutron flux measurement.
+           Filled with Ar at atmospheric pressure.
+MONITOR    (92-U-235(N,F),,SIG) For fast and thermal neutrons.
+            Taken from White,J.Nucl.En.19,325(1965) and
+            BNL-325(1965).
+            U-235 fission cross section used:
+            En,keV  Cross-section,b    En,keV  Cross-section,b
+             180.   1.45               1420.   1620.
+             290.   1.32               1620.   1.27
+             410.   1.26               1830.   1.27
+             510.   1.22               2030.   1.30
+             810.   1.17               2220.   1.30
+            1020.   1.26               2610.   1.30
+            1220.   1.27
+           . The error in U-235 fission cross-section was +- 5.%.
+           . Values of the activation C-S of Ti-50 and V-51 and
+           U-235 thermal fission C-S were taken from a book of
+           I.V.Gordeev, D.A.Kardashev, A.V.Malyshev, Nuclear-
+           Physics Constants, in Russian, Gosatomizdat, Moscow,
+           1963.
+CORRECTION For contribution of moderated neutrons < 1.%.
+           For admixture of U-238 in U-235 sample at En=2.0 MeV
+           amounted to 2.%.
+ERR-ANALYS (ERR-1) Error in U235 fission cross-section
+           (DATA-ERR) Type of uncertainty is not explained in the
+            article.
+COMMENT     Of compiler M.M.
+            In Tables 1, 2 of R,YFI-4,34(2),1967
+           data units are given as "mub".
+            On Figs. 1,2 data units are "mb".
+            Comparing with other data on Figs.1,2
+           it was concluded that DATA units are milli-barn.
+HISTORY    (19840213T) Converted from ENTRY 80097
+           (19870602U) INSTITUTE code corrected - IJI to IFU
+           (20010319A) Date is corrected
+           (20231016A) Monitor values were added.
+            Refs. R,YFI-4,34(2),1967, R,INDC(CCP)*017,34(2),1967
+            were added.
+            BIB information was updated.
+            Upper -> lower case correction.
+            STATUS: SCSRS -> TABLE .
+ENDBIB              64
+COMMON               1          3
+ERR-1
+PER-CENT
+ 5.
+ENDCOMMON            3
+ENDSUBENT           71
+SUBENT        40696002   20231016   20240202   20240202       4215
+BIB                  4         10
 REACTION   (22-TI-50(N,G)22-TI-51,,SIG)
-MONITOR    (92-U-235(N,F),,SIG)
-ENDBIB               2
+REL-REF    (N,13860010,D.J.Hughes+,J,PR,91,1423,1953)
+           (N,11399007,R.L.Macklin+,J,PR,107,504,1957)
+           (N,40336102,M.V.Pasechnik+,C,58GENEVA,15,18,1958)
+           (N,,Yu.Ya.Stavisskiy+,R,ICD-1,73,1964)
+            Compilation - Table 2 on page 73.
+           . Four data sets used for comparison on Fig.2 of
+            J,SJA,23,742,1967
+ERR-ANALYS (ERR-S,6.,10.)
+STATUS     (TABLE,,G.G.Zaikin+,R,YFI-4,34(2),1967)  Table 1
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 4          8
 EN         EN-RSL     DATA       DATA-ERR
-MEV        MEV        B          B
- 1.8000E-01 7.3000E-02 8.9000E-04 9.0000E-05
- 2.8500E-01 6.5000E-02 6.3000E-04 7.0000E-05
- 5.1000E-01 6.0000E-02 7.0000E-04 7.0000E-05
- 1.2200E+00 8.5000E-02 6.5000E-04 5.0000E-05
- 1.4250E+00 8.5000E-02 7.8000E-04 7.0000E-05
- 1.6250E+00 8.5000E-02 4.8000E-04 6.0000E-05
- 1.8300E+00 9.0000E-02 5.1000E-04 6.0000E-05
- 2.0300E+00 9.0000E-02 3.7000E-04 4.0000E-05
+KEV        KEV        MB         MB
+  180.      73.        0.89       0.09
+  285.      65.        0.63       0.07
+  510.      60.        0.70       0.07
+ 1220.      85.        0.65       0.05
+ 1425.      85.        0.78       0.07
+ 1625.      85.        0.48       0.06
+ 1830.      90.        0.51       0.06
+ 2030.      90.        0.37       0.04
 ENDDATA             10
-ENDSUBENT           17
-SUBENT        40696003   20010319   20010718   20050926       0000
-BIB                  2          3
+ENDSUBENT           25
+SUBENT        40696003   20231016   20240202   20240202       4215
+BIB                  4         13
 REACTION   (23-V-51(N,G)23-V-52,,SIG)
-MONITOR    (92-U-235(N,F),,SIG)TAKEN FROM WHITE,J.NUCL.
-            EN.19,325(1965) AND BNL-325(1965).
-ENDBIB               3
+REL-REF    (N,11675002,A.E.Johnsrud+,J,PR,116,927,1959)
+           (N,40452010,Yu.Ya.Stavisskii+,J,AE,9,401,1960)
+           (N,11407003,W.S.Lyon+,J,PR,114,1619,1959)
+           (N,40244070,A.I.Leipunskiy+,C,58GENEVA,15,50,1958)
+           (N,13860011,D.J.Hughes+,J,PR,91,1423,1953)
+           (N,11399008,R.L.Macklin+,J,PR,107,504,1957)
+           (N,40421010,V.N.Kononov+,J,AE,5,564,1958)
+           (N,11010003,V.Hummel+,J,PR,82,67,1951)
+           . Eight data sets used for comparison on Fig.1 of
+            J,SJA,23,742,1967
+ERR-ANALYS (ERR-S,2.,3.)
+STATUS     (TABLE,,G.G.Zaikin+,R,YFI-4,34(2),1967)  Table 2
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4         13
 EN         EN-RSL     DATA       DATA-ERR
-MEV        MEV        B          B
- 1.8700E-01 6.7000E-02 7.1100E-03 4.5000E-04
- 2.9300E-01 5.7000E-02 4.9200E-03 3.1000E-04
- 4.0900E-01 5.3000E-02 3.1800E-03 2.0000E-04
- 5.2000E-01 5.0000E-02 2.1100E-03 1.3000E-04
- 8.0600E-01 8.6000E-02 1.6500E-03 1.2000E-04
- 1.0160E+00 8.4000E-02 1.5600E-03 1.0000E-04
- 1.2200E+00 8.5000E-02 1.3900E-03 8.0000E-05
- 1.4250E+00 8.5000E-02 1.3500E-03 9.0000E-05
- 1.6260E+00 8.6000E-02 1.3300E-03 9.0000E-05
- 1.8300E+00 9.0000E-02 1.0700E-03 9.0000E-05
- 2.0300E+00 9.0000E-02 9.8000E-04 6.0000E-05
- 2.2200E+00 9.0000E-02 1.0500E-03 6.0000E-05
- 2.6100E+00 1.1000E-01 1.1000E-03 7.0000E-05
+KEV        KEV        MB         MB
+  187.      67.        7.11       0.45
+  293.      57.        4.92       0.31
+  409.      53.        3.18       0.20
+  520.      50.        2.11       0.13
+  806.      86.        1.65       0.12
+ 1016.      84.        1.56       0.10
+ 1220.      85.        1.39       0.08
+ 1425.      85.        1.35       0.09
+ 1626.      86.        1.33       0.09
+ 1830.      90.        1.07       0.09
+ 2030.      90.        0.98       0.06
+ 2220.      90.        1.05       0.06
+ 2610.     110.        1.10       0.07
 ENDDATA             15
-ENDSUBENT           23
+ENDSUBENT           33
 ENDENTRY             3

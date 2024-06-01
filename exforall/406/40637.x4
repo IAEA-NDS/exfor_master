@@ -1,39 +1,67 @@
-ENTRY            40637   19850329              20050926       0000
-SUBENT        40637001   19850329              20050926       0000
-BIB                 12         17
-INSTITUTE  (4CCPCCP)
-REFERENCE  (J,AE,8,360,60)
-           (J,SJA,8,310,61)
-AUTHOR     (YU.A.ZYSIN,A.A.KOVRIZHNYKH,A.A.LBOV,L.I.SEL'CHENKOV)
-TITLE      CROSS SECTION FOR THE REACTION TH232(N,2N)TH231 AT 14.7
-           MEV NEUTRON ENERGY.
-FACILITY   (LINAC) LOW-VOLTAGE LINEAR ACCELERATOR
-INC-SOURCE (D-T) T(D,N) SOURCE.
-SAMPLE      MIXTURE OF THE THORIUM OXIDE-DIOXIDE (0.2 GRAM) AND
-            URANIUM OXIDE-DIOXIDE (0.6 GRAM)
-METHOD     (ACTIV) ACTIVATION, COUNTED TH-231 DECAY BETAS
+ENTRY            40637   20231006   20240202   20240202       4215
+SUBENT        40637001   20231006   20240202   20240202       4215
+BIB                 14         27
+TITLE      Cross section for the reaction Th232(n,2n)Th231
+           at 14.7 MeV neutron energy
+AUTHOR     (Yu.A.Zysin,A.A.Kovrizhnykh,A.A.Lbov,L.I.Sel'chenkov)
+REFERENCE  (J,SJA,8,310,1961) Engl.translation of AE,8,360,1960
+           (J,AE,8,360,1960) Issue 4.
+INSTITUTE  (4RUSKUR)
+EXP-YEAR   (1956) 1956 - 1957 years.
+FACILITY   (LINAC,4RUSKUR) Low-voltage linear accelerator.
+INC-SOURCE (D-T) Deuteron energy ~ 150 keV.
+SAMPLE      Mixture of the thorium nitrate Th(NO(3))(4)*4H(2)O
+            (0.2 g) and uranium oxide U(3)O(8) (0.6 g).
+            Placed at ~ 7 mm distance from tritium target center.
+METHOD     (ACTIV) Six irradiations, time of irradiation 3-11 hr.
+           (CHSEP) For required isotopes.
 DETECTOR   (D4PI)
-MONITOR    (92-U-238(N,F),,SIG)
-           (92-U-238(N,F)42-MO-99,CUM,FY)
-           (92-U-238(N,F)56-BA-140,CUM,FY)
+ASSUMED    (ASSUM1,92-U-238(N,F),,SIG)
+           (ASSUM2,92-U-238(N,F)42-MO-99,CUM,FY)
+           (ASSUM3,92-U-238(N,F)56-BA-140,CUM,FY)
 PART-DET   (B-)
-HISTORY    (831011C)  COMPILED AT THE CENTRE
-ENDBIB              17
-COMMON               4          3
-EN-NRM     MONIT      MONIT      MONIT
-MEV        B          PC/FIS     PC/FIS
- 1.4700E+01 1.1000E+00 6.3000E-02 4.7000E-02
+CORRECTION  For disintegration during the irradiation time,
+           and for Tc99m and La140.
+           For increasing activity of the natural decay products
+           of Th232.
+HISTORY    (19831011C)  Compiled at the centre
+           (20231006A) EN-NRM=14.7 MeV was deleted ( the same as
+           incident neutron energy EN).
+           MONITOR -> ASSUMED . 4RUSRUS -> 4RUKUR
+ENDBIB              27
+COMMON               3          3
+ASSUM1     ASSUM2     ASSUM3
+B          PC/FIS     PC/FIS
+ 1.1        6.3        4.7
 ENDCOMMON            3
-ENDSUBENT           24
-SUBENT        40637002   19850329              20050926       0000
-BIB                  1          1
+ENDSUBENT           34
+SUBENT        40637002   20231006   20240202   20240202       4215
+BIB                  4         19
 REACTION   (90-TH-232(N,2N)90-TH-231,,SIG)
-ENDBIB               1
+ANALYSIS   Formula for n,2n cross section calculation is given
+           on page 310 of SJA,8,310,1961:
+            SIGn,2n=((Nth*HLth)/(Nmo*HLmo))*
+            (SIGufis*Ymou*(232Pu/238Pth)+SIGthfis*Ymoth)),
+            where
+           SIGufis, SIGthfis - fission cross-section for U238 and
+           Th232 at 14 MeV;
+           HLth, HLmo - half-life of Th231 and Mo99 (or Ba140);
+           Nth, Nmo - number of Th231, Mo99 (or Ba140)
+           disintegrations per time unit at the end irradiation
+           and referred to the total amounts of Th232 and U-238;
+           Ymou, YYmoth - Mo ( or Ba) yield at fission of U238 and
+           Th232  at 14 MeV;
+           Pth, Pu - weights of Th232 and U238.
+ERR-ANALYS (DATA-ERR) Includes statistical uncertainty and
+           uncertainties of fission cross sections and fragment
+           yields.
+STATUS     (TABLE,,Yu.A.Zysin+,J,SJA,8,310,1961) Text page 310.
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 MEV        B          B
- 1.4700E+01 6.5000E-01 1.5000E-01
+ 14.7       0.65       0.15
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           27
 ENDENTRY             2

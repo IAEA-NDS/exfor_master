@@ -1,54 +1,75 @@
-ENTRY            40609   20021127   20030327   20050926       0000
-SUBENT        40609001   20021127   20030327   20050926       0000
-BIB                 12         18
-TITLE       DETERMINATION OF TOTAL CROSS-SECTION AND SCATTERING
-            CROSS-SECTION OF U-235 FOR NEUTRON ENERGIES 2. AND
-            24.5 KEV
-AUTHOR     (V.P.VERTEBNYY, N.L.GNIDAK, A.V.GREBNEV, A.L.KIRILYUK,
-            E.A.PAVLENKO, N.A.TROFIMOVA)
-INSTITUTE  (4UKRIJI)
-REFERENCE  (C,80KIEV,2,254,198009)
-INC-SOURCE (REAC) REACTOR WWR-M
-SAMPLE      THICKNESS IS 0.00238NUCLEI/B AND .00981NUCLEI/B
-            FOR EN=2.KEV,AND0 .00981NUCLEI/B FOR EN=24.5KEV
-METHOD      SCANDIUM AND IRON FILTER METHOD
-DETECTOR   (HE3SP) HE-3
+ENTRY            40609   20230919   20240202   20240202       4215
+SUBENT        40609001   20230919   20240202   20240202       4215
+BIB                 13         26
+TITLE       Determination of total cross-section and scattering
+            cross-section of U-235 for neutron energies 2. and
+            24.5 keV
+AUTHOR     (V.P.Vertebnyy, N.L.Gnidak, A.V.Grebnev, A.L.Kirilyuk,
+            E.A.Pavlenko, N.A.Trofimova)
+REFERENCE  ((C,80KIEV,2,254,1980)=
+           (R,INDC(CCP)-169,(3),254,1980))
+INSTITUTE  (4UKRIJD)
+FACILITY   (REAC,4UKRIJD)
+INC-SOURCE (REAC) Reactor WWR-M
+SAMPLE      Thickness is 0.00238nuclei/b and .00981nuclei/b
+            for En=2.keV,and 0.00981nuclei/b for En=24.5keV
+METHOD     (FNB) Scandium ( thickness 96 cm, diameter 11 mm ) and
+           iron (content: Fe- 234 g/cm2, Al- 108 g/cm2,
+           S - 15.5 g/cm2, B - 0.164 g/cm2) filters
+DETECTOR   (HE3SP) He-3 counters SNM-52, SNM-53.
+            Methane counter SNM-38.
 PART-DET   (N)
-CORRECTION CORRECTIONS ARE ON THE DEPOSIT OF U-238,EFFECT OF SELF-
-            SHIEDING,MULTIPLE SCATTERING
-ERR-ANALYS (DATA-ERR) NOT SPECIFIED
-HISTORY    (19810602C) COMPILED AT CJD
-           (20021127A) CORRECTED AT CJD. Date corrected to Y2K
-ENDBIB              18
-NOCOMMON
-ENDSUBENT           21
-SUBENT        40609002   20021127   20030327   20050926       0000
-BIB                  3          4
+CORRECTION Corrections are on the deposit of U-238, effect of
+           self-shielding, multiple scattering .
+ERR-ANALYS (DATA-ERR) Not specified
+HISTORY    (19810602C) Compiled at CJD
+           (20021127A) Corrected at CJD. Date corrected .
+           (20230919A) M.M. Upper -> lower case correction.
+            Ref. INDC(CCP) was added.
+           STATUS was added in data Subents.
+ENDBIB              26
+NOCOMMON             0          0
+ENDSUBENT           29
+SUBENT        40609002   20230919   20240202   20240202       4215
+BIB                  5         14
 REACTION   (92-U-235(N,TOT),,SIG)
-MONITOR    ((MONIT1)82-PB-0(N,TOT),,SIG)
-           ((MONIT2)83-BI-209(N,TOT),,SIG)
-HISTORY    (20021127A) MONITOR MOVED FROM SAN 001
-ENDBIB               4
-NOCOMMON
-DATA                 7          2
-EN         DATA       DATA-ERR   MONIT1     MONIT1-ERR MONIT2
-MONIT2-ERR
-KEV        B          B          B          B          B
-B
-    2.        19.9        .1         11.41      .07
-
-   24.5       14.04       .02                             10.77
-      .02
-ENDDATA              8
-ENDSUBENT           17
-SUBENT        40609003   20021127   20030327   20050926       0000
-BIB                  3          4
+REL-REF    (R,40562002,N.L.Gnidak+,R,INDC(CCP)-118,(2),223,1977)
+            DATA at 2 keV.
+METHOD     (TRN)
+STATUS     (TABLE,,V.P.Vertebnyy+,R,INDC(CCP)-169,(3),254,1980)
+            Table on page 256.
+HISTORY    (20021127A) MONITOR moved from SAN 001
+           (20230919A) DATA at 2. keV were deleted -
+           they are from REL-REF (as mentioned in
+           INDC(CCP)-169,(3),254,1980 ) .
+           MONIT1, MONIT2 were deleted (transmission measurement;
+           monitors were used at scattering measurement, see
+           Subent 003).
+            EN-RSL-FW was added.
+ENDBIB              14
+NOCOMMON             0          0
+DATA                 4          1
+EN         EN-RSL-FW  DATA       DATA-ERR
+KEV        KEV        B          B
+   24.5     2.1         14.04       .02
+ENDDATA              3
+ENDSUBENT           22
+SUBENT        40609003   20230919   20240202   20240202       4215
+BIB                  6         12
 REACTION   (92-U-235(N,EL)92-U-235,,SIG)
-MONITOR    ((MONIT1)82-PB-0(N,TOT),,SIG)
-           ((MONIT2)83-BI-209(N,TOT),,SIG)
-HISTORY    (20021127A) MONITOR MOVED FROM SAN 001
-ENDBIB               4
-NOCOMMON
+SAMPLE     .2 samples of 0.00238 and 0.00981 nucl/barn thickness.
+            Measurement relative Pb.
+           .Sample of 0.00981 nucl/barn thickness,
+            Measurement relative Bi.
+MONITOR    ((MONIT1)82-PB-0(N,TOT),,SIG)  at 2.keV
+           ((MONIT2)83-BI-209(N,TOT),,SIG) at 24.5 keV
+REL-REF    (A,21088001,C.A.Uttley+,C,66PARIS,1,165,1966)
+           (A,20145001,F.Poortmans+,C,70HELSINKI,1,449,1970)
+STATUS     (TABLE,,V.P.Vertebnyy+,R,INDC(CCP)-169,(3),254,1980)
+            Table on page 256.
+HISTORY    (20021127A) MONITOR moved from SAN 001
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 7          2
 EN         DATA       DATA-ERR   MONIT1     MONIT1-ERR MONIT2
 MONIT2-ERR
@@ -59,26 +80,46 @@ B
    24.5       11.50        .14                            10.77
       .02
 ENDDATA              8
-ENDSUBENT           17
-SUBENT        40609004   20021127   20030327   20050926       0000
-BIB                  1          1
-REACTION   (92-U-235(N,ABS),,ALF)
-ENDBIB               1
-NOCOMMON
-DATA                 3          2
-EN         DATA       DATA-ERR
-KEV        NO-DIM     NO-DIM
-   2.          .28        .04
-  24.5         .29        .09
+ENDSUBENT           25
+SUBENT        40609004   20230919   20240202   20240202       4215
+BIB                  6         17
+REACTION   (92-U-235(N,ABS),,ALF,,,DERIV)
+ANALYSIS    ALF = (SIGtotal-SIGscattering-SIGfission)/SIGfission
+ASSUMED    (ASSUM,92-U-235(N,F),,SIG) From REL-REFs
+REL-REF    (R,40588003,A.V.Murzin+,C,77KIEV,2,252,1977)
+            Fission cross section 6.27+-0.13 b at 2.0 keV.
+           (R,40587003,A.V.Murzin+,C,80KIEV,2,257,1980)
+            Fission cross section 1.964+-0.06 b at 24.5 keV.
+           (N,40562004,N.L.Gnidak+,R,INDC(CCP)-118,(2),223,1977)
+            Previous measurement.
+            Method was improved in 40609.
+STATUS     (TABLE,,V.P.Vertebnyy+,R,INDC(CCP)-169,(3),254,1980)
+            Table on page 256.
+           (DEP,40609002) Total cross section at 24.5 keV.
+           (DEP,40562002) Total cross section at 2. keV.
+           (DEP,40609003) Scattering cross section.
+HISTORY    (20230919A) ANALYSIS, ASSUM, REL-REFs were added.
+            DERIV was added in REACTION.
+ENDBIB              17
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA       DATA-ERR   ASSUM      ASSUM-ERR
+KEV        NO-DIM     NO-DIM     B          B
+   2.          .28        .04     6.27       0.13
+  24.5         .29        .09     1.964      0.06
 ENDDATA              4
-ENDSUBENT           10
-SUBENT        40609005   20021127   20030327   20050926       0000
-BIB                  2          2
+ENDSUBENT           26
+SUBENT        40609005   20230919   20240202   20240202       4215
+BIB                  4          6
 REACTION   (92-U-235(N,EL),,STF)
-HISTORY    (20021127C)   COMPILED AT THE CENTER - CJD
-ENDBIB               2
+ANALYSIS   Calculated from formulas for SIGtotal and SIGscattering
+           given on page 256 of INDC(CCP)-169,(3),254,1980
+STATUS     (TABLE,,V.P.Vertebnyy+,R,INDC(CCP)-169,(3),254,1980)
+            Text on page 256.
+HISTORY    (20021127C)   Compiled at the center - CJD
+ENDBIB               6
 COMMON               2          3
-EN-MIN     EN-MAX
+EN-RES-MIN EN-RES-MAX
 KEV        KEV
    2.        24.5
 ENDCOMMON            3
@@ -88,12 +129,17 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM     NO-DIM
     0.         .93E-04    .03E-04    .02E-04
     1.        1.43E-04                          .25E-04
 ENDDATA              4
-ENDSUBENT           15
-SUBENT        40609006   20021127   20030327   20050926       0000
-BIB                  2          2
-REACTION   (92-U-235(N,EL)92-U-235,POT,RAD)
-HISTORY    (20021127C)   COMPILED AT THE CENTER - CJD
-ENDBIB               2
+ENDSUBENT           19
+SUBENT        40609006   20230919   20240202   20240202       4215
+BIB                  4          7
+REACTION   (92-U-235(N,EL)92-U-235,,RAD)
+ANALYSIS   Calculated from formulas for SIGtotal and SIGscattering
+           given on page 256 of INDC(CCP)-169,(3),254,1980
+STATUS     (TABLE,,V.P.Vertebnyy+,R,INDC(CCP)-169,(3),254,1980)
+            Text on page 256.
+HISTORY    (20021127C)   Compiled at the center - CJD
+           (20230919A) POT was deleted from REACTION.
+ENDBIB               7
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
@@ -104,12 +150,14 @@ DATA       DATA-ERR
 FERMI      FERMI
    9.57        .04
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40609007   20021127   20030327   20050926       0000
-BIB                  2          2
+ENDSUBENT           19
+SUBENT        40609007   20230919   20240202   20240202       4215
+BIB                  3          4
 REACTION   (92-U-235(N,EL)92-U-235,POT,SIG)
-HISTORY    (20021127C)   COMPILED AT THE CENTER - CJD
-ENDBIB               2
+STATUS     (TABLE,,V.P.Vertebnyy+,R,INDC(CCP)-169,(3),254,1980)
+            Text on page 256.
+HISTORY    (20021127C)   Compiled at the center - CJD
+ENDBIB               4
 COMMON               2          3
 EN-MIN     EN-MAX
 KEV        KEV
@@ -120,5 +168,5 @@ DATA       DATA-ERR
 B          B
    11.43       .08
 ENDDATA              3
-ENDSUBENT           14
+ENDSUBENT           16
 ENDENTRY             7

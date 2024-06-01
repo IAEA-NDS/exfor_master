@@ -1,46 +1,94 @@
-ENTRY            40695   19840320              20050926       0000
-SUBENT        40695001   19840320              20050926       0000
-BIB                  7          9
-INSTITUTE  (4CCPCCP)
-REFERENCE  (J,AE,20,60,66)
-           (J,SJA,20,75,66)
-AUTHOR     (L.N.YUROVA,A.V.BUSHUEV)
-TITLE      USE OF GAMMA SPECTROMETRY TO MEASURE THE RATIO BETWEEN
-           THE CAPTURE AND FISSION CROSS SECTIONS OF U238.
-FACILITY   (REAC) REACTOR BR-1
-STATUS     (SCSRS)
-HISTORY    (840213T) CONVERTED FROM ENTRY 80091
-ENDBIB               9
-NOCOMMON             0          0
-ENDSUBENT           12
-SUBENT        40695002   19840320              20050926       0000
-BIB                  6          6
-REACTION   (92-U-238(N,ABS),,ALF,,MXW)
-INC-SPECT   THERMAL SPECTRUM
-DETECTOR   (SCIN)     GAS SCINTILLATION COUNTER
-DECAY-DATA (92-U-239,,DG,74.,0.435)
+ENTRY            40695   20231016   20240202   20240202       4215
+SUBENT        40695001   20231016   20240202   20240202       4215
+BIB                  8         20
+TITLE      Use of gamma spectrometry to measure the ratio between
+           the capture and fission cross sections of U238
+AUTHOR     (L.N.Yurova,A.V.Bushuev)
+REFERENCE  (J,SJA,20,75,1966) Engl.translation of AE,20,60,1966
+           (J,AE,20,60,1966) Issue 1.
+INSTITUTE  (4RUSMIF,4RUSFEI)
+FACILITY   (REAC,4RUSFEI) Reactor BR-1
+CORRECTION  For backgrounds.
+            For spectrometer detection efficiency.
+            For gamma-ray absorption in samples.
+ERR-ANALYS (ERR-S) Statistical uncertainty - 0.5 % .
+           (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+HISTORY    (19840213T) Converted from ENTRY 80091
+           (20231016A) BIB information was updated.
+            Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            4CCPCCP -> 4RUSMIF.
+            EN-DUMMY : 0.0253 eV -> 1.MeV (fast neutrons of BR-1),
+            MXW -> FST.
+ENDBIB              20
+COMMON               1          3
+ERR-S
+PER-CENT
+ 0.5
+ENDCOMMON            3
+ENDSUBENT           27
+SUBENT        40695002   20231016   20240202   20240202       4215
+BIB                 10         15
+REACTION   (92-U-238(N,ABS),,ALF,,FST)
+INC-SPECT   Fast neutrons of BR-1 reactor.
+SAMPLE      4.7 mg/mm2 thickness.
+DETECTOR   (SCIN) Scintillation spectrometer with NaI(Tl) crystal
+           and 100-channel pulse amplitude analyzer.
+           Cs-137,Au-198,Hg-203, Ce-144+Pr-144, Na-22 sources were
+           used for calibration - photo-efficiency versus
+           gamma-energy.
+DECAY-DATA (92-U-239,,DG,74.,0.435) 43.5 +- 3.0 %
+           (93-NP-239,,DG,106.,0.504) 50.4 +- 2.5 %
 MONITOR    (92-U-238(N,F)57-LA-140,CUM,FY)
 DECAY-MON  (57-LA-140,,DG,1600.,0.94)
-ENDBIB               6
+ANALYSIS    See formula (1) in the article
+STATUS     (TABLE,,L.N.Yurova+,J,SJA,20,75,1966) Table of page 76
+HISTORY    (20231016A) MONIT-ERR: PER-CENT -> PC/FIS
+ENDBIB              15
 NOCOMMON             0          0
 DATA                 5          1
 EN-DUMMY   DATA       DATA-ERR   MONIT      MONIT-ERR
-MEV        NO-DIM     NO-DIM     PC/FIS     PER-CENT
- 2.5300E-08 4.4000E-01 4.0000E-02 5.8000E+00 4.0000E-01
+MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS
+ 1.0        0.44       0.04       5.8        0.4
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40695003   19840320              20050926       0000
-BIB                  4          4
-REACTION   (92-U-238(N,ABS),,ALF,,MXW)
-INC-SPECT   THERMAL SPECTRUM
-DETECTOR   (SCIN)     GAS SCINTILLATION COUNTER
-MONITOR    (92-U-235(N,F),,SIG)
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           23
+SUBENT        40695003   20231016   20240202   20240202       4215
+BIB                  8         24
+REACTION   (92-U-238(N,ABS),,ALF,,FST)
+INC-SPECT   Fast neutron flux of BR-1 reactor.
+            Thermal spectrum - for normalization.
+SAMPLE      Natural. U-235 content 0.726 %.
+DETECTOR   (SCIN) Scintillation spectrometer with NaI(Tl) crystal
+           and 100-channel pulse amplitude analyzer.
+           Cs-137,Au-198,Hg-203, Ce-144+Pr-144, Na-22 sources were
+           used for calibration - photo-efficiency versus
+           gamma-energy.
+MONITOR    (92-U-235(N,F),,SIG,,MXW) Averaged over Maxwellian
+           velocity spectrum of thermal neutrons.
+           (92-U-238(N,G)92-U-239,,SIG,,MXW) Averaged over
+           Maxwellian velocity spectrum of thermal neutrons.
+           (92-U-238(N,F)57-LA-140,CUM,FY,,MXW)
+           For thermal neutrons.
+           (92-U-235(N,F)57-LA-140,CUM,FY,,MXW)
+           For thermal neutrons.
+           . Monitor values are not given in the article.
+DECAY-MON  (57-LA-140,,DG,1600.,0.94)
+ANALYSIS    See formula (2) in the article.
+            La-140 yields for fission of U-235 and U-238 by
+           neutrons with energies up to 10 MeV are practically
+           constant.
+STATUS     (TABLE,,L.N.Yurova+,J,SJA,20,75,1966) Table of page 76
+ENDBIB              24
+COMMON               1          3
+EN-NRM
+EV
+ 0.0253
+ENDCOMMON            3
 DATA                 3          1
 EN-DUMMY   DATA       DATA-ERR
 MEV        NO-DIM     NO-DIM
- 2.5300E-08 4.2000E-01 3.0000E-02
+ 1.0        0.42       0.03
 ENDDATA              3
-ENDSUBENT           12
+ENDSUBENT           36
 ENDENTRY             3

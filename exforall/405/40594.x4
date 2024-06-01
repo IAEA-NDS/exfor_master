@@ -1,265 +1,455 @@
-ENTRY            40594   19881130              20050926       0000
-SUBENT        40594001   19881130              20050926       0000
-BIB                 13         25
-TITLE       DETERMINATION OF STRENGT FUNCTIONS AND SCATERING
-            LENGTHS FROM AVERAGED WITH THE HELP OF SCANDIUM
-            FILTER NEUTRON CROSS-SECTIONS
-AUTHOR     (N.A.TROFIMOVA,A.L.KIRILYUK,V.P.VERTEBNYJ,
-           G.M.NOVOSELOV,N.L.GNIDAK,E.A.PAVLENKO,A.V.GREBNEV)
-INSTITUTE  (4CCPIJI)
-REFERENCE  (C,77KIEV,2,227,7704) STRENGTH FUNCTIONS, SCATT.LENGTHS
-                     GAMMA-WIDTH AND LEVEL-SPACINGS ARE GIVEN
-           (T,VERTEBNYJ,,73)
-MONITOR    (6-C-12(N,TOT),,SIG)  AUTHORS' MEASUREMENTS
-INC-SOURCE  NO INFORMATION
+ENTRY            40594   20230724   20240202   20240202       4215
+SUBENT        40594001   20230724   20240202   20240202       4215
+BIB                 15         39
+TITLE       Determination of strength functions and scattering
+            lengths from averaged with the help of scandium
+            filter neutron cross-sections
+AUTHOR     (N.A.Trofimova,A.L.Kirilyuk,V.P.Vertebnyy,
+           G.M.Novoselov,N.L.Gnidak,E.A.Pavlenko, A.V.Grebnev)
+REFERENCE  ((C,77KIEV,2,227,1977)=
+           (R,INDC(CCP)-118,(2),227,1977))
+                      Strength functions, scatt. lengths,
+                     gamma-width and level-spacings are given
+REL-REF    (R,,V.P.Vertebnyy,T,VERTEBNYY,1972)
+             GAMMAgamma and D data.
+INSTITUTE  (4UKRIJD)
+FACILITY   (REAC,4UKRIJD)
+INC-SOURCE (REAC)
+INC-SPECT   Quasi-mono-energy spectrum after Sc filter.
+METHOD     (TRN) All isotopes - measurement in "direct" geometry;
+            Au, Eu-151 and C also measurement in "scattering"
+           geometry.
+           (FNB) Scandium filter of 96 cm thickness.
 PART-DET   (N)
-DETECTOR   (PROPC)  BATTERY OF HE-3 COUNTERS
-ANALYSIS   (AREA)  AREA METHOD
-            MONTE-CARLO METHOD
-CORRECTION  NEUTRON BACKGROUND WAS MEASURED WITH THE HELP OF
-            MANGANESE FILTER, OXIGEN SIGMA WAS TAKEN = 3.8 B
-           FOR CORRECTIONS ON OXIGEN CONTENT IN SAMPLES
-ERR-ANALYS  DATA-ERR1)  FLUCTUATION AND MATCHING ERROR
-            DATA-ERR2)  MATCHIG ERROR
-STATUS      DATA ARE TAKEN FROM THE REFERENCES ONE ANT TWO
-HISTORY    (790124C)   COMPILED AT THE CENTRE
-           (881130A)  EIGHT NEW SUBENTS ARE CREATED WITH DATA
-                      FROM SAN 002 - 009
-                      SEVERAL OBSOLET KEYWORDS CORRECTED
-ENDBIB              25
-COMMON               4          3
-EN         EN-RSL     MONIT      MONIT-ERR
-KEV        KEV        B          B
-   2.0        0.6        4.73       0.03
+DETECTOR   (PROPC)  Battery of He-3 counters
+ANALYSIS   (AREA)  Area method for total c-s.
+            Monte-Carlo method for total and scattering c-s.
+CORRECTION  Neutron background was measured with the help of
+            manganese filter.
+COMMENT    Of compiler M.M. Subent 017 was absent in initial
+           compilation.
+HISTORY    (19790124C)   Compiled at the centre
+           (19881130A)  Eight new Subents are created with data
+                      from SAN 002 - 009
+                      Several obsolete keywords corrected
+           (20230724U) Upper -> lower case correction.
+            Ref. INDC(CCP)-118,(2),1997 was added.
+            BIB information was updated.
+            MONITOR was moved in ASSUM1, ASSUM2 was added.
+             T,VERTEBNYY,1973 -> T,VERTEBNYY,1972 according to a
+             comment of O.Gritzay 2023-10-16 and moved in REL-REF.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV in
+            Subents 002-009 according to a comment from NDS,IAEA.
+ENDBIB              39
+NOCOMMON             0          0
+ENDSUBENT           42
+SUBENT        40594002   20230724   20240202   20240202       4215
+BIB                  7         17
+REACTION   (63-EU-151(N,EL),,STF)  S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM1,6-C-12(N,TOT),,SIG)  Authors' measurements in
+            scattering geometry
+           (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,63-EU-151(N,0),,D)
+           (ASSUM4,63-EU-151(N,G),,WID,,AV)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729017) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            AV code was deleted from ASSUM3.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            according to a comment from NDS,IAEA.
+ENDBIB              17
+COMMON               5          3
+EN-RES-MIN EN-RES-MAX ASSUM1     ASSUM1-ERR ASSUM2
+KEV        KEV        B          B          B
+ 1.7        2.3           4.73       0.03     3.8
 ENDCOMMON            3
-ENDSUBENT           32
-SUBENT        40594002   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(63-EU-151(N,0),,STF)  S-WAVE STF
-          3(63-EU-151(N,0),,D,,AV) AVERAGED
-          4(63-EU-151(N,G),,WID,,AV) AVERAGED
-ERR-ANALYS (ERR-1)    FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     3.7E-4     0.3E-4  0.56       0.090
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             3.7E-4     0.3E-4  0.56       0.090
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594003   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(63-EU-153(N,0),,STF)           S-WAVE STF
-          3(63-EU-153(N,G),,WID,,AV)          AVERAGED
-          4(63-EU-153(N,0),,D,,AV)            AVERAGED
-ERR-ANALYS (ERR-1) FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.9E-4     0.2E-4   0.100      0.99
+ENDSUBENT           29
+SUBENT        40594003   20230724   20240202   20240202       4215
+BIB                  7         15
+REACTION   (63-EU-153(N,EL),,STF)          S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,63-EU-153(N,G),,WID,,AV)
+           (ASSUM4,63-EU-153(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729018) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            AV code was deleted from ASSUM4.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            according to a comment from NDS,IAEA.
+ENDBIB              15
+COMMON               3          3
+EN-RES-MIN EN-RES-MAX ASSUM2
+KEV        KEV        B
+ 1.7        2.3         3.8
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.9E-4     0.2E-4   0.100      0.99
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594004   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(67-HO-165(N,0),,STF)               S-WAVE STF
-          3(67-HO-165(N,G),,WID,,AV) AVERAGED
-          4(67-HO-165(N,0),,D,,AV)   AVERAGED
-SAMPLE      OXIDE
-ERR-ANALYS (ERR-1) FLUCTUATION AND MONITOR ERROR
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.8E-4     0.2E-4   0.073      6.21
+ENDSUBENT           27
+SUBENT        40594004   20230724   20240202   20240202       4215
+BIB                  7         15
+REACTION   (67-HO-165(N,EL),,STF)              S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,67-HO-165(N,G),,WID,,AV)
+           (ASSUM4,67-HO-165(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729019) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            AV code was deleted from ASSUM4.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            according to a comment from NDS,IAEA.
+ENDBIB              15
+COMMON               3          3
+EN-RES-MIN EN-RES-MAX ASSUM2
+KEV        KEV        B
+ 1.7        2.3         3.8
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.8E-4     0.2E-4   0.073      6.21
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594005   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(68-ER-166(N,0),,STF)            S-WAVE STF
-          3(68-ER-166(N,G),,WID,,AV)          AVERAGED
-          4(68-ER-166(N,0),,D,,AV)            AVERAGED
-ERR-ANALYS (ERR-1)  FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.6E-4     0.4E-4  0.087      38.4
+ENDSUBENT           27
+SUBENT        40594005   20230724   20240202   20240202       4215
+BIB                  7         15
+REACTION   (68-ER-166(N,EL),,STF)           S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,68-ER-166(N,G),,WID,,AV)
+           (ASSUM4,68-ER-166(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729020) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            AV code was deleted from ASSUM4.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            002-009 according to a comment from NDS,IAEA.
+ENDBIB              15
+COMMON               3          3
+EN-RES-MIN EN-RES-MAX ASSUM2
+KEV        KEV        B
+ 1.7        2.3        3.8
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.6E-4     0.4E-4  0.087      38.4
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594006   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(68-ER-167(N,0),,STF)            S-WAVE STF
-          3(68-ER-167(N,G),,WID,,AV)          AVERAGED
-          4(68-ER-167(N,0),,D)                AVERAGED
-ERR-ANALYS (ERR-1) FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.9E-4     0.2E-4  0.088      4.1
+ENDSUBENT           27
+SUBENT        40594006   20230724   20240202   20240202       4215
+BIB                  7         14
+REACTION   (68-ER-167(N,EL),,STF)           S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,68-ER-167(N,G),,WID,,AV)
+           (ASSUM4,68-ER-167(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729021) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            according to a comment from NDS,IAEA.
+ENDBIB              14
+COMMON               3          3
+EN-RES-MIN EN-RES-MAX ASSUM2
+KEV        KEV        B
+ 1.7        2.3        3.8
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.9E-4     0.2E-4  0.088      4.1
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594007   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(68-ER-168(N,0),,STF)            S-WAVE STF
-          3(68-ER-168(N,G),,WID,,AV)           AVERAGED
-          4(68-ER-168(N,0),,D)                 AVERAGED
-ERR-ANALYS (ERR-1) FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.5E-4     0.8E-4  0.100       95.3
+ENDSUBENT           26
+SUBENT        40594007   20230724   20240202   20240202       4215
+BIB                  7         14
+REACTION   (68-ER-168(N,EL),,STF)           S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,68-ER-168(N,G),,WID,,AV)
+           (ASSUM4,68-ER-168(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729022) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            002-009 according to a comment from NDS,IAEA.
+ENDBIB              14
+COMMON               3          3
+EN-RES-MIN EN-RES-MAX ASSUM2
+KEV        KEV        B
+ 1.7        2.3        3.8
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.5E-4     0.8E-4  0.100       95.3
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594008   19881130              20050926       0000
-BIB                  3          5
-REACTION  1(68-ER-170(N,0),,STF)            S-WAVE STF
-          3(68-ER-170(N,G),,WID,,AV)            AVERAGED
-          4(68-ER-170(N,0),,D)                  AVERAGED
-ERR-ANALYS (ERR-1)  FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               5
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.4E-4     0.7E-4   0.087       135.
+ENDSUBENT           26
+SUBENT        40594008   20230724   20240202   20240202       4215
+BIB                  7         14
+REACTION   (68-ER-170(N,EL),,STF)           S-wave STF
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM3,68-ER-170(N,G),,WID,,AV)
+           (ASSUM4,68-ER-170(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729023) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            according to a comment from NDS,IAEA.
+ENDBIB              14
+COMMON               3          3
+EN-RES-MIN EN-RES-MAX ASSUM2
+KEV        KEV        B
+ 1.7        2.3        3.8
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.4E-4     0.7E-4   0.087       135.
 ENDDATA              3
-ENDSUBENT           13
-SUBENT        40594009   19881130              20050926       0000
-BIB                  2          4
-REACTION  1(79-AU-197(N,0),,STF)            S-WAVE STF
-          3(79-AU-197(N,G),,WID,,AV)            AVERAGED
-          4(79-AU-197(N,0),,D)                   AVERAGED
-ERR-ANALYS (ERR-1)  FLUCTUATION AND MONITOR ERROR
-ENDBIB               4
-NOCOMMON             0          0
-DATA                 4          1
-DATA      1ERR-1     1DATA      3DATA      4
-NO-DIM     NO-DIM     EV         EV
-     1.9E-4     0.3E-4   .126        19.5
+ENDSUBENT           26
+SUBENT        40594009   20230724   20240202   20240202       4215
+BIB                  6         15
+REACTION   (79-AU-197(N,EL),,STF)           S-wave STF
+SAMPLE      Foils of 10 mm diameter and 0.5 mm thickness and
+           28 mm diameter and 0.1 mm thickness.
+ASSUMED    (ASSUM1,6-C-12(N,TOT),,SIG)  Authors' measurements in
+            scattering geometry
+           (ASSUM3,79-AU-197(N,G),,WID,,AV)
+           (ASSUM4,79-AU-197(N,0),,D)
+ERR-ANALYS (DATA-ERR)  Includes statistical uncertainty and
+           uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729024) Final publication at 1980 year.
+HISTORY    (20230724A) SF3 in REACTION 1 : 0 -> EL.
+            D and gamma WID were moved in ASSUMED data.
+            EN=2.0+-0.3 KEV -> EN-RES-MIN/MAX = 1.7/2.3 KEV
+            according to a comment from NDS,IAEA.
+ENDBIB              15
+COMMON               4          3
+EN-RES-MIN EN-RES-MAX ASSUM1     ASSUM1-ERR
+KEV        KEV        B          B
+ 1.7        2.3          4.73       0.03
+ENDCOMMON            3
+DATA                 5          1
+MOMENTUM L DATA       DATA-ERR   ASSUM3     ASSUM4
+NO-DIM     NO-DIM     NO-DIM     EV         EV
+ 0.             1.9E-4     0.3E-4   .126        19.5
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594010   19881130              20050926       0000
-BIB                  3          3
-REACTION   (63-EU-151(N,EL)63-EU-151,,RAD) OPTICL SCATT. LENGTH
-ERR-ANALYS (ERR-2)  MONITOR ERROR
-SAMPLE      OXIDE
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           27
+SUBENT        40594010   20230724   20240202   20240202       4215
+BIB                  6          9
+REACTION   (63-EU-151(N,EL)63-EU-151,,RAD) Optical scatt. length
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+           (ASSUM1,6-C-12(N,TOT),,SIG)  Authors' measurements in
+            scattering geometry
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729028) Final publication at 1980 year.
+ENDBIB               9
+COMMON               5          3
+EN-MIN     EN-MAX     ASSUM1     ASSUM1-ERR ASSUM2
+KEV        KEV        B          B          B
+ 1.7        2.3          4.73       0.03     3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
     7.9        0.2
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        40594011   19881130              20050926       0000
-BIB                  4          4
-REACTION   (63-EU-153(N,EL)63-EU-153,,RAD) OPTICAL SCATT. LENGTH
-ERR-ANALYS (ERR-1) FLUCTUATION AND MONITOR ERROR
-SAMPLE      OXIDE
-HISTORY    (881130C)   COMPILED AT THE CJD
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           21
+SUBENT        40594011   20230724   20240202   20240202       4215
+BIB                  7          8
+REACTION   (63-EU-153(N,EL)63-EU-153,,RAD) Optical scatt. length
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729031) Final publication at 1980 year.
+HISTORY    (19881130C)   Compiled at the CJD
+ENDBIB               8
+COMMON               1          3
+ASSUM2
+B
+ 3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-1
+DATA       DATA-ERR
 FERMI      FERMI
   8.2         .2
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594012   19881130              20050926       0000
-BIB                  4          4
-REACTION   (67-HO-165(N,EL)67-HO-165,,RAD) OPTICAL SCATT. LENGTH
-ERR-ANALYS (ERR-2) MONITOR ERROR
-SAMPLE      OXIDE
-HISTORY    (881130C)   COMPILED AT THE CJD
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           20
+SUBENT        40594012   20230724   20240202   20240202       4215
+BIB                  7          8
+REACTION   (67-HO-165(N,EL)67-HO-165,,RAD) Optical scatt. length
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729044) Final publication at 1980 year.
+HISTORY    (19881130C)   Compiled at the CJD
+ENDBIB               8
+COMMON               1          3
+ASSUM2
+B
+ 3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
    8.2       .2
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594013   19881130              20050926       0000
-BIB                  4          4
-REACTION   (68-ER-166(N,EL)68-ER-166,,RAD) OPTICAL SCATT. LENGTH
-ERR-ANALYS (ERR-2) MONITOR ERROR
-SAMPLE      OXIDE
-HISTORY    (881130C)   COMPILED AT THE CJD
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           20
+SUBENT        40594013   20230724   20240202   20240202       4215
+BIB                  7          8
+REACTION   (68-ER-166(N,EL)68-ER-166,,RAD) Optical scatt. length
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+SAMPLE      Oxide powder
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+CORRECTION  For oxygen content in samples
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729036) Final publication at 1980 year.
+HISTORY    (19881130C)   Compiled at the CJD
+ENDBIB               8
+COMMON               1          3
+ASSUM2
+B
+ 3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
   8.1        .1
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594014   19881130              20050926       0000
-BIB                  4          4
-REACTION   (68-ER-167(N,EL)68-ER-167,,RAD) OPTICAL SCATT. LENGTH
-SAMPLE      OXIDE
-HISTORY    (881130C)   COMPILED AT THE CJD
-ERR-ANALYS (ERR-2)  MONITOR ERROR
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           20
+SUBENT        40594014   20230724   20240202   20240202       4215
+BIB                  7          8
+REACTION   (68-ER-167(N,EL)68-ER-167,,RAD) Optical scatt. length
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729037) Final publication at 1980 year.
+HISTORY    (19881130C)   Compiled at the CJD
+ENDBIB               8
+COMMON               1          3
+ASSUM2
+B
+ 3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
   7.9       .3
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594015   19881130              20050926       0000
-BIB                  4          4
-REACTION   (68-ER-168(N,EL)68-ER-168,,RAD) OPTICAL SCATT. LENGT
-ERR-ANALYS (ERR-2) MONITOR ERROR
-SAMPLE      OXIDE
-HISTORY    (881130C)   COMPILED AT THE CJD
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           20
+SUBENT        40594015   20230724   20240202   20240202       4215
+BIB                  7          8
+REACTION   (68-ER-168(N,EL)68-ER-168,,RAD) Optical scatt. length
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729038) Final publication at 1980 year.
+HISTORY    (19881130C)   Compiled at the CJD
+ENDBIB               8
+COMMON               1          3
+ASSUM2
+B
+ 3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
    7.8       .2
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594016   19881130              20050926       0000
-BIB                  4          4
-REACTION   (68-ER-170(N,EL)68-ER-170,,RAD) OPTICAL SCATTERING LENG
-ERR-ANALYS (ERR-2)  MONITOR ERROR
-SAMPLE      OXIDE
-HISTORY    (881130C)  COMPILED AT THE CJD
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           20
+SUBENT        40594016   20230724   20240202   20240202       4215
+BIB                  7          8
+REACTION   (68-ER-170(N,EL)68-ER-170,,RAD) Optical scatt. length
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+SAMPLE      Oxide powder
+CORRECTION  For oxygen content in samples
+ASSUMED    (ASSUM2,8-O-16(N,TOT),,SIG)
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729039) Final publication at 1980 year.
+HISTORY    (19881130C)  Compiled at the CJD
+ENDBIB               8
+COMMON               1          3
+ASSUM2
+B
+ 3.8
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
   8.2       .2
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        40594018   19881130              20050926       0000
-BIB                  3          3
-REACTION   (79-AU-197(N,EL)79-AU-197,,RAD) OPTICAL SCATT. LENGTH
-ERR-ANALYS (ERR-2)  MONITOR ERROR
-HISTORY    (881130C)  COMPILED AT THE CJD
-ENDBIB               3
-NOCOMMON             0          0
+ENDSUBENT           20
+SUBENT        40594018   20230724   20240202   20240202       4215
+BIB                  6          9
+REACTION   (79-AU-197(N,EL)79-AU-197,,RAD) Optical scatt. length
+SAMPLE      Foils of 10 mm diameter and 0.5 mm thickness and
+            28 mm diameter and 0.1 mm thickness.
+ASSUMED    (ASSUM1,6-C-12(N,TOT),,SIG)  Authors' measurements in
+            scattering geometry
+ERR-ANALYS (DATA-ERR) Includes only uncertainty of fitting.
+STATUS     (TABLE,,N.A.Trofimova+,R,INDC(CCP)-118,(2),227,1977)
+           (SPSDD,40729034) Final publication at 1980 year.
+HISTORY    (19881130C)  Compiled at the CJD
+ENDBIB               9
+COMMON               2          3
+ASSUM1     ASSUM1-ERR
+B          B
+   4.73       0.03
+ENDCOMMON            3
 DATA                 2          1
-DATA       ERR-2
+DATA       DATA-ERR
 FERMI      FERMI
   9.5        .2
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           21
 ENDENTRY            17
