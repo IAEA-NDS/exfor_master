@@ -26,9 +26,17 @@ from git import (
 from zipfile import ZipFile
 
 import logging
+
 logging.basicConfig(filename="process.log", level=logging.DEBUG, filemode="w")
 
-from config import EXFOR_ALL_URL, EXFOR_ALL_PATH, EXFOR_ALL_TEMP, headers,  GIT_REPO_PATH, GIT_REPO_URL
+from config import (
+    EXFOR_ALL_URL,
+    EXFOR_ALL_PATH,
+    EXFOR_ALL_TEMP,
+    headers,
+    GIT_REPO_PATH,
+    GIT_REPO_URL,
+)
 
 
 ####################################################################
@@ -44,7 +52,6 @@ def get_local_files():
         x += [re.split(r"\.", os.path.basename(d))[0]]
 
     return x  # get_latest_date(x)
-
 
 
 def get_server_files():
@@ -66,12 +73,10 @@ def get_server_files():
     return x  # get_latest_date(x)
 
 
-
 def download_master_backup_sequential():
     x = get_server_files()
     for d2 in x:
         download_backup_zip(d2)
-
 
 
 def get_latest_date(x: list):
@@ -82,8 +87,6 @@ def get_latest_date(x: list):
         return max(d)
     else:
         return None
-
-
 
 
 def download_latest_master_from_bk():
@@ -107,7 +110,6 @@ def download_latest_master_from_bk():
     return d2
 
 
-
 ####################################################################
 # General functions
 ####################################################################
@@ -124,8 +126,6 @@ def convert_dtform(dtstring: str):
     )
 
 
-
-
 def zip_filename(date_str):
     # date_dt: datatime.date(YYYY, MM, DD) format
     date_dt = convert_dtform(date_str.replace("EXFOR-", "").replace("exfor-", ""))
@@ -133,8 +133,6 @@ def zip_filename(date_str):
         return "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".zip"])
     else:
         return "".join(["EXFOR-", date_str, ".zip"])
-
-
 
 
 def bck_filename(date_dt):
@@ -147,8 +145,6 @@ def bck_filename(date_dt):
             return "".join(["exfor-", date_dt.strftime("%Y-%m-%d"), ".BCK"])
     else:
         return "".join(["EXFOR-", date_dt.strftime("%Y-%m-%d"), ".bck"])
-
-
 
 
 def download_backup_zip(date_str):
@@ -168,14 +164,14 @@ def download_backup_zip(date_str):
         r = requests.get(url, allow_redirects=True)
 
         if r.status_code == 404:
-            logging.error(f"Something wrong with retrieving new dictionary from the IAEA-NDS.")
+            logging.error(
+                f"Something wrong with retrieving new dictionary from the IAEA-NDS."
+            )
             sys.exit()
 
         open(zipfile, "wb").write(r.content)
         logging.info(f"zip file downloaded")
     return zipfile
-
-
 
 
 def unzip_file(zipfile: str):
@@ -188,9 +184,6 @@ def unzip_file(zipfile: str):
             else:
                 logging.error(f"Unzip error {zipfile}")
                 exit()
-
-
-
 
 
 def split_bck_file(filename: str):
@@ -227,9 +220,6 @@ def split_bck_file(filename: str):
     logging.info(f"split finished")
 
 
-
-
-
 def run_rsync():
     ## not used
     print("rsync")
@@ -239,17 +229,12 @@ def run_rsync():
     logging.info(f"rsync finished")
 
 
-
-
 def del_files(filename: str):
     if os.path.isfile(filename):
         os.remove(filename)
         logging.info(f"File has been deleted")
     else:
         logging.info(f"File does not exist")
-
-
-
 
 
 ####################################################################
@@ -265,22 +250,16 @@ def git_new_branch(date_str):
     logging.info(f"repo.active_branch {repo.active_branch}")
 
 
-
-
 def git_add_commit(date_str):
     repo.git.add("exforall/")
     repo.git.commit(m=date_str)
     logging.info(f"branch commit {date_str}")
 
 
-
-
 def git_push_branch(date_str):
     origin = repo.remote(name="origin")
     origin.push(date_str)
     logging.info(f"origin.push {date_str}")
-
-
 
 
 def git_merge_to_main(date_str):
@@ -291,45 +270,44 @@ def git_merge_to_main(date_str):
     logging.info(f"repo.git.merge and origin.push master")
 
 
-
 def git_branches():
     branches = []
     remote_refs = repo.remote().refs
 
     for refs in remote_refs:
-        branches.append(refs.name.replace("origin/",""))
+        branches.append(refs.name.replace("origin/", ""))
 
     return branches
-
-
 
 
 def git_tags():
     tags = []
     for tag in repo.tags:
-        tags.append(tag.name.replace("Backup-",""))
+        tags.append(tag.name.replace("Backup-", ""))
     return tags
-
-
-
 
 
 def semantic_release_name(branch_name):
     name_sp = branch_name.split("-")
     if len(branch_name) == 10:
-        return "v" + str(name_sp[0]) + str(name_sp[1])+ str(name_sp[2]) + ".0"
+        return "v" + str(name_sp[0]) + str(name_sp[1]) + str(name_sp[2]) + ".0"
     elif branch_name.count("-") == 3:
-        return "v" + str(name_sp[0]) + str(name_sp[1])+ str(name_sp[2]) + "." + name_sp[3]
+        return (
+            "v" + str(name_sp[0]) + str(name_sp[1]) + str(name_sp[2]) + "." + name_sp[3]
+        )
     elif len(branch_name) == 11:
-        return "v" + str(name_sp[0]) + str(name_sp[1])+ str(name_sp[2])[0:2] + "." + name_sp[2][2:]
-
-
+        return (
+            "v"
+            + str(name_sp[0])
+            + str(name_sp[1])
+            + str(name_sp[2])[0:2]
+            + "."
+            + name_sp[2][2:]
+        )
 
 
 def git_log():
     return repo.git.log("--name-status", "--no-merges", "-n1", "--pretty=oneline")
-
-
 
 
 def git_tagging(branch_name):
@@ -339,12 +317,10 @@ def git_tagging(branch_name):
 
     msg = git_log()
     repo.create_tag("Backup-" + branch_name, ref=branch_name, message=msg)
-    
+
     origin = repo.remote(name="origin")
     origin.push("Backup-" + branch_name)
     logging.info(f"tagging branch_name: {branch_name}")
-
-
 
 
 def git_release(branch_name):
@@ -353,16 +329,15 @@ def git_release(branch_name):
         "name": semantic_release_name(branch_name),
         "draft": False,
         "prerelease": False,
-        "generate_release_notes": False
-        }
+        "generate_release_notes": False,
+    }
 
     r = requests.post(
-        GIT_REPO_URL, 
-        data=json.dumps(data_body), 
-        headers=headers, 
+        GIT_REPO_URL,
+        data=json.dumps(data_body),
+        headers=headers,
         verify=False,
     )
-
 
 
 def git_delete_branch(date_str):
@@ -371,8 +346,6 @@ def git_delete_branch(date_str):
     origin = repo.remote(name="origin")
     origin.push()
     logging.info(f"repo.git.branch -d")
-
-
 
 
 def process_zip_file(date_str):
@@ -392,8 +365,8 @@ def process_zip_file(date_str):
     ## create Release in Github
     git_tagging(date_str)
 
-    ## release does not work from the CLI from Github/Actions, 
-    ## it needs curl to post to REST API 
+    ## release does not work from the CLI from Github/Actions,
+    ## it needs curl to post to REST API
     ## (see .github/workflows/manual.yaml)
     # git_release(date_str)
 
@@ -420,7 +393,6 @@ def runall():
         process_zip_file(date_str)
 
 
-
 ####################################################################
 # This is the process to update the repository.
 ####################################################################
@@ -443,9 +415,8 @@ def update():
         else:
             not_processed.append(date_str)
 
-
     ## because exfor-2010-07-12.zip is broken
-    not_processed.remove('2010-07-12')
+    not_processed.remove("2010-07-12")
     logging.info(f"process starts for {not_processed}")
 
     if not_processed:
@@ -455,13 +426,8 @@ def update():
     else:
         logging.info(f"repository is up-to-date")
 
-
     return " ".join(not_processed)
 
 
-
 if __name__ == "__main__":
-
     print(update())
-
-
