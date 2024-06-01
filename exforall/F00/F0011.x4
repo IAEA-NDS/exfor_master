@@ -1,14 +1,11 @@
-ENTRY            F0011   20210429   20210813   20210811       F083
-SUBENT        F0011001   20210429   20210813   20210811       F083
-BIB                 10         24
+ENTRY            F0011   20240207   20240412   20240412       F096
+SUBENT        F0011001   20240207   20240412   20240412       F096
+BIB                  9         24
 TITLE      Measurement of the 6Li(3He,d)7Be and
            7Li(3He,t)7Be cross sections
 AUTHOR     (R.V.Pyle,L.Ruby,J.W.Sterbentz)
 INSTITUTE  (1USABRK)
 REFERENCE  (J,ANS,30,623,1978)
-SAMPLE     Thin targets of 99.32% LiF, 99.99% LiF, and normal LiF
-           were evaporated onto aluminium backings and irradiated
-           in the cyclotron beam.
 METHOD     (ACTIV,EXTB)
 FACILITY   (CYCLO,1USABRK)
 DETECTOR   (GELI)
@@ -25,6 +22,9 @@ HISTORY    (19811215C)
            in REACTION was replaced by SF9=CALC.
            (20210429A) SD: Corrections in all Subents. ERR-ANALYS
            updated.
+           (20240207A) SD: Correction in all Subents. SAMPLE
+           moved to Subents 002-006. Subents 004,005 were split in
+           two.
 ENDBIB              24
 COMMON               2          3
 ERR-2      ERR-3
@@ -32,15 +32,20 @@ PER-CENT   PER-CENT
         1.5       0.52
 ENDCOMMON            3
 ENDSUBENT           31
-SUBENT        F0011002   20210429   20210813   20210811       F083
-BIB                  5          6
+SUBENT        F0011002   20240207   20240412   20240412       F096
+BIB                  6         11
 REACTION   (3-LI-6(HE3,X)4-BE-7,,SIG)
-MISC-COL   (MISC) Target (6LiF) thickness (ug/cm2)
-ERR-ANALYS (ERR-S) Statistical counting error
-STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+SAMPLE     (3-LI-6,ENR=0.9999) Thin targets of 99.32% 6LiF,
+           99.99% LiF, and normal LiF were evaporated onto
+           aluminum backings and irradiated in the cyclotron
+           beam.
+MISC-COL   (MISC) Target thickness (ug/cm2)
+ERR-ANALYS (ERR-S) Statistical error
+STATUS     (TABLE,,R.V.Pyle+,J,ANS,30,623,1978) Tbl.1
 HISTORY    (20210429A) SD: SF3=D -> X in REACTION code. STATUS
             updated.
-ENDBIB               6
+           (20240207U) SD: STATUS updated. SAMPLE added.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 5         10
 EN         DATA       ERR-S      ERR-T      MISC
@@ -56,16 +61,17 @@ MEV        MB         PER-CENT   MB         G/CM-SQ
         5.9       397.       0.63        22.   5.09E-04
         5.9       379.       0.57        23.   5.20E-04
 ENDDATA             12
-ENDSUBENT           23
-SUBENT        F0011003   20210429   20210813   20210811       F083
-BIB                  4          6
+ENDSUBENT           28
+SUBENT        F0011003   20240207   20240412   20240412       F096
+BIB                  4          7
 REACTION   (3-LI-6(HE3,X)4-BE-7,,SIG,,AV)
 ANALYSIS    Weighted average over all targets.
-STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+STATUS     (TABLE,,R.V.Pyle+,J,ANS,30,623,1978) Tbl.1
            (DEP,F0011002) Cr.sect. depended on target thickness
 HISTORY    (20210429A) SD: SF3=D -> X; SF8=AV added; SF9=CALC
            deleted from REACTION code. STATUS updated.
-ENDBIB               6
+           (20240207U) SD: STATUS updated.
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 3          3
 EN         DATA       ERR-T
@@ -74,50 +80,86 @@ MEV        MB         MB
      2.8      384.        22.
      5.9      389.        23.
 ENDDATA              5
-ENDSUBENT           16
-SUBENT        F0011004   20210429   20210813   20210811       F083
-BIB                  6          7
+ENDSUBENT           17
+SUBENT        F0011004   20240207   20240412   20240412       F096
+BIB                  6         10
 REACTION   (3-LI-7(HE3,T)4-BE-7,,SIG)
-MISC-COL   (MISC) Target (6LiF) thickness (ug/cm2)
-FLAG       (1.) Target 7LiF
-           (2.) Natural LiF
+MISC-COL   (MISC) Target (7LiF) thickness (ug/cm2)
+SAMPLE     (3-LI-7,ENR=0.9999) Thin targets of 99.99% 7LiF were
+           evaporated onto aluminum backings and irradiated in
+           the cyclotron beam.
 ERR-ANALYS (ERR-S) Statistical counting error
-STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+STATUS     (TABLE,,R.V.Pyle+,J,ANS,30,623,1978) Tbl.1
 HISTORY    (20210429U) SD: STATUS updated.
-ENDBIB               7
+           (20240207A) SD: Subent was split in two according to
+           the SAMPLE.
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 6          8
-EN         DATA       ERR-S      ERR-T      MISC       FLAG
-MEV        MB         PER-CENT   MB         G/CM-SQ    NO-DIM
-        1.7        6.5       9.20        0.7   5.40E-04         1.
-        1.7        7.2       8.20        0.7   5.44E-04         1.
-        2.8        98.       1.00         6.   5.47E-04         1.
-        2.8        92.       1.10         5.   5.68E-04         1.
-        5.9       208.       0.88        12.   5.05E-04         1.
-        5.9       199.       0.85        11.   5.09E-04         1.
-        5.9       208.       0.86        12.   5.19E-04         2.
-        5.9       203.       0.88        11.   5.26E-04         2.
-ENDDATA             10
-ENDSUBENT           22
-SUBENT        F0011005   20210429   20210813   20210811       F083
-BIB                  5          8
+DATA                 5          6
+EN         DATA       ERR-S      ERR-T      MISC
+MEV        MB         PER-CENT   MB         G/CM-SQ
+        1.7        6.5       9.20        0.7   5.40E-04
+        1.7        7.2       8.20        0.7   5.44E-04
+        2.8        98.       1.00         6.   5.47E-04
+        2.8        92.       1.10         5.   5.68E-04
+        5.9       208.       0.88        12.   5.05E-04
+        5.9       199.       0.85        11.   5.09E-04
+ENDDATA              8
+ENDSUBENT           23
+SUBENT        F0011005   20240207   20240412   20240412       F096
+BIB                  4          8
 REACTION   (3-LI-7(HE3,X)4-BE-7,,SIG,,AV)
 ANALYSIS    Weighted average over all targets.
-FLAG       (1.) Target 7LiF
-           (2.) Natural LiF
-STATUS     (TABLE) Tbl.1 from Transact.Amer.Nucl.Soc.,30(1978)623
+STATUS     (TABLE,,R.V.Pyle+,J,ANS,30,623,1978) Tbl.1
            (DEP,F0011004) Cr.sect. depended on target thickness
 HISTORY    (20210429A) SD: SF3=T -> X; SF8=AV added; SF9=CALC
            deleted from REACTION code. STATUS updated.
+           (20240207A) SD: Subent was split in two according to
+           the SAMPLE.
 ENDBIB               8
 NOCOMMON             0          0
-DATA                 4          4
-EN         DATA       ERR-T      FLAG
-MEV        MB         MB         NO-DIM
-        1.7        6.9        0.7         1.
-        2.8        95.         6.         1.
-        5.9       204.        12.         1.
-        5.9       206.        12.         2.
-ENDDATA              6
-ENDSUBENT           19
-ENDENTRY             5
+DATA                 3          3
+EN         DATA       ERR-T
+MEV        MB         MB
+        1.7        6.9        0.7
+        2.8        95.         6.
+        5.9       204.        12.
+ENDDATA              5
+ENDSUBENT           18
+SUBENT        F0011006   20240207   20240412   20240412       F096
+BIB                  7         11
+REACTION   (3-LI-0(HE3,X)4-BE-7,,SIG)
+SAMPLE     Natural LiF
+MISC-COL   (MISC) Target (LiF) thickness (ug/cm2)
+COMMENT    As a check on the cross sections determined for 6Li
+           and 7Li, an irradiation of normal LiF was made at
+           6.0 MeV. The resulting value of 206+/-12 mb per Li atom
+           compares well with the constructed value of 218+/-26 mb
+           based on the isotopic cross sections.
+ERR-ANALYS (ERR-S) Statistical counting error
+STATUS     (TABLE,,R.V.Pyle+,J,ANS,30,623,1978) Tbl.1
+HISTORY    (20210429T) SD: Part of Subent 004.
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 5          2
+EN         DATA       ERR-S      ERR-T      MISC
+MEV        MB         PER-CENT   MB         G/CM-SQ
+        5.9       208.       0.86        12.   5.19E-04
+        5.9       203.       0.88        11.   5.26E-04
+ENDDATA              4
+ENDSUBENT           20
+SUBENT        F0011007   20240207   20240412   20240412       F096
+BIB                  4          4
+REACTION   (3-LI-0(HE3,X)4-BE-7,,SIG)
+SAMPLE     Natural LiF
+STATUS     (TABLE,,R.V.Pyle+,J,ANS,30,623,1978) Tbl.1
+HISTORY    (20210429T) SD: Part of Subent 004.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       ERR-T
+MEV        MB         MB
+        5.9       206.        12.
+ENDDATA              3
+ENDSUBENT           12
+ENDENTRY             7
