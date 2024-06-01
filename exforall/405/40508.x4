@@ -1,53 +1,95 @@
-ENTRY            40508   20010315   20010718   20050926       0000
-SUBENT        40508001   20010315   20010718   20050926       0000
-BIB                 16         31
-TITLE       Gamma-Quanta Production Cross-Section at the
-            Interaction of the Fast Neutrons on the Nuclei
-            Of the Carbon, Lead and Rhenium
-AUTHOR     (M.V.SAVIN,YU.A.KHOKHLOV,I.N.PARAMONOVA,
-           V.A.CHIRKIN,V.N.LUDIN,N.N.ZALYALOV)
+ENTRY            40508   20230724   20231109   20231109       4214
+SUBENT        40508001   20230724   20231109   20231109       4214
+BIB                 18         66
+TITLE       Cross section for the formation of gamma-quanta
+            during the interaction of fast neutrons with carbon,
+            lead, and rhenium nuclei
+AUTHOR     (M.V.Savin,Yu.A.Khokhlov,I.N.Paramonova,
+           V.A.Chirkin,V.N.Ludin,N.N.Zalyalov)
+REFERENCE  (J,SJA,49,686,1980)     English of AE, 49, 236
+           (J,AE,49,236,1980) Issue 4.  Graphs only.
+           ((C,75KIEV,4,191,1975)=
+           (R,INDC(CCP)-099,(4),1975)) Preliminary results for Re
+            and Pb on figures.
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,AE,49,(4),236,198010)  Graphs are Given
-           (J,SJA,49,686,198104)     English of Ae, 49, 236
-           (C,75KIEV,4,191,197506)   Preliminary Results
-MONITOR     Absolute Measurements
-METHOD     (TOF)  For Neutrons
-FACILITY   (LINAC)  Linear Electron Accelerator
-INC-SOURCE (PHOTO) Tantalum-Beryllium Target Irradiated by the
-                   Electron Beam
+REL-REF    (M,40346001,M.V.Savin+,J,SNP,23,269,1976)
+            Detector response function measurement method using
+           sources of discrete gamma-lines.
+SAMPLE      Natural isotopic mixture
+MONITOR    See analysis.
+METHOD     (TOF)  For neutrons.
+           Time scale was calibrated by variable delay and checked
+           according to the carbon resonances in transmission
+           measurement.
+           Several series, each consisted of
+           - measurement with the sample,
+           - background measurement,
+           - time and amplitude calibration,
+           - energy distributions and neutron flux on the sample
+FACILITY   (LINAC,4RUSKUR)  Linear electron accelerator
+INC-SOURCE (PHOTO) Tantalum-beryllium target irradiated by the
+                   electron beam
 PART-DET   (N,G)
-DETECTOR   (STANK) Liquid Scintillation Detector For Gammas
-           (SCIN)  Stilbene Scintillation Detector For Neutrons
-ANALYSIS   (4PI1A) De is Obtained As Da/De Times 4Pi
-SAMPLE      Natural Isotopic Mixture
-ERR-ANALYS (ERR-T)  Total Error
+DETECTOR   (STANK) Liquid scintillation detector for gammas.
+            Diameter 54 mm, high 38 mm.
+            Angle between between neutron beam and gamma-detector
+            was ~125 deg.
+           (SCIN)  Stilbene scintillation detector for neutrons.
+            Diameter 30 mm, high 10 mm.
+           . All-wave neutron counter was served as monitor.
+ANALYSIS   (4PI1A) DE is obtained as DA/DE times 4PI
+           In formula (1) of J,SNP,23,269,1976 for cross section
+           calculation the authors used
+            - total neutron cross section SIGMAtotal(En),
+            - A coefficient taking into account geometry
+           and normalization according to monitor channel.
+CORRECTION  For backgrounds - 3 - 10 % for Re, 0-2 % for Pb
+            For multiple scattering, calculated by Monte Carlo
+           method < ~ 5 %, 17 %, 15 % for C, Re, Pb, respectively.
+            For gamma-quanta angular distribution < 5.% for C.
+ERR-ANALYS (ERR-T)  Total error
            (ERR-S)  Statistical
-STATUS     (APRVD) Savin 8211
-HISTORY    (19830204C) + +  Compiled at the Centre - CJD  + +
-           (19931015A)  Pointers Deleted. All Data For Definite
-                      Element Transferred in One Subent
-                      Several Author Names Corrected
-           (19990902A)  Errors in Data Tables Corrected
-                        4-Digit Dates Introdiced
+           (ERR-1,4.,5.) Determining the neutron flux absolute
+           value.
+           (ERR-2) Gamma-detector calibration.
+           (ERR-3) Uncertainty in the method of analysis.
+           (ERR-4,1.,4.) Uncertainty due to time resolution
+            (+-0.135 nsec/m) - ~4.% at En=9 MeV, <1.% at En<5 MeV.
+STATUS     (APRVD) Savin 1982-11
+HISTORY    (19830204C) + +  Compiled at the centre - CJD  + +
+           (19931015A)  Pointers deleted. All data for definite
+                      element transferred in one subent.
+                      Several author names corrected
+           (19990902A)  Errors in data tables corrected,
+                        4-digit dates introduced
            (20010315A)  Corrected at CJD
            (20010315U) Last checking has been done.
-COMMENT    Data For Linear Gamma-Spectrum on Lead See Entry 40542
-ENDBIB              31
-NOCOMMON
-ENDSUBENT           34
-SUBENT        40508002   20010315   20010718   20050926       0000
-BIB                  4          9
+           (20230724A) Ref. R,INDC(CCP)-099,(4),1975 was added.
+            Upper -> lower case correction.
+COMMENT    Data for linear gamma-spectrum on lead see Entry 40542
+ENDBIB              66
+COMMON               2          3
+ERR-2      ERR-3
+PER-CENT   PER-CENT
+ 2.5        15.
+ENDCOMMON            3
+ENDSUBENT           73
+SUBENT        40508002   20230724   20231109   20231109       4214
+BIB                  4         12
 REACTION   (75-RE-0(N,X)0-G-0,,DE,,FCT/AV) Times Delta-E-Gamma
-            Averaged Over Energy Interval in Data Section
-EN-SEC     (E-MIN,G)
-           (E-MAX,G)
-SAMPLE      Metallic Powder, Density  9.89 Gram/Cm3
-HISTORY    (19931015A) All Data For Rhenium from San 004 - 007
-                     Collected in this Subentry
-           (20010315U)  Reaction Code Corrected
+            averaged over energy interval in data section
+SAMPLE      Metallic powder, density  9.89 gram/cm3
+STATUS     (TABLE) From author.
+            On Fig. 2 of J,SJA,49,686,1981 - data for 8 Egamma
+            energy ranges.
+HISTORY    (19931015A) All data for rhenium from SAN 004 - 007
+                     collected in this Subentry
+           (20010315U)  Reaction code corrected
            (20010315U) Last checking has been done.
-ENDBIB               9
-NOCOMMON
+           (20230724U) EN-SEC (E-MIN/MAX,G) was deleted according
+            to a comment of N.Otsuka (NDS, IAEA).
+ENDBIB              12
+NOCOMMON             0          0
 DATA                 7        186
 EN-MAX     EN-MIN     E-MAX      E-MIN      DATA       ERR-S
 ERR-T
@@ -426,17 +468,18 @@ MB/MEV
        1.17       1.06       1.25         1.       148.        34.
         41.
 ENDDATA            376
-ENDSUBENT          390
-SUBENT        40508003   20010315   20010718   20050926       0000
-BIB                  4          7
+ENDSUBENT          393
+SUBENT        40508003   20230724   20231109   20231109       4214
+BIB                  4          8
 REACTION   (75-RE-0(N,X)0-G-0,,DE,,FCT/AV) Times Delta-E-Gamma
-            Averaged Over Energy Interval in Data Section
-EN-SEC     (E-MIN,G)
-           (E-MAX,G)
-SAMPLE      Metallic Powder, Density 9.89 Gram/Cm3
-HISTORY    (20010315U)  Reaction Code Corrected
+            averaged over energy interval in data section
+SAMPLE      Metallic powder, density 9.89 gram/cm3
+STATUS     (TABLE) From author.
+HISTORY    (20010315U)  Reaction code corrected
            (20010315U) Last checking has been done.
-ENDBIB               7
+           (20230724U) EN-SEC (E-MIN/MAX,G) was deleted according
+            to a comment of N.Otsuka (NDS, IAEA).
+ENDBIB               8
 COMMON               2          3
 EN-MAX     EN-MIN
 MEV        MEV
@@ -449,25 +492,30 @@ MEV        MEV        MB/MEV     MB/MEV     MB/MEV
         4.5         4.       250.        82.        92.
          4.        3.5       202.        64.        72.
 ENDDATA              5
-ENDSUBENT           21
-NOSUBENT      40508004   19931015   20000118   20050926       0000
-NOSUBENT      40508005   19931015   20000118   20050926       0000
-NOSUBENT      40508006   19931015   20000118   20050926       0000
-NOSUBENT      40508007   19931015   20000118   20050926       0000
-SUBENT        40508008   20010315   20010718   20050926       0000
-BIB                  4         10
+ENDSUBENT           22
+SUBENT        40508004   20230724   20231109   20231109       4214
+SUBENT        40508005   20230724   20231109   20231109       4214
+SUBENT        40508006   20230724   20231109   20231109       4214
+SUBENT        40508007   20230724   20231109   20231109       4214
+SUBENT        40508008   20230724   20231109   20231109       4214
+BIB                  5         15
 REACTION   (82-PB-0(N,X)0-G-0,,DE,,FCT/AV) Times Delta-E-Gamma
-            Averaged Over Energy Interval in Data Section
-EN-SEC     (E-MIN,G)
-           (E-MAX,G)
-SAMPLE      Metallic Cone
-HISTORY    (19931015A) All Data For Lead from San 010 - 013
-                     Collected in this Subentry
-           (19990922A)  Secondary Energy Corrected
-           (20010315U)  Reaction Code Corrected
+            averaged over energy interval in data section
+REL-REF    (N,20941012,J.L.Perkin,J,NP,60,561,1964)
+            Data used for comparison.
+SAMPLE      Metallic cone
+STATUS     (TABLE) From author.
+            On Fig. 3 of J,SJA,49,686,1981 - data for 8 Egamma
+            energy ranges.
+HISTORY    (19931015A) All data for lead from SAN 010 - 013
+                     collected in this Subentry
+           (19990922A)  Secondary energy corrected
+           (20010315U)  Reaction code corrected
            (20010315U) Last checking has been done.
-ENDBIB              10
-NOCOMMON
+           (20230724U) EN-SEC (E-MIN/MAX,G) was deleted according
+            to a comment of N.Otsuka (NDS, IAEA).
+ENDBIB              15
+NOCOMMON             0          0
 DATA                 7        171
 EN-MAX     EN-MIN     E-MAX      E-MIN      DATA       ERR-S
 ERR-T
@@ -816,18 +864,19 @@ MB/MEV
        1.18       1.06       1.25         1.        33.        13.
         14.
 ENDDATA            346
-ENDSUBENT          361
-SUBENT        40508009   20010315   20010718   20050926       0000
-BIB                  4          7
+ENDSUBENT          366
+SUBENT        40508009   20230724   20231109   20231109       4214
+BIB                  4          8
 REACTION   (82-PB-0(N,X)0-G-0,,DE,,FCT/AV) Times Delta-E-Gamma
-            Averaged Over Energy Interval in Data Section
-EN-SEC     (E-MIN,G)
-           (E-MAX,G)
-SAMPLE     Metallic Cone
-HISTORY    (20010315U)  Reaction Code Corrected
+            averaged over energy interval in data section
+SAMPLE     Metallic cone
+STATUS     (TABLE) From author.
+HISTORY    (20010315U)  Reaction code corrected
            (20010315U) Last checking has been done.
-ENDBIB               7
-NOCOMMON
+           (20230724U) EN-SEC (E-MIN/MAX,G) was deleted according
+            to a comment of N.Otsuka (NDS, IAEA).
+ENDBIB               8
+NOCOMMON             0          0
 DATA                 7          6
 EN-MAX     EN-MIN     E-MAX      E-MIN      DATA       ERR-S
 ERR-T
@@ -846,28 +895,35 @@ MB/MEV
        7.96         7.         5.        4.5       197.        78.
         86.
 ENDDATA             16
-ENDSUBENT           28
-NOSUBENT      40508010   19931015   20000118   20050926       0000
-NOSUBENT      40508011   19931015   20000118   20050926       0000
-NOSUBENT      40508012   19931015   20000118   20050926       0000
-NOSUBENT      40508013   19931015   20000118   20050926       0000
-SUBENT        40508014   20010315   20010718   20050926       0000
-BIB                  5          7
-REACTION   (6-C-12(N,X)0-G-0,PAR,SIG,,SPA) Averaged Over Energy
-             Interval Given in Data Section
-EN-SEC     (E,G)
-SAMPLE      Graphite Cone
-ERR-ANALYS (ERR-1) Error Due to Inelastic Scattering
-HISTORY    (20010315U)  Reaction Code Corrected
+ENDSUBENT           29
+SUBENT        40508010   20230724   20231109   20231109       4214
+SUBENT        40508011   20230724   20231109   20231109       4214
+SUBENT        40508012   20230724   20231109   20231109       4214
+SUBENT        40508013   20230724   20231109   20231109       4214
+SUBENT        40508014   20230724   20231109   20231109       4214
+BIB                  6         14
+REACTION   (6-C-12(N,X)0-G-0,PAR,SIG,,SPA) Averaged over energy
+             interval given in data section
+SAMPLE      Graphite cone
+REL-REF    (D,10025003,D.M.Drake+,J,NSE,40,294,1970)
+            Lower at En 5.8 and 6.21 MeV
+           (A,10490001,V.C.Rogers+,J,NSE,58,298,1975)
+           (A,10399001,G.L.Morgan+,J,NIM,128,125,1975) Issue 1.
+ERR-ANALYS (ERR-5) Error due to inelastic scattering
+STATUS     (TABLE) From author.
+            Data on Fig.1 of J,SJA,49,686,1981
+HISTORY    (20010315U)  Reaction code corrected
            (20010315U) Last checking has been done.
-ENDBIB               7
+           (20230724U) EN-SEC (E,G) was deleted according
+            to a comment of N.Otsuka (NDS, IAEA).
+ENDBIB              14
 COMMON               1          3
 E
 MEV
        4.44
 ENDCOMMON            3
 DATA                 6         11
-EN-MIN     EN-MAX     DATA       ERR-T      ERR-S      ERR-1
+EN-MIN     EN-MAX     DATA       ERR-T      ERR-S      ERR-5
 MEV        MEV        MB         MB         MB         MB
        4.85       5.14        58.         6.         4.
        5.14       5.46       107.        10.         5.
@@ -881,5 +937,5 @@ MEV        MEV        MB         MB         MB         MB
        8.76       9.47       300.        31.        14.        28.
        9.47      10.27       310.        47.        35.        30.
 ENDDATA             13
-ENDSUBENT           29
+ENDSUBENT           36
 ENDENTRY            14

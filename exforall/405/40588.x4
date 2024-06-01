@@ -1,68 +1,87 @@
-ENTRY            40588   20060606   20061121   20060816       4138
-SUBENT        40588001   20060606   20061121   20060816       4138
-BIB                 14         26
-INSTITUTE  (4UKRIJI)
-REFERENCE  (C,77KIEV,2,252,197704)
-AUTHOR     (A.V.MURZIN,A.F.RUDYK,V.A.LIBMAN)
-TITLE       Fission Cross-section Measurement For U-233 And
-            U-235 At The Neutron Energy 2. keV
-INC-SOURCE (REAC) WWR-M Reactor
-INC-SPECT   2 keV neutron beam - 3.E+05 neutrons/(sec*cm2)
-METHOD      Scandium Filter Method.Scandium filter lenght 960 mm.
-DETECTOR   (SOLST)  Stilbene Detector For Neutron Detection
-           (GELI)   GE-LI Detector For Gamma, 25 cm3 volume
-           (PROPC)  Recoil Proton Counter
+ENTRY            40588   20230724   20231109   20231109       4214
+SUBENT        40588001   20230724   20231109   20231109       4214
+BIB                 16         42
+TITLE       Fission cross-section measurement for u-233 and
+            U-235 at the neutron energy 2. keV
+AUTHOR     (A.V.Murzin,A.F.Rudyk,V.A.Libman)
+REFERENCE  ((C,77KIEV,2,252,1977)=
+           (R,INDC(CCP)-118,(2),252,1977))
+INSTITUTE  (4UKRIJD)
+FACILITY   (REAC,4UKRIJD) WWR-M reactor
+INC-SOURCE (REAC)
+INC-SPECT   2 keV neutron beam - 3.E+05 neutrons/(sec*cm2) at
+           sample position.
+METHOD     (FNB) Scandium filter length 960 mm.
+DETECTOR   (SOLST) Stilbene detector for fission neutrons
+           detection
+           (GELI)   Ge(Li) detector for gamma, 25 cm3 volume
+           (PROPC)  Recoil proton counter
 MONITOR    ((MONIT)5-B-10(N,A)3-LI-7,,SIG)
+            478.keV gamma were registered.
 PART-DET   (N)
            (G)
-STATUS     (APRVD) Murzin, 19821209
-COMMENT     Of compiler.M.M. 2006.06.06.
-            In Text of reference the c-s data values are
+CORRECTION  Corrections on multiple scattering and background
+            were made
+            For neutron attenuation in sample.
+STATUS     (APRVD) Murzin, 1982-12-09
+COMMENT     Of compiler. M.M. 2006.06.06.
+            - In text of reference the c-s data values are
              7.54 +- 0.17 b for U-233,
              6.19 +- 0.12 b for U-235.
-            But STATUS is APRVD of author. 1982.12.09.
+            But STATUS is APRVD of author 1982.12.09.
+            Probably, data were revised by the author.
+           - There are values of systematical uncertainties in
+           INDC(CCP)-118,(2),252,1977, Table 1, 2 ;
+           they were not inserted in this Entry, because data were
+           probably revised by authors and uncertainties values
+           could been changed after revision.
+ERR-ANALYS (DATA-ERR) Total uncertainty
 HISTORY    (19821214C)
            (20060606A) M.M. Reference correction was made.
             Dates were corrected for 4-digits year.
             Samples description was added.
-CORRECTION  Corrections On Multiple Scattering And Background
-            Were Made
-ENDBIB              26
+           (20230724U) Upper -> lower case correction.
+            Ref. INDC(CCP)-118,(2),252,1977 was added.
+            ERR-T -> DATA-ERR.
+ENDBIB              42
 COMMON               4          3
 EN         EN-RSL-HW  MONIT      MONIT-ERR
 KEV        KEV        B          PER-CENT
- 2.0000E+00 3.0000E-01 1.3550E+01 1.0000E+00
+ 2.0        0.3        13.55      1.
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        40588002   20060606   20061121   20060816       4138
-BIB                  2          6
-REACTION   (92-U-233(N,F),,SIG,,AV)  Averaged Over Scandium
-                                     Filter Energy Range
+ENDSUBENT           49
+SUBENT        40588002   20230724   20231109   20231109       4214
+BIB                  2          7
+REACTION   (92-U-233(N,F),,SIG,,AV)
+           Averaged over scandium filter neutrons energy range
 SAMPLE      U-233 samples of 0.89, 4.03, 11.72 g/cm2 thickness,
             of 98.9% enrichment.
             B-10 sample of 0.11 g/cm2 thickness and
             85.8% enrichment
-ENDBIB               6
+           (92-U-233,ENR=0.989)
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
-DATA       ERR-T
+DATA       DATA-ERR
 B          B
- 8.1100E+00 2.5000E-01
+ 8.11       0.25
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        40588003   20060606   20061121   20060816       4138
-BIB                  2          5
+ENDSUBENT           15
+SUBENT        40588003   20230724   20231109   20231109       4214
+BIB                  2          7
 REACTION   (92-U-235(N,F),,SIG,,AV)
+           Averaged over scandium filter neutrons energy range
 SAMPLE      U-235 samples of 0.95, 3.4, 13.3 g/cm2 thickness,
                 of 90% enrichment.
            B-10 sample of 0.11 g/cm2 thickness and
             85.8% enrichment
-ENDBIB               5
+           (92-U-235,ENR=0.858)
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
-DATA       ERR-T
+DATA       DATA-ERR
 B          B
- 6.2700E+00 1.3000E-01
+ 6.27       0.13
 ENDDATA              3
-ENDSUBENT           13
+ENDSUBENT           15
 ENDENTRY             3
