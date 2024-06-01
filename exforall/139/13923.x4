@@ -1,28 +1,30 @@
-ENTRY            13923   20041122              20050926       0000
-SUBENT        13923001   20041122              20050926       0000
-BIB                  8         14
+ENTRY            13923   20230707   20240315   20240315       1507
+SUBENT        13923001   20230707   20240315   20240315       1507
+BIB                  8         17
 INSTITUTE  (1USABNL)
-REFERENCE  (J,NP/A,285,235,197707)
+REFERENCE  (J,NP/A,285,235,1977)
+           #doi:10.1016/0375-9474(77)90250-0
 AUTHOR     (R.F.Casten,R.C.Grennwood,M.R.McPhail,R.E.Chrien,
            W.R.Kane,G.J.Smith,J.A.Cizewski)
 TITLE      Study of 191Os by Average Resonance Neutron Capture
 FACILITY   (REAC,1USABNL) High-flux Beam Reactor
-SAMPLE     2.5x2.5 cm osmium powder sample of 2 g enriched to
-            95.46% in 190Os.
+SAMPLE     (76-OS-190,ENR=0.9546) 2.5x2.5 cm osmium powder sample
+            of 2 g enriched to 95.46% in 190Os.
 MONITOR    Absolute energy scale is established using the 7.6 MeV
             Fe doublet, the ground state transition following
             thermal capture in 27Al, the hydrogen capture line at
             2223.33 keV and the 1778.9 keV transition occurring
             in 28Si following neutron capture in 27Al.
 HISTORY    (20041116C) DR
-ENDBIB              14
+           (20230604A) OS. E-ERR corrected in sub.3,
+            STATUS updated, BIB modifications
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        13923002   20041122              20050926       0000
-BIB                  7         12
+ENDSUBENT           20
+SUBENT        13923002   20230707   20240315   20240315       1507
+BIB                  6         11
 REACTION   (76-OS-190(N,G)76-OS-191,,SPC,,MXW/REL)
 INC-SPECT  Thermal neutron spectrum
-SAMPLE     Osmium powder sample enriched to 95.46% in 190Os.
 METHOD     Intensities are normalized to 1000 for the 527.5 keV
             transition.
 DETECTOR   (GELI) 40-cm3 Ge(Li) detector at 90 degrees to the
@@ -31,8 +33,8 @@ DETECTOR   (GELI) 40-cm3 Ge(Li) detector at 90 degrees to the
 ERR-ANALYS (DATA-ERR) Relative uncertainties given.
            (E-ERR) Uncertainty on the absolute gamma-ray energy
              scale.
-STATUS     Data taken from table I of the journal article
-ENDBIB              12
+STATUS     (TABLE,,R.F.Casten+,J,NP/A,285,235,1977) Table 1
+ENDBIB              11
 COMMON               2          3
 EN-DUMMY   E-ERR
 EV         KEV
@@ -76,13 +78,11 @@ KEV        ARB-UNITS  ARB-UNITS
 3776.4       90.       12.
 3675.2      113.       15.
 ENDDATA             36
-ENDSUBENT           57
-SUBENT        13923003   20041122              20050926       0000
-BIB                  9         20
+ENDSUBENT           56
+SUBENT        13923003   20230707   20240315   20240315       1507
+BIB                  9         22
 REACTION   (76-OS-190(N,G)76-OS-191,,SPC,,REL)
-INC-SPECT  Scandium filterted beam.
-SAMPLE     2.5x2.5 cm osmium powder sample of 2 g enriched to
-            95.46% in 190Os.
+METHOD     (FNB) Scandium filtered beam
 DETECTOR   (GELI) Ge(Li) detector at 90 degrees to the beam,
             surrounded by a bismuth shield. Detector resolution
             about 8 keV (FWHM) at a transition energy of 5.6 MeV.
@@ -95,15 +95,19 @@ ANALYSIS   Below 4191.1 keV transition energy, the decreasing
 ERR-ANALYS (DATA-ERR) Relative uncertainties given. In addition,
             there is about 1 keV uncertainty in energy scale.
            (E-ERR) Uncertainty on the absolute gamma-ray energy
-             scale.
+            scale. ~+/-1 keV overall energy scale uncertainty is
+           not included.
 FLAG       (1.) Observation of transition is questionable.
            (2.) Peak may be a multiplet.
-STATUS     Data taken from table 2 of the journal article
-ENDBIB              20
-COMMON               3          3
-EN         EN-RSL-FW  E-ERR
-KEV        EV         KEV
- 2.        800.        1.
+STATUS     (TABLE,,R.F.Casten+,J,NP/A,285,235,1977) Table 2
+HISTORY    (20230604A) E-ERR deleted in COMMON, ERR-ANALYS text
+           updated
+           (20240314U) On. INC-SPECT -> METHOD(FNB)
+ENDBIB              22
+COMMON               2          3
+EN         EN-RSL-FW
+KEV        EV
+ 2.        800.
 ENDCOMMON            3
 DATA                 5         32
 E          E-ERR      DATA       DATA-ERR   FLAG
@@ -141,5 +145,5 @@ KEV        KEV        ARB-UNITS  ARB-UNITS  NO-DIM
 4131.1     0.8         37.9       5.5
 3998.3     1.1         20.9       5.7
 ENDDATA             34
-ENDSUBENT           63
+ENDSUBENT           65
 ENDENTRY             3
