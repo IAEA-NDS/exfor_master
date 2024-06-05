@@ -81,14 +81,14 @@ jobs:
 
       - name: run entry update list file script and commit file
         run: |
-          if [[ -n "${{ steps.runpy.outputs.NP }}" ]]
-          then
-            bash ${GITHUB_WORKSPACE}/script/get_update_date.sh > entry_updatedate.dat
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git add entry_updatedate.dat
-            git commit -m "update entry_updatedate.dat"
-            git push origin main
-          else
-            echo "no update"
-          fi
+          # if [[ -n "${{ steps.runpy.outputs.NP }}" ]]
+          # then
+          bash ${GITHUB_WORKSPACE}/script/get_update_date.sh > entry_updatedate.dat
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add entry_updatedate.dat
+          git commit -m "update entry_updatedate.dat"
+          git push origin main
+          # else
+          #   echo "no update"
+          # fi
