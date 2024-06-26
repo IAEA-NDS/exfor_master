@@ -1,47 +1,52 @@
-ENTRY            E0735   20091023   20100128   20100119       E060
-SUBENT        E0735001   20091023   20100128   20100119       E060
-BIB                 11         19
+ENTRY            E0735   20240622   20240625   20240625       E145
+SUBENT        E0735001   20240622   20240625   20240625       E145
+BIB                 11         20
 TITLE      Polarization effects in the QFS region of the p-d
            breakup reaction at 65 MeV
 AUTHOR     (H.Shimizu, K.Imai, T.Matsusue, J.Shirai, R.Takashima,
-           K.Nisimura, K.Hatanaka, T.Saito, A.Okihana)
-INSTITUTE  (2JPNKTO) Department of Physics
-           (2JPNOSA) Research Center for Nuclear Physics
-           (2JPNKUE) Department of Physics
-REFERENCE  (J,NP/A,380,(1),111,198205)
+            K.Nisimura, K.Hatanaka, T.Saito, A.Okihana)
+INSTITUTE  (2JPNKTO,2JPNOSA,2JPNKUE)
+REFERENCE  (J,NP/A,380,111,1982)
 INC-SOURCE Beam intensity is 5 to 80 nA.
            (POLIS)
 SAMPLE     - Chemical-form of target is CD2.
            - Physical-form of target is solid.
-           - Target-thickness is 1.6, 2.7 mg/cm**2.
+           - Target-thickness is 1.6, 2.7 mg/cm2.
 METHOD     (EDE)
 FACILITY   (ISOCY,2JPNOSA) Research Center for Nuclear Physics
 DETECTOR   (TELES,SIBAR,NAICR) To detect proton
            (SCIN) To detect neutron (NE213)
 ADD-RES    (COMP) PWIA (Plane wave impulse approximation)
 HISTORY    (20090810C) Nh
-ENDBIB              19
+           (20240505A) MA: modified COMMON and ERR-ANALYS in 002,
+                       REACTION and numerical data in 004, STATUS
+                       in 002-004; added ANG-SEC in 002-004.
+ENDBIB              20
 COMMON               1          3
 EN
 MEV
  65.
 ENDCOMMON            3
-ENDSUBENT           26
-SUBENT        E0735002   20091023   20100128   20100119       E060
-BIB                  6          8
+ENDSUBENT           27
+SUBENT        E0735002   20240622   20240625   20240625       E145
+BIB                  8         12
 REACTION   (1-H-2(P,N+P)1-H-1,,DA/DA/DE,P/P/P)
 PART-DET   (P)
-EN-SEC     ANG is polar angle (lab.) between beam and proton
-           (E,P)
+ANG-SEC    (ANG1,P)
+           (ANG2,P)
+EN-SEC     (E,P)
 METHOD     (COINC) Detect protons in coincidence.
-ERR-ANALYS (ERR-S) Over-all uncertainty in absolute cross section
-                   is about 10%.
-STATUS     (CURVE) Scanned from Fig.4, p117 of reference
-ENDBIB               8
-COMMON               1          3
-ANG
-ADEG
- 42.5
+ERR-ANALYS (ERR-S) Statistical uncertainty
+           (DATA-ERR) Over-all uncertainty in absolute cross
+                      section is about 10%.
+STATUS     (CURVE,,H.Shimizu+,J,NP/A,380,111,1982) Fig. 4
+HISTORY    (20240505A) MA: COMMON: ANG deleted, ANG1, ANG2 and
+                       DATA-ERR added.
+ENDBIB              12
+COMMON               3          3
+ANG1       ANG2       DATA-ERR
+ADEG       ADEG       MB/SR2/MEV
+ 42.5       42.5       10.
 ENDCOMMON            3
 DATA                 3         37
 E          DATA       ERR-S
@@ -84,17 +89,17 @@ MEV        MB/SR2/MEV MB/SR2/MEV
   4.401E+01  3.602E-01
   4.503E+01  2.632E-01
 ENDDATA             39
-ENDSUBENT           56
-SUBENT        E0735003   20091023   20100128   20100119       E060
+ENDSUBENT           60
+SUBENT        E0735003   20240622   20240625   20240625       E145
 BIB                  6          8
 REACTION   (1-H-2(P,N+P)1-H-1,,POL/DA/DA,P/P,ANA)
 PART-DET   (P)
-EN-SEC     - ANG1 is polar angle (lab.) between beam and proton
-           - ANG2 is polar angle (lab.) between beam and neutron
+ANG-SEC    (ANG1,P)
+           (ANG2,P)
 METHOD     (COINC) Detect protons in coincidence.
 ERR-ANALYS (ERR-1) Uncertainty due to normalization
            (DATA-ERR) Relative uncertainty only
-STATUS     (TABLE) Taken from Table 1, p118 of reference
+STATUS     (TABLE,,H.Shimizu+,J,NP/A,380,111,1982) Table 1
 ENDBIB               8
 COMMON               1          3
 ERR-1
@@ -104,31 +109,33 @@ ENDCOMMON            3
 DATA                 4         12
 ANG1       ANG2       DATA       DATA-ERR
 ADEG       ADEG       NO-DIM     NO-DIM
- 20.0       64.0       -0.004     0.013
- 25.0       59.5       -0.035     0.009
- 25.5       59.0       -0.038     0.009
- 28.0       57.0       -0.026     0.014
- 30.0       56.0       -0.013     0.005
- 30.0       54.0       -0.007     0.008
- 32.5       52.5       -0.010     0.007
- 35.0       49.5       0.000      0.006
- 38.0       47.0       -0.008     0.011
- 39.0       45.5       -0.011     0.005
- 40.0       44.0       -0.005     0.006
- 42.5       42.5       0.006      0.007
+       20.0       64.0     -0.004      0.013
+       25.0       59.5     -0.035      0.009
+       25.5       59.0     -0.038      0.009
+       28.0       57.0     -0.026      0.014
+       30.0       56.0     -0.013      0.005
+       30.0       54.0     -0.007      0.008
+       32.5       52.5     -0.010      0.007
+       35.0       49.5      0.000      0.006
+       38.0       47.0     -0.008      0.011
+       39.0       45.5     -0.011      0.005
+       40.0       44.0     -0.005      0.006
+       42.5       42.5      0.006      0.007
 ENDDATA             14
 ENDSUBENT           31
-SUBENT        E0735004   20091023   20100128   20100119       E060
-BIB                  6          8
-REACTION   (1-H-2(P,N+P)1-H-1,,POL/DA/DA,P/N,ANA)
-PART-DET   (P,N)
-EN-SEC     - ANG1 is polar angle (lab.) between beam and proton
-           - ANG2 is polar angle (lab.) between beam and neutron
-METHOD     (COINC) Detect proton and neutron in coincidence.
+SUBENT        E0735004   20240622   20240625   20240625       E145
+BIB                  7         10
+REACTION   (1-H-2(P,N+P)1-H-1,,POL/DA/DA,N/P,ANA)
+PART-DET   (N,P)
+ANG-SEC    (ANG1,N)
+           (ANG2,P)
+METHOD     (COINC) Detect neutron and proton in coincidence.
 ERR-ANALYS (ERR-1) Uncertainty due to normalization
            (DATA-ERR) Relative uncertainty only
-STATUS     (TABLE) Taken from Table 2, p118 of reference
-ENDBIB               8
+STATUS     (TABLE,,H.Shimizu+,J,NP/A,380,111,1982) Table 2
+HISTORY    (20240505A) MA: SF7: P/N -> N/P; Numerical data of
+                       ANG1 and ANG2 swapped.
+ENDBIB              10
 COMMON               1          3
 ERR-1
 PER-CENT
@@ -137,14 +144,14 @@ ENDCOMMON            3
 DATA                 4          8
 ANG1       ANG2       DATA       DATA-ERR
 ADEG       ADEG       NO-DIM     NO-DIM
- 16.5       70.5       0.133      0.033
- 23.0       63.5       0.112      0.033
- 30.0       57.0       0.184      0.016
- 37.0       50.0       0.158      0.012
- 41.5       45.5       0.155      0.014
- 43.5       43.5       0.133      0.009
- 48.0       39.0       0.109      0.009
- 55.0       32.0       0.049      0.010
+       70.5       16.5      0.133      0.033
+       63.5       23.0      0.112      0.033
+       57.0       30.0      0.184      0.016
+       50.0       37.0      0.158      0.012
+       45.5       41.5      0.155      0.014
+       43.5       43.5      0.133      0.009
+       39.0       48.0      0.109      0.009
+       32.0       55.0      0.049      0.010
 ENDDATA             10
-ENDSUBENT           27
+ENDSUBENT           29
 ENDENTRY             4
