@@ -1,12 +1,12 @@
-ENTRY            40574   20230724   20231109   20231109       4214
-SUBENT        40574001   20230724   20231109   20231109       4214
-BIB                 13         29
+ENTRY            40574   20240712   20240902   20240902       4217
+SUBENT        40574001   20240712   20240902   20240902       4217
+BIB                 13         31
 TITLE       Scattering of neutrons with energy 0.8 - 2.75 MeV
             by Sm-150 nucleus
 AUTHOR     (E.A.Andreev,V.K.Basenko,S.A.Pshenichnyy,
-           S.P.Sit'Ko,I.A.Korzh,V.A.Mishchenko,N.M.Pravdivyy)
+           S.P.Sit'ko,I.A.Korzh,V.A.Mishchenko,N.M.Pravdivyy)
 REFERENCE  ((C,77KIEV,2,17,1977)=
-           (R,INDC(CCP)-118,(2),17,1977))
+           (S,INDC(CCP)-118,(2),17,1977))
            Data and excitation function curves are given
 REL-REF    (I,,V.V.Zhuk+,C,73KIEV,4,203,1973)
             Experimental details
@@ -18,29 +18,31 @@ SAMPLE      Cylinder 30. mm diam, 40. mm height, oxide Sm(2)O(3),
            (62-SM-150,ENR=0.929)
 METHOD     (TOF)
            (ASSOP) For absolute monitoring.
-DETECTOR   (GELI) 46 cm3 volume.
+DETECTOR   (GELI) 46 cm3 volume. For gamma registration.
 MONITOR     Absolute measurements with help of He-3 ions
 PART-DET   (G)
-           (HE3)
-           (P)
-           (T)
+           (HE3) Associated particle from D(d,n)He-3
+           (P) Associated particle from D(d,p)T reaction
+           (T) Associated particle from D(d,p)T reaction
 ERR-ANALYS (DATA-ERR)  Not specified
 HISTORY    (19790103C)
            (20230724U) Upper -> lower case correction.
             Dates were corrected for 4-digits year.
             STATUS was added.
             Subent 003 was added.
-ENDBIB              29
+           (20240712A) DATA-ERR was corrected in Subent 003.
+            Minor corrections in all Subents.
+ENDBIB              31
 COMMON               1          3
 EN
 MEV
- 2.7500E+00
+ 2.75
 ENDCOMMON            3
-ENDSUBENT           36
-SUBENT        40574002   20230724   20231109   20231109       4214
+ENDSUBENT           38
+SUBENT        40574002   20240712   20240902   20240902       4217
 BIB                  2          2
 REACTION   (62-SM-150(N,INL)62-SM-150,PAR,SIG)
-STATUS     (TABLE,,E.A.Andreev+,R,INDC(CCP)-118,(2),17,1977)
+STATUS     (TABLE,,E.A.Andreev+,S,INDC(CCP)-118,(2),17,1977)
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 3         16
@@ -52,7 +54,7 @@ KEV        MB         MB
   1046.14     275.      35.
   1071.4      370.      40.
   1165.75     290.      40.
-  1193.81    250.      30.
+  1193.81     250.      30.
   1417.33      80.      20.
   1504.53     110.      14.
   1603.        60.      10.
@@ -64,10 +66,9 @@ KEV        MB         MB
   2024.60      30.       6.
 ENDDATA             18
 ENDSUBENT           25
-SUBENT        40574003   20230724   20231109   20231109       4214
-BIB                  7         13
+SUBENT        40574003   20240712   20240902   20240902       4217
+BIB                  7         14
 REACTION   (62-SM-150(N,INL)62-SM-150,PAR,SIG,G)
-            Gamma production cross-section in n,n'gamma reaction
 MISC-COL   (MISC1)   Spin of the initial level
            (MISC2)   Parity of the initial level
            (MISC3)   Spin of the final level
@@ -76,10 +77,12 @@ EN-SEC     (E,G)
 MONITOR    (26-FE-56(N,INL)26-FE-56,PAR,SIG,G)
 FLAG       (1.)  Spin of the initial level known uncertainly
            (2.)  Parity of the initial level known uncertainly
-STATUS     (TABLE,,E.A.Andreev+,R,INDC(CCP)-118,(2),17,1977)
+STATUS     (TABLE,,E.A.Andreev+,S,INDC(CCP)-118,(2),17,1977)
 HISTORY    (20230724S) Subent was re-stored from archive and
            recompiled.
-ENDBIB              13
+           (20240712A) Misprint in DATA-ERR was corrected 0. -> 8.
+           for 1927.3 keV gamma energy.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                10         24
 E          LVL-INI    DATA       DATA-ERR   MISC1      MISC2
@@ -132,8 +135,8 @@ NO-DIM     NO-DIM     NO-DIM     NO-DIM
  4.         +1.         2.
    1636.5    1970.44       30.         6.    4.         +1.
  2.         +1.
-   1927.3    1927.3        50.         0.    2.         +1.
+   1927.3    1927.3        50.         8.    2.         +1.
             +1.         1.         2.
 ENDDATA             52
-ENDSUBENT           70
+ENDSUBENT           71
 ENDENTRY             3
