@@ -1,106 +1,112 @@
-ENTRY            30771   20090908   20091224   20091223       3141
-SUBENT        30771001   20090908   20091224   20091223       3141
-BIB                  7         11
-TITLE      Lu-175(n,g)Lu-176-m cross sections
-AUTHOR     (B.J.Allen,G.C.Lowenthal,J.W.Boldeman,J.R.de Laeter)
-INSTITUTE  (3AULAUA)
-           (3AULWAI) Last author
+ENTRY            30771   20240524   20240917   20240917       3213
+SUBENT        30771001   20240524   20240917   20240917       3213
+BIB                  9         20
+TITLE      s-process branch at 176Lu
+AUTHOR     (B.J.Allen, G.C.Lowenthal, J.R.de Laeter)
+INSTITUTE  (3AULAUA,3AULWAI)
+REFERENCE  (J,JP/G,7,1271,1981)
+           (C,81GRENOB,,573,1981)
+            final 175Lu(n,g) data in text
+           (P,AAEC/AP/PR-81,8,1981)
+            final 175Lu(n,g) data in text
+           (P,AAEC/PR-44-PD,19,1978)
+            preliminary 175Lu(n,g) isomeric ratio in text
+FACILITY   (VDG)
 MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+DETECTOR   (GELI) 40 cm3 volume, for 176Hf 88 keV gamma-ray
+           (PROPC) 4pi beta-gamma coincidence chamber for Au
+           (LONGC) To monitor neutron flux at 0 deg every 15 min
 METHOD     (ACTIV)
-DETECTOR   (GELI)
-           (D4PI) 4Pi beta-gamma coincidence detector for Au
-                  activity.
+           (BGCT) for Au
 HISTORY    (19880119C) DG.-
            (20090725A) SD:Updated to new date formats,lower case.
-ENDBIB              11
+           (20240524A) On. Major revisions in 002-004.
+ENDBIB              20
 NOCOMMON             0          0
-ENDSUBENT           14
-SUBENT        30771002   20090908   20091224   20091223       3141
-BIB                  9         38
-REACTION  1(71-LU-175(N,G)71-LU-176-M,,SIG)
-          2(71-LU-175(N,G)71-LU-176-M/T,,SIG/RAT)
-REFERENCE  (C,81GRENOB,,573,198109)
-           (J,JP/G,7,1271,1981) Superseded by 81Grenob
-           (P,AAEC/AP/PR-81,8,1981)
-           (P,AAEC/PR-44PD,19,1978)
-SAMPLE     Metallic Lu sample
+ENDSUBENT           23
+SUBENT        30771002   20240524   20240917   20240917       3213
+BIB                 10         29
+REACTION  1((71-LU-175(N,G)71-LU-176-M,,SIG)/
+           (79-AU-197(N,G)79-AU-198,,SIG))
+          2(71-LU-175(N,G)71-LU-176-M,,SIG)
 DECAY-DATA (71-LU-176-M,3.635HR,DG,88.36,0.0890)
-INC-SOURCE (P-LI7)
-ERR-ANALYS  Isotope         Quantity              Value    1 sigma
-           -------------------------------------------------------
-            Lu-176-m    -half life(hours)         3.635     0.003
-                        -88 keV gamma fraction    0.0890    0.0015
-                        -Detector eff.at 88keV    0.0088    0.0002
-                        -Effect of source thickness on
-                         source-detector dist.(%) 1.0       0.3
-                        -Self-shielding of 88 keV
-                         gamma-ray in sources(%)  4.3-11.8  0.5
-                        -Peak area determination
-                             random(%)                     0.6-2.4
-                             systematic(%)                 0.4-2.5
-                        -Correction for Lu-176(%) <0.1      0.1
-                        -Pb fluorescence-KXB at 87.3keV(%)   0.2
-            Au-198      -Half-life(days)          2.696     0.001
-                        -Mass of foils (Mg)       24-65     0.020
-                        -Coincidence counting
-                             random(%)                     0.2-0.4
-                             systematic(%)                 0.3-0.5
-           -------------------------------------------------------
-ASSUMED    (ASSUM,71-LU-175(N,G)71-LU-176,,SIG)
-STATUS     (TABLE) Data taken from Conf.Grenoble Sep.1981,Pag.573
-           Total cross section (1230 +- 130 mb)used in the
-           isomeric ratio,is the weighted average value
-           taken from:
-          2(DEP,11679020)  1411 +- 170 mb
-           (DEP,30233010)  1240 +- 190 mb
-           (DEP,10720005)  1208 +-  60 mb
+INC-SOURCE (P-LI7) with proton 25 keV above the 7Li(p,n)
+            threshold energy (1.881 MeV).
+SAMPLE     Lu2O3 samples (99.9% pure) stacked alternately between
+            Au discs (12.7 mm diameter, 25-60 mg/cm2) in Cd can
+            (0.64 mm thick)
+ANALYSIS   Weighted mean of the four results. The authors
+            concluded 175Lu(n,g)/197Au(n,g) is not sensitive
+            to the neutron energy range.
+CORRECTION Corrected for
+            . 176mLu decay after irradiation
+            . photo peak efficiency
+            . 176gLu decay background
+            . 87.3 keV Kxbeta peak due to lead fluorescence
+            . Absorption in Al foil
+            . thickness of sources on the source-detector distance
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty.
+           By compiler (2024-05-24):
+            Detailed error budgets are summarized in the journal
+           publication, but it is not clear which parts are
+           applicable to the final value of the cross section.
+ADD-RES    175Lu(n,g)176mLu/175Lu(n,g)(176gLu+176mLu)=0.78+/-0.10
+STATUS     (TABLE,,B.J.Allen+,C,81GRENOB,,573,1981) Text (p.574)
 HISTORY    (19890718A) VOF.-Data heading in col.2 and status corr.
-ENDBIB              38
-COMMON               4          3
-MONIT      MONIT-ERR  ASSUM      ASSUM-ERR
-MB         MB         MB         MB
- 579.       23.         1230.       130.
+           (20240524A) On. 175Lu(n,g)/197Au(n,g) added. Isomeric
+            ratio deleted.
+ENDBIB              29
+COMMON               2          3
+MONIT     2MONIT-ERR 2
+MB         MB
+ 579.       23.
 ENDCOMMON            3
 DATA                 6          1
-EN         EN-RSL     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
-KEV        KEV        MB         MB         NO-DIM     NO-DIM
-30.        10.        958.       58.        0.78       0.10
+EN         EN-RSL-HW  DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+KEV        KEV        NO-DIM     NO-DIM     MB         MB
+ 30.        10.        1.654      0.076      958.       58.
 ENDDATA              3
-ENDSUBENT           50
-SUBENT        30771003   20090908   20091224   20091223       3141
-BIB                  7          8
-REACTION   (73-TA-181(N,G)73-TA-182-G,,SIG)
-REFERENCE  (J,JP/G,7,1271,1981)
+ENDSUBENT           41
+SUBENT        30771003   20240524   20240917   20240917       3213
+BIB                  6         10
+REACTION  1((73-TA-181(N,G)73-TA-182-G,,SIG,,SPA)/
+           (79-AU-197(N,G)79-AU-198,,SIG,,SPA))
+          2(73-TA-181(N,G)73-TA-182-G,,SIG,,SPA)
 DECAY-DATA (73-TA-182-G,115.D)
-INC-SOURCE (P-LI7)
-ERR-ANALYS No information
-STATUS     (TABLE) Data taken from JP/G,7(1981)pag.1271,
-            from text on p.1280
+INC-SOURCE (P-LI7) with proton 30 keV above the 7Li(p,n)
+            threshold energy (1.881 MeV)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
+STATUS     (TABLE,,B.J.Allen+,J,JP/G,7,1271,1981) Text (p.1280)
 HISTORY    (19890718A) VOF.-Data heading in col. 2 Corrected.-
-ENDBIB               8
-NOCOMMON             0          0
+           (20240524A) On. 181Ta(n,g)/197Au(n,g) ratio added.
+ENDBIB              10
+COMMON               2          3
+MONIT     2MONIT-ERR 2
+MB         MB
+ 579.       23.
+ENDCOMMON            3
 DATA                 6          1
-EN         EN-RSL     DATA       DATA-ERR   MONIT      MONIT-ERR
-KEV        KEV        MB         MB         MB         MB
-30.        10.        834.       74.        579.       23.
+EN-MIN     EN-MAX     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+KEV        KEV        NO-DIM     NO-DIM     MB         MB
+ 2.         105.       1.44       0.12       834.       74.
 ENDDATA              3
-ENDSUBENT           16
-SUBENT        30771004   20090908   20091224   20091223       3141
+ENDSUBENT           22
+SUBENT        30771004   20240524   20240917   20240917       3213
 BIB                  7          8
-REACTION   (71-LU-175(N,G)71-LU-176-M,,SIG,,MXW)
-REFERENCE  (J,JP/G,7,1271,1981)
-SAMPLE     Lu2-O3 foils
-DECAY-DATA (71-LU-176-M,3.635HR,DG,88.36,0.0890)
-ERR-ANALYS No information
-STATUS     (TABLE) Data taken from JP/G,7(1981) pag.1271,
-            from text on p.1280
-INC-SPECT  Thermal neutron spectrum.No other information is given
+REACTION   (71-LU-175(N,G)71-LU-176-M,,SIG,,SPA)
+SAMPLE     Lu2O3 samples stacked between Au discs (12.7 mm
+            diameter, 25-60 mg/cm2)
+INC-SOURCE No information
+INC-SPECT  Thermal neutron spectrum flux
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
+STATUS     (TABLE,,B.J.Allen+,J,JP/G,7,1271,1981) Text (p.1280)
+HISTORY    (20240524A) REACTION(SF8): MXW -> SPA
 ENDBIB               8
 NOCOMMON             0          0
 DATA                 3          1
-EN-MEAN    DATA       DATA-ERR
+EN-DUMMY   DATA       DATA-ERR
 EV         B          B
-0.0253     16.4       0.8
+ 0.0253     16.4       0.8
 ENDDATA              3
 ENDSUBENT           16
 ENDENTRY             4
