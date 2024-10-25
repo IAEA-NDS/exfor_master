@@ -1,71 +1,77 @@
-ENTRY            A1136   19990319   19990505   20050926       0000
-SUBENT        A1136001   19990319   19990505   20050926       0000
-BIB                 11         14
-INSTITUTE  (1USALRL)
-REFERENCE  (J,PR,125,(2),626,196201)
-AUTHOR     (C.C.GARDNER,J.D.ANDERSON)
+ENTRY            A1136   20240711   20241024   20241024       A114
+SUBENT        A1136001   20240711   20241024   20241024       A114
+BIB                 11         18
 TITLE      Gamma yield from the proton bombardment of tritium
-FACILITY   (ISOCY) Variable-energy
+AUTHOR     (C.C.Gardner,J.D.Anderson)
+REFERENCE  (J,PR,125,626,1962)
+INSTITUTE  (1USALRL)
+FACILITY   (ISOCY,1USALRL) The 90-in. variable-energy cyclotron
 SAMPLE     0.12 MeV-thick tritium gas target
 METHOD     (TOF) To separated background neutrons and gamma rays
            from neutrons produced in the tritium gas
            (PHD)
 DETECTOR   (NAICR) 5-in. diam by 6-in.long
+           (SCIN) Neutron detector (plastic scintillator) placed
+           at 0. degr. to the proton beam, 68 in. from the gas
+           target.
 MONITOR    (1-H-3(P,N)2-HE-3,,DA)
-MONIT-REF  (A1083001,PERRY+,J,PR,99,1368,1955)
+MONIT-REF  (A1083001,J.E.Perry+,J,PR,99,1368,1955)
 HISTORY    (19810526C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990214U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              14
+           (20240711A) SD: Corrections in all Subents.
+ENDBIB              18
 COMMON               1          3
 ANG-NRM
 ADEG
  0.0
 ENDCOMMON            3
-ENDSUBENT           21
-SUBENT        A1136002   19990319   19990505   20050926       0000
-BIB                  3          3
-REACTION   (1-H-3(P,G)2-HE-4,,DA,,,EXP)
+ENDSUBENT           25
+SUBENT        A1136002   20240711   20241024   20241024       A114
+BIB                  4          4
+REACTION   (1-H-3(P,G)2-HE-4,,DA)
 ERR-ANALYS (DATA-ERR) Absolute error
-STATUS     (TABLE) From the text p.627
-ENDBIB               3
-NOCOMMON
+STATUS     (TABLE,,C.C.Gardner+,J,PR,125,626,1962) Text p.627
+HISTORY    (20240711A) SD: SF9=EXP deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
 DATA                 4          1
 EN         ANG        DATA       DATA-ERR
 MEV        ADEG       MB/SR      PER-CENT
-     6.15      90.         0.001     15.
+     6.15      90.      0.114E-01     15.
 ENDDATA              3
-ENDSUBENT           11
-SUBENT        A1136003   19990319   19990505   20050926       0000
-BIB                  3          5
-REACTION   (1-H-3(P,G)2-HE-4,,DA,,,EXP)
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) Digitizing error
-           (DATA-ERR1)  Relative error
-STATUS     (CURVE) Fig 4
-ENDBIB               5
-COMMON               4          3
-EN-ERR     ANG        DATA-ERR   DATA-ERR1
-MEV        ADEG       MB/SR      PER-CENT
- 0.035       90.       0.4000E-04  5.
+ENDSUBENT           12
+SUBENT        A1136003   20240711   20241024   20241024       A114
+BIB                  4          6
+REACTION   (1-H-3(P,G)2-HE-4,,DA)
+ERR-ANALYS (DATA-ERR)  Relative error of 5%
+STATUS     (CURVE,,C.C.Gardner+,J,PR,125,626,1962) Fig 4
+HISTORY    (20240711A) SD: SF9=EXP deleted from REACTION code.
+           EN-ERR -> EN-ERR-DIG; DATA-ERR -> ERR-DIG;
+           DATA-ERR1 -> DATA-ERR. Data were re-digitized.
+ENDBIB               6
+COMMON               3          3
+ANG        EN-ERR-DIG ERR-DIG
+ADEG       MEV        MU-B/SR
+        90.      0.005    0.9E-02
 ENDCOMMON            3
-DATA                 2         15
-EN         DATA
-MEV        MB/SR
-     5.813      0.0094
-     6.032      0.0095
-     6.191      0.0094
-     6.308      0.009
-     6.448      0.0091
-     6.568      0.0093
-     6.666      0.009
-     6.866      0.0092
-     7.083      0.009
-     7.758      0.0087
-     8.134      0.0084
-     8.352      0.0081
-     8.472      0.0083
-     8.809      0.008
-     9.245      0.0078
+DATA                 3         15
+EN         DATA       DATA-ERR
+MEV        MU-B/SR    MU-B/SR
+      5.793      9.579      0.445
+      6.018      9.681
+      6.156      9.543
+      6.294      9.200
+      6.450      9.370      0.445
+      6.553      9.439
+      6.657      9.164
+      6.864      9.369
+      7.123      9.162
+      7.762      8.885      0.479
+      8.125      8.643
+      8.384      8.437
+      8.453      8.505
+      8.815      8.332
+      9.264      8.090      0.411
 ENDDATA             17
-ENDSUBENT           31
+ENDSUBENT           32
 ENDENTRY             3
