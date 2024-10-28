@@ -1,14 +1,15 @@
-ENTRY            C1928   20140418   20140711   20140711       C141
-SUBENT        C1928001   20140418   20140711   20140711       C141
-BIB                  9         17
+ENTRY            C1928   20240611   20241027   20241027       C239
+SUBENT        C1928001   20240611   20241027   20241027       C239
+BIB                 10         23
 TITLE      Measurements and calculations of neutron spectra from
            35 MeV deuterons on thick lithium for the FMIT facility
 AUTHOR     (D.L.Johnson,F.M.Mann,J.W.Watson,J.Ullmann,W.G.Wyckoff)
-INSTITUTE  (1USAHED,1USADAV)
 REFERENCE  (J,JNM,85-86,467,1979)
+           #doi:10.1016/0022-3115(79)90532-4
+INSTITUTE  (1USAHED,1USADAV)
 FACILITY   (CYCLO,1USADAV) Measurements were performed using the
            isochronous cyclotron of the Crocker Nuclear
-           Laboratory of the University of California at Davis
+           Laboratory of the University of California at Davis.
 SAMPLE     Natural Li target with diameter of 25 mm and
            thickness of 20 mm
 DETECTOR   (SCIN) Neutrons were detected by an NE213
@@ -16,23 +17,35 @@ DETECTOR   (SCIN) Neutrons were detected by an NE213
 METHOD     (TOF,PSD) Neutron energy determination was by the
            time of flight method with gamma ray background
            rejected by pulse shape discrimination.
+ERR-ANALYS (DATA-ERR) The experimental spectrum has
+           uncertainties currently estimated at about 20%
+            (1 sigma).
 HISTORY    (20120731C) Compiled by S.H.
-           920140418U) SD: Volume of the ref. corrected.
-ENDBIB              17
+           (20140418U) SD: volume of the ref. corrected.
+           (20240611A) BP: Updated entry, corrected second update
+                      time stamp, added doi and sub.3, ERR-ANALYS.
+ENDBIB              23
 COMMON               1          3
 EN
 MEV
 35.0
 ENDCOMMON            3
-ENDSUBENT           24
-SUBENT        C1928002   20120731   20121218   20121128       C121
-BIB                  2          4
-REACTION   (3-LI-0(D,X)0-NN-1,,TTY/PY/DA/DE)
-STATUS     (CURVE) Data taken from fig. 2 of the reference
-            Regular grid was superimposed on the fig.2. Data
-            values were digitized on grid points.
-ENDBIB               4
-NOCOMMON             0          0
+ENDSUBENT           30
+SUBENT        C1928002   20240611   20241027   20241027       C239
+BIB                  3          7
+REACTION   (3-LI-0(D,X)0-NN-1,,PY/DA/DE,,TT/CH)
+STATUS     (CURVE,,D.L.Johnson+,J,JNM,85-86,467,1979)
+           Fig. 2, page 469 of J,JNM,85-86,467,1979. Regular grid
+           was superimposed on the fig.2. Data values were
+           digitized on grid points.
+HISTORY    (20240611A) BP: Reaction string correction, added
+                       DATA-ERR.
+ENDBIB               7
+COMMON               1          3
+DATA-ERR
+PER-CENT
+       20.0
+ENDCOMMON            3
 DATA                 3        499
 ANG        E          DATA
 ADEG       MEV        P/MEVMUCSR
@@ -536,5 +549,28 @@ ADEG       MEV        P/MEVMUCSR
       150.0       27.0   3.92E+05
       150.0       27.9   1.69E+05
 ENDDATA            501
-ENDSUBENT          510
-ENDENTRY             2
+ENDSUBENT          517
+SUBENT        C1928003   20240611   20241027   20241027       C239
+BIB                  4          6
+REACTION   (3-LI-0(D,X)0-NN-1,,PY/DA,,TT/CH)
+REL-REF    (A,C1832009,M.J.Saltmarsh+,J,NIM,145,81,1977)
+STATUS     (DEP,C1928002)
+           (CURVE,,D.L.Johnson+,J,JNM,85-86,467,1979)
+           Fig. 3, page 469 of J,JNM,85-86,470,1979.
+HISTORY    (20240611C) BP
+ENDBIB               6
+NOCOMMON             0          0
+DATA                 3          8
+ANG        DATA       DATA-ERR
+ADEG       PRD/MUC/SR PRD/MUC/SR
+      0.269  2.361E+11  3.513E+10
+      3.952  2.133E+11  3.421E+10
+      8.037  1.672E+11  2.438E+10
+     12.136  1.240E+11  1.949E+10
+     20.232  7.261E+10  1.168E+10
+     29.720  5.141E+10  8.777E+09
+     45.014  3.172E+10  6.827E+09
+     69.918  1.911E+10  2.964E+09
+ENDDATA             10
+ENDSUBENT           21
+ENDENTRY             3
