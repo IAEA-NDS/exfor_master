@@ -1,6 +1,6 @@
-ENTRY            41300   20210414   20210810   20210810       4195
-SUBENT        41300001   20210414   20210810   20210810       4195
-BIB                 12         46
+ENTRY            41300   20240724   20241025   20241025       4218
+SUBENT        41300001   20240724   20241025   20241025       4218
+BIB                 12         48
 TITLE       Measurements of the energy dependence of the relative
             delayed neutron yields related to individual
             precursors from neutron-induced fission of 237Np
@@ -8,7 +8,7 @@ AUTHOR     (S.G.Isaev,V.M.Piksaykin,L.E.Kazakov,M.Z.Tarasko)
 INSTITUTE  (4RUSFEI)
 REFERENCE  (J,YK,,(1),17,1998) Main reference,data are given.
             In English.
-FACILITY   (VDG)    Electrostatic accelerator KG-2.5
+FACILITY   (VDG,4RUSFEI) Electrostatic accelerator KG-2.5
 DETECTOR   (D4PI)   Boron counter SNM-11 as assemblage of
              30 counters distributed in polyethylene moderator -
              for neutron detection. Energy dependence of detector
@@ -47,7 +47,9 @@ HISTORY    (19980925C)  + + Compiled at the CJD   + +
            Correction according to memo CP-D/777.
            (20191112U) Ref. YK was corrected.
            (20210414A) REACTION in Subent 002 was corrected
-ENDBIB              46
+           (20240724A) Subent 002 was corrected.
+            STATUS was updated for new rules.
+ENDBIB              48
 COMMON               8          6
 E-LVL      ERR-S      ERR-1      ERR-2      ERR-3      ERR-4
 ERR-5      ERR-6
@@ -56,13 +58,14 @@ PER-CENT   PER-CENT
 0.           0.01       0.7         0.6      0.05        0.01
   0.1        0.6
 ENDCOMMON            6
-ENDSUBENT           56
-SUBENT        41300002   20210414   20210810   20210810       4195
-BIB                  6         43
+ENDSUBENT           58
+SUBENT        41300002   20240724   20241025   20241025       4218
+BIB                  7         49
 REACTION   ((93-NP-237(N,F),DL/GRP,NU)/
            (93-NP-237(N,F),DL,NU))  Relative
              delayed neutrons yield from 8 individual precursors
              and 4 groups of precursors.
+RESULT     (DFRCT)
 SAMPLE      NpO(2) oxide powder, density 7 g/cm3, packed in
             stainless-steel capsule placed in titanium container.
             Sample weight is 2.2810 gram
@@ -90,8 +93,9 @@ DECAY-DATA  Individual precursors:
            (55-CS-144,1.002SEC)
            (53-I-140,0.86SEC)
 ERR-ANALYS (EN-ERR) Standard deviations in incident neutron energy
-STATUS     (TABLE)  Data from Table 2 of YK,,(1),17,1998
-           (COREL,41322002) 6-group data
+STATUS     (TABLE,,S.G.Isaev,J,YK,,(1),17,1998) Data from Table 2
+           (COREL,41322002) 6-group expression of data from the
+            same measurement.
 HISTORY    (19990319A)  Reaction coding changed
            (20140721A) GRP code was deleted from SF5 of REACTION
            according to comment of N.Otsuka (NDS,IAEA).
@@ -102,7 +106,11 @@ HISTORY    (19990319A)  Reaction coding changed
             DL/IND -> DL (second term).
             ELEMENT, MASS, ISOMER were deleted from DATA block,
             they are given in DECAY-DATA for specified half-life.
-ENDBIB              43
+           (20240724A) ERR-T : 0.000 -> 0.0010 at EN=4.719 MeV
+            ( taking into account ERR-T values at neighbouring
+            points - 0.0059+-0.0011, 0.0052+-0.0009; one digit
+            was lost at the right side of this table).
+ENDBIB              49
 NOCOMMON             0          0
 DATA                 5         60
 EN         EN-ERR     HL         DATA       ERR-T
@@ -159,7 +167,7 @@ MEV        MEV        SEC        NO-DIM     NO-DIM
   4.719     0.205       0.384     0.088      0.020
   4.719     0.205       0.542     0.022      0.004
   4.719     0.205       0.942     0.015      0.003
-  4.719     0.205       1.289     0.0054     0.000
+  4.719     0.205       1.289     0.0054     0.0010
   4.719     0.205       2.09      0.259      0.011
   4.719     0.205       2.76      0.136      0.012
   4.719     0.205       4.38      0.098      0.007
@@ -168,5 +176,5 @@ MEV        MEV        SEC        NO-DIM     NO-DIM
   4.719     0.205      24.5       0.141      0.005
   4.719     0.205      55.69      0.037      0.001
 ENDDATA             62
-ENDSUBENT          110
+ENDSUBENT          116
 ENDENTRY             2
