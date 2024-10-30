@@ -1,6 +1,6 @@
-ENTRY            22877   20171108   20180903   20180809       2266
-SUBENT        22877001   20171108   20180903   20180809       2266
-BIB                 15         51
+ENTRY            22877   20231026   20241029   20241029       2319
+SUBENT        22877001   20231026   20241029   20241029       2319
+BIB                 14         57
 TITLE       New cross section measurements for neutron-induced
              reactions on Cr, Ni, Cu, Ta and W isotopes obtained
              with the activation technique
@@ -12,6 +12,9 @@ REFERENCE  (C,2007NICE,1,559,2007)
             003-004,006,008,011,015 data sets in figs
            (S,EUR-22794,117,2007)
             002-003,005-010,013,019-021 data sets in figs
+           (J,JP/CS,1555,012010,2020) Data for 58Ni(n,pa)54Mn and
+           63(n,pa)59Fe
+           #doi:10.1088/1742-6596/1555/1/012010
 REL-REF    (I,22820001,V.Semkova+,J,NP/A,730,255,2004)
             Detail description of measurement technique
 FACILITY   (VDG,2ZZZGEL)) 7-MV Van de Graaff accelerator
@@ -45,26 +48,31 @@ CORRECTION Corrected for
             - low energy neutron background
             - neutron flux and energy distribution inside the
               stack of sample and monitor foils
-ERR-ANALYS (DATA-ERR) No information on sources of uncertainties
 STATUS     (APRVD) Approved by Valentina Semkova (2017-11-09)
 HISTORY    (20081015C) M.M.
            (20090914A) M.M. Reference C,2008VILLIG was added.
             Request for the newer data was sent to A.Plompen.
            (20171108R) On. Data received from V.Semkova.
            (20171108A) On. Major revision in 002-020. 021 deleted.
-ENDBIB              51
+           (20231026A) VS. Reference JP/CS,1555,012010,2020 added.
+           Subents 003 and 005 updated. Subents 002, 004, 006-020
+              ERR-ANALYS moved from 001. Subents 006-007,019-020
+              SF3 corrected.
+ENDBIB              57
 NOCOMMON             0          0
-ENDSUBENT           54
-SUBENT        22877002   20171108   20180903   20180809       2266
-BIB                  6          7
+ENDSUBENT           60
+SUBENT        22877002   20231026   20241029   20241029       2319
+BIB                  7          9
 REACTION   (24-CR-50(N,X)23-V-48,,SIG)
 SAMPLE     Natural Cr (30 mm diam.x5 mm), nominal weight 25500 mg.
 DECAY-DATA (23-V-48,15.9735D,DG,983.525,0.9989)
 CORRECTION Corrected for coincidence summing effect
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB               7
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          5
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -75,9 +83,9 @@ MEV        MEV        MB         MB
  19.5       0.2        0.59       0.03
  20.6       0.1        1.18       0.1
 ENDDATA              7
-ENDSUBENT           19
-SUBENT        22877003   20171108   20180903   20180809       2266
-BIB                  6         11
+ENDSUBENT           21
+SUBENT        22877003   20231026   20241029   20241029       2319
+BIB                  7         22
 REACTION   (28-NI-58(N,P+A)25-MN-54,,SIG)
 SAMPLE     Natural Ni (14 mm diam.x5 mm), nominal weight 5000 mg.
 DECAY-DATA (25-MN-54,312.12D,DG,834.848,0.99976)
@@ -86,25 +94,45 @@ COMMENT    By authors:
              cross section is 800 mb and Mn impurity is 100 ppm;
             Contribution of 54Fe(n,p)54Mn is less than 0.1% if the
              cross section is 200 mb and Fe impurity is 40 ppm.
-STATUS     (TABLE) Data received from V.Semkova
-           (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
+ERR-ANALYS (ERR-T) Total uncertainty determined by error
+           propagation of the partial uncertainties of the:
+           (ERR-S) counting statistics including the studied and
+           monitor reactions.
+           (ERR-1) ratio of the detector efficiencies for the
+           reaction and monitor gamma-rays.
+           (ERR-2) correction factor for the low energy neutron
+           background
+           (ERR-3) coincidence-summing correction factor
+           (ERR-4) monitor reaction
+           (ERR-5) other factors
+STATUS     (TABLE,,V.Semkova+,J,JP/CS,1555,012010,2020) Table 4.
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              11
-NOCOMMON             0          0
-DATA                 4          7
-EN         EN-RSL-HW  DATA       DATA-ERR
-MEV        MEV        MB         MB
- 15.6       0.3         3.07      0.2
- 16.8       0.3         7.1       0.7
- 18.0       0.2        17.4       2.
- 18.1       0.2        14.6       1.5
- 19.1       0.2        26.        1.5
- 19.9       0.2        28.        1.7
- 20.6       0.1        36.        3.
-ENDDATA              9
-ENDSUBENT           25
-SUBENT        22877004   20171108   20180903   20180809       2266
-BIB                  7         11
+           (20231026A) Data updated. ERR-ANALYS added.
+ENDBIB              22
+COMMON               3          3
+ERR-1      ERR-3      ERR-5
+PER-CENT   PER-CENT   PER-CENT
+        3.1        0.4       2.
+ENDCOMMON            3
+DATA                 7          5
+EN         EN-RSL-HW  DATA       ERR-T      ERR-S      ERR-2
+ERR-4
+MEV        MEV        MB         MB         PER-CENT   PER-CENT
+PER-CENT
+ 15.6       0.3         2.97      0.2              1.6
+   1.6
+ 16.8       0.3         7.06      0.37             3.0       1.5
+   2.1
+ 18.0       0.2        17.4       2.0              2.4       1.5
+   2.2
+ 19.1       0.2        26.2       1.4              2.4       1.5
+   3.0
+ 20.6       0.1        35.4       3.0              1.7       1.5
+   5.1
+ENDDATA             14
+ENDSUBENT           45
+SUBENT        22877004   20231026   20241029   20241029       2319
+BIB                  8         13
 REACTION   (28-NI-58(N,X)27-CO-56,,SIG)
 SAMPLE     Natural Ni (14 mm diam.x5 mm), nominal weight 5000 mg.
 DECAY-DATA (27-CO-56,77.233D,DG,846.771,0.99935)
@@ -113,10 +141,12 @@ COMMENT    By authors:
             Potential interference from 58Ni(n,3n)56Ni (low
              threshold) and 58Ni(n,3p)56Mn (Coulomb barrier
              exists) were discarded.
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              11
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4          9
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -131,9 +161,9 @@ MEV        MEV        MB         MB
  19.9       0.2        0.77       0.05
  20.6       0.1        1.         0.1
 ENDDATA             11
-ENDSUBENT           27
-SUBENT        22877005   20171108   20180903   20180809       2266
-BIB                  7         15
+ENDSUBENT           29
+SUBENT        22877005   20231026   20241029   20241029       2319
+BIB                  8         26
 REACTION   (29-CU-63(N,P+A)26-FE-59,,SIG)
 SAMPLE     Natural Cu (20 mm diam.x5 mm), nominal weight 14000 mg.
 DECAY-DATA (26-FE-59,44.495D,DG,1099.245,0.565,
@@ -146,31 +176,51 @@ COMMENT    By authors:
              reactions on the above mentioned elements in the
              measured spectra.
 CORRECTION Corrected for coincidence summing effect
-STATUS     (TABLE) Data received from V.Semkova
-           (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
+ERR-ANALYS (ERR-T) Total uncertainty determined by error
+           propagation of the partial uncertainties of the:
+           (ERR-S) counting statistics including the studied and
+           monitor reactions.
+           (ERR-1) ratio of the detector efficiencies for the
+           reaction and monitor gamma-rays.
+           (ERR-2) correction factor for the low energy neutron
+           background
+           (ERR-3) coincidence-summing correction factor
+           (ERR-4) monitor reaction
+           (ERR-5) other factors
+STATUS     (TABLE,,V.Semkova+,J,JP/CS,1555,012010,2020) Table 5.
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              15
-NOCOMMON             0          0
-DATA                 4          5
-EN         EN-RSL-HW  DATA       DATA-ERR
-MEV        MEV        MB         MB
- 17.4       0.2        0.043      0.004
- 18.0       0.2        0.098      0.009
- 19.0       0.2        0.196      0.012
- 19.4       0.2        0.25       0.02
- 19.9       0.2        0.35       0.03
-ENDDATA              7
-ENDSUBENT           27
-SUBENT        22877006   20171108   20180903   20180809       2266
-BIB                  6          7
-REACTION   (73-TA-181(N,A)71-LU-178-M,,SIG)
+           (20231026A) Data updated. ERR-ANALYS added.
+ENDBIB              26
+COMMON               3          3
+ERR-1      ERR-3      ERR-5
+PER-CENT   PER-CENT   PER-CENT
+        2.5        0.4       2.
+ENDCOMMON            3
+DATA                 7          3
+EN         EN-RSL-HW  DATA       ERR-T      ERR-S      ERR-2
+ERR-4
+MEV        MEV        MB         MB         PER-CENT   PER-CENT
+PER-CENT
+ 17.4         0.2         0.0453     0.0026       3.7      0.5
+   1.6
+ 19.0         0.2         0.196     0.013         2.0      0.5
+   2.8
+ 19.9         0.2         0.362     0.03          3.0      1.5
+   4.5
+ENDDATA             10
+ENDSUBENT           45
+SUBENT        22877006   20231026   20241029   20241029       2319
+BIB                  7          9
+REACTION   (73-TA-181(N,X)71-LU-178-M,,SIG)
 SAMPLE     Natural Ta (15 mm diam.x1 mm), nominal weight 2900 mg.
 DECAY-DATA (71-LU-178-M,23.1MIN,DG,426.36,0.970)
 CORRECTION Corrected for coincidence summing effect
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB               7
+           (20231026A) VS. SF3: A->X; ERR-ANALYS moved from 001.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          8
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -184,17 +234,19 @@ MEV        MEV        MB         MB
  19.9       0.2        0.91       0.06
  20.6       0.1        0.95       0.07
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        22877007   20171108   20180903   20180809       2266
-BIB                  6          7
-REACTION   (73-TA-181(N,A)71-LU-178-G,,SIG)
+ENDSUBENT           24
+SUBENT        22877007   20231026   20241029   20241029       2319
+BIB                  7          9
+REACTION   (73-TA-181(N,X)71-LU-178-G,,SIG)
 SAMPLE     Natural Ta (15 mm diam.x1 mm), nominal weight 2900 mg.
 DECAY-DATA (71-LU-178-G,28.4MIN,DG,1340.8,0.0342)
 CORRECTION Corrected for coincidence summing effect
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB               7
+           (20231026A) VS. SF3: A->X; ERR-ANALYS moved from 001.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          4
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -204,17 +256,19 @@ MEV        MEV        MB         MB
  19.9       0.2        1.5        0.2
  20.6       0.1        1.66       0.2
 ENDDATA              6
-ENDSUBENT           18
-SUBENT        22877008   20171108   20180903   20180809       2266
-BIB                  6          7
+ENDSUBENT           20
+SUBENT        22877008   20231026   20241029   20241029       2319
+BIB                  7          9
 REACTION   (73-TA-181(N,P)72-HF-181,,SIG)
 SAMPLE     Natural Ta (13 mm diam.x0.1 mm), nominal weight 222 mg.
 DECAY-DATA (72-HF-181,42.39D,DG,482.10,0.805)
 CORRECTION Corrected for coincidence summing effect
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB               7
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          6
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -226,17 +280,19 @@ MEV        MEV        MB         MB
  19.3       0.2        7.2        0.6
  20.6       0.1        8.88       0.64
 ENDDATA              8
-ENDSUBENT           20
-SUBENT        22877009   20171108   20180903   20180809       2266
-BIB                  6          7
+ENDSUBENT           22
+SUBENT        22877009   20231026   20241029   20241029       2319
+BIB                  7          9
 REACTION   (73-TA-181(N,X)72-HF-180-M,,SIG)
 SAMPLE     Natural Ta (13 mm diam.x0.1 mm), nominal weight 222 mg.
 DECAY-DATA (72-HF-180-M,5.5HR,DG,332.275,0.941)
 CORRECTION Corrected for coincidence summing effect
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB               7
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 4          6
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -248,9 +304,9 @@ MEV        MEV        MB         MB
  19.3       0.2        1.4        0.1
  20.6       0.1        2.28       0.2
 ENDDATA              8
-ENDSUBENT           20
-SUBENT        22877010   20171108   20180903   20180809       2266
-BIB                  6         10
+ENDSUBENT           22
+SUBENT        22877010   20231026   20241029   20241029       2319
+BIB                  7         12
 REACTION   (73-TA-181(N,2N)73-TA-180-G,,SIG)
 SAMPLE     Natural Ta (13 mm diam.x0.1 mm), nominal weight 222 mg.
 DECAY-DATA (73-TA-180-G,8.154HR,DG,93.4,0.0451)
@@ -258,10 +314,12 @@ COMMENT    By authors:
             Contribution of 181Ta(n,x)180mHf 93.325 keV gammas
             was found to be negligible based on measurement of
             the decay curve.
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          7
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -274,9 +332,9 @@ MEV        MEV        MB         MB
  18.8       0.2         523.      50.
  19.3       0.2         392.      20.
 ENDDATA              9
-ENDSUBENT           24
-SUBENT        22877011   20171108   20180903   20180809       2266
-BIB                  5         12
+ENDSUBENT           26
+SUBENT        22877011   20231026   20241029   20241029       2319
+BIB                  6         14
 REACTION   (74-W-182(N,P)73-TA-182,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -286,10 +344,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
 DECAY-DATA (73-TA-182-G,114.43D,DG,1221.4,0.270)
             1121.3 keV gamma-line was not adopted to avoid
              interference with natural background
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              12
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 4          4
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -299,9 +359,9 @@ MEV        MEV        MB         MB
  16.1       0.2         7.12       0.8
  15.1       0.3         4.6        0.5
 ENDDATA              6
-ENDSUBENT           23
-SUBENT        22877012   20171108   20180903   20180809       2266
-BIB                  5         10
+ENDSUBENT           25
+SUBENT        22877012   20231026   20241029   20241029       2319
+BIB                  6         12
 REACTION   (74-W-183(N,P)73-TA-183,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -309,10 +369,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             container (182W 2.11%/183W 96.30%/184W 1.58%/
             186W 0.005%).
 DECAY-DATA (73-TA-183,5.1D,DG,246.0587,0.27)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          6
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -324,9 +386,9 @@ MEV        MEV        MB         MB
  18.0       0.2         8.94      1.43
  19.0       0.2        10.2       1.
 ENDDATA              8
-ENDSUBENT           23
-SUBENT        22877013   20171108   20180903   20180809       2266
-BIB                  5         10
+ENDSUBENT           25
+SUBENT        22877013   20231026   20241029   20241029       2319
+BIB                  6         12
 REACTION   (74-W-184(N,P)73-TA-184,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -334,10 +396,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             container (181W <0.003%/182W 0.82%/183W 1.34%/
             184W 95.2%/186W 2.64%).
 DECAY-DATA (73-TA-184,8.7HR,DG,414.01,0.72)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          7
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -350,21 +414,23 @@ MEV        MEV        MB         MB
  19.3       0.2         9.93      0.77
  20.5       0.1        10.58      0.91
 ENDDATA              9
-ENDSUBENT           24
-SUBENT        22877014   20171108   20180903   20180809       2266
-BIB                  5         11
+ENDSUBENT           26
+SUBENT        22877014   20231026   20241029   20241029       2319
+BIB                  6         13
 REACTION   (74-W-186(N,P)73-TA-186,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
            an enriched 186W metal powder canned in a plexiglass
             container (181W <0.005%/182W 0.65%/183W 0.45%/
             184W 2.2%/186W 96.7%).
-DECAY-DATA (73-TA-186,10.5MIN,DG,122.3,0.25,
+DECAY-DATA (73-TA-186-G,10.5MIN,DG,122.3,0.25,
                               DG,737.5,0.29)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              11
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              13
 NOCOMMON             0          0
 DATA                 4          4
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -374,9 +440,9 @@ MEV        MEV        MB         MB
  19.4       0.2        5.82       0.97
  20.6       0.1        6.81       1.4
 ENDDATA              6
-ENDSUBENT           22
-SUBENT        22877015   20171108   20180903   20180809       2266
-BIB                  5         12
+ENDSUBENT           24
+SUBENT        22877015   20231026   20241029   20241029       2319
+BIB                  6         14
 REACTION   (74-W-183(N,X)73-TA-182,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -386,10 +452,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
 DECAY-DATA (73-TA-182-G,114.43D,DG,1221.4,0.270)
             1121.3 keV gamma-line was not adopted to avoid
              interference with natural background
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              12
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              14
 NOCOMMON             0          0
 DATA                 4          3
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -398,9 +466,9 @@ MEV        MEV        MB         MB
  17.6       0.2         5.9       1.
  20.6       0.1        15.        3.
 ENDDATA              5
-ENDSUBENT           22
-SUBENT        22877016   20171108   20180903   20180809       2266
-BIB                  5         10
+ENDSUBENT           24
+SUBENT        22877016   20231026   20241029   20241029       2319
+BIB                  6         12
 REACTION   (74-W-184(N,X)73-TA-183,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -408,10 +476,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             container (181W <0.003%/182W 0.82%/183W 1.34%/
             184W 95.2%/186W 2.64%).
 DECAY-DATA (73-TA-183,5.1D,DG,246.0587,0.27)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          4
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -421,9 +491,9 @@ MEV        MEV        MB         MB
  18.0       0.2         7.4       1.
  19.0       0.2        10.6       1.
 ENDDATA              6
-ENDSUBENT           21
-SUBENT        22877017   20171108   20180903   20180809       2266
-BIB                  5         10
+ENDSUBENT           23
+SUBENT        22877017   20231026   20241029   20241029       2319
+BIB                  6         12
 REACTION   (74-W-186(N,X)73-TA-185,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -431,10 +501,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             container (181W <0.005%/182W 0.65%/183W 0.45%/
             184W 2.2%/186W 96.7%).
 DECAY-DATA (73-TA-185,49.4MIN,DG,177.59,0.257)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          5
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -445,9 +517,9 @@ MEV        MEV        MB         MB
  19.3       0.2        6.47       0.53
  20.6       0.1        8.59       0.76
 ENDDATA              7
-ENDSUBENT           22
-SUBENT        22877018   20171108   20180903   20180809       2266
-BIB                  5         10
+ENDSUBENT           24
+SUBENT        22877018   20231026   20241029   20241029       2319
+BIB                  6         12
 REACTION   (74-W-186(N,2N)74-W-185-M,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
@@ -455,10 +527,12 @@ SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             container (181W <0.005%/182W 0.65%/183W 0.45%/
             184W 2.2%/186W 96.7%).
 DECAY-DATA (74-W-185-M,1.67MIN,DG,131.55,0.0433)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026U) VS. ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          5
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -469,20 +543,22 @@ MEV        MEV        MB         MB
  19.3       0.2        204.       17.
  20.5       0.1        131.       11.
 ENDDATA              7
-ENDSUBENT           22
-SUBENT        22877019   20171108   20180903   20180809       2266
-BIB                  5         10
-REACTION   (74-W-184(N,A)72-HF-181,,SIG)
+ENDSUBENT           24
+SUBENT        22877019   20231026   20241029   20241029       2319
+BIB                  6         12
+REACTION   (74-W-184(N,X)72-HF-181,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
            an enriched 184W metal powder canned in a plexiglass
             container (181W <0.003%/182W 0.82%/183W 1.34%/
             184W 95.2%/186W 2.64%).
 DECAY-DATA (72-HF-181,42.39D,DG,482.10,0.805)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026A) VS. SF3: A->X; ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          5
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -493,20 +569,22 @@ MEV        MEV        MB         MB
  18.1       0.2        2.         0.2
  20.5       0.1        2.24       0.2
 ENDDATA              7
-ENDSUBENT           22
-SUBENT        22877020   20171108   20180903   20180809       2266
-BIB                  5         10
-REACTION   (74-W-186(N,A)72-HF-183,,SIG)
+ENDSUBENT           24
+SUBENT        22877020   20231026   20241029   20241029       2319
+BIB                  6         12
+REACTION   (74-W-186(N,X)72-HF-183,,SIG)
 SAMPLE     Natural metallic (13 mm diam. or 1 cmx1 cm, 0.1 or
             0.25 mm thick), or
            an enriched 186W metal powder canned in a plexiglass
             container (181W <0.005%/182W 0.65%/183W 0.45%/
             184W 2.2%/186W 96.7%).
 DECAY-DATA (72-HF-183,1.067HR,DG,783.753,0.66)
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
 STATUS     (TABLE) Data received from V.Semkova
            (PRELM) Declared as preliminary (V.Semkova, 2017-11-08)
 HISTORY    (20171108A) Numerical data inserted.
-ENDBIB              10
+           (20231026A) VS. SF3: A->X; ERR-ANALYS moved from 001.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4          6
 EN         EN-RSL-HW  DATA       DATA-ERR
@@ -518,6 +596,5 @@ MEV        MEV        MB         MB
  19.4       0.2        1.86       0.2
  20.6       0.1        2.1        0.2
 ENDDATA              8
-ENDSUBENT           23
-NOSUBENT      22877021   20171108   20180903   20180809       2266
+ENDSUBENT           25
 ENDENTRY            21
