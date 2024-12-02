@@ -1,34 +1,40 @@
-ENTRY            11055   19830909   20050616   20050926       0000
-SUBENT        11055001   19830909   20050616   20050926       0000
-BIB                  6          9
+ENTRY            11055   20241001   20241129   20241129       1515
+SUBENT        11055001   20241001   20241129   20241129       1515
+BIB                  6         12
 INSTITUTE  (1USAROC)
-REFERENCE  (J,PR,88,15,52)
-AUTHOR     (G.GUERNSEY,G.MOTT,B.K.NELSON)
-TITLE      DIFFERENTIAL N-P SCATTERING CROSS SECTION FOR 220-MEV
-           NEUTRONS.
-STATUS     (SCSRS)
-HISTORY    (760628T) TRANSLATED FROM SCISRS
-           (820106A) CONVERTED TO REACTION FORMALISM
-           (830817A) BIB CORRECTIONS. MONIT ADDED TO DATA.
-ENDBIB               9
+REFERENCE  (J,PR,88,15,1952)
+           #doi:10.1103/PhysRev.88.15
+AUTHOR     (G.Guernsey,G.Mott,B.K.Nelson)
+TITLE      Differential n-p scattering cross section for 220-MeV
+           neutrons.
+FACILITY   (CYCLO,1USAROC)
+HISTORY    (19760628T) Translated from SCISRS
+           (19820106A) Converted to reaction formalism
+           (19830817A) BIB corrections. Monit added to data.
+           (20240902A) OS. Error headings changed, Data replaced
+             in sub.3
+ENDBIB              12
 NOCOMMON             0          0
-ENDSUBENT           12
-SUBENT        11055002   19830909   20050616   20050926       0000
-BIB                  4          6
+ENDSUBENT           15
+SUBENT        11055002   20241001   20241129   20241129       1515
+BIB                  7          9
 REACTION   (1-H-1(N,EL)1-H-1,,DA)
-DETECTOR   (TELES)    COUNTER TELESCOPE
-MONITOR    (1-H-0(N,TOT),,SIG) RENORMALIZED BY HESS,
-            REV.MOD.PHYS.30,368(1958) TO ACCOUNT FOR ASYMMETRY.
-            ASYMMETRY.
-ERR-ANALYS  DATA-ERR GIVEN IS STATISTICAL ERROR ONLY
-ENDBIB               6
+DETECTOR   (TELES)    Counter telescope
+MONITOR    (1-H-0(N,TOT),,SIG) Renormalized by Hess,
+            Rev.Mod.Phys.30,368(1958) to account for asymmetry.
+REL-REF    (R,,W.N.Hess,J,RMP,30,368,1958)
+ERR-ANALYS (ERR-S) Error given is statistical error only
+STATUS     (SCSRS)
+HISTORY    (20240902A) Error heading changed, REL-REF added,
+            DATA -> DATA-CM
+ENDBIB               9
 COMMON               2          3
 ANG-RSL    MONIT
 ADEG       MB
  5.         41.3
 ENDCOMMON            3
 DATA                 4         20
-EN         COS-CM     DATA       DATA-ERR
+EN         COS-CM     DATA-CM    ERR-S
 MEV        NO-DIM     MB/SR      MB/SR
  172.       0.21600    2.37   +00   71.
  172.      -0.1290     2.47   +00   41.
@@ -51,41 +57,44 @@ MEV        NO-DIM     MB/SR      MB/SR
  215.      -0.9620     9.15   +00   68.
  215.      -1.         1.38   +01   29.
 ENDDATA             22
-ENDSUBENT           37
-SUBENT        11055003   19830909   20050616   20050926       0000
-BIB                  5          7
+ENDSUBENT           40
+SUBENT        11055003   20241001   20241129   20241129       1515
+BIB                  7         10
 REACTION   (1-H-1(N,EL)1-H-1,,DA)
-STATUS     (OUTDT,11055002)
-DETECTOR   (TELES)    COUNTER TELESCOPE
+STATUS     (TABLE,,G.Guernsey+,J,PR,88,15,1952) Tables I, II
+           (OUTDT,11055002)
+DETECTOR   (TELES)    Counter telescope
 MONITOR    (1-H-0(N,TOT),,SIG)
-            NORMALIZED TO H TOTAL=41.3MB, ASSUMING
-            SYMMETRY ABOUT 90DEG.
-ERR-ANALYS  DATA-ERR GIVEN IS STATISTICAL ERROR ONLY
-ENDBIB               7
+MONIT-REF  (13038002,G.R.Mott+,J,PR,88,9,1952)
+ERR-ANALYS (ERR-S) Error given is statistical error only
+HISTORY    (20240902A) Data replaced with Tables I+II, added
+             MONITOR data, REL-REF, changed error heading,
+            DATA -> DATA-CM
+ENDBIB              10
 NOCOMMON             0          0
-DATA                 4         20
-EN         COS-CM     DATA       DATA-ERR
-MEV        NO-DIM     MB/SR      MB/SR
- 172.       0.21600    2.3    +00    7.
- 172.      -0.1290     2.4    +00    4.
- 172.      -0.4650     2.5    +00    4.
- 172.      -0.4730     2.1    +00    9.
- 172.      -0.7720     3.5    +00    9.
- 172.      -0.8550     5.3    +00    8.
- 172.      -0.9260     7.0    +00   12.
- 172.      -0.9350     7.6    +00   15.
- 172.      -0.9640     1.09   +01   14.
- 172.      -1.         1.66   +01   68.
- 215.       0.22700    1.45   +00   22.
- 215.      -0.1200     1.31   +00   12.
- 215.      -0.4570     2.40   +00   32.
- 215.      -0.4650     2.53   +00   37.
- 215.      -0.7650     4.18   +00   35.
- 215.      -0.8520     5.38   +00   47.
- 215.      -0.9220     6.97   +00  131.
- 215.      -0.9320     7.58   +00   75.
- 215.      -0.9620     8.89   +00   66.
- 215.      -1.         1.34   +01   28.
+DATA                 5         20
+EN         COS-CM     DATA-CM    ERR-S      MONIT
+MEV        NO-DIM     MB/SR      MB/SR      MB
+ 172.       0.21600    2.3    +00    0.7       44.
+ 172.      -0.1290     2.4    +00    0.4       44.
+ 172.      -0.4650     2.5    +00    0.6       44.
+ 172.      -0.4730     2.1    +00    0.9       44.
+ 172.      -0.7720     3.5    +00    0.9       44.
+ 172.      -0.8550     5.3    +00    0.8       44.
+ 172.      -0.9260     7.0    +00    1.2       44.
+ 172.      -0.9350     7.6    +00    1.5       44.
+ 172.      -0.9640     1.09   +01    1.4       44.
+ 172.      -1.         1.66   +01    6.8       44.
+ 215.       0.22700    1.45   +00    0.22      41.3
+ 215.      -0.1200     1.31   +00    0.12      41.3
+ 215.      -0.4570     2.40   +00    0.32      41.3
+ 215.      -0.4650     2.53   +00    0.37      41.3
+ 215.      -0.7650     4.18   +00    0.35      41.3
+ 215.      -0.8520     5.38   +00    0.47      41.3
+ 215.      -0.9220     6.97   +00    1.31      41.3
+ 215.      -0.9320     7.58   +00    0.75      41.3
+ 215.      -0.9620     8.89   +00    0.66      41.3
+ 215.      -1.         1.34   +01    2.8       41.3
 ENDDATA             22
-ENDSUBENT           34
+ENDSUBENT           37
 ENDENTRY             3

@@ -1,6 +1,6 @@
-ENTRY            14149   20170329   20170703   20170622       1426
-SUBENT        14149001   20170329   20170703   20170622       1426
-BIB                 12         63
+ENTRY            14149   20241001   20241129   20241129       1515
+SUBENT        14149001   20241001   20241129   20241129       1515
+BIB                 11         61
 TITLE      New precision measurements of the 235U(n,g) cross
             section
 AUTHOR     (M.Jandel, T.A.Bredeweg, E.M.Bond, M.B.Chadwick,
@@ -11,7 +11,7 @@ AUTHOR     (M.Jandel, T.A.Bredeweg, E.M.Bond, M.B.Chadwick,
 INSTITUTE  (1USALAS,1USALRL)
 REFERENCE  (J,PRL,109,202506,2012) Final (n,g) and alpha
            (J,NIM/B,261,986,2007)  Prelim. (n,g) and (n,f) in figs
-           (C,2007NICE,1,607,2008) Prelim. (n,g) and (n,f) in figs
+           (C,2007NICE,1,607,2007) Prelim. (n,g) and (n,f) in figs
 FACILITY   (LINAC,1USALAS) Lujan Neutron Scattering Center of
             LANSCE
 SAMPLE     (92-U-235,ENR=0.94)
@@ -32,10 +32,6 @@ DETECTOR   (BAF2) 4pi highly segmented highly efficient gamma-ray
 METHOD     (TOF) gamma flash from the spallation reaction and
             gamma-ray by neutron interacting with sample were
             used to calculate the time-of-flight
-MONITOR    (92-U-235(N,G)92-U-236,,INT)
-            Overall normalization constant was obtained by
-            cross section integral from 45 to 100 eV in
-            ENDF/B-VII.1 (837.8 eV*b)
 INC-SOURCE (SPALL) Spallation on a natural W target by 800-MeV
             protons beams (~ 1-2 uA, pulse width of ~125 nsec
             FWHM with a repetition rate of 20 Hz).
@@ -64,9 +60,11 @@ HISTORY    (20080211C) Compiled by S.H.
             2007NICE without numerical data
            (20130408A) S.H. Major revision in 003. 004-006 deleted
            (20170329A) On. Major revisions in 002-003. 007 added.
-ENDBIB              63
+           (20240930A) OS. REFERENCE date corrected, MONITOR moved
+            to subs. 3,7
+ENDBIB              61
 NOCOMMON             0          0
-ENDSUBENT           66
+ENDSUBENT           64
 SUBENT        14149002   20170329   20170703   20170622       1426
 BIB                  4          6
 REACTION   (92-U-235(N,F),,SIG)
@@ -269,9 +267,13 @@ EV         B          B
  17.500      4.452E+00  2.138E+00
 ENDDATA            189
 ENDSUBENT          200
-SUBENT        14149003   20170329   20170703   20170622       1426
-BIB                  4         11
+SUBENT        14149003   20241001   20241129   20241129       1515
+BIB                  5         16
 REACTION   (92-U-235(N,G)92-U-236,,SIG)
+MONITOR    (92-U-235(N,G)92-U-236,,INT)
+            Overall normalization constant was obtained by
+            cross section integral from 45 to 100 eV in
+            ENDF/B-VII.1 (837.8 eV*b)
 ERR-ANALYS (DATA-ERR) Total uncertainty which could not be
             separated to statistical and systematic uncertainties
             because of data correlations.
@@ -282,7 +284,8 @@ STATUS     (TABLE) Data sent by author (M.J.) corresponding to
 HISTORY    (20100315A) S.H. EN: KEV -> EV
            (20130408A) S.H. Final data replaced digitized data.
            (20170329A) On. Data above 500 eV moved to 007.
-ENDBIB              11
+           (20240930A) MONITOR keyword moved from sub.1
+ENDBIB              16
 COMMON               3          3
 EN-NRM-MIN EN-NRM-MAX MONIT
 EV         EV         B*EV
@@ -1339,12 +1342,9 @@ EV         EV         B          B
  495.452    1.14082      4.91354  0.64437
  497.738    1.14608      5.99639  0.73361
 ENDDATA           1049
-ENDSUBENT         1069
-NOSUBENT      14149004   20130622   20130812   20130622       1390
-NOSUBENT      14149005   20130622   20130812   20130622       1390
-NOSUBENT      14149006   20130622   20130812   20130622       1390
-SUBENT        14149007   20130408   20170703   20170622       1426
-BIB                  6         16
+ENDSUBENT         1074
+SUBENT        14149007   20241001   20241129   20241129       1515
+BIB                  6         21
 REACTION  1(92-U-235(N,ABS),,ALF)
           2(92-U-235(N,G)92-U-236,,SIG)
 ERR-ANALYS1(DATA-ERR) No information on source of uncertainty
@@ -1353,15 +1353,20 @@ ERR-ANALYS1(DATA-ERR) No information on source of uncertainty
             because of data correlations.
            Uncertainties will be updated after publication of a
             separate paper devoted to uncertainties.
-MONITOR   2(92-U-235(N,F),,SIG)
+MONITOR    ((MONIT)92-U-235(N,G)92-U-236,,INT)
+            Overall normalization constant was obtained by
+            cross section integral from 45 to 100 eV in
+            ENDF/B-VII.1 (837.8 eV*b)
+          2(92-U-235(N,F),,SIG)
             ENDF/B-VII.1 with broadening function of DANCE
             obtained by SAMMY
-MONIT-REF 2(,,3,ENDF/B-VII.1,,2011)
+MONIT-REF  (,,3,ENDF/B-VII.1,,2011)
 STATUS    1(TABLE) Received from Marian Jandel
           2(TABLE) Data sent by author (M.J.) corresponding to
             Fig.3+4 of Phys.Rev.Lett.109(2012)202506
 HISTORY    (20170329C) On
-ENDBIB              16
+           (20240930A) MONITOR moved from sub.1
+ENDBIB              21
 COMMON               3          3
 EN-NRM-MIN EN-NRM-MAX MONIT
 EV         EV         B*EV
@@ -1437,5 +1442,5 @@ EV         EV         NO-DIM     NO-DIM     B          B
  398107.    630958.    0.143714   0.0270141  0.16447    0.03092
  630958.   1000000.    0.109442   0.0234804  0.12408    0.02662
 ENDDATA             68
-ENDSUBENT           93
+ENDSUBENT           98
 ENDENTRY             7
