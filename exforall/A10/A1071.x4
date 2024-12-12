@@ -1,33 +1,40 @@
-ENTRY            A1071   19990319   19990505   20050926       0000
-SUBENT        A1071001   19990319   19990505   20050926       0000
-BIB                  9         13
-INSTITUTE  (1USASTF)
-REFERENCE  (J,NP/A,219,(1),157,197401)
-AUTHOR     (E.VENTURA,J.CALARCO,C.C.CHANG,E.M.DIENER,E.KUHLMANN,
-           W.E.MEYERHOF)
+ENTRY            A1071   20240702   20240820   20240820       A112
+SUBENT        A1071001   20240702   20240820   20240820       A112
+BIB                 11         19
 TITLE      Resonant structure observed in the 3He(3He,gamma)6Be
            capture reaction
-FACILITY   (VDGT)
-SAMPLE     The target consisted of 99.95% enriched 3He gas
+AUTHOR     (E.Ventura,J.Calarco,C.C.Chang,E.M.Diener,E.Kuhlmann,
+           W.E.Meyerhof)
+REFERENCE  (J,NP/A,219,157,1974)
+INSTITUTE  (1USASTF)
+FACILITY   (VDGT,1USASTF)
+SAMPLE     (2-HE-3,ENR=0.9995) The target consisted of 99.95%
+           enriched 3He gas contained in a cylindrical, gold
+           lined, stainless steel.
+LEVEL-PROP (4-BE-6,E-LVL=0.0,SPIN=0.,PARITY=+1.)
+           (4-BE-6,E-LVL=1.5,SPIN=2.,PARITY=+1.)
 METHOD     (PHD)
 DETECTOR   (NAICR) 24cm*24cm crystal surrounded by a plastic
            scintillator operated in anticoincidence
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
 HISTORY    (19810327C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990205U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              13
-NOCOMMON
-ENDSUBENT           16
-SUBENT        A1071002   19990319   19990505   20050926       0000
-BIB                  3          4
-REACTION   (2-HE-3(HE3,G+2P)2-HE-4,,DA,,,EXP)
-ERR-ANALYS (EN-ERR) Digitizing error
-           (DATA-ERR) From graphic bars (statistic) and digitizing
-STATUS     (CURVE) Fig 4
-ENDBIB               4
-COMMON               2          3
-EN-ERR     ANG
-MEV        ADEG
- 0.1         90.
+           (20240702A) SD: Corrections in all Subents.
+ENDBIB              19
+NOCOMMON             0          0
+ENDSUBENT           22
+SUBENT        A1071002   20240702   20240820   20240820       A112
+BIB                  3          5
+REACTION   (2-HE-3(HE3,G)4-BE-6,PAR,DA)
+STATUS     (CURVE,,E.Ventura+,J,NP/A,219,157,1974) Fig 4
+HISTORY    (20240702A) SD: SF3=G+2P -> G; SF4=He-4 -> Be-6;
+           SF5=PAR added; SF9=EXP deleted from REACTION code.
+           EN-ERR -> EN-ERR-DIG.
+ENDBIB               5
+COMMON               4          3
+E-LVL      E-LVL      ANG        EN-ERR-DIG
+MEV        MEV        ADEG       MEV
+ 0.0         1.5        90.0             0.1
 ENDCOMMON            3
 DATA                 3         16
 EN         DATA       DATA-ERR
@@ -49,22 +56,19 @@ MEV        MB/SR      MB/SR
     25.57   0.8875E-03 0.9312E-04
     26.92   0.7858E-03 0.6807E-04
 ENDDATA             18
-ENDSUBENT           31
-SUBENT        A1071003   19990319   19990505   20050926       0000
-BIB                  3          3
-REACTION   (2-HE-3(HE3,G+2P)2-HE-4,PAR,DA,,,EXP)
-ERR-ANALYS (ERR-S)  Statistical error
-STATUS     (TABLE) From text p.163
-ENDBIB               3
-COMMON               3          3
-E-LVL-MIN  E-LVL-MAX  ANG
-MEV        MEV        ADEG
- 0.0         1.5        90.0
-ENDCOMMON            3
-DATA                 3          1
-EN         DATA       ERR-S
-MEV        MB/SR      MB/SR
-    11.8    0.6400E-03 0.8000E-04
+ENDSUBENT           32
+SUBENT        A1071003   20240702   20240820   20240820       A112
+BIB                  3          4
+REACTION   (2-HE-3(HE3,G)4-BE-6,PAR,DA)
+STATUS     (TABLE,,E.Ventura+,J,NP/A,219,157,1974) from text p.163
+HISTORY    (20240702A) SD: SF3=G+2P -> G; SF4=He-4 -> Be-6;
+           SF9=EXP deleted from REACTION code.
+ENDBIB               4
+NOCOMMON             0          0
+DATA                 6          1
+EN         E-LVL      E-LVL      ANG        DATA       DATA-ERR
+MEV        MEV        MEV        ADEG       MB/SR      MB/SR
+ 11.8            0.0         1.5       90.0    0.64E-03   0.80E-04
 ENDDATA              3
-ENDSUBENT           15
+ENDSUBENT           12
 ENDENTRY             3

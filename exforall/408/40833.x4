@@ -1,79 +1,86 @@
-ENTRY            40833   20231226   20240331   20240331       4216
-SUBENT        40833001   20231226   20240331   20240331       4216
-BIB                 11         28
-TITLE       Np-237 neutron fission cross-section near the
-            threshold (n,n'f)
-AUTHOR     (A.A.Goverdovskiy,A.K.Gordyushin,B.D.Kuz'minov,
-           V.F.Mitrovanov,A.I.Sergachev,S.M.Solov'ev,
-           P.S.Soloshenkov)
-REFERENCE  (R,FEI-1552,1984)  Data are given
+ENTRY            40833   20240617   20240902   20240902       4217
+SUBENT        40833001   20240617   20240902   20240902       4217
+BIB                 11         31
+TITLE      Cross section for fission of 237Np induced by neutrons
+            in the (n,n'f) threshold region
+AUTHOR     (A.A.Goverdovskiy, A.K.Gordyushin, B.D.Kuz'minov,
+            V.F.Mitrovanov, A.I.Sergachev, S.M.Solov'ev,
+            P.S.Soloshenkov)
+REFERENCE  (R,FEI-1552,1984)
 INSTITUTE  (4RUSFEI)
-FACILITY   (VDG) Electrostatic charge exchange accelerator EGP-10M
+FACILITY   (VDGT,4RUSFEI) EGP-10M
 INC-SOURCE (D-D) Gaseous deuterium target.
-METHOD     (TOF)  Flight base 60 cm
-DETECTOR   (IOCH) Double ionization chamber. Filled with methane
+METHOD     (TOF) Flight base 60 cm
+DETECTOR   (FISCH) Double ionization chamber. Filled with methane
             at 1.8 atm pressure. Fission detection efficiency
-           96 % for Np, 98 % for U.
-CORRECTION   Background neutron scattering - 0.2 %
-             Fragments slowing-down in sample - 0.5 %
-             Admixture isotopes fission - 0.3 %
-             Geometrical factor - 0.1 %
-ERR-ANALYS (ERR-T) Total uncertainty includes:
-           (ERR-S) Statistical uncertainty,
-           (ERR-1) Error caused by the absolute value calculation
-           (ERR-2) Error caused by the U-235 to NP-237 fission
-                   fragments detection efficiencies
-           (ERR-3) Error due to the corrections introduced
+            96 % for Np, 98 % for U.
+CORRECTION Corrected for
+            . background neutron scattering       (<0.2%)
+            . fragments slowing-down in sample    (<0.5%)
+            . admixture isotopes fission       (0.2-0.3%)
+            . experimental hall background       (<0.15%)
+            . geometry in Monte Carlo method      (<0.1%)
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-S) statistical uncertainty
+           (ERR-1) normalization                          (~2%)
+           (ERR-2) 237Np/235U detection efficiency ratio (1.2%)
+           (ERR-3) corrections                           (0.2%)
 HISTORY    (19850218C)
            (20231226A) ERR-S was deleted from COMMON block - it's
-            given in DATA block.
-            Upper -> lower case correction .
-            Dates were corrected for 4-digits year.
-ENDBIB              28
+           given in DATA block.
+           Upper -> lower case correction.
+           Dates were corrected for 4-digits year.
+           (20240308A) VT. Revision in 002. BIB section updated.
+           (20240617U) M.M. Minor correction of BIB information.
+ENDBIB              31
 COMMON               3          3
 ERR-1      ERR-2      ERR-3
 PER-CENT   PER-CENT   PER-CENT
  2.         1.2        0.2
 ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        40833002   20231226   20240331   20240331       4216
-BIB                  4         15
+ENDSUBENT           38
+SUBENT        40833002   20240617   20240902   20240902       4217
+BIB                  5         19
 REACTION   ((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))
-SAMPLE     Layers of 0.3 - 0.5 mg/cm2 thickness, 50 mm diameter,
-           on Al backings of 20 microm thickness.
-            First sample  U-235 content is 99.992 % , density
-                          0.258 milligram/cm2
-            Second sample U-235 content 5.889 % , Np-237 content
-                          94.111 % , density 0.300 milligram/cm2
-            Third sample U-235 content is 99.994 % , density
-                          0.41 milligram/cm2
-            Forth sample Np-237 content 99.05 % , Pu-239 content
-                          0.43 % , Am-241 content 0.52 % ,
-                          density 0.46 milligram/cm2
-MONITOR     Absolute measurement
-STATUS     (TABLE,,A.A.Goverdovskiy+,R,FEI-1552,1984)
+MONITOR    Absolute measurement (isotopic dilution method)
+SAMPLE      Layers of 50 mm diameter on Al backings of 20 micron
+            thickness.
+           Nuclide content (%):
+           ---------------------------------------------------
+            Sample   235U      237Np        Thickness (mg/cm2)
+           ---------------------------------------------------
+             1.     99.992                    0.258
+             2.      5.889     94.111         0.300
+             3.     99.994                    0.41
+             4.                99.05          0.46
+           ----------------------------------------------------
+STATUS     (TABLE,,A.A.Goverdovskij+,R,FEI-1552,1984) Table 2
            (PRELM)
-ENDBIB              15
+           (SPSDD,40861004)
+HISTORY    (20240617A) Code SPSDD was added - in 40861 data from
+           FEI-1552 are not mentioned and are not used on figure
+           fro comparison with other data.
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 5         16
 EN         EN-RSL-FW  DATA       ERR-T      ERR-S
 MEV        KEV        NO-DIM     PER-CENT   PER-CENT
-  5.66       116.      1.315       3.38      0.7
-  5.88       108.      1.331       2.40      0.8
-  6.10       103.      1.395       2.45      1.0
-  6.32        97.      1.349       2.42      0.9
-  6.50        93.      1.330       2.42      0.9
-  6.68        89.      1.312       2.42      0.9
-  7.34        78.      1.232       1.75      0.6
-  7.96        70.      1.161       2.45      1.0
-  8.10        68.      1.151       2.45      1.0
-  8.39        65.      1.177       2.44      1.0
-  8.64        63.      1.157       2.46      0.8
-  8.78        62.      1.170       2.47      0.9
-  9.03        60.      1.150       2.45      1.0
-  9.17        59.      1.150       2.52      1.0
-  9.44        57.      1.135       2.50      1.1
- 10.06        53.      1.123       2.50      1.1
+  5.66      116.       1.315      3.38       0.7
+  5.88      108.       1.331      2.40       0.8
+  6.10      103.       1.395      2.45       1.0
+  6.32       97.       1.349      2.42       0.9
+  6.50       93.       1.330      2.42       0.9
+  6.68       89.       1.312      2.42       0.9
+  7.34       78.       1.232      1.75       0.6
+  7.96       70.       1.161      2.45       1.0
+  8.10       68.       1.151      2.45       1.0
+  8.39       65.       1.177      2.44       1.0
+  8.64       63.       1.157      2.46       0.8
+  8.78       62.       1.170      2.47       0.9
+  9.03       60.       1.150      2.45       1.0
+  9.17       59.       1.150      2.52       1.0
+  9.44       57.       1.135      2.50       1.1
+ 10.06       53.       1.123      2.50       1.1
 ENDDATA             18
-ENDSUBENT           38
+ENDSUBENT           42
 ENDENTRY             2

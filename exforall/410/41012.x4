@@ -1,12 +1,12 @@
-ENTRY            41012   20180129   20180402   20180319       4177
-SUBENT        41012001   20180129   20180402   20180319       4177
-BIB                 13         38
-INSTITUTE  (4UKRIJD)
-REFERENCE  (C,87KIEV,2,283,198709)
+ENTRY            41012   20240913   20241210   20241210       4219
+SUBENT        41012001   20240913   20241210   20241210       4219
+BIB                 11         38
+TITLE       Neutron cross-sections for U-236 at thermal and
+            resonance energies
 AUTHOR     (P.N.Vorona,V.P.Vertebnyy,A.I.Kal'chenko, V.G.Krivenko,
            L.E.Chervonnaya, V.Yu.Chervyakov)
-TITLE       Neutron cross-sections for U-236 at thermal  and
-            resonance energies
+REFERENCE  (C,87KIEV,2,283,1987)
+INSTITUTE  (4UKRIJD)
 FACILITY   (REAC,4UKRIJD) Reactor WWR-M
 SAMPLE      Metallic and uranium oxide, U-236 content is 99.845 %,
             U-235 - 0.047 %, U-238 - 0.107 %.
@@ -23,15 +23,13 @@ SAMPLE      Metallic and uranium oxide, U-236 content is 99.845 %,
               4.4 eV - 30. keV, time resolution 0.055 microsec/m.
             3) - for resonance measurement in energy range
                  5.2 - 5.8 eV, time resolution 0.11 microsec/m .
-METHOD     (TOF) Transmission Measurements
+METHOD     (TOF) Transmission measurements by TOF method
            (TRN)
 MONITOR     No information
 ASSUMED    (ASSUM,8-O-16(N,TOT),,SIG)  From REL-REF.
             Oxygen total c-s was assumed to be constant in energy
             range 0.025 - 2.5 eV .
 REL-REF    (R,,S.F.Mughabghab+,R,BNL-325,1984)
-ERR-ANALYS (DATA-ERR) Error is not specified .
-STATUS      Data are taken from the reference .
 HISTORY    (19900316C)  Compiled at the center - CJD
            (20020729A) DATE is corrected
            (20090324A) M.M. Subents 008 -013 were added.
@@ -39,6 +37,8 @@ HISTORY    (19900316C)  Compiled at the center - CJD
             Free text was corrected to be human-readable.
            (20180129A) M.M. Thickness was added in COMMON block
             in Subents 011-013 .
+           (20240913A) Subent 002 was corrected.
+           STATUS was corrected according to now-day rules.
 ENDBIB              38
 COMMON               2          3
 ASSUM      ASSUM-ERR
@@ -46,70 +46,79 @@ B          B
  3.761      0.006
 ENDCOMMON            3
 ENDSUBENT           45
-SUBENT        41012002   20090324   20090724   20090724       4146
-BIB                  4          9
-REACTION  1(92-U-236(N,TOT),,SIG,,,RECOM)
+SUBENT        41012002   20240913   20241210   20241210       4219
+BIB                  6         11
+REACTION  1(92-U-236(N,TOT),,SIG)
           2(92-U-236(N,TOT),,SIG)
 SAMPLE    1 Metal samples, 9 disks. Transmission 0.927.
           2 U3-O8 sample.  Transmission 0.62 .
 COMMENT    Of authors. Measured by metal samples value is
            recommended by authors.
            Measurement by U3-O8 sample was used as test.
-STATUS     (TABLE) Table 2 of reference.
+ERR-ANALYS (DATA-ERR) Error is not specified .
+STATUS     (TABLE,,P.N.Vorona+,C,87KIEV,2,283,1987) Table 2
            (DEP,41012007)
-ENDBIB               9
+HISTORY    (20240913A) Code RECOM was deleted from REACTION 1.
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4          1
 EN         DATA      1DATA-ERR  1DATA      2
 EV         B          B          B
    2.53E-02   16.0        0.1      18.2
 ENDDATA              3
-ENDSUBENT           17
-SUBENT        41012003   20090324   20090724   20090724       4146
-BIB                  3          6
+ENDSUBENT           19
+SUBENT        41012003   20240913   20241210   20241210       4219
+BIB                  5          9
 REACTION   (92-U-236(N,EL)92-U-236,,SIG,,,DERIV)
-STATUS     (TABLE) Table 2 of reference.
-           (DEP,41012007) Derived from total c-s of energy range
-            0.025 - 2.5 eV by the assumption of 1/v dependence of
-            total c-s.
+ANALYSIS     Derived from total c-s of energy range 0.025 - 2.5 eV
+           by the assumption of 1/v dependence of total c-s and
+           fitting by formula GIStotal=SIGabs(V0/V)+SIGscat.
+ERR-ANALYS (DATA-ERR) Error is not specified .
+STATUS     (TABLE,,P.N.Vorona+,C,87KIEV,2,283,1987) Table 2
+           (DEP,41012007) Total c-s, see ANALYSIS.
+           (DEP,41012004) Absorbtion C-S.
 HISTORY    (20090324A) DERIV was added in REACTION .
-ENDBIB               6
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
    2.53E-02  1.057E+01     6.0E-2
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        41012004   20090324   20090724   20090724       4146
-BIB                  3          6
+ENDSUBENT           17
+SUBENT        41012004   20240913   20241210   20241210       4219
+BIB                  5          9
 REACTION   (92-U-236(N,G)92-U-237,,SIG,,,DERIV)
-STATUS     (TABLE) Table 2 of reference.
-           (DEP,41012007) Derived from total c-s of energy range
-            0.025 - 2.5 eV by the assumption of 1/v dependence of
-            total c-s.
+ANALYSIS     Derived from total c-s of energy range 0.025 - 2.5 eV
+           by the assumption of 1/v dependence of total c-s and
+           fitting by formula GIStotal=SIGabs(V0/V)+SIGscat.
+ERR-ANALYS (DATA-ERR) Error is not specified .
+STATUS     (TABLE,,P.N.Vorona+,C,87KIEV,2,283,1987) Table 2
+           (DEP,41012007) Total C-S, see ANALYSIS
+           (DEP,41012003) Elastic scattering C-S
 HISTORY    (20090324A) DERIV was added in REACTION .
-ENDBIB               6
+ENDBIB               9
 NOCOMMON             0          0
 DATA                 3          1
 EN         DATA       DATA-ERR
 EV         B          B
    2.53E-02   5.41         0.6
 ENDDATA              3
-ENDSUBENT           14
-SUBENT        41012005   20090324   20090724   20090724       4146
-BIB                  4         10
-REACTION  1(92-U-236(N,0),,EN)  Resonance Energy
+ENDSUBENT           17
+SUBENT        41012005   20240913   20241210   20241210       4219
+BIB                  5         11
+REACTION  1(92-U-236(N,0),,EN)
           2(92-U-236(N,G),,WID)
           3(92-U-236(N,EL),,WID/RED)
 SAMPLE      U3-O8 and 1 disk.
 ANALYSIS   (AREA,SHAPE) Analysis in energy range <100 eV.
             Single-level Breit-Wigner analysis.
             Measured transmissions (Fig.2) were used.
-STATUS     (TABLE) Table 3 of reference.
-           (DEP,41012011)
-           (DEP,41012012)
-ENDBIB              10
+ERR-ANALYS (DATA-ERR) Error is not specified .
+STATUS     (TABLE,,P.N.Vorona+,C,87KIEV,2,283,1987) Table 3
+           (DEP,41012011) Transmission data
+           (DEP,41012012) Transmission data
+ENDBIB              11
 COMMON               1          3
 MOMENTUM L
 NO-DIM
@@ -120,18 +129,19 @@ DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
 EV         EV         EV         EV         EV         EV
    5.45         2.E-02   2.48E-02     6.E-04   9.50E-04    1.5E-05
 ENDDATA              3
-ENDSUBENT           22
-SUBENT        41012006   20090324   20090724   20090724       4146
-BIB                  6          8
+ENDSUBENT           23
+SUBENT        41012006   20240913   20241210   20241210       4219
+BIB                  7          9
 REACTION  1(92-U-236(N,0),,EN)
           2(92-U-236(N,EL),,WID/RED)
 SAMPLE      U3-O8 sample.
 ANALYSIS   (AREA)
 ASSUMED    (ASSUM1,92-U-236(N,G),,WID)  Taken from BNL,1984
-STATUS     (TABLE) Table 3 of reference.
-           (DEP,41012013)
+ERR-ANALYS (DATA-ERR) Error is not specified .
+STATUS     (TABLE,,P.N.Vorona+,C,87KIEV,2,283,1987) Table 3
+           (DEP,41012013) Transmission data used in analysis
 HISTORY    (20090324A) ASSUM-ERR was added.
-ENDBIB               8
+ENDBIB               9
 COMMON               1          3
 MOMENTUM L
 NO-DIM
@@ -148,9 +158,9 @@ EV         EV         MILLI-EV   MILLI-EV   MILLI-EV   MILLI-EV
    86.5       .6        2.43       .14        22.6
   102.3       .8         .15       .06        23.       1.5
 ENDDATA              9
-ENDSUBENT           26
-SUBENT        41012007   20090324   20090724   20090724       4146
-BIB                  6          9
+ENDSUBENT           27
+SUBENT        41012007   20240913   20241210   20241210       4219
+BIB                  6         10
 REACTION   (92-U-236(N,TOT),,SIG)
 SAMPLE      9 metal disks.
 CORRECTION  Correction of total c-s for admixtures of
@@ -158,9 +168,10 @@ CORRECTION  Correction of total c-s for admixtures of
 ERR-ANALYS (ERR-DIG) Digitizing error of DATA .
            (MISC-ERR-D)Error of digitizing the time channel number
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.1 b, solid circles, of reference.
-           (DEP,41012009)
-ENDBIB               9
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.1 b, solid circles.
+           (DEP,41012009) Fig.1 a, solid circles data
+ENDBIB              10
 COMMON               2          3
 MISC-ERR-D ERR-DIG
 NO-DIM     B
@@ -215,9 +226,9 @@ EV         B          NO-DIM
 0.02747     16.112       477.
 0.02635     15.808       487.
 ENDDATA             47
-ENDSUBENT           65
-SUBENT        41012008   20090324   20090724   20090724       4146
-BIB                  6          9
+ENDSUBENT           66
+SUBENT        41012008   20240913   20241210   20241210       4219
+BIB                  6         10
 REACTION   (92-U-236(N,TOT),,SIG)
 SAMPLE      U3-O8 sample.
 CORRECTION  Correction of total c-s for admixtures of
@@ -225,9 +236,10 @@ CORRECTION  Correction of total c-s for admixtures of
 ERR-ANALYS (ERR-DIG)  Digitizing error of DATA .
            (MISC-ERR-D)Error of digitizing the time channel number
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.1 b, open circles, of reference.
-           (DEP,41012010)
-ENDBIB               9
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.1 b, open circles.
+           (DEP,41012010)  Fig.1 a, open circles data
+ENDBIB              10
 COMMON               2          3
 MISC-ERR-D ERR-DIG
 NO-DIM     B
@@ -282,17 +294,18 @@ EV         B          NO-DIM
 0.02747     18.379      477.
 0.02635     18.374      487.
 ENDDATA             47
-ENDSUBENT           65
-SUBENT        41012009   20090324   20090724   20090724       4146
-BIB                  6          7
+ENDSUBENT           66
+SUBENT        41012009   20240913   20241210   20241210       4219
+BIB                  6          8
 REACTION   (92-U-236(N,TOT),,SIG)
 SAMPLE      9 metal disks.
 ANALYSIS   Obtained from transmission values .
 ERR-ANALYS (ERR-DIG) Digitizing error of DATA .
            (MISC-ERR-D)Error of digitizing the time channel number
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.1 a, solid circles, of reference.
-ENDBIB               7
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.1 a, solid circles.
+ENDBIB               8
 COMMON               2          3
 MISC-ERR-D ERR-DIG
 NO-DIM     B
@@ -494,17 +507,18 @@ EV         B          NO-DIM
 0.0252        14.099       498.
 0.0251        18.445       499.
 ENDDATA            194
-ENDSUBENT          210
-SUBENT        41012010   20090324   20090724   20090724       4146
-BIB                  6          7
+ENDSUBENT          211
+SUBENT        41012010   20240913   20241210   20241210       4219
+BIB                  6          8
 REACTION   (92-U-236(N,TOT),,SIG)
 SAMPLE      U3-O8 sample.
 ANALYSIS   Obtained from transmission values .
 ERR-ANALYS (ERR-DIG) Digitizing error of DATA .
            (MISC-ERR-D)Error of digitizing the time channel number
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.1 a, open circles, of reference.
-ENDBIB               7
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.1 a, open circles.
+ENDBIB               8
 COMMON               2          3
 MISC-ERR-D ERR-DIG
 NO-DIM     B
@@ -640,17 +654,18 @@ EV         B          NO-DIM
 0.0253         27.796      497.
 0.0250         28.876      500.
 ENDDATA            128
-ENDSUBENT          144
-SUBENT        41012011   20180129   20180402   20180319       4177
-BIB                  6          7
+ENDSUBENT          145
+SUBENT        41012011   20240913   20241210   20241210       4219
+BIB                  6          8
 REACTION   (92-U-236(N,TOT),,TRN)
 SAMPLE     Metal disk. 4.44E+20 nucl/cm2
 ERR-ANALYS (ERR-DIG) Digitizing error of DATA.
            (MISC-ERR) Error of digitizing the time channel number.
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.2 right, solid circles, of reference.
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.2 right, solid circles.
 HISTORY    (20180129A) M.M. Thickness was added in COMMON block.
-ENDBIB               7
+ENDBIB               8
 COMMON               3          3
 MISC-ERR   ERR-DIG    THICKNESS
 NO-DIM     NO-DIM     ATOMS/B
@@ -729,17 +744,18 @@ EV         NO-DIM     NO-DIM
 4.392      0.99878      596.
 4.362      0.98269      598.
 ENDDATA             71
-ENDSUBENT           87
-SUBENT        41012012   20180129   20180402   20180319       4177
-BIB                  6          7
+ENDSUBENT           88
+SUBENT        41012012   20240913   20241210   20241210       4219
+BIB                  6          8
 REACTION   (92-U-236(N,TOT),,TRN)
 SAMPLE      U3-O8 sample. 168.52E+20 nucl/cm2
 ERR-ANALYS (ERR-DIG) Digitizing error of DATA .
            (MISC-ERR) Error of digitizing the time channel number.
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.2 right, open circles, of reference.
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.2 right, open circles.
 HISTORY    (20180129A) M.M. Thickness was added in COMMON block.
-ENDBIB               7
+ENDBIB               8
 COMMON               3          3
 MISC-ERR   ERR-DIG    THICKNESS
 NO-DIM     NO-DIM     ATOMS/B
@@ -845,17 +861,18 @@ EV         NO-DIM     NO-DIM
 4.36237    0.67823      598.
 4.34781    0.65087      599.
 ENDDATA             98
-ENDSUBENT          114
-SUBENT        41012013   20180129   20180402   20180319       4177
-BIB                  6          7
+ENDSUBENT          115
+SUBENT        41012013   20240913   20241210   20241210       4219
+BIB                  6          8
 REACTION   (92-U-236(N,TOT),,TRN)
 SAMPLE      U3-O8 sample. 168.52E+20 nucl/cm2
 ERR-ANALYS (ERR-DIG) Digitizing error of DATA .
            (MISC-ERR) Error of digitizing the time channel number.
 MISC-COL   (MISC) Digitized number of channel.
-STATUS     (CURVE) Fig.2 left, open circles, of reference.
+STATUS     (CURVE,,P.N.Vorona+,C,87KIEV,2,283,1987)
+                   Fig.2 left, open circles.
 HISTORY    (20180129A) M.M. Thickness was added in COMMON block.
-ENDBIB               7
+ENDBIB               8
 COMMON               3          3
 MISC-ERR   ERR-DIG    THICKNESS
 NO-DIM     NO-DIM     ATOMS/B
@@ -961,5 +978,5 @@ EV         NO-DIM     NO-DIM
  25.778      0.69199      246.
  25.364      0.70061      248.
 ENDDATA             98
-ENDSUBENT          114
+ENDSUBENT          115
 ENDENTRY            13

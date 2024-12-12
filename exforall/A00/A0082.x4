@@ -1,40 +1,45 @@
-ENTRY            A0082   20120327   20120530   20120522       A077
-SUBENT        A0082001   20120327   20120530   20120522       A077
-BIB                 10         21
+ENTRY            A0082   20240714   20241028   20241028       A115
+SUBENT        A0082001   20240714   20241028   20241028       A115
+BIB                 11         24
 TITLE      Near-threshold anomaly in the reaction 7Li(t,9Li)1H
 AUTHOR     (S.N.Abramovich,B.Ja.Guzhovskii,A.G.Zvenigorodskii,
            S.V.Trusillo)
+REFERENCE  (J,SNP,30,665,1979) English translation
+           (J,YF,30,1276,1979) Main reference
 INSTITUTE  (4RUSEPA)
 FACILITY   (VDGT,4RUSEPA)
-HISTORY    (19800428R)
-           (19811110A)
-           (19800718C)
-           (20080618A) BIB section updated
-            Corrections were made according new exfor rules.
-           (20120327A) English translation of 'YF' was added
-SAMPLE     Enriched metallic Li-7, enrichment 99.98%,
-           thickness 140.E-6 g/cm**2 on tantalum backing
-           thickness 0.03 cm.
-ERR-ANALYS (DATA-ERR).The uncertainty is reported by authors.
-REFERENCE  (J,YF,30,(5),1276,1979).Main reference
-           (J,SNP,30,665,1979) English translation
-REL-REF    (N,,S.N.Abramovich,J,YF,32,(2),402,1980) Theory
+SAMPLE     (3-LI-7,ENR=0.9998) Enriched metallic Li-7,
+           enrichment 99.98%, thickness 140. ug/cm2 on tantalum
+           backing thickness 0.03 cm.
+METHOD     (BCINT,SITA)
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+REL-REF    (N,,S.N.Abramovich,J,YF,32,402,1980) Theory
             J,SNP,32,208,1980 Theory-English translation
-STATUS     (CURVE).By CAJAD-fig.3 of J,YF,30,(5),1276,1979
-           (APRVD).By S.N.Abramovich,19801030.
-ENDBIB              21
+STATUS     (TABLE,,S.N.Abramovich+,J,SNP,30,665,1979) Fig.3
+           (APRVD) By S.N.Abramovich,19801030.
+HISTORY    (19800428R)
+           (19800718C)
+           (19811110A)
+           (20080618A) BIB section updated
+            Corrections were made according to new EXFOR rules.
+           (20120327A) English translation of 'YF' was added
+           (20240714A) SD: Corrections in all Subents.
+           Subent 003 was split.
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           24
-SUBENT        A0082002   20080626   20080908   20080901       A063
-BIB                  7          7
+ENDSUBENT           27
+SUBENT        A0082002   20240714   20241028   20241028       A115
+BIB                  6          9
 REACTION   (3-LI-7(T,P)3-LI-9,,SIG,,REL)
-RAD-DET    (3-LI-9,B-)
+            No information about relative units is given
 DECAY-DATA (3-LI-9,0.176SEC,B-)
-DETECTOR   (SCIN)
-METHOD     (BCINT,EXTB,SITA,ACTIV)
+DETECTOR   (SCIN) Plastic scintillator of diameter 40 mm and
+           thickness 50 mm, was placed at an angle of 120. degr.
+           to the beam direction.
 ADD-RES    (COMP)
-MISC-COL   (MISC). Number of measurement at same energy.
-ENDBIB               7
+MISC-COL   (MISC) Number of measurements at the same energy.
+HISTORY    (20240714U) SD: BIB updated.
+ENDBIB               9
 COMMON               1          3
 DATA-ERR
 PER-CENT
@@ -143,145 +148,151 @@ MEV        ARB-UNITS  SEE TEXT
     5.9484    36.726
     6.0579    37.372
 ENDDATA            101
-ENDSUBENT          117
-SUBENT        A0082003   20080626   20080908   20080901       A063
-BIB                  8         14
-REACTION  N((3-LI-7(T,N)4-BE-9,PAR,DA,,REL)+
-           (3-LI-7(T,2N+A)2-HE-4,,DA,,REL))
-          T(3-LI-7(T,N)4-BE-9,PAR,DA,,REL)
-DETECTOR  N(LONGC)
-          T(THRES)
-PART-DET  N(N)
-          T(N)
-EN-SEC     (E-EXC,4-BE-9)
-METHOD    N(BCINT,EXTB,SITA)
-          T(BCINT,SITA,EXTB)
+ENDSUBENT          119
+SUBENT        A0082003   20240714   20241028   20241028       A115
+BIB                  6         16
+REACTION   ((3-LI-7(T,N)4-BE-9,PAR,DA,,REL)+
+           (3-LI-7(T,2N+A)2-HE-4,,DA,N,REL))
+            No information about relative units is given
+DETECTOR   (LONGC) At an angle of 90. degr. to the beam
+           direction was placed a standard all-wavelength
+           neutron detector.
+           (BF3) BF3 proportional counter placed inside a hollow
+           paraffin cylinder of diameter 80 mm, height 80 mm,
+           and wall thickness 20 mm.
+           (THRES)
 ADD-RES    (COMP)
-MISC-COL   (MISC). Number of measurement at same energy.
-COMMENT     (by author).These reactions (n,t) were studied
+MISC-COL   (MISC) Number of measurements at the same energy.
+COMMENT     (by author) These reactions (n,t) were studied
            simultaneously.
-ENDBIB              14
-COMMON               5          3
-E-EXC      DATA-ERR  NDATA-ERR  TANG       NANG       T
-MEV        PER-CENT   PER-CENT   ADEG       ADEG
-       14.4         1.        0.5        90.         0.
+HISTORY    (20240714A) SD: Subent was split. SF7=N added to
+           REACTION code. E-LVL -> E-EXC-MAX.
+ENDBIB              16
+COMMON               3          3
+E-EXC-MAX  ANG        DATA-ERR
+MEV        ADEG       PER-CENT
+       14.4        90.         1.
 ENDCOMMON            3
-DATA                 4         99
-EN         DATA      NDATA      TMISC
-MEV        ARB-UNITS  ARB-UNITS  SEE TEXT
-    5.4264    20.506     40.547
-    5.4264    20.347     40.314
-    5.4361    20.499     40.478
-    5.4441    20.202     40.474
-    5.4529    20.432     40.686
-    5.4617    20.286     40.682
-    5.4697    20.366     40.576
-    5.4795    20.417     40.318
-    5.4874    20.440     40.918
-    5.4972    20.504     40.575
-    5.5070    20.416     40.471
-    5.5168    20.132     40.668
-    5.5248    20.779     40.508
-    5.5346    20.661     40.772
-    5.5444    20.580     40.620
-    5.5542    20.507     40.462
-    5.5631    20.953     41.021
-    5.5658    20.868     41.020
-    5.5703    20.721     50.757
-    5.5739    20.785     40.765
-    5.5774    20.630     40.408
-    5.5801    20.225     40.517
-    5.5837    20.741     40.699
-    5.5873    20.528     40.607
-    5.5900    20.477     40.332      1.
-    5.5900    20.444     40.151      2.
-    5.5900    20.608     41.307      3.
-    5.5900    21.365     41.316      4.
-    5.5936    20.909     40.995
-    5.5971    21.042     40.739
-    5.6007    20.540     40.812
-    5.6043    20.770     41.337
-    5.6079    21.121     41.130
-    5.6115    20.792     40.839
-    5.6151    20.827     41.156
-    5.6178    20.731     40.853
-    5.6223    20.816     41.414
-    5.6250    20.675     40.865
-    5.6295    20.813     40.963
-    5.6322    20.332     41.623      1.
-    5.6322    20.748     41.003      2.
-    5.6348    20.798     41.080
-    5.6384    20.737     40.950
-    5.6420    20.836     41.529
-    5.6456    20.767     41.343
-    5.6492    20.642     41.392
-    5.6528    20.588     41.374
-    5.6547    20.813     41.199
-    5.6574    20.877     41.501
-    5.6601    20.773     41.115
-    5.6637    20.819     41.357
-    5.6664    20.928     42.437
-    5.6691    20.820     43.841      1.
-    5.6691    20.665     43.104      2.
-    5.6691    20.909     44.287      3.
-    5.6718    20.885     44.876      1.
-    5.6718    20.764     44.691      2.
-    5.6718    21.007     44.345      3.
-    5.6754    20.771     45.713      1.
-    5.6754    20.881     45.434      2.
-    5.6790    20.818     46.467      1.
-    5.6790    20.891     46.201      2.
-    5.6817    21.272     41.170      1.
-    5.6817    20.510     46.649      2.
-    5.6844    21.041     46.971      1.
-    5.6844    21.035     47.161      2.
-    5.6871    20.912     47.864      1.
-    5.6871    20.665     47.485      2.
-    5.6898    21.098     47.757      1.
-    5.6898    20.948     47.621      2.
-    5.6935    21.009     47.660
-    5.6963    20.899     46.828
-    5.6989    20.787     46.894
-    5.7016    20.720     46.501
-    5.7043    20.600     45.715
-    5.7070    20.686     44.981
-    5.7115    20.833     44.745
-    5.7143    20.831     44.568
-    5.7170    20.816     44.196
-    5.7206    20.637     43.575
-    5.7242    20.659     43.713
-    5.7269    20.572     43.925
-    5.7306    20.569     43.683
-    5.7333    21.075     43.516
-    5.7369    20.922     43.682      1.
-    5.7369    20.584     42.701      2.
-    5.7369    20.519     42.850      3.
-    5.7405    20.220     42.102
-    5.7442    20.350     42.727
-    5.7469    20.565     42.188
-    5.7514    20.605     42.627
-    5.7542    20.683     42.492
-    5.7551    20.330     42.314
-    5.7614    20.660     42.170
-    5.7651    20.621     42.228
-    5.8116    20.981     42.106
-    5.8793    20.448     42.055
-    5.9484    20.254     41.298
-    6.0579    20.022     40.926
+DATA                 3         99
+EN         DATA       MISC
+MEV        ARB-UNITS  SEE TEXT
+     5.4264     20.506
+     5.4264     20.347
+     5.4361     20.499
+     5.4441     20.202
+     5.4529     20.432
+     5.4617     20.286
+     5.4697     20.366
+     5.4795     20.417
+     5.4874     20.440
+     5.4972     20.504
+     5.5070     20.416
+     5.5168     20.132
+     5.5248     20.779
+     5.5346     20.661
+     5.5444     20.580
+     5.5542     20.507
+     5.5631     20.953
+     5.5658     20.868
+     5.5703     20.721
+     5.5739     20.785
+     5.5774     20.630
+     5.5801     20.225
+     5.5837     20.741
+     5.5873     20.528
+     5.5900     20.477         1.
+     5.5900     20.444         2.
+     5.5900     20.608         3.
+     5.5900     21.365         4.
+     5.5936     20.909
+     5.5971     21.042
+     5.6007     20.540
+     5.6043     20.770
+     5.6079     21.121
+     5.6115     20.792
+     5.6151     20.827
+     5.6178     20.731
+     5.6223     20.816
+     5.6250     20.675
+     5.6295     20.813
+     5.6322     20.332         1.
+     5.6322     20.748         2.
+     5.6348     20.798
+     5.6384     20.737
+     5.6420     20.836
+     5.6456     20.767
+     5.6492     20.642
+     5.6528     20.588
+     5.6547     20.813
+     5.6574     20.877
+     5.6601     20.773
+     5.6637     20.819
+     5.6664     20.928
+     5.6691     20.820         1.
+     5.6691     20.665         2.
+     5.6691     20.909         3.
+     5.6718     20.885         1.
+     5.6718     20.764         2.
+     5.6718     21.007         3.
+     5.6754     20.771         1.
+     5.6754     20.881         2.
+     5.6790     20.818         1.
+     5.6790     20.891         2.
+     5.6817     21.272         1.
+     5.6817     20.510         2.
+     5.6844     21.041         1.
+     5.6844     21.035         2.
+     5.6871     20.912         1.
+     5.6871     20.665         2.
+     5.6898     21.098         1.
+     5.6898     20.948         2.
+     5.6935     21.009
+     5.6963     20.899
+     5.6989     20.787
+     5.7016     20.720
+     5.7043     20.600
+     5.7070     20.686
+     5.7115     20.833
+     5.7143     20.831
+     5.7170     20.816
+     5.7206     20.637
+     5.7242     20.659
+     5.7269     20.572
+     5.7306     20.569
+     5.7333     21.075
+     5.7369     20.922         1.
+     5.7369     20.584         2.
+     5.7369     20.519         3.
+     5.7405     20.220
+     5.7442     20.350
+     5.7469     20.565
+     5.7514     20.605
+     5.7542     20.683
+     5.7551     20.330
+     5.7614     20.660
+     5.7651     20.621
+     5.8116     20.981
+     5.8793     20.448
+     5.9484     20.254
+     6.0579     20.022
 ENDDATA            101
-ENDSUBENT          124
-SUBENT        A0082004   20080626   20080908   20080901       A063
-BIB                  8          9
+ENDSUBENT          126
+SUBENT        A0082004   20240714   20241028   20241028       A115
+BIB                  9         13
 REACTION   (3-LI-7(T,A)2-HE-6,,SIG,,REL)
+            No information about relative units is given
 METHOD     (SITA,BCINT,EXTB)
 RAD-DET    (2-HE-6,B-)
 DECAY-DATA (2-HE-6,0.8081SEC,B-,3500.)
-MISC-COL   (MISC). Number of measurment at same energy.
-DETECTOR   (SCIN)
-COMMENT    *By author*.Influence of Li-9 was very small
-REL-REF    (N,,S.N.ABRAMOVICH+,J,PJS,,(2),256,1976).Details of
+MISC-COL   (MISC) Number of measurements at the same energy.
+DETECTOR   (BF3) BF3 proportional counter placed inside a hollow
+           paraffin cylinder of diameter 80 mm, height 80 mm,
+           and wall thickness 20 mm.
+COMMENT    *By author*. Influence of Li-9 was very small.
+REL-REF    (N,,S.N.Abramovich+,J,PJS,,(2),256,1976).Details of
            method.
-ENDBIB               9
+HISTORY    (20240714A) SD: BIB updated.
+ENDBIB              13
 COMMON               1          3
 DATA-ERR
 PER-CENT
@@ -374,5 +385,127 @@ MEV        ARB-UNITS  SEE TEXT
     5.9503     6.046
     5.9836     6.335
 ENDDATA             85
-ENDSUBENT          103
-ENDENTRY             4
+ENDSUBENT          107
+SUBENT        A0082005   20240714   20241028   20241028       A115
+BIB                  5         10
+REACTION   (3-LI-7(T,X)0-NN-1,,DA,,REL)
+            No information about relative units is given
+DETECTOR   (LONGC) At an angle of 90. degr. to the beam
+           direction was placed a standard all-wavelength
+           neutron detector.
+           (THRES)
+MISC-COL   (MISC) Number of measurements at the same energy.
+COMMENT     (by author) These reactions (n,t) were studied
+           simultaneously.
+HISTORY    (20240714T) SD: Part of Subent 002.
+ENDBIB              10
+COMMON               2          3
+ANG        DATA-ERR
+ADEG       PER-CENT
+         0.        0.5
+ENDCOMMON            3
+DATA                 3         99
+EN         DATA       MISC
+MEV        ARB-UNITS  SEE TEXT
+     5.4264     40.547
+     5.4264     40.314
+     5.4361     40.478
+     5.4441     40.474
+     5.4529     40.686
+     5.4617     40.682
+     5.4697     40.576
+     5.4795     40.318
+     5.4874     40.918
+     5.4972     40.575
+     5.5070     40.471
+     5.5168     40.668
+     5.5248     40.508
+     5.5346     40.772
+     5.5444     40.620
+     5.5542     40.462
+     5.5631     41.021
+     5.5658     41.020
+     5.5703     50.757
+     5.5739     40.765
+     5.5774     40.408
+     5.5801     40.517
+     5.5837     40.699
+     5.5873     40.607
+     5.5900     40.332         1.
+     5.5900     40.151         2.
+     5.5900     41.307         3.
+     5.5900     41.316         4.
+     5.5936     40.995
+     5.5971     40.739
+     5.6007     40.812
+     5.6043     41.337
+     5.6079     41.130
+     5.6115     40.839
+     5.6151     41.156
+     5.6178     40.853
+     5.6223     41.414
+     5.6250     40.865
+     5.6295     40.963
+     5.6322     41.623         1.
+     5.6322     41.003         2.
+     5.6348     41.080
+     5.6384     40.950
+     5.6420     41.529
+     5.6456     41.343
+     5.6492     41.392
+     5.6528     41.374
+     5.6547     41.199
+     5.6574     41.501
+     5.6601     41.115
+     5.6637     41.357
+     5.6664     42.437
+     5.6691     43.841         1.
+     5.6691     43.104         2.
+     5.6691     44.287         3.
+     5.6718     44.876         1.
+     5.6718     44.691         2.
+     5.6718     44.345         3.
+     5.6754     45.713         1.
+     5.6754     45.434         2.
+     5.6790     46.467         1.
+     5.6790     46.201         2.
+     5.6817     41.170         1.
+     5.6817     46.649         2.
+     5.6844     46.971         1.
+     5.6844     47.161         2.
+     5.6871     47.864         1.
+     5.6871     47.485         2.
+     5.6898     47.757         1.
+     5.6898     47.621         2.
+     5.6935     47.660
+     5.6963     46.828
+     5.6989     46.894
+     5.7016     46.501
+     5.7043     45.715
+     5.7070     44.981
+     5.7115     44.745
+     5.7143     44.568
+     5.7170     44.196
+     5.7206     43.575
+     5.7242     43.713
+     5.7269     43.925
+     5.7306     43.683
+     5.7333     43.516
+     5.7369     43.682         1.
+     5.7369     42.701         2.
+     5.7369     42.850         3.
+     5.7405     42.102
+     5.7442     42.727
+     5.7469     42.188
+     5.7514     42.627
+     5.7542     42.492
+     5.7551     42.314
+     5.7614     42.170
+     5.7651     42.228
+     5.8116     42.106
+     5.8793     42.055
+     5.9484     41.298
+     6.0579     40.926
+ENDDATA            101
+ENDSUBENT          120
+ENDENTRY             5

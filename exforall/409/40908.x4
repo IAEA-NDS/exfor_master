@@ -1,34 +1,49 @@
-ENTRY            40908   20010319   20010718   20050926       0000
-SUBENT        40908001   20010319   20010718   20050926       0000
-BIB                 11         14
+ENTRY            40908   20240208   20240902   20240902       4217
+SUBENT        40908001   20240208   20240902   20240902       4217
+BIB                  9         16
+TITLE       Au-198 isomeric state excitation in the reaction
+            (n,gamma) at En = 14.6 MeV
+AUTHOR     (V.L.Demekhin,B.E.Leshchenko,V.K.Maydanyuk,G.Peto,
+           V.A.Plyuyko)
+REFERENCE  (C,84ALMAAT,,329,1984)
 INSTITUTE  (4UKRKGU)
-REFERENCE  (C,84ALMAAT,,329,198404)
-AUTHOR     (V.L.DEMEKHIN,B.E.LESHCHENKO,V.K.MAYDANYUK,G.PETO,
-           V.A.PLYUYKO)
-TITLE       AU-198 ISOMERIC STATE EXCITATION IN THE REACTION
-            (N-GAMMA) AT THE NEUTRON ENERGY 14.6 MEV
-FACILITY    NEUTRON GENERATOR
+FACILITY   (NGEN) Neutron generator
 METHOD     (ACTIV)
 DETECTOR   (GELI)
-MONITOR     NO INFORMATION
-ERR-ANALYS (DATA-ERR)  NOT SPECIFIED
-STATUS      FROM THE ABOVE-MENTIONED REFERENCE
-HISTORY    (19861010C)   COMPILED AC CJD
+ERR-ANALYS (DATA-ERR)  Not specified
+HISTORY    (19861010C)   Compiled at CJD
            (20010319A) DATE is corrected
-ENDBIB              14
+           (20240208A) BIB information was updated.
+            MONITOR line was moved in Subent 002 and corrected as
+            ASSUMED.
+            Upper -> lower case correction.
+ENDBIB              16
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        40908002   20010319   20010718   20050926       0000
-BIB                  3          3
-REACTION   (79-AU-197(N,G)79-AU-198-M,,SIG)
-DECAY-DATA (79-AU-198-M,2.30D,DG,811.7)
-DECAY-MON  (79-AU-198-G,2.69D,DG,411.8)
-ENDBIB               3
+ENDSUBENT           19
+SUBENT        40908002   20240208   20240902   20240902       4217
+BIB                  7         16
+REACTION   (79-AU-197(N,G)79-AU-198-M,,SIG,,,DERIV)
+DECAY-DATA (79-AU-198-M,2.30D) 811.7 keV gamma-line was not used
+           for C-S calculation due to very low it's intensity.
+           (79-AU-198-G,2.69D,DG,411.8)
+ASSUMED    (ASSUM,79-AU-197(N,G)79-AU-198-G,,SIG)
+ANALYSIS   (DECAY) Experimental Au-198-G decay curve was compared
+           with theoretical calculation, taking into account
+           decay of Au-198-M isomeric state and using results of
+           V.K.Maydanyuk+, see REL-REF.
+REL-REF    (N,,V.K.Maydanyuk+,C,82KIEV,,541,1982)
+STATUS     (TABLE,,V.L.Demekhin+,C,84ALMAAT,,329,1984)
+            Text on page 329.
+HISTORY    (20240208A) DATA-ERR: 100. -> 140. microbarn as given
+           in the article.
+            DERIV code was added in REACTION according to a
+           comment of N.Otsuka (NDS,IAEA).
+ENDBIB              16
 NOCOMMON             0          0
-DATA                 3          1
-EN         DATA       DATA-ERR
-MEV        B          B
- 14.6          400.E-6    100.E-6
+DATA                 5          1
+EN         DATA       DATA-ERR   ASSUM      ASSUM-ERR
+MEV        MICRO-B    MICRO-B    MB         MB
+ 14.6          400.       140.    1.4        0.4
 ENDDATA              3
-ENDSUBENT           11
+ENDSUBENT           24
 ENDENTRY             2

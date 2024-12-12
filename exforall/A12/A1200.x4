@@ -1,35 +1,53 @@
-ENTRY            A1200   19990319   19990505   20050926       0000
-SUBENT        A1200001   19990319   19990505   20050926       0000
-BIB                 10         13
-INSTITUTE  (1USALAS)
-REFERENCE  (J,PR,82,(6),777,195106)
-AUTHOR     (L.ROSEN,J.C.ALLRED)
+ENTRY            A1200   20240707   20240820   20240820       A113
+SUBENT        A1200001   20240707   20240820   20240820       A113
+BIB                 10         16
 TITLE      The scattering of 10.4 MeV deuterons by hydrogen
-FACILITY   (CYCLO)
+AUTHOR     (L.Rosen,J.C.Allred)
+REFERENCE  (J,PR,82,777,1951)
+           (J,PR,79,227(Q4),1950) - prelim. data. Minutes of the
+                         Meeting at Washington, April 27-29, 1950
+INSTITUTE  (1USALAS)
+FACILITY   (CYCLO,1USALAS)
 SAMPLE     A gas targets
-METHOD     (EXTB)
-DETECTOR   (PLATE) Ilford 100-mu C2 plates.
+METHOD     (EXTB,BCINT)
+DETECTOR   (PLATE) Ilford 100-um C2 plates.
 ADD-RES    (COMP) A smooth curve which fits the data is given by
            sigma(cos(omega))=0.0740+0.1150cos(omega)+0.00492*
            cos(omega)**2-0.1214cos(omega)**3+0.1424cos(omega)**4
 HISTORY    (19830304C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990220U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              13
-NOCOMMON
-ENDSUBENT           16
-SUBENT        A1200002   19990319   19990505   20050926       0000
-BIB                  4          5
-REACTION   (1-H-1(D,EL)1-H-1,,DA,,,EXP)
-ERR-ANALYS (ERR-T) absolute error from authors
+           (20240707A) SD: Corrections in all Subents.
+ENDBIB              16
+NOCOMMON             0          0
+ENDSUBENT           19
+SUBENT        A1200002   20240707   20240820   20240820       A113
+BIB                  5         17
+REACTION   (1-H-1(D,EL)1-H-1,,DA)
+ERR-ANALYS (ERR-T) All uncertainties give an rms absolute
+           standard error of 2.9% in the interval 40. - 140.
+           degr. CM and the data in the intervals 30. - 40. and
+           140. - 160. degr. CM are believed to have an absolute
+           standard error of 5.0%
+           (ERR-S) Statistical error
+           (ERR-1) The errors incurred because of slit
+           penetration, slit scattering, and other background
+           (ERR-2) Uncertainty in the current integrator
+           (ERR-3,,1.) Errors introduced by geometrical factors
+           (ERR-4) Errors due to microscope calibration and
+           personal factors
 COMMENT    The assembly average was calculated for every angle
            from several runs.
-STATUS     (TABLE) table 1
-ENDBIB               5
-COMMON               1          3
-EN
-MEV
-  10.40
-ENDCOMMON            3
+STATUS     (TABLE,,L.Rosen+,J,PR,82,777,1951) table I
+HISTORY    (20240707A) SD: SF9=EXP deleted from REACTION code.
+ENDBIB              17
+COMMON               7          6
+EN         EN-ERR     ERR-S      ERR-1      ERR-2      ERR-4
+ANG-RSL
+MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT   PER-CENT
+ADEG
+      10.40        1.2        1.5        1.0        1.7        1.0
+        0.9
+ENDCOMMON            6
 DATA                 3         35
 ANG-CM     DATA-CM    ERR-T
 ADEG       MB/SR      PER-CENT
@@ -69,5 +87,50 @@ ADEG       MB/SR      PER-CENT
    157.5      248.         5.
    161.2      238.         5.
 ENDDATA             37
-ENDSUBENT           51
-ENDENTRY             2
+ENDSUBENT           66
+SUBENT        A1200003   20240707   20240820   20240820       A113
+BIB                  4          5
+REACTION   (1-H-1(D,EL)1-H-1,,DA)
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE,,J.C.Allred+,J,PR,79,227(Q4),1950) text on p.227
+           (SPSDD,A1200002)
+HISTORY    (20240707C) SD
+ENDBIB               5
+COMMON               2          3
+EN         EN-ERR
+MEV        MEV
+  10.35           0.10
+ENDCOMMON            3
+DATA                 3         14
+ANG-CM     DATA-CM    DATA-ERR
+ADEG       MB/SR      MB/SR
+        50.       163.         4.
+        60.       141.         4.
+        65.       126.         3.
+        70.       112.         3.
+        75.       100.        2.6
+        80.       90.2        2.4
+        85.       86.2        2.1
+        90.       70.7        1.8
+       100.       60.4        1.5
+       110.       54.3        1.3
+       120.       57.6        1.5
+       130.       74.2        2.0
+       135.       80.9        2.5
+       140.      107.7         3.
+ENDDATA             16
+ENDSUBENT           30
+SUBENT        A1200004   20240707   20240820   20240820       A113
+BIB                  3          3
+REACTION   (1-H-1(D,EL)1-H-1,,SIG)
+STATUS     (TABLE,,L.Rosen+,J,PR,82,777,1951) Text on p.781
+HISTORY    (20240707C) SD
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 2          1
+EN         DATA
+MEV        B
+    10.40      1.5
+ENDDATA              3
+ENDSUBENT           11
+ENDENTRY             4

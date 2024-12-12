@@ -1,22 +1,26 @@
-ENTRY            40660   20160601   20180122   20180119       4176
-SUBENT        40660001   20160601   20180122   20180119       4176
-BIB                 11         32
-INSTITUTE  (4RUSFEI)
-REFERENCE  (J,AE,53,(2),83,1982)  Data Table is given
-           (J,SJA,53,536,1982) Eng.trans.of AE,53,83,1982
+ENTRY            40660   20240828   20241025   20241025       4218
+SUBENT        40660001   20240828   20241025   20241025       4218
+BIB                 11         37
+TITLE       Average number (v(bar)(p)) of prompt neutrons in the
+            fission of 236U nuclei by neutrons in the energy range
+            0.8 - 6 MeV
+AUTHOR     (V.V.Malinovski,V.G.Vorob'eva,B.D.Kuz'minov,
+           V.M.Piksaikin,N.N.Semenova)
+REFERENCE  (J,SJA,53,536,1982) Engl.translstion of AE,53,83,1982
+           (J,AE,53,(2),83,1982)  Data Table is given
            (R,INDC(CCP)-178,1982) same data
            (J,YK,,(1/50),4,1983) same data, several isotopes
            (R,INDC(CCP)-229,46,1984) Transl. of YK,,(1/50),4,1983
-AUTHOR     (V.V.Malinovsky,V.G.Vorobeva,B.D.Kuzminov,
-           V.M.Piksaikin,N.N.Semenova)
-TITLE       Average number (v(bar)(p)) of prompt neutrons  in the
-            fission of U-236 nuclei by the neutrons in the
-            energy range 0.8 - 6. MeV
+INSTITUTE  (4RUSFEI)
 INC-SOURCE (P-T) Energy resolution 30 keV
            (D-D) Energy resolution 80 keV
            (P-LI7) Energy resolution 30 keV
-SAMPLE      U-236 Enrichment is more than 99%
-DETECTOR   (PROPC)  He-3 filled counters
+SAMPLE      U-236 enrichment is more than 99%
+DETECTOR   (PROPC) 16 He-3 filled counters in polyethylene block-
+           to detect fission neutrons.
+           (IOCH) 6 U chambers and one Cf chamber with detection
+           efficiency of FF of U-236 and Cf-252 - 80 and 96 %,
+           respectively. .
 MONITOR    (98-CF-252(0,F),PR,NU)
 REL-REF    (M,,V.G.Vorobeva+,J,YK,,(3/38),44,1980)
              Details of corrections method.
@@ -33,15 +37,16 @@ HISTORY    (19831226C)
            J,YK,1983,(1/50),4,1983 -> J,YK,,(1/50),4,1983
            J,YK,1980,(3/38),44,1980 ->
                                 J,YK,,(3/38),44,1980  - REL-REF
-ENDBIB              32
+           (20240828A) Subent 002 was corrected.
+ENDBIB              37
 COMMON               1          3
 MONIT
 PRT/FIS
  3.733
 ENDCOMMON            3
-ENDSUBENT           39
-SUBENT        40660002   20090923   20091127   20091127       4147
-BIB                  6         41
+ENDSUBENT           44
+SUBENT        40660002   20240828   20241025   20241025       4218
+BIB                  8         48
 REACTION   (92-U-236(N,F),PR,NU)
 CORRECTION  For differences of energy fission neutron spectra of
             U-236 and Cf-252 - MISC1,
@@ -71,7 +76,7 @@ MISC-COL   (MISC1) Correction for differences of energy fission
            (MISC3) Correction for false counting of coincidence of
             two pulses from fission neutron and background at dead
             time.
-COVARIANCE  Diagonal element of covariation matrix, defined
+COVARIANCE  Diagonal element of covarince matrix, defined
             without taking into account of statistical error:
             for EN=5.05, 5.60 is 0.29E-4,
             for EN=5.90 is 0.28E-4,
@@ -82,8 +87,15 @@ ADD-RES    (THEO) Energy dependence of Nu-prompt could be
             (2.346+-0.012)+(0.1072+-0.0071)*En at En=< 2.35 MeV,
             (2.236+-0.024)+(0.1539+-0.0068)*En at
            (COMP)                       2.35MeV=<En=<5.9 MeV.
-STATUS     (TABLE) Table of AE,53,(2),83,1982 .
-ENDBIB              41
+ERR-ANALYS (ERR-S) Statistical uncertainty
+           (ERR-T) Total uncertainty
+STATUS     (TABLE,,V.V.Malinovsky+,J,SJA,53,536,1982)
+HISTORY    (20240828A) ERR-S was corrected at last 4 points
+           according to a comment of W.N.Fritsch (misprint at
+           initial compilation).
+            EN,DATA,ERR-S,ERR-T format was corrected:
+            floating point -> fixed point.
+ENDBIB              48
 COMMON               2          3
 MISC2-ERR  MISC3-ERR
 NO-DIM     NO-DIM
@@ -94,80 +106,80 @@ EN         DATA       ERR-S      ERR-T      MISC1      MISC1-ERR
 MISC2      MISC3
 MEV        PRT/FIS    PRT/FIS    PRT/FIS    NO-DIM     NO-DIM
 NO-DIM     NO-DIM
- 8.0000E-01 2.451      2.9000E-02 3.4000E-02  -0.019    0.005
+0.80        2.451      0.029       0.034      -0.019    0.005
   0.002      -0.019
- 8.5000E-01 2.446      2.7000E-02 3.3000E-02  -0.019    0.005
+0.85        2.446      0.027       0.033      -0.019    0.005
   0.003      -0.019
- 9.0000E-01 2.434      2.2000E-02 3.4000E-02  -0.019    0.005
+0.90        2.434      0.022       0.034      -0.019    0.005
   0.003      -0.019
- 9.5000E-01 2.430      2.3000E-02 3.5000E-02  -0.019    0.005
+0.95        2.430      0.023       0.035      -0.019    0.005
   0.004      -0.019
- 1.0000E+00 2.465      3.3000E-02 3.8000E-02  -0.019    0.005
+1.00        2.465      0.033       0.038      -0.019    0.005
   0.004      -0.019
- 1.1000E+00 2.472      2.2000E-02 2.9000E-02  -0.019    0.005
+1.10        2.472      0.022       0.029      -0.019    0.005
   0.002      -0.019
- 1.2000E+00 2.501      1.7000E-02 2.5000E-02  -0.018    0.005
+1.20        2.501      0.017       0.025      -0.018    0.005
   0.005      -0.017
- 1.3000E+00 2.469      3.0000E-02 3.5000E-02  -0.018    0.005
+1.30        2.469      0.030       0.035      -0.018    0.005
   0.002      -0.017
- 1.3500E+00 2.476      3.1000E-02 3.6000E-02  -0.018    0.005
+1.35        2.476      0.031       0.036      -0.018    0.005
   0.001      -0.017
- 1.4000E+00 2.480      1.5000E-02 2.4000E-02  -0.018    0.005
+1.40        2.480      0.015       0.024      -0.018    0.005
   0.002      -0.017
- 1.5000E+00 2.514      2.0000E-02 3.0000E-02  -0.018    0.005
+1.50        2.514      0.020       0.030      -0.018    0.005
   0.002      -0.017
- 1.6000E+00 2.515      1.7000E-02 2.5000E-02  -0.018    0.005
+1.60        2.515      0.017       0.025      -0.018    0.005
   0.002      -0.017
- 1.7000E+00 2.518      2.3000E-02 3.0000E-02  -0.018    0.005
+1.70        2.518      0.023       0.030      -0.018    0.005
   0.003      -0.017
- 1.8000E+00 2.556      2.6000E-02 3.2000E-02  -0.018    0.005
+1.80        2.556      0.026       0.032      -0.018    0.005
   0.001      -0.017
- 1.9000E+00 2.549      1.2000E-02 2.1000E-02  -0.017    0.004
+1.90        2.549      0.012       0.021      -0.017    0.004
   0.003      -0.017
- 2.0000E+00 2.545      3.5000E-02 3.9000E-02  -0.017    0.004
+2.00        2.545      0.035       0.039      -0.017    0.004
   0.003      -0.017
- 2.1000E+00 2.575      3.3000E-02 3.7000E-02  -0.016    0.004
+2.10        2.575      0.033       0.037      -0.016    0.004
   0.001      -0.017
- 2.2000E+00 2.558      2.4000E-02 3.0000E-02  -0.016    0.004
+2.20        2.558      0.024       0.030      -0.016    0.004
   0.002      -0.017
- 2.2500E+00 2.611      1.6000E-02 2.4000E-02  -0.015    0.004
+2.25        2.611      0.016       0.024      -0.015    0.004
   0.004      -0.017
- 2.3000E+00 2.604      1.5000E-02 2.3000E-02  -0.015    0.004
+2.30        2.604      0.015       0.023      -0.015    0.004
   0.002      -0.017
- 2.4000E+00 2.588      1.5000E-02 2.3000E-02  -0.015    0.004
+2.40        2.588      0.015       0.023      -0.015    0.004
   0.005      -0.017
- 2.5000E+00 2.626      2.9000E-02 3.4000E-02  -0.015    0.004
+2.50        2.626      0.029       0.034      -0.015    0.004
   0.005      -0.017
- 2.6000E+00 2.684      2.8000E-02 3.4000E-02  -0.014    0.004
+2.60        2.684      0.028       0.034      -0.014    0.004
   0.001      -0.016
- 2.7000E+00 2.667      2.3000E-02 2.9000E-02  -0.014    0.004
+2.70        2.667      0.023       0.029      -0.014    0.004
   0.009      -0.016
- 2.8000E+00 2.669      3.2000E-02 3.7000E-02  -0.014    0.004
+2.80        2.669      0.032       0.037      -0.014    0.004
   0.003      -0.016
- 2.9000E+00 2.678      2.4000E-02 3.0000E-02  -0.014    0.004
+2.90        2.678      0.024       0.030      -0.014    0.004
   0.004      -0.016
- 3.0000E+00 2.690      1.3000E-02 2.3000E-02  -0.014    0.004
+3.00        2.690      0.013       0.023      -0.014    0.004
   0.003      -0.016
- 3.1000E+00 2.704      2.3000E-02 3.0000E-02  -0.014    0.004
+3.10        2.704      0.023       0.030      -0.014    0.004
   0.002      -0.016
- 3.2000E+00 2.727      1.6000E-02 2.5000E-02  -0.014    0.004
+3.20        2.727      0.016       0.025      -0.014    0.004
   0.004      -0.016
- 3.3000E+00 2.732      2.1000E-02 2.9000E-02  -0.014    0.004
+3.30        2.732      0.021       0.029      -0.014    0.004
   0.002      -0.016
- 3.4000E+00 2.780      2.2000E-02 2.9000E-02  -0.012    0.003
+3.40        2.780      0.022       0.029      -0.012    0.003
   0.004      -0.015
- 3.5000E+00 2.772      1.5000E-02 2.3000E-02  -0.012    0.003
+3.50        2.772      0.015       0.023      -0.012    0.003
   0.003      -0.015
- 3.6000E+00 2.775      2.2000E-02 2.9000E-02  -0.012    0.003
+3.60        2.775      0.022       0.029      -0.012    0.003
   0.005      -0.015
- 3.7000E+00 2.819      1.9000E-01 2.6000E-02  -0.012    0.003
+3.70        2.819      0.019       0.026      -0.012    0.003
   0.005      -0.015
- 5.0500E+00 3.007      1.6000E-01 3.0000E-02  -0.009    0.003
+5.05        3.007      0.016       0.030      -0.009    0.003
   0.005      -0.013
- 5.6000E+00 3.167      2.6000E-01 3.4000E-02  -0.007    0.002
+5.60        3.167      0.026       0.034      -0.007    0.002
   0.002      -0.010
- 5.9000E+00 3.154      4.2000E-01 4.6000E-02  -0.007    0.002
+5.90        3.154      0.042       0.046      -0.007    0.002
   0.002      -0.010
 ENDDATA             78
-ENDSUBENT          128
+ENDSUBENT          135
 ENDENTRY             2

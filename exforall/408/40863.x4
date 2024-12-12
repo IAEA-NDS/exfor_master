@@ -1,14 +1,14 @@
-ENTRY            40863   20110715   20111003   20110930       4153
-SUBENT        40863001   20110715   20111003   20110930       4153
-BIB                 12         32
-INSTITUTE  (4RUSRI)
-REFERENCE  (J,AE,57,(3),210,198409)
-           (J,SJA,57,(3),670,1984) Engl. translation of J,AE .
-           #doi:10.1007/BF01122346
-AUTHOR     (YU.N.Trofimov)
-TITLE       Cross section of the C-111(n,n')Cd-111m reaction in
+ENTRY            40863   20240724   20241025   20241025       4218
+SUBENT        40863001   20240724   20241025   20241025       4218
+BIB                 12         33
+TITLE       Cross section of the 111Cd(n,n')111mCd reaction in
            the interval extending from the threshold energy to
-           2.2 MeV.
+           2.2 MeV
+AUTHOR     (Yu.N.Trofimov)
+REFERENCE  (J,SJA,57,(3),670,1984) Engl. translation of J,AE .
+           #doi:10.1007/BF01122346
+           (J,AE,57,(3),210,198409)
+INSTITUTE  (4RUSRI)
 FACILITY   (VDG)
 INC-SOURCE (P-T)   T-Ti targets .
 SAMPLE      Cd-110 content is 0.35  %, Cd-111 content is 95.1  %,
@@ -22,37 +22,52 @@ DETECTOR   (SOLST) Two detectors of diameter 6mm , thickness 0.2mm
            38 cm**3 volume, resolution 3 keV for 1332 keV line,
            to measure energy and intensity of gamma-peaks.
            Spectrometer was calibrated by standard sources.
+CORRECTION   On scattered neutrons - 3+-1 % , on pulse addition -
+            1.5+-0.3 % ,
+ERR-ANALYS (ERR-1)  Error due to the Ge-Li detector efficiency
+           (ERR-2)  Cd-111-m activity error
+           (ERR-3)  In-116-m activity error
+           (ERR-T) Total error.
 HISTORY    (19850521C)
            (20110715A) M.M. Upper -> lower case correction.
            Dates were corrected for 4-digits year.
            BIB information was added.
            Ref. J,SJA was added.
-CORRECTION   On scattered neutrons - 3+-1 % , on pulse addition -
-            1.5+-0.3 % ,
-ERR-ANALYS (ERR-1)  Error due to the Ge-Li Detector Efficiency
-           (ERR-2)  Cd-111-m activity error
-           (ERR-3)  In-116-m activity error
-           (ERR-T) Total error.
-ENDBIB              32
+           (20240724U) Subent 002 was corrected.
+ENDBIB              33
 COMMON               3          3
 ERR-1      ERR-2      ERR-3
 PER-CENT   PER-CENT   PER-CENT
- 4.0000E+00 5.0000E-01 1.0000E+00
+ 4.         0.5        1.
 ENDCOMMON            3
-ENDSUBENT           39
-SUBENT        40863002   20110715   20111003   20110930       4153
-BIB                  7         10
+ENDSUBENT           40
+SUBENT        40863002   20240724   20241025   20241025       4218
+BIB                  9         24
 REACTION   (48-CD-111(N,INL)48-CD-111-M,,SIG)
 DECAY-DATA (48-CD-111-M,49.1MIN,DG,245.35,0.942)
-MONITOR    (49-IN-115(N,G)49-IN-116-M,,SIG)
+MONITOR    (49-IN-115(N,G)49-IN-116-M1+M2,,SIG)
+             IT=100% for M2 -> M1
            (49-IN-115(N,INL)49-IN-115-M,,SIG)
 DECAY-MON  (49-IN-115-M,,DG,336.25)
-           (49-IN-116-M,54.15MIN,DG,416.98,0.33)
+           (49-IN-116-M1,54.15MIN,DG,416.98,0.33)
             54.15+-0.05 min, 0.33+-0.01 - data from REL-REF.
 MONIT-REF  (,,R,BNL-NCS-50446,1975) ENDF/B-V Dosimetry File.
-REL-REF    (R,,N.G.Gusev+,B,GUSEV,,1977) Ref. for DECAY-MON data.
-STATUS     (TABLE) Table of J,AE,57,(3),210,1984
-ENDBIB              10
+REL-REF    (R,,N.G.Gusev+,B,GUSEV,,,1977) Ref. for DECAY-MON data.
+COMMENT    Of compiler M.M.
+            Data at En=0.3 MeV is given in the Table of the
+           article as 0. +- 0. mb; the total absolute uncertainty
+            (= 0.mb) looks like strange, even point is below the
+           reaction threshold (0.4 MeV mentioned in the article).
+           ERR-T at this data point was deleted because this
+           point is below the reaction threshold and ERR-2
+            (Cd-111-m activity error = 0.5 %) could not be
+            applied at this case ( no activation is supposed below
+            threshold).
+STATUS     (TABLE,,Yu.N.Trofimov,J,SJA,57,(3),670,1984)
+            Table on page 671
+HISTORY    (20240724A) ERR-T = 0. mb at En=0.3 MeV was deleted -
+            see comment of compiler.
+ENDBIB              24
 COMMON               2          3
 ERR-HL     ERR-IDD
 MIN        NO-DIM
@@ -61,20 +76,20 @@ ENDCOMMON            3
 DATA                 6         14
 EN         EN-RSL-FW  DATA       ERR-T      MONIT1     MONIT2
 MEV        MEV        MB         MB         MB         MB
- 3.0000E-01 1.4000E-01 0.0000E+00 0.0000E+00 1.8000E+02 0.0000E+00
- 5.0000E-01 1.3000E-01 3.0000E-01 1.0000E-01 1.8300E+02 3.7500E+00
- 7.0000E-01 1.3000E-01 8.0000E+00 1.0000E+00 1.9000E+02 1.4000E+01
- 8.0000E-01 1.3000E-01 2.5000E+01 2.0000E+00 2.0000E+02 2.3000E+01
- 1.0000E+00 1.2000E-01 6.2000E+01 5.0000E+00 1.8800E+02 5.9000E+01
- 1.2000E+00 1.1000E-01 1.0300E+02 8.0000E+00 1.7800E+02 1.0100E+02
- 1.4000E+00 1.0000E-01 1.5000E+02 1.2000E+01 1.6000E+02 1.3600E+02
- 1.5000E+00 1.0000E-01 1.7400E+02 1.4000E+01 1.6000E+02 1.6700E+02
- 1.6000E+00 9.0000E-02 2.0500E+02 1.6000E+01 1.5300E+02 1.8900E+02
- 1.8000E+00 9.0000E-02 2.3600E+02 1.7000E+01 1.3700E+02 2.3200E+02
- 1.9000E+00 9.0000E-02 2.4800E+02 1.8000E+01 1.2900E+02 2.4600E+02
- 2.0000E+00 8.0000E-02 2.2000E+02 1.7000E+01 1.2100E+02 2.6000E+02
- 2.1000E+00 8.0000E-02 2.3200E+02 1.8000E+01 1.1500E+02 2.7000E+02
- 2.2000E+00 8.0000E-02 2.5300E+02 2.0000E+01 1.0800E+02 2.8000E+02
+ 0.3         .14        0.                  180.         0.
+ 0.5         .13        0.3       0.1       183.         3.75
+ 0.7         .13        8.        1.        190.        14.
+ 0.8         .13       25.        2.        200.        23.
+ 1.0         .12       62.        5.        188.        59.
+ 1.2         .11      103.        8.        178.       101.
+ 1.4         .10      150.       12.        160.       136.
+ 1.5         .10      174.       14.        160.       167.
+ 1.6         .09      205.       16.        153.       189.
+ 1.8         .09      236.       17.        137.       232.
+ 1.9         .09      248.       18.        129.       246.
+ 2.0         .08      220.       17.        121.       260.
+ 2.1         .08      232.       18.        115.       270.
+ 2.2         .08      253.       20.        108.       280.
 ENDDATA             16
-ENDSUBENT           35
+ENDSUBENT           49
 ENDENTRY             2

@@ -1,33 +1,36 @@
-ENTRY            A0223   20010323   20050616   20050926       0000
-SUBENT        A0223001   20010323   20050616   20050926       0000
-BIB                 13         24
-TITLE      The Investigation of Neutron Energy Spectra For
-           68-Zn(P,N)68-Ga Reaction.
-AUTHOR     (G.V.KOTEL'NIKOVA, G.N.LOVCHIKOVA, O.A.SAL'NIKOV,
-           S.P.SIMAKOV, A.M.TRUFANOV, N.I.FETISOV)
-REFERENCE  (R,FEI-1141,1,1980).
+ENTRY            A0223   20240819   20241129   20241129       A116
+SUBENT        A0223001   20240819   20241129   20241129       A116
+BIB                 13         27
+TITLE      The investigation of neutron energy spectra for
+           68-Zn(p,n)68-Ga reaction
+AUTHOR     (G.V.Kotel'nikova,G.N.Lovchikova,O.A.Sal'nikov,
+           S.P.Simakov,A.M.Trufanov,N.I.Fetisov)
+REFERENCE  (R,FEI-1141,1,1980)
 INSTITUTE  (4RUSFEI)
 FACILITY   (VDGT,4RUSFEI)
-HISTORY    (19841012C)
-           (19840605R).Checked Tables have Been Received.
-           (20001024A) Reamarks of V. Mclane are Included.
-           (20010323U) Last checking has been done.
 METHOD     (EXTB,BCINT,TOF,SITA)
-REL-REF    (N,A0222001,G.V.KOTEL'NIKOVA+,R,FEI-1121,1,1980).
+REL-REF    (M,A0222001,G.V.Kotel'nikova+,R,FEI-1121,1,1980)
            Experimental Details.
-DETECTOR   (SCIN). Threshold = 0.6 MeV. See 'Rel-Ref'.
-STATUS     (APRVD). By a.M. Trufanov.
-ADD-RES    (LD,ANGD).
+DETECTOR   (SCIN) Threshold = 0.6 MeV. See 'REL-REF'.
+ADD-RES    (LD,ANGD)
 SAMPLE     Target Composition-
            68-Zn- 68.%
            64-Zn-  3.3%
            66-Zn-  7.9%
            67-Zn-  1.6%
            70-Zn-  0.4%
-ERR-ANALYS (DATA-ERR). Any Additinal Information is Absent.
-ENDBIB              24
+ERR-ANALYS (DATA-ERR) No information about source of uncertainty
+STATUS     (TABLE) Tables from authors.
+           (APRVD) By A.M.Trufanov.
+HISTORY    (19841012C)
+           (19840605R) Checked tables have been received.
+           (20001024A) Reamarks of V. Mclane were included.
+           (20010323U) Last checking has been done.
+           (20240819A) SD: Corrections in several Subents.
+           Subent 008 was split according to EXFOR rules.
+ENDBIB              27
 NOCOMMON             0          0
-ENDSUBENT           27
+ENDSUBENT           30
 SUBENT        A0223002   20010323   20050616   20050926       0000
 BIB                  2          2
 REACTION   (30-ZN-68(P,N)31-GA-68,,DE)
@@ -457,34 +460,54 @@ MEV        MU-B/MEV   PER-CENT
         6.4   3.79E+01   5.45E+01
 ENDDATA             59
 ENDSUBENT           70
-SUBENT        A0223008   20010323   20050616   20050926       0000
-BIB                  1          2
-REACTION  A(30-ZN-68(P,N)31-GA-68,PAR,SIG)
-          B(30-ZN-68(P,N)31-GA-68,,SIG)
-ENDBIB               2
-COMMON               3          3
-E-MIN     ADATA-ERR  ADATA-ERR  B
-MEV        PER-CENT   PER-CENT
-         1.         5.         5.
+SUBENT        A0223008   20240819   20241129   20241129       A116
+BIB                  2          3
+REACTION   (30-ZN-68(P,N)31-GA-68,PAR,SIG)
+HISTORY    (20240819A) SD: Subent was split in two (see
+           Subent 009).
+ENDBIB               3
+COMMON               2          3
+E-MIN      DATA-ERR
+MEV        PER-CENT
+         1.         5.
 ENDCOMMON            3
-DATA                 3         15
-EN         DATA      ADATA      B
-MEV        MB         MB
-         5.        20.
+DATA                 2         15
+EN         DATA
+MEV        MB
+        5.0       20.0
         5.2       42.8
         5.4       82.1
-        5.6       110.
+        5.6      110.0
         5.8      133.8
-         6.      152.6
-        6.2       191.
-        6.4       195.
+        6.0      152.6
+        6.2      191.0
+        6.4      195.0
         6.6      227.1
         6.8      235.2
-         7.      244.7
-        7.5       302.       537.
-         8.       347.       598.
-        8.5       390.       649.
-         9.       413.       682.
+        7.0      244.7
+        7.5      302.0
+        8.0      347.0
+        8.5      390.0
+        9.0      413.0
 ENDDATA             17
-ENDSUBENT           28
-ENDENTRY             8
+ENDSUBENT           29
+SUBENT        A0223009   20240819   20241129   20241129       A116
+BIB                  2          2
+REACTION   (30-ZN-68(P,N)31-GA-68,,SIG)
+HISTORY    (20240819T) SD: Part of Subent 008.
+ENDBIB               2
+COMMON               1          3
+DATA-ERR
+PER-CENT
+         5.
+ENDCOMMON            3
+DATA                 2          4
+EN         DATA
+MEV        MB
+        7.5       537.
+        8.0       598.
+        8.5       649.
+        9.0       682.
+ENDDATA              6
+ENDSUBENT           17
+ENDENTRY             9

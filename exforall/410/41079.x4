@@ -1,92 +1,150 @@
-ENTRY            41079   20020729   20030127   20050926       0000
-SUBENT        41079001   20020729   20030127   20050926       0000
-BIB                  9         18
+ENTRY            41079   20240906   20241210   20241210       4219
+SUBENT        41079001   20240906   20241210   20241210       4219
+BIB                  9         27
+TITLE       Energy dependence of yields and kinetic energies of
+            235U fission fragments
+AUTHOR     (P.P.D'yachenko,B.D.Kuz'minov,L.S.Kutsaeva,
+           V.M.Piksaikin)
+REFERENCE  (J,SNP,14,629,1972) English translation
+           (J,YF,14,1129,1971) In Russian.
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,YF,14,1129,197112) IN RUSSIAN.
-           (J,SNP,14,629,197206) ENGLISH TRANSLATION
-AUTHOR     (P.P.D'YACHENKO,B.D.KUZ'MINOV,L.S.KUTSAEVA,
-           V.M.PIKSAIKIN)
-TITLE       ENERGY DEPENDENCE OF YIELDS AND KINETIC ENERGIES OF
-            235U FISSION FRAGMENTS
-METHOD                    NO INFORMATION
-ERR-ANALYS  ERRORS ARE NOT SPECIFIED
-COMMENT    39 VALUES GRAPHICALLY GIVEN FOR PEAK (137-141) AND
-            VALLEY (118-121) YIELDS AT NEUTRON ENERGIES 0.12-6 MEV
-           CONSOLIDATES 68DYA1 AND 70DYA1. BY INTEGRATING OVER A
-            FISSION SPECTRUM IN 7 GROUPS OF 1 MEV EACH, EFFECTIVE
-            VALLEY YIELDS FOR U235F = 0.034 +- 0.005. EFFECTIVE
-            PEAK YIELDS FOR U235F = 6.28 +-0.05
-STATUS     (RIDER)   RIDER'S REFERENCE 71DYA1
-HISTORY    (19911116T) CONVERTED FROM RIDER ENTRY 90462
-           (20020729A) DATE is corrected. 'MONITOR' KEYWD DELETED
-ENDBIB              18
+METHOD      Measurement at fast and thermal neutron beams.
+            Method is almost the same as in Entry 40235, see
+           REL-REFvof P/P.D'yachenko+;
+           but measurement-computer-center was used instead of
+           16000-channel analyzer ( as in 40235).
+ERR-ANALYS (DATA-ERR) Errors are not specified
+COMMENT    Of the author V.M.Piksaikin:
+           Yields before prompt neutron emission were measured.
+REL-REF    (N,,T.R.England+,R,ENDF-349,1994) = LA-UR-94-3106 .
+            https://nds.iaea.org/endf349/
+           (M,40235001,P.P.D'yachenko+,J,SNP,8,165,1969)
+HISTORY    (19911116T) Converted from RIDER ENTRY 90462
+           (20020729A) Date is corrected.
+            'MONITOR' keyword was deleted.
+           (20240906A) Comment of the author V.M.Piksaikin was
+           added.
+            Subents 002, 003 were deleted - data were not measured
+            by authors, were derived by B.F.Rider and T.R.England,
+            see REL-REF of T.R.England+.
+            Subent 004 was added (measured data, digitized Fig.3).
+ENDBIB              27
 NOCOMMON             0          0
-ENDSUBENT           21
-SUBENT        41079002   20020729   20030127   20050926       0000
-BIB                  3          3
-REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY,,FIS)
-INC-SPECT   REACTOR'S FAST NEUTRON SPECTRUM
-MONITOR    (92-U-235(N,F)56-BA-140,CUM,FY,,FIS)
-ENDBIB               3
-COMMON               1          3
-EN-DUMMY
-EV
- 1.0   E+06
+ENDSUBENT           30
+SUBENT        41079002   20240906   20241210   20241210       4219
+SUBENT        41079003   20240906   20241210   20241210       4219
+SUBENT        41079004   20240906   20241210   20241210       4219
+BIB                  6         24
+REACTION   (92-U-235(N,F)50-SN-118,PRE,FY,,AV/MSC)
+            Yields average in mass region MASS-MIN - MASS-MAX,
+            derived from several experiments of the same authors.
+FLAG       (1.) this experiment ( open circles )
+           (2.) this experiment ( open triangles )
+           (3.) derived from experiment published in
+           P.P.Dyachenko+,J,PL/B,31,122,1970 (crosses).
+           (4.) derived from previous measurement described in
+            Entry 40235 ( black circles)
+ERR-ANALYS  Quantization errors (one pixel):
+            axis X - 0.0040 MeV,
+            axis Y - 0.0022 pc/fis for mass 118-121,
+                   - 0.0007 pc/fis for mass 137-141.
+COMMENT    Of compiler M.M.
+           - Data point 0.0285 pc/fis at 137-141 mass,
+           EN=1.6904 MeV is on Fig.3 without error bars,
+           so DATA-ERR is not given for this point in DATA block.
+           - Data point 0.0117+-0.0048 pc/fis at 137-141,
+           EN=0.2781 MeV is presented on Fig.3 as two overlapping
+           black circles, it was digitized as one point. Probably
+           one of circle is the cross if take into account upper
+           part of Fig.3. at this EN region.
+STATUS     (CURVE,,P.P.D'yachenko+,J,SNP,14,629,1972)
+HISTORY    (20240906C) Subent was added.
+ENDBIB              24
+COMMON               2          3
+EN-ERR-DIG ERR-DIG
+MEV        PC/FIS
+0.0061       0.0028
 ENDCOMMON            3
-DATA                 6          8
-ELEMENT    MASS       ISOMER     DATA       DATA-ERR   MONIT
-NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS     PC/FIS
- 50.       118.                    0.034      0.005      6.28
- 50.       119.         0.         0.034      0.005      6.28
- 50.       120.                    0.034      0.005      6.28
- 50.       121.         0.         0.034      0.005      6.28
- 55.       137.                    6.28        .05       6.28
- 55.       138.         0.         6.28        .05       6.28
- 56.       139.                    6.28        .05       6.28
- 58.       141.                    6.28        .05       6.28
-ENDDATA             10
-ENDSUBENT           22
-SUBENT        41079003   20020729   20030127   20050926       0000
-BIB                  2          2
-REACTION   (92-U-235(N,F)50-SN-118,CUM,FY)
-MONITOR    (92-U-235(N,F)55-CS-137,CUM,FY)
-ENDBIB               2
-NOCOMMON             0          0
-DATA                 4         32
-EN         DATA       DATA-ERR   MONIT
-MEV        PC/FIS     PC/FIS     PC/FIS
-0.120         .007       .005      6.35
-0.125         .008       .005      6.35
-0.200         .108       .005      6.40
-0.250         .108       .005      6.35
-0.300         .102       .005      6.35
-0.400         .017       .005      6.40
-0.500         .017       .005      6.25
-0.600         .018       .007      6.30
-0.650         .015       .007      6.35
-0.700         .015       .007      6.35
-0.750         .015       .007      6.40
-0.800         .015       .007      6.25
-0.900         .022       .007      6.33
-1.0           .018       .010      6.45
-1.1           .017       .010      6.35
-1.2           .021       .010      6.35
-1.3           .025       .010      6.30
-1.4           .025       .010      6.30
-1.5           .030       .010      6.20
-1.6           .035       .010      6.30
-1.7           .030       .010      6.32
-1.8           .025       .010      6.35
-1.9           .020       .010      6.30
-2.0           .035       .010      6.30
-2.2           .035       .010      6.33
-2.4           .040       .010      6.25
-2.5           .040       .010      6.30
-2.6           .055       .010      6.30
-3.0           .045       .010      6.25
-3.6           .065       .015      6.22
-5.0           .130       .020      6.05
-6.0           .145       .020      6.00
-ENDDATA             34
-ENDSUBENT           41
-ENDENTRY             3
+DATA                 6         77
+EN         MASS-MIN   MASS-MAX   DATA       DATA-ERR   FLAG
+MEV        NO-DIM     NO-DIM     PC/FIS     PC/FIS     NO-DIM
+ 0.1151     137.       141.       0.0069     0.0039     3.
+ 0.1154     118.       121.       6.3583     0.0491     3.
+ 0.1876     137.       141.       0.0104     0.0052     3.
+ 0.2061     118.       121.       6.3984     0.0491     3.
+ 0.2781     137.       141.       0.0117     0.0048     4.
+ 0.2965     118.       121.       6.3715     0.0491     4.
+ 0.3146     118.       121.       6.3804     0.0491     3.
+ 0.3958     137.       141.       0.0129     0.0052     3.
+ 0.4144     118.       121.       6.4249     0.0491     3.
+ 0.5044     137.       141.       0.0155     0.0043     3.
+ 0.5221     118.       121.       6.2328     0.0536     3.
+ 0.5949     137.       141.       0.0116     0.0048     3.
+ 0.6130     118.       121.       6.3220     0.0536     1.
+ 0.6131     137.       141.       0.0151     0.0056     1.
+ 0.6133     118.       121.       6.3666     0.0535     3.
+ 0.7036     137.       141.       0.0173     0.0043     1.
+ 0.7128     118.       121.       6.3710     0.0580     1.
+ 0.7397     137.       141.       0.0121     0.0043     4.
+ 0.7493     118.       121.       6.4290     0.0536     4.
+ 0.8031     137.       141.       0.0138     0.0048     1.
+ 0.8119     118.       121.       6.2682     0.0536     1.
+ 0.9028     137.       141.       0.0220     0.0052     1.
+ 0.9210     118.       121.       6.3573     0.0580     1.
+ 0.9752     137.       141.       0.0177     0.0074     2.
+ 1.0120     118.       121.       6.4688     0.0625     2.
+ 1.0837     137.       141.       0.0155     0.0056     4.
+ 1.1109     137.       141.       0.0185     0.0052     1.
+ 1.1203     118.       121.       6.3928     0.0402     1.
+ 1.1204     118.       121.       6.4240     0.0446     4.
+ 1.2105     137.       141.       0.0151     0.0056     1.
+ 1.2289     118.       121.       6.4016     0.0536     1.
+ 1.3192     118.       121.       6.3613     0.0536     1.
+ 1.3192     137.       141.       0.0211     0.0061     1.
+ 1.3373     137.       141.       0.0250     0.0061     4.
+ 1.3467     118.       121.       6.4282     0.0580     4.
+ 1.4185     118.       121.       6.2987     0.0669     2.
+ 1.4188     137.       141.       0.0250     0.0069     2.
+ 1.5093     137.       141.       0.0259     0.0056     2.
+ 1.5095     137.       141.       0.0350     0.0061     1.
+ 1.5180     118.       121.       6.2852     0.0714     2.
+ 1.5263     118.       121.       6.1334     0.0625     1.
+ 1.5819     137.       141.       0.0332     0.0086     2.
+ 1.5820     137.       141.       0.0401     0.0091     2.
+ 1.6086     118.       121.       6.2985     0.0714     2.
+ 1.6174     118.       121.       6.2493     0.0714     2.
+ 1.6904     137.       141.       0.0285                2.
+ 1.6905     137.       141.       0.0319     0.0061     4.
+ 1.6991     118.       121.       6.2939     0.0625     4.
+ 1.7266     118.       121.       6.3697     0.0625     2.
+ 1.7629     137.       141.       0.0354     0.0061     2.
+ 1.7805     118.       121.       6.2849     0.0625     2.
+ 1.8080     137.       141.       0.0233     0.0074     2.
+ 1.8351     118.       121.       6.3473     0.0714     2.
+ 1.8622     137.       141.       0.0198     0.0074     2.
+ 1.9158     118.       121.       6.1865     0.0759     2.
+ 1.9437     137.       141.       0.0172     0.0078     2.
+ 1.9710     118.       121.       6.3739     0.0580     2.
+ 2.0162     137.       141.       0.0271     0.0065     2.
+ 2.0345     137.       141.       0.0384     0.0061     4.
+ 2.0522     118.       121.       6.3202     0.0491     4.
+ 2.1339     118.       121.       6.3648     0.0625     2.
+ 2.2696     118.       121.       6.3423     0.0625     2.
+ 2.2698     137.       141.       0.0349     0.0086     2.
+ 2.5144     137.       141.       0.0440     0.0082     2.
+ 2.5227     118.       121.       6.2795     0.0714     2.
+ 2.5418     137.       141.       0.0570     0.0074     4.
+ 2.5681     118.       121.       6.3107     0.0625     4.
+ 2.7771     137.       141.       0.0552     0.0082     2.
+ 2.7853     118.       121.       6.3104     0.0580     4.
+ 3.0847     137.       141.       0.0461     0.0086     4.
+ 3.1018     118.       121.       6.2520     0.0491     4.
+ 3.5104     137.       141.       0.0651     0.0099     4.
+ 3.5271     118.       121.       6.2158     0.0625     4.
+ 5.0015     118.       121.       6.0265     0.0536     4.
+ 5.0050     137.       141.       0.1299     0.0156     4.
+ 6.0010     137.       141.       0.1468     0.0177     4.
+ 6.0062     118.       121.       6.0164     0.0491     4.
+ENDDATA             79
+ENDSUBENT          112
+ENDENTRY             4

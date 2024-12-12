@@ -1,134 +1,159 @@
-ENTRY            A0022   20180523   20181008   20180919       A089
-SUBENT        A0022001   20180523   20181008   20180919       A089
-BIB                 12         26
-TITLE      Yields of Se-72 and Se-75  in nuclear reactions with
-           protons, deuterons and alpha particles.
+ENTRY            A0022   20240713   20241028   20241028       A115
+SUBENT        A0022001   20240713   20241028   20241028       A115
+BIB                 11         26
+TITLE      Yields of Se-72 and Se-75 in nuclear reactions with
+           protons, deuterons and alpha-particles
 AUTHOR     (P.P.Dmitriev,G.A.Molin,I.O.Konstantinov,
            N.N.Krasnov,M.V.Panarin)
 INSTITUTE  (4RUSFEI)
-REFERENCE  (J,AE,34,405,1973) Main reference.
-           (J,SJA,34,499,1973) English translation
+REFERENCE  (J,SJA,34,499,1973) English translation
+           (J,AE,34,405,1973) Main reference. in Russian
 REL-REF    (I,A0011001,P.P.Dmitriev+,J,AE,32,426,1972)
            (I,A0012001,P.P.Dmitriev+,J,AE,31,157,1971)
-           (R,,C.M.Lederer,B,LEDERER-7,,,1967) decay data
+           (R,,C.M.Lederer,B,LEDERER-7,,,1967) Decay data
 FACILITY   (CYCLO,4RUSFEI)
 DETECTOR   (NAICR)
-ERR-ANALYS (DATA-ERR).No analysis of the uncertainties is given
-           The uncertainties of the data for Se-72 and Se-75
-           amount to +-15%.
-           (EN-ERR) No analysis of the uncertainties is given
+ERR-ANALYS (DATA-ERR) The error is mainly governed by systematic
+           errors in the measurements of the activity of Se-72
+           and Se-75 and the integral current of bombarding
+           particles, and are estimated to be 15%.
 METHOD     (SITA,EXTB,MOSEP,EDEG,BCINT)
-FLAG       (1.) Data from Tbl.1 of AE,34,405,1973
-STATUS     (CURVE) fig.1 from AE,34,405,1973 by CAJaD
-           (APRVD).By P.P.Dmitriev.
+STATUS     (APRVD) By P.P.Dmitriev.
 HISTORY    (19780901C)
-           (20080608A) BIB section was updated
-            Corrections were made according new EXFOR rules.
+           (20080608A) BIB section was updated.
+            Corrections were made according to new EXFOR rules.
            (20180523A) SD: REACTION code was updated according to
            MEMO CP-D/933rev. in Subents 002-004. BIB was updated.
            Two refs moved to REL-REF. LEDERER-7 added to REL-REF.
+           (20240713A) SD: Corrections in all Subents. Subent 004
+           was split in two.
 ENDBIB              26
-NOCOMMON             0          0
-ENDSUBENT           29
-SUBENT        A0022002   20180523   20181008   20180919       A089
-BIB                  9         11
-REACTION   (33-AS-75(P,N)34-SE-75,,TTY,,PHY)
-SAMPLE     As-75,powder
-COMMENT    *By authors*.Threshold=1.67 MeV.
+COMMON               1          3
+DATA-ERR
+PER-CENT
+       15.
+ENDCOMMON            3
+ENDSUBENT           33
+SUBENT        A0022002   20240713   20241028   20241028       A115
+BIB                 10         14
+REACTION  1(33-AS-75(P,N)34-SE-75,,TTY,,PHY)
+          2(33-AS-75(P,N)34-SE-75,,TTY,,PHY)
+SAMPLE     As-75, powder
+COMMENT    *By authors* Threshold = 1.67 MeV.
 DECAY-DATA (34-SE-75,120.D,DG,256./280.,0.85)
 MONITOR    (29-CU-65(P,N)30-ZN-65,,SIG)
 MONIT-REF  (,P.P.Dmitriev+,J,AE,24,279,1968)
 DECAY-MON  (30-ZN-65,245.D)
 REL-REF    (A,O2103001,J.Delaunay-Olkowsky+,J,NP,47,266,1963)
-            (comment by authors).This is good agreement with
-           the results of P.P.Dmitriev+,A0022002.
+STATUS    1(CURVE,,P.P.Dmitriev+,J,SJA,34,499,1973) fig.1
+          2(TABLE,,P.P.Dmitriev+,J,SJA,34,499,1973) Tbl.1
 HISTORY    (20180522A) SD: SF8=DT -> PHY in REACTION code.
-ENDBIB              11
+           (20240713A) SD: FLAG deleted; value moved to REACTION
+           code (2).
+ENDBIB              14
 NOCOMMON             0          0
-DATA                 5          5
-EN         EN-ERR     DATA       DATA-ERR   FLAG
-MEV        MEV        MUCI/MUAHR MUCI/MUAHR NO-DIM
-    6.5                   4.5
-    9.3                  17.7
-   11.4                  29.5
-   15.5                  40.
-   21.8        0.2       52.         7.8      1.
+DATA                 6          5
+EN         EN-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MUCI/MUAHR PER-CENT   MUCI/MUAHR MUCI/MUAHR
+        6.5                   4.5        15.
+        9.3                  17.7        15.
+       11.4                  29.5        15.
+       15.5                   40.
+       21.8        0.2                            52.         7.8
 ENDDATA              7
-ENDSUBENT           23
-SUBENT        A0022003   20180523   20181008   20180919       A089
+ENDSUBENT           26
+SUBENT        A0022003   20240713   20241028   20241028       A115
 BIB                 10         14
-REACTION   (33-AS-75(D,2N)34-SE-75,,TTY,,PHY)
-SAMPLE     As-75,powder
-COMMENT    *By authors*.Threshold=3.97MeV.
+REACTION  1(33-AS-75(D,2N)34-SE-75,,TTY,,PHY)
+          2(33-AS-75(D,2N)34-SE-75,,TTY,,PHY)
+SAMPLE     As-75, powder
+COMMENT    *By authors* Threshold=3.97 MeV.
 DECAY-DATA (34-SE-75,120.D,DG,256./280.,0.85)
 MONITOR    (29-CU-65(D,2N)30-ZN-65,,SIG)
 MONIT-REF  (,P.P.Dmitriev+,J,AE,18,184,1965)
 DECAY-MON  (30-ZN-65,245.D)
 REL-REF    (A,,H.F.Roehm+,J,JIN,34,1773,1972)
-            (comment by authors) this is good agreement with
-           results of H.F.Roehm and H.Muenzel.
-FLAG       (2.).Yield of Se-75 was deduced by authors from
-           paper of H.Roehm and H.Muenzel.See 'REL-REF' this
-           Subent.
+STATUS    1(CURVE,,P.P.Dmitriev+,J,SJA,34,499,1973) fig.1
+          2(TABLE,,P.P.Dmitriev+,J,SJA,34,499,1973) Tbl.1
 HISTORY    (20180522A) SD: SF8=DT -> PHY in REACTION code.
+           (20240713A) SD: FLAG deleted; value moved to REACTION
+           code (2).
 ENDBIB              14
 NOCOMMON             0          0
-DATA                 5          6
-EN         EN-ERR     DATA       DATA-ERR   FLAG
-MEV        MEV        MUCI/MUAHR MUCI/MUAHR NO-DIM
-    9.1                   5.1
-   13.3                  28.5
-   15.0                  39.1
+DATA                 6          5
+EN         EN-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MUCI/MUAHR PER-CENT   MUCI/MUAHR MUCI/MUAHR
+    9.1                   5.1            15.
+   13.3                  28.5            15.
+   15.0                  39.1            15.
    20.0                  65.9
-   23.0        0.2       77.        12.        1.
-   23.0                  73.                    2.
-ENDDATA              8
-ENDSUBENT           27
-SUBENT        A0022004   20180523   20181008   20180919       A089
-BIB                  9         24
-REACTION  A(32-GE-70(A,2N)34-SE-72,,TTY,,PHY)
-          B(32-GE-0(A,X)34-SE-75,,TTY,,PHY)
-           the isotope Se-75 was produced by 3 reactions
-           32-Ge-72(alpha,n)34-Se-75,threshold=6.4MeV
-           32-Ge-73(alpha,2n)34-Se-75,threshold=13.55 MeV
-           32-Ge-74(alpha,3n)34-Se-75,threshold=24.3 MeV
-           the isotope Se-72 was produced by reaction
-           32-Ge-70(alpha,2n)34-Se-72,threshold=17.6 MeV
-DECAY-DATAA(33-AS-72,26.HR,DG,835.,0.78)
-          B(34-SE-75,120.D,DG,256./280.,0.85)
+   23.0        0.2                           77.            12.
+ENDDATA              7
+ENDSUBENT           26
+SUBENT        A0022004   20240713   20241028   20241028       A115
+BIB                  9         21
+REACTION  1(32-GE-70(A,2N)34-SE-72,,TTY,,PHY)
+          2(32-GE-70(A,2N)34-SE-72,,TTY,,PHY)
+            32-Ge-70(alpha,2n)34-Se-72, threshold=17.6 MeV
+DECAY-DATA (33-AS-72,26.HR,DG,835.,0.78)
 SAMPLE     Ge-metal-20.6% Ge-70, 27.43% Ge-72, 7.84% Ge-73,
             36.4% Ge-74.
-REL-REF    (D,,S.Amiel+,J,PR,116,415,1959).
+REL-REF    (D,,S.Amiel+,J,PR,116,415,1959)
             (comment by authors) this is contradiction with
            the results of S.Amiel+.
-FLAG       (2.).Yield of Se-72 was deduced by authors from
-           the paper of S.Amiel+.See 'Rel-Ref' a0022004
 MONITOR    (29-CU-63(A,X)30-ZN-65,CUM,SIG)
 MONIT-REF  (,N.T.Porile+,J,PR,116,1193,1959)
 DECAY-MON  (30-ZN-65,245.D)
-           (31-GA-65,15.2MIN).100% decay to Zn-65
+           (31-GA-65,15.2MIN) 100% decay to Zn-65
             (comment by the compiler)
+STATUS    1(CURVE,,P.P.Dmitriev+,J,SJA,34,499,1973) fig.1
+          2(TABLE,,P.P.Dmitriev+,J,SJA,34,499,1973) Tbl.1
 HISTORY    (20180522A) SD: SF8=DT -> PHY in REACTION code.
             MONITOR corrected.
-ENDBIB              24
+           (20240713A) SD: Subent was split in two (see
+           Subent 005). FLAG deleted; value moved to REACTION
+           code (2).
+ENDBIB              21
 NOCOMMON             0          0
-DATA                 7          6
-EN         EN-ERR     DATA      ADATA-ERR  ADATA      BDATA-ERR  B
-FLAG
+DATA                 6          4
+EN         EN-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
 MEV        MEV        MUCI/MUAHR MUCI/MUAHR MUCI/MUAHR MUCI/MUAHR
-NO-DIM
-       15.0        1.2                              0.3       0.04
-
-       24.8        0.9        7.0        1.0        1.4       0.21
-
-       32.4        0.7       21.4        3.1        3.5       0.51
-
-       39.6        0.6       29.5        4.5        6.0       0.90
-         1.
-       42.0                   20.
-         2.
-       44.0        0.5       33.0        5.0        8.0        1.2
-
-ENDDATA             16
-ENDSUBENT           45
-ENDENTRY             4
+       24.8        0.9        7.0        1.0
+       32.4        0.7       21.4        3.1
+       39.6        0.6       29.5        4.5
+       44.0        0.5                            33.0        5.0
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        A0022005   20240713   20241028   20241028       A115
+BIB                  9         18
+REACTION  1(32-GE-0(A,X)34-SE-75,,TTY,,PHY)
+          2(32-GE-0(A,X)34-SE-75,,TTY,,PHY)
+           the isotope Se-75 was produced by 3 reactions
+           32-Ge-72(alpha,n)34-Se-75, threshold = 6.4 MeV
+           32-Ge-73(alpha,2n)34-Se-75, threshold = 13.55 MeV
+           32-Ge-74(alpha,3n)34-Se-75, threshold = 24.3 MeV
+DECAY-DATA (34-SE-75,120.D,DG,256./280.,0.85)
+SAMPLE     Ge-metal-20.6% Ge-70, 27.43% Ge-72, 7.84% Ge-73,
+            36.4% Ge-74.
+REL-REF    (D,,S.Amiel+,J,PR,116,415,1959)
+MONITOR    (29-CU-63(A,X)30-ZN-65,CUM,SIG)
+MONIT-REF  (,N.T.Porile+,J,PR,116,1193,1959)
+DECAY-MON  (30-ZN-65,245.D)
+           (31-GA-65,15.2MIN) 100% decay to Zn-65
+            (comment by the compiler)
+STATUS    1(CURVE,,P.P.Dmitriev+,J,SJA,34,499,1973) fig.1
+          2(TABLE,,P.P.Dmitriev+,J,SJA,34,499,1973) Tbl.1
+HISTORY    (20240713T) SD: Part of Subent 004.
+ENDBIB              18
+NOCOMMON             0          0
+DATA                 6          5
+EN         EN-ERR     DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MUCI/MUAHR MUCI/MUAHR MUCI/MUAHR MUCI/MUAHR
+       15.0        1.2        0.3       0.04
+       24.8        0.9        1.4       0.21
+       32.4        0.7        3.5       0.51
+       39.6        0.6        6.0       0.90
+       44.0        0.5                             8.0        1.2
+ENDDATA              7
+ENDSUBENT           30
+ENDENTRY             5

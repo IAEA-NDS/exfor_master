@@ -1,45 +1,57 @@
-ENTRY            C0403   19981014   19990304   20050926       0000
-SUBENT        C0403001   19981014   19990304   20050926       0000
-BIB                 11         23
+ENTRY            C0403   20241014   20241203   20241203       C241
+SUBENT        C0403001   20241014   20241203   20241203       C241
+BIB                 11         28
 INSTITUTE  (1CANMCG)
 REFERENCE  (J,CJC,41,2533,1963)
-AUTHOR     (G.R.GRANT,L.YAFFE)
+           #doi:10.1139/v63-373
+AUTHOR     (G.R.Grant,L.Yaffe)
 TITLE      The spallation of iridium with protons of energies
             9-87 MeV
-FACILITY   (SYNCY)
+FACILITY   (SYNCY,1CANMCG)
 SAMPLE     Approximately 10-15 mg of 'spec-pure' iridium sponge
             and 'spec-pure' copper powder loaded into thin-walled
             aluminum tubing.
 METHOD     (ACTIV,CHSEP,STTA)
 DETECTOR   (NAICR)
-ERR-ANALYS (DATA-ERR) Uncertainty includes:
-            - photopeak areas (+-10%),
-            - photo efficiency (+-5%),
-            - chemical yields (+-2% TO 5%),
-            - pipetting and dilution (+-1%),
-            - ratio of number of atoms in monitor to target (+-6%)
-           giving overall errors of +-20% to +-25%.
-STATUS     Data taken from reference -- Tables II and III.
+ERR-ANALYS Uncertainty includes:
+           (ERR-1) - photopeak areas (+-10%),
+           (ERR-2)- photo efficiency (+-5%),
+           (ERR-3,2.,5.) - chemical yields (+-2% to 5%),
+           (ERR-4) - pipetting and dilution (+-1%),
+           (ERR-5) - ratio of number of atoms in monitor to target
+             +-6%)
+           (ERR-T) giving overall errors of +-20% to +-25%.
+STATUS     (TABLE,,G.R.Grant+,J,CJC,41,2533,1963)
+            Data taken from reference -- Table III.
 HISTORY    (19871201C) ZY
            (19881011C) BIB corrections. Data sorted.
            (19970425U) BIB Update, converted to lower case.
            (19981014U) Dates corrected
-ENDBIB              23
-NOCOMMON             0          0
-ENDSUBENT           26
-SUBENT        C0403002   19981014   19990304   20050926       0000
-BIB                  4          7
+           (20241009A) OS. DECAY-DATA corrected, ERR-ANALYS,
+            STATUS updated, BIB updates
+ENDBIB              28
+COMMON               4          3
+ERR-1      ERR-2      ERR-4      ERR-5
+PER-CENT   PER-CENT   PER-CENT   PER-CENT
+  10.        5.         1.         6.
+ENDCOMMON            3
+ENDSUBENT           35
+SUBENT        C0403002   20241014   20241203   20241203       C241
+BIB                  5         10
 REACTION   (77-IR-0(P,X)ELEM/MASS,CUM,SIG)
-DECAY-DATA ((1.)77-IR-185,15.HR,EC/B+,,0.80)
+DECAY-DATA ((1.)77-IR-185,15.HR)
+           ((1.)76-OS-185,94.D,DG,646.,0.80)
            ((2.)76-OS-183-G,12.HR,DG,382.,0.87)
            ((3.)76-OS-182,20.HR,AR,510.,1.0)
            ((4.)75-RE-181,19.HR,DG,365.,0.50)
-MONITOR    (29-CU-65(P,N+P)29-CU-64,,SIG)
-MONIT-REF  (,J.W.MEADOWS,J,PR,91,885,1953)
-ENDBIB               7
+MONITOR    (29-CU-65(P,X)29-CU-64,,SIG)
+MONIT-REF  (B0054006,J.W.Meadows,J,PR,91,885,1953)
+HISTORY    (20241009A) DECAY-DATA (1.) corrected,
+             MONIT-REF updated
+ENDBIB              10
 NOCOMMON             0          0
 DATA                 7         16
-EN         ELEMENT    MASS       DECAY-FLAG DATA       DATA-ERR
+EN         ELEMENT    MASS       DECAY-FLAG DATA       ERR-T
 MONIT
 MEV        NO-DIM     NO-DIM     NO-DIM     MB         PER-CENT
 MB
@@ -76,31 +88,33 @@ MB
  87.        76.        183.       2.          30.       25.
  190.
 ENDDATA             36
-ENDSUBENT           48
-SUBENT        C0403003   19981014   19990304   20050926       0000
-BIB                  4         17
+ENDSUBENT           51
+SUBENT        C0403003   20241014   20241203   20241203       C241
+BIB                  4         19
 REACTION   (77-IR-0(P,X)ELEM/MASS,,SIG)
 DECAY-DATA ((1.)78-PT-191,3.D,DG,540.,0.144)
            ((2.)78-PT-189,9.HR,DG,545.,0.128,DG,608.,0.149)
-           ((3.)78-PT-188,10.D,EC/B+,,0.287)
+           ((3.)78-PT-188,10.D)
+           ((3.)77-IR-188,41.HR,DG,633.,0.287)
            ((4.)78-PT-186,3.HR,DG,670.,1.0)
            ((5.)77-IR-192-G,74.D,DG,296.,0.32,DG,308.,0.36,
                                  DG,316.,0.91)
            ((6.)77-IR-190-M2,3.HR,DG,361.,1.0)
            ((7.)77-IR-190-G,11.D,DG,361./371.,0.344)
-           ((8.)77-IR-188-G,41.HR,DG,633.,0.287)
+           ((8.)77-IR-188,41.HR,DG,633.,0.287)
            ((9.)77-IR-186-G,15.HR,DG,297.,0.205)
            ((10.)76-OS-185,94.D,DG,646.,0.80)
 MONITOR    ((MONIT1)29-CU-63(P,N)30-ZN-63,,SIG)
-           ((MONIT2)29-CU-65(P,N+P)29-CU-64,,SIG)
+           ((MONIT2)29-CU-65(P,X)29-CU-64,,SIG)
 HISTORY    (19881011A) ISOMER filed moved.
            (19970425A) Ground states added.
            (19981014A) Target corrected.
-ENDBIB              17
+           (20241009A) DECAY-DATA (3.) corrected
+ENDBIB              19
 NOCOMMON             0          0
 DATA                 9         63
 EN         ELEMENT    MASS       ISOMER     DECAY-FLAG DATA
-DATA-ERR   MONIT2     MONIT1
+ERR-T      MONIT2     MONIT1
 MEV        NO-DIM     NO-DIM     NO-DIM     NO-DIM     MB
 PER-CENT   MB         MB
   9.        78.        191.                  1.          12.
@@ -230,5 +244,5 @@ PER-CENT   MB         MB
  87.        78.        186.                  4.         180.
  20.        190.
 ENDDATA            130
-ENDSUBENT          152
+ENDSUBENT          154
 ENDENTRY             3

@@ -57,7 +57,7 @@ def get_list_of_trans_files():
     df[["Date", "Time"]] = df["Last modified"].str.split(" ", expand=True)
 
     df = df.drop(df[df["Name"].str.contains("trans.zip")].index)
-    df = df.drop(df[df["Name"].str.contains("trans.99")].index)
+    df = df.drop(df[df["Name"].str.contains("trans.9")].index) # To skip EXFOR dictionary trans
     df = df.dropna(subset=["Last modified"])
 
     x = df.groupby("Date")["Name"].apply(list).to_dict()
