@@ -11,20 +11,14 @@
 ####################################################################
 
 import requests
-import glob
-import re
 import os
 import sys
 import json
 import shutil
 import datetime
 from git import (
-    Git,
     Repo,
 )
-from zipfile import ZipFile
-from bs4 import BeautifulSoup
-
 import logging
 
 logging.basicConfig(filename="process.log", level=logging.DEBUG, filemode="w")
