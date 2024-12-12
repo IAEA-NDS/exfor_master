@@ -470,7 +470,10 @@ def update():
         date_dt = convert_dtform(date_str)
         if date_dt < datetime.date(2023, 11, 2):
             """
-            Since the production of EXFOR backup files are suspended by NRDC after the final backup file, which corresponds to the 2023-10-27 database version and contains trans.o097, https://github.com/IAEA-NDS/exfor_master/releases/tag/Backup-2023-10-27), the master file will be updated based on  TRANS files.
+            Since the production of EXFOR backup files are suspended by NRDC after the final backup file, 
+            which corresponds to the 2023-10-27 database version and contains trans.o097, 
+            https://github.com/IAEA-NDS/exfor_master/releases/tag/Backup-2023-10-27), 
+            the master file will be updated based on  TRANS files.
             """
             continue
 
@@ -485,7 +488,9 @@ def update():
     if not_processed:
 
         """
-        After the TRANS files have been back public in May 2024, the name of the 'release' will be the date of the TRANS file. If more than one TRANS files exist, all TRANS are included in one 'release'.
+        After the TRANS files have been back public in May 2024, the name of the 'release' 
+        will be the date of the TRANS file. If more than one TRANS files exist, all TRANS are 
+        included in one 'release'.
         """
         for date_str in not_processed:
             download_trans_files(x[date_str])

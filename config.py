@@ -3,7 +3,7 @@ EXFOR_TRANS_URL = "https://nds.iaea.org/nrdc/exfor-master/trans/"
 
 
 GIT_REPO_PATH = "./"  # here
-# GIT_REPO_PATH = "/Users/sin/Documents/test/exfor_master/"  # Private Repo
+# GIT_REPO_PATH = "/Users/okumuras/Documents/nucleardata/EXFOR/exfor_master_private/"  # Private Repo
 
 GIT_REPO_URL = "https://api.github.com/repos/IAEA-NDS/exfor_master/releases"
 # GIT_REPO_URL = "https://api.github.com/repos/shinokumura/exfor_master/releases" # Private Repo
