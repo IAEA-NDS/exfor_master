@@ -195,7 +195,7 @@ def git_release(branch_name):
         GIT_REPO_URL,
         data=json.dumps(data_body),
         headers=headers,
-        verify=False,
+        verify=True
     )
 
 
