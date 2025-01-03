@@ -1,14 +1,15 @@
-ENTRY            T0166   20010711   20020218   20050926       0000
-SUBENT        T0166001   20010711   20020218   20050926       0000
-BIB                 14         26
+ENTRY            T0166   20241025   20241215   20241215       C242
+SUBENT        T0166001   20241025   20241215   20241215       C242
+BIB                 14         30
 INSTITUTE  (1USAORU,1USAORE,1USAORL,1CANTMF)
-REFERENCE  (J,PR/C,40,246,198907)
+REFERENCE  (J,PR/C,40,246,1989)
+           #doi:10.1103/PhysRevC.40.246
 AUTHOR     (L.W.Swenson,Y.Y.Chen,J.Lisantii,D.K.McDaniels,
            F.E.Bertrand,D.J.Horen,E.E.Gross,C.Glover,R.O.Sayer,
            B.L.Burks,O.Hausser,K.Hicks,M.J.Iqbal)
 TITLE      Different continuum approaches to giant resonances in
             208Pb with 400-MeV protons
-FACILITY   (MESON,1CANTMF)
+FACILITY   (LINAC,1CANTMF)
 INC-SPECT  Energy resolution given for 50 mg/cm**2 lead target.
 SAMPLE     50 mg/cm**2 Pb target.
 METHOD     (SITA)
@@ -16,31 +17,36 @@ DETECTOR   (MAGSP) Medium Resolution Spectrometer (MRS).
 ANALYSIS   (MLA) Multipole decomposition of the giant resonance
             region.  Background was assumed as gaussian plus
             polinomial approach.
-REL-REF    (R,,D.A.HUTCHEON+,J,PRL,447,315,1981)
-           (R,,D.A.HUTCHEON+,J,NP/A,484,429,1988)
+REL-REF    (R,,D.A.Hutcheon+,J,PRL,47,315,1981)
+           (R,,D.A.Hutcheon+,J,NP/A,483,429,1988)
            Elastic Scattering Data For Pb-208 at 400 MeV. The Data
            Were Used to Check of Absolute Cross Section
            Determination.
 ADD-RES    (COMP).Surface Response Model, a relativistic model.
             A phenomenological approach to the continuum.
            (P-SPC)
-STATUS     (CURVE) Scanned from figues in reference by CAJAD.
+STATUS     (CURVE,,L.W.Swenson+,J,PR/C,40,246,1989)
+           Scanned from figues 3,8 by CAJAD.
            No reply from D.K. McDaniels to author proof.
 HISTORY    (20010612C) SB+VM
-ENDBIB              26
+           (20241023A) OS. REACTION in sub.2 modified, ERR-ANALYS
+            updated, minor BIB updates
+ENDBIB              30
 COMMON               2          3
 EN         EN-RSL-FW
 MEV        KEV
  400.       230.
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        T0166002   20010612   20020218   20050926       0000
-BIB                  5         12
-REACTION   (82-PB-208(P,INL)82-PB-208,PAR,DA,,,EXP)  Figures 3,8
+ENDSUBENT           37
+SUBENT        T0166002   20241025   20241215   20241215       C242
+BIB                  6         16
+REACTION   (82-PB-208(P,INL)82-PB-208,PAR,DA)  Figures 3,8
 MONITOR    (82-PB-208(P,EL)82-PB-208,,DA)
 MONIT-REF  (C0081005,Hutcheon+,J,NP/A,483,429,1988)
-ERR-ANALYS (ERR-T) Uncertainty scanned from figures.
-           Data-point reader uncertainty in angle 0.08 degrees.
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainties.
+           Uncertainty scanned from figures.
+           (ANG-ERR-D) Data-point reader uncertainty in angle
+            0.08 degrees.
 COMMENT    - By Authors -
             10.6 MeV energy excitation is region of isoscalar
              giant quadrupole resonance.
@@ -48,10 +54,16 @@ COMMENT    - By Authors -
              resonance.
             20.9 MeV energy excitation is region of isoscalar
              giant octupole resonance.
-ENDBIB              12
-NOCOMMON             0          0
+HISTORY    (20241023A) REACTION SF9 deleted, ERR-T  ->  DATA-ERR,
+            ANG-ERR-D added in COMMON
+ENDBIB              16
+COMMON               1          3
+ANG-ERR-D
+ADEG
+  0.08
+ENDCOMMON            3
 DATA                 4         20
-E-EXC      ANG        DATA       ERR-T
+E-EXC      ANG        DATA       DATA-ERR
 MEV        ADEG       MB/SR      PER-CENT
   10.6       6.13       24.        29.
   10.6       8.13       12.        25.
@@ -74,5 +86,5 @@ MEV        ADEG       MB/SR      PER-CENT
   20.9      12.07        2.0       30.
   20.9      13.91        2.0       30.
 ENDDATA             22
-ENDSUBENT           39
+ENDSUBENT           47
 ENDENTRY             2

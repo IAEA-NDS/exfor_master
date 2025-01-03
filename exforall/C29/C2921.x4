@@ -1,12 +1,13 @@
-ENTRY            C2921   20240405   20240405   20240405       C230
-SUBENT        C2921001   20240405   20240405   20240405       C230
-BIB                 12         95
+ENTRY            C2921   20241031   20241215   20241215       C243
+SUBENT        C2921001   20241031   20241215   20241215       C243
+BIB                 12         97
 TITLE      Proton-induced reactions on Fe, Cu, and Ti from
            threshold to 55 MeV
 AUTHOR     (A.S.Voyles,A.M.Lewis,J.T.Morrell,M.S.Basunia,
            L.A.Bernstein,J.W.Engle,S.A.Graves,E.F.Matthews)
 INSTITUTE  (1USAUCX,1USABRK,1USAWIS,1USAIOW)
 REFERENCE  (J,EPJ/A,57,94,2021)
+           #doi:10.1140/epja/s10050-021-00401-2
 FACILITY   (CYCLO,1USABRK) Sample stacks were separately
            irradiated at the Lawrence Berkeley National
            Laboratory 88-Inch Cyclotron, a K=140 sector- focused
@@ -96,9 +97,10 @@ ERR-ANALYS (DATA-ERR)
              - monitor product half-life
              - in proton beam current
 HISTORY    (20230211C) Compiled by S.H.
-ENDBIB              95
+           (20241030A) OS. Corrections in subs.9,18,19,27
+ENDBIB              97
 NOCOMMON             0          0
-ENDSUBENT           98
+ENDSUBENT          100
 SUBENT        C2921002   20240405   20240405   20240405       C230
 BIB                  3          4
 REACTION   (26-FE-0(P,X)24-CR-48,CUM,SIG)
@@ -238,17 +240,20 @@ MEV        MEV        MB         MB
       12.11       0.53      0.595      0.042
 ENDDATA             14
 ENDSUBENT           22
-SUBENT        C2921009   20240405   20240405   20240405       C230
-BIB                  5          8
+SUBENT        C2921009   20241031   20241215   20241215       C243
+BIB                  5         11
 REACTION   (26-FE-0(P,X)26-FE-52,CUM,SIG)
-DECAY-DATA (26-FE-52-M,45.9SEC)
-COMMENT    By NDS (2024-04-05):
-            No answer from Andrew Voyles about the usage of the
-            short-lived metastable state half-life tabulated in
-            the supplemental material.
+DECAY-DATA (26-FE-52-G,8.275HR,DG,168.688,0.991752,
+                               DG,377.748,0.0164331,
+                               DG,1039.928,0.00095139,
+                               DG,1727.57,0.0021142)
+           Fe-52m was not observed
+REL-REF    (R,,D.Yang+,J,NDS,128,185,2015) Decay data
 STATUS     (TABLE,,A.S.Voyles+,J,EPJ/A,57,94,2021) Table 1
 HISTORY    (20240405U) On. COMMENT added.
-ENDBIB               8
+           (20241030A) DECAY-DATA replaced according to A.Voyles,
+            related COMMENT deleted, REL-REF added
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4          9
 EN         EN-RSL     DATA       DATA-ERR
@@ -263,7 +268,7 @@ MEV        MEV        MB         MB
       19.36       0.56    0.01297    0.00075
        17.6        1.5    0.00242    0.00021
 ENDDATA             11
-ENDSUBENT           24
+ENDSUBENT           27
 SUBENT        C2921010   20240405   20240405   20240405       C230
 BIB                  3          3
 REACTION   (26-FE-0(P,X)25-MN-52-M,,SIG)
@@ -489,12 +494,20 @@ MEV        MEV        MB         MB
        4.10       0.73       5.49       0.73
 ENDDATA             15
 ENDSUBENT           26
-SUBENT        C2921018   20240405   20240405   20240405       C230
-BIB                  3          3
+SUBENT        C2921018   20241031   20241215   20241215       C243
+BIB                  5         11
 REACTION   (26-FE-0(P,X)27-CO-58-M,,SIG)
+ANALYSIS   (DECAY) Feeding of 58mCo vs 58gCo was separated using
+           the difference in the half-life of the two states, and
+           observations of the 58gCo activity over a long enough
+           of span to resolve the two states (Andrew Voyles,
+           2024-08-01)
 DECAY-DATA (27-CO-58-M,9.10HR)
 STATUS     (TABLE,,A.S.Voyles+,J,EPJ/A,57,94,2021) Table 1
-ENDBIB               3
+           (COREL,C2921019) 58mCo and 58gCo contribution separated
+            by decay curve analysis
+HISTORY    (20241030A) Added METHOD, STATUS (COREL)
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 4         11
 EN         EN-RSL     DATA       DATA-ERR
@@ -511,15 +524,18 @@ MEV        MEV        MB         MB
        9.23       0.61      0.477      0.049
        4.10       0.73      0.170      0.025
 ENDDATA             13
-ENDSUBENT           21
-SUBENT        C2921019   20240405   20240405   20240405       C230
-BIB                  3          5
+ENDSUBENT           29
+SUBENT        C2921019   20241031   20241215   20241215       C243
+BIB                  4          8
 REACTION   (26-FE-0(P,X)27-CO-58-G,,SIG)
 DECAY-DATA (27-CO-58-G,70.86D,DG,810.7593,0.9945,
                               DG,863.951,0.00686,
                               DG,1674.25,0.00517)
 STATUS     (TABLE,,A.S.Voyles+,J,EPJ/A,57,94,2021) Table 1
-ENDBIB               5
+           (COREL,C2921018) 58mCo and 58gCo contribution separated
+            by decay curve analysis
+HISTORY    (20241030A) Added STATUS (COREL)
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 4         11
 EN         EN-RSL     DATA       DATA-ERR
@@ -536,7 +552,7 @@ MEV        MEV        MB         MB
        9.23       0.61       1.56       0.17
        4.10       0.73      0.623      0.083
 ENDDATA             13
-ENDSUBENT           23
+ENDSUBENT           26
 SUBENT        C2921020   20240405   20240405   20240405       C230
 BIB                  2          2
 REACTION   (26-FE-0(P,X)27-CO-58,,SIG)
@@ -677,11 +693,16 @@ MEV        MEV        MB         MB
       34.06       0.86      0.578      0.038
 ENDDATA              6
 ENDSUBENT           15
-SUBENT        C2921027   20240405   20240405   20240405       C230
-BIB                  2          2
+SUBENT        C2921027   20241031   20241215   20241215       C243
+BIB                  5          7
 REACTION   (29-CU-0(P,X)27-CO-61,CUM,SIG)
+DECAY-DATA (27-CO-61,1.649HR,DG,67.412,0.84672,
+                             DG,850.0,0.0079,
+                             DG,917.5,0.036)
+REL-REF    (R,,K.Zuber+,J,NDS,125,1,2015) Decay data
 STATUS     (TABLE,,A.S.Voyles+,J,EPJ/A,57,94,2021) Table 2
-ENDBIB               2
+HISTORY    (20241030A) DECAY-DATA, REL-REF added
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          9
 EN         EN-RSL     DATA       DATA-ERR
@@ -696,7 +717,7 @@ MEV        MEV        MB         MB
       18.30       0.38     0.1178     0.0069
       16.60       1.50     0.0415     0.0035
 ENDDATA             11
-ENDSUBENT           18
+ENDSUBENT           23
 SUBENT        C2921028   20240405   20240405   20240405       C230
 BIB                  3         14
 REACTION   (29-CU-0(P,X)29-CU-61,CUM,SIG)

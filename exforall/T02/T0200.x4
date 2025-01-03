@@ -1,8 +1,9 @@
-ENTRY            T0200   20210828   20211123   20211122       C203
-SUBENT        T0200001   20210828   20211123   20211122       C203
-BIB                 11         27
+ENTRY            T0200   20241025   20241215   20241215       C242
+SUBENT        T0200001   20241025   20241215   20241215       C242
+BIB                 11         32
 INSTITUTE  (1USAPUR,1USAMSU)
 REFERENCE  (J,PR/C,39,2227,1989)
+           #doi:10.1103/PhysRevC.39.2227
 AUTHOR     (S.Y.Cho,N.T.Porile,D.J.Morrissey)
 TITLE      Target residues from the interaction of copper with
             15-45 MeV/nucleon 12C ions.
@@ -23,18 +24,22 @@ ERR-ANALYS (ERR-T) Tabulated uncertainties are the larger of
            (ERR-2) An additional 5% uncertainty has been folded
             into the overall uncertainty of cross sections based
             on a single determination of a single gamma-ray.
-STATUS     (TABLE) Data taken from Table I of PR/C,39,2227,1989
+STATUS     (TABLE,,S.Y.Cho+,J,PR/C,39,2227,1989)
+           Data taken from Table I of PR/C,39,2227,1989
 HISTORY    (20020614C) SD
            (20120320A) SD: In Subent 006 value in DATA section
              without heading deleted. ERR-ANALYS was upgraded.
            (20210816A) OS. ISOMER coding corrected in subs.2,3
-ENDBIB              27
+           (20241023A) OS. Subs. 6,7 split in two; REACTION in
+            subs. 4,5 modified
+           (20241214A) OG. REACTION updated in subs.006-007.
+ENDBIB              32
 COMMON               2          3
 ERR-1      ERR-2
 PER-CENT   PER-CENT
   5.0         5.0
 ENDCOMMON            3
-ENDSUBENT           34
+ENDSUBENT           39
 SUBENT        T0200002   20210828   20211123   20211122       C203
 BIB                  5          8
 REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,CUM,SIG)
@@ -144,16 +149,17 @@ MEV        NO-DIM     NO-DIM     NO-DIM     MB         MB
  528.         30.        65.                  14.3        1.4
 ENDDATA             51
 ENDSUBENT           67
-SUBENT        T0200004   20050119   20050707   20050926       T020
-BIB                  4          7
-REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,IND,SIG)
+SUBENT        T0200004   20241025   20241215   20241215       C242
+BIB                  5          8
+REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,,SIG)
 FACILITY   (CYCLO,1USAANL) Atlas Facility
 SAMPLE     Target stacks containing 20.7 millig/cm**2 copper foil
             surrounded by carbon foils.
 DETECTOR   (GELI,GE-IN)
             Samples assayed at Purdue beginning several hours
             after irradiations.
-ENDBIB               7
+HISTORY    (20241023A) REACTION SF5 deleted
+ENDBIB               8
 COMMON               1          3
 EN
 MEV
@@ -169,10 +175,10 @@ NO-DIM     NO-DIM     NO-DIM     MB         MB
    25.        54.                  9.34         1.
    29.        64.                  102.         9.
 ENDDATA              8
-ENDSUBENT           24
-SUBENT        T0200005   20050119   20050707   20050926       T020
-BIB                  4         10
-REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,IND,SIG)
+ENDSUBENT           25
+SUBENT        T0200005   20241025   20241215   20241215       C242
+BIB                  5         11
+REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,,SIG)
 FACILITY   (CYCLO,1USAMSU)
 SAMPLE     Target stacks containing 20.7 millig/cm**2 copper foil
             surrounded by Mylar forward and backward catcher
@@ -182,7 +188,8 @@ DETECTOR   (GELI,GE-IN)
             Those from longer irradiations were assayed starting
             1 d after irradiation and continuing for several
             months.
-ENDBIB              10
+HISTORY    (20241023A) REACTION SF5 deleted
+ENDBIB              11
 NOCOMMON             0          0
 DATA                 6         17
 EN         ELEMENT    MASS       ISOMER     DATA       ERR-T
@@ -205,10 +212,10 @@ MEV        NO-DIM     NO-DIM     NO-DIM     MB         MB
    528.        25.        54.                  59.6         6.
    528.        29.        64.                  60.9        3.8
 ENDDATA             19
-ENDSUBENT           34
-SUBENT        T0200006   20120320   20120530   20120515       T022
-BIB                  5          9
-REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,IND/M+,SIG)
+ENDSUBENT           35
+SUBENT        T0200006   20241025   20241215   20241215       C242
+BIB                  5         11
+REACTION   (29-CU-0(6-C-12,X)27-CO-60,,SIG)
 FACILITY   (CYCLO,1USAANL) Atlas Facility
 SAMPLE     Target stacks containing 20.7 millig/cm**2 copper foil
             surrounded by carbon foils.
@@ -217,22 +224,23 @@ DETECTOR   (GELI,GE-IN)
             after irradiations.
 HISTORY    (20120320A) SD: Value in DATA section
                                          without heading deleted.
-ENDBIB               9
+           (20241023A) Data for 58Co production moved to sub.8
+           (20241214A) OG. REACTION updated.
+ENDBIB              11
 COMMON               1          3
 EN
 MEV
  151.
 ENDCOMMON            3
-DATA                 5          2
-ELEMENT    MASS       ISOMER     DATA       ERR-T
-NO-DIM     NO-DIM     NO-DIM     MB         MB
-  27.        58.        0.         43.2       12.4
-  27.        60.        0.        151.       13.1
-ENDDATA              4
-ENDSUBENT           22
-SUBENT        T0200007   20050119   20050707   20050926       T020
-BIB                  4         10
-REACTION   (29-CU-0(6-C-12,X)ELEM/MASS,IND/M+,SIG)
+DATA                 2          1
+DATA       ERR-T
+MB         MB
+ 151.       13.1
+ENDDATA              3
+ENDSUBENT           23
+SUBENT        T0200007   20241025   20241215   20241215       C242
+BIB                  5         12
+REACTION   (29-CU-0(6-C-12,X)27-CO-60,,SIG)
 FACILITY   (CYCLO,1USAMSU)
 SAMPLE     Target stacks containing 20.7 millig/cm**2 copper foil
             surrounded by Mylar forward and backward catcher
@@ -242,15 +250,59 @@ DETECTOR   (GELI,GE-IN)
             Those from longer irradiations were assayed starting
             1 d after irradiation and continuing for several
             months.
-ENDBIB              10
+HISTORY    (20241023A) Data for 58Co production moved to sub.9
+           (20241214A) OG. REACTION updated.
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 6          4
-EN         ELEMENT    MASS       ISOMER     DATA       ERR-T
-MEV        NO-DIM     NO-DIM     NO-DIM     MB         MB
- 280.        27.        58.        0.        134.        11.
- 280.        27.        60.        0.        26.9         4.
- 528.        27.        58.        0.        74.3        6.1
- 528.        27.        60.        0.        19.2         1.
-ENDDATA              6
+DATA                 3          2
+EN         DATA       ERR-T
+MEV        MB         MB
+ 280.       26.9         4.
+ 528.       19.2         1.
+ENDDATA              4
 ENDSUBENT           21
-ENDENTRY             7
+SUBENT        T0200008   20241025   20241215   20241215       C242
+BIB                  5          8
+REACTION   (29-CU-0(6-C-12,X)27-CO-58,,SIG)
+FACILITY   (CYCLO,1USAANL) Atlas Facility
+SAMPLE     Target stacks containing 20.7 millig/cm**2 copper foil
+            surrounded by carbon foils.
+DETECTOR   (GELI,GE-IN)
+            Samples assayed at Purdue beginning several hours
+            after irradiations.
+HISTORY    (20241023C) Data for 58Co production moved from sub.6
+ENDBIB               8
+COMMON               1          3
+EN
+MEV
+ 151.
+ENDCOMMON            3
+DATA                 2          1
+DATA       ERR-T
+MB         MB
+  43.2       12.4
+ENDDATA              3
+ENDSUBENT           20
+SUBENT        T0200009   20241025   20241215   20241215       C242
+BIB                  5         11
+REACTION   (29-CU-0(6-C-12,X)27-CO-58,,SIG)
+FACILITY   (CYCLO,1USAMSU)
+SAMPLE     Target stacks containing 20.7 millig/cm**2 copper foil
+            surrounded by Mylar forward and backward catcher
+            foils.
+DETECTOR   (GELI,GE-IN)
+            Samples from short irradiations assayed for about 1 d.
+            Those from longer irradiations were assayed starting
+            1 d after irradiation and continuing for several
+            months.
+HISTORY    (20241023C) Data for 58Co production moved from sub.7
+ENDBIB              11
+NOCOMMON             0          0
+DATA                 3          2
+EN         DATA       ERR-T
+MEV        MB         MB
+ 280.         134.        11.
+ 528.          74.3        6.1
+ENDDATA              4
+ENDSUBENT           20
+ENDENTRY             9
