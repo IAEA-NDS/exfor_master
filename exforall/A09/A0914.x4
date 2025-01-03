@@ -1,12 +1,12 @@
-ENTRY            A0914   20210629   20210921   20210917       A098
-SUBENT        A0914001   20210629   20210921   20210917       A098
-BIB                 12         25
+ENTRY            A0914   20240920   20241213   20241213       A119
+SUBENT        A0914001   20240920   20241213   20241213       A119
+BIB                 12         27
 TITLE      Excitation functions of nuclear reactions occurring
            incident to fast proton bombardment of Bi-209
 AUTHOR     (B.I.Belyaev, A.V.Kalyamin, A.N.Murin)
 INSTITUTE  (4ZZZDUB)
-REFERENCE  (J,IZV,27,923,1963) in Russian
-           (J,BAS,27,907,1963) in English
+REFERENCE  (J,BAS,27,907,1963) in English
+           (J,IZV,27,923,1963) in Russian
            (J,DOK,140,337,1961) - prelim. results at Ep=135 MeV
 FACILITY   (SYNCY,4ZZZDUB)
 SAMPLE     Pressed tablets bismuth oxide or metal, thickness
@@ -21,14 +21,16 @@ MONIT-REF  (C0257001,H.G.Hicks+,J,PR,102,1390,1956) for 0.135,
            (C0296001,N.T.Porile,J,PR,125,1379,1962) for 0.66 GeV
            (C0354001,J.Robb Grover,J,PR,126,1540,1962) for 10 GeV
            (C0288001,G.Rudstam+,J,PR,126,1852,1962) for 10 GeV
-STATUS     (TABLE) Table 1 from Izv.Akad.Nauk,27(1963)923
-HISTORY    (20120117C) sb
+STATUS     (TABLE,,B.I.Belyaev+,J,BAS,27,907,1963) Table 1
+HISTORY    (20120117C) SB
            (20180421U) SD: Ref. BAS,27,907 added. BIB was updated.
             MONITOR corrected.
            (20210629A) SD: Corrections in several Subents.
-ENDBIB              25
+           (20240920A) SD: Subent 014 was split according to
+           EXFOR rules.
+ENDBIB              27
 NOCOMMON             0          0
-ENDSUBENT           28
+ENDSUBENT           30
 SUBENT        A0914002   20210629   20210921   20210917       A098
 BIB                  3          5
 REACTION   (83-BI-209(P,X)84-PO-210,,SIG)
@@ -233,25 +235,24 @@ GEV        MB         MB         MB
 0.66       4.1        0.3        11.0
 ENDDATA              6
 ENDSUBENT           16
-SUBENT        A0914014   20210629   20210921   20210917       A098
+SUBENT        A0914014   20240920   20241213   20241213       A119
 BIB                  3          7
-REACTION  1(83-BI-209(P,X)83-BI-204,,SIG)
-          2((83-BI-209(P,X)83-BI-204,,SIG)+
-           (83-BI-209(P,X)83-BI-203,,SIG))
+REACTION   (83-BI-209(P,X)83-BI-204,,SIG)
 ERR-ANALYS (DATA-ERR) The errors in cross sections are due to
            number of measurements. No error in absolute value
            determination considered.
 HISTORY    (20210629A) SD: SF5=IND deleted from REACTION code.
+           (20240920A) SD: Subent was split in two (see
+           Subent 048).
 ENDBIB               7
 NOCOMMON             0          0
-DATA                 5          3
-EN         DATA      1DATA-ERR  1DATA      2MONIT
-GEV        MB         MB         MB         MB
-0.135      125.       7.                    9.7
-0.26       48.                              10.2
-10.                              94.        9.4
-ENDDATA              5
-ENDSUBENT           17
+DATA                 4          2
+EN         DATA       DATA-ERR   MONIT
+GEV        MB         MB         MB
+      0.135       125.         7.        9.7
+       0.26        48.                  10.2
+ENDDATA              4
+ENDSUBENT           16
 SUBENT        A0914015   20210629   20210921   20210917       A098
 BIB                  3          5
 REACTION   (83-BI-209(P,X)84-PO-203,,SIG)
@@ -744,4 +745,17 @@ GEV        MB         MB
 0.135      0.19       11.0
 ENDDATA              3
 ENDSUBENT            9
-ENDENTRY            47
+SUBENT        A0914048   20240920   20241213   20241213       A119
+BIB                  2          3
+REACTION   ((83-BI-209(P,X)83-BI-204,,SIG)+
+           (83-BI-209(P,X)83-BI-203,,SIG))
+HISTORY    (20240920T) SD: Part of Subent 014.
+ENDBIB               3
+NOCOMMON             0          0
+DATA                 3          1
+EN         DATA       MONIT
+GEV        MB         MB
+        10.        94.        9.4
+ENDDATA              3
+ENDSUBENT           11
+ENDENTRY            48

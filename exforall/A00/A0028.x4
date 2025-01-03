@@ -1,13 +1,13 @@
-ENTRY            A0028   20210120   20210406   20210405       A096
-SUBENT        A0028001   20210120   20210406   20210405       A096
-BIB                 13         48
+ENTRY            A0028   20240927   20241213   20241213       A119
+SUBENT        A0028001   20240927   20241213   20241213       A119
+BIB                 13         50
 TITLE      Energy dependence of the cross sections for fission
            and nuclear transfer in interaction of 232Th with
            accelerated 74Ge ions
 AUTHOR     (Ju.Ts.Oganesyan, D.M.Nadkarni, Ju.E.Penionzhkevich,
            B.I.Pustyl'nik, Nguen Tak An)
-REFERENCE  (J,YF,19,486,1974) see explanation below
-           (J,SNP,19,244,1974) English translation
+REFERENCE  (J,SNP,19,244,1974) English translation
+           (J,YF,19,486,1974) see explanation below
            (R,JINR-P7-7391,1973) these papers are identical
 INSTITUTE  (4ZZZDUB,3INDTRM)
 FACILITY   (CYCTM,4ZZZDUB)
@@ -32,12 +32,12 @@ ERR-ANALYS (ERR-1,,5.) The chemical yield was determined with an
            accuracy of 5% or better on the basis of a control
            activity which was introduced before the radiochemical
            separation.
-           (DATA-ERR1,,15.) The relative error in the yield
+           (ERR-2,,15.) The relative error in the yield
            determination of the individual isotopes was no
            greater than 15%.
-           (DATA-ERR2) Error from error bars. No information
+           (DATA-ERR) Error from error bars. No information
            about source of uncertainties
-COMMENT    *By authors*.Ions energy for each part of target was
+COMMENT    *By authors* Ions energy for each part of target was
            calculated by means of tables of stopping power. See
             REL-REF. The cross-section of monitor reaction was
            determined by special experiments.
@@ -49,11 +49,13 @@ HISTORY    (19780908C)
            (20180523A) SD: REACTION code was updated according to
            MEMO CP-D/933rev. in Subents 002-004. BIB was updated.
            (20210120A) SD: Corrections in Subents 002, 003.
-ENDBIB              48
+           (20240927A) SD: Corrections in all Subents. Subent 004
+           was split according to EXFOR rules.
+ENDBIB              50
 NOCOMMON             0          0
-ENDSUBENT           51
-SUBENT        A0028002   20210120   20210406   20210405       A096
-BIB                  4         13
+ENDSUBENT           53
+SUBENT        A0028002   20240927   20241213   20241213       A119
+BIB                  4         14
 REACTION   (90-TH-232(32-GE-74,F)ELEM/MASS,CUM,FY,,REL)
             No explanation of relative units is given.
 DECAY-DATA (79-AU-192-G,5.03HR,DG,612.,0.067)
@@ -62,19 +64,20 @@ DECAY-DATA (79-AU-192-G,5.03HR,DG,612.,0.067)
            (79-AU-196-G,6.18D,DG,356.,0.88)
            (79-AU-198-G,2.69D,DG,412.,0.947)
            (79-AU-199,3.13D,DG,158.,0.394)
-STATUS     (CURVE) fig. 1 from JINR-P7-7391,1973
+STATUS     (CURVE,,Ju.Ts.Oganesyan+,R,JINR-P7-7391,1973) fig.1
            (APRVD) By Ju.E.Penionzhkevich.
 HISTORY    (20180522A) SD: SF6=TTY -> SIG in REACTION code.
            Data were re-digitized.
            (20210120A) SD: SF6=SIG -> FY in REACTION code.
-ENDBIB              13
+           (20240927U) SD: STATUS updated. DATA-ERR2 -> DATA-ERR.
+ENDBIB              14
 COMMON               2          3
 ELEMENT    ERR-DIG
 NO-DIM     PER-CENT
    79.       2.
 ENDCOMMON            3
 DATA                 4         27
-EN         MASS       DATA       DATA-ERR2
+EN         MASS       DATA       DATA-ERR
 MEV        NO-DIM     ARB-UNITS  ARB-UNITS
        420.       194.        38.        14.
        420.       196.        98.        42.
@@ -104,14 +107,14 @@ MEV        NO-DIM     ARB-UNITS  ARB-UNITS
        600.       198.      1752.       470.
        600.       199.       681.       209.
 ENDDATA             29
-ENDSUBENT           51
-SUBENT        A0028003   20210120   20210406   20210405       A096
-BIB                  5         12
+ENDSUBENT           52
+SUBENT        A0028003   20240927   20241213   20241213       A119
+BIB                  5         13
 REACTION   (90-TH-232(32-GE-74,F)ELEM,CUM,FY,,REL)
             No explanation of relative units is given.
 COMMENT    *By compiler*. The radioactive isotopes were accepted
            only.
-STATUS     (CURVE) fig. 2 from JINR-P7-7391,1973
+STATUS     (CURVE,,Ju.Ts.Oganesyan+,R,JINR-P7-7391,1973) fig.2
            (DEP,A0027002) The sum yield of gold isotopes
            was determined from the data of the Subent 002.
            (APRVD) By Ju.E.Penionzhkevich.
@@ -119,14 +122,15 @@ ADD-RES    (COMP)
 HISTORY    (20180522A) SD: SF6=TTY -> SIG in REACTION code.
            Data were re-digitized.
            (20210120A) SD: SF6=SIG -> FY in REACTION code.
-ENDBIB              12
+           (20240927U) SD: STATUS updated. DATA-ERR2 -> DATA-ERR.
+ENDBIB              13
 COMMON               2          3
 ELEMENT    ERR-DIG
 NO-DIM     PER-CENT
    79.       0.6
 ENDCOMMON            3
 DATA                 4          6
-EN         DATA       DATA-MAX   DATA-ERR2
+EN         DATA       DATA-MAX   DATA-ERR
 MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS
        405.                  0.21
        420.       8.06                  1.34
@@ -135,44 +139,108 @@ MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS
        500.      311.7                  45.2
        600.     1082.4                 215.5
 ENDDATA              8
-ENDSUBENT           29
-SUBENT        A0028004   20180523   20181008   20180919       A089
-BIB                  5         12
-REACTION  A(90-TH-232(32-GE-74,X)91-PA-232,CUM,SIG,,REL)
-          B(90-TH-232(32-GE-74,X)92-U-230,CUM,SIG,,REL)
-          C(90-TH-232(32-GE-74,X)90-TH-231,CUM,SIG,,REL)
-          D(90-TH-232(32-GE-74,X)90-TH-227,CUM,SIG,,REL)
+ENDSUBENT           30
+SUBENT        A0028004   20240927   20241213   20241213       A119
+BIB                  5          9
+REACTION   (90-TH-232(32-GE-74,X)91-PA-232,CUM,SIG,,REL)
+            No explanation of relative units is given.
 ADD-RES    Calculation of effective interaction radius
-DECAY-DATAA(91-PA-232,1.31D,DG,969.,0.446)
-          B(92-U-230,20.8D,DG,72.,0.0054)
-          C(90-TH-231,25.5HR,DG,89.,0.011)
-          D(90-TH-227,18.2D,DG,334.,0.011)
-STATUS     (CURVE) fig. 2 from JINR-P7-7391,1973
+DECAY-DATA (91-PA-232,1.31D,DG,969.,0.446)
+STATUS     (CURVE,,Ju.Ts.Oganesyan+,R,JINR-P7-7391,1973) fig.2
 HISTORY    (20180522A) SD: SF6=TTY -> SIG in REACTION code.
            Data were re-digitized.
-ENDBIB              12
+           (20240927A) SD: Subent was split in four (see
+           Subents 005-007). DATA-ERR2 -> DATA-ERR.
+ENDBIB               9
 COMMON               1          3
 ERR-DIG
 PER-CENT
    0.6
 ENDCOMMON            3
-DATA                 9          6
-EN         DATA      ADATA-ERR2 ADATA      BDATA-ERR2 BDATA      C
-DATA-ERR2 CDATA      DDATA-ERR2 D
-MEV        ARB-UNITS  ARB-UNITS  ARB-UNITS  ARB-UNITS  ARB-UNITS
-ARB-UNITS  ARB-UNITS  ARB-UNITS
-       405.       17.1        2.5       18.6        3.3       19.7
-        2.2       19.5        2.4
-       420.       35.0        6.5       42.3        4.0       40.6
-        4.1       52.0        3.6
-       450.      129.0       19.4      108.5       15.7      118.8
-       13.0      149.6       18.3
-       470.      201.3       30.6      211.6       33.7      253.7
-       40.6      235.5       26.7
-       500.      361.6       39.5      396.0       46.1      426.5
-       68.3      399.3       83.5
-       600.      597.5       73.9      752.8       87.7      638.3
-       90.1      964.3      112.3
-ENDDATA             16
-ENDSUBENT           37
-ENDENTRY             4
+DATA                 3          6
+EN         DATA       DATA-ERR
+MEV        ARB-UNITS  ARB-UNITS
+       405.       17.1        2.5
+       420.       35.0        6.5
+       450.      129.0       19.4
+       470.      201.3       30.6
+       500.      361.6       39.5
+       600.      597.5       73.9
+ENDDATA              8
+ENDSUBENT           26
+SUBENT        A0028005   20240927   20241213   20241213       A119
+BIB                  5          6
+REACTION   (90-TH-232(32-GE-74,X)92-U-230,CUM,SIG,,REL)
+            No explanation of relative units is given.
+ADD-RES    Calculation of effective interaction radius
+DECAY-DATA (92-U-230,20.8D,DG,72.,0.0054)
+STATUS     (CURVE,,Ju.Ts.Oganesyan+,R,JINR-P7-7391,1973) fig.2
+HISTORY    (20240927T) SD: Part of Subent 004.
+ENDBIB               6
+COMMON               1          3
+ERR-DIG
+PER-CENT
+   0.6
+ENDCOMMON            3
+DATA                 3          6
+EN         DATA       DATA-ERR
+MEV        ARB-UNITS  ARB-UNITS
+       405.       18.6        3.3
+       420.       42.3        4.0
+       450.      108.5       15.7
+       470.      211.6       33.7
+       500.      396.0       46.1
+       600.      752.8       87.7
+ENDDATA              8
+ENDSUBENT           23
+SUBENT        A0028006   20240927   20241213   20241213       A119
+BIB                  5          6
+REACTION   (90-TH-232(32-GE-74,X)90-TH-231,CUM,SIG,,REL)
+            No explanation of relative units is given.
+ADD-RES    Calculation of effective interaction radius
+DECAY-DATA (90-TH-231,25.5HR,DG,89.,0.011)
+STATUS     (CURVE,,Ju.Ts.Oganesyan+,R,JINR-P7-7391,1973) fig.2
+HISTORY    (20240927T) SD: Part of Subent 004.
+ENDBIB               6
+COMMON               1          3
+ERR-DIG
+PER-CENT
+   0.6
+ENDCOMMON            3
+DATA                 3          6
+EN         DATA       DATA-ERR
+MEV        ARB-UNITS  ARB-UNITS
+       405.       19.7        2.2
+       420.       40.6        4.1
+       450.      118.8       13.0
+       470.      253.7       40.6
+       500.      426.5       68.3
+       600.      638.3       90.1
+ENDDATA              8
+ENDSUBENT           23
+SUBENT        A0028007   20240927   20241213   20241213       A119
+BIB                  5          6
+REACTION   (90-TH-232(32-GE-74,X)90-TH-227,CUM,SIG,,REL)
+            No explanation of relative units is given.
+ADD-RES    Calculation of effective interaction radius
+DECAY-DATA (90-TH-227,18.2D,DG,334.,0.011)
+STATUS     (CURVE,,Ju.Ts.Oganesyan+,R,JINR-P7-7391,1973) fig.2
+HISTORY    (20240927T) SD: Part of Subent 004.
+ENDBIB               6
+COMMON               1          3
+ERR-DIG
+PER-CENT
+   0.6
+ENDCOMMON            3
+DATA                 3          6
+EN         DATA       DATA-ERR
+MEV        ARB-UNITS  ARB-UNITS
+       405.       19.5        2.4
+       420.       52.0        3.6
+       450.      149.6       18.3
+       470.      235.5       26.7
+       500.      399.3       83.5
+       600.      964.3      112.3
+ENDDATA              8
+ENDSUBENT           23
+ENDENTRY             7
