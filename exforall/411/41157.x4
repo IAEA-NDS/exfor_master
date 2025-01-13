@@ -1,18 +1,23 @@
-ENTRY            41157   19940914              20050926       0000
-SUBENT        41157001   19940914              20050926       0000
-BIB                 11         23
-TITLE       YIELDS OF DELAYED NEUTRON PRECURSORS IN THE FISSION
-            OF ACTINIDES
-AUTHOR     (A.N.GUDKOV,S.V.KRIVASHEEV,A.B.KOLDOBSKIY,
-           V.V.KOVALENKO,E.YU.BOBKOV,V.M.ZHIVUN)
-REFERENCE  (J,RCA,57,69,92)   DATA TABLES ARE GIVEN
-           (R,MIF-058-88,88)  PRELIMINARY PUBLICATION
+ENTRY            41157   20240916   20250110   20250110       4220
+SUBENT        41157001   20240916   20250110   20250110       4220
+BIB                 10         31
+TITLE       Yields of delayed neutron precursors in the fission
+            of actinides
+AUTHOR     (A.N.Gudkov, S.V.Krivasheyev, A.B.Koldobski,
+           V.V.Kovalenko, E.Yu.Bobkov, V.M.Givun)
+            S.V.Krivasheyev=S.V.Krivasheev; V.M.Givun=V.M.Zhivun
+REFERENCE  (J,RCA,57,69,1992)   Data tables are given
+           (R,MIF-058-88,1988)  Preliminary publication
 INSTITUTE  (4RUSMIF,4RUSFEI,4RUSLIN)
-MONITOR     NO INFORMATION
-DETECTOR   (BF3)   BATTERY OF 24 BF3 COUNTERS
-ANALYSIS    METHOD OF INCREMENTAL DECONVOLUTION, T.J.KENNETT,
-            W.V.PRESTWICH, NUCL.INSTR. AND METHODS, VOL.203, P.31
-            1982
+DETECTOR   (BF3)   Battery of 24 BF3 counters in a water tank.
+ANALYSIS    Method of incremental deconvolution, see REL-REF of
+           T.J.Kennett+.
+REL-REF    (M,,T.J.Kennett+,J,NIM,203,317,1982)
+           (R,,V.M.Sluchevska+,J,YK,,(3/38),29,1980)
+               Decay constants and yields
+           (R,,R.W.Waldo+,J,PR/C,23,1113,1981)
+           (R,,L.Tomlinson,R,AERE-R-6993,1972)
+           (R,,G.Benedetti+,J,NSE,80,379,1982)
 DECAY-DATA (35-BR-87,55.7SEC)
            (35-BR-88,16.0SEC)
            (35-BR-89,4.38SEC)
@@ -21,25 +26,47 @@ DECAY-DATA (35-BR-87,55.7SEC)
            (53-I-137,24.5SEC)
            (53-I-138,6.53SEC)
            (53-I-139,2.38SEC)
-ERR-ANALYS (ERR-T)   TOTAL ERROR
-STATUS      DATA ARE TAKEN FROM THE REFERENCE ONE
-HISTORY    (940914C)  + + COMPILED AT THE CENTRE - CJD + +
-ENDBIB              23
-NOCOMMON
-ENDSUBENT           26
-SUBENT        41157002   19940914              20050926       0000
-BIB                  3          3
+ERR-ANALYS (DATA-ERR)   Total error
+HISTORY    (19940914C)  + + Compiled at the centre - CJD + +
+           (20240916A) Upper -> lower case correction.
+            Dates were corrected for 4-digits year.
+            STATUS information was updated.
+            ERR-T -> DATA-ERR in all data Subents.
+ENDBIB              31
+NOCOMMON             0          0
+ENDSUBENT           34
+SUBENT        41157002   20240916   20250110   20250110       4220
+BIB                  7         22
 REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSMIF)
-INC-SPECT   THERMAL NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Thermal neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.06+-0.005) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0126 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,V.M.Sluchevska+,J,YK,,(3/38),29,1980)
+             Decay constant and yield used for normalization.
+           (N,,W.Grimm,T,GRIMM,1978)
+            Exp.data used for comparison (%/fis):
+            Br-87 - 2.25+-0.16, I-137 - 1.91+-0.20,
+            Br-88 - 2.56+-0.33, I-138 - 0.62+-0.54,
+            Br-89 - 1.18+-0.56.
+           (N,21550007,R.Brissot+,J,NP/A,255,461,1975)
+            Exp.data used for comparison
+           (N,12926018,R.W.Waldo+,J,PR/C,23,1113,1981)
+            Exp.data used for comparison.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 2.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              22
 COMMON               1          3
 EN-DUMMY
 EV
    2.53E-02
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.       2.27       0.28
   35.         88.       1.26       0.24
@@ -50,22 +77,61 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.       0.70       0.21
   53.        139.       0.15       0.05
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157003   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           41
+SUBENT        41157003   20240916   20250110   20250110       4220
+BIB                  7         42
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSMIF)
-INC-SPECT   THERMAL NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   thermal neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.054+-0.007) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0124 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,V.M.Sluchevska+,J,YK,,(3/38),29,1980)
+             Decay constant and yield used for normalization.
+           (N,,E.Lund+,R,BNL-51778,137,1983)
+            Exp.data used for comparison:
+            Br-87 - 2.13+-0.20, Br-88 - 1.71+-0.21,
+            Rb-93 - 3.50+-0.55, Br-98 - 0.92+-0.15
+            Rb-94 - 2.11+-0.44
+           (N,21550006,R.Brissot+,J,NP/A,255,461,1975)
+            Exp.data used for comparison
+           (N,13475001,J.E.Sattizahn+,J,JIN,12,206,1960)
+            Exp.data used for comparison: Br-87 - 2.70+-0.81
+           (N,21689001,W.Lang+,J,NP/A,345,34,1980)
+            Exp.data used for comparison:
+            Br-87 - 1.79+-0.05, Rb-93 - 3.44+-0.09,
+            Br-89 - 1.00+-0.06
+           (N,21273002,J.V.Kratz+,C,73ROCH,2,95,1973)
+            Exp.data used for comparison.
+           (N,12926019,R.W.Waldo+,J,PR/C,23,1113,1981)
+            Exp.data used for comparison.
+           (N,10722001,R.B.Strittmatter,T,STRITTMATTER,1978)
+            Exp.data used for comparison:
+            Br-87 - 1.91+-0.04, Rb-93 - 3.44+-0.09
+            Br-89 - 1.11+-0.05
+           (N,23356001,P.Del Marmol+,J,RCA,16,4,1971)
+            Exp.data used for comparison:
+            I-137 - 3.30+-0.50
+           (N,21605001,G.Siegert+,J,PR/C,14,1864,1976)
+            Exp.data used for comparison:
+            Br-88 - 1.90+-0.08, Br-89 - 1.32+-0.08
+           (N,,L.G.Manevich+,R,IAE-4308/4,1985)
+            Exp.data used for comparison:  Rb-94 - 1.73+-0.08
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 3.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              42
 COMMON               1          3
 EN-DUMMY
 EV
    2.53E-02
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
-  35.         87.      2.1         0.32
+  35.         87.      2.11        0.32
   35.         88.      2.19        0.35
   35.         89.      1.11        0.17
   37.         93.      3.87        0.74
@@ -74,20 +140,27 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.24        0.28
   53.        139.      0.89        0.19
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157004   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           61
+SUBENT        41157004   20240916   20250110   20250110       4220
+BIB                  6         10
 REACTION   (90-TH-229(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSMIF)
-INC-SPECT   THERMAL NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Thermal neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.198+-0.016) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0132 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 4.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              10
 COMMON               1          3
 EN-DUMMY
 EV
    2.53E-02
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      6.77        0.78
   35.         88.      3.83        0.46
@@ -98,20 +171,32 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.61        0.10
   53.        139.      0.30        0.12
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157005   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           29
+SUBENT        41157005   20240916   20250110   20250110       4220
+BIB                  7         15
 REACTION   (98-CF-249(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSMIF)
-INC-SPECT   THERMAL NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Thermal neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.0077+-0.0006) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0129 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,12926001,R.W.Waldo+,J,PR/C,23,1113,1981)
+             Decay constant and yield used for normalization.
+           (N,12926030,R.W.Waldo+,J,PR/C,23,1113,1981)
+            Exp.data used for comparison: 0.30+-0.03
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 4.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              15
 COMMON               1          3
 EN-DUMMY
 EV
    2.53E-02
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      0.28        0.10
   35.         88.      0.13        0.05
@@ -122,20 +207,30 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.121       0.047
   53.        139.      0.038       0.018
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157006   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           34
+SUBENT        41157006   20240916   20250110   20250110       4220
+BIB                  7         13
 REACTION   (92-U-233(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.071+-0.005) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0128/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,G.Benedetti+,J,NSE,80,379,1982)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 5.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      2.60        0.32
   35.         88.      1.85        0.25
@@ -146,20 +241,30 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.77        0.17
   53.        139.      0.49        0.16
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157007   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           32
+SUBENT        41157007   20240916   20250110   20250110       4220
+BIB                  7         13
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.063+-0.007) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0127 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,V.M.Sluchevska+,J,YK,,(3/38),29,1980)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 5.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      2.34        0.44
   35.         88.      2.09        0.48
@@ -170,20 +275,27 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.70        0.62
   53.        139.      0.74        0.32
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157008   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           32
+SUBENT        41157008   20240916   20250110   20250110       4220
+BIB                  6         10
 REACTION   (92-U-236(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.060+-0.010) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0124 1/sec) and the decay constant for
+           87Br(0.01247 1/sec)
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 5.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              10
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      2.34        0.67
   35.         88.      2.10        0.50
@@ -194,20 +306,30 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.44        0.53
   53.        139.      0.22        0.13
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157009   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           29
+SUBENT        41157009   20240916   20250110   20250110       4220
+BIB                  7         13
 REACTION   (93-NP-237(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.0490+-0.0031) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0127 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,G.Benedetti+,J,NSE,80,379,1982)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 6.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.82        0.26
   35.         88.      1.74        0.33
@@ -218,20 +340,32 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.99        0.24
   53.        139.      0.53        0.18
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157010   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           32
+SUBENT        41157010   20240916   20250110   20250110       4220
+BIB                  7         15
 REACTION   (94-PU-240(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.0265+-0.0025) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0128 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,G.Benedetti+,J,NSE,80,379,1982)
+             Decay constant and yield used for normalization.
+           (N,12926024,R.W.Waldo+,J,PR/C,23,1113,1981)
+            Exp.data used for comparison: 0.92+-0.13
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 6.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              15
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.       0.97       0.19
   35.         88.       0.93       0.22
@@ -242,20 +376,30 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.       0.56       0.19
   53.        139.       0.33       0.12
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157011   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           34
+SUBENT        41157011   20240916   20250110   20250110       4220
+BIB                  7         13
 REACTION   (94-PU-241(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.0276+-0.0012) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0128 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,G.Benedetti+,J,NSE,80,379,1982)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 6.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.01         0.20
   35.         88.      1.13         0.20
@@ -266,20 +410,30 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.58         0.46
   53.        139.      0.72         0.24
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157012   19940914              20050926       0000
-BIB                  3          3
+ENDSUBENT           32
+SUBENT        41157012   20240916   20250110   20250110       4220
+BIB                  7         13
 REACTION   (95-AM-241(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (REAC,4RUSFEI)
-INC-SPECT   FAST NEUTRON SPECTRUM OF THE REACTOR
-ENDBIB               3
+INC-SPECT   Fast neutron spectrum of the reactor
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.0192+-0.0021) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0122 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,,J,NSE,80,379,1982)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 6.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              13
 COMMON               1          3
 EN-DUMMY
 EV
    1.00E+06
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      0.77        0.13
   35.         88.      0.78        0.17
@@ -290,19 +444,29 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.74        0.29
   53.        139.      0.20        0.07
 ENDDATA             10
-ENDSUBENT           22
-SUBENT        41157013   19940914              20050926       0000
-BIB                  2          2
+ENDSUBENT           32
+SUBENT        41157013   20240916   20250110   20250110       4220
+BIB                  6         12
 REACTION   (92-U-235(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (VDG,4RUSLIN)
-ENDBIB               2
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.049+-0.004) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0127 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,L.Tomlinson,R,AERE-R-6993,1972)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 7.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              12
 COMMON               1          3
 EN
 EV
    1.47E+07
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.82        0.22
   35.         88.      1.41        0.28
@@ -313,19 +477,27 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.18        0.33
   53.        139.      0.22        0.12
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        41157014   19940914              20050926       0000
-BIB                  2          2
+ENDSUBENT           31
+SUBENT        41157014   20240916   20250110   20250110       4220
+BIB                  5         10
 REACTION   (92-U-236(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (VDG,4RUSLIN)
-ENDBIB               2
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.033+-0.006) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0124 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 7.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              10
 COMMON               1          3
 EN
 EV
    1.47E+07
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.29       0.29
   35.         88.      1.57       0.40
@@ -336,19 +508,34 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.10       0.35
   53.        139.      0.47       0.17
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        41157015   19940914              20050926       0000
-BIB                  2          2
+ENDSUBENT           29
+SUBENT        41157015   20240916   20250110   20250110       4220
+BIB                  6         17
 REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (VDG,4RUSLIN)
-ENDBIB               2
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.049+-0.005) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0123 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (N,,W.Grimm,T,GRIM,1973) University of Mainz.
+            Exp. data used for comparison:
+            Br-87 - 1.38+-0.16
+            I-137 - 3.15+-0.41
+            Br-88 - 1.33+-0.27
+            I-138 - 0.55+-0.06
+            Br-89 - 1.38+-0.16
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 7.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              17
 COMMON               1          3
 EN
 EV
    1.47E+07
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.94       0.31
   35.         88.      1.90       0.37
@@ -359,19 +546,27 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      1.94       0.33
   53.        139.      0.37       0.19
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        41157016   19940914              20050926       0000
-BIB                  2          2
+ENDSUBENT           36
+SUBENT        41157016   20240916   20250110   20250110       4220
+BIB                  5         10
 REACTION   (93-NP-237(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (VDG,4RUSLIN)
-ENDBIB               2
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.030+-0.004) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0127 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 7.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              10
 COMMON               1          3
 EN
 EV
    1.47E+07
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.11        0.18
   35.         88.      0.80        0.15
@@ -382,19 +577,29 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.44        0.10
   53.        139.      0.16        0.06
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        41157017   19940914              20050926       0000
-BIB                  2          2
+ENDSUBENT           29
+SUBENT        41157017   20240916   20250110   20250110       4220
+BIB                  6         12
 REACTION   (94-PU-242(N,F)ELEM/MASS,CUM,FY)
 FACILITY   (VDG,4RUSLIN)
-ENDBIB               2
+ANALYSIS    Data were normalized to the yield of the first delayed
+           neutron group (Y1=0.027+-0.004) taking acount of the
+           difference between decay constant of first group
+            (LAMBDA1=0.0126 1/sec) and the decay constant for
+           87Br(0.01247 1/sec) as described in REL-REF of
+           R.W.Waldo+.
+REL-REF    (R,,L.Tomlinson,R,AERE-R-6993,1972)
+             Decay constant and yield used for normalization.
+STATUS     (TABLE,,A.N.Gudkov+,J,RCA,57,69,1992) Table 7.
+HISTORY    (20240916A) ERR-T -> DATA-ERR
+ENDBIB              12
 COMMON               1          3
 EN
 EV
    1.47E+07
 ENDCOMMON            3
 DATA                 4          8
-ELEMENT    MASS       DATA       ERR-T
+ELEMENT    MASS       DATA       DATA-ERR
 NO-DIM     NO-DIM     PC/FIS     PC/FIS
   35.         87.      1.04       0.20
   35.         88.      1.00       0.23
@@ -405,5 +610,5 @@ NO-DIM     NO-DIM     PC/FIS     PC/FIS
   53.        138.      0.82       0.27
   53.        139.      0.25       0.12
 ENDDATA             10
-ENDSUBENT           21
+ENDSUBENT           31
 ENDENTRY            17
