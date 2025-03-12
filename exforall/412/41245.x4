@@ -1,16 +1,16 @@
-ENTRY            41245   20191109   20200113   20200113       4184
-SUBENT        41245001   20191109   20200113   20200113       4184
-BIB                 13         32
+ENTRY            41245   20241224   20250311   20250311       4221
+SUBENT        41245001   20241224   20250311   20250311       4221
+BIB                 13         39
 TITLE       Gamma-quanta production cross sections at neutron
             inelastic scattering at the energy 3 MeV
 AUTHOR     (A.I.Lashuk, I.P.Sadokhin)
-INSTITUTE  (4RUSFEI)
 REFERENCE  (J,YK,,(2),59,1996)   Data table is given
            (J,AE,9,403,1960) Iss.5. First author A.L.Androsenko
            (J,SJA,9,945,1961) Engl.translation of AE,9,
            (J,AE,7,268,1959) Iss.3. First author A.L.Androsenko
            (J,SJA,7,763,1961) Engl.translation of AE,7,
             Two initial publications in AE.
+INSTITUTE  (4RUSFEI)
 REL-REF    (M,41186001,A.I.Lashuk+,J,YK,,(1),26,1994)
            Details of method and analysis
 EXP-YEAR   (1958)
@@ -18,6 +18,7 @@ EXP-YEAR   (1958)
            this article YK,,(2),59,1996 at 1996 year.
 FACILITY   (VDG)  Cascade neutron generator KG-1.2
 INC-SOURCE (D-D)
+SAMPLE      Natural.
 DETECTOR   (NAICR)  Scintillation detector on the base of
                     sodium iodide
 CORRECTION  Corrections were made on gamma-quanta registration
@@ -26,50 +27,69 @@ CORRECTION  Corrections were made on gamma-quanta registration
             on registration system's fallouts, on internal
             conversion of gamma-quanta, on gamma-quanta angular
             distribution
-STATUS     (TABLE) Table 1 of YK,is.2,p.59,1996
 ERR-ANALYS (DATA-ERR)  Errors are not specified
 HISTORY    (19970531C)  + + Compiled at the centre - CJD + +
            (20191109U) Refs. of YK were corrected.
            Upper -> lower case correction.
            Dates were corrected for 4-digits year.
             ERR-T -> DATA-ERR ( no partial errors) .
-ENDBIB              32
+           (20241224A) Nuclide codes in SF1 and SF4 were replaced
+            with natural ones except for (nearly) monoisotopic
+            elements.
+            STATUS was updated for new rules.
+            Subents were merged: 005-008 in 005, 009-011 in 009,
+            013-017 in 013, 018-021 in 018, 022-024 in 022,
+            025-028 -> 025.
+ENDBIB              39
 COMMON               1          3
 EN
-EV
- 3.0000E+06
+MEV
+ 3.0
 ENDCOMMON            3
-ENDSUBENT           39
-SUBENT        41245002   20191109   20200113   20200113       4184
-BIB                  1          1
+ENDSUBENT           46
+SUBENT        41245002   20241224   20250311   20250311       4221
+BIB                  5         11
 REACTION   (11-NA-23(N,INL)11-NA-23,PAR,SIG,G)
-ENDBIB               1
+FLAG       (1.) Egamma is average for 2.080(?, see comment),
+           2.266, 2.3191 MeV gamma energies ( from decay scheme ).
+COMMENT    Of compiler M.M.
+           It's not clear from the table of the article -
+           2.080 MeV gamma lines is for average gamma energy
+           2.35 MeV or 1.96 MeV or for both;
+           figure brackets mentioned in the article text are
+           absent in the table of the article.
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) FLAG and COMMENT were added.
+ENDBIB              11
 NOCOMMON             0          0
-DATA                 4          4
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
+DATA                 5          4
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
   0.44        0.04       440.      40.
   1.70        0.03        58.       9.
   1.96        0.04        17.       4.
-  2.35        0.04        43.       8.
+  2.35        0.04        43.       8.        1.
 ENDDATA              6
-ENDSUBENT           12
-SUBENT        41245003   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (14-SI-28(N,INL)14-SI-28,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           22
+SUBENT        41245003   20241224   20250311   20250311       4221
+BIB                  3          3
+REACTION   (14-SI-0(N,INL)14-SI-0,PAR,SIG,G)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) SI-28 -> SI-0 in REACTION.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          1
 E          E-ERR      DATA       DATA-ERR
 MEV        MEV        MB         MB
   1.72        0.03       270.      30.
 ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245004   20191109   20200113   20200113       4184
-BIB                  2          2
+ENDSUBENT           11
+SUBENT        41245004   20241224   20250311   20250311       4221
+BIB                  2          3
 REACTION   (13-AL-27(N,INL)13-AL-27,PAR,SIG,G)
-STATUS     (COREL,41186005) Data from previous analysis
-ENDBIB               2
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+           (COREL,41186005) Data from previous analysis
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 4          3
 E          E-ERR      DATA       DATA-ERR
@@ -78,96 +98,74 @@ MEV        MEV        MB         MB
   1.00        0.03       246.      35.
   2.12        0.04       243.      30.
 ENDDATA              5
-ENDSUBENT           12
-SUBENT        41245005   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (24-CR-50(N,INL)24-CR-50,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           13
+SUBENT        41245005   20241224   20250311   20250311       4221
+BIB                  4         12
+REACTION   (24-CR-0(N,INL)24-CR-0,PAR,SIG,G)
+FLAG       (1.) Contributing isotopes (gamma energies):
+                Cr-50(0.782 MeV), Cr-54(0.835 MeV)
+           (2.) Cr-52(0.935 MeV), Cr-54(1.000 MeV),
+                Cr-53(1.003 MeV)
+           (3.) Cr-52(1.334 MeV, 1.435MeV)
+           (4.) Cr-50(1.900 MeV), Cr-53(1.986 MeV),
+                Cr-54(2.000 MeV)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) CR-50 -> CR-0.
+            Subents .006-.008 data were added.
+            FLAG was introduced.
+ENDBIB              12
 NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  0.80        0.03        68.      10.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245006   20191109   20200113   20200113       4184
-BIB                  2          2
-REACTION   (24-CR-52(N,INL)24-CR-52,PAR,SIG,G)
-STATUS     (COREL,41186010) Data from previous analysis
-ENDBIB               2
+DATA                 5          4
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
+  0.80        0.03        68.      10.       1.
+  0.99        0.03       282.      30.       2.
+  1.42        0.04       790.      80.       3.
+  1.93        0.04        44.       6.       4.
+ENDDATA              6
+ENDSUBENT           23
+SUBENT        41245006   20241224   20250311   20250311       4221
+SUBENT        41245007   20241224   20250311   20250311       4221
+SUBENT        41245008   20241224   20250311   20250311       4221
+SUBENT        41245009   20241224   20250311   20250311       4221
+BIB                  4         13
+REACTION   (40-ZR-0(N,INL)40-ZR-0,PAR,SIG,G)
+FLAG       (1.) Contributing isotopes (gamma energies):
+            Zr-92(0.904 MeV, 0.932 MeV), Zr-94(0.920 MeV)
+           (2.) Zr-92(1.118 MeV), Zr-94(1.140 MeV),
+                Zr-91(1.210 MeV)
+           (3.) Zr-94(1.680 MeV), Zr-92(1.836 MeV),
+                Zr-96(1.870 MeV), Zr-91(1.890 MeV)
+           (4.) Zr-92(2.050 MeV), Zr-90(2.182 MeV),
+                Zr-91(2.210 MeV)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) ZR-50 -> ZR-0.
+            Subents .010-.011 data were added.
+            FLAG was introduced.
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  1.42        0.04       790.      80.
-ENDDATA              3
-ENDSUBENT           10
-SUBENT        41245007   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (24-CR-53(N,INL)24-CR-53,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  1.93        0.04        44.       6.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245008   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (24-CR-54(N,INL)24-CR-54,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  0.99        0.03       282.      30.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245009   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (40-ZR-90(N,INL)40-ZR-90,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  2.18        0.04       310.      35.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245010   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (40-ZR-92(N,INL)40-ZR-92,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          2
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  0.94        0.03       490.      53.
-  1.80        0.04       144.      20.
-ENDDATA              4
-ENDSUBENT           10
-SUBENT        41245011   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (40-ZR-94(N,INL)40-ZR-94,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
-  1.18        0.04        66.      11.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245012   20191109   20200113   20200113       4184
-BIB                  3          7
+DATA                 5          4
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
+  0.94        0.03       490.      53.       1.
+  1.18        0.04        66.      11.       2.
+  1.80        0.04       144.      20.       3.
+  2.18        0.04       310.      35.       4.
+ENDDATA              6
+ENDSUBENT           24
+SUBENT        41245010   20241224   20250311   20250311       4221
+SUBENT        41245011   20241224   20250311   20250311       4221
+SUBENT        41245012   20241224   20250311   20250311       4221
+BIB                  3          8
 REACTION   (41-NB-93(N,INL)41-NB-93,PAR,SIG,G)
 FLAG       (1.)    Gamma-line 0.96 MeV was split on two -
                    0.96 and 1.08 MeV
            (2.)    Gamma-line 1.35 MeV was split on two -
                    1.28 and 1.34 MeV
-STATUS     (COREL,41186005) Data from previous analysis  for
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+           (COREL,41186005) Data from previous analysis for
             different En.
-ENDBIB               7
+ENDBIB               8
 NOCOMMON             0          0
 DATA                 5          7
 E          E-ERR      DATA       DATA-ERR   FLAG
@@ -180,195 +178,147 @@ MEV        MEV        MB         MB         NO-DIM
   1.70        0.04        92.      11.
   1.92        0.04        55.       7.
 ENDDATA              9
-ENDSUBENT           21
-SUBENT        41245013   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (42-MO-94(N,INL)42-MO-94,PAR,SIG,G)
-ENDBIB               1
+ENDSUBENT           22
+SUBENT        41245013   20241224   20250311   20250311       4221
+BIB                  4         17
+REACTION   (42-MO-0(N,INL)42-MO-0,PAR,SIG,G)
+FLAG       (1.) Contributing isotopes (gamma energies):
+           Mo-94(0.434 MeV), Mo-100(0.450 MeV), Mo-98(0.455 MeV),
+           Mo-96(0.480 MeV), Mo97(0.481 MeV)
+           (2.) Mo-100(0.530 MeV), Mo-95(0.580 MeV)
+           (3.) Mo-95(0.765, 0.784, 0.788, 0.822, 0.840, 0.850
+           MeV), Mo-96(0.779 MeV), Mo-98(0.787 MeV),
+           Mo-92(0.790 MeV), Mo-94(0.871 MeV)
+           (4.) Mo-100(1.150 MeV), Mo-96(1.200 MeV),
+           Mo-97(1.269 MeV)
+           (5.) Mo-100(1.470 MeV), Mo-95(1.478 MeV)
+           (6.) Mo-97(1.516 MeV), Mo-94(1.530 MeV),
+           Mo-92(1.540 MeV)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) MO-94 -> MO-0.
+            Subents .014-.017 data were added.
+            FLAG was introduced.
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 1.54        0.04        69.        9.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245014   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (42-MO-95(N,INL)42-MO-95,PAR,SIG,G)
-ENDBIB               1
+DATA                 5          6
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
+ 0.48        0.03       100.       20.       1.
+ 0.54        0.03       375.       41.       2.
+ 0.82        0.03      1224.      110.       3.
+ 1.20        0.04        68.        8.       4.
+ 1.48        0.04        63.        7.       5.
+ 1.54        0.04        69.        9.       6.
+ENDDATA              8
+ENDSUBENT           30
+SUBENT        41245014   20241224   20250311   20250311       4221
+SUBENT        41245015   20241224   20250311   20250311       4221
+SUBENT        41245016   20241224   20250311   20250311       4221
+SUBENT        41245017   20241224   20250311   20250311       4221
+SUBENT        41245018   20241224   20250311   20250311       4221
+BIB                  4         17
+REACTION   (48-CD-0(N,INL)48-CD-0,PAR,SIG,G)
+FLAG       (1.) Contributing isotopes (gamma energies):
+           Cd-116(0.515 MeV), Cd-114(0.558 MeV), Cd-113(0.580 MeV)
+           (2.) Cd-112(0.617 MeV), Cd-111(0.619 MeV),
+           Cd-106(0.630 MeV), Cd-108(0.632 MeV)
+           (3.) Cd-111(0.640 MeV), Cd-110(0.658 MeV),
+           Cd-113(0.670 MeV), Cd-116(0.700 MeV), Cd-114(0.724 MeV)
+           (4.) Cd-110(0.938 MeV), Cd-113(0.980 MeV),
+           Cd-108(1.050 MeV), Cd-111(1.055 MeV)
+           (5.) Cd-113(1.400 MeV), Cd-112(1.468 MeV),
+           Cd-110(1.476 MeV)
+           (6.) Cd-110(2.005 MeV), Cd-114(2.048 MeV),
+           Cd-114(2.200 MeV)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) CD-111 -> CD-0.
+            Subents .019-.021 data were added.
+            FLAG was introduced.
+ENDBIB              17
 NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.82       0.03        1224.       110.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245015   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (42-MO-97(N,INL)42-MO-97,PAR,SIG,G)
-ENDBIB               1
+DATA                 5          6
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
+ 0.56        0.03       357.        40.      1.
+ 0.62        0.03       465.        55.      2.
+ 0.69        0.03       235.        32.      3.
+ 1.02        0.04       290.        35.      4.
+ 1.42        0.04       634.        68.      5.
+ 2.11        0.04       137.        15.      6.
+ENDDATA              8
+ENDSUBENT           30
+SUBENT        41245019   20241224   20250311   20250311       4221
+SUBENT        41245020   20241224   20250311   20250311       4221
+SUBENT        41245021   20241224   20250311   20250311       4221
+SUBENT        41245022   20241224   20250311   20250311       4221
+BIB                  4         16
+REACTION   (74-W-0(N,INL)74-W-0,PAR,SIG,G)
+FLAG       (1.) Contributing isotopes (gamma energies):
+           W-186(0.198, 0.215 MeV), W-183(0.207 MeV),
+           W-184(0.215 MeV)
+           (2.) W-182(0.351 MeV), W-184(0.384,0.414 MeV),
+           W-186(0.417 MeV)
+           (3.) W-186(0.511, 0.615 MeV), W-184(0.537 MeV)
+           (4.) W-186(0.738, 0.739 MeV), W-184(0.792 MeV)
+           (5.) W-184(0.895, 0.903, 0.921 MeV) W-180(1.006 MeV)
+           (6.) W-182(1.121, 1.173, 1.221, 1.231 MeV),
+           W-184(1.189MeV)
+           (7.) W-186(1.829 MeV), W-182(1.871 MeV)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) W-183 -> W-0.
+            Subents .023-.024 data were added.
+            FLAG was introduced.
+ENDBIB              16
 NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 1.20        0.04        68.        8.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245016   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (42-MO-98(N,INL)42-MO-98,PAR,SIG,G)
-ENDBIB               1
+DATA                 5          7
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
+ 0.21         0.03     2523.       730.      1.
+ 0.38         0.03      361.        53.      2.
+ 0.57         0.03      469.        61.      3.
+ 0.76         0.03      511.        65.      4.
+ 0.92         0.03      763.        94.      5.
+ 1.204        0.04      331.        50.      6.
+ 1.87         0.05      396.        50.      7.
+ENDDATA              9
+ENDSUBENT           30
+SUBENT        41245023   20241224   20250311   20250311       4221
+SUBENT        41245024   20241224   20250311   20250311       4221
+SUBENT        41245025   20241224   20250311   20250311       4221
+BIB                  4         13
+REACTION   (82-PB-0(N,INL)82-PB-0,PAR,SIG,G)
+FLAG       (1.) Contributing isotopes (gamma energies):
+           Pb-204(0.502 MeV), Pb-206(0.516, 0.538 MeV),
+           Pb-207(0.570 MeV)
+           (2.) Pb-204(0.791 MeV), Pb-206(0.803, 0.841, 0.881 MeV)
+           ,Pb-207(0.894 MeV)
+           (3.) Pb-204(0.984 MeV), Pb-207(1.063 MeV)
+           (4.) Pb-206(1.341, 1.460 MeV), Pb-207(1.447 MeV)
+           (5.) Pb-208(2.641 MeV)
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+HISTORY    (20241224A) PB-204 -> PB-0.
+            Subents .026-.028 data were added.
+            FLAG was introduced.
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.48        0.03        100.       20.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245017   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (42-MO-100(N,INL)42-MO-100,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          2
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.54        0.03        375.       41.
- 1.48        0.04         63.        7.
-ENDDATA              4
-ENDSUBENT           10
-SUBENT        41245018   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (48-CD-111(N,INL)48-CD-111,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.62        0.03       465.        55.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245019   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (48-CD-112(N,INL)48-CD-112,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 1.42        0.04       634.        68.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245020   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (48-CD-113(N,INL)48-CD-113,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          2
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.69        0.03       235.        32.
- 1.02        0.04       290.        35.
-ENDDATA              4
-ENDSUBENT           10
-SUBENT        41245021   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (48-CD-114(N,INL)48-CD-114,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          2
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.56        0.03       357.        40.
- 2.11        0.04       137.        15.
-ENDDATA              4
-ENDSUBENT           10
-SUBENT        41245022   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (74-W-183(N,INL)74-W-183,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.21         0.03     2523.       730.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245023   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (74-W-184(N,INL)74-W-184,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          4
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.38         0.03      361.        53.
- 0.57         0.03      469.        61.
- 0.92         0.03      763.        94.
- 1.204        0.04      331.        50.
-ENDDATA              6
-ENDSUBENT           12
-SUBENT        41245024   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (74-W-186(N,INL)74-W-186,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          2
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.76         0.03      511.        65.
- 1.87         0.05      396.        50.
-ENDDATA              4
-ENDSUBENT           10
-SUBENT        41245025   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (82-PB-204(N,INL)82-PB-204,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 1.05         0.03      57.         10.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245026   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (82-PB-206(N,INL)82-PB-206,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          2
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 0.52         0.03     445.         60.
- 0.79         0.03     570.         65.
-ENDDATA              4
-ENDSUBENT           10
-SUBENT        41245027   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (82-PB-207(N,INL)82-PB-207,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 1.37         0.03     118.         25.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245028   20191109   20200113   20200113       4184
-BIB                  1          1
-REACTION   (82-PB-208(N,INL)82-PB-208,PAR,SIG,G)
-ENDBIB               1
-NOCOMMON             0          0
-DATA                 4          1
-E          E-ERR      DATA       DATA-ERR
-MEV        MEV        MB         MB
- 2.64         0.04     107.         23.
-ENDDATA              3
-ENDSUBENT            9
-SUBENT        41245029   20191109   20200113   20200113       4184
-BIB                  1          1
+DATA                 5          5
+E          E-ERR      DATA       DATA-ERR   FLAG
+MEV        MEV        MB         MB         NO-DIM
+ 0.52         0.03     445.         60.      1.
+ 0.79         0.03     570.         65.      2.
+ 1.05         0.03      57.         10.      3.
+ 1.37         0.03     118.         25.      4.
+ 2.64         0.04     107.         23.      5.
+ENDDATA              7
+ENDSUBENT           25
+SUBENT        41245026   20241224   20250311   20250311       4221
+SUBENT        41245027   20241224   20250311   20250311       4221
+SUBENT        41245028   20241224   20250311   20250311       4221
+SUBENT        41245029   20241224   20250311   20250311       4221
+BIB                  2          2
 REACTION   (83-BI-209(N,INL)83-BI-209,PAR,SIG,G)
-ENDBIB               1
+STATUS     (TABLE,,A.I.Lashuk,J,YK,,(2),59,1996) Table 1
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 4          3
 E          E-ERR      DATA       DATA-ERR
@@ -377,5 +327,5 @@ MEV        MEV        MB         MB
  1.61         0.04     420.         45.
  2.53         0.04     155.         17.
 ENDDATA              5
-ENDSUBENT           11
+ENDSUBENT           12
 ENDENTRY            29
