@@ -47,12 +47,13 @@ def get_list_of_trans_files():
     """
     r = requests.get(EXFOR_TRANS_URL)
     dfs = pd.read_html(r.text)
+    print(r,dfs)
     df = dfs[0]
-    df[["Date", "Time"]] = df["Last modified"].str.split(" ", expand=True)
+    df[["Date", "Time"]] = df["Released"].str.split(" ", expand=True)
 
     df = df.drop(df[df["Name"].str.contains("trans.zip")].index)
     df = df.drop(df[df["Name"].str.contains("trans.9")].index) # To skip EXFOR dictionary trans
-    df = df.dropna(subset=["Last modified"])
+    df = df.dropna(subset=["Released"])
 
     x = df.groupby("Date")["Name"].apply(list).to_dict()
 
