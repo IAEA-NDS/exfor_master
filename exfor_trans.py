@@ -16,11 +16,12 @@ import sys
 import json
 import shutil
 import datetime
-from git import (
-    Repo,
-)
+from git import Repo
+from io import StringIO
+from bs4 import XMLParsedAsHTMLWarning
+import warnings
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 import logging
-
 logging.basicConfig(filename="process.log", level=logging.DEBUG, filemode="w")
 import pandas as pd
 
@@ -46,8 +47,9 @@ def get_list_of_trans_files():
     groupby returns dictionary in { '2024-05-06': ['trans.1510', 'trans.1511', 'trans.c235', 'trans.c236', 'trans.l052']} format
     """
     r = requests.get(EXFOR_TRANS_URL)
-    dfs = pd.read_html(r.text)
-    print(r,dfs)
+    html_content = StringIO(r.text)
+    dfs = pd.read_html(html_content)
+
     df = dfs[0]
     df[["Date", "Time"]] = df["Released"].str.split(" ", expand=True)
 
@@ -111,7 +113,7 @@ def git_new_branch(date_str):
 
 
 def git_add_commit(date_str):
-    repo.git.add("exforall/")
+    repo.git.add("./exforall/")
     repo.git.commit(m=date_str)
     logging.info(f"branch commit {date_str}")
 
@@ -344,6 +346,7 @@ def process_trans_file(trans: str):
 
     for entry_num in trans_indexes.keys():
         entry_dir = os.path.join(EXFOR_ALL_PATH, entry_num[0:3])
+        logging.info(f"process: ENTRY #{entry_num} started")
         ## Check if the entry dir exist
         if not os.path.exists(entry_dir):
             os.mkdir(entry_dir)
@@ -414,6 +417,7 @@ def process_trans_file(trans: str):
         with open(ent_file_name, "w") as e:
             for line in new_subent_lines:
                 e.write(line)
+            logging.info(f"processed: {ent_file_name}")
 
         logging.info(f"end: {trans} {entry_num}")
 
@@ -455,6 +459,7 @@ def process_release(date_str, trans_list):
 
 def update():
     x = get_list_of_trans_files()
+
     tags = git_tags()
 
     processed = []
@@ -477,7 +482,7 @@ def update():
 
         else:
             not_processed.append(date_str)
-
+    
     logging.info(f"process starts for {not_processed}")
 
     if not_processed:

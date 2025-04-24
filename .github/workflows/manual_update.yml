@@ -1,6 +1,9 @@
 # This is a basic workflow that is manually triggered
 
 name: Manual Update
+permissions:
+  contents: read
+  pull-requests: write
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -22,19 +25,19 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v3 # checkout the repository content to github runner
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0      
 
 
-      - uses: fregante/setup-git-user@v1
+      - uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
 
 
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
   
 
 
@@ -52,9 +55,12 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: |
-          output=$(python exfor_backups.py)
+          output=$(python exfor_trans.py)
           echo ::set-output name=NP::$output
 
+
+        # echo "{NP}=$output" >> $GITHUB_OUTPUT
+        # echo ::set-output name=NP::$output
 
 
       - name: create release using REST API
@@ -66,7 +72,7 @@ jobs:
             tagname="Backup-"$not_processed
             echo $tagname
 
-            sem_release=$(bash ${GITHUB_WORKSPACE}/semantic_release_name.sh $not_processed)
+            sem_release=$(bash ${GITHUB_WORKSPACE}/script/semantic_release_name.sh $not_processed)
             echo $sem_release
 
             curl -X POST https://api.github.com/repos/${{ github.repository }}/releases \
@@ -87,7 +93,7 @@ jobs:
         run: |
           if [[ -n "${{ steps.runpy.outputs.NP }}" ]]
           then
-            bash ${GITHUB_WORKSPACE}/get_update_date.sh > entry_updatedate.dat
+            bash ${GITHUB_WORKSPACE}/script/get_update_date.sh > entry_updatedate.dat
             git config user.name github-actions
             git config user.email github-actions@github.com
             git add entry_updatedate.dat
@@ -96,4 +102,3 @@ jobs:
           else
             echo "no update"
           fi
-
