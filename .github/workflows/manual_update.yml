@@ -2,7 +2,7 @@
 
 name: Manual Update
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
@@ -31,7 +31,7 @@ jobs:
           fetch-depth: 0      
 
 
-      - uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
+      # - uses: fregante/setup-git-user@v2
 
 
       - name: setup python
@@ -56,11 +56,7 @@ jobs:
           EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: |
           output=$(python exfor_trans.py)
-          echo ::set-output name=NP::$output
-
-
-        # echo "{NP}=$output" >> $GITHUB_OUTPUT
-        # echo ::set-output name=NP::$output
+          echo "NP=$output" >> $GITHUB_OUTPUT
 
 
       - name: create release using REST API
