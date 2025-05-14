@@ -1,21 +1,19 @@
-ENTRY            M0326   20130618   20130823   20130819       M067
-SUBENT        M0326001   20130618   20130823   20130819       M067
-BIB                 12         30
+ENTRY            M0326   20250325   20250508   20250508       M136
+SUBENT        M0326001   20250325   20250508   20250508       M136
+BIB                 10         33
 TITLE      A measurement of the Ti-50(g,n) and Ti-50(g,n0) cross
             sections.
 AUTHOR     (R.E.Pywell,M.N.Thompson,R.A.Hicks)
-INSTITUTE  (3AULAML)
 REFERENCE  (J,NP/A,325,116,1979)
            #doi:10.1016/0375-9474(79)90156-8
-FACILITY   (BETAT,3AULAML)
+INSTITUTE  (3AULAML)
+FACILITY   (BETAT,3AULAML) the Melbourne University 35 MeV
+            betatron.
 INC-SOURCE (BRST)
-SAMPLE     THE 68.09%  Isotopically  enriched Ti-50 metal target
-            of 2.88 g weight was used. the 31.9% impurity in the
-            enriched Ti-50 target was mostly Ti-48.
-CORRECTION The yield  curves  were corrected for
-            (A) the 31.9% impurity of Ti-48;
-            (B) The background.
-ERR-ANALYS (DATA-ERR) Root-mean-squared errors.
+SAMPLE     (22-TI-50,ENR=0.6809) THE 68.09% 0f isotopically
+            enriched Ti-50 metal target of 2.88 g weight.
+            The 31.9% impurity in the enriched Ti-50 target was
+            mostly Ti-48.
 COMMENT    The measurement of the Ti-50(g,n0)  and  Ti-50((g,n)+
             (g,2n))cross  sections had been made in energy range
             of the giant dipole resonance.  Assuming  the  giant
@@ -24,34 +22,44 @@ COMMENT    The measurement of the Ti-50(g,n0)  and  Ti-50((g,n)+
             calculation  based on statistical decay of the giant
             dipole resonance  states  was  consistent  with  the
             experimental results.
-STATUS     (CURVE)
+CRITIQUE   In the title and the Abstract the reactions
+            50Ti(G,X)0-NN-1,,SIG, 50Ti(G,X)0-NN-1,UNW,SIG,
+            should be mentioned, not 50Ti(G,N).
 HISTORY    (19870526C) Data  were  compiled  at SCJAD of Saratov
             State University.
            (19910202A) Corrected By V.Varlamov, V.Mclane.
            (20130618A) Corrected    by   V.Varlamov:   REACTION,
             ERR-ANALYS,  STATUS,  SUBENT   005   added,   dates,
             lowercase.
-ENDBIB              30
+           (20250325A) Corrected by V.Varlamov: FACILITY,
+            CORRECTION, DETECTOR, REACTION, DATA, ERR-ANALYS,
+            EN-MAX, CRITIQUE, STATUS.
+ENDBIB              33
 NOCOMMON             0          0
-ENDSUBENT           33
-SUBENT        M0326002   20130618   20130823   20130819       M067
-BIB                  5         12
-REACTION   ((22-TI-50(G,N)22-TI-49,,SIG,,BRS)+
-           (22-TI-50(G,2N)22-TI-48,,SIG,,BRS))
-ANALYSIS   (PLA) (gamma,xn) reaction yield unfolding.
-            The ((gamma,n)+(gamma,2n)) cross section was obtained
-            from (gamma,xn) cross section by  statistical  model
-            counting   (Blatt-Weisskopf)   of  (gamma,2n)  cross
-            section.
-DETECTOR   (D4PI) 4PI Halpern-type neutron detector was used.
+ENDSUBENT           36
+SUBENT        M0326002   20250325   20250508   20250508       M136
+BIB                  5         17
+REACTION   (22-TI-50(G,X)0-NN-1,UNW,SIG,,BRS)
+ANALYSIS   To make allowance for the double counting of the
+            reaction (g,2n) in the yield crosssection, a
+            correction for neutron multipplicity was made
+            based on the statisticalmodel of Blatt and
+            Weisskopf.
+ERR-ANALYS (DATA-ERR) Mean-root-squared errors.
 STATUS     (DEP,M0326005)
-           Data from Fig. 3.
+            Cross section of the reaction yield
+            50Ti(G,X)0-NN-1.
+           (CURVE,,R.E.Pywell+,J,NP/A,325,116,1979)
+            Data from Fig. 3.
 HISTORY    (20130618A) Corrected  by  V.Varlamov:  BRA -> BRS,
             STATUS.
-ENDBIB              12
+           (20250325A) Corrected by V.Varlamov: REACTION,
+            ANALYSIS, ERR-ANALYS, DETECTOR, PART-DET, EN-SEC,
+            STATUS.
+ENDBIB              17
 NOCOMMON             0          0
 DATA                 3        154
-EN         DATA       ERR-S
+EN         DATA       DATA-ERR
 MEV        MB         MB
  10.36       0.7
  10.47       0.4
@@ -208,23 +216,32 @@ MEV        MB         MB
  26.18       6.2        0.9
  26.25       6.6        0.9
 ENDDATA            156
-ENDSUBENT          173
-SUBENT        M0326003   20130618   20130823   20130819       M067
-BIB                  7          9
+ENDSUBENT          178
+SUBENT        M0326003   20250325   20250508   20250508       M136
+BIB                  8         18
 REACTION   (22-TI-50(G,X)0-NN-1,,DA/DE,,BRA/REL)
-METHOD     (REC)
-PART-DET   (P)
 DETECTOR   (SCIN) The  5.1  cm diameter by 2.5 cm thick stilbene
             scintillator was used.
-ERR-ANALYS (E-ERR) Half of the range of experimental histogram.
-STATUS     Data from Fig. 4.
+METHOD     The spectrum of recoil protons was measured and  used
+           for obtaining the neutron spectrum.
+ANALYSIS   The spectrum of neutrons was obtained from the
+            spectrum of recoil protons.
+ERR-ANALYS (ERR-S) Statistical uncertainties.
+           (E-ERR) Half of the range of experimental histogram.
+CORRECTION The background of neutrons from the lead collimator
+            was measured and substracted from spectrum obtained
+            with the 50Ti sample.
+STATUS     (CURVE,,R.E.Pywell+,J,NP/A,325,116,1979)
+            Data from Fig. 4.
 HISTORY    (20130618A) Corrected  by  V.Varlamov:  BRS -> BRA,
             STATUS.
-ENDBIB               9
+           (20250325A) Corrected by V.Varlamov: METHOD, ANALYSIS,
+            ERR-ANALYS, CORRECTION, EN-MAX, PART-DET, STATUS.
+ENDBIB              18
 COMMON               3          3
 EN-MAX     ANG        E-ERR
 MEV        ADEG       MEV
-24.0       90.        0.25
+24.5       90.        0.25
 ENDCOMMON            3
 DATA                 3         21
 E          DATA       ERR-S
@@ -251,20 +268,25 @@ MEV        ARB-UNITS  ARB-UNITS
  12.8        0.03       0.04
  13.3        0.03       0.04
 ENDDATA             23
-ENDSUBENT           41
-SUBENT        M0326004   20130618   20130823   20130819       M067
-BIB                  6         10
+ENDSUBENT           50
+SUBENT        M0326004   20250325   20250508   20250508       M136
+BIB                  5         15
 REACTION   (22-TI-50(G,N)22-TI-49,PAR,DA,,BRS/REL)
-ANALYSIS   (PHDIF) The  data were deduced from the  photoneutron
-            spectra obtained  for  En-max energies ranging  from
-            15.5 MeV  to 26 MeV in 1.5 MeV steps.
-EN-SEC      (E-LVL,22-TI-49) The excitation energy after neutron
-            emission.
-ERR-ANALYS (EN-ERR) Half of the range of experimental histogram.
-STATUS     Data from Fig. 5.
+ANALYSIS   The cross section of reaction 50Ti(G,n0)49Ti was
+            obtained using the spectrum of neutrons and the
+            large separation (1.38 MeV) between the ground
+            state and first escited state of 49Ti.
+ERR-ANALYS (ERR-S) Statistical uncertainties.
+           (EN-ERR) Half of the range of experimental histogram.
+STATUS     (CURVE,,R.E.Pywell+,J,NP/A,325,116,1979)
+            Data from Fig. 5.
+           (DEP,M0326003)
+            Spectrum of neutrons.
 HISTORY    (20130618A) Corrected  by  V.Varlamov:  BRA -> BRS,
             EN-SEC, STATUS.
-ENDBIB              10
+           (20250325A) Corrected by V.Varlamov: ANALYSIS,
+            EN-SEC, STATUS.
+ENDBIB              15
 COMMON               3          3
 E-LVL      ANG        EN-ERR
 MEV        ADEG       MEV
@@ -296,21 +318,27 @@ MEV        ARB-UNITS  ARB-UNITS
  25.25      0.50       0.37
  25.75      0.41       0.43
 ENDDATA             24
-ENDSUBENT           43
-SUBENT        M0326005   20130618   20130823   20130819       M067
-BIB                  5          8
+ENDSUBENT           48
+SUBENT        M0326005   20250325   20250508   20250508       M136
+BIB                  7         14
 REACTION   (22-TI-50(G,X)0-NN-1,,SIG,,BRS)
+DETECTOR   (BF3) 4PI Halpern-type neutron detector was used.
 ANALYSIS   (PLA) Variable  bin  (0.5,0.75,1.0-MeV to energies of
             20.0,  23.5,  and 27.0 MeV) Penfold-Leiss  unfolding
             technique    using    shiff   integrated-over-angles
             bremsstrahlung spectrum.
-DETECTOR   (D4PI) 4PI Halpern-type neutron detector was used.
-STATUS     Data from Fig. 2.
+ERR-ANALYS (DATA-ERR) Mean-root-squared errors.
+CORRECTION The yield  curve  was corrected for the 31.9%
+            impurity of Ti-48.
+STATUS     (CURVE,,R.E.Pywell+,J,NP/A,325,116,1979)
+            Data from Fig. 2.
 HISTORY    (20130618C) Compiled by V.Varlamov.
-ENDBIB               8
+           (20250325A) Corrected by V.Varlamov: DETECTOR, DATA
+            substituted, CORRECTION, STATUS.
+ENDBIB              14
 NOCOMMON             0          0
-DATA                 4        153
-EN         DATA       ERR-S      ANAL-STEP
+DATA                 4        158
+EN         DATA       DATA-ERR   ANAL-STEP
 MEV        MB         MB         MEV
  10.36       0.7                   0.5
  10.47       0.4                   0.5
@@ -356,8 +384,8 @@ MEV        MB         MB         MEV
  14.83      19.0        1.8        0.5
  14.94      19.4        1.5        0.5
  15.05      25.6        1.8        0.5
- 15.22      26.7        2.2        0.5
- 15.30      28.2        1.8        0.5
+ 15.22      26.7        1.9        0.5
+ 15.30      28.2        2.2        0.5
  15.44      31.5        2.4        0.5
  15.55      33.3        3.1        0.5
  15.62      40.3        3.1        0.5
@@ -366,105 +394,110 @@ MEV        MB         MB         MEV
  15.96      38.8        2.6        0.5
  16.05      42.1        3.3        0.5
  16.16      41.4        3.3        0.5
- 16.26      44.3        2.0        0.5
- 16.30      47.6        2.0        0.5
- 16.34      45.8        2.2        0.5
- 16.44      46.9        4.0        0.5
- 16.51      45.8        3.7        0.5
- 16.67      47.6        4.0        0.5
- 16.77      50.6        4.0        0.5
- 16.80      58.6        3.7        0.5
- 16.87      64.1        3.3        0.5
- 17.02      59.3        2.9        0.5
- 17.12      63.4        2.6        0.5
- 17.16      67.0        4.5        0.5
- 17.30      72.2        6.2        0.5
- 17.45      72.5        5.9        0.5
- 17.52      67.4        5.3        0.5
- 17.59      72.5        5.7        0.5
- 17.70      72.9        5.5        0.5
- 17.77      79.1        6.2        0.5
- 17.80      65.9        5.1        0.5
- 17.98      74.0        6.6        0.5
- 18.09      74.7        6.6        0.5
- 18.20      75.1        6.6        0.5
- 18.27      82.0        7.3        0.5
- 18.30      72.2        5.9        0.5
- 18.45      73.3        5.5        0.5
- 18.55      67.4        5.5        0.5
- 18.63      65.9        5.1        0.5
- 18.73      70.3        5.1        0.5
- 18.84      68.9        5.1        0.5
- 19.02      67.0        5.1        0.5
- 19.09      53.8        5.5        0.5
- 19.16      59.6        6.1        0.5
- 19.31      71.9       11.2        0.5
- 19.34      65.8       10.7        0.5
- 19.45      64.2        9.7        0.5
- 19.59      69.7        9.8        0.5
- 19.63      69.2       11.3        0.5
- 19.77      53.2       10.2        0.5
- 19.84      58.2        9.5        0.5
- 19.88      68.6       10.8        0.5
- 19.95      58.2       10.4        0.5
- 19.99      60.2       10.2        0.5
- 20.17      58.2        9.8        0.75
- 20.31      64.8        9.7        0.75
- 20.38      59.2        9.7        0.75
- 20.49      63.2        9.8        0.75
- 20.59      87.5        9.8        0.75
- 20.70      71.9       11.         0.75
- 20.77      65.2       10.8        0.75
- 20.88      66.2       11.2        0.75
- 20.92      68.8       10.2        0.75
- 21.06      56.7       10.8        0.75
- 21.17      60.8       10.3        0.75
- 21.20      64.8       10.3        0.75
- 21.31      65.2       10.8        0.75
- 21.49      73.2       10.4        0.75
- 21.56      67.5       10.8        0.75
- 21.60      65.2       10.4        0.75
- 21.81      67.2       10.9        0.75
- 21.85      58.6       10.2        0.75
- 21.96      54.2       10.2        0.75
- 22.10      63.2        9.8        0.75
- 22.24      62.9       11.3        0.75
- 22.31      57.2       11.1        0.75
- 22.38      59.7       10.7        0.75
- 22.45      61.8       10.3        0.75
- 22.60      62.3       10.9        0.75
- 22.67      57.2       10.9        0.75
- 23.10      46.2       10.4        0.75
- 23.12      50.2       10.2        0.75
- 23.27      57.7        9.8        0.75
- 23.31      48.6       10.3        0.75
- 23.49      49.3       10.5        0.75
- 23.56      46.7        9.5        1.0
- 23.70      40.7        9.2        1.0
- 23.81      50.2        9.1        1.0
- 23.92      42.6        8.9        1.0
- 24.03      25.2        8.5        1.0
- 24.17      28.4        8.2        1.0
- 24.28      35.1        7.5        1.0
- 24.39      26.4        8.1        1.0
- 24.53      25.2        7.7        1.0
- 24.57      14.5        2.         1.0
- 24.64      15.8        2.1        1.0
- 24.85      16.0        2.2        1.0
- 24.89      15.5        2.3        1.0
- 25.03      17.3        2.5        1.0
- 25.21      10.3        1.1        1.0
+ 16.26      44.3        3.4        0.5
+ 16.34      46.8        3.5        0.5
+ 16.44      47.3        3.6        0.5
+ 16.51      46.5        3.7        0.5
+ 16.67      46.8        4.0        0.5
+ 16.77      50.0        4.0        0.5
+ 16.80      58.4        3.7        0.5
+ 17.02      62.8        3.7        0.5
+ 17.12      59.9        3.6        0.5
+ 17.16      63.5        4.5        0.5
+ 17.30      72.2        5.2        0.5
+ 17.45      67.5        5.9        0.5
+ 17.52      71.5        5.3        0.5
+ 17.59      72.8        5.7        0.5
+ 17.70      75.9        5.5        0.5
+ 17.77      65.3        6.2        0.5
+ 17.80      74.1        5.1        0.5
+ 17.98      75.5        6.6        0.5
+ 18.09      82.1        6.6        0.5
+ 18.20      70.8        6.6        0.5
+ 18.27      67.2        7.3        0.5
+ 18.45      70.0        5.5        0.5
+ 18.55      68.6        5.5        0.5
+ 18.63      66.4        5.1        0.5
+ 18.73      59.9        5.1        0.5
+ 18.84      67.9        5.1        0.5
+ 19.02      54.7        5.1        0.5
+ 19.09      63.7        5.5        0.5
+ 19.16      60.6        6.1        0.5
+ 19.31      54.7        6.2        0.5
+ 19.34      53.3        6.7        0.5
+ 19.45      58.0        6.7        0.5
+ 19.59      57.7        6.8        0.5
+ 19.63      43.4        6.3        0.5
+ 19.77      47.1        6.2        0.5
+ 19.88      48.2        6.8        0.5
+ 19.95      56.9        6.4        0.5
+ 20.17      47.4        6.8        0.75
+ 20.31      49.7        6.7        0.75
+ 20.38      48.2        6.7        0.75
+ 20.49      43.6        6.8        0.75
+ 20.59      52.4        6.8        0.75
+ 20.70      52.6        7.0        0.75
+ 20.77      56.2        6.8        0.75
+ 20.88      60.2        7.2        0.75
+ 20.92      54.4        6.2        0.75
+ 20.99      57.7        6.3        0.75
+ 21.06      58.4        6.8        0.75
+ 21.17      46.7        6.3        0.75
+ 21.20      50.0        6.3        0.75
+ 21.31      54.7        6.8        0.75
+ 21.49      62.0        6.4        0.75
+ 21.56      56.2        6.8        0.75
+ 21.60      53.6        6.4        0.75
+ 21.81      55.8        6.9        0.75
+ 21.85      48.9        6.2        0.75
+ 21.96      45.3        6.2        0.75
+ 22.10      52.9        5.8        0.75
+ 22.24      52.6        6.3        0.75
+ 22.31      45.3        6.1        0.75
+ 22.38      49.3        6.7        0.75
+ 22.45      51.1        6.3        0.75
+ 22.60      51.8        6.2        0.75
+ 22.67      50.9        6.2        0.75
+ 22.75      37.2        5.8        0.75
+ 22.80      40.1        5.6        0.75
+ 22.96      47.4        5.7        0.75
+ 23.10      38.7        5.4        0.75
+ 23.12      36.5        5.2        0.75
+ 23.27      31.4        5.8        0.75
+ 23.31      32.4        5.3        0.75
+ 23.49      41.3        5.5        0.75
+ 23.56      33.6        5.5        1.0
+ 23.58      27.7        5.3        1.0
+ 23.60      29.2        5.2        1.0
+ 23.70      31.4        5.2        1.0
+ 23.81      28.5        5.1        1.0
+ 23.92      27.7        4.9        1.0
+ 24.03      29.2        4.5        1.0
+ 24.17      17.5        4.2        1.0
+ 24.20      15.7        4.0        1.0
+ 24.28      21.4        4.5        1.0
+ 24.39      20.8        4.1        1.0
+ 24.53      27.0        3.7        1.0
+ 24.57      19.9        3.6        1.0
+ 24.61      18.6        2.9        1.0
+ 24.64      18.2        2.8        1.0
+ 24.85      18.6        2.7        1.0
+ 24.89      16.2        2.3        1.0
+ 25.03      15.7        2.5        1.0
+ 25.21      18.2        2.1        1.0
  25.25       7.2        2.1        1.0
- 25.35       9.0        2.2        1.0
- 25.43      10.         1.4        1.0
- 25.50      11.7        1.5        1.0
- 25.57      13.0        1.8        1.0
- 25.75      10.8        1.7        1.0
- 25.82      11.9        1.4        1.0
- 25.96      10.9        1.5        1.0
- 26.00      12.6        1.4        1.0
- 26.18      10.9        1.4        1.0
- 26.25      11.6        1.5        1.0
-ENDDATA            155
-ENDSUBENT          168
+ 25.35       9.5        2.2        1.0
+ 25.43       9.4        2.4        1.0
+ 25.50      11.7        2.5        1.0
+ 25.57      12.0        2.8        1.0
+ 25.75      13.2        2.7        1.0
+ 25.82      10.9        2.4        1.0
+ 25.96      13.3        2.5        1.0
+ 26.00      11.1        2.4        1.0
+ 26.03      13.1        2.3        1.0
+ 26.18      11.7        2.4        1.0
+ 26.25      10.9        2.5        1.0
+ 26.31      12.4        2.5        1.0
+ENDDATA            160
+ENDSUBENT          179
 ENDENTRY             5
