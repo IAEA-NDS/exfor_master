@@ -1,12 +1,12 @@
-ENTRY            D4228   20210929   20211117   20211117       D132
-SUBENT        D4228001   20210929   20211117   20211117       D132
-BIB                 13         41
+ENTRY            D4228   20250506   20250507   20250507       D147
+SUBENT        D4228001   20250506   20250507   20250507       D147
+BIB                 13         44
 TITLE      Investigation of proton induced reactions on niobium
            at low and medium energies
 AUTHOR     (F.Ditroi,A.Hermanne,E.Corniani,S.Takacs,
-           F.Tarkanyi,J.Csikai,Yu.N.Shubin)
+            F.Tarkanyi,J.Csikai,Yu.N.Shubin)
 INSTITUTE  (3HUNDEB,2BLGVUB,3HUNKOS,4RUSFEI)
-REFERENCE  (J,NIM/B,267,(19),3364,2009)
+REFERENCE  (J,NIM/B,267,3364,2009)
            #doi:10.1016/j.nimb.2009.07.010
 FACILITY   (CYCLO,2BLGVUB)
            (CYCLO,3HUNDEB)
@@ -25,7 +25,7 @@ METHOD     (STTA,ACTIV,EXTB,GSPEC)Proton beams of 37, 28 and 18
            corrected on the basis of the measured monitor
            reaction excitation function.
 MONITOR    (22-TI-0(P,X)23-V-48,,SIG)
-MONIT-REF  (,F.TARKANYI+,R,IAEA-NDS-1211,2001)    Chapter 4
+MONIT-REF  (,F.Tarkanyi+,R,IAEA-NDS-1211,2001)    Chapter 4
 ERR-ANALYS (EN-ERR)The uncertainties on the energy of the front
            foil of a stack are around 0.3 MeV and increase up
            to 1.2 - 2.7 MeV for the last foil of the stacks.
@@ -42,9 +42,12 @@ ADD-RES    (THEO) The experimental data were compared to the
            determination of integral physical yields.
 HISTORY    (20091013C) TS
            (20210927A) VS. SF3=X in subentry 006.
-ENDBIB              41
+           (20250325A) ts. Uncertainty of DATA point at 27.90 MeV
+           was corrected 0.00 -> 0.005 in subentry 009.
+           (20250506A) On. Major revision in 009.
+ENDBIB              44
 NOCOMMON             0          0
-ENDSUBENT           44
+ENDSUBENT           47
 SUBENT        D4228002   20091013   20100209   20100128       D071
 BIB                  3          3
 REACTION   (41-NB-93(P,4N)42-MO-90,,SIG)
@@ -324,19 +327,28 @@ MEV        MEV        MB         MB
       37.00      0.30      19.86      2.15
 ENDDATA             37
 ENDSUBENT           45
-SUBENT        D4228009   20091013   20100209   20100128       D071
-BIB                  3          3
-REACTION   (41-NB-93(P,X)39-Y-88,CUM,SIG)
-DECAY-DATA (39-Y-88,106.65D,DG,898.04,0.937,DG,1836.1,0.992)
-STATUS     (TABLE) Table 2 of reference.
-ENDBIB               3
+SUBENT        D4228009   20250506   20250507   20250507       D147
+BIB                  5         12
+REACTION   (41-NB-93(P,X)39-Y-88,CUM,SIG,,RAW)
+           No proper correction made for subtraction of 88Zr
+            decay contribution
+DECAY-DATA (39-Y-88,106.65D,DG,898.04,0.937,
+                            DG,1836.1,0.992)
+COMMENT    By Sandor Takacs (2024-08-07):
+            The reported data are not independent and not
+           cumulative but time dependent.
+STATUS     (TABLE,,F.Ditroi+,J,NIM/B,267,3364,2009) Table 2
+HISTORY    (20250325A) ts. Uncertainty of DATA point at 27.90 MeV
+           was corrected 0.00 -> 0.005.
+           (20250506A) On. REACTION(SF8): RAW added.
+ENDBIB              12
 NOCOMMON             0          0
 DATA                 4         17
 EN         EN-ERR     DATA       ERR-T
 MEV        MEV        MB         MB
       26.80                0.14      0.03
       27.70                0.24      0.05
-      27.90      0.30      0.04      0.00
+      27.90      0.30      0.04      0.005
       28.50                0.57      0.07
       28.60                0.07      0.12
       29.30                0.50      0.18
@@ -352,5 +364,5 @@ MEV        MEV        MB         MB
       36.30                8.38      0.95
       37.00      0.30      9.36      1.05
 ENDDATA             19
-ENDSUBENT           27
+ENDSUBENT           36
 ENDENTRY             9
