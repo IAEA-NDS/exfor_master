@@ -1,44 +1,75 @@
-ENTRY            41312   19981121   19990308   20050926       0000
-SUBENT        41312001   19981121   19990308   20050926       0000
-BIB                 10         14
+ENTRY            41312   20250214   20250404   20250404       4222
+SUBENT        41312001   20250214   20250404   20250404       4222
+BIB                 10         17
+TITLE      Determination of cross sections for inelastic processes
+            and the formation of 4.43-MeV gamma quanta during the
+            interaction of carbon with the neutrons from a
+            T(d,n)4He reaction
+AUTHOR     (V.T.Shchevolev,Z.A.Ramendik,Sh.V.Yablokov)
+REFERENCE  (J,SJA,39,814,1975)   English translation of AE 39 207
+           (J,AE,39,207,1975) Issue 3. Main reference, data given
 INSTITUTE  (4RUSKUR)
-REFERENCE  (J,AE,39,(3),207,197509)  MAIN REFERENCE, DATA GIVEN
-           (J,SJA,39,814,1976)    ENGLISH TRANSLATION OF AE 39 207
-AUTHOR     (V.T.SHCHEBOLEV,Z.A.RAMENDIK,SH.V.YABLOKOV)
-TITLE      .DETERMINATION OF CROSS SECTIONS FOR INELASTIC PROCESS
-            AND THE FORMATION OF 4.43-MEV GAMMA QUANTA DURING THE
-            INTERACTION OF CARBON WITH THE NEUTRONS FROM
-            T(D,N)A  REACTION
-MONITOR    .ABSOLUTE MEASUREMENTS
-FACILITY   (VDG) LOW-VOLTAGE NEUTRON GENERATOR
-DETECTOR   (SOLST)  STILBENE SPECTROMETER
-ERR-ANALYS (DATA-ERR) NO INFORMATION GIVEN
-STATUS     .DATA ARE TAKEN FROM MAIN REFERENCE
-HISTORY    (19981121C)  + +  COMPILED AT THE CJD  + +
-ENDBIB              14
+SAMPLE      Spherical samples of graphite of thickness 1 - 7 cm.
+MONITOR     Absolute measurements
+FACILITY   (VDG) Low-voltage neutron generator
+DETECTOR   (SOLST)  Stilbene spectrometer
+METHOD     (SHELT)
+HISTORY    (19981121C)  + +  Compiled at the CJD  + +
+           (20250214A) Upper -> lower case correction.
+            STATUS information was updated for new rules.
+            Subent 003 was corrected.
+ENDBIB              17
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        41312002   19981121   19990308   20050926       0000
-BIB                  2          2
+ENDSUBENT           20
+SUBENT        41312002   20250214   20250404   20250404       4222
+BIB                  5          7
 REACTION   (6-C-12(N,NON),,SIG,,AV)
-HISTORY    (19981121T)  + + CONVERTED FROM SUBENT 88012002
-ENDBIB               2
+METHOD     Measurements with four samples of 1.0-5.5 cm thickness.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE,,V.T.Shchebolev+,J,SJA,39,814,1976)
+           Text page 814.
+HISTORY    (19981121T)  + + Converted from SUBENT 88012002
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 4          1
 EN-MIN     EN-MAX     DATA       DATA-ERR
 MEV        MEV        B          B
- 1.3300E+01 1.4800E+01 5.1800E-01 1.4000E-01
+ 13.3       14.8       0.518      0.014
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        41312003   19981121   19990308   20050926       0000
-BIB                  1          1
-REACTION   (6-C-12(N,NON),,SIG,G,AV)
-ENDBIB               1
-NOCOMMON             0          0
+ENDSUBENT           15
+SUBENT        41312003   20250214   20250404   20250404       4222
+BIB                  6         20
+REACTION   (6-C-12(N,X)0-G-0,PAR,SIG,,AV)
+DETECTOR    Sensitivity of stilbene crystal to 4.43-MeV gammas
+            for detector threshold 0.423 MeV was 0.125+-0.004
+CORRECTION  Background was measured without sample.
+ERR-ANALYS (ERR-T)    Includes:
+            detection efficiency,
+           (ERR-1) Solid angle  - 0.8 %
+           (ERR-2) Neutron flux - 0.6 %
+           (ERR-3) Thickness of sample - 0.2 %
+STATUS     (TABLE,,V.T.Shchebolev+,J,SJA,39,814,1976)
+           Text page 814.
+HISTORY    (20250214A) Values 0.125+-0.004 were moved from
+            DATA block to DETECTOR.
+            New DATA and DATA-ERR values were added.
+            REACTION was corrected:
+            (N,NON),,SIG -> (N,X)0-G-0,PAR,SIG - 4.43 MeV gamma
+           production cross-section.
+           E=4.43 MeV was added in COMMON.
+           ERR-ANALYS was added.
+           DATA-ERR -> ERR-T
+ENDBIB              20
+COMMON               4          3
+E          ERR-1      ERR-2      ERR-3
+MEV        PER-CENT   PER-CENT   PER-CENT
+ 4.43       0.8        0.6        0.2
+ENDCOMMON            3
 DATA                 4          1
-EN-MIN     EN-MAX     DATA       DATA-ERR
+EN-MIN     EN-MAX     DATA       ERR-T
 MEV        MEV        B          B
- 1.3300E+01 1.4800E+01 1.2500E-01 4.0000E-03
+ 13.3       14.8       0.261      0.012
 ENDDATA              3
-ENDSUBENT            9
+ENDSUBENT           32
 ENDENTRY             3

@@ -1,32 +1,40 @@
-ENTRY            41431   20031126              20050926       0000
-SUBENT        41431001   20031126              20050926       0000
-BIB                 11         15
-TITLE      .Neutron Level Spins of 121-Sb
-AUTHOR     (F.N.BELYAEV, V.P.BOLOTSKIY, S.P.BOROVLEV)
+ENTRY            41431   20250225   20250404   20250404       4222
+SUBENT        41431001   20250225   20250404   20250404       4222
+BIB                 10         21
+TITLE       Neutron level spins of 121-Sb
+AUTHOR     (F.N.Belyaev, V.P.Bolotskiy, S.P.Borovlev)
 INSTITUTE  (4RUSITE)
-           (4RUSKUR)   Experimental Site
-REFERENCE  (C,83KIEV,2,366,198310) Main Reference
-FACILITY   (LINAC,4RUSKUR) Linear Accelerator of Electrons
-METHOD     (TOF) 45 M Flight Path.
+           (4RUSKUR)   Experimental site
+REFERENCE  ((C,83KIEV,2,366,1983)=
+           (R,INDC(CCP)-235,(2),366,1983)) Main ref. In Russian.
+FACILITY   (LINAC,4RUSKUR) Linear accelerator of electrons
+METHOD     (TOF) 45 m flight path.
            (GSPEC)
-DETECTOR   (NAICR) Two Scintillation Detectors Nai(TL)
-SAMPLE      Antimony Dioxide SB2-O4 of 98.2 % Enrichment,
-                12 G Weight and 0.5 G/Cm2 Thickness.
-ERR-ANALYS .Errors, If Present, are not Specified
-STATUS     (PRELM) Data from Main Reference
-HISTORY    (20031110C)   Compiled at the Centre - CJD
+DETECTOR   (NAICR) Two scintillation detectors NaI(Tl) of
+           60 x 10 mm size.
+SAMPLE      Antimony dioxide Sb121(2)O(4) of 98.2 % enrichment,
+                12 g weight and 0.5 g/cm2 thickness.
+           (51-SB-121,ENR=0.982)
+STATUS     (PRELM)
+HISTORY    (20031110C)   Compiled at the centre - CJD
            (20031126U) Last checking has been done.
-ENDBIB              15
+           (20250225A) Upper -> lower case correction
+            STATUS was added in data Subents.
+            Ref. R,INDC(CCP)-235,(2),366,1983 was added.
+            Reaction was corrected at Subent 003.
+ENDBIB              21
 COMMON               1          3
 EN-RSL
 NSEC/M
          2.
 ENDCOMMON            3
-ENDSUBENT           22
-SUBENT        41431002   20031126              20050926       0000
-BIB                  1          1
-REACTION   (51-SB-121(N,0),,J) Spin of Neutron Level
-ENDBIB               1
+ENDSUBENT           28
+SUBENT        41431002   20250225   20250404   20250404       4222
+BIB                  2          3
+REACTION   (51-SB-121(N,0),,J)
+STATUS     (TABLE,,F.N.Belyaev+,R,INDC(CCP)-235,(2),366,1983)
+            Table on pages 367-368.
+ENDBIB               3
 NOCOMMON             0          0
 DATA                 2         27
 EN-RES     DATA
@@ -59,21 +67,26 @@ EV         NO-DIM
      630.8          2.
      661.2          3.
 ENDDATA             29
-ENDSUBENT           35
-SUBENT        41431003   20031126              20050926       0000
-BIB                  1          4
-REACTION   ((51-SB-121(N,G)51-SB-122,,SPC,,AV)//
-           (51-SB-121(N,G)51-SB-122,,SPC,,AV))     Experimental
-            Ratio of Averaged Intensities For 50-100 KeV Interval
-            To 100-130 KeV Interval.
-ENDBIB               4
+ENDSUBENT           37
+SUBENT        41431003   20250225   20250404   20250404       4222
+BIB                  4          9
+REACTION   ((51-SB-121(N,G)51-SB-122,,SPC,,RES/AV)//
+           (51-SB-121(N,G)51-SB-122,,SPC,,RES/AV))  Experimental
+            ratio of averaged intensities for 50-100 keV interval
+            to 100-130 keV interval.
+ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
+           article.
+STATUS     (TABLE,,F.N.Belyaev+,R,INDC(CCP)-235,(2),366,1983)
+            Table on pages 367-368.
+HISTORY    (20250225A) RES code was added, EN -> EN-RES
+ENDBIB               9
 COMMON               4          3
-E-MIN-NM   E-MIN-DN   E-MAX-NM   E-MAX-DN
+E-MIN-NM   E-MAX-NM   E-MIN-DN   E-MAX-DN
 KEV        KEV        KEV        KEV
         50.       100.       100.   130.
 ENDCOMMON            3
 DATA                 3         27
-EN         DATA       DATA-ERR
+EN-RES     DATA       DATA-ERR
 EV         NO-DIM     NO-DIM
        6.24       1.41       0.03
       15.41       1.26       0.03
@@ -103,5 +116,5 @@ EV         NO-DIM     NO-DIM
      630.8        1.22       0.02
      661.2        1.35       0.03
 ENDDATA             29
-ENDSUBENT           42
+ENDSUBENT           47
 ENDENTRY             3
