@@ -1,48 +1,55 @@
-ENTRY            13336   20050719   20050909   20050926       1336
-SUBENT        13336001   20050719   20050909   20050926       1336
-BIB                 14         28
-INSTITUTE  (1USAARK)
-REFERENCE  (J,JIN,37,2243,1975)
+ENTRY            13336   20250601   20250822   20250822       1520
+SUBENT        13336001   20250601   20250822   20250822       1520
+BIB                 15         33
+TITLE      Distribution of fission yields in the 3.0 MeV
+           neutron-induced fission of 238U
 AUTHOR     (J.T.Harvey,D.E.Adams,W.D.James,J.N.Beck,J.L.Meason,
            P.K.Kuroda)
-TITLE      Distribution of fission yields in the 3.0 MeV neutron-
-            induced fission of 238U
-FACILITY   (CCW)
+REFERENCE  (J,JIN,37,2243,1975)
+           #doi:10.1016/0022-1902(75)80718-4
+INSTITUTE  (1USAARK)
+FACILITY   (CCW,1USAARK)
 INC-SOURCE (D-D)
-SAMPLE     Depleted uranium, 99.989% 238U, 0.011% 235U
-METHOD     (RCHEM)
 DETECTOR   (PROPC) Omniguard low background beta counter
-MONITOR    (92-U-238(N,F)56-BA-140,CUM,FY)
-            From fission neutron spectrum value of 6.02+-0.12 of
-            Meek and Rider, NEDO-12154-1 (1974)
+SAMPLE     (92-U-238,ENR=0.99989)
+           (92-U-235,ENR=0.00011) Depleted uranium, 99.989%
+           238U, 0.011% 235U.
+METHOD     (CHSEP)
+MONITOR    (92-U-238(N,F)56-BA-140,CUM,FY,,FIS)
+MONIT-REF  (,M.E.Meek+,R,NEDO-12154-1,1974)
 CORRECTION Short-lived sample data corrected for self-absorption
             and self-scattering
-           Corrected for loss of yield due to decay of isomers
+           corrected for loss of yield due to decay of isomers
            in some cases corrections applied for:
-            - Fractional chain yields
-            - Lack of saturation of activities due to change of
+            - fractional chain yields
+            - lack of saturation of activities due to change of
               flux during irradiation
-            - Growth and decay of daughter activities
+            - growth and decay of daughter activities
 ERR-ANALYS (DATA-ERR) Most probable errors, arising mainly from
             counting statistics and decay curve resolution
 STATUS     (RIDER) Reference 75HAR1
 HISTORY    (19891023C) VM
            (19900522U) BIB corrections
-           (20050719C) DR Format updated and reference corrected
-ENDBIB              28
+           (20050719C) DR format updated and reference corrected
+           (20250417A) BP+OS: Corrected FACILITY, SAMPLE
+            and METHOD, corrected MONITOR code and value, added
+            MONIT-REF, added doi. Data corrections in sub.2.
+ENDBIB              33
 COMMON               4          3
 EN         EN-RSL     MONIT      MONIT-ERR
 MEV        MEV        PC/FIS     PC/FIS
- 3.0        0.3        6.16       0.03
+        3.0        0.3       6.02       0.12
 ENDCOMMON            3
-ENDSUBENT           35
-SUBENT        13336002   19891027   20050909   20050926       1336
-BIB                  2          2
+ENDSUBENT           40
+SUBENT        13336002   20250601   20250822   20250822       1520
+BIB                  3          4
 REACTION   (92-U-238(N,F)ELEM/MASS,CUM,FY)
+HISTORY    (20250417A) Added data for 140Ba, corrected uncertainty
+            for 143Ce
 ERR-ANALYS No information
-ENDBIB               2
+ENDBIB               4
 NOCOMMON             0          0
-DATA                 5         31
+DATA                 5         32
 MASS       ELEMENT    ISOMER     DATA       DATA-ERR
 NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
  83.        35.                    0.117      0.020
@@ -70,12 +77,13 @@ NO-DIM     NO-DIM     NO-DIM     PC/FIS     PC/FIS
 134.        53.                    8.19       0.84
 135.        53.                    6.88       0.90
 139.        56.                    6.51       0.61
+140.        56.                    6.16       0.13
 141.        58.                    5.76       0.61
-143.        58.                    5.45       0.60
+143.        58.                    5.45       0.50
 145.        59.                    4.07       0.38
 147.        60.                    3.50       0.51
 149.        61.                    1.83       0.22
 151.        61.                    0.69       0.08
-ENDDATA             33
-ENDSUBENT           40
+ENDDATA             34
+ENDSUBENT           43
 ENDENTRY             2

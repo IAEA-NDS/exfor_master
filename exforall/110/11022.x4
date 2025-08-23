@@ -1,28 +1,36 @@
-ENTRY            11022   19830909              20050926       0000
-SUBENT        11022001   19830909              20050926       0000
-BIB                  7         10
+ENTRY            11022   20250601   20250822   20250822       1520
+SUBENT        11022001   20250601   20250822   20250822       1520
+BIB                  9         16
 INSTITUTE  (1USALRL)
-REFERENCE  (J,NP,33,680,62)
-AUTHOR     (C.WONG,J.D.ANDERSON,J.W.MC CLURE)
-TITLE      ELASTIC AND INELASTIC SCATTERING OF 14 MEV NEUTRONS
-           FROM THE LITHIUM ISOTOPES.
-METHOD     (TOF) TIME-OF-FLIGHT. RING GEOMETRY
+REFERENCE  (J,NP,33,680,1962)
+           #doi:10.1016/0029-5582(62)90558-8
+AUTHOR     (C.Wong,J.D.Anderson,J.W.McClure)
+TITLE      Elastic and inelastic scattering of 14 MeV neutrons
+           from the lithium isotopes.
+FACILITY   (CCW,1USALRL)
+INC-SOURCE (D-T)
+METHOD     (TOF) Time-of-flight. Ring geometry
 STATUS     (SCSRS)
-HISTORY    (760628T) TRANSLATED FROM SCISRS
-           (820106A) CONVERTED TO REACTION FORMALISM
-           (820518A) DATA REPLACED WITH AUTHORS ORIGINAL VALUES.
-ENDBIB              10
+HISTORY    (19760628T) Translated from SCISRS
+           (19820106A) Converted to reaction formalism
+           (19820518A) Data replaced with authors original values.
+           (20250427A) OS. REACTION coding changed in subs.2,7,
+            added FACILITY, INC-SOURCE, uncertainty information
+            updated, converted to lower and upper case
+ENDBIB              16
 NOCOMMON             0          0
-ENDSUBENT           13
-SUBENT        11022002   19860326              20050926       0000
-BIB                  2          2
-REACTION   ((3-LI-0(N,EL)3-LI-0,,DA)+(3-LI-0(N,INL)3-LI-7,PAR,DA))
-HISTORY    (860326A) REACTION PRODUCTS ADDED.
-ENDBIB               2
-COMMON               2          3
-EN         E-LVL
-MEV        MEV
- 1.4    +01 0.478
+ENDSUBENT           19
+SUBENT        11022002   20250601   20250822   20250822       1520
+BIB                  3          4
+REACTION   (3-LI-0(N,SCT)3-LI-0,PAR,DA)
+ERR-ANALYS (DATA-ERR) No information
+HISTORY    (19860326A) Reaction products added.
+           (20250427A) REACTION sum EL+INL,PAR replaced by SCT,PAR
+ENDBIB               4
+COMMON               3          3
+EN         E-LVL      E-LVL
+MEV        MEV        MEV
+ 1.4    +01 0.         0.478
 ENDCOMMON            3
 DATA                 3         13
 ANG        DATA       DATA-ERR
@@ -41,34 +49,38 @@ ADEG       MB/SR      MB/SR
 107.0        16.8       1.3
 127.8        10.2       1.6
 ENDDATA             15
-ENDSUBENT           26
-SUBENT        11022003   19830909              20050926       0000
-BIB                  2          4
+ENDSUBENT           28
+SUBENT        11022003   20250601   20250822   20250822       1520
+BIB                  5          7
 REACTION   (3-LI-6(N,EL)3-LI-6,,SIG)
-STATUS     (DEP,11022004) INTEGRATED ANGULAR DISTRIBUTION.
-           INTEGRATION PERFORMED BY BATCHELOR AND TOWLE, PHYS.
-            LETT.2,312(1962).
-ENDBIB               4
+ANALYSIS   (INTAD)
+           Integration performed by Batchelor and Towle,
+           Phys.Lett.2,312(1962).
+REL-REF    (N,,R.Batchelor+,J,PL,2,312,1962)
+STATUS     (DEP,11022004) Integrated angular distribution.
+HISTORY    (20250427A) ANALYSIS, REL-REF added
+ENDBIB               7
 NOCOMMON             0          0
 DATA                 2          1
 EN         DATA
 MEV        B
  1.40   +01 7.30   -01
 ENDDATA              3
-ENDSUBENT           12
-SUBENT        11022004   19830909              20050926       0000
-BIB                  3          3
+ENDSUBENT           15
+SUBENT        11022004   20250601   20250822   20250822       1520
+BIB                  4          4
 REACTION   (3-LI-6(N,EL)3-LI-6,,DA)
-CORRECTION CORRECTED FOR MULTIPLE SCATTERING.
-ERR-ANALYS  DATA-ERR GIVEN IS STATISTICAL ERROR ONLY
-ENDBIB               3
+CORRECTION Corrected for multiple scattering.
+ERR-ANALYS (ERR-S)  Error given is statistical error only
+HISTORY    (20250427A) Error heading changed, ERR-ANALYS added
+ENDBIB               4
 COMMON               1          3
 EN
 MEV
  1.4    +01
 ENDCOMMON            3
 DATA                 3         15
-ANG        DATA       DATA-ERR
+ANG        DATA       ERR-S
 ADEG       MB/SR      MB/SR
  18.3       558.8      21.
  22.3       504.       19.
@@ -86,19 +98,20 @@ ADEG       MB/SR      MB/SR
 116.3         7.79      0.7
 127.8         4.0       0.8
 ENDDATA             17
-ENDSUBENT           29
-SUBENT        11022005   19820106              20050926       0000
-BIB                  2          2
+ENDSUBENT           30
+SUBENT        11022005   20250601   20250822   20250822       1520
+BIB                  3          3
 REACTION   (3-LI-6(N,INL)3-LI-6,PAR,DA)
-ERR-ANALYS  DATA-ERR GIVEN IS STATISTICAL ERROR ONLY
-ENDBIB               2
+ERR-ANALYS (ERR-S)  Error given is statistical error only
+HISTORY    (20250427A) Error heading changed, ERR-ANALYS added
+ENDBIB               3
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
  1.4    +01    2.184
 ENDCOMMON            3
 DATA                 3          8
-COS-CM     DATA       DATA-ERR
+COS-CM     DATA-CM    ERR-S
 NO-DIM     MB/SR      MB/SR
  0.36200    1.3    +01    3.
  0.23200    1.1    +01    2.
@@ -109,19 +122,20 @@ NO-DIM     MB/SR      MB/SR
 -0.5810     4.8    +00   12.
 -0.7230     3.9    +00   13.
 ENDDATA             10
-ENDSUBENT           21
-SUBENT        11022006   19820106              20050926       0000
-BIB                  2          2
+ENDSUBENT           22
+SUBENT        11022006   20250601   20250822   20250822       1520
+BIB                  3          3
 REACTION   (3-LI-7(N,INL)3-LI-7,PAR,DA)
-ERR-ANALYS  DATA-ERR GIVEN IS STATISTICAL ERROR ONLY
-ENDBIB               2
+ERR-ANALYS (ERR-S)  Error given is statistical error only
+HISTORY    (20250427A) Error heading changed, ERR-ANALYS added
+ENDBIB               3
 COMMON               2          3
 EN         E-LVL
 MEV        MEV
  1.4    +01    4.63
 ENDCOMMON            3
 DATA                 3         10
-COS-CM     DATA       DATA-ERR
+COS-CM     DATA-CM    ERR-S
 NO-DIM     MB/SR      MB/SR
  0.85000    2.0    +01    7.
  0.79200    1.5    +01    5.
@@ -134,16 +148,18 @@ NO-DIM     MB/SR      MB/SR
 -0.1150     9.9    +00   15.
 -0.3020     8.6    +00   15.
 ENDDATA             12
-ENDSUBENT           23
-SUBENT        11022007   19830909              20050926       0000
-BIB                  1          2
-REACTION   ((3-LI-7(N,EL)3-LI-7,,DA)+
-           (3-LI-7(N,INL)3-LI-7,PAR,DA))
-ENDBIB               2
-COMMON               2          3
-EN         E-LVL
-MEV        MEV
- 1.4    +01 0.478
+ENDSUBENT           24
+SUBENT        11022007   20250601   20250822   20250822       1520
+BIB                  3          4
+REACTION   (3-LI-7(N,SCT)3-LI-7,PAR,DA)
+ERR-ANALYS (DATA-ERR) No information
+HISTORY    (20250427A) REACTION sum EL+INL,PAR replaced by
+            SCT,PAR. ERR-ANALYS added
+ENDBIB               4
+COMMON               3          3
+EN         E-LVL      E-LVL
+MEV        MEV        MEV
+ 1.4    +01 0.         0.478
 ENDCOMMON            3
 DATA                 3         15
 ANG        DATA       DATA-ERR
@@ -164,5 +180,5 @@ ADEG       MB/SR      MB/SR
 127.8         9.75      1.6
 139.3         6.09      2.0
 ENDDATA             17
-ENDSUBENT           28
+ENDSUBENT           30
 ENDENTRY             7

@@ -1,33 +1,38 @@
-ENTRY            11442   19820813              20050926       0000
-SUBENT        11442001   19820813              20050926       0000
-BIB                  7         11
+ENTRY            11442   20250601   20250822   20250822       1520
+SUBENT        11442001   20250601   20250822   20250822       1520
+BIB                  7         15
 INSTITUTE  (1CANCRC)
-REFERENCE  (J,NP/A,147,174,7005)
-           (W,CLARKE,6804)
-AUTHOR     (R.L.CLARKE,P.PERRIN)
-TITLE      ELASTIC AND INELASTIC SCATTERING OF 14.1MEV NEUTRONS
-            FROM FLOURINE.
-ERR-ANALYS (DATA-ERR1) ABSOLUTE ERROR
-           (DATA-ERR2) RELATIVE ERROR
-STATUS     (SCSRS)
-HISTORY    (761016T) TRANSLATED FROM SCISRS
-           (820813A) CONVERTED TO REACTION FORMALISM
-ENDBIB              11
+REFERENCE  (J,NP/A,147,174,1970)
+           #doi:10.1016/0375-9474(70)90519-1
+           (W,CLARKE,1968)
+AUTHOR     (R.L.Clarke,P.Perrin)
+TITLE      Elastic and inelastic scattering of 14.1 MeV neutrons
+            from fluorine.
+INC-SOURCE (D-T)
+ERR-ANALYS (DATA-ERR1) Absolute error
+           (DATA-ERR2) Relative error
+HISTORY    (19761016T) Translated from SCISRS
+           (19820813A) Converted to REACTION formalism
+           (20250507A) OS. REACTION coding in sub.3 changed,
+            added INC-SOURCE, updated STATUS, several minor BIB
+            changes, converted to lower and upper case
+ENDBIB              15
 COMMON               4          3
 EN         EN-RSL     ANG-RSL    DATA-ERR1
 MEV        MEV        ADEG       PER-CENT
  14.1       0.5        12.        25.
 ENDCOMMON            3
-ENDSUBENT           18
-SUBENT        11442002   19820813              20050926       0000
-BIB                  3          3
+ENDSUBENT           22
+SUBENT        11442002   20250601   20250822   20250822       1520
+BIB                  4          4
 REACTION   (9-F-19(N,INL)9-F-19,,DA)
-DETECTOR   (SCIN)     LIQUID SCINTILLATION COUNTER
+DETECTOR   (SCIN)     Liquid scintillation counter
 MONITOR    (9-F-19(N,EL)9-F-19,,SIG)
-ENDBIB               3
+STATUS     (TABLE,,R.L.Clarke+,J,NP/A,147,174,1970) Table 3, p.180
+ENDBIB               4
 NOCOMMON             0          0
 DATA                 3         12
-COS-CM     DATA       DATA-ERR2
+COS-CM     DATA-CM    DATA-ERR2
 NO-DIM     MB/SR      MB/SR
  0.84620    9.2    +00 3.8    +00
  0.73370    5.87   +00 1.8    -01
@@ -42,22 +47,23 @@ NO-DIM     MB/SR      MB/SR
 -0.6947     3.27   +00 7.5    -01
 -0.8018     2.56   +00 7.5    -01
 ENDDATA             14
-ENDSUBENT           22
-SUBENT        11442003   19820813              20050926       0000
-BIB                  3          5
-REACTION   ((9-F-19(N,EL)9-F-19,,DA)+
-           (9-F-19(N,INL)9-F-19,PAR,DA))
-DETECTOR   (SCIN)     LIQUID SCINTILLATION COUNTER
-MONITOR    (6-C-0(N,EL),,SIG)
-            BASED ON CARBON ELASTIC AT 72DEG.
-ENDBIB               5
-COMMON               2          3
-E-LVL      E-LVL
-MEV        MEV
- 0.110      0.197
+ENDSUBENT           23
+SUBENT        11442003   20250601   20250822   20250822       1520
+BIB                  5          6
+REACTION   (9-F-19(N,SCT)9-F-19,PAR,DA)
+DETECTOR   (SCIN)     Liquid scintillation counter
+MONITOR    (6-C-0(N,EL)6-C-0,,SIG)
+            based on carbon elastic at 72 deg.
+STATUS     (TABLE,,R.L.Clarke+,J,NP/A,147,174,1970) Table 2, p.179
+HISTORY    (20250507A) REACTION sum EL+INL,PAR replaced by SCT,PAR
+ENDBIB               6
+COMMON               3          3
+E-LVL      E-LVL      E-LVL
+MEV        MEV        MEV
+ 0.         0.110      0.197
 ENDCOMMON            3
 DATA                 3         13
-COS-CM     DATA       DATA-ERR2
+COS-CM     DATA-CM    DATA-ERR2
 NO-DIM     MB/SR      MB/SR
  0.92050    6.95   +02 6.0    +01
  0.84340    3.29   +02 4.0    +01
@@ -73,18 +79,19 @@ NO-DIM     MB/SR      MB/SR
 -0.6934     1.28   +01 1.6    +00
 -0.8007     1.19   +01 1.5    +00
 ENDDATA             15
-ENDSUBENT           29
-SUBENT        11442004   19820813              20050926       0000
-BIB                  5          5
-REACTION   (9-F-19(N,EL)9-F-19,,DA)
-STATUS     (DEP)
-DETECTOR   (SCIN)     LIQUID SCINTILLATION COUNTER
-MONITOR    (6-C-0(N,EL),,SIG)
-ANALYSIS   SUBTRACTED CALCULATED INELASTIC FROM MEASURED SUM C/S
-ENDBIB               5
+ENDSUBENT           30
+SUBENT        11442004   20250601   20250822   20250822       1520
+BIB                  5          6
+REACTION   (9-F-19(N,EL)9-F-19,,DA,,,DERIV)
+DETECTOR   (SCIN)     Liquid scintillation counter
+MONITOR    (6-C-0(N,EL)6-C-0,,SIG)
+ANALYSIS   Subtracted calculated inelastic from measured sum c/s
+STATUS     (TABLE,,R.L.Clarke+,J,NP/A,147,174,1970) Table 2, p.179
+           (DEP,11442003) Measured cross section
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 3         13
-COS-CM     DATA       DATA-ERR2
+COS-CM     DATA-CM    DATA-ERR2
 NO-DIM     MB/SR      MB/SR
  0.92050    6.94   +02 6.0    +01
  0.84340    3.28   +02 4.0    +01
@@ -100,23 +107,24 @@ NO-DIM     MB/SR      MB/SR
 -0.6934     1.21   +01 1.6    +00
 -0.8007     1.13   +01 1.5    +00
 ENDDATA             15
-ENDSUBENT           25
-SUBENT        11442005   19820813              20050926       0000
-BIB                  5          6
-REACTION   (9-F-19(N,INL)9-F-19,PAR,DA)
-STATUS     (DEP)
-DETECTOR   (SCIN)     LIQUID SCINTILLATION COUNTER
+ENDSUBENT           26
+SUBENT        11442005   20250601   20250822   20250822       1520
+BIB                  5          7
+REACTION   (9-F-19(N,INL)9-F-19,PAR,DA,,,DERIV)
+DETECTOR   (SCIN)     Liquid scintillation counter
 MONITOR    (9-F-19(N,EL)9-F-19,,SIG)
-ANALYSIS   SUBTRACTED CALCULATED CONTRIBUTION FROM 1.35 AND
-            1.46MEV LEVELS FROM MEASURED SUM C/S.
-ENDBIB               6
+ANALYSIS   Subtracted calculated contribution from 1.35 and
+            1.46 MeV levels from measured sum c/s.
+STATUS     (TABLE,,R.L.Clarke+,J,NP/A,147,174,1970) Table 3, p.180
+           (DEP,11442002) Measured cross section
+ENDBIB               7
 COMMON               1          3
 E-LVL
 MEV
     1.556
 ENDCOMMON            3
 DATA                 3         12
-COS-CM     DATA       DATA-ERR2
+COS-CM     DATA-CM    DATA-ERR2
 NO-DIM     MB/SR      MB/SR
  0.84620    8.7    +00 3.8    +00
  0.73370    5.37   +00 1.80   +00
@@ -131,5 +139,5 @@ NO-DIM     MB/SR      MB/SR
 -0.6947     2.79   +00 7.5    -01
 -0.8018     2.03   +00 7.5    -01
 ENDDATA             14
-ENDSUBENT           29
+ENDSUBENT           30
 ENDENTRY             5

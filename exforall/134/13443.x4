@@ -1,26 +1,29 @@
-ENTRY            13443   20120225   20120921   20120911       1379
-SUBENT        13443001   20120225   20120921   20120911       1379
-BIB                  9         13
+ENTRY            13443   20250601   20250822   20250822       1520
+SUBENT        13443001   20250601   20250822   20250822       1520
+BIB                  9         16
 TITLE      A compilation of yields from neutron-induced fission
             of 232Th, 235U, 236U, 237Np, 238U, and 239Pu
             measured radiochemically at Los Alamos
 AUTHOR     (G.P.Ford, A.E.Norris)
 INSTITUTE  (1USALAS)
-REFERENCE  (R,LA-6129,197602) Data compilation
-           (R,LA-1997,195602)
+REFERENCE  (R,LA-6129,1976) Data compilation
+           (R,LA-1997,1956)
 FACILITY   (VDG,1USALAS) LANL short tank VdG and vertical VdG
-METHOD     (RCHEM)
+METHOD     (CHSEP)
 ERR-ANALYS (ERR-S) Statistical uncertainty
-STATUS     (TABLE) Data taken from LA-6129
+STATUS     (TABLE,,G.P.Ford+,R,LA-6129,1976)
+            Data taken from LA-6129
 HISTORY    (19900111C) VM
            (20120225A) On. DATA-ERR -> ERR-S
-ENDBIB              13
+           (20250529A) OS. REACTION and MONITOR corrections in
+            sub.4
+ENDBIB              16
 COMMON               1          3
 EN-DUM-DN
 EV
  0.0253
 ENDCOMMON            3
-ENDSUBENT           20
+ENDSUBENT           23
 SUBENT        13443002   20120225   20120921   20120911       1379
 BIB                  3          6
 REACTION   (((92-U-235(N,F)48-CD-115-G,CUM,FY)/
@@ -71,20 +74,22 @@ PER-CENT   PC/FIS     NO-DIM     PC/FIS
  1.9
 ENDDATA             16
 ENDSUBENT           32
-SUBENT        13443004   20120225   20120921   20120911       1379
-BIB                  5         11
+SUBENT        13443004   20250601   20250822   20250822       1520
+BIB                  5         13
 REACTION  1(((92-U-238(N,F)ELEM/MASS,CUM,FY)/
-           (92-U-238(N,F)42-MO-99,CUM,FY))/
-           ((92-U-238(N,F)ELEM/MASS,CUM,FY,,MXW)/
-           (92-U-238(N,F)42-MO-99,CUM,FY,,MXW)))
+           (92-U-238(N,F)42-MO-99,CUM,FY))//
+           ((92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)/
+           (92-U-235(N,F)42-MO-99,CUM,FY,,MXW)))
           2(92-U-238(N,F)ELEM/MASS,CUM,FY)
 RESULT    1(RVAL)
 INC-SOURCE (D-T)
 MONITOR   2((MONIT1)(92-U-238(N,F)42-MO-99,CUM,FY)/
-           (92-U-238(N,F)42-MO-99,CUM,FY,,MXW))
-           ((MONIT2)92-U-238(N,F)ELEM/MASS,CUM,FY,,MXW)
+           (92-U-235(N,F)42-MO-99,CUM,FY,,MXW))
+           ((MONIT2)92-U-235(N,F)ELEM/MASS,CUM,FY,,MXW)
 HISTORY    (20120225A) On. MONITOR (MONIT1) corrected.
-ENDBIB              11
+           (20250529A) REACTION and MONIT1: SF1 in denominator
+            changed from U-238 to U-235
+ENDBIB              13
 COMMON               3          3
 EN-NM      EN-RSL     MONIT1
 MEV        MEV        NO-DIM
@@ -100,5 +105,5 @@ PC/FIS
  48.        115.        0.        16.00
 
 ENDDATA              8
-ENDSUBENT           28
+ENDSUBENT           30
 ENDENTRY             4

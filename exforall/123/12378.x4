@@ -1,28 +1,40 @@
-ENTRY            12378   19860815              20050926       0000
-SUBENT        12378001   19860815              20050926       0000
-BIB                 10         14
+ENTRY            12378   20250601   20250822   20250822       1520
+SUBENT        12378001   20250601   20250822   20250822       1520
+BIB                 10         24
 INSTITUTE  (1USALAS)
-REFERENCE  (J,PR,109,2063,58)
-           (R,LA-2177,59)
-AUTHOR     (L.CRANBERG,J.S.LEVIN)
-TITLE      INELASTIC NEUTRON SCATTERING BY U-238.
-FACILITY   (VDG)
-INC-SOURCE (P-LI7) 550 KEV NEUTRONS.
+REFERENCE  (J,PR,109,2063,1958)
+           #doi:10.1103/PhysRev.109.2063
+           (R,LA-2177,1959)
+AUTHOR     (L.Cranberg,J.S.Levin)
+TITLE      Inelastic neutron scattering by U-238.
+FACILITY   (VDG,1USALAS)
+INC-SOURCE (P-LI7) 550 keV neutrons.
            (P-T)
-DETECTOR   (SCIN) BIASED PLASTIC SCINTILLATOR.
+DETECTOR   (SCIN) Biased plastic scintillator.
 MONITOR    (1-H-1(N,EL)1-H-1,,DA)
-STATUS     (SCSRS)
-HISTORY    (760804T) TRANSLATED FROM SCISRS
-           (820519A) CONVERTED TO REACTION FORMALISM
-           (860815A) BIB UPDATE.
-ENDBIB              14
+ERR-ANALYS (DATA-ERR) Uncertainty contributions considered are
+            - effect of angular error
+            - normalization uncertainty
+            - geometrical errors
+            - flux uniformity
+            - uncertainty in attenuation and multiple scattering
+               correction
+HISTORY    (19760804T) Translated from SCISRS
+           (19820519A) Converted to reaction formalism
+           (19860815A) BIB update.
+           (20250529A) OS. REACTION coding in subs.2,3 changed,
+            STATUS corrected, ERR-ANALYS added, converted to lower
+            and upper case, minor BIB changes
+ENDBIB              24
 NOCOMMON             0          0
-ENDSUBENT           17
-SUBENT        12378002   19860815              20050926       0000
-BIB                  2          2
-REACTION   ((92-U-0(N,EL)92-U-0,,DA)+(92-U-0(N,INL),PAR,DA))
-CORRECTION NOT CORRECTED FOR MULTIPLE SCATTERING (ESTIMATED SMALL)
-ENDBIB               2
+ENDSUBENT           27
+SUBENT        12378002   20250601   20250822   20250822       1520
+BIB                  4          4
+REACTION   (92-U-0(N,SCT)92-U-0,PAR,DA)
+CORRECTION Not corrected for multiple scattering (estimated small)
+STATUS     (TABLE) Table VIII, LA-2177
+HISTORY    (20250529A) REACTION coding changed
+ENDBIB               4
 COMMON               5          3
 EN         EN-RSL     E-DGD-MAX  E-DGD-ERR  ANG-RSL
 MEV        MEV        MEV        MEV        ADEG
@@ -47,12 +59,14 @@ NO-DIM     MB/SR      MB/SR
 -0.9100     4.03   +02
 -0.9400     3.89   +02
 ENDDATA             17
-ENDSUBENT           28
-SUBENT        12378003   19860815              20050926       0000
-BIB                  2          2
-REACTION   ((92-U-0(N,EL)92-U-0,,DA)+(92-U-0(N,INL),PAR,DA))
-CORRECTION NOT CORRECTED FOR MULTIPLE SCATTERING (ESTIMATED SMALL)
-ENDBIB               2
+ENDSUBENT           30
+SUBENT        12378003   20250601   20250822   20250822       1520
+BIB                  4          4
+REACTION   (92-U-0(N,SCT)92-U-0,PAR,DA)
+CORRECTION Not corrected for multiple scattering (estimated small)
+STATUS     (TABLE) Table X, LA-2177
+HISTORY    (20250529A) REACTION coding changed
+ENDBIB               4
 COMMON               5          3
 EN         EN-RSL     E-DGD-MAX  E-DGD-ERR  ANG-RSL
 MEV        MEV        MEV        MEV        ADEG
@@ -77,13 +91,16 @@ NO-DIM     MB/SR      MB/SR
 -0.8570     6.0    +01 2.     +00
 -0.9340     7.7    +01
 ENDDATA             17
-ENDSUBENT           28
-SUBENT        12378004   19860815              20050926       0000
-BIB                  3          3
+ENDSUBENT           30
+SUBENT        12378004   20250601   20250822   20250822       1520
+BIB                  5          6
 REACTION   (92-U-0(N,EL)92-U-0,,SIG)
-STATUS     (DEP) INTEGRATED ANGULAR DISTRIBUTION
+STATUS     (TABLE,,L.Cranberg+,J,PR,109,2063,1958)
+            Table II, p.2068, PR,109,2063,1958
+ANALYSIS   (INTAD)
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
-ENDBIB               3
+HISTORY    (20250529A) STATUS changed, ANALYSIS added
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 4          2
 EN         EN-RSL     DATA       DATA-ERR
@@ -91,24 +108,30 @@ MEV        MEV        B          B
  5.5    -01 1.     -02 6.3    +00 3.     -01
  2.00   +00 4.     -02 3.9    +00 2.     -01
 ENDDATA              4
-ENDSUBENT           12
-SUBENT        12378005   19820519              20050926       0000
-BIB                  2          2
+ENDSUBENT           15
+SUBENT        12378005   20250601   20250822   20250822       1520
+BIB                  4          5
 REACTION   (92-U-238(N,INL)92-U-238,,SIG)
-STATUS     (DEP) INTEGRATED ANGULAR DISTRIBUTION.
-ENDBIB               2
+STATUS     (TABLE,,L.Cranberg+,J,PR,109,2063,1958)
+            Table II, p.2068, PR,109,2063,1958
+ANALYSIS   (INTAD)
+HISTORY    (20250529A) STATUS changed, ANALYSIS added
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 4          1
 EN         EN-RSL     DATA       DATA-ERR
 MEV        MEV        B          B
  5.5    -01 1.     -02 1.7    +00 2.     -01
 ENDDATA              3
-ENDSUBENT           10
-SUBENT        12378006   19820519              20050926       0000
-BIB                  2          2
+ENDSUBENT           13
+SUBENT        12378006   20250601   20250822   20250822       1520
+BIB                  4          5
 REACTION   (92-U-238(N,INL)92-U-238,PAR,SIG)
-STATUS     (DEP) INTEGRATED ANGULAR DISTRIBUTION.
-ENDBIB               2
+STATUS     (TABLE,,L.Cranberg+,J,PR,109,2063,1958)
+            Table II, p.2068, PR,109,2063,1958
+ANALYSIS   (INTAD)
+HISTORY    (20250529A) STATUS changed, ANALYSIS added
+ENDBIB               5
 NOCOMMON             0          0
 DATA                 5          2
 EN         EN-RSL     E-MIN      DATA       DATA-ERR
@@ -116,11 +139,13 @@ MEV        MEV        MEV        B          B
  1.00   +00 2.4    -02 2.50   -01 2.0    +00 4.     -01
  2.00   +00 4.0    -02 5.00   -01 2.4    +00 2.     -01
 ENDDATA              4
-ENDSUBENT           11
-SUBENT        12378007   19860815              20050926       0000
-BIB                  1          1
+ENDSUBENT           14
+SUBENT        12378007   20250601   20250822   20250822       1520
+BIB                  2          3
 REACTION   (92-U-238(N,INL)92-U-238,PAR,DA)
-ENDBIB               1
+STATUS     (TABLE,,L.Cranberg+,J,PR,109,2063,1958)
+            Table I, p.2065, PR,109,2063,1958
+ENDBIB               3
 COMMON               2          3
 ANG        ANG-RSL
 ADEG       ADEG
@@ -143,11 +168,13 @@ KEV        KEV        KEV        KEV        B/SR       B/SR
 1060.       30.       1890.       30.        0.035      0.004
 1260.       40.       1890.       30.        0.008      0.004
 ENDDATA             15
-ENDSUBENT           25
-SUBENT        12378008   19860815              20050926       0000
-BIB                  1          1
+ENDSUBENT           27
+SUBENT        12378008   20250601   20250822   20250822       1520
+BIB                  2          3
 REACTION   (92-U-238(N,INL)92-U-238,PAR,DA)
-ENDBIB               1
+STATUS     (TABLE,,L.Cranberg+,J,PR,109,2063,1958)
+            Table I, p.2065, PR,109,2063,1958
+ENDBIB               3
 COMMON               4          3
 ANG        ANG-RSL    EN         EN-RSL
 ADEG       ADEG       KEV        KEV
@@ -159,11 +186,12 @@ KEV        KEV        B/SR       B/SR
  980.      1260.       0.10       0.01
 1400.      1750.       0.087      0.008
 ENDDATA              4
-ENDSUBENT           14
-SUBENT        12378009   19860815              20050926       0000
-BIB                  1          1
+ENDSUBENT           16
+SUBENT        12378009   20250601   20250822   20250822       1520
+BIB                  2          2
 REACTION   (92-U-238(N,INL)92-U-238,PAR,DA)
-ENDBIB               1
+STATUS     (SCSRS)
+ENDBIB               2
 COMMON               5          3
 EN         EN-RSL     E-LVL      E-LVL-ERR  ANG-RSL
 MEV        MEV        KEV        KEV        ADEG
@@ -179,5 +207,5 @@ NO-DIM     MB/SR      MB/SR
 -0.8200     9.2    +01 2.3    +01
 -0.9200     8.1    +01 2.4    +01
 ENDDATA              8
-ENDSUBENT           18
+ENDSUBENT           19
 ENDENTRY             9
