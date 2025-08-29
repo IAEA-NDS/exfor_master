@@ -1,39 +1,55 @@
-ENTRY            14130   20070411   20070719   20070713       1343
-SUBENT        14130001   20070411   20070719   20070713       1343
-BIB                 11         21
-INSTITUTE  (1USALAS)
-REFERENCE  (J,PR/C,75,034610,2007)
-AUTHOR     (F.Tovesson,T.S.Hill)
+ENTRY            14130   20250629   20250828   20250828       1522
+SUBENT        14130001   20250629   20250828   20250828       1522
+BIB                 11         22
 TITLE      Neutron induced fission cross section of 237Np from
             100 keV to 200 MeV
-FACILITY   (ACCEL,1USALAS) LANSCE accelerator at Los Alamos
-INC-SPECT  WNR center, spallation target, 90-degree left flight
-            path, 9.84 meters
-DETECTOR   (FISCH) Event counting was achieved by detecting
-            fission fragments in a gas-filled parallel-plate
-            ionization chamber
-SAMPLE     For this experiment the following samples were mounted:
-            237Np (5.6 mg), 238U (11.4 mg), 235U (15.5 mg), and
-            a blank backing foil. The sample deposits were
-            13.3 cm in diameter.
-METHOD     (TOF)
-MONITOR    The 235U sample was used for neutron flux monitoring,
-            the 238U sample for measuring beam-related background
-            events, and the blank foil to monitor neutron-induced
-            charged-particle emission from the sample backings.
+AUTHOR     (F.Tovesson, T.S.Hill)
+INSTITUTE  (1USALAS)
+REFERENCE  (J,PR/C,75,034610,2007)
+FACILITY   (LINAC,1USALAS) LANSCE accelerator
+INC-SOURCE (SPALL) 800 MeV protons on cylindrical W target
+            (7 cm x 3 cm radius)
+DETECTOR   (FISCH) gas-filled parallel-plate ionization chamber
+SAMPLE     Samples deposits (13.3 cm in diameter) typically
+            deposited on stainless-steel backing foils:
+            . 237Np (5.6 mg)
+            . 235U (15.5 mg) for monitoring neutron flux
+            . 238U (11.4 mg) for measuring beam-related
+              background events
+            . A blank foil to monitor neutron-induced
+              charged-particle emission from the sample backings
+METHOD     (TOF) Fission detector located 9.84 m from the central
+            neutron production point
+STATUS     (APRVD) Proofread by Fredrik Tovesson (2025-06-30)
 HISTORY    (20070411C) DR
-ENDBIB              21
+           (20250629A) On+VD. Recompiled.
+ENDBIB              22
 NOCOMMON             0          0
-ENDSUBENT           24
-SUBENT        14130002   20070411   20070719   20070713       1343
-BIB                  3          3
+ENDSUBENT           25
+SUBENT        14130002   20250629   20250828   20250828       1522
+BIB                  7         14
 REACTION   ((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))
-ERR-ANALYS (ERR-T) Total uncertainties
-STATUS     Data received from F. Tovesson on April 2007
-ENDBIB               3
-NOCOMMON             0          0
+MONITOR    ((93-NP-237(N,F),,SIG)/(92-U-235(N,F),,SIG))
+            Normalized to ENDF/B-VI ratio at 14.8 MeV
+MONIT-REF  (,,3,ENDF/B-VI.8,,2001)
+ERR-ANALYS (ERR-1) Uncertainty excluding 3% normalization
+            uncertainty
+           (ERR-2) Normalization uncertainty (3%)
+COMMENT    Fredrik Tovesson (2025-06-27):
+            The uncertainty listed in EXFOR does not include a 3%
+           systematic uncertainty associated with the
+           normalization of the cross section ratio
+STATUS     (TABLE,,F.Tovesson,J,PR/C,75,034610,2007) Fig.9
+            Data received from F.Tovesson on April 2007
+HISTORY    (20250629A) On+VD. ERR-T -> ERR-1. ERR-2=3% added.
+ENDBIB              14
+COMMON               2          3
+EN-NRM     ERR-2
+MEV        PER-CENT
+ 14.8       3.
+ENDCOMMON            3
 DATA                 3        660
-EN         DATA       ERR-T
+EN         DATA       ERR-1
 EV         NO-DIM     NO-DIM
  1.0058E+05 0.019641  0.0149375
  1.0174E+05 0.0418093 0.0157872
@@ -696,5 +712,5 @@ EV         NO-DIM     NO-DIM
  1.9611E+08 1.04133   0.027667
  1.9838E+08 1.03323   0.0278159
 ENDDATA            662
-ENDSUBENT          670
+ENDSUBENT          685
 ENDENTRY             2
