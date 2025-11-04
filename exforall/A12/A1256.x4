@@ -1,43 +1,74 @@
-ENTRY            A1256   19990322   19990505   20050926       0000
-SUBENT        A1256001   19990322   19990505   20050926       0000
-BIB                  7         11
-INSTITUTE  (1USADKE,1USATNL,1USANCA)
-REFERENCE  (J,PRL,53,(14),1325,198410)
-AUTHOR     (H.R.WELLER,P.COLBY,N.R.ROBERSON,D.R.TILLEY)
+ENTRY            A1256   20250904   20251103   20251103       A124
+SUBENT        A1256001   20250904   20251103   20251103       A124
+BIB                  9         15
 TITLE      Tensor-polarized-deuteron capture on deuterium and the
-           d state of 4He
+           D state of 4He
+AUTHOR     (H.R.Weller,P.Colby,N.R.Roberson,D.R.Tilley)
+REFERENCE  (J,PRL,53,1325,1984)
+INSTITUTE  (1USADKE,1USATNL,1USANCA)
+FACILITY   (VDGT,1USATNL)
 SAMPLE     A target thickness of 1.7 mg/sm2 was obtained by
-           operating the gas cell at the pressure of 270 kpa
-           absolute. Tantalum foil having a thickness 2.5e-3 mm
+           operating the gas cell at the pressure of 270 kPa
+           absolute. Tantalum foil having a thickness 2.5E-3 mm.
 DETECTOR   (NAICR) Two 25.4 x 25.4 cm gamma-ray spectrometers
+ERR-ANALYS (ERR-S) Statistical error
 HISTORY    (19871110C) Compilation produced by Arzamas RFNC-VNIIEF
            (19990315U)CNPD: corrected 4-dig. year and lower cases.
-ENDBIB              11
-NOCOMMON
-ENDSUBENT           14
-SUBENT        A1256002   19990322   19990505   20050926       0000
-BIB                  4          6
-REACTION   (1-H-2(D,G)2-HE-4,PAR,DA,,,EXP)
-MONIT-REF  (A1032001,MEYERHOF+,J,NP/A,131,(3),489,196907)
-ERR-ANALYS (ANG-ERR) Digitizing error
-           (DATA-ERR) Statistical error from graphic bars and
-           digitizing
-STATUS     (CURVE) fig 2
+           (20250904A) SD: Corrections in all Subents.
+           Subent 003 added.
+ENDBIB              15
+COMMON               2          3
+EN         E-LVL
+MEV        MEV
+        9.7         0.
+ENDCOMMON            3
+ENDSUBENT           22
+SUBENT        A1256002   20250904   20251103   20251103       A124
+BIB                  5          6
+REACTION   (1-H-2(D,G)2-HE-4,PAR,DA)
+MONITOR    (1-H-2(D,G)2-HE-4,,DA)
+MONIT-REF  (A1032003,W.E.Meyerhof+,J,NP/A,131,489,1969)
+STATUS     (CURVE,,H.R.Weller+,J,PRL,53,1325,1984) Figure 2
+HISTORY    (20250904A) SD: SF9=EXP deleted from REACTION code.
+           STATUS updated. ANG-ERR -> ANG-ERR-D; DATA-ERR -> ERR-S
 ENDBIB               6
-COMMON               3          3
-EN         ANG-ERR    E-LVL
-MEV        ADEG       MEV
-  9.7       0.5        0.
+COMMON               1          3
+ANG-ERR-D
+ADEG
+        0.5
 ENDCOMMON            3
 DATA                 3          6
-ANG-CM     DATA-CM    DATA-ERR
+ANG-CM     DATA-CM    ERR-S
 ADEG       MB/SR      MB/SR
-    51.36   0.1405E-04 0.7176E-06
-    72.7    0.5569E-05 0.5980E-06
-   101.8    0.3552E-05 0.8372E-06
-   112.7    0.6070E-05 0.5980E-06
-   132.4    0.1362E-04 0.7176E-06
-   141.4    0.1422E-04 0.5980E-06
+       51.4  1.405E-05  7.176E-07
+       72.7  5.569E-06  5.980E-07
+      101.8  3.552E-06  8.372E-07
+      112.7  6.070E-06  5.980E-07
+      132.4  1.362E-05  7.176E-07
+      141.4  1.422E-05  5.980E-07
 ENDDATA              8
 ENDSUBENT           23
-ENDENTRY             2
+SUBENT        A1256003   20250904   20251103   20251103       A124
+BIB                  4          4
+REACTION   (1-H-2(D,G)2-HE-4,20/PAR,POL/DA,,TAP)
+INC-SOURCE (POLIS) Lamb-shift polarized-ion source
+STATUS     (CURVE,,H.R.Weller+,J,PRL,53,1325,1984) Figure 2
+HISTORY    (20250904C) SD:
+ENDBIB               4
+COMMON               2          3
+ANG-ERR-D  ERR-DIG
+ADEG       NO-DIM
+        0.2     0.0005
+ENDCOMMON            3
+DATA                 3          6
+ANG-CM     DATA       ERR-S
+ADEG       NO-DIM     NO-DIM
+       51.9    -0.2118     0.0232
+       73.0    -0.2708     0.0449
+      103.0    -0.2292     0.0588
+      112.7    -0.1998     0.0341
+      132.5    -0.2000     0.0294
+      142.1    -0.2171     0.0341
+ENDDATA              8
+ENDSUBENT           21
+ENDENTRY             3
