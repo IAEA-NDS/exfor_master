@@ -1,43 +1,54 @@
-ENTRY            F0118   20200507   20200629   20200624       F077
-SUBENT        F0118001   20200507   20200629   20200624       F077
-BIB                 10         18
+ENTRY            F0118   20250930   20251126   20251126       F102
+SUBENT        F0118001   20250930   20251126   20251126       F102
+BIB                 11         32
 TITLE      Excited states in 10B
 AUTHOR     (J.B.Marion)
 INSTITUTE  (1USACAL)
 REFERENCE  (J,PR,103,713,1956)
 FACILITY   (VDG,1USACAL) Electrostatic generator. No information
-           of the facility in the article, probably, Van de Graaf
+           of the facility in the article, probably, Van de Graaff
 SAMPLE     The target was beryllium metal evaporated on to a
            tungsten backing and was approximately 5-keV thick to
            2-MeV protons.
-DETECTOR   (BF3)Neutron detector a paraffin-moderated BF-3 counter
+MONITOR    (3-LI-7(P,N)4-BE-7,,SIG)
+           An absolute cross section for the Be9(p,n)B9 reaction
+           was determined by comparing the yield from a weighed
+           beryllium target with that from a weighed lithium
+           target at bombarding energies such that the neutrons
+           from both the Be9(p,n) and Li7(p,n) reactions had an
+           energy of 0.4 MeV; the cross section for the
+           Li7(p,n)Be7 reaction measured by Taschek (see
+           MONIT-REF) was then used.
+MONIT-REF  (F0023001,R.Taschek+,J,PR,74,373,1948)
+DETECTOR   (BF3) Neutron detector was a paraffin-moderated counter
            (NAICR) The gamma-ray detector was a NaI(Tl) crystal
            1.5 in. in diameter and 1.5 in. in length.
-MONITOR    (3-LI-7(P,N)4-BE-7,,SIG)
-MONIT-REF  (F0023001,R.Taschek+,J,PR,74,373,1948)
+ERR-ANALYS (DATA-ERR,15.,20.) The cross section for the Be9(p,n)B9
+           reaction is correct to within 15-20% at
+           E = 2.5 MeV (see MONIT).
 HISTORY    (19840517C)
            (19990407U) CNPD: corrected 4-dig. year and lower cases
-           (20200507A) SD: Corrections in all Subents.
-           MONITOR added.
-ENDBIB              18
-COMMON               2          3
-ANG-RSL    EN-NRM
-ADEG       MEV
-  5.0        0.4
-ENDCOMMON            3
-ENDSUBENT           25
-SUBENT        F0118002   20200507   20200629   20200624       F077
-BIB                  3          5
+           (20200507A) SD: Corrections in all Subents. MONITOR
+           added.
+           (20250930A) SD: Corrections in all Subents. ANG-RSL
+           moved to appropriated Subents. EN-NRM deleted (see
+           MONITOR and ERR-ANALYS).
+ENDBIB              32
+NOCOMMON             0          0
+ENDSUBENT           35
+SUBENT        F0118002   20250930   20251126   20251126       F102
+BIB                  3          6
 REACTION   (4-BE-9(P,N)5-B-9,,DA)
-STATUS     (CURVE) Fig 1 from Phys.Rev.,103(1956)713
+STATUS     (CURVE,,J.B.Marion,J,PR,103,713,1956) Figure 1
 HISTORY    (20200507A) SD: SF9=EXP deleted from REACTION code.
            EN-ERR -> EN-ERR-DIG; DATA-ERR -> ERR-DIG.
            ERR-ANALYS deleted. STATUS updated.
-ENDBIB               5
-COMMON               2          3
-EN-ERR-DIG ERR-DIG
-MEV        MB/SR
- 0.01       0.1
+           (20250930U) SD: STATUS updated. ANG-RSL added.
+ENDBIB               6
+COMMON               3          3
+ANG-RSL    EN-ERR-DIG ERR-DIG
+ADEG       MEV        MB/SR
+        5.        0.01        0.1
 ENDCOMMON            3
 DATA                 3         66
 ANG        EN         DATA
@@ -109,19 +120,20 @@ ADEG       MEV        MB/SR
         90.       4.88       19.0
         90.       4.97       18.2
 ENDDATA             68
-ENDSUBENT           82
-SUBENT        F0118003   20200507   20200629   20200624       F077
-BIB                  3          5
+ENDSUBENT           83
+SUBENT        F0118003   20250930   20251126   20251126       F102
+BIB                  3          6
 REACTION   (4-BE-9(P,N)5-B-9,,DA)
-STATUS     (CURVE) Fig. 2 from Phys.Rev.,103(1956)713
+STATUS     (CURVE,,J.B.Marion,J,PR,103,713,1956) Figure 2
 HISTORY    (20200507A) SD: SF9=EXP deleted from REACTION code.
            ANG-ERR -> ANG-ERR-D; DATA-ERR -> ERR-DIG.
            ERR-ANALYS deleted. STATUS updated.
-ENDBIB               5
-COMMON               2          3
-ANG-ERR-D  ERR-DIG
-ADEG       MB/SR
- 0.5        0.07
+           (20250930A) SD: STATUS updated. ANG-RSL added.
+ENDBIB               6
+COMMON               3          3
+ANG-RSL    ANG-ERR-D  ERR-DIG
+ADEG       ADEG       MB/SR
+      5.       0.5        0.07
 ENDCOMMON            3
 DATA                 3         79
 EN         ANG-CM     DATA-CM
@@ -206,13 +218,16 @@ MEV        ADEG       MB/SR
        4.56      135.9      21.66
        4.56      145.1      22.27
 ENDDATA             81
-ENDSUBENT           95
-SUBENT        F0118004   20200507   20200629   20200624       F077
-BIB                  3          3
+ENDSUBENT           96
+SUBENT        F0118004   20250930   20251126   20251126       F102
+BIB                  4          6
 REACTION   (4-BE-9(P,N)5-B-9,,SIG)
-STATUS     (TABLE) Tbl. I from Phys.Rev.,103(1956)713
+ANALYSIS   (INTAD)
+STATUS     (TABLE,,J.B.Marion,J,PR,103,713,1956) Table I
+           (DEP,F0118003) Angular distributions
 HISTORY    (20200507A) SD: SF9=EXP deleted from REACTION code.
-ENDBIB               3
+           (20250930U) SD: STATUS updated.
+ENDBIB               6
 NOCOMMON             0          0
 DATA                 2          5
 EN         DATA
@@ -223,24 +238,24 @@ MEV        MB
      3.56     126.
      4.56     141.
 ENDDATA              7
-ENDSUBENT           15
-SUBENT        F0118005   20200507   20200629   20200624       F077
+ENDSUBENT           18
+SUBENT        F0118005   20250930   20251126   20251126       F102
 BIB                  4         10
 REACTION   (4-BE-9(P,N)5-B-9,,SIG)
 ANALYSIS   The experimental points were obtained from excitation
-           cuves taken at angles of 0,45,90 and 120 degr. (in each
-           case ang.resolution was +/- 25.degr.)
-STATUS     (CURVE) Fig. 4 from Phys.Rev.,103(1956)713
+           curves taken at angles of 0,45,90 and 120 degr.
+STATUS     (CURVE,,J.B.Marion,J,PR,103,713,1956) Figure 4
            (DEP,F0118004) The absolute cr.sect. scale was obtained
-            by normalizing the 2.56 MeV peak to 101.mb.
+            by normalizing the 2.56 MeV peak to 101 mb.
 HISTORY    (20200507A) SD: SF9=EXP deleted from REACTION code.
            EN-ERR -> EN-ERR-DIG; DATA-ERR -> ERR-DIG.
            ERR-ANALYS deleted. STATUS updated.
+           (20250930A) SD: STATUS updated.
 ENDBIB              10
 COMMON               2          3
 EN-ERR-DIG ERR-DIG
 MEV        MB
- 0.002      0.6
+      0.002      0.6
 ENDCOMMON            3
 DATA                 2         25
 EN         DATA
