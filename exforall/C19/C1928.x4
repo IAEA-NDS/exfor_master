@@ -1,11 +1,12 @@
-ENTRY            C1928   20240611   20241027   20241027       C239
-SUBENT        C1928001   20240611   20241027   20241027       C239
-BIB                 10         23
+ENTRY            C1928   20260120   20260312   20260312       C253
+SUBENT        C1928001   20260120   20260312   20260312       C253
+BIB                 10         26
 TITLE      Measurements and calculations of neutron spectra from
            35 MeV deuterons on thick lithium for the FMIT facility
 AUTHOR     (D.L.Johnson,F.M.Mann,J.W.Watson,J.Ullmann,W.G.Wyckoff)
-REFERENCE  (J,JNM,85-86,467,1979)
+REFERENCE  (J,JNM,85-86,467,1979) Main reference.
            #doi:10.1016/0022-3115(79)90532-4
+           (S,BNL-NCS-51245,99,1980) Limited tabulated data.
 INSTITUTE  (1USAHED,1USADAV)
 FACILITY   (CYCLO,1USADAV) Measurements were performed using the
            isochronous cyclotron of the Crocker Nuclear
@@ -24,13 +25,15 @@ HISTORY    (20120731C) Compiled by S.H.
            (20140418U) SD: volume of the ref. corrected.
            (20240611A) BP: Updated entry, corrected second update
                       time stamp, added doi and sub.3, ERR-ANALYS.
-ENDBIB              23
+           (20260119A) BP: Added BNL-NCS-51245 report REFERENCE,
+                      updated subentry 3 using the report data.
+ENDBIB              26
 COMMON               1          3
 EN
 MEV
 35.0
 ENDCOMMON            3
-ENDSUBENT           30
+ENDSUBENT           33
 SUBENT        C1928002   20240611   20241027   20241027       C239
 BIB                  3          7
 REACTION   (3-LI-0(D,X)0-NN-1,,PY/DA/DE,,TT/CH)
@@ -550,27 +553,36 @@ ADEG       MEV        P/MEVMUCSR
       150.0       27.9   1.69E+05
 ENDDATA            501
 ENDSUBENT          517
-SUBENT        C1928003   20240611   20241027   20241027       C239
-BIB                  4          6
+SUBENT        C1928003   20260120   20260312   20260312       C253
+BIB                  6         13
 REACTION   (3-LI-0(D,X)0-NN-1,,PY/DA,,TT/CH)
 REL-REF    (A,C1832009,M.J.Saltmarsh+,J,NIM,145,81,1977)
+ANALYSIS   The data were integrated for neutron energies greater
+           than 1 MeV to give an angular distribution of the
+           yield. Spectral data below ~1.5 MeV had poor accuracy.
+MISC-COL   (MISC) Average neutron energy.
 STATUS     (DEP,C1928002)
-           (CURVE,,D.L.Johnson+,J,JNM,85-86,467,1979)
-           Fig. 3, page 469 of J,JNM,85-86,470,1979.
+           (TABLE,,D.L.Johnson+,S,BNL-NCS-51245,99,1980) Table - I
+           0,4,12,20,30,45,70 degree data from the report.
+           (CURVE,,D.L.Johnson+,J,JNM,85-86,467,1979) Fig. - 3
+           Uncertainties, 8 degree data were digitized from JNM.
 HISTORY    (20240611C) BP
-ENDBIB               6
+           (20260119A) BP: updated subentry using the report data.
+ENDBIB              13
 NOCOMMON             0          0
-DATA                 3          8
-ANG        DATA       DATA-ERR
-ADEG       PRD/MUC/SR PRD/MUC/SR
-      0.269  2.361E+11  3.513E+10
-      3.952  2.133E+11  3.421E+10
+DATA                 4         10
+ANG        DATA       DATA-ERR   MISC
+ADEG       PRD/MUC/SR PRD/MUC/SR MEV
+         0.   2.43E+11  3.513E+10      12.56
+         4.   2.08E+11  3.421E+10      13.09
       8.037  1.672E+11  2.438E+10
-     12.136  1.240E+11  1.949E+10
-     20.232  7.261E+10  1.168E+10
-     29.720  5.141E+10  8.777E+09
-     45.014  3.172E+10  6.827E+09
-     69.918  1.911E+10  2.964E+09
-ENDDATA             10
-ENDSUBENT           21
+        12.   1.20E+11  1.949E+10      12.28
+        20.   7.13E+10  1.168E+10      11.27
+        30.   5.07E+10  8.777E+09       9.71
+        45.   3.11E+10  6.827E+09       7.97
+        70.   1.85E+10  2.964E+09       6.42
+       105.   1.31E+10                  5.95
+       150.    6.45E+9                  4.42
+ENDDATA             12
+ENDSUBENT           30
 ENDENTRY             3
