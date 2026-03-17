@@ -1,12 +1,15 @@
-ENTRY            14719   20211102   20220927   20220920       1497
-SUBENT        14719001   20211102   20220927   20220920       1497
-BIB                 14         29
+ENTRY            14719   20260127   20260316   20260316       1526
+SUBENT        14719001   20260127   20260316   20260316       1526
+BIB                 16         36
 TITLE      Cross Sections for Neutron Production from 6- and
            10-MeV Neutrons Incident on 10B and 11B
 AUTHOR     (P.W.Lisowski,M.Drosg,D.M.Drake,B.Hoop)
 INSTITUTE  (1USALAS,2AUSVIE)
            (1USAUSA) Harvard Medical School,Boston,Massachusetts
 REFERENCE  (J,NSE,195,1131,2021)
+           #doi:10.1080/00295639.2021.1906588
+REL-REF    (O,12986001,M.Drosg+,R,LA-10665-MS,1986)
+           Previous analysis.
 FACILITY   (VDGT,1USALAS) Experiment performed at the pulsed
            tandem Van de Graaff accelerator at the Los Alamos
            National Laboratory
@@ -17,7 +20,7 @@ DETECTOR   (SCIN) The detector was an NE-213 liquid scintillator
 METHOD     (TOF)
 MONITOR    (1-H-1(N,EL)1-H-1,,SIG)
 MONIT-REF  (,J.C.Hopkins+,J,ND/A,9,137,1971)
-INC-SOURCE (P-T) Neutrons were produced by the 1H(t,n) 3He
+INC-SOURCE (P-T) Neutrons were produced by the 1H(t,n)3He
            reaction. The target was a gas cell with an entrance
            foil of 5.3 mg/cm2 of molybdenum and a beam stop of
            0.05 cm of gold. Irradiation were performed at 0 deg.
@@ -29,29 +32,42 @@ ERR-ANALYS The uncertainty in incoming beam direction was 0.4 deg.
            (ERR-2,,0.5) Systematic uncertainty in monitor mass
            (ERR-3) Systematic uncertainty in monitor cross section
            (ERR-6,,0.5) Systematic uncertainty in normalization
+STATUS     (APRVD) Approved by P.W.Lisowski on January 28, 2026.
 HISTORY    (20211102C) Compiled by S.H.
-ENDBIB              29
+           (20260311A) BP: Replaced digitized with the tabulated
+                      data in sub 14-15, added DOI, REL-REF, added
+                       subentries 16-17.
+ENDBIB              36
 COMMON               2          3
 ANG-ERR    ERR-3
 ADEG       PER-CENT
-0.1        1.
+        0.1         1.
 ENDCOMMON            3
-ENDSUBENT           36
-SUBENT        14719002   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           43
+SUBENT        14719002   20260127   20260316   20260316       1526
+BIB                  7         21
 REACTION   (5-B-10(N,EL)5-B-10,,DA)
+REL-REF    (R,13162001,E.T.Sadowski+,J,PR/C,42,190,1990)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
            a mass of 1.80 mol.
-ERR-ANALYS (ERR-4) Uncertainty in correction for multiple
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-4) Uncertainty in correction for multiple
                    scattering
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from fig. 4 of the reference.
-                   Waiting for data from author
-ENDBIB              12
+CORRECTION In the case of 10B at 6 MeV, neutrons from the first
+           excited state at 0.719 MeV (n,n1) could not be
+           confidently separated from the elastic scattering
+           peak at forward angles. The authors therefore used a
+           Legendre polynomial fit to the data of E.T.Sadowski
+           et al. combined with our back-angle data to generate
+           a correction to the sum over the elastic and first
+           inelastic states.
+STATUS     (CURVE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 4
+HISTORY    (20260115A) BP: Updated STATUS, added CORRECTION.
+ENDBIB              21
 COMMON               5          3
 EN         EN-RSL     ERR-4      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -71,22 +87,30 @@ ADEG       MB/SR      MB/SR
       134.6   4.35E+01   2.06E+00
       148.5   4.69E+01   2.48E+00
 ENDDATA             12
-ENDSUBENT           33
-SUBENT        14719003   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           42
+SUBENT        14719003   20260127   20260316   20260316       1526
+BIB                  6         20
 REACTION   (5-B-10(N,EL)5-B-10,,DA)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
            a mass of 1.80 mol.
-ERR-ANALYS (ERR-4) Uncertainty in correction for multiple
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-4) Uncertainty in correction for multiple
                    scattering
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (CURVE) Data taken from fig. 4 of the reference.
-                   Waiting for data from author
-ENDBIB              12
+CORRECTION At 10 MeV, the authors summed the double differential
+           cross section over both states and used the
+           ENDF/B-VIII evaluated data for the first excited
+           state as a correction. An estimated uncertainty of
+           25% of the subtracted inelastic cross-section value
+           was combined quadratically with the experimental
+           statistical uncertainty to take into account the
+           uncertainty in the data used to make the correction.
+STATUS     (CURVE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 4
+HISTORY    (20260115A) BP: Updated STATUS, added CORRECTION.
+ENDBIB              20
 COMMON               5          3
 EN         EN-RSL     ERR-4      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -106,22 +130,23 @@ ADEG       MB/SR      MB/SR
       134.7   1.80E+01
       148.4   1.24E+01   7.24E-01
 ENDDATA             12
-ENDSUBENT           33
-SUBENT        14719004   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           41
+SUBENT        14719004   20260127   20260316   20260316       1526
+BIB                  5         13
 REACTION   (5-B-10(N,INL)5-B-10,PAR,DA)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
            a mass of 1.80 mol.
-ERR-ANALYS (ERR-5) Uncertainty in correction for spectra
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 5 of the reference
-            sent by author (P.W.L)
-ENDBIB              12
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 5
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              13
 COMMON               5          3
 EN         EN-RSL     ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -165,22 +190,23 @@ NO-DIM     ADEG       MB/SR      MB/SR
          4.      137.5   4.61E+00
          4.      150.7   4.58E+00
 ENDDATA             36
-ENDSUBENT           57
-SUBENT        14719005   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           58
+SUBENT        14719005   20260127   20260316   20260316       1526
+BIB                  5         13
 REACTION   (5-B-10(N,INL)5-B-10,PAR,DA)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
            a mass of 1.80 mol.
-ERR-ANALYS (ERR-5) Uncertainty in correction for spectra
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 6 of the reference
-            sent by author (P.W.L)
-ENDBIB              12
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 6
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              13
 COMMON               5          3
 EN         EN-RSL     ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -211,22 +237,23 @@ NO-DIM     ADEG       MB/SR      MB/SR
          4.       136.   1.88E+00   1.52E-01
          4.      149.6   2.94E+00   2.72E-01
 ENDDATA             23
-ENDSUBENT           44
-SUBENT        14719006   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           45
+SUBENT        14719006   20260127   20260316   20260316       1526
+BIB                  5         13
 REACTION   (5-B-11(N,EL)5-B-11,,DA)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
            of 0.92 mol
-ERR-ANALYS (ERR-4) Uncertainty in correction for multiple
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-4) Uncertainty in correction for multiple
                    scattering
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 7 of the reference
-            sent by author (P.W.L)
-ENDBIB              12
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 7
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              13
 COMMON               5          3
 EN         EN-RSL     ERR-4      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -246,9 +273,9 @@ ADEG       MB/SR      MB/SR
        135.   9.69E+01
       148.9   1.02E+02   6.25E+00
 ENDDATA             12
-ENDSUBENT           33
-SUBENT        14719007   20211102   20220927   20220920       1497
-BIB                  4         11
+ENDSUBENT           34
+SUBENT        14719007   20260127   20260316   20260316       1526
+BIB                  5         12
 REACTION   (5-B-11(N,EL)5-B-11,,DA)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
@@ -258,9 +285,10 @@ ERR-ANALYS (ERR-4) Uncertainty in correction for multiple
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-STATUS     (TABLE) Data presented in fig. 7 of the reference
-            sent by author (P.W.L)
-ENDBIB              11
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 7
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              12
 COMMON               5          3
 EN         EN-RSL     ERR-4      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -278,22 +306,23 @@ ADEG       MB/SR
       134.1   2.46E+01
       147.8   1.91E+01
 ENDDATA             10
-ENDSUBENT           30
-SUBENT        14719008   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           31
+SUBENT        14719008   20260127   20260316   20260316       1526
+BIB                  5         13
 REACTION   (5-B-11(N,INL)5-B-11,PAR,DA)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
            of 0.92 mol
-ERR-ANALYS (ERR-5) Uncertainty in correction for spectra
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 8 of the reference
-            sent by author (P.W.L)
-ENDBIB              12
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 8
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              13
 COMMON               5          3
 EN         EN-RSL     ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -329,21 +358,22 @@ NO-DIM     ADEG       MB/SR      MB/SR
          3.       75.6   4.06E+00   2.10E-01
          3.       92.6   4.06E+00   3.27E-01
 ENDDATA             28
-ENDSUBENT           49
-SUBENT        14719009   20211102   20220927   20220920       1497
-BIB                  4         11
+ENDSUBENT           50
+SUBENT        14719009   20260127   20260316   20260316       1526
+BIB                  5         12
 REACTION   (5-B-11(N,INL)5-B-11,PAR,DA)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
            of 0.92 mol
-ERR-ANALYS (ERR-5) Uncertainty in correction for spectra
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 9 of the reference
-            sent by author (P.W.L)
-ENDBIB              11
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 9
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              12
 COMMON               5          3
 EN         EN-RSL     ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -396,24 +426,25 @@ NO-DIM     ADEG       MB/SR      MB/SR
          6.      138.9   1.46E+00   8.46E-01
          6.      151.6   4.94E+00   9.15E-01
 ENDDATA             45
-ENDSUBENT           65
-SUBENT        14719010   20211102   20220927   20220920       1497
-BIB                  4         14
+ENDSUBENT           66
+SUBENT        14719010   20260127   20260316   20260316       1526
+BIB                  5         15
 REACTION   (5-B-10(N,INL)5-B-10,,DA)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
            a mass of 1.80 mol.
-ERR-ANALYS (ERR-4) Uncertainty in correction for multiple
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-4) Uncertainty in correction for multiple
                    scattering
            (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 10 of the reference
-            sent by author (P.W.L)
-ENDBIB              14
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 10
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              15
 COMMON               6          3
 EN         EN-RSL     ERR-4      ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT
@@ -433,9 +464,9 @@ ADEG       MB/SR      MB/SR
       130.2   5.34E+01   1.97E+00
       145.1   5.72E+01   2.55E+00
 ENDDATA             12
-ENDSUBENT           35
-SUBENT        14719011   20211102   20220927   20220920       1497
-BIB                  4         13
+ENDSUBENT           36
+SUBENT        14719011   20260127   20260316   20260316       1526
+BIB                  5         14
 REACTION   (5-B-10(N,INL)5-B-10,,DA)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
@@ -447,9 +478,10 @@ ERR-ANALYS (ERR-4) Uncertainty in correction for multiple
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-STATUS     (TABLE) Data presented in fig. 10 of the reference
-            sent by author (P.W.L)
-ENDBIB              13
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 10
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              14
 COMMON               6          3
 EN         EN-RSL     ERR-4      ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT
@@ -468,22 +500,23 @@ ADEG       MB/SR
        130.   3.39E+01
       144.9   2.99E+01
 ENDDATA             11
-ENDSUBENT           33
-SUBENT        14719012   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           34
+SUBENT        14719012   20260127   20260316   20260316       1526
+BIB                  5         13
 REACTION   (5-B-11(N,INL)5-B-11,,DA)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
            of 0.92 mol
-ERR-ANALYS (ERR-5) Uncertainty in correction for spectra
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 11 of the reference
-            sent by author (P.W.L)
-ENDBIB              12
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 11
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              13
 COMMON               5          3
 EN         EN-RSL     ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
@@ -503,26 +536,27 @@ ADEG       MB/SR      MB/SR
       130.3   1.53E+01   1.49E+00
       145.2   1.81E+01   1.66E+00
 ENDDATA             12
-ENDSUBENT           33
-SUBENT        14719013   20211102   20220927   20220920       1497
-BIB                  4         12
+ENDSUBENT           34
+SUBENT        14719013   20260127   20260316   20260316       1526
+BIB                  5         13
 REACTION   (5-B-11(N,INL)5-B-11,,DA)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
            of 0.92 mol
-ERR-ANALYS (ERR-5) Uncertainty in correction for spectra
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
                    extrapolation
            (ERR-7) Syst. uncertainty in Monte Carlo correction
            (ERR-S) Combines statistical uncertainty, in dead time
                    correction and background subtraction
-           (ERR-T) Total uncertainty
-STATUS     (TABLE) Data presented in fig. 11 of the reference
-            sent by author (P.W.L)
-ENDBIB              12
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 11
+           Data were received from the author.
+HISTORY    (20260115A) BP: Updated STATUS.
+ENDBIB              13
 COMMON               5          3
 EN         EN-RSL     ERR-5      ERR-7      ERR-S
 MEV        MEV        PER-CENT   PER-CENT   PER-CENT
-10.        0.015      2.8        1.1        0.9
+        10.      0.015        2.8        1.1        0.9
 ENDCOMMON            3
 DATA                 3          9
 ANG-CM     DATA-CM    ERR-T
@@ -537,176 +571,1537 @@ ADEG       MB/SR      MB/SR
       130.1   1.83E+01
       145.1   1.97E+01
 ENDDATA             11
-ENDSUBENT           32
-SUBENT        14719014   20220505   20220927   20220920       1497
-BIB                  4          7
+ENDSUBENT           33
+SUBENT        14719014   20260127   20260316   20260316       1526
+BIB                  6         16
 REACTION   (5-B-10(N,X)0-NN-1,,DA/DE)
 SAMPLE     (5-B-10,ENR=0.955) Irregularly shaped cylinder
            of approximately 1.7 cm diameter and 4 cm height with
            a mass of 1.80 mol.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-4) Uncertainty in correction for multiple
+                   scattering
+           (ERR-5) Uncertainty in correction for spectra
+                   extrapolation
+           (ERR-7) Syst. uncertainty in Monte Carlo correction
+           (ERR-S) Combines statistical uncertainty, in dead time
+                   correction and background subtraction
 CORRECTION Data corrected for multiple scattering
-STATUS     (CURVE) Data taken from fig.2 of the reference
-                   Waiting for data from author
-ENDBIB               7
-COMMON               1          3
-ANG
-ADEG
-75.
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 2
+           Data were received from author on January 26, 2026.
+HISTORY    (20260115A) BP: Replaced digitized data with tabulated.
+ENDBIB              16
+COMMON               5          3
+EN-RSL     ERR-4      ERR-5      ERR-7      ERR-S
+MEV        PER-CENT   PER-CENT   PER-CENT   PER-CENT
+       0.01       15.0        1.2        0.7        0.5
 ENDCOMMON            3
-DATA                 3         64
-EN         E          DATA
-MEV        MEV        MB/SR/MEV
-         6.       0.42   4.56E+00
-         6.       0.57   1.25E+01
-         6.       0.72   6.63E+00
-         6.       0.86   8.30E-01
-         6.       1.45   6.03E-01
-         6.       1.60   7.00E+00
-         6.       1.75   2.08E+01
-         6.       1.90   5.66E+00
-         6.       2.07   8.62E-01
-         6.       2.65   1.93E-01
-         6.       2.86   2.29E+00
-         6.       3.06   6.65E+00
-         6.       3.25   3.33E+00
-         6.       3.43   1.38E+00
-         6.       3.64   7.56E-01
-         6.       3.83   2.00E-01
-         6.       4.05   1.04E+00
-         6.       4.33   4.88E+00
-         6.       4.56   7.09E+00
-         6.       4.80   2.25E+01
-         6.       5.05   5.43E+01
-         6.       5.29   3.53E+01
-         6.       5.54   8.34E+00
-         6.       5.76   6.85E-01
-        10.       0.43   1.80E+00
-        10.       0.57   1.38E+00
-        10.       0.72   1.09E+00
-        10.       0.88   3.30E+00
-        10.       1.02   5.34E+00
-        10.       1.18   2.87E+00
-        10.       1.32   1.25E+00
-        10.       1.48   2.80E+00
-        10.       1.62   2.69E+00
-        10.       1.77   2.04E+00
-        10.       1.91   3.63E+00
-        10.       2.10   5.21E+00
-        10.       2.29   6.28E+00
-        10.       2.49   7.28E+00
-        10.       2.68   1.49E+01
-        10.       2.89   2.73E+01
-        10.       3.27   2.64E+00
-        10.       3.49   1.85E+00
-        10.       3.69   4.14E+00
-        10.       3.89   2.64E+00
-        10.       4.11   2.02E+00
-        10.       4.34   5.56E-01
-        10.       4.61   1.67E-01
-        10.       4.83   7.10E-01
-        10.       5.11   2.26E+00
-        10.       5.35   1.26E+00
-        10.       5.58   4.14E-01
-        10.       6.12   1.12E-01
-        10.       6.35   4.64E-01
-        10.       6.59   8.50E-01
-        10.       6.84   7.10E-01
-        10.       7.10   3.94E-01
-        10.       7.37   3.06E-01
-        10.       7.61   1.38E+00
-        10.       7.86   4.11E+00
-        10.       8.04   1.02E+01
-        10.       8.39   1.92E+01
-        10.       8.74   1.89E+01
-        10.       8.99   6.33E+00
-        10.       9.33   1.04E+00
-ENDDATA             66
-ENDSUBENT           82
-SUBENT        14719015   20220505   20220927   20220920       1497
-BIB                  4          7
-REACTION   (5-B-11(N,INL)5-B-11,,DA/DE)
+DATA                 6        667
+EN         ANG        E-MIN      E-MAX      DATA       ERR-T
+MEV        ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
+         6.        20.      0.350      0.500  7.600E+00  1.116E+00
+         6.        20.      0.500      0.650  1.037E+01  7.534E-01
+         6.        20.      0.650      0.800  3.183E+00  6.989E-01
+         6.        20.      0.800      0.950  6.577E+00  5.391E-01
+         6.        20.      0.950      1.100  7.061E+00  4.749E-01
+         6.        20.      1.100      1.250  1.545E+00  4.474E-01
+         6.        20.      1.250      1.400  1.341E-01  6.179E-01
+         6.        20.      1.400      1.550  6.450E-04  5.443E-01
+         6.        20.      1.550      1.700  3.303E-03  5.291E-01
+         6.        20.      1.700      1.850  2.720E-02  5.173E-01
+         6.        20.      1.850      2.000  6.064E-01  4.540E-01
+         6.        20.      2.000      2.200  7.480E+00  3.465E-01
+         6.        20.      2.200      2.400  1.163E+01  3.484E-01
+         6.        20.      2.400      2.600  2.443E+00  2.965E-01
+         6.        20.      2.600      2.800  2.537E-01  3.770E-01
+         6.        20.      2.800      3.000  1.402E-03  3.982E-01
+         6.        20.      3.000      3.200  2.049E-02  3.815E-01
+         6.        20.      3.200      3.500  9.619E-01  3.485E-01
+         6.        20.      3.500      3.600  7.960E+00  3.505E-01
+         6.        20.      3.600      3.800  1.490E+01  4.526E-01
+         6.        20.      3.800      5.000  8.988E+00  3.536E-01
+         6.        20.      4.000      4.250  6.303E+00  2.887E-01
+         6.        20.      4.250      4.500  4.781E+00  3.211E-01
+         6.        20.      4.600      4.750  3.469E+00  4.818E-01
+         6.        20.      4.750      5.000  1.835E+01  1.165E+00
+         6.        20.      5.000      5.250  4.717E+01  2.312E+00
+         6.        20.      5.250      5.500  1.095E+02  3.809E+00
+         6.        20.      5.500      5.750  3.227E+02  4.866E+00
+         6.        20.      5.750      6.000  5.251E+02  7.397E+00
+         6.        20.      6.000      6.250  2.461E+02  3.735E+00
+         6.        20.      6.250      6.500  2.244E+01  4.555E-01
+         6.        20.      6.500      6.750  2.595E+00  1.452E-01
+         6.        20.      6.750      7.000  1.155E+00  1.175E-02
+         6.        35.      0.350      0.500  9.396E+00  1.092E+00
+         6.        35.      0.500      0.650  1.126E+01  7.216E-01
+         6.        35.      0.650      0.800  3.367E+00  6.546E-01
+         6.        35.      0.800      0.950  8.583E+00  5.082E-01
+         6.        35.      0.950      1.100  6.017E+00  4.272E-01
+         6.        35.      1.100      1.250  1.983E+00  4.112E-01
+         6.        35.      1.250      1.400  8.855E-02  5.848E-01
+         6.        35.      1.400      1.550  1.262E-03  4.826E-01
+         6.        35.      1.550      1.700  1.860E-03  4.664E-01
+         6.        35.      1.700      1.850  6.363E-02  4.533E-01
+         6.        35.      1.850      2.000  1.035E+00  3.789E-01
+         6.        35.      2.000      2.200  8.804E+00  3.168E-01
+         6.        35.      2.200      2.400  1.106E+01  3.169E-01
+         6.        35.      2.400      2.600  2.203E+00  2.530E-01
+         6.        35.      2.600      2.800  1.649E-01  3.595E-01
+         6.        35.      2.800      3.000  8.218E-04  3.762E-01
+         6.        35.      3.000      3.200  4.131E-02  3.611E-01
+         6.        35.      3.200      3.500  1.197E+00  3.368E-01
+         6.        35.      3.500      3.600  7.689E+00  3.406E-01
+         6.        35.      3.600      3.800  1.404E+01  4.606E-01
+         6.        35.      3.800      5.000  7.888E+00  3.650E-01
+         6.        35.      4.000      4.250  6.808E+00  3.253E-01
+         6.        35.      4.250      4.500  4.329E+00  9.575E-01
+         6.        35.      4.600      4.750  4.245E+00  1.957E+00
+         6.        35.      4.750      5.000  1.003E+01  3.285E+00
+         6.        35.      5.000      5.250  3.303E+01  1.675E+00
+         6.        35.      5.250      5.500  9.153E+01  1.656E+00
+         6.        35.      5.500      5.750  2.614E+02  3.631E+00
+         6.        35.      5.750      6.000  4.688E+02  6.613E+00
+         6.        35.      6.000      6.250  2.180E+02  3.301E+00
+         6.        35.      6.250      6.500  1.312E+01  3.063E-01
+         6.        35.      6.500      6.750  1.902E+00  1.299E-01
+         6.        35.      6.750      7.000  9.383E-01  1.144E-01
+         6.        45.      0.350      0.500  7.024E+00  8.881E-01
+         6.        45.      0.500      0.650  6.080E+00  5.913E-01
+         6.        45.      0.650      0.800  2.444E+00  5.067E-01
+         6.        45.      0.800      0.950  9.671E+00  4.116E-01
+         6.        45.      0.950      1.100  3.549E+00  3.325E-01
+         6.        45.      1.100      1.250  6.262E-01  3.835E-01
+         6.        45.      1.250      1.400  6.797E-03  5.062E-01
+         6.        45.      1.400      1.550  3.741E-04  3.771E-01
+         6.        45.      1.550      1.700  4.001E-03  3.606E-01
+         6.        45.      1.700      1.850  1.949E-01  3.549E-01
+         6.        45.      1.850      2.000  2.720E+00  2.901E-01
+         6.        45.      2.000      2.200  1.342E+01  3.066E-01
+         6.        45.      2.200      2.400  6.182E+00  2.243E-01
+         6.        45.      2.400      2.600  1.293E+00  2.173E-01
+         6.        45.      2.600      2.800  3.333E-02  2.797E-01
+         6.        45.      2.800      3.000  1.307E-03  2.886E-01
+         6.        45.      3.000      3.200  1.503E-01  2.950E-01
+         6.        45.      3.200      3.500  3.497E+00  2.886E-01
+         6.        45.      3.500      3.600  1.427E+01  6.251E-01
+         6.        45.      3.600      3.800  1.561E+01  1.435E+00
+         6.        45.      3.800      5.000  4.521E+00  2.640E+00
+         6.        45.      4.000      4.250  3.988E+00  2.232E+00
+         6.        45.      4.250      4.500  8.652E-01  1.233E+00
+         6.        45.      4.600      4.750  1.196E+00  6.146E-01
+         6.        45.      4.750      5.000  1.225E+01  3.131E-01
+         6.        45.      5.000      5.250  3.365E+01  6.307E-01
+         6.        45.      5.250      5.500  1.076E+02  1.605E+00
+         6.        45.      5.500      5.750  2.601E+02  3.620E+00
+         6.        45.      5.750      6.000  2.331E+02  3.571E+00
+         6.        45.      6.000      6.250  3.590E+01  7.434E-01
+         6.        45.      6.250      6.500  2.251E+00  1.169E-01
+         6.        45.      6.500      6.750  8.824E-01  8.632E-02
+         6.        60.      0.350      0.500  7.320E+00  8.601E-01
+         6.        60.      0.500      0.650  3.878E+00  5.834E-01
+         6.        60.      0.650      0.800  5.226E+00  4.310E-01
+         6.        60.      0.800      0.950  8.880E+00  3.757E-01
+         6.        60.      0.950      1.100  2.096E+00  3.224E-01
+         6.        60.      1.100      1.250  1.542E-01  4.523E-01
+         6.        60.      1.250      1.400  8.122E-04  4.215E-01
+         6.        60.      1.400      1.550  1.056E-03  3.551E-01
+         6.        60.      1.550      1.700  3.937E-02  3.354E-01
+         6.        60.      1.700      1.850  1.155E+00  2.975E-01
+         6.        60.      1.850      2.000  7.742E+00  2.816E-01
+         6.        60.      2.000      2.200  1.637E+01  2.567E-01
+         6.        60.      2.200      2.400  3.533E+00  1.977E-01
+         6.        60.      2.400      2.600  3.534E-01  1.086E+00
+         6.        60.      2.600      2.800  2.114E-03  2.741E+00
+         6.        60.      2.800      3.000  1.443E-02  3.225E+00
+         6.        60.      3.000      3.200  7.445E-01  2.541E+00
+         6.        60.      3.200      3.500  6.398E+00  1.022E+00
+         6.        60.      3.500      3.600  1.146E+01  3.227E-01
+         6.        60.      3.600      3.800  4.658E+00  2.664E-01
+         6.        60.      3.800      5.000  2.753E+00  1.849E-01
+         6.        60.      4.000      4.250  1.744E+00  1.858E-01
+         6.        60.      4.250      4.500  5.505E-01  2.082E-01
+         6.        60.      4.600      4.750  3.486E+00  1.909E-01
+         6.        60.      4.750      5.000  1.144E+01  2.515E-01
+         6.        60.      5.000      5.250  2.702E+01  3.779E-01
+         6.        60.      5.250      5.500  8.392E+01  7.786E-01
+         6.        60.      5.500      5.750  1.671E+02  1.523E+00
+         6.        60.      5.750      6.000  9.419E+01  1.241E+00
+         6.        60.      6.000      6.250  7.728E+00  2.293E-01
+         6.        60.      6.250      6.500  5.712E-01  8.656E-02
+         6.        75.      0.350      0.500  5.482E+00  7.433E-01
+         6.        75.      0.500      0.650  2.387E+00  5.589E-01
+         6.        75.      0.650      0.800  1.002E+01  4.056E-01
+         6.        75.      0.800      0.950  4.241E+00  3.356E-01
+         6.        75.      0.950      1.100  4.352E-01  3.970E-01
+         6.        75.      1.100      1.250  1.002E-03  1.488E+00
+         6.        75.      1.250      1.400  4.265E-04  2.488E+00
+         6.        75.      1.400      1.550  2.971E-02  2.577E+00
+         6.        75.      1.550      1.700  1.012E+00  2.165E+00
+         6.        75.      1.700      1.850  7.860E+00  1.074E+00
+         6.        75.      1.850      2.000  2.121E+01  4.201E-01
+         6.        75.      2.000      2.200  5.509E+00  2.078E-01
+         6.        75.      2.200      2.400  6.013E-01  1.711E-01
+         6.        75.      2.400      2.600  8.095E-03  2.067E-01
+         6.        75.      2.600      2.800  4.677E-03  2.126E-01
+         6.        75.      2.800      3.000  2.316E-01  2.127E-01
+         6.        75.      3.000      3.200  2.232E+00  2.062E-01
+         6.        75.      3.200      3.500  6.967E+00  2.993E-01
+         6.        75.      3.500      3.600  4.157E+00  2.607E-01
+         6.        75.      3.600      3.800  1.760E+00  1.784E-01
+         6.        75.      3.800      5.000  1.020E+00  1.737E-01
+         6.        75.      4.000      4.250  2.886E-01  1.975E-01
+         6.        75.      4.250      4.500  1.340E+00  1.783E-01
+         6.        75.      4.600      4.750  5.317E+00  2.180E-01
+         6.        75.      4.750      5.000  8.670E+00  2.649E-01
+         6.        75.      5.000      5.250  2.300E+01  4.567E-01
+         6.        75.      5.250      5.500  5.578E+01  9.177E-01
+         6.        75.      5.500      5.750  4.538E+01  7.874E-01
+         6.        75.      5.750      6.000  8.289E+00  2.346E-01
+         6.        75.      6.000      6.250  6.276E-01  9.498E-02
+         6.        75.      6.250      6.500  1.838E-02  8.838E-02
+         6.        90.      0.350      0.500  4.564E+00  2.071E+00
+         6.        90.      0.500      0.650  1.247E+01  8.616E-01
+         6.        90.      0.650      0.800  6.591E+00  3.625E-01
+         6.        90.      0.800      0.950  8.195E-01  3.431E-01
+         6.        90.      0.950      1.100  1.820E-03  5.200E-01
+         6.        90.      1.100      1.250  9.089E-05  3.196E-01
+         6.        90.      1.250      1.400  1.704E-02  2.950E-01
+         6.        90.      1.400      1.550  6.013E-01  2.546E-01
+         6.        90.      1.550      1.700  6.962E+00  2.625E-01
+         6.        90.      1.700      1.850  2.086E+01  3.940E-01
+         6.        90.      1.850      2.000  5.675E+00  2.261E-01
+         6.        90.      2.000      2.200  8.585E-01  1.477E-01
+         6.        90.      2.200      2.400  1.867E-02  1.888E-01
+         6.        90.      2.400      2.600  2.856E-03  1.863E-01
+         6.        90.      2.600      2.800  1.907E-01  1.825E-01
+         6.        90.      2.800      3.000  2.271E+00  1.807E-01
+         6.        90.      3.000      3.200  6.602E+00  2.678E-01
+         6.        90.      3.200      3.500  3.306E+00  2.641E-01
+         6.        90.      3.500      3.600  1.382E+00  1.670E-01
+         6.        90.      3.600      3.800  7.527E-01  1.634E-01
+         6.        90.      3.800      5.000  1.997E-01  1.978E-01
+         6.        90.      4.000      4.250  1.033E+00  1.881E-01
+         6.        90.      4.250      4.500  4.830E+00  2.110E-01
+         6.        90.      4.600      4.750  7.092E+00  2.504E-01
+         6.        90.      4.750      5.000  2.243E+01  4.239E-01
+         6.        90.      5.000      5.250  5.391E+01  8.386E-01
+         6.        90.      5.250      5.500  3.492E+01  6.772E-01
+         6.        90.      5.500      5.750  8.427E+00  2.497E-01
+         6.        90.      5.750      6.000  6.892E-01  1.192E-01
+         6.        90.      6.000      6.250  2.191E-02  9.652E-02
+         6.       110.      0.350      0.500  2.593E+00  7.250E-01
+         6.       110.      0.500      0.650  9.158E+00  4.497E-01
+         6.       110.      0.650      0.800  1.169E+00  3.381E-01
+         6.       110.      0.800      0.950  1.553E-02  4.976E-01
+         6.       110.      0.950      1.100  1.609E-05  3.910E-01
+         6.       110.      1.100      1.250  7.784E-03  3.188E-01
+         6.       110.      1.250      1.400  5.621E-01  2.619E-01
+         6.       110.      1.400      1.550  5.242E+00  2.379E-01
+         6.       110.      1.550      1.700  1.924E+01  3.766E-01
+         6.       110.      1.700      1.850  5.752E+00  2.279E-01
+         6.       110.      1.850      2.000  8.614E-01  1.862E-01
+         6.       110.      2.000      2.200  4.904E-02  1.885E-01
+         6.       110.      2.200      2.400  1.952E-03  1.906E-01
+         6.       110.      2.400      2.600  1.563E-01  1.780E-01
+         6.       110.      2.600      2.800  1.580E+00  1.494E-01
+         6.       110.      2.800      3.000  6.263E+00  2.395E-01
+         6.       110.      3.000      3.200  3.330E+00  2.592E-01
+         6.       110.      3.200      3.500  1.269E+00  1.727E-01
+         6.       110.      3.500      3.600  6.413E-01  1.857E-01
+         6.       110.      3.600      3.800  1.895E-01  2.014E-01
+         6.       110.      3.800      5.000  1.051E+00  2.039E-01
+         6.       110.      4.000      4.250  4.807E+00  2.148E-01
+         6.       110.      4.250      4.500  7.874E+00  2.574E-01
+         6.       110.      4.600      4.750  2.626E+01  4.937E-01
+         6.       110.      4.750      5.000  7.731E+01  1.213E+00
+         6.       110.      5.000      5.250  5.420E+01  9.763E-01
+         6.       110.      5.250      5.500  1.561E+01  3.444E-01
+         6.       110.      5.500      5.750  2.093E+00  1.802E-01
+         6.       110.      5.750      6.000  2.548E-02  1.176E-01
+         6.       130.      0.350      0.500  6.146E+00  5.934E-01
+         6.       130.      0.500      0.650  1.952E+00  3.758E-01
+         6.       130.      0.650      0.800  4.084E-02  4.371E-01
+         6.       130.      0.800      0.950  3.479E-05  3.868E-01
+         6.       130.      0.950      1.100  1.406E-02  3.034E-01
+         6.       130.      1.100      1.250  6.773E-01  2.392E-01
+         6.       130.      1.250      1.400  6.490E+00  2.441E-01
+         6.       130.      1.400      1.550  1.451E+01  3.068E-01
+         6.       130.      1.550      1.700  1.905E+00  1.704E-01
+         6.       130.      1.700      1.850  4.639E-01  1.883E-01
+         6.       130.      1.850      2.000  7.181E-03  2.147E-01
+         6.       130.      2.000      2.200  3.622E-03  1.911E-01
+         6.       130.      2.200      2.400  2.538E-01  1.754E-01
+         6.       130.      2.400      2.600  2.354E+00  1.578E-01
+         6.       130.      2.600      2.800  5.859E+00  2.418E-01
+         6.       130.      2.800      3.000  1.736E+00  2.279E-01
+         6.       130.      3.000      3.200  1.254E+00  1.567E-01
+         6.       130.      3.200      3.500  4.279E-01  1.746E-01
+         6.       130.      3.500      3.600  4.086E-01  1.981E-01
+         6.       130.      3.600      3.800  3.060E+00  2.126E-01
+         6.       130.      3.800      5.000  8.348E+00  2.737E-01
+         6.       130.      4.000      4.250  1.123E+01  3.046E-01
+         6.       130.      4.250      4.500  5.374E+01  8.131E-01
+         6.       130.      4.600      4.750  9.013E+01  1.060E+00
+         6.       130.      4.750      5.000  2.658E+01  7.987E-01
+         6.       130.      5.000      5.250  1.091E+01  3.055E-01
+         6.       130.      5.250      5.500  5.961E-01  1.559E-01
+         6.       130.      5.500      5.750  6.182E-03  9.872E-02
+         6.       145.      0.350      0.500  4.528E+00  6.663E-01
+         6.       145.      0.500      0.650  4.866E-01  5.037E-01
+         6.       145.      0.650      0.800  9.777E-05  5.377E-01
+         6.       145.      0.800      0.950  7.984E-03  3.865E-01
+         6.       145.      0.950      1.100  4.469E-01  3.073E-01
+         6.       145.      1.100      1.250  4.176E+00  2.560E-01
+         6.       145.      1.250      1.400  1.244E+01  3.123E-01
+         6.       145.      1.400      1.550  1.810E+00  2.158E-01
+         6.       145.      1.550      1.700  2.607E-01  2.485E-01
+         6.       145.      1.700      1.850  4.330E-03  2.592E-01
+         6.       145.      1.850      2.000  4.014E-03  2.793E-01
+         6.       145.      2.000      2.200  2.421E-01  1.977E-01
+         6.       145.      2.200      2.400  2.353E+00  1.768E-01
+         6.       145.      2.400      2.600  6.061E+00  2.647E-01
+         6.       145.      2.600      2.800  1.423E+00  2.647E-01
+         6.       145.      2.800      3.000  1.492E+00  1.700E-01
+         6.       145.      3.000      3.200  4.728E-01  1.683E-01
+         6.       145.      3.200      3.500  9.099E-01  1.827E-01
+         6.       145.      3.500      3.600  5.278E+00  2.240E-01
+         6.       145.      3.600      3.800  1.071E+01  3.127E-01
+         6.       145.      3.800      5.000  1.112E+01  3.288E-01
+         6.       145.      4.000      4.250  5.545E+01  8.564E-01
+         6.       145.      4.250      4.500  7.361E+01  1.495E+00
+         6.       145.      4.600      4.750  1.505E+01  7.214E-01
+         6.       145.      4.750      5.000  7.967E+00  3.072E-01
+         6.       145.      5.000      5.250  4.845E-01  2.016E-01
+         6.       145.      5.250      5.500  4.606E-03  1.189E-01
+        10.        20.      0.350      0.500  3.973E+00  3.580E+00
+        10.        20.      0.500      0.650  2.702E-02  3.062E+00
+        10.        20.      0.650      0.800  7.393E-01  2.477E+00
+        10.        20.      0.800      0.950  2.243E+00  1.696E+00
+        10.        20.      0.950      1.100  4.645E+00  1.515E+00
+        10.        20.      1.100      1.250  2.741E+00  1.562E+00
+        10.        20.      1.250      1.400  1.181E+00  1.588E+00
+        10.        20.      1.400      1.550  3.832E+00  1.254E+00
+        10.        20.      1.550      1.700  1.800E+00  1.207E+00
+        10.        20.      1.700      1.850  2.229E+00  1.242E+00
+        10.        20.      1.850      2.000  1.288E+00  1.224E+00
+        10.        20.      2.000      2.200  3.538E+00  9.215E-01
+        10.        20.      2.200      2.400  1.810E+00  8.882E-01
+        10.        20.      2.400      2.600  3.579E+00  9.355E-01
+        10.        20.      2.600      2.800  6.256E+00  8.994E-01
+        10.        20.      2.800      3.000  4.675E+00  8.749E-01
+        10.        20.      3.000      3.200  5.448E+00  7.973E-01
+        10.        20.      3.200      3.500  7.140E+00  7.308E-01
+        10.        20.      3.500      3.600  1.957E+01  7.332E-01
+        10.        20.      3.600      3.800  2.738E+01  7.179E-01
+        10.        20.      3.800      5.000  9.181E+00  6.424E-01
+        10.        20.      4.000      4.250  3.557E+00  5.495E-01
+        10.        20.      4.250      4.500  4.742E+00  5.669E-01
+        10.        20.      4.600      4.750  8.840E+00  5.520E-01
+        10.        20.      4.750      5.000  5.081E+00  5.327E-01
+        10.        20.      5.000      5.250  4.755E+00  5.456E-01
+        10.        20.      5.250      5.500  1.238E+00  6.725E-01
+        10.        20.      5.500      5.750  8.426E-01  6.243E-01
+        10.        20.      5.750      6.000  5.360E+00  4.947E-01
+        10.        20.      6.000      6.250  1.011E+01  4.885E-01
+        10.        20.      6.250      6.500  8.156E+00  4.729E-01
+        10.        20.      6.500      6.750  4.999E+00  4.764E-01
+        10.        20.      6.750      7.000  5.817E+00  4.879E-01
+        10.        20.      7.000      7.250  7.364E+00  5.174E-01
+        10.        20.      7.250      7.500  9.745E+00  5.458E-01
+        10.        20.      7.500      7.750  1.372E+01  5.901E-01
+        10.        20.      7.750      8.000  1.500E+01  6.456E-01
+        10.        20.      8.000      8.500  2.424E+01  8.044E-01
+        10.        20.      8.300      8.600  5.489E+01  1.264E+00
+        10.        20.      8.600      8.900  1.272E+02  2.052E+00
+        10.        20.      8.900      9.200  1.938E+02  1.839E+00
+        10.        20.      9.200      9.500  2.151E+02  1.894E+00
+        10.        20.      9.500      9.800  3.028E+02  2.479E+00
+        10.        20.      9.800     10.100  3.419E+02  3.065E+00
+        10.        20.     10.100     10.400  1.745E+02  2.026E+00
+        10.        20.     10.400     10.700  2.005E+01  5.004E-01
+        10.        20.     10.700     11.000  2.828E+00  2.780E-01
+        10.        20.     11.000     11.300  1.542E+00  2.502E-01
+        10.        35.      0.350      0.500  1.097E+00  4.025E+00
+        10.        35.      0.500      0.650  6.498E-02  2.740E+00
+        10.        35.      0.650      0.800  3.654E+00  1.872E+00
+        10.        35.      0.800      0.950  6.422E+00  1.439E+00
+        10.        35.      0.950      1.100  3.904E+00  1.349E+00
+        10.        35.      1.100      1.250  6.579E-01  1.545E+00
+        10.        35.      1.250      1.400  3.873E+00  1.165E+00
+        10.        35.      1.400      1.550  4.542E+00  1.033E+00
+        10.        35.      1.550      1.700  3.557E+00  1.063E+00
+        10.        35.      1.700      1.850  1.724E+00  1.116E+00
+        10.        35.      1.850      2.000  3.582E+00  9.448E-01
+        10.        35.      2.000      2.200  4.617E+00  7.730E-01
+        10.        35.      2.200      2.400  2.809E+00  7.880E-01
+        10.        35.      2.400      2.600  5.693E+00  7.547E-01
+        10.        35.      2.600      2.800  6.499E+00  7.707E-01
+        10.        35.      2.800      3.000  5.852E+00  7.191E-01
+        10.        35.      3.000      3.200  6.505E+00  6.407E-01
+        10.        35.      3.200      3.500  1.234E+01  6.289E-01
+        10.        35.      3.500      3.600  2.649E+01  6.839E-01
+        10.        35.      3.600      3.800  1.525E+01  5.723E-01
+        10.        35.      3.800      5.000  2.209E+00  4.883E-01
+        10.        35.      4.000      4.250  2.745E+00  4.350E-01
+        10.        35.      4.250      4.500  5.689E+00  4.283E-01
+        10.        35.      4.600      4.750  4.828E+00  4.109E-01
+        10.        35.      4.750      5.000  3.697E+00  3.972E-01
+        10.        35.      5.000      5.250  1.752E+00  4.348E-01
+        10.        35.      5.250      5.500  5.594E-01  5.173E-01
+        10.        35.      5.500      5.750  3.306E+00  3.995E-01
+        10.        35.      5.750      6.000  7.574E+00  4.801E-01
+        10.        35.      6.000      6.250  8.643E+00  7.522E-01
+        10.        35.      6.250      6.500  4.171E+00  9.481E-01
+        10.        35.      6.500      6.750  8.852E-01  1.271E+00
+        10.        35.      6.750      7.000  4.487E-01  1.285E+00
+        10.        35.      7.000      7.250  2.221E+00  7.982E-01
+        10.        35.      7.250      7.500  4.341E+00  4.051E-01
+        10.        35.      7.500      7.750  4.224E+00  3.486E-01
+        10.        35.      7.750      8.000  4.240E+00  3.310E-01
+        10.        35.      8.000      8.500  4.696E+00  4.069E-01
+        10.        35.      8.300      8.600  1.649E+01  7.093E-01
+        10.        35.      8.600      8.900  5.505E+01  1.194E+00
+        10.        35.      8.900      9.200  8.405E+01  1.339E+00
+        10.        35.      9.200      9.500  1.127E+02  1.578E+00
+        10.        35.      9.500      9.800  1.763E+02  2.379E+00
+        10.        35.      9.800     10.100  1.463E+02  2.128E+00
+        10.        35.     10.100     10.400  4.582E+01  8.476E-01
+        10.        35.     10.400     10.700  3.628E+00  2.558E-01
+        10.        35.     10.700     11.000  7.307E-01  2.115E-01
+        10.        35.     11.000     11.300  6.906E-01  2.108E-01
+        10.        45.      0.350      0.500  2.484E-03  3.181E+00
+        10.        45.      0.500      0.650  4.849E-01  1.979E+00
+        10.        45.      0.650      0.800  2.665E+00  1.284E+00
+        10.        45.      0.800      0.950  3.759E+00  1.073E+00
+        10.        45.      0.950      1.100  1.545E+00  1.165E+00
+        10.        45.      1.100      1.250  1.423E+00  1.018E+00
+        10.        45.      1.250      1.400  4.519E+00  8.093E-01
+        10.        45.      1.400      1.550  3.836E+00  7.747E-01
+        10.        45.      1.550      1.700  1.367E+00  8.546E-01
+        10.        45.      1.700      1.850  2.695E+00  7.388E-01
+        10.        45.      1.850      2.000  3.380E+00  6.717E-01
+        10.        45.      2.000      2.200  2.294E+00  5.969E-01
+        10.        45.      2.200      2.400  4.504E+00  5.684E-01
+        10.        45.      2.400      2.600  5.655E+00  5.386E-01
+        10.        45.      2.600      2.800  5.121E+00  6.108E-01
+        10.        45.      2.800      3.000  6.007E+00  4.799E-01
+        10.        45.      3.000      3.200  7.448E+00  4.648E-01
+        10.        45.      3.200      3.500  2.210E+01  5.531E-01
+        10.        45.      3.500      3.600  2.009E+01  5.063E-01
+        10.        45.      3.600      3.800  4.313E+00  3.781E-01
+        10.        45.      3.800      5.000  1.845E+00  3.542E-01
+        10.        45.      4.000      4.250  5.818E+00  3.303E-01
+        10.        45.      4.250      4.500  4.896E+00  7.990E-01
+        10.        45.      4.600      4.750  1.550E+00  1.129E+00
+        10.        45.      4.750      5.000  8.710E-01  1.117E+00
+        10.        45.      5.000      5.250  1.246E+00  7.771E-01
+        10.        45.      5.250      5.500  2.894E+00  4.937E-01
+        10.        45.      5.500      5.750  5.117E+00  2.764E-01
+        10.        45.      5.750      6.000  5.096E+00  2.767E-01
+        10.        45.      6.000      6.250  2.860E+00  2.650E-01
+        10.        45.      6.250      6.500  8.709E-01  2.533E-01
+        10.        45.      6.500      6.750  2.455E-01  2.897E-01
+        10.        45.      6.750      7.000  1.044E+00  2.745E-01
+        10.        45.      7.000      7.250  1.413E+00  2.531E-01
+        10.        45.      7.250      7.500  2.302E+00  2.664E-01
+        10.        45.      7.500      7.750  1.861E+00  2.605E-01
+        10.        45.      7.750      8.000  1.724E+00  2.852E-01
+        10.        45.      8.000      8.500  4.236E+00  3.300E-01
+        10.        45.      8.300      8.600  2.010E+01  5.147E-01
+        10.        45.      8.600      8.900  4.428E+01  7.770E-01
+        10.        45.      8.900      9.200  4.610E+01  7.548E-01
+        10.        45.      9.200      9.500  6.400E+01  9.582E-01
+        10.        45.      9.500      9.800  7.922E+01  1.219E+00
+        10.        45.      9.800     10.100  4.066E+01  7.749E-01
+        10.        45.     10.100     10.400  5.985E+00  2.511E-01
+        10.        45.     10.400     10.700  4.838E-01  1.575E-01
+        10.        45.     10.700     11.000  2.475E-01  1.616E-01
+        10.        60.      0.350      0.500  1.871E-01  3.474E+00
+        10.        60.      0.500      0.650  3.934E+00  1.769E+00
+        10.        60.      0.650      0.800  4.031E+00  1.353E+00
+        10.        60.      0.800      0.950  8.359E-01  1.357E+00
+        10.        60.      0.950      1.100  1.658E+00  1.168E+00
+        10.        60.      1.100      1.250  4.178E+00  9.360E-01
+        10.        60.      1.250      1.400  2.930E+00  8.663E-01
+        10.        60.      1.400      1.550  1.212E+00  9.297E-01
+        10.        60.      1.550      1.700  3.309E+00  7.798E-01
+        10.        60.      1.700      1.850  3.544E+00  7.409E-01
+        10.        60.      1.850      2.000  5.276E+00  7.538E-01
+        10.        60.      2.000      2.200  7.379E+00  6.450E-01
+        10.        60.      2.200      2.400  6.292E+00  9.527E-01
+        10.        60.      2.400      2.600  3.067E+00  1.483E+00
+        10.        60.      2.600      2.800  5.362E+00  1.233E+00
+        10.        60.      2.800      3.000  1.021E+01  5.944E-01
+        10.        60.      3.000      3.200  2.648E+01  5.934E-01
+        10.        60.      3.200      3.500  1.626E+01  4.899E-01
+        10.        60.      3.500      3.600  2.399E+00  3.818E-01
+        10.        60.      3.600      3.800  1.272E+00  3.644E-01
+        10.        60.      3.800      5.000  3.128E+00  3.513E-01
+        10.        60.      4.000      4.250  3.528E+00  3.212E-01
+        10.        60.      4.250      4.500  2.636E+00  3.093E-01
+        10.        60.      4.600      4.750  1.053E+00  3.015E-01
+        10.        60.      4.750      5.000  2.034E-01  3.642E-01
+        10.        60.      5.000      5.250  6.207E-01  2.955E-01
+        10.        60.      5.250      5.500  2.137E+00  2.485E-01
+        10.        60.      5.500      5.750  2.497E+00  2.450E-01
+        10.        60.      5.750      6.000  7.504E-01  2.346E-01
+        10.        60.      6.000      6.250  3.013E-01  2.737E-01
+        10.        60.      6.250      6.500  1.541E-01  2.803E-01
+        10.        60.      6.500      6.750  3.621E-01  2.622E-01
+        10.        60.      6.750      7.000  9.899E-01  2.589E-01
+        10.        60.      7.000      7.250  1.068E+00  2.620E-01
+        10.        60.      7.250      7.500  7.159E-01  2.645E-01
+        10.        60.      7.500      7.750  5.950E-01  2.873E-01
+        10.        60.      7.750      8.000  1.164E+00  2.955E-01
+        10.        60.      8.000      8.500  4.737E+00  2.891E-01
+        10.        60.      8.300      8.600  1.047E+01  3.324E-01
+        10.        60.      8.600      8.900  1.496E+01  3.719E-01
+        10.        60.      8.900      9.200  1.868E+01  4.203E-01
+        10.        60.      9.200      9.500  1.416E+01  3.777E-01
+        10.        60.      9.500      9.800  5.029E+00  2.782E-01
+        10.        60.      9.800     10.100  9.204E-01  2.057E-01
+        10.        60.     10.100     10.400  3.742E-02  2.033E-01
+        10.        75.      0.350      0.500  1.793E+00  2.391E+00
+        10.        75.      0.500      0.650  1.364E+00  1.718E+00
+        10.        75.      0.650      0.800  1.089E+00  1.612E+00
+        10.        75.      0.800      0.950  3.271E+00  9.946E-01
+        10.        75.      0.950      1.100  5.305E+00  7.879E-01
+        10.        75.      1.100      1.250  2.853E+00  7.323E-01
+        10.        75.      1.250      1.400  1.248E+00  7.265E-01
+        10.        75.      1.400      1.550  2.765E+00  6.157E-01
+        10.        75.      1.550      1.700  2.668E+00  5.769E-01
+        10.        75.      1.700      1.850  2.010E+00  6.208E-01
+        10.        75.      1.850      2.000  3.597E+00  5.457E-01
+        10.        75.      2.000      2.200  5.204E+00  4.305E-01
+        10.        75.      2.200      2.400  6.335E+00  4.499E-01
+        10.        75.      2.400      2.600  7.259E+00  3.928E-01
+        10.        75.      2.600      2.800  1.489E+01  4.492E-01
+        10.        75.      2.800      3.000  2.707E+01  5.206E-01
+        10.        75.      3.000      3.200  9.565E+00  3.576E-01
+        10.        75.      3.200      3.500  2.644E+00  3.032E-01
+        10.        75.      3.500      3.600  1.820E+00  2.934E-01
+        10.        75.      3.600      3.800  4.097E+00  2.788E-01
+        10.        75.      3.800      5.000  2.595E+00  2.887E-01
+        10.        75.      4.000      4.250  1.994E+00  2.481E-01
+        10.        75.      4.250      4.500  5.551E-01  2.545E-01
+        10.        75.      4.600      4.750  1.658E-01  2.867E-01
+        10.        75.      4.750      5.000  7.062E-01  2.225E-01
+        10.        75.      5.000      5.250  2.242E+00  2.044E-01
+        10.        75.      5.250      5.500  1.248E+00  2.014E-01
+        10.        75.      5.500      5.750  4.099E-01  2.032E-01
+        10.        75.      5.750      6.000  6.267E-02  2.460E-01
+        10.        75.      6.000      6.250  1.111E-01  2.462E-01
+        10.        75.      6.250      6.500  4.609E-01  2.165E-01
+        10.        75.      6.500      6.750  8.451E-01  2.045E-01
+        10.        75.      6.750      7.000  7.027E-01  2.279E-01
+        10.        75.      7.000      7.250  3.964E-01  2.498E-01
+        10.        75.      7.250      7.500  3.036E-01  2.656E-01
+        10.        75.      7.500      7.750  1.357E+00  2.936E-01
+        10.        75.      7.750      8.000  4.066E+00  3.090E-01
+        10.        75.      8.000      8.500  1.008E+01  3.056E-01
+        10.        75.      8.300      8.600  1.905E+01  4.017E-01
+        10.        75.      8.600      8.900  1.871E+01  4.238E-01
+        10.        75.      8.900      9.200  6.294E+00  2.598E-01
+        10.        75.      9.200      9.500  1.037E+00  2.046E-01
+        10.        75.      9.500      9.800  3.813E-02  1.924E-01
+        10.        90.      0.350      0.500  3.433E+00  1.900E+00
+        10.        90.      0.500      0.650  2.714E+00  1.376E+00
+        10.        90.      0.650      0.800  1.423E+00  1.178E+00
+        10.        90.      0.800      0.950  2.267E+00  8.313E-01
+        10.        90.      0.950      1.100  1.942E+00  7.784E-01
+        10.        90.      1.100      1.250  1.635E+00  7.474E-01
+        10.        90.      1.250      1.400  3.284E+00  6.214E-01
+        10.        90.      1.400      1.550  2.472E+00  5.675E-01
+        10.        90.      1.550      1.700  2.119E+00  5.953E-01
+        10.        90.      1.700      1.850  4.552E+00  5.325E-01
+        10.        90.      1.850      2.000  4.121E+00  5.071E-01
+        10.        90.      2.000      2.200  6.559E+00  4.755E-01
+        10.        90.      2.200      2.400  6.374E+00  3.981E-01
+        10.        90.      2.400      2.600  1.806E+01  4.830E-01
+        10.        90.      2.600      2.800  2.694E+01  5.466E-01
+        10.        90.      2.800      3.000  6.281E+00  3.205E-01
+        10.        90.      3.000      3.200  2.671E+00  3.192E-01
+        10.        90.      3.200      3.500  2.823E+00  2.896E-01
+        10.        90.      3.500      3.600  4.475E+00  2.970E-01
+        10.        90.      3.600      3.800  2.506E+00  2.770E-01
+        10.        90.      3.800      5.000  1.278E+00  2.628E-01
+        10.        90.      4.000      4.250  4.115E-01  2.613E-01
+        10.        90.      4.250      4.500  2.670E-01  2.816E-01
+        10.        90.      4.600      4.750  1.096E+00  2.113E-01
+        10.        90.      4.750      5.000  1.968E+00  2.050E-01
+        10.        90.      5.000      5.250  8.812E-01  2.061E-01
+        10.        90.      5.250      5.500  2.007E-01  2.209E-01
+        10.        90.      5.500      5.750  4.744E-02  2.491E-01
+        10.        90.      5.750      6.000  2.292E-01  2.352E-01
+        10.        90.      6.000      6.250  6.059E-01  2.376E-01
+        10.        90.      6.250      6.500  6.276E-01  2.173E-01
+        10.        90.      6.500      6.750  5.655E-01  2.246E-01
+        10.        90.      6.750      7.000  5.174E-01  2.569E-01
+        10.        90.      7.000      7.250  1.554E+00  3.135E-01
+        10.        90.      7.250      7.500  7.126E+00  3.647E-01
+        10.        90.      7.500      7.750  1.579E+01  4.069E-01
+        10.        90.      7.750      8.000  2.370E+01  4.842E-01
+        10.        90.      8.000      8.500  3.406E+01  5.894E-01
+        10.        90.      8.300      8.600  2.429E+01  5.256E-01
+        10.        90.      8.600      8.900  7.355E+00  2.815E-01
+        10.        90.      8.900      9.200  3.064E+00  1.923E-01
+        10.        90.      9.200      9.500  8.169E-01  1.478E-01
+        10.        90.      9.500      9.800  1.750E-01  1.501E-01
+        10.       110.      0.350      0.500  3.075E+00  2.127E+00
+        10.       110.      0.500      0.650  8.333E-01  1.469E+00
+        10.       110.      0.650      0.800  2.253E+00  1.013E+00
+        10.       110.      0.800      0.950  1.718E+00  9.138E-01
+        10.       110.      0.950      1.100  2.214E+00  7.837E-01
+        10.       110.      1.100      1.250  2.563E+00  6.571E-01
+        10.       110.      1.250      1.400  1.164E+00  6.545E-01
+        10.       110.      1.400      1.550  2.781E+00  5.795E-01
+        10.       110.      1.550      1.700  3.374E+00  5.522E-01
+        10.       110.      1.700      1.850  3.740E+00  6.060E-01
+        10.       110.      1.850      2.000  6.278E+00  5.749E-01
+        10.       110.      2.000      2.200  6.494E+00  4.518E-01
+        10.       110.      2.200      2.400  2.696E+01  5.742E-01
+        10.       110.      2.400      2.600  1.177E+01  4.243E-01
+        10.       110.      2.600      2.800  3.408E+00  3.675E-01
+        10.       110.      2.800      3.000  2.919E+00  3.352E-01
+        10.       110.      3.000      3.200  4.209E+00  3.035E-01
+        10.       110.      3.200      3.500  2.522E+00  2.955E-01
+        10.       110.      3.500      3.600  2.038E+00  2.817E-01
+        10.       110.      3.600      3.800  3.559E-02  2.740E-01
+        10.       110.      3.800      5.000  1.238E-01  3.538E-01
+        10.       110.      4.000      4.250  6.255E-01  2.353E-01
+        10.       110.      4.250      4.500  2.564E+00  2.214E-01
+        10.       110.      4.600      4.750  1.388E+00  2.195E-01
+        10.       110.      4.750      5.000  4.257E-01  2.151E-01
+        10.       110.      5.000      5.250  7.384E-02  2.622E-01
+        10.       110.      5.250      5.500  2.501E-01  2.472E-01
+        10.       110.      5.500      5.750  5.972E-01  2.258E-01
+        10.       110.      5.750      6.000  6.922E-01  2.210E-01
+        10.       110.      6.000      6.250  6.529E-01  2.175E-01
+        10.       110.      6.250      6.500  4.840E-01  2.327E-01
+        10.       110.      6.500      6.750  1.554E+00  2.587E-01
+        10.       110.      6.750      7.000  6.441E+00  3.066E-01
+        10.       110.      7.000      7.250  1.558E+01  3.956E-01
+        10.       110.      7.250      7.500  2.655E+01  5.123E-01
+        10.       110.      7.500      7.750  3.748E+01  6.431E-01
+        10.       110.      7.750      8.000  2.679E+01  5.722E-01
+        10.       110.      8.000      8.500  7.817E+00  3.118E-01
+        10.       110.      8.300      8.600  3.966E+00  2.247E-01
+        10.       110.      8.600      8.900  2.632E+00  1.897E-01
+        10.       110.      8.900      9.200  6.806E-01  1.422E-01
+        10.       110.      9.200      9.500  1.412E-01  1.289E-01
+        10.       130.      0.350      0.500  6.705E-01  2.338E+00
+        10.       130.      0.500      0.650  2.287E+00  1.212E+00
+        10.       130.      0.650      0.800  1.398E+00  1.070E+00
+        10.       130.      0.800      0.950  1.523E+00  8.632E-01
+        10.       130.      0.950      1.100  2.506E+00  7.334E-01
+        10.       130.      1.100      1.250  1.615E+00  7.205E-01
+        10.       130.      1.250      1.400  3.243E+00  6.113E-01
+        10.       130.      1.400      1.550  2.456E+00  5.959E-01
+        10.       130.      1.550      1.700  4.826E+00  6.476E-01
+        10.       130.      1.700      1.850  5.687E+00  6.173E-01
+        10.       130.      1.850      2.000  7.338E+00  5.982E-01
+        10.       130.      2.000      2.200  2.517E+01  5.944E-01
+        10.       130.      2.200      2.400  5.855E+00  3.986E-01
+        10.       130.      2.400      2.600  2.175E+00  4.075E-01
+        10.       130.      2.600      2.800  4.124E+00  3.891E-01
+        10.       130.      2.800      3.000  3.908E+00  3.319E-01
+        10.       130.      3.000      3.200  2.775E+00  3.315E-01
+        10.       130.      3.200      3.500  8.530E-01  2.867E-01
+        10.       130.      3.500      3.600  2.099E-01  3.376E-01
+        10.       130.      3.600      3.800  2.544E-01  3.105E-01
+        10.       130.      3.800      5.000  1.660E+00  2.519E-01
+        10.       130.      4.000      4.250  3.604E+00  2.357E-01
+        10.       130.      4.250      4.500  9.994E-01  2.055E-01
+        10.       130.      4.600      4.750  2.060E-01  2.141E-01
+        10.       130.      4.750      5.000  1.687E-01  2.265E-01
+        10.       130.      5.000      5.250  5.064E-01  1.930E-01
+        10.       130.      5.250      5.500  7.844E-01  2.029E-01
+        10.       130.      5.500      5.750  5.394E-01  2.122E-01
+        10.       130.      5.750      6.000  4.504E-01  2.167E-01
+        10.       130.      6.000      6.250  9.392E-01  1.864E-01
+        10.       130.      6.250      6.500  3.414E+00  2.022E-01
+        10.       130.      6.500      6.750  7.518E+00  2.504E-01
+        10.       130.      6.750      7.000  1.300E+01  3.215E-01
+        10.       130.      7.000      7.250  2.120E+01  4.086E-01
+        10.       130.      7.250      7.500  1.777E+01  4.171E-01
+        10.       130.      7.500      7.750  2.437E+00  2.735E-01
+        10.       130.      7.750      8.000  3.546E-01  1.829E-01
+        10.       130.      8.000      8.500  4.533E-02  3.684E-02
+        10.       145.      0.350      0.500  2.931E+00  2.465E+00
+        10.       145.      0.500      0.650  3.352E+00  1.581E+00
+        10.       145.      0.650      0.800  1.311E+00  1.542E+00
+        10.       145.      0.800      0.950  3.285E+00  1.187E+00
+        10.       145.      0.950      1.100  1.776E+00  1.122E+00
+        10.       145.      1.100      1.250  2.846E+00  1.028E+00
+        10.       145.      1.250      1.400  3.767E+00  9.331E-01
+        10.       145.      1.400      1.550  3.416E+00  9.355E-01
+        10.       145.      1.550      1.700  6.601E+00  9.112E-01
+        10.       145.      1.700      1.850  5.430E+00  8.792E-01
+        10.       145.      1.850      2.000  2.009E+01  8.865E-01
+        10.       145.      2.000      2.200  1.276E+01  6.726E-01
+        10.       145.      2.200      2.400  1.983E+00  6.029E-01
+        10.       145.      2.400      2.600  3.290E+00  6.386E-01
+        10.       145.      2.600      2.800  5.941E+00  5.719E-01
+        10.       145.      2.800      3.000  3.281E+00  5.103E-01
+        10.       145.      3.000      3.200  1.173E+00  5.160E-01
+        10.       145.      3.200      3.500  1.116E-01  5.583E-01
+        10.       145.      3.500      3.600  1.969E-01  5.189E-01
+        10.       145.      3.600      3.800  2.062E+00  4.014E-01
+        10.       145.      3.800      5.000  5.626E+00  3.940E-01
+        10.       145.      4.000      4.250  2.123E+00  3.195E-01
+        10.       145.      4.250      4.500  5.214E-01  3.272E-01
+        10.       145.      4.600      4.750  1.692E-01  3.626E-01
+        10.       145.      4.750      5.000  1.057E+00  2.961E-01
+        10.       145.      5.000      5.250  1.311E+00  2.845E-01
+        10.       145.      5.250      5.500  7.958E-01  2.841E-01
+        10.       145.      5.500      5.750  7.455E-01  2.733E-01
+        10.       145.      5.750      6.000  9.300E-01  2.975E-01
+        10.       145.      6.000      6.250  2.279E+00  2.777E-01
+        10.       145.      6.250      6.500  5.242E+00  2.949E-01
+        10.       145.      6.500      6.750  8.264E+00  3.206E-01
+        10.       145.      6.750      7.000  1.411E+01  3.922E-01
+        10.       145.      7.000      7.250  1.128E+01  3.837E-01
+        10.       145.      7.250      7.500  2.478E+00  2.859E-01
+        10.       145.      7.500      7.750  5.427E-01  2.784E-01
+        10.       145.      7.750      8.000  1.069E-01  2.905E-01
+        10.       145.      8.000      8.500  8.299E-02  2.505E-01
+        10.       145.      8.300      8.600  3.701E-02  2.494E-01
+ENDDATA            669
+ENDSUBENT          694
+SUBENT        14719015   20260127   20260316   20260316       1526
+BIB                  6         14
+REACTION   (5-B-11(N,X)0-NN-1,,DA/DE)
 SAMPLE     (5-B-11,ENR=0.905) Right-circular cylinder of
            1.7 cm diameter and 3 cm height with a mass
            of 0.92 mol
 CORRECTION Data corrected for multiple scattering
-STATUS     (CURVE) Data taken from fig.3 of the reference
-                   Waiting for data from author
-ENDBIB               7
-COMMON               1          3
-ANG
-ADEG
-75.
+ERR-ANALYS (ERR-T) Total uncertainty
+           (ERR-5) Uncertainty in correction for spectra
+                   extrapolation
+           (ERR-7) Syst. uncertainty in Monte Carlo correction
+           (ERR-S) Combines statistical uncertainty, in dead time
+                   correction and background subtraction
+STATUS     (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Fig. - 3
+           Data were received from author on January 26, 2026.
+HISTORY    (20260115A) BP: Replaced digitized data with tabulated.
+ENDBIB              14
+COMMON               4          3
+EN-RSL     ERR-5      ERR-7      ERR-S
+MEV        PER-CENT   PER-CENT   PER-CENT
+      0.015        2.8        1.1        0.9
 ENDCOMMON            3
-DATA                 3         67
-EN         E          DATA
-MEV        MEV        MB/SR/MEV
-         6.       0.43   1.99E+01
-         6.       0.58   8.92E+00
-         6.       0.74   1.26E+00
-         6.       0.89   7.02E+00
-         6.       1.04   4.54E+01
-         6.       1.19   8.83E+00
-         6.       1.34   2.65E-01
-         6.       2.13   6.30E-01
-         6.       2.33   1.02E+00
-         6.       2.53   1.15E+00
-         6.       2.74   1.02E+00
-         6.       2.93   1.78E+00
-         6.       3.15   1.79E+01
-         6.       3.35   2.66E+01
-         6.       3.55   2.53E+00
-         6.       3.75   1.84E+00
-         6.       3.94   1.35E+00
-         6.       4.17   1.19E+00
-         6.       4.47   1.45E+00
-         6.       4.68   4.07E+00
-         6.       4.95   1.87E+01
-         6.       5.21   6.06E+01
-         6.       5.45   6.46E+01
-         6.       5.72   1.11E+01
-         6.       5.94   7.13E-01
-        10.       0.43   2.17E+00
-        10.       0.58   2.67E+00
-        10.       0.73   2.68E-01
-        10.       0.88   2.70E-01
-        10.       1.03   9.79E-01
-        10.       1.18   5.29E+00
-        10.       1.33   8.02E-01
-        10.       1.64   3.36E+00
-        10.       1.78   2.13E+01
-        10.       1.94   7.99E+00
-        10.       2.11   3.55E+00
-        10.       2.32   2.12E+01
-        10.       2.51   3.41E+00
-        10.       2.71   1.31E-01
-        10.       2.93   1.40E-01
-        10.       3.12   2.43E-01
-        10.       3.30   6.41E-01
-        10.       3.51   1.40E+00
-        10.       3.71   4.72E+00
-        10.       3.92   1.25E+01
-        10.       4.14   9.35E+00
-        10.       4.42   1.80E+01
-        10.       4.66   1.73E+01
-        10.       4.87   7.21E-01
-        10.       5.14   1.38E-01
-        10.       5.37   1.39E-01
-        10.       5.65   1.39E-01
-        10.       5.89   4.30E-01
-        10.       6.14   1.69E+00
-        10.       6.40   2.64E+00
-        10.       6.64   5.35E+00
-        10.       6.91   5.53E+00
-        10.       7.13   1.69E+00
-        10.       7.43   9.99E-01
-        10.       7.64   3.46E+00
-        10.       7.89   7.72E+00
-        10.       8.18   1.24E+01
-        10.       8.49   1.97E+01
-        10.       8.80   2.91E+01
-        10.       9.12   1.53E+01
-        10.       9.36   2.57E+00
-        10.       9.65   2.82E-01
-ENDDATA             69
-ENDSUBENT           85
-ENDENTRY            15
+DATA                 6        695
+EN         ANG        E-MIN      E-MAX      DATA       ERR-T
+MEV        ADEG       MEV        MEV        MB/SR/MEV  MB/SR/MEV
+         6.        20.      0.350      0.500  4.948E+00  1.608E+00
+         6.        20.      0.500      0.650  1.547E+01  1.042E+00
+         6.        20.      0.650      0.800  4.590E+01  9.979E-01
+         6.        20.      0.800      0.950  5.081E+00  7.753E-01
+         6.        20.      0.950      1.100  8.386E-01  7.422E-01
+         6.        20.      1.100      1.250  5.645E+00  8.250E-01
+         6.        20.      1.250      1.400  3.812E+01  8.845E-01
+         6.        20.      1.400      1.550  1.706E+01  7.071E-01
+         6.        20.      1.550      1.700  8.648E-01  6.289E-01
+         6.        20.      1.700      1.850  2.105E+00  5.985E-01
+         6.        20.      1.850      2.000  8.252E-01  5.679E-01
+         6.        20.      2.000      2.200  8.462E-01  4.835E-01
+         6.        20.      2.200      2.400  1.557E+00  5.063E-01
+         6.        20.      2.400      2.600  2.671E+00  4.571E-01
+         6.        20.      2.600      2.800  2.576E+00  4.351E-01
+         6.        20.      2.800      3.000  3.745E+00  4.319E-01
+         6.        20.      3.000      3.200  2.468E+00  4.282E-01
+         6.        20.      3.200      3.500  3.758E+00  4.279E-01
+         6.        20.      3.500      3.600  1.352E+01  5.075E-01
+         6.        20.      3.600      3.800  3.962E+01  6.842E-01
+         6.        20.      3.800      5.000  2.408E+01  5.614E-01
+         6.        20.      4.000      4.250  5.238E+00  4.026E-01
+         6.        20.      4.250      4.500  5.446E+00  4.448E-01
+         6.        20.      4.600      4.750  7.196E+00  5.628E-01
+         6.        20.      4.750      5.000  1.396E+01  8.110E-01
+         6.        20.      5.000      5.250  4.223E+01  1.310E+00
+         6.        20.      5.250      5.500  1.531E+02  2.427E+00
+         6.        20.      5.500      5.750  4.083E+02  5.315E+00
+         6.        20.      5.750      6.000  7.285E+02  8.488E+00
+         6.        20.      6.000      6.250  4.010E+02  4.433E+00
+         6.        20.      6.250      6.500  3.671E+01  6.223E-01
+         6.        20.      6.500      6.750  3.535E+00  2.321E-01
+         6.        20.      6.750      7.000  2.183E+00  2.056E-01
+         6.        25.      0.350      0.500  7.450E+00  1.559E+00
+         6.        25.      0.500      0.650  2.006E+01  9.778E-01
+         6.        25.      0.650      0.800  4.121E+01  9.199E-01
+         6.        25.      0.800      0.950  5.107E+00  6.823E-01
+         6.        25.      0.950      1.100  2.529E+00  6.602E-01
+         6.        25.      1.100      1.250  8.302E+00  7.358E-01
+         6.        25.      1.250      1.400  3.882E+01  8.345E-01
+         6.        25.      1.400      1.550  1.314E+01  6.179E-01
+         6.        25.      1.550      1.700  1.533E+00  5.447E-01
+         6.        25.      1.700      1.850  2.092E+00  5.148E-01
+         6.        25.      1.850      2.000  2.734E+00  4.740E-01
+         6.        25.      2.000      2.200  1.074E-01  4.164E-01
+         6.        25.      2.200      2.400  2.236E+00  4.364E-01
+         6.        25.      2.400      2.600  2.989E+00  3.887E-01
+         6.        25.      2.600      2.800  2.677E+00  3.678E-01
+         6.        25.      2.800      3.000  2.866E+00  3.778E-01
+         6.        25.      3.000      3.200  2.832E+00  4.008E-01
+         6.        25.      3.200      3.500  2.703E+00  4.128E-01
+         6.        25.      3.500      3.600  1.254E+01  5.038E-01
+         6.        25.      3.600      3.800  4.036E+01  7.190E-01
+         6.        25.      3.800      5.000  2.315E+01  5.933E-01
+         6.        25.      4.000      4.250  3.936E+00  4.375E-01
+         6.        25.      4.250      4.500  5.761E+00  4.432E-01
+         6.        25.      4.600      4.750  7.437E+00  4.772E-01
+         6.        25.      4.750      5.000  1.272E+01  5.479E-01
+         6.        25.      5.000      5.250  3.076E+01  7.486E-01
+         6.        25.      5.250      5.500  1.131E+02  1.643E+00
+         6.        25.      5.500      5.750  3.076E+02  4.064E+00
+         6.        25.      5.750      6.000  6.551E+02  7.629E+00
+         6.        25.      6.000      6.250  3.786E+02  4.139E+00
+         6.        25.      6.250      6.500  1.880E+01  4.501E-01
+         6.        25.      6.500      6.750  2.178E+00  2.067E-01
+         6.        25.      6.750      7.000  1.734E+00  1.936E-01
+         6.        35.      0.350      0.500  4.000E+00  1.288E+00
+         6.        35.      0.500      0.650  2.448E+01  8.195E-01
+         6.        35.      0.650      0.800  2.785E+01  7.140E-01
+         6.        35.      0.800      0.950  8.367E-01  5.415E-01
+         6.        35.      0.950      1.100  2.478E+00  5.168E-01
+         6.        35.      1.100      1.250  1.289E+01  6.297E-01
+         6.        35.      1.250      1.400  3.832E+01  7.242E-01
+         6.        35.      1.400      1.550  2.305E+00  4.466E-01
+         6.        35.      1.550      1.700  3.365E-01  4.234E-01
+         6.        35.      1.700      1.850  3.558E-01  4.076E-01
+         6.        35.      1.850      2.000  5.558E-01  3.826E-01
+         6.        35.      2.000      2.200  7.558E-01  3.394E-01
+         6.        35.      2.200      2.400  1.068E+00  3.281E-01
+         6.        35.      2.400      2.600  1.480E+00  3.088E-01
+         6.        35.      2.600      2.800  1.502E+00  2.897E-01
+         6.        35.      2.800      3.000  1.914E+00  3.004E-01
+         6.        35.      3.000      3.200  1.768E+00  3.240E-01
+         6.        35.      3.200      3.500  3.426E+00  3.500E-01
+         6.        35.      3.500      3.600  2.235E+01  5.272E-01
+         6.        35.      3.600      3.800  3.661E+01  6.268E-01
+         6.        35.      3.800      5.000  8.017E+00  4.472E-01
+         6.        35.      4.000      4.250  2.292E+00  3.508E-01
+         6.        35.      4.250      4.500  2.957E+00  2.926E-01
+         6.        35.      4.600      4.750  5.485E+00  2.857E-01
+         6.        35.      4.750      5.000  9.401E+00  3.804E-01
+         6.        35.      5.000      5.250  3.567E+01  7.283E-01
+         6.        35.      5.250      5.500  1.259E+02  1.761E+00
+         6.        35.      5.500      5.750  3.243E+02  4.100E+00
+         6.        35.      5.750      6.000  3.873E+02  4.276E+00
+         6.        35.      6.000      6.250  8.507E+01  1.026E+00
+         6.        35.      6.250      6.500  2.403E+00  1.947E-01
+         6.        35.      6.500      6.750  1.783E+00  1.556E-01
+         6.        45.      0.350      0.500  5.883E+00  1.225E+00
+         6.        45.      0.500      0.650  3.166E+01  8.220E-01
+         6.        45.      0.650      0.800  1.174E+01  6.036E-01
+         6.        45.      0.800      0.950  1.052E+00  4.874E-01
+         6.        45.      0.950      1.100  3.384E+00  4.750E-01
+         6.        45.      1.100      1.250  3.066E+01  7.277E-01
+         6.        45.      1.250      1.400  2.494E+01  6.101E-01
+         6.        45.      1.400      1.550  1.080E+00  3.901E-01
+         6.        45.      1.550      1.700  7.427E-01  3.940E-01
+         6.        45.      1.700      1.850  3.775E-01  3.649E-01
+         6.        45.      1.850      2.000  1.673E-01  3.543E-01
+         6.        45.      2.000      2.200  2.673E-01  3.377E-01
+         6.        45.      2.200      2.400  2.673E-01  2.991E-01
+         6.        45.      2.400      2.600  3.673E-01  2.937E-01
+         6.        45.      2.600      2.800  1.388E+00  3.273E-01
+         6.        45.      2.800      3.000  1.695E+00  3.506E-01
+         6.        45.      3.000      3.200  1.916E+00  3.481E-01
+         6.        45.      3.200      3.500  5.305E+00  3.624E-01
+         6.        45.      3.500      3.600  3.114E+01  5.650E-01
+         6.        45.      3.600      3.800  2.454E+01  4.783E-01
+         6.        45.      3.800      5.000  2.004E+00  2.775E-01
+         6.        45.      4.000      4.250  8.297E-01  2.366E-01
+         6.        45.      4.250      4.500  1.583E+00  2.393E-01
+         6.        45.      4.600      4.750  2.944E+00  2.565E-01
+         6.        45.      4.750      5.000  6.072E+00  3.362E-01
+         6.        45.      5.000      5.250  2.562E+01  6.004E-01
+         6.        45.      5.250      5.500  8.683E+01  1.358E+00
+         6.        45.      5.500      5.750  2.172E+02  2.787E+00
+         6.        45.      5.750      6.000  1.831E+02  2.078E+00
+         6.        45.      6.000      6.250  1.639E+01  3.945E-01
+         6.        45.      6.250      6.500  6.189E-01  1.543E-01
+         6.        45.      6.500      6.750  6.967E-01  1.414E-01
+         6.        60.      0.350      0.500  9.204E+00  1.042E+00
+         6.        60.      0.500      0.650  2.592E+01  7.090E-01
+         6.        60.      0.650      0.800  5.468E-01  4.989E-01
+         6.        60.      0.800      0.950  2.228E+00  4.308E-01
+         6.        60.      0.950      1.100  1.448E+01  4.967E-01
+         6.        60.      1.100      1.250  4.557E+01  8.272E-01
+         6.        60.      1.250      1.400  2.329E+00  4.274E-01
+         6.        60.      1.400      1.550  1.649E+00  3.985E-01
+         6.        60.      1.550      1.700  5.362E-01  3.890E-01
+         6.        60.      1.700      1.850  1.238E-01  3.468E-01
+         6.        60.      1.850      2.000  1.218E-01  3.757E-01
+         6.        60.      2.000      2.200  1.926E-01  2.692E-01
+         6.        60.      2.200      2.400  1.284E-01  2.550E-01
+         6.        60.      2.400      2.600  2.444E-01  2.372E-01
+         6.        60.      2.600      2.800  5.905E-01  2.326E-01
+         6.        60.      2.800      3.000  1.041E+00  2.307E-01
+         6.        60.      3.000      3.200  4.845E+00  2.824E-01
+         6.        60.      3.200      3.500  2.427E+01  4.608E-01
+         6.        60.      3.500      3.600  2.343E+01  4.514E-01
+         6.        60.      3.600      3.800  1.214E+00  2.540E-01
+         6.        60.      3.800      5.000  1.726E+00  2.366E-01
+         6.        60.      4.000      4.250  1.180E+00  2.214E-01
+         6.        60.      4.250      4.500  1.530E+00  2.362E-01
+         6.        60.      4.600      4.750  2.313E+00  2.529E-01
+         6.        60.      4.750      5.000  7.108E+00  3.208E-01
+         6.        60.      5.000      5.250  2.917E+01  5.688E-01
+         6.        60.      5.250      5.500  7.694E+01  1.072E+00
+         6.        60.      5.500      5.750  6.336E+01  9.473E-01
+         6.        60.      5.750      6.000  5.813E+00  2.828E-01
+         6.        60.      6.000      6.250  1.318E-01  1.395E-01
+         6.        60.      6.250      6.500  1.018E-01  1.142E-01
+         6.        75.      0.350      0.500  1.978E+01  9.912E-01
+         6.        75.      0.500      0.650  8.938E+00  5.860E-01
+         6.        75.      0.650      0.800  1.269E+00  4.491E-01
+         6.        75.      0.800      0.950  7.007E+00  4.226E-01
+         6.        75.      0.950      1.100  4.511E+01  6.907E-01
+         6.        75.      1.100      1.250  8.846E+00  4.527E-01
+         6.        75.      1.250      1.400  2.667E-01  3.452E-01
+         6.        75.      1.400      1.550  6.670E-02  3.196E-01
+         6.        75.      1.550      1.700  7.890E-02  3.228E-01
+         6.        75.      1.700      1.850  3.600E-02  3.746E-01
+         6.        75.      1.850      2.000  7.600E-02  2.859E-01
+         6.        75.      2.000      2.200  6.328E-01  2.315E-01
+         6.        75.      2.200      2.400  1.032E+00  2.290E-01
+         6.        75.      2.400      2.600  1.151E+00  2.116E-01
+         6.        75.      2.600      2.800  1.024E+00  2.204E-01
+         6.        75.      2.800      3.000  1.787E+00  2.317E-01
+         6.        75.      3.000      3.200  1.796E+01  3.966E-01
+         6.        75.      3.200      3.500  2.655E+01  4.584E-01
+         6.        75.      3.500      3.600  2.532E+00  2.574E-01
+         6.        75.      3.600      3.800  1.866E+00  2.169E-01
+         6.        75.      3.800      5.000  1.360E+00  2.123E-01
+         6.        75.      4.000      4.250  1.231E+00  1.974E-01
+         6.        75.      4.250      4.500  1.466E+00  2.368E-01
+         6.        75.      4.600      4.750  4.111E+00  2.927E-01
+         6.        75.      4.750      5.000  1.886E+01  4.916E-01
+         6.        75.      5.000      5.250  6.102E+01  9.792E-01
+         6.        75.      5.250      5.500  6.485E+01  8.578E-01
+         6.        75.      5.500      5.750  1.119E+01  3.284E-01
+         6.        75.      5.750      6.000  7.160E-01  1.400E-01
+         6.        90.      0.350      0.500  1.706E+01  9.900E-01
+         6.        90.      0.500      0.650  2.296E+00  5.573E-01
+         6.        90.      0.650      0.800  2.299E+00  4.515E-01
+         6.        90.      0.800      0.950  3.314E+01  6.072E-01
+         6.        90.      0.950      1.100  1.817E+01  5.089E-01
+         6.        90.      1.100      1.250  1.500E-04  4.140E-01
+         6.        90.      1.250      1.400  1.500E-04  3.746E-01
+         6.        90.      1.400      1.550  4.400E-03  3.344E-01
+         6.        90.      1.550      1.700  4.400E-03  3.514E-01
+         6.        90.      1.700      1.850  4.400E-03  3.495E-01
+         6.        90.      1.850      2.000  4.400E-03  2.874E-01
+         6.        90.      2.000      2.200  5.383E-01  2.456E-01
+         6.        90.      2.200      2.400  7.254E-01  2.435E-01
+         6.        90.      2.400      2.600  1.237E+00  2.392E-01
+         6.        90.      2.600      2.800  2.095E+00  2.350E-01
+         6.        90.      2.800      3.000  1.574E+01  3.835E-01
+         6.        90.      3.000      3.200  2.566E+01  4.583E-01
+         6.        90.      3.200      3.500  3.688E+00  2.702E-01
+         6.        90.      3.500      3.600  1.232E+00  2.451E-01
+         6.        90.      3.600      3.800  1.431E+00  2.432E-01
+         6.        90.      3.800      5.000  1.628E+00  2.384E-01
+         6.        90.      4.000      4.250  2.498E+00  2.483E-01
+         6.        90.      4.250      4.500  4.995E+00  3.025E-01
+         6.        90.      4.600      4.750  2.994E+01  6.056E-01
+         6.        90.      4.750      5.000  1.118E+02  1.472E+00
+         6.        90.      5.000      5.250  1.041E+02  1.292E+00
+         6.        90.      5.250      5.500  1.155E+01  3.856E-01
+         6.        90.      5.500      5.750  1.173E+00  1.784E-01
+         6.        90.      5.750      6.000  2.331E-02  1.150E-01
+         6.       110.      0.350      0.500  1.609E+00  8.608E-01
+         6.       110.      0.500      0.650  6.090E-01  5.050E-01
+         6.       110.      0.650      0.800  2.112E+01  5.321E-01
+         6.       110.      0.800      0.950  1.989E+01  5.103E-01
+         6.       110.      0.950      1.100  7.521E-01  3.808E-01
+         6.       110.      1.100      1.250  1.653E-01  3.704E-01
+         6.       110.      1.250      1.400  6.520E-02  3.475E-01
+         6.       110.      1.400      1.550  6.530E-02  3.351E-01
+         6.       110.      1.550      1.700  1.652E-01  2.845E-01
+         6.       110.      1.700      1.850  2.279E-01  2.830E-01
+         6.       110.      1.850      2.000  1.017E+00  2.618E-01
+         6.       110.      2.000      2.200  5.582E-01  2.331E-01
+         6.       110.      2.200      2.400  9.338E-01  2.441E-01
+         6.       110.      2.400      2.600  1.734E+00  2.399E-01
+         6.       110.      2.600      2.800  2.277E+01  4.236E-01
+         6.       110.      2.800      3.000  2.584E+01  4.302E-01
+         6.       110.      3.000      3.200  1.680E+00  2.059E-01
+         6.       110.      3.200      3.500  2.232E+00  2.058E-01
+         6.       110.      3.500      3.600  3.227E+00  2.340E-01
+         6.       110.      3.600      3.800  3.045E+00  2.447E-01
+         6.       110.      3.800      5.000  3.233E+00  2.773E-01
+         6.       110.      4.000      4.250  6.292E+00  3.134E-01
+         6.       110.      4.250      4.500  4.184E+01  8.478E-01
+         6.       110.      4.600      4.750  1.636E+02  1.862E+00
+         6.       110.      4.750      5.000  1.105E+02  1.180E+00
+         6.       110.      5.000      5.250  9.193E+00  3.408E-01
+         6.       110.      5.250      5.500  1.167E+00  1.635E-01
+         6.       110.      5.500      5.750  1.336E-01  1.148E-01
+         6.       130.      0.350      0.500  1.209E+00  9.312E-01
+         6.       130.      0.500      0.650  6.006E+00  5.599E-01
+         6.       130.      0.650      0.800  2.917E+01  6.150E-01
+         6.       130.      0.800      0.950  2.212E+00  4.472E-01
+         6.       130.      0.950      1.100  1.894E+00  4.068E-01
+         6.       130.      1.100      1.250  1.437E-01  3.995E-01
+         6.       130.      1.250      1.400  1.870E-01  3.610E-01
+         6.       130.      1.400      1.550  1.816E-01  3.481E-01
+         6.       130.      1.550      1.700  3.085E-01  3.246E-01
+         6.       130.      1.700      1.850  1.549E+00  3.097E-01
+         6.       130.      1.850      2.000  1.735E+00  3.009E-01
+         6.       130.      2.000      2.200  1.415E+00  2.588E-01
+         6.       130.      2.200      2.400  1.940E+00  2.713E-01
+         6.       130.      2.400      2.600  2.305E+01  4.477E-01
+         6.       130.      2.600      2.800  3.145E+01  4.930E-01
+         6.       130.      2.800      3.000  2.424E+00  2.334E-01
+         6.       130.      3.000      3.200  1.637E+00  2.184E-01
+         6.       130.      3.200      3.500  2.071E+00  2.310E-01
+         6.       130.      3.500      3.600  2.487E+00  2.716E-01
+         6.       130.      3.600      3.800  2.956E+00  3.208E-01
+         6.       130.      3.800      5.000  6.597E+00  3.670E-01
+         6.       130.      4.000      4.250  4.231E+01  8.596E-01
+         6.       130.      4.250      4.500  1.809E+02  1.836E+00
+         6.       130.      4.600      4.750  1.024E+02  1.084E+00
+         6.       130.      4.750      5.000  5.790E+00  3.219E-01
+         6.       130.      5.000      5.250  1.148E+00  1.793E-01
+         6.       130.      5.250      5.500  3.194E-01  1.255E-01
+         6.       145.      0.350      0.500  1.902E+00  9.499E-01
+         6.       145.      0.500      0.650  1.333E+01  6.768E-01
+         6.       145.      0.650      0.800  1.525E+01  6.215E-01
+         6.       145.      0.800      0.950  2.363E+00  5.646E-01
+         6.       145.      0.950      1.100  6.910E-02  4.873E-01
+         6.       145.      1.100      1.250  9.100E-03  5.499E-01
+         6.       145.      1.250      1.400  7.853E-03  4.602E-01
+         6.       145.      1.400      1.550  4.405E-01  4.169E-01
+         6.       145.      1.550      1.700  1.298E+00  3.943E-01
+         6.       145.      1.700      1.850  9.769E-01  3.919E-01
+         6.       145.      1.850      2.000  1.692E+00  3.678E-01
+         6.       145.      2.000      2.200  1.311E+00  3.119E-01
+         6.       145.      2.200      2.400  5.916E+00  3.712E-01
+         6.       145.      2.400      2.600  4.477E+01  6.541E-01
+         6.       145.      2.600      2.800  6.696E+00  3.319E-01
+         6.       145.      2.800      3.000  1.558E+00  2.728E-01
+         6.       145.      3.000      3.200  2.024E+00  2.710E-01
+         6.       145.      3.200      3.500  1.659E+00  2.832E-01
+         6.       145.      3.500      3.600  1.937E+00  3.243E-01
+         6.       145.      3.600      3.800  3.723E+00  3.612E-01
+         6.       145.      3.800      5.000  1.778E+01  6.189E-01
+         6.       145.      4.000      4.250  1.196E+02  1.600E+00
+         6.       145.      4.250      4.500  1.889E+02  1.723E+00
+         6.       145.      4.600      4.750  1.770E+01  4.193E-01
+         6.       145.      4.750      5.000  2.720E+00  2.570E-01
+         6.       145.      5.000      5.250  7.126E-01  1.543E-01
+        10.        20.      0.350      0.500  6.133E+00  4.374E+00
+        10.        20.      0.500      0.650  1.012E+01  3.036E+00
+        10.        20.      0.650      0.800  6.300E+00  2.623E+00
+        10.        20.      0.800      0.950  1.725E+01  2.378E+00
+        10.        20.      0.950      1.100  1.253E+01  2.416E+00
+        10.        20.      1.100      1.250  1.888E+00  2.370E+00
+        10.        20.      1.250      1.400  9.230E-01  2.177E+00
+        10.        20.      1.400      1.550  6.159E+00  1.982E+00
+        10.        20.      1.550      1.700  1.459E+01  1.945E+00
+        10.        20.      1.700      1.850  4.313E+00  1.784E+00
+        10.        20.      1.850      2.000  2.177E+00  1.560E+00
+        10.        20.      2.000      2.200  1.883E+00  1.376E+00
+        10.        20.      2.200      2.400  1.405E+01  1.438E+00
+        10.        20.      2.400      2.600  1.033E+01  1.329E+00
+        10.        20.      2.600      2.800  1.237E+01  1.232E+00
+        10.        20.      2.800      3.000  5.164E+01  1.312E+00
+        10.        20.      3.000      3.200  1.928E+01  1.133E+00
+        10.        20.      3.200      3.500  1.178E+00  1.054E+00
+        10.        20.      3.500      3.600  1.413E+00  1.045E+00
+        10.        20.      3.600      3.800  2.765E+00  1.045E+00
+        10.        20.      3.800      5.000  2.420E+00  9.583E-01
+        10.        20.      4.000      4.250  2.726E+00  8.350E-01
+        10.        20.      4.250      4.500  5.253E+00  8.191E-01
+        10.        20.      4.600      4.750  2.125E+01  8.948E-01
+        10.        20.      4.750      5.000  2.471E+01  8.671E-01
+        10.        20.      5.000      5.250  2.618E+01  8.820E-01
+        10.        20.      5.250      5.500  4.619E+01  9.441E-01
+        10.        20.      5.500      5.750  1.506E+01  8.085E-01
+        10.        20.      5.750      6.000  2.718E+00  7.582E-01
+        10.        20.      6.000      6.250  2.610E+00  7.460E-01
+        10.        20.      6.250      6.500  5.291E+00  7.310E-01
+        10.        20.      6.500      6.750  5.779E+00  7.527E-01
+        10.        20.      6.750      7.000  7.765E+00  7.915E-01
+        10.        20.      7.000      7.250  1.313E+01  8.556E-01
+        10.        20.      7.250      7.500  1.280E+01  8.832E-01
+        10.        20.      7.500      7.750  1.908E+01  9.382E-01
+        10.        20.      7.750      8.000  1.855E+01  1.029E+00
+        10.        20.      8.000      8.500  9.058E+00  1.124E+00
+        10.        20.      8.300      8.600  1.802E+01  1.639E+00
+        10.        20.      8.600      8.900  8.490E+01  2.409E+00
+        10.        20.      8.900      9.200  1.666E+02  3.022E+00
+        10.        20.      9.200      9.500  1.812E+02  3.434E+00
+        10.        20.      9.500      9.800  2.698E+02  4.789E+00
+        10.        20.      9.800     10.100  4.216E+02  5.572E+00
+        10.        20.     10.100     10.400  2.931E+02  3.322E+00
+        10.        20.     10.400     10.700  4.675E+01  8.198E-01
+        10.        20.     10.700     11.000  4.726E+00  4.526E-01
+        10.        20.     11.000     11.300  1.512E+00  4.020E-01
+        10.        35.      0.350      0.500  1.557E+01  4.124E+00
+        10.        35.      0.500      0.650  1.928E-01  2.622E+00
+        10.        35.      0.650      0.800  2.787E+00  2.191E+00
+        10.        35.      0.800      0.950  1.486E+01  1.979E+00
+        10.        35.      0.950      1.100  3.040E-01  2.000E+00
+        10.        35.      1.100      1.250  2.040E-01  1.999E+00
+        10.        35.      1.250      1.400  4.040E-01  1.843E+00
+        10.        35.      1.400      1.550  6.988E+00  1.685E+00
+        10.        35.      1.550      1.700  7.575E+00  1.615E+00
+        10.        35.      1.700      1.850  3.825E-01  1.449E+00
+        10.        35.      1.850      2.000  6.390E-01  1.251E+00
+        10.        35.      2.000      2.200  5.919E+00  1.142E+00
+        10.        35.      2.200      2.400  1.964E+01  1.218E+00
+        10.        35.      2.400      2.600  3.391E+00  1.052E+00
+        10.        35.      2.600      2.800  2.287E+01  1.024E+00
+        10.        35.      2.800      3.000  3.648E+01  1.032E+00
+        10.        35.      3.000      3.200  1.875E+00  8.565E-01
+        10.        35.      3.200      3.500  4.952E-01  8.384E-01
+        10.        35.      3.500      3.600  1.712E-01  8.439E-01
+        10.        35.      3.600      3.800  1.143E+00  7.774E-01
+        10.        35.      3.800      5.000  1.528E+00  7.064E-01
+        10.        35.      4.000      4.250  1.713E+00  6.328E-01
+        10.        35.      4.250      4.500  7.981E+00  6.349E-01
+        10.        35.      4.600      4.750  2.109E+01  7.052E-01
+        10.        35.      4.750      5.000  1.666E+01  6.573E-01
+        10.        35.      5.000      5.250  3.119E+01  7.444E-01
+        10.        35.      5.250      5.500  2.775E+01  6.986E-01
+        10.        35.      5.500      5.750  2.456E+00  5.472E-01
+        10.        35.      5.750      6.000  9.438E-01  5.527E-01
+        10.        35.      6.000      6.250  2.415E+00  5.535E-01
+        10.        35.      6.250      6.500  2.379E+00  5.384E-01
+        10.        35.      6.500      6.750  3.190E+00  5.485E-01
+        10.        35.      6.750      7.000  5.071E+00  5.745E-01
+        10.        35.      7.000      7.250  7.318E+00  5.865E-01
+        10.        35.      7.250      7.500  1.122E+01  5.915E-01
+        10.        35.      7.500      7.750  1.613E+01  5.885E-01
+        10.        35.      7.750      8.000  1.185E+01  5.305E-01
+        10.        35.      8.000      8.500  7.911E+00  4.772E-01
+        10.        35.      8.300      8.600  2.367E+01  7.239E-01
+        10.        35.      8.600      8.900  6.203E+01  1.232E+00
+        10.        35.      8.900      9.200  8.551E+01  1.431E+00
+        10.        35.      9.200      9.500  9.084E+01  1.655E+00
+        10.        35.      9.500      9.800  1.517E+02  2.490E+00
+        10.        35.      9.800     10.100  1.758E+02  2.369E+00
+        10.        35.     10.100     10.400  7.656E+01  1.106E+00
+        10.        35.     10.400     10.700  7.558E+00  4.171E-01
+        10.        35.     10.700     11.000  7.125E-01  3.513E-01
+        10.        35.     11.000     11.300  8.273E-01  3.393E-01
+        10.        45.      0.350      0.500  1.795E+00  3.146E+00
+        10.        45.      0.500      0.650  9.180E-02  1.937E+00
+        10.        45.      0.650      0.800  5.820E+00  1.614E+00
+        10.        45.      0.800      0.950  1.743E+00  1.677E+00
+        10.        45.      0.950      1.100  1.474E-01  1.737E+00
+        10.        45.      1.100      1.250  1.390E-01  1.463E+00
+        10.        45.      1.250      1.400  1.098E+00  1.329E+00
+        10.        45.      1.400      1.550  1.129E+01  1.202E+00
+        10.        45.      1.550      1.700  3.467E-01  1.166E+00
+        10.        45.      1.700      1.850  2.807E-01  1.038E+00
+        10.        45.      1.850      2.000  3.416E+00  9.095E-01
+        10.        45.      2.000      2.200  1.617E+01  8.938E-01
+        10.        45.      2.200      2.400  7.297E+00  8.791E-01
+        10.        45.      2.400      2.600  7.107E+00  7.710E-01
+        10.        45.      2.600      2.800  3.665E+01  8.569E-01
+        10.        45.      2.800      3.000  8.018E+00  6.943E-01
+        10.        45.      3.000      3.200  6.191E-01  6.338E-01
+        10.        45.      3.200      3.500  1.190E-01  6.551E-01
+        10.        45.      3.500      3.600  2.480E-01  6.120E-01
+        10.        45.      3.600      3.800  8.409E-01  5.561E-01
+        10.        45.      3.800      5.000  1.493E+00  5.255E-01
+        10.        45.      4.000      4.250  2.584E+00  4.772E-01
+        10.        45.      4.250      4.500  1.450E+01  5.258E-01
+        10.        45.      4.600      4.750  1.933E+01  5.719E-01
+        10.        45.      4.750      5.000  1.825E+01  5.440E-01
+        10.        45.      5.000      5.250  3.251E+01  6.470E-01
+        10.        45.      5.250      5.500  7.964E+00  4.670E-01
+        10.        45.      5.500      5.750  8.810E-02  4.162E-01
+        10.        45.      5.750      6.000  2.396E-01  4.078E-01
+        10.        45.      6.000      6.250  6.129E-01  4.082E-01
+        10.        45.      6.250      6.500  1.106E+00  3.940E-01
+        10.        45.      6.500      6.750  1.827E+00  3.920E-01
+        10.        45.      6.750      7.000  4.427E+00  4.182E-01
+        10.        45.      7.000      7.250  5.668E+00  4.301E-01
+        10.        45.      7.250      7.500  1.086E+01  4.616E-01
+        10.        45.      7.500      7.750  9.836E+00  4.412E-01
+        10.        45.      7.750      8.000  4.446E+00  3.936E-01
+        10.        45.      8.000      8.500  4.600E+00  3.725E-01
+        10.        45.      8.300      8.600  1.759E+01  5.748E-01
+        10.        45.      8.600      8.900  4.177E+01  8.628E-01
+        10.        45.      8.900      9.200  4.139E+01  8.387E-01
+        10.        45.      9.200      9.500  4.742E+01  1.011E+00
+        10.        45.      9.500      9.800  8.337E+01  1.355E+00
+        10.        45.      9.800     10.100  6.440E+01  9.821E-01
+        10.        45.     10.100     10.400  1.353E+01  4.216E-01
+        10.        45.     10.400     10.700  4.055E-01  2.611E-01
+        10.        45.     10.700     11.000  8.869E-01  2.489E-01
+        10.        60.      0.350      0.500  4.000E-03  3.641E+00
+        10.        60.      0.500      0.650  5.000E-03  2.440E+00
+        10.        60.      0.650      0.800  1.026E+00  1.744E+00
+        10.        60.      0.800      0.950  3.200E-02  1.541E+00
+        10.        60.      0.950      1.100  3.200E-02  1.659E+00
+        10.        60.      1.100      1.250  3.230E-02  1.551E+00
+        10.        60.      1.250      1.400  3.705E+00  1.341E+00
+        10.        60.      1.400      1.550  2.330E-02  1.251E+00
+        10.        60.      1.550      1.700  2.320E-02  1.181E+00
+        10.        60.      1.700      1.850  1.874E-01  1.081E+00
+        10.        60.      1.850      2.000  1.479E+01  9.912E-01
+        10.        60.      2.000      2.200  1.068E+01  9.326E-01
+        10.        60.      2.200      2.400  4.492E+00  8.329E-01
+        10.        60.      2.400      2.600  2.403E+01  8.270E-01
+        10.        60.      2.600      2.800  6.024E+00  7.047E-01
+        10.        60.      2.800      3.000  4.149E-01  6.505E-01
+        10.        60.      3.000      3.200  1.490E-02  7.317E-01
+        10.        60.      3.200      3.500  1.490E-02  6.779E-01
+        10.        60.      3.500      3.600  2.572E-01  5.622E-01
+        10.        60.      3.600      3.800  1.420E+00  5.318E-01
+        10.        60.      3.800      5.000  3.217E+00  5.390E-01
+        10.        60.      4.000      4.250  1.118E+01  5.220E-01
+        10.        60.      4.250      4.500  1.259E+01  5.007E-01
+        10.        60.      4.600      4.750  1.723E+01  5.320E-01
+        10.        60.      4.750      5.000  2.334E+01  5.668E-01
+        10.        60.      5.000      5.250  4.430E+00  4.371E-01
+        10.        60.      5.250      5.500  1.266E-01  3.922E-01
+        10.        60.      5.500      5.750  6.800E-03  3.826E-01
+        10.        60.      5.750      6.000  6.900E-03  3.741E-01
+        10.        60.      6.000      6.250  4.323E-01  3.620E-01
+        10.        60.      6.250      6.500  5.750E-01  3.731E-01
+        10.        60.      6.500      6.750  2.140E+00  3.836E-01
+        10.        60.      6.750      7.000  4.702E+00  4.217E-01
+        10.        60.      7.000      7.250  7.125E+00  4.343E-01
+        10.        60.      7.250      7.500  4.408E+00  3.967E-01
+        10.        60.      7.500      7.750  1.368E+00  3.534E-01
+        10.        60.      7.750      8.000  2.376E+00  3.594E-01
+        10.        60.      8.000      8.500  5.871E+00  3.654E-01
+        10.        60.      8.300      8.600  1.123E+01  4.464E-01
+        10.        60.      8.600      8.900  1.356E+01  4.800E-01
+        10.        60.      8.900      9.200  1.733E+01  5.029E-01
+        10.        60.      9.200      9.500  1.935E+01  4.987E-01
+        10.        60.      9.500      9.800  9.730E+00  3.961E-01
+        10.        60.      9.800     10.100  2.312E+00  3.183E-01
+        10.        60.     10.100     10.400  1.212E-01  2.595E-01
+        10.        75.      0.350      0.500  2.186E+00  2.552E+00
+        10.        75.      0.500      0.650  2.673E+00  1.586E+00
+        10.        75.      0.650      0.800  2.730E-01  1.311E+00
+        10.        75.      0.800      0.950  2.730E-01  1.176E+00
+        10.        75.      0.950      1.100  9.921E-01  1.189E+00
+        10.        75.      1.100      1.250  5.333E+00  1.122E+00
+        10.        75.      1.250      1.400  8.131E-01  1.039E+00
+        10.        75.      1.400      1.550  2.532E-02  9.840E-01
+        10.        75.      1.550      1.700  3.375E+00  9.111E-01
+        10.        75.      1.700      1.850  2.140E+01  9.258E-01
+        10.        75.      1.850      2.000  8.101E+00  7.786E-01
+        10.        75.      2.000      2.200  3.618E+00  6.684E-01
+        10.        75.      2.200      2.400  2.134E+01  7.070E-01
+        10.        75.      2.400      2.600  3.458E+00  6.060E-01
+        10.        75.      2.600      2.800  1.326E-01  5.574E-01
+        10.        75.      2.800      3.000  1.446E-01  5.683E-01
+        10.        75.      3.000      3.200  2.446E-01  4.758E-01
+        10.        75.      3.200      3.500  6.470E-01  4.356E-01
+        10.        75.      3.500      3.600  1.421E+00  4.196E-01
+        10.        75.      3.600      3.800  4.760E+00  4.383E-01
+        10.        75.      3.800      5.000  1.257E+01  4.902E-01
+        10.        75.      4.000      4.250  9.508E+00  4.270E-01
+        10.        75.      4.250      4.500  1.824E+01  4.659E-01
+        10.        75.      4.600      4.750  1.746E+01  4.761E-01
+        10.        75.      4.750      5.000  7.346E-01  3.351E-01
+        10.        75.      5.000      5.250  1.409E-01  3.268E-01
+        10.        75.      5.250      5.500  1.409E-01  3.093E-01
+        10.        75.      5.500      5.750  1.409E-01  3.115E-01
+        10.        75.      5.750      6.000  4.384E-01  3.147E-01
+        10.        75.      6.000      6.250  1.725E+00  3.153E-01
+        10.        75.      6.250      6.500  2.654E+00  3.269E-01
+        10.        75.      6.500      6.750  5.451E+00  3.518E-01
+        10.        75.      6.750      7.000  5.606E+00  3.518E-01
+        10.        75.      7.000      7.250  1.723E+00  3.236E-01
+        10.        75.      7.250      7.500  1.009E+00  3.119E-01
+        10.        75.      7.500      7.750  3.506E+00  3.207E-01
+        10.        75.      7.750      8.000  7.860E+00  3.794E-01
+        10.        75.      8.000      8.500  1.262E+01  4.124E-01
+        10.        75.      8.300      8.600  2.009E+01  5.246E-01
+        10.        75.      8.600      8.900  2.948E+01  5.841E-01
+        10.        75.      8.900      9.200  1.556E+01  4.109E-01
+        10.        75.      9.200      9.500  2.625E+00  2.558E-01
+        10.        75.      9.500      9.800  2.879E-01  2.338E-01
+        10.        90.      0.350      0.500  1.503E+00  2.445E+00
+        10.        90.      0.500      0.650  1.118E+00  1.513E+00
+        10.        90.      0.650      0.800  5.440E-02  1.263E+00
+        10.        90.      0.800      0.950  9.720E-01  1.140E+00
+        10.        90.      0.950      1.100  2.413E+00  1.191E+00
+        10.        90.      1.100      1.250  2.870E-01  1.094E+00
+        10.        90.      1.250      1.400  3.722E-01  1.025E+00
+        10.        90.      1.400      1.550  4.359E+00  9.571E-01
+        10.        90.      1.550      1.700  2.123E+01  9.692E-01
+        10.        90.      1.700      1.850  3.714E+00  8.393E-01
+        10.        90.      1.850      2.000  4.586E+00  7.382E-01
+        10.        90.      2.000      2.200  1.992E+01  7.082E-01
+        10.        90.      2.200      2.400  1.009E+00  5.985E-01
+        10.        90.      2.400      2.600  9.100E-02  5.737E-01
+        10.        90.      2.600      2.800  2.520E-01  5.645E-01
+        10.        90.      2.800      3.000  3.230E-01  4.733E-01
+        10.        90.      3.000      3.200  1.447E+00  4.441E-01
+        10.        90.      3.200      3.500  5.670E-01  4.286E-01
+        10.        90.      3.500      3.600  6.239E+00  4.521E-01
+        10.        90.      3.600      3.800  1.263E+01  4.895E-01
+        10.        90.      3.800      5.000  7.811E+00  4.540E-01
+        10.        90.      4.000      4.250  1.948E+01  4.854E-01
+        10.        90.      4.250      4.500  1.270E+01  4.271E-01
+        10.        90.      4.600      4.750  9.078E-02  3.466E-01
+        10.        90.      4.750      5.000  2.865E-01  3.268E-01
+        10.        90.      5.000      5.250  3.956E-01  3.183E-01
+        10.        90.      5.250      5.500  9.343E-01  3.134E-01
+        10.        90.      5.500      5.750  1.721E+00  3.157E-01
+        10.        90.      5.750      6.000  3.541E+00  3.326E-01
+        10.        90.      6.000      6.250  5.519E+00  3.472E-01
+        10.        90.      6.250      6.500  7.429E+00  3.603E-01
+        10.        90.      6.500      6.750  4.039E+00  3.301E-01
+        10.        90.      6.750      7.000  1.645E+00  3.162E-01
+        10.        90.      7.000      7.250  3.660E+00  3.537E-01
+        10.        90.      7.250      7.500  8.911E+00  4.221E-01
+        10.        90.      7.500      7.750  1.666E+01  4.997E-01
+        10.        90.      7.750      8.000  2.395E+01  5.969E-01
+        10.        90.      8.000      8.500  3.664E+01  7.141E-01
+        10.        90.      8.300      8.600  4.839E+01  7.556E-01
+        10.        90.      8.600      8.900  1.866E+01  4.624E-01
+        10.        90.      8.900      9.200  2.186E+00  2.693E-01
+        10.        90.      9.200      9.500  3.599E-01  2.216E-01
+        10.        90.      9.500      9.800  2.642E-01  2.244E-01
+        10.       110.      0.350      0.500  3.331E-01  2.919E+00
+        10.       110.      0.500      0.650  3.331E-01  2.015E+00
+        10.       110.      0.650      0.800  1.254E+00  1.300E+00
+        10.       110.      0.800      0.950  2.190E-01  1.267E+00
+        10.       110.      0.950      1.100  2.190E-01  1.285E+00
+        10.       110.      1.100      1.250  1.496E+00  1.107E+00
+        10.       110.      1.250      1.400  5.496E+00  1.054E+00
+        10.       110.      1.400      1.550  1.285E+01  1.002E+00
+        10.       110.      1.550      1.700  6.182E-01  9.078E-01
+        10.       110.      1.700      1.850  1.651E+01  9.025E-01
+        10.       110.      1.850      2.000  1.883E+01  8.114E-01
+        10.       110.      2.000      2.200  1.225E-01  7.018E-01
+        10.       110.      2.200      2.400  6.230E-02  7.437E-01
+        10.       110.      2.400      2.600  6.230E-02  5.600E-01
+        10.       110.      2.600      2.800  1.069E-01  4.999E-01
+        10.       110.      2.800      3.000  7.250E-01  4.729E-01
+        10.       110.      3.000      3.200  2.770E+00  4.565E-01
+        10.       110.      3.200      3.500  1.387E+01  5.261E-01
+        10.       110.      3.500      3.600  9.364E+00  4.790E-01
+        10.       110.      3.600      3.800  1.289E+01  5.017E-01
+        10.       110.      3.800      5.000  2.378E+01  5.638E-01
+        10.       110.      4.000      4.250  3.203E+00  3.895E-01
+        10.       110.      4.250      4.500  5.697E-02  3.443E-01
+        10.       110.      4.600      4.750  3.001E-02  3.462E-01
+        10.       110.      4.750      5.000  4.555E-01  3.265E-01
+        10.       110.      5.000      5.250  7.554E-01  3.180E-01
+        10.       110.      5.250      5.500  2.138E+00  3.259E-01
+        10.       110.      5.500      5.750  4.301E+00  3.543E-01
+        10.       110.      5.750      6.000  1.042E+01  4.028E-01
+        10.       110.      6.000      6.250  7.072E+00  3.611E-01
+        10.       110.      6.250      6.500  7.696E-01  3.048E-01
+        10.       110.      6.500      6.750  2.518E+00  3.289E-01
+        10.       110.      6.750      7.000  6.607E+00  3.944E-01
+        10.       110.      7.000      7.250  1.607E+01  5.169E-01
+        10.       110.      7.250      7.500  2.392E+01  6.310E-01
+        10.       110.      7.500      7.750  3.315E+01  7.465E-01
+        10.       110.      7.750      8.000  4.631E+01  7.875E-01
+        10.       110.      8.000      8.500  2.878E+01  5.325E-01
+        10.       110.      8.300      8.600  4.372E+00  3.255E-01
+        10.       110.      8.600      8.900  1.105E+00  2.592E-01
+        10.       110.      8.900      9.200  6.599E-01  2.199E-01
+        10.       110.      9.200      9.500  4.634E-01  2.091E-01
+        10.       130.      0.350      0.500  2.300E-01  2.038E+00
+        10.       130.      0.500      0.650  2.296E-01  1.951E+00
+        10.       130.      0.650      0.800  1.961E-01  1.448E+00
+        10.       130.      0.800      0.950  2.296E-01  1.425E+00
+        10.       130.      0.950      1.100  2.300E-01  1.237E+00
+        10.       130.      1.100      1.250  2.640E-01  1.115E+00
+        10.       130.      1.250      1.400  2.778E+00  1.048E+00
+        10.       130.      1.400      1.550  6.778E+00  9.499E-01
+        10.       130.      1.550      1.700  2.699E+01  1.019E+00
+        10.       130.      1.700      1.850  1.206E+01  8.808E-01
+        10.       130.      1.850      2.000  1.276E+00  7.327E-01
+        10.       130.      2.000      2.200  2.060E-01  6.849E-01
+        10.       130.      2.200      2.400  4.923E-02  5.942E-01
+        10.       130.      2.400      2.600  3.211E-01  5.309E-01
+        10.       130.      2.600      2.800  1.420E-01  5.099E-01
+        10.       130.      2.800      3.000  5.048E+00  5.097E-01
+        10.       130.      3.000      3.200  1.958E+01  5.733E-01
+        10.       130.      3.200      3.500  7.072E+00  4.910E-01
+        10.       130.      3.500      3.600  2.051E+01  5.653E-01
+        10.       130.      3.600      3.800  1.416E+01  5.141E-01
+        10.       130.      3.800      5.000  9.753E-01  3.978E-01
+        10.       130.      4.000      4.250  1.100E-02  3.492E-01
+        10.       130.      4.250      4.500  3.735E-02  3.301E-01
+        10.       130.      4.600      4.750  4.023E-01  3.316E-01
+        10.       130.      4.750      5.000  1.220E+00  3.247E-01
+        10.       130.      5.000      5.250  2.679E+00  3.294E-01
+        10.       130.      5.250      5.500  7.971E+00  3.779E-01
+        10.       130.      5.500      5.750  1.275E+01  4.119E-01
+        10.       130.      5.750      6.000  3.058E+00  3.301E-01
+        10.       130.      6.000      6.250  2.642E-01  2.916E-01
+        10.       130.      6.250      6.500  3.696E-01  3.031E-01
+        10.       130.      6.500      6.750  3.503E+00  3.526E-01
+        10.       130.      6.750      7.000  8.933E+00  4.195E-01
+        10.       130.      7.000      7.250  1.523E+01  5.250E-01
+        10.       130.      7.250      7.500  2.787E+01  6.129E-01
+        10.       130.      7.500      7.750  2.231E+01  5.074E-01
+        10.       130.      7.750      8.000  5.236E+00  3.417E-01
+        10.       130.      8.000      8.500  8.698E-01  2.460E-01
+        10.       130.      8.300      8.600  6.138E-01  2.458E-01
+        10.       130.      8.600      8.900  3.217E-01  2.349E-01
+        10.       145.      0.350      0.500  4.235E+00  2.943E+00
+        10.       145.      0.500      0.650  4.407E+00  2.079E+00
+        10.       145.      0.650      0.800  1.628E+00  1.934E+00
+        10.       145.      0.800      0.950  1.342E-01  2.133E+00
+        10.       145.      0.950      1.100  2.862E-01  2.033E+00
+        10.       145.      1.100      1.250  1.908E+01  1.674E+00
+        10.       145.      1.250      1.400  2.740E+00  1.575E+00
+        10.       145.      1.400      1.550  1.427E+01  1.483E+00
+        10.       145.      1.550      1.700  2.624E+01  1.454E+00
+        10.       145.      1.700      1.850  1.411E-01  1.301E+00
+        10.       145.      1.850      2.000  1.527E-01  1.165E+00
+        10.       145.      2.000      2.200  1.368E-01  9.989E-01
+        10.       145.      2.200      2.400  1.074E+00  9.413E-01
+        10.       145.      2.400      2.600  1.863E+00  8.712E-01
+        10.       145.      2.600      2.800  2.579E+00  8.320E-01
+        10.       145.      2.800      3.000  1.983E+01  8.557E-01
+        10.       145.      3.000      3.200  8.117E+00  7.865E-01
+        10.       145.      3.200      3.500  1.843E+01  7.910E-01
+        10.       145.      3.500      3.600  2.060E+01  7.742E-01
+        10.       145.      3.600      3.800  2.344E-01  6.557E-01
+        10.       145.      3.800      5.000  2.345E-01  6.241E-01
+        10.       145.      4.000      4.250  4.401E-02  5.384E-01
+        10.       145.      4.250      4.500  2.540E-01  5.033E-01
+        10.       145.      4.600      4.750  1.005E+00  4.993E-01
+        10.       145.      4.750      5.000  2.619E+00  4.767E-01
+        10.       145.      5.000      5.250  6.511E+00  5.103E-01
+        10.       145.      5.250      5.500  1.272E+01  5.206E-01
+        10.       145.      5.500      5.750  5.157E+00  4.546E-01
+        10.       145.      5.750      6.000  3.901E-01  4.197E-01
+        10.       145.      6.000      6.250  8.350E-02  4.073E-01
+        10.       145.      6.250      6.500  1.421E+00  4.059E-01
+        10.       145.      6.500      6.750  5.515E+00  4.432E-01
+        10.       145.      6.750      7.000  1.226E+01  5.247E-01
+        10.       145.      7.000      7.250  2.131E+01  5.865E-01
+        10.       145.      7.250      7.500  1.842E+01  5.342E-01
+        10.       145.      7.500      7.750  3.707E+00  3.860E-01
+        10.       145.      7.750      8.000  1.057E+00  3.320E-01
+        10.       145.      8.000      8.500  8.343E-01  2.963E-01
+        10.       145.      8.300      8.600  3.182E-01  2.799E-01
+ENDDATA            697
+ENDSUBENT          720
+SUBENT        14719016   20260127   20260316   20260316       1526
+BIB                  6         42
+REACTION  1(5-B-10(N,EL)5-B-10,,SIG)
+          2(5-B-10(N,NON),,SIG)
+          3(5-B-10(N,X)0-NN-1,,SIG)
+ANALYSIS   (INTAD) Integrated Cross Sections.
+ERR-ANALYS (DATA-ERR) No details on the sources of integrated
+           cross section uncertainties.
+CORRECTION Estimated Effect of Corrections in Percent on
+           Integrated Values of the Elastic, Nonelastic, and
+           Total Emission Cross Sections
+           Correction 10B
+                                 6 MeV                 10 MeV
+           Water (10%) a)
+           Elastic               1.6                   0.6
+           Inelastic             20.8                  11.9
+           Total emission        5.2                   3.5
+           Multiple scattering (20%) b)
+           Elastic               16.3                  16.4
+           Total emission        15.0                  14.3
+           Energy spectra extrapolation (50%) c)
+           Inelastic             7.6                   3.6
+           Total emission        1.2                   1.0
+           Extrapolation of angular range d)
+           Typically 0.5% up to 1.1%
+           a) This fraction of the correction was added
+           quadratically to the final random uncertainties of the
+           individual points.
+           b) Consists of multiple scattering, flux attenuation,
+           and geometry corrections.
+           c) Correcting for the 0.35-MeV cutoff of the neutron
+           emission spectra.
+           d) Effect on the integrated value of the Legendre
+           polynomial fit to the elastic and total emission data
+           when the 0- and 180-deg values were varied within a
+           reasonable range and the number of coefficients used in
+            the fit varied by one.
+STATUS     (DEP,14719002)
+           (DEP,14719003)
+           (DEP,14719010)
+           (DEP,14719011)
+           (DEP,14719014)
+           (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Table - II
+HISTORY    (20260311C) BP
+ENDBIB              42
+NOCOMMON             0          0
+DATA                 7          2
+EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3
+DATA-ERR  3
+MEV        MB         MB         MB         MB         MB
+MB
+        6.0      860.0       19.0      241.0       30.0     1101.0
+       23.0
+       10.0      809.0       16.0      309.0       28.0     1118.0
+       23.0
+ENDDATA              8
+ENDSUBENT           55
+SUBENT        14719017   20260127   20260316   20260316       1526
+BIB                  6         42
+REACTION  1(5-B-11(N,EL)5-B-11,,SIG)
+          2(5-B-11(N,NON),,SIG)
+          3(5-B-11(N,X)0-NN-1,,SIG)
+ANALYSIS   (INTAD) Integrated Cross Sections.
+ERR-ANALYS (DATA-ERR) No details on the sources of integrated
+           cross section uncertainties.
+CORRECTION Estimated Effect of Corrections in Percent on
+           Integrated Values of the Elastic, Nonelastic, and
+           Total Emission Cross Sections
+           Correction 11B
+                                 6 MeV                 10 MeV
+           Water (10%) a)
+           Elastic
+           Inelastic
+           Total emission
+           Multiple scattering (20%) b)
+           Elastic               8.7                   8.3
+           Total emission        7.5                   6.2
+           Energy spectra extrapolation (50%) c)
+           Inelastic             8.4                   2.8
+           Total emission        1.8                   1.0
+           Extrapolation of angular range d)
+           Typically 0.5% up to 1.1%
+           a) This fraction of the correction was added
+           quadratically to the final random uncertainties of the
+           individual points.
+           b) Consists of multiple scattering, flux attenuation,
+           and geometry corrections.
+           c) Correcting for the 0.35-MeV cutoff of the neutron
+           emission spectra.
+           d) Effect on the integrated value of the Legendre
+           polynomial fit to the elastic and total emission data
+           when the 0- and 180-deg values were varied within a
+           reasonable range and the number of coefficients used in
+            the fit varied by one.
+STATUS     (DEP,14719006)
+           (DEP,14719007)
+           (DEP,14719012)
+           (DEP,14719013)
+           (DEP,14719015)
+           (TABLE,,P.W.Lisowski+,J,NSE,195,1131,2021) Table - II
+HISTORY    (20260311C) BP
+ENDBIB              42
+NOCOMMON             0          0
+DATA                 7          2
+EN         DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3
+DATA-ERR  3
+MEV        MB         MB         MB         MB         MB
+MB
+        6.0     1360.0       27.0      366.0       45.0     1726.0
+       37.0
+       10.0      904.0       18.0      539.0       35.0     1442.0
+       30.0
+ENDDATA              8
+ENDSUBENT           55
+ENDENTRY            17
