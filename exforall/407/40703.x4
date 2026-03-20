@@ -1,27 +1,30 @@
-ENTRY            40703   20231113   20240331   20240331       4216
-SUBENT        40703001   20231113   20240331   20240331       4216
-BIB                 10         32
+ENTRY            40703   20251006   20260319   20260319       4226
+SUBENT        40703001   20251006   20260319   20260319       4226
+BIB                 10         37
 TITLE       The investigation of the reaction Na-22(n,p)Ne-22
             for a neutron energy to 1,000 eV
 AUTHOR     (Yu.M.Gledenov,J.Kvitek,S.Marinova,Yu.P.Popov,J.Rigol,
            V.I.Salatski)
 REFERENCE  (J,ZP/A,308,57,1982)
            (C,82ANTWER,,150,1982)
-           (C,83KIEV,2,388,1983)
+           (S,INDC(CCP)-235,(2),388,1984)=(C,83KIEV,2,388,1983))
+            In Russian
            (R,JINR-P3-82-303,1982)
 INSTITUTE  (4ZZZDUB)
+REL-REF    (O,41400002,Yu.M.Gledenov+,R,JINR-P3-89-351,1989)
+            Final data for Cl-35 ( Table 1 of
+            S,INDC(CCP)-235,(2),388,1984) WID
+           (O,41352003,Yu.M.Gledenov+,J,PAN,62,818,1999)
+            Final data for Cl-35  Table 1 of
+            S,INDC(CCP)-235,(2),388,1984)  WID/STR
+           (O,41596002,Yu.M.Gledenov+,J,ZP/A,322,685,1985)
+            Final data for Cl-36 ( the same as in
+            S,INDC(CCP)-235,(2),388,1984 Table 1)
 FACILITY   (REAC,4ZZZDUB) IBR-30 pulsed reactor.
-SAMPLE      Na-22 sample on polycarbon layer of 500 microCurie on
-            a polycarbon film of 4 micrometer thickness.
-            Li-6 or B-10 was place on inverse side.
-METHOD     (TOF)
-           Run number  Resolution,microsec  Measuring time,hr
-            1            4.5                  48.
-            2            0.2                  91.
-            3            3.0                  47.
-DETECTOR   (SOLST) Silicon semiconductor detector of 8 cm2 area,
-           202 micrometer thick sensitive layer, placed at 40 mm
-           from samples. Registered protons up to ~ 5.2 MeV.
+METHOD     (TOF) TOF base from 20 m to 85 m.
+            Li-6 was used for energy calibration and normalization
+           of cross-sections.
+DETECTOR   (SIBAR,IOCH)
 ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
             article.
 HISTORY    (19840410C) Compiled at the CJD
@@ -33,37 +36,60 @@ HISTORY    (19840410C) Compiled at the CJD
             BIB information was updated.
             Reaction was corrected in Subent 002.
             Subent 003 was added.
-ENDBIB              32
+           (20251006A) Ref. S,INDC(CCP)-235 was added.
+            Subents 004, 005 were added.
+ENDBIB              37
 NOCOMMON             0          0
-ENDSUBENT           35
-SUBENT        40703002   20231113   20240331   20240331       4216
-BIB                  4         11
+ENDSUBENT           40
+SUBENT        40703002   20251006   20260319   20260319       4226
+BIB                  8         30
 REACTION  1(11-NA-22(N,0),,EN)
           2(11-NA-22(N,EL),,WID/RED)
           3(11-NA-22(N,P),PAR,WID)
+SAMPLE      Na-22 sample on polycarbon layer of 500 microCurie on
+            a polycarbon film of 4 micrometer thickness.
+            Li-6 or B-10 was placed on inverse side.
+METHOD     (TOF)
+           Run number  Resolution,microsec  Measuring time,hr
+            1            4.5                  48.
+            2            0.2                  91.
+            3            3.0                  47.
+DETECTOR   (SOLST) Silicon semiconductor detector of 8 cm2 area,
+           202 micrometer thick sensitive layer, placed at 40 mm
+           from samples. Registered protons up to ~ 5.2 MeV.
 ANALYSIS    Breit-Wigner formula was used to calculate resonance
             parameters at fitting of measured cross-section.
 STATUS     (TABLE,,Yu.M.Gledenov+,J,ZP/A,308,57,1982)
             Text on page 59.
-            DATA 3 (GAMMAp1) in Abstract of article - 114+-20 eV.
+            Text page 150 of 82ANTWER,,150,1982
+            Text page 389 of S,INDC(CCP)-235,(2),388,1983
            (DEP,40703002) Cross-section measured.
+COMMENT    Of compiler. DATA 3 (GAMMAp1) in :
+           abstract of ZP/A,308,57,1982,
+           82ANTWER,,150,1982,
+           text page 389 of INDC(CCP)-235,(2),388,1984
+           - 114+-20 eV.
 HISTORY    (20231113A) PAR was added in Reaction 3.
-            MOMENTUM L2 and E 3 were added in COMMON.
-ENDBIB              11
-COMMON               2          3
-MOMENTUM L2E         3
-NO-DIM     MEV
- 0.         2.25
-ENDCOMMON            3
-DATA                 6          1
-DATA      1DATA-ERR  1DATA      2DATA-ERR  2DATA      3DATA-ERR  3
-EV         EV         EV         EV         EV         EV
-  145.       11.       1.6        0.2        45.        20.
-ENDDATA              3
-ENDSUBENT           23
-SUBENT        40703003   20231113   20240331   20240331       4216
-BIB                  7         20
+            MOMENTUM L2 and E 3 were added.
+           (20251006) DATA 3 were corrected :
+            45.+-20. -> 114.+-20. eV - see comment of compiler.
+ENDBIB              30
+NOCOMMON             0          0
+DATA                 8          1
+DATA      1DATA-ERR  1MOMENTUM L2DATA      2DATA-ERR  2E         3
+DATA      3DATA-ERR  3
+EV         EV         NO-DIM     EV         EV         MEV
+EV         EV
+  145.       11.       0.         1.6        0.2        2.25
+ 114.       20.
+ENDDATA              6
+ENDSUBENT           41
+SUBENT        40703003   20251006   20260319   20260319       4226
+BIB                  9         26
 REACTION   (11-NA-22(N,P)10-NE-22,,SIG)
+SAMPLE      Na-22 sample on polycarbon layer of 500 microCurie on
+            a polycarbon film of 4 micrometer thickness.
+            Li-6 or B-10 was placed on inverse side.
 MONITOR    (3-LI-6(N,T)2-HE-4,,SIG)
            (5-B-10(N,A)3-LI-7,,SIG)
             Li-6 and B-10 were used for determination of the
@@ -74,6 +100,9 @@ MONIT-REF  (,S.F.Mughabghab+,R,BNL-325,1973) 3rd edition.
             Li cross section.
            ((MONIT)30586002,J.Kvitek+,J,ZP/A,299,187,1981)
             at thermal energy.
+DETECTOR   (SOLST) Silicon semiconductor detector of 8 cm2 area,
+           202 micrometer thick sensitive layer, placed at 40 mm
+           from samples. Registered protons up to ~ 5.2 MeV.
 METHOD     (TOF)
            Run number  Resolution,microsec  Measuring time,hr
             1            4.5                  48.
@@ -83,7 +112,7 @@ ERR-ANALYS . Quantization errors:
             scale X - 0.324 %, scale Y - 0.328 %.
 STATUS     (CURVE,,Yu.M.Gledenov+,J,ZP/A,308,57,1982) Fig.3
 HISTORY    (20231113C) Subent was added.
-ENDBIB              20
+ENDBIB              26
 COMMON               5          3
 EN-NRM     MONIT      MONIT-ERR  EN-ERR-DIG ERR-DIG
 EV         B          B          PER-CENT   PER-CENT
@@ -109,5 +138,57 @@ EV         B          B
    3.01E+02   1.03E+02   5.11E+02
    3.71E+02   2.10E+02   5.04E+02
 ENDDATA             18
-ENDSUBENT           47
-ENDENTRY             3
+ENDSUBENT           53
+SUBENT        40703004   20251006   20260319   20260319       4226
+BIB                  6         21
+REACTION   (19-K-40(N,A),,WID/STR)
+SAMPLE      630 cm2 square, K-40 enrichment 2.7 %,
+            K-40 content 2.6*10**17 at/cm2.
+REL-REF    (N,21726003,H.Weigmann,J,NP/A,368,(1),117,1981)
+            Data used for comparison.
+ADD-RES      Table 3 of S,INDC(CCP)-235,(2),388,1984
+           E,eV    Np      Na    Np/Na Np/N6 Na/N6 Np/Na(Weigmann)
+           0.61    23100   2600   8.9  2.2   0.25    5.0
+           0.18    51000   5000  10.2  2.2   0.22    6.7
+           0.059  132200  10400  12.7  1.9   0.15    9.3
+           0.039  148100  12000  12.3  2.2   0.17   10.8
+           0.028   98100   8500  11.5  2.2   0.18   12.4
+           0.017   62900   5500  11.4  2.1   0.18   15.7
+           0.013   38800   3400  11.4  2.3   0.19   18.3
+           Na - counts of K-40(n,alpha) reaction,
+           Np - counts of K-40(n,p) reaction        ,
+           N6 - counts of B-10(n,a) reaction ( B-10 - admixture
+           in sample).
+STATUS     (TABLE,,Yu.M.Gledenov+,S,INDC(CCP)-235,(2),388,1984)
+            Table 2.
+HISTORY    (20251006C) M.M. Subent was added.
+ENDBIB              21
+NOCOMMON             0          0
+DATA                 4          4
+EN-RES-MIN EN-RES-MAX DATA       DATA-ERR
+KEV        KEV        EV         EV
+ 1.13       1.13         42.        7.
+ 2.29       2.29         27.        9.
+ 5.18       5.18       1140.      230.
+ 5.9        9.8         380.      160.
+ENDDATA              6
+ENDSUBENT           32
+SUBENT        40703005   20251006   20260319   20260319       4226
+BIB                  5          8
+REACTION   (19-K-40(N,P),,WID/STR)
+SAMPLE      630 cm2 square, K-40 enrichment 2.7 %,
+            K-40 content 2.6*10**17 at/cm2.
+REL-REF    (N,21726003,H.Weigmann,J,NP/A,368,(1),117,1981)
+            Data used for comparison.
+STATUS     (TABLE,,Yu.M.Gledenov+,S,INDC(CCP)-235,(2),388,1984)
+            Table 2.
+HISTORY    (20251006C) M.M. Subent was added.
+ENDBIB               8
+NOCOMMON             0          0
+DATA                 3          1
+EN-RES     DATA       DATA-ERR
+KEV        EV         EV
+ 3.06       6.5        5.5
+ENDDATA              3
+ENDSUBENT           16
+ENDENTRY             5

@@ -1,13 +1,13 @@
-ENTRY            40062   20220127   20220610   20220610       4204
-SUBENT        40062001   20220127   20220610   20220610       4204
-BIB                  8         24
+ENTRY            40062   20260209   20260319   20260319       4226
+SUBENT        40062001   20260209   20260319   20260319       4226
+BIB                  8         27
 TITLE      Cross sections and resonance integrals for capture and
            fission in long-lived americium isotopes
 AUTHOR     (M.A.Bak, A.S.Krivokhatskii, K.A.Petrzhak, Yu.G.Petrov,
            Yu.F.Romanov, E.A.Shlyamin)
-REFERENCE  (J,AE,23,316,196710) Issue 4.
-           (J,SJA,23,1059,1967)  Engl.transl.of J,AE,23,316,1967
+REFERENCE  (J,SJA,23,1059,1967)  Engl.transl.of J,AE,23,316,1967
            #doi:10.1007/BF01120465
+           (J,AE,23,316,196710) Issue 4.
            (R,YFI-5,49,1967)
            (R,INDC(CCP)-1,51,1967)
 INSTITUTE  (4RUSRI)
@@ -15,7 +15,8 @@ FACILITY   (REAC,4RUSRI)  Thermal reactor WWR-M
 COMMENT    Exact meaning of cadmium neutron spectrum limit was not
            indicated. Cadmium neutron spectrum limit was supposed
            to be equal to 0.4 eV
-STATUS     (TABLE) Table 2 of At.Energy,v.23,is.4,p.316,1967 .
+STATUS     (TABLE,,M.A.Bak+,J,SJA,23,1059,1967)
+            Table 2 of At.Energy,v.23,is.4,p.316,1967 .
             = Table 1 of INDC(CCP)-1,p.51,1967
 HISTORY    (19710405C)
            (20051101A) (M.M.) Correction of Reaction codes,
@@ -25,9 +26,11 @@ HISTORY    (19710405C)
            BIB information was updated.
            (20220127A) Ref. INDC(CCP) was added.
            Update for current rules and dictionaries.
-ENDBIB              24
+           (20260209A) Subent 003 was corrected.
+            STATUS was updated for new rules.
+ENDBIB              27
 NOCOMMON             0          0
-ENDSUBENT           27
+ENDSUBENT           30
 SUBENT        40062002   20220127   20220610   20220610       4204
 BIB                 11         20
 REACTION   (95-AM-241(N,G)95-AM-242-G,,SIG)
@@ -62,8 +65,8 @@ B          B
  670.       60.
 ENDDATA              3
 ENDSUBENT           32
-SUBENT        40062003   20220127   20220610   20220610       4204
-BIB                 12         33
+SUBENT        40062003   20260209   20260319   20260319       4226
+BIB                 13         34
 REACTION   (95-AM-241(N,G)95-AM-242-M,,SIG)
 INC-SOURCE (REAC) Samples were irradiated in neutron flux from
            1.5E+13 to 1.0E+14 neutron/cm**2/sec. Irradiation
@@ -78,14 +81,12 @@ METHOD     (ACTIV) For determination of thermal cross sections
 DETECTOR   (FISCH) For determination of Am-242-M quantity
             double fission chamber was used.
            (SI) For samples alpha-activity measuring
-MONITOR    ((MONIT1)95-AM-242-M1(N,F),,SIG)
-           (79-AU-197(N,G)79-AU-198,,SIG)
-            For measuring of neutron flux gold
-           was used
+ASSUMED    (ASSUM,95-AM-242-M(N,F),,SIG)
+MONITOR    (79-AU-197(N,G)79-AU-198,,SIG)
+            For measuring of neutron flux - gold was used
            (93-NP-237(N,A)91-PA-234,,SIG)
-            For measuring of neutron flux neptunium
-           was used
-MONIT-REF  ((MONIT1)12563002,K.Wolfsberg+,J,JNE/AB,20,588,1966)
+            For measuring of neutron flux - neptunium was used
+REL-REF    (R,12563002,K.Wolfsberg+,J,JNE/AB,20,588,1966) ASSUM
 ANALYSIS   Am-241 capture c-s was measured by accumulated Am-242m
            number defined by Am-242m thermal fission c-s .
 PART-DET   (FF)
@@ -97,9 +98,12 @@ ERR-ANALYS (DATA-ERR) Type of uncertainty is not explained in the
                       articles.
 HISTORY    (20130716A) AM-242-M1 -> AM-242-M was corrected in
            Reaction according to the comment of N.Otsuka(NDS,IAEA)
-ENDBIB              33
+           (20260209A) MONITOR: 95-AM-242-M1 -> 95-AM-242-M and
+           moved in ASSUMED according to a comment of N.Otsuka
+            (NDS, IAEA).
+ENDBIB              34
 COMMON               5          3
-EN-MIN     EN-MAX     MONIT1     MONIT1-ERR EN-NRM
+EN-MIN     EN-MAX     ASSUM      ASSUM-ERR  EN-NRM
 EV         EV         B          B          EV
  0.0        4.0000E-01 7200.      300.        0.0253
 ENDCOMMON            3
@@ -108,7 +112,7 @@ DATA       DATA-ERR
 B          B
  70.        5.
 ENDDATA              3
-ENDSUBENT           45
+ENDSUBENT           46
 SUBENT        40062004   20220127   20220610   20220610       4204
 BIB                  8         17
 REACTION   (95-AM-242(N,F),,SIG)
