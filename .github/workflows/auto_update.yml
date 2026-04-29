@@ -6,40 +6,35 @@ permissions:
 on:
   schedule:
     - cron: '0 13 * * *' # runs at 13:00 UTC every day.
-#    - cron: '*/15 * * * *' # runs every 15min
-
 
 jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.runpy.outputs.test }}
+      output1: ${{ steps.runpy.outputs.NP }}
 
     steps:
-
+      # actions/checkout@v3 -> Pin to v3.6.0
       - name: checkout repo content
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - uses: fregante/setup-git-user@v2
+      # fregante/setup-git-user@v2 -> Pin to v2.0.2
+      - name: setup git user
+        uses: fregante/setup-git-user@285a4991157774e444490f2305333f2a36b9f621
 
+      # actions/setup-python@v5 -> Pin to v5.1.0
       - name: setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d
         with:
           python-version: '3.11'
-  
-
 
       - name: install python packages
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-
 
       - name: execute py script 
         id: runpy
@@ -55,35 +50,32 @@ jobs:
         shell: bash
         run: |
           for not_processed in ${{ steps.runpy.outputs.NP }}; do
-            echo $not_processed
+            echo "Processing: $not_processed"
 
-            tagname="Backup-"$not_processed
-            echo $tagname
-
-            sem_release=$(bash ${GITHUB_WORKSPACE}/script/semantic_release_name.sh $not_processed)
-            echo $sem_release
+            tagname="Backup-$not_processed"
+            sem_release=$(bash ${GITHUB_WORKSPACE}/script/semantic_release_name.sh "$not_processed")
+            
+            echo "Tag: $tagname"
+            echo "Release Name: $sem_release"
 
             curl -X POST https://api.github.com/repos/${{ github.repository }}/releases \
             --header "Accept: application/vnd.github+json" \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-            --data '{
-              "tag_name": "'$tagname'",
-              "name": "'$sem_release'",
-              "draft": false,
-              "prerelease": false,
-              "generate_release_notes": false
-              }'\
+            --data "{
+              \"tag_name\": \"$tagname\",
+              \"name\": \"$sem_release\",
+              \"draft\": false,
+              \"prerelease\": false,
+              \"generate_release_notes\": false
+              }" \
               --fail
           done
-
 
       - name: run entry update list file script and commit file
         run: |
           if [[ -n "${{ steps.runpy.outputs.NP }}" ]]
           then
             bash ${GITHUB_WORKSPACE}/script/get_update_date.sh > entry_updatedate.dat
-            git config user.name github-actions
-            git config user.email github-actions@github.com
             git add entry_updatedate.dat
             git commit -m "update entry_updatedate.dat"
             git push origin main
