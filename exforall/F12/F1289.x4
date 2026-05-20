@@ -1,16 +1,16 @@
-ENTRY            F1289   20180422   20181129   20181128       F069
-SUBENT        F1289001   20180422   20181129   20181128       F069
-BIB                  9         26
-TITLE      Elastic and inelastic scattering of Li-6 on C-12 at
+ENTRY            F1289   20260117   20260508   20260508       F108
+SUBENT        F1289001   20260117   20260508   20260508       F108
+BIB                  9         27
+TITLE      Elastic and inelastic scattering of 6Li on 12C at
            63 MeV.
-INSTITUTE  (4ZZZDUB) Laboratory of Nuclear Reactions
 AUTHOR     (V.A.Maslov,R.A.Astabatyan,I.Vincour,A.S.Denikin,
            T.K.Zholdybaev,V.I.Zagrebaev,R.Kalpakchieva,
            I.V.Kuznetsov,S.P.Lobastov,S.M.Lukyanov,
            E.R.Markaryan,Yu.E.Penionzhkevich,N.K.Skobelev,
            Yu.G.Sobolev,V.Yu.Ugryumov,A.A.Hassan)
-REFERENCE  (J,IZV,69,(11),1578,2005)
-           (J,BAS,69,1761,2005) English translation
+INSTITUTE  (4ZZZDUB) Laboratory of Nuclear Reactions
+REFERENCE  (J,BAS,69,1761,2005) English translation
+           (J,IZV,69,(11),1578,2005)
            (R,JINR-P7-2003-132,2003) The same results are given.
            (C,2004BELGOR,,175,2004)
 FACILITY   (CYCLO,4ZZZDUB) U-400.
@@ -22,27 +22,31 @@ DETECTOR   (MAGSP) MSP-400 spectrometer
            with scintillation part was used. The working mixture
            of the chamber was C4H10 gas. Proportional counters
            were used for determination of position of charged
-           particles. Scintillation part consisted of NE-102
+           particles. Scintillation part consisted of NE102
            scintillator and photomultipliers.
-METHOD     (MASSP,EDE)
+METHOD     (EDE)
 HISTORY    (20161004C)
            (20180422U) SD: Ref. JINR-P7 corrected.
-ENDBIB              26
+           (20260117U) SD: Small corrections in all Subents.
+ENDBIB              27
 COMMON               2          3
 EN         EN-ERR
 MEV        MEV
         63.        0.5
 ENDCOMMON            3
-ENDSUBENT           33
-SUBENT        F1289002   20161004   20170201   20170118       F063
-BIB                  2          2
+ENDSUBENT           34
+SUBENT        F1289002   20260117   20260508   20260508       F108
+BIB                  4          5
 REACTION   (6-C-12(3-LI-6,EL)6-C-12,,DA)
-STATUS     (CURVE) Figure 2a from (J,IZV,69,(11),1578,2005).
-ENDBIB               2
+STATUS     (CURVE,,V.A.Maslov+,J,BAS,69,1761,2005) Fig, 2a
+COMMENT    By compiler: On fig.2 data are given in lab.system (see
+           text on p.1763 and fig.4 of JINR-P7-2003-132).
+HISTORY    (20260117U) SD: STATUS updated.
+ENDBIB               5
 COMMON               2          3
 ANG-ERR-D  ERR-DIG
 ADEG       PER-CENT
-      0.180         5.
+        0.2         5.
 ENDCOMMON            3
 DATA                 2         25
 ANG        DATA
@@ -73,19 +77,24 @@ ADEG       MB/SR
      63.025  4.401E-02
      67.111  4.392E-02
 ENDDATA             27
-ENDSUBENT           38
-SUBENT        F1289003   20161004   20170201   20170118       F063
-BIB                  3          3
+ENDSUBENT           41
+SUBENT        F1289003   20260117   20260508   20260508       F108
+BIB                  5          8
 REACTION   (6-C-12(3-LI-6,INL)6-C-12,PAR,DA)
-EN-SEC     (E-LVL,6-C-12)
-STATUS     (CURVE) Figure 2b from (J,IZV,69,(11),1578,2005).
-ENDBIB               3
-COMMON               3          3
-E-LVL      ANG-ERR-D  ERR-DIG
-MEV        ADEG       PER-CENT
-       4.44      0.109         4.
+EN-SEC     (E-LVL1,6-C-12)
+           (E-LVL2,3-LI-6)
+STATUS     (CURVE,,V.A.Maslov+,J,BAS,69,1761,2005) Fig, 2b
+COMMENT    By compiler: On fig.2 data are given in lab.system (see
+           text on p.1763 and fig.4 of JINR-P7-2003-132).
+HISTORY    (20260117U) SD: BIB updated. Value at 60. degr.
+           was added. E-LVL -> E-LVL1. E-LVL2 added.
+ENDBIB               8
+COMMON               4          3
+E-LVL1     E-LVL2     ANG-ERR-D  ERR-DIG
+MEV        MEV        ADEG       PER-CENT
+       4.44         0.      0.109         4.
 ENDCOMMON            3
-DATA                 2         20
+DATA                 2         21
 ANG        DATA
 ADEG       MB/SR
       9.146  5.086E+01
@@ -107,7 +116,8 @@ ADEG       MB/SR
      34.950  1.047E+00
      40.944  6.811E-01
      51.924  1.603E-01
+     59.082  1.093E-02
      63.044  2.966E-02
-ENDDATA             22
-ENDSUBENT           34
+ENDDATA             23
+ENDSUBENT           40
 ENDENTRY             3

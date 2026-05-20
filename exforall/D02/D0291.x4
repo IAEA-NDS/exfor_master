@@ -1,18 +1,18 @@
-ENTRY            D0291   20050315   20050810   20050926       D039
-SUBENT        D0291001   20050315   20050810   20050926       D039
-BIB                 10         22
+ENTRY            D0291   20260119   20260508   20260508       D151
+SUBENT        D0291001   20260119   20260508   20260508       D151
+BIB                 11         33
 TITLE      Polarisation in 11B(p,p) and 11B(p,p') at 30.3 MeV
 AUTHOR     (O.Karban, J.Lowe, P.D.Greaves, V.Hnizdo)
 INSTITUTE  (2UK BIR)
 REFERENCE  (J,NP/A,133,255,1969)
            (J,NP/A,141,675(3),1970) Erratum
-FACILITY   (LINAC) The Rutherford High Energy Laboratory linear
-           accelerator was used.
+FACILITY   (LINAC,2UK NIN)
+INC-SOURCE (POLIS)
 SAMPLE     The target consisted of isotopically enriched 11B
            powder compressed to a foil 15 mg/cm2 thick.
-DETECTOR   (SILI)Scattered protons were detected by four 5 mm
-           deep Si(Li) detecors, enabling measurements to be made
-           at four scattering angles simultaneously.
+DETECTOR   (SILI) Scattered protons were detected by four 5 mm
+           deep Si(Li) detectors, enabling measurements to be
+           made at four scattering angles simultaneously.
            (SCIN) The incident beam intensity was monitored
            using two scintillation detectors viewing 11B target
            at +-17. degr.
@@ -20,23 +20,35 @@ DETECTOR   (SILI)Scattered protons were detected by four 5 mm
            was carried out in one or both of two polarimeters
            one at the end of the accelerator and the other behind
            the main target.
-ERR-ANALYS (DATA-ERR1) Experimental error
-STATUS     (TABLE)Tables from the article
+ERR-ANALYS (ERR-1) The cross section normalization predicted by
+           the optical model searches was used to normalize all
+           experimental cross sections. The normalization
+           constants derived from various sets of optical
+           parameters which gave a reasonable fit to the data
+           varied by about +- 25%
+           (ERR-2) The errors arise mainly from uncertainty in
+           the background and, in the case of the 4.46 MeV state,
+           in the separation from neighbouring states.
+STATUS     (TABLE,,O.Karban+,J,NP/A,133,255,1969) Table 1
 HISTORY    (20050315C) SD
-ENDBIB              22
-COMMON               4          3
-EN         ANG-ERR-D  ERR-DIG    DATA-ERR1
-MEV        ADEG       PER-CENT   PER-CENT
-  30.5       0.7        0.3        5.
+           (20260119A) SD: Corrections in all Subents.
+           DATA-ERR1 -> ERR-1. ERR-DIG and ANG-ERR-D deleted (not
+           relevant). E=30.5 -> 30.3 MeV.
+ENDBIB              33
+COMMON               2          3
+EN         ERR-1
+MEV        PER-CENT
+       30.3        25.
 ENDCOMMON            3
-ENDSUBENT           29
-SUBENT        D0291002   20050315   20050810   20050926       D039
-BIB                  1          1
+ENDSUBENT           40
+SUBENT        D0291002   20260119   20260508   20260508       D151
+BIB                  2          2
 REACTION   (5-B-11(P,EL)5-B-11,,DA)
-ENDBIB               1
+HISTORY    (20260119A) SD: ERR-S -> ERR-2.
+ENDBIB               2
 NOCOMMON             0          0
 DATA                 3         30
-ANG-CM     DATA-CM    ERR-S
+ANG-CM     DATA-CM    ERR-2
 ADEG       MB/SR      MB/SR
     21.8     504.        24.
     27.2     334.        16.
@@ -69,14 +81,19 @@ ADEG       MB/SR      MB/SR
    161.8       0.78       0.04
    166.3       0.69       0.02
 ENDDATA             32
-ENDSUBENT           38
-SUBENT        D0291003   20050315   20050810   20050926       D039
-BIB                  1          1
+ENDSUBENT           39
+SUBENT        D0291003   20260119   20260508   20260508       D151
+BIB                  2          2
 REACTION   (5-B-11(P,EL)5-B-11,,POL/DA,,ASY)
-ENDBIB               1
-NOCOMMON             0          0
+HISTORY    (20260119A) SD: ERR-S -> ERR-2.
+ENDBIB               2
+COMMON               1          3
+POL-BM
+NO-DIM
+       0.5
+ENDCOMMON            3
 DATA                 3         30
-ANG-CM     DATA-CM    ERR-S
+ANG-CM     DATA       ERR-2
 ADEG       NO-DIM     NO-DIM
      21.8    -0.06      0.02
      27.2    -0.08      0.02
@@ -109,15 +126,15 @@ ADEG       NO-DIM     NO-DIM
     161.8     0.59      0.03
     166.3     0.57      0.02
 ENDDATA             32
-ENDSUBENT           38
-SUBENT        D0291004   20050315   20050810   20050926       D039
+ENDSUBENT           43
+SUBENT        D0291004   20260119   20260508   20260508       D151
 BIB                  2          2
 REACTION   (5-B-11(P,INL)5-B-11,PAR,DA)
-EN-SEC     (E-LVL,5-B-11)
+HISTORY    (20260119A) SD: ERR-S -> ERR-2.
 ENDBIB               2
 NOCOMMON             0          0
 DATA                 4         59
-E-LVL      ANG-CM     DATA-CM    ERR-S
+E-LVL      ANG-CM     DATA-CM    ERR-2
 MEV        ADEG       MB/SR      MB/SR
    2.14      21.8       2.88        0.14
    2.14      27.3       2.66        0.13
@@ -180,14 +197,18 @@ MEV        ADEG       MB/SR      MB/SR
    4.46     166.5       0.35        0.03
 ENDDATA             61
 ENDSUBENT           68
-SUBENT        D0291005   20050315   20050810   20050926       D039
+SUBENT        D0291005   20260119   20260508   20260508       D151
 BIB                  2          2
 REACTION   (5-B-11(P,INL)5-B-11,PAR,POL/DA,,ASY)
-EN-SEC     (E-LVL,5-B-11)
+HISTORY    (20260119A) SD: ERR-S -> ERR-2.
 ENDBIB               2
-NOCOMMON             0          0
+COMMON               1          3
+POL-BM
+NO-DIM
+       0.5
+ENDCOMMON            3
 DATA                 4         59
-E-LVL      ANG-CM     DATA-CM    ERR-S
+E-LVL      ANG-CM     DATA       ERR-2
 MEV        ADEG       NO-DIM     NO-DIM
    2.14      21.8       -0.16       0.10
    2.14      27.3        0.04       0.06
@@ -249,5 +270,5 @@ MEV        ADEG       NO-DIM     NO-DIM
    4.46     162.0        0.00       0.04
    4.46     166.5        0.07       0.04
 ENDDATA             61
-ENDSUBENT           68
+ENDSUBENT           72
 ENDENTRY             5
