@@ -1,39 +1,72 @@
-ENTRY            20274   19840106              20050926       0000
-SUBENT        20274001   19840106              20050926       0000
-BIB                 11         17
+ENTRY            20274   20251214   20260826   20260826       2323
+SUBENT        20274001   20251214   20260826   20260826       2323
+BIB                  9         17
+TITLE      Fission of Am241 induced by thermal neutrons
+AUTHOR     (M.Hyakutake)
 INSTITUTE  (2JPNKYU)
-REFERENCE  (W,HYAKUTAKE,6608) DATA PUBLISHED IN TECHNOLOGY
-            REPORTS OF THE KYUSHU UNIV. VOL 39(1965)170,
-            REPORT IN JAPANESE.
-AUTHOR     (M.HYAKUTAKE)
-TITLE      -FISSION OF AM-241 INDUCED BY THERMAL NEUTRONS-
-INC-SOURCE (REAC )    REACTOR
-METHOD     .DETECTION OF FISSION FRAGMENTS.
-MONITOR    (92-U-235(N,F),,SIG)
-           D.J.HUGHES ET AL., BNL-325(II), 1958.
-PART-DET   (FF   )    FISSION FRAGMENTS.
-STATUS     .DATA FROM REPORT.
-HISTORY    (711010C)
-           (740626E)
-           (840106U) A.P.T. JAPAN CODE CHANGED TO JPN
-           (840106E)
-ERR-ANALYS .STATISTICAL ERROR ONLY.
+REFERENCE  (J,TRKU,39,170,1966)
+FACILITY   (REAC,2JPNKTO) KUR
+INC-SOURCE (THCOL) graphite thermal neutron column
+SAMPLE     Am241 (77+/-3 ug/cm2) and U235 (215+/-3 ug),
+            1 cm x 1 cm evaporated onto Al (0.1 mm),
+           The thickness of Am241 and U235 was determined by
+            alpha counting
+DETECTOR   (SOLST) 2.2 cm and 2.3 cm from the target centre
+            and perpendicular to the beam line
+HISTORY    (19711010C)
+           (19740626E)
+           (19840106U) A.P.T. Japan code changed to JPN
+           (19840106E)
+           (20251214A) On. Recompiled. 003 added.
 ENDBIB              17
 NOCOMMON             0          0
 ENDSUBENT           20
-SUBENT        20274002   19860822              20050926       0000
-BIB                  2          5
+SUBENT        20274002   20251214   20260826   20260826       2323
+BIB                  6          9
 REACTION   (95-AM-241(N,F),,SIG,,MXW)
-HISTORY    (711010C)
-           (740626E)
-           (860808A)HH MXW INSERTED
-           (860822E)
-ENDBIB               5
+MONITOR    (92-U-235(N,F),,SIG)
+MONIT-REF  (,D.J.Hughes+,R,BNL-325,(2),1958)
+ERR-ANALYS (ERR-S) Statistics, mainly in Am241 target thickness
+            determination
+STATUS     (TABLE,,M.Hyakutake,J,TRKU,39,170,1966) Table 2
+HISTORY    (19860808A) HH MXW inserted
+           (19860822E)
+           (20251214A) On. MONIT(-ERR) added.
+ENDBIB               9
 NOCOMMON             0          0
-DATA                 3          1
-EN-DUMMY   DATA       DATA-ERR
-MEV        B          B
- 2.5000E-08 3.8000E+00 2.0000E-01
+DATA                 5          1
+EN-DUMMY   DATA       ERR-S      MONIT      MONIT-ERR
+EV         B          B          B          B
+ 0.0253     3.8        0.2        582.       4.
 ENDDATA              3
-ENDSUBENT           13
-ENDENTRY             2
+ENDSUBENT           17
+SUBENT        20274003   20251214   20260826   20260826       2323
+BIB                  8         15
+REACTION  1(95-AM-241(N,F),PRE,AKE,HF,MXW)
+          2(95-AM-241(N,F),PRE,AKE,LF,MXW)
+ANALYSIS   E(pre) = E(sec) + nu-bar * E(sec)/(242 - nu-bar)
+ASSUMED    (ASSUM,95-AM-241(N,F),,NU)
+REL-REF    (R,40400002,V.I.Levedev+,J,JNE,10,90,1959)
+            nu-bar=3.14+/-0.05
+ADD-RES    The mean energies derived from the compiled
+            most probable energies are
+           . <EH> =  77.8 +/- 3.6 MeV
+           . <EL> = 108.2 +/- 3.3 MeV
+           . <TKE>= 186.0 +/- 4.9 MeV
+ERR-ANALYS (DATA-ERR) No information on sources of uncertainty
+STATUS     (TABLE,,M.Hyakutake,J,TRKU,39,170,1966)
+            Text (p.173)
+HISTORY    (20251214C) On
+ENDBIB              15
+COMMON               3          3
+EN-DUMMY   ASSUM      ASSUM-ERR
+EV         PRT/FIS    PRT/FIS
+ 0.0253     3.14       0.05
+ENDCOMMON            3
+DATA                 4          1
+DATA      1DATA-ERR  1DATA      2DATA-ERR  2
+MEV        MEV        MEV        MEV
+ 75.5       3.4        107.8      2.9
+ENDDATA              3
+ENDSUBENT           27
+ENDENTRY             3
