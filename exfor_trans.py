@@ -46,7 +46,7 @@ def get_list_of_trans_files():
     pd.read_html returns the list of dataframes
     groupby returns dictionary in { '2024-05-06': ['trans.1510', 'trans.1511', 'trans.c235', 'trans.c236', 'trans.l052']} format
     """
-    r = requests.get(EXFOR_TRANS_URL)
+    r = requests.get(EXFOR_TRANS_URL, headers=headers)
     html_content = StringIO(r.text)
     dfs = pd.read_html(html_content)
 
@@ -219,11 +219,11 @@ def download_trans_files(trans_list: list):
     for trans in trans_list:
         try:
             url = "".join([EXFOR_TRANS_URL, trans])
-            r = requests.get(url, allow_redirects=True)
+            r = requests.get(url, headers=headers, allow_redirects=True)
 
         except:
             url = "".join([TRANS_REPO_URL, "-/tree/main/trans_files", trans])
-            r = requests.get(url, allow_redirects=True)
+            r = requests.get(url, headers=headers, allow_redirects=True)
 
         if r.status_code == 404:
             logging.error(

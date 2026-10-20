@@ -21,7 +21,7 @@ EXFOR_ALL_PATH = GIT_REPO_PATH + "exforall/"
 
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64)",
+    "User-Agent": "NEA/1.0",
     "X-Requested-With": "XMLHttpRequest",
     "Referer": "https://127.0.0.1:5000",
     "content-type": "application/vnd.github+json",
